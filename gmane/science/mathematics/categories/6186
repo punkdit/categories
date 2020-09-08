@@ -1,0 +1,88 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: are fibrations evil?
+Date: Fri, 17 Sep 2010 00:44:18 -0700
+Lines: 48
+Approved: news@gmane.org
+Message-ID: <E1OwmDc-00010b-Vo@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca> <alpine.LRH.2.00.1009161023190.12162@siskin.dpmms.cam.ac.uk> <E1OwQLJ-0002lj-14@mlist.mta.ca>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1284773356 26640 80.91.229.12 (18 Sep 2010 01:29:16 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 18 Sep 2010 01:29:16 +0000 (UTC)
+Cc: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sat Sep 18 03:29:14 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmEl-0000aV-3o
+	for gsmc-categories@m.gmane.org; Sat, 18 Sep 2010 03:29:07 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51097)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmDf-0007NV-Cz; Fri, 17 Sep 2010 22:27:59 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmDc-00010b-Vo
+	for categories-list@mlist.mta.ca; Fri, 17 Sep 2010 22:27:57 -0300
+Content-Disposition: inline
+In-Reply-To: <E1OwQLJ-0002lj-14@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6186
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6186>
+
+Thomas Streicher wrote at last:
+
+>BTW under a regime which identifies equality with being isomorphic (or weakly
+>equivalent) it looks tempting to use functors from B^\op to Cat. These should
+>capture the pseudo-functors since equality and isomorphism are identified. But
+>writing down functoriality in type theory using \Sigma for existence amounts
+>to choosing a lot of not at all canonical "canonical isomorphisms". Actually,
+>one would get something even more general than pseudo-functors because one
+>wouldn't write down the coherence conditions (actually one couldn't even
+>since there is no honest for good equality!).
+
+Yes, you can write the coherence conditions down
+(although I agree that it would be easy to forget them).
+
+What you need is that a functor (pseudofunctor) P: B^\op -> Cat
+is not just the following data:
+*  for each object x of B,
+     a category P_x,
+*  for each object x, object y, and morphism f: x -> y,
+     a functor P_f: P_x -> P_y,
+*  functoriality structure (and maybe coherence conditions);
+but in fact the following data:
+*  for each object x of B,
+     a category P_x,
+*  for each object x, object y, and morphism f: x -> y,
+     a functor P_f: P_y -> P_x,
+*  for each object x, object y, and equal morphisms f = g: x -> y,
+     a natural isomorphism P_{f=g}: P_f => P_g,
+*  functoriality structure and coherence conditions.
+
+For example, given f: w -> x, g: x -> y, and h: y -> z in B,
+we want to compare (P_f . P_g) . P_h with P_f . (P_g . P_h).
+In a "kosher" treatment of category theory, these aren't equal
+(that would be meaningless), but there is an associator between them.
+As a coherence condition, we want to demand that this associator
+is equal (and this does have meaning) to a natural isomorphism
+built out of the functoriality structure isomorphisms and their inverses.
+As we do this, we need to compare P_{(f;g);h} and P_{f;(g;h)}.
+Again, it's not meaningful (much less true) that these are equal,
+but P_{(f;g);h = f;(g;h)} is a natural isomorphism between them.
+So we can write down this coherence condition after all.
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

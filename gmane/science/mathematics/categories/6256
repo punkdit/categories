@@ -1,0 +1,81 @@
+Path: news.gmane.org!not-for-mail
+From: Bas Spitters <spitters@cs.ru.nl>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Haskell Arrows and internal categories
+Date: Wed, 29 Sep 2010 14:06:16 +0200
+Lines: 41
+Approved: news@gmane.org
+Message-ID: <E1P15xs-0001ff-8E@mlist.mta.ca>
+References: <AANLkTinJEsOLaF4iaMcgJoypZktx4q-AFCpTtmw+5oz=@mail.gmail.com> <E1P0kUW-0003qo-P2@mlist.mta.ca>
+Reply-To: Bas Spitters <spitters@cs.ru.nl>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1285802551 9398 80.91.229.12 (29 Sep 2010 23:22:31 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 29 Sep 2010 23:22:31 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: Mike Stay <metaweta@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Thu Sep 30 01:22:29 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15yn-0005gl-AB
+	for gsmc-categories@m.gmane.org; Thu, 30 Sep 2010 01:22:29 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43516)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15xy-00016a-R5; Wed, 29 Sep 2010 20:21:38 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15xs-0001ff-8E
+	for categories-list@mlist.mta.ca; Wed, 29 Sep 2010 20:21:32 -0300
+In-Reply-To: <E1P0kUW-0003qo-P2@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6256
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6256>
+
+You may be interested in the work of my colleagues:
+"Categorical semantics for Arrows" (2009) Bart Jacobs, Ichiro Hasuo
+and Chris Heunen
+Journal of Functional Programming, 19(3-4):403-438, 2009
+http://www.comlab.ox.ac.uk/people/chris.heunen/publications/2008/arrows/arr=
+ows.pdf
+
+"Arrows, like Monads, are Monoids" (2006) Bart Jacobs and Chris Heunen
+(ENTCS 158:219-236) in the proceedings of MFPS 22
+http://www.comlab.ox.ac.uk/people/chris.heunen/publications/2006/arrows/arr=
+ows.pdf
+
+Bas
+
+On Tue, Sep 28, 2010 at 1:45 AM, Mike Stay <metaweta@gmail.com> wrote:
+> On Mon, Sep 27, 2010 at 3:50 PM, Mike Stay <metaweta@gmail.com> wrote:
+>> I'm trying to understand Arrows in Haskell,
+>> =A0 =A0http://www.haskell.org/arrows/index.html
+>> but since I haven't become literate yet, I'm not sure I'm getting
+>> everything right. =A0It looks to me like an Arrow is a monoidal closed
+>> category object in Hask. =A0Is that all there is to it?
+>
+> Hmm. =A0After reading "Freyd is Kleisli, for Arrows", it now looks to me
+> like an Arrow is an enrichment.
+>
+> It consists of a V-profunctor
+> - A:C^op x C -> V,
+> where V is a monoidal category, together with a natural transformation
+> - arr:Hom =3D> A
+> and dinatural transformations
+> - compose:A(b,c) x A(a,b) =3D> A(a,c)
+> - first:A(a,b) =3D> A(a tensor c, b tensor c)
+> satisfying various coherence laws.
+> --
+> Mike Stay - metaweta@gmail.com
+> http://www.cs.auckland.ac.nz/~mike
+> http://reperiendi.wordpress.com
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

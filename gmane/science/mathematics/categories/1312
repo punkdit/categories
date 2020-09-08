@@ -1,0 +1,101 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Real midpoints
+Date: Wed, 29 Dec 1999 00:03:53 -0800
+Lines: 70
+Approved: news@gmane.org
+Message-ID: <199912290803.AAA30583@coraki.Stanford.EDU>
+References: <199912261845.NAA19441@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017743 30672 80.91.229.2 (29 Apr 2009 15:09:03 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:03 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Dec 31 11:20:14 1999 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA00752
+	for categories-list; Fri, 31 Dec 1999 09:42:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: Your message of "Sun, 26 Dec 1999 13:45:08 EST."
+             <199912261845.NAA19441@saul.cis.upenn.edu> 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 21
+Status: O
+Content-Length: 3606
+Original-Lines: 69
+Xref: news.gmane.org gmane.science.mathematics.categories:1312
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1312>
+
+
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+>It could well be that Vaughan and I are defining the midpoint structure
+>in the same way.
+
+Yes, after changing g(dx,uy) to g(ux,dy) in line 2 of Peter's definition
+of g and similarly for line 3 (otherwise g(dx,uy) simplifies to the
+nonsensical g(T,B)) Peter and I have essentially the same coalgebra on
+IxI, and exactly the same after some inessential permutations within
+that definition.
+
+While I rather like Peter's nonrecursive definition
+
+                   T v F v B             F'v F'        F'
+    I --> 1 v I v 1 ------> I v I v I v I ---> I v I  --> I
+
+of the halving map  h:I --> I sending  x  to  x/2, it should be remarked
+that the effect of this map as an operation on sequences is to preserve
+the empty sequence, and for nonempty sequences simply to prepend a copy
+of the leading digit, e.g. -++-+000... becomes --++-+000....  (This takes
+the 3-symbol alphabet for Peter's number system to be {-,0,+}.)  In other
+words, right shift by one with sign extension, a well-known realization
+of halving.
+
+Along the same lines, Peter's d and u maps shift the sequence left.
+If d (resp. u) shifts a + (resp. -) off the left end, the result is
+replaced by the constantly + (resp. -) sequence, i.e. "clamp overflow
+to +1 (resp. -1)".
+
+Although the interval [-1,1] goes naturally with Peter's final coalgebra,
+it occurrs to me that a fragment of Conway's surreal numbers is perfectly
+matched to it, namely the interval [-\omega,\omega] consisting of the real
+line plus two endpoints.  With respect to the Conway story this can be
+described as what Conway produces by day omega, modulo infinitesimals
+(identify those surreals that are only infinitesimally far apart).
+At no day does exactly the real line appear in Conway's scenario.
+Prior to day omega only the finite binary rationals have appeared.
+Day omega sees the sudden emergence of all the reals along with 1/omega
+added to and subtracted from each rational, as well as -omega and omega.
+Except for -omega and omega, the quotienting eliminates the 1/omega
+perturbations, yielding exactly the real line plus endpoints.
+
+Exactly the same quotienting happens with Peter's final coalgebra, whose
+elements are representable as finite and infinite strings over {-,+}
+(the 0 is eliminated by allowing strings to be finite; if you want all
+strings to be infinite, put 0 back in the alphabet and use it to pad the
+infinite strings to infinity).  For example ---+++++... and --+----...
+are identified by both Conway and Freyd.  Using Peter's choice of [-1,1]
+as the represented interval, these are both -1/4.  Using Conway's number
+system, these are respectively -2 - 1/omega and -2 + 1/omega, which
+with the identification I described above become -2.  
+
+In Conway's setup the finite constant sequences are the integers, with
+the empty sequence being 0 and counting being done in unary.  At the
+first sign reversal the bits jump mysteriously from unary to binary, not
+by fiat but as a surprising consequence of a definition of addition that
+on the face of is so natural that you would not dream it could cause a
+radix jump like that.
+
+So both [-1,1] and [-omega,omega] each admit a natural final coalgebra
+structure for Peter's functor, namely Peter's and Conway's respectively,
+and I would be surprised to see a different final coalgebra in either
+case that was as natural.  In contrast, Dusko and I exhibited a number
+of more or less equally convincing final coalgebra structures on [0,1)
+and [0,omega) for the functor product-with-omega, no one of which I
+would be willing to call *the* right one.
+
+Vaughan
+
+

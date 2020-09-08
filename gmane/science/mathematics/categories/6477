@@ -1,0 +1,144 @@
+Path: news.gmane.org!not-for-mail
+From: David Roberts <droberts@maths.adelaide.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fibrations in a 2-category
+Date: Mon, 17 Jan 2011 19:32:59 +1030
+Lines: 106
+Approved: news@gmane.org
+Message-ID: <E1PfAaZ-0007Pg-1k@mlist.mta.ca>
+References: <E1PcdVr-0004A6-7N@mlist.mta.ca>
+Reply-To: David Roberts <droberts@maths.adelaide.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1295353405 21407 80.91.229.12 (18 Jan 2011 12:23:25 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 18 Jan 2011 12:23:25 +0000 (UTC)
+To: Michal Przybylek <michal.przybylek@gmail.com>, Categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Jan 18 13:23:21 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfAal-0002pe-Na
+	for gsmc-categories@m.gmane.org; Tue, 18 Jan 2011 13:23:20 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55702)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfAad-0000zU-8X; Tue, 18 Jan 2011 08:23:11 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfAaZ-0007Pg-1k
+	for categories-list@mlist.mta.ca; Tue, 18 Jan 2011 08:23:07 -0400
+In-Reply-To: <AANLkTikU4JZuAjM5Rj1Ki0+RtoWQX1gaKrWiEkMbUqz6@mail.gmail.com>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6477
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6477>
+
+I was I think a bit hasty in my last post. I thought it was possible
+to separate the use of Choice in the metalogic and in Set, but I can't
+see how to stop Choice 'filtering down'. However if we work not with
+categories of sets but more general categories, I can get a more
+definite answer.
+
+
+Let S be a site (with a subcanonical singleton pretopology) so that
+the bicategory Cat_ana(S) is defined, and also assume that
+coequalisers of reflexive pairs exist in S.
+
+Theorem: If Cat_ana(S) is equivalent to a 2-category Cat(C) for some
+category C with finite products and coequalisers of reflexive pairs,
+then covers are split in S.
+
+Proof:
+
+  In what follows an _equivalence_ of bicategories is defined to be a
+2-functor (weak or strict) which is essentially surjective and locally
+fully faithful and essentially surjective. If one has Choice in the
+metalogic, then one can find a 2-functor which is an inverse up to a
+isotransformation etc.
+
+Definition: Let B be a bicategory. An object x in B is called a
+_discrete object_ if B(w,x) is equivalent to a set for all objects w.
+
+Let do(B) denote the full sub-bicategory on the discrete objects. For
+any object a in a category C there is a discrete object disc(a) in
+Cat(C), and disc:C --> Cat(C) is a functor. There is also a  2-functor
+Cat(S) --> Cat_ana(S) for a site S (with subcanonical singleton
+pretopology), which is the identity on objects. Discrete objects in
+Cat(S) are precisely discrete objects in Cat_ana(S).
+
+Lemma: If B = Cat(C) for some category C with finite products and
+coequalisers of reflexive pairs of arrows, then disc:C --> do(Cat(C))
+is an equivalence.
+
+Lemma: if B = Cat_ana(S) for some site S with coequalisers of
+reflexive pairs of arrows, then disc:S --> do(Cat_ana(S)) is an
+equivalence.
+
+Lemma: Let F:B --> B' be an 2-functor. Then there is a 2-functor do(B)
+--> do(B') (i.e. discrete objects are mapped to discrete objects). If
+F is an equivalence then it reflects discrete objects.
+
+Corollary: If F:B --> B' is an equivalence there is an equivalence
+do(B) --> do(B') given by restriction of F.
+
+So if we have an equivalence Cat(C) --> Cat_ana(S) and both C and S
+satisfy the conditions of the first two lemmas, we have a co-span of
+equivalences
+
+C --> do(Cat_ana(S)) <-- S
+
+Thus if one doesn't mind inverting equivalences as defined here, we
+have an equivalence S --> C of categories.
+
+Lemma: Given an equivalence of categories S --> C there is an
+equivalence Cat(S) --> Cat(C).
+
+Thus we have an equivalence Cat(S) --> Cat_ana(S). But this implies
+that the appropriate version of internal Choice holds in S.      #
+
+
+Going back to Michal's question, this would imply that in the topos S
+all regular epimorphisms split, which is of course not always true.
+
+David
+
+
+
+
+On 17 January 2011 09:21, David Roberts <droberts@maths.adelaide.edu.au> wrote:
+> Hi Michal,
+>
+> it is not *always* false. Consider the topoi Set and Set_choice, where
+> the first is the category of sets without choice and the second is
+> with choice. Then the bicategory of categories, anafunctors and
+> transformations in Set is equivalent (assuming choice in the
+> metalogic) to the 2-category of categories, functors and natural
+> transformations in Set_choice. This is (essentially) shown by Makkai
+> in his original anafunctors paper.
+>
+> However, I doubt that it is always true (only a hunch). Also, one does
+> not need a topos as an ambient category in which to define
+> anafunctors, only a site where the Grothendieck pretopology is
+> subcanonical and singleton (single maps as covering families). The
+> topos case is when you take the regular pretopology.
+>
+> And although you did not ask for a reference, here's one:
+>
+> http://arxiv.org/abs/1101.2363
+>
+> which builds on internal anafunctors introduced here
+>
+> http://arxiv.org/abs/math.CT/0410328
+>
+> and Makkai's original paper is available in parts from here:
+>
+> http://www.math.mcgill.ca/makkai/anafun/
+>
+> David
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

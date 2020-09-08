@@ -1,0 +1,94 @@
+Path: news.gmane.org!not-for-mail
+From: Meredith Gregory <lgreg.meredith@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: naive questions about sets
+Date: Tue, 24 Mar 2009 10:57:48 -0700
+Lines: 61
+Approved: news@gmane.org
+Message-ID: <E1LmSGz-0004WC-Ud@mailserv.mta.ca>
+Reply-To: Meredith Gregory <lgreg.meredith@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237987189 2705 80.91.229.12 (25 Mar 2009 13:19:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 25 Mar 2009 13:19:49 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Wed Mar 25 14:21:07 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LmT2T-0001aK-QP
+	for gsmc-categories@m.gmane.org; Wed, 25 Mar 2009 14:21:01 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LmSGz-0004WC-Ud
+	for categories-list@mta.ca; Wed, 25 Mar 2009 09:31:57 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:197
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/197>
+
+Categorical,
+
+i have a question about a presentation of sets. The motivation for this
+question comes from a conversation i had a few years ago with Jamie Gabbay
+concerning the use of FM-set theory in semantics for 'freshness'. i was
+arguing that a certain use of 'reflection' gave a canonical (and smallest)
+set of atoms. Jamie objected that atoms are not allowed to have internal
+structure in FM-set theory. My question has to do with my response.
+
+Because my question has to do with a formulation in categorical language,
+rather than formulate it in that language, i will formulate it naively. In
+my view, heavily influenced by computing as it is, i see the basics of set
+theory as providing some operations for constructing and inspecting,
+de-structing a data type called set. Very primitively, we have operations
+for
+
+   - extensionally constructing sets, '{ ... }' and
+   - operations for intensionally constructing sets '{ ... | ... }'
+   - operations for inspecting sets 'x in ... '
+
+In this view, nothing prevents me from imagining two different versions of
+this data type. One of which i will call the 'black' version and one of
+which i will call the 'red' version. Initially, i might imagine these data
+types as copies of each other; but, we can only construct and inspect 'black
+sets' with 'black' braces and 'black' in predicate; and likewise for the
+'red sets'. So, never the twain shall meet.
+
+Now, once we've built such a structure, there's nothing to prevent us from
+imaginging that the 'atoms' of a 'black' FM-set theory are none other than
+'red sets'. Symmetrically, nothing prevents us from imagining that the
+'atoms' of a 'red' FM-set theory are none other than 'black sets'. A
+suggestive use of data type specifications might illustrate the idea
+
+   - Ordinary sets
+      - Set ::= '{' Set* '}'
+      - Red/black sets
+      - BlackSet ::= '{b|' (BlackSet + RedAtom)* '|b}'
+      - RedSet ::= '{r|' (RedSet + BlackAtom)* '|r}'
+      - RedAtom ::= RedSet
+      - BlackAtom ::= BlackSet
+
+Now, my question: is there a topos theoretic characterization of the obvious
+zoology that results from these musings?
+
+Best wishes,
+
+--greg
+
+-- 
+L.G. Meredith
+Managing Partner
+Biosimilarity LLC
+806 55th St NE
+Seattle, WA 98105
+
++1 206.650.3740
+
+http://biosimilarity.blogspot.com
+
+
+

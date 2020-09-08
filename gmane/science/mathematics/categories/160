@@ -1,0 +1,91 @@
+Path: news.gmane.org!not-for-mail
+From: Robin Cockett <robin@ucalgary.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Sun, 15 Mar 2009 16:18:41 -0600
+Lines: 58
+Approved: news@gmane.org
+Message-ID: <E1LiysS-0001YF-TI@mailserv.mta.ca>
+Reply-To: Robin Cockett <robin@ucalgary.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237158917 32282 80.91.229.12 (15 Mar 2009 23:15:17 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 15 Mar 2009 23:15:17 +0000 (UTC)
+To: Categories Mailing List <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon Mar 16 00:16:34 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LizZJ-0007OE-HC
+	for gsmc-categories@m.gmane.org; Mon, 16 Mar 2009 00:16:33 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LiysS-0001YF-TI
+	for categories-list@mta.ca; Sun, 15 Mar 2009 19:32:16 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:160
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/160>
+
+The simple questions ARE the good ones ...  and one should certainly not
+stop the confusing there!
+
+If you want to define the initial object in a functional language you
+should write (say in Haskell):
+
+data Initial =
+     deriving (Show)   -- so we can display the elements
+
+After all clearly the initial object is the (inductive) datatype with
+zero constructors.  Clearly you then should be able to write perfectly
+good programs such as the identity function and the case on this datatype.
+
+idinit:: Initial -> Initial
+idinit x = x
+
+init:: Initial -> a
+init x = case x of           -- well there are no cases!
+
+There is one problem, of course: Haskell does not think this is legal as
+it thinks all datatypes should have at least one constructor.  (BTW do
+any functional languages allow NO constructors? They really should.)  No
+matter we can try to be a little cleverer and cheat the system by having
+a constructor which we cannot construct anyway ...
+
+data Initial = ZZ initial
+     deriving (Show)   -- so we can display the elements
+
+This has no elements ... just try to inductively construct them.   So
+this works fine as the  initial datatype ... or does it?  At this stage
+we belatedly remember we are not quite in the world we expect as initial
+and final datatypes coincide so we do actually have a perfectly good
+element in this datatype.
+
+forever:: Initial
+forever = ZZ forever
+
+You do have to be patient as it does takes a bit of time to display it
+... :-)
+
+OK so that did not work!!
+
+But now we have remembered that initial and final datatypes are supposed
+to coincide we have a blinding flash of inspiration:  because ()=1 is
+the final type it must also be the initial object.  So constant
+functions ARE the same as initial functions after all ....... so the
+student was not confused at all!
+
+Or was he?
+
+-robin
+
+
+Robin Cockett, Calgary
+
+
+
+

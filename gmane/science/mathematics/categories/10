@@ -1,0 +1,143 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: categories: Re: adjunction of symmetric monoidal closed categories
+Date: Wed, 28 Jan 2009 09:56:28 +1100
+Lines: 110
+Approved: news@gmane.org
+Message-ID: <E1LRyfj-0005Z3-GU@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1233106481 14564 80.91.229.12 (28 Jan 2009 01:34:41 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 28 Jan 2009 01:34:41 +0000 (UTC)
+To: Bockermann Bockermann <tonymeman1@googlemail.com>,	categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Jan 28 02:35:54 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LRzLL-00032X-Ms
+	for gsmc-categories@m.gmane.org; Wed, 28 Jan 2009 02:35:51 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LRyfj-0005Z3-GU
+	for categories-list@mta.ca; Tue, 27 Jan 2009 20:52:51 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:10
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/10>
+
+
+On 20/01/09 6:11 AM, "Bockermann Bockermann" <tonymeman1@googlemail.com>
+wrote:
+
+> Dear mathematicians,
+> I wonder if the following is true. Has anybody a reference, if this is
+> the case?
+>
+> Let V and W be two complete and cocomplete symmetric monoidal closed
+> categories and
+> L: V <--> W :R
+> an adjunction of (lax) symmetric monoidal functors. Let D be a small V-
+> category.
+> Is it true that there is a V-isomorphism
+> V-Fun(D,RW) = R(W-Fun(LD,W)) ?
+>
+> (If not, is this at least the case if L is strict symmetric monoidal?)
+>
+> Thank you for any help.
+> Tony
+>
+>
+
+Dear Tony,
+
+I pointed out this fact in my reply (see below) to one of your earlier
+questions. In fact you don't need symmetry, and L is automatically strong
+monoidal.
+
+Regards,
+
+Steve Lack.
+
+%%%%%
+
+On 6/12/08 10:21 AM, "Bockermann Bockermann" <tonymeman1@googlemail.com>
+wrote:
+
+> Dear mathematicians,
+>
+> could anybody give me a hint if the following assertion is true?
+> Let V be a complete and co-complete symmetric monoidal closed category. The
+> category sV of simplicial objects in V is also complete and co-complete
+> symmetric monoidal closed with the pointwise tensor. There is a V-adjunction
+> D:V<-->sV:Z
+> of the V-functor Z which evaluates in 0 and the discrete V-functor D. Does
+> this induce a V-Isomorphism of V-categories
+> V-Fun(K,ZC)~sV-Fun(DK,C)
+> for any small V-category K and any sV-category C?
+>
+> Please note that a similar statement is true for the non-enriched case [e.g.
+> Borceux2, Proposition 6.4.8.].
+>
+> Thank you for any help.
+>
+> Tony
+>
+>
+Dear Tony,
+
+Yes, it is true. More generally, let F-|U:W-->V be a monoidal adunction.
+
+This means that V and W are monoidal categories, F and U are monoidal
+functors, monoidal natural transformations 1-->UF and FU-->1 satisfying the
+triangle equations.
+
+(A monoidal functor F:V-->W involves maps FX\otimes FY-->F(X\otimes Y)
+and I_W-->F(I_V), not necessarily invertible, but satisfying coherence
+conditions. In a monoidal adjunction, as above, the monoidal functor F is
+necessarily strong, so that the comparison maps are invertible. The
+comparison maps for U need not be invertible.)
+
+For a small V-category K and a W-category C we do indeed have an isomorphism
+    V-Fun(K,UC) = U(W-Fun(FK,C))
+of V-categories. I'll do my best to explain this via ascii.
+
+
+V-functors from K to UC are in bijection with W-functors from FK to C; this
+takes care of the object-part. For V-functors M,N:K-->UC,
+the hom-object V-Fun(K,UC)(M,N) is the equalizer of the evident maps
+               --->
+Pi_k UC(Mk,Nk) ---> Pi_{k,l} [K(k,l), UC(Mk,Nl)]
+in V, where the products run over all objects k and l of K.
+
+On the other hand, U(W-Fun(FK,C)(M,N)) is given by the equalizer of
+                 -->
+U(Pi_k C(Mk,Nk)) --> U Pi_{k,l} [FK(k,l),C(Mk,Nl)]
+or equivalently, since U is a left adjoint, the equalizer of
+               -->
+Pi_k UC(Mk,Nk) --> Pi_{k,l} U[FK(k,l),C(Mk,Nl)]
+
+So we are now left to prove
+
+Lemma: U[FX,Y]=[X,UY], for X in V and Y in W.
+Proof:
+
+V(Z,U[FX,Y]) = W(FZ,[FX,Y]) = W(FZ\otimes FX,Y) = W(F(Z\otimes X),Y)
+             = V(Z\otimes X,UY) = V(Z,[X,UY])
+
+naturally in Z and so U[FX,Y]=[X,UY] as required.
+
+Regards,
+
+Steve Lack.
+
+
+
+
+
+

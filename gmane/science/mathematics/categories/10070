@@ -1,0 +1,146 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: Peter LeFanu Lumsdaine <p.l.lumsdaine@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: well powered categories, categorically?
+Date: Thu, 5 Dec 2019 16:04:43 +0100
+Approved: news@gmane.org
+Message-ID: <E1idEsL-0001Oy-Ac@rr.mta.ca>
+References: <E1ics70-0001zb-GX@rr.mta.ca>
+Reply-To: Peter LeFanu Lumsdaine <p.l.lumsdaine@gmail.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="241910"; mail-complaints-to="usenet@blaine.gmane.org"
+Cc: Categories list <categories@mta.ca>
+To: Paul Taylor <cats@paultaylor.eu>
+Original-X-From: majordomo@rr.mta.ca Fri Dec 06 15:47:59 2019
+Return-path: <majordomo@rr.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by blaine.gmane.org with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.89)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1idEtg-0010eJ-TS
+	for gsmc-categories@m.gmane.org; Fri, 06 Dec 2019 15:47:57 +0100
+Original-Received: from rr.mta.ca ([198.164.44.159]:55136)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1idEsw-0003Ub-BR; Fri, 06 Dec 2019 10:47:10 -0400
+Original-Received: from majordomo by rr.mta.ca with local (Exim 4.92.1)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1idEsL-0001Oy-Ac
+	for categories-list@rr.mta.ca; Fri, 06 Dec 2019 10:46:33 -0400
+In-Reply-To: <E1ics70-0001zb-GX@rr.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:10070
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/10070>
+
+Perhaps this is one of the accounts you found unsatisfactory, but what
+about the approach using indexed categories, as set out in e.g. Section
+B1.3 of the Elephant, and (partially) summarised at
+https://ncatlab.org/nlab/show/indexed+category ?
+
+Your category C would be given as an indexed category over the base E; this
+allows talking about families of objects of C indexed by objects of E, and
+more generally, diagrams in E indexed by internal categories in C.  There
+are standard definitions (given in the Elephant) for an indexed category to
+*locally small* (generalising the enrichment you ask for), and
+*well-powered*, which seems sufficient for all or most of what you ask for
+below?
+
+(Of course, all this can be set up in terms of fibrations instead of
+indexed categories, according to taste.)
+
+Best,
+=E2=80=93Peter
+
+On Thu, Dec 5, 2019 at 3:29 PM Paul Taylor <cats@paultaylor.eu> wrote:
+
+> Is there some genuinely categorical account of the notion of
+>
+>              WELL POWERED CATEGORY
+>
+> that would rid this topic of what I have taken to calling
+> "hocus pocus" foundations?
+>
+> That is, I do not want to be told that a well powered category
+> has a "set" of isomorphism classes of subobjects of each object.
+>
+> (I have just done a web search for this phrase but, despite the
+> occurrence of several names for which I have a lot of respect,
+> I could not find anything along the lines I have in mind.)
+>
+> Suppose we are using some elementary topos E as our usual
+> mathematical workbench, so objects of E are called "sets".
+> We can set up the notions of poset, dcpo, lattice, complete
+> lattice and whatever in E in the usual way.
+>
+> To talk about some category C being "well powered", I want:
+>
+> - I don't care about "collecting" all the objects of C,
+>     so it doesn't need to be an internal category in E.
+>
+> - I would like the homs of C to be objects of E, so it is
+>     an E-enriched category.
+>
+> - Each object of C has a "set" (E-object) of isomorphism
+>     classes of monos into it, and
+>
+> - C might as well have pullbacks of monos (inverse images),
+>     so this is a contravariant functor
+>
+>        Sub  :   C^op  ------>  Poset_E
+>
+> - Now I want to so some ordinary categorical constructions
+>     in C using diagrams, with such things as pullbacks,
+>     colimits of diagrams indexed by E-objects, maybe function
+>     types.
+>
+> - Suppose that all of the objects that occur in my
+>     construction have monos into a handful of particular
+>     C-objects X_1, ..., X_k
+>
+> - Then I want to INTERNALISE the construction using
+>     endofunctions of
+>            Sub (X_1 x ... x X_k)
+>     or something like that.
+>
+> - I use some logic and constructions in the elementary topos
+>     E to do something or other with this internalisation.
+>
+> - Then I want to EXTERNALISE this to give some diagrammatic
+>     construction in the category.
+>
+> - A particular application of this would be to PARTIAL
+>     MAPS, so maybe some of the work of Pino Rosolini,
+>     Robin Cockett and others might form part of this theory.
+>
+>
+> For example, let C just be the topos E.   We know how to
+> internalise ("classify") subobjects - using the subobject
+> classifier Omega.
+>
+> Simple constructions like intersection and union of
+> subobjects in E can be internalised as the meet and join
+> on Omega.  So we can show that it is a Heyting algebra.
+>
+> Doing this is an exercise that many of us will have done
+> as graduate students.  It's straightforward, once you get
+> the idea, but a bit tedious after a while.
+>
+> So what I'm looking for is the universal property that
+> says how to internalise and externalise, ie translate
+> between categorical diagram constructions in the category C
+> and endofunctions of the Sub(X) objects in E.
+>
+> I will write about the subject for which I need this in
+> another posting.
+>
+> Any ideas?
+>
+> Paul Taylor.
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

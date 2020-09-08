@@ -1,0 +1,80 @@
+Path: news.gmane.org!not-for-mail
+From: Jacques Carette <carette@mcmaster.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on rewriting and program specification
+Date: Sat, 12 Nov 2005 22:23:13 -0500
+Organization: McMaster University
+Lines: 45
+Approved: news@gmane.org
+Message-ID: <E1EbHms-0001bK-Ej@mailserv.mta.ca>
+References: <011d01c5e77f$0ef00140$d78a4c51@brown1>
+NNTP-Posting-Host: main.gmane.org
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018954 6173 80.91.229.2 (29 Apr 2009 15:29:14 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:29:14 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Nov 13 09:25:25 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 13 Nov 2005 09:25:25 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EbHms-0001bK-Ej
+	for categories-list@mta.ca; Sun, 13 Nov 2005 09:20:50 -0400
+In-Reply-To: <011d01c5e77f$0ef00140$d78a4c51@brown1>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 15
+Status: O
+Content-Length: 2046
+Original-Lines: 44
+Xref: news.gmane.org gmane.science.mathematics.categories:2870
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2870>
+
+There is one part of your questions that I can comment on:
+
+Ronald Brown wrote:
+
+>The intuitive idea is that a program may be very complex, even undecidable,
+>or inconsistent, but if the input is trivial, or simple, then the output may
+>be decidable, and simple. Perhaps there are commercial examples of this,
+>where most users give simple inputs?
+>
+>
+Consider a Computer Algebra System (ie like Maple or Mathematica).
+Almost everything interesting it does in the area of Analysis is
+formally undecidable.  This is because zero-equivalence for any
+interesting subset of the (constructive) reals is undecidable, and
+almost all CAS algorithms to do analysis (integration, solving
+equations, limits, simplification, etc) requires many zero-equivalence
+tests, amongst many undecidable problems.
+
+Nevertheless, these systems are very powerful, and frequently return
+interesting answers to even fairly complex user input.  This is because
+most users give ``structured'' input, for which semi-decision procedures
+seem to be quite adequate.  Of course, if you happen to know exactly
+which semi-decision procedures are being used, you can fool them and get
+the system to either go into an infinite loop or give a wrong answer.
+But that requires a huge amount of knowledge to do so.  The average user
+would be unable to manufacture such examples.
+
+It is very important to note that the distinction is between
+``structured'' input and ``generic'' input, rather than between simple
+and complex.  In other words, what seems to matter most is the
+Kolmogorov Complexity (or in the specification case, the logical
+succinctness) of an input.  [See
+http://www.cas.mcmaster.ca/~carette/publications/simplification.pdf for
+one approach to this].
+
+There are similar examples in the automated theorem proving world, where
+in particular PVS and IMPS can frequently prove theorems which are not a
+priori known to be in a decidable subclass.  Here again, a combination
+of semi-decision procedures driven by intelligent heuristics seems to be
+highly effective.
+
+Jacques
+
+
+

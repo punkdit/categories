@@ -1,0 +1,528 @@
+Date:        Mon, 04 Feb 91
+From:        "RROSEBRUGH" <RROSEBRUGH@MTA>
+Subject:     another correction
+
+Cristina Pedicchio has asked me to correct the e-mail address
+transmitted for her. It should be
+
+ti2tsg24@icineca2.bitnet
+
+and not
+ti2tsg2h@....
+
+Bob Rosebrugh
+
+Subject:     list by ftp
+Date: 06 Feb 91 06:43:56 PST (Wed)
+From: pratt@cs.stanford.edu
+
+The up-to-date list (of e-mail addresses - RR) is a file struct.list
+on boole.stanford.edu, 36.8.0.65, in the anonymous ftp directory /pub.
+-v
+
+Date:        Sun, 17 Feb 91 12:38:14 AST
+From:        "RROSEBRUGH" <RROSEBRUGH@MTA>
+Subject:     Abstract: Constructive complete distributivity
+
+
+The following article is available as a preprint from the first-named
+author, and will also be available as soon as possible by ftp.
+
+Constructive Complete Distributivity II
+
+Robert Rosebrugh* and R.J. Wood**
+
+Abstract
+
+A complete lattice, L, is constructively completely distributive,
+(CCD)(L), if  the sup map defined on down-closed subobjects has a
+left adjoint.  It was known that in boolean toposes (CCD)(L)
+is equivalent to (CCD)(L^op).  We show here that the latter
+property for all L (sufficiently, for Omega) characterizes boolean toposes.
+Along the way we also consider Heyting algebras satisfying the `infinite
+DeMorgan Law' i.e. negation has a right adjoint. We show that a topos is
+boolean iff Omega satisfies this law.
+
+*<RROSEBRUGH@MTA.BITNET>
+**<rjwood@cs.dal.ca>
+
+Subject:     Question on Tannaka-Krein categories
+Date: Sat, 16 Feb 91 14:33:05 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Dear Bob:
+I got the following query from John McKay.  I don't know anything about
+it, but someone on your network may. ---Michael
+
+Date: Sat, 16 Feb 1991 03:35 EDT
+From: MCKAY%Vax2.Concordia.CA%vm1.mcgill.ca@gauss.Math.McGill.CA
+Subject: Modular or Tannaka-Krein categories
+To: barr@gauss.Math.McGill.CA
+
+What is a modular category? A Tannaka-Krein category?
+It comes up in work I have done.
+I learnt this today, over a decade later!
+Best,
+John
+
+
+Subject:     Ross Street
+Date: Fri, 22 Feb 1991 09:31:35 -0400
+From: Richard Wood <rjwood@cs.DAL.CA>
+
+Max Kelly is pleased to inform the community that Ross Street has been
+promoted to a personal chair at Macquarie University.
+
+Richard
+
+Subject:     Availability of Casley's thesis by FTP
+Date: Fri, 22 Feb 91 23:19:45 PST
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+Ross Casley's thesis is now available by anonymous ftp, in both .tex
+and .dvi forms.  It should be of interest to those working in
+concurrency modeling, particularly if you have an interest in notions
+of time other than the two-valued one implicit in partial order and
+linear order models of concurrency.
+
+The thesis views concurrent processes in terms of an algebra of
+behaviors each defined as a set of events spread out in time and
+labeled or endowed with attributes, rather than as sequential processes
+connected by communication channels.
+
+Although a treatment of timed processes was the motivating concern of
+the thesis, there exist interesting parallels between the algebraic
+structure of behaviors as developed in the thesis and the structure of
+types.  Both behaviors and types combine naturally via sum, product,
+and exponentiation, and both are amenable to very similar categorical
+treatments.  While these are not drawn out in any detail in the thesis,
+those familiar with type theory should have little difficulty in seeing
+at least some of these connections.
+
+Types can be thought of as the dual of behaviors: a type is a
+disjunctive collection of values (a variable can take on only one
+value) while a behavior is a conjunctive collection of events (all
+events of the behavior must happen for the behavior itself to be
+considered to have happened).  A set passed as a parameter or stored as
+a value lives on the behavior side of this duality inasmuch as it is a
+conjunctive aggregate: the elements of the set are all present
+simultaneously.
+
+The contravariant power object functor 2?X equips this duality with a
+natural and mathematically rich representation.  One of the motivations
+behind our present interest in event spaces, concurrent automata,
+partial distributive lattices, etc., is a better understanding of this
+duality.
+
+Instructions for obtaining the thesis, along with other papers from the
+same source, appear below.
+
+        Vaughan Pratt
+
+=====================================================================
+                     Papers on Concurrency Modeling
+                       Available by Anonymous FTP
+                         from Boole.Stanford.EDU
+
+
+This file is README in the /pub directory of Boole.Stanford.EDU,
+36.8.0.65, accessible by anonymous ftp.
+
+The /pub directory is for FTP distribution of recent publications of
+the Boole group.  The Boole group is a subgroup of the Mathematical
+Theory of Computation group, Computer Science Department, Stanford
+University.  The group consists of the following.
+
+        Ross Casley                     casley@cs.stanford.edu  (SYS)
+        Roger Crew                      crew@cs.stanford.edu    (SYS)
+        Rob van Glabbeek                rvg@cs.stanford.edu
+        Vineet Gupta                    vgupta@cs.stanford.edu
+        Vaughan Pratt (group leader)    pratt@cs.stanford.edu   (SYS)
+        Pat Simmons (secretary)         simmons@cs.stanford.edu
+        Orli Waarts                     orli@cs.stanford.edu
+
+==========================Instructions=================================
+
+FTP LOGIN.  Give the following commands.
+
+        ftp boole.stanford.edu
+Login:  anonymous                       (if you don't have an account on boole)
+Paswd:  yoursurname                     (though any string will work)
+        bin                             (if you are retrieving a .dvi file)
+        prompt off                      (if you want no ? prompts from mget)
+        cd pub                          (change directory to ^ftp/pub
+        ls -lt                          (see what's there, most recent first)
+        mget filename-1 ... filename-n  (e.g.   mget cg.tex logic.bib)
+        quit                            (exit from FTP)
+
+SOURCE.  To retrieve the source to paper foo, get foo.tex and
+logic.bib.  The source should be compiled using
+
+        latex foo; bibtex foo; latex foo; latex foo
+
+DVI.  If you wish to print paper foo without having to compile with
+latex, retrieve just foo.dvi.  You must first give the bin command to
+ftp since .dvi files are not text files.  Print foo.dvi on your host
+using
+
+        lpr -d foo.dvi.
+
+PROBLEMS.  If you have problems in either retrieving or compiling
+papers, please contact a systems person (flagged SYS on the list
+above).
+
+===========================Available papers=================================
+
+TITLES
+
+casthes.tex On the Specification of Concurrent Systems
+es.tex      Event Spaces and their Linear Logic (in preparation)
+catl.tex    Concurrent Automata and Their Logic (old es.tex, temporary)
+cg.tex      Modeling Concurrency with Geometry
+jelia.tex   Action Logic and Pure Induction
+man.tex     Temporal Structures
+pp2.tex     Teams Can See Pomsets
+am4.tex     Enriched Categories and the Floyd-Warshall Connection
+iowatr.tex  Dynamic Algebras as a well-behaved fragment of Relation Algebras
+ijpp.tex    Modelling Concurrency with Partial Orders
+
+-----------------------------------------------------------------------
+
+ABSTRACTS
+
+
+casthes.tex On the Specification of Concurrent Systems
+            Ross Casley
+            Ph.D. Thesis, January, 1991
+
+In models of concurrent processes constraints on the order of events are
+often represented by partial orders, and schedules of events are then
+defined using an algebra of standard operations such as sequential and
+parallel composition.
+
+In this dissertation the notion of partial order is replaced by that of a
+set with a metric which takes values in a given ordered monoid.  Partial
+orders are the simple case of a monoid whose two elements represent the
+presence or absence of a constraint.
+
+An ordered monoid can be seen as a monoidal category, and schedules based
+on it are categories enriched in the monoid.  Algebraic operations on
+schedules can then be defined as constructions in the category of
+schedules.
+
+These definitions rely on certain properties of a category of schedules,
+such as closure and completeness.  To simplify proofs of these properties,
+two constructions are defined.  The first creates a category of unlabeled
+schedules from a system of constraints.  The second adds labels to
+unlabeled schedules.  Many categories of interest can be constructed from
+simple categories using these two methods.  The main results of the
+dissertation derive the required properties of categories so constructed
+from similar, more easily verified properties of the base categories.
+
+Several notions of timing constraint can be viewed in a uniform way in
+this framework.  An example is the Gaifman-Pratt system, essentially the
+partial order model with additional specification as to whether two events
+may occur simultaneously.  It corresponds to a monoid whose three elements
+represent strict precedence, lax precedence (simultaneity is permitted),
+and absence of constraint.  Real-valued timing constraints correspond to
+the additive monoid of the real numbers.
+
+
+es.tex    Event Spaces and their Linear Logic
+            V. Pratt
+            Submitted to LICS-91 under its earlier title of
+                "Concurrent Automata and Their Logic"
+
+(This paper is still being written.  The paper to date is being made
+available for those wishing to follow closely or contribute to the
+development of event spaces.  See catl.tex for a more stable but dated
+account.)
+
+An event space is a partially ordered set with a top element and all
+nonempty joins, including infinite ones.  Whereas in a Boolean algebra
+OR and AND are interpreted extrinsically as respectively join and meet,
+in an event space they are both interpreted as join and distinguished
+intrinsically according to whether or not that join is the top
+element.  In addition we take the order itself as the interpretation of
+AND-THEN, sequential AND.  Event spaces subsume Winskel event
+structures, and are dual to state spaces in an unexpectedly simple
+way.  We exhibit a calculus of event spaces whose primitive operations
+are direct product, tensor product, and free space, along with
+associated constants providing units for the two products.  From these
+are derived by duality etc. several other operations constituting
+simultaneously a concurrent programming language and a linear logic of
+concurrency.  While event spaces resemble vector spaces in many ways,
+they improve on them with respect to duality (restricted to finite
+dimensions for vector spaces), flexibility (vector spaces are more
+rigid), and nondegeneracy (product and sum coincide for vector spaces
+but not event spaces, and similarly for other dual pairs of
+operations).
+
+
+catl.tex    Concurrent Automata and Their Logic
+            V. Pratt
+            Submitted to LICS-91
+
+(This is the previous revision of es.tex, which will replace it when
+ready.)
+
+A concurrent automaton is a poset with a top (the global initial state)
+and all nonempty sups (the local initial states).  A schedule is
+defined identically.  These form dually isomorphic categories Aut and
+Sched admitting universally definable operations constituting a
+concurrent programming language, and additional operations constituting
+a linear logic of concurrency in which $!a$ and $?a$ are respectively a
+free choice automaton and a free concert schedule.  The linear theory
+Th(CSLat) of complete semilattices strictly extends Th(Aut) with
+$\query a=\bang a$, an unwanted isomorphism of free and cofree
+semilattices (both being Boolean algebras) found only in CSLat.  Both
+theories contain such howlers as 0=1.  Intersection with classical
+logic (multiplication by 2) removes the howlers, but not usefully so
+for CSLat, and moreover $\query a=\bang a$ remains.  The self-duality
+of these categories permits a non-categorical account requiring only
+elementary lattice theory.
+
+cg.tex          Modeling Concurrency with Geometry
+                V. Pratt
+                To appear in POPL-91.
+
+Abstract:
+Branching time and causality find their respective homes in the
+Birkhoff-dual models of automata and schedules.  This creates a
+puzzle:  if the duality is supposed to make the models completely
+equivalent then why does each phenomenon have a preferred side?  We
+identify dimension as the culprit:  1-dimensional automata are
+skeletons permitting only interleaving concurrency, true n-fold
+concurrency resides in transitions of dimension n.  The Birkhoff dual
+of a poset then becomes a simply-connected space.  We distinguish
+Birkhoff duality from Stone duality and treat the former in detail from
+a concurrency perspective.  We introduce true nondeterminism and define
+it as monoidal homotopy; from this perspective nondeterminism in
+ordinary automata arises from forking and joining creating nontrivial
+homotopy.  We propose a formal definition of higher dimensional
+automaton as an n-complex or n-category, whose two essential axioms are
+associativity of concatenation within dimension and an interchange
+principle between dimensions.
+
+
+jelia.tex       Action Logic and Pure Induction
+                V. Pratt
+                To appear in Proceedings of JELIA-90, European Workshop on
+                Logics in AI (ed. J. van Benthem and Jan Eijck),
+                held Amsterdam, Sept. 1990
+
+Abstract:
+In Floyd-Hoare logic programs are dynamic while assertions are static
+(hold at states).  In action logic the two notions become one, with
+programs viewed as on-the-fly assertions whose truth is evaluated along
+intervals instead of at states.  Action logic is an equational theory
+ACT conservatively extending the equational theory REG of regular
+expressions with operations preimplication a -> b (HAD a THEN b) and
+postimplication b <- a (b IF-EVER a).  Unlike REG, ACT is finitely
+based, makes a* reflexive transitive closure, and has an equivalent
+Hilbert system.  The crucial axiom is that of pure induction,
+(a -> a)* = a -> a.
+
+
+man.tex         Temporal Structures
+                R. Casley, R. Crew, J. Meseguer, V. Pratt
+
+                To appear in Mathematical Structures in Computer
+                Science, inaugural issue, 1990.  Revision of
+                proceedings version in Category Theory and Computer
+                Science, LNCS 389, Manchester, 1989.  Formerly called
+                "Dynamic Types."
+
+Abstract:
+We combine the principles of the Floyd-Warshall-Kleene algorithm,
+enriched categories, and Birkhoff arithmetic, to yield a useful class
+of algebras of transitive vertex-labeled spaces.  The motivating
+application is a uniform theory of abstract or parametrized time in
+which to any given notion of time there corresponds an algebra of
+concurrent behaviors and their operations, always the same operations
+but interpreted automatically and appropriately for that notion of
+time.  An interesting side application is a language for succinctly
+naming a wide range of datatypes.
+
+
+pp2.tex         Teams Can See Pomsets
+                G. Plotkin and V. Pratt
+                Draft in preparation
+
+Abstract:
+Strings may serve as both specifications and observations of behavior.
+However partial strings or pomsets, superior to strings in certain
+respects for the representation of concurrent behavior, are provably
+unobservable and hence apparently suitable only for specifying
+behavior.  The proof however tacitly assumes that observers are
+isolated individuals.  We show that observations by a cooperating team
+of sequential observers agreeing on *what* happened but not
+*when* can distinguish all pomsets.  The resolving power of a finite
+team increases strictly with its size k, permitting it to distinguish
+all pomsets of dimension (not width) k but not all of k+1.  These
+results extend to observation of augment closed processes.  As expected
+we depend on the now standard technique of refinement of atomic events
+to complex events; what is not expected is that their complexity need
+be only that of nondeterminism, in that we refine one atomic event to a
+set of alternative atomic events, not to a set of sequences.
+
+
+am4.tex         Enriched Categories and the Floyd-Warshall Connection
+                V. Pratt
+                Proceedings, AMAST-88
+
+Abstract:
+We give a correspondence between enriched categories and the
+Gauss-Kleene-Floyd-Warshall connection familiar to computer
+scientists.  This correspondence shows this generalization of
+categories to be a close cousin to the generalization of transitive
+closure algorithms.  Via this connection we may bring categorical and
+2-categorical constructions into an active but algebraically
+impoverished arena presently served only by semiring constructions.  We
+illustrate these techniques by applying them to Birkoff's poset
+arithmetic, interpretable as an algebra of ``true concurrency.''
+
+iowatr.tex   Dynamic Algebras as a well-behaved fragment of Relation Algebras
+             V. Pratt
+             Algebraic Logic and Universal Algebra in Computer Science,
+             LNCS 425, ed. C.H. Bergman, R.D. Maddux, D.L. Pigozzi,
+             Springer-Verlag, 1990.
+
+Abstract:
+The varieties RA of relation algebras and DA of dynamic algebras are
+similar with regard to definitional capacity, admitting essentially the
+same equational definitions of converse and star.  They differ with
+regard to completeness and decidability.  The RA definitions that are
+incomplete with respect to representable relation algebras, when
+expressed in their DA form are complete with respect to representable
+dynamic algebras.  Moreover, whereas the theory of RA is undecidable,
+that of DA is decidable in exponential time.  These results follow from
+representability of the free intensional dynamic algebras.
+
+
+ijpp.tex        Modelling Concurrency with Partial Orders
+                V. Pratt
+                International Journal of Parallel Programming,
+                15:1, 33-71, Feb. 1986.
+
+Abstract:
+Concurrency has been expressed variously in terms of formal languages
+(typically via the shuffle operator), partial orders, and temporal
+logic, inter alia.  In this paper we extract from these three
+approaches a single hybrid approach having a rich language that mixes
+algebra and logic and having a natural class of models of concurrent
+processes.  The heart of the approach is a notion of partial string
+derived from the view of a string as a linearly ordered multiset by
+relaxing the linearity constraint, thereby permitting partially ordered
+multisets or pomsets.  Just as sets of strings form languages, so
+do sets of pomsets form processes.  We introduce a number of operations
+useful for specifying concurrent processes and demonstrate their
+utility on some basic examples.  Although none of the operations is
+particularly oriented to nets it is nevertheless possible to use them
+to express processes constructed as a net of subprocesses, and more
+generally as a system consisting of components.  The general benefits
+of the approach are that it is conceptually straightforward, involves
+fewer artificial constructs than many competing models of concurrency,
+yet is applicable to a considerably wider range of types of systems,
+including systems with buses and ethernets, analog systems, and
+real-time systems.
+
+Date: Mon, 25 Feb 91 10:45:53 +11
+From: kelly_m@maths.su.oz.au (Max Kelly)
+
+I just wanted you to publicize
+my email address viz
+kelly_m@maths.su.oz.au
+Many thanks & best regards, Max Kelly.
+
+Date:        Mon, 25 Feb 91 21:30:53 AST
+Subject:     personal addresses
+
+Max Kelly has pointed out that individuals who receive the categories
+mailing list through a local distribution may not have had their personal
+e-mail addresses entered on the list of e-mail addresses maintained
+by Vaughan Pratt and available by ftp. If your personal address
+did not appear on the lists distributed last month and you
+wish it included in future distributions, please send your personal
+address to  Vaughan Pratt, <pratt@cs.stanford.edu>, with
+a copy to me, <rrosebrugh@mta.bitnet>.
+
+Thanks, Bob Rosebrugh
+
+Subject:     Sydney Categories Address List
+Date: Wed, 27 Feb 91 10:24:01 +11
+From: walters_b@maths.su.oz.au (Bob Walters)
+
+-------------------------------------
+SYDNEY CATEGORY THEORY ADDRESS LIST
+-------------------------------------
+
+The Sydney Categories Address List is now
+available via anonymous ftp from
+maths@su.oz.au
+
+It is in a subdirectory entitled
+sydcat
+
+The file is named
+catcurrent
+There is a compressed version named
+catcurrent.Z
+
+It is maintained by Michael Johnson and Max Kelly.
+The compressed version should be retrieved in binary mode
+and uncompressed.
+
+We intend in the future to put copies of texed
+papers produced in Sydney in the same directory.
+
+-Bob Walters
+
+Subject:     EECS '91 CANCELLED -- Cancellation telex for general distribution
+Date: 28-FEB-1991 13:52:50.98
+From: "Fred E.J. Linton" <FLINTON@Wesleyan.bitnet>
+
+Last night I found the following Telex from the organisers of the EECS.
+I hope you'll distribute it to the Categories readership.  Thanks.  Fred.
+
+------------- Begin Forwarded Message -------------
+Date: Wed Feb 27 08:11:18 EST 1991
+
+FEJLINTON
+USA
+151223413
+
+
+DEAR  COLLEAGUE,
+TO OUR GREAT  REGRET WE HAVE TO  INFORM YOU THAT TDE  THE EECS-91
+HAS  BEEN  CANCELED. AS YOU MAY KNOW  BULGARIA IS FACED WITH A
+DESASTROUS  EKCONOMIKC  CRISIS WHERE LASCK OF FOOD, FUEL AND
+MONEY TAKE THE MOST IMPORTANT. THEREFORE WE COULD  NOT PRESERVE THE
+STVLE  AND THE PREVIOUS CONDITIONS OF PAYMENT FOR THIS SEMINAR.
+LET'S  HOPE NEXT YEAR  WE'LL BE BETTER OFF TO GET IT ORGANIZED
+AGAIN.
+
+SO PLEASE INFORM THE PEOPLE WHO MIGHT HAVE BEEN INTERESTED, AMONG
+THEM: MARTA BUNGE, LAMBEK, JURGENSEN (UNIV. OF WESTERN ONTARIO, LONDON
+ONT.), FOX, VANOSDOL, DUSKIN.
+
+PLEASE CONFIRM RECEIPT OF THIS MESSSAGE. THE CORRECT TELEX NUMER IS:
+22575, /EECS,91, LOZANOV/.
+
+SINCERELY YOURS,                       +---------------------------+
+VLADIMIR TOPENCHAROV                   |From the USA, incidentally,|
+RUMEN LOZANOV                          |that telex number with TLX-|
+                                       |country-code 865 prepended |
+22575+                                 |becomes:   86522575 .      |
+FEJLINTON                              |"/EECS,91, LOZANOV/" should|
+                                       |be for the Attention: field|
+                                       |or the Subject: line -- and|
+                                       |NOT for the Answerback.    |
+                                       |But there should be no need|
+                                       |for anyone other than yours|
+                                       |truly to send such a telex,|
+                                       |so don't bother unless you |
+                                       |want to send condolences --|
+                                       |the ACKing of receipt is my|
+                                       |job, I think.      -- Fred |
+                                       +---------------------------+

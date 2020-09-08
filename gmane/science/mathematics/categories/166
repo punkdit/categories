@@ -1,0 +1,82 @@
+Path: news.gmane.org!not-for-mail
+From: Miles Gould <miles@assyrian.org.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Mon, 16 Mar 2009 11:37:41 +0000
+Lines: 49
+Approved: news@gmane.org
+Message-ID: <E1LjMVh-0001d4-RC@mailserv.mta.ca>
+Reply-To: Miles Gould <miles@assyrian.org.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1237249370 12446 80.91.229.12 (17 Mar 2009 00:22:50 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 17 Mar 2009 00:22:50 +0000 (UTC)
+To: Robin Cockett <robin@ucalgary.ca>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Tue Mar 17 01:24:07 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LjN6B-0007X4-0J
+	for gsmc-categories@m.gmane.org; Tue, 17 Mar 2009 01:24:03 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LjMVh-0001d4-RC
+	for categories-list@mta.ca; Mon, 16 Mar 2009 20:46:21 -0300
+Content-Disposition: inline
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:166
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/166>
+
+On Sun, Mar 15, 2009 at 04:18:41PM -0600, Robin Cockett wrote:
+> If you want to define the initial object in a functional language you
+> should write (say in Haskell):
+>
+> data Initial =
+>      deriving (Show)   -- so we can display the elements
+
+Unfortunately, this wouldn't be initial in Hask, because of two Haskell
+features:
+
+1) Every Haskell datatype contains at least one element, namely
+"undefined", which represents (among other things) non-terminating
+computations.
+2) Haskell is a lazy language, and thus functions are not required to
+preserve undefinedness.
+
+So we can write as many functions Initial -> Int as we please:
+
+one :: Initial -> Int
+one _ = 1               -- The _ means "ignore this input"
+
+five :: Initial -> Int
+five _ = 5
+
+seventeen :: Initial -> Int
+seventeen _ = -17        -- XXX must get round to renaming this function
+                         -- to reflect changed functionality
+
+Calling these functions is as easy as
+
+Hugs> one undefined
+1
+Hugs> five undefined
+5
+Hugs> seventeen undefined
+-17
+[D'oh!]
+
+Hope that helps,
+
+Miles
+
+-- 
+Men occasionally stumble over the truth, but most of them pick
+themselves up and hurry on as if nothing had happened.
+  -- Winston Churchill
+
+
+

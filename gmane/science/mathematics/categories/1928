@@ -1,0 +1,69 @@
+Path: news.gmane.org!not-for-mail
+From: Carsten Fuhrmann <C.Fuhrmann@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Kleisli and colimits
+Date: Wed, 25 Apr 2001 17:04:34 +0100
+Organization: School of Computer Science, The University of Birmingham, U.K.
+Lines: 33
+Approved: news@gmane.org
+Message-ID: <3AE6F592.C9298FD8@cs.bham.ac.uk>
+References: <E14sQJw-00034c-00@plover.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018209 1234 80.91.229.2 (29 Apr 2009 15:16:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:49 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Apr 25 14:13:19 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f3PGdRr01165
+	for categories-list; Wed, 25 Apr 2001 13:39:27 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.77 [en] (X11; U; SunOS 5.7 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 26
+Status: O
+Content-Length: 1206
+Original-Lines: 32
+Xref: news.gmane.org gmane.science.mathematics.categories:1928
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1928>
+
+
+The construction of the Kleisli category can be turned into a
+left adjoint functor whose domain is the category of Mnd monads
+(on arbitrary categories) and monad morphisms.  However, the
+codomain of this functor is not Cat, but a category AbsKl whose
+objects I call "abstract Kleisli categories".  An abstract
+Kleisli category is a category K together with a functor L:K->K,
+a natural transformation \epsilon: L->Id, and a (not generally
+natural) transformation \theta:Id->L, such that
+
+(1) \theta_L is a natural transformation
+(2) L\theta o \theta = \theta_L o \theta
+(3) \epsilon o \theta = id
+(3) L\epsilon o \theta_L = id
+
+A morphism K->K' of AbsKl is a functor that preserves the
+solutions of the non-naturality square
+
+\theta o f = Lf o \theta   (I)
+
+The Kleisli construction forms a functor Mnd->AbsKl.  Its right
+adjoint sends an abstract Kleisli category K to the evident monad
+on the subcategory given by the solutions of Equation (I).  The
+counit of this adjunction is in fact an iso, so AbsKl is a full
+reflective subcategory of Mnd.  The full subcategory of Mnd which
+is equivalent to Abskl is given by those monads for which every
+component of the unit is a regular mono.
+
+Cheers,
+
+Carsten
+
+

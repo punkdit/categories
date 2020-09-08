@@ -1,0 +1,163 @@
+From: Karel Stokkermans <stokkerm@cosy.sbg.ac.at>
+Date: Tue, 2 Mar 1999 13:55:11 +0100 (MET)
+Subject: categories: geometric formulae and axioms
+
+Dear category theorists, 
+
+Recently I came across geometric formulae (built up from atomic formulae
+using only conjunction, disjunction and existential quantification).  I
+would know like to know whether there is any way to decide whether an
+arbitrary given first order formula is (classically) equivalent to a
+geometric formula (or geometric axiom: phi -> psi where phi and psi are
+both geometric formulae).  I've looked in the book by Mac Lane and Moerdijk
+but didn't discover a general decision method.  Any hints or references
+to relevant literature would be much appreciated.
+
+Best regards,
+Karel Stokkermans
+
+
+Date: Wed, 3 Mar 1999 12:33:12 -0500 (EST)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Subject: Re: categories: geometric formulae and axioms
+
+	Yes, this question is disussed in Kieslers' paper on "Generalized Atomic
+Formulas" from the early 1960s. The third name , which I prefer, for the
+class is simply "positive" formulas. They are of course a key tool in the
+Presentations of a Positive Theory. 
+	This may not agree exactly with some
+previous uses of the term "positive", since the not-so-innocuous use of
+universal prefixes has been eliminated along with the excessive
+burden that had been put on the single element "TRUE"; the presentation
+machinery for positive theories must involve a BINARY relation of
+entailment (for each admitted arity of formula) in place of the single
+0-ary relation of provability. This is actually a simplication rather than
+a complication although that may not have been clear in the 1930s As far as
+ expressive power is concerned, one can say that for Boolean models (as
+opposed to models in more general toposes) positive theories are as
+general as what have been called "standard presentation first order
+theories" : Any particular negation occurring in a presentation of one of
+the latter can be replaced by a new primitive relation symbol, nailed to
+what it is to negate by the usual pair of lattice (hence positive) new
+axioms.
+	The geometric role of positive theories is that via
+ the classifying-topos construction they provide a standard way
+to geometrically visualize models of arbitrary theories via the
+ algebraic-geometry paridigm (ie via the body of mathematics created by
+Kan, Isbell, Grothendieck, and Yoneda in the decade 1954-1964). Of course,
+one of the theories which most interested the model theory pioneers
+Birkhoff, Robinson, and Tarski was the theory of commutative rings, so
+this extension may seem as natural to us as it did to them.
+	Kiesler's paper shows us that the explicit relation between
+positivity and preservation under morphisms was recognized clearly quite
+a long time ago. Are there papers which also draw the conclusion that the 
+"standard" theories and presentations should really be the positive ones,
+with negation as a cared-for particular rather than a blanket general ? 
+	Whether the possibility of recursive presentability of a given
+mathematical concept might vary under this change is not clear to me.(Of
+course "quantifier elimination" in some cases changes to an exceptional
+"quantifier definability"). Also, the original question concerning whether
+(for example) the inclusion, of a positive theory into the associated
+theory in the doctrine which has negation and universal quantifiers, is
+itself recursive qua inclusion, probably has a negative answer, but I
+don't have a reference.
+Bill 
+*******************************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*******************************************************************************
+                       
+
+
+On Tue, 2 Mar 1999, Karel Stokkermans wrote:
+
+> Dear category theorists, 
+> 
+> Recently I came across geometric formulae (built up from atomic formulae
+> using only conjunction, disjunction and existential quantification).  I
+> would know like to know whether there is any way to decide whether an
+> arbitrary given first order formula is (classically) equivalent to a
+> geometric formula (or geometric axiom: phi -> psi where phi and psi are
+> both geometric formulae).  I've looked in the book by Mac Lane and Moerdijk
+> but didn't discover a general decision method.  Any hints or references
+> to relevant literature would be much appreciated.
+> 
+> Best regards,
+> Karel Stokkermans
+> 
+> 
+
+
+Date: Fri, 5 Mar 1999 10:15:45 +0000
+From: s.vickers@doc.ic.ac.uk (Steven Vickers)
+Subject: categories: Re: geometric formulae and axioms
+
+>Dear category theorists,
+>
+>Recently I came across geometric formulae (built up from atomic formulae
+>using only conjunction, disjunction and existential quantification).  I
+>would know like to know whether there is any way to decide whether an
+>arbitrary given first order formula is (classically) equivalent to a
+>geometric formula (or geometric axiom: phi -> psi where phi and psi are
+>both geometric formulae).  I've looked in the book by Mac Lane and Moerdijk
+>but didn't discover a general decision method.  Any hints or references
+>to relevant literature would be much appreciated.
+>
+>Best regards,
+>Karel Stokkermans
+
+For myself, the short answer is I don't know.
+
+Perhaps I ought to, since I've made lots of geometric theries out of
+classical ones, but in practice the problem goes further than a strict
+answer to the question would provide. One often needs not just to transform
+the theories within a fixed language but to tranform the language itself. A
+simple example is negation as "cared-for particular" to use Bill's phrase.
+It is especially true once one starts using the full geometric logic, with
+infinitary disjunctions (unlike the coherent logic in Mac Lane and
+Moerdijk). One then sees, for instance, that geometric logic is actually
+weak second order, with universal quantification bounded over finite sets.
+
+Steve Vickers.
+
+http://www.doc.ic.ac.uk/~sjv/
+
+
+
+Date: Mon, 8 Mar 1999 17:54:20 -0500 (EST)
+From: Andreas Blass <ablass@math.lsa.umich.edu>
+Subject: categories: geometric formulas
+
+	Karel Stokkermans asked about a decision procedure for checking
+whether an arbitrary given first-order formula is classically equivalent
+to a geometric one.  There is no such algorithm.  The reason is that any
+such algorithm could easily be converted into an algorithm for testing
+(classical, first-order) validity, which is well-known to be undecidable. 
+To test a formula A for validity, take a 0-ary predicate symbol P that
+doesn't occur in A, and let A' be the formula "A or not P".  Then A' is
+equivalent to a geometric formula (namely "true") if and only if A is
+valid.  So just test A' for geometricity and you'll know whether A is
+valid.  (If, like some textbook authors, you don't believe in 0-ary
+predicate symbols, use P(x) instead, where P is unary.) 
+	Bill Lawvere asked whether there are "papers which also draw the
+conclusion that the 'standard' theories and presentations should really be
+positive ones, with negation as a cared-for particular rather than a
+blanket general".  I assume he means papers where this is done for a
+purpose other than having geometric theories or the nice things that come
+with them, like classifying topoi.  In a paper that Yuri Gurevich and I
+wrote long ago ["Existential fixed-point logic" in "Computation Theory and
+Logic", edited by Egon Boerger, Springer Lecture Notes in Comp. Sci. 270
+(1987) pp.20-36], we found it convenient to adopt the following
+convention, which though not quite what Bill described, is similar in
+spirit: A first-order language (or signature or similarity-type) should
+have its predicate symbols classified into two sorts, positive and
+negatable.  Negation can be applied only to atomic formulas whose
+predicate symbol is negatable.  Homomorphisms are required to preserve the
+interpretations of all predicate symbols and to reflect the
+interpretations of the negatable ones.  
+
+Andreas Blass
+
+

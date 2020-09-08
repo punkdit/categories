@@ -1,0 +1,94 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Lietz <lietz@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Realizibility and Partial Combinatory Algebras
+Date: Fri, 7 Feb 2003 13:57:05 +0100 (CET)
+Lines: 60
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0302071304160.13889-100000@fb04182.mathematik.tu-darmstadt.de>
+References: <Pine.LNX.3.96.1030206103607.30286C-100000@penguin.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018452 2750 80.91.229.2 (29 Apr 2009 15:20:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:52 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb  7 11:15:01 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 07 Feb 2003 11:15:01 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18hACG-0000Xb-00
+	for categories-list@mta.ca; Fri, 07 Feb 2003 11:13:44 -0400
+In-Reply-To: <Pine.LNX.3.96.1030206103607.30286C-100000@penguin.dpmms.cam.ac.uk>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 9
+Status: O
+Content-Length: 2485
+Original-Lines: 59
+Xref: news.gmane.org gmane.science.mathematics.categories:2154
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2154>
+
+Hello,
+
+On Thu, 6 Feb 2003, Prof. Peter Johnstone wrote:
+
+> I'd like to know the answer to this too. Why does *everyone*, in writing
+> down the definition of a PCA, include the assumption that Sxy is always
+> defined? As far as I can see, the only answer is "because everyone else
+> does so"; the condition is never used in the construction of
+> realizability toposes, or in establishing any of their properties.
+> In every case where you need to know that a particular term Sab is
+> defined, it's easy to find a particular c such that Sabc is provably
+> defined.
+
+
+I'd like to vehemently contradict the claim that the condition "sab is
+always defined" is never used in the construction of realizability
+toposes.
+
+In the paper "Modified Realizability Toposes and Strong Normalization
+Proofs (Extended Abstract)" by Martin Hyland and Luke Ong, a weaker notion
+of combinatory algebra, called "conditionally partial combinatory algebra
+c-pca)", in which the requirement in question is actually dropped, is
+thoroughly examined. The axioms for a c-pca are that
+
+	(K)	 kxy  = y
+	(S)	sxyz ~= xz(yz)
+
+where by "~=" I mean Kleene-equality (i.e. the r.h.s. is defined iff the
+l.h.s. is defined in which case they are equal). It is not required for a
+c-pca that "sxy" exists, but if z exists such that xz(yz) exists then sxyz
+and hence sxy exists by the axiom (S).
+
+The motivation for introducing the notion of a c-pca in the paper is that
+there is a very relevant c-pca which is not a pca. It consists of strongly
+normalizing lambda terms modulo closed beta equivalence and can be used
+for providing a categorical point of view on the "candidates of
+reducibility" method for strong normalization proof.
+
+It is shown in the paper that the standard realizability tripos
+construction will fail to actually deliver a tripos: The set of subsets of
+the c-pca taken as the set of truth-values won't even model minimal logic,
+which is why a "modified realizability topos" construction is used in the
+paper. So there is a strong reason for stipulating the existence of sxy.
+
+One relaxation of the notion of pca which won't break the usual
+constructions but is nevertheless rarely employed (exception is e.g.
+Longley's work) is the following: instead of sxyx ~= xz(yz) one might
+merely require sxyz ~> xz(yz), i.e., sxyz is allowed to be more defined
+than xz(yz). However, I don't know of any interesting models which do not
+satisfy (S) with Kleene equality anyway.
+
+
+Respectfully yours,
+
+Peter Lietz
+
+
+
+
+

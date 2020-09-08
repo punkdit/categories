@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <Andrej.Bauer@CS.cmu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction: definable equationally?
+Date: 29 Oct 2000 19:32:19 -0500
+Lines: 83
+Approved: news@gmane.org
+Message-ID: <vkak8arcgoc.fsf@laurie.rem.cmu.edu>
+References: <200010280923.CAA10190@coraki.Stanford.EDU> <87bsw4wusc.fsf@phiwumbda.dyndns.org>
+Reply-To: Andrej.Bauer@CS.cmu.edu
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241018010 32355 80.91.229.2 (29 Apr 2009 15:13:30 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:30 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct 30 14:23:33 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9UHmMR07543
+	for categories-list; Mon, 30 Oct 2000 13:48:22 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: laurie.rem.cmu.edu: andrej set sender to Andrej.Bauer@cs.cmu.edu using -f
+In-Reply-To: jesse@andrew.cmu.edu's message of "28 Oct 2000 16:54:59 -0400"
+User-Agent: Gnus/5.0803 (Gnus v5.8.3) XEmacs/20.4 (Emerald)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 30
+Status: O
+Content-Length: 3037
+Original-Lines: 81
+Xref: news.gmane.org gmane.science.mathematics.categories:1672
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1672>
+
+
+I believe the original post asked what coalgebras might be good for.
+Dusko Pavlovic already talked about examples of coinduction in
+analysis. Let me mention two examples from constructive mathematics.
+They are both examples of final coalgebras for polynomial functors.
+
+A polynomial functor P_f with signature f: B --> A is a functor of the
+form
+
+   P_f(X) = \sum_{a \in A} X^{f^{*} a}
+
+where \sum is a dependent sum, and f^{*} is the inverse image of f.
+For the purposes of this post you can think of a polynomial functor as 
+one of the form
+
+   P(X) = C_0 + C_1 x X^{N_1} + ... + C_k x X^{N_k}
+
+where C_0, ..., C_k and N_0, ..., N_k are (constant) objects.
+
+Suppose we are in a constructive setting (a variant of Martin-Lof type
+theory, effective topos, a PER model, ...) in which every polynomial
+functor has a final coalgebra.
+
+
+
+Example 1:
+
+In constructive mathematics _spreads_ and _fans_ play an important
+role. They are examples of final coalgebras. For example, a fan is a
+finitely branching tree (can be infinite!) in which the nodes are
+labeled with natural numbers. The space of all fans FAN satisfies the
+identity
+
+  FAN = N + N x FAN + N x FAN^2 + N x FAN^3 + ...
+      = sum_{k \in N} N x FAN^k
+
+it is the final coalgebra for the polynomial functor
+
+  P(X) = \sum_{k \in N} N x FAN^k
+
+I find this presentation conceptually cleaner than the usual encoding
+of spreads as sets of Goedel codes of finite sequences of natural
+numbers (of course, this presentation requires a richer type theory).
+Also, this definition is easily adapted to fans and spreads labeled by
+elements of any set A (just replace N x FAN^k with A x FAN^k), and of
+any branching type.
+
+By the way, FAN is isomorphic to N^N, and N^N is the final coalgebra
+for the functor P(X) = N x X.
+
+
+Example 2:
+
+The initial algebra for P(X) = 1 + X is the set of natural numbers.
+
+The final coalgebra N^+ for this functor is best thought of as the
+one-point compactification of the natural numbers, as it consists of
+the natural numbers together with one extra point "at infinity". In
+classical set theory, this is no different from natural numbers, but
+in a constructive setting the point at infinity is not isolated. If
+one wants to prove anything interesting about N^+, just about the only
+way to do it is to use coinduction and corecursion. It's a good
+exercise.
+
+This is neat because we get a one-point compactification of N without
+any reference to topology.
+
+If we compute N^+ in PER(D), where D is some topological model of the
+untyped lambda calculus, such as P(omega) or the universal Scott
+domain, we get _precisely_ the one-point compactification of natural
+numbers.
+
+In the effective topos N^+ can be described as an equivalence relation
+on partial recursive functions, where two such functions are
+equivalent if, and only if, they terminate in the same number of steps
+(when applied to some fixed input) or they diverge. The divergent
+functions represent the point at infinity, and those terminating in
+exactly k steps represent the number k.
+
+
+Andrej
+
+

@@ -1,0 +1,198 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "prime" monads?
+Date: Mon, 17 Sep 2007 01:54:30 -0700
+Lines: 164
+Approved: news@gmane.org
+Message-ID: <E1IXPkB-0000aE-Ex@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019604 10886 80.91.229.2 (29 Apr 2009 15:40:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:04 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Sep 17 20:11:21 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 17 Sep 2007 20:11:21 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IXPkB-0000aE-Ex
+	for categories-list@mta.ca; Mon, 17 Sep 2007 20:11:07 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 43
+Status: O
+Content-Length: 7367
+Original-Lines: 163
+Xref: news.gmane.org gmane.science.mathematics.categories:3919
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3919>
+
+(This supersedes my previous post, responding to Fred Linton, which was
+written too hastily in retrospect.  The following is hopefully more
+accurate.)
+
+In my response to Fred, "method A" imposed the condition on the
+coefficients of the linear combinations constituting the operations of
+Vct_R that they come from a subrig C of R, in line with Bill Lawvere's
+mention of rigs.  Earlier I had pointed out that affine spaces arose
+from a submonad of vector spaces obtained by requiring the weight of
+every operation (sum of its coefficients) to be 1, i.e. the condition W
+= {1} where W is the set of permitted weights.  The latter construction
+evidently generalizes to all submonads produced by method A.
+
+I then wrote,
+
+ > Method B is to limit the operations to those whose weight (sum of
+ > coefficients) is drawn from a submonoid of the monoid R under
+ > multiplication.
+
+Sorry, that attempt at generalizing method A doesn't produce submonads
+after all (the \mu of Vct_R produces operations with weights outside W,
+as I'll make clearer shortly).
+
+Worse, I can't see what the right fix should be.  In fact I can't think
+of any other submonads T of "Vct_C", namely those for which T(1) is the
+underlying set of a subrig C of R, such that C contains a coefficient
+greater than 1, other than those submonads with W = R or W = {1}.
+Conjecture: there are none.
+
+Monads probably aren't the most convenient framework for talking about
+submonads of Vct_R, certainly for the typical reader of the American
+Math Monthly, who would surely understand them better in terms of
+ordinary finite matrices and their multiplication since the submonads
+all have the same equational theory forming the basis for matrix
+multiplication, just restricted to fewer operations.
+
+To make the connection between matrix algebra and the Kleisli category
+KT for any submonad T of Vct_R, the object n of KT for n a finite set is
+(from the standpoint of the morphisms of KT) a free algebra A_n on a set
+that can be viewed schizophrenically as a set of n variables and a basis
+for A_n.   (Semantics qua EM doesn't specify a basis but syntax qua
+Kleisli does.)  KT(1,m) = T(m) is schizophrenically the m-ary operations
+and the points of A_m understood as column vectors.  KT(n,1) = T(1)^n is
+the set of permitted row vectors aka dual points.  More generally
+KT(n,m) is the set of permitted mxn matrices over T(1) representing the
+morphisms from n to m in the Kleisli category of this particular
+submonad T of Vct_R.
+
+It follows that submonads can only constrain rows by constraining T(1),
+which amounts to constraining the coefficients; what I've been calling
+the set C of permitted coefficients is T(1).  Submonads can constrain
+columns in more general ways, but not too general.
+
+Restating my conjecture above in this mixed monad-matrix language, given
+any submonad T of the monad for Vct_R for which T(1) contains a
+coefficient c > 1, the only proper submonad of T that leaves the
+permitted matrix entries (the set T(1)) unchanged is that for which
+every column of the permitted matrices sums to 1.
+
+This is almost how affine geometry is standardly implemented in
+computational geometry and computer graphics (CG), the difference being
+that the last row of each matrix is constrained to be a unit vector with
+its 1 in the "translation" column (projective geometry projected from
+infinity - the translation column specifies the vector translating the
+transformed point).
+
+The following is the generic affine transformation of a generic point
+(x,y) in the plane in the CG approach.
+
+( a b s )  ( x )  =  ( ax + by + s)
+( c d t )  ( y )  =  ( cx + dy + t)
+( 0 0 1 )  ( 1 )  =  (      1     )
+
+The 2x2 matrix at the top left performs an ordinary linear
+transformation of the plane.  The "translation column" is at the right,
+and acts by translating the plane right s and up t.
+
+This constraint on the last row, with no constraints on the columns,
+seems in total violation of the above.  However the violation is not an
+essential one as the matrix
+
+     ( a b s )
+A = ( c d t )
+     ( 0 0 1 )
+
+is similar (http://en.wikipedia.org/wiki/Similar_matrix) to
+
+  -1       (    a+s         b+s         s    )
+P  A P  = (        c+t         d+t       t  )
+           ( 1-(a+s+c+t) 1-(b+s+d+t) 1-(s+t) )
+
+where
+
+     ( 1 0 0 )
+P = ( 0 1 0 )
+     ( 1 1 1 )
+
+(Similarity is the matrix algebra counterpart of functoriality in
+category theory.  That is, the evident nxn counterparts of P for all n
+exhibit an equivalence, in fact an isomorphism, between the CG
+representation of the category for affine spaces and its CT counterpart
+as presented by its Kleisli category.)
+
+It is easily seen that after applying this functor the column sums are
+now 1, while a counting argument for degrees of freedom (6) shows that
+the rows are no longer at all constrained.  The determinant remains
+ad-bc while the trace remains a+d+1, and eigenvalues also remain unchanged.
+
+(I only noticed this isomorphism of the two categories today.  In
+retrospect it is a routine application of similarity, but is CG aware of
+this particular functor?)
+
+Other conditions on the morphisms, such as that they be orthogonal
+matrices, will not in general produce submonads because they tamper with
+the rows in what is likely to be an essential way that destroys
+algebraicity.
+
+The matrix viewpoint makes it a lot easier to see where my method B
+breaks down: the only constraints on column sums that seem to work when
+C (aka T(1)) = R are W = R and W = {1} (the conjecture above).
+
+So what restrictions *can* we impose on the columns that preserve
+algebraicity, specifically that preserve the equational theory of Vct_R?
+
+The sets I = [0,1] and I- = (0,1] look like they could work
+independently for each of C and W.  However for n > 1 we need 0 for the
+unit vectors (\eta in the monad), ruling out C = I- and leaving C = I as
+the only possibility here.   This still leaves the two possibilities W =
+I and W = I-, the latter corresponding to disallowing zero column vectors.
+
+The free algebras A_n on n generators for these two submonads can be
+visualized geometrically as follows.
+
+C = W = I: Unit simplexes with n+1 vertices, namely the origin and the n
+unit vectors.  These are closed, containing their (n+1 choose d+1)
+d-dimensional subfaces.  So n generators create ordinary n-dimensional
+linear algebra confined to a simplex.
+
+C = I, W = I- : Ditto less one point, namely the origin.
+
+In the latter case, if the one zeroary operation (constant) 0 in T(0) is
+understood as having weight 0, W = I- rules it out whence that constant
+disappears.  So the 0-dimensional space A_0 is empty while A_1 is (0,1],
+A_2 is a triangle less the origin, etc.
+
+To summarize, we have as submonads of Vct_R the following:
+
+1.  Vct_S obtained by subsetting T(1) to a subrig S of R, and
+independently requiring either W = S (no constraint on W) or W = {1}
+(the strongest possible constraint on W).  S could be the natural
+numbers for example, with or without 0, but not the integers mod n
+because that would not be a subrig of R (it would introduce new
+equations we're trying to avoid).
+
+2.  The pair of monads C = W = I and C = I, W = I-, intersected with S
+as per 1 and so giving rise to lots of variants of the pair.
+
+Does Vct_R have any other submonads?  Keep in mind the conditions that 1
+belong to C and W (consider \eta) and that the rows be T(1)^n.
+
+Vaughan
+
+
+

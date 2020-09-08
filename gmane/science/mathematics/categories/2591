@@ -1,0 +1,190 @@
+Path: news.gmane.org!not-for-mail
+From: "John Baez" <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: golden objects
+Date: Sun, 7 Mar 2004 12:50:29 -0800 (PST)
+Lines: 156
+Approved: news@gmane.org
+Message-ID: <200403072050.i27KoTB12570@math-cl-n03.ucr.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018765 4885 80.91.229.2 (29 Apr 2009 15:26:05 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:26:05 +0000 (UTC)
+To: categories@mta.ca (categories)
+Original-X-From: rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0RfN-0000Ce-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:48:01 -0400
+X-Mailer: ELM [version 2.5 PL6]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 12
+Status: O
+Content-Length: 7040
+Original-Lines: 155
+Xref: news.gmane.org gmane.science.mathematics.categories:2591
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2591>
+
+
+Dear Categorists -
+
+Sorry to take a while to respond.  People at UCR have been unable to
+receive posts on the category theory mailing list, due to problems with
+our internet connection.
+
+I'd asked for some nice examples of an object G in a rig category
+equipped with an isomorphism from G to G^2 + 1.  Steve Schanuel replied:
+
+>I was unable to understand John Baez' golden object problem, nor his
+>description of the solutions.  He refuses to tell us what 'nice' means, [...]
+
+The problem was deliberately open-ended, but you seem to have
+understood it perfectly, since you've given a nice solution,
+including a precise specification of what you consider "nice".
+
+Let me repeat the two solutions given by Robin Houston:
+
+1) The first solution works in any rig category having an object H
+equipped with an isomorphism to H^2 + 4H + 1.  The solution is to take
+
+G = H + 2.
+
+I described how Houston uses the isomorphism H -> H^2 + 4H + 1 to
+construct an isomorphism G^2 -> G + 1.
+
+What's nice about this is that it reduces a problem that's not
+obviously of fixed-point form to one that is.
+
+2) Houston's second solution works in any monoidal cocomplete category,
+tensor product distributing over colimits, that contains an object X
+equipped with an isomorphism to 2X + 1.  The solution is to let G be
+the object of "binary planar rooted trees with X-labelled leaves", i.e.
+
+G = X + X^2 + 2X^3 + 5X^4 + 14X^5 + 42X^6 + ...
+
+where the coefficients are Catalan numbers.  He uses the obvious
+isomorphism G -> G^2 + X to construct an isomorphism G^2 -> G + 1.
+
+What's nice about this is that it shows Propp's originally proposed
+golden object really is one: just take the category of sigma-polytopes
+with its cartesian product, and let X be the open interval!  And,
+it makes precise the sense in which the alternating sum of Catalan
+numbers equals the golden ratio.
+
+Steve writes:
+
+>I don't know whether there is an extensive category with N[X]/(X^2=X+1)
+>as its full Burnside rig; perhaps one or both of the examples John
+>mentioned would do, if I knew what they were.
+
+I think example 1) does the job if we take the free distributive
+category on an object H equipped with an isomorphism to H^2 + 4H + 1.
+Right?
+
+Steve also writes:
+
+>He is very generous, allowing one to use a category with both plus
+>and times as extra monoidal structures.  (Does anyone know an example
+>of interest in which the plus is not coproduct?)  This freedom is
+>unnecessary [...]
+
+It's unnecessary, but handy: I think there's also an golden object in
+the rig category of reps of quantum SU(2) at a suitable value of q.
+Here the tensor product is not cartesian.
+
+In the lingo of quantum group theory, this object has "quantum dimension"
+equal to the golden number.  It's interesting how such nonintegral but
+algebraic "dimensions" show up naturally in quantum group theory,
+just as nonintegral but algebraic "cardinalities" show up in the theory
+of distributive categories.
+
+I don't know any golden objects in rig categories where the plus is
+not coproduct, and I agree that such rig categories arise less often
+than those where times is not product.  But, if you use the obvious
+way of making the groupoid of finite sets into a rig category, + isn't
+coproduct, nor is x product.
+
+> While I'm airing my confusions, can anyone tell me what
+> 'categorification' means? I don't know any such process; the simplest
+> exanple, 'categorifying' natural numbers to get finite sets, seems to me
+> rather 'remembering the finite sets and maps which gave rise to natural
+> numbers by the abstraction of passing to isomorphism classes'.
+
+You're right: categorification is not a systematic process!
+I explained this idea back in "week121", and also in my paper
+"Categorification", at http://www.arXiv.org/abs/math.QA/9802029.
+Here's what I said.
+
+ If one studies categorification one soon discovers an amazing fact: many
+ deep-sounding results in mathematics are just categorifications of facts
+ we learned in high school!  There is a good reason for this.  All along,
+ we have been unwittingly `decategorifying' mathematics by pretending
+ that categories are just sets.  We `decategorify' a category by
+ forgetting about the morphisms and pretending that isomorphic objects
+ are equal.  We are left with a mere set: the set of isomorphism classes
+ of objects.
+
+ To understand this, the following parable may be useful.  Long ago, when
+ shepherds wanted to see if two herds of sheep were isomorphic, they
+ would look for an explicit isomorphism.  In other words, they would line
+ up both herds and try to match each sheep in one herd with a sheep in
+ the other.  But one day, along came a shepherd who invented
+ decategorification.  She realized one could take each herd and `count'
+ it, setting up an isomorphism between it and some set of `numbers',
+ which were nonsense words like `one, two, three, ...' specially
+ designed for this purpose.  By comparing the resulting numbers, she
+ could show that two herds were isomorphic without explicitly
+ establishing an isomorphism!  In short, by decategorifying the category
+ of finite sets, the set of natural numbers was invented.
+
+ According to this parable, decategorification started out as a stroke
+ of mathematical genius.  Only later did it become a matter of dumb
+ habit, which we are now struggling to overcome by means of
+ categorification.  While the historical reality is far more
+ complicated, categorification really has led to tremendous progress
+ in mathematics during the 20th century.  For example, Noether
+ revolutionized algebraic topology by emphasizing the importance of
+ homology groups.  Previous work had focused on Betti numbers, which
+ are just the dimensions of the rational homology groups.  As with
+ taking the cardinality of a set, taking the dimension of a vector
+ space is a process of decategorification, since two vector spaces are
+ isomorphic if and only if they have the same dimension.  Noether noted
+ that if we work with homology groups rather than Betti numbers, we can
+ solve more problems, because we obtain invariants not only of spaces,
+ but also of maps.
+
+ In modern language, the nth rational homology is a *functor* defined
+ on the *category* of topological spaces, while the nth Betti number is
+ a mere *function*, defined on the *set* of isomorphism classes of
+ topological spaces.  Of course, this way of stating Noether's insight
+ is anachronistic, since it came before category theory.  Indeed, it
+ was in Eilenberg and Mac Lane's subsequent work on homology that
+ category theory was born!
+
+ Decategorification is a straightforward process which typically
+ destroys information about the situation at hand.  Categorification,
+ being an attempt to recover this lost information, is inevitably
+ fraught with difficulties.
+
+>Finally, a note to John: While you're trying to give your audience
+>some feeling for the virtues of n-categories, couldn't you give them a
+>little help with n=1, by being a little more precise about objects and
+>maps?
+
+I hope it's clearer now.
+
+Best,
+jb
+
+
+
+
+
+

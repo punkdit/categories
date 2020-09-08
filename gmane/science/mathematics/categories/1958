@@ -1,0 +1,88 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Limits
+Date: Wed, 09 May 2001 19:18:32 -0700
+Lines: 53
+Approved: news@gmane.org
+Message-ID: <3AF9FA78.9968DFEE@kestrel.edu>
+References: <200105032338.f43NcI203820@math-cl-n03.ucr.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018231 1385 80.91.229.2 (29 Apr 2009 15:17:11 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:17:11 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu May 10 08:38:23 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f4AAwqm21469
+	for categories-list; Thu, 10 May 2001 07:58:52 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.72 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 26
+Status: O
+Content-Length: 2258
+Original-Lines: 52
+Xref: news.gmane.org gmane.science.mathematics.categories:1958
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1958>
+
+Peter Freyd wrote:
+
+> A good question. I have no answer, only a similar (and ancient)
+> question: is there a setting in which adjoint operators on Hilbert
+> spaces can be seen to be examples of adjoint functors between
+> categories?
+
+probably not, but the they seem to be instances of the same general
+structure. (it is simple, pretty old, and i am sure many have noticed it,
+but since no one mentioned it, here it goes.)
+
+let U :   Cat     ---> CAT be the embedding of small categories in all,
+and
+let Y: Cat^op ---> CAT map each small category A to the presheaves
+Psh(A).
+
+now look at the (pseudo)comma category U/Y. each category A is
+represented in it by the yoneda embedding A-->Psh(A). the morphisms
+between A-->Psh(A) and B --> Psh(B) are exactly the pairs of adjoint
+functors between A and B.
+
+on the other hand, let I: Vec---> Vec be the identity functor,
+and let * : Vec^op ---> Vec take a vector space V to its dual V*.
+
+look at the comma category I/*. each hilbert space V is represented in it
+by the obvious linear map  V-->V*. the morphisms between V-->V* and
+W-->W* are exactly the adjoint pairs of operators between V and W.
+
+playing around a bit, these two comma categories can be thought of as
+Chu(CAT,Set) and Chu(Vec,R) respectively. so both sorts of adjunctions
+are the instances of the chu morphisms. they are the chu morphisms on the
+"representation" objects, in the form X --> R^X, where R is the dualizing
+object.
+
+-- dusko
+
+PS infact, one could start from Chu(SET,Set), and define categories as
+the profunctors A-->Set^A which form a monoid with respect to the
+profunctor composition. you'd get only the object part of the adjoint
+functors as the morphisms of this chu, but the arrow part follows from
+the adjunction (i think).
+
+now can we characterize hilbert spaces in a similar way within
+Chu(Vec,R)? this seems to be a completely different kind of question. in
+particular, it is possible to define "profunctors" with respect to R or
+C, like we did with respect to Set, and we can compose them, but hilbert
+spaces do not seem to be monoids with respect to this composition, at
+least the way it occurs to me. if there is no such composition that they
+are, then hilbert spaces are like R-enriched graphs, rather than
+categories.
+
+
+

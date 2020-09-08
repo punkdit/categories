@@ -1,0 +1,86 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Real midpoints
+Date: Tue, 18 Jan 2000 11:16:22 -0500 (EST)
+Lines: 54
+Approved: news@gmane.org
+Message-ID: <200001181616.LAA27249@liberty.math.lsa.umich.edu>
+References: <3883E700.797D12A9@kestrel.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017773 30873 80.91.229.2 (29 Apr 2009 15:09:33 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:33 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: rrosebru@mta.ca Wed Jan 19 12:51:13 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA15473
+	for categories-list; Wed, 19 Jan 2000 10:31:48 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <3883E700.797D12A9@kestrel.edu> from "Dusko Pavlovic" at Jan 17, 2000 08:07:28 PM
+X-Mailer: ELM [version 2.5 PL1]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 2569
+Original-Lines: 53
+Xref: news.gmane.org gmane.science.mathematics.categories:1358
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1358>
+
+> > My point is that the definition of  g  is neither recursive nor
+> > co-recursive. The definition of  g  is merely expressed as a fixpoint
+> > equation, and Peter has set up things so that there is indeed a unique
+> > solution to this equation. However, the reason the fixpoint is unique
+> > is because the  "h"  part is contracting, and not because the equation
+> > is co-recursive.
+
+Dusko Pavlovic wrote:
+> what exactly do you mean by corecursive? (it's guarded, and guarded equations
+> do have unique fixpoints.)
+
+The definition I had in mind is that an arrow g is defined from G by
+co-recursion "in a single step" if it arises as the unique coalgebra
+homomorphism from a coalgebra G to the terminal coalgebra.  It is
+defined by co-recusion "in multiple steps" if it is obtained from
+certain basic morphisms by repeated applications of the above single
+step, together with basic operations on morphisms. I am not so sure
+what I mean by "basic"; but I have in mind morphisms and operations
+that are defined by ordinary equations (as opposed to fixpoint
+equations) from the structure of the category at hand (such as
+composition, pairing, the functor "X v Y", etc).
+
+What's the exact definition of "guarded" in this context? I assume
+that h x h would be the guard. The fact that Peter's equation has a
+unique fixpoint relies on the fact that h x h is contracting. It
+follows, for instance, from Banach's fixpoint theorem. If one omits
+the "h x h", there are multiple fixpoints.  It seems that the proof
+that Peter's equation has a unique fixpoint is independent of the
+underlying representation of [0,1], whereas my proposed definition of
+"co-recursive" is not.
+
+By the way, Peter's definition of the "halfing" map does not quite fit
+my idea of a "basic" map above: 
+
+> Let  F:I --> I v I  be a final coalgebra. We will denote the top of  I
+> as  T  and the bottom as  B.  Construct the "halving" map,  h:I --> I,
+> (on  [-1,1]  it will send  x  to  x/2)  as:  
+> 
+>                    T v F v B             F'v F'        F'
+>     I --> 1 v I v 1 ------> I v I v I v I ---> I v I  --> I
+> 
+> where  F' denotes the inverse of  F, and, by a little overloading, T
+> and  B  denote the maps constantly equal to  T  and  B.  The leftmost
+> map records the fact that the terminator is a unit for the 
+> ordered-wedge functor.
+
+The problem is that "X v Y" is only functorial on morphisms that
+preserve top and bottom, and neither T nor B are of that form. Thus it
+seems one needs to briefly step outside the category to justify this
+particular definition of h.
+
+-- Peter
+
+

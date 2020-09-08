@@ -1,0 +1,846 @@
+Date: Mon, 27 Oct 1997 16:09:44 -0400 (AST)
+Subject: Topos-abelian categories that are neither 
+
+Date: Mon, 27 Oct 1997 10:19:51 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+Toposes and abelian categories are striking for the number of
+elementary properties they have in common (monic+epi = iso, mono/epi is
+a unique factorization system, etc. etc.) and the paucity of their
+common models, namely just the final category.
+
+This observation prompts the following questions.
+
+1.  Are there any other pairs of large and/or useful classes of
+categories whose respective theories have so much in common yet whose
+models have so little in common?
+
+2.  What can be said of the class of those categories having all the
+elementary properties common to toposes and abelian categories?  In
+particular does it contain anything other than toposes and abelian
+categories?  And if so, does this outcome change when the language is
+extended to say second order logic?
+
+To the extent that both toposes and abelian categories share much
+pleasant structure, the models of the intersection of their theories,
+for a suitable choice of language, would seem to be a nice class in its
+own right.
+
+Vaughan Pratt
+
+
+Date: Thu, 30 Oct 1997 22:33:29 -0400 (AST)
+Subject: pratt cat 
+
+Date: Thu, 30 Oct 1997 16:39:48 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan wrote:
+
+  To the extent that both toposes and abelian categories share much
+  pleasant structure, the models of the intersection of their
+  theories, for a suitable choice of language, would seem to be a nice
+  class in its own right.
+
+There are several variations on the topic. I'll look first at the
+theory obtained by starting with 
+
+  finite completeness,
+  coterminator,
+  pushouts for pairs of maps one of which is monic,
+  pushouts for kernel pairs
+
+then adjoining all universal Horn sentences in these predicates that
+hold for both the category of abelian groups and the category of sets
+(or, if prefered, hold for all abelian categories and all pre-topoi).
+We will see that this theory can be finitely axiomatized and that the
+representations of its models into the categories of abelian groups
+and sets are collectively faithful. This will be the "first task.
+The representation will be done by finding a single faithful
+representation into the product of an abelian category and a topos and
+using known theorems thereon. By a representation I here mean a
+functor that preserves finite limits, coterminators, pushouts of pairs
+of maps one of which is monic and pushouts of kernel pairs. (It
+follows that a representation preserves epimorphisms, finite
+coproducts and images.)
+
+If we expand the theory to include all positive AE sentences it
+remains finitely axiomatizable, and the only models are those
+categories that are a product of an abelian category and a pre-topos.
+This will be the "second task".
+
+After that, I'll add some more essentially algebraic structure so that
+we can talk about power-objects using universal Horn sentences and
+obtain again the finite axiomatizability and the fact that the the
+only models are those categories that are a product of an abelian
+category and a pre-topos. This will be the "third task".
+
+Note that each of axioms below is true for both abelian categories and
+topoi. Until we reach axiom VAE, all can be turned into universal
+Horn sentences if the completeness conditions listed above are turned
+into an essentially algebraic theory.
+
+V1) Effective regular category. (Yes this can be stated as universal
+Horn conditions on pullbacks and the special pushouts mentioned
+above.)
+
+V2)  0 -> 1  is monic.
+
+Note that it follows that all maps from  0  are monic.
+
+In the diagrams below all non-horizontal lines should have arrows
+added in downwards direction.
+
+V3) If  A -> C  is monic and 
+                              A
+                            /   \
+                           B     C
+                            \   /
+                              D
+
+is a pushout then it's a pullback, 
+
+V4)  and so is
+                             0xA
+                            /   \
+                         0xB     0xC
+                            \   /
+                             0xD.
+
+
+Note that binary coproducts therefore exist and are disjoint.
+
+V5) If  B -> 0xC  is epic and
+                               A
+                             /   \
+                            0     B
+                             \   /
+                              0xC
+
+is a pullback then it's a pushout.
+
+Two definitions: let
+                        0 x X
+                       /     \
+                      0       X
+ 
+be a product diagram. If the map to  0  is an iso, I'll say 
+that  X  is type-T; if the map to X is an iso, I'll say that
+it's type-A. 
+
+Note that (using V2) an object is type-A iff it has a map to  0. The
+type-A objects are closed under binary products and coproducts,
+subobjects and quotient objects. The full subcategory of A objects is
+coreflective, with  AX = 0xX  as coreflector. Most important, it is an 
+abelian category.
+
+V5) If the rhombi in
+                     A     B
+                     |\   /|
+                     D  C  E
+                      \ | /
+                        F
+are pullbacks and if 
+                     D     E
+                      \   /
+                        F
+
+is a coproduct diagram, and if all the objects are type-T
+then 
+
+                     A     B
+                      \   /
+                        C
+
+is also a coproduct diagram.
+
+Note that an object is type-T iff every type-A object has a unique map
+thereto. Type-T objects are closed under binary products and
+coproducts, subobjects and quotient objects. (For coproducts use V3.)
+The full subcategory of type-T objects forms a reflective subcategory:
+the reflector, T, is defined via the pushout diagram:
+
+                    0xX
+                   /   \
+                  0     X
+                   \   /
+                     TX
+
+One now has what's needed to show that the full subcategory of type-T
+objects is a pre-topos.
+
+Note that the functor  A  preserves pullbacks and pushouts
+of pairs of maps one of which is monic (V4). Add 
+
+V6) T preserves pullbacks.
+
+(It clearly preserves pushouts.)
+
+Only one more axiom is needed for the first task:
+
+V7)  If  f  is a map such that  Af  and  Tf  are both isos then
+f  is an iso.
+
+For the second task add:
+
+VAE) For every  X  there's a map  TX -> X  such that 
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+Note that  TX -> X  is a coreflector (making V6 redundant). One can
+force the map to be unique by further requiring that  TX -> X -> TX
+is the identity map. And note that the type-A objects can not be 
+reflective: if  1  has a map to any type-A object the entire category
+collapses.
+
+For the third task, I'll add the following structure: functions
+on objects P,E,l, r such that  lX:EX -> PX  and  rX:EX -> X  and 
+
+V8)  <lX,rX>:EX -> PXxX  is monic and  PX, EX  are type-T.
+
+I need one more operation, denoted with an upcase lambda, here 
+written as  /\.  Given a pair of maps  f:R -> Y, g:R -> X
+where  R  is of type-T, then  /\(f,g): Y -> PX  is defined and 
+
+V9> The composition of relations
+
+       /\(f,g)        (lX)'         rX
+   Y  ----------> PX -------> EX ---------> X
+
+is equal to 
+         f'         g
+   Y  -------> R --------> X
+
+(where  '  is being used to denote the reciprocation operator on
+relations).
+
+V10) If
+             R
+         f /   \ g
+          Y     EX
+         h \   /lX
+            TX
+
+is a pullback and R of type-T, then  /\(f,(rX)g)  = h.
+
+Note that in the full category of type-T objects, P  yields
+power-objects with  E, l, r  naming the universal relations. (V10 
+provides the uniqueness condition.)
+
+In any abelian category the only type-T object is the zero
+object, which forces  P=E=0  for abelian categories.
+
+It's routine that both  A  and  T  preserve the new structure. We can
+now remove the existential from VAE. Define  TX -> X  as the image of
+rX. The third task is finished with:
+
+V11) For every  X  
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+
+
+These axioms will, no doubt, be much simplified.
+
+
+Date: Fri, 31 Oct 1997 14:36:29 -0400 (AST)
+Subject: Re: Topos-abelian categories that are neither
+
+[Note from moderator: this is two postings from Peter...an error on my 
+part resulted in the first not being circulated until now.]
+
+Date: Tue, 28 Oct 1997 08:50:20 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan points out the many remarkable similarities between topoi and
+abelian categories. I've always thought that the most remarkable is
+the fact that if one forms the pushout of a pair of maps one of which
+is monic then the result is a pullback. The known proofs for the two
+cases are remarkably different. When both maps are monic this is known
+as the amalgamation property (at least it's so known in the category
+of belian groups, that is, groups abelian or not).
+
+It's also right here that a big difference shows up. For abelian cats
+the lemma remains true when one relaxes the hypothesis from "a pair of
+maps one of which is monic" to "a pair of maps that are jointly
+monic." Such a lemma is very wrong for topoi. (For a counterexample in
+sets pushout any jointly monic pair of maps from a 3-element set. The
+result is a pullback iff one of the given maps is already monic. Such
+a counterexample sits, in fact, in any non-degenerate topos.)
+
+Vaughan asked:
+
+  What can be said of the class of those categories having all the
+  elementary properties common to toposes and abelian categories?  In
+  particular does it contain anything other than toposes and abelian
+  categories?  And if so, does this outcome change when the language
+  is extended to say second order logic?
+
+The answer to the second question is no (hence so is the answer to
+the third sentence).
+
+There is a complete answer to the first question. You won't like it.
+
+For a 1-sentence axiom of pratt categories first take a 1-sentence
+elementary axiom, T, for elementary topoi and a 1-sentence elementary
+axiom, A, for abelian categories
+
+Then take the sentence:
+
+   T or A.
+
+Sorry. 
+
+Vaughan goes on to say:
+
+  To the extent that both toposes and abelian categories share much
+  pleasant structure, the models of the intersection of their
+  theories, for a suitable choice of language, would seem to be a nice
+  class in its own right.
+
+This strikes me as an interesting topic (and perhaps we should use the
+phrase "pratt categories" for what emerges as the right choice of this
+class). My first choice for the suitable choice of language would be
+the set of universal Horn sentences in the predicates of finite limits
+and colimits (where it is understood that we already have the axioms
+for finite bicompleteness). Can one prove the expected representation
+theorem: does every pratt category have a faithful limit- and colimit-
+preserving functor into a product of an abelian category and a topos?
+
+
+Date: Fri, 31 Oct 1997 05:35:00 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+To: cat-dist@mta.ca
+
+Somehow my first answer to Vaughan's question went astray. He
+had asked:
+
+  What can be said of the class of those categories having all the
+  elementary properties common to toposes and abelian categories?  In
+  particular does it contain anything other than toposes and abelian
+  categories?  And if so, does this outcome change when the language
+  is extended to say second order logic?
+
+The answer to the second question is no, hence so is the answer to
+the third. And you won't like the answer to the first.
+
+Given any two elementary theories, *A*  and  *T*, let  *AoT*  be the 
+set of all sentences of the form  "A or T", where  "A"  is a sentence
+in  *A*  and  "T"  is a sentence in  *T*.  Clearly every model of  *A*
+is a model of  *AoT*  and so is every model of  *T*.
+
+Almost as clearly: every model of  *AoT*  is either a model of  *A*
+or of  *T*.
+
+Since the elementary theories of abelian cats and topoi can each be
+finitely axiomatized, there's a single elementary sentence common to
+topoi and abelian cats whose only models are either topoi or abelian
+cats.
+
+                  *           *          *
+
+A few misstatements from my previous post. My attempt to abbreviate
+V4  didn't work. I want to say that the diagram is a pushout (of 
+course it's a pullback). So it should be:
+
+V4) If  A -> C  is monic and 
+                              A
+                            /   \
+                           B     C
+                            \   /
+                              D
+
+is a pushout then and so is
+                             0xA
+                            /   \
+                         0xB     0xC
+                            \   /
+                             0xD.
+
+
+I wrote:
+
+   And note that the type-A objects can not be reflective: if 1 has a
+   map to any type-A object the entire category collapses.
+	
+I should have written:
+
+   And note that the type-A objects can not be reflective unless all
+   objects are type-A: if  1  has a map to any type-A object then 
+   0 = 1.
+
+Finally (I must be kidding), as it stands the  P-E-l-r-/\   structure
+is not properly fixed for abelian categories. Adjust as follows:  /\ 
+is defined for pairs  f:R -> Y, g:R -> X  only when both  R  and  Y
+are of type-T. Note that the equation in V9 is a directed equality: if
+/\(f,g)  is defined then the equality holds. V10 must be modified by 
+strengthening the hypothesis to include the condition that  Y  is 
+type-T  (at which point the condition on  R  becomes redundant).
+
+
+Date: Fri, 31 Oct 1997 15:40:18 -0400 (AST)
+Subject: Re: pratt cat 
+
+Date: Fri, 31 Oct 1997 01:03:22 -0800
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+Peter's response to my question about categories having all the common
+properties of toposes and abelian categories was a very pleasant
+surprise.
+
+First I was not at all expecting such a definite answer.
+
+Second I did not expect a representation theorem, especially not such a
+nice one as "every such category is a product of an abelian category
+and a topos".  This is the converse of the automatic (by Horn) fact
+that such a product is such a category, where (for this converse at
+least) the language can be taken to be as large as the full Horn theory
+common to abelian categories and toposes.
+
+Third I did not expect at all that the class would be finitely
+axiomatizable (but on the other hand neither did I have any reason to
+suppose not).
+
+Fourth and very nice, unless I'm overlooking something, Peter's
+representation theorem implies that my original question (does the
+common *elementary* theory allow anything other than abelian categories
+and toposes?) can now be answered in the negative.  The elementary
+sentence "either all the objects are A-type or all the objects are
+T-type" is obviously true in both abelian categories and (pre)toposes,
+and rules out hybrids like Set x Ab.  I'd been wondering what
+elementary sentence might fail for that example, and Peter's A-type and
+T-type constructs lead straight to it.
+
+Minor remarks:
+
+The trick of multiplying by 0 to tease out both the A- and T-components
+at once is beautiful, not just intrinsically but also because it
+reveals a certain duality between A and T that is not at all apparent
+(to me anyway) from their separate definitions.  The actual
+multiplication projects out the T part without disturbing the A part,
+and then the pushout 
+
+                    AX		(where AX = 0xX)
+                   /  \
+                  0    X
+                   \  /
+                    TX
+
+neatly quotients out that surviving A part by forcing the left side
+through the zero object while on the right AX->X communicates only the
+A part which is therefore the only part that the pushout quotients out
+from 0 + X (if that's not too clumsy a way of putting it).
+
+The upshot is then that the AX's form (as an abelian category) a
+coreflective subcategory of the whole while the TX's form (as a
+pretopos) a reflective subcategory.  That's really beautiful!
+
+The following is presumably the key to proving completeness of Peter's
+axiomatization...
+
+>VAE) For every  X  there's a map  TX -> X  such that 
+>
+>                    AX     TX
+>                      \   /
+>                        X
+
+...by permitting any model to be constructed directly as a
+product of an abelian category and a topos (not even "subcategory"
+seems to be needed here, so this is an even stronger representation
+theorem than the representation of a Boolean algebra as a subalgebra of
+a power set).
+
+>And note that the type-A objects can not be 
+>reflective: if  1  has a map to any type-A object the entire category
+>collapses.
+
+Whoops, a bug here if I'm understanding things.  Only the T part
+collapses, if the category were abelian to begin with then there'd be
+no collapse.
+
+>Define  TX -> X  as the image of rX.
+
+This was lovely (getting rid of the E in VAE above).
+
+
+Some questions.
+
+1.  Can this representation theorem be extended to the full Horn
+theory, i.e. any number of alternations of quantifiers?  (Note that my
+disjunction---every object is A-type or every object is T-type---is not
+a Horn sentence.)  (Now that I look again, I guess the answer must be
+yes, since products preserve *all* Horn sentences.)
+
+2.  In a text that treated both toposes and abelian categories, would
+your axiomatization be a good starting point prior to doing either?
+You could then quickly define an abelian category to be a category of
+this general type with the additional property of being strongly
+connected.  I don't see right off how to define a pretopos as slickly.
+
+3.  What about bringing in the closed structure?  Might that permit
+some simplification of your axiomatization?  For example it looks as
+though you could define a T-type object to be one having a unique map
+to the tensor unit.  Then you could answer the last sentence of the
+previous paragraph simply with "the tensor unit is terminal."
+
+Vaughan Pratt
+
+
+Date: Sun, 2 Nov 1997 14:54:55 -0400 (AST)
+Subject: Abelian-topos (AT) categories
+
+Date: Sun, 02 Nov 1997 06:52:02 -0800
+From: Vaughan R. Pratt <pratt@cs.stanford.edu>
+
+
+Surely a natural name for these "abelian-topos" categories would be
+abelian-topos categories, AT categories for short.  (I barely grasp
+them, I only found out what abelian categories were a week ago, when
+someone on sci.math asked about them and I looked them up and answered
+him because I wanted to know too.  It struck me as interesting that
+they had so much in common with toposes, whence my question about
+intersecting their respective theories.  I made language a parameter
+because it seemed intuitively obvious that a strong enough language
+would make the models of that intersection the union of the respective
+classes.  But as Peter points out this is already a triviality for any
+theory closed under classical disjunction, which I still can't believe
+I didn't know.)
+
+On the question of the right language for defining AT, I fully agree
+with Peter that universal Horn sentences are the appropriate logical
+strength of language.  (I take back what I said before about
+"universal" not making a difference.  Peter showed that for the Horn
+theory, i.e. allowing existential quantification, the models are
+representable as products AxT of an abelian category A with a pretopos
+T.  Presumably the weaker universal Horn theory admits in addition the
+appropriate subcategories thereof.)  So would it be correct to say that
+this makes AT a quasivariety in CAT with functors preserving the
+signature Peter is using?
+
+What I'm less clear about than the logical strength is the choice of
+signature.  In particular what about the closed structure?
+
+Without the closed structure we have Peter's AxT representation
+theorem, with the theory finitely axiomatized to boot.  Presumably this
+remains unchanged by the introduction of closed structure: we retain
+only those categories AxT such that A and T independently admit closed
+structure, and can finitely axiomatize the separate closed structure of
+each in terms of the associated retractions A and T (ugh, overloading),
+thereby axiomatizing the joint closed structure.
+
+For example the tensor unit I of AxT will be (Z,1) (Z the tensor unit
+of A), with AI = (Z,0) != I (except for pure abelian categories) and TI
+= (0,1) = 1 != I (except for pure pretoposes).  But for objects a,b of
+A and t,u of T, the tensor product (a,t)@(b,u) will be (a@b,txu), with
+A(a@b,txu) = (a@b,0) = (a,0)@(b,0) = A(a,t)@A(b,u) and T(a@b,txu) =
+(0,txu) = (0,t)@(0,u) = T(a,t)@T(b,u).  (So the retractions preserve
+tensor product but not tensor unit---TI just gives the terminator, but
+AI furnishes a new constant.)
+
+So should there perhaps be two classes, the AT categories and the
+closed AT categories?  The latter would add I and @ to the signature
+(and presumably \aleph\lambda\rho, bless them).
+
+For the closed AT categories, TX can be neatly defined as 1@X, with the
+T-type objects identified as those having only one map to I (Mike Barr
+pointed out to me that strictness of 0, maps to 0 only from initial
+objects, would do this job), and with a topos defined as a closed AT
+category for which I is terminal (or 0 is strict).
+
+But although people seem comfortable working with toposes as opposed to
+pretoposes, what about abelian closed categories (if that's the right
+word order)?  Despite Ab itself being a closed category, I don't see
+much discussion of closed structure for abelian categories.  Why is
+this?  Am I just reading the wrong stuff, or is the closed structure of
+abelian categories boring, or what?  Or is FinAb (abelian but not
+abelian closed---no suitable tensor unit) too desirable to discard in
+this way?  (What comparably interesting pretoposes are so lost?  Not
+the topos FinSet.)  Does the requirement of being closed kill off too
+many desirable abelian categories?  I would have thought lack of closed
+structure would greatly impair the utility of a category, however
+beautiful its objects might be.
+
+I'm interested in these classes, especially those whose categories
+admit closed structure, because toposes sit at or near the left
+(geometric or discrete) end of what I've been calling the Stone gamut,
+while abelian categories sit near the middle.  AT categories offer an
+entirely different approach to the Chu construction for mixing
+categories from strategic positions on the Stone gamut.  The Chu
+construction Chu(V,k) mixes two closed categories, V and V\op,
+symmetrically positioned about the center of the Stone gamut, to yield
+all categories "in between" V and V\op (and "all"--certainly all
+small--categories period when V and V\op are at the outermost points,
+viz. Set and Set\op).  In contrast AT categories mix categories from
+the far left (represented by Set) and the center (represented by Ab) to
+get a qualitatively different effect that I'm not sure how to relate to
+the Chu construction but which seems in some vague sense dual to it.
+
+One such sense is as follows.  AT is the quasivariety generated just by
+Set and Ab alone.  So in this sense at least it is the smallest
+quasivariety spanning the left half of the Stone gamut, assuming that
+the quasivariety generated by either Set or Ab alone does not span the
+gamut but crowds around their two respective positions on the gamut,
+left and middle.  Include the duals of AT categories (not necessarily
+expanded to a quasivariety, see below) and now you cover the whole
+gamut in this minimal sense.  On the other hand the various
+comprehensiveness properties I've been pointing out for the concrete
+subcategories of Chu(Set,K) for large enough K (including all small
+categories, even when concreteness is a requirement unlike the
+comprehensiveness results of the 1960's) make "sub-Chu" maximal over
+the Stone gamut.
+
+Vague question.  The minimality of AT and the maximality of Chu is a
+very weak sort of duality, analogous to the minimal structure of sets
+vs. the maximal structure of Boolean algebras.  Is there a more formal
+duality here, analogous to the duality of Set and CABA?  That the
+retracts AX and TX seem to be dual notions, being respectively
+coreflective and reflective, gives them some of the flavor of Chu.  But
+is AT itself dual to Chu in any categorical sense?
+
+More precise question.  Is the quasivariety generated by all three of
+Set, Ab, and Set\op (aka CABA) finitely axiomatizable?  And if not,
+does using Bool instead of CABA help or hinder?
+
+Vaughan
+
+
+Date: Mon, 3 Nov 1997 15:44:52 -0400 (AST)
+Subject: Re: Abelian-topos (AT) categories 
+
+Date: Mon, 3 Nov 1997 10:00:59 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+I've had trouble with starting a reply to Vaughan's most recent
+posting, the one headed, "Abelian-topos (AT) categories". It makes the
+wide gap that's come into being all too painful.
+
+Vaughan wrote,
+
+  I don't see much discussion of closed structure for abelian
+  categories.  Why is this?  Am I just reading the wrong stuff, or is
+  the closed structure of abelian categories boring, or what?
+
+And that was after he had written,
+
+ I only found out what abelian categories were a week ago.
+
+For a long time Category Theory existed (say, in the Mathematical
+Reviews) as a subset of Homological Algebra -- which is a way of
+saying that category theory was abelian category theory. (I can't
+remember a new result in the theory of abelian categories in the last
+quarter-century. I do remember, alas, a bunch of new announcements of
+such results.)
+
+I have trouble with Vaughan's phrase "the closed structure" on an
+abelian category. There can be many. The category of finite-
+dimensional complex representations of a compact group has a
+distinguished symmetric monoidal closed structure. If they are viewed
+just as categories then for any two compact groups with the same
+number of conjugacy classes the categories are isomorphic. If viewed
+just as monoidal closed categories then the necessary and sufficient
+condition that they be isomorphic is that the groups have isomorphic
+character tables. On the other hand, if viewed as a _symmetric_
+monoidal closed categories, one can recover the group from the
+category. If you want a specific example consider the two non-abelian
+groups of order eight, the dihedral and the quaternian. In each case
+the plain category of representations is the 5-fold cartesian power of
+the category of finite-dimensional complex vector spaces. As monoidal
+closed categories they are isomorphic (but not isomorphic with the
+5-fold cartesian power of the closed monoidal category of finite-
+dimensional complex vector spaces). As symmetric monoidal closed
+categories they are different.
+
+Anyway, there's a whole body of material. A lot of it is now viewed as
+standard in a number of (non-categorical) subjects and as for all
+successfull branches of category theory the theory of abelian
+categories is no longer considered to be a branch of category theory.
+
+Back to pratt cats: if one wants to axiomatize those categories that
+are products of abelian cats and topoi and not worry about the
+intervening families the axioms can be made quite simple. After
+saying that it's a regular category with a coterminator contained in
+its terminator, I'd start with the  P-E-l-r-/\  structure as in my 
+last post, define  TX  as the image of  rX  and prove it to be the
+correflection of X into the full subcategory of type-T objects. 
+0xX -> X  is easily seen to be the correflection of  X  into the full
+subcategory of type-A objects. Then the axiom that these two 
+correflections yield a coproduct decomposition for each object allows
+one to prove quickly that the category is the cartesian product of the
+two correfletive subcategories. The type-T objects clearly form a
+topos. All that's needed now is a couple of axioms to make the type-A 
+objects abelian. 
+
+
+Date: Tue, 4 Nov 1997 08:17:51 -0400 (AST)
+Subject: Re: Abelian-topos (AT) categories 
+
+Date: Mon, 03 Nov 1997 21:57:20 -0800
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+I appreciate that there are people on the list with more years of
+experience with abelian categories than I have days.  AC's don't seem
+to have penetrated much into computer science, and I have no idea
+whether they need to.
+
+But the finite axiomatizability of the quasivariety generated by Set
+and Ab definitely has my attention.  And the fact that toposes and
+abelian categories, so far apart intuitively (sets vs. abelian
+groups?), are brought to within so short an axiom of each other by the
+definition of AT cats, has the potential to make abelian categories
+much more relevant to fans of toposes.
+
+Peter (and privately Fred Linton and Mike Barr) have answered my
+question about what I was naively calling "abelian closed".  "Abelian"
+and "cartesian" are not interchangeable adjectives inasmuch as the
+latter describes the tensor product in the context of "cartesian
+closed" while the former names a quasivariety.  While I was aware of
+the distinction, I was hoping that abelian categories as the models of
+the universal Horn theory of Ab, combined with Ab having closed
+structure, would somehow make the juxtaposition "abelian closed"
+meaningful, but the examples show this to be wishful thinking.  And
+Peter's
+
+	define  TX  as the image of  rX
+
+removes any motivation to define TX as 1@X.  (Meanwhile I've reconciled
+myself to TX as the pushout of the projections of 0xX.)
+
+>After saying that it's a regular category with a coterminator contained
+                          ^^^^^^^  [Is "effective" not needed? -v]
+>in its terminator, I'd start with the  P-E-l-r-/\  structure as in my
+>last post, and prove it to be the correflection of X into the full
+>subcategory of type-T objects.  0xX -> X  is easily seen to be the
+>correflection of  X  into the full subcategory of type-A objects. Then
+>the axiom that these two correflections yield a coproduct decomposition
+>for each object allows one to prove quickly that the category is the
+>cartesian product of the two correfletive subcategories. The type-T
+>objects clearly form a topos. All that's needed now is a couple of
+>axioms to make the type-A objects abelian.
+
+Not just finitely axiomatizable but beautifully so.
+
+Vaughan
+
+
+Date: Wed, 5 Nov 1997 17:35:52 -0400 (AST)
+Subject: Re: Abelian-topos (AT) categories 
+
+Date: Wed, 5 Nov 1997 11:11:52 +0000
+From: Steven Vickers <s.vickers@doc.ic.ac.uk>
+
+Under one view, there is a mismatch in the comparison between toposes and
+Abelian categories. Consider enriched category theory over Set and Ab[elian
+groups].
+
+Over Set: enriched category A = small category, A-action = functor from A
+to Set (covariant or contra- for right or left action), cat of A-actions =
+Set^A or Set^A^op, wlog a presheaf topos, "quotient" (by Grothendieck
+topology) = general Grothendieck topos.
+
+Over Ab: enriched category A = ringoid ("ring with several objects"),
+A-action = right or left module over A, cat of A-actions = Mod-A or A-Mod,
+"quotient" (by Gabriel topology, a.k.a. hereditary torsion theory) =
+Grothendieck category, i.e. cocomplete Abelian category in which direct
+limits are exact and there is a generator.
+
+By the Lubkin-Heron-Freyd-Mitchell theorems, Abelian categories embed fully
+faithfully in Grothendieck categories but are more general. Assuming this
+parallel Grothendieck toposes || Grothendieck categories is a good one, is
+there a natural parallel of Abelian categories on the Set-enriched side?
+
+Steve Vickers.
+
+
+Date: Thu, 6 Nov 1997 16:36:32 -0400 (AST)
+Subject: Re: Abelian-topos (AT) categories 
+
+Date: Thu, 6 Nov 1997 10:39:35 GMT
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+In reply to Steve Vickers' post, I have a few comments.  First off,
+it was not Lubkin-Heron-Freyd-Mitchell who proved the full embedding
+theorem.  The first three proved only a faithful functor into set
+(and subject to some smallness condition), while Mitchell showed
+the full embedding theorem.  And not merely into a Grothendieck abelian
+category, but one with a small projective generator.  The analogue would
+be an embedding into a set-valued functor category.  Unfortunately,
+a beautiful observation of Makkai's shows that that is impossible.  
+Makkai pointed out that under a full embedding that preserves finite
+limits, finite sums and epis the boolean algebra of complemented
+subobjects, which is classified by maps into 1 + 1, would have to
+be preserved.  But in a functor category that lattice is complete
+and atomic (that is, completely distributive), so that fact, which
+is not true for toposes in general, becomes a necessary condition
+for the existence of an embedding.  (Is it sufficient?)  There is, of
+course, a full embedding theorem for small exact categories, but that
+is a lot less than a topos.  But is true that additive + exact = abelian,
+so maybe that is also a good analogy.
+
+Michael
+
+
+Date: Fri, 7 Nov 1997 14:46:40 -0400 (AST)
+Subject: Re: Abelian-topos (AT) categories 
+
+Date: Thu, 6 Nov 1997 16:38:20 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+The result that Steve Vickers cited -- that every small abelian
+cateogory can be fully embedded into a Grothendieck category --
+actually must have come before anything proved by Lubkin, Heron, Freyd
+or Mitchell. I'm sure that Grothendieck knew about the canonical
+representation of a small abelian category into its category of
+abelian pre-canonical sheaves.
+
+
+Date: Tue, 11 Nov 1997 17:19:27 -0400 (AST)
+Subject: On a remark of Barr 
+
+Date: Tue, 11 Nov 1997 11:35:10 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Mike Barr on the question: "is every small topos fully representable
+into a set-valued functor category?":
+
+  Unfortunately, a beautiful observation of Makkai's shows that that
+  is impossible. Makkai pointed out that under a full embedding that
+  preserves finite limits, finite sums and epis the boolean algebra of
+  complemented subobjects, which is classified by maps into 1 + 1,
+  would have to be preserved. But in a functor category that lattice
+  is complete and atomic (that is, completely distributive), so that
+  fact, which is not true for toposes in general, becomes a necessary
+  condition for the existence of an embedding.  (Is it sufficient?)
+
+One can go further. The embedding will necessarily preserve all finite
+colimits and all infinite coproducts that happen to exist. 
+
+Extend the Makkai observation as follows. For any pair of objects  A
+and  B  note that the lattice of partial maps with complemented 
+domains can be constructed as the set of maps from  A  to  1+B  (give
+1+B  the "flat ordering" of CS: start with  B  with the trivial 
+partial ordering and adjoin a bottom). The fact that it's a complete
+lattice is enough to show that arbitrary disjoint unions are 
+coproducts. 
+
+There is an argument for the case that the topos does not have a 
+natural numbers object but I'll assume here that it does have such.
+The standard points of the natural numbers object are complemented,
+hence their union must exist; that union is a coproduct; it must
+therefore be the entire natural numbers object. It is preserved by
+the embedding.
+
+In Aspects of Topoi there's a lemma entitled "one coequalizer for
+all" that now suffices to show that the representation preserves
+all coequalizers.
+
+

@@ -1,0 +1,132 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <cats@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: functors defined by well-founded induction
+Date: Wed, 9 Jul 2014 10:39:16 +0100 (BST)
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <E1X5D98-0006p8-8Z@mlist.mta.ca>
+Reply-To: Paul Taylor <cats@PaulTaylor.EU>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; format=flowed; charset=US-ASCII
+X-Trace: ger.gmane.org 1404994138 15401 80.91.229.3 (10 Jul 2014 12:08:58 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 10 Jul 2014 12:08:58 +0000 (UTC)
+Cc: Michael Shulman <shulman@sandiego.edu>
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Jul 10 14:08:52 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1X5D9g-00030S-7S
+	for gsmc-categories@m.gmane.org; Thu, 10 Jul 2014 14:08:52 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45856)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1X5D99-0008BK-JB; Thu, 10 Jul 2014 09:08:19 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1X5D98-0006p8-8Z
+	for categories-list@mlist.mta.ca; Thu, 10 Jul 2014 09:08:18 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8206
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8206>
+
+Mike Shulman asked:
+
+> Suppose I have a well-founded poset W, regarded as a category, and
+> I would like to define a functor W -> C into some other category
+> by well-founded recursion.  Is there written out anywhere in the
+> literature a general schema for doing this?  It's a little more
+> subtle than defining an ordinary function by well-founded recursion,
+> since we have to define the value of the functor on morphisms too,
+> and its value at a given object may depend on its value at morphisms
+> between previous objects.
+
+The simple answer is that the recursion has to define the functor,
+ie the morphisms corresponding to instances of the order relation,
+and not just the values at individual ordinals, in order to make sense
+of defining the values at limit ordinals as colimits.
+
+I suspect, however, that Mike is looking for a more sophisticated
+answer than this.
+
+(The particular reason why I suspect this is that he solved the
+problem of how to define Conway numbers without using excluding
+middle at every level, in the final chapter of the Homotopy Type
+Theory book.  Although he apparently discovered this independently,
+his solution turned out to be the two-sided analogue of my notion
+of "plumpness" for intuitionistic ordinals.)
+
+The well founded recursion is a routine matter if the categories
+W and C in Mike's notation are small ones, ie structures within
+some ambient universe.   However, if C is Set or any other familiar
+large category, even if W is small, we have to invoke some part
+of the Axiom-Scheme of Replacement.   For example, if W=omega
+and the values are the interated powersets P^n(N) then we cannot
+form the colimit of the diagram (or turn the diagram itself into
+a fibration) in an arbitrary elementary topos.  This is because,
+in set theory, the result is the cardinal aleph_omega and its
+members form an elementary topos.
+
+In the mid 1990s I investigated not only intuitionistic ordinals
+in a quasi-set theoretic style but also a categorical one.  The
+results are summarised in sections 6.3, 6.7 and 9.6 of my book,
+"Practical Foundations of Mathematics".
+
+Gerhard Osius showed how one can regard a "set" (epsilon-structure)
+as a coalgebra in a topos for the covariant powerset functor.
+This structure is extensional if the coalgebra structure map
+is mono.  The definition of a "well founded coalgebra" is given
+in my book.
+
+One can also apply the same ideas in other categories, varying
+the notion of "mono".  Several kinds of intuitionistic ordinals
+are obtained by doing this in the category of posets, with the
+lattice-of-lower-subsets functor in place of the powerset.
+
+This leads to a purely categorical way of defining transfinite
+iterates F^alpha of a functor F and of expressing the Axiom-Scheme
+of Replacement.
+
+First, we can encode an ordinal-indexed family of objects,
+along with morphisms for the order, by a fibration (internal
+to the ambient topos).  Then by standard fibrational methods
+we can apply the functor F to the family.  Again by standard
+methods we can compute the colimit of F^beta over the "elements"
+beta of alpha that are specified by the structure map of the
+coalgebra.
+
+Such an internal fibration is the family of iterates of the
+functor iff a certain square is a pullback.  The relevant
+diagram is in the final pages of the text of my book.
+
+Beware that this is a characterisation not a construction.
+We may take the existence of such pullback diagrams as a
+purely categorical formulation of (part of) the Axiom-Scheme
+of Replacement.
+
+Note also that pullbacks of this kind then form a reflective
+subcategory of a category composed of squares.   We therefore
+have examples of subcategories that are closed under all
+available limits but only have reflectors if Replacement
+holds.
+
+Unfortunately, not only is the summary in my book the
+only published account of these ideas,  but I do not really
+have any more coherent private notes.   I had hoped that
+this work might contribute to a categorical debate about
+Replacement, but that went off in other directions without me.
+
+Paul Taylor
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

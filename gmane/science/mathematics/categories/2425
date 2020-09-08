@@ -1,0 +1,133 @@
+Path: news.gmane.org!not-for-mail
+From: rjwood@mathstat.dal.ca (RJ Wood)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: module for a category
+Date: Wed, 27 Aug 2003 11:11:07 -0300 (ADT)
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <20030827141108.1237B73667@chase.mathstat.dal.ca>
+References: <20030825175543Z10615-24564+241@calvin.math.vt.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018651 4106 80.91.229.2 (29 Apr 2009 15:24:11 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:24:11 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Aug 27 13:32:08 2003 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 27 Aug 2003 13:32:08 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 19s3BD-0002Tu-00
+	for categories-list@mta.ca; Wed, 27 Aug 2003 13:29:55 -0300
+In-Reply-To: <20030825175543Z10615-24564+241@calvin.math.vt.edu> from "Stefan Forcey" at Aug 25, 2003 01:55:41 PM
+X-Mailer: ELM [version 2.5 PL2]
+X-Virus-Scanned: by AMaViS 0.3.12
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 4788
+Original-Lines: 95
+Xref: news.gmane.org gmane.science.mathematics.categories:2425
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2425>
+
+Here is another twist on this circle of ideas which appeared in the
+introductory chapter of my 1976 thesis. Robin Cockett and I are
+working on a redevelopment of it.
+
+For monoidal (V,\ten, i), (promonoidal V will suffice) consider Brian Day's
+convolution (closed) monoidal structure on set^{V^op}. If A is a
+set^{V^op} category, it is helpful to think of A(-,-):A^op x A ---> set^{V^op}
+as A(-,-,-):A^op x V^op x A ---> set with the interpretation that A(a,v,b)
+provides a set of `v-indexed families' of arrows from a to b. The
+composite of a v-indexed family  (v;f):a--->b with a w-indexed family
+(w;g):b--->c is a w\ten v family (w\ten v;gf):a--->c. Of course it may
+happen that for each a,b in A, A(a,-,b) is representable, by an object
+A[a,b] in V. In this case each (v;f):a--->b takes the form
+f:v--->A[a,b]. If for each a in A, and each v in V, A(a,v,-) is representable,
+by an object a.v in A, then the (v;f):a--->b take the form
+f:a.v--->b. Note that the identity a.v--->a.v considered as a v-indexed
+family (v,j):a--->a.v can be construed as a family of `sum-injections'
+for the `multiple' a.v. (Asking for a representing object {v,b} for
+A(-,v,b) leads to dual considerations.) Simultaneous representability in
+a,b and a,v is equivalent to the notion of `tensored V-category' mentioned
+below.
+
+In part this work was motivated by questions raised by Linton in `The
+multilinear Yoneda lemmas' SLN 195, 209--229, and also pursued by
+Reynolds in his 1973 Wesleyan thesis. For example, if A is a V-category
+and M is a V-actegory, in the nomenclature below, what is a V-functor
+A--->M, a V-functor M--->A? The familial approach, suggested by the
+1970s work of Benabou, Pare/Schumacher, Rosebrugh and others provides
+a straightforward intuitive answer. For general set^{V^op}-categories
+A and M, the data for a set^{V^op}-functor F:A--->M sends, for each v in V,
+each v-indexed family (v;f):a--->b to a v-indexed family (v;Ff):Fa--->Fb.
+Each representability possibility for A and B allows for a compact presentation
+of the data. When A is a V-category then it suffices to know F on
+the generic families g:A[a,b]--->A[a,b]. In other words, one requires
+(A[a,b];Fg):Fa--->Fb. If M is also a V-category then Fg is what is
+usually denoted F_{a,b}:A[a,b]--->M[Fa,Fb], the effect of F on homs,
+but if M is a V-actegory it will take the form Fa.A[a,b]--->Fb. If
+A is a V-actegory then it suffices to know F on the generic
+(v,j):a--->a.v. For M a V-category we have Fj:v--->M[Fa,F(a.v)], while
+for M also a V-actegory we have Fj:Fa.v--->F(a.v), a form called `tensorial
+strength' by Anders Kock in a seeries of papers about mononoidal monads.
+
+In fact the 3x3 possibilities for `strengths' can be tabulated easily using
+these considerations: Write 1) for `powers' {v,b}, 2) for homs [a,b] and
+3) for `multiples' a.v. Then the i,j th entry below provides the form of
+strength for a set^{V^op}-functor F:A--->M where A is of type i) and
+M is of type j)
+
+		 1)                     2)                  3)
+
+    1)    F{v,b}--->{v,Fb}     v--->M[F{v,b},Fb]     F{v,b}.v--->Fb
+
+    2)    Fa--->{A[a,b],Fb}    A[a,b]--->M[Fa,Fb]    Fa.A[a,b]--->Fb
+
+    3)    Fa--->{v,F(a.v)}     v--->M[Fa,F(a.v)]     Fa.v--->F(a.v)
+
+Best regards
+RJ Wood
+
+>  What you are looking for may be similar to something I queried Ross Street in regard to earlier this summer.
+>  I'll save him some time by putting here the relevant part of his response.
+>
+>  > I think the one you first
+>  >mention is what we have been calling V-actegories.  Benabou looked at
+>  >these rather than (as well as?) V-categories in the early days of
+>  >monoidal categories.  Pareigis also made use of them. More recently,
+>  >publications of Paddy McCrudden involve them. There is a close
+>  >connection with V-categories.  A V-module  V x A --> A  in this sense
+>  >for which we have a parametrized adjoint  V(x,[a,b]) =~ A(x.a,b)
+>  >makes  A  a V-category with V-valued hom [a,b].
+>  >
+>  >Conversely, a tensored V-category becomes such a V-module.
+>
+>  I recommend the work of McCrudden, who has developed among other things a
+>  descent theoretic approach to the tensor product of V-actegories.
+>  There is also resource in the work of Harald Lindner.
+>  His paper, Enriched Categories and Enriched Modules, in Cahiers, Vol XXII-2 (1981)
+>  develops morphisms between enriched categories and actegories, which he calls modules.
+>  I'm curious about why it is that I have never seen his work referenced.
+>
+>  Paul B Levy writes:
+>  >
+>  > Hi
+>  >
+>  > Is there a standard reference for the notion of "left module for a
+>  > category"?  (or right module, or bimodule)
+>  >
+>  > Is there any reference in the setting of ordinary categories rather than
+>  > (or as well as) enriched categories or bicategories?
+>  >
+>  > Thanks
+>  > Paul
+
+
+
+

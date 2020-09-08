@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: Sam Staton <sam.staton@cl.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Sheaf toposes and chain-complete posets
+Date: Tue, 28 Jul 2009 09:35:55 +0100
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <E1MVqBC-0000qO-Vp@mailserv.mta.ca>
+Reply-To: Sam Staton <sam.staton@cl.cam.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753.1)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1248803968 5579 80.91.229.12 (28 Jul 2009 17:59:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 28 Jul 2009 17:59:28 +0000 (UTC)
+To: Andrej Bauer <andrej.bauer@andrej.com>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Tue Jul 28 19:59:21 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MVqxN-0007pp-Af
+	for gsmc-categories@m.gmane.org; Tue, 28 Jul 2009 19:59:21 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MVqBC-0000qO-Vp
+	for categories-list@mta.ca; Tue, 28 Jul 2009 14:09:35 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5070
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5070>
+
+Dear Andrej, when you say "complete" but not "chain-complete", do you
+mean "directed complete"?
+
+Here is (I think) an example that is also natural and relevant.
+
+Do you know Andy Pitts' work (with others) on Nominal Sets? The
+category of nominal sets is a sheaf topos (the "Schanuel topos", it
+is actually Boolean). Andy has done some domain theory in nominal
+sets to model a language with dynamic allocation of fresh names,
+FreshML.
+
+Fixing an infinite set of "atoms" A, then the category of nominal
+sets is a subcategory of the category of actions of the symmetric
+group on A (see reference for full definition). The set of atoms has
+itself a natural group action. The finite powerset of the nominal set
+of atoms, ordered by inclusion, is chain complete, but not directed
+complete. Any chain of finite sets can only have finite support, and
+is thus necessarily finite. But the full finite powerset is itself
+directed, without an upper bound.
+
+I hope that is of some help. Best regards, Sam.
+
+Reference: Section 3 of On a Monadic Semantics for Freshness, M. R.
+Shinwell and A. M. Pitts, Theoretical Computer Science 342, 2005.
+Available from Andy Pitts' web page. NB "nominal sets" are there
+called "FM-sets".
+
+The example I mention appears in Mark Shinwell's PhD thesis, The
+Fresh Approach: functional programming with names and binders. http://
+www.cl.cam.ac.uk/techreports/UCAM-CL-TR-618.html.
+
+
+On 27 Jul 2009, at 13:45, Andrej Bauer wrote:
+
+> Dear categorists,
+>
+> I am trying to wrap my mind around the concept of an (internal)
+> chain-complete poset in a sheaf topos. I am failing to come up with an
+> example of a poset that is chain-complete but is not complete. The
+> precise definitions of "chain-complete" in the internal language are
+> as follows.
+>
+> Suppose (P, <=) is a poset in a topos. For C in Omega^P, let chain(C)
+> be the statement
+>
+>   forall x, y : P, (x in C and y in C) ==> (x <= y or y <= x)
+>
+> Then P is chain-complete if
+>
+>   forall C : Omega^P, chain(C) ==> exists x : P, x is the supremum
+> of C
+>
+> where "x is the supremum of C" means the usual thing.
+>
+> So what does a chain-complete poset which isn't complete look like?
+>
+> Since I am used to arguing intuitionistically, it would help a lot if
+> there were some (possibly infinitary) logical principle or schema that
+> is typical of sheaf toposes -- something expressing the local nature
+> of validity. Such a principle ought to be invalid in realizability
+> toposes, so perhaps it should express or imply cocompleteness (with
+> respect to Set). But would that be of any help for arguing in the
+> internal language?
+>
+> With kind regards,
+>
+> Andrej Bauer
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

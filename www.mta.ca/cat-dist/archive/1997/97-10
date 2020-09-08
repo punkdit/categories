@@ -1,0 +1,1991 @@
+From cat-dist Wed Oct  1 13:42:05 1997
+Received: by mailserv.mta.ca; id AA12664; Wed, 1 Oct 1997 13:41:04 -0300
+Date: Wed, 1 Oct 1997 13:41:04 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Billfest 
+Message-Id: <Pine.OSF.3.90.971001134055.2872B-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Wed, 1 Oct 1997 10:30:58 GMT
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+A special issue of JPAA will be devoted to papers for the Billfest.  The
+deadline for submission is March 31, 1998 and may be sent to one of 
+the three editors, Myles Tierney, Ieke Moerdijk or me.
+
+Michael
+
+
+From cat-dist Wed Oct  1 13:42:44 1997
+Received: by mailserv.mta.ca; id AA13413; Wed, 1 Oct 1997 13:42:43 -0300
+Date: Wed, 1 Oct 1997 13:42:42 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: vacant position 
+Message-Id: <Pine.OSF.3.90.971001134228.21077A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Wed, 1 Oct 1997 17:17:05 +0400
+From: Teodor Knapik <Teodor.Knapik@univ-reunion.fr>
+
+A problem occured when this message was posted
+for the first time. Sorrry if you receive the message
+twice.
+
+-------------------------------------------------------------------------
+
+Tenured professorship in computer science is available
+at the University of Reunion Island starting from September,
+1, 1998. The person holding the position is intended to
+enrich 30 staff members of IREMIA, the local research
+laboratory composed of both computer scientist and
+mathematicians. The laboratory is well equipped with Sparc
+workstations and Mac computers.
+
+The research interests of the applicant should be related
+to one of the following items
+
+      - formal verifications using model checking
+          and theorem proving,
+      - logic programming, constraint solving,
+        concurrent constraint logic programming,
+      - machine learning (both symbolic and numerical),
+      - multi-agent systems.
+
+Besides a PhD, one of the formal requirements is the French
+diploma "Habilitation a diriger les recherches". However,
+equivalent foreign diplomas (as e.g. German Habilitationsschrift)
+are accepted. Moreover, candidates from countries where an
+equivalent diploma does not exist are encouraged to apply,
+provided that they justify a substantial experience in research,
+teaching and research supervision.
+
+Another requirement is the ability to teach in French at both
+undergraduate and graduate levels.
+
+The salary depends on experience but it is at least 276000 FRF
+(46800 USD) p.a.
+
+Reunion is a French overseas department in the Indian Ocean near
+Mauritius and Madagascar. The surface area is 2512 square km and
+the population is about 600 000 of various origins (Europe, Africa,
+India, China). It is probably one of the most successful melting-pots
+of the world where Christians, Muslims cohabit with Hinduists in
+perfect harmony. The climate is mild with daily temperatures between
+32 deg. C (summer) and 24 deg. C (winter) at sea level. The island
+is mountainous with the highest summit above 3000m. The recreation
+activities practiced in the island include surfing, windsurfing,
+sailing, diving, hiking, climbing, canyoning, rafting and
+paragliding.
+
+Interested candidates may e-mail knapik@univ-reunion.fr
+and send a CV to the following address by November, 1, 1997:
+
+                      Teodor Knapik
+                      IREMIA
+                      Universite de la Reunion
+                      BP 7151
+                      97715 SAINT DENIS Messageries Cedex 9
+                      Reunion
+
+Applicants will be informed by e-mail about the official
+procedure.
+
+
+From cat-dist Wed Oct  1 16:51:50 1997
+Received: by mailserv.mta.ca; id AA06196; Wed, 1 Oct 1997 16:50:18 -0300
+Date: Wed, 1 Oct 1997 16:50:18 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: query
+Message-Id: <Pine.OSF.3.90.971001164904.2947C-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Date: Wed, 1 Oct 97 04:53:29 +1000
+From: burns burns@latcs1.lat.oz.au
+
+
+
+I've quite a lot to ask, but for this post I'll explain what I've
+been about. It's PhD research, but I came to category theory only
+in the last year, so let me lay out my background.
+
+
+1. Context.
+
+The goal is to formulate coordinate systems as first-class entities
+in programming languages. But what is a coordinate system, in
+computational terms? Some more or less equivalent answers:
+
+Operationally:
+
+* The initial node, or any derived node, in a directed graph where the
+edges are coordinate transformation functions.
+
+Denotationally:
+
+* A chart mapping from an open set into a vector space. (Manifold  
+theory.)
+
+* A signature or ADT (where it appears as type F):
+
+	Types:
+		X ; coordinate tuples
+		T ; coordinate transformations
+		F ; coordinate systems
+		P ; points
+	Operations:
+		compose: T x T -> T
+		invert: T -> T
+		apply: T x X -> X
+		plot: F x X -> P
+		measure : F x P -> X
+		step: T x F -> F
+	Identities:
+		plot(step(t,f),apply(t,x)) = plot(f,x)
+		measure(f,plot(f,x)) = x
+		plot(f,measure(f,p)) = p
+		+ group identities for T
+
+* A functor on a Cartesian closed category with additive structure,
+preserving biproducts (vector bases); or more ambitiously, preserving
+a set of invariant relations axiomatizing Euclidean geometry.
+
+It's the simple linear case of this last, which I want to develop here.
+
+
+2. Background.
+
+I got this stuff originally from Arbib & Manes, Freyd, Barr & Wells,
+and Pierce; while I bounced off Eilenberg and Asperti & Longo. What
+I found I was stubbornly keeping out of the library was MacLane,
+_Categories for the Working Mathematican_, and the 1985 _Category
+Theory and Computer Programming_, with its nice essays by Rydehard,
+Poigne, Pitt et al.
+
+
+3. Essentials.
+
+The foundations are Cartesian closed categories and abelian categories.
+
+Briefly, CCCs have values, products and powers; while ACs have
+abelian group structure on Hom-sets, a common zero, and biproducts;
+as well as kernels and stuff which I'm not up with yet.
+
+(I'm also still lost with limits and adjunctions. It's frustrating that
+I can work through examples, and still miss the principle. I imagine
+I really understood adjoints, a whole lot would snap into focus.)
+
+
+4. Sketch Synopsis.
+
+(Terminology:
+	domain = type = object
+	arrow = morphism
+	power domain = exponential = Hom-set (in CCCs)
+)
+
+
+4.1. CCC Isomorphisms.
+
+CCC's are held together by domain constructors: 1, x, and [->],
+with corresponding isomorphisms:
+
+	A =~= [1->A]			; domains have values
+	[M->A] x [M->B] =~= [M -> AxB]	; there are finite products
+	[MxA -> B] =~= [M -> [A->B]]	 ; Hom-sets are power domains
+
+[NB! I get the impression that writers use "power domain" in a different
+sense. "Hom domain", "arrow domain", "function domain" might all be
+better.)
+
+Also
+
+	A x B =~= B x A
+
+for products in general. Products are associative, powers aren't.
+
+4.2. The Field Domain.
+
+To put it to work, assume primitive domains:
+
+	I	 stands for a finite index set
+	R	stands for the reals, with the ring structure:
+
+	(+) : R x R -> R
+	(.) : R x R -> R
+	0 : 1 -> R
+	1 : 1 -> R
+	(-) : R -> R
+
+(To turn R into a field, we have to break it up as a coproduct:
+
+	R = {0} + R-{0}
+
+so that we can define
+
+	(^-1) : R-{0} -> R-{0}
+
+but this complication can be left until kernels are opened up.)
+
+
+R is a module, with a one-element basis {1}, and it's also its
+own linear automorphism set,
+
+	R =~= L[R->R]
+	r <-> (lambda(.)) r
+
+The vectorial properties, addition and scalar multiplication,
+carry over to any domain [A->R]. For [A->R] to be a module,
+there must be a finite basis for it. As far as I can tell,
+being "finite" only requires that operations (e.g. sum) over
+all elements are defined.
+
+4.3. Biproduct from CCC.
+
+Now bring in domain I. Equip it with an equality mapping, the
+Kronecker delta:
+
+	(=) : I x I -> R : (i,j) |-> if (i = j) 1, else 0
+
+With the CCC isomorphisms, plus R =~= L[R->R], this can be
+expressed as:
+
+	delta : I x R x I -> R : (i,r,j) |-> if (i = j) r , else 0
+
+and we use the usual exponential curry-eval diagram, and a bit of
+extra currying, to resolve it to:
+
+	eta : I -> [R -> [I->R]] : i |-> (r |-> (j |-> if(i=j) r,else 0))
+	pi :  I -> [[I->R] -> R] : i |-> ((j |-> x[j]) |-> x[i])
+
+This expresses the biproduct (sketch diagram here)
+
+	 eta i     pi i
+	R -> [I->R] -> R
+
+with (eta i) and (pi i) as injection and projection sets. The eta's
+produce vectors, the pi's take components. In effect they are a
+vector basis and a covector basis for [I->R].
+
+We want a name for this category; I don't know what the standard is,
+so I'll refer to the domain [I->R] as X within the category, and
+X(I) for the category itself.
+
+4.4. Duality Functor
+
+The contravariant hom-functor X(I)(-,R) gives the dual category,
+which we could call X*(I) = Xop(I). The hom-functor action is:
+
+	X(I)(-,R):
+
+	A |=> [A->R]
+	f: A ->B |=> f#: [B->R] -> [A->R]
+
+In particular, this gives:
+
+	(pi* i) = (eta i)# : [X->R] -> R : x* |-> x* eta i
+	(eta* i) = (pi i)# : R -> [X->R] : r |-> r pi i
+
+and
+
+	(eta** i) = (eta i)##
+	(pi** i) = (pi i)##
+
+after some fiddling around with [1-> ]'s.
+
+4.5. Chart and Transformation Functors.
+
+Next, suppose we have another category, say P, with its own
+copies of I and R as well as a domain E. And suppose there is
+an isomorphism:
+
+	f : E -> X
+	~f : X -> E
+
+then (as far as I can tell), it defines an invertible functor:
+
+	Chart(f): P -> X(I)
+
+with the action:
+
+	R |=> R
+	I |=> I
+	E |=> X
+	eta i |=> ~f eta i : R -> E
+	pi i  |=>  (pi i) f : E -> R
+
+and Chart(f), at last, is what we mean by a coordinate system!
+
+
+Thirdly, if we have a matrix:
+
+	m : I x I -> R
+
+and require its adjoint to be defined (i.e. it's non-singular),
+then
+
+	t(m) = Sum(i,j) ( t<i,j> (eta i) (pi j) ) : X -> X
+
+defines a functor as above:
+
+	Trans(t(m)) : X(I) -> X(I)
+
+The adjoint matrix has to be defined, to preserve the biproduct.
+If it isn't, the dual functor won't define a surjection.
+
+
+4.6 Category: XTFP(I)?
+
+Now let me put together what I think I've got. (If I'm qualifying
+assertions a lot, that is because the concept is clear enough for
+making assertions, but the hard work is only half done.)
+
+Overall, we have a collection of categories which we can denote
+
+	{Trans(t)(X), I, Trans(t) eta(X), Trans(t) pi(X)}
+
+including the structure
+
+	X(I) = {[I->R], I, eta, pi}
+
+which we first made up (and which remains somewhat special, because
+it's the only one for which the eta's and pi's are the columns and
+rows of the identity matrix, i.e. Kronecker delta for I).
+
+Make a category of this collection. Its domains will be the categories
+in the collection, and its arrows will be the transformation functors
+Trans(t(m)). Call this XT(I); perhaps a nicer name would be
+Bases(I).
+
+But more, we can include XT(I) in a larger category, of images of
+the whole thing. This will be a category of domains P, with associated
+chart functors Chart(f): P -> X.
+
+It would be reasonable to call the the category containing XT(I)
+and the image of it defined by a single P and F, XTF(I,P) or
+Altas(I,P). And the whole gazoo, comprising as many of these as
+we care to make up P's, we can call XTFP(I), or LinearGeometry(I).
+
+
+4.7 Back to ADT's.
+
+One test of whether the construction has gelled, is to match it
+against the ADT signature at the beginning. That signature is
+what I was originally calling "XTFP", before I started using
+categories, and the reason I've gone in for categories was to
+impose on it a discipline of function domains and ranges.
+
+The core of the signature is:
+
+	Operations:
+		compose: T x T -> T
+		invert: T -> T
+		apply: T x X -> X
+		plot: F x X -> P
+		measure : F x P -> X
+		step: T x F -> F
+
+With the categorial development, write this as:
+
+	compose : (t1,t2) |-> t1 t2
+	invert : t |-> ~t
+	apply : (t,x) |-> t x
+	plot: (f, x) |-> ~f x
+	measure: (f,p) |-> f p
+	step: (t,f) |-> t f
+
+But also requiring:
+
+	invert: f -> ~f
+
+The ADT is thus included in XTFP(I); but the latter now has a good
+deal more structure, because it also contains R, with addition and
+scalar multiplication defined on I x I x ... x I -> R, and all arrow
+domains which are isomorphic to it via the CCC and R <-> L[R->R]
+isomorphisms.
+
+What's more, if we extend still further, to a category containing
+XTFP(I) for all indices I, this larger category (XTFP) is exactly
+Vect.
+
+4.8  In Practice
+
+The categorial version of the ADT is nice in some basic ways.
+The identities, such as
+
+	plot(step(t,f),apply(t,x)) = plot(f,x)
+
+come out like
+
+	~(t f) (t x) = ~f ~t t x = ~f x
+
+with the cancellation being obvious, where the original is
+rather ad hoc.
+
+Considering this as an expression syntax, it's pretty readable.
+In fact, this form is what I have, in an implementation of the
+original ADT in Mathematica 2.2. I extend the types to lists
+or arrays in the types, and the expression syntax then works
+for regular hierarchic figures. I build small models in this
+XTFP implementation: 3D stick-figure bicycles, fractals, etc.
+I think of it as a more elaborate version of LOGO.
+
+Part of what I'm wrestling with, is a way to use Mathematica's
+substitution rules to make the t's and f's work _as_ Trans
+and Chart functors. This is application of categories (to the
+definition of functional programming languages) with a vengeance.
+
+I haven't seen it done quite like this in the literature, but
+then I may be missing something in denotational semantics or
+typed-lambda, which states it all but states it obscurely.
+
+
+4.9  Geometric Semantics
+
+A big concern of mine, is that programming languages for graphics
+and geometry lack geometric meaning. Because the conventions of
+numerical representation are settled _during_ the analysis of a
+modelling problem, and _before_ programming begins, the actual
+code does not support any shifting between alternate representations;
+that is, there's no such thing as change of variable, re-solving
+equations for a different variable set, etc.
+
+Bringing coordinate systems into a programming as first-class entities
+is supposed to be a first step towards improving the state of affairs.
+Now we can see coordinate systems and transformations as functors,
+the problem can be seen as, how to keep the language in a form to
+which functors can be applied.
+
+The immediate successes in geometric semantics with XTFP(I), are
+
+1. Points and their coordinates are distinguished.
+2. Covariant and contravariant vectors are distinguished.
+3. Active and passive coordinate transformations are distinguished.
+
+
+4.10  The Further Prospect.
+
+The basic operation in XTFP(I) turns out to be: substitute for the
+eta i and pi i, any equivalent set of basis vectors.
+
+Looking back, it impresses me that we can get all this from:
+
+1. Field structure on R
+2. Equality on I
+
+The next thing to go for, is the remainder of tensor analysis.
+The compounds
+
+	eta i pi j
+	pi i eta j
+
+are arrow-successive; but there is no tensor product defined,
+to make
+
+	eta i eta j
+
+meaningful, for instance.
+
+
+Further, up til now we have made minimal use of structure on I.
+But there are some obvious morphisms between XTFP(I)'s, for
+different I's.
+
+In particular, if we have I, then we have the lattice of subsets
+of I; and these subsets index related spaces, with related vector
+bases. E.g. if
+
+	I = (1,2,3,4)
+
+indexes vectors in R^4 = [I->R], then
+
+	I<I = ((1,2),(1,3),(1,4),(2,3),(2,4),(3,4))
+
+indexes bivectors. The combinatorics of the I's implies the
+form of the cross-product function, that is, how to arrange the
+2x2 minors of a matrix {x1,x2} with x1,x2 in X(I). So to speak.
+
+I'm working on a smooth way to formalize this in general. The
+essential concept is that there must be some _functor_ from the
+category of I's and combinatorial operations, to the category
+of the graded subspaces (scalar, vector, bivector,..,(n-1)-vector,
+determinant) of X(I). It's one of those cases where one is sure
+that someone must have done such a thing already, but one can't
+find it in the literature.
+
+
+4.11 Thanks for Listening.
+
+That's the state of play.
+
+I guess my conclusion on categorial development, is that you can
+spend a lot of effort getting to the elements of the area you want
+to model; but when you've done it, you have a formalism that's
+pretty well purged of ad-hoc assumptions. It's done with the
+absolute minimum.
+
+Now, everyone wants feedback on their ideas, and I'm no exception;
+but I'm not expecting anyone to review this in detail. What would
+help me a lot is any indication that others have gone up the same
+route, of combining CCCs or lambda-calculus with arithmetic, to
+define vector analysis in the same sort of way.
+
+That's all. Now I'll be hoping to gain some enlightenment from
+listening in to your discussions.
+
+-------------------------------------------------------------------
+Jonathan Burns        |
+burns@latcs1.lat.oz.au|   I don't care what the Dark Matter is
+Dept.Computer Science |   as long as it's not spiders.
+LaTrobe University    |                  - The Classic .sigs
+-------------------------------------------------------------------
+
+
+From cat-dist Thu Oct  2 16:47:40 1997
+Received: by mailserv.mta.ca; id AA15313; Thu, 2 Oct 1997 16:46:43 -0300
+Date: Thu, 2 Oct 1997 16:46:43 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: resolutions as fractions, space complexity 
+Message-Id: <Pine.OSF.3.90.971002164632.10764A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Thu, 2 Oct 1997 12:19:44 -0500 (CDT)
+From: J. R. Otto <otto@quant.pr.mcs.net>
+
+Dear People,
+
+The following revisions of talks on work in progress may be of
+interest.
+
+<from.dvi.gz> From NNO to Complexity (12 pages, October 2, 1997).  We
+begin to revisit space complexity by collapsing resolutions to maps.
+So we evolve our talk `Presenting LCC Categories by Answering Queries'
+by stratifying higher order types and allowing alternatives.
+
+<lcc-ans.dvi.gz> Presenting LCC Categories by Answering Queries (15
+pages, October 1, 1997).  We present LCC categories in a manner that
+provides a basis for logic programming with dependent types and
+equality.  We find that resolutions are left fractions which collapse
+to the maps.
+
+They are linked to http://www.mcs.net/~quant/ .
+
+Regards, Jim Otto
+quant@mcs.com
+
+
+From cat-dist Thu Oct  2 16:52:27 1997
+Received: by mailserv.mta.ca; id AA19454; Thu, 2 Oct 1997 16:52:25 -0300
+Date: Thu, 2 Oct 1997 16:52:25 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: query 
+Message-Id: <Pine.OSF.3.90.971002165150.14195A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Wed, 1 Oct 1997 10:17:10 -0400
+From: wglick@CapAccess.org
+
+
+My name is Warren Glick.  Until illness forced
+me into a disability retirement, I was a reference
+librarian in the Philosophy Division of the
+main branch of the DC Public Library.  Currently,
+I am working my way through the Schaum's Outline
+Book on Set Theory.  I am a beginner and would
+enjoy receiving pointers and guidance on the
+relationship between set theory and category theory.
+
+
+On the Web I have read brief summaries on 
+the Bourbaki School's view of set theory and
+structuralism in the philosophy of mathematics,
+as it relates to set theory.  Please e-mail
+and/or mail me any information that might 
+assist me.
+
+Thanks in advance for your support.
+
+
+Warren Glick
+4850 Conn. Ave., NW #619
+Washington, DC 20008
+wglick@capaccess.org
+
+
+
+
+
+
+
+From cat-dist Mon Oct  6 09:17:38 1997
+Received: by mailserv.mta.ca; id AA24698; Mon, 6 Oct 1997 09:14:47 -0300
+Date: Mon, 6 Oct 1997 09:14:46 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Montreal Category group new WWW address (URL) 
+Message-Id: <Pine.OSF.3.90.971006091407.3718A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Date: Sun, 5 Oct 1997 16:54:24 GMT
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+
+Triples has been down for a while, especially its ftp interface
+with the outside world. Things seem to be back to normal again.
+So if you have had trouble getting papers from our ftp site, 
+please try again - things ought to be working.  (And please
+let us know if you still have trouble.)
+
+One thing has changed: we have a simpler WWW URL for the group's
+home page.  The old URL still works, but you might want to update
+any links you have to the new one:
+  http://triples.math.mcgill.ca
+(Individual team members may or may not also change their WWW
+page URLs, but at present, only the old ones are active, so don't
+try to "guess" other URLs based on the team one.  There are links
+to all the team members WWW pages or ftp sites on the group page.)
+
+= rags =
+
+
+From cat-dist Tue Oct  7 08:31:47 1997
+Received: by mailserv.mta.ca; id AA30657; Tue, 7 Oct 1997 08:30:42 -0300
+Date: Tue, 7 Oct 1997 08:30:42 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: query 
+Message-Id: <Pine.OSF.3.90.971007083022.30051A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Mon, 6 Oct 1997 15:48:08 -0400 (EDT)
+From: John R Isbell <ji2@acsu.buffalo.edu>
+
+Dear Warren,
+   With Schaum's Outline on set theory, I would recommend
+the new (new as proper book; it had a long development)
+book "Conceptual Mathematics" by F. W. Lawvere and S. H.
+Schanuel. They developed the book as a text for a
+'mathematics for poets' course.
+    John Isbell
+
+
+
+From cat-dist Thu Oct  9 16:47:13 1997
+Received: by mailserv.mta.ca; id AA28062; Thu, 9 Oct 1997 16:46:00 -0300
+Date: Thu, 9 Oct 1997 16:46:00 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Research Positions at BRICS Research Centre and Int. PhD School 
+Message-Id: <Pine.OSF.3.90.971009164547.6294B-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Fri, 3 Oct 1997 03:00:08 +0200 (MET DST)
+From: Uffe Henrik Engberg <engberg@brics.dk>
+
+     [Please accept our apologies if you receive this more than once]
+
+
+		 BRICS, Basic Research in Computer Science
+
+		   Universities of  Aarhus  and Aalborg
+
+
+
+Research Positions at BRICS Research Centre and International PhD School
+
+There are  several research positions  at BRICS  starting  next year, 1998.
+Applications by researchers are welcome in theoretical computer science and
+related areas, especially, but not exclusively, within the following areas:
+
+      - Semantics of Computation,
+      - Logic,
+      - Algorithms and Data Structures,
+      - Complexity Theory,
+      - Data Security,
+      - Programming Languages,
+      - Distributed Computing,
+      - Verification.
+
+Openings,  while likely to  start as postdoctoral  positions, generally for
+1-2 years, have the possibility of extension to longer-term positions.
+
+
+BRICS, Basic Research in Computer Science, is funded by the Danish National
+Research Foundation and consists of the BRICS Research Centre and the BRICS
+International PhD School.
+The Research Centre (Director Glynn Winskel) is a joint venture between the
+theoretical-computer-science  groups at   the  universities of  Aarhus  and
+Aalborg, Denmark.
+The PhD  School (Director Mogens Nielsen)  is based in the Computer Science
+Department at the University of Aarhus.
+
+The BRICS Research  Centre is based on  a commitment to develop theoretical
+computer science and related  mathematics, using a combination of long-term
+efforts and a number  of short-term, intensive programmes, within carefully
+chosen scientific themes. The BRICS International PhD  School offers a full
+PhD programme  in  computer science,   including a  wide range of  courses,
+summer  schools etc., and a  number  of PhD grants  for  Danish as well  as
+foreign students. At present  BRICS comprises around  25 researchers  and a
+similar number of PhD students.
+
+Further information on BRICS can be accessed by opening the URL:
+
+			   http://www.brics.dk/
+
+The BRICS  WWW  entry contains  information about  activities, courses, PhD
+grants  and  researchers  as  well  as   access  to  electronic copies   of
+information material and reports of the BRICS Series.
+
+
+Addresses:
+
+        BRICS
+        Department of Computer Science
+        University of Aarhus
+        Ny Munkegade, building 540
+        DK - 8000 Aarhus C
+        Denmark.
+
+        Telephone:      +45 8942 3360
+        Telefax:        +45 8942 3255
+        Internet:       BRICS@brics.dk
+
+
+How to apply
+--------------------------------------
+
+Applications for positions should preferably be sent by e-mail
+(BRICS@brics.dk) and include
+
+      - curriculum vitae and
+      - two or three names of referees for recommendations with the referees'
+	+ regular mail addresses and, if possible,
+	+ e-mail addresses, as well as
+      - an URL to your WWW home directory if available.
+
+The various parts of the application (application letter,  CV, etc.) can be
+sent by e-mail as e.g. uuencoded PDF, PostScript, clear ASCII text or if it
+causes trouble, just as an URL in which case we will try to load the files.
+
+
+From cat-dist Mon Oct 13 09:18:33 1997
+Received: by mailserv.mta.ca; id AA20300; Mon, 13 Oct 1997 09:16:36 -0300
+Date: Mon, 13 Oct 1997 09:16:36 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Induction and functors preserving Cartesian closure 
+Message-Id: <Pine.OSF.3.90.971013091629.28803E-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Sat, 11 Oct 97 19:37:31 +1000
+From: burns <burns@clementine.mailserv.mta.ca>
+
+
+In my last mailing, I talked about my attempt to develop vector
+spaces from CCC's with finite sets and real arithmetic. Now it's
+time for some questions.
+
+(1)
+
+Assume a category with domains I, standing for a finite set; and
+R, standing for the reals. If it's a CCC, we can get the biproduct
+structure, by currying the Kronecker delta, i.e. the equality function
+on I.
+
+Even to express very simple statements about vectors, one now needs
+a legitimate way to write _summation over_ I. E.g. if we have a full
+set of injectors
+
+        eta : I -> X   where X = [I->R]
+
+we want to write an arbitrary vector as
+
+        Sigma  x(i) (eta i)
+        i e I
+
+This is shorthand for something like
+
+        compose : R x R x ... x R -> X
+
+where the R's correspond 1-1 with I. It's the domain I itself
+(rather than any element of it) which determines that finite product.
+
+We know what we mean, by summation over I; but it seems to me that
+(1) we are relying on induction over I, and therefore on first, last
+and successor arrows to I, the whole Peano development; and (2) that
+this is not explicit in the CCC definition. Yes, it is stated that
+a CCC has all finite products. But to make this formal, we need a
+formal means of expressing the inductive step; the equivalent, perhaps
+of a FOR loop in algorithms.
+
+Is there a standard way to address this?
+
+
+(2)
+
+To make the issue more pointed, let's step back from our category,
+and name it X(I,R). Now, define a category of finite sets, say Y,
+in which I1, I2, ... are domains, and each one can stand in for I,
+so that we have X(I1,R), etc.
+
+We would like to say, there is a category V(Y,R), of all such
+categories; and define a functor
+
+        V(-,R):
+
+                Y => X(Y,R) : I |=> X(I,R)
+
+
+We should be able to say that VECT(R) is a proper subcategory of
+V(,-R), because each
+
+        f : Y -> Y
+
+maps onto
+
+        V(f,R) : X(Y,R) -> X(Y,R) : X(I,R) |-> X(f(I),R)
+
+But there is more to V(-,R) than that. For one thing, there
+will be a unique arrow in V(-,R), expressing summation (or in
+general what they call "fold", or APL, "reduce"),
+
+        fold : [RxR ->R] x Y -> [[Y -> R] -> R]
+
+such that
+
+        fold <(+),I> : [[I -> R] -> R] :
+                (i |-> a(i)) |-> Sigma(i) a(i)
+
+The fold arrow expresses _reduction by a real binary function, over
+an inductable set_, producing a unique arrow in each X(I,R) that
+does the job.
+
+
+Now if this makes me uneasy, it's possibly just "abstraction vertigo".
+As far as I can make out, fold is justified iff in Y, each domain I
+is equipped with arrows:
+
+        first : 1 -> I
+        last: 1 -> I
+        next : (I-last(I)) -> I
+
+That means that in Y itself, one can define:
+
+        First: Y -> (1->Y) : I |-> (first : 1 -> I)
+etc.
+
+Something is slipping here, and I think its that the notation is
+being overloaded when "I" refers both to a domain in Y, and to the
+actual finite set it denotes.
+
+It seems to me there much be a well-tried way of doing this, but
+my reading into categories in language specification haven't
+disclosed anyone spelling it out.
+
+
+(3)
+
+Now for a major issue. I managed to define my biproduct in X(I,R)
+by defining X(I,R) as a CCC, with real arithmetic, equality on I,
+_and only that_. Which seems to me a notable finding, and one to
+be followed up.
+
+In introducing functors on X(I,R), and further, functors on X(Y,R),
+I want to deduce the consequences of X(I,R) being Cartesian closed.
+Therefore I want to develop just those functors which map one CCC
+to another.
+
+Such functors will only be coherent, so to speak, if they map
+values to values, products to products, and exponentials to
+exponentials. That is, if they preserve Cartesian closure.
+
+What has been said about the properties of such functors?
+
+I'm following one lead, John W. Gray, _A Categorical Treatment
+of Polymorphic Operations_ in _S-V Lecture Notes in Computer
+Science 298, Mathematical Foundations of programming Language
+Semantics_. Let's just say about this, that the development
+of functors between exponential domains is more complex than
+I had expected.
+
+Enough for the present.
+
+
+
+From cat-dist Mon Oct 13 09:18:34 1997
+Received: by mailserv.mta.ca; id AA15651; Mon, 13 Oct 1997 09:17:41 -0300
+Date: Mon, 13 Oct 1997 09:17:41 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Operads, multicategories 
+Message-Id: <Pine.OSF.3.90.971013091734.28803J-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Mon, 13 Oct 1997 10:36:43 +0100 (BST)
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+
+
+An advertisement for an article, available by electric transmission from
+http://www.dpmms.cam.ac.uk/~leinster.
+
+
+ABSTRACT
+
+Notions of `operad' and `multicategory' abound. This work provides a single
+framework in which many of these various notions can be expressed.
+Explicitly: given a monad * on a category S, we define the term
+(S,*)-multicategory, subject to certain conditions on S and *.  Different
+choices of S and * give some of the existing notions. We then describe the
+algebras for an (S,*)-multicategory, and finish with a selection of possible
+further developments. Our approach enable concise descriptions of Baez and
+Dolan's opetopes and Batanin's operads; both of these are included.
+
+
+
+Tom Leinster
+
+
+
+
+From cat-dist Thu Oct 16 16:53:28 1997
+Received: by mailserv.mta.ca; id AA11501; Thu, 16 Oct 1997 16:53:13 -0300
+Date: Thu, 16 Oct 1997 16:53:13 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: abstract algebraic geometry 
+Message-Id: <Pine.OSF.3.90.971016165305.19078F-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Thu, 16 Oct 1997 10:23:55 -0700
+From: Zhaohua Luo <zack@iswest.com>
+
+The following report is based on my paper CATEGORICAL
+GEOMETRY. The plan is to generalize (and simplify) Diers's
+theory of Zariski categories (presented in his book [D]). A
+more detailed report (in LaTex) is available upon request.
+Comments and suggestions are welcome.
+
+Zack Luo
+
+
+ABSTRACT ALGEBRAIC GEOMETRY
+
+by Zhaohua Luo (1997)
+
+It is well known that most geometric-like categories have
+finite limits and finite stable disjoint sums. These are
+lextensive categories in the sense of [CLW]. We introduce
+the notion of an analytic category, which is a lextensive
+category with the property that any map factors as an epi
+followed by a strong mono. The class of analytic categories
+includes many natural categories arising in geometry, such as
+the categories of  topological spaces, locales, posets, affine
+schemes,  as well as all the elementary toposes. 
+
+A large class of analytic categories is formed by the opposites
+of  Zariski categories in the sense of Diers [D]. The notion of
+a Zariski category captures the categorical properties of
+commutative rings. Many algebraic-geometric analysis carried
+by Diers for a Zariski category can be done for a more
+general analytic category in the dual situation. We show that
+the notion of a flat singular epi developed in [D] can be
+applied to define a canonical functor from an analytic
+category to the category of locales, which is a framed
+topology in the sense of [L1] and [L2]. This topology plays
+the fundamental role of Zariski topology in categorical
+geometry. 
+
+1. Unipotent Maps and Normal Monos
+
+Consider a category C with a strict initial object. Two maps
+u: U --> X and v: V --> X are "disjoint" if the initial object is
+the pullback of u and v. If S is a set of maps to an object X
+we denote by N(S) the sieve of maps to X which is disjoint
+with each map in S. The set S is called a "unipotent cover" on
+X if N(S) consists of only initial map. We say S is a "normal
+sieve" if S = N(N(S)). A map is called "unipotent" if it is a
+unipotent cover. A mono is called "normal" if it generates a
+normal sieve. If C has pullbacks then a mono is normal iff any
+of its pullback is not proper unipotent. The class of unipotent
+(resp. normal) maps is closed under compositions and stable,
+and any intersection of normal monos is normal.
+Geometrically a unipotent map (resp. normal mono) plays the
+role of a surjective map (resp. embedding). 
+
+2. Framed Topologies
+
+Consider a functor G from C to the category of locales. A
+mono u: U --> X in C (and G(u): G(U) --> G(X)) is called
+"open effective" if G(u) is an open embedding of locales, and 
+any map t: T --> X in C such that G(t) factors through G(u)
+factors through u. If u is open effective then u or U is called
+an "open effective subobject" of X, and G(u) or G(U) is an
+"open effective sublocale" of G(X). 
+
+We say G is a "framed topology" on C if an object X is initial
+iff G(X) is initial, and any open sublocale of G(X) is a join of
+open effective sublocales. If {U_i} is a set of open effective
+subobjects of  X such that G(X) is the join of {G(U_i)}, then
+we say that {U_i} (resp. {G(U_i)}) is an "open effective
+cover" on X (resp. G(X)). The collection T(G) of open
+effective covers is a Grothendieck topology on C. We say G
+is "strict" if its Grothendieck topology T(G) is subcanonical.
+
+3. Divisors
+
+Here is a general method to define framed topologies. A class
+D of maps containing isomorphisms is called a "divisor" if it is
+closed under compositions, and its pullback along any map
+exists which is also in D; we say D is "normal" if any map in
+D is a normal mono. If D is a divisor, a sieve with the form
+N(N(T)), where T is any set of  monos to X in D, is called a
+"D-sieve" on X. One can show the set D(X) of D-sieves on X
+is a locale and the pullbacks of D-sieves along a map induce a
+morphism of locales. Thus each divisor D determine a functor
+L(D) to the category of locales. If D is normal then L(D) is a
+framed topology, called the "framed topology" determined by
+D.  
+
+4. Extensive Topologies.
+
+Recall that a category with finite stable disjoint sums is an
+extensive category. An extensive category C has a strict initial
+object. An injection of a sum is simply called a "direct mono".
+An intersection of direct monos is called a "locally direct
+mono". The class of direct monos is a normal divisor E(C),
+called the "extensive divisor". The extensive divisor E(C)
+determines a framed topology, called the "extensive
+topology". It generalizes the Stone topology on the category
+of Stone spaces. 
+
+For any object X we denote by Dir(X) the set of locally direct
+subobjects of X, viewed as a poset with the reverse order. If
+any intersection of direct monos exist in C, then Dir(X) is a
+locale for any object X, and Dir is naturally a functor from C
+to the category of locales, which is equivalent to the
+extensive topology. Special cases of extensive topologies
+were considered by Barr and Pare [BP] and Diers [D1].
+
+5. Analytic Topologies
+
+An "analytic category" is a lextensive category with epi-
+strong-mono factorizations. In the following we consider an
+analytic category C. One of the most important notion
+introduced by Diers to categorical geometry is that of a flat
+singular map. We consider the dual notion. A mono v: V -->
+X is a "complement" of a mono u: U --> X if u and v are
+disjoint, and any map t: T --> X such that u and t are disjoint
+factors through v. A complement mono is normal. A mono v:
+V --> X is called "singular" if it is the complement of a strong
+mono u: U --> X. A map f: Y -->  X is called "coflat " if the
+pullback functor C/X  --> C/Y along it preserves epis. The
+main point here is that any pullback along a coflat map
+preserves epi-strong-mono factorizations. 
+
+A coflat singular mono is called an "analytic mono". A coflat
+normal mono is called a "fraction" (thus any analytic mono is
+a fraction). A fraction plays the role of local isomorphism in
+algebraic geometry. The class of coflat maps (resp. analytic
+monos, resp. fractions) is closed under compositions and
+stable. The class of analytic monos is a normal divisor A(C),
+called the "analytic divisor". The analytic divisor A(C)
+determines a framed topology, called the "analytic topology".
+It generates the usual Zariski topology on affine schemes. We
+say C is "strict" if its analytic divisor A(C) is strict.
+
+6. Reduced and Integral Objects
+
+The analytic topology can also be defined algebraically, using
+reduced and integral objects, as in the case of affine schemes.
+An object is "reduced" if any unipotent map to it is epic. A
+non-initial object is "integral" if any non-initial coflat map to
+it is epic One can show easily that any quotient of a reduced
+(resp. integral) object is reduced (resp. integral) (i.e. if f: Y --
+> X is an epi and Y is reduced or integral then so is X). 
+
+A unipotent reduced strong subobject of an object X is called
+the "radical" of X. It is the largest reduced and the smallest
+unipotent strong subobject of X, thus is uniquely determined
+by X. An analytic category is "reduced" if any unipotent map
+is epic. An analytic category is reduced iff its strong monos
+are normal. An analytic category is "reducible" (resp.
+"spatial") if any non-initial object has a non-initial reduced
+(resp. integral) strong subobject. If any intersection of strong
+monos exist in C then the full subcategory of reduced objects
+is a coreflective subcategory; if moreover C is reducible then
+any object has a radical. 
+
+7. Spectrums
+
+A strong mono is called "disjunctive" if it has an analytic
+complement. An object is disjunctable if its diagonal map is a
+disjunctable regular mono. An analytic category is called
+"disjunctable" if any strong mono is disjunctable. An analytic
+category is "locally disjunctable" if any strong subobject is an
+intersection of disjunctive strong subobjects. A locally
+disjunctable reducible analytic category in which any
+intersection of strong subobjects exist is called an "analytic
+geometry". 
+
+Let C be an analytic geometry. If X is an object we denote by
+Loc(X) (resp. Spec(X)) the set of reduced (resp. integral)
+strong subobjects of X, where Loc(X) is regarded as a poset
+with the reverse order. Then Loc(X) is a locale with Spec(X)
+as the set of points. If C is spatial then Loc(X) is a spatial
+locale. Since any quotient of a reduced (resp. integral) object
+is reduced (resp. integral), Loc (resp. Spec) is naturally a
+functor from C to the category of locals (resp. topological
+spaces). The functor Loc is equivalent to the analytic
+topology on C. If C is spatial then Spec determines Loc, thus
+in this case we simply say that Spec is the analytic topology
+on C.  The space Spec(X) is called the "spectrum" of X.
+
+A spatial analytic geometry C together with the topology
+Spec is a metric site defined in my paper [L1]. Any object in
+C is separated (i.e. its diagonal map is universally closed). In
+fact Spec is the smallest separated metric topology on C. The
+metric completion of a strict spatial analytic geometry plays
+the role of "schemes" in categorical geometry.
+
+8. Zariski Geometries
+
+A cocomplete regular category with a strict analytic opposite
+is a Zariski category in the sense of Diers if it has a strong
+generating set of finitely presentable objects including the
+terminal object which are disjunctable in its opposite. The
+opposite of a Zariski category is a strict spatial analytic
+geometry, whose analytic topology coincides with the Zariski
+topology defined by Diers. We introduce a (simplified)
+geometric version of a Zariski category. A strict locally
+disjunctable analytic category is called a "Zariski geometry" if
+it is a locally finitely copresentable category with a finitely
+copresentable initial object. Any Zariski geometry is a strict
+spatial analytic geometry with coherent spectrums. Most of
+the theorems proved by Diers in [D] for a Zariski category
+can be extended to any Zariski geometry. 
+
+9. Examples
+
+(a) An analytic category is "coflat" if any map is coflat (or
+equivalently, any epi is stable). In a coflat analytic category
+any epi is unipotent, any singular mono is analytic, any
+normal mono (thus any analytic mono) is strong, and any
+integral object is simple. 
+(b) In a reduced coflat disjunctable analytic category, the
+notions of strong, normal, analytic, singular, and fractional
+mono are the same.
+(c) Any elementary topos is a coflat disjunctable analytic
+category; its analytic topology is determined by the double
+negation; a topos is reduced iff it is boolean; a reducible
+Grothendieck topos is an analytic geometry.
+(d) The category of locales is a reduced analytic geometry; its
+analytic topology is the functor sending each locale to the
+locale of its nuclei.
+(e) The category of topological spaces (resp. posets) is a
+reduced coflat disjunctable spatial analytic geometry; its
+analytic topology is the discrete topology.
+(f) The category of  coherent spaces (resp. Stone spaces) is a
+reduced spatial analytic geometry; its analytic topology is the
+patch topology.
+(g) The category of Hausdorff spaces is a strict reduced
+disjunctable spatial analytic geometry; its analytic topology is
+the Hausdorff topology.
+(h) The opposite of the category of commutative rings is a
+Zariski geometry; its analytic topology is the Zariski
+topology.
+
+References
+
+[BP] Barr, M. and Pare, R. Molecular toposes, J. Pure
+Applied Algebra 17, 127 -152, 1980
+
+[CLW] Carboni, C. Lack, S. and Walters, R. F. C.
+Introduction to extensive and distributive categories, Journal
+of Pure and Applied Algebra 84, 145-158, 1993. 
+
+[D] Diers, Y. Categories of Commutative Algebras, Oxford
+University Press, 1992.
+
+[D1] Diers, Y. Categories of Boolean Sheaves of Simple
+Algebras, Lecture Notes in Mathematics Vol. 1187, Springer
+Verlag, Berlin, 1986.
+
+[L1] Luo, Z. On the geometry of metric sites, Journal of
+Algebra 176, 210-229, 1995.
+
+[L2] Luo, Z. On the geometry of framed sites, preprint, 1995.
+                                                                            
+                                                                            
+        
+
+
+
+From cat-dist Thu Oct 16 16:53:29 1997
+Received: by mailserv.mta.ca; id AA02028; Thu, 16 Oct 1997 16:52:29 -0300
+Date: Thu, 16 Oct 1997 16:52:29 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Weak higher dimensional categories 
+Message-Id: <Pine.OSF.3.90.971016165158.19078A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Thu, 16 Oct 1997 10:13:07 +0100
+From: ajp@dcs.ed.ac.uk
+
+
+Those people interested in Tom Leinster's paper on multicategories and
+weak higher dimensional categories might also be interested in recent,
+closely related work by Claudio Hermida at McGill. I do not think
+there is a paper available yet, but he has given talks at Vancouver
+and at the recent meeting of the Canadian Math Society in Montreal, so
+there are probably slides available.
+
+
+From cat-dist Fri Oct 17 12:54:33 1997
+Received: by mailserv.mta.ca; id AA04967; Fri, 17 Oct 1997 12:53:07 -0300
+Date: Fri, 17 Oct 1997 12:53:07 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Path Algebras 
+Message-Id: <Pine.OSF.3.90.971017125300.26634A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Fri, 17 Oct 1997 09:41:04 +0100 (BST)
+From: A.L.Heyworth <map130@bangor.ac.uk>
+
+
+I am trying to find a definition of a path algebra, does anyone have an 
+easy definition? Is a path algebra with one "object" an ordinary (K-)algebra?
+
+Anne Heyworth
+
+(University of Wales, Bangor)
+
+
+From cat-dist Mon Oct 20 14:47:48 1997
+Received: by mailserv.mta.ca; id AA02389; Mon, 20 Oct 1997 14:43:16 -0300
+Date: Mon, 20 Oct 1997 14:43:16 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: PSSL65 - Second Announcement 
+Message-Id: <Pine.OSF.3.90.971020144302.9983D-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Mon, 20 Oct 1997 19:34:33 +0200 (MET DST)
+From: Carsten Butz <butz@brics.dk>
+
+Peripatetic Seminar on Sheaves and Logic, PSSL 65
+
+  SECOND ANNOUNCEMENT
+
+The 65th meeting of the Peripatetic Seminar on Sheaves and Logic
+will take place in Aarhus (Denmark) over the weekend of
+1-2 November 1997.
+
+As usual, we welcome talks on category theory, sheaves, logic, and 
+related areas.
+
+To register, please fill out the form below and return (preferably by
+email) to Carsten Butz (butz@brics.dk, postal address below) as soon as
+possible. 
+
+We maintain a WWW-page with information for the seminar, although this is 
+only in addition to the standard procedures (which means: registration,
+confirmation, hotel and travel information will be sent out by email
+or snail mail, as usually). The URL is
+
+http://www.brics.dk/~butz/PSSL65/pssl65.html
+and
+http://www.brics.dk/Activities/97/PSSL65/index.html  (mirror).
+
+The home page contains links to travel information; we point out that there
+are direct flights from London (Heathrow) and Amsterdam to 
+Aarhus Airport.
+Also, the airport of Billund has many international connections (including
+direct flights from Amsterdam, Berlin, Birmingham, Brussels, Paris, 
+Frankfurt, London and Manchester).
+Both airports are connected to Aarhus City by a good bus service.
+>From Central Europe, Aarhus can by reached by train via Hamburg/Flensburg.
+
+
+The following people (from outside Aarhus) have already indicated 
+that they will take part in the seminar:
+
+R. Bvrger
+M. Jibladze
+P.T. Johnstone
+J. Koslowski
+E. Palmgren
+D. Pataraia
+J. Power
+S. Soloviev
+
+
+We have options for pension/hotel rooms in the range of Kr 300 - Kr 500. 
+On Friday evening there will be a get-together in a downtown pub. 
+Lectures will start on Saturday at 9.30 am.
+More detailed information about hotels etc. will be sent out by surface mail
+to those who registered for the seminar. 
+
+Regards,
+
+Carsten Butz and Anders Kock
+
+---------------------------------------------------------------------
+
+Looking forward to meeting you in Aarhus,
+
+Carsten Butz and Anders Kock
+
+Postal address:
+
+Carsten Butz
+BRICS
+Computer Science Department
+Aarhus University
+Ny Munkegade, Building 540
+8000 Aarhus C
+Denmark
+
+email: butz@brics.dk  (PSSL65 email address)
+WWW:   http://www.brics.dk/~butz/PSSL65/pssl65.html
+       http://www.brics.dk/Activities/97/PSSL65/index.html
+
+----------------------------------------------------------------
+
+I want to attend the 65th PSSL in Aarhus, Denmark.
+
+Name:
+Address:
+       :
+       :
+       :
+email:
+WWW (if available):
+I wish to give a talk entitled:
+
+I wish to reserve accommodation for the following nights
+(single/double):
+
+------------------------------------------------------------------
+
+
+
+From cat-dist Mon Oct 27 16:00:49 1997
+Received: by mailserv.mta.ca; id AA05802; Mon, 27 Oct 1997 15:59:39 -0400
+Date: Mon, 27 Oct 1997 15:59:39 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: logic jobs at Carnegie Mellon 
+Message-Id: <Pine.OSF.3.90.971027155932.24073E-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Thu, 23 Oct 1997 21:55:26 -0500
+From: Steve Awodey <awodey@cmu.edu>
+
+CARNEGIE MELLON UNIVERSITY
+
+Department of Mathematical Sciences
+
+Visiting Positions in Logic
+
+        The Carnegie Mellon Department of Mathematical Sciences seeks visitors
+in logic for one or more semesters (possibly one or two years) of the 1998-99
+and 1999-2000 academic years. We seek persons who share interests with the
+logic faculty and can teach at the undergraduate and graduate level.
+Information about our department and Carnegie Mellon's interdisciplinary
+Ph.D. program in Pure and Applied Logic can be obtained from:
+                http://www.math.cmu.edu/
+                http://www.cs.cmu.edu/afs/cs/project/pal/www/pal.html
+        Applicants should send a vita, list of publications, and a statement
+describing current and planned research to: Appointments Committee, Department
+of Mathematical Sciences, Carnegie Mellon University, Pittsburgh, PA
+15213. Recent Ph.D's should also arrange to have at least three letters of
+recommendation sent to the same address.
+        Carnegie Mellon University is an Affirmative Action/Equal Opportunity
+Employer.
+
+
+
+
+From cat-dist Mon Oct 27 16:09:10 1997
+Received: by mailserv.mta.ca; id AA02359; Mon, 27 Oct 1997 16:09:06 -0400
+Date: Mon, 27 Oct 1997 16:09:06 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Topos-abelian categories that are neither 
+Message-Id: <Pine.OSF.3.90.971027160851.894A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Date: Mon, 27 Oct 1997 10:19:51 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+Toposes and abelian categories are striking for the number of
+elementary properties they have in common (monic+epi = iso, mono/epi is
+a unique factorization system, etc. etc.) and the paucity of their
+common models, namely just the final category.
+
+This observation prompts the following questions.
+
+1.  Are there any other pairs of large and/or useful classes of
+categories whose respective theories have so much in common yet whose
+models have so little in common?
+
+2.  What can be said of the class of those categories having all the
+elementary properties common to toposes and abelian categories?  In
+particular does it contain anything other than toposes and abelian
+categories?  And if so, does this outcome change when the language is
+extended to say second order logic?
+
+To the extent that both toposes and abelian categories share much
+pleasant structure, the models of the intersection of their theories,
+for a suitable choice of language, would seem to be a nice class in its
+own right.
+
+Vaughan Pratt
+
+
+From cat-dist Thu Oct 30 22:33:46 1997
+Received: by mailserv.mta.ca; id AA16867; Thu, 30 Oct 1997 22:32:49 -0400
+Date: Thu, 30 Oct 1997 22:32:49 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: pratt cat 
+Message-Id: <Pine.OSF.3.90.971030223238.32511A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: RO
+X-Status: 
+
+Date: Thu, 30 Oct 1997 16:39:48 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan wrote:
+
+  To the extent that both toposes and abelian categories share much
+  pleasant structure, the models of the intersection of their
+  theories, for a suitable choice of language, would seem to be a nice
+  class in its own right.
+
+There are several variations on the topic. I'll look first at the
+theory obtained by starting with 
+
+  finite completeness,
+  coterminator,
+  pushouts for pairs of maps one of which is monic,
+  pushouts for kernel pairs
+
+then adjoining all universal Horn sentences in these predicates that
+hold for both the category of abelian groups and the category of sets
+(or, if prefered, hold for all abelian categories and all pre-topoi).
+We will see that this theory can be finitely axiomatized and that the
+representations of its models into the categories of abelian groups
+and sets are collectively faithful. This will be the "first task.
+The representation will be done by finding a single faithful
+representation into the product of an abelian category and a topos and
+using known theorems thereon. By a representation I here mean a
+functor that preserves finite limits, coterminators, pushouts of pairs
+of maps one of which is monic and pushouts of kernel pairs. (It
+follows that a representation preserves epimorphisms, finite
+coproducts and images.)
+
+If we expand the theory to include all positive AE sentences it
+remains finitely axiomatizable, and the only models are those
+categories that are a product of an abelian category and a pre-topos.
+This will be the "second task".
+
+After that, I'll add some more essentially algebraic structure so that
+we can talk about power-objects using universal Horn sentences and
+obtain again the finite axiomatizability and the fact that the the
+only models are those categories that are a product of an abelian
+category and a pre-topos. This will be the "third task".
+
+Note that each of axioms below is true for both abelian categories and
+topoi. Until we reach axiom VAE, all can be turned into universal
+Horn sentences if the completeness conditions listed above are turned
+into an essentially algebraic theory.
+
+V1) Effective regular category. (Yes this can be stated as universal
+Horn conditions on pullbacks and the special pushouts mentioned
+above.)
+
+V2)  0 -> 1  is monic.
+
+Note that it follows that all maps from  0  are monic.
+
+In the diagrams below all non-horizontal lines should have arrows
+added in downwards direction.
+
+V3) If  A -> C  is monic and 
+                              A
+                            /   \
+                           B     C
+                            \   /
+                              D
+
+is a pushout then it's a pullback, 
+
+V4)  and so is
+                             0xA
+                            /   \
+                         0xB     0xC
+                            \   /
+                             0xD.
+
+
+Note that binary coproducts therefore exist and are disjoint.
+
+V5) If  B -> 0xC  is epic and
+                               A
+                             /   \
+                            0     B
+                             \   /
+                              0xC
+
+is a pullback then it's a pushout.
+
+Two definitions: let
+                        0 x X
+                       /     \
+                      0       X
+ 
+be a product diagram. If the map to  0  is an iso, I'll say 
+that  X  is type-T; if the map to X is an iso, I'll say that
+it's type-A. 
+
+Note that (using V2) an object is type-A iff it has a map to  0. The
+type-A objects are closed under binary products and coproducts,
+subobjects and quotient objects. The full subcategory of A objects is
+coreflective, with  AX = 0xX  as coreflector. Most important, it is an 
+abelian category.
+
+V5) If the rhombi in
+                     A     B
+                     |\   /|
+                     D  C  E
+                      \ | /
+                        F
+are pullbacks and if 
+                     D     E
+                      \   /
+                        F
+
+is a coproduct diagram, and if all the objects are type-T
+then 
+
+                     A     B
+                      \   /
+                        C
+
+is also a coproduct diagram.
+
+Note that an object is type-T iff every type-A object has a unique map
+thereto. Type-T objects are closed under binary products and
+coproducts, subobjects and quotient objects. (For coproducts use V3.)
+The full subcategory of type-T objects forms a reflective subcategory:
+the reflector, T, is defined via the pushout diagram:
+
+                    0xX
+                   /   \
+                  0     X
+                   \   /
+                     TX
+
+One now has what's needed to show that the full subcategory of type-T
+objects is a pre-topos.
+
+Note that the functor  A  preserves pullbacks and pushouts
+of pairs of maps one of which is monic (V4). Add 
+
+V6) T preserves pullbacks.
+
+(It clearly preserves pushouts.)
+
+Only one more axiom is needed for the first task:
+
+V7)  If  f  is a map such that  Af  and  Tf  are both isos then
+f  is an iso.
+
+For the second task add:
+
+VAE) For every  X  there's a map  TX -> X  such that 
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+Note that  TX -> X  is a coreflector (making V6 redundant). One can
+force the map to be unique by further requiring that  TX -> X -> TX
+is the identity map. And note that the type-A objects can not be 
+reflective: if  1  has a map to any type-A object the entire category
+collapses.
+
+For the third task, I'll add the following structure: functions
+on objects P,E,l, r such that  lX:EX -> PX  and  rX:EX -> X  and 
+
+V8)  <lX,rX>:EX -> PXxX  is monic and  PX, EX  are type-T.
+
+I need one more operation, denoted with an upcase lambda, here 
+written as  /\.  Given a pair of maps  f:R -> Y, g:R -> X
+where  R  is of type-T, then  /\(f,g): Y -> PX  is defined and 
+
+V9> The composition of relations
+
+       /\(f,g)        (lX)'         rX
+   Y  ----------> PX -------> EX ---------> X
+
+is equal to 
+         f'         g
+   Y  -------> R --------> X
+
+(where  '  is being used to denote the reciprocation operator on
+relations).
+
+V10) If
+             R
+         f /   \ g
+          Y     EX
+         h \   /lX
+            TX
+
+is a pullback and R of type-T, then  /\(f,(rX)g)  = h.
+
+Note that in the full category of type-T objects, P  yields
+power-objects with  E, l, r  naming the universal relations. (V10 
+provides the uniqueness condition.)
+
+In any abelian category the only type-T object is the zero
+object, which forces  P=E=0  for abelian categories.
+
+It's routine that both  A  and  T  preserve the new structure. We can
+now remove the existential from VAE. Define  TX -> X  as the image of
+rX. The third task is finished with:
+
+V11) For every  X  
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+
+
+These axioms will, no doubt, be much simplified.
+
+
+From cat-dist Fri Oct 31 14:35:45 1997
+Received: by mailserv.mta.ca; id AA24325; Fri, 31 Oct 1997 14:34:06 -0400
+Date: Fri, 31 Oct 1997 14:34:05 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: Topos-abelian categories that are neither
+Message-Id: <Pine.OSF.3.90.971031143246.4797A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+[Note from moderator: this is two postings from Peter...an error on my 
+part resulted in the first not being circulated until now.]
+
+Date: Tue, 28 Oct 1997 08:50:20 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan points out the many remarkable similarities between topoi and
+abelian categories. I've always thought that the most remarkable is
+the fact that if one forms the pushout of a pair of maps one of which
+is monic then the result is a pullback. The known proofs for the two
+cases are remarkably different. When both maps are monic this is known
+as the amalgamation property (at least it's so known in the category
+of belian groups, that is, groups abelian or not).
+
+It's also right here that a big difference shows up. For abelian cats
+the lemma remains true when one relaxes the hypothesis from "a pair of
+maps one of which is monic" to "a pair of maps that are jointly
+monic." Such a lemma is very wrong for topoi. (For a counterexample in
+sets pushout any jointly monic pair of maps from a 3-element set. The
+result is a pullback iff one of the given maps is already monic. Such
+a counterexample sits, in fact, in any non-degenerate topos.)
+
+Vaughan asked:
+
+  What can be said of the class of those categories having all the
+  elementary properties common to toposes and abelian categories?  In
+  particular does it contain anything other than toposes and abelian
+  categories?  And if so, does this outcome change when the language
+  is extended to say second order logic?
+
+The answer to the second question is no (hence so is the answer to
+the third sentence).
+
+There is a complete answer to the first question. You won't like it.
+
+For a 1-sentence axiom of pratt categories first take a 1-sentence
+elementary axiom, T, for elementary topoi and a 1-sentence elementary
+axiom, A, for abelian categories
+
+Then take the sentence:
+
+   T or A.
+
+Sorry. 
+
+Vaughan goes on to say:
+
+  To the extent that both toposes and abelian categories share much
+  pleasant structure, the models of the intersection of their
+  theories, for a suitable choice of language, would seem to be a nice
+  class in its own right.
+
+This strikes me as an interesting topic (and perhaps we should use the
+phrase "pratt categories" for what emerges as the right choice of this
+class). My first choice for the suitable choice of language would be
+the set of universal Horn sentences in the predicates of finite limits
+and colimits (where it is understood that we already have the axioms
+for finite bicompleteness). Can one prove the expected representation
+theorem: does every pratt category have a faithful limit- and colimit-
+preserving functor into a product of an abelian category and a topos?
+
+
+Date: Fri, 31 Oct 1997 05:35:00 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+To: cat-dist@mta.ca
+
+Somehow my first answer to Vaughan's question went astray. He
+had asked:
+
+  What can be said of the class of those categories having all the
+  elementary properties common to toposes and abelian categories?  In
+  particular does it contain anything other than toposes and abelian
+  categories?  And if so, does this outcome change when the language
+  is extended to say second order logic?
+
+The answer to the second question is no, hence so is the answer to
+the third. And you won't like the answer to the first.
+
+Given any two elementary theories, *A*  and  *T*, let  *AoT*  be the 
+set of all sentences of the form  "A or T", where  "A"  is a sentence
+in  *A*  and  "T"  is a sentence in  *T*.  Clearly every model of  *A*
+is a model of  *AoT*  and so is every model of  *T*.
+
+Almost as clearly: every model of  *AoT*  is either a model of  *A*
+or of  *T*.
+
+Since the elementary theories of abelian cats and topoi can each be
+finitely axiomatized, there's a single elementary sentence common to
+topoi and abelian cats whose only models are either topoi or abelian
+cats.
+
+                  *           *          *
+
+A few misstatements from my previous post. My attempt to abbreviate
+V4  didn't work. I want to say that the diagram is a pushout (of 
+course it's a pullback). So it should be:
+
+V4) If  A -> C  is monic and 
+                              A
+                            /   \
+                           B     C
+                            \   /
+                              D
+
+is a pushout then and so is
+                             0xA
+                            /   \
+                         0xB     0xC
+                            \   /
+                             0xD.
+
+
+I wrote:
+
+   And note that the type-A objects can not be reflective: if 1 has a
+   map to any type-A object the entire category collapses.
+	
+I should have written:
+
+   And note that the type-A objects can not be reflective unless all
+   objects are type-A: if  1  has a map to any type-A object then 
+   0 = 1.
+
+Finally (I must be kidding), as it stands the  P-E-l-r-/\   structure
+is not properly fixed for abelian categories. Adjust as follows:  /\ 
+is defined for pairs  f:R -> Y, g:R -> X  only when both  R  and  Y
+are of type-T. Note that the equation in V9 is a directed equality: if
+/\(f,g)  is defined then the equality holds. V10 must be modified by 
+strengthening the hypothesis to include the condition that  Y  is 
+type-T  (at which point the condition on  R  becomes redundant).
+
+From cat-dist Fri Oct 31 15:39:47 1997
+Received: by mailserv.mta.ca; id AA01476; Fri, 31 Oct 1997 15:39:29 -0400
+Date: Fri, 31 Oct 1997 15:39:28 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: pratt cat 
+Message-Id: <Pine.OSF.3.90.971031153919.12899A-100000@mailserv.mta.ca>
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Status: O
+X-Status: 
+
+Date: Fri, 31 Oct 1997 01:03:22 -0800
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+Peter's response to my question about categories having all the common
+properties of toposes and abelian categories was a very pleasant
+surprise.
+
+First I was not at all expecting such a definite answer.
+
+Second I did not expect a representation theorem, especially not such a
+nice one as "every such category is a product of an abelian category
+and a topos".  This is the converse of the automatic (by Horn) fact
+that such a product is such a category, where (for this converse at
+least) the language can be taken to be as large as the full Horn theory
+common to abelian categories and toposes.
+
+Third I did not expect at all that the class would be finitely
+axiomatizable (but on the other hand neither did I have any reason to
+suppose not).
+
+Fourth and very nice, unless I'm overlooking something, Peter's
+representation theorem implies that my original question (does the
+common *elementary* theory allow anything other than abelian categories
+and toposes?) can now be answered in the negative.  The elementary
+sentence "either all the objects are A-type or all the objects are
+T-type" is obviously true in both abelian categories and (pre)toposes,
+and rules out hybrids like Set x Ab.  I'd been wondering what
+elementary sentence might fail for that example, and Peter's A-type and
+T-type constructs lead straight to it.
+
+Minor remarks:
+
+The trick of multiplying by 0 to tease out both the A- and T-components
+at once is beautiful, not just intrinsically but also because it
+reveals a certain duality between A and T that is not at all apparent
+(to me anyway) from their separate definitions.  The actual
+multiplication projects out the T part without disturbing the A part,
+and then the pushout 
+
+                    AX		(where AX = 0xX)
+                   /  \
+                  0    X
+                   \  /
+                    TX
+
+neatly quotients out that surviving A part by forcing the left side
+through the zero object while on the right AX->X communicates only the
+A part which is therefore the only part that the pushout quotients out
+from 0 + X (if that's not too clumsy a way of putting it).
+
+The upshot is then that the AX's form (as an abelian category) a
+coreflective subcategory of the whole while the TX's form (as a
+pretopos) a reflective subcategory.  That's really beautiful!
+
+The following is presumably the key to proving completeness of Peter's
+axiomatization...
+
+>VAE) For every  X  there's a map  TX -> X  such that 
+>
+>                    AX     TX
+>                      \   /
+>                        X
+
+...by permitting any model to be constructed directly as a
+product of an abelian category and a topos (not even "subcategory"
+seems to be needed here, so this is an even stronger representation
+theorem than the representation of a Boolean algebra as a subalgebra of
+a power set).
+
+>And note that the type-A objects can not be 
+>reflective: if  1  has a map to any type-A object the entire category
+>collapses.
+
+Whoops, a bug here if I'm understanding things.  Only the T part
+collapses, if the category were abelian to begin with then there'd be
+no collapse.
+
+>Define  TX -> X  as the image of rX.
+
+This was lovely (getting rid of the E in VAE above).
+
+
+Some questions.
+
+1.  Can this representation theorem be extended to the full Horn
+theory, i.e. any number of alternations of quantifiers?  (Note that my
+disjunction---every object is A-type or every object is T-type---is not
+a Horn sentence.)  (Now that I look again, I guess the answer must be
+yes, since products preserve *all* Horn sentences.)
+
+2.  In a text that treated both toposes and abelian categories, would
+your axiomatization be a good starting point prior to doing either?
+You could then quickly define an abelian category to be a category of
+this general type with the additional property of being strongly
+connected.  I don't see right off how to define a pretopos as slickly.
+
+3.  What about bringing in the closed structure?  Might that permit
+some simplification of your axiomatization?  For example it looks as
+though you could define a T-type object to be one having a unique map
+to the tensor unit.  Then you could answer the last sentence of the
+previous paragraph simply with "the tensor unit is terminal."
+
+Vaughan Pratt
+
+

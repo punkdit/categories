@@ -1,0 +1,85 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: theorem about ends
+Date: Mon, 7 Feb 2011 16:04:52 +1100
+Lines: 45
+Approved: news@gmane.org
+Message-ID: <E1PmV6E-0004QF-KG@mlist.mta.ca>
+References: <AANLkTikzK3ygOLMAUqm6WKWCrv7Ba8aBHugbpFrCWqMN@mail.gmail.com>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1297100579 1362 80.91.229.12 (7 Feb 2011 17:42:59 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 7 Feb 2011 17:42:59 +0000 (UTC)
+Cc: categories list <categories@mta.ca>
+To: Paul Levy <pbl@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Mon Feb 07 18:42:54 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PmV6y-0005Y9-NT
+	for gsmc-categories@m.gmane.org; Mon, 07 Feb 2011 18:42:52 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55142)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PmV6L-00029e-CK; Mon, 07 Feb 2011 13:42:13 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PmV6E-0004QF-KG
+	for categories-list@mlist.mta.ca; Mon, 07 Feb 2011 13:42:06 -0400
+In-Reply-To: <AANLkTikzK3ygOLMAUqm6WKWCrv7Ba8aBHugbpFrCWqMN@mail.gmail.com>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6529
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6529>
+
+Actually, since the codomain of your functor P is actually Set, the
+argument I gave---which would be valid for any suitably complete
+codomain---can be rewritten to avoid the use of weighted limits
+entirely, by expressing those necessary in this case as hom-sets in a
+functor category. It then becomes the single calculation that
+
+End(P(-,F-)) =3D [C^op x C, Set](Hom_C, P.(1 x F)) =3D [C^op x D,
+Set](Hom_C.(1 x U), P) =3D [C^op x D, Set](Hom_D.(F^op x 1), P) =3D [C^op
+x D, Set](Hom_D, P.(U^op x 1)) =3D End(P(U-,-))
+
+which requires no machinery beyond that of transpositions under adjunction.
+
+Richard
+
+On 7 February 2011 15:35, Richard Garner <richard.garner@mq.edu.au> wrote:
+> Dear Paul,
+>
+> I do not know anywhere that it appears explicitly, but it can be
+> pieced together quite quickly from results about weighted limits in
+> Kelly's book. First, given any adjunction X -| Y : B --> A, any W : A
+> --> Set, and any G : B --> C, we have
+>
+> {WY, G} =3D {W, GX} =A0(**)
+>
+> in the sense that the one exists if the other does, and the canonical
+> comparison is then an isomorphism. This follows since Lan_X(W) =3D WY
+> (by (4.28) of Kelly) and {Lan_X(W), G} =3D {W, GX} (by (4.58) ibid).
+>
+> Since the end of a functor T: K^op x K --> E is by definition ((3.59)
+> ibid) the limit of H weighted by the hom-functor H_K: K^op x K -->
+> Set, we have, in the situation you describe, that
+>
+> End(P(-,F-)) =3D {H_C, P.(1 x F)} =3D {H_C.(1 x U), P} =3D {H_D.(F^op x 1=
+),
+> P} =3D {H_D, P.(U^op x 1)} =3D End(P(U-,-))
+>
+> by applying (**) twice to the adjointnesses 1 x F -| 1 x U =A0and =A0U^op
+> x 1 -| F^op x 1, and using the natural isomorphism H_C.(1 x U) =3D
+> H_D.(F^op x 1) obtained from the adjointness F -| U.
+>
+> Richard
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,87 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Henning Basold <henning@basold.eu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Functor fibrations and Cartesian closure of general presheaves
+Date: Wed, 17 Jan 2018 16:18:28 +0100
+Lines: 49
+Approved: news@gmane.org
+Message-ID: <E1ebyFY-0007Q7-Ud@mlist.mta.ca>
+Reply-To: Henning Basold <henning@basold.eu>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1516235947 32389 195.159.176.226 (18 Jan 2018 00:39:07 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 18 Jan 2018 00:39:07 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Thu Jan 18 01:39:03 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ebyE5-0006sG-8I
+	for gsmc-categories@m.gmane.org; Thu, 18 Jan 2018 01:38:41 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:59040)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ebyGp-0006Sr-VB; Wed, 17 Jan 2018 20:41:31 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ebyFY-0007Q7-Ud
+	for categories-list@mlist.mta.ca; Wed, 17 Jan 2018 20:40:12 -0400
+Content-Language: en-GB
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9505
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9505>
+
+Dear Categorists,
+
+I have three loosely related requests for references for constructions
+that I am using in some of my current work.
+
+First, does someone know of a publication, in which it is proved that
+for a category I the 2-functor [I, -] : Cat -> Cat given by
+post-composition extends to a map on the (large) fibration Fib -> Cat?
+Alternatively, I would also be happy to have references for the fact
+that [I, p] : [I, E] -> [I, B] is a fibration for a fibration p : E -> B
+and a proof that [I, -] preserves strict 2-pullbacks, as these can be
+put together to obtain the above result.
+
+Second, I need to construct exponents in general presheaves I^op -> C.
+In particular, I am interested in the case where I is the poset ?? of
+finite ordinals. I am able to show that [??^op, C] is Cartesian closed,
+if C has finite limits and is Cartesian closed. In this case, the
+exponent s => t for s, t : ??^op -> C is given as follows. First, for
+every natural number n, one defines a functor Sn : N x N^op -> C,
+where N is the poset of ordinals less or equal to n, by putting
+
+     Sn(m, k) = t(k)^{s(m)}  and
+     Sn(m' <= m, k <= k') = t(k <= k')^{s(m' <= m)},
+
+in which (-)^(-) : C x C^op -> C is the exponent in C. We can then
+define the exponent s => t as the end
+
+      (s => d)(n) = \int_{m in N} Sn(m, m),
+
+which exists in C because N is a finite category and C has finite
+limits. It takes a bit of effort to check this, but the construction
+gives us indeed exponents in [??^op, C].
+
+Did someone see this construction before or is aware of another way to
+construct exponents in presheaf categories like [??^op, C]?
+
+Finally, the previous construction can be also applied to the fibres
+of the fibration [??^op, p] : [??^op, E] -> [??^op, B], if p : E -> B is
+a fibred CCC with fibred finite limits. Thus, one also obtains that
+the fibration [??^op, p] is a fibred CCC. Again, the question is,
+whether someone has seen something like this before.
+
+Thank you all very much in advance.
+
+Best,
+Henning
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,132 @@
+Path: news.gmane.org!not-for-mail
+From: "George Janelidze" <janelg@telkomsa.net>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on exact sequence
+Date: Fri, 13 Nov 2009 20:15:36 +0200
+Lines: 98
+Approved: news@gmane.org
+Message-ID: <E1N91nm-0005F8-Qi@mailserv.mta.ca>
+References: <E1N8PC3-0007CL-1m@mailserv.mta.ca> <E1N8d4l-0000zy-0v@mailserv.mta.ca> <00a001ca63f6$80936b50$0b00000a@C3> <Pine.LNX.4.64.0911122132300.27416@msr03.math.mcgill.ca> <000f01ca644d$065eb590$0b00000a@C3> <Pine.LNX.4.64.0911131101330.27416@msr03.math.mcgill.ca>
+Reply-To: "George Janelidze" <janelg@telkomsa.net>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1258142043 6962 80.91.229.12 (13 Nov 2009 19:54:03 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 13 Nov 2009 19:54:03 +0000 (UTC)
+To: "Michael Barr" <barr@math.mcgill.ca>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Fri Nov 13 20:53:56 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1N92DT-00068c-0D
+	for gsmc-categories@m.gmane.org; Fri, 13 Nov 2009 20:53:55 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1N91nm-0005F8-Qi
+	for categories-list@mta.ca; Fri, 13 Nov 2009 15:27:22 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5267
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5267>
+
+Yes, this is how I understood your original question. In order to make some
+comments, let me mention/recall:
+
+You say "a map between two three term sequences" and such a diagram in a
+category C is of course the same as a composable pair of morphisms in the
+arrow category Arr(C). Therefore let me write it as
+
+f ---> g ---> h   (1)
+
+- and so your question is: when - for an abelian C - does (1) induce an
+exact sequence
+
+(0 -->) ker f --> ker g --> ker h --> cok f --> cok g --> cok h (--> 0)
+(2)
+
+My comments are:
+
+1. I think Steve made a very good comment. Let me repeat it in my words:
+When C is abelian, the category Cat(C) of internal categories in C is
+equivalent to Arr(C). Writing cat(f) for the internal category corresponding
+to f, we have:
+
+(a) ker f = the internal group of automorphisms of 0 in cat(f) = the
+fundamental group of cat(f). Therefore, let me write ker f = pi_1(f).
+
+(b) cok f = the object of connected components of cat(f). Therefore, let me
+write cok f = pi_0(f).
+
+After that the sequence (2) becomes
+
+(0 -->) pi_1(f) --> pi_1(g) --> pi_1(h) --> pi_0(f) --> pi_0(g) --> pi_0(h)
+(--> 0),
+
+and your question becomes a classical question of abstract homotopy theory!
+And Steve gave (a partial?) answer that comes out of Enrico's work.
+
+2. As we both agree, Marco also made a very good comment. Namely, Marco has
+a general theorem that applies to (1) in the two cases of main interest: to
+the standard snake lemma and to the case you called curious.
+.
+3. My own comment (although I am slightly changing it here) was/is that the
+morphism ker h --> cok f (in (2)) should probably be considered as an extra
+structure on (1) rather than something "induced". In Marco's approach it is
+an induced morphism on subquotients, but it becomes "induced" in the two
+cases of interest for different reasons. And those two reasons ONLY BECOME
+the same when we present the two cases of interest as special cases of
+Marco's theorem in Marco's way. But using Marco's way we also automatically
+equip our diagram with an extra structure. Note also, that an extra
+structure appears in Steve's second message as z : A --> C' (which surely
+helps to create ker h --> cok f, although I have not checked the details).
+
+4. It is amazing how many non-abelian versions of your question might be
+asked! Since Dominique has a non-abelian snake lemma it can be about
+semi-abelian/homological/protomodular categories - I would call it
+"Bourn-nonabelian" although there are older versions with "old" axioms. Or
+it can be Grandis-nonabelian - since Marco has own homological categories,
+where he develops abstract homological algebra. Or it can be replacing
+(all?) morphisms with pairs of parallel morphisms in a category enriched in
+commutative monoids - as I understand this is what Bill had in mind asking
+his question. Or it can be replacing f, g, h with internal categories (or
+groupoids) in a rather large class of categories - as follows from Steve's
+suggestion.
+
+And there are related questions that came out of other interesting
+messages...
+
+George
+
+----- Original Message -----
+From: "Michael Barr" <barr@math.mcgill.ca>
+To: "George Janelidze" <janelg@telkomsa.net>
+Cc: "Categories list" <categories@mta.ca>
+Sent: Friday, November 13, 2009 6:06 PM
+Subject: Re: categories: Re: Question on exact sequence
+
+
+> Actually, on further thought, I agree with you.  I didn't originally want
+> a slick proof but to understand and then I forgot why I really raised the
+> question.  After all, I had already proved it.  So what I really wanted
+> and still want to know is what conditions on a map between two three term
+> sequences gives the 6 term exact sequence (with or without the end 0s).
+> The situation of the snake lemma is so different from the situation I
+> (and, obviously others) discovered that one wonders still what general
+> conditions could possibly encompass the two cases.  That really was my
+> initial question and that question now comes back to me.
+>
+> Michael
+>
+> On Fri, 13 Nov 2009, George Janelidze wrote:
+>
+> > All right, then I shall better stop, unless there will be new unexpected
+> > comments (because what Bill and others say, will take us too far...)
+> >
+> > George
+> >
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

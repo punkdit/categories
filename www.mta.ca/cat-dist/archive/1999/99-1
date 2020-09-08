@@ -1,0 +1,3427 @@
+From cat-dist Mon Jan  4 21:58:10 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA02897
+	for categories-list; Mon, 4 Jan 1999 20:34:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 4 Jan 1999 21:41:14 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Message-Id: <199901042141.VAA23513@ruby.dcs.qmw.ac.uk>
+To: categories@mta.ca
+Subject: categories: An Abstract Stone Duality
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+On 29 June 1997, I announced on "categories" my "Euclidean principle"
+	f(a) & a = f(true) & a
+which holds for any support classifier or dominance Sigma (ie subobject
+classifier as in an elementary topos, but for any class of monos, eg open
+or RE subsets), where a:X->Sigma and f:X x Sigma -> Sigma.  I gave a 
+talk about this at the Category Theory meeting in Vancouver that year.
+
+At the Category Theory meeting in Tours in 1994 I talked about taking
+Par\'e's theorem (that the contravariant powerset functor in a topos,
+which is self-adjoint, is monadic) as an axiom.  Another category with
+this property is the category of locally compact locales, where Sigma is
+the Sierpinski space and "powerset" means "lattice of open sets", equipped
+with the Scott topology.
+
+This is a way of re-axiomatising general topology without the arbitrary
+unions in the traditional definition and in locale theory: the category
+of "frames" is to be both dual to the category of "spaces" and algebraic
+over it.
+
+I have now written up these ideas as a draft paper entitled
+    "An Abstract Stone Duality, I: Geometric and Higher Order Logic"
+that you can get via my page in the Hypatia Electronic Library, which is
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+(I sent copies of an earlier draft to a number of people in November 1998,
+but otherwise this is new text: it is not the same as any "notes on SDT"
+that you may have got from me over the web in the past.)
+
+After some discussion relating the monadic property to sobriety of spaces
+and spatiality of locales, I prove the converse of the basic observation
+about the Euclidean principle: if Sigma satisfies it and the adjunction
+is monadic then Sigma is the classifier for some class of monos.
+
+It is neither an axiom nor a theorem that the category has all finite limits.
+Indeed, the point is that equalisers etc depend on a notion of equality,
+which, from a computational point of view, is not as straightforward as
+pure mathematicians have traditionally considered it to be.  Some spaces
+(datatypes) admit equality in a "positive" way: for example in a group
+given by generators and relations, or in a lambda calculus with reduction
+rules, we may hope to prove equality of two terms, but not inequality.
+On the other hand, we may hope to prove inequality of real numbers but
+not equality.  These ideas are formalised by notions of "discrete" and
+"Hausdorff" spaces respectively, along with definitions of "open" and
+"compact".
+
+We show that the full subcategory of open discrete spaces is a pretopos,
+the same being true of the compact Hausdorff spaces, by showing that the
+coequaliser is Sigma-split.
+
+The point of Sigma-split co/equalisers is that, being equationally defined,
+we might hope to be able to compute with them, possibly using something
+like the "continuation-passing style" used in some compilers.
+
+The Euclidean principle and monadicity property are related, respectively,
+to the Phoa principle and repleteness in sythetic domain theory.  In that
+subject we also need an infinitary axiom that makes all functions Scott
+continuous and provides fixed points; this axiom is *not* discussed in
+the present paper, largely because this seemed an appropriate criterion
+to use to divide up a rambling collection of notes into papers.  The
+infinitary axiom and the construction of the "lift" will be considered 
+in Part II.
+
+Under the infinitary axiom, open discrete spaces form an arithmetic universe,
+ie they admit N-indexed colimits and free algebras, whilst compact Hausdorff
+space admit limits and cofree coalgebras.
+
+You might like to consider this paper alongside the recent work of Alex
+Simpson and Jaap van Oosten on Synthetic Domain Theory,
+	http://www.math.uu.nl/publications/preprints/1080.ps.gz
+which is very much concerned with the infinitary axiom.  In particular
+Alex is keen to emphasise the additional completeness of the ambient
+category that is needed to construct infinitary co/limits and solutions
+of domain equations, by comparison with directed joins and fixed points
+of functions.  He considers that some attention to the axiom of replacement
+is needed here, and I agree with him, though our treatments are different.
+
+My paper is written for a general mathematical audience, and argues its
+point of view from a position of extreme Cartesisn doubt.  I feel that
+Alex and Jaap's work is very arcane by comparison, as it depends heavily
+on Hyland's effective topos.
+
+For my own views on replacement, see the final section of my book,
+	Practical Foundations of Mathematics.
+I hope to be able to make an announcement about the availability of 
+this very soon.
+
+
+From cat-dist Wed Jan  6 10:31:35 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA21096
+	for categories-list; Wed, 6 Jan 1999 09:02:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 6 Jan 1999 06:28:46 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+To: categories@mta.ca
+Subject: strictification
+Message-ID: <Pine.SOL.3.96.990106062756.29331G-100000@cupid.math.unc.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Is there a strictification result for A_infty-cats?
+If so, under what hypotheses? and by whome? where?
+
+.oooO   Jim Stasheff		jds@math.unc.edu
+(UNC)   Math-UNC		(919)-962-9607
+ \ (    Chapel Hill NC		FAX:(919)-962-2568
+  \*)   27599-3250
+
+        http://www.math.unc.edu/Faculty/jds
+
+
+
+From cat-dist Wed Jan  6 10:43:03 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA08488
+	for categories-list; Wed, 6 Jan 1999 09:03:12 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 6 Jan 1999 12:35:26 +0100 (MET)
+From: Jaap van Oosten <jvoosten@math.uu.nl>
+Message-ID: <199901061135.MAA12430@kodder.math.uu.nl>
+To: categories@mta.ca
+Subject: categories: re: An Abstract Stone Duality
+Cc: jvoosten@math.uu.nl
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+This is a reaction to Paul Taylor's advertisement for his paper
+on Abstract Stone Duality.
+
+Paul has considered appropriate to mention the paper "Axioms and
+(Counter)examples in Synthetic Domain Theory" by Alex Simpson and
+myself, and to polemicize against it in the following way:
+  
+> You might like to consider this paper alongside the recent work of Alex
+> Simpson and Jaap van Oosten on Synthetic Domain Theory,
+> 	http://www.math.uu.nl/publications/preprints/1080.ps.gz
+> which is very much concerned with the infinitary axiom.  In particular
+> Alex is keen to emphasise the additional completeness of the ambient
+> category that is needed to construct infinitary co/limits and solutions
+> of domain equations, by comparison with directed joins and fixed points
+> of functions.  He considers that some attention to the axiom of replacement
+> is needed here, and I agree with him, though our treatments are different.
+> 
+> My paper is written for a general mathematical audience, and argues its
+> point of view from a position of extreme Cartesisn doubt.  I feel that
+> Alex and Jaap's work is very arcane by comparison, as it depends heavily
+> on Hyland's effective topos.
+
+Thanks, Paul, for mentioning our paper, but since the above text is a
+blatant misrepresentation of its content, a correction is in order.
+Our paper develops the theory on the basis of 4 axioms, of which one
+(the \neg\neg-separatedness of \Sigma) is rather special, as we explicitly
+acknowledge. Otherwise the treatment is completely general, and "completeness
+of the ambient category" nowhere enters the picture (we do have, however,
+some treatment of whether the lift functor preserves internal colimits of
+chains). The remark about Replacement refers to other work by Alex. 
+
+The axiomatic treatment raises independence questions, some of which we solve
+by considering models. One of these models is the effective topos. Nowhere
+do we hint that the effective topos should have a privileged place among
+models.
+
+Anyway, it is funny that our work, which builds on the tradition of turning
+SDT into an axiomatic theory (a process which I think is still unfinished),
+tradition which was started by Pino Rosolini, Wesley Phoa, Martin Hyland and
+Paul himself, is now found to be "arcane" (mind you, the whole subject is
+less than twenty years old) by Paul.
+
+Jaap van Oosten
+
+
+From cat-dist Wed Jan  6 16:14:06 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA09245
+	for categories-list; Wed, 6 Jan 1999 15:12:14 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <6486.199901061804@papa.dcs.ed.ac.uk>
+X-Mailer: exmh version 2.0.2 2/24/98
+To: categories@mta.ca
+cc: marcelo@cogs.susx.ac.uk, als@dcs.ed.ac.uk
+Subject: categories: Paper Announcement
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 06 Jan 1999 18:04:29 +0000
+From: Alex Simpson <als@dcs.ed.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The following paper is available by anonymous FTP or over the Web
+
+
+    Lambda Definability with Sums via Grothendieck Logical Relations
+
+                 by Marcelo Fiore and Alex Simpson
+
+    We introduce a notion of *Grothendieck logical relation* and use 
+    it to characterise the definability of morphisms in *stable* bicartesian
+    closed categories by terms of the simply-typed lambda calculus with 
+    finite products and finite sums. Our techniques are based on concepts 
+    from topos theory, however our exposition is elementary.
+
+
+The paper is written in a style appropriate for the conference
+
+    Typed Lambda-Calculi and Applications
+
+where it is to be presented in April. However, we briefly discuss
+the true categorical content of the paper, which will be further 
+expanded upon in a full version of the paper (forthcoming).
+
+The paper is available over the Web:
+
+    http://www.dcs.ed.ac.uk/~mf/TYPES/glr.{dvi,ps}
+    http://www.dcs.ed.ac.uk/~als/Research/glr.ps.gz
+
+or by anonymous FTP:
+
+    ftp://ftp.dcs.ed.ac.uk/pub/mf/TYPES/glr.{dvi,ps}
+    ftp://ftp.dcs.ed.ac.uk/pub/als/Research/glr.ps.gz
+
+Best wishes for a happy New Year,
+
+Alex Simpson
+
+-- 
+Alex Simpson, LFCS, Division of Informatics, University of Edinburgh
+Email: Alex.Simpson@dcs.ed.ac.uk             Tel: +44 (0)131 650 5113
+FTP: ftp.dcs.ed.ac.uk/pub/als                Fax: +44 (0)131 667 7209  
+URL: http://www.dcs.ed.ac.uk/home/als
+
+
+
+
+
+From cat-dist Wed Jan  6 16:14:28 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA02715
+	for categories-list; Wed, 6 Jan 1999 15:11:24 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 6 Jan 1999 17:52:25 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Message-Id: <199901061752.RAA23320@ruby.dcs.qmw.ac.uk>
+To: categories@mta.ca
+Subject: categories: Synthetic Domain Theory
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+As Jaap van Oosten says, I considered appropriate to mention the paper
+"Axioms and (Counter)examples in Synthetic Domain Theory" by Alex Simpson
+and himself when I announced my own draft paper "An Absract Stone Duality".
+
+There are two reasons why I did consider this appropriate:
+(1) they and I both use the heading "synthetic domain theory" for our
+    work, and I feel that their work is important and should be considered
+    alongside mine;
+(2) people outside a particular discipline tend to go by the labels -
+    "guilt by association" - so I was keen that those who had already
+    looked at Jaap & Alex's paper (after they advertised it on "categories"
+    before the holiday) should not assume that mine would be of the same kind.
+
+I did not "polemicize" against it.  I said that I felt it was "arcane",
+but wanted to say something positive about it first. Unfortunately, as
+Alex has pointed out to me, I got the paper confused with our discussions
+when I visited Edinburgh shortly before Jaap's announcement.
+
+Jaap says that
+> it is funny that our work, which builds on the tradition of turning
+> SDT into an axiomatic theory (a process which I think is still unfinished),
+> tradition which was started by Pino Rosolini, Wesley Phoa, Martin Hyland and
+> Paul himself, is now found to be "arcane" (mind you, the whole subject is
+> less than twenty years old) by Paul.
+
+As a generality, and without wishing to take this argument any further,
+surely a *founder* of a theory is qualified to describe a subsequent 
+development of it as "arcane", ie accessible only to particular specialists,
+and not what that founder had in mind?  SDT is a minority research topic,
+still the plaything of a group of friends - that's what I like about it.
+It's not Tony Blair's New Labour Party - we *are* allowed to disagree!
+
+Anyway, since this particular beast has now been awoken from its slumbers,
+I want to try to explain the mathematical content of this disagreement
+briefly for a general audience.
+
+Probably most "categories" readers have now heard the slogan,
+	"Domains are sets - all functions are computable"
+cf	"Manifolds are sets - all functions are smooth".
+Synthetic domain theory and synthetic differential geometry are then about
+(1) postulating conditions on the ambient topos (category of "sets")
+(2) selecting from those "sets" those that are to be called "domains" or
+    "manifolds" and
+(3) using these ideas to prove interesting theorems or compute programs.
+
+Much of the progress and disagreement in SDT has been about part (2).
+
+Wesley Phoa, in his 1990 Cambridge thesis under Martin Hyland's supervision,
+was the first to describe objects in a certain topos that looked like the
+"domains" in theoretical computer science, rather than like lattices in
+pure mathematics. (I *don't* mean to polemicize against Pino Rosolini there.)
+Wes defined a certain preorder on each object of the topos, and restricted
+to those objects for which this is a poset (antisymmetric), and further
+to those for which it has directed joins, a least element and therefore
+fixed points.
+
+In particular, Wes selected his domains by testing each one for the relevant
+infinitary condition.
+
+My idea, in my 1991 LiCS paper, was that the infinitary condition could be
+imposed on a *single* object, and the domains selected be means of a more
+finitary categorical notion called "repleteness" that Martin Hyland had
+introduced in his paper in the 1990 Como Category Theory proceedings.
+
+Alex Simpson, John Longley and Jaap van Oosten later came up with another
+infinitary condition, "well-completeness", and they, like Wes, select their
+domains by testing this for each domain.  Under suitable conditions, this
+gives a larger full subcategory than mine.
+
+I do not dare even to give you the definition of well-completeness, let
+alone attempt to defend or attack it.  You should read Alex and Jaap's
+paper for that.
+
+One of the objections to repleteness is that it is very difficult to 
+characterise in familiar models.  Pino Rosolini has (with others)
+investigated this, and you can find some of his results in the papers 
+listed on his Hypatia page,
+	http://hypatia.dcs.qmw.ac.uk/author/RosoliniG
+
+(By the way, Hypatia now has a new server and some new code.  The machine
+on which it was living from May to December 1998 was forever crashing,
+partly because the mirrored papers were stored on a large collection of 
+very old disks with a SCSI chain that made visitors to our machine room 
+gasp in horror.)
+
+My paper is, in this context, a defence of the notion of repleteness.
+Since "attack is the best form of defence" it does this by replacing it
+with a stronger notion, namely that a certain adjunction be monadic.
+This has the effect of replacing the "domains" defined by ordered structures
+that have been in use in theoretical computer science since the early 1970s
+by locally compact locales.
+
+Paul
+
+
+From cat-dist Wed Jan  6 20:26:57 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA10368
+	for categories-list; Wed, 6 Jan 1999 19:23:15 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3693EA39.139F@mpce.mq.edu.au>
+Date: Thu, 07 Jan 1999 09:56:57 +1100
+From: Michael Batanin <mbatanin@mpce.mq.edu.au>
+Reply-To: mbatanin@mpce.mq.edu.au
+Organization: Maquarie University, Sydney
+X-Mailer: Mozilla 3.01Gold (Win95; I)
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: strictification
+References: <Pine.SOL.3.96.990106062756.29331G-100000@cupid.math.unc.edu>
+Content-Type: text/plain; charset=koi8-r
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+James Stasheff wrote:
+> 
+> Is there a strictification result for A_infty-cats?
+> If so, under what hypotheses? and by whome? where?
+> 
+> .oooO   Jim Stasheff            jds@math.unc.edu
+> (UNC)   Math-UNC                (919)-962-9607
+>  \ (    Chapel Hill NC          FAX:(919)-962-2568
+>   \*)   27599-3250
+> 
+>         http://www.math.unc.edu/Faculty/jds
+
+Yes. Im my paper
+"Homotopy coherent category theory and A_{\infty}-structures in monoidal
+categories" JPAA, 123 (1988), 67-103, theorems 2.3, 2.4 and corollary
+2.3.1.. 
+
+In this paper I define A_{\infty}-categories as algebras in the category
+of K-graphs over A_{\infty}-K-operads, where K is a simplicial monoidal
+category with Quillen model structure such that tensor commutes 
+with simplicial realization functor. I show that every locally fibrant
+A_{\infty}-category (i.e. Hom(a,b) is fibrant object in K for every a
+and b) is equivalent in some homotopy coherent sense to a honest
+K-category.
+
+Michael Batanin.
+
+
+From cat-dist Thu Jan  7 12:06:37 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA02848
+	for categories-list; Thu, 7 Jan 1999 09:48:33 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 7 Jan 1999 07:49:14 GMT
+Message-Id: <v01540b0100dea62b6bc2@[193.51.133.140]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Mailer: Eudora F1.5.4
+To: categories@mta.ca
+From: carlos@picard.ups-tlse.fr (Carlos Simpson)
+Subject: categories: re: strictification
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+>
+> Is there a strictification result for A_infty-cats?
+> If so, under what hypotheses? and by whome? where?
+>
+> .oooO   Jim Stasheff            jds@math.unc.edu
+
+It seems that a reference for this result is a paper of Dwyer-Kan-Smith:
+
+W. Dwyer, D. Kan, J. Smith. Homotopy commutative diagrams and their
+realizations. JPAA 57 (1989), 5-24.
+
+This is prior to Batanin's paper (NB there is a typographical error in
+Batanin's message---the year of his paper is 1998 not 1988!).
+
+I found D-K-S in my bibliographic wanderings this fall. In the last section
+of their paper, they define the notion of ``Segal category'' and at the
+same time prove that any Segal category is equivalent to a strict
+simplicial category.
+The terminology ``Segal category'' is my own (D-K-S don't give this notion
+a name). The notion of ``Segal category'' is the Segal-delooping-machine
+equivalent of the notion of A_{\infty}-category.
+
+In our preprint of this summer (math.AG/9807049), A. Hirschowitz and I give
+a sketch of proof of the strictification result of D-K-S. We were not aware
+at the time of D-K-S, nor of Batanin's paper which also gives a proof and
+which treats a more general situation too. (I found out about Batanin's
+paper this fall thanks to the previous flurry of messages on ``categories''
+occasionned by a question from Jim!)
+
+I don't claim to have actually understood DKS's proof because it is very
+short and in very abstract language; however, given that (1) all proofs of
+this type of strictification result are basically the same; and (2) D-K-S
+have a good
+track record; there doesn't seem to be any doubt that the proof is indeed
+contained in their paper.
+
+The definition of ``Segal category'' in D-K-S is of course much prior to any
+of my own versions of this definition. It also seems to be (as far as I know)
+the first occurrence of the notion of A_{\infty}-category.
+
+In this context one should point out that Jim's original notion plus all of
+the subsequent delooping-machine variants, are just A_{\infty}-categories
+with one object; and going to the case of several objects is a rather
+obvious embellishment, so discussing ``priority'' for this notion would
+seem to be arcane indeed!
+
+---Carlos Simpson
+
+
+
+
+
+
+From cat-dist Fri Jan  8 13:24:33 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA09218
+	for categories-list; Fri, 8 Jan 1999 11:54:39 -0400 (AST)
+X-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA07551
+	for categories-list; Fri, 11 Dec 1998 09:22:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m0zoOGf-0003BCC@pc36.mcs.le.ac.uk>
+To: categories@mta.ca
+Subject: categories: PhD position available
+Mime-Version: 1.0 (generated by tm-edit 7.108)
+Content-Type: text/plain; charset=US-ASCII
+Date: Fri, 11 Dec 1998 08:49:44 +0100
+From: N Ghani <ng13@mcs.le.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+[ Note from moderator: this is a repost by request of the original sender
+- December Net outages may have prevented it reaching some intended
+recipients. Happy New Year to all, Bob ]
+
+I am currently looking for someone who wants to do a PhD on
+categorical models of rewriting. If you are interested, or know
+someone who may be, then please get in touch. 
+
+You can find bits and bobs about what I have in mind from my homepage
+
+http://www.mcs.le.ac.uk/~ng13/home.html
+
+Neil Ghani
+
+
+
+
+
+From cat-dist Fri Jan  8 13:24:33 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA30674
+	for categories-list; Fri, 8 Jan 1999 11:43:55 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 8 Jan 1999 10:01:22 -0800
+From: Eva SCHLAEPFER <esch@math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: References
+Message-ID: <Pine.SGI.4.05.9901071643360.12724-100000@scylla.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Hello,
+
+can someone give me references for the following two constructions?
+
+- in a closed monoidal category, the multiplication on the inner hom is
+normally defined as the transpose of 
+
+B tens (B -o B) tens (B -o B) ---> B tens (B -o B) ---> B
+
+where tens is the tensor product, -o the inner hom, the first map ev tens
+(B-o B) and the second ev.
+
+- A,B,C objects in a monoidal category and A is a monoid. 
+If B is an A-right-module in the sense that there is a morphism 
+f: B tens A ---> B which satisfies certain axioms and C is a
+A-left-module g:A tens C ---> C, then the quotient B tens_A C can be
+defined as the coequalizer of the two
+maps 
+B tens g: B tens A tens C ---> B tens C   
+and 
+f tens C: B tens A tens C ---> B tens C
+
+Thanks,
+
+Eva Schlaepfer
+
+
+
+From cat-dist Mon Jan 11 13:20:42 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA02382
+	for categories-list; Mon, 11 Jan 1999 10:40:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 11 Jan 1999 08:01:08 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <199901111301.IAA06980@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Terrible news -- young Myles
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+     ''The death of Myles Tierney has robbed international 
+     television of one of its brightest young stars. He was a
+     consummate professional, highly talented and highly 
+     resourceful.''
+
+     ''On top of his professional skills he was renowned among
+     colleagues and competitors for his great good humor and 
+     generosity of spirit''
+
+                   Copyright 1999 Associated Press
+                              AP Online
+             January 11, 1999; Monday 06:23 Eastern Time
+
+SECTION: International news
+
+LENGTH: 593 words
+
+HEADLINE: AP Journalists Shot in Sierra Leone
+
+DATELINE: FREETOWN, Sierra Leone
+
+   BODY:
+   A television producer for The Associated Press was killed and an AP
+bureau chief was seriously wounded when their car was hit by gunfire
+while covering the civil war in Sierra Leone.
+
+   Myles Tierney, a Kenya-based producer for Associated Press
+Television News, and Ian Stewart, based in Ivory Coast, were among
+journalists and government Information Ministry officials who were
+traveling Sunday in four cars through embattled downtown Freetown.
+
+   They were being escorted by troops of a West African coalition
+force, known as ECOMOG, which is protecting the elected government.
+
+   According to other journalists in the group, the AP journalists
+were in a station wagon that was approached by an armed man on the
+street in downtown Freetown. The man opened fire on the car with a
+semiautomatic rifle after an exchange of words with an ECOMOG soldier
+also riding in the car.
+
+   Tierney, 34, of New York City, was shot and died instantly.
+Stewart, 32, suffered a head wound. AP photographer David Guttenfelder
+of Waukee, Iowa, was also in the car and suffered cuts from broken
+window glass.
+
+   The journalists were rushed to a nearby ECOMOG base, and then flown
+to Conakry, Guinea. Stewart and Guttenfelder were transported from
+there to Abidjan, Ivory Coast.
+
+   ''We are devastated by the news of Myles' death and Ian's serious
+injuries,'' said Thomas Kent, international editor of The Associated
+Press. ''It is another bitter example of the sacrifices made by
+correspondents who go in harm's way to cover the news.''
+
+   Nigel Baker, head of news at Associated Press Television News,
+said: ''The death of Myles Tierney has robbed international television
+of one of its brightest young stars. He was a consummate professional,
+highly talented and highly resourceful.''
+
+   Freetown has been carved into neighborhoods of rebel and loyalist
+control. The rebel Revolutionary United Front controls most of eastern
+Freetown and parts of the downtown, and has rejected calls for a
+cease-fire. Sporadic shelling had been heard overnight, but
+street-to-street fighting had tapered off Sunday morning.
+
+   State-controlled radio warned all civilians to stay indoors, saying
+loyalist troops were patrolling the streets in search of rebel
+fighters who have been using residents as human shields.
+
+   Tierney joined AP as a freelance producer for the agency's TV
+division in Africa during 1996, organizing coverage of a military coup
+in Burundi. Later that year he joined the staff and set up the
+agency's first TV bureau in New York.
+
+   In January 1997, he shifted to Africa, based in Nairobi. For the
+next two years he chronicled the turmoil across east and west Africa.
+He was part of an AP team that for three months reported exclusively
+on the advance of then rebel leader Laurent Kabila in eastern Zaire,
+now Congo.
+
+   During the assignment, he pioneered use of new technology which
+allowed video to be dispatched over a conventional satellite
+telephone. It meant the TV coverage was ahead of all opposition.
+
+   He also had covered conflicts in Rwanda, Guinea-Bissau, Eritrea and
+Somalia.
+
+   ''On top of his professional skills he was renowned among
+colleagues and competitors for his great good humor and generosity of
+spirit,'' Baker said.
+
+   Stewart is AP's West Africa bureau chief, based in Abidjan. He
+began working for AP in Pakistan, moved on to Hanoi in 1996 and began
+his present assignment last year. A Toronto native, he graduated from
+Queen's University in Kingston, Ontario, and has a master's degree
+from Columbia University's Graduate School of Journalism.
+
+
+From cat-dist Tue Jan 12 13:28:05 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA28546
+	for categories-list; Tue, 12 Jan 1999 10:15:36 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 12 Jan 1999 07:05:10 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <199901121205.HAA13201@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: AP on young Myles
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+ Slain, Wounded Journalists Praised
+ By TED ANTHONY
+ AP National Writer
+ 902 Words
+ 5682 Characters
+ 01/12/99
+ AP Online
+ International
+ Copyright 1999 The Associated Press. All Rights Reserved.
+
+   They came from all over one continent - from New York City, from
+Ontario, from Iowa - to cover a war in the corner of another, to tell
+the world about a place that few had heard of and even fewer had ever
+considered visiting.
+
+   Myles Tierney, Ian Stewart and David Guttenfelder, journalists for
+The Associated Press in Africa, brought a long list of reporting credits
+- and risks - to their assignment in the chaotic West African nation of
+Sierra Leone.
+
+   But on a hot, sunny Sunday, the dizzying unpredictability so familiar
+to those who have covered Africa caught up with them for several
+seconds.
+
+   Tierney, 34, from New York City, a Kenya-based producer for
+Associated Press Television News who one colleague said "lived his life
+like it was the 100-yard dash," was killed instantly when a rebel
+soldier peppered the AP vehicle with gunfire.
+
+   Stewart, 32, from Toronto, known for chasing one story and coming
+back with many more, was seriously wounded in the head. Guttenfelder,
+29, of Waukee, Iowa, one of the AP's most intrepid photographers, was
+cut by flying glass and was the only one of the three who escaped
+serious injury.
+
+   "They just wanted to kill someone. Maybe we were the closest to
+them," Guttenfelder said Monday from his home base, the AP's West Africa
+bureau in Abidjan, Ivory Coast.
+
+   Stewart, the West Africa chief of bureau, was airlifted Monday to
+London, where he was to undergo surgery for a bullet in the brain. He
+was in stable condition Monday night.
+
+   AP President Louis D. Boccardi praised Tierney as "a brave and
+adventurous man" and mourned the attack. "We are in awe of the
+sacrifices they and others make so we can carry out our mission,"
+Boccardi said Monday.
+
+   "Africa was the opportunity in his life to realize himself," said
+Tierney's mother, Hanne. "And he did. This was where all of his talents
+really came to the fore."
+
+   Guttenfelder recounted a surreal day that began at a hotel outside
+downtown Freetown, the unstable capital, with the AP journalists and
+their colleagues from other organizations trying to obtain firsthand
+information about the situation in the city.
+
+   They'd tried to move around Saturday but couldn't because of the
+warfare on the streets. Sunday seemed less tense, Guttenfelder said.
+
+   On the street they came upon Julius Spencer, Sierra Leone's minister
+of communications, who offered to escort them into town. With him were
+soldiers from ECOMOG, the West African regional peacekeeping force.
+
+   "He said ... it was a matter of mopping up," Guttenfelder said. "He
+wanted to show us - and us to show the world - that they were very much
+in control."
+
+   The journalists were skeptical, but they saw subtle signs of
+improvement: troops moving freely, gasoline stations reopening.
+
+   As they neared downtown, and part of the convoy headed down to take a
+look at the city's center, shots reverberated in the distance. Down a
+hill they went, past the soccer stadium, past hulks of blown-up cars,
+past fallen traffic lights, past shuttered buildings, past corpses set
+upon by vultures.
+
+   Then, around a corner, they encountered five armed men in American-
+style jeans and flipflops. One, Guttenfelder remembered, "was wearing
+a black bowler hat - like in `A Clockwork Orange."' No one was sure:
+Were they rebels or looters?
+
+   "They looked kind of charged up, maybe drugged up. They were smiling,
+kind of laughing, acting like everything was cool," Guttenfelder said.
+"I felt immediately they were different. ... (But) it seemed impossible
+that a rebel would get that close."
+
+   Then, in seconds: An ECOMOG soldier spoke to the men in a Nigerian
+tongue; one responded in another dialect. And things fell apart. One
+armed man fired a burst of shots into the AP car - a brazen act, given
+the ECOMOG firepower surrounding him..
+
+   "I get the feeling that he knew they were going to be killed, and
+they didn't care," Guttenfelder said.
+
+   Tierney died instantly. Stewart went down moaning.
+
+   "I just felt this blast of heat and glass," Guttenfelder said. "I
+immediately put my head down and I heard shooting for a couple of
+seconds. ... Myles was obviously dead. ... I grabbed Ian and drug him
+down into the car, then got out of the car into the street.
+
+   ECOMOG soldiers fired back, killing the shooter and another rebel.
+The driver took off with Stewart and Tierney to the ECOMOG staging area
+in western Freetown. Guttenfelder was left behind. He shot a few
+pictures, then hurried to the base to help arrange an airlift for
+Stewart and for Tierney's body.
+
+   Though he was a cameraman, Tierney's byline appeared on a range of
+stories from Africa. He joined AP's TV arm in 1996, organizing coverage
+of a military coup in Burundi. He set up the agency's first TV bureau in
+New York before returning to Africa in 1997.
+
+   Tierney is survived by his mother and a sister, Loren, both of New
+York City. The family planned a private funeral; the AP was arranging a
+memorial service.
+
+   The AP has withdrawn all foreign journalists from Sierra Leone for
+now.
+
+   Tierney is the 24th AP journalist to die in the line of duty in the
+organization's 150-year history. On Monday, at AP headquarters in New
+York City, his picture was posted in memoriam. In it, he appears dressed
+for action. Atop his head is an AP hat.
+
+   And he is smiling.
+
+
+From cat-dist Wed Jan 13 16:41:33 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA29246
+	for categories-list; Wed, 13 Jan 1999 14:37:14 -0400 (AST)
+X-Authentication-Warning: caruaru.di.ufpe.br: ruy owned process doing -bs
+Date: Mon, 11 Jan 1999 17:18:25 -0300 (EST)
+From: Ruy de Queiroz <ruy@di.ufpe.br>
+X-Sender: ruy@caruaru
+To: categories@mta.ca
+Subject: categories: 6th WoLLIC'99 - 3rd Call
+Message-ID: <Pine.GSO.3.95.990111171810.2738C-100000@caruaru>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+                         Call for Contributions
+
+        6th Workshop on Logic, Language, Information and Computation
+       	                      (WoLLIC'99)
+                            May 25-28, 1999
+
+ !  TUTORIALS   >>     (Tutorial Day: May 25th)       <<   TUTORIALS !
+
+                Itatiaia National Park (Rio de Janeiro), Brazil
+
+The "6th Workshop on Logic, Language, Information and Computation" (WoLLIC'99),
+the sixth version of a series of workshops which started in 1994 with the aim
+of fostering interdisciplinary research in pure and applied logic, will be held
+in Itatiaia (Rio de Janeiro), Brazil, from May 25th to 28th 1999, in
+conjunction with the "XII Encontro Brasileiro de Logica" (EBL'99).
+Contributions are invited in the form of short papers (10 A4 10pt pages) in
+all areas related to logic, language, information and computation, including:
+pure logical systems, proof theory, model theory, algebraic logic, type theory,
+category theory, constructive mathematics, lambda and combinatorial calculi,
+program logic and program semantics, logics and models of concurrency,
+logic and complexity theory, nonclassical logics, nonmonotonic logic,
+logic and language, discourse representation, logic and artificial
+intelligence, automated deduction, foundations of logic programming,
+logic and computation, and logic engineering.
+
+The 6th WoLLIC'99 has the scientific sponsorship of the Association
+for Symbolic Logic (ASL), the Interest Group in Pure and Applied Logics
+(IGPL), the European Association for Logic, Language and Information (FoLLI),
+the Sociedade Brasileira de Computacao (SBC), and the Sociedade Brasileira
+de Logica (SBL).
+
+There will be a number of guest speakers, including:
+Samson Abramsky (Edinburgh Univ, Scotland)
+John Baldwin (Univ Illinois at Chicago, USA)
+Craig Boutilier (Univ British Columbia, Canada)
+Daniel Leivant (Indiana Univ, USA)
+Francisco Miraglia (Univ Sao Paulo, Brazil)
+Alan Woods (Univ Western Australia, Australia)
+
+Submission:
+Papers (sent preferably in postscript format by e-mail to wollic@di.ufpe.br,
+or in 5(five) copies to postal address) must be RECEIVED by MARCH 8th, 1999 by
+the Co-Chair of the Organising Committee. Papers must be ANONYMOUS (a separate
+identification page must be included), written in English and give enough
+detail to allow the programme committee to assess the merits of the work.
+Papers should start with a brief statement of the issues, a summary of the
+main results, and a statement of their significance and relevance to the
+workshop. References and comparisons with related work is also expected.
+Technical development directed to the specialist should follow.
+Results must be unpublished and not submitted for publication elsewhere,
+including the proceedings of other symposia or workshops. One author of each
+accepted paper will be expected to attend the conference in order to present
+it. Authors will be notified of acceptance by APRIL 9th, 1999, and final
+versions will have be delivered (in LaTeX format) by APRIL 23RD, 1999.
+The abstracts of the papers will be published in a "Conference Report" section
+of the Logic Journal of the IGPL (ISSN 1367-0751) (Oxford Univ Press) as part
+of the meeting report.  Papers presented at the meeting will be invited for
+submission (in full version) to the Logic Journal of the IGPL
+(http://www.oup.co.uk/igpl/).
+
+Important Dates:
+Submission: March 8th, 1999
+Notification of acceptance/rejection: April 9th, 1999
+Delivery of final (in LaTeX): April 23rd, 1999
+
+Programme Committee:
+Gianluigi Bellin (Univ Verona, IT)
+Walter Carnielli (Univ Campinas, BR)
+Abbas Edalat (Imperial College, UK)
+Rob van Glabbeek (Stanford Univ, US)
+Jeroen Groenendijk (Amsterdam Univ, NL)
+Roman Kossak (City Univ New York, US)
+Daniel Lehmann (Hebrew Univ Jerusalem, IL)
+Dusko Pavlovic (Kestrel Institute, US)
+Moshe Vardi (Rice Univ, US)
+
+Organising Committee:
+M. Benevides (COPPE/UFRJ), W. Carnielli (UNICAMP), M. Finger (USP),
+E. Hermann Haeusler (PUC-Rio), A. T. C. Martins (UFC),
+A. G. de Oliveira (UFPE/UFBA), L. C. Pereira (PUC-Rio), R. de Queiroz (UFPE) 
+
+For further information, contact the Co-Chairs of the Organising Committee:
+Ruy de Queiroz, Departamento de Informatica, Univ. Federal de Pernambuco,
+CP 7851, 50732-970 Recife, PE, Brazil. E-mail: ruy@di.ufpe.br,
+tel.: (+55 81) 271-8430, fax: (+55 81) 271-8438.
+Walter Carnielli, Centro de Logica, Epistemologia e Historia da Ciencia,
+Univ. Estadual de Campinas, CP 6133, 13081-970 Campinas, SP, Brazil.
+E-mail: carniell@cle.unicamp.br, tel./fax: (+55 19) 289-3269.
+
+Web page: http://www.di.ufpe.br/~wollic/wollic99/
+
+
+
+
+From cat-dist Wed Jan 13 16:41:40 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA18594
+	for categories-list; Wed, 13 Jan 1999 14:38:20 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <369B8724.4B7A69D8@iswest.com>
+Date: Tue, 12 Jan 1999 12:32:25 -0500
+From: Zhaohua Luo <zack@iswest.com>
+X-Mailer: Mozilla 4.5 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: categorical geometry
+Content-Type: multipart/alternative;
+ boundary="------------FF260AA9AFA537FC9D7A1021"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+--------------FF260AA9AFA537FC9D7A1021
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+In a recent paper (TAC, Vol 4, 208-248)
+
+On Generic Separable Objects, by Robbie Gates,
+
+the author mentioned a well known "boolean algebraic structure of the
+summands of an object in an extensive category". This reminded me a
+paper I posted to my homepage last year (8/30/98, see the abstract
+below), in which the same boolean structure was reconstructed (at that
+time this was not "well known" to me), and was applied to define the
+Pierce topology for any extensive category, extending some results of
+Diers. The paper
+
+                Pierce Topologies of Extensive Categories
+
+is available at Categorical Geometry Homepage at the following new
+(permanent, hopefully) address
+
+             http://www.geometry.net (or http://www.azd.com)
+
+(The new service is a little bit slow, but offers more functions than
+the old one, so please be patient.)
+
+Best wishes,
+
+Zhaohua Luo
+-----------------------------------------------------------------------------------------
+
+Pierce Topologies of Extensive Categories
+
+by Zhaohua Luo
+
+Abstraction
+
+An extensive category is a category with finite stable disjoint sums. In
+this note we show that each extensive category carries a natural
+subcanonical coherent Grothendieck topology defined by injections of
+sums. This Grothendieck topology is induced by a strict metric topology,
+which is a functor to the category of  Stone spaces. We call this metric
+topology the Pierce topology of the category, as it generalizes the
+classical Pierce spectrums of commutative rings. Recall that the Pierce
+spectrum of a commutative ring R is the spectrum of the Boolean algebra
+of idempotents of R, which is a Stone space. A theorem of R. S. Pierce
+states that R can be represented as the ring of global sections of a
+sheaf of commutative rings on its Pierce spectrum (called the Pierce
+sheaf or representation), whose stalks are indecomposable rings (with
+respect to product decomposations). Diers showed that Pierce's theorem
+can be extended to any object in a locally finitely presentable category
+such that the opposite of the subcategory of finitely presentable
+objects is lextensive (called a locally indecomposable category). We
+shall see that a weak form of Pierce representation exists for any
+object in an extensive category.
+
+--------------FF260AA9AFA537FC9D7A1021
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<body text="#000000" bgcolor="#FFFFEA" link="#0000EE" vlink="#551A8B" alink="#FF0000">
+In a recent paper (TAC, Vol 4, 208-248)
+<p>On Generic Separable Objects, by Robbie Gates,
+<p>the author mentioned a well known "boolean algebraic structure of the
+summands of an object in an extensive category". This reminded me a paper
+I posted to my homepage last year (8/30/98, see the abstract below), in
+which the same boolean structure was reconstructed (at that time this was
+not "well known" to me), and was applied to define the Pierce topology
+for any extensive category, extending some results of Diers. The paper<a href="http://www.geometry.net/cg/pierce.html"></a>
+<center>
+<p><a href="http://www.geometry.net/cg/pierce.html">Pierce Topologies of
+Extensive Categories</a></center>
+
+<p>is available at <a href="http://www.geometry.net">Categorical Geometry
+Homepage</a> at the following new (permanent, hopefully) address
+<center>
+<p><a href="http://www.geometry.net">http://www.geometry.net</a> (or <a href="http://www.azd.com">http://www.azd.com</a>)</center>
+
+<p>(The new service is a little bit slow, but offers more functions than
+the old one, so please be patient.)
+<p>Best wishes,
+<p>Zhaohua Luo
+<br>-----------------------------------------------------------------------------------------
+<br>Pierce Topologies of Extensive Categories
+<p>by Zhaohua Luo
+<p>Abstraction
+<p>An extensive category is a category with finite stable disjoint sums.
+In this note we show that each extensive category carries a natural subcanonical
+coherent Grothendieck topology defined by injections of sums. This Grothendieck
+topology is induced by a strict metric topology, which is a functor to
+the category of&nbsp; Stone spaces. We call this metric topology the Pierce
+topology of the category, as it generalizes the classical Pierce spectrums
+of commutative rings. Recall that the Pierce spectrum of a commutative
+ring R is the spectrum of the Boolean algebra of idempotents of R, which
+is a Stone space. A theorem of R. S. Pierce states that R can be represented
+as the ring of global sections of a sheaf of commutative rings on its Pierce
+spectrum (called the Pierce sheaf or representation), whose stalks are
+indecomposable rings (with respect to product decomposations). Diers showed
+that Pierce's theorem can be extended to any object in a locally finitely
+presentable category such that the opposite of the subcategory of finitely
+presentable objects is lextensive (called a locally indecomposable category).
+We shall see that a weak form of Pierce representation exists for any object
+in an extensive category.
+</body>
+</html>
+
+--------------FF260AA9AFA537FC9D7A1021--
+
+
+
+From cat-dist Wed Jan 13 16:54:34 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA32367
+	for categories-list; Wed, 13 Jan 1999 15:01:11 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m100UuZ-00029IC@pc34.mcs.le.ac.uk>
+Date: Wed, 13 Jan 1999 18:20:59 +0000 (GMT)
+From: "Roy L. Crole" <R.Crole@mcs.le.ac.uk>
+To: categories@mta.ca, types@cis.upenn.edu
+Subject: categories: Lectureships in Computer Science
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+
+LEICESTER UNIVERSITY
+
+DEPARTMENT OF MATHEMATICS AND COMPUTER SCIENCE
+
+LECTURESHIPS (GRADE A/B) IN COMPUTER SCIENCE (2 POSTS)
+
+Applications are invited for 2 permanent Lectureships in Computer Science
+in the Department of Mathematics and Computer Science at the University of
+Leicester.  There is no restriction regarding the area of research and
+applicants with expertise in any area of Computer Science are welcomed.
+Both lectureships are tenable from 1 April 1999 or as soon as possible
+thereafter.
+
+The Department of Mathematics and Computer Science is divided into three
+groups: Computer Science, Pure Mathematics and Applicable Mathematics.  The
+lectureships are intended to strengthen the Computer Science Group with
+regard to both teaching and research.  The Computer Science Group is firmly
+research oriented and current activities are concentrated within three
+research areas: Logic, Algebra and Complexity; Theory of Distributed
+Systems; and Semantics.
+
+The successful applicants will be ambitious, able to develop their own
+research within a multi-faceted environment, and have a strong research
+record and potential.  The new lecturers will be required to teach at
+undergraduate and postgraduate level, and to perform administrative duties
+as directed by the Head of Department.  This is a superb opportunity for
+persons of energy, drive and ambition to assume rewarding roles and to
+establish themselves in a young, dynamic and rapidly developing department.
+Initial salary, dependent upon qualifications and experience, will be on
+the Lecturer Grade A or B scale UK pounds 16,655 to UK pounds 29,048 p.a.
+
+Candidates who are interested in the lectureships are invited, if they so
+wish, to contact Professor Iain Stewart, Head of Computer Science and Head
+of Department (telephone (+44) 116 252 3885, e-mail
+i.a.stewart@mcs.le.ac.uk) or Professor Rick Thomas, Deputy Head of
+Department (telephone (+44) 116 252 3411, email r.thomas@mcs.le.ac.uk), who
+will be pleased to discuss the Lectureships further.  Information about all
+aspects of the Department is available from its World Wide Web pages
+[http://www.mcs.le.ac.uk].
+
+Further particulars (which are also available on the World Wide Web) and
+application forms are available from the Personnel Office (Academic
+Appointments), University of Leicester, University Road, Leicester LE1 7RH,
+telephone (+44) 116 252 2758.
+
+The closing date for applications is 19 February 1999.
+
+
+
+From cat-dist Tue Jan 19 12:09:42 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA11229
+	for categories-list; Tue, 19 Jan 1999 09:12:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 18 Jan 1999 09:07:21 +0200
+From: Eva Ullan <evah@eucmax.sim.ucm.es>
+Subject: categories: CSL'99 3rd CFP (Text & LaTex versions)
+X-Sender: evah@147.96.1.121
+To: csl99org@eucmos.sim.ucm.es
+Message-id: <l03010d02b2c88c2ec3b7@[147.96.25.145]>
+MIME-version: 1.0
+Content-type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id EAA08874
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+____________________________________________________
+
+          My apologies if you receive this more than once!
+____________________________________________________
+
+	===================================
+	             3rd CALL FOR PAPERS -- CSL'99
+
+	 Annual Conference of the European Association
+	             for Computer Science Logic
+
+	      September 20-25, 1999, Madrid, Spain
+	===================================
+
+	__________________________________________________
+		IMPORTANT REMARK
+
+	 The proceedings volume will be available at the conference.
+	 In order to enable this, the DEADLINES for paper submission
+	 and notification of acceptance have been slightly MODIFIED
+	 w.r.t. the announcement made in the 1st call for papers.
+	__________________________________________________
+
+
+CSL is the annual conference of the European Association for Computer
+Science Logic (EACSL). The conference is intended for computer scientists
+whose research activities involve logic, as well as for logicians working
+on issues significant for computer science. Suggested, but not exclusive,
+topics of interest include:
+
+* abstract datatypes,
+* automated deduction,
+* categorical and topological approaches,
+* concurrency theory,
+* constructive mathematics,
+* database theory,
+* domain theory,
+* finite model theory,
+* lambda and combinatory calculi,
+* logical aspects of computational complexity,
+* logical foundations of programming paradigms,
+* linear logic,
+* modal and temporal logics,
+* model checking,
+* program logics and semantics,
+* program specification, transformation and verification,
+* rewriting,
+* symbolic computation.
+
+
+PROGRAM COMMITEE
+Samson Abramsky (Edinburgh, UK)
+Marc Bezem (Utrecht, The Netherlands)
+Peter Clote (Munich, Germany)
+Hubert Comon (Cachan, France)
+Jorg Flum (Freiburg i.Br., Germany) (co-chair)
+Harald Ganzinger (Saarbrucken, Germany)
+Neil Immerman (Amherst, USA)
+Neil Jones (Copenhagen, Denmark)
+Jan Maluszynski (Linkoping, Sweden)
+Michael Maher (Brisbane, Australia)
+Catuscia Palamidessi (Pennsylvania, USA)
+Mario Rodriguez-Artalejo (Madrid, Spain) (co-chair)
+Wolfgang Thomas (Aachen, Germany)
+Jerzy Tiuryn (Warsaw, Poland)
+Glynn Winskel (Aarhus, Denmark)
+Martin Wirsing (Munich, Germany)
+
+
+SCIENTIFIC PROGRAMME
+In addition to invited lectures and contributed papers, there will be two
+tutorials on theorem proving and rewriting techniques,
+scheduled on September 24 afternoon (Friday) and September 25 morning
+(Saturday), immediately after the main conference.
+
+** September 20--24, 1999: Invited Lectures and Contributed Papers
+   The list of invited speakers will include:
+        Jose Luis Balcazar (Barcelona, Spain)
+        Javier Esparza (Munich, Germany)
+         Martin Grohe (Freiburg, Germany)
+         Peter D. Mosses (Aarhus, Denmark)
+         V. Vianu (San Diego, USA)
+
+** September 24--25, 1999: CSL Tutorials
+         Douglas Howe (Bell Labs, USA)
+         Aart Middeldorp (Tsukuba, Japan)
+
+
+LOCAL ORGANIZING COMMITTEE
+J. Carlos Gonzalez-Moreno
+Teresa Hortala-Gonzalez
+Javier Leach-Albert (chair)
+Paco Lopez-Fraguas
+Fernando Saenz-Perez
+Eva Ullan
+
+
+EACSL BOARD
+Marc Bezem (Utrecht, President)
+Ian Stewart (Leicester, Vice-President)
+Clemens Lautemann (Mainz, Treasurer)
+Peter Hajek (Prague)
+Simone Martini (Udine)
+Christine Paulin (Paris)
+Moshe Vardi (Houston)
+Johann Makowsky (Haifa)
+Alexander Razborov (Moscow)
+
+EACSL homepage:  http://www.dimi.uniud.it/~eacsl
+
+
+IMPORTANT DATES
+Paper submissions		March 19, 1999
+Notifications of acceptance	May 31, 1999
+Final version due: 		July 12, 1999
+CSL'99 main conference		September 20-24, 1999
+CSL'99 Tutorials		September 24-25, 1999
+
+
+PAPER SUBMISSIONS
+Submitted papers must be written in English and describe work not previously
+published. They must not be submitted concurrently to a journal or to another
+conference. Papers authored or coauthored by members of the Program
+Committee are not allowed. Submissions must not exceed 15 pages, including
+title page, figures, and references. The title page must contain: title and
+authors; physical and e-mail addresses; telephone and (if available) fax
+number for each author; identification of corresponding author, if not the
+first author; an abstract of no more than 200 words; a list of keywords.
+
+Submissions must arrive by  March 19, 1999, and notifications of acceptance
+will be sent by May 31, 1999. Authors are invited to send manuscripts by
+electronic mail, as uuencoded gzipped postcript files:
+
+* see the conference home page for instructions
+	http://mozart.sip.ucm.es:1580/csl99
+* or send an empty message with subject "submission information'' to
+	csl99org@eucmos.sim.ucm.es
+
+Those authors without access to the facilities for electronic submission
+can alternatively submit five hardcopies to:
+
+	Prof. Mario Rodriguez Artalejo, CSL'99
+	Departamento de  Sistemas Informaticos y Programacion
+	Facultad de Matematicas, Universidad Complutense de Madrid
+	Av. Complutense s/n
+	E-28040 Madrid
+	Spain
+
+	E-mail: mario@sip.ucm.es
+	Phone: +34 91 3 94 45 12
+	Fax:   +34 91 3 94 46 07
+
+
+PUBLICATION
+Papers accepted by the Program Committee must be presented at the
+conference and will appear in a proceedings volume, to be published by
+Springer Verlag in the "Lecture Notes in Computer Science" series.
+The second refereeing round which was requested in previous CSL editions
+before accepting a paper for publication in the proceedings, has been
+suppressed following the decision taken by the EACSL membership
+meeting held during CSL'98 (Brno, Czech Republic, August 25th 1998).
+
+Final versions of accepted papers will be due by July 12, 1999.
+The format for camera-ready manuscripts will be that of Springer LNCS;
+instructions can be found in the LNCS home page at:
+	http://www.springer.de/comp/lncs/index.html
+
+
+ADDITIONAL INFORMATION
+CSL'99 home page: 		http://mozart.sip.ucm.es:1580/csl99
+CSL'99 local organization: 	csl99org@eucmos.sim.ucm.es
+
+
+ %%%%%%%%%%%%%%%%%%%%%% LATEX VERSION %%%%%%%%%%%%%%
+% 2nd Call for Papers, CSL'99.
+% Last revision: September 24, 1998.
+
+\documentstyle{article}
+
+\oddsidemargin 6pt
+\evensidemargin 6pt
+\marginparwidth 90pt
+\marginparsep 10pt
+\topmargin -30pt
+\headheight 12pt
+\headsep 25pt
+\footheight 12pt
+\footskip 30pt
+\columnsep 10.5pt
+\columnseprule 0pt
+\addtolength{\oddsidemargin}{-2.3cm}
+\setlength{\textwidth}{20cm} %{18.7cm}
+\addtolength{\topmargin}{-1cm}
+\setlength{\textheight}{27cm}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Heading
+
+\begin{center}
+{\large \bf 3rd CALL FOR PAPERS -- CSL'99}
+\end{center}
+
+\begin{center}
+{\Large \bf Annual Conference of the }\\[1.5ex]
+{\Large \bf European Association for Computer Science Logic}
+\end{center}
+
+\begin{center}
+{\large \bf Madrid, Spain, September 20-25, 1999}
+\end{center}
+
+\vspace*{0.15in}
+
+% Left column
+
+\parbox[t]{6.5cm}{%6.3cm
+\footnotesize
+
+\noindent
+{\bf Program Committee:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Samson Abramsky (Edinburgh, UK)\\
+Marc Bezem (Utrecht, The Netherlands)\\
+Peter Clote (Munich, Germany)\\
+Hubert Comon (Cachan, France)\\
+J\"{o}rg Flum (Freiburg i.Br., Germany) \\
+\hspace{1cm} ({\bf co-chair})\\
+Harald Ganzinger (Saarbr\"{u}cken, Germany)\\
+Neil Immerman (Amherst, USA)\\
+Neil Jones (Copenhagen, Denmark)\\
+Jan Maluszynski (Link\"{o}ping, Sweden)\\
+Michael Maher (Brisbane, Australia)\\
+Catuscia Palamidessi (Pennsylvania, USA)\\
+Mario Rodr\'{\i}guez-Artalejo (Madrid, Spain) \\
+\hspace{1cm} ({\bf co-chair})\\
+Wolfgang Thomas (Aachen, Germany)\\
+Jerzy Tiuryn (Warsaw, Poland)\\
+Glynn Winskel (Aarhus, Denmark)\\
+Martin Wirsing (Munich, Germany)\\
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Invited Speakers:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Jos\'{e} Luis Balc\'{a}zar (Barcelona, Spain)\\
+Javier Esparza (Munich, Germany)\\
+Martin Grohe (Freiburg, Germany)\\
+Peter D. Mosses (Aarhus, Denmark)\\
+V. Vianu (San Diego, USA)
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Tutorialists:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Douglas Howe (Bell Labs, USA)\\
+Aart Middeldorp (Tsukuba, Japan)
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Local Organizing Committee:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+J. Carlos Gonz\'{a}lez-Moreno\\
+Teresa Hortal\'{a}-Gonz\'{a}lez\\
+Javier Leach-Albert ({\bf chair})\\
+Paco L\'{o}pez-Fraguas\\
+Fernando S\'{a}enz-P\'{e}rez\\
+Eva Ull\'{a}n
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf EACSL Board:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Marc Bezem (Utrecht, President)\\
+Ian Stewart (Leicester, Vice-President)\\
+Clemens Lautemann (Mainz, Treasurer)\\
+Peter Hajek (Prague)\\
+Simone Martini (Udine)\\
+Christine Paulin (Paris)\\
+Moshe Vardi (Houston)\\
+Johann Makowsky (Haifa)\\
+Alexander Razborov (Moscow)\\
+\end{tabular}
+
+\vspace*{0.15in}
+
+\noindent
+{\bf EACSL homepage:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+http://www.dimi.uniud.it/\~{}eacsl
+\end{tabular}
+
+\vspace*{0.15in}
+
+\noindent
+{\bf Important Dates:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Paper submissions: \\
+~~~~ March 19, 1999 \\
+Notifications of acceptance: \\
+~~~~ May 31, 1999 \\
+Final version due: \\
+~~~~ July 12, 1999 \\
+CSL'99 main conference: \\
+~~~~ September 20-24, 1999 \\
+CSL'99 Tutorials: \\
+~~~~ September 24-25, 1999
+\end{tabular}
+
+} % \end{parbox} % Right column. No blank line here!
+\parbox[t]{5mm}{
+     \rule[-22.0cm]{0.2mm}{22.5cm}
+} %\end{parbox}
+\begin{minipage}[t]{11.0cm}%{11.5cm}
+\small
+{\bf Aims and Scope of the Conference:}
+{\bf CSL} is the annual conference of the {\em European Association for
+Computer Science Logic} (EACSL). The conference is intended for computer
+scientistswhose research activities involve logic, as well as for logicians
+working on issues significant for computer science. Suggested, but not
+exclusive, topics of interest include:
+abstract datatypes,
+automated deduction,
+categorical and topological approaches,
+concurrency theory,
+constructive mathematics,
+database theory,
+domain theory,
+finite model theory,
+lambda and combinatory calculi,
+logical aspects of computational complexity,
+logical foundations of programming paradigms,
+linear logic,
+modal and temporal logics,
+model checking,
+program logics and semantics,
+program specification, transformation and verification,
+rewriting,
+symbolic computation.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Scientific Programme:}
+In addition to invited lectures and contributed papers, there will be two
+tutorials on theorem proving and rewriting techniques,
+scheduled on September 24 afternoon (Friday) and September 25 morning
+(Saturday), immediately after the main conference.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Paper Submissions:}
+Submitted papers must be written in English and describe work not previously
+published. They must not be submitted concurrently to a journal or to another
+conference.
+Papers authored or co-authored by members of the Program Committee are not
+allowed. Submissions must not exceed 15 pages, including
+title page, figures, and references. The title page must contain: title and
+authors; physical and e-mail addresses; telephone and (if available) fax
+number for each author; identification of corresponding author, if not the
+first author; an abstract of no more than 200 words; a list of keywords.
+Submissions must arrive by  {\bf March 19, 1999}, and notifications of
+acceptance will be sent by {\bf May 31, 1999}.
+Authors are invited to send manuscripts by electronic mail, as uuencoded
+gzipped postcript files (see the conference home page for instructions,
+or send an empty message with subject ``submission
+information'' to csl99org@eucmos.sim.ucm.es). Those authors without
+access to the facilities for electronic submission can alternatively
+submit {\em five hardcopies} to:
+
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+	Prof. Mario Rodr\'{\i}guez-Artalejo, CSL'99  \\
+	Departamento de  Sistemas Inform\'{a}ticos y Programaci\'{o}n   \\
+	Facultad de Matem\'{a}ticas, Universidad Complutense de Madrid  \\
+	Av. Complutense s/n ~~~~~~~~~~ Phone: +34 91 3 94 45 12 \\
+	E-28040 Madrid ~~~~~~~~~~~~~~~~~ Fax:   +34 91 3 94 46 07 \\
+	Spain ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ E-mail: mario@sip.ucm.es
+\end{tabular}
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Publication:}
+Papers accepted by the Program Committee must be presented at the conference
+and {\bf will appear in a proceedings volume}, to be published by Springer
+Verlag in the ``Lecture Notes in Computer Science'' series. The second
+refereeing round which was requested in previous CSL editions before
+accepting a paper for publication in the proceedings, has been
+suppressed following the decision taken by the EACSL membership
+meeting held during CSL'98 (Brno, Czech Republic, August 25th 1998).
+Final versions of accepted papers will be due by {\bf July 12, 1999}.
+The format for camera-ready manuscripts will be that of Springer LNCS;
+instructions can be found in the LNCS home page at
+http://www.springer.de/comp/lncs/index.html.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Important Remark:}
+The proceedings volume will be available at the conference.
+In order to enable this, the deadlines for paper submission and
+notification of acceptance have been slightly modified w.r.t.
+the announcement made in the 1st call for papers.
+
+
+\vspace*{0.15in}
+
+\noindent
+{\bf Additional Information:}
+\vspace*{0.05in}
+
+\begin{tabular}{ll}
+	CSL'99 home page: & http://mozart.sip.ucm.es:1580/csl99 \\
+	CSL'99 local organization: & E-mail: csl99org@eucmos.sim.ucm.es
+\end{tabular}
+
+
+\end{minipage}
+\end{document}
+
+
+
+
+From cat-dist Tue Jan 19 20:31:27 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA21929
+	for categories-list; Tue, 19 Jan 1999 19:21:37 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Myles Tierney <tierney@math.uqam.ca>
+Message-Id: <199901192121.QAA23193@cogito.math.uqam.ca>
+Subject: categories: Memorial
+To: categories@mta.ca
+Date: Tue, 19 Jan 1999 16:21:52 -0500 (EST)
+X-Mailer: ELM [version 2.4 PL24]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+A Memorial Service, organized by Associated Press, 
+will be held for Myles on Monday, January 25, at Newseum/NY, 
+located at 580 Madison Ave. between 56th and 57th Streets.
+The Service begins at 10:30 a.m., and is open to all who wish
+to attend. Associated Press will try to make the Service available
+live on the Internet, at www.ap.org, for those unable to be in 
+New York.
+
+Myles Tierney
+
+
+From cat-dist Wed Jan 20 12:24:50 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA15646
+	for categories-list; Wed, 20 Jan 1999 09:29:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <22026.199901201228@craro.dcs.ed.ac.uk>
+X-Mailer: exmh version 2.0.2 2/24/98
+To: categories@mta.ca
+Subject: categories: Paper Announcement
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Wed, 20 Jan 1999 12:28:53 +0000
+From: Alex Simpson <als@dcs.ed.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The following paper is available by anonymous FTP or over the Web
+
+          Computational Adequacy in an Elementary Topos
+
+  We place simple axioms on an elementary topos which suffice for it to 
+  provide a denotational model of call-by-value PCF with sum and product
+  types. The model is synthetic in the sense that types are interpreted
+  by their set-theoretic counterparts within the topos. The main result
+  characterises when the model is computationally adequate with respect
+  to the operational semantics of the programming language. We prove that
+  computational adequacy holds if and only if the topos is $1$-consistent
+  (i.e. its internal logic validates only true $\Sigma^0_1$-sentences).
+
+This paper is to appear in the forthcoming proceedings of CSL 98.
+
+It is available from:
+
+  http://www.dcs.ed.ac.uk/~als/Research/adequacy.ps.gz
+  ftp://ftp.dcs.ed.ac.uk/pub/als/Research/adequacy.ps.gz
+
+Best wishes,
+
+Alex Simpson
+
+-- 
+Alex Simpson, LFCS, Division of Informatics, University of Edinburgh
+Email: Alex.Simpson@dcs.ed.ac.uk             Tel: +44 (0)131 650 5113
+FTP: ftp.dcs.ed.ac.uk/pub/als                Fax: +44 (0)131 667 7209  
+URL: http://www.dcs.ed.ac.uk/home/als
+
+
+
+
+
+From cat-dist Wed Jan 20 15:46:12 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id NAA28231
+	for categories-list; Wed, 20 Jan 1999 13:59:11 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Koslowski <koslowj@iti.cs.tu-bs.de>
+Message-Id: <199901201640.RAA18661@lisa.iti.cs.tu-bs.de>
+Subject: categories: first reference to "dualizing object"?
+To: categories@mta.ca (categories list)
+Date: Wed, 20 Jan 1999 17:40:24 +0100 (MET)
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Dear Colleagues,
+
+  A referee attributed the notion of "dualizing object" in the context
+  of *-autonomous to Grothendieck, but wasn't sure of the exact 
+  reference.  Does somebody out there happen to know, where this was
+  introduced first?
+
+  Thank you very much.
+
+-- J"urgen Koslowski
+
+-- 
+J"urgen Koslowski       % If I don't see you no more in this world
+ITI                     % I meet you in the next world
+TU Braunschweig         % and don't be late!
+koslowj@iti.cs.tu-bs.de %              Jimi Hendrix (Voodoo Child)
+
+
+From cat-dist Wed Jan 20 21:27:16 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA25994
+	for categories-list; Wed, 20 Jan 1999 20:07:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 20 Jan 1999 14:56:56 -0400 (AST)
+From: TAC <tac@mta.ca>
+To: categories@mta.ca
+Subject: categories: TAC 1998 contents
+Message-ID: <Pine.OSF.3.96.990120145636.5758A-100000@mailserv.mta.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+[note from moderator: it is quite possible that as result of a labour
+dispute at Mount Allison University the categories list may be dormant for
+an undetermined period. I will attempt to let you know and provide
+alternate access to the list if this happens; thanks for your patience.
+regards to all, Bob]
+
+Here is the table of contents and associated information for Theory and
+Applications of Categories for 1998. The Editors solicit high quality
+contributions. 
+
+
+             THEORY AND APPLICATIONS OF CATEGORIES          ISSN 1201-561X
+
+
+                      Volume 4, 1998
+
+
+Pasting in multiple categories
+Richard Steiner                                                          1
+
+Protomodularity, descent and semidirect products
+D. Bourn and G. Janelidze                                               37
+
+A theory of enriched sketches
+F. Borceux, C. Quinteiro and J. Rosicky                                 47
+
+Simplicial and categorical diagrams, and their equivariant applications 
+Rudolf Fritsch and Marek Golasinski                                     73
+
+A 2-categorical approach to change of base and geometric morphisms II 
+A.Carboni, G.M.Kelly, D.Verity and R.J.Wood                             82
+
+The separated extensional Chu category 
+Michael Barr                                                           137
+
+Applications of Peiffer pairings in the Moore complex of a simplicial
+group
+A. Mutlu and T. Porter                                                 148
+
+Freeness Conditions for 2-Crossed Modules and Complexes
+A. Mutlu and T. Porter                                                 174
+
+Geometric Construction of the Levi-Civita Parallelism
+Anders Kock                                                            195
+
+On Generic Separable Objects
+Robbie Gates                                                           174
+
+Copyright 1998 The Editors of Theory and Applications of Categories
+
+THEORY AND APPLICATIONS OF CATEGORIES   (ISSN 1201-561X)
+will disseminate articles
+that significantly advance the study of categorical algebra or methods, or
+that make significant new contributions to mathematical science using
+categorical methods. The scope of the journal includes: all areas of
+pure category theory, including higher dimensional categories; applications
+of category theory to algebra, geometry and topology and other areas of
+mathematics; applications of category theory to computer science, physics
+and other mathematical sciences; contributions to scientific knowledge
+that make use of categorical methods.
+ 
+Articles appearing in the journal have been carefully and critically
+refereed under the responsibility of members of the Editorial Board.
+Only papers judged to be both significant and excellent are accepted for
+publication.
+ 
+The method of distribution of the journal is via the Internet tools
+WWW/ftp. The journal is archived electronically and in
+printed paper format.
+ 
+ 
+Subscription information:
+
+Individual subscribers receive (by e-mail) abstracts of articles
+as they are published. Full text of published articles is available
+in .dvi and Postscript format. Details will be e-mailed to new
+subscribers and are available by tt WWW/ftp. To subscribe,
+send e-mail to tac@mta.ca including a full name and postal
+address.
+For institutional subscription, send enquiries to the Managing Editor,
+Robert Rosebrugh,  rrosebrugh@mta.ca.
+ 
+Information for authors:
+
+The typesetting language of the journal is TeX, and LaTeX is the preferred
+flavour. TeX source of articles for publication should be submitted by
+e-mail directly to an appropriate Editor.  They are listed below.  Please
+obtain detailed information on submission format and style files from the
+journal's WWW server at URL 
+http://www.tac.mta.ca/tac/
+or by anonymous ftp from
+ftp.tac.mta.ca
+in the directory  pub/tac/info.
+You may also write to tac@mta.ca to receive details by e-mail.
+ 
+Editorial board:
+
+John Baez, University of California, Riverside:  
+baez@math.ucr.edu 
+
+Michael Barr, McGill University:
+barr@triples.math.mcgill.ca 
+
+Lawrence Breen, Universite de Paris 13:
+breen@math.univ-paris13.fr 
+
+Ronald Brown, University of North Wales:
+r.brown@bangor.ac.uk 
+
+Jean-Luc Brylinski, Pennsylvania State University:
+jlb@math.psu.edu 
+
+Aurelio Carboni, Universita dell Insubria:
+carboni@fis.unico.it 
+
+P. T. Johnstone, University of Cambridge:
+ptj@pmms.cam.ac.uk 
+
+G. Max Kelly, University of Sydney:
+kelly_m@maths.usyd.edu.au 
+
+Anders Kock, University of Aarhus:
+kock@imf.au.dk 
+
+F. William Lawvere, State University of New York at Buffalo:
+wlawvere@acsu.buffalo.edu 
+
+Jean-Louis Loday, Universit e de Strasbourg:
+loday@math.u-strasbg.fr 
+
+Ieke Moerdijk, University of Utrecht:
+moerdijk@math.ruu.nl 
+
+Susan Niefield, Union College:
+niefiels@union.edu 
+
+Robert Pare, Dalhousie University:
+pare@mscs.dal.ca 
+
+Andrew Pitts, University of Cambridge:
+ap@cl.cam.ac.uk 
+
+Robert Rosebrugh, Mount Allison University:
+rrosebrugh@mta.ca 
+
+Jiri Rosicky, Masaryk University:
+rosicky@math.muni.cz 
+
+James Stasheff, University of North Carolina:
+jds@charlie.math.unc.edu 
+
+Ross Street, Macquarie University:
+street@macadam.mpce.mq.edu.au 
+
+Walter Tholen, York University:
+tholen@mathstat.yorku.ca 
+
+Myles Tierney, Rutgers University:
+tierney@math.rutgers.edu 
+
+Robert F. C. Walters, University of Sydney:
+walters_b@maths.usyd.edu.au 
+
+R. J. Wood, Dalhousie University:
+rjwood@mscs.dal.ca 
+
+ 
+
+
+
+
+
+
+From cat-dist Wed Jan 20 21:27:46 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA22690
+	for categories-list; Wed, 20 Jan 1999 20:09:12 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <36A63787.FFEC3A75@kestrel.edu>
+Date: Wed, 20 Jan 1999 12:07:35 -0800
+From: Dusko Pavlovic <dusko@kestrel.edu>
+X-Mailer: Mozilla 4.5 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+Mime-Version: 1.0
+To: Koslowski <koslowj@iti.cs.tu-bs.de>
+Cc: categories list <categories@mta.ca>
+Subject: categories: Re: first reference to "dualizing object"?
+References: <199901201640.RAA18661@lisa.iti.cs.tu-bs.de>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+>   A referee attributed the notion of "dualizing object" in the context
+>   of *-autonomous to Grothendieck, but wasn't sure of the exact
+>   reference.  Does somebody out there happen to know, where this was
+>   introduced first?
+
+hi.
+
+there is probably a bit of duality in Grothendieck's TVS book. perhaps
+there is more in one of his functional analysis papers from the 50es, all
+referenced in the book.
+
+an even earlier source, with a hint of the chu construction, is George
+Mackey's work on barreled spaces, as pointed out to me by Bill Lawvere.
+
+-- dusko
+
+
+
+From cat-dist Sun Jan 24 22:22:40 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA13951
+	for categories-list; Sun, 24 Jan 1999 21:18:02 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 21 Jan 1999 15:20:59 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+To: Categories list <categories@mta.ca>
+Subject: categories: Juergen's question
+Message-ID: <Pine.LNX.4.04.9901211519580.31460-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+I want to comment on Juergen's question.  It is possible, I suppose,
+that Grothendieck used the phrase "dualizing object" somewhere, but as
+far as I am aware, he never did anything with them.  It is not, after
+all, a difficult concept.  He certainly never talked about "*-autonomous
+categories", although Grothendieck (and everyone else who ever gave it a
+thought) was surely aware that finite dimensional vectors spaces and
+finite abelian groups were such.  If he ever isolated the concept as an
+interesting one, I am unaware of it and, in any case, I don't believe he
+ever pursued it (someone would surely have let me know by now).  This
+mad insistence on giving Grothendieck credit for every fleeting idea he
+may (or even may not) have mentioned somewhere is a perfect example of
+how the star system (no pun intended) has permeated our consciousness.
+I am not, of course, blaming Grothendieck for any of this.  In another
+instance, one of the best ideas I ever had has been named after Euler,
+who never heard of cohomology groups.
+
+Now, as I have said elsewhere, I was very much aware of the "pairs" of
+vector spaces used by the topological vector space theorists when I
+created the Chu construction.  I believe that the sources I had seen
+stuck to the separated extensional case.  They did not mention that this
+construction was originally due to Mackey, although I eventually (fairly
+recently) tracked it down.  It was in his PhD thesis, in fact.  I
+believe he did not stick to the separated extensional case.  But neither
+he, nor anyone else I read talked about morphisms of pairs.  In the se
+case, the morphisms are obvious.  In the general case a bit less so.
+The duality was, of course, obvious and the main raison d'etre for the
+pairs.  But, although it was obvious how to make the morphisms between
+two pairs into a vector space, no one seems to have even raised the
+question of making it into a pair.  That it is possible and even easly
+struck me--and still strikes me--as an amazing bit of magic.
+
+Michael
+
+
+
+-------------------------------------------------------------------
+History shows that the human mind, fed by constant accessions of
+knowledge, periodically grows too large for its theoretical coverings, and
+bursts them asunder to appear in new habiliments, as the feeding and
+growing grub, at intervals, casts its too narrow skin and assumes
+another... Truly the imago state of Man seems to be terribly distant, but
+every moult is a step gained. 
+
+- Charles Darwin, from "The Origin of Species"
+
+
+
+From cat-dist Sun Jan 24 22:22:52 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA16850
+	for categories-list; Sun, 24 Jan 1999 21:18:27 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 21 Jan 1999 15:27:18 -0700 (MST)
+From: "Samuel B. Johnson" <sjohnson@mail.sjcsf.edu>
+To: categories@mta.ca
+Subject: categories: Inquiry - Manhattan Street Problem
+Message-ID: <Pine.LNX.3.96.990121152336.22482B-100000@mail.sjcsf.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Inquiry to: categories list-serve subscribers
+ 
+In the mid- to late 70s there were meetings at Columbia University in New
+York of mathematicians interested in topos theory, which meetings I
+attended as a student of Peter Freyd. 
+ 
+At one such meeting, someone proposed and solved the following problem,
+which I have since named The Manhattan Street Problem.  (Note: it was NOT
+so named at the time.) 
+ 
+    Consider a large number of commuters, all traveling from
+    south to north along two parallel highways.  Connecting the
+    two north-south highways are one (or more?) east-west linking
+    streets, all of which are one way from west to east.  The
+    speed at which a commuter moves along any highway or street
+    is a function of the number of users on that (part of that)
+    highway or street, e.g., as more commuters who are initially
+    on the western of the two north-south highways choose to
+    leave and go over to the eastern of the two north-south
+    highways, the speed of traffic on the western highway
+    increases and the speed on the eastern highway decreases. The
+    functions relating speed to number of users are not
+    (necessarily) the same for each highway or street.  (I think,
+    however, that the most elegant solution would have a single
+    function applicable to both highways and (all) street(s).)
+    Each commuter chooses whether (and when, if there's more than
+    one cross over street) to go over to the eastern highway in
+    an attempt to minimize individual total travel time.
+ 
+    Problem:  Specify the speed controlling function(s), the
+    number of crossing east-west roads and, if necessary, the
+    distances, e.g., distance between eastern and western
+    highways as a fraction of total north-south distance, or
+    distance between various east-west roads, again presumably as
+    a fraction of total north-south distance, such that:  the
+    system stabilizes, i.e., individual commuters cannot improve
+    their time by changing their route, BUT the total travel time
+    summed over all travelers is NOT a minimum.  Thus, if such a
+    solution is found, an omniscient, big brother traffic
+    controller, by (randomly?) requiring some commuters to take a
+    route slower than what he/she would individually choose,
+    could thereby decrease (minimize?) travel time (hence air
+    pollution?) for the whole commuting community.
+ 
+Plausibility argument that this might be possible:  That the
+situation stabilizes seems intuitively plausible to me.  That the
+stable situation might not minimize total travel time is
+suggested by the following:  If the big brother traffic
+controller moves an individual from a too heavily traveled
+highway, the benefit flows to a large number of commuters left
+behind on that highway, which flows faster, even though the moved
+individual may be shunted over to a route slower for that
+individual.
+ 
+If anyone:  a) remembers who presented and solved this problem at
+Columbia, or b) remembers the solution, or c) can point me toward
+where this might be solved in the literature, or d) can provide
+any other help, I would be extremely grateful.
+ 
+Samuel Johnson  (sjohnson@mail.sjcsf.edu)
+ 
+Postscript:  A solution would have (obvious?) implications for
+those who have great faith in the general applicability of free
+market mechanisms and Adam Smith's invisible hand for solving
+problems or finding best strategies from a society's point of
+view.
+
+
+
+
+
+From cat-dist Sun Jan 24 22:53:19 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA19975
+	for categories-list; Sun, 24 Jan 1999 22:05:39 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 22 Jan 1999 08:57:32 +0800 (CST)
+From: Pao-Ann Hsiung <eric@ccs1.isd1>
+Message-Id: <199901220057.IAA10644@iis11.isd1>
+To: categories@mta.ca
+Subject: categories: SGM v1.1 Released
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+              --------------------------------------------
+                    State Graph Manipulators (SGM) 
+                     New Version 1.1 Released!!!
+               "http://www.iis.sinica.edu.tw/~eric/sgm/"
+              --------------------------------------------
+
+  State Graph Manipulators (SGM) is a high-level state-graph manipulation 
+  tool for verification non-experts as well as experts. The tool has
+  undergone further refining and testing. A much more stable version (v1.1)
+  is now released for downloading. This version provides both a batch
+  and an interactive user interface. The next version (v1.2) scheduled
+  to be released around January 31, 1999 will have a flexible easy-to-use
+  graphical user interface (GUI).
+
+                     Changes in v1.1 from v1.0
+
+(1) Memory usage drastically reduced to 1/8th of that originally 
+    required in SGM v1.0. Memory leaks removed using Purify, a 
+    commercial program debugging tool from Rational Software.
+(2) SGM input language syntax modified to accomodate non-symmetrical
+    system descriptions. Non-symmetrical systems can now be described!
+(3) A new manipulator (state-graph reduction technique) implemented:
+    BIT (Bypass Internal-Transition).
+(4) Totally 5 application examples included with v1.1 distribution.
+    (a) Fischer's Mutual Exclusion Protocol,
+    (b) CSMA/CD Protocol,
+    (c) Token Ring Network,
+    (d) PATHO OS Priority-Based Task Execution, and
+    (e) Bus Arbiter.
+(5) User manual updated to version 1.1.
+(6) Programming bugs/errors fixed.
+(7) Interactive user interface improved.
+(8) A graphical user interface has been developed and is being testing
+    currently, it will be released in the next version SGM v1.2
+    around January 31, 1999.
+
+Visit URL: "http://www.iis.sinica.edu.tw/~eric/sgm/" to download SGM.
+SGM web site completely renewed for easier download and access.
+
+        Authors: 
+            Dr. Pao-Ann Hsiung and Dr. Farn Wang
+              Institute of Information Science
+            Academia Sinica, Taipei, TAIWAN, R.O.C.
+            E-mail: {eric,farn}@iis.sinica.edu.tw
+
+-----------------------------------------------------------------------------
+                     Dr. Pao-Ann (Eric) Hsiung           
+Institute of Information Science | E-MAIL: eric@iis.sinica.edu.tw
+Academia Sinica                  | TEL   : +886-2-27883799 ext. 2453
+Nankang, Taipei 115              | FAX   : +886-2-27824814
+TAIWAN, Republic of China.       | URL   : http://www.iis.sinica.edu.tw/~eric
+-----------------------------------------------------------------------------
+
+
+From cat-dist Tue Jan 26 22:08:49 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA23456
+	for categories-list; Tue, 26 Jan 1999 21:05:14 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <36AC2740.6AF02D32@kestrel.edu>
+Date: Mon, 25 Jan 1999 00:11:44 -0800
+From: Dusko Pavlovic <dusko@kestrel.edu>
+X-Mailer: Mozilla 4.5 [en] (Win98; U)
+X-Accept-Language: en,nl
+Mime-Version: 1.0
+To: Michael Barr <barr@triples.math.mcgill.ca>
+Cc: Categories list <categories@mta.ca>
+Subject: categories: Re: Juergen's question
+References: <Pine.LNX.4.04.9901211519580.31460-100000@triples.math.mcgill.ca>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Michael Barr wrote:
+
+> I want to comment on Juergen's question.  It is possible, I suppose,
+> that Grothendieck used the phrase "dualizing object" somewhere, but as
+> far as I am aware, he never did anything with them.  It is not, after
+> all, a difficult concept.  He certainly never talked about "*-autonomous
+> categories", although Grothendieck (and everyone else who ever gave it a
+> thought) was surely aware that finite dimensional vectors spaces and
+> finite abelian groups were such.  If he ever isolated the concept as an
+> interesting one, I am unaware of it and, in any case, I don't believe he
+> ever pursued it (someone would surely have let me know by now).  This
+> mad insistence on giving Grothendieck credit for every fleeting idea he
+> may (or even may not) have mentioned somewhere is a perfect example of
+> how the star system (no pun intended) has permeated our consciousness.
+
+I may have misunderstood, but I didn't think anyone even implied that
+Grothendieck could be credited with *-autonomous categories. Juergen was just
+asking about the history of the idea of dualizing object, which is just a part
+of that structure, and certainly predates it.
+
+The fact that an idea may have been in the air before it was captured in a
+structure does not have to decrease the merit of capturing it; on the
+contrary, it may also be thought of as a sign that it was an important idea,
+or that capturing it wasn't easy. The fact that Wiles was drawing upon a rich
+source of ideas does not devaluate his victory.
+
+> I am not, of course, blaming Grothendieck for any of this.  In another
+> instance, one of the best ideas I ever had has been named after Euler,
+> who never heard of cohomology groups.
+
+This is a remarkable phenomenon, isn't it? Cartesius also knew nothing of
+Cartesian categories (or squares, or arrows...), and Frobenius could hardly
+recognize the logical form of his reciprocity...
+
+I think Etruscans had this religion, where they systematically attributed all
+victories to the ancestors, so that the soldiers wouldn't take things too
+personally.
+
+With kind regards,
+-- Dusko
+
+
+
+
+From cat-dist Tue Jan 26 22:08:49 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA09728
+	for categories-list; Tue, 26 Jan 1999 21:06:19 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 25 Jan 1999 09:30:08 +0100 (MET)
+From: "Pedicchio M. Cristina" <pedicchi@univ.trieste.it>
+To: categories@mta.ca
+Subject: categories: new mail address
+Message-ID: <Pine.OSF.4.05.9901250927450.28306-100000@uts.univ.trieste.it>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+I inform that my e-mail  is
+pedicchi@univ.trieste.it
+
+The previous address pedicchi@uts.univ.trieste.it, does not work any more;
+
+best regards
+Cristina Pedicchio
+
+
+
+From cat-dist Tue Jan 26 22:40:27 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA00777
+	for categories-list; Tue, 26 Jan 1999 21:49:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 25 Jan 1999 23:48:03 +0100 (MET)
+Message-Id: <199901252248.XAA27814@brics.dk>
+From: Uffe Henrik Engberg <engberg@brics.dk>
+To: categories@mta.ca
+Subject: categories: May 3-7, 1999: Summer School in Semantics of Computation
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+SUMMER SCHOOL IN  SEMANTICS OF COMPUTATION
+
+- organized by computer science research centres
+
+
+BRICS (Denmark)     TUCS (Finland)      IPA (Holland)
+
+
+- as part of  the EEF series of  summer schools, supported by  the European
+Union.
+
+
+Place: BRICS, Aarhus University, Denmark.
+
+Time: May 3-7, 1999, with an informal get-together in the evening of May 2. 
+
+
+Who Should Attend?
+
+The course  is open to anyone interested.  Prerequisites  are an elementary
+knowledge  of mathematics and  computer science. A  primary target group is
+PhD and other students.
+
+Grants:  Grants for students  to attend the  school, covering accommodation
+and local   costs,  can be  applied  for   (see  below).  As  part  of  the
+application a recommendation letter is required from supervisor.
+
+
+Lecturers and Topics:
+
+Achim Jung (Birmingham):      	  Domain Theory
+    
+Luke Ong  (Oxford):           	  Correspondence  between  Operational  and
+                              	  Denotational Semantics
+    
+Bob Tennent (Queens, Canada): 	  Denotational Semantics
+    
+Jaap van Oosten (Utrecht):    	  Category Theory in Semantics
+    
+Andrzej Filinski (Aarhus):    	  Semantics of Types (tentative) 
+
+Each lecturer is to teach for 5-6 hours---a proportion of this time will be
+spent supervising students through exercises.
+
+
+How to Register
+
+Visit the web-site of the school:
+
+		www.brics.dk/Activities/99/SemanticsSchool/
+
+The    registration  fee is   1100   Danish  kroner.  This covers  lunches,
+refreshments, social events and the banquet. A limited number of grants are
+available  for students, covering registration  and  living expenses during
+the school, leaving only travel expenses to be paid.
+
+Applying for such a grant is also done by visiting the web site.
+
+
+To get more information, visit the Web-site of the school:
+
+		www.brics.dk/Activities/99/SemanticsSchool/
+
+
+From cat-dist Wed Jan 27 21:29:04 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA12028
+	for categories-list; Wed, 27 Jan 1999 20:22:41 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: PSSL 70 -- Second Announcement
+To: categories@mta.ca, theory@cl.cam.ac.uk
+Date: Wed, 27 Jan 1999 15:29:11 +0000 (GMT)
+Cc: P.T.Johnstone@dpmms.cam.ac.uk
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E105Wu0-0001sy-00@owl.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+             PERIPATETIC SEMINAR ON SHEAVES AND LOGIC
+               70th meeting -- Second Announcement
+
+The 70th meeting of the PSSL will be held in Cambridge on the weekend of
+27-28 February 1999. As usual, we welcome contributed talks on any aspect
+of category theory, sheaf theory or related areas of logic and computer
+science.
+
+As previously announced, this meeting will be a special one to celebrate 
+the 60th birthday of Gavin Wraith, who has been involved with the
+Peripatetic Seminar since its inception in 1976. We therefore particularly
+welcome talks relating to areas in which Gavin has worked.
+
+Those intending to come to the meeting should complete the registration 
+form below, and return it as soon as possible to <ptj@dpmms.cam.ac.uk>.
+We shall attempt to arrange accommodation in College guest rooms (or,
+failing that, in local bed and breakfast establishments) for those who
+request it before 17 February.
+
+Lectures will take place in the Isaac Newton Institute, Clarkson Road,
+beginning at 9.30 on Saturday and ending by lunchtime on Sunday. An 
+informal bread-and-cheese lunch will be provided on both days. Details of
+other arrangements, including a provisional programme, will be sent out
+about a week before the meeting to those who have registered.
+
+                                           Peter Johnstone
+                                           Martin Hyland
+                                           Chris Mulvey
+
+-----------------------------------------------------------------------
+PSSL 70 -- REGISTRATION FORM
+
+Name:
+
+Address:
+
+E-mail:
+
+  I plan to attend the 70th meeting of the PSSL.
+
+ *I should like to give a talk, lasting about       minutes,
+  entitled:
+
+ *Please reserve accommodation for me for Friday/Saturday/Sunday night(s).
+
+ *Delete if inappropriate.
+------------------------------------------------------------------------
+
+
+From cat-dist Thu Jan 28 04:59:04 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id DAA31240
+	for categories-list; Thu, 28 Jan 1999 03:55:10 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 28 Jan 1999 18:40:37 +1100 (EST)
+Message-Id: <199901280740.SAA22067@algae.socs.uts.EDU.AU>
+To: categories@mta.ca
+Subject: categories: two questions about universal quantification 
+From: Barry Jay <cbj@socs.uts.edu.au>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+Can anyone help with the following two questions? 
+Barry Jay
+
+
+
+Question 1 
+~~~~~~~~~~
+
+Has the following lemma been seen before? 
+
+Lemma: If D is a cartesian closed category having all finite limits
+then so is its arrow category.
+
+Proof
+
+Finite limits in the arrow category are constructed pointwise. 
+Arrows from a: A -> I to b: B-> J In the arrow category are given by
+commuting squares (all vertical lines are arrows pointing down)
+
+      f
+  A -----> B
+  |        |
+ a|        |b
+  |        |
+  I -----> J
+      u
+
+The object of such appropriate pairs (f,u) is given by the pullback
+
+  E -----> A->B
+  |         |
+  |         | A->b
+  |         |
+ I->J ---> A->J
+     a->J
+
+The universal property follows directly. QED
+
+The proof uses a form of universal quantification over A.
+Similar constructions arise with the use of ends and dinatural
+transformations. I also used them aggresively in my paper on data
+categories (http://linus/~cbj/Publications/data_categories.ps.gz) to
+quantify over all paths through a tree. The lemma generalises to other
+functor categories over D provided there are sufficient limits in D to
+express all of the constraints.
+
+
+Question 2 
+~~~~~~~~~~
+
+The proof above shows how pullbacks and cartesian closure interact to
+provide a form of universal quantification.  Call this new
+construction quantification by exponentiation. What is its expressive
+power?
+
+Discussion
+~~~~~~~~~~
+
+Universal quantification wrt an arrow f : X -> Y is usually given as a
+right adjoint to the functor D/Y --> D/X which pulls back along f.
+Call this quantification by adjunction. When it is specialised to a
+projection XxY ---> X then it can be thought of as quantification over
+the object Y. Quantification by exponentiation can be seen as
+supplying some of the ingredients necessary for this special case. For
+example, consider the equaliser E of two functions into an
+exponential:
+
+  f,g : X --> (A->B)
+
+If the quantifier by adjunction exists for the projection XxA ---> X
+then E is given by applying it to the equaliser of the uncurried forms
+of f and g from XxA to B. 
+  
+Motivation
+~~~~~~~~~~
+
+One the one hand, this structure is weaker than that normally assumed,
+which may sometimes be a good thing. On the other hand, the power
+resulting from this combination of features may still be more than
+desired.
+
+Many models of computation assume both cartesian closure and and all
+finite limits but this is already more than we need to model the types
+of most languages, i.e. a type corresponding to one of the objects
+produced by quantification by exponentiation would have undecidable
+membership, so that values would need to come equipped with a proof of
+their membership. So (assuming that cartesian closure is a given) the
+question becomes whether there is a smaller class of limits which are
+good enough to model programming languages. 
+
+One candidate is to work in an extensive category, in which only
+pullbacks along coproduct inclusions are presumed. A short argument
+shows that if Z has decidable equality then any cospan over it has a
+pullback. Actually, there is a rich, but under-explored class of
+pullbacks implied by this innocuous assumption. For example, the list
+functor preserves such pullbacks (this is not quite trivial). There
+may well be other, better candidates. I would be glad to hear of them.
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,	  http://www-staff.socs.uts.edu.au/~cbj	|
+| Australia.			        FISh homepage ... ~cbj/FISh     |
+*************************************************************************
+
+
+
+From cat-dist Thu Jan 28 20:38:40 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA15035
+	for categories-list; Thu, 28 Jan 1999 19:17:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Re: two questions about universal quantification
+Date: Thu, 28 Jan 1999 09:45:31 +0000 (GMT)
+To: categories@mta.ca
+In-Reply-To: <199901280740.SAA22067@algae.socs.uts.EDU.AU> from "Barry Jay" at Jan 28, 99 06:40:37 pm
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E105o0y-0001Ah-00@can.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Barry Jay asked
+
+> Has the following lemma been seen before?
+>
+> Lemma: If D is a cartesian closed category having all finite limits
+> then so is its arrow category.
+
+This is a special case of the cartesian closedness of a category 
+obtained by Artin glueing, which was covered in the Carboni--Johnstone
+paper (Math. Struct. Comp. Sci. 5 (1995), 441--459). (However, we don't
+claim any originality for it; it is implicit in Gavin Wraith's 1974
+paper on Artin glueing.) Of course, the "glueing functor" in Barry's case
+is the identity on D.
+
+Peter Johnstone
+
+
+From cat-dist Thu Jan 28 21:19:00 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA25223
+	for categories-list; Thu, 28 Jan 1999 19:15:52 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m105nsI-00029JC@pc34.mcs.le.ac.uk>
+Date: Thu, 28 Jan 1999 09:36:34 +0000 (GMT)
+From: "Roy L. Crole" <R.Crole@mcs.le.ac.uk>
+To: categories@mta.ca
+In-Reply-To: <199901280740.SAA22067@algae.socs.uts.EDU.AU> (message from Barry
+	Jay on Thu, 28 Jan 1999 18:40:37 +1100 (EST))
+Subject: categories: Re: two questions about universal quantification
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+
+>Question 1 
+>~~~~~~~~~~
+
+>Has the following lemma been seen before? 
+
+>Lemma: If D is a cartesian closed category having all finite limits
+>then so is its arrow category.
+
+If I've not misunderstood Barry's question 1, this is surely just the 
+gluing or sconing lemma for the particular functor id_D : D -> D, 
+where
+
+     Glue(id_D) = arrow(D)
+
+Gluing along the identity gives a pleasant form for exponentials; the
+glued exponentials in Glue(G) for some G : C -> D collapse to the diagram
+in Barry's note.
+
+
+
+From cat-dist Thu Jan 28 22:38:46 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA04029
+	for categories-list; Thu, 28 Jan 1999 21:36:55 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 28 Jan 1999 11:37:05 +0800 (CST)
+From: eric@iis.sinica.edu.tw (Pao-Ann Hsiung)
+Message-Id: <199901280337.LAA09924@ccs1.iis.sinica.edu.tw>
+To: categories@mta.ca
+Subject: categories: CFP: PDPTA-99 Codesign Session
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+              ===========================================
+              S E C O N D   C A L L   F O R   P A P E R S
+              ===========================================
+
+                            SPECIAL SESSION 
+     ________________________________________________________________
+
+     "HARDWARE-SOFTWARE CODESIGN OF PARALLEL AND DISTRIBUTED SYSTEMS"
+     ________________________________________________________________
+
+         "http://www.iis.sinica.edu.tw/~eric/pdpta99-codesign/"
+
+      The 1999 International Conference on Parallel and Distributed
+                Processing Techniques and Applications
+                               (PDPTA'99)
+
+                          June 28 - July 1, 1999
+                  Monte Carlo Resort, Las Vegas, Nevada, USA
+
+A special session on the HARDWARE-SOFTWARE CODESIGN of parallel and 
+distributed systems is being organized at PDPTA'99, which will be
+held in Las Vegas, Nevada, U.S.A., June 28 - July 1, 1999.
+
+Architectures supporting parallel and distributed computing include 
+both hardware and software. The success of such architectures depends 
+significantly on how the hardware and software interact. This in turn 
+requires careful codesign approaches which include co-partitioning, 
+scheduling, co-synthesis, co-simulation, and co-verification. Due to
+their complex behavior and structural restrictions, parallel and 
+distributed systems present a greater challenge to codesign 
+methodologies than conventional systems.  Object-oriented modeling/design, 
+formal specification/verification methods, graph-theoretic analysis,
+virtual prototyping, functional/structural partitioning are some 
+promising techniques which can be employed for hardware-software codesign. 
+Parallel and distributed processing is the computing trend and 
+hardware-software codesign is the technique for supporting this trend.
+
+SESSION SCOPE: 
+  All hardware-software codesign related topics that deal with parallel
+and distributed systems are invited. Topics of interest include, 
+but are not limited to, the following:
+
+   *  Specification/Modeling         *  Object-Oriented Technology
+   *  Co-design Methodologies/Tools  *  Parallel/Distributed Techniques
+   *  Co-partitioning                *  Virtual Prototyping 
+   *  Related Software Synthesis     *  Rapid Prototyping
+   *  Related Hardware Synthesis     *  High-Assurance Systems
+   *  Co-simulation and Validation   *  IP / Virtual Components
+   *  Co-verification and Testing    *  Embedded/Real-Time Systems
+
+SUBMISSION OF PAPERS:
+
+      To submit a paper to the special session, please do the following:
+
+      (1) Prepare a manuscript in PDF/PostScript/Microsoft Word-7.0 format 
+          of maximum 7 pages: single-spaced, single-column, 
+          US-Letter/A4 size, with title, authors, affiliations, 
+          e-mail addresses, and a 100-word abstract on the first page. 
+
+      (2) Send an ascii-text e-mail with the paper title and the
+          corresponding author's name, mailing address, e-mail address, 
+          and telephone/fax numbers.
+
+      (3) E-mail the above two to: "eric@iis.sinica.edu.tw".
+          If electronic submission is not possible, please mail the above
+          to the following address:
+                        Dr. Hsiung, Pao-Ann (Mailbox A-38)
+                        Institute of Information Science
+                        Academia Sinica
+                        No. 128, Sec. 2, Academic Road
+                        Nankang, Taipei 115, TAIWAN, R.O.C.
+
+      (4) Important Dates:
+               Submission Deadline:        March 1, 1999
+                Paper Notification:        April 1, 1999
+               Camera-Ready papers:          May 1, 1999
+                  Pre-Registration:          May 1, 1999
+               PDPTA'99 Conference: June 28-July 1, 1999
+
+      (5) A minimum of 6 and a maximum of 24 papers will be accepted 
+          for the special session.  All submissions will be reviewed 
+          by at least 2 referees.  Papers must not have been previously 
+          published or currently submitted for publication elsewhere. 
+          Pre-registration at the conference is a must for all accepted 
+          papers to be published in the proceedings. All accepted papers 
+          must be presented at PDPTA'99, Las Vegas, Nevada, U.S.A.
+
+PUBLICATION:
+
+      The conference proceedings will be published by CSREA Press
+      (ISBN).  It will be a multivolume set.  The proceedings will
+      be available at the conference.  All accepted papers will also
+      be considered for journal publication (soon after the conference).
+      
+
+ORGANIZERS/SPONSORS:
+
+      A number of university faculty members and their staff
+      in cooperation with the Monte Carlo Resort (Conference Division,
+      Las Vegas ), will be organizing the conference.  The conference
+      is sponsored by the Computer Science Research, Education, and
+      Applications Press (CSREA: USA Federal EIN # 58-2171953) in
+      cooperation with the National Supercomputing Center for Energy and
+      the Environment (Department of Energy, USA), The International
+      Association for Mathematics and Computers in Simulation (IMACS),
+      The International Technology Institute (ITI), The Java High
+      Performance Computing research group (JHPC; www.jhpc.org),
+      the Computer Vision Research and Applications Tech. (CVRA),
+      developers of high-performance machines and systems (pending)
+      and other related computer associations (pending.)
+
+
+LOCATION OF CONFERENCE:
+
+      The conference will be held in the Monte Carlo Resort
+      hotel, Las Vegas, Nevada, USA.  This is a mega hotel
+      with excellent conference facilities and over 3000 rooms.
+      The hotel is minutes from the Las Vegas airport with free
+      shuttles to and from the airport.  This hotel has many
+      vacation and recreational attractions, including:
+      waterfalls, casino, spa, pools & kiddie pools, sunning decks,
+      Easy River water ride, wave pool with cascades, lighted
+      tennis courts, health spa (with workout equipment, whirlpool,
+      sauna, ...), arcade virtual reality game rooms, nightly
+      shows, snack bars, a number of restaurants, shopping
+      area, bars, ...  Many of these attractions are open 24
+      hours a day and most are suitable for families and children.
+      The negotiated hotel's room rate for conference attendees
+      is very reasonable ($79 + tax) per night (no extra charge
+      for double occupancy) for the duration of the conference.
+
+      The hotel is within walking distance from most other
+      Las Vegas attractions (major shopping areas, recreational
+      destinations, fine dining and night clubs, free street
+      shows, ...).
+      For the benefit of our international colleagues: the state of
+      Nevada neighbors with the states of California, Oregon, Idaho,
+      Utah, and Arizona.  Las Vegas is only a few driving hours away
+      from other major cities, including: Los Angeles, San Diego,
+      Phoenix, Grand Canyon, ...
+
+EXHIBITION:
+
+      An exhibition is planned for the duration of the conference.
+      We have reserved 20+ exhibit spaces.  Interested parties
+      should contact H. R. Arabnia (address is given below).
+      All exhibitors will be considered to be the co-sponsors
+      of the conference.  Each exhibitor will have the opportunity
+      to include a two-page description of their latest products
+      in the conference proceedings (if submitted by May 1, 1999).
+
+
+MEMBERS OF PROGRAM & ORGANIZING COMMITTEES:
+
+      The Program Committee is currently being formed.  Those interested
+      in joining the Program Committee should email H. R. Arabnia
+      (hra@cs.uga.edu) the following information:
+      Name, affiliation and position, complete mailing address,
+      email address, tel/fax numbers, a short biography together with
+      research interests.
+
+
+SESSION CHAIR/ORGANIZER:
+
+          Address: Dr. Pao-Ann Hsiung
+                   Institute of Information Science
+                   Academia Sinica
+                   No. 128, Sec. 2, Academic Road
+                   Nankang, Taipei 115, TAIWAN, R.O.C.
+           E-mail: eric@iis.sinica.edu.tw
+           Tel.  : +886-2-27883799
+           Fax   : +886-2-27824814
+           URL   : http://www.iis.sinica.edu.tw/~eric/pdpta99-codesign/
+
+
+CONFERENCE CONTACT:
+
+          Hamid R. Arabnia
+          The University of Georgia
+          Department of Computer Science
+          415 Graduate Studies Research Center
+          Athens, Georgia 30602-7404, U.S.A.
+
+          Tel: (706) 542-3480
+          Fax: (706) 542-2966
+          E-mail: hra@cs.uga.edu
+	  URL: http://www.jhpc.org/pdpta/
+
+
+From cat-dist Thu Jan 28 22:45:06 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA17939
+	for categories-list; Thu, 28 Jan 1999 21:42:10 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Jose Meseguer <meseguer@csl.sri.com>
+Date: Thu, 28 Jan 1999 17:17:38 -0800 (PST)
+Message-Id: <199901290117.RAA16611@cyrano.csl.sri.com>
+To: categories@mta.ca
+Subject: categories: Maude 1.00 Release
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The Maude system, its documentation, a collection of examples, and a list
+of related papers are available (free of charge) on the web at
+  
+     http://maude.csl.sri.com
+
+Maude is a high-performance reflective language and system supporting both 
+equational and rewriting logic specification and programming for a wide range
+of applications.  Maude has been influenced in important ways by the OBJ3
+language, which can be regarded as an equational logic sublanguage.  Besides
+supporting equational specification and programming, Maude also supports
+rewriting logic computation.
+
+Rewriting logic is a logic of concurrent change that can naturally deal with
+state and with concurrent computations.  It has good properties as a general
+semantic framework for giving executable semantics to a wide range of
+languages and models of concurrency.  In particular, it supports very well
+concurrent object-oriented computation.  The same reasons making rewriting
+logic a good semantic framework make it also a good logical framework, that
+is, a metalogic in which many other logics can be naturally represented and
+executed.
+
+Maude supports in a systematic and efficient way logical reflection.  This
+makes Maude remarkably extensible and powerful, supports an extensible algebra
+of module composition operations, and allows many advanced metaprogramming and
+metalanguage applications.  Indeed, some of the most interesting applications
+of Maude are metalanguage applications, in which Maude is used to create
+executable environments for different logics, theorem provers, languages, and
+models of computation.
+
+%%% Please, excuse the inconvenience if you received multiple copies.
+
+
+From cat-dist Fri Jan 29 04:26:50 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id DAA28768
+	for categories-list; Fri, 29 Jan 1999 03:36:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 28 Jan 1999 23:13:03 -0600 (CST)
+From: Hongseok Yang <hyang@cs.uiuc.edu>
+To: categories@mta.ca
+Subject: categories: Pullback perserving functor
+Message-ID: <Pine.SOL.4.05.9901282302410.4923-100000@sal.cs.uiuc.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+Would someone let me know the answer and the proof or counter example of
+the following question? 
+
+Suppose the category C has a pullback for every pair of morphism 
+(f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+category Func(C,Set) whose objects are pullback perserving functors.
+Is K ccc? (If so, how I can show this?)
+
+Thanks,
+Hongseok
+
+
+
+From cat-dist Fri Jan 29 23:04:59 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA14762
+	for categories-list; Fri, 29 Jan 1999 22:19:29 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 29 Jan 1999 08:08:26 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+To: Categories list <categories@mta.ca>
+Subject: categories: Barry Jay's question
+Message-ID: <Pine.LNX.4.04.9901290756520.26850-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Unless I am missing something, it seems to me that for any CCC C with
+finite limits and any finite category I, the functor category C^I is a
+CCC.  You can also replace finite by any cardinal if you do it in both
+places.  The argument is roughly this.  Let |I| denote the discrete
+category with the objects of I.  The inclusion |I| --> I induces U: C^I
+--> C^{|I|} and the limits imply the existence of a right adjoint R of U.
+Since U also preserves limits, the cotriple (UR,e,d) preserves finite
+limits.  It is easy to see that U is cotripleable and that C^{|I|} is a
+CCC and, hence, so is C^I.  For define A -o RC = R(UA -o C).  For a
+general object B, the line B --> URB ==> URURB is an equalizer and you can
+define A -o B as the equalizer of A -o URB ==> A -o URURB.  
+
+Michael
+
+
+-------------------------------------------------------------------
+History shows that the human mind, fed by constant accessions of
+knowledge, periodically grows too large for its theoretical coverings, and
+bursts them asunder to appear in new habiliments, as the feeding and
+growing grub, at intervals, casts its too narrow skin and assumes
+another... Truly the imago state of Man seems to be terribly distant, but
+every moult is a step gained. 
+
+- Charles Darwin, from "The Origin of Species"
+
+
+
+From cat-dist Fri Jan 29 23:05:04 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA05429
+	for categories-list; Fri, 29 Jan 1999 22:17:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+To: categories@mta.ca
+Subject: categories: Conference Announcement BCTCS 15
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Content-MD5: 6WdDOrOM9Ouku2aXaPdeew==
+Message-Id: <E106BRQ-0005rt-00@nina.cs.keele.ac.uk>
+From: "John G. Stell" <j.g.stell@cs.keele.ac.uk>
+Date: Fri, 29 Jan 1999 10:46:24 +0000
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+
+___________________________________________________________________________
+
+CALL FOR CONTRIBUTIONS AND PARTICIPATION
+
+    15th British Colloquium for Theoretical Computer Science (BCTCS 15)
+
+    14th - 16th April 1999 at Keele University
+
+    Supported by EPSRC and the London Mathematical Society
+
+___________________________________________________________________________
+
+INVITED SPEAKERS:    Wan Fokkink  (Swansea)
+                     Martin Hofmann (Edinburgh)
+                     Bill McColl (Oxford)
+                     Ian Pratt (Manchester)
+                     David Pym (QMW, London)
+                     Glynn Winskel (Aarhus)
+                     Mike Worboys (Keele)
+___________________________________________________________________________
+
+CONTRIBUTED TALKS
+
+Contributions are sought on any aspect of theoretical computer science.
+Research areas within the scope of BCTCS include, but are not limited to,
+the following list:
+
+     Concurrency, types, semantics, formal methods, computational complexity,
+     algorithms, discrete mathematics, proof theory and logic, 
+     artificial intelligence, database theory, theorem proving,
+     symbolic computation and experimental work.
+
+This year for the first time, authors  will have the option to submit
+papers based on their talks to a special issue of the
+Journal of Universal Computer Science. However, the meeting will retain
+its informal character, and it will still be possible for researchers to 
+give a presentation at the meeting but not have their paper considered for
+publication. Submission of papers for publication will take place at some
+stage after the meeting.
+
+Besides talks from established researchers, BCTCS meetings provide a forum
+for  young researchers who may wish to give a presentation but who may feel
+that the body of their work is not yet substantial enough for publication.
+___________________________________________________________________________
+
+SUPPORT FOR POSTGRADUATE STUDENTS
+
+A limited number of fully funded places are available to postgraduate students
+who are supported by EPSRC. For other students there is a SPECIAL REDUCED RATE
+for the meeting, and some additional financial support may be available in
+special cases.
+___________________________________________________________________________
+
+FURTHER DETAILS
+
+Further details, including registration forms, prices, and forms for submission
+of contributed talks, are available from the BCTCS15 web page:
+
+    http://www.keele.ac.uk/depts/cs/Announcements/bctcs/
+    
+The web page also has links to previous BCTCS meetings, which provide a useful
+guide to the wide range of topics which have been covered by past contributions.
+    
+BCTCS15 is organized by John Stell, who can be contacted
+by email:  john@cs.keele.ac.uk 
+or at: Department of Computer Science,
+       Keele University, Keele, Staffs, U. K., ST5 5BG.
+___________________________________________________________________________
+
+
+
+From cat-dist Fri Jan 29 23:05:04 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA03223
+	for categories-list; Fri, 29 Jan 1999 22:22:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Re: Pullback preserving functor
+Date: Fri, 29 Jan 1999 15:35:47 +0000 (GMT)
+To: categories@mta.ca
+In-Reply-To: <Pine.SOL.4.05.9901282302410.4923-100000@sal.cs.uiuc.edu> from "Hongseok Yang" at Jan 28, 99 11:13:03 pm
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E106FxU-0004WE-00@owl.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+> Would someone let me know the answer and the proof or counter example of
+> the following question?
+>
+> Suppose the category C has a pullback for every pair of morphism
+> (f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+> category Func(C,Set) whose objects are pullback perserving functors.
+> Is K ccc? (If so, how I can show this?)
+
+
+The answer is no. First note that K is closed under products in the
+functor category. Also, it contains all the representable functors; 
+so, if it were cartesian closed, the exponential G^F would have to be 
+given by 
+
+G^F(c) \cong nat((c,-),G^F) \cong nat((c,-)\times F,G)
+
+i.e. K would have to be closed under exponentials in [C,Set]. However,
+it isn't in general. For a simple counterexample, let C be the category
+with five objects a,b,c,d,e and six non-identity morphisms
+
+a --> b, a --> c, b --> d, c --> d, a --> d, a --> e ;
+
+note that C has just one nontrivial pullback square
+
+            a -----> b
+            |        |
+            |        |
+            v        v
+            c -----> d
+
+Let F be the functor given by F(a) = F(b) = F(c) = F(d) = \emptyset,
+F(e) = {*}, and let G be F + F. Then (taking the above definition of G^F)
+G^F(a) has two elements, but G^F(b), G^F(c) and G^F(d) are singletons.
+
+Peter Johnstone
+
+
+From cat-dist Fri Jan 29 23:05:08 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA10106
+	for categories-list; Fri, 29 Jan 1999 22:17:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Generalized Enrichment
+To: categories@mta.ca
+Date: Fri, 29 Jan 1999 12:29:26 +0000 (GMT)
+Cc: T.Leinster@dpmms.cam.ac.uk (Tom Leinster)
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E106D39-00027a-00@carp.dpmms.cam.ac.uk>
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+The following is now available, at http://www.dpmms.cam.ac.uk/~leinster/
+
+
+Generalized Enrichment for Categories and Multicategories
+
+In this paper we answer the question: `what kind of a structure can a general
+multicategory be enriched in?' (Here `general multicategory' is used in the
+sense of the author, Burroni or Hermida.) The answer is, in a sense to
+be made precise, that a multicategory of one type can be enriched in a
+multicategory of the type one level up. In particular, we will be able to
+speak of a T_n-multicategory enriched in a T_{n+1}-multicategory, where
+T_n is the monad expressing the pasting-together of n-opetopes.
+
+The answer for general multicategories reduces to something surprising in the
+case of ordinary categories: a category may be enriched in an
+`fc-multicategory', a very general kind of 2-dimensional structure
+encompassing monoidal categories, plain multicategories, bicategories and
+double categories. It turns out that fc-multicategories also provide a
+natural setting for the bimodules construction. We also explore enrichment
+for some multicategories other than just categories. An extended application
+is given: the relaxed multicategories of Borcherds and Soibelman are
+explained in terms of enrichment.
+
+
+Tom Leinster
+
+PS - There's been the odd problem in the past with the web address; if it
+doesn't work, try substituting "can" for "www", or send me an email.
+
+
+
+
+From cat-dist Fri Jan 29 23:09:59 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA10073
+	for categories-list; Fri, 29 Jan 1999 22:20:37 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 29 Jan 1999 09:51:13 -0500 (EST)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Reply-To: wlawvere@ACSU.Buffalo.EDU
+To: categories@mta.ca
+Subject: categories: Re: Pullback perserving functor
+In-Reply-To: <Pine.SOL.4.05.9901282302410.4923-100000@sal.cs.uiuc.edu>
+Message-ID: <Pine.GSO.4.05.9901290947240.15470-100000@xena.acsu.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+    Whether or not these functors form a cartesian-closed category
+depends strongly on the nature of the domain category.  For example,
+if the domain category is an abelian category as opposed to it
+being a pretopos.  Related matters are discussed in the recent
+paper by  Borceux and Pedicchio and the papers there cited:
+Left-exact presheaves on a small pretopos, Journal of Pure and
+Applied Algebra, vol. 135, no. 1, 4 Febr. 1999, pp 9 - 22.
+
+					
+
+*******************************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*******************************************************************************
+                       
+
+
+On Thu, 28 Jan 1999, Hongseok Yang wrote:
+
+> 
+> Would someone let me know the answer and the proof or counter example of
+> the following question? 
+> 
+> Suppose the category C has a pullback for every pair of morphism 
+> (f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+> category Func(C,Set) whose objects are pullback perserving functors.
+> Is K ccc? (If so, how I can show this?)
+> 
+> Thanks,
+> Hongseok
+> 
+> 
+> 
+
+
+
+From cat-dist Sun Jan 31 01:00:18 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA20130
+	for categories-list; Sat, 30 Jan 1999 21:24:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199901301048.LAA13272@portofix.ida.liu.se>
+Date: Sat, 30 Jan 1999 11:48:10 +0100 (MET)
+From: Lars Lindqvist <larli@ida.liu.se>
+Reply-To: Lars Lindqvist <larli@ida.liu.se>
+Subject: categories: Reading advise on bicategory theory
+To: categories@mta.ca
+MIME-Version: 1.0
+Content-Type: TEXT/plain; charset=us-ascii
+Content-MD5: BgezVXG1sA+vcYpKeDh0bQ==
+X-Mailer: dtmail 1.2.1 CDE Version 1.2.1 SunOS 5.6 sun4m sparc 
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Hi,
+
+I am looking for advise on suitable litterature for a beginner in
+bicategory-theory. The litterature I have found so far is:
+
+Kelly, Street  Review of the elements of 2-categories
+Borceux        Handbook of categorical algebra 1
+
+I have also ordered the following article:
+
+Benabou        Introduction to bicategories
+
+So far I have only read Borceux's book but it contains mainly
+definitions. In particular I have difficulties understanding
+the need for (and consequences of) the coherence axioms
+associated with the natural isomorphisms expressing the
+associativity and identity 'axioms'.
+
+/Lars Lindqvist
+
+
+
+From cat-dist Sun Jan 31 21:18:49 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA25555
+	for categories-list; Sun, 31 Jan 1999 20:24:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Sun, 31 Jan 1999 10:20:19 -0500 (EST)
+From: John R Isbell <ji2@ACSU.Buffalo.EDU>
+To: categories@mta.ca
+Subject: categories: Re: Reading advise on bicategory theory
+In-Reply-To: <199901301048.LAA13272@portofix.ida.liu.se>
+Message-ID: <Pine.GSO.4.05.9901311014530.10527-100000@xena.acsu.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Lars, I would guess that you will get more advice than you can
+use. Here is my nickel's worth. The matter of coherence is
+wide open. There is a paper of Yanofsky accepted for publication
+in JPAA which investigates higher dimensional categories with
+no coherence assumptions at all -- this coming after a lot of
+work on weakened coherence. Benabou's basic point was that
+naturally arising 2-dimensional categories are not quite
+2-categories and don't seem to suffer from it. Avoid getting
+knotted in coherence questions, especially in 1999.
+
+   _____________________________
+   John R. Isbell
+   ji2@buffalo.edu or ji2@acsu.buffalo.edu
+   Homepage: www.unipissing.ca/topology/z/a/a/a/05.htm
+       _________________________________________________
+      |                                                  |
+      | Der Mensch ist nur da ganz Mensch, wo er spielt. |
+      |                                                  |
+      |                       -- Friedrich Schiller      |
+      |_________________________________________________ |
+
+On Sat, 30 Jan 1999, Lars Lindqvist wrote:
+
+> Hi,
+> 
+> I am looking for advise on suitable litterature for a beginner in
+> bicategory-theory. The litterature I have found so far is:
+> 
+> Kelly, Street  Review of the elements of 2-categories
+> Borceux        Handbook of categorical algebra 1
+> 
+> I have also ordered the following article:
+> 
+> Benabou        Introduction to bicategories
+> 
+> So far I have only read Borceux's book but it contains mainly
+> definitions. In particular I have difficulties understanding
+> the need for (and consequences of) the coherence axioms
+> associated with the natural isomorphisms expressing the
+> associativity and identity 'axioms'.
+> 
+> /Lars Lindqvist
+> 
+> 
+> 
+
+
+
+From cat-dist Sun Jan 31 21:20:02 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA30332
+	for categories-list; Sun, 31 Jan 1999 20:30:08 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Koslowski <koslowj@iti.cs.tu-bs.de>
+Message-Id: <199902010000.BAA28439@lisa.iti.cs.tu-bs.de>
+Subject: categories: paper announcement
+To: categories@mta.ca (categories list)
+Date: Mon, 1 Feb 1999 01:00:07 +0100 (MET)
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+A heavily revised version of my paper "Beyond the Chu-construction"
+is now available from my home page:
+
+	http://www.iti.cs.tu-bs.de/~koslowj/RESEARCH/
+
+It will eventually be published in Applied Categorical Structures.
+I have not attempted to attribute the term "dualizing object" to anyone
+in particular.  The open problem of an earlier version, as to whether
+Cauchy-complete bicategories of interpolads inherit local *-autonomy 
+from their base, has been answered affirmatively.  
+
+Here is the abstract:
+
+
+  Starting from symmetric monoidal closed (= autonomous) categories,
+  Po-Hsiang Chu showed how to construct new *-autonomous categories,
+  i.e., autonomous categories that are self-dual because of a
+  dualizing object.  Recently, Michael Barr extended this to the
+  non-symmetric, but closed, case, utilizing monads and modules
+  between them.  Since these notions are well-understood for
+  bicategories, we introduce a notion of local *-autonomy for these
+  that implies closedness and, moreover, is inherited when forming
+  bicategories of monads and of interpolads.  Since the initial step
+  of Barr's construction also carries over to the bicategorical
+  setting, we recover his main result as an easy corollary.
+  Furthermore, the Chu-construction at this level may be viewed as a
+  procedure for turning the endo-1-cells of a closed bicategory into
+  the objects of a new closed bicategory, and hence conceptually is
+  similar to constructing bicategories of monads and of interpolads.
+
+
+Best regards,
+
+-- J"urgen
+
+-- 
+J"urgen Koslowski       % If I don't see you no more in this world
+ITI                     % I meet you in the next world
+TU Braunschweig         % and don't be late!
+koslowj@iti.cs.tu-bs.de %              Jimi Hendrix (Voodoo Child)
+
+
+From cat-dist Mon Feb  1 01:32:51 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id AAA19723
+	for categories-list; Mon, 1 Feb 1999 00:38:33 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Sun, 31 Jan 1999 17:28:51 -0800 (PST)
+From: james dolan <jdolan@math.ucr.edu>
+Message-Id: <199902010128.RAA04546@math.ucr.edu>
+To: categories@mta.ca
+Subject: categories: Re: Reading advise on bicategory theory
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+john isbell writes:
+
+-The matter of coherence is wide open. There is a paper of Yanofsky
+-accepted for publication in JPAA which investigates higher dimensional
+-categories with no coherence assumptions at all -- this coming after a
+-lot of work on weakened coherence. Benabou's basic point was that
+-naturally arising 2-dimensional categories are not quite 2-categories
+-and don't seem to suffer from it. Avoid getting knotted in coherence
+-questions, especially in 1999.
+
+
+what does "no coherence assumptions at all" mean in this context?
+does it mean that yanofsky is studying what i call "coarse
+n-categories", defined recursively as categories enriched over the
+cartesian closed category where the objects are the coarse
+[n-1]-categories and the morphisms are the enriched natural
+isomorphism classes of enriched functors?  coarse n-categories are
+interesting but they're obviously not the whole story; for example
+it's straightforward to define the "fundamental coarse n-groupoid" of
+a space, but it's indeed a rather coarse invariant of the homotopy
+type.
+
+
+
+
+
+

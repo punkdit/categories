@@ -1,0 +1,113 @@
+Path: news.gmane.org!not-for-mail
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: more on monoidal structure of graphs
+Date: Fri, 19 Mar 1999 14:27:58 +0100
+Organization: LORIA
+Lines: 81
+Approved: news@gmane.org
+Message-ID: <36F250DE.DF267D0A@loria.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017556 29437 80.91.229.2 (29 Apr 2009 15:05:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:05:56 +0000 (UTC)
+To: categories@mta.ca, grandis@dima.unige.it
+Original-X-From: cat-dist Fri Mar 19 12:21:52 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA21505
+	for categories-list; Fri, 19 Mar 1999 09:37:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.5 [en] (X11; I; SunOS 5.5 sun4m)
+X-Accept-Language: fr, en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3782
+Original-Lines: 80
+Xref: news.gmane.org gmane.science.mathematics.categories:1085
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1085>
+
+Since Michael's posting leapfrogged Marco's in the aether (at least from
+the viewpoint of our server) what I'll be saying may not appear in the
+right order threadwise to some.
+
+Marco Grandis wrote:
+
+
+> 
+> Would it not be simpler to work with  REFLEXIVE GRAPHS  and their cartesian
+> closed structure?
+> In my opinion, reflexive graphs are more natural than graphs:
+
+The answer is no, because of the application in mind. We want to
+consider a graph as a constructive binary relation X(x,y), where an edge
+x-->y is a proof that (x,y) are related. We also want to build such
+things by induction, using universal properties. Reflexivity is often a
+desirable feature of the free structures you want to build, but you
+don't want it to come for free, since it creates redundancies and can
+mess up the induction principle associated with the structure. In
+certain situations you want reflexivity to be a consequence of the
+induction principle. 
+
+> Remark 3.
+> [The sequel is relevant for homotopy; I do not know if it may be relevant
+> in CS, but I always had the impression that abstract homotopy should be of
+> use there, eg with respect to deformations of processes, in some sense.]
+> 
+
+There are two connections I know about between homotopy and computer
+science. The first has to do with process algebras, and originates in
+Eric Goubault's thesis, I think. Philippe Gaucher just sent a paper
+annoucement on this server about this line of research.
+
+The second connection is something Thomas Streicher, Martin Hoffmann and
+I discuss whenever we meet, which is not often enough. In constructive
+type theory there is a gadget called the Martin-L"of intensional
+equality predicate, J(x,y). So this is a version of equality, where you
+have to name the proofs that x=y. It has very simple (but rather
+mysterious) introduction and elimination rules, which can be translated
+as a universal property in a kind of higher-order universal algebra,
+where arities can not only be seen as finite sets, but also as families
+of sets, and families of families of sets and so on. In particular,
+since everything is a type, you have a type/predicate of equality proofs
+between equality proofs, and so on. For example given proofs that x=y
+and y=z, you can construct a proof that x=z, and you can do this
+uniformly, getting a term/algorithm  J(x,y)*J(y,z) --> J(x,z) (here the
+* means a fibered product over y). But you cannot show that this
+operation is itself associative, it is only associative at a higher
+order. Ah! some kind of multiple category is involved! But so far all
+attempts to use higher-order categories to describe those weird algebras
+have failed. It only works at level one: when you collapse all proofs of
+equality between proofs of equality you get that the predicate J(x,y) is
+a groupoid structure. But when you try to go to level 2 the ordinary 2-
+or bi- or lax- or whatever- categorical machinery fails. You realize
+that simplicial sets are a better paradigm/starting point, but we need
+simplicial sets with operations.
+
+BTW is anybody from G"oteborg reading this? 
+
+> This is why I think that the basic 2-dimensional categorical setting for
+> abstract homotopy should only treat such "reduced horizontal composition":
+> arrows with cells, cells with arrows, but NOT cells with cells.
+> Formally, it is again a category enriched over reflexive graphs, BUT wrt
+> the following monoidal closed structure:
+> 
+> X tensor Y:
+>  -  the subgraph of  XxY  whose arrows are pairs  (a, b),  where  a  or  b
+> is an identity;
+> 
+> [X, Y]:
+> -   vertices: the graph morphisms;
+> -   arrows: their transformations (without "diagonals").
+> 
+
+Hm... the geometrical motivations for not having full composition(s)
+here might well be related to the logical ones I mentioned briefly
+above.
+
+Francois
+
+

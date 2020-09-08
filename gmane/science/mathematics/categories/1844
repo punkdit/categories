@@ -1,0 +1,153 @@
+Path: news.gmane.org!not-for-mail
+From: "zdiskin" <zdiskin@email.msn.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Why binary products are ordered
+Date: Sat, 10 Feb 2001 17:54:58 -0800
+Lines: 119
+Approved: news@gmane.org
+Message-ID: <003201c093cd$c9a89020$cc49393f@cpu>
+References: <Pine.LNX.4.10.10102081243440.21476-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018145 770 80.91.229.2 (29 Apr 2009 15:15:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:45 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Feb 11 17:50:12 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f1BKqeg12064
+	for categories-list; Sun, 11 Feb 2001 16:52:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 26
+Status: O
+Content-Length: 6395
+Original-Lines: 118
+Xref: news.gmane.org gmane.science.mathematics.categories:1844
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1844>
+
+Michael Barr <barr@barrs.org>  wrote:
+> As I said in an earlier post, the whole thing is a figment of the linear
+> way we write (and speak, for that matter).  Products are over unordered
+> sets and any ordering is purely irrelevant.
+>
+It's right of course but maybe some explanation of what is meant would be
+useful.
+
+Even if we work in naive set theory, products are defined for diagrams d:
+I -> Set and thus expressions
+Prod(A,B,C) or AxBxC are, strictly speaking, incorrect because we don't see
+diagrams. When we use such expressions we actually use the following
+convention:
+(i)  the source of any  diagram is an initinal fragment of natural numbers,
+I={1,2,3,...n}
+(ii) the very mapping d is defined by the correspondence of the natural
+ordering  I={1,2,...} and  the list of sets in the expressions above in
+their reading from left to right, eg, AxBxC encodes the diagram d1=A, d2=B,
+d3=C.
+
+Quite similarly, we may use colored inks for writing AxBxC... and state
+another convention:
+(i)'  the source of any diagram is a set of colors, I={red, yellow,
+blue,...}
+(ii)' the very mapping d is defined by correspondence between semantic
+meaning of these labels 'red', 'yellow', .... and colors of inks with which
+symbols 'A', 'B', 'C' are written, eg, A(written in yellow) x B(in greeen) x
+C(in red) encodes the diagram
+d: {yellow, green, red} --> Set with yellow.d=A, green.d=B, red.d =C.
+Does it mean that pdoducts are colored? :)
+
+So, back to the "problem of ordered vs. unordered products": ordering is not
+more than a notational tip for encoding diagrams having nothing to do with
+the construct of product as such. In applications, where we need to deal
+with semantically meaningful indexes -- elements of I, the convention of
+having I={1,2,..} is irrelevant and another notational tip was invented. To
+designate the product of diagram d: {red, blue}-> Set with red.d=A,
+blue.d=B, we write Prod(red:A, blue:B) or  (red:A) x (blue:B) or just
+[red:A, blue:B] and it's really convenient.
+
+Thus, expression AxB denotes Prod(1:A, 2:B) while BxA denotes Prod(1:B, 2:A)
+which are different just becausse these are products of the *different*
+diagrams.
+
+So, heavy use of convention (i),(ii) and the corresponding notation in
+classical math may be misleading (notational peculiarity is attributed to
+the notion as such) and thus, as Mike Barr wrote in his early posting, is
+its disadvantage. It became an *annoying*  disadvantage when you start to
+work in applications (say, relational database theory) with your old habit
+to consider relations as sets of ordered tuples.
+
+================
+Actually, a similar problem we have in categorical products and other
+categroical operations producing multiple items and so  we need a convention
+how to name/denote them. For example, having a diagram d: I--> C, we need to
+agree how to denote (name)  projections. There is no such a problem with
+usual operations over sets because there is a single result and we usually
+denote it by the very term built with the symbol of the operation, say, 8+3.
+Let's imagine now that we have a  binary operation * on integers producing
+two results: their difference and product, so that 8*3=(5,24). Of course,
+the latter notation is ambiguous and actually we need to write say [1st:8] *
+[2nd:3]  = [1ST: 5,  2ND:24]. Thus, a really unambiguous format for writing
+arity-coarity shape of the operation * is
+      [1st:_] * [2nd:_] = [1ST:_ , 2ND:_ ]
+where _'s denote placeholders. Well, this notation is still using, though
+inesentially, some ordering flavor and so let's suppose that the two
+operands of our operation are distingusihed by some meaningful (semantic)
+roles they play, say, one operand is considered to be 'principal' while the
+other is 'auxiliary'; as for the two results, we may use the underlying
+procedures for naming them.  Then the arity-coarity shape might be written
+as
+      [princ:_ ]  *  [aux:_ ] = [diff:_ , prod:_ ]
+and no any ordeirng used. Note, names of the results are included in the
+syntax of the operation from the very beginning and not taken on the sky.
+Probably, Colin McLarty wrote about the same.
+=======================
+
+After all, it seems that in this (indeed somewhat figment) debate
+(initiated, i remind, by a Todd Wilson's question about comparative pluses
+and minuses of the two ways of treating products w.r.t. applications) the
+actual principle difference between them, that really matters for
+applications, was lost, i mean not articulated explicitly and hence lost by
+the applied domains part of the audience. I will sketch it for the case of
+relations  because in application we normally deal with relations rather
+than products.
+
+In ST, you first define tuples (actually, as we've seen,  mappings defined
+on unordered sets) and *then* a relation is a set of tuples of the
+corresponding type. In CT, you *first* define a relation as a set equipped
+with a jointly monic family of outgoing mappings (that is, in fact, declare
+a special predicate for the corresponding diagram of arrows with common
+source) and then, if you need, define a tuple as an element of that set.
+
+The CT-way is a really abstract specification applicable in any context
+where objects of interest are organized into a category (say, we may define
+what is a relation between the two database schemas). In ST-way,  we have
+just a particular specification, in fact, an elementwise implementation of
+the categorical specification. In sofware engineering terms, one might say
+that the CT-way is object-oriented (though actually it's arrow orineted)
+since relation appears as a set of objects  while the ST-way is
+value-oriented since relation is just a table of values.
+
+Also, these two ways induce the two different logics. In the CT-treatment,
+relations appear as new (derived) sorts to which basic sorts of other
+theories can be mapped when we deal with interpretaions of theories. In
+applications (say, consider the famous ER-diagrams),  this phenomenon is not
+exotics and well known under the name of 'semantic relativism' (what is an
+entity -- basic sort -- for one user, may be a relationship for another
+user).  In the logic naturally induced by the ST-treatment (Tarsky's
+first-order structures), a theory  interpretation can map a basic relation
+to a derived relation but mapping a basic sort to relation (either basic or
+derived) is not legitimate. An essential difference!
+
+Zinovy Diskin
+
+
+
+
+

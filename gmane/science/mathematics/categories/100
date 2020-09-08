@@ -1,0 +1,142 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Fixing the constructive continued-fraction definition of the reals: proofs and refutations
+Date: Thu, 19 Feb 2009 23:57:18 -0800
+Lines: 109
+Approved: news@gmane.org
+Message-ID: <E1LaeM4-0004hy-TB@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1235173789 9225 80.91.229.12 (20 Feb 2009 23:49:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 20 Feb 2009 23:49:49 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Sat Feb 21 00:51:05 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Laf95-0007K9-SW
+	for gsmc-categories@m.gmane.org; Sat, 21 Feb 2009 00:51:04 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LaeM4-0004hy-TB
+	for categories-list@mta.ca; Fri, 20 Feb 2009 19:00:25 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:100
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/100>
+
+
+Prof. Peter Johnstone wrote:
+> On Wed, 11 Feb 2009, Vaughan Pratt wrote:
+>
+>> Prof. Peter Johnstone wrote:
+>>>  Whoa! This simply can't work. Whatever the final coalgebra for N x (-)
+>>>  looks like, it must (thanks to Lambek) be isomorphic to N x itself,
+>>>  and therefore (since equality for N is decidable) must have lots of
+>>>  complemented subobjects {0} x itself, {1} x itself, ... The point of
+>>>  the continuity theorem for functions R --> R is that there are toposes
+>>>  in which R has *no* nontrivial complemented subobjects [...]
+>>>  The only way to get round it (apart from using glue)
+>>>  is to replace N by some "nonstandard natural number object" having no
+>>>  nontrivial complemented subobjects -- but where you get that from, I
+>>>  don't know.
+>>
+>> You're assuming product distributes over sums, which would be true for
+>> ordinary product but I specified lexicographic product, with the left
+>> argument as the "high order digit" (converse of the usual convention for
+>> ordinal product in ordinal arithmetic).
+>
+> For goodness' sake, Vaughan! How many times do I have to tell you that
+> I'm talking about *the underlying object* of the final coalgebra, and
+> not its order structure or its topology? If the underlying object of
+> the lexicographic product is the ordinary (cartesian) product -- and
+> if it's not, then I don't know what it is -- then it distributes over
+> sums because that's what products do in a topos.
+
+Peter, if you don't mind my answering a question with a question, did
+either of us mention underlying objects before?  (I could have
+overlooked an earlier message.)
+
+When you speak out of the blue about "the underlying object of the final
+coalgebra," what exactly is underlying what?  I feel like I've abruptly
+stepped through a mirror into some strange part of topos theory that
+will be covered in Volume 3 of the Elephant.
+
+One notion of underlying object that makes sense for me in the context
+so far is the set E(1,X) of elements of an object X in a topos E.  With
+this notion I have a prayer of making sense of your claim in the context
+of the following four objects of a topos E with NNO N (and whatever else
+if anything is needed to ensure that objects 2-4 exist in E).
+
+1.  N^2.
+
+2.  The initial object among all objects X with an element 0: 1 --> X
+and maps s,t: X --> X satisfying st = ts.
+
+3.  As for 2 with ts = t in place of st = ts.
+
+4.  As for 3 with st = s in place of ts = t.
+
+If I've grasped this slippery topos concept, all four objects X of E
+have, as their underlying set E(1,X), the set of all pairs (m,n) of
+natural numbers (up to isomorphism of course).  In 2 the elements take
+the form of terms (s^m||t^n)(0) meaning m s's and n t's applied in any
+order to 0.  In 3 the elements take the form of maps s^m(t^n(0)) meaning
+n applications of t (coarse tuning) followed by m applications of s
+(fine tuning), while in 4 they take the form of maps t^m(s^n(0)) (3 with
+s and t interchanged).
+
+I could well imagine 1 and 2 turning out to be isomorphic, but I feel I
+would get a lot from seeing the proof of whichever way that goes.
+
+I presume that 3 and 4 are isomorphic on the ground that s and t can be
+mapped to any two endomorphisms whence there must exist an isomorphism
+exchanging s and t.  I imagine I would get less out of a rigorous proof
+of that unless there's a bug in the previous sentence.  If there's no
+bug then this would seem to constitute a subtle difference from algebra,
+where the signature labels the operations in a way that prevents such an
+interchange and puts 3 and 4 in distinct albeit equivalent varieties.
+
+Whether or not 1 and 2 are isomorphic, they are in some sense both
+representations of the ordinary product of N with itself.
+
+Where I have greater difficulty is imagining an isomorphism between 2
+and 3 merely on the ground that they have the same underlying object.
+I'm really not following your logic here.  2 implements product
+concurrently whereas 3 and 4 implement it sequentially.  How could they
+be isomorphic in every topos?  (I can see that they'd have to be
+isomorphic in Set, and presumably certain other toposes which however I
+have no idea how to characterize.)  I regard 3 and 4 as equivalent
+definitions of the ordinal w^2 (w = \omega) in a topos.
+
+What are the necessary subobjects of 3, and which of those are
+necessarily complemented?  I can think of the singletons {(m,n)}, the
+set of successor elements (since s: X --> X is a monic), and the
+*uniform* tails s^m: X --> X of the successor elements, but not the set
+of limit ordinals in w^2 since t: X --> X is not a monic, and hence not
+anything involving t.  Are there other subobjects of 3, and can you
+characterize them all in some neat way?
+
+If as you seem to be implying, 1-4 are isomorphic, then I would have to
+agree with your "for goodness' sake" (yes it was really stupid of me not
+to see that) and resign myself to the absence (thus far) of any
+alternative to apartness for representing the reals.
+
+If however you agree with me that they can't be isomorphic (via
+something more reliable than my proof by agitated gesticulation born of
+summary dismissal) then we can move on with the rest of my envisaged
+program to define the continuum [0,x) in a topos without appealing to
+apartness.  This too may or may not have bugs, whence the "proofs and
+refutations" qualification in the new subject line.  (If this were darts
+there'd be a sequential scoreboard, concurrently with beer.)
+
+Vaughan
+
+
+

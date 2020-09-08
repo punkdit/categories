@@ -1,0 +1,137 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Help!
+Date: Sun, 07 Oct 2007 16:20:42 -0700
+Lines: 103
+Approved: news@gmane.org
+Message-ID: <E1IesOJ-0003xO-Tr@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019631 11116 80.91.229.2 (29 Apr 2009 15:40:31 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:31 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct  8 10:13:57 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Oct 2007 10:13:57 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IesOJ-0003xO-Tr
+	for categories-list@mta.ca; Mon, 08 Oct 2007 10:11:24 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 21
+Status: O
+Content-Length: 5609
+Original-Lines: 102
+Xref: news.gmane.org gmane.science.mathematics.categories:3964
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3964>
+
+I would think the best topics would be those that can be described with
+a minimum of jargon.  The problem with category theory is that it is so
+steeped in its own jargon as to make it quite an effort to strip it out.
+
+Here are some topics where I would expect that effort to be minimal,
+arranged in roughly increasing order of intricacy of definition.  This
+should more than fill a one-hour lecture, especially if there are questions.
+
+1.  Thinking of each object T of a category C as both a type and a dual
+type, characterize a product AxB in C as an object consisting of all
+pairs of T-elements of A and B over all types T, and A+B as dually
+consisting of all pairs of T-functionals of A and B over all dual types
+T in ob(C).  Section 6 needs pullbacks, they could be done either here
+or there, it's neither here nor there.
+
+2.  The category FinBip of finite bipointed sets as the theory of
+cubical sets.  The models are arbitrary functors M: Bip --> Set.  You
+could look at \Delta for simplicial sets as well or instead, I'm partial
+to Bip perhaps because in kindergarten we tended to work more with
+cubical than simplicial sets (Western Australian kindergartens had
+strong PTOs reflecting epic entanglements).  You could then continue
+with FinSet^op as the algebraic theory of Boolean algebras, but that
+would entail giving up one of the other segments.
+
+3.  Enriched categories as generalized metric spaces.  People who have a
+hard time with abstract objects mixed in with concrete homsets (I
+certainly did) will be relieved to know that making the homsets just as
+abstract as the objects turns the definition of category into a familiar
+object not normally considered part of the categorical basement.
+
+4.  Presheaves on J as colimits of diagrams in J.  If you use Yoneda to
+hide the concept of colimit the idea becomes almost trivial.  In the
+case J = 1, as C starts from 1 and grows towards Set^1 each new set X as
+a new object of C is installed along with an arbitrary choice of C(1,X).
+  The composites at X are defined by first installing C(X,Y) for all
+existing Y in C, defining fx: 1 --> X --> Y for each x in X and new f in
+C(X,Y), and taking C(X,Y) to be maximal subject to Ax[fx=gx] ==> f=g.
+These composites then uniquely determine the remaining composites
+gf: X --> Y --> Z and fg: W --> X --> Y for W other than 1.  The
+completion is complete when every new set is necessarily isomorphic to
+one already present.  (Does this have anything to do with Yoneda
+structures?  Trying to read about those I discovered I no longer talked
+Strine.)
+
+For J the ordinals 1 and 2 as respectively the primitive vertex and the
+primitive edge, namely the two reflexive graphs priming the pump for the
+rest, there are now two types of element, vertices and edges, with Ax
+interpreted as quantifying over all elements of both types; otherwise
+everything is as for J = 1.  Point out that whereas all sets are free,
+the free graphs are just those with trivial incidences.  If you do
+section 6 (triples for matrix multiplication), also point out at some
+point that whereas Set^1 is tripleable on Set (the identity), Set^J in
+general is tripleable only on Set^{|J|}, important when talking Czech.
+
+5.  Toposes, but *not* the way it is explained on You-tube, which is
+completely unmotivated and incomprehensible for anyone who hasn't
+already understood them.  The Explanation section
+http://en.wikipedia.org/wiki/Topos_theory#Explanation in the Wikipedia
+article on elementary toposes touches on the two points that should be
+in any explanation of the concept, namely
+(i) "subobject" predates "topos," witness CTWM which defines it in
+second-order language, and
+(ii) monics m: X' --> X are in bijection with pullbacks of the element
+(hence monic) t: 1 --> \Omega along morphisms f: X --> \Omega, allowing
+one to speak of *the* characteristic function of a monic, thereby
+classifying the monics by their characteristic functions, a first-order
+notion (whence the "elementary" in "elementary topos") that is in full
+agreement with the second-order notion in (i) when applied to a topos.
+
+6.  Matrix multiplication in terms of the Kleisli construction for the
+triple for Vct_k.  I just sent out a crib sheet for that which focused
+on a difficulty with non-finitary (square summable) linear combinations,
+but that difficulty is impossible to absorb in the available time,
+better to stick to the finitary operations where matrix multiplication
+is tripleable.  You could mention the Haskell programming language and
+how they blended the second component of the triple and Kleisli into a
+single operator Bind: T(X) --> (X --> T(Y)) --> T(Y), which might get
+any programmers in the club interested in Haskell; also point out the
+possibility of replacing (X --> T(Y)) by T(Y*X) and its implications for
+matrix algebra including Hilbert space.  Stick to finite X in T(X) = k^X
+to save the extra step of defining finitary k^X for infinite X (but if
+you do decide to do that step it should suffice to point out that 6 of
+the 16 binary Boolean operations as 2x2 truth tables have constant rows
+or columns or both and then generalize to infinity).  In case You-tube
+ever has a video on triples you should probably mention any synonyms for
+"triple" so the students can find the video.
+
+Vaughan
+
+
+Michael Barr wrote:
+> What would you say to an undergraduate math club about categories?  I have
+> been thinking about it, but I am not sure what to say.  Talk about
+> cohomology, which is what motivated E-M?  I don't think so.  Talk about
+> dual spaces of finite-dimensional vector spaces?  Maybe, but then what?
+>
+> Michael
+>
+>
+>
+
+
+

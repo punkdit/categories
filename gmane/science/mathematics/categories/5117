@@ -1,0 +1,109 @@
+Path: news.gmane.org!not-for-mail
+From: Greg Meredith <lgreg.meredith@biosimilarity.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: typed lambda calculus:cartesian closed :sorted pi calculus:?
+Date: Sat, 29 Aug 2009 10:27:09 -0700
+Lines: 76
+Approved: news@gmane.org
+Message-ID: <E1Mi64H-0005SR-Jd@mailserv.mta.ca>
+Reply-To: Greg Meredith <lgreg.meredith@biosimilarity.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-7
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1251724112 16940 80.91.229.12 (31 Aug 2009 13:08:32 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 31 Aug 2009 13:08:32 +0000 (UTC)
+To: Mike Stay <metaweta@gmail.com>, Categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon Aug 31 15:08:24 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from [138.73.1.1] (helo=mailserv.mta.ca)
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Mi6c3-0007Hr-Le
+	for gsmc-categories@m.gmane.org; Mon, 31 Aug 2009 15:07:59 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Mi64H-0005SR-Jd
+	for categories-list@mta.ca; Mon, 31 Aug 2009 09:33:05 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5117
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5117>
+
+Dear Mike,
+
+Is your question motivated by an interest in equivalences or categorical
+models? For the "unsorted" =F0-calculus the most well exercised categorical
+models are certain classes of functor categories. You need this "extra
+layer" to take into account the name generation. Maybe i'm not seeing
+something, but i don't think introducing a sorting discipline will perturb
+these models very much. It certainly doesn't affect confluence. You can hav=
+e
+well sorted processes that are not confluent. The lack of confluence arises
+from the essential non-determinism in reduction. Here's a race condition
+that is still well-sorted:
+
+   - (new u : S)x?(y).y!(u) + (new v : T)z?(w).w!(v) | (new a : A)x!(a) |
+   (new b : B)z!(b)
+      - reduces along one path to (new a)(new u)a!(u)
+      - and along another to (new b)(new v)b!(v)
+
+The better equivalence for the =F0-calculus is bisimilarity. In fact, in ma=
+ny
+cases of (nominal) rewrite systems that are confluent, bisimilarity can be
+the better equivalence. Consider applicative bisimilarity for the lambda
+calculus. More generally, there are results that show that the entire famil=
+y
+of proposed processes equivalences can be characterized as bisimulation up
+to.
+
+Best wishes,
+
+--greg
+
+P.S. There's something very strange going on in this hierarchy of
+equivalences. As the equivalences can see more fine-grained structure, the
+complexity goes down. Language equivalence for regular languages is P-Space=
+.
+The corresponding bisimulation problem is polynomial. The language
+equivalence problem for CFLs: not decidable. The corresponding bisimulation
+problem: polynomial. You might wave this away by observing that in the
+language equivalence situation you are searching "program space" while in
+the bismulation situation you are checking that two program match in a
+step-by-step fashion. But, then consider the logical equivalence of
+spatial-behavioral logic -- which is strictly more expressive than
+bisimilarity.
+
+On Tue, Aug 25, 2009 at 10:40 AM, Mike Stay <metaweta@gmail.com> wrote:
+
+> As far as I can tell, the major difference between lambda calculus and
+> pi calculus is that the rewrite rules in pi calculus aren't confluent,
+> so it doesn't make a lot of sense to consider rewrite-equivalence
+> classes of terms.  What kind of category (or bicategory) does sorted
+> pi calculus give?
+> --
+> Mike Stay - metaweta@gmail.com
+> http://math.ucr.edu/~mike <http://math.ucr.edu/%7Emike>
+> http://reperiendi.wordpress.com
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/<http:/=
+/www.mta.ca/%7Ecat-dist/>]
+>
+
+
+
+--=20
+L.G. Meredith
+Managing Partner
+Biosimilarity LLC
+1219 NW 83rd St
+Seattle, WA 98117
+
++1 206.650.3740
+
+http://biosimilarity.blogspot.com
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,131 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: squares and cubes
+Date: Fri, 14 Jan 2000 16:32:21 -0500 (EST)
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <200001142132.QAA01366@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017764 30807 80.91.229.2 (29 Apr 2009 15:09:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:24 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Jan 15 10:44:03 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA00112
+	for categories-list; Sat, 15 Jan 2000 09:48:23 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 4447
+Original-Lines: 104
+Xref: news.gmane.org gmane.science.mathematics.categories:1345
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1345>
+
+About an associative bifunctor I wrote
+
+  There's a general theorem that says that a final coalgebra for 
+  X v X  is automatically a final coalgebra for  X v X v X v X,
+  indeed, for any such ordered-wedge where the number of copies of  X
+  is a power of two. I haven't been able to find the proof for a 
+  general theorem that specializes to  X v X v X.
+
+Well, the proof is just a modification of an old one (of mine). And
+once in hand, it makes clear the nonsensical nature of the
+construction for the thirding map that appeared in my "Derivatives"
+posting. (I'll replace it with a better construction in a later
+posting.)
+
+The general theorem is that if  T  is an endo-functor on a category 
+with coproducts and if  f:F --> TF  is a final coalgebra then
+
+   f     Tfn
+F --> TF --> TTF  is a final  TT-coalgebra. (Citation below, albeit
+for the dual case -- it appears that not everyone has noticed that
+just by replacing the category in question with its dual one can
+transfer any theorem about initial algebras to one about final
+coalgebras.)
+
+Let  X*Y  denote the values of a bifunctor (not necessarily 
+associative) on a category with binary coproducts.
+
+    If  f:F --> F*F  is a final "square coalgebra" then
+
+        f       f*1
+     F --> F*F ----> (F*F)*F  is a final "cubical coalgebra".
+
+Given a cubical coalgebra  a:A --> (A*A)*A  consider the square 
+coalgebra  A + A*A  --> (A + A*A)*(A + A*A)   whose left coordinate 
+
+            a           r*l
+map  is  A --> (A*A)*A ----> (A + A*A)*(A + A*A)  and whose right
+
+                        l*l
+coordinate map is  A*A ----> (A + A*A)*(A + A*A)  where  l  and  r  
+denote the left and right coprojections for the coproduct.  Let  
+A + A*A  --> F  be the induced map to the final square coalgebra and
+let  a'  and  a'' be its coordinate maps. Then
+
+           a'                            a''
+     A --------> F        and      A*A ------> F
+                                                       (add downward
+   a |           | f              1 |          | f      arrowheads)
+
+ (A*A)*A -----> F*F                A*A -----> F*F          
+         a''*a'                        a'*a'
+
+Consequently:
+                             a'
+                    A  --------------> F
+
+                  a |                  | f
+                            a''*a'
+                (A*A)*A ------------> F*F
+
+                  1 |                  | f*1
+
+                (A*A)*A ---------> (F*F)*F
+                        (a'*a')*a'
+
+For the uniqueness, suppose that  a'  is as in the last diagram with
+the middle arrow removed. Define  a'' so that the penultimate diagram
+commutes (f, by Lambek, is an isomorphism). Then the map from  A + A*A
+to  F  whose coordinate maps are  a'  and  a''  is a map of square 
+coalgebras, hence  a'  is as already described.
+
+For a counterexample for arbitrary categories, consider the discrete
+category with two objects and bifunctor that turns it into the
+two-element group. On discrete categories coalgebras are, of course,
+the same as fixed points, and the only way a functor can have a final
+coalgebra is if it has a unique fixed point. The object that serves
+as the identity element for the group structure is thus the final
+square coalgebra. But both objects are cubical coalgebras, hence 
+there is no final cubical coalgebra.
+
+There's nothing special about the number three. Given any iteration
+obtainable from the bifunctor, the constructions above can be 
+modified to provide proofs and counterexamples. Indeed, we needn't
+restrict to bifunctors. For example, if  TXYZ  is a trifunctor on a 
+category with binary coproducts, then a final coalgebra for  TXXX
+gives rise to a final coalgebra for  TX(T(TXXX)X)(TXX(TXXX)).
+
+But what I can't find a proof for is the analogue of this theorem,
+good for any category (same citation):
+
+  If  T  is an endo-functor and if  TT  has a final coalgebra
+  then so does  T.
+
+The analogue would be: if  X*Y  is a bifunctor and if  (X*X)*X  has
+a final coalgebra then so does  X*X.  All my counterexamples --  here
+and in the citation below -- are on discrete categories. For what it's 
+worth, if an associative bifunctor on a discrete category is such that
+X*X*X  has a final coalgebra, then so does  X*X.
+
+
+Algebraically Complete Categories, Como Conference, Category Theory, 
+     Proceedings of the International Conference held in Como, Italy,
+     1990, Lecture Notes in Mathematics, 1488, Springer-Verlag, 1991
+
+

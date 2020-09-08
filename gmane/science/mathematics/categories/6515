@@ -1,0 +1,77 @@
+Path: news.gmane.org!not-for-mail
+From: N.Bowler@dpmms.cam.ac.uk
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: categories with several compositions?
+Date: 03 Feb 2011 11:36:58 +0000
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E1PlNVT-0008Cs-5t@mlist.mta.ca>
+References: <E1PkdTT-0005tx-AB@mlist.mta.ca>
+Reply-To: N.Bowler@dpmms.cam.ac.uk
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1296833045 3661 80.91.229.12 (4 Feb 2011 15:24:05 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 4 Feb 2011 15:24:05 +0000 (UTC)
+Cc: "'categories@mta.ca'" <categories@mta.ca>
+To: John Stell <J.G.Stell@leeds.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Fri Feb 04 16:24:00 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlNVw-0008Ms-4o
+	for gsmc-categories@m.gmane.org; Fri, 04 Feb 2011 16:24:00 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34158)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlNVY-0006sn-BM; Fri, 04 Feb 2011 11:23:36 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlNVT-0008Cs-5t
+	for categories-list@mlist.mta.ca; Fri, 04 Feb 2011 11:23:31 -0400
+In-Reply-To: <E1Pkn8d-0000Wc-Ip@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6515
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6515>
+
+> Can anyone tell me whether these structures have been studied anywhere?
+>
+> A kind of generalized monoid with two or more compositions *1, *2, etc
+> with [each composition having its own identity] and where
+> (x *i y) *j z = x *i (y *j z) for all i,j
+We can certainly relate these structures to things we already understand
+reasonably well (though I can't see how to say `they are just wombats').
+
+First of all, here's a way to generate lots of examples. Pick any monoid M,
+and let (e_i | i is in I) be any family of invertible elements of M. For
+each i in I, define a new operation *i on M by a *i b = a * (e_i^{-1}) * b.
+M is a monoid under each *i, with identities the s_i, and (x *i y) *j z = x
+*i (y *j z) for all i,j.
+
+In fact, all examples arise in this way. Pick one of the operations, which
+we will treat differently from the others: call it * and call its identity
+e. So the structure is a monoid with respect to * and e. I'll call this
+monoid M. Now pick some other operation *i and let e_i be the identity for
+*i.
+
+e_i * (e *i e) = (e_i * e) *i e = e_i *i e = e
+
+and similarly (e *i e) * e_i = e, so e_i is an invertible element of M with
+inverse (e *i e). Now note that for any a and b,
+
+a *i b = (a * e) *i (e * b) = a * (e *i e) * b = a * (e_i^{-1}) * b
+
+so that each *i arises as above.
+
+On the basis of this analysis, it looks like the structures you asked about
+bear the same sort of relation to monoids with a designated family of
+invertible elements that torsors do to groups.
+
+Nathan
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

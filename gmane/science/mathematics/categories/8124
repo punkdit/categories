@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Descent for fibred monads
+Date: Sun, 18 May 2014 10:43:41 +1000
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1WmBDC-0000Lt-2Z@mlist.mta.ca>
+References: <E1Wl7d4-0005XM-OI@mlist.mta.ca> <E1WlILk-0007nO-1P@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1400458491 23286 80.91.229.3 (19 May 2014 00:14:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 19 May 2014 00:14:51 +0000 (UTC)
+To: George Janelidze <janelg@telkomsa.net>, Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon May 19 02:14:45 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WmBE4-0005Da-Jx
+	for gsmc-categories@m.gmane.org; Mon, 19 May 2014 02:14:44 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:59270)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WmBDC-00058n-9N; Sun, 18 May 2014 21:13:50 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WmBDC-0000Lt-2Z
+	for categories-list@mlist.mta.ca; Sun, 18 May 2014 21:13:50 -0300
+In-Reply-To: <C0B1CA9552A242DB89EE85AB7B1C06AC@ACERi3>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8124
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8124>
+
+> Thank you, Richard, for the clarification. But you say
+>
+>> This deficiency also applies to the example I started with, of a locally
+>> connected topos E---->S.
+>
+> and this not "also" but "therefore". I mean, my example of G-sets is the
+> simplest non-trivial (in the sense of Galois theory) special case of your
+> locally connected topos example, as you surely know.
+
+Yes indeed!
+
+> And another comment: to say that HI is left exact is the same as to say
+> that
+> I is left exact - so, your story is a localization story, right?
+
+That's right. In this case, in fact, things are a bit boring; to say
+that the reflection IH is a fibred reflection, equivalently a
+localisation, means that the E-maps are stable under pullback, which in
+turn means---by Section 6 of CJKP---that the M-maps already descend
+along effective descent morphisms. So "trivial = locally trivial".
+
+Thinking about this further, the situation here is actually completely
+typical: if p: D ---> C is a fibration, and T is a fibred monad on D,
+then any effective descent morphism for the fibration p will also be one
+for the fibration T-Alg ----> C. Indeed, to say that a fibration sees a
+particular map as an effective descent morphism is expressible as a
+(bicategorical) orthogonality property in the 2-category Fib(C). Thus
+the class of fibrations with this property is closed under bilimits; in
+particular, under Eilenberg-Moore objects of monads. In short: if
+objects descend, then for any fibred monad T, also T-algebras descend.
+
+So, to summarise:
+
+(a) If p: D ---> C is a fibration with sums, and T a fibred monad on p,
+and f: x--->y in C, then the category of descent data of T-algebras
+w.r.t. f is isomorphic to the category of f^* T_y f_!-algebras.
+
+(b) If, in the same situation, f is an effective descent morphism for p,
+then the category of descent data of T-algebras w.r.t. f is equivalent
+to the category of T_y algebras
+
+(c) Thus, in this situation, the category of f^* T_y f_! algebras is
+equivalent to the category of T_y-algebras.
+
+And unfortunately, the requirement of T's fibredness rules out all the
+interesting examples, such as those coming from Galois theory. So
+perhaps this is why (a) above does not appear in the literature; the
+monadic treatment it promises for "local" structure is in fact, by (c),
+only valid for local structure that already descends.
+
+Thanks for the careful readings, George - I think I understand what is
+going on here much better now!
+
+Richard
+
+>
+> George
+>
+> --------------------------------------------------
+> From: "Richard Garner" <richard.garner@mq.edu.au>
+> Sent: Saturday, May 17, 2014 9:16 AM
+> To: "George Janelidze" <janelg@telkomsa.net>; "Categories list"
+> <categories@mta.ca>
+> Subject: Re: categories: Re:  Descent for fibred monads
+>
+>> Ah! You are quite correct. I was hasty in saying that the Galois theory
+>> situation is an example of the result I am interested in. The reason it
+>> does not work is that the reflection HI does not induce a fibred monad
+>> on C. The semi-left-exactness ensures the simple formula for the
+>> reflection: A--->B goes to the pullback of HIA ----> HIB along
+>> B---->IHB. What it does not ensure is that pullback commutes with
+>> reflection---which would be to ask that HI be left exact.
+>>
+>> This deficiency also applies to the example I started with, of a locally
+>> connected topos E---->S. The "fibred monad" Delta pi_0 is only fibred
+>> over S, whereas I need it to be fibred over E. So in fact it seems that
+>> a correct example is given by a topos with totally connected components
+>> --- meaning that the left adjoint pi_0 of Delta preserves pullbacks. In
+>> this case, then, the analogue of (2) does hold.
+>>
+>> Richard
+>>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

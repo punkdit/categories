@@ -1,0 +1,75 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: What is a contractible simplicial object?
+Date: Fri, 21 Jul 2017 11:14:22 -0400 (EDT)
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E1dYmUL-0001Ar-CA@mlist.mta.ca>
+Reply-To: Michael Barr <barr@math.mcgill.ca>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Trace: blaine.gmane.org 1500699548 28561 195.159.176.226 (22 Jul 2017 04:59:08 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Sat, 22 Jul 2017 04:59:08 +0000 (UTC)
+To: "Categories list\" <Categories list>" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Jul 22 06:59:04 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dYmVL-00075w-6u
+	for gsmc-categories@m.gmane.org; Sat, 22 Jul 2017 06:59:03 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:54885)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dYmW6-0000rb-Is; Sat, 22 Jul 2017 01:59:50 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dYmUL-0001Ar-CA
+	for categories-list@mlist.mta.ca; Sat, 22 Jul 2017 01:58:01 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9275
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9275>
+
+A few weeks ago, I asked on this group how one defines contractibility
+of simplicial objects.  Later I tried Math Overflow and discovered that
+the question had been asked but not satisfactorily answered several
+years ago.  Below is a \TeX file that gives an entirely satisfactory
+answer.
+
+\def\dot{{_\bullet}}
+  \def\to{\mathop{\longrightarrow}\limits}
+For an augmented simplicial set, the answer is clear.  Given $X_\dot\to
+X_{-1}$, a contraction is a sequence of maps $t=t_n:X_n\to X_{n+1}$ for
+all $n\ge -1$ such that $d^0t=1$, $d^it=td^{i-1}$ for $i>0$, $s^0t=tt$,
+and $s^it=ts^{i-1}$ for $i>0$.  These are the equations a degeneracy
+$s^{-1}$ would satisfy.
+
+Suppose $X\dot$ is a simplicial object in a category with split
+idempotents and there
+are maps $t=t_n:X_n\to X_{n+1}$ for all $n\ge0$ satisfying all the above
+equations as far as they are defined.  We
+have, in $X_0$
+  $$d^1td^1t=d^1d^2tt=d^1d^1tt=d^1td^0t=d^1t$$
+  so that $d^1t$ is idempotent.  If we factor it as $X_0\to^{d^0}X_{-1}
+\to^{t_{-1}}X_0$ we nearly have a contractible augmented simplicial
+object. There two things to verify: first that $d_0^0d_1^0=d_0^0d_1^1$
+and second that $s_0^0t_{-1}=t_0t_{-1}$. I have used the normally
+omitted lower indices to clarify that the low dimension indentities
+follow from the higher ones. For the first,
+  $$t_{-1}d_1^0d_2^0=d_0^1t_0d_1^0=d_1^1d_2^1t_2=d_1^1d_2^2t_1=
+d_1^1t_0d^1 =t_{-1}d_0^0d_1^1$$
+  and $t_{-1}$ being a (split) monic can be canceled to give
+the result. For the second,
+  $$s_0^0t_{-1}d_0^0=s_0^0d_1^1t_0=d_2^2s_1^0t_0=d_2^2t_1t_0=
+t_0d_1^1t_0=t_0t_{-1}d_0^0$$
+  and $d_0^0$ being a (split) epic can be canceled to give
+  the result.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

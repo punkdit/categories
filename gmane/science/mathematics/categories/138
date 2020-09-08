@@ -1,0 +1,192 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Bi-presheaves
+Date: Sun, 08 Mar 2009 12:25:09 -0700
+Lines: 159
+Approved: news@gmane.org
+Message-ID: <E1LgSFX-0007dh-JX@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1236556934 14048 80.91.229.12 (9 Mar 2009 00:02:14 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 9 Mar 2009 00:02:14 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon Mar 09 01:03:31 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LgSxn-00032K-9y
+	for gsmc-categories@m.gmane.org; Mon, 09 Mar 2009 01:03:23 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LgSFX-0007dh-JX
+	for categories-list@mta.ca; Sun, 08 Mar 2009 20:17:39 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:138
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/138>
+
+Ross Street wrote:
+> Given a category A, the Isbell envelope E(A) is the category whose
+> objects
+> are triplets (F_*, F^*, t) where F_* : A --> Set and F^* : A^{op} -->
+> Set are functors
+> and  t_{a,b} : F^*(a) x F_*(b) --> A(a,b) is a family natural in a
+> and b in A. The
+> morphisms are as you described. There is a "double Yoneda" A --> E(A)
+> taking
+> c to (A(c,-), A(-,c), composition).
+
+
+(For "the morphisms are as you described" to work, unless I'm missing an
+op somewhere, in the move from (P,F,c) to (F_*,F^*,t), P as the
+component that "transforms forward" has to be F^*.)
+
+I learned about the Isbell envelope from Ross just this January.  Ross
+said he'd learned it from Bill Lawvere, who he said named it that after
+learning it from Isbell.
+
+In the course of some follow-up discussion, Rich Wood pointed out to us
+the following translation into the language of profunctors of what both
+Andrew and Ross wrote just now.  To avoid having to play favourites by
+choosing between (P,F,c) and (F_*,F^*,t) I'll pick the neutral (A,X,r),
+r: A x X --> ? I've been using myself for this stuff, where the early
+letters A,B,... transform forwards and the late letters X,Y,...
+transform backwards, just as with Chu spaces.
+
+Organize the presheaves A and X as the profunctors A: C^op x 1 --> Set
+and X: 1^op x C --> Set in the category Prof (Australian: Mod) of
+profunctors ((bi)modules, distributors) and their natural
+transformations.  In notation more suggestive of how they compose, these
+become
+
+    A: 1 -|-> C
+    X: C -|-> 1
+    r: AX --> 1_C
+
+where AX is profunctor composition at 1, and 1_C: C^op x C --> Set is
+the identity profunctor 1_C: C -|-> C in Prof, aka the homfunctor of C.
+
+In general, composition of profunctors entails a left Kan extension, but
+in this case the composition is taking place at 1, trivializing the
+composite AX to A x X: C^op x C --> Set (Andrew's P x F).
+
+The Isbell envelope being strikingly reminiscent of the Chu
+construction, it is natural to ask how they're related, which I'll offer
+an answer to in the rest of this message.
+
+A little calculation shows that for the Isbell envelope of the
+one-morphism category 1 (whose one object I'll denote * in the next
+paragraph), E(1) is equivalent to Set x Set^op.  But this is also
+Chu(Set,1) where 1 is now the singleton set.
+
+What about Chu(Set,2)?  The trick here is to take C to be the two-object
+category 1+1, augmented with two morphisms from what I'll call the
+positive copy j of 1 to the negative copy \ell, call this C_2 as the
+category naturally associated to the profunctor 2: 1 -|-> 1 defined by
+2(*,*) = 2.  I'd been doing this with what I call Dsh(2) below, but Ross
+pointed out to me (more generally) that Dsh(K) fully embeds in E(C_K) as
+follows.  I'll write it assuming Rich's profunctor typing of A and X as
+above so that the second argument of A and the first argument of X is
+always the object * of 1.  (In that language Ross's t_{a,b} : F^*(a) x
+F_*(b) --> A(a,b) becomes t_{a,b} : \int^c F^*(a,c) x F_*(c,b) -->
+A(a,b) which exposes the left Kan nature of the product, albeit trivial
+as noted above.)
+
+The objects (A,X,r) of E(C_2) now consist of two pairs of sets: A =
+(A(j,*),A(\ell,*)) and X = (X(*,j),X(*,\ell)).  Chu(Set,2) then emerges
+from E(C) as the full subcategory of E(C_2) for which A(\ell,*) = X(*,j)
+= {}.  In effect A and X behave as though they were single sets A(j,*)
+and X(*,\ell), the effect we need for (A,X,r) to be an ordinary Chu space.
+
+The generalization to Chu(Set,K) simply entails setting C_K(j,\ell) = K,
+leaving C_K(\ell,j) empty as implicitly assumed above, with |C_K(j,j)| =
+|C_K(\ell,\ell)| = 1, and with no other change to the description of the
+full subcategory of E(C_K) constituting Chu(Set,K).
+
+In a posting to this list on 9/7/02 with subject line "Presheaves etc.
+in a uniform way" I described (even more obscurely than my usual
+postings) a common generalization of presheaves and Chu spaces that can
+be described far more clearly using the above language.  It amounts to a
+generalization of the Isbell envelope (which as I said I only learned
+about this January from Ross).  Quite independently of Rich and within a
+day of him, Jeff Egger suggested to me exactly the following typing for
+A and X in this generalization.
+
+In place of the small C parametrizing the Isbell envelope E(C), take two
+small categories J and L (explaining the j and \ell in the above).
+Define a *disheaf* (at CT'04 I called these "communes") on a profunctor
+K: L -|-> J to be a triple (A,X,r) where A: 1 -|-> J and X: L -|-> 1 are
+profunctors and r: AX --> K: L -|-> J is a natural transformation.  By
+analogy with Chu(Set,K), write Dsh(Set,K) for the category of disheaves
+on the profunctor K, whose morphisms are just as for the Isbell
+envelope, which in turn are just as for Chu spaces.
+
+The Isbell envelope E(C) = Dsh(Set,1_C).  This is the sense in which Dsh
+generalizes E.
+
+(The "Set" parameter is a bad habit arising out of the notation Chu(V,k)
+adopted around 1992, I forget by whom.  It is probably better to write
+Chu(K) and Dsh(K) and let V be inferred from context as the ambient V in
+which one is working, which I'll do now.)
+
+As pointed out to me by Ross, E(C) generalizes Dsh(K) by taking C to be
+what Ross called the *cone* C_K of K: J^op x L --> Set (L -|-> J),
+namely J+L augmented with  morphisms from each j to each \ell picked out
+of the set K(j,\ell) and composed as prescribed by the functoriality of
+K.  (I learned this category representation of profunctors/bimodules the
+hard way from Robert Seely at CT'04, who kindly said of my "bipartite
+categories" during my talk, "That's a bimodule!")
+
+The generalization is weaker (in some sense) than the other direction,
+in that Dsh(K) is not E(C_K) itself but only the full subcategory
+obtained by requiring A(j,*) = X(*,\ell) = 0 for all j in \ob(J) and
+\ell in \ob(L).
+
+I've recently found Dsh(K) very useful as a foundation for ontology (not
+so much Aristotle as XML, which among other things supplies the Web
+Ontology Language OWL with its presentation syntax), where it furnishes
+an extensional conception of the notion of attribute (which the
+Wikipedia article "Property (philosophy)" helpfully points out doesn't
+exist), makes sense of C.I. Lewis's highly controversial notion of
+qualia from the 1920's (philosophers today divide into qualiaphiles and
+qualiaphobes, see the Wikipedia article on "Qualia") as the elements of
+K(j,\ell), and offers a mechanism for interaction between the two
+components in Cartesian dualism, which failed after a century of
+unconvincing candidates for a meaningful such mechanism (Malebranche's
+occasionalism, Leibniz's monads, etc.).
+
+ From a more mathematical standpoint disheaves are even more general
+than Chu spaces.  I can imagine a few raised eyebrows here---after my
+decade of propaganda on Chu spaces as the ultimate universal framework,
+the natural question would be, how could anything be more general than a
+Chu space?
+
+It depends on whether you're willing to settle for some full subcategory
+of some Chu(Set,K) or want your category "on the nose" without the
+hassle of having to come up with some ad hoc characterization of the
+desired subcategory (cf. the distinction above between Dsh(K) as a
+generalization of E(C) and vice versa where only the latter requires the
+extra step of specifying a full subcategory).  Instead one can point to
+a profunctor K and say that a K-flapdoodle is precisely an object of
+Dsh(K).  For example there is a straightforwardly exhibited K such that
+Dsh(K) consists essentially of the inelastic acylic graphs, those having
+invariant path length.  No presheaf category consists of these, and
+Isbell envelopes only contain them as a full subcategory (I don't know
+if there's a K large enough that Chu(K) does the same job).
+
+I have a paper on this in the works, focusing mainly on the ontology
+application for now and therefore trying (only half successfully I fear)
+to minimize the deployment of categorical weapons of math destruction in
+order to make it more accessible to those likely to care at all about
+ontology, let me know if you're interested.
+
+Vaughan Pratt
+
+
+

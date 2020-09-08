@@ -1,0 +1,110 @@
+Path: news.gmane.org!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: filtered monads?
+Date: Sun, 30 May 2010 06:05:44 +0200 (MEST)
+Lines: 73
+Approved: news@gmane.org
+Message-ID: <E1OIjV4-0006O5-I4@mailserv.mta.ca>
+References: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1275231546 3619 80.91.229.12 (30 May 2010 14:59:06 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 30 May 2010 14:59:06 +0000 (UTC)
+Cc: categories@mta.ca
+To: James Borger <james.borger@anu.edu.au>
+Original-X-From: categories@mta.ca Sun May 30 16:59:05 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjyj-0006fC-0i
+	for gsmc-categories@m.gmane.org; Sun, 30 May 2010 16:59:05 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjV4-0006O5-I4
+	for categories-list@mta.ca; Sun, 30 May 2010 11:28:26 -0300
+In-Reply-To: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5881
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5881>
+
+Dear James,
+
+There is a pretty obviuous way to formalize it, but very few does it. It's
+the existence/construction thing. "Free" is an angel and devil is in the
+detail.
+
+What I mean is just to construct each F_m and see what happens in this
+transfinite induction. At the end you pick up all F_m's to produce F =
+\cup_m F_m, and formulating F_m is the main formalizing part.
+
+When you do this over C=Set, it looks natural, and almost canonic, but
+when moving over to other C's it is not all that jazz.
+
+Many will say, yes, it's already in the literature, "it's been there for
+the past 50 years", "everything is pretty standard", and so on and so
+forth. This angelic self-confidence makes no good in your case, I
+believe(!). You need to work out the filtered steps and complete the
+transfinite induction. eta : id -> F often behaves, and is sometimes even
+unique, and obviously mu : F o F -> F requires detail.
+
+We are doing these things for the term monad. Let me know if you need some
+references. In your case your are a bit more abstract algebra, and terms
+mean you are more universal algebra, but that shouldn't make any
+difference, I guess.
+
+Cheers,
+
+Patrik
+
+
+
+On Thu, 27 May 2010, James Borger wrote:
+
+>
+> Dear category theorists,
+>
+> Does the concept of "filtered monad" exist in the literature? Here are =
+> two basic models of what I have in mind.
+>
+> 1. Let C be the category of sets, let F:C->C be the set underlying the =
+> free monoid on S, and let F_n(S) be the subset of F(S) consisting of =
+> words of length at most n. Then the monad structure map F o F-->F =
+> restricts to maps F_m o F_n-->F_{mn}, and F_1 is the identity functor.
+>
+> 2. Let C be the category of R-modules (R a given ring), F(M) is the =
+> tensor product R[x] \otimes_R M, and F_n(M) is the sub-R-module M + xM + =
+> ... + x^n M of F(M). Then the monad structure map F o F --> F restricts =
+> to a map F_m o F_n --> F_{m+n}, and F_0 is the identity functor.
+>
+> So, in the first example, I'd say that the monad F is filtered by the =
+> ordered monoid of non-negiative integers under multiplication, and in =
+> the second example, it's filtered by that under addition.
+>
+> There seems to be a pretty obvious way of formalizing this, and since =
+> many monads in practice come with such a structure, I'd guess that this =
+> concept is in the literature, but I didn't find anything on the internet =
+> or in the textbooks on my shelf. But perhaps that's because it's not =
+> called a "filtered monad" or because it's a special case of a general =
+> concept with a completely different name. So, does this concept exist in =
+> the literature? I'm writing something about a particular monad with a a =
+> filtered structure, and after I define it, I'd like to have the sentence =
+> "In the language of [5], the functors F_n endow F with a filtered monad =
+> structure."
+>
+> Yours,
+>
+> James Borger
+>
+> ps I'm not at the moment a subscriber to the mailing list, so please cc =
+> to me any responses to the list.
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

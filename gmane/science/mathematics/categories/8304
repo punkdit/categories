@@ -1,0 +1,90 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <categories@tobybartels.name>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Uniform locales in Shv(X)
+Date: Thu, 28 Aug 2014 10:10:13 -0700
+Lines: 51
+Approved: news@gmane.org
+Message-ID: <E1XNA80-0006AW-1v@mlist.mta.ca>
+References: <E1XMeQW-0007GO-Kx@mlist.mta.ca>
+Reply-To: Toby Bartels <categories@tobybartels.name>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1409272455 13613 80.91.229.3 (29 Aug 2014 00:34:15 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 29 Aug 2014 00:34:15 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Aug 29 02:34:10 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XNA8m-0005sG-Qs
+	for gsmc-categories@m.gmane.org; Fri, 29 Aug 2014 02:34:09 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:33328)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XNA81-00029H-0X; Thu, 28 Aug 2014 21:33:21 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XNA80-0006AW-1v
+	for categories-list@mlist.mta.ca; Thu, 28 Aug 2014 21:33:20 -0300
+Content-Disposition: inline
+In-Reply-To: <E1XMeQW-0007GO-Kx@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8304
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8304>
+
+I wrote in part:
+
+>I don't know what to do about the dependent choice, however.
+
+Now I do!  Generalize from gauge spaces to prometric spaces.
+
+There is a very precise analogy as follows:
+equivalence relation : uniformity :: pseudometric : prometric.
+So just as an entourage need not be transitive,
+but instead there is a transitivity condition on the entire family,
+so a distance map in a prometric need not satisfy the triangle inequality,
+but instead a triangle inequality is imposed on the entire family.
+A gauge generates a prometric, but not every prometric arises thus.
+
+Then it's straightforward to get the uniformity underlying a prometric,
+and also to get a universal gauge or universal prometric from a uniformity.
+The question is whether this gives you back your original uniformity,
+and this in turn hinges on whether there are enough distance maps
+(which in the case of the gauge are pseudometrics) in the prometric.
+Specifically, given an entourage U, we need a natural number n
+and a uniformly continuous d such that {x,y | d(x,y) < 1/n} is in U.
+
+An argument involving dependent choice and infima says yes, for the gauge.
+For the prometric, we have a simpler argument, using only infima.
+This argument works internally to any topos with a natural-numbers object
+as long as the distance maps in our prometrics are valued in upper reals.
+
+Specifically, given the entourage U, define d_U as follows:
+d_U(x,y) := inf {t | t = 0 and (x,y) in U}.
+That is, d_U(x,y) = 0 iff (x,y) in U,
+and d_U(x,y) = infinity iff (x,y) not in U.
+(If you don't want to allow infinite distances, use a finite upper bound;
+this gives a different prometric but one with the same uniformity.
+You can even get the same prometric by using an unbounded sequence of bounds.)
+This violates the triangle inequality whenever U is not transitive,
+but d_U(x,z) <= d_V(x,y) + d_V(y,z) when V . V <= U,
+so we have a prometric if we start with a uniformity.
+
+So anyway, if you use prometrics valued in upper real numbers,
+then every uniformity is prometrizable, even if not gauge-able.
+
+This is all for pointwise spaces, but the construction of d_U
+should also work for a uniform cover in a uniform locale.
+I have not checked this carefully, however.
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

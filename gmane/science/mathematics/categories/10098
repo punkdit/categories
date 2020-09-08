@@ -1,0 +1,125 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: Matsuoka Takuo <motogeomtop@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Monoidal product functor is strong monoidal, when?
+Date: Sun, 12 Jan 2020 01:44:45 +1100
+Approved: news@gmane.org
+Message-ID: <E1iqgFL-00071S-D1@rr.mta.ca>
+Reply-To: Matsuoka Takuo <motogeomtop@gmail.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="80258"; mail-complaints-to="usenet@blaine.gmane.org"
+Cc: "categories@mta.ca list" <categories@mta.ca>
+To: David Roberts <droberts.65537@gmail.com>
+Original-X-From: majordomo@rr.mta.ca Sun Jan 12 17:42:23 2020
+Return-path: <majordomo@rr.mta.ca>
+Envelope-to: gsmc-categories@m.gmane-mx.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by blaine.gmane.org with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.89)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iqgIv-0007YA-Qd
+	for gsmc-categories@m.gmane-mx.org; Sun, 12 Jan 2020 17:41:33 +0100
+Original-Received: from rr.mta.ca ([198.164.44.159]:58778)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iqgH8-00013r-Rp; Sun, 12 Jan 2020 12:39:42 -0400
+Original-Received: from majordomo by rr.mta.ca with local (Exim 4.92.1)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iqgFL-00071S-D1
+	for categories-list@rr.mta.ca; Sun, 12 Jan 2020 12:37:51 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:10098
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/10098>
+
+Hi David,
+
+Your message caught my attention on my spam tray by Gmail's fault.
+
+I'm not sure what proof would be nice to you, but as far as I could see,
+the construction of a symmetric monoidality of the multiplication of a
+> _symmetric_ monoidal category is largely trivial. Let Fin denote the
+category of finite sets. Then, a symmetric monoidal category (C,@) gives
+you a symmetric monoidal functor Fin ---> Cat which associates to a finite
+set S the category C^S. The symmetric monoidal structure of C x C gives
+you a symmetric monoidal structure on the functor Fin ---> Cat
+associating C^S x C^S to S. Inspecting this symmetric monoidal functor,
+you further obtain a map of these symmetric monoidal functors which
+associates to S the multiplication functor
+C^S x C^S ---> C^S induced from the codiagonal map S + S ---> S, where
+"+" in the source denotes the coproduct operation in
+Fin. This is the desired structure.
+
+As you see, we have used the symmetric monoidality of the product
+functor Cat x Cat ---> Cat, which you have because the Cartesian product
+is a limit so preserves products. Thus, a reference you are looking for
+may be
+
+Graeme Segal, Categories and cohomology theories, Topology 13 (1974),
+
+which essentially contains a sufficient argument for this (and is indeed
+earlier than Joyal=E2=80=93Street).
+
+To conclude, "commutation with the braiding" comes immediately from
+the naturality of the codiagonal map, to commute with any
+automorphism of a finite set.
+
+Best regards,
+Takuo Matsuoka
+
+
+2019=E5=B9=B412=E6=9C=8817=E6=97=A5(=E7=81=AB) 7:34 David Roberts <droberts=
+.65537@gmail.com>:
+>
+> Hi all again,
+>
+> thanks to those who replied off-list. The canonical reference is
+> Joyal=E2=80=93Street's Braided monoidal categories. (Someone else also po=
+inted
+> out that algebras for the E_2 operad are equivalent to E_1 algebras in
+> the category of E_1 algebras.)
+>
+> However, my *actual* desired result is that the multiplication of a
+> _symmetric_ monoidal category is a braided functor (i.e. commutes with
+> the braiding=3Dsymmetry in this case). I proved this to my own
+> satisfaction, but my proof is not very nice, and I'm searching for a
+> cleaner verification of the required commuting diagram. Surely this
+> was also known! And if so, what's a good reference (I expect it to be
+> even earlier than Joyal=E2=80=93Street).
+>
+> Thanks,
+> David
+>
+> PS this question relating to Lawvere's 2015 invited CT address might
+> be of interest to people here:
+>
+https://mathoverflow.net/questions/348436/the-barr-boole-galois-topos-a-mod=
+ification-of-sets-to-play-well-with-schemes
+>
+>
+> David Roberts
+> Webpage: https://ncatlab.org/nlab/show/David+Roberts
+> Blog: https://thehighergeometer.wordpress.com
+>
+> On Wed, 11 Dec 2019 at 16:59, David Roberts <droberts.65537@gmail.com>
+wrote:
+>>
+>> Hi all,
+>>
+>> I have half convinced myself (without checking details) that if I have
+>> a braided monoidal category (C,@), then the monoidal product @: C x C
+>> --> C is strong monoidal. Is this true? What's a reference for this I
+>> could point to?
+>>
+>> Thanks,
+>> David
+>>
+>> David Roberts
+>> Webpage: https://ncatlab.org/nlab/show/David+Roberts
+>> Blog: https://thehighergeometer.wordpress.com
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

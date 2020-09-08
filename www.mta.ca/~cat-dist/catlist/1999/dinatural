@@ -1,0 +1,152 @@
+Date: Wed, 6 Dec 1995 12:49:18 -0400 (AST)
+Subject: Dinatural exercise
+
+Date: Wed, 6 Dec 1995 09:08:19 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Is this new?
+
+  Let  *A*  be a locally small category. Let  *D*  be the category
+  whose objects are set-valued bifunctors on  *A*  (contravariant on
+  the first variable, covariant on the second) and whose maps are the
+  dinatural transformations. Then  *A*  is a groupoid.
+
+Well, OK, what I mean is that dinaturals are closed under composition iff
+*A*  is a groupoid. (And, yes, this could all be done with the category of
+sets replaced with a topos.)
+
+I trust the following is old, but who has a reference?
+
+  If  *A*  is a groupoid then  *D*  is equivalent to the category of
+  presheaves on  *A*.
+
+
+Date: Wed, 6 Dec 1995 15:36:59 -0400 (AST)
+Subject: Re: Dinatural exercise
+
+Date: Wed, 06 Dec 1995 10:45:03 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        From: Peter Freyd
+        [Let  *D*  be the category
+        whose objects are] set-valued bifunctors on  *A*  (contravariant on
+        the first variable, covariant on the second)
+
+Two definitional/notational suggestions:
+
+        1.   "sesquifunctors on A" for the objects of *D*
+
+        2.   A -X A as a notation for *D*
+
+The right-hand half of the X in -X is intended to suggest the
+contravariant bit.  One then has the following hierarchy.
+
+  A => B   "functions" from A to B, viz. !A -o B
+  A -o B   (homo)morphisms from A to B
+  A -X B   sesquifunctors A\op x A -> B, dinaturally transformed
+
+The first two come from linear logic, with !A = FU being interpreted as
+the underlying object (e.g. underlying set) of A reflected back into
+the category via F.  F serves merely to make the underlying objects the
+same "kind" as the objects they underlie, avoiding a proliferation of
+kinds in order to keep linear logic typeless, or at least kindless.
+
+Vaughan Pratt
+
+
+Date: Sun, 10 Dec 1995 17:19:22 -0400 (AST)
+Subject: Dinatural exercise solved
+
+Date: Sun, 10 Dec 1995 15:36:34 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+I had asked if the following is new:
+
+  Let  *A*  be a locally small category. Let  *D*  be the category
+  whose objects are set-valued bifunctors on  *A*  (contravariant on
+  the first variable, covariant on the second) and whose maps are the
+  dinatural transformations. Then  *A*  is a groupoid.
+
+Meaning, of course, that dinaturals are closed under composition iff
+*A*  is a groupoid.
+
+Well, all I've received are requests for the proof. So: given  *A*
+let  P  denote the covariant power-set functor on the category of
+sets. Fix an object  C.  Consider the bifunctor that sends  A  to
+P(C,A)  and consider the dinatural transformation  (A,A) -> P(C,A)
+that sends an endomorphism  e  in  (A,A)  to the set of solutions o
+the equation:
+                x          x    e
+              C -> A  =  C -> A -> A.
+
+The composition  1 -> (A,A) -> P(C,A)  has as its unique value the
+_entire_ subset of maps from  C  to  A. If it is dinatural then for
+any  f:A -> C:
+                  P(C,A)
+                /
+              1      | P(1,f)
+                \
+                  P(C,C).
+                                                 g    f
+Every endomorphism of  C  is thus of the form  C -> A -> C. In
+particular, the identity map is of that form, that is, f  is left
+invertible, hence, every map targeted at  C  is left-invertible. If
+this remains true for every  C  then every map in  *A*  is left
+invertible, thus invertible.
+
+I also asked for a reference for:
+
+ If  *A*  is a groupoid then  *D*  is equivalent to the category of
+  presheaves on  *A*.
+
+Nobody's asked for it, but let  *A*  be a groupoid anyway. For any
+target category and any dinatural  S -> T  one may easily prove that
+the hexagon used for defining dinaturals expands to a commutative
+diagram (from which the computability of dinaturals easily follows):
+
+                  SAA  ------------------> TAA
+
+            SfA /     \ SAf           TfA /    \ TAf
+
+          SBA             SAB  -->  TBA            TAB
+
+            SBf \     / SfB           TBf \    / TfB
+
+                  SBB  -------------------> TBB.
+
+  If  *A*  is a groupoid then the category composed of dinaturals
+  between bifunctors from  *A*  to  *B*  is equivalent to the category
+  composed of natural transformations between covariant functors from
+  *A*  to  *B*.
+
+Show that for any bifunctor, S, there is an isomorphism (in the
+category composed of dinaturals) to a bifunctor, T, with the special
+property that  TAB = TAA  and  TAx = TA1. Given  S  define  T  to be
+the bifunctor such that  TAB = SAA  and  Tfg = Sff' (where  f'  is the
+inverse of  f). The collection of identity functions from  SAA  to
+TAA  forms a dinatural transformation as does the collection of
+identity functions from  TAA  back to  SAA.
+
+The full subcategory of such functors is easily seen to be isomorphic
+to the category of contravariant functors from  *A*  to  *B*.
+
+
+Date: Wed, 13 Dec 1995 10:07:28 -0400 (AST)
+Subject: Dinatural exercise solved: addendum
+
+Date: Mon, 11 Dec 1995 09:13:51 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Whoops. I lifted the proof I posted yesterday out of a longer ms I'm
+writing. It occured to me (you know how it goes -- around 3 a.m.) that
+it assumed the reader already knew the dinatural transformation
+1 -> (A,A). Its source is the terminal set-valued bifunctor: the
+constant bifunctor whose constant value is a one-element set. Its
+target is the "hom" bifunctor. The dinatural transformation is the one
+with identity maps as values.
+
+See: the reader did already know it (because, of course, it's the
+only dinatural from  1  to  (A,A)  that can be defined uniformly for
+all categories).
+

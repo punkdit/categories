@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: pratt cat
+Date: Fri, 31 Oct 1997 15:39:28 -0400 (AST)
+Lines: 106
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971031153919.12899A-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017005 26043 80.91.229.2 (29 Apr 2009 14:56:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:45 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Fri Oct 31 15:39:47 1997
+Original-Received: by mailserv.mta.ca; id AA01476; Fri, 31 Oct 1997 15:39:29 -0400
+Status: O
+Content-Length: 4325
+Original-Lines: 105
+Xref: news.gmane.org gmane.science.mathematics.categories:506
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/506>
+
+Date: Fri, 31 Oct 1997 01:03:22 -0800
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+Peter's response to my question about categories having all the common
+properties of toposes and abelian categories was a very pleasant
+surprise.
+
+First I was not at all expecting such a definite answer.
+
+Second I did not expect a representation theorem, especially not such a
+nice one as "every such category is a product of an abelian category
+and a topos".  This is the converse of the automatic (by Horn) fact
+that such a product is such a category, where (for this converse at
+least) the language can be taken to be as large as the full Horn theory
+common to abelian categories and toposes.
+
+Third I did not expect at all that the class would be finitely
+axiomatizable (but on the other hand neither did I have any reason to
+suppose not).
+
+Fourth and very nice, unless I'm overlooking something, Peter's
+representation theorem implies that my original question (does the
+common *elementary* theory allow anything other than abelian categories
+and toposes?) can now be answered in the negative.  The elementary
+sentence "either all the objects are A-type or all the objects are
+T-type" is obviously true in both abelian categories and (pre)toposes,
+and rules out hybrids like Set x Ab.  I'd been wondering what
+elementary sentence might fail for that example, and Peter's A-type and
+T-type constructs lead straight to it.
+
+Minor remarks:
+
+The trick of multiplying by 0 to tease out both the A- and T-components
+at once is beautiful, not just intrinsically but also because it
+reveals a certain duality between A and T that is not at all apparent
+(to me anyway) from their separate definitions.  The actual
+multiplication projects out the T part without disturbing the A part,
+and then the pushout 
+
+                    AX		(where AX = 0xX)
+                   /  \
+                  0    X
+                   \  /
+                    TX
+
+neatly quotients out that surviving A part by forcing the left side
+through the zero object while on the right AX->X communicates only the
+A part which is therefore the only part that the pushout quotients out
+from 0 + X (if that's not too clumsy a way of putting it).
+
+The upshot is then that the AX's form (as an abelian category) a
+coreflective subcategory of the whole while the TX's form (as a
+pretopos) a reflective subcategory.  That's really beautiful!
+
+The following is presumably the key to proving completeness of Peter's
+axiomatization...
+
+>VAE) For every  X  there's a map  TX -> X  such that 
+>
+>                    AX     TX
+>                      \   /
+>                        X
+
+...by permitting any model to be constructed directly as a
+product of an abelian category and a topos (not even "subcategory"
+seems to be needed here, so this is an even stronger representation
+theorem than the representation of a Boolean algebra as a subalgebra of
+a power set).
+
+>And note that the type-A objects can not be 
+>reflective: if  1  has a map to any type-A object the entire category
+>collapses.
+
+Whoops, a bug here if I'm understanding things.  Only the T part
+collapses, if the category were abelian to begin with then there'd be
+no collapse.
+
+>Define  TX -> X  as the image of rX.
+
+This was lovely (getting rid of the E in VAE above).
+
+
+Some questions.
+
+1.  Can this representation theorem be extended to the full Horn
+theory, i.e. any number of alternations of quantifiers?  (Note that my
+disjunction---every object is A-type or every object is T-type---is not
+a Horn sentence.)  (Now that I look again, I guess the answer must be
+yes, since products preserve *all* Horn sentences.)
+
+2.  In a text that treated both toposes and abelian categories, would
+your axiomatization be a good starting point prior to doing either?
+You could then quickly define an abelian category to be a category of
+this general type with the additional property of being strongly
+connected.  I don't see right off how to define a pretopos as slickly.
+
+3.  What about bringing in the closed structure?  Might that permit
+some simplification of your axiomatization?  For example it looks as
+though you could define a T-type object to be one having a unique map
+to the tensor unit.  Then you could answer the last sentence of the
+previous paragraph simply with "the tensor unit is terminal."
+
+Vaughan Pratt
+
+

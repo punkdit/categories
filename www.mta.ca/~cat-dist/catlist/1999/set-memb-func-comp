@@ -1,0 +1,2763 @@
+Date: Mon, 11 Mar 1996 10:15:45 -0400 (AST)
+Subject: Set membership <-> function composition
+
+Date: Sun, 10 Mar 1996 17:23:14 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+I don't know quite how much sense this question makes, but let me ask
+it anyway.
+
+Set membership and function composition can be defined in terms of each
+other.  However getting from the former to the latter seems to be
+*much* easier than going back, which would appear to entail first
+picking out the transitive closure of membership in Set and then
+recovering membership itself from it (see e.g. Goldblatt's Topoi 12.4),
+a messy process.
+
+What significance does this asymmetry have for you?  Does it mean that
+Set itself is somehow to blame by having been improperly formulated?
+Or does it mean that membership is an intrinsically obscure notion
+because of the messiness of the process?  Or is transitivity itself
+merely an unnatural preoccupation of set theorists that has no place in
+proper mathematics?  In that case is membership better regarded as just
+an undefined notion in Set?  Should one forget altogether about
+membership *and* Set and just work in one's favorite topos, e.g. the
+effective topos?
+
+Or should we just define set membership as done by ZF instead of trying
+(pretending?) to extract it from function composition?  This need not
+entail abandoning any part of category theory.  All it would do is make
+set membership the elementary concept we all (well, surely almost all)
+intuit it to be, instead of one that depends on a tour de force.
+
+Pointers to relevant literature much appreciated.
+
+Vaughan Pratt
+
+
+Date: Tue, 12 Mar 1996 08:31:14 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Mon, 11 Mar 1996 17:07:55 -0400 (AST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+ Let me introduce my response by saying that although I was more-or-less
+ familiar with Lawvere's thoughts on the subject, I had never thought too
+ much about them until some years ago, more than 5, less than 10, when
+ I found myself teaching a course in set theory.  For the first time,
+ I came to realize what a complex horror set membership really is.
+ In every other type of mathematics I had ever studied, the objects
+ were some kind of sets with some kind of structure and the arrows were
+ the functions (or at worst equivalence classes of such) that preserved
+ them.  Mostly, the structure was given by operations, or at least
+ partial operations, although Top was something of an exception, but
+ even there, continuous maps are those that preserve ultrafilter
+ convergence.
+
+ But of course, Sets are an exception.  Here are sets defined in terms of
+ these elaborate epsilon trees and this structure is invariably ignored.
+ It seemed to me intuitively, confirmed by Makkai, that the ONLY arrows
+ between sets that actually preserved all that structure were inclusions
+ of subsets.  So that obvious category is just a poset.  But of course
+ the truth is that that epsilon structure is invariably ignored.  So
+ why is it taken as the basis of mathematics.  Much better to simply
+ define sets as the objects of a category and then an element is just
+ a global section, or rather an equivalence class thereof.
+
+ My whole experience with category theory convinces me that membership and
+ the closely related idea of equality is an intrinsically obscure notion
+ Or rather, not that it itself is obscure, but it obscures anything
+ it touches.  Like, the idea of embedding Z into Q by taking the eqivalence
+ classes of fractions and then removing those that include a fraction
+ of the form n/1 and replacing them by the corresponding integer.  Yes,
+ it can be done and we certainly want to say that Z is a subring of Q,
+ but it is such a mess and so unnecessary.
+
+ Some would say, but not I, that you should just work in your favorite
+ topos.  I take a platonic view that there really are sets, but membership
+ and equality are not the simple concepts we think they are.  In particular,
+ I would like to say that a fraction is a pair of integers m/n, n > 0 and
+ that m/n = p/q when mq = np.
+
+ I don't know about pointers to the literature.
+
+ Cheers, Mike
+
+
+Date: Tue, 12 Mar 1996 14:46:10 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Tue, 12 Mar 1996 10:27:25 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+  On Mike Barr's comments. The bulk of them are right enough, though maybe it
+is not quite fair to complain that something designed as foundation for every-
+thing is awkward to work with. Like complaining that the tax code is full of
+qualifications and exceptions. But, what stirred me to respond is recognition
+of an old friend in
+<<I would like to say that a fraction is a pair of integers m/n, n > 0 and
+<<that m/n = p/q when mq = np.>>
+   So would Saunders MacLane, sorry, Mac Lane. He gives the axioms in his 1948
+invited address published as 'Duality for groups' in BullAMS 1950. The
+community has not taken up Saunders' axioms, can't think why.
+     John Isbell
+
+
+Date: Wed, 13 Mar 1996 10:50:22 -0400 (AST)
+Subject: rationals
+
+Date: Tue, 12 Mar 1996 17:29:31 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+        From: MTHISBEL@ubvms.cc.buffalo.edu
+        <<I would like to say that a fraction is a pair of integers m/n, n > 0 and
+        <<that m/n = p/q when mq = np.>>
+           So would Saunders MacLane, sorry, Mac Lane. He gives the axioms in his 1948
+        invited address published as 'Duality for groups' in BullAMS 1950. The
+        community has not taken up Saunders' axioms, can't think why.
+
+I thought these were Weber's axioms.  Lerhbuch der Algebra, 1895.
+
+The integers are likewise pairs m-n of natural numbers, with m-n = p-q
+when m+q = n+p.
+
+Natives of Ab are no doubt comfortable defining the integers as the
+tensor unit.  But in Ab, Z = Z.  Are people from Ab even aware that
+there are infinitely many integers?  Can they even count?
+
+People from Set surely know a whole lot more about Ab than people from
+Ab know about Set.
+
+(By Ab I mean the closed category of Abelian groups, with all logic
+conducted internally, i.e. Hom:Ab\op x Ab -> Ab.)
+
+Vaughan
+
+
+Date: Wed, 13 Mar 1996 10:49:19 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Tue, 12 Mar 1996 17:11:35 -0500
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+Michael Barr's reply to this question was not entirely complete (IMHO), as
+he forgot to mention that he wrote a short paper some time (3 yrs) ago
+dealing with matters related to this.  Those interested might want to
+download his paper, which can be obtained by ftp from triples.math.mcgill.ca
+in the directory pub/barr (look for variable.sets.*.Z, where * = dvi, tex,
+or ps).
+
+= rags =
+
+
+Date: Wed, 13 Mar 1996 12:50:21 -0400 (AST)
+Subject: Re: rationals
+
+Date: Wed, 13 Mar 1996 07:35:27 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+We seem to be having mailer problems again, with caret being turned
+into escape.
+
+Peter Freyd's ASCII notation => for internal hom to the rescue: read
+
+        But in Ab, Z^Z = Z.
+
+as
+
+        But in Ab, Z=>Z = Z.
+
+Vaughan
+
+
+Date: Wed, 13 Mar 1996 12:49:33 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 10:29:57 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+One may argue that formal set theory relates to topos theory in the
+way that untyped lambda calculus relates to the typed theory. If you
+think it's difficult to get a model of set theory out of a topos try
+to get a model of untyped lambda calculus out of a model for the typed
+theory.
+
+The semantics of core mathematics -- unlike the semantics of a
+programming language -- has never presented much of a problem. The
+perversity of formal set theory as a foundational language for
+mathematics has not been much in evidence for the simple reason that
+no mathematician has ever actually used it for his semantics.
+
+I am not saying here that the continuum hypothesis is perverse, or
+even questions about much larger cardinals. (For one thing they can be
+stated easily in a topos setting.) I am saying that formal set theory
+allows entirely perverse questions that have nothing to do with the
+semantics of mathematics.
+
+The actual elements used for a mathematical construction are never of
+interest. Imagine your reaction to an interruption at the beginning of
+a lecture on number theory, "Which construction of the natural numbers
+do you have in mind? Russell's or Van Neumann's?" My favorite example
+of the sort of perverse question one can ask if one were to take
+formal set theory seriously is "Does any simple group appear as a zero
+of the Riemann Zeta function?"
+
+
+Date: Wed, 13 Mar 1996 16:28:57 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 19:30:06 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+Hi,
+
+>The actual elements used for a mathematical construction are never of
+>interest. Imagine your reaction to an interruption at the beginning of
+
+It's perfectly feasible to imagine that in say, descriptive set theory,
+properties of certain structures could be shown by showing (1) they have a
+certain cardinality, (2) sets of such cardinality have epsilon trees with a
+certain property and (3) using epsilon induction over such epsilon trees to
+prove something about our original structures.  [I don't know of any such
+instances; I'm not a descriptive set theorist.]
+
+Alternatively, what about Godel's constructible universe.  This seems to be
+a mathematical construction, and the actual element relation seems to be
+not only of interest, but essential to the construction.
+
+>a lecture on number theory, "Which construction of the natural numbers
+>do you have in mind? Russell's or Van Neumann's?" My favorite example
+>of the sort of perverse question one can ask if one were to take
+>formal set theory seriously is "Does any simple group appear as a zero
+>of the Riemann Zeta function?"
+
+This is an interesting example.  You state a question in mathematical
+English, and then criticise ZF for being able to express this question,
+while category theory cannot.  One wonders what other questions stated in
+mathematical English---some of them perhaps perfectly sensible---can be
+stated in the language of ZF, but not in the language of category theory.
+I'd much rather that my formalisation of mathematics could state
+nonsensical things (consistency strength isn't an issue here), than to be
+living in the fear that my formalisation may be inadequate to express some
+sensible arguments.
+
+Two examples that I think are relevant to this debate.
+
+Category theorists are keen on statements to the effect that structures are
+defined by their universal properties.  A typical book on topos theory may
+define an elementary topos as a category with finite limits and power
+objects.  It then goes on to show that any topos has internal-homs.  How?
+By defining the function space as a certain set of sets of ordered pairs...
+
+Let Nat(x) be the statement "x is a triple (omega,S,0) to which the Peano
+axioms apply". ZF |- "there exists x such that Nat(x)".  This is sufficient
+to do arithmetic; after proving this single existential statement, one need
+never give a particular construction of the natural numbers again.  Indeed,
+if one is really worried about these things, note that ZF+"Nat(omega)"
+(where omega is a new constant symbol) is conservative over ZF and then
+work in the latter theory, without ever fixing on a particular
+interpretation of ZF+"Nat(omega)" into ZF.
+
+Both category theory and set theory are amenable to working with
+mathematical structures by either explicit constructions or by uniquely
+characterising properites.  In both category theory and set theory, we
+prove the existence of structures with certain uniquely characterising
+properties via explicit construction.
+
+Ralph.
+
+
+Date: Wed, 13 Mar 1996 16:54:57 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 15:45:47 -0500
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+-
+- Date: Wed, 13 Mar 1996 10:29:57 -0500
+- From: Peter Freyd <pjf@saul.cis.upenn.edu>
+-
+.................................
+-
+- The actual elements used for a mathematical construction are never of
+- interest. Imagine your reaction to an interruption at the beginning of
+- a lecture on number theory, "Which construction of the natural numbers
+- do you have in mind? Russell's or Van Neumann's?" My favorite example
+- of the sort of perverse question one can ask if one were to take
+- formal set theory seriously is "Does any simple group appear as a zero
+- of the Riemann Zeta function?"
+-
+-
+My point exactly.  The elements don't matter, so why should
+elementhood be taken as the fundamental relation of all
+of mathematics?  Equality doesn't matter either, but
+equivalence relations do.
+
+
+Date: Wed, 13 Mar 1996 17:13:55 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 15:54:44 -0500
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+-
+- Date: Wed, 13 Mar 1996 19:30:06 GMT
+- From: Ralph Loader <loader@maths.ox.ac.uk>
+-
+............................
+-
+- Category theorists are keen on statements to the effect that structures are
+- defined by their universal properties.  A typical book on topos theory may
+- define an elementary topos as a category with finite limits and power
+- objects.  It then goes on to show that any topos has internal-homs.  How?
+- By defining the function space as a certain set of sets of ordered pairs...
+
+................................
+-
+- Ralph.
+-
+-
+Nonsense.  How can a set of sets of ordered pairs be an object of a
+topos.  In fact, there is at least one book that defines a topos as
+a category with finite limits and power objects and constructs the
+internal homs as a limit of two arrows between two power objects.
+The construction is hidden inside a cotriple, but that is what it
+amounts to.
+
+
+Date: Thu, 14 Mar 1996 10:25:46 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 13:45:19 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+        The semantics of core mathematics -- unlike the semantics of a
+        programming language -- has never presented much of a problem.
+
+It would be interesting to hear a few mathematicians who *don't* work
+much in foundations comment on this.
+
+===
+
+Item A.
+
+        The perversity of formal set theory as a foundational language
+        for mathematics has not been much in evidence for the simple
+        reason that no mathematician has ever actually used it for his
+        semantics.
+
+Isn't this a bit strong?  An awful lot of mathematicians are under the
+impression that their definitions are grounded in set theory.  This has
+the enormous advantage for them that, if pressed as to whether their
+own mathematics is consistent, they can claim
+
+(a) that the definitions could be expanded all the way out to whatever
+fragment of ZF they're assuming if the auditors insist, and
+
+(b) that if their local framework is inconsistent, then the part of ZF
+they used (and a fortiori the whole of ZF) is itself inconsistent.  "If
+I go down, I'm taking you with me" sort of thing, just like if we ever
+find a polytime recognizer for an NP-complete set.
+
+Being well-calibrated on the structure of ZF and which bits are at
+greater risk makes it a *lot* easier to organize one's mathematics to
+minimize the risk of consistency.  Pretending there never was any risk
+of inconsistency in the first place is *very* well contradicted by the
+historical record, particularly in calculus.
+
+Today we have trustworthy infinitesimals, of a very elegant kind,
+thanks to nonstandard arithmetic.  While one might *wish* that these
+had been discovered by categorical means, the actuality is that their
+discovery used very heavy doses of formal set theory.  Whether we can
+do it today with less heavy doses is beside the historical point.
+Formal set theory evolved in response to consistency concerns, and
+today it engenders for many of us a strong sense of safety, implicit in
+our trust of our own tools, and explicit in actual products such as
+infinitesimals we can trust.
+
+===
+Item B.
+
+        My favorite example
+        of the sort of perverse question one can ask if one were to take
+        formal set theory seriously is "Does any simple group appear as a zero
+        of the Riemann Zeta function?"
+
+Item A argues that many of us *do* take formal set theory seriously.
+In this item I will argue that doing so does not force one into this
+sort of situation.
+
+Now there's nothing inconsistent about going inside a definition and
+asking implementation-specific questions.  People do this all the time,
+in fact one might argue that mathematicians do it every one or two
+sentences.
+
+In any such visit to the inside of a definition, people seem to treat
+the occasion as though a tacit NDA (nondisclosure agreement) applied.
+Perhaps it shouldn't be so tacit.
+
+MATH NDA.  When you step inside a definition, you agree to bring in
+only permitted imports.  You agree furthermore that when you leave, you
+will take out only permitted exports.
+
+The usual definitions of "simple group" and "zero of the Riemann Zeta
+function" permit neither importing nor exporting the other concept.
+Your example enters both definitions at the one time, imports the other
+concept in each case, and exits each definition with illicit
+information, racking up a total of four NDA violations in a single
+exchange.
+
+Even if mathematicians don't stick this NDA to their doors, they know
+instinctively to use it, independently of whether their math is
+implemented with sets or categories.  Violations of the NDA will get
+you funny looks.
+
+===
+A+B
+
+Now here's a *very* important point, it's why I separated the above two
+issues out as two items.
+
+Item B, the NDA protocol, does not conflict with Item A, the reliance
+on the consistency of ZF that many put their trust in.
+
+There is no more conflict here than there is between NDA's in business
+and the laws of physics.  All an NDA does is *restrict* what things can
+be done, it does not break or even bend any law.
+
+If you don't stick to the NDA's, you may get funny looks, but
+consistency is not put at risk.  If you add an unexplored axiom to ZFC
+you put consistency at serious risk *and* you get funny looks.  All
+very analogous to violating business NDA's and breaking laws of
+physics.
+
+===
+
+Back to my original question.
+
+CAT is grounded in Set when you take the homfunctor to go to Set, as is
+standardly done.  But the very notion of set is defined by membership;
+a set is determined by the truth values of membership of candidate
+elements of it.
+
+A choice to be made early on is whether the candidate elements of a
+given set themselves must form a set, the point of view encouraged by
+toposes where the very question of membership is a private business
+discussed only in power objects (a power breakfast comes to mind).  The
+alternative is to allow the candidates to form a proper class, as in
+ZF, which will blithely tell *every* individual except 1 and 2 that
+they are not members of {1,2}, without any consideration of their
+feelings.
+
+The first choice does seem saner to me.  However a lot of people think
+globally about membership and equality, and it seems like a lot of
+religious mumbo-jumbo to them not to be allowed to even *ask* whether
+two things are not equal when they don't live in the same
+neighborhood.
+
+So when I write about sets, can I safely adopt a "Boolean" style and
+say that the question "x \in {1,2,3}" (equivalently, "x=1 or x=2 or
+x=3") has only two answers, yes or no?  Or should I do the mumbo-jumbo
+thing and clarify the ground-rules by explaining how the existence of
+neighborhoods creates at least one more possible answer?  Or should I
+pretend there's no problem and think mumbo-jumbo even when I know my
+audience is thinking Boolean?
+
+I *hate* that third alternative, it seems so dishonest.  But maybe
+dishonesty is the best policy in this situation...
+
+Vaughan Pratt
+
+
+Date: Thu, 14 Mar 1996 10:24:51 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 13:40:25 -0800
+From: james dolan <jdolan@math.ucr.edu>
+
+-This is an interesting example.  You state a question in mathematical
+-English, and then criticise ZF for being able to express this question,
+-while category theory cannot.
+
+
+i at least am curious just what is this mathematical question you
+claim to have in mind which zf can express but which category theory
+can not.  obviously it wasn't "Does any simple group appear as a zero
+of the Riemann Zeta function?" since that is mere gibberish and not a
+mathematical question at all.  zf was being criticized for being
+unable to not express this non-question, and category theory was being
+praised for having the option to express "it" (should someone actually
+bother to give it a real meaning) or not.
+
+whatever was the real point that you were trying to argue might still
+be interesting to hear but it's hard to even know what that point
+might have been in light of the apparent misunderstanding you've
+exhibited here.
+
+
+Date: Thu, 14 Mar 1996 10:26:30 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Wed, 13 Mar 1996 16:53:30 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+  Ralph Loader writes:
+
+  It's perfectly feasible to imagine that in say, descriptive set
+  theory, properties of certain structures could be shown by showing
+  (1) they have a certain cardinality, (2) sets of such cardinality
+  have epsilon trees with a certain property and (3) using epsilon
+  induction over such epsilon trees to prove something about our
+  original structures.  [I don't know of any such instances; I'm not a
+  descriptive set theorist.]
+
+There are all sorts of near-by examples but they're not
+counterexamples to my assertion. The fact that any structure of a
+certain type is isomorphic to one with further special properties is a
+standard first-step. The most usual further property is the existence
+of a well-ordering.  But there's no such example, nor will there ever
+be, in which one must use some property of the elements of every
+possible structure of the given type in order to prove a property of
+the structure. That's a tautology if the "property of the structure" in
+question is an isomorphism-invariant.
+
+  Alternatively, what about Godel's constructible universe.  This
+  seems to be a mathematical construction, and the actual element
+  relation seems to be not only of interest, but essential to the
+  construction.
+
+I must agree that when making constructions in mathematical subjects
+in which the elements are the essence then one will use elements.
+
+About my example of the philosopher who asked the number theorist (I
+actually witnessed this) whether he was proving theorems about Russell's
+or Van Neumann's numbers led Ralph to reply:
+
+  You state a question in mathematical English, and then criticize ZF
+  for being able to express this question, while category theory
+  cannot. One wonders what other questions stated in mathematical
+  English---some of them perhaps perfectly sensible---can be stated in
+  the language of ZF, but not in the language of category theory.
+
+In fact there are topos-theoretic analogues for Russell and Van
+Neumann, but not even a philosopher would be tempted to ask the
+analogue question. Besides the R and VN numbers one could ask the
+analogue question about the Lawvere and the Church numbers (in
+category theory, not in set theory). But one wouldn't.
+
+Anyway, I do have a counterexample to my own assertion. I think JH
+Conway gave us some examples of mathematical constructions in which
+the elements are the essence, to wit, his games and his numbers. Conway
+games can be described as the result of replacing the single epsilon
+of ZF with a pair of epsilons (for left and right "moves"). If one
+restricts attention to "impartial" games (any move legal for one player
+would have been legal for the other) then the two epsilons can be
+conflated and the subject conflates to ZF.
+
+
+Date: Thu, 14 Mar 1996 10:27:16 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 09:38:34 +1100 (EST)
+From: peterj@maths.su.oz.au
+
+Peter Freyd's old question "Does any simple group appear as a zero
+of the Riemann Zeta funxtion?" reminds me of the pleasing fact that
+it contains what philosophers would call a "category mistake".
+Pleasing because it's precisely the sort of mistake you can't make
+if you're working in a category.
+
+Peter Johnstone
+
+
+Date: Thu, 14 Mar 1996 10:28:00 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 01:25:06 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+My original problem was what to do about the absolutely ghastly
+argument I complained about, showing that membership could be figured
+out in Set.  I now have a solution, only a couple of whose 70 lines are
+needed to describe membership.  The rest explicitly, arithmetically,
+and (except for infinite products) completely describes all the
+adjunctions of (a lightweight version of) the bicomplete topos Set.
+
+For starters, you need to accept Mike Barr's intuition that "the
+elements don't matter."  If it bothers you that {2,4,17} is not "in" my
+version of Set, you aren't looking at it from Mike's perspective.
+
+It's tempting to make Set even lighter weight than I do here by
+constructing it as Skel(Set).  But while this is technically feasible,
+it makes the definition of limits and colimits on infinite sets
+obscure, and also loses a property I'll mention below in connection
+with a nice observation of John Isbell.
+
+Instead I retrace what I imagine is a familiar path for set theorists,
+but from the categorical perspective.  I take the objects to be simply
+the ordinals, each defined as the set of ordinals less than it, and the
+maps to be all functions (in the usual sense) between ordinals.  (So
+for all cardinals alpha, this Set has only alpha many sets of
+cardinality less than alpha, which is what I mean by lightweight.)
+
+This may well have been already proposed before, since it is so simple
+and solves my problem so directly.  But if so then why didn't someone
+bring it up as an answer to my question?
+
+The ordinals being a transitive class, membership i \in j coincides
+with (global) strict inclusion i \subset j, which as will be seen below
+is definable as the left "local" inclusion of i into i+(j-i).  This is
+ten times shorter than the method I complained about (Goldblatt 12.4)
+for calculating membership in Set!
+
+Here are some features of this version of Set.  I'll abbreviate \omega
+to \w, \eta to \i, \epsilon to \e.
+
+* The full subcategory consisting of the finite sets is skeletal.
+
+* Since every set is well-ordered, by definition, Choice holds.
+
+* Since i+j=k is uniquely solvable in j for i<=k (this can be seen
+informally by deleting the first i elements of k and taking j to be the
+order type of the residue), it follows that monus (nonnegative minus)
+can be defined, denoted k-i.  (Note that i+j=k is not uniquely solvable
+in i, witness i+\w=\w which has all finite ordinals as solutions while
+i+\w=\w+1 has no solutions.)  We also have ordinal ("integer") division
+i/j and remainder i%j, see below.
+
+* The *global* inclusion (assumed proper) of i into j is definable,
+namely as the "local" inclusion of i into i+(j-i) (meaning the first
+half of the unit of the adjunction defining +, at (i,j-i)), just when
+this is not the identity on i.  (For j <= i, j-i = 0, making the local
+inclusion the identity.)  The global inclusions make Set an irreflexive
+poset, identical to membership except that we do not normally speak of
+membership of x in y as a map, only as the truth of the binary relation
+of membership at the object pair (x,y).  If for some crazy reason we
+want to represent the membership relation by maps in Set, the global
+inclusion maps are the obvious choice.
+
+* The isomorphism 1=>x = x is the identity 1_x, and similarly for the
+isos \rho: x*1 = x, \lambda: 1*x = x, and \alpha: (x*y)*z = x*(y*z)
+making Set a strict cartesian closed category.  I wrote = rather than
+tilde to avoid a repeat of yesterday's screwup with caret, but in fact
+these are equalities in the strongest sense: they make \rho, \lambda,
+and \alpha all identity natural transformations.
+
+Isbell's argument in CTWM VII.1 shows that we can't *always* make
+\lambda,\rho,\alpha identities, even in a CCC like Skel(Set).  In the
+present context Isbell's argument yields more, namely that any
+construction we use to further reduce Set from the ordinals to a
+skeletal category *must* weaken these identities to isos.
+
+What saves the day for ordinals is that when x,y,z are countably
+infinite, x*y and (x*y)*z get to be different infinite ordinals.
+Isbell's argument gives really nice insight into why set theorists find
+ordinals work better than cardinals: as cardinals, countable x*y and
+(x*y)*z have to be the *same* countable cardinal, ordinals create
+useful elbow room.  (Without this category perspective, I don't know how
+to make a convincing case for ordinal arithmetic over cardinal, anyone
+know a noncategorical way?)
+
+* The inclusion of the rationals into the reals (as Dedekind cuts) is
+definable, but only as a local inclusion, not a global one, nor a
+monotone one with respect to the well-ordering of the reals.  Set well
+orders the reals "randomly," and we get to probe around in the
+resulting well-ordering after the "big coin toss" and sniff out some
+(all?) aspects of its crazy choices.  (Use the global inclusion of 1
+into the reals to locate the "least" real "0", which can now be
+compared with the "real" additive identity of the reals, 0.0.)  But
+because it depends on the coin toss it is not mathematics, just
+unrepeatable noise.
+
+*  But this isn't to say that every uncountable ordinal looks random.
+The least uncountable ordinal \w_1 *is* ordered predictably and
+repeatably, and that order *is* genuinely mathematical (to believers in
+\w_1 anyway).
+
+There's presumably a lot more to say about Set defined this way, but
+this is way overlength already, so let me push on to describe the
+category Set itself.  The description talks about 0 and successor early
+on; these can be understood either externally starting from an already
+constructed Set (less demanding pedagogically) or internally as a
+purely categorical definition of Set (in terms of constants 0,1,+
+denoting initial and final objects and a coproduct), which will
+inevitably seem circular just like ZF seems circular.
+
+====================Light Set---V.R. Pratt--3/13/96===========
+
+I'll start from the class of von Neumann ordinals, each the set of all
+ordinals less than it (sorry, Mike), and define all small sums and
+products, (co)equalizers, and the classified subobjects.  I'll follow
+the standard ordinal conventions for binary sum and product, which make
+1+\w = \w < \w+1 and 2*\w = \w < \w*2.
+
+We need some auxiliary operations on ordinals.
+
+        i/j  =  the least k satisfying i < j*(k+1)
+        i%j  =  i - j*(i/j)     (i modulo j)
+
+Exercises.  i <= j*(i/j), i%j < j.
+
+Binary sums (for illustration).  To form i+j, form j' by adding i to
+the *elements* of j (recursively), and take i+j to be i union j', with
+the evident inclusions.  (This is not commutative in general, as noted
+earlier.)
+
+This generalizes to all small sums as follows.  Given a family n_i of
+ordinals indexed by i<I (I=2 for binary sums), take their sum to be the
+least ordinal s such that there exists a family f_i of monotone
+injections f_i:n_i->s such that i<j<I, h<n_i, k<n_j -> f_i(h)<f_j(k).
+For the rest of the adjunction defining this sum, take the unit
+\i_<n_i> to be <f_i> and the counit \e_k to be \n.n%k (*not* \n.n%I).
+
+Binary products (for illustration).  Form i*j as the sum of j copies of
+i, with the evident projections.  (Not commutative in general.)
+
+Infinite products are a well-known problem for ordinal arithmetic,
+starting with \w copies of 2.  The problem is to well-order the
+continuum.  Choice says only that a well-ordering exists, we can't
+determine one by the constructive methods that work on everything else
+in this note.  We just do our best.
+
+Given a family n_i of ordinals indexed by i<I, take their product to be
+the least ordinal p such that there exists a jointly monic family f_i
+of monotone surjections f_i:p->n_i (the projections) such that for all
+x<y<p, if there exists a largest j such that f_j(x) != f_j(y), then
+f_j(x) < f_j(y).  The projections form the counit while the unit is the
+linear function \n.an where a=1+sum(n_i,i+1<I) (the brick's diagonal).
+
+The incompleteness of this specification arises when such a largest j
+does not exist.  Note that care is taken not to contradict the
+definition for finite products, which *does* completely specify the
+adjunction for product.
+
+Exponential i.  Defined as the product of j copies of i (inheriting
+the infinite product problem when j is infinite).  The unit of the
+defining adjunction (- right adjoint to j*-, not -*j) has for its
+morphisms linear (!) functions an+b where a = sum((ji),0<=k<j), b =
+sum(ki(ji),0<=k<j).  The counit (evaluation map) at i is the function
+\n.((n/j)/i%j))%i.  This works by (i) projecting out the function
+part of n as n/j and the argument part as n%j (ii) evaluating by
+"shifting" and "masking" to pick out "digit" n%j in radix i.  Theorem:
+this function is the evaluation map.  (So this weird-looking function
+is not an "implementation hack" at all, it's the unique function for
+the job.)
+
+Subobject classifier:   Given f:i->2, the associated subobject is the
+least j such that there exists a monotone injection g:j->i such that
+fg = 1!.  Theorem: such a g:j->i exists and is unique, and is the
+pullback of 1:1->2 along f.
+
+The equalizer of f:i->j and g:i->j is the subobject of i corresponding
+to the predicate on i "f(x)=g(x)".  Theorem: this exists and is
+unique.
+
+The coequalizer object k of f:i->j and g:i->j is the subobject of j
+whose characteristic function p:j->2 is the predicate "is the least
+representative in its block".  The coequalizer h:j->k maps each element
+of j to the least representative of its block.  Theorem: h exists and
+is unique.
+
+Vaughan Pratt
+
+
+Date: Thu, 14 Mar 1996 10:29:46 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 12:24:37 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+
+>My point exactly.  The elements don't matter, so why should
+>elementhood be taken as the fundamental relation of all
+>of mathematics?  Equality doesn't matter either, but
+>equivalence relations do.
+
+Really?  Try telling that to people who produce computer verified
+correctness proofs for communication protocols.  I'm sure they'll be
+pleased to know that their proofs should undergo a very significant
+increase in size and obscurity to satisfy what appears to be little more
+than aesthetic prejudice.
+
+Equality matters in some contexts, it doesn't matter in others.  In some
+logics equality is definable rather than explicit, in which case this point
+doesn't appear to make much sense.  Trying to be perscriptive about
+this---or any other---foundational point seems to me about as useful as
+(and just as perverse as) perscriptive linguistics.
+
+Given the known relationships between e.g. topos theory, higher order
+logics and various set-theories, is arguing about which is the correct /
+best / most relevant foundations of mathematics really that different from
+arguing about whether the Russell naturals or the von Neumann naturals are
+the correct / best / most relevant natural numbers?  [Of course, this is
+fairly independant from questions such as how to present the natural
+numbers]
+
+Ralph (who is quite pleased to be talking to someone who isn't a dogmatic
+platonist the-universe-is-a-model-of-ZF type).
+
+P.S. any sarcasm isn't intended to be personal.
+
+
+Date: Thu, 14 Mar 1996 10:30:39 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 12:55:58 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+
+>- Category theorists are keen on statements to the effect that structures are
+>- defined by their universal properties.  A typical book on topos theory may
+>- define an elementary topos as a category with finite limits and power
+>- objects.  It then goes on to show that any topos has internal-homs.  How?
+>- By defining the function space as a certain set of sets of ordered pairs...
+
+>Nonsense.  How can a set of sets of ordered pairs be an object of a
+>topos.  In fact, there is at least one book that defines a topos as
+>a category with finite limits and power objects and constructs the
+>internal homs as a limit of two arrows between two power objects.
+>The construction is hidden inside a cotriple, but that is what it
+>amounts to.
+
+<sigh/smirk> My desire for a little irony got the better of my pedantic
+instincts.  I'm well aware that the phrase "representative of a subobject
+of the power-object of a product" would have be more precise than the
+morally equivalent set-theoretic terminology.  It doesn't effect the point
+that I was trying to make; that whether one defines certain things by
+explicit construction or via an axiomatisation is fairly independent of
+whether one prefers to work in a logical, categorical or set-theoretic
+foundation.  Neither is this effected by the availability of alternative
+constructions.
+
+Of course, for some people, it would be a perfectly sensible point of view
+that topos theory is interesting precisely because of results to the effect
+that a couple of elementary constructs are sufficient to justify the fairly
+general use of set-theoretic notation, such as refering to a `set of sets
+of ordered pairs'.
+
+Ralph.
+
+
+Date: Thu, 14 Mar 1996 10:28:56 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 11:43:20 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+Ralph Loader writes:
+
+>I'd much rather that my formalisation of mathematics could state
+>nonsensical things (consistency strength isn't an issue here), than to be
+>living in the fear that my formalisation may be inadequate to express some
+>sensible arguments.
+
+I for one _do_ live in fear (not really ... more a sort of smug
+schadenfreude) that set theoretic formalisation is inadequate to express
+some sensible arguments.
+
+The nonsensical things in set theory seem to arise from a basic nonsensical
+postulate: that there is a single fundamental relation "element of" on the
+mathematical universe that is sufficient to determine the nature of every
+mathematical object. It's a tour de force of modern mathematics that so
+much has been accomplished using this postulate, but its essential
+unreasonableness should not be forgotten and it is therefore complacent to
+assume that it is adequate to express all sensible arguments.
+
+Let me give some examples.
+
+1) The "element of" relation is absolutely _un_fundamental - this is part
+of the force of Freyd's example about simple groups. What are the elements
+of a real number? If you consider the real number to be a Dedekind section,
+then it is a pair of subsets of the rationals, Q, and hence its elements
+are whatever you think the elements of an ordered pair are. Or,
+equivalently, it can be represented as a subset of Qx2 (or Q x any
+doubleton {L,R}). Or, equivalently, a subset of QxQ, with (q,r) in x iff
+|q-x| < r (i.e. the real is identified with its neighbourhood filter of
+rational open balls). All these enable a real to be described as a set, but
+they give it completely different elements. In reality there is no single
+universal "element of" relation that describes the nature of everything,
+including the reals; instead, the reals are described by various relations
+with other specific objects.
+
+2) Topology: Normally one thinks of open sets as being sets of points, but
+localic topology views points as being sets of opens (e.g. reals as
+neighbourhood filters above). There is obviously a fundamental relation of
+points being "in" opens, and localic arguments can be expressed quite
+reasonably using it. Set theoretic expression using "element of" completely
+obscures this. In other words, set theory prevents you from adequately
+expressing reasonable arguments.
+
+3) Generic objects: Suppose we agree on a particular set theoretic
+representation, e.g. reals as Dedekind sections. What then is a _generic_
+real, such as the x in f(x) = x^2? Set theory has to treat this as a mere
+hole where a specific real could be put, but it is quite reasonable to
+treat it as a real in its own right (so long as you don't use - e.g. -
+excluded middle to demand specific properties of it) and that's exactly
+what people do. What are its elements? One can still make sense of the idea
+that it is determined by its elements (using "generalized elements" and
+Kripke-Joyal semantics), but in doing so one must go far beyond classical
+set theory.
+
+4) What about theories such as that of accessible categories, that, for set
+theoretic reasons, have to be liberally sprinkled with infinite cardinals?
+Doesn't this make you think that perhaps set theory is somehow obscuring
+simple ideas?
+
+To my mind, the evidence suggests that despite its undoubted successes, set
+theory is not right for mathematical foundations, and we should be looking
+for its replacement. It is easy to be bemused by the fact that all our
+mathematical upbringing presumes set theoretical foundations, but we should
+try to recognize its limitations and failures.
+
+Steve Vickers.
+
+
+Date: Thu, 14 Mar 1996 10:53:28 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 09:28:40 -0500
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+ >> Date: Wed, 13 Mar 1996 19:30:06 GMT
+ >> From: Ralph Loader <loader@maths.ox.ac.uk>
+ >>
+ >> [ cuts ]
+ >>
+ >> This is an interesting example.  You state a question in mathematical
+ >> English, and then criticise ZF for being able to express this question,
+ >> while category theory cannot.  One wonders what other questions stated in
+ >> mathematical English---some of them perhaps perfectly sensible---can be
+ >> stated in the language of ZF, but not in the language of category theory.
+ >> I'd much rather that my formalisation of mathematics could state
+ >> nonsensical things (consistency strength isn't an issue here), than to be
+ >> living in the fear that my formalisation may be inadequate to express some
+ >> sensible arguments.
+ >>
+ >> [One] example that I think [is] relevant to this debate.
+ >>
+ >> Category theorists are keen on statements to the effect that structures are
+ >> defined by their universal properties.  A typical book on topos theory may
+ >> define an elementary topos as a category with finite limits and power
+ >> objects.  It then goes on to show that any topos has internal-homs.  How?
+ >> By defining the function space as a certain set of sets of ordered pairs...
+ >>
+
+This might be a little disingenuous -
+
+Of course, in any topos there will be a monic X=>Y --> P(XxY) , so via the
+"internal language" X=>Y may be seen as a certain set of sets of ordered
+pairs.  But the point is that via the "internal language" you can (and
+indeed you may) argue about the structure of a topos in a very "set-like"
+manner.  But of course you are not obliged to do so.  So in a very real
+sense, your (first) example illustrates that your fear is unfounded.
+(Indeed, one can imagine a topos theorist pondering the matter of simple
+groups being zeros of the Riemann zeta function in suitable toposes; the
+point of Peter Freyd's observation was (I think) that a topos theorist
+without any taste is less likely to stumble upon this question than a set
+theorist without taste, who might well do so... due to the emphasis upon
+different fundamental notions in the two approaches.)
+
+= rags =
+
+
+Date: Thu, 14 Mar 1996 17:10:46 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 10:40:33 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan writes:
+
+  An awful lot of mathematicians are under the impression that their
+  definitions are grounded in set theory.
+
+Note, please, that I was writing about _core_ mathematics. There's an
+aperture problem here. What do we take as the universe of
+"mathematicians"?  If we stick to those parts of mathematics as
+described by the US National Science Foundation as "core mathematics"
+then I will stand by my statement. A semantics is unneeded.
+
+I must agree, of course, that there have been proofs in core
+mathematics that have used structures for which the semantics became
+questionable. Because of their technical nature (that is, because
+they were needed in proofs, not theorems) consistency arguments -- in
+lieu of clear semantics -- were acceptable. There's a reasonably clear
+historical argument in favor of ZF for purposes of such arguments.
+
+(One example: In what John Thompson described as his best work he
+proved that certain finite groups -- such as the Monster -- appear as
+the Galois groups of number fields; in his proof he used the existence
+of infinitely many automorphisms of the complex numbers. Whether or
+not your semantics allows more than two automorphisms of the complex
+numbers, there's no question that the consistency of ZFC implies that
+the groups in question do appear as the Galois groups of number
+fields.)
+
+
+Date: Thu, 14 Mar 1996 17:09:47 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 10:08:42 -0500 (EST)
+From: Colin Mclarty <mclarty@husc.harvard.edu>
+
+
+
+        Several contributors to this thread share Loader's confusion on a
+couple of points.
+
+        For one, constructibility in set theory does have an isomorphism
+invariant meaning, as Mitchell showed in JPAA about 1975. Trivial changes
+make the definition work in any topos with natural number object. In fact,
+a good bit of work in set theory today is on finding isomorphism invariant
+consequences of V=L or related axioms (constructibility relative to some
+set). Elementhood is not essential.
+
+        And Peter Freyd's question
+
+        "Does any simple group appear as a zero of the Riemann Zeta
+                function?"
+
+is not absolute nonsense in ZF or in category theory--it is only
+misleading as it makes a question of (arbitrarily definable) codings look
+like a question of complex analysis.
+
+        In ZF the answer is: It depends which coding of groups and numbers
+you use--it is easy to make up codings where the answer is yes and just as
+easy to make them up where the answer is no.
+
+        For what it is worth, the codings in common use all make the
+answer "no", since they make every group an ordered 3 or 4 tuple while
+they make a complex number an ordered pair of infinite sets. This is
+trivia.
+
+        Now suppose we found some good relation representing groups as
+complex numbers, which was manageable to work with and for which we could
+show that some simple groups correspond to points which would falsify the
+Riemann hypothesis.
+
+        Then mathematicians might well start asking whether some zero of
+the zeta function "is" a simple group--just as we now ask whether some
+given real number "is" rational (a question whose strict answer on most ZF
+codings is always "no"). And this question would be just as well expressed
+in category theory as in ZF.
+
+
+best regards, Colin
+
+
+Date: Thu, 14 Mar 1996 17:12:25 -0400 (AST)
+Subject: Expressiveness of category theory and set-theory.
+
+Date: Thu, 14 Mar 1996 20:59:55 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+>Date: Wed, 13 Mar 1996 13:40:25 -0800
+>From: james dolan <jdolan@math.ucr.edu>
+>
+>-This is an interesting example.  You state a question in mathematical
+>-English, and then criticise ZF for being able to express this question,
+>-while category theory cannot.
+>
+>
+>i at least am curious just what is this mathematical question you
+>claim to have in mind which zf can express but which category theory
+>can not.  obviously it wasn't "Does any simple group appear as a zero
+>of the Riemann Zeta function?" since that is mere gibberish and not a
+
+This question clearly is mathematical English, in the sense that it is in
+the English language, and uses mathematical jargon.
+
+It doesn't make sense.  I wasn't arguing with that.  Ruling out statements
+from being "mathematical" *merely* on the grounds that they offend your
+mathematical taste, quickly becomes disasterous.  Especially when we're
+(implicitly) talking about a formalisation in a formal language such as
+that of first order set theory.
+
+Anyway, as a good example, take a set-theoretic proof of Borel
+determinancy.  Can anyone give a reasonable category theoretic proof of
+Borel determinacy?  [This is a result that Friedman showed is a theorem of
+ZF but not of Z, if my memory serves me correctly.]  This could well
+suffice to answer my concerns w.r.t. the adequacy of category language, by
+showing how even arguments needing replacement can have category theoretic
+analogues.
+
+Ralph.
+
+P.S.  My personal opinion on foundations is fairly agnostic, in case anyone
+mistakes my concerns with rejection of category theoretic foundations.
+
+
+Date: Thu, 14 Mar 1996 17:13:13 -0400 (AST)
+Subject: Foundations and formalisability
+
+Date: Thu, 14 Mar 1996 21:00:06 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+>
+>This might be a little disingenuous -
+>
+>Of course, in any topos there will be a monic X=>Y --> P(XxY) , so via the
+>"internal language" X=>Y may be seen as a certain set of sets of ordered
+>pairs.  But the point is that via the "internal language" you can (and
+>indeed you may) argue about the structure of a topos in a very "set-like"
+>manner.  But of course you are not obliged to do so.  So in a very real
+>sense, your (first) example illustrates that your fear is unfounded.
+
+We seem to have got completely sidetracked from either of the points I was
+trying to make (probably my fault for making it unclear that it was a two
+points, and for using sloppy language).
+
+The (good) category theorist proves
+
+"there exists internal homs [in any topos]" [by constructing particualar
+internal homs, or otherwise].
+
+The (good) set theorist proves
+
+"there is a structure satisfying the Peano axioms [is a theorem of first
+order ZF]" [by constucting one explicitly, or otherwise].
+
+Both can then be asked "which is the real internal hom / set of natural
+numbers".  Both can answer that they didn't claim that there is a
+particular "real" internal hom / set of natural numbers.  [See my P.S.]
+
+A (bad) topos theorist might never actually prove "there exists internal
+homs", but rather continually refer to an explicit construction, rather
+than its universal properties.
+
+A (bad) set theorist may construct a set, and never prove that it satisfies
+the Peano axioms, but rather keep referring to the explicit construction.
+
+In both cases, the bad mathematician has a real problem when asked why
+they're using their particular construction, as opposed to some isomorphic
+alternative.
+
+In both cases the good mathematician does the right thing---showing the
+existence of structures with appropriate properties, and then using those
+properties, rather than refering to any particular structure.
+
+This was with regards to the question "Which construction of the natural
+numbers do you have in mind? Russell's or Van Neumann's?".  Now we have a
+slightly different issue:
+
+>point of Peter Freyd's observation was (I think) that a topos theorist
+>without any taste is less likely to stumble upon this question than a set
+>theorist without taste, who might well do so... due to the emphasis upon
+>different fundamental notions in the two approaches.)
+
+I read Peter Freyd's original criticism to be a criticism of the fact that
+it was *possible* to ask [Quote: `one can ask'] "Does any simple group
+appear as a zero of the Riemann Zeta function" in ZF, presumably claiming
+that this cannot be asked in category theory.
+
+If we weaken this to just saying that category theory makes some
+nonsensical statements more clearly nonsensical than they would be in set
+theory, then I have no objections to his statement.
+
+"Makes ... more clearly" is a matter of aesthetics, which is sometimes an
+important consideration.  However, are aesthetics an overriding
+considerations for foundations?  It's not obvious to me that it's even a
+_foundationally_ important consideration here---as has been pointed out by
+others, people don't do real mathematics in either first order topos theory
+or in first order ZF; it is probably impossible to develop a reasonably
+clear mathematical vernacular in either.
+
+Ralph.
+
+P.S.  In any case, it is entirely possible to carry out formalisation of
+mathematics in first order ZF in such a way that statements like "A simple
+group appears as a zero of the Riemann Zeta function" do not have a
+formalisation.  This is an application of the good practice I advocated
+above.  In brief outline (=incomplete):
+
+Let Reals(R,+,*,0,1,<) be "R,+,*,0,1,< is a complete Archimedean linearly
+ordered field"(2), stated in the language of 1st order ZF in the obvious
+way.  Define formalisations of sentences about the reals so as to be
+formulae in the form(1)
+
+Reals(R,+,*,0,1,<) implies phi(R,+,*,0,1,<)
+
+along with a _proof_ of a ``type-checking'' sentence
+
+( there exists (R,+,*,0,1,<) such that Reals(R,+,*,0,1,<) and
+phi(R,+,*,0,1,<) ) if and only if ( for all (R,+,*,0,1,<), if
+Reals(R,+,*,0,1,<) then phi(R,+,*,0,1,<) )
+
+Now of course, if a sentence about the reals can be seen to make sense,
+then there should be a straightforward proof that it is independant of any
+particular presentation of the reals, so that the type-checking statement
+will be ZF-provable.  Clearly, if phi tries to formalise Freyd's statement,
+then it's type-checking sentence is false and not provable.
+
+Note that if phi is a tautology (or a contradiction) then it will have a
+provable type-checking sentence.  We could probably argue until the cows
+come home about whether or not this is reasonable.
+
+(1) Using a trivial (&conservative) extension of ZF would enable us to drop
+the "Reals(R,+,*,0,1,<) implies".  This is probably necessary if we wish to
+formalise statements with free variables over the reals [I use sentence in
+the logical sense of not having free variables].
+
+(2) Apologies if I missed an axiom of the real numbers.
+
+P.P.S.  This is getting off-topic for a category theory list.  If people
+want to carry this on, perhaps we should take this off the categories list.
+
+
+Date: Thu, 14 Mar 1996 18:43:38 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 13:30:24 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+
+
+        From: Peter Freyd <pjf@saul.cis.upenn.edu>
+        If we stick to those parts of mathematics as
+        described by the US National Science Foundation as "core mathematics"
+        then I will stand by my statement. A semantics is unneeded.
+
+Without looking, I'm certain that they include calculus.  I'm not sure
+what is meant by "calculus doesn't need a semantics."  My impression
+was that the evolution of analysis was a beautiful interplay of
+definition and theorem that went on for centuries, from Newton (if not
+even earlier) right into the end of this century!
+
+Do you see a clear distinction between "definition" and "semantics"?
+
+Vaughan Pratt
+
+
+Date: Fri, 15 Mar 1996 09:35:12 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Thu, 14 Mar 1996 16:41:51 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+        1) The "element of" relation is absolutely _un_fundamental -
+        this is part of the force of Freyd's example about simple
+        groups. What are the elements of a real number?
+
+Yes, when you need to kick a set theorist, the real number line is a
+particularly sensitive part.  Excellent kick.  Ouch.
+
+        In reality there is no single
+        universal "element of" relation that describes the nature of
+        everything, including the reals; instead, the reals are
+        described by various relations with other specific objects.
+
+I'm with you 100% philosophically on this.  We move and rest, and need
+vocabulary for both activities.  Sets are great for lolling around in
+(I wonder how Cantor was at sports in school), but terrible for zipping
+perfectly smoothly along the real line.
+
+Categories give a much smoother ride than sets because they're *built*
+to.  But they also have stationary parts, that show up in two places.
+
+(i)    The objects.  This is where one rests between morphisms.  Having
+your objects form a set is a Good Thing, it fits their punctual style:
+"Be there on the dot" says the set.
+
+(ii)   Homsets.  Sets are dual to their elements.  This seems to be
+because when dealing with powersets you have a higher probability of
+meeting the contravariant power set functor herself than one of her
+covariant brothers.  (Not a theorem, just a feeling.)  Homsets are no
+exception.  When you pass from moving along one morphism at a time in a
+category to contemplating the morphisms lying there in profusion in the
+homsets, you dualize your viewpoint and see a morphism as merely a
+punctual dot of a homset.  This explains the paradox of the very
+unpunctual morphisms able to make themselves the punctual members of a
+homset, we just view them dually "from the other direction" (not one
+parallel to the morphisms though).
+
+I agree that it is a type error to try to understand a smooth line as
+made of points when it is just trying to do its job and get you from
+point A to point B uninterrupted (poor gap, I interrupted it).
+Interruptions are incompatible with smooth travel.  But travel with no
+rest at all is pretty grim and hard to sustain when you're trying to
+get some real work done, whence line *segments* rather than entire
+lines for category theory.  Hell is having to move forever along the
+real line!
+
+But it is equally a type error to try to turn your rest stops into
+motion.  You *need* to rest from time to time.  For one thing it gives
+your maintenance department a turn at doing stuff, maintenance has to
+shut down when you're on the move, on-the-fly maintenance is *much*
+harder.  And if you're the type of person that has opponents, it's all
+in the game to give them a turn.
+
+But if I'm with you 100% philosophically on this example, I'm only with
+you about 50% mathematically.  It seems to me that set theory supports
+the go part of stop-and-go traffic *pretty* well.  Not perfectly, as we
+agree.  But when you consider how much of the continuum set theory *is*
+able to comprehend, I'm not terribly sold on the inadequacy of sets for
+modeling go almost as well as stop.
+
+        2) Topology: Normally one thinks of open sets as being sets of
+        points, but localic topology views points as being sets of
+        opens (e.g. reals as neighbourhood filters above). There is
+        obviously a fundamental relation of points being "in" opens,
+        and localic arguments can be expressed quite reasonably using
+        it. Set theoretic expression using "element of" completely
+        obscures this. In other words, set theory prevents you from
+        adequately expressing reasonable arguments.
+
+I'm with you <10% on this one.  I can't tell what limitation of Set
+you're talking about here, but unlike your philosophically excellent 1)
+it doesn't seem to match up to any of the well-known limitations.
+
+It sounds like you're saying that set theory doesn't let you talk about
+the converse of the membership relation.  That's certainly not the
+case.  Or maybe you mean that Set\op is not a concrete category.
+What's wrong with its concrete representation as CABA?  If that seems
+too complicated, how about its coconcrete representation as the
+category of sets and their *converse* functions (binary relations whose
+converse is a function)?
+
+Maybe you're saying that  Hom:Set\op*Set -> Set  is outside set
+theory.  That too is implausible.
+
+None of these issues hold the sort of terrors for set theorists that
+the continuum does.  At least not a terror that has them terribly
+bothered mathematically the way the continuum problem does.
+
+        3) Generic objects:
+
+0%, needle wrapped around the post.  You seem to be saying that set
+theorists are scratching their heads over what a variable is while the
+category theorists have it all sorted out.  News to set theorists.  You
+can't kick a set theorist in the variables, they're very well protected
+there.
+
+        4) What about theories such as that of accessible categories,
+        that, for set theoretic reasons, have to be liberally sprinkled
+        with infinite cardinals?  Doesn't this make you think that
+        perhaps set theory is somehow obscuring simple ideas?
+
+I don't know how to define "accessible category" without bringing
+cardinals into the picture, but maybe I'm the last one to find out how,
+as usual.  What's the trick?
+
+        To my mind, the evidence suggests that despite its undoubted
+        successes, set theory is not right for mathematical
+        foundations, and we should be looking for its replacement.
+
+Whoa, needle went negative there.  But I would have the same reaction to
+a set theorist who claimed that categories were nothing but an
+alternative language for the mathematics ordinarily and satisfactorily
+treated by set theory.
+
+("Alternative language for" is the polite code word some people use for
+"weird way of talking about")
+
+Set theory itself will only go away when the natural numbers go away.
+Let's get real here.  The natural numbers are the very oxygen of
+mathematics, and they are not going away in *any* foreseeable future.
+Hence neither is the (internally) bicomplete topos of finite sets.
+This topos is a very nice concrete way of working with natural
+numbers---it makes numbers *more* categorical, not less, by letting you
+transform them.
+
+But sets *do* have to transform via arbitrary functions, there's no way
+to wriggle out of *that* one!  Transforming sets with binary relations
+neuters them, neutered sets are only good for the side lines.
+*Converse* functions on the other hand are fine, if you're not Bill
+Thurston, who eloquently expressed his inability to relate to Set\op at
+UACT.
+
+I don't care how the infinite sets are organized, just so long as
+there's a way of doing it that doesn't make the logic that bears on my
+life inconsistent.  I'm not planning on rubbing up against any infinite
+sets personally without a sturdy layer of math and logic between me and
+them.  You can seriously injure yourself with an infinite set.
+
+Mathematics founded on set theory stays close to the air supply.  Any
+religious upstart of a foundations claiming to offer a viable
+*replacement* for set theory is going to have to argue real hard about
+the disadvantages of breathing!
+
+Whether we should work with sets and categories in exactly equal
+proportions is an interesting question.  I tend to be slightly more
+settish than cattish in my thinking, if only because I'm lazy and sit
+around a lot, on the dime if not on the dot.  But there's not a big
+gap.
+
+Categories: can't live with sets, can't live without them.
+Sets: can't live with categories, can't live without them.
+
+Vaughan Pratt
+
+PS.  No reactions yet to my ordinal-based definition of Set.  Main
+thing I want to know is, is it old hat?  Second thing, is it good for
+anything else besides what I made it up for, namely to shorten the
+passage from function composition in Set to the membership relation on
+ob(Set)?
+
+I don't claim any more *significance* to the membership relation in my
+version of Set than Mike Barr et al were claiming for other versions of
+Set.  Well, maybe a little more: it is undeniably the membership
+relation for ordinals, which is all my Set claims to contain
+*explicitly*.  But is pi essentially an ordinal?  Of course not.  Can
+pi exist in my Set?  No more or less than in anyone else's Set.  Is pi
+made any more real by installing it in a category?  Rubbish.
+
+
+Date: Fri, 15 Mar 1996 14:43:47 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Fri, 15 Mar 1996 08:53:57 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+There's certainly a clear distinction between "definition" and
+"semantics". They are -- to echo PeterJ -- in different categories.
+
+But Vaughan's point about the calculus is well taken. I must back down
+a bit. Yes, a semantics for the real numbers and for limits and for
+continuity and -- hardest these days to believe -- for the very notion
+of function were indeed needed by 19th C mathematicians.  So let me
+try again. Core mathematics in the 20th C did not provide a problem
+for semantics and for that reason the inadequacy of formal set theory
+was not noticed.
+
+Inadequate for what? Well, let's start with the Church polymorphic
+notion of number.
+
+
+Date: Fri, 15 Mar 1996 15:56:01 -0400 (AST)
+Subject: sets against categories
+
+Date: Fri, 15 Mar 1996 12:30:19 -0600
+From: saunders@math.uchicago.edu
+
+The recent discussion of sets against categories on the internet appears to
+miss the appropriate sources.
+
+It is well known that it is easy to go from sets to categories, harder in
+the reverse.  For this there is a very well-known equicoherence theorem,
+which is presented in both the standard texts on topos
+        Johnstone, Chapter 9, S 7
+        Mac Lane / Moerdijk (Sheaves in Geometry and Logic, Chapter 6, S 10.)
+
+I fondly imagine that the latter is a bit clearer.  Both sources will give
+your the original literature--for example Mitchell JPAA 2(1972) p. 261 (I
+suggested this question to Bill Mitchell when he was an instructor at
+Chicago).
+
+As far as I can make out; none of the many messages speaks to this fact.
+It is a reasonable question for Pratt to raise, though he should have known
+that the Goldblatt book was hopeless from day one.
+
+Of course most mathematicians find sets easier than cats--but they usually
+can't recite ZFC axioms.  The fault may lie with Pat Suppes, who taught
+sets in the Kindergarten.
+
+Otherwise, the exchange convinces me tht e-mail is for the birds.  All
+fluff with no professional substance
+
+Saunders Mac Lane
+Department of Mathematics
+University of Chicago
+saunders@math.uchicago.edu
+
+
+Date: Sat, 16 Mar 1996 10:38:13 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Fri, 15 Mar 1996 12:37:36 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        There's certainly a clear distinction between "definition" and
+        "semantics". They are -- to echo PeterJ -- in different categories.
+
+In his evening talk on Post some LICS' ago, Martin Davis told us of his
+sense of revelation when he learned he'd been a computer scientist all
+these years.
+
+Now I know just how he must have felt.  What a relief to find I have
+*not* been a semanticist all these years.
+
+All I ask is a tall ship and a star to steer her by.  Definitions tell
+us our position relative to both our destination and the rocks of
+inconsistency.
+
+Whatever semantics is, if the navigator says he can't do his job
+without it we're lost.  Another round of semantics for the navigator.
+
+        let's start with the Church polymorphic notion of number.
+
+Of course when the navigator's had so much semantics he tells you he's
+seeing double, you do worry a bit.  That semantics is heady stuff.
+
+Vaughan Pratt
+
+
+Date: Sat, 16 Mar 1996 10:39:03 -0400 (AST)
+Subject: Re: sets against categories
+
+Date: Fri, 15 Mar 1996 15:11:50 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        From: saunders@math.uchicago.edu
+
+        Mac Lane / Moerdijk (Sheaves in Geometry and Logic, Chapter 6, S 10.)
+
+Reference *much* appreciated, which I am browsing now.  (Peter, will
+Topos Theory be back in print soon?)
+
+        It is well known that it is easy to go from sets to categories,
+        harder in the reverse.
+
+This is disturbing, since it is the opposite of the answer I came up
+with myself a couple of days after asking my question.  (I am reading
+"harder" as "necessarily harder" here, my apologies if this was not
+your intended meaning.)
+
+As often in these things, at least some of the problem lies with my
+question, which was certainly fluffy when I asked it, not knowing then
+quite what I really wanted to ask.  I think I can sharpen it now.
+
+Is there a category equivalent to Set for which it is easy to recover
+the membership relation from the category structure?
+
+This is still not a mathematical question as it leaves "easy" open to
+interpretation.  But I think the rest of it is unambiguous.
+
+Now I thought I'd answered this sharper question in the affirmative,
+with an interpretation of "easy" that surely *no* reasonable person
+could complain about, namely a two line construction of the membership
+relation.
+
+Therefore if my answer was only "fluff", I have made an error
+somewhere, either in my construction of this version of Set or in my
+choice of problem.
+
+With regard to the latter possibility, I freely admit to knowing less
+than just about anyone on this list what it feels like to work in a
+general topos, not enough to write even 6 pages about them let alone
+600.  My experience of toposes is with one topos only, Set, which makes
+me about the last person qualified to attempt a contribution to topos
+theory.
+
+However, that my question only concerns the one topos Set gives me hope
+that, if there is indeed a problem with my construction, it is some
+technical oversight that I need to repair if possible, and not
+something to do with other toposes besides Set.
+
+In passing, let me again draw people's attention to the fact that I
+described not just the category Set but its (cartesian) closed
+structure as well, including complete verification of the coherence
+conditions.  (Not that this was particularly difficult in this case. :)
+
+Without giving the full closed structure I do not understand how one
+can claim to have fully specified which topos one is speaking of.  Does
+the topos literature attend adequately to this detail?  (It may well, I
+just don't know where to find it.)
+
+I interpret the reference to Isbell at the end of VII.1 of CTWM as
+(inter alia) a warning that one cannot take the closed structure for
+granted merely because it is cartesian closed.  If this misinterprets
+the situation for the cartesian closed case, and coherence is in fact
+routine there, then my apologies for the misunderstanding.
+
+Vaughan Pratt
+
+
+Date: Sat, 16 Mar 1996 23:09:29 -0400 (AST)
+Subject: 2 bug fixes
+
+Date: Sat, 16 Mar 1996 18:43:26 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+The following repairs two problems I found with my ordinal-based
+axiomatization of Set: missing axiom of infinity (no NNO), and an
+inconsistent definition of product.
+
+
+1.  Add "There exists x such that 1+x=x."  (Set *forbids* FinSet.)
+
+(By equality in my axiomatization I always mean identity, not just
+iso.)
+
+
+[A reminder that i/j = min k[i < j*(k+1)], and  i%j = i - j*(i/j)
+(ordinal division and ordinal remainder, used in the following).
+Exercises.  (i) j*(i/j) <= i.  (ii)  i%j < j. ]
+
+
+2.  Replace the definition of product by the following.
+
+
+Given an ordinal i, the i-product p = p_i of a family <n_j>,j<i of
+ordinals is defined up to Choice by recursion on i to be the least
+ordinal p_i satisfying the following.
+
+The 0-product p_0 is 1.
+
+For all j<i, the j-product p_j of the family <n_m>,m<i is defined by
+recursion along with, for all k<=j, an *auxiliary* projection
+f_{jk} : p_j -> p_k, namely \n.n%p_k.  (So f_{jj} is the identity.)
+
+For successor ordinals i = k+1, the definition of p_i is completed by
+requiring that it have in addition a *main* projection
+g_k : p_{k+1} -> n_k, namely \n.n/p_k (a monotone function).
+
+For limit ordinals, the definition of p_i is completed, up to Choice,
+by requiring it to be *a* categorical limit of the diagram whose
+objects are, for j<i, the j-products p_j of <n_m>, m<j, and whose maps
+are the recursively defined auxiliary projections between those
+objects.  The projections of this limit to the recursively defined
+j-products p_j are the auxiliary projections f_{ij} : p_i -> p_j
+defined at this level.
+
+The counit of i-product at family <n_j>, j<i, has for its j-th map,
+j<i, the composite g_j f_{i,j+1} : p_i -> p_{j+1} -> n_j.  These are
+the *standard* projections of ordinal product.
+
+The unit of I-product at n (the diagonal d_n: n->n^I) is the K
+combinator, \m.(m,m,m,...), sending m to the constant I-tuple of m's.
+
+-----
+
+I-Products act just like counters with I digits; this is lexicographic
+product adapted to infinite ordinals.
+
+Compare the explicit definition \n.n%p_k, a monotone function, at
+successor products to the underdetermined categorical definition at
+limit products.  The latter defines ordinal product only "up to
+Choice," bringing in Choice as a "randomizer".
+
+That a limit of this (small) diagram exists is immediate by the
+completeness of Set.  Once one such limit has been found in this
+version of Set, all ordinals of the same cardinality become equally
+eligible, and the first paragraph of the definition then selects the
+least ordinal from among these.  By definition this is a cardinal, and
+so our definition makes *all* limit products cardinals, a nice
+feature.  But even though we know exactly which cardinal, the product
+is only defined up to an automorphism.  The well-ordering of that
+cardinal is thus completely uncorrelated with the projections.
+
+Barring further bugs, this definition is an underdetermined alternative
+to those of Birkhoff 1942 and Hausdorff, who gave fully specified
+notions of ordinal or lexicographic product.  Birkhoff's definition did
+not always produce ordinals, though it did preserve linearity.
+Hausdorff's definition did not even send ordinals to linear orders.
+The above preserves ordinals, inevitably at the cost of nondeterminism
+at each limit ordinal.
+
+Vaughan Pratt
+
+PS.  I learned after giving the obvious (for Set) ordinal version of
+the axiom of infinity above, that Peter Freyd had shown it was
+equivalent to NNO not just for Set but for *any* topos.  Now *that's*
+what I call an interesting property of toposes.  A lightweight
+collection of such nice facts in one place might put hard-to-please
+types like me in a more receptive frame of mind for the massive body of
+theory that topos theory seems dependent on.  Halmos fits "all" the
+basic material about naive set theory in his 100-page book.  Is it fair
+to say that the corresponding material treated in topos theory requires
+considerably more space?  And if not, when can we expect the topos
+counterpart to Halmos?
+
+
+Date: Sun, 17 Mar 1996 22:23:14 -0400 (AST)
+Subject: Re: Set membership <-> function composition
+
+Date: Mon, 18 Mar 1996 10:44:32 +1100 (EST)
+From: peterj@maths.su.oz.au
+
+After seeing the volume of "fluff" that this topic had generated on
+Friday, I took a vow not to contribute any more to it. But Vaughan
+Pratt seems to be challenging the rest of us to find something wrong
+with his ordinal-based definition of Set, and no-one else has taken
+up the challenge; so I'll have to break my vow and point out its
+obvious shortcoming.
+
+Vaughan's definition is fine as long as you are happy, not just to
+assume that the axiom of choice holds, but actually to rely on it
+to construct codings for you. If AC doesn't hold, the Vaughan's
+category fails to be cartesian closed; and even if it does, you
+don't have the ability to point to a particular object of it and
+say "This is the set of real numbers" (still less to point to a
+particular morphism and say "This is the addition operation on
+real numbers"); you have to rely on God's (or "the randomizer's",
+as Vaughan seems to call him) ability to do it for you.
+
+I suppose only a minority of mathematicians are unhappy about AC
+to the extent of actually rejecting any construction that can't be
+done without it. But I think a very large majority would be unhappy
+about calling upon God to construct things for them (such as the
+real numbers) for which they know there is a perfectly good
+man-made construction. Such people are going to be in a near-
+permanent state of unhappiness if they are condemned to do
+mathematics inside Vaughan's category.
+
+By the way, the Cole--Mitchell--Osius equivalence between weak Zermelo
+set theory and well-pointed topos theory, which is described in my
+book (sorry Vaughan, but Academic Press won't reprint it) and in
+Mac Lane--Moerdijk, doesn't assume the axiom of choice; it's an
+"optional extra" which you can add to both sides of the equation
+if you want to.
+
+Peter Johnstone
+
+
+Date: Sun, 17 Mar 1996 22:46:31 -0400 (AST)
+Subject: Re: Set membership <-> function composition 
+
+Date: Sun, 17 Mar 1996 11:28:59 -0500 (EST)
+From: mthfwl@ubvms.cc.buffalo.edu
+
+	Younger participants and lurkers in this past week's discussion
+may be shocked at the large amount of frantic concern to prevent obscurity
+from becoming extinct.  Vaughan Pratt's question: -- should one forget
+altogether about membership -- `and' -- just work in one's favorite
+topos? -- still remained unanswered.
+
+	The possibility of rejecting the rigid epsilon chains as a
+`foundation' for mathematics occurred to many around 1960.  But for me the
+necessity for doing so became clear at a 1963 debate between Montague and
+Scott.  Each had tried hard to find the right combination of tricks which
+would permit a correct definition of the fundamental concept of a model of
+a higher-order theory (such as topological algebra). Each found in turn
+that his proposal was refuted by the other's counter example (involving of
+course unforeseen ambiguities between the given theory and global epsilon
+in the recipient set theory). 
+
+	The whole difficulty Montague and Scott were having seemed in
+utter contrast with what I had learned about the use of mathematical
+English and what we try to make clear to students:  in a given
+mathematical discussion there is no structure nor theorem except those
+which follow from what we explicitly give at the outset.  Only in this way
+can we accurately express our _knowledge of_ real situations.  A foundation
+for mathematics should allow a general definition of model for
+higher-order theories which would permit that crucial feature of
+mathematical English to flourish, confusing matters as little as possible
+with its own contaminants.  We are constantly passing from one
+mathematical discussion to another, introducing or discharging given
+structures and assumptions, and that too needs to be made flexibly
+explicit by a foundation. Of course the reasons for this motion are not
+whim, but the sober needs of further investigating the relations between
+space and quantity,etc and disseminating the results of such
+investigation. 
+
+	The idealization of a truly all-purpose computer (on which we
+might record such discussions) was relevant. The explicit introduction,
+into a given discussion, of a few inclusion, projection, and evaluation
+maps on a formal footing with addition, multiplication and a differential
+equation, etc. clarifies and is a minor effort compared with the
+complications and collisions attendant on an arbitrary monolithic scheme
+for keeping them implicit. 
+
+	Vaughan's continuing confusion comes he says from Goldblatt 12.4. 
+More exactly, the few lines introducing 12.4 are `In order to...construct
+models of set theory from topoi, we have to analyze further the
+arrow-theoretic account of the membership relation'.  However, `the'
+arrow-theoretic account of membership was actually totally omitted from
+the book, though it should have been in section 4.1, along with the
+discussion of related basic matters, such as subobjects and their
+inclusions. (I return to this below).  For the stated narrow purpose of
+constructing models of epsilon-based set theory, one indeed needs an
+arrow-theoretic account (not of the mathematically useful relation but) of
+the von Neumann rigid-epsilon monsters.  Goldblatt recites such an
+account, as do several of the dozen or so texts on topos.  The
+construction had been done around 1971 by each of Cole, Mitchell, and
+Osius.  I had suggested the basic approach they used, but in so doing I
+was just transmitting (in categorical form) what I had learned from Scott
+about the 1950's work of Specker.  Specker is a mathematician (for example
+it was he who taught R. Bott algebraic topology!) who realized that
+transitive ZFvNBG `sets' can actually be seen as ordinary mathematical
+structures (posets) which happen to satisfy some rather non-ordinary
+conditions (such as no automorphisms, etc.).  Certain special morphisms
+between these structures can be seen as `epsilons' and certain others as
+`inclusions';  the functor which adjoins a new top element can be seen,
+for the special structures, as `singleton', and permits to define those
+two special classes of morphisms in terms of each other.  A further
+insight concerning how these bizarre structures could be studied, if one
+wished, in terms of ordinary mathematical concepts such as free
+infinitary algebras, is elegantly explained in the recent L.M.S. Lecture
+Notes 220 by Joyal and Moerdijk.  They too provide, on the basis of the
+ordinary mathematical ground (of toposes and similar categories) a
+foundation for those structures;  for anyone who is seriously interested
+in those structures, that book should be an excellent reference.  However,
+for anyone with potential to advance mathematics, such interest should be
+discouraged, since the time and energy wasted on these things during this
+century has vastly overshadowed any byproduct contribution to either
+mathematics or to the foundation of mathematics.  Even most set-theorists
+work mainly on problems with definite mathematical content (such as
+Cantor's hypothesis, Souslin's conjecture, `measurable' cardinals, etc.
+etc.) which have no actual dependence on these rigid epsilon chains for
+their formulation and treatment.  That many mathematicians (including some
+categorists) continue to pay lip-service to an alleged `foundational' role
+of these chains can only be attributed to the general cultural
+backwardness of our times;  similarly, certain natural scientists 300
+years ago felt compelled to refer to a `hand that started the universe'
+even though they knew it played no role in their work. 
+
+       	It is my impression (though further sifting of the historical
+record is needed to confirm it) that Hausdorff and other pioneers did not
+actually give to the rigid epsilon the central role that von Neumann and
+others later did.  Cantor had made several important advances, some of
+which may have been submerged by the later attempt at a monolithic
+ideology;  my paper on `lauter Einsen' in Philosophia Mathematica (MR'ed
+by Colin McLarty) describes some potentially useful mathematical
+constructions which were suggested by Cantor's work but which have
+nothing to do with an external, rigidly imposed epsilon. 
+
+	(Of course, one of Cantor's other contributions was the theorem
+that non trivial function spaces are bigger than their domain space, which
+he knew implied that no single set can parameterize a category of sets. 
+It is amazing in hindsight how Frege and Russell managed to transform
+this theorem into a propaganda scare concerning the viability of
+mathematics, thus obscuring more serious problems with the `foundation',
+such as the space-filling curves.)
+
+	The omission by Goldblatt of the definition may have contributed
+to Vaughan's further misconception that `by toposes...membership is
+discussed only in power objects.' In the next two paragraphs I recall the
+definition. 
+
+	The elementary membership relation in any category is
+straightforward, one of the two inverse relations for composition itself,
+the one which Steenrod called the lifting problem:  `y is a member of b'
+means by definition that there exists x with y = bx.  This of course
+presupposes that y and b have the same codomain, and for uniqueness of the
+proof x, that b is mono.  The mathematical role of these two
+presuppositions must be understood. 
+
+ 	It became clear in the early sixties that the definition of SUBOBJECT
+given by Grothendieck is not a pretense, circumlocution, or paraphrase,
+but the only correct definition.  Here `correct' means in a foundational
+sense, i.e. the only definition universally and compatibly applicable
+across all the branches of mathematics:  a subobject is NOT an object, but
+a given inclusion map.  The intersection of two objects has no sense, for
+only maps (with common codomain) can overlap.  The category of sets is in
+no way exceptional in this regard.  Singleton is not a functor of objects
+but a natural transformation (from the identity functor to a covariant
+power set functor in the categories where the latter exists .) Of course,
+when I say `only definition' it is not meant to exclude consideration of
+further mathematical conditions such as regular monos, closed monos etc
+whose interest may be revealed by the study of the particular category;
+nor should we long forget that subobjects are typically mere images of
+fibrations wherein the question of whether there exists a proof of
+membership is deepened to a study of particular sections.
+
+	Equality is not obscure, it just keeps changing - but in ways
+under our control.  Here I am speaking of the dual notion to membership,
+which might be called `dependence' and is just the epic case of Steenrod's
+extension problem.  In commutative algebra for example, what two
+quantities `are' under a chosen homomorphism may become equal.  Neither
+quotient objects nor subobjects have `preferred' representatives in their
+isomorphism classes;  proposals to introduce such preferred
+representatives have been justly ignored, since such would only
+re-introduce spurious complications - of course in any topos further
+objects do exist which can support maps that PARAMETERIZE precisely these
+isomorphism classes . 
+
+				****
+
+	One topos becomes another. Only a very limited mathematical agenda
+could have a favorite topos to stay in, because constructions that one is
+led to make in E will lead to further toposes E' which are both of
+interest in themselves and also further illuminate what is possible and
+necessary in E;  indeed the most effective way to axiomatize E is to
+specify a few key E' which are required to exist.  A topos that satisfies
+both an existential condition concerning sections of epis and a
+disjunctive condition concerning subsets of 1 is an important attempted
+extreme case of constancy and non-cohesion, that usually in mathematics
+becomes a more determinate category of variation and cohesion, modelled
+via structures sketched by diagrams of specified shapes .  It may be
+occasionally of interest however to consider still more extreme
+affirmations of constancy such as the lack of objects both larger than a
+given object and smaller than its power object;  Goedel's theorem to the
+effect that such constancy can always be achieved was shown by W. Mitchell
+to be independent of any extra-categorical structure such as the epsilon
+chains which most people had assumed are inherent to the very idea of
+`constructible'.  This might be clarified if Mitchell's tour de force
+could be replaced by something more direct. 
+
+	That startling result of Mitchell and its total lack of follow-up
+was mentioned by McLarty during this interchange.  Mentioned by Loader was
+another striking result which in its existing form still seems bound up
+with the epsilon ideology, but which surely could contribute something to
+the understanding of the category of abstract sets, namely the
+Martin/Friedman work on Borel determinacy, as I discussed with Friedman
+twenty years ago.  Union and intersection are shadows (in a proof-theory
+sense) of sums and products, but in this case the tail wags the dog--why? 
+The usual formulation that the replacement schema is required surely
+depends on a special limitation of the class of theories:  how could one
+statement require a schema?  Of course, the proof shows that something is
+required but what?  Replacement can easily be made explicit in a topos, if
+required;  indeed doing so makes it clearer that, in the case of abstract
+sets, the essence of the schema is just to give more cardinals. 
+
+				***
+
+	The title of Goldblatt's book (and not only his!) is in itself
+misleading.  The purpose of topos theory and category theory is not
+primarily to provide an analysis of logic, but to permit the development
+of algebraic topology, algebraic geometry, differential topology and
+geometry, dynamical systems, combinatorics, etc.  It emerged in the 1960's
+that logic and set theory can and should be viewed as a special
+distillation of this geometry.  In that way the actual achievements of
+logic and set theory are, reciprocally, enjoying much wider mathematical
+application. 
+
+Bill Lawvere
+
+
+Date: Wed, 20 Mar 1996 14:48:15 -0400 (AST)
+Subject: Proof of nonexistence of membership
+
+Date: Wed, 20 Mar 1996 10:25:56 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+It occurs to me that the arguments that have been advanced against
+membership can be strengthened to a mathematical proof that the usual
+notion of membership as a 2-valued binary relation is an inconsistent
+notion.  That is,
+
+Theorem.  Membership does not exist.
+
+Proof.  Clearly the universe exists, or we're in serious trouble.  But
+if membership also exists then the Cantor-Russell argument leads to a
+contradiction.  QED
+
+
+My real point here is that the Cantor-Russell argument doesn't *really*
+prove there is no universal set, or no 2-valued membership relation, or
+that some sets we can name are not in the universe, or that the
+universe we exist in must be different from the one in which
+mathematical objects exist, or that we are arguing with an unreliable
+logic.
+
+What it proves is the sentence "false."
+
+Anything powerful enough to prove false is a theorem of the universe
+dual to ours.  Such a theorem is a gedanken wavefunction.  To bring it
+into our universe it has to collapse to a Gedankeneigenfunction of the
+operator by which we observe it, that is, our logic.
+
+When you are young and unobserved you are just some gedanken
+wavefunction.  When you become observed, whether for the purpose of
+influencing future generations or getting tenure, you collapse to one
+of the schools of thought constituting the Gedankeneigenfunctions of
+the observation operator, whether set theorist, or category theorist,
+or intuitionist, etc.  That is, you have to take a stand or risk
+failure to communicate.
+
+I have tried to communicate without taking a stand.  I may have
+underestimated the disadvantages of not collapsing to a
+Gedankeneigenfunction.  There's a lot to be said in favor of collapse.
+
+Vaughan Pratt
+
+
+Date: Wed, 20 Mar 1996 21:02:30 -0400 (AST)
+Subject: Re: Proof of nonexistence of membership
+
+Date: Wed, 20 Mar 1996 15:58:58 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+Dear QED,
+   Your proof of nonexistence of the universe is short and convincing. But why
+do you call it membership?
+    John Isbell
+
+
+Date: Thu, 21 Mar 1996 11:09:00 -0400 (AST)
+Subject: Re: Proof of nonexistence of membership
+
+Date: Wed, 20 Mar 1996 18:48:59 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        From: MTHISBEL@ubvms.cc.buffalo.edu
+        Your proof of nonexistence of the universe is short and convincing.
+        But why do you call it membership?
+
+Bill Lawvere visited Stanford in 1988 to give a talk and share ideas.
+I vaguely registered that his (cream-colored?) jacket had a Members
+Only label, and I found myself wondering why I was noticing such a
+trivial detail, and why it kept coming back to haunt me in the
+intervening years.
+
+As I stared at your message, John, trying to decide which of its ten
+meanings you most likely intended, free associating like crazy,
+suddenly the irony hit me.  Thanks!  God knows how much longer it would
+have taken otherwise for my subconscious to deliver this particular
+message.
+
+I should explain what gave rise to my very off-the-wall posting.  I'd
+asked a well-known set theorist where set theorists preferred to set
+the boundary between the ordinals that existed and those that didn't,
+or whether they didn't try, and the exchange that followed was about
+what you'd expect of two explorers from different solar systems meeting
+and trying to find a common alphabet, lexicon, syntax, and semantics in
+that order.
+
+But we got there, and I thought, ah, *this* must be what a wavefunction
+feels like when its pushed out of one eigenstate of an operator into
+another.  (Nothing contradictory there when you analyze it in terms of
+a second operator whose eigenstates are different from the other one,
+applied for the purpose of temporarily getting out of an eigenstate of
+the other operator.)
+
+The metaphor doesn't have to be quantum mechanics.  Instead of two
+operators you could have two drains and one plug in your bathtub.  The
+water will pick a direction to swirl as one of the two eigenstates of
+the open drain, and will then get nudged out of that eigenstate when
+you move the plug over to the other drain.  The first open drain
+represents conferences and journal publication in some discipline, and
+its eigenstates represent schools of thought in that discipline.  The
+other represents a method of getting out of the rut so that you have a
+chance when you do go back to the first drain of finding yourself in
+the other eigenstate.  Provided the operators are sufficiently
+orthogonal you can expect this method to succeed after two tries on
+average (1/2 + 1/4 + 1/8 + ...).
+
+I only know of analog metaphors for this phenomenon, which it seems to
+me nicely describes the relationship between the competing schools of
+foundations and the Cantor-Russell-Goedel paradox.  (To which some
+people these days add Heisenberg, I'm on the side that likes this
+connection, but there's plenty on the other side too.)
+
+In the absence of discrete metaphors I'm not sure I can add anything
+helpful to this.  If the above doesn't do it, well, it was just a silly
+idea then.
+
+Vaughan
+
+
+Date: Thu, 21 Mar 1996 11:10:22 -0400 (AST)
+Subject: Choice, inclusions, nonstandard analysis 
+
+Date: Thu, 21 Mar 1996 03:33:55 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+Contents:
+	1. Defense of Choice
+	2. Toposes with inclusion
+	3. Nonstandard analysis without tears.
+(Sorry this got so long.)
+
+	From: peterj@maths.su.oz.au
+	Vaughan Pratt seems to be challenging the rest of us to find
+	something wrong with his ordinal-based definition of Set, and
+	no-one else has taken up the challenge; so I'll have to break
+	my vow and point out its obvious shortcoming.
+
+Peter's points are sufficiently well taken as to deserve both careful
+reflection and measured response.  I apologize for the one-liner on
+Monday referring to Peter's Sunday message in the middle of a
+postscript advertising my LL'96 paper, which violated both of these.
+Cryptic responses only clog everything up.
+
+Peter argues that Choice should be avoided in constructions, on the
+following ground.
+
+	I suppose only a minority of mathematicians are unhappy about AC
+	to the extent of actually rejecting any construction that can't be
+	done without it. But I think a very large majority would be unhappy
+	about calling upon God to construct things for them (such as the
+	real numbers) for which they know there is a perfectly good 
+	man-made construction. Such people are going to be in a near-
+	permanent state of unhappiness if they are condemned to do
+	mathematics inside Vaughan's category.
+
+===================
+
+1.  Defense of Choice
+
+Before I address the distinction Peter draws here between natural chaos
+and mathematical artifact, I'd like to put in a word for Choice, which
+Peter isn't exactly leaping to defend.
+
+Using Choice is like wearing eyeglasses.  The wearer barely sees them
+but sees the world more clearly.  The *observer* of the wearer on the
+other hand sees the glasses directly as the wearer's baggage or
+ornament, and is only indirectly aware of the wearer's improved
+vision.
+
+Using Choice lets you prove more theorems, but they also shorten
+existing proofs, sometimes significantly.  There is no shortage of
+examples, but just to point to the case under discussion, if you
+organize a category-with-epsilon-trees along the lines I was
+suggesting, the construction of epsilon reduces to the equation
+\epsilon = <.  At a fraction of a line, this is significantly shorter
+than the published constructions, which seem to require a lot more.
+
+Long proofs cloud our mathematical vision.  A shorter proof shows us
+the same result but by a path that makes its truth clearer.  The proof
+as the means is a sine qua non, but that does not make it the end, the
+truth is the end (wearing my Platonist hat for now).
+
+The counterpart to the observer of the wearer of eyeglasses is that
+movie critic of the foundations world, the axiom system critic who
+worries about excess baggage, ornamentation, and/or legislation.  Why
+interfere with the natural course of things when with just a little
+accommodation of nature by longer proofs we can leave her unfettered by
+legislation?
+
+Unfortunately all known ways of building a house seem to entail some
+disturbance of nature, and this commendable environmental concern is in
+impractical conflict with the requirement that your house have a
+picture window with a clear view of mathematical truth.
+
+Quantum mechanics and Choice are in much the same boat.  Neither makes
+as direct contact with the truth as F=Ma or x+y=y+x, but both are
+better understood as sharpening vision, providing respectively the
+physicist and the mathematician with eyeglasses.  In time they may come
+to feel like absolute truth, but this is a slow process.
+
+Arguing against Choice, understood internally, applies nonmonotonic
+logic to restrict what can be deduced.  It is fundamentalist in its
+rejection of sophisticated reasoning supporting clear thinking.  (Sorry
+if that's too cryptic, happy to explain privately if this worries you.)
+
+=============
+
+2.  Toposes with inclusion
+
+	Such people are going to be in a near-
+	permanent state of unhappiness if they are condemned to do
+	mathematics inside Vaughan's category.
+
+At first I had interpreted this to mean that mathematicians would be
+unhappy working with reals that had bits of the membership relation
+dangling off them.  This seemed no objection at all; of course the user
+doesn't want construction materials on his nice stuff.  The builder has
+to clean up after construction, or the user isn't obliged to pay the
+bill in full.  But even if the builder doesn't do it, the user can
+always spend a bit extra to do it himself, and the upshot is the same.
+
+But a day or so later, after rereading
+
+	even if [AC] does [hold], you don't have the ability to point
+	to a particular object of it and say "This is the set of real
+	numbers" (still less to point to a particular morphism and say
+	"This is the addition operation on real numbers"); you have to
+	rely on God's (or "the randomizer's", as Vaughan seems to call
+	him) ability to do it for you.
+
+it occurred to me that perhaps Peter was interpreting my construction
+as meaning quite literally that I was proposing to name reals with
+ordinals.  This certainly would make the users permanently unhappy.  My
+interest in this stuff is ultimately as a user, and I would be
+unhappiest of all because such a user-unfriendly system would have been
+my fault, and because it would have been a complete waste of effort.
+
+I suppose I could just ask Peter which he meant (or was it something
+else again?).  However both are plausible concerns, and I can think of
+equally good and more or less independent responses to them, which I'll
+give now.
+
+For the first, I'll define what I'll call for the moment an itopos, for
+topos-with-inclusion, along with a forgetful functor from itoposes to
+toposes.  (This might be better done for categories in general; here
+I'm only concerned about clarifying one topos.)  For the second I'll
+point to a particular object of my category and say "This is a monoid
+embedding the monoid of nonnegative reals as its bounded sequences, the
+rest being nonstandard reals", and point to a particular morphism and
+say "This is the addition operation on this monoid, whose restriction
+to the standard nonnegative reals is standard addition").  This will do
+double duty as a constructive refutation of Peter's objection and as an
+interesting (to me), short, and I believe new construction of the reals
+that bypasses *all* the many intermediate constructions in the standard
+constructions, *and* produces the nonstandard reals more simply than
+previous constructions (that I'm aware of) as a potentially useful
+spinoff.
+
+A topos with inclusions is no big deal (though it might be if worked
+out more carefully than here).  Its point is to make explicit the
+identity of the elements of sets, in part because it is useful in its
+own right in some situations, in part because it clarifies what is
+being erased when we claim to erase construction details.
+
+The identities of a topos are those of a category, defined by a map
+i:O->M.  An *itopos*, or topos with inclusions, extends the notion of
+identity to a preorder on the objects as a subcategory of the topos.
+An *extensional* itopos makes this a partial order.
+
+This entails an extension not so much of the signature of a topos
+itself as just an increase in the arity of identity, as a function from
+objects to morphisms, from one to ordered two, i.e.  not just the
+diagonal but the "upper triangle" of the homfunctor when a partial
+order, plus squares on the diagonal when a preorder.
+
+The inclusions need to be coordinated with the topos structure, not
+done here (a good thing too if this is all old hat, which seems rather
+likely given that it is a rather obvious notion).
+
+The strict inclusions for the itopos OSet (for Ordinal Set) that I
+constructed the other day were already described then as the
+nonidentity maps from i to j that are the left inclusion of i into
+i+(j-i).  In other words just ignore the excess of j over i and map
+bijectively and monotonely to what remains of j.
+
+Application.  In an itopos one can define the usual Boolean operations
+on sets in the (large) distributive lattice of inclusions (omit the
+downward remainders), knowing that the intersection of two sets
+contains the very elements that show up in common in those two sets,
+not mere stand-ins for them.
+
+Cleaning up.  There is an evident forgetful functor from OSet to Set,
+obtained by decrementing the arity of identity to leave only the
+diagonal identities, those in Set(X,X).
+
+The practical impact of forgetting the nondiagonal identities is that
+functors between toposes need preserve only the retained identities.
+If you find a need to preserve epsilon structure, it means you should
+be working in the itopos.  This addresses Mike Barr's point, which he
+mentioned as confirming with Makkai, about most applications ignoring
+the epsilon structure.  Erasing the off-diagonal identities makes it
+official.
+
+===============
+
+3.  Nonstandard analysis without tears
+
+Definition.  The nonstandard nonnegative reals form the set
+\omega^\omega of sequences of natural numbers, modulo the following two
+equational universal Horn clauses whose variables range over sequences,
+with addition understood as pointwise.
+
+	1.  2(a/2) = a
+	2.  a + c = b + c   ->   a = b
+
+The function 2a doubles every element of sequence a:  (3,2,..) |-> (6,4,...)
+
+The function a/2 shifts the sequence right, setting the leading digit,
+indexed by 0, to 0.  (3,2,...) |-> (0,3,2,...).  Think of halving a
+binary numeral by shifting.
+
+End of construction.
+
+It can easily be seen that the clauses will not identify an unbounded
+sequence with a bounded one.  The standard nonnegative reals are
+extracted from this monoid as the (equivalence classes of) bounded
+sequences.  The real denoted by the sequence a_i is
+sum(a_i / 2^i),i<\omega, in other words ordinary binary notation.
+
+Example.  The ultimately constant sequences (1,0,0,0,...) and
+(0,1,1,1,...) denote the respective reals 1.00... and 0.111... in binary
+notation.  These are identified by the following computation:
+
+	1.111...  =  0.222... 	by 1
+	1.000...  =  0.111...   by 2, with c = 0.111...
+
+A little work shows that every bounded real is identified by clauses 1
+and 2 with a sequence all of whose elements but the leading "digit" are
+0 or 1, and which if ultimately constant ends in 0's.  This of course
+is the standard binary representation for real fractions, but with a
+single digit in "radix" \omega for the integer part.  It should be
+clear that pointwise addition is ordinary real addition for such reals,
+with infinite carries propagating in finite time as in the example.
+
+This construction makes these standard and nonstandard nonnegative
+reals a monoid.  The same technique that extends the natural numbers to
+the integers extends these nonnegative reals to the standard and
+nonstandard reals, of which the standard reals then form a ring (define
+multiplication as all endomorphisms of the monoid, made a binary
+operation by associating each endomorphism with where it sends 1) and a
+field as usual, the standard field of reals.
+
+Every real in this monoid being bounded away from zero, the whole
+monoid without the nonstandard reals cannot form a field, though the
+above definition of the ring satisfies the ring axioms by
+construction.
+
+But we can easily extend it to a field by the same means by which the
+integers are made the field of rationals: define an ireal (possibly
+infinite or infinitesimal real) to be a pair a/b of nonstandard reals,
+modulo the implication ad = bc -> a/b = c/d.  This produces with very
+little fuss a field suitable for nonstandard analysis without tears.
+
+These constructions can all be carried out as operations on objects of
+the category Set, as a topos obtained by my construction from OSet.
+All terms used in the construction are made explicitly available in the
+construction I gave, as part of its signature as a bicomplete topos.
+No trace of the randomness in the choice of well-ordering of
+\omega^\omega participates in the construction, which should be
+understood as merely proving existence and properties of the topos
+thereby constructed, with the proof erased when done.
+
+Here is an indication of how this construction could go, at least for
+the nonstandard reals.
+
+Start with two copies of \omega^\omega, for respectively a and b in
+clause 2 of the definition.  Make \omega^\omega copies of
+\omega^\omega, one for each c.  From the copy for c, delete all
+sequences pointwise less than c.  Send maps a+c, b+c from a,b to c
+respectively.  Now make one more copy of \omega^\omega and send maps
+x-c from c to it.  (Note that monus never "underflows", because we
+deleted those elements.)  The colimit of this diagram implements 2.
+1 is an easy coequalizer.  That's it.
+
+For the promised addition morphism, very roughly speaking, start from
++:\omega^2->\omega, form +^\omega, and apply to this morphism the same
+operations that were applied above to the objects, all of which are
+functorial.
+
+Getting from here to the ireals is a matter of constructing the
+"integers" then the "rationals" with any standard approach, starting
+with \omega^\omega instead of \omega.
+
+This construction was described as an infinite diagram for conceptual
+simplicity.  It can be made finitary with first order logic or
+adjunctions, however you prefer to look at it.  Hopefully all
+operations needed for this conversion are already in the signature
+provided for Set; if not the signature needs more oomph.
+
+Vaughan Pratt
+
+
+Date: Thu, 21 Mar 1996 13:35:57 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Thu, 21 Mar 1996 16:53:46 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>Arguing against Choice, understood internally, applies nonmonotonic
+>logic to restrict what can be deduced.  It is fundamentalist in its
+>rejection of sophisticated reasoning supporting clear thinking.  (Sorry
+>if that's too cryptic, happy to explain privately if this worries you.)
+
+There's a sense in which by reasoning non-classically (specifically, with
+geometric logic) you can eliminate the need for explicit topology:
+
+  if you define points by a geometric theory, then the topology is implicit
+  if you define a map by geometric constructions, then continuity is automatic
+
+>From this point of view, the purpose of explicit topology is to correct the
+errors introduced by classical reasoning.
+
+We thus see sophisticated reasoning (classical principles) necessitating
+complicated thinking (topology), the reverse of what was intended. You
+don't need dogma to see this could be a bad idea, though you do need hard
+work to see whether the classical principles really can be dispensed with.
+
+Steve Vickers.
+
+
+Date: Fri, 22 Mar 1996 11:28:34 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 00:44:30 -0400
+From: RJ Wood <rjwood@cs.dal.ca>
+
+I would like to comment on Vaughan Pratt's
+
+> 1.  Defense of Choice
+...
+> Using Choice lets you prove more theorems, but they also shorten
+> existing proofs, sometimes significantly.  There is no shortage of
+> examples,...
+
+Write CD(L) for complete distributivity of a complete lattice L.
+Write CCD(L) for constructive complete distributivity of L, by which is
+meant that \/:DL--->L has a left adjoint, where DL is the lattice of
+down-closed subsets of L, ordered by inclusion.
+
+It is easy to show that CD==>CCD but many times in joint work with
+Fawcett, Rosebrugh and Marmolejo I have been led back to the more
+interesting
+AC<==>(CD<==>CCD)    *
+
+Without choice there is not much that one can prove about CD.
+In fact, without choice there is a severe shortage of infinite L
+satisfying CD(L). (Recall that AC is equivalent to `for every set X,
+CD(PX), where P denotes power set'.) My experience suggests that
+all theorems about CD follow from constructively proveable theorems
+about CCD after invoking *. Those that my colleagues and I have
+discovered have reasonably ``short'' proofs, if one starts with some
+basic knowledge of adjunctions.
+
+Allow me to discharge the facile comment that by *, any theorem that has been
+proved constructively about CCD (examples exist) proves that ``Using Choice
+lets you prove more theorems'' because that is not the point of this note.
+
+Rather, I think that * and similar results show that some of the
+definitions and concepts that seem to arise rather ``naturally'' from
+traditional set-based Mathematics are not particularly natural. Stepping
+further away from Mathematics, I think that twentieth century Mathematics
+has frequently sacrificed useful generalization for excessive abstraction.
+
+RJ Wood
+
+
+Date: Fri, 22 Mar 1996 14:33:22 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 09:18:21 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        I would like to comment on Vaughan Pratt's
+
+Phew, thanks Richard, no fun defending a position alone.
+
+Here's another argument for Choice, no more or less a proof than the
+clarity-of-mathematical-thought argument, it seems to me.
+
+"Proof" of AC.  It took mathematics about thirty years longer to
+imagine AC false than it did to imagine it true.
+
+This "argument" can be applied in other situations.  Applying it to
+Grothendieck universes (aka inaccessible cardinals) would suggest that
+they don't exist.  We can imagine their nonexistence (their existence
+is independent of ZFC) but so far we haven't been able to imagine their
+existence (a proof in ZFC that they don't exist is still on the
+cards).
+
+What arguments exist in *support* of the existence of Grothendieck
+universes?  I see the "cogito ergo sum" argument, what else?
+
+Vaughan Pratt
+
+
+Date: Fri, 22 Mar 1996 17:10:02 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 16:01:04 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+Vaughan Pratt says
+  <<What arguments exist in *support* of the existence of Grothendieck
+  <<universes?  I see the "cogito ergo sum" argument, what else?>>
+    I once asked Joe Shoenfield that -- not quite in those terms -- and his
+answer certainly didn't seem to me "cogito ergo sum". That seems to me,
+assuming I understand what argument you mean, not radically better than
+Anselm's proof of the existence of God: we can imagine the best thing in the
+world, and if it is the best it must exist (otherwise one that existed
+would be even better), so it exists, QED. Now I don't suppose you mean a
+White Knight's sort of argument -- the universe imagined me, therefore it
+exists. You mean I imagine Grothendieck's universe, therefore IT exists.
+Well, Joe said in effect I can tell you everything that goes to make up the
+first Grothendieck universe, except I don't have time to finish telling you.
+It's the null set, and the singleton of the null set, and [and on. Not just
+countably, of course; we can describe \omega very satisfactorily, and the
+union of an omega-sequence of ordinals, and on. This differs from Anselm's
+word game in being a string of constructions. The first Grothendieck
+universe is rather large, so it is a fairly formidable kit of constructions.
+Pass to a second Grothendieck universe, and you used at least one miracle, to
+produce an individual from the first-universe construction.
+      John Isbell
+
+
+Date: Sun, 24 Mar 1996 20:55:41 -0400 (AST)
+Subject: Existence of Grothendieck Universes
+
+Date: Sat, 23 Mar 1996 15:50:07 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        I once asked Joe Shoenfield that [...]
+        Well, Joe said in effect I can tell you everything that goes to
+        make up the first Grothendieck universe, except I don't have
+        time to finish telling you.
+
+Well, it's no worse than any of my existence "proofs" I suppose.  I
+can't shoot it down with the argument that it would equally well prove
+the existence of cardinals we already know not to exist, since the
+extra time Joe would need to tell us everything that goes into making
+up a nonexistent ordinal might disqualify that proof without
+disqualifying the other.  :)
+
+Further reflection on this merely seems to lead back to my original
+point about there not being enough room in this town for both \in and
+U.  If your U is an inaccessible cardinal, and inaccessible cardinals
+*do* exist (and some set theorists seem to hope very badly they do,
+despite knowing it cannot be proven in ZFC), then rejecting membership
+is one reasonable way out.  Becoming an intuitionist is another.  Have
+the reasonable alternatives proposed to date been collected in one
+place and insightfully classified and compared?
+
+The flip side of this is, if inaccessible cardinals are eventually
+proved *not* to exist, then the Cantor-Russell paradox goes away for
+those working in a Grothendieck universe.  But in that case the one
+reasonable objection I've been able to grasp so far to membership,
+namely its incompatibility with existence of one's mathematical home,
+goes away too.
+
+Is there any other argument against membership?  Preferably just as
+short, but I'll settle for long if that's all that's possible.
+
+Or is the rejection of membership all just touchy-feely stuff based on a
+deep-seated feeling for something?
+
+"The von Neumann rigid-epsilon monsters" alluded to by Bill Lawvere
+sounds like it might be made into such an argument.  But as I pointed
+out, when the only sets are the ordinals, one of each, the "monster" is
+tamed to a gentle line +1'ing steadily along, with the occasional
+little hiccup at each limit ordinal.  That's no monster.
+
+A more convincing objection is needed.  There must be something else,
+ideally something we are all very familiar with.
+
+The smoothness of space, for example.
+
+First off, even if physical space *is* smooth, why should this have any
+more bearing on our mathematical spaces than their dimension?
+Obviously no one can get away in these enlightened days with
+legislating 3, 4, or 26 as an upper bound in mathematics.
+
+Second, it is not even clear that the space we inhabit *is* smooth.
+Start with
+
+        http://zebu.uoregon.edu/~imamura/209/may8/may8.html
+
+and look at what Vilenkin and Linde are proposing as an alternative
+model of space: foam at fine grain.  Their idea that small distances in
+space are chaotic makes much more sense to me than a model based on
+extrapolating the smoothness of space-in-the-large down to arbitrarily
+fine scales as though space were a mathematical manifold.
+That extrapolation applied to the smoothness in the law of large
+numbers in statistics for example is well-known to lead to nonsensical
+results.
+
+With the statistical analogy in mind, my only question about the
+Vilenkin-Linde model is whether the appearance of chaos at fine scales
+would be nicely explained by populating unit volumes with only finitely
+many points.  It is very easy to construct smooth-in-the-large
+manifolds from finite sets, and these will naturally look bumpy in the
+small.
+
+We would then have to add another physical constant to the books, the
+number of points of space per cubic centimeter.
+
+--
+Vaughan Pratt
+
+
+===================================
+
+
+PS. I inquired on sci.math.research about my construction of the
+nonstandard reals.  Vladimir Pestov at U. Wellington pointed out an
+embarrassingly trivial oversight: I'd forgotten that the class of
+fields subdivides into smaller elementary classes, and had not thought
+to order my field (the standard part leaves no alternative, it can't be
+an algebraically closed field).  You can't, at least not without
+further restrictions on the sequences.
+
+Luckily the standard part of my field *can* be ordered or I'd have to
+come up with some other demonstration to Peter Johnstone that one can
+identify the set of reals and its addition morphism without having to
+say which ordinals go where.
+
+More generally, any sequence can be named by its elements.  There is no
+need to name it by whichever ordinal God picked this time around as the
+placeholder in the set of sequences of which that sequence is a
+member.
+
+I can't imagine what Peter was thinking.  This sort of construction,
+where you have to take down the scaffolding when you're done, goes on
+all the time in ordinary mathematics.
+
+
+Date: Wed, 27 Mar 1996 14:55:46 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Tue, 26 Mar 96 13:44:07 -0800
+From: oliver@math.ucla.edu
+
+
+
+Vaughan Pratt writes:
+
+        If your U is an inaccessible cardinal, and inaccessible cardinals
+        *do* exist (and some set theorists seem to hope very badly they do,
+        despite knowing it cannot be proven in ZFC), ...
+
+I think the word "despite" here misses the whole point.  It is precisely
+*because* the existence of inaccessibles cannot be proven in ZFC, that
+the assumption of their existence is interesting.  More exactly, this
+is how we know that ZFC+inaccessibles is a proper (if modest) extension
+of ZFC itself.
+
+Now of course this is not to say that whenever ZFC fails to prove the
+existence of some X that we should immediately assume "X exists"; among
+other problems, that would quickly lead to an inconsistent theory.
+
+Inaccessibles, however, have other merits:
+
+        i)      If my model says there are inaccessibles, and
+        yours says there aren't, it may just mean that your model
+        is an initial segment of mine.  In that case my model
+        is clearly better, because it has everything in it that
+        yours does, and more besides; moreover, we haven't lost
+        any nice features that your model might happen to have, because
+        they are still true when prefaced by "in your model..." .
+
+        ii)     Inaccessibles are an example of the intuition
+        that says "anything we know how to do too well or too
+        precisely, can't possibly tell the whole story; there
+        must be more."  In this case what we know too well how to
+        do is take exponentials of cardinals and limits of sequences
+        of ordinals, where the length of the sequence is a cardinal
+        we already have.  Strengthen this intuition to "things
+        we can construct in L" and you start to see why 0# should
+        exist.
+
+
+Date: Thu, 28 Mar 1996 15:41:25 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Wed, 27 Mar 1996 12:59:32 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+(I promised Bob I'd give it a rest (my idea, not his), but I can't
+resist one more shot.
+
+        From: oliver@math.ucla.edu
+
+        i)      If my model says there are inaccessibles,... my model
+        is clearly better, because it has everything in it that
+        yours does, and more besides; moreover, we haven't lost
+        any nice features that your model might happen to have,
+
+Consistency is not a nice feature?  News to me.  My model is more
+likely to be consistent than yours.  Inconsistency of yours would be a
+beautiful result to most people, like a beautiful building or park.
+Inconsistency of mine would be a magnitude-9 earthquake!
+
+Furthermore mathematics has had no trouble imagining my model since
+1939 when Goedel showed us how.  It is *very* hard to imagine your
+model, so hard that not even the smartest people in the world have been
+able to do it in over half a century of trying.  This is *not* a good
+sign.
+
+        Strengthen this intuition to "things
+        we can construct in L" and you start to see why 0# should
+        exist.
+
+This is an argument for assuming the existence of everything whose
+nonexistence you can't actually *prove*.  But that forces you to
+retreat every time we disprove the existence of yet another ordinal.
+Such discoveries happen periodically, and do not astonish working
+mathematicians.
+
+A much more stable approach would be to accept the easily imagined, and
+reject what is hard to imagine.  Following that strategy, you only have
+to retreat in the face of 50-year or even 200-year earthquakes.
+
+Anyway, what are we arguing about here?  What exactly *is* the
+advantage of assuming inaccessibles?  (Let's not tempt fate and get too
+close to inconsistency by assuming measurables!)  Sure you can shorten
+some contrived proofs a lot with inaccessibles, but can you shorten a
+proof some mathematician might care about?  Or do anything else useful
+with them?
+
+Vaughan Pratt
+
+
+Date: Fri, 29 Mar 1996 15:59:56 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Thu, 28 Mar 96 20:57:48 -0800
+From: oliver@math.ucla.edu
+
+>From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+>>From: oliver@math.ucla.edu
+
+>>i)    If my model says there are inaccessibles,... my model
+>>is clearly better, because it has everything in it that
+>>yours does, and more besides; moreover, we haven't lost
+>>any nice features that your model might happen to have,
+
+>Consistency is not a nice feature?  News to me.  My model is more
+>likely to be consistent than yours.
+
+Careful with language.  Models are not consistent or inconsistent;
+they simply exist or fail to exist.  Consistency is a property of
+*theories*.
+
+If my model exists, then it is better than yours.
+
+>Furthermore mathematics has had no trouble imagining my model since
+>1939 when Goedel showed us how.  It is *very* hard to imagine your
+>model, so hard that not even the smartest people in the world have been
+>able to do it in over half a century of trying.
+
+I do not know what you might mean by this.  I have no difficulty
+whatsoever in imagining inaccessible cardinals.
+
+If you mean I can't imagine everything that might happen *below* an
+inaccessible cardinal I plead guilty, and challenge you to imagine
+all ordinals below Aleph_1.
+
+>This is an argument for assuming the existence of everything whose
+>nonexistence you can't actually *prove*.
+
+No, not everything:  For example I don't assume the existence of a proof
+of 0=1 from ZFC, even though I can't prove the nonexistence of such
+a proof.  In my first article I tried to give an idea of why I assume
+one and not the other.
+
+>But that forces you to
+>retreat every time we disprove the existence of yet another ordinal.
+
+-------IF YOU READ NOTHING ELSE IN THE ARTICLE, READ THIS PARAGRAPH---------
+Science is a continual process of assuming things that might be proved
+wrong, taking the chance that you may later be forced to retreat.  Read
+"Conjectures and Refutations" by Karl Popper.
+
+>A much more stable approach would be to accept the easily imagined, and
+>reject what is hard to imagine.  Following that strategy, you only have
+>to retreat in the face of 50-year or even 200-year earthquakes.
+
+Truly, I think you are much overestimating the difference between
+ZFC and ZFC+inaccessibles.  To prove a contradiction from ZFC+inaccessibles,
+or even ZFC+measurables, would be earthquake enough for me; but even
+a contradiction from ZFC would have little effect on most everyday
+mathematics as long as it didn't go through in, say, 2nd-order PA.
+
+>Anyway, what are we arguing about here?  What exactly *is* the
+>advantage of assuming inaccessibles?
+
+Well for example, if inaccessibles exist then we *know* choice is
+necessary to prove the existence of a nonmeasurable set of reals.
+
+If measurables exist then every analytic set of reals (i.e. projection
+of a Borel set in the plane) is measurable.
+
+
+Date: Sat, 30 Mar 1996 09:33:02 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Fri, 29 Mar 96 12:16:47 -0800
+From: oliver@math.ucla.edu
+
+I wrote:
+
+        If measurables exist then every analytic set of reals
+        (i.e. projection of a Borel set in the plane) is measurable.
+
+Careless of me.  ZFC is enough on its own to prove that every analytic
+set is measurable, either countable or contains a perfect subset, and
+has the property of Baire.
+
+Measurables get you the same results one real quantifier higher; i.e.
+for projections of co-analytic sets.
+
+For future reference, if I notice an error after making a submission
+on lists like this, can I write the moderator and ask to make a correction?
+
+
+

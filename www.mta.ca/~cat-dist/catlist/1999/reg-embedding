@@ -1,0 +1,254 @@
+Date: Thu, 21 May 1998 08:44:12 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: Regular embedding
+
+A month or so ago, I got a note from Ross Street asking about my 1986
+JPAA paper on representations of categories.  The main point of that
+paper was to give a new, relatively simple proof of the full embedding
+theorem for regular categories.  Unfortunately, I tried to get too
+general and got tangled in the variance, so that the argument could not
+be followed.  Follows is my final note to Ross.  The argument is really
+quite simple and can be described as follows:
+
+1. Show that when @C (read script C) is regular, so is Lex(@C,Set)\op.
+ (Lex=FL is the finite limit preserving functors.  This result is really
+the only new thing in the paper.)
+
+2. Adapt Grothendieck's transfinite induction proof of the existence of
+injectives in an AB5 abelian category to show that Lex(@C,Set)\op has
+enough @C-projectives = regular functors.
+
+3. Adapt Mitchell's proof of the abelian category full embedding theorem
+to show that by taking a sufficiently large full subcategory @P in
+Lex(@C,Set) consisting of regular functors, then the evaluation functor
+@C --> Func(@P\op,Set) is full and faithful.
+
+That's all there is to it.  I plan to post on triples in the next few
+days a revised version of the paper (it was, fortunately, one of the
+very first that was typed on a computer, so this is not too onerous).  I
+will call it embedding.rev.
+
+Ross further raised the question as to whether a transfinite induction
+was too sophisticated for the classroom.  I don't know exactly what
+level his course was, but I will say that if we never do a hard theorem,
+then the students will come away with the idea that there is no depth to
+category theory, an impression his colleagues will be only too happy to
+affirm.  This argument of Grothendieck's is, after all, the first
+example that there could be deep results in categories.
+
+Michael
+
+=====================================================================
+
+Dear Ross:
+
+I did not really try to understand my paper.  I suspect it is a matter
+of trying to be too abstract and getting tangled in my own feet.  At any
+rate, here is how I would do it for a class.  First, since you didn't
+ask, I assume that you are happy with the fact that given a small
+category @C (think of that as script C; BTW, I never noticed how
+dreadful JPAA's scripts were), the category @L = Lex(@C,Set)\op has the
+property that given any functor F, there is a regular epi P -->> F such
+that P is projective with respect to regular epis in @C.  Now consider a
+small full subcategory @P built out of choosing @C projective covers for
+each representable and a @C-projective cover for the kernel pair of each
+of the @C-projective covers of representables.  Thus, for each object C,
+there is a parallel pair Q ===> P in @P, whose coequalizer in @L is C.
+Notice that Hom_{@L}(P,C) = PC, using Yoneda and taking the variance
+into account.
+
+There is an obvious functor F: @C --> Fun(@P\op,Set) that takes C to
+the functor P |--> Hom(P,C) = PC.  This functor is clearly
+faithful, preserves finite limits and regular epis.  The only question
+is the fullness.  So suppose a: FC --> FB is a natural transformation.
+What naturality means is that for any d: Q --> P in @P, the square
+                         Hom(d,C)
+               Hom(P,C) ----------> Hom(Q,C)
+                  |                    |
+                  |                    |
+               aP |                    | aQ
+                  |                    |
+                  |                    |
+                  v                    v
+               Hom(P,B) ----------> Hom(Q,B)
+                         Hom(d,B)
+ commutes.  Applied to an f: P --> C, this means that aQ(d.f) = d.aP(f).
+Apply this in the case that f is a coequalizer in @L to a parallel pair
+d,e : Q ===> P in @P.  It says that
+     aP(f).d = aQ(f.d) = aQ(f.e) = aQ(f).e
+ and that means that there is a unique b: C --> B such that aP(f) = b.f.
+You finish the argument by observing that for any object R of @P and any
+c: R --> C, there is a lifting to an arrow g: R --> P and then aR(c) =
+aR(f.g) = aP(f).g = b.f.g = b.c.
+
+
+Date: Fri, 22 May 1998 14:05:30 +1000
+From: street@mpce.mq.edu.au (Ross Street)
+Subject: categories: Re: Regular embedding
+
+The proof Michael Barr had in mind at the time of writing his 1986 JPAA
+paper on representations of categories, and has now clarified, is truly
+beautiful.  I may have misrepresented what the problem was with presenting
+the transfinite induction part of the proof in my course.  It is a question
+of time rather than difficulty.  I am not known amongst my colleagues as
+one who shrinks from teaching or avoiding hard proofs.  The point is that I
+have a course consisting of 24 lectures to a group including a (bright) 4th
+year student (who had hardly heard of categories before the course), a
+graduate students in number theory, physics and computer science, my own 5
+PhD students, and a professional category theorist.  I am trying to keep it
+interesting for all. The students (even the ones who have done a formal
+set-theory course) have not really used ordinals; so I would need to
+sacrifice some category theory to provide that background. I am still
+undecided about this; perhaps, the transfinite induction and the embedding
+theorem can be an appendix to the course.
+
+Perhaps the most novel aspect of the course, considering my 2-cell
+background, is that I have given 18 lectures so far without introducing
+natural transformations. I'm about to talk about adjunctions without them
+too.
+
+I must admit that the course content has evolved on the run. But looking
+back, I think it has some unity of purpose.  I headed straight for the
+definition of regular category as having a terminal object, pullbacks,
+strong epi - monic factorizations, and stability of strong epis under
+pulling back along arbitrary arrows.  We developed the method of
+generalised elements and constructed the Poset-enriched category of
+relations in a regular category.  We proved relations with right adjoints
+are graphs of arrows.  We proved strong epis are regular. Equivalence
+relations and (Barr-)exact categories were examined.
+
+[One of my (intended?) questions to Michael Barr was whether he knew of a
+diagram lemma which could be proved significantly quicker using the
+embedding theorem than by the generalised-element/relations technology.]
+
+I proved in detail that an exact additive category is abelian (as defined
+in Freyd's book "Abelian Categories" - beginning of Chapter 2). Not only is
+that a deep theorem of category theory (in my opinion - despite not needing
+a transfinite argument) but it is a microcosm of categorical ideas that
+have proved useful in other contexts.  We proved the Five Lemma, Snake
+Lemma using relations in the abelian category.
+
+So far I have set 15 exercises: some quite challenging. One was to prove
+Cat is not regular (I gave a bit of a hint).
+
+Now I am discussing 2-sided discrete fibrations (just for categories) in
+depth.  These are being advertised as the "relations" of category theory.
+In fact, this means we do have presheaf categories disguised as  DFib(A,1);
+so some natural transformations are there hiding there.
+
+I have this weekend to decide where we go next!
+
+But I think there is enough meat in all this to deal with sceptical colleagues.
+
+When it comes to a game of "my subject's harder than yours, nya, nya", I
+would also argue that the concepts category theory has to offer are just as
+hard to really master as difficult theorems.  This is why many
+mathematicians calculate hard to do what we can do with our concepts.
+
+Regards,
+Ross
+
+
+Date: Fri, 22 May 1998 11:25:25 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: Re: Regular embedding
+
+I certainly welcome Ross' clarification of his problem.  One possibility
+would be to give the proof except for the existence of sufficient regular
+functors and either refer the students to the paper or (better) write it
+out carefully and distribute it.  One thing I have given only a little
+thought to is whether it can be done using a maximal principle argument.
+The point is that it is not a question of extending a map to a larger and
+larger subobject, but of building larger and larger objects and not as
+subobjects of something already given.  This makes it different from the
+proof, say, that divisible abelian groups are injective (from which the
+existence of sufficient injectives in any module category follows easily).
+I think a maximal principle argument goes down a lot more easily than one
+based overtly on ordinals or transfinite induction.
+
+Ross, it sounds like a beautiful course and if you have notes, I would
+like to see them. 
+
+Michael
+
+
+Date: Fri, 22 May 1998 13:31:52 -0400 (EDT)
+From: Donovan Van Osdol <don.vanosdol@unh.edu>
+Subject: categories: Re: Regular embedding
+
+Ross Street asks Michael Barr if he knows "of a diagram lemma
+which could be proved significantly quicker using the embedding 
+theorem than by the generalized-element/relations technology".
+Well, I don't exactly, but one of the earliest uses of Barr's
+embeddings of regular categories was in my American Journal of
+Mathematics paper on Simplicial Homotopy in an Exact Category 
+(1977, vol 99, pp 1193-1204). I wanted to prove the homotopy 
+exact sequence of a Kan fibration of sheaves of simplicial sets
+and Barr's results were exactly what I needed. All this has 
+since been improved by using closed model structures and a less
+naive definition of fibration, but the "embedding/technology" 
+Ross mentions was all we had available--in sufficient generality
+to cover my situation--at the time.
+Don Van Osdol
+
+
+Date: Mon, 25 May 1998 17:00:07 -0400
+From: "Ockham's stubble" <boshuck@triples.math.mcgill.ca>
+Subject: categories: Regular embedding
+
+Would the following (aside from the first) help to prepare a more
+digestible proof of Barr's full regular embedding theorem?
+
+1) Say that an object U of a (but not just any) category E is open if U
+   is a finitely presentable object of the opposite of E (i.e., if it
+   satisfies the analogue of the filter convergence characterization
+   of open sets). An object P of E is strict if it is the projective
+   limit of a diagram of opens such that each limit projection is an
+   effective epimorphism; P is called saturated if for every U -->> V
+   of opens, each P -->> V lifts to some P -->> U; finally, P is called
+   weakly projective if it is projective with respect to effective
+   epimorphisms of opens. Every strict, saturated object is  weakly
+   projective.   
+2) Given P in Pro(C), where C is a regular category, let P' denote the
+   fibred product of all X -->> P which are opens of Pro(C)/P, and P*
+   the projective limit of: P <<-- P' <<-- P'' <<-- P''' ...; one
+   shows that the projection P* --> P is an effective epimoprhism, that 
+   P* is a strict, saturated object of Pro(C)/P, and therefore that P*
+   is a weakly projective object of Pro(C). Theorem 14 of Barr's '86
+   JPAA paper (i.e., step three in his message of 21 May) applies.
+3) The construction is (to my knowledge) due to Joyal (c. 1972, or
+   earlier). Objects of the form X*, where X is an object of C, are 
+   principal prime models, a notion Makkai (Full continuous embeddings
+   of toposes, Trans AMS, 1982) distilled from Barr's original proof
+   (Joyal called them absolutely flasque). 
+cheers, 
+-b
+PS:Without the terminology, that Pro(C) (=~ Lex(C,Set)^op) is regular 
+   if C is is suggested in SGA4, Expose I, 8.9 (especially cf. exercise
+   8.9.9(b)). 
+
+
+Date: Tue, 26 May 1998 14:03:07 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: Re: categories: Regular embedding
+
+Well, I am not trying to be snide, but for me, my argument is more
+understandable.  But if you prefer to see it in the way you put it, I have
+no objection.  A couple more comments.
+
+In 1986 (or, really, 1984), I did not really understand that this argument
+was *really* the same argument, just dressed up nicer, using functors
+instead of diagrams.  
+
+In 1970, I was fresh from homological algebra.  The construction struck me
+(and still does) as reminiscent of the argument you use in showing that if
+you have the beginnings of a map from a projective complex to an acyclic
+one, you can continue it one more step.  The main difference was that this
+was a well-founded poset instead of an inter-indexed chain.  And if anyone
+ever wondered why I called these A diagrams and P diagrams, it had nothing
+to do with A&P and everything to do with acyclic and projective.  Thus the
+embedding theorem is, like many other things I have done, a form of
+acyclic models.
+
+
+

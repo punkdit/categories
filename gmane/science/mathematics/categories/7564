@@ -1,0 +1,158 @@
+Path: news.gmane.org!not-for-mail
+From: Ohad Kammar <ohad.kammar@ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Splitting epis by wishful thinking
+Date: Fri, 4 Jan 2013 15:22:29 +0000
+Lines: 119
+Approved: news@gmane.org
+Message-ID: <E1TrHKh-0003PM-25@mlist.mta.ca>
+References: <E1TqwRE-00070o-75@mlist.mta.ca> <E1Tr87D-00014Y-O3@mlist.mta.ca>
+Reply-To: Ohad Kammar <ohad.kammar@ed.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: ger.gmane.org 1357344600 2045 80.91.229.3 (5 Jan 2013 00:10:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sat, 5 Jan 2013 00:10:00 +0000 (UTC)
+To: Richard Garner <richard.garner@mq.edu.au>,        Andrej Bauer <Andrej.Bauer@andrej.com>,        Categories List <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Jan 05 01:10:15 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.32])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TrHL0-0002NE-U4
+	for gsmc-categories@m.gmane.org; Sat, 05 Jan 2013 01:10:11 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:58026)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TrHEY-0001p7-D9; Fri, 04 Jan 2013 20:03:30 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TrHKh-0003PM-25
+	for categories-list@mlist.mta.ca; Fri, 04 Jan 2013 20:09:51 -0400
+In-Reply-To: <E1Tr87D-00014Y-O3@mlist.mta.ca>
+Content-Disposition: inline
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7564
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7564>
+
+Dear Andrej,
+
+The following formulation of your question has negative answers:
+
+Let Cat be the category of small categories and functors between them,
+and SCat be its full sub-category of small categories in which all
+epis split. Let U : SCat -> Cat be the full inclusion.
+
+U does not have a left adjoint, nor a right adjoint.
+
+Proof:
+
+Let C be the following category:
+It has 3 objects:
+0 - an initial object
+A and B.
+
+Apart from the identities and the initial maps, C has the following 3 morphisms:
+a parallel pair f, g : A -> B
+an endomorphism h : B -> B
+
+The non-trivial compositions are given by:
+
+x o h = x, for x = f, g, and h.
+
+Note that C is in SCat, as it has no trivial epimorphisms: the
+non-trivial arrow into A equalises f and g, which are different, and
+the non-trivial arrows into B equalise h and id.
+
+Let F : C -> C be the endofunctor that swaps f with g.
+
+If U had a left adjoint, then SCat was a full reflective subcategory
+of Cat, it was complete. Consider the equaliser of F, Id : C->C.
+Whatever it is in SCat, this coequaliser cannot be preserved by U, as
+the equaliser in Cat is given by dropping f and g. This resulting
+subcategory has an epi, the initial arrow into A, that doesn't split.
+
+Similarly, if U had a right adjoint, then SCat was cocomplete. Then
+the coequaliser of F, Id : C->C in Cat would be C with g dropped
+(=identified with f).  But then the initial map into A becomes epi,
+without a section. Thus this colimit is not in SCat, and U doesn't
+preserve it.
+
+The same construction actually lies within the category Cat_ac that
+Richard described (with specified sections), as C has no non-trivial
+sections. Thus the same proof applies to his formulation, and his
+forgetful functor also isn't a right nor a left adjoint.
+
+Ohad.
+
+On 4 January 2013 04:04, Richard Garner <richard.garner@mq.edu.au> wrote:
+> Hi Andrej,
+>
+> This isn't exactly what you want, but it's along the right lines. Given a
+> small category with cokernel pairs, one can construct another category with
+> cokernel pairs in which all epis have been "freely" split. By this, I mean
+> that a chosen section has been freely added to every epi in the category,
+> even the ones that already had a section; thus the construction is not
+> idempotent. Basically one uses the small object argument.
+>
+> Consider the category K of small categories with cokernel pairs, and
+> functors preserving such. Let C be the free category with cokernel pairs
+> containing an epi e: it can be obtained by first forming the free category
+> with cokernel pairs on an arrow f, and then coinverting the codiagonal of
+> f. Let D be the free category with cokernel pairs containing a
+> section-retraction pair (i,p). There is an obvious map C --> D in K which
+> sends e to p. Now some E in K satisfies the axiom of choice if and only if
+> it is projective (has the weak right lifting property) with respect to this
+> map C --> D.
+>
+> K is locally finitely presentable, and so the map C --> D generates via the
+> small object argument a weak factorisation system (L,R) on it. By the above
+> argument, the fibrant objects for (L,R) are those small categories with
+> cokernel pairs satisfying the axiom of choice. If one uses the algebraic
+> version of the small object argument, the fibrant replacement for this
+> w.f.s. is a monad, S, say. The action of this monad on objects freely
+> adjoins sections for all epis; its algebras are precisely the small
+> categories with cokernel pairs with a chosen section for each epi.
+>
+> One can ask what happens if one drops the assumption of cokernel pairs.
+> Consider the category Cat_ac, whose objects are small categories in which
+> every epi comes equipped with a chosen section. There is an obvious
+> forgetful functor Cat_ac ---> Cat, and a more precise formulation of your
+> original question would be to ask if this functor has a left adjoint. This
+> is unclear to me; at the moment I feel like it probably doesn't. What does
+> seem clear is that, if it does have a left adjoint, then it can't possibly
+> be monadic, so whatever construction one gives won't be entirely honest or
+> straightforward.
+>
+> Richard
+>
+>
+> On 3 January 2013 23:36, Andrej Bauer <andrej.bauer@andrej.com> wrote:
+>
+>> On Mathoverflow there is a discussion (see
+>>
+>> http://mathoverflow.net/questions/117921/relative-consistency-of-etcs-over-the-theory-of-a-well-pointed-topos-with-nno
+>> )
+>> which got me thinking.
+>>
+>> Is there a construction which "freely" splits all epis in a category
+>> C? Something like: we add sections to every epi and wish we are done?
+>>
+>> The question is somewhat lose, but I think it is clear nontheless.
+>>
+>> With kind regards,
+>>
+>> Andrej
+>>
+>
+
+-- 
+The University of Edinburgh is a charitable body, registered in
+Scotland, with registration number SC005336.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

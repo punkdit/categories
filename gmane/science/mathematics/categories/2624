@@ -1,0 +1,127 @@
+Path: news.gmane.org!not-for-mail
+From: nobody@nowhere.invalid (Unknown)
+Newsgroups: gmane.science.mathematics.categories
+Subject: (unknown)
+Date: Wed, 29 Apr 2009 15:26:24 +0000 (UTC)
+Lines: 108
+Approved: news@gmane.org
+Message-ID: <48241.4600825452$1241018785@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018784 5039 80.91.229.2 (29 Apr 2009 15:26:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:26:24 +0000 (UTC)
+Original-X-From: rrosebru@mta.ca Thu Apr  1 14:24:46 2004 -0400 Return-path:
+Status: O
+Content-Length: 4938
+Original-Lines: 107
+Xref: news.gmane.org gmane.science.mathematics.categories:2624
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2624>
+
+<cat-dist@mta.ca> Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 01 Apr 2004 14:24:46 -0400 Received: from
+Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B96pj-0006qu-00
+    for categories-list@mta.ca; Thu, 01 Apr 2004 14:22:31 -0400
+From: Todd Wilson <twilson@csufresno.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <16491.20549.171326.902250@localhost.localdomain>
+Date: Wed, 31 Mar 2004 15:12:05 -0800
+To: categories@mta.ca
+Subject: categories: Re: on the axiom of infinity
+In-Reply-To: <200403291603.i2TG3UX6000400@saul.cis.upenn.edu>
+References: <200403291603.i2TG3UX6000400@saul.cis.upenn.edu>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 1
+
+On Mon, 29 Mar 2004, Peter Freyd wrote:
+> There's a particular operator that keeps popping up for me.
+>
+> In an arbitrary heyting algebra define  x << y  to mean that not only
+> is  x  less than or equal to  y, but the value of  y -> x  is as small
+> as it can be, that is, y -> x = x. In a complete heyting algebra
+> define an order-preserving, inflationary unary operation  s  by
+>
+>                        sx =  inf{ y | x << y }.
+>
+> E.g.: on a linearly ordered set if { y | x < y } has a least element
+> then that's what  sx  is. If there is no smallest element above  x,
+> then  sx = x (even without the completeness hypothesis). In
+> particular, note, there no assertion that  x << sx.
+>
+> The subobject classifier in an elementary topos is complete in the
+> relevant sense: s  is definable. A quick description of the
+> construction to follow is that we're going to turn  s  into the
+> successor operation on an NNO.
+>
+> DIVERSION: The definition I just gave is the first I came across. The
+> next incarnation for me was when I wanted a measure of the failure of
+> booleaness. In any topos, *A*, there's a largest subterminator  B
+> with the property that the slice category  *A*/B  is boolean. But
+> given any subterminator, U, we have its "closed sheaves", *A*_(U), the
+> full subcat of objects  A  such that  AxU --> U  is an iso. (This is a
+> subcategory of sheaves for a Lawvere-Tierney topology. Starting with
+> a space  X  then  Sheaves(X)_(U)  may be identified with  Sheaves(U'),
+> where  U'  denotes the complement of U.)  Note that the lattice of
+> subterminators in  *A*_(U)  is isomorphic to the interval of
+> subterminators in  *A*  from  U  up. We can define BU  to be the
+> largest subterminator in  *A*_(U)  such that  *A*_(U)/BU  is boolean.
+> The interval of subterminators in  *A*  from  U  up to  BU  is boolean
+> and in the relevant internal sense, BU  is the largest such
+> subterminator. We can, of course, translate this all to a unary
+> operation on  Omega.
+>
+> It's the same operator  s.
+>
+> When one specializes this to a space  X  it becomes historically
+> familiar if we dualize it it to a deflationary operator on closed
+> subsets. It's the operation that removes isolated points. The very
+> operation that got Cantor started. Hence the word "historically".
+
+I haven't yet digested the rest of Freyd's post, but all of the above,
+including the notation x << y, the connection with collapsing maximal
+Boolean intervals, the "historical" connection with Cantor, and a lot
+more, can be found in a series of papers of Harold Simmons:
+
+    H. Simmons, "The Cantor-Bendixson analysis of a frame", Seminaire
+    de mathematique pure,  Rapport no. 92, Institut de Mathematique
+    Pure, Universite Catholique de Louvain, January 1980.
+
+    H. Simmons, "An algebraic version of Cantor-Bendixson analysis",
+    in Categorial Aspects of Toplogy and Analysis, pp. 310-323,
+    Springer LNM 915, 1982.
+
+    H. Simmons, "Near-discreteness of modules and spaces as measured
+    by Gabriel and Cantor", J. Pure and Appl. Alg. 56 (1989), 119-162.
+
+    H. Simmons, "Separating the discrete from the continuous by
+    iterating derivatives", Bull. Soc. Math. Belg. 41 (1989), 417-463.
+
+The operation Freyd is calling s (and the associated relation <<)
+arose in connection with the so-called Reflection Problem for Frames,
+namely to characterize those frames that have a reflection into the
+category of complete Boolean algebras.  When such reflections exist,
+they can be found by iterating the functor A |-> N(A), which freely
+complements the elements of A (and is also the frame of nuclei on A,
+ordered pointwise), until it "terminates":
+
+    A -> N(A) -> N^2(A) -> ... -> N^a(A) -> ...  (a in ORD).
+
+(These maps are all both mono and epi and are components of natural
+transformations between iterates of N).  A basic result here is that
+N(A) is Boolean iff x << sx for all x in A.  The general reflection
+problem remains open.
+
+--
+Todd Wilson                               A smile is not an individual
+Computer Science Department               product; it is a co-product.
+California State University, Fresno                 -- Thich Nhat Hanh
+
+
+
+

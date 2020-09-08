@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: Aleks Kissinger <aleks0@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: categories of models of cartesian PROPs
+Date: Thu, 20 Aug 2015 22:20:07 +0200
+Lines: 74
+Approved: news@gmane.org
+Message-ID: <E1ZSkbg-0006eK-M2@mlist.mta.ca>
+References: <E1ZS3A0-00051h-Q0@mlist.mta.ca>
+Reply-To: Aleks Kissinger <aleks0@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Trace: ger.gmane.org 1440157002 11302 80.91.229.3 (21 Aug 2015 11:36:42 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 21 Aug 2015 11:36:42 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri Aug 21 13:36:32 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSkcZ-0004eC-Tj
+	for gsmc-categories@m.gmane.org; Fri, 21 Aug 2015 13:36:32 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43400)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSkbg-0004kg-LT; Fri, 21 Aug 2015 08:35:36 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSkbg-0006eK-M2
+	for categories-list@mlist.mta.ca; Fri, 21 Aug 2015 08:35:36 -0300
+In-Reply-To: <E1ZS3A0-00051h-Q0@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8682
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8682>
+
+Some of this is now superseded by Richard's remarks, but I'll repost
+nonetheless, since it offers a slightly different perspective...
+
+
+The functor category is indeed symmetric monoidal. In fact, its really
+only the monoidal structure on C that plays a role (by analogy to your
+pointwise multiplication example, where you only need structure on the
+codomain).
+
+To ensure the functor is monoidal, the symmetry from C comes in to play:
+
+(F @ G)(X @ Y) := F(X @ Y) @ G(X @ Y)
+~= FX @ FY @ GX @ GY
+~= FX @ GX @ FY @ GY
+~= (F@ G)(X) @ (F @ G)(Y)
+
+Probably more interesting is that, since the base category is
+cartesian, so too is the functor category. Each object is endowed with
+natural "copy" and "delete" maps, which are again natural in [T,C].
+This might seem surprising, but being a monoidal natural
+transformation is actually pretty restrictive when it comes to PROPs.
+E.g. for frobenius algebras, it forces the map to be iso.
+
+
+On Wed, Aug 19, 2015 at 3:13 PM John Baez <baez@math.ucr.edu> wrote:
+>
+> Hi -
+>
+> Here are two questions:
+>
+> Suppose you have a category with finite products, say T, and a symmetric
+> monoidal category, say C.   Let [T,C] be the category where
+>
+>     objects are symmetric monoidal functors from T to C,
+>     morphisms are monoidal natural transformations.
+>
+> *1.  What structure beyond a mere category does [T,C] automatically get in
+> this sort of situation?*
+>
+> *2.  What further structure do we get if C has some particular class of
+> limits or colimits?*
+>
+> I haven't thought about this much.  Even if T were just symmetric monoidal,
+> I think [T,C] should get a symmetric monoidal structure due to "pointwise
+> multiplication", just as the set of homomorphisms from one commutative
+> monoid to another becomes a commutative monoid where
+>
+> fg(x) := f(x) g(x)
+>
+> Should [T,C] also have some sort of "comultiplication"?  What extra
+> benefits do we get from T being cartesian?
+>
+> Here's why I care:
+>
+> My student Brendan Fong wrote a masters' thesis about Bayesian networks,
+> which he's trying to polish up and publish.
+>
+> In the new improved version, he'll associate to any Bayesian network a
+> category with finite products, say T.   This plays the role of a "theory".
+> An assignment of probabilities to random variables consistent with this
+> theory is a symmetric monoidal functor from T to C, where C is some
+> symmetric monoidal category - but not cartesian! - category of probability
+> measure spaces and stochastic maps.  So, [T,C] plays the role of the
+> "category of models of T in C".
+>
+> It would be nice to know the properties of [T,C] that follow instantly from
+> what I've said, not reliant on any more detailed information about T and C.
+>
+> Best,
+> jb
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

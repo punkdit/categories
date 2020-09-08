@@ -1,0 +1,297 @@
+Date: Wed, 1 Mar 1995 04:30:33 -0400 (AST)
+Subject: Composition as a relation?
+
+Date: Tue, 28 Feb 1995 15:12:04 -0500
+From: David Espinosa <espinosa@cs.columbia.edu>
+
+
+
+Has there been any work on "categories" with composition as a relation
+instead of a function?
+
+We would allow several "composites" of two arrows but would likely
+require unique composition with the identity:
+
+        f o id = {f}
+        id o f = {f}
+
+David
+
+Date: Sat, 4 Mar 1995 00:37:17 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: Composition as a relation?
+
+Date: Wed, 1 Mar 1995 09:20:42 +0100
+From: mas013@clvax.bangor.ac.uk
+
+Dear All,
+
+re categories with relational composition:
+
+
+
+David Espinosa <espinosa@cs.columbia.edu> asked:
+"Has there been any work on "categories" with composition as a relation
+instead of a function?
+
+We would allow several "composites" of two arrows but would likely
+require unique composition with the identity:
+
+        f o id = {f}
+        id o f = {f}".
+
+Such objects naturally occur in some studies of homotopy coherence in
+abstract homotopy theory.  There is a set of possible composites so
+a choice of composite is made to make life easy, but in
+this context, any two choices are related by higher dimensional data. Of
+course associativity does not work but does up to higher diemnsional
+data.  This is linked to some ideas in bicategories.  Perhaps the fact
+that the resulting THING is constructed rather like a Kleisli category
+but with a choice of "multiplication" on the "monad" is significant.
+
+If anyone is interested I can expand further on this.
+
+Tim
+
+Tim Porter,
+Bangor,
+e-mail: mas013@clss1.bangor.ac.uk
+
+Date: Sat, 4 Mar 1995 00:42:36 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: Composition as a relation?
+Date: Wed, 1 Mar 1995 20:37:52 -0500
+From: David Espinosa <espinosa@cs.columbia.edu>
+
+
+
+   Do you have any examples in mind?  Abstractions with no examples have
+   an unfortunate track record.
+
+Jim,
+
+Thanks for your suggestions, and sorry to omit the examples.
+
+I'm considering a "category" whose objects are type constructors,
+given as endofunctions on a base category, and whose arrows are
+_situated monads_ relating the type constructors.
+
+There's no _function_ for monad composition, but perhaps we can obtain
+a _relation_ by describing conditions for a monad to be a composition
+of two others.  Does that sound reasonable (or like anything else
+you've seen)?
+
+After working out the details, I find that under a relational
+definition of monad composition,
+
+        M = M o id
+but
+        M not= id o M
+
+In other words, there exists a situated monad N (not equal to M) such
+that
+
+        N = id o M
+
+For "composition as a relation" to be useful, I would guess that both
+identities would have to come out exactly (as well as associativity).
+After all, it's not much fun to compose the identity and get something
+else back!  But, in general, I like the idea of relational composition
+and would be interested to see some applications.  Thanks again for
+your help.
+
+The full development follows, in case you're interested.
+
+David
+
+
+Situated Monads
+---------------
+
+A _situated monad_ PQ is a triple
+
+        PQ     : im(P)          -> im(Q)
+        unitPQ : P(A)           -> Q(A)
+        bindPQ : (P(A) -> Q(B)) -> (Q(A) -> Q(B))
+
+obeying the usual monad laws and also
+
+        PQ(P(A)) = Q(A).
+
+PQ is the object part of a functor between full subcategories im(P)
+and im(Q) whose arrow part is
+
+        mapPQ : (P(A) -> P(B)) -> (Q(A) -> Q(B))
+        mapPQ(f) = bindPQ(unitPQ o f)
+
+UnitPQ is a natural transformation from
+
+        i_P      : im(P) -> C   to
+        i_Q o PQ : im(P) -> C
+
+where i_P and i_Q are the inclusion functors of im(P) and im(Q) into
+the base category C.  BindPQ (as usual) seems to have a categorical
+description solely as a map between hom-sets.  Join (monadic eta)
+seems inappropriate because PQ is not an endofunctor, and thus join is
+ill-typed.
+
+
+Monad composition as a relation
+-------------------------------
+
+If we want to say that (as situated monads)
+
+        PR = PQ o QR
+
+we can postulate
+
+        unitPR             = unitPQ o unitQR
+        bindPR(unitQR o f) = mapQR(bindPQ(f))
+
+for f : P(A) -> Q(B).  The latter obtains by pushing f both ways through
+the composition triangle.  These imply
+
+        mapPR = mapPQ o mapQR
+
+So far, so good.  Now let's see what happens if PQ = id or QR = id.
+Does it follow that "composition" with the identity is the identity?
+With QR = id, we find
+
+        unitPR = unitPQ
+        bindPR = bindPQ
+
+but with PQ = id, we have
+
+        unitPR = unitQR
+        mapPR  = mapQR
+
+which is much weaker.  We could add another law
+
+        bindQR(f) = bindPR(f o unitPQ)
+
+for f : Q(A) -> R(B), but this implies for QR = id that
+
+        f = bindPQ(f o unitPQ)
+
+which is false for monads (take PQ as the list monad and f as
+reverse).
+
+So left composition with the identity doesn't yield exactly the same
+monad back (under the above definition of composition).  We have
+
+        PQ = PQ o id
+but
+        QR not= id o QR
+
+This asymmetry doesn't surprise me, since Kleisli composition isn't
+symmetric (the arrows to be composed don't have symmetric types if we
+look at its most general typing).  Unfortunately, I would expect that
+both identities (and associativity as well) would need to hold for
+composition to make sense, even as a relation.
+
+David
+
+Date: Sat, 4 Mar 1995 00:45:44 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: Composition as a relation?
+
+Date: Thu, 2 Mar 1995 00:50:16 -0500
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+
+Dear David,
+
+   Thanks for your suggestions, and sorry to omit the examples.
+
+   I'm considering a "category" whose objects are type constructors,
+   given as endofunctions on a base category, and whose arrows are
+   _situated monads_ relating the type constructors.
+
+   There's no _function_ for monad composition, but perhaps we can
+   obtain a _relation_ by describing conditions for a monad to be a
+   composition of two others.  Does that sound reasonable (or like
+   anything else you've seen)?
+
+To me this gives your question an entirely different flavor.  You
+might want to post your question again with the above target example
+added.
+
+There is a lot of work on combinig triples, e.g. Manes.  My impression
+is that it is not obvious what it means to combine 2 triples.  (One
+way is the stacking below.)
+
+There is some mention of combining triples with distribute laws in
+
+        Barr, Wells, toposes, triples, and theories, '85, Springer
+
+Bicategories may be relevant.
+
+        MacLane, Pare, coherence for bicategories and indexed
+        categories, JPAA (Journ. of Pure and Applied Alg.) '85
+
+There is a paper by Palmquist, in I think Springer LNM 195, on the
+double category of adjoint pairs.  Double categories are categories
+internal to the category of small categories.  2-categories are a
+special case of both bicategories and of double categories.  Monoidal
+categories are a special case of bicategories.
+
+        Borceux, handbook of categorical algebra, '94, Cambridge
+
+may be helpful on some of this.
+
+Finitary triples are those commuting with filtered colimits.  One can
+stack them by starting with set to a discrete power, taking a finitary
+triple on that, forming the category of algebras, taking a finitary
+triple on that, forming the category of algebras, ...  The net result
+of a finite such stack can also be obtained with just 2 special
+layers.  The 1st has as algebras the sketches in the sense of my
+`tensor and linear time' and the 2nd follows from the reflector
+following from the orthogonality.
+
+   The full development follows, in case you're interested.
+
+Maybe I'll read it sometime.  The sad truth is that it's hard to write
+and even harder to get anyone to read it.  (However I have found one
+reader for my writing.  Myself.  It's amazing what one forgets.)
+
+Regards, Jim
+
+
+Date: Sun, 5 Mar 1995 23:51:03 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: Re: Composition as a relation?
+
+Date: Sat, 4 Mar 1995 00:16:18 -0500
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+
+Dear People,
+
+>Dear David,
+>
+>   ...
+>   I'm considering a "category" whose objects are type constructors,
+>   given as endofunctions on a base category, and whose arrows are
+>   _situated monads_ relating the type constructors.
+>   ...
+>
+>To me this gives your question an entirely different flavor.  You
+
+Whoops.  I had meant that to be private.  I guess I may as well add a
+few more references in public mode.
+
+triples:
+E. Manes, Algebraic Theories, 1976, Springer-Verlag
+
+the monoidal case of bicategories:
+A. Joyal and R. Street, The geometry of tensor calculus, I, 1991,
+Advances in Mathematics
+
+some implicit but usually unmentioned coherence trickery:
+G. Kelly, On MacLane's condition of coherence of natural
+associativities, commutativities, etc., 1964, J. Algebra
+
+Oh well, Jim
+

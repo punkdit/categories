@@ -1,0 +1,73 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@barrs.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Curious fact
+Date: Sat, 1 Apr 2000 14:44:04 -0500 (EST)
+Lines: 44
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.10.10004011442590.11711-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017854 31400 80.91.229.2 (29 Apr 2009 15:10:54 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:54 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sat Apr  1 19:51:50 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA13002
+	for categories-list; Sat, 1 Apr 2000 19:43:14 -0400 (AST)
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+X-Sender: barr@triples.math.mcgill.ca
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 1948
+Original-Lines: 43
+Xref: news.gmane.org gmane.science.mathematics.categories:1475
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1475>
+
+Has anyone seen this before, or can anyone give a principled
+explanation.  Begin with the following observation. Suppose
+       del            del
+  ... -----> (C_n,d) -----> (C_{n-1},d) ---> ... ---> (C_0,d) --> 0
+ is a chain complex of differential abelian groups, except that we
+assume d.del = -del.d.  Suppose (C_n,d) is exact for each n. Let C be
+the direct sum of the C_n with boundary given by the matrix
+          (   d     0     0   ...    )
+          (  del    d     0   ...    )
+          (   0    del    d   ...    )
+          (   .     .     .   .      )
+          (   .     .     .    .     )
+          (   .     .     .     .    )
+ The finite truncations F^n = C_0 +...+ C_n are readily
+shown to be exact:  F^0 = C_0 is by hypothesis and there is an exact
+sequence     0 --> F^{n-1} --> F^n --> C_n --> 0.  AB5 now shows that
+the direct limit, which is C, is exact.
+
+Of course, this is going to be false for a category, such as compact
+abelian groups, that is not AB5.  Except it is true.  Using duality, we
+can translate it to the following statement for abelian groups.  Suppose
+       del            del
+  ... <----- (C_n,d) <----- (C_{n-1},d) <--- ... <--- (C_0,d) <-- 0
+ is a cochain complex of differential abelian groups, except that we
+assume d.del = -del.d.  Suppose (C_n,d) is exact for each n. Let C be
+the direct product of the C_n with boundary given by the matrix
+          (   d    del    0   ...    )
+          (   0     d    del  ...    )
+          (   0     0     d   ...    )
+          (   .     .     .   .      )
+          (   .     .     .    .     )
+          (   .     .     .     .    )
+ then C is exact.  The proof is by using elements and although AB4 (at
+least countable) is clearly a necessary condition for this (it is the
+case that all the del's are 0), it sure doesn't look sufficient.
+
+BTW, both are false if you change direct sum to product in the first or
+product to sum in the second.
+
+Michael
+
+
+
+

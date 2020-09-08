@@ -1,0 +1,206 @@
+From: ramshaw@pa.dec.com
+Subject: categories: an early exercise in Mac Lane
+Date: Thu, 08 Jul 1999 13:50:51 -0700
+
+I am puzzled by an exercise on page 15 of Mac Lane's classic text
+"Categories for the Working Mathematician": exercise 5 for section 3
+of Chapter I:
+
+  5. Find two different functors T: Grp --> Grp with object function
+  T(G) = G the identity for every group G.
+
+One such functor, of course, is the identity on every arrow as well.
+So the challenge is to find a functor that leaves all objects
+unchanged, but changes around at least some arrows.
+
+There is one easy way to do that, which may well be what Mac Lane had
+in mind as the solution to this exercise.  For each group G, we choose
+some automorphism of G, say a_G.  We then define our functor T to take
+the arrow f: G --> H to the arrow
+
+         (a_H)^(-1) f a_G : G --> H.
+
+This preserves identities and compositions, so it does define a
+functor.  But it seems like cheating, in a way.  For one thing, this
+new functor is structurally the same as the identity functor.  All
+that we've done is to change the scheme by which we name the elements
+of the various groups, using the automorphism a_G as our rule for
+renaming the elements of G.
+
+Note also that we haven't used any properties of the particular
+category Grp.  This renaming technique would work equally well for Ab
+or Set.  If renaming was what Mac Lane had in mind, why did he specify
+Grp in the exercise?
+
+I've spent some time trying to construct a more interesting solution
+to the exercise: a functor from Grp to Grp that leaves objects alone
+and transforms arrows in some way that clearly changes the structure.
+In particular, I started out hoping to take some non-null arrows to
+null arrows.  For example, consider the homomorphism
+
+         h : C_2 --> A_5
+
+from the cyclic group C_2 to the alternating group A_5 that takes the
+lone non-identity element of C_2 to the permutation (12)(34).  That
+permutation is even, and hence belongs to A_5; and it has order two,
+so the map h is a homomorphism.
+
+Initially, I thought that it would be pretty safe for my functor to
+map h to the null homomorphism.  Note that A_5 is a simple group, so
+any homomorphism from A_5 to any other group has to be either
+injective or null -- there are no intermediate possibilities.
+
+But then I thought about situations like the following:
+
+           C_2  --->  C_2 x G
+
+            |            |
+            | h          | (h, id)
+            V            V
+
+           A_5  <---  A_5 x G
+
+The map on the top line takes t |--> (t, e) where e is the identity of
+G, while the map on the bottom line is the projection (s, u) |--> s.
+
+This diagram commutes before I apply my functor, and my functor
+presumably leaves the top and bottom arrows alone.  If my functor
+takes the h on the left to the null homomorphism, it must also take
+the h component of the map (h, id) on the right to null; but it can't
+alter the id component of that map.  So my functor has to take some
+arrows only partway to the null arrow.  Given an arbitrary arrow, how
+far towards the null arrow should my functor take it?  Finding a rule
+that works seems hard, even for direct products, not to mention
+semi-direct products and non-split extensions.
+
+Is there some interesting solution to this exercise that I am missing?
+Or did Mac Lane have the boring, renaming solution in mind?
+
+Thanks,
+Lyle Ramshaw
+
+
+From: baez@math.ucr.edu (john baez)
+Subject: categories: an early exercise in Mac Lane
+Date: Fri, 9 Jul 1999 06:39:25 -0700 (PDT)
+
+Lyle Ramshaw writes:
+
+>   5. Find two different functors T: Grp --> Grp with object function
+>   T(G) = G the identity for every group G.
+> 
+> One such functor, of course, is the identity on every arrow as well.
+> So the challenge is to find a functor that leaves all objects
+> unchanged, but changes around at least some arrows.
+
+> I've spent some time trying to construct a more interesting solution
+> to the exercise: a functor from Grp to Grp that leaves objects alone
+> and transforms arrows in some way that clearly changes the structure.
+> In particular, I started out hoping to take some non-null arrows to
+> null arrows.  
+
+I assume that by "null arrow" you mean what some folks call "the trivial
+homomorphism".  
+
+Why not go all the way and consider the functor that leaves objects
+alone and maps all arrows to null arrows?
+
+Best,
+John Baez
+
+
+Date: Fri, 9 Jul 1999 16:05:05 -0400 (EDT)
+From: Michael Barr <barr@barrs.org>
+Subject: Re: categories: an early exercise in Mac Lane
+
+I am afraid that does not work.  You have to take an identity to an
+identity.  The suggested conjugation by choosing an automorphism for each
+object does that.  It may be the answer Mac Lane had in mind, although
+that works for any category, as noted.  I cannot think of any other
+example.
+
+
+-------------------------------------------------------------------
+If a society puts up with bad plumbers because plumbing is such a low
+calling, and if it puts up with bad philosophers because philosophy is
+such a high calling---then neither its pipes nor its theories will hold
+water.  --- Slight paraphrase of former HEW secretary John Gardner
+
+On Fri, 9 Jul 1999, john baez wrote:
+
+> Lyle Ramshaw writes:
+> 
+> >   5. Find two different functors T: Grp --> Grp with object function
+> >   T(G) = G the identity for every group G.
+> > 
+> > One such functor, of course, is the identity on every arrow as well.
+> > So the challenge is to find a functor that leaves all objects
+> > unchanged, but changes around at least some arrows.
+> 
+> > I've spent some time trying to construct a more interesting solution
+> > to the exercise: a functor from Grp to Grp that leaves objects alone
+> > and transforms arrows in some way that clearly changes the structure.
+> > In particular, I started out hoping to take some non-null arrows to
+> > null arrows.  
+> 
+> I assume that by "null arrow" you mean what some folks call "the trivial
+> homomorphism".  
+> 
+> Why not go all the way and consider the functor that leaves objects
+> alone and maps all arrows to null arrows?
+> 
+> Best,
+> John Baez
+> 
+> 
+> 
+
+
+Date: Sat, 10 Jul 1999 14:02:48 -0400 (EDT)
+From: "Fred E.J. Linton" <FLinton@mail.wesleyan.edu>
+Subject: Re: categories: an early exercise in Mac Lane
+
+At 01:50 PM 7/8/99 -0700, Lyle Ramshaw was 
+
+> ... puzzled by an exercise on page 15 of Mac Lane's classic text ...
+
+I have three remarks to add to this discussion.
+
+The first is more of a confession: for nigh onto thirty years I seem to have
+misread this problem, thinking what it sought was a functor  Grp ---> Grp
+commuting with the underlying-set functors, like the passage from a group
+to its opposite.  I now stand, belatedly, corrected.
+
+Second (and surely others will be chiming in on this point too),
+Baez's suggestion to trivialize all homomorphisms can't work -- you can't be
+a functor if you trivialize identity maps.
+
+Finally, the sort of example Mac Lane probably had in mind for an exercise
+on such an early page as p. 15:  writing   t  for the only non-identity
+automorphism (an central involution, actually) of, say, the chosen group  G
+= Z 
+(or of G = Z/3Z , if you prefer), define  T: Grp ---> Grp as follows:
+
+ T(X) = X ,  whatever the group  X ,  and, for  f: X --> Y  in  Grp ,  set
+
+        + -
+        |   f  ,  if either  X = G = Y  or neither  X  nor  Y  is  G ;
+ T(f) = |  ft  ,  if only  X = G ;
+        |  tf  ,  if only  Y = G .
+        + -
+
+(This ASCII graphic works best if you display it in a fixed-width font.)
+
+I'll spare CATEGORIES readers the straightforward details of the checking 
+that  T  really is a functor.  But I'll add the aside that there's nothing 
+special about the choices of  G  and  t  above, beyond  G  being a group
+and  t  being a central, involutive automorphism of  G .  Even "involutive"
+isn't really needed, except for the typographical convenience, here in 
+ASCII-land, of not having to compose a  " t-inverse "  with  f  in *one*
+(but, please, *not* in the other) of the last two lines of the definition 
+of  T(f) :-) .
+
+Cheers,
+
+-- Fred [E.J. Linton,  aka <FLinton@Wesleyan.edu>
+

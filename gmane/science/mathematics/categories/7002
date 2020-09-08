@@ -1,0 +1,123 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Wed, 26 Oct 2011 11:11:56 +0100
+Lines: 83
+Approved: news@gmane.org
+Message-ID: <E1RJ3K6-0005wZ-KV@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk> <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu> <E1RIgcZ-0000YV-SW@mlist.mta.ca> <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1319635004 15535 80.91.229.12 (26 Oct 2011 13:16:44 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 26 Oct 2011 13:16:44 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: Vaughan Pratt <pratt@cs.stanford.edu>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 26 15:16:40 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3LR-0004bo-9o
+	for gsmc-categories@m.gmane.org; Wed, 26 Oct 2011 15:16:37 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55265)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3K8-0008HY-Es; Wed, 26 Oct 2011 10:15:16 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3K6-0005wZ-KV
+	for categories-list@mlist.mta.ca; Wed, 26 Oct 2011 10:15:14 -0300
+In-Reply-To: <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7002
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7002>
+
+Dear Vaughan -
+
+Vaughan Pratt wrote:
+> The rationale I gave on Monday for sticking to the standard
+> axiomatization of first order logic, which proves Dusko's formula,
+> Steve's objection to it notwithstanding, was as follows.
+>
+>> But it is just as reasonable to say there are variables even when they
+>> don't occur free in the formula, e.g. when they occur bound, and the
+>> opposite result then obtains.  The wffs of propositional calculus, L_0,
+>> don't even contain bound variables.  Since this convention seems to
+>> create fewer problems I'm inclined to prefer it.
+
+To count the bound variables in the context is a crudeness that loses
+information. For example, it implies there are problem with (all) a.
+TRUE(a) and (exists) a. FALSE(a). Both are in fact theorems in the empty
+context.
+
+>
+> "Seems to create fewer problems" being the sort of sentence any
+> Wikipedia editor would these days tag as "weasel words", I should be
+> more explicit about the sorts of problems it can create.
+>
+> If I've understood Steve's reasoning, he accepts
+>
+> TRUE(a) --> (exists) x. TRUE(x)
+>
+> as a theorem of FOL that holds even in the empty universe, on the ground
+> that it is "vacuously true" (where I would have said vacuously valid).
+>
+> The same reasoning would also appear to justify
+>
+> TRUE(a)
+>
+> as a theorem of FOL.  (Note that both formulas are standard FOL
+> theorems, with both holding in every nonempty universe.)
+>
+> But by Modus Ponens, which I can't imagine Steve rejecting, we obtain
+>
+> (exists) x. TRUE(x)
+>
+> which Steve has judged as false.
+>
+> Since falsehood is the criterion by which Steve has been judging
+> theoremhood, unless I've misinterpreted Steve it seems to me that his
+> approach to handling the empty universe is unsound.
+
+To avoid any misunderstanding, it's not my approach to handling the
+empty universe - it has been around for a long time, I believe it
+originated with Mostowski, and it is present well in the Elephant D.
+
+It relies on conducting each logical deductions within a specified
+context that describes which free variables are available for use. A
+theorem phi proved in context (a1, ..., an) is implicitly
+
+   (all) a1...an. phi
+
+To put it another way, when you quantify out to get a theorem in the
+empty context, that is what it is.
+
+The theorems
+
+   TRUE(a)
+   TRUE(a) --> (exists) x. TRUE(x)
+
+can only be in a context that has at least a, and applying modus ponens
+leaves us with
+
+   (exists) x. TRUE(x)
+
+as a theorem _in that same context_. It is wrong to say (exists) x.
+TRUE(x) is a theorem without specifying the context. In the empty
+context it becomes the theorem
+
+   (all) a. (exists) x. TRUE(x)
+
+All the best,
+
+Steve.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

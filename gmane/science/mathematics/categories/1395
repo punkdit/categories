@@ -1,0 +1,156 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: integrals
+Date: Fri, 28 Jan 2000 14:56:53 -0500 (EST)
+Lines: 130
+Approved: news@gmane.org
+Message-ID: <200001281956.OAA28133@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017801 31026 80.91.229.2 (29 Apr 2009 15:10:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Jan 29 23:43:19 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA04354
+	for categories-list; Sat, 29 Jan 2000 22:14:01 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 5924
+Original-Lines: 129
+Xref: news.gmane.org gmane.science.mathematics.categories:1395
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1395>
+
+Let  I  be a closed interval and let  C(X)  denote the bipointed 
+midpoint algebra of continuous functions from a space  X  to  I.
+I would not have guessed the following:
+
+1.
+   Any map from  C(X)  to  C(Y)  that preserves midpoints, top, and
+   bottom is monotonic and preserves constant functions.
+
+The order preservation is an immediate consequence of:
+
+    f =< g   iff  there exists  h  such that  f|top = g|h
+
+If we specialize to the case that  X  and  Y  are single points, the
+order preservation implies the only map from  I  to  I  that preserves
+midpoints, top and bottom, is the identity map (after first noticing 
+that it must have a dense subset of fixed points corresponding to the
+dyadic rationals). Let  I -> C(X)  be the "K-map" that assigns 
+constant maps. For any  y:Y  let  C(Y) -> I  be its evaluation map.
+Then for any map  C(X) -> C(Y)  that preserves midpoints, top, and 
+bottom we have that  I -> C(X) -> C(Y) -> I  is the identity map. 
+And from that we can easily conclude that  C(X) -> C(Y)  preserves 
+constant maps.
+
+In a 22 Dec posting I said that the "mean-value" function  M:C(I) -> I
+can be characterized from its order preservation together with what it
+does to constant functions and
+                                                MxM
+         C(I v I) -->  C(I + I) --> C(I) x C(I) ---> I x I
+  
+        C(F) |                                         | m
+             v                                         v         
+                                 M
+           C(I)  ----------------------------------->  I
+
+where  F:I -> I v I  is the coalgebra structure and  m  is the 
+midpoint operation. I went on to say that if  C(F)  is inverted then 
+this diagram can be read as a fixed-point definition of  M: "It's the
+unique fixed-point of an operator acting on the set of all those 
+order-preserving maps from  C(I)  to  R  that do the right thing on 
+constant functions." It's much better to change the  R  to  I  and say
+just that it's acting on the set of bipointed midpoint-algebra
+homomorphisms.
+
+To recapitulate (using  \  for lambda, T  for top, B  for bottom):
+
+2.
+    The mean-value operator,  M:C(I) --> I, is the unique map 
+    such that:
+
+                   M(\x.B) = B
+                   M(\x.T) = T
+                 (Mf)|(Mg) = M(\x.(fx)|(gx))
+                        Mf = (M(\x.f(B|x)))|(M(\x.f(x|T)))
+
+No inequalities, no limits, only equations.
+
+
+Let me take the occasion to do a little clean-up. In a 31 Dec posting
+I gave a curse-of-analysis proof for:
+
+3.
+    Midpoint-preserving functions between intervals are monotonic.
+
+Here's a much better proof. Monotonicity is equivalent to the
+preservation of betweenness. Suppose  f  is a midpoint-preserving map 
+between intervals. It's conceptually useful to take the target to be, 
+instead, the real line and show that a failure to preserve betweenness
+forces the values of  f  to be unbounded. So let  a,b,c  be points in 
+the source interval with  b  between  a  and  c  which fact will be 
+denoted as  {a.b.c}  and suppose that  fb  is not between  fa  and  fc.
+Without loss of generality we can assume that  {fa.fc.fb}.  There 
+exists  {a.b'.c}  such that either  b = a|b'  or  b = c|b'.  Each of
+the equations  fb = fa|fb'  and  fb = fc|fb'  implies   {fa.fc.fb'}.
+So  {a.b'.c}  is still an example but the first equation implies that
+the distance from  fc  to  fb'  is twice -- and the second equation 
+implies it is _at least_ twice -- the distance from  fc  to  fb.  By
+iteration we may thus increase that distance beyond any bound.
+
+A point that the previous proof didn't really cover is dispatched
+by this corollary:
+
+4.
+    Midpoint-preserving functions between intervals are either
+    one-to-one or constant.
+
+Suppose  a  and  c  are distinct but  fa = fc.  If there's  c'  such
+that  c = a|c'  then we may infer that  fa = fc'.  By replacing  c
+with  c'  in this manner as long as possible we may assume that  a  
+and  c  are such that there is no solution to the equation  c = a|x 
+and from that we may infer that if  c'  is chosen to be the endpoint
+such that  {a.c.c'}  then there is  {a,b,c}  such that  c = b|c'. By
+the last result we have  fa = fb = fc  hence  fc = fb = fc'.  Thus we
+may assume that  a  and  c  are distinct with  fa = fc  and  c  an 
+endpoint. Similarly we may assume that  a  is  an endpoint and finish
+by applying, once again, the last result.
+
+Besides injectivity we have this corollary on surjectivity obtained
+by combining 1 and 3:
+
+5.
+    The image of any midpoint preserving function between intervals
+    is a closed interval. 
+
+PS
+
+>From the proof of  1  it is clear that order preservation doesn't 
+require preservation of bottom. A similar proof uses preservation of
+bottom instead of top, but if both conditions are dropped the map 
+needn't even be  monotonic. Let  I = [-1,1]  and let  C(I) -> I  be
+the map that sends  f  to  f(-1)|(-f1).  It sends all constant 
+functions to  0, it sends the identity map to  -1  and it sends the
+negating map to  1.)
+
+The proof of  3  suggests that if the target interval is replaced by 
+the reals then there do exist midpoint-preserving maps that are not 
+monotonic. And that is, indeed, the case in the presence of the axiom
+of choice: view the reals as a rational vector-space and count the
+number of endomorphisms (each of which preserves midpoints) to find 
+that there are  2^{2^N} of them. But there are only  2^N  monotonic
+self maps (midpoint preserving or not).
+
+Do we need the axiom of choice? If, instead, we add the axiom of 
+measurability, then the counterexamples disappear: let  f  be a 
+measurable midpoint-preserving map from  R  to  R;  we can easily
+specialize to the case that  f0 = 0, hence  f  is a measurable group
+endomorphism; for any real  a  consider the induced group homomorphism
+from  R/aZ  to  R/(fa)Z;  any measurable group character is continuous
+and that's enough to force  f  to be continuous.
+
+

@@ -1,0 +1,90 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Pre-calculus
+Date: Fri, 31 Dec 1999 17:54:56 -0500 (EST)
+Lines: 62
+Approved: news@gmane.org
+Message-ID: <199912312254.RAA21550@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017744 30679 80.91.229.2 (29 Apr 2009 15:09:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:04 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Dec 31 21:57:31 1999 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id UAA31833
+	for categories-list; Fri, 31 Dec 1999 20:14:46 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 22
+Status: RO
+Content-Length: 3128
+Original-Lines: 61
+Xref: news.gmane.org gmane.science.mathematics.categories:1313
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1313>
+
+Starting with the closed interval, regarded as an ordered midpoint
+algebra with duality, what's the best way to get the reals? My
+previous answer was first to reflect the midpoint algebra in the
+subcategory of abelian groups and then define the multiplication via
+monotonic endomorphisms. I think there's a more natural way.
+
+First, a re-cap of the definitions. A midpoint operation is a binary 
+operation, with values here denoted as  x|y,  satisfying:
+idempotence, x|x = x; commutativity, x|y = y|x; 
+middle-two-interchange, (u|v)|(x|y) = (u|x)|(v|y); and cancelation,
+x|y = x|z  =>  y = z.  The closed interval is a totally ordered
+midpoint algebra with anti-involution, with values here denoted as  
+ -x.  It follows that there's a unique element of the form  (-x)|x.  
+We'll call it the center.
+
+The middle-two-interchange law is just what is needed to see that the
+monoid of midpoint-endomorphisms is itself a midpoint algebra (where
+the midpoint of  f  and  g  is defined pointwise: (f|g)(x) =
+(fx)|(gx)).   If  f  and  g  are both order-preserving or both order-
+reversing then it's easy to see that so is  f|g.  But we'll want all 
+the _monotonic_ endomorphisms (the OED defines "monotonic" as "varying
+in such a way that it either never increases or never decreases") and
+there's no apparent reason to expect that monotonicity is preserved by
+midpointing. The wonderful fact, though, is:
+
+    Midpoint-preserving functions between intervals are monotonic.
+
+(The axiom of choice yields  2^{2^N}  counterexamples if the interval
+is replaced by the reals.)
+
+It follows that a midpoint-preserving function is determined by
+its values on any two points. The monoid of midpoint- and duality-
+preserving endo-functions on a closed interval is naturally 
+isomorphic (via evaluation at Top) to the closed interval. For the
+entire reals use the stalk at the center of the germs of such 
+functions.
+
+
+PS
+For a proof suppose that  f:[-1,1] --> [-K,K]  preserves midpoints and
+duality. For any  x:[-1,1]  and dyadic rational  q  such that  
+qx:[-1,1], we may uniquely identify  qx  using just midpoints and
+duality, hence  f(qx) = qf(x).
+
+Suppose that  f  is not monotonic.  We wish to reach a contradiction.
+Let  u < v  and  x < y  in  [-1,1]  be such that  fu < fv  and  
+fx > fy.  Define  a = (-u)|v  and  b = (-x)|y  to obtain  a,b > 0  
+and  fb < 0 < fa.  Let  q > 0  be a dyadic rational such that
+a/b - (fa)/(bK)  <  q  <  a/b  and define  c = (-qb)|a.  Let  r  be a 
+dyadic rational such that  (2K)/(fa)  <  r  <  1/c.  Then  rc  is in 
+[-1,1]  but  f(rc)  can not be in  [-K,K]  (because  fc > (fa)/2).
+
+The theorem I stated doesn't say anything about preserving duality. So
+let  g  be a midpoint-preserving function between intervals. Let  a  
+be the dual of the value of  g  at the center. Then the function  
+\x.a|(gx)  preserves the center and continues to preserve midpoints.
+Since  -x  may be uniquely identified by  (-x)|x = 0  the preservation
+of the center implies preservation of the duality and  \x.a|(gx)  is
+monotonic. Since  \y.a|y  not only preserves but reflects the order,
+we know that  g  is monotonic.
+
+

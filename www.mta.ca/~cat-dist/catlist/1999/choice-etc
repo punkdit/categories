@@ -1,0 +1,719 @@
+Date: Thu, 21 Mar 1996 11:10:22 -0400 (AST)
+Subject: Choice, inclusions, nonstandard analysis 
+
+Date: Thu, 21 Mar 1996 03:33:55 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+Contents:
+	1. Defense of Choice
+	2. Toposes with inclusion
+	3. Nonstandard analysis without tears.
+(Sorry this got so long.)
+
+	From: peterj@maths.su.oz.au
+	Vaughan Pratt seems to be challenging the rest of us to find
+	something wrong with his ordinal-based definition of Set, and
+	no-one else has taken up the challenge; so I'll have to break
+	my vow and point out its obvious shortcoming.
+
+Peter's points are sufficiently well taken as to deserve both careful
+reflection and measured response.  I apologize for the one-liner on
+Monday referring to Peter's Sunday message in the middle of a
+postscript advertising my LL'96 paper, which violated both of these.
+Cryptic responses only clog everything up.
+
+Peter argues that Choice should be avoided in constructions, on the
+following ground.
+
+	I suppose only a minority of mathematicians are unhappy about AC
+	to the extent of actually rejecting any construction that can't be
+	done without it. But I think a very large majority would be unhappy
+	about calling upon God to construct things for them (such as the
+	real numbers) for which they know there is a perfectly good 
+	man-made construction. Such people are going to be in a near-
+	permanent state of unhappiness if they are condemned to do
+	mathematics inside Vaughan's category.
+
+===================
+
+1.  Defense of Choice
+
+Before I address the distinction Peter draws here between natural chaos
+and mathematical artifact, I'd like to put in a word for Choice, which
+Peter isn't exactly leaping to defend.
+
+Using Choice is like wearing eyeglasses.  The wearer barely sees them
+but sees the world more clearly.  The *observer* of the wearer on the
+other hand sees the glasses directly as the wearer's baggage or
+ornament, and is only indirectly aware of the wearer's improved
+vision.
+
+Using Choice lets you prove more theorems, but they also shorten
+existing proofs, sometimes significantly.  There is no shortage of
+examples, but just to point to the case under discussion, if you
+organize a category-with-epsilon-trees along the lines I was
+suggesting, the construction of epsilon reduces to the equation
+\epsilon = <.  At a fraction of a line, this is significantly shorter
+than the published constructions, which seem to require a lot more.
+
+Long proofs cloud our mathematical vision.  A shorter proof shows us
+the same result but by a path that makes its truth clearer.  The proof
+as the means is a sine qua non, but that does not make it the end, the
+truth is the end (wearing my Platonist hat for now).
+
+The counterpart to the observer of the wearer of eyeglasses is that
+movie critic of the foundations world, the axiom system critic who
+worries about excess baggage, ornamentation, and/or legislation.  Why
+interfere with the natural course of things when with just a little
+accommodation of nature by longer proofs we can leave her unfettered by
+legislation?
+
+Unfortunately all known ways of building a house seem to entail some
+disturbance of nature, and this commendable environmental concern is in
+impractical conflict with the requirement that your house have a
+picture window with a clear view of mathematical truth.
+
+Quantum mechanics and Choice are in much the same boat.  Neither makes
+as direct contact with the truth as F=Ma or x+y=y+x, but both are
+better understood as sharpening vision, providing respectively the
+physicist and the mathematician with eyeglasses.  In time they may come
+to feel like absolute truth, but this is a slow process.
+
+Arguing against Choice, understood internally, applies nonmonotonic
+logic to restrict what can be deduced.  It is fundamentalist in its
+rejection of sophisticated reasoning supporting clear thinking.  (Sorry
+if that's too cryptic, happy to explain privately if this worries you.)
+
+=============
+
+2.  Toposes with inclusion
+
+	Such people are going to be in a near-
+	permanent state of unhappiness if they are condemned to do
+	mathematics inside Vaughan's category.
+
+At first I had interpreted this to mean that mathematicians would be
+unhappy working with reals that had bits of the membership relation
+dangling off them.  This seemed no objection at all; of course the user
+doesn't want construction materials on his nice stuff.  The builder has
+to clean up after construction, or the user isn't obliged to pay the
+bill in full.  But even if the builder doesn't do it, the user can
+always spend a bit extra to do it himself, and the upshot is the same.
+
+But a day or so later, after rereading
+
+	even if [AC] does [hold], you don't have the ability to point
+	to a particular object of it and say "This is the set of real
+	numbers" (still less to point to a particular morphism and say
+	"This is the addition operation on real numbers"); you have to
+	rely on God's (or "the randomizer's", as Vaughan seems to call
+	him) ability to do it for you.
+
+it occurred to me that perhaps Peter was interpreting my construction
+as meaning quite literally that I was proposing to name reals with
+ordinals.  This certainly would make the users permanently unhappy.  My
+interest in this stuff is ultimately as a user, and I would be
+unhappiest of all because such a user-unfriendly system would have been
+my fault, and because it would have been a complete waste of effort.
+
+I suppose I could just ask Peter which he meant (or was it something
+else again?).  However both are plausible concerns, and I can think of
+equally good and more or less independent responses to them, which I'll
+give now.
+
+For the first, I'll define what I'll call for the moment an itopos, for
+topos-with-inclusion, along with a forgetful functor from itoposes to
+toposes.  (This might be better done for categories in general; here
+I'm only concerned about clarifying one topos.)  For the second I'll
+point to a particular object of my category and say "This is a monoid
+embedding the monoid of nonnegative reals as its bounded sequences, the
+rest being nonstandard reals", and point to a particular morphism and
+say "This is the addition operation on this monoid, whose restriction
+to the standard nonnegative reals is standard addition").  This will do
+double duty as a constructive refutation of Peter's objection and as an
+interesting (to me), short, and I believe new construction of the reals
+that bypasses *all* the many intermediate constructions in the standard
+constructions, *and* produces the nonstandard reals more simply than
+previous constructions (that I'm aware of) as a potentially useful
+spinoff.
+
+A topos with inclusions is no big deal (though it might be if worked
+out more carefully than here).  Its point is to make explicit the
+identity of the elements of sets, in part because it is useful in its
+own right in some situations, in part because it clarifies what is
+being erased when we claim to erase construction details.
+
+The identities of a topos are those of a category, defined by a map
+i:O->M.  An *itopos*, or topos with inclusions, extends the notion of
+identity to a preorder on the objects as a subcategory of the topos.
+An *extensional* itopos makes this a partial order.
+
+This entails an extension not so much of the signature of a topos
+itself as just an increase in the arity of identity, as a function from
+objects to morphisms, from one to ordered two, i.e.  not just the
+diagonal but the "upper triangle" of the homfunctor when a partial
+order, plus squares on the diagonal when a preorder.
+
+The inclusions need to be coordinated with the topos structure, not
+done here (a good thing too if this is all old hat, which seems rather
+likely given that it is a rather obvious notion).
+
+The strict inclusions for the itopos OSet (for Ordinal Set) that I
+constructed the other day were already described then as the
+nonidentity maps from i to j that are the left inclusion of i into
+i+(j-i).  In other words just ignore the excess of j over i and map
+bijectively and monotonely to what remains of j.
+
+Application.  In an itopos one can define the usual Boolean operations
+on sets in the (large) distributive lattice of inclusions (omit the
+downward remainders), knowing that the intersection of two sets
+contains the very elements that show up in common in those two sets,
+not mere stand-ins for them.
+
+Cleaning up.  There is an evident forgetful functor from OSet to Set,
+obtained by decrementing the arity of identity to leave only the
+diagonal identities, those in Set(X,X).
+
+The practical impact of forgetting the nondiagonal identities is that
+functors between toposes need preserve only the retained identities.
+If you find a need to preserve epsilon structure, it means you should
+be working in the itopos.  This addresses Mike Barr's point, which he
+mentioned as confirming with Makkai, about most applications ignoring
+the epsilon structure.  Erasing the off-diagonal identities makes it
+official.
+
+===============
+
+3.  Nonstandard analysis without tears
+
+Definition.  The nonstandard nonnegative reals form the set
+\omega^\omega of sequences of natural numbers, modulo the following two
+equational universal Horn clauses whose variables range over sequences,
+with addition understood as pointwise.
+
+	1.  2(a/2) = a
+	2.  a + c = b + c   ->   a = b
+
+The function 2a doubles every element of sequence a:  (3,2,..) |-> (6,4,...)
+
+The function a/2 shifts the sequence right, setting the leading digit,
+indexed by 0, to 0.  (3,2,...) |-> (0,3,2,...).  Think of halving a
+binary numeral by shifting.
+
+End of construction.
+
+It can easily be seen that the clauses will not identify an unbounded
+sequence with a bounded one.  The standard nonnegative reals are
+extracted from this monoid as the (equivalence classes of) bounded
+sequences.  The real denoted by the sequence a_i is
+sum(a_i / 2^i),i<\omega, in other words ordinary binary notation.
+
+Example.  The ultimately constant sequences (1,0,0,0,...) and
+(0,1,1,1,...) denote the respective reals 1.00... and 0.111... in binary
+notation.  These are identified by the following computation:
+
+	1.111...  =  0.222... 	by 1
+	1.000...  =  0.111...   by 2, with c = 0.111...
+
+A little work shows that every bounded real is identified by clauses 1
+and 2 with a sequence all of whose elements but the leading "digit" are
+0 or 1, and which if ultimately constant ends in 0's.  This of course
+is the standard binary representation for real fractions, but with a
+single digit in "radix" \omega for the integer part.  It should be
+clear that pointwise addition is ordinary real addition for such reals,
+with infinite carries propagating in finite time as in the example.
+
+This construction makes these standard and nonstandard nonnegative
+reals a monoid.  The same technique that extends the natural numbers to
+the integers extends these nonnegative reals to the standard and
+nonstandard reals, of which the standard reals then form a ring (define
+multiplication as all endomorphisms of the monoid, made a binary
+operation by associating each endomorphism with where it sends 1) and a
+field as usual, the standard field of reals.
+
+Every real in this monoid being bounded away from zero, the whole
+monoid without the nonstandard reals cannot form a field, though the
+above definition of the ring satisfies the ring axioms by
+construction.
+
+But we can easily extend it to a field by the same means by which the
+integers are made the field of rationals: define an ireal (possibly
+infinite or infinitesimal real) to be a pair a/b of nonstandard reals,
+modulo the implication ad = bc -> a/b = c/d.  This produces with very
+little fuss a field suitable for nonstandard analysis without tears.
+
+These constructions can all be carried out as operations on objects of
+the category Set, as a topos obtained by my construction from OSet.
+All terms used in the construction are made explicitly available in the
+construction I gave, as part of its signature as a bicomplete topos.
+No trace of the randomness in the choice of well-ordering of
+\omega^\omega participates in the construction, which should be
+understood as merely proving existence and properties of the topos
+thereby constructed, with the proof erased when done.
+
+Here is an indication of how this construction could go, at least for
+the nonstandard reals.
+
+Start with two copies of \omega^\omega, for respectively a and b in
+clause 2 of the definition.  Make \omega^\omega copies of
+\omega^\omega, one for each c.  From the copy for c, delete all
+sequences pointwise less than c.  Send maps a+c, b+c from a,b to c
+respectively.  Now make one more copy of \omega^\omega and send maps
+x-c from c to it.  (Note that monus never "underflows", because we
+deleted those elements.)  The colimit of this diagram implements 2.
+1 is an easy coequalizer.  That's it.
+
+For the promised addition morphism, very roughly speaking, start from
++:\omega^2->\omega, form +^\omega, and apply to this morphism the same
+operations that were applied above to the objects, all of which are
+functorial.
+
+Getting from here to the ireals is a matter of constructing the
+"integers" then the "rationals" with any standard approach, starting
+with \omega^\omega instead of \omega.
+
+This construction was described as an infinite diagram for conceptual
+simplicity.  It can be made finitary with first order logic or
+adjunctions, however you prefer to look at it.  Hopefully all
+operations needed for this conversion are already in the signature
+provided for Set; if not the signature needs more oomph.
+
+Vaughan Pratt
+
+
+Date: Thu, 21 Mar 1996 13:35:57 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Thu, 21 Mar 1996 16:53:46 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>Arguing against Choice, understood internally, applies nonmonotonic
+>logic to restrict what can be deduced.  It is fundamentalist in its
+>rejection of sophisticated reasoning supporting clear thinking.  (Sorry
+>if that's too cryptic, happy to explain privately if this worries you.)
+
+There's a sense in which by reasoning non-classically (specifically, with
+geometric logic) you can eliminate the need for explicit topology:
+
+  if you define points by a geometric theory, then the topology is implicit
+  if you define a map by geometric constructions, then continuity is automatic
+
+From this point of view, the purpose of explicit topology is to correct the
+errors introduced by classical reasoning.
+
+We thus see sophisticated reasoning (classical principles) necessitating
+complicated thinking (topology), the reverse of what was intended. You
+don't need dogma to see this could be a bad idea, though you do need hard
+work to see whether the classical principles really can be dispensed with.
+
+Steve Vickers.
+
+
+Date: Fri, 22 Mar 1996 11:28:34 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 00:44:30 -0400
+From: RJ Wood <rjwood@cs.dal.ca>
+
+I would like to comment on Vaughan Pratt's
+
+> 1.  Defense of Choice
+...
+> Using Choice lets you prove more theorems, but they also shorten
+> existing proofs, sometimes significantly.  There is no shortage of
+> examples,...
+
+Write CD(L) for complete distributivity of a complete lattice L.
+Write CCD(L) for constructive complete distributivity of L, by which is
+meant that \/:DL--->L has a left adjoint, where DL is the lattice of
+down-closed subsets of L, ordered by inclusion.
+
+It is easy to show that CD==>CCD but many times in joint work with
+Fawcett, Rosebrugh and Marmolejo I have been led back to the more
+interesting
+AC<==>(CD<==>CCD)    *
+
+Without choice there is not much that one can prove about CD.
+In fact, without choice there is a severe shortage of infinite L
+satisfying CD(L). (Recall that AC is equivalent to `for every set X,
+CD(PX), where P denotes power set'.) My experience suggests that
+all theorems about CD follow from constructively proveable theorems
+about CCD after invoking *. Those that my colleagues and I have
+discovered have reasonably ``short'' proofs, if one starts with some
+basic knowledge of adjunctions.
+
+Allow me to discharge the facile comment that by *, any theorem that has been
+proved constructively about CCD (examples exist) proves that ``Using Choice
+lets you prove more theorems'' because that is not the point of this note.
+
+Rather, I think that * and similar results show that some of the
+definitions and concepts that seem to arise rather ``naturally'' from
+traditional set-based Mathematics are not particularly natural. Stepping
+further away from Mathematics, I think that twentieth century Mathematics
+has frequently sacrificed useful generalization for excessive abstraction.
+
+RJ Wood
+
+
+Date: Fri, 22 Mar 1996 14:33:22 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 09:18:21 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        I would like to comment on Vaughan Pratt's
+
+Phew, thanks Richard, no fun defending a position alone.
+
+Here's another argument for Choice, no more or less a proof than the
+clarity-of-mathematical-thought argument, it seems to me.
+
+"Proof" of AC.  It took mathematics about thirty years longer to
+imagine AC false than it did to imagine it true.
+
+This "argument" can be applied in other situations.  Applying it to
+Grothendieck universes (aka inaccessible cardinals) would suggest that
+they don't exist.  We can imagine their nonexistence (their existence
+is independent of ZFC) but so far we haven't been able to imagine their
+existence (a proof in ZFC that they don't exist is still on the
+cards).
+
+What arguments exist in *support* of the existence of Grothendieck
+universes?  I see the "cogito ergo sum" argument, what else?
+
+Vaughan Pratt
+
+
+Date: Fri, 22 Mar 1996 17:10:02 -0400 (AST)
+Subject: Re: Choice, inclusions, nonstandard analysis
+
+Date: Fri, 22 Mar 1996 16:01:04 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+Vaughan Pratt says
+  <<What arguments exist in *support* of the existence of Grothendieck
+  <<universes?  I see the "cogito ergo sum" argument, what else?>>
+    I once asked Joe Shoenfield that -- not quite in those terms -- and his
+answer certainly didn't seem to me "cogito ergo sum". That seems to me,
+assuming I understand what argument you mean, not radically better than
+Anselm's proof of the existence of God: we can imagine the best thing in the
+world, and if it is the best it must exist (otherwise one that existed
+would be even better), so it exists, QED. Now I don't suppose you mean a
+White Knight's sort of argument -- the universe imagined me, therefore it
+exists. You mean I imagine Grothendieck's universe, therefore IT exists.
+Well, Joe said in effect I can tell you everything that goes to make up the
+first Grothendieck universe, except I don't have time to finish telling you.
+It's the null set, and the singleton of the null set, and [and on. Not just
+countably, of course; we can describe \omega very satisfactorily, and the
+union of an omega-sequence of ordinals, and on. This differs from Anselm's
+word game in being a string of constructions. The first Grothendieck
+universe is rather large, so it is a fairly formidable kit of constructions.
+Pass to a second Grothendieck universe, and you used at least one miracle, to
+produce an individual from the first-universe construction.
+      John Isbell
+
+
+Date: Sun, 24 Mar 1996 20:55:41 -0400 (AST)
+Subject: Existence of Grothendieck Universes
+
+Date: Sat, 23 Mar 1996 15:50:07 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        I once asked Joe Shoenfield that [...]
+        Well, Joe said in effect I can tell you everything that goes to
+        make up the first Grothendieck universe, except I don't have
+        time to finish telling you.
+
+Well, it's no worse than any of my existence "proofs" I suppose.  I
+can't shoot it down with the argument that it would equally well prove
+the existence of cardinals we already know not to exist, since the
+extra time Joe would need to tell us everything that goes into making
+up a nonexistent ordinal might disqualify that proof without
+disqualifying the other.  :)
+
+Further reflection on this merely seems to lead back to my original
+point about there not being enough room in this town for both \in and
+U.  If your U is an inaccessible cardinal, and inaccessible cardinals
+*do* exist (and some set theorists seem to hope very badly they do,
+despite knowing it cannot be proven in ZFC), then rejecting membership
+is one reasonable way out.  Becoming an intuitionist is another.  Have
+the reasonable alternatives proposed to date been collected in one
+place and insightfully classified and compared?
+
+The flip side of this is, if inaccessible cardinals are eventually
+proved *not* to exist, then the Cantor-Russell paradox goes away for
+those working in a Grothendieck universe.  But in that case the one
+reasonable objection I've been able to grasp so far to membership,
+namely its incompatibility with existence of one's mathematical home,
+goes away too.
+
+Is there any other argument against membership?  Preferably just as
+short, but I'll settle for long if that's all that's possible.
+
+Or is the rejection of membership all just touchy-feely stuff based on a
+deep-seated feeling for something?
+
+"The von Neumann rigid-epsilon monsters" alluded to by Bill Lawvere
+sounds like it might be made into such an argument.  But as I pointed
+out, when the only sets are the ordinals, one of each, the "monster" is
+tamed to a gentle line +1'ing steadily along, with the occasional
+little hiccup at each limit ordinal.  That's no monster.
+
+A more convincing objection is needed.  There must be something else,
+ideally something we are all very familiar with.
+
+The smoothness of space, for example.
+
+First off, even if physical space *is* smooth, why should this have any
+more bearing on our mathematical spaces than their dimension?
+Obviously no one can get away in these enlightened days with
+legislating 3, 4, or 26 as an upper bound in mathematics.
+
+Second, it is not even clear that the space we inhabit *is* smooth.
+Start with
+
+        http://zebu.uoregon.edu/~imamura/209/may8/may8.html
+
+and look at what Vilenkin and Linde are proposing as an alternative
+model of space: foam at fine grain.  Their idea that small distances in
+space are chaotic makes much more sense to me than a model based on
+extrapolating the smoothness of space-in-the-large down to arbitrarily
+fine scales as though space were a mathematical manifold.
+That extrapolation applied to the smoothness in the law of large
+numbers in statistics for example is well-known to lead to nonsensical
+results.
+
+With the statistical analogy in mind, my only question about the
+Vilenkin-Linde model is whether the appearance of chaos at fine scales
+would be nicely explained by populating unit volumes with only finitely
+many points.  It is very easy to construct smooth-in-the-large
+manifolds from finite sets, and these will naturally look bumpy in the
+small.
+
+We would then have to add another physical constant to the books, the
+number of points of space per cubic centimeter.
+
+--
+Vaughan Pratt
+
+
+===================================
+
+
+PS. I inquired on sci.math.research about my construction of the
+nonstandard reals.  Vladimir Pestov at U. Wellington pointed out an
+embarrassingly trivial oversight: I'd forgotten that the class of
+fields subdivides into smaller elementary classes, and had not thought
+to order my field (the standard part leaves no alternative, it can't be
+an algebraically closed field).  You can't, at least not without
+further restrictions on the sequences.
+
+Luckily the standard part of my field *can* be ordered or I'd have to
+come up with some other demonstration to Peter Johnstone that one can
+identify the set of reals and its addition morphism without having to
+say which ordinals go where.
+
+More generally, any sequence can be named by its elements.  There is no
+need to name it by whichever ordinal God picked this time around as the
+placeholder in the set of sequences of which that sequence is a
+member.
+
+I can't imagine what Peter was thinking.  This sort of construction,
+where you have to take down the scaffolding when you're done, goes on
+all the time in ordinary mathematics.
+
+
+Date: Wed, 27 Mar 1996 14:55:46 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Tue, 26 Mar 96 13:44:07 -0800
+From: oliver@math.ucla.edu
+
+
+
+Vaughan Pratt writes:
+
+        If your U is an inaccessible cardinal, and inaccessible cardinals
+        *do* exist (and some set theorists seem to hope very badly they do,
+        despite knowing it cannot be proven in ZFC), ...
+
+I think the word "despite" here misses the whole point.  It is precisely
+*because* the existence of inaccessibles cannot be proven in ZFC, that
+the assumption of their existence is interesting.  More exactly, this
+is how we know that ZFC+inaccessibles is a proper (if modest) extension
+of ZFC itself.
+
+Now of course this is not to say that whenever ZFC fails to prove the
+existence of some X that we should immediately assume "X exists"; among
+other problems, that would quickly lead to an inconsistent theory.
+
+Inaccessibles, however, have other merits:
+
+        i)      If my model says there are inaccessibles, and
+        yours says there aren't, it may just mean that your model
+        is an initial segment of mine.  In that case my model
+        is clearly better, because it has everything in it that
+        yours does, and more besides; moreover, we haven't lost
+        any nice features that your model might happen to have, because
+        they are still true when prefaced by "in your model..." .
+
+        ii)     Inaccessibles are an example of the intuition
+        that says "anything we know how to do too well or too
+        precisely, can't possibly tell the whole story; there
+        must be more."  In this case what we know too well how to
+        do is take exponentials of cardinals and limits of sequences
+        of ordinals, where the length of the sequence is a cardinal
+        we already have.  Strengthen this intuition to "things
+        we can construct in L" and you start to see why 0# should
+        exist.
+
+
+Date: Thu, 28 Mar 1996 15:41:25 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Wed, 27 Mar 1996 12:59:32 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+(I promised Bob I'd give it a rest (my idea, not his), but I can't
+resist one more shot.
+
+        From: oliver@math.ucla.edu
+
+        i)      If my model says there are inaccessibles,... my model
+        is clearly better, because it has everything in it that
+        yours does, and more besides; moreover, we haven't lost
+        any nice features that your model might happen to have,
+
+Consistency is not a nice feature?  News to me.  My model is more
+likely to be consistent than yours.  Inconsistency of yours would be a
+beautiful result to most people, like a beautiful building or park.
+Inconsistency of mine would be a magnitude-9 earthquake!
+
+Furthermore mathematics has had no trouble imagining my model since
+1939 when Goedel showed us how.  It is *very* hard to imagine your
+model, so hard that not even the smartest people in the world have been
+able to do it in over half a century of trying.  This is *not* a good
+sign.
+
+        Strengthen this intuition to "things
+        we can construct in L" and you start to see why 0# should
+        exist.
+
+This is an argument for assuming the existence of everything whose
+nonexistence you can't actually *prove*.  But that forces you to
+retreat every time we disprove the existence of yet another ordinal.
+Such discoveries happen periodically, and do not astonish working
+mathematicians.
+
+A much more stable approach would be to accept the easily imagined, and
+reject what is hard to imagine.  Following that strategy, you only have
+to retreat in the face of 50-year or even 200-year earthquakes.
+
+Anyway, what are we arguing about here?  What exactly *is* the
+advantage of assuming inaccessibles?  (Let's not tempt fate and get too
+close to inconsistency by assuming measurables!)  Sure you can shorten
+some contrived proofs a lot with inaccessibles, but can you shorten a
+proof some mathematician might care about?  Or do anything else useful
+with them?
+
+Vaughan Pratt
+
+
+Date: Fri, 29 Mar 1996 15:59:56 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Thu, 28 Mar 96 20:57:48 -0800
+From: oliver@math.ucla.edu
+
+>From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+>>From: oliver@math.ucla.edu
+
+>>i)    If my model says there are inaccessibles,... my model
+>>is clearly better, because it has everything in it that
+>>yours does, and more besides; moreover, we haven't lost
+>>any nice features that your model might happen to have,
+
+>Consistency is not a nice feature?  News to me.  My model is more
+>likely to be consistent than yours.
+
+Careful with language.  Models are not consistent or inconsistent;
+they simply exist or fail to exist.  Consistency is a property of
+*theories*.
+
+If my model exists, then it is better than yours.
+
+>Furthermore mathematics has had no trouble imagining my model since
+>1939 when Goedel showed us how.  It is *very* hard to imagine your
+>model, so hard that not even the smartest people in the world have been
+>able to do it in over half a century of trying.
+
+I do not know what you might mean by this.  I have no difficulty
+whatsoever in imagining inaccessible cardinals.
+
+If you mean I can't imagine everything that might happen *below* an
+inaccessible cardinal I plead guilty, and challenge you to imagine
+all ordinals below Aleph_1.
+
+>This is an argument for assuming the existence of everything whose
+>nonexistence you can't actually *prove*.
+
+No, not everything:  For example I don't assume the existence of a proof
+of 0=1 from ZFC, even though I can't prove the nonexistence of such
+a proof.  In my first article I tried to give an idea of why I assume
+one and not the other.
+
+>But that forces you to
+>retreat every time we disprove the existence of yet another ordinal.
+
+-------IF YOU READ NOTHING ELSE IN THE ARTICLE, READ THIS PARAGRAPH---------
+Science is a continual process of assuming things that might be proved
+wrong, taking the chance that you may later be forced to retreat.  Read
+"Conjectures and Refutations" by Karl Popper.
+
+>A much more stable approach would be to accept the easily imagined, and
+>reject what is hard to imagine.  Following that strategy, you only have
+>to retreat in the face of 50-year or even 200-year earthquakes.
+
+Truly, I think you are much overestimating the difference between
+ZFC and ZFC+inaccessibles.  To prove a contradiction from ZFC+inaccessibles,
+or even ZFC+measurables, would be earthquake enough for me; but even
+a contradiction from ZFC would have little effect on most everyday
+mathematics as long as it didn't go through in, say, 2nd-order PA.
+
+>Anyway, what are we arguing about here?  What exactly *is* the
+>advantage of assuming inaccessibles?
+
+Well for example, if inaccessibles exist then we *know* choice is
+necessary to prove the existence of a nonmeasurable set of reals.
+
+If measurables exist then every analytic set of reals (i.e. projection
+of a Borel set in the plane) is measurable.
+
+
+Date: Sat, 30 Mar 1996 09:33:02 -0400 (AST)
+Subject: Re: Existence of Grothendieck Universes
+
+Date: Fri, 29 Mar 96 12:16:47 -0800
+From: oliver@math.ucla.edu
+
+I wrote:
+
+        If measurables exist then every analytic set of reals
+        (i.e. projection of a Borel set in the plane) is measurable.
+
+Careless of me.  ZFC is enough on its own to prove that every analytic
+set is measurable, either countable or contains a perfect subset, and
+has the property of Baire.
+
+Measurables get you the same results one real quantifier higher; i.e.
+for projections of co-analytic sets.
+
+For future reference, if I notice an error after making a submission
+on lists like this, can I write the moderator and ask to make a correction?
+
+

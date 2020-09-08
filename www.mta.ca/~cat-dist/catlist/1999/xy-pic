@@ -1,0 +1,1254 @@
+Date: Sun, 12 Jun 1994 23:52:56 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: New release of XY-pic diagram drawing macros 
+
+Date: Thu, 9 Jun 1994 17:42:43 +0200
+From: kris@diku.dk
+
+Dear fellow diagram drawers and TeX users!
+
+This is to announce the release of a new version of my DIAGRAM DRAWING
+PACKAGE, XY-pic: version 2.9.  In particular this version represents
+the stage where XY-pic 3 has left ALPHA test (and entered BETA
+confidence test) and the kernel should be stable.
+
+The release is mainly a BUG FIX RELEASE fixing several problems
+reported in version 2.7 and 2.8 by users; in addition it ADDS THESE
+NEW FEATURES:
+
+* The speed of diagram typesetting has been increased back closer to
+  the version 2.6 speed, faster for very large diagrams.
+
+* The set up of the style of \arrow command must now be clearly
+  marked.
+
+* It is possible to `compile' large diagrams (with some restrictions)
+  to a file such that retypesetting is faster still.
+
+* Options can now be loaded safely in any order.
+
+* The bug that required removal of \\ before \enddiagram has been
+  fixed.
+
+* The PostScript backend by Ross Moore has been greatly enhanced and
+  now supports varying line thickness, colour, rotation, and scaling.
+
+* There is a new feature by Ross Moore: \xyoption{2cell} loads special
+  commands typesetting pairs and triples of curved arrows like
+  categorical two-cells.
+
+Below I have attached the TRAILER of the package that gives some more
+details and explains how to obtain it; the version packaged specially
+for the Apple Macintosh by Ross Moore will be available shortly.
+
+Regards,
+	 Kristoffer Rose		(.signature at end of TRAILER)
+
+-*-text-*- $Id: TRAILER,v 2.9 1994/06/09 14:53:07 kris Exp $
+
+======================================================================
+TRAILER: ANNOUNCING the XY-pic version 2.9 DIAGRAM TYPESETTING PACKAGE
+======================================================================
+
+XY-pic is a package for typesetting a variety of graphs and diagrams
+within TeX that works with most formats (including LaTeX 2.09, LaTeX2e,
+AMS-LaTeX, AMS-TeX, and plain TeX).  In particular XY-pic is provided
+as a LaTeX2e `package'.
+
+NOTE: version 2.9 is a final BETA CONFIDENCE TEST release of XY-pic 3
+in the sense that it is likely to contain minor bugs in both
+documentation and code but should be stable.  If you are a user of an
+earlier version of XY-pic then PLEASE TEST this release with your
+existing diagrams and REPORT PROBLEMS you encounter to the authors!
+
+The intention remains to maintain full backwards compatibility with
+XY-pic 2 but we need feed-back from users in order to achieve this
+goal (see `The future and backwards compatibility' in the User's Guide
+for the unavoidable exceptions).
+
+Version 2.9 is the final result of the effort this springs to outline
+XY-pic 3 in collaboration with Ross Moore while visiting Macquarie U,
+Sydney: The package has been restructured and extended into a kernel
+and several orthogonal modules and is now ready for the implementation
+of several independent `specialist' modes for convenient typesetting
+of Graphs and Trees, 2-cells, String and braid diagrams, etc. (some
+are already under construction).
+
+Below I discuss the main features of XY-pic and how it is available.
+
+----------------------------------------------------------------------
+VERSION 2.9 FEATURES
+----------------------------------------------------------------------
+
+XY-pic version 2.9 provides two modes of specifying drawings:
+
+* A matrix-like mode where the dimensions of the drawing are
+  automatically computed by aligning diagram entries in rows and
+  columns (this is also the `version 2 compatibility mode').
+
+* A general `turtle graphic' drawing language for specifying graphs
+  with objects and connections between them in a manner independent of
+  orientation.
+
+Both modes support the following specific features:
+
++ Positions can be given in variety of formats (extendable) including
+  user defined coordinates (x,y) and relative to previous positions,
+  objects, object edges, and points on connections.
+
++ Objects may be circular or rectangular (more shapes can be added)
+  and adjusted in several ways.
+
++ Large library of objects with mnemonic names.
+
++ Objects that orient themself along a connection when placed relative
+  to it, e.g., `\dir{|-}' is like \vdash but thus oriented; new such
+  objects can be defined in a convenient way.
+
++ Includes circle segments and arbitrary TeX text.
+
++ Connections are aligned between the reference points of objects but
+  start and end on the edges.
+
++ Any object can be used to build a connection (using `diagonal
+  filling'); library objects provide common line types.
+
++ Special notation for drawing arrows with tail, stem, and head build
+  from any object(s).  Special support for arrows that cross each
+  other, arrows that `go by' other entries, combined arrows, and
+  arrows with n/8 bends.
+
++ Library of frames.
+
++ NEW: Special notation for rotation, scaling, colour, and line
+  thickness.  The correct typesetting of these features requires a
+  backend that supports it (i.e., PostScript) but even when PostScript
+  is not available XY-pic tries to approximate what is requested.
+
++ Output can use PostScript for drawing (several \special formats are
+  supported: dvips, dvitops, Textures, and OzTeX -- more are being
+  added continuously: contact Ross Moore <ross@mpce.mq.edu.au> for the
+  current list).  Notation for inclusion of literal PostScript.
+
+----------------------------------------------------------------------
+AVAILABILTY
+----------------------------------------------------------------------
+
+XY-pic can be retrieved by anonymous ftp from at least the following
+locations (given as `site : directory'):
+
+  ftp.diku.dk : 	/diku/users/kris/TeX
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX
+
+as well as (unpacked) on CTAN in macros/generic/diagrams/xypic.
+
+The following distribution files should be available in the above two
+locations but check the `README' file in each case:
+
+  xy29.TRAILER		These release notes
+
+  xy29run.tar.Z		XY-pic 2.9 `ready to run' distribution for
+			un*x and similar systems 
+
+  xy29src.tar.Z		XY-pic 2.9 complete sources
+
+  xy29mac.sit.hqx	XY-pic adapted for the Macintosh (Textures and
+			  OzTeX) by Ross Moore <ross@mpce.mq.edu.au>
+
+  xyguide.ps.Z		User's Guide and Reference Manual preformatted
+  xyrefer.ps.Z		  for a 300dpi PostScript printer
+
+Please note that XY-pic is `copyleft' under the terms of the GNU
+General Public License.
+
+----------------------------------------------------------------------
+
+This is the end of the TRAILER.  I hope you will enjoy XY-pic!
+
+--
+Kristoffer Ho/gsbro ROSE                         Internet: kris@diku.dk
+DIKU, U of Copenhagen, Universitetsparken 1, 2100 Ko/benhavn O/, DANMARK
+phone: +45 35321400       direct: +45 35321420       fax: +45 35321401
+--
+World Wide Web URL:   file://ftp.diku.dk/diku/users/kris/WWW/home.html
+
+
+Date: Wed, 15 Jun 1994 14:20:12 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: ANNOUNCE: XY-pic version 2.10 released...
+
+Date: Wed, 15 Jun 1994 16:27:02 +0200
+From: kris@diku.dk
+
+Dear CATEGORY THEORY COMMUNITY,
+
+This is to announce a BUG FIX release of my DIAGRAM DRAWING PACKAGE,
+XY-pic: version 2.10.  It fixes the following user visible bugs in
+version 2.9:
+
+* Very high of wide labels were not placed correctly on diagonal
+  arrows by the `arrow' feature and in compatibility mode (thanks to
+  Clemens Beckstein for finding this).
+
+* Colouring of labels (using the `color' extension) now works!
+
+I'm sorry for releasing so soon after the last release but the bugs
+were classed `important'.
+
+Please retrieve the new version by anonymous ftp from
+
+  ftp.diku.dk :         /diku/users/kris/TeX
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX
+
+or the CTAN `macros/generic/diagrams/xypic' mirror which will be up to
+date in a day or so.
+
+
+Regards,
+         Kristoffer Rose
+
+--
+Kristoffer H^]o/gsbro ROSE                         Internet: kris@diku.dk
+DIKU, U of Copenhagen, Universitetsparken 1, 2100 K^]o/benhavn ^]O/, DANMARK
+phone: +45 35321400       direct: +45 35321420       fax: +45 35321401
+--
+W3 <A HREF="file://ftp.diku.dk/diku/users/kris/WWW/home.html">home</A>
+
+
+Date: Tue, 5 Jul 1994 22:20:23 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: ANNOUNCE: XY-pic version 2.11 released...
+
+Date: Tue, 5 Jul 1994 13:45:28 +0200
+From: kris@diku.dk
+
+Dear CATEGORY THEORY COMMUNITY,
+
+[Thank you for all the positive replies ... so this time I'll only ask
+ those who do NOT wish news about XY-pic or who get it from other
+ sources to send me an email saying so :-]
+
+This is to announce yet another BUG FIX release of my DIAGRAM DRAWING
+PACKAGE, XY-pic: version 2.11.  It fixes the following user visible
+bugs in version 2.10:
+
+* Arrow tips were reversed in a few cases (thanks to Clemens Beckstein
+  for finding this (also)).
+
+* Repeated labels on arrows now works.
+
+* The PostScript backend sometimes did curves wrong; this is fixed.
+
+Futhermore it adds a new `Graph Combinator feature' which is specially
+designed for enterting diagrams with graph structure.  Please test it
+and comment on it.
+
+Please retrieve the new version by anonymous ftp from
+
+  ftp.diku.dk :         /diku/users/kris/TeX
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX
+
+or the CTAN `macros/generic/diagrams/xypic' mirror which will be up to
+date in a day or so.
+
+
+Regards,
+         Kristoffer Rose
+
+--
+Kristoffer H^]o/gsbro ROSE                         Internet: kris@diku.dk
+DIKU, U of Copenhagen, Universitetsparken 1, 2100 K^]o/benhavn ^]O/, DANMARK
+phone: +45 35321400       direct: +45 35321420       fax: +45 35321401
+--
+W3 <A HREF="file://ftp.diku.dk/diku/users/kris/WWW/home.html">home</A>
+
+Date: Thu, 27 Oct 1994 18:21:27 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: ANNOUNCE: XY-pic version 2.12 released...
+Date: Tue, 25 Oct 1994 13:17:10 +0100
+From: kris@diku.dk
+
+Dear category theorist,
+
+This is to announce yet another BUG FIX release of my DIAGRAM DRAWING
+PACKAGE, XY-pic: version 2.12.  It fixes the following user visible
+bugs in version 2.11:
+
+* No conflict with `AMS-LaTeX' version 1.2 (SEE BELOW).
+
+* No conflict with Karl Berry's `eplain' (SEE BELOW).
+
+* Curves with explicit control are now right [Sjoerd Crans].
+
+* Directional vectors no longer invalidate the Xy-state [Luc van Eycken].
+
+* Tips on zero-sized turns no longer reversed [Jorge Almeida].
+
+* Curves no longer overlap the surrounding text.
+
+* Numerous documentation fixes in the Reference Manual.
+
+* Short steep segments now placed correctly [thanks, Ross].
+
+I am sorry to announce this very interim version which is necessary
+because of a change in an internal function of AMS-LaTeX [sic].  Thus
+
+      ** PLEASE UPDATE TO VERSION 2.12 IF YOU USE AMS-LaTeX ***
+
+The release of the `real' version 3 (no longer in beta-test) is
+imminent so you need not update otherwise unless any of the other bugs
+have bothered you (or you desperately need one of the additions
+described below).
+
+There is ONE IMPORTANT CHANGE in the v3 extensions of this version:
+the \arrow command has been renamed to \ar in order to make diagrams
+more concise and avoid conflict with Karl Berry's `eplain', however,
+using the `v2' compatibility option will still define \arrow (as well
+as \stop and \merge that are also in conflict with existing names on
+some systems).
+
+                                - o -
+
+One extension and one feature have been added with this release:
+
+* \xyoption{cmtip} allows the use of arrow tips that resemble those
+  of D. Knuth's Computer Modern and Computer Concrete fonts.
+
+* \xyoption{poly} supports drawing of regular polygons (by Ross Moore).
+
+Version 3 will also have a special input mode for `knots and links'.
+
+                                - o -
+
+Xy-pic can be retrieved by anonymous ftp from
+
+  ftp.diku.dk :         /diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX/
+
+(see the README file as to the exact location below that), from
+
+  CTAN :                /tex-archive/macros/generic/diagrams/xypic
+
+and also through the World Wide Web (see below).
+
+                                - o -
+
+NEWS: there is now a World Wide Web HOME PAGE for Xy-pic in
+
+  <URL: http://www.diku.dk/users/kris/Xy-pic.html>
+
+which includes pointers to the sources as well as some TUTORIAL PAPERS
+on Xy-pic:
+
+* K.Rose: Xy-pic and Notation for Categorical Diagrams.
+
+* R.Moore: Typesetting Neural Nets with Xy-pic.
+
+(for people without WWW access these are also available on the ftp
+servers in files xy/papers/ecct-94.ps and xy/papers/NeuralNets.ps).
+
+                                - o -
+
+In the hope that you will like the new things,
+                                                Kristoffer Rose
+
+--
+              Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+
+     DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+     Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+
+        World Wide Web <URL: http://www.diku.dk/users/kris/>
+
+
+Date: Fri, 7 Jul 1995 18:43:10 -0300 (ADT)
+Subject: ANNOUNCE: Xy-pic version 3.0 released!
+
+Date: Fri, 7 Jul 1995 22:59:08 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+======================================================================
+      ANNOUNCING the Xy-pic version 3 DIAGRAM TYPESETTING PACKAGE
+======================================================================
+
+This is to announce a MAJOR RELEASE of my DIAGRAM TYPESETTING PACKAGE:
+
+                               Xy-pic 3.0
+
+In particular most features that have been added since version 2.6 are
+now sufficiently stable to leave beta-test.
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the distribution.
+
+----------------------------------------------------------------------
+                                  NEWS
+----------------------------------------------------------------------
+
+Xy-pic version 3 is a thorough rewrite of the last major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases numbered 2.7-2.12 have been made available to users).  However,
+full backwards compatibility is maintained (except for the unavoidable
+but fully documented obscure cases).
+
+The package is now structured as a kernel and several orthogonal
+modules, in particular there are independent `specialist' modes for
+convenient typesetting of components that are structured as graphs,
+matrices, polygons, 2-cells, etc.
+
+Finally, version 3 adds the following to what was available in
+v2.12/3beta:
+
+* The User's Guide is up to date with v3 features!
+* There is a new input mode specially for KNOTS AND LINKS!
+* Arbitrary arcs and frames are now properly integtared!
+* DVI driver interface greatly simplified!
+
+A few DVI drivers are not quite ready for release which is why this is
+v3.0 and there will be a 3.1 including the missing drivers (as well as
+the inevitable bug fixes).
+
+----------------------------------------------------------------------
+                              AVAILABILITY
+----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home page':
+
+  <URL: http://www.diku.dk/users/kris/Xy-pic.html>
+
+as well as by anonymous ftp from
+
+  CTAN :                /tex-archive/macros/generic/diagrams/xypic
+
+and from the archives of the authors:
+
+  ftp.diku.dk :         /diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX/
+
+Check the README file in each location for the exact details.
+
+----------------------------------------------------------------------
+                                CREDITS
+----------------------------------------------------------------------
+
+Xy-pic was created by Kristoffer H. Rose, DIKU, U of Copenhagen.  Most
+of the rewrite was accomplished in collaboration with Ross Moore while
+visiting Macquarie U, Sydney (Jan-May 1994), supported by the Australian
+Research Council, Macquarie University, and using donated DEC equipment.
+
+Xy-pic is Copyright (c) 1991-1995 by Kristoffer H. Rose under GNU
+COPYLEFT which means that you can use the package for any purpose but if
+you provide the macros or any code derived from them to a third party
+then you are obliged to include the entire Xy-pic package (full details
+in the file COPYING).
+
+----------------------------------------------------------------------
+
+          This is the end of the announcement.  Enjoy Xy-pic!
+
+----------------------------------------------------------------------
+
+              Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+     DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+     Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+            World Wide Web  <URL: http://www.diku.dk/~kris/>
+
+----------------------------------------------------------------------
+
+Date: Tue, 11 Jul 1995 08:09:29 -0300 (ADT)
+Subject: ANNOUNCE: fix01 for Xy-pic 3.0 available 
+
+Date: Mon, 10 Jul 1995 23:46:24 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+A bug fix for Xy-pic has been issued, and the files updated since
+some bugs were MAJOR.  The change is also available as a patch in
+relative to the unfixed version in
+
+        xy-3.0/fixes/fix01
+
+The following things were fixed:
+
+* xyv2.doc (\framed, \Framed, ...): Removed erroneous brace level;
+furthermore made it compile-safe.
+Bug: Frames disappear in compatibility mode. MAJOR.
+>From: Clemens Beckstein <beckstei@mipool.uni-jena.de>
+>From: Michael J. Healy <mjhealy@espresso.rt.cs.boeing.com>
+
+* xymatrix.doc: changed \row@/\col@ to \row@@/col@@.
+Bug: conflict with AMS-LaTeX \row@ cs. MAJOR.
+>From: Enrico Gregorio <GREGORIO@dipmat.unict.it>
+
+* xyarrow.doc (\PATHturn@i): Split turn code into several \xy@@s.
+Bug: Too long lines in xyguide-30.xyc and xyguide-38.xyc. MINOR.
+>From: Jvrg Knappen <KNAPPEN@VKPMZD.kph.Uni-Mainz.DE>
+
+* xyguide.man: Set \CompilePrefix to 6-character string.
+Bug: File names for .xyc-files too long. MINOR.
+>From: Jvrg Knappen <KNAPPEN@VKPMZD.kph.Uni-Mainz.DE>
+
+* latin1.sty: Explicitly includes plain TeX's \def\copyright...
+Bug: Can't typeset \copyright properly. MINOR.
+>From: Antonio Possolo <antonio@espresso.rt.cs.boeing.com>
+>From: Robert Kiessling <Robert.Kiessling@rrze.uni-erlangen.de>
+
+--
+	       Kristoffer Hxgsbro ROSE  <kris@diku.dk>
+	DIKU, Universitetsparken 1, 2100 Kxbenhavn X, DANMARK
+    Phones: +45 35321400, direct: +45 35321420, fax: +45 35321401
+	   World Wide Web <URL: http://www.diku.dk/~kris/>
+--
+
+
+Date: Fri, 21 Jul 1995 10:22:21 -0300 (ADT)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: ANNOUNCE: fix06 for Xy-pic 3.0 available
+
+Date: Thu, 20 Jul 1995 20:35:35 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+A MAJOR bug fix for Xy-pic has been issued in the Xy-pic
+distribution file
+
+        xy-3.0/fixes/fix06
+
+The following things are fixed:
+
+  * xyframe.doc: elliptical frames now work properly... MINOR
+  * xyps-f.doc: ...using PostScript.
+  still need to get them working using \xycircle, for non-PS.
+
+  * import1.eps: changed font name: MINOR
+  /courier changed to /Courier, else DPS may complain.
+
+  * xyimport.doc: made save-safe. MINOR
+  Modified to use xy@@s such that it is compile safe.
+
+  * xy.doc: adjusted spacing in the <decor> table. MINOR
+
+  * Makefile (DVIPS): Use 300 dpi and a4 paper as advertised. MINOR.
+
+  * xymatrix.doc (\xymatrix@pretypeset): Final matrix dimension set
+  after \halign.
+  Longest last row ignored. MAJOR.
+  From: Marc Gemis <makke@pucky.uia.ac.be>
+
+
+Please get the files afresh or apply fixes in consecutive order
+until you can apply fix06.
+
+Thanx to those who reported the bugs!
+
+Sincerely,
+            Kristoffer H. Rose
+--
+               Kristoffer Hxgsbro ROSE  <kris@diku.dk>
+        DIKU, Universitetsparken 1, 2100 Kxbenhavn X, DANMARK
+    Phones: +45 35321400, direct: +45 35321420, fax: +45 35321401
+           World Wide Web <URL: http://www.diku.dk/~kris/>
+
+
+
+Date: Wed, 6 Sep 1995 15:49:51 -0300 (ADT)
+Subject: ANNOUNCE: Xy-pic version 3.1 released!
+
+Date: Tue, 5 Sep 1995 22:59:43 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.1 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a RELEASE of my DIAGRAM TYPESETTING PACKAGE:
+
+                               Xy-pic 3.1
+
+This is a maintenance release where many little problems of the major
+release of Xy-pic 3.0 (from July) have been solved.
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the
+distribution.
+
+-----------------------------------------------------------------------
+                                  NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 is a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to users).
+However, full backwards compatibility is maintained (except for the
+unavoidable but fully documented obscure cases).
+
+Release 3.1 fixes the following problems of release 3.0:
+
+* Improved framing and curve code (in particular dashed curves).
+
+* More & improved DVI driver support (includes the em-TeX driver)!
+
+* User's Guide now available as hypertext (HTML)!
+
+and many other little fixes in code & documentation (all described in
+the ChangeLog file in the source distribution).
+
+Thanks to Robert Kiessling, Antonio Possolo, Jvrg Knappen, Michael J
+Healy, Clemens Beckstein, Michel Goossens, Dierdrik Wiersma, Dan
+Christensen, and Vladimiro Sassone, for your bug reports !
+
+-----------------------------------------------------------------------
+                              AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home page':
+
+  URL:                  http://www.diku.dk/~kris/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN :                /tex-archive/macros/generic/diagrams/xypic
+
+and from the archives of the authors:
+
+  ftp.diku.dk :         /diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX/
+
+Check the README file in each location for the exact details.
+
+-----------------------------------------------------------------------
+                                CREDITS
+-----------------------------------------------------------------------
+
+Xy-pic was created by Kristoffer H. Rose, DIKU, U of Copenhagen.  Most
+of the rewrite was accomplished in collaboration with Ross Moore while
+visiting Macquarie U, Sydney (Jan-May 1994), supported by the Australian
+Research Council, Macquarie University, and using donated DEC equipment.
+
+Xy-pic is Copyright (c) 1991-1995 by Kristoffer H. Rose under GNU
+COPYLEFT which means that you can use the package for any purpose but if
+you provide the macros or any code derived from them to a third party
+then you are obliged to include the entire Xy-pic package (full details
+in the file COPYING).
+
+-----------------------------------------------------------------------
+
+          This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+               Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+      DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+      Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+            World Wide Web  <URL: http://www.diku.dk/~kris/>
+
+-----------------------------------------------------------------------
+
+
+Date: Wed, 20 Sep 1995 10:51:47 -0300 (ADT)
+Subject: ANNOUNCE: Xy-pic version 3.2 released!
+
+Date: Tue, 19 Sep 1995 22:16:46 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.2 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a RELEASE of the DIAGRAM TYPESETTING PACKAGE:
+
+                               Xy-pic 3.2
+
+This is a maintenance release where a few more bugs of the previous
+major release of Xy-pic 3 (from July) have been eliminated.
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the
+distribution.
+
+-----------------------------------------------------------------------
+                                  NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 is a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to users).
+However, full backwards compatibility is maintained (except for the
+unavoidable but fully documented obscure cases).
+
+Release 3.2 fixes the following relative to release 3.1:
+
+* Arrow labels now typeset using the correct style in all cases.
+
+* Circles in old-style diagrams now work again...
+
+* PostScript pattern support now compatible with GhostScript.
+
+as well as several minor fixes in code & documentation (all described in
+the ChangeLog file in the source distribution).
+
+Thanks to J|rgen Koslowski, Young U. Ryu, Fred T. Krogh, Clemens
+Beckstein, and Ralf Gaertner, for your bug reports!
+
+-----------------------------------------------------------------------
+                              AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:                  http://www.diku.dk/~kris/Xy-pic.html
+  URL:                  http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN :                /tex-archive/macros/generic/diagrams/xypic
+
+and from the archives of the authors:
+
+  ftp.diku.dk :         /diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX/
+
+Check the README file in each location for the exact details.
+
+-----------------------------------------------------------------------
+                                CREDITS
+-----------------------------------------------------------------------
+
+Xy-pic version 2 was created by Kristoffer H. Rose, DIKU, U of
+Copenhagen.  The rewrite that has become version 3 is a collaboration
+with Ross Moore, Macquarie U, Sydney, initiated through a visit to
+Macquarie (Jan-May 1994 supported by the Australian Research Council,
+Macquarie University, and using donated DEC equipment).
+
+Xy-pic is Copyright (c) 1991-1995 by Kristoffer H. Rose and 1994-1995 by
+Ross Moore under GNU COPYLEFT which means that you can use the package
+for any purpose but if you provide the macros or any code derived from
+them to a third party then you are obliged to include the entire Xy-pic
+package (full details in the file COPYING).
+
+-----------------------------------------------------------------------
+
+          This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+               Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+      DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+      Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+            World Wide Web  <URL: http://www.diku.dk/~kris/>
+
+-----------------------------------------------------------------------
+
+
+
+Date: Thu, 19 Dec 1996 15:57:58 -0400 (AST)
+Subject: ANNOUNCING: Xy-pic version 3.3 released! 
+
+Date: Thu, 19 Dec 1996 20:11:04 +0100 (MET)
+From: Kristoffer Hogsbro Rose <krisrose@brics.dk>
+
+Dear Category Theorists,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.3 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a RELEASE of the DIAGRAM TYPESETTING PACKAGE:
+
+			       Xy-pic 3.3
+
+This is a maintenance release where a few more bugs of the previous
+major release of Xy-pic 3 (a year ago) have been eliminated and a few
+things have been added.
+
+  It is released on December 19, 1996 because this is the fifth
+  anniversary of Xy-pic: the first public release (version 1.40)
+  of Xy-pic was distributed via Usenet on December 19, 1991!
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the
+distribution.
+
+-----------------------------------------------------------------------
+				  NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 was a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to
+users).  However, full backwards compatibility is maintained (except
+for the unavoidable but fully documented obscure cases).
+
+Release 3.3 fixes the following problems with release 3.2:
+
+* Now has `outline-only' mode for quick processing of intermediate runs!
+* Now has special support for in-text one-line diagrams!
+* Arrows now meet their end-points more precisely when these are round!
+* Optimised file loading!
+* Computer Modern and Euler-style tips use the current (LaTeX) font size!
+* Compiled files are more stable!
+* PostScript improvements!
+* 600 dpi fonts included in standard distribution!
+
+as well as several minor fixes in code & documentation (all described
+in the ChangeLog file in the source distribution).
+
+Thanks to Joerg Eich, J|rgen Koslowski, Wolfgang Gellerich, and Michel
+Goossens, for your bug reports!
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:			http://www.brics.dk/~krisrose/Xy-pic.html
+  URL:			http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN :		macros/generic/diagrams/xypic
+
+and from the private archives of the authors:
+
+  ftp.brics.dk : 	/Staff/krisrose/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for specifics.
+
+-----------------------------------------------------------------------
+				CREDITS
+-----------------------------------------------------------------------
+
+Xy-pic version 2 was created by Kristoffer H. Rose, then DIKU, U of
+Copenhagen, now BRICS, U of Aarhus.  The rewrite that has become
+version 3 is a collaboration with Ross Moore, Macquarie U, Sydney,
+initiated through a visit to Macquarie (Jan-May 1994 supported by the
+Australian Research Council, Macquarie University, and using donated
+DEC equipment).
+
+Xy-pic is Copyright (c) 1991-1996 by Kristoffer H. Rose and 1994-1996
+by Ross Moore under GNU COPYLEFT which means that you can use the
+package for any purpose but if you provide the macros or any code
+derived from them to a third party then you are obliged to include the
+entire Xy-pic package (full details in the file COPYING).
+
+-----------------------------------------------------------------------
+
+	  This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+Kristoffer Hxgsbro ROSE                           <krisrose@brics.dk>
+BRICS                           <URL: http://www.brics.dk/~krisrose/>
+Department of Computer Science B3.26, +45 89423193 (fax +45 89423255)
+University of Aarhus, Ny Munkegade, build. 540, 8000 Erhus C, DENMARK
+
+
+Date: Tue, 20 May 1997 21:18:39 -0300 (ADT)
+Subject: ANNOUNCING: Xy-pic version 3.4 released!
+ 
+Date: Tue, 20 May 1997 16:19:28 +0200 (MET DST)
+From: Kristoffer Hogsbro Rose <krisrose@brics.dk>
+ 
+Dear Category Theorists,
+ 
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.  Notice that DIKU has discontinued my
+ftp directory, so the principal home of Xy-pic is now at brics.dk.
+ 
+Sincerely,
+            Kristoffer H. Rose
+ 
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.4 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+ 
+This is to announce a RELEASE of the DIAGRAM TYPESETTING PACKAGE:
+ 
+                              Xy-pic 3.4
+ 
+This is a maintenance release where a few more bugs of the previous
+major release of Xy-pic 3 have been eliminated and a few things have
+been added...
+ 
+-----------------------------------------------------------------------
+                                GENERAL
+-----------------------------------------------------------------------
+ 
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+ 
+Further specifics of the package are in the distribution README file.
+ 
+-----------------------------------------------------------------------
+                                 NEWS
+-----------------------------------------------------------------------
+ 
+Xy-pic version 3 was a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to
+users).  However, full backwards compatibility is maintained (except
+for the unavoidable but fully documented obscure cases).
+ 
+Release 3.4 fixes the following problems remaining in release 3.3:
+ 
+* \txt and v2 arrow commands now work again, even first in matrix entries!
+* Tiling patterns are functional again!
+* PostScript frames have the right shape again!
+* The [F**] `enhance' modifier is now useful, even without PostScript!
+* Using Xy-constructions with & inside other table constructs possible!
+* Improved non-PostScript curved dashing!
+* `Illegal parameter number in definition of \lastprentry@@' bug fixed!
+ 
+as well as the usual collection of minor fixes in code & documentation
+(all described in the ChangeLog file of the source distribution).
+ 
+Thanks to J|rgen Koslowski, Clemens Beckstein, G. Allen Morris III,
+Chris L. Skeels, and Peter Selinger, for your bug reports (and to
+David Carlisle for reminding us of LaTeX2e's \AtBeginDvi mechanism,
+and last but not least to Karl Berry for releasing web2c-7.0 so we
+won't have to get `out of memory' errors any more and gee are we proud
+of being the only macro package mentioned in texmf.cnf :)
+ 
+-----------------------------------------------------------------------
+                              AVAILABILITY
+-----------------------------------------------------------------------
+ 
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+ 
+  URL:                  http://www.brics.dk/~krisrose/Xy-pic.html
+  URL:                  http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+ 
+as well as by anonymous ftp from
+ 
+  CTAN:                 macros/generic/diagrams/xypic
+ 
+and from the private archives of the authors:
+ 
+  ftp.brics.dk :        /Staff/krisrose/TeX/
+  ftp.mpce.mq.edu.au :  /pub/maths/TeX/
+ 
+Check the README file in each location for specifics.
+ 
+-----------------------------------------------------------------------
+                           HISTORY & CREDITS
+-----------------------------------------------------------------------
+ 
+The first public release (version 1.40) of Xy-pic was created by
+Kristoffer H. Rose, DIKU, U of Copenhagen (now BRICS, U of Aarhus) and
+distributed via Usenet on December 19, 1991.  (Version 3.3 was released
+on December 19, 1996 because this was the fifth anniversary of Xy-pic.)
+This quickly became Version 2 of which version 2.6 was the most stable.
+ 
+The rewrite that became version 3 is a continued collaboration with
+Ross Moore, Macquarie U, Sydney, initiated through a visit to Macquarie
+(Jan-May 1994 supported by the Australian Research Council, Macquarie
+University, and using donated DEC equipment).
+ 
+Xy-pic is Copyright (c) 1991-1997 by Kristoffer H. Rose and 1994-1997
+by Ross Moore under GNU COPYLEFT which means that you can use the
+package for any purpose but if you provide the macros or any code
+derived from them to a third party then you are obliged to include the
+entire Xy-pic package (full details in the file COPYING).
+ 
+-----------------------------------------------------------------------
+ 
+          This is the end of the announcement.  Enjoy Xy-pic!
+ 
+-----------------------------------------------------------------------
+ 
+PS. Don't miss TUG'97 with the latest in advanced TeX/LaTeX web & math
+    typesetting developments!  See <URL: http://tug.cs.umb.edu/tug97/>
+--
+Kristoffer Hxgsbro ROSE, Ph.D.                     <krisrose@brics.dk>
+BRICS International Ph.D. School  <URL: http://www.brics.dk/~krisrose>
+Department of Computer Science    +45 89423193, 20900180, fax 89423255
+University of Aarhus, Ny Munkegade, bld. 540, DK-8000 Erhus C, DENMARK
+
+
+Date: Mon, 2 Jun 1997 09:10:06 -0300 (ADT)
+Subject: ANNOUNCING: Xy-pic version 3.5 released! 
+
+Date: Fri, 30 May 1997 11:51:51 +0200 (MET DST)
+From: Kristoffer Hogsbro Rose <krisrose@brics.dk>
+
+Dear Category Theorists,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic
+- I am sorry for announcing a new version so soon after the previous
+release but a serious bug needed fixing.  I hope you will find this
+version useful.
+
+Sincerely,
+           Kristoffer H. Rose
+
+PS. Notice that DIKU has discontinued my ftp directory, so the
+European home of Xy-pic is now at brics.dk; as usual the mirror at
+CTAN should be current in a few days.
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.5 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a release of my diagram typesetting package Xy-pic.
+
+version 3.5 is a bug fix release where a single serious bug of the
+previous major release of Xy-pic 3 has been eliminated.
+
+-----------------------------------------------------------------------
+				GENERAL
+-----------------------------------------------------------------------
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further specifics of the package are in the distribution README file.
+
+-----------------------------------------------------------------------
+				 NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 was a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to
+users).  However, full backwards compatibility is maintained (except
+for the unavoidable but fully documented obscure cases).
+
+Release 3.5 fixes the following problem of release 3.4:
+
+* Breaks (in arrows) were ignored more often than not!
+
+Furthermore version 3.5 adds an installation script for TDS-compliant
+un*x Xy-pic installations.
+
+Thanks to Uffe Engberg, Juan Carlos Soliveres, and John Landamore for
+your bug reports!
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:			http://www.brics.dk/~krisrose/Xy-pic.html
+  URL:			http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN:			macros/generic/diagrams/xypic
+
+and from the private archives of the authors:
+
+  ftp.brics.dk : 	/Staff/krisrose/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for specifics, in particular
+check that you have reached a version 3.5 copy (some archives take a
+while to mirror the latest files)!
+
+-----------------------------------------------------------------------
+			   HISTORY & CREDITS
+-----------------------------------------------------------------------
+
+The first public release (version 1.40) of Xy-pic was created by
+Kristoffer H. Rose, DIKU, U of Copenhagen (now BRICS, U of Aarhus) and
+distributed via Usenet on December 19, 1991.  (Version 3.3 was released
+on December 19, 1996 because this was the fifth anniversary of Xy-pic.)
+This quickly became Version 2 of which version 2.6 was the most stable.
+
+The rewrite that became version 3 is a continued collaboration with
+Ross Moore, Macquarie U, Sydney, initiated through a visit to Macquarie
+(Jan-May 1994 supported by the Australian Research Council, Macquarie
+University, and using donated DEC equipment).
+
+Xy-pic is Copyright (c) 1991-1997 by Kristoffer H. Rose and 1994-1997
+by Ross Moore under GNU COPYLEFT which means that you can use the
+package for any purpose but if you provide the macros or any code
+derived from them to a third party then you are obliged to include the
+entire Xy-pic package (full details in the file COPYING).
+
+-----------------------------------------------------------------------
+
+	  This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+PS. Don't miss TUG'97 with the latest in advanced TeX/LaTeX web & math
+    typesetting developments!  See <URL: http://tug.cs.umb.edu/tug97/>
+--
+Kristoffer Hxgsbro ROSE, Ph.D.                     <krisrose@brics.dk>
+BRICS International Ph.D. School  <URL: http://www.brics.dk/~krisrose>
+Department of Computer Science    +45 89423193, 20900180, fax 89423255
+University of Aarhus, Ny Munkegade, bld. 540, DK-8000 Erhus C, DENMARK
+
+
+Date: Fri, 6 Mar 1998 06:02:48 +0100 (CET)
+From: krisrose@sauternes.ens-lyon.fr (Kristoffer Rose)
+Subject: categories: ANNOUNCING: Xy-pic version 3.6 released!
+
+Dear Category Theorists,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic!
+
+Sincerely,
+           Kristoffer H. Rose
+
+=======================================================================
+    ANNOUNCING the Xy-pic version 3.6 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a release of my diagram typesetting package Xy-pic.
+
+Version 3.6 contains new and improved PostScript fonts donated by Y&Y
+Inc. (as well as several minor bug fixes).
+
+-----------------------------------------------------------------------
+				GENERAL
+-----------------------------------------------------------------------
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further specifics of the package are in the distribution README file.
+
+-----------------------------------------------------------------------
+				 NEWS
+-----------------------------------------------------------------------
+
+The primary purpose of release 3.6 is the inclusion of much improved
+PostSript fonts courtesy of Y&Y TeX and several Internetwide
+volunteers: these make it possible to use Xy-pic output with Windows
+(in addition to Macintosh and Un*x), Adobe's ATM software, and to
+produce Adobe PDF ("Acrobat") files.
+
+NOTE: This change means that you must REMOVE SOME OLD FONT FILES (the
+details of which and how are in the INSTALL file).
+
+Release 3.6 furthermore fixes a few problems of release 3.5:
+
+* frames more robust against disappearing on bogus PostScript printers
+* thickness of curves now adjustable
+* TDS compliance improved
+* bogus `graph escape redefined' message eliminated
+
+Thanks to David Carlisle, John Landamore, Ralph Loader, Thorsten
+Schwander, and Timco Visser, for your bug reports, and to Adam
+Worrall, Thierry Bouche, Tanmoy Bhattacharya and especially to
+Berthold Horn and Louis Vosloo of Y&Y Inc. for their work on the
+PostScript fonts.
+
+Finally profound thanks to BRICS and DAIMI for hosting Xy-pic (and
+Kristoffer :) for a most productive and enjoyable year!
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:			http://www.ens-lyon.fr/~krisrose/Xy-pic.html
+  URL:			http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN:			macros/generic/diagrams/xypic
+
+and from the private TeX archives of the authors:
+
+  ftp.ens-lyon.fr : 	/pub/users/LIP/krisrose/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for specifics, in particular
+check that you have reached a version 3.6 copy (some archives take a
+while to mirror the latest files)!
+
+-----------------------------------------------------------------------
+			   HISTORY & CREDITS
+-----------------------------------------------------------------------
+
+The first public release (version 1.40) of Xy-pic was created by
+Kristoffer H. Rose, DIKU, U of Copenhagen (now ENS-Lyon, France) and
+distributed via Usenet on December 19, 1991.  This quickly became
+version 2 of which version 2.6 was the most stable.
+
+The thorough rewrite that became version 3 is a continued
+collaboration with Ross Moore, Macquarie U, Sydney, initiated through
+a visit to Macquarie (Jan-May 1994 supported by the Australian
+Research Council, Macquarie University, and using donated DEC
+equipment).  However, full backwards compatibility is maintained
+(except for the unavoidable but fully documented obscure cases).
+
+Xy-pic is Copyright (c) 1991-1998 by Kristoffer H. Rose and 1994-1998
+by Ross Moore under GNU COPYLEFT which means that you can use the
+package for any purpose but if you provide the macros or any code
+derived from them to a third party then you are obliged to include the
+entire Xy-pic package (full details in the file COPYING).  The
+PostScript fonts are additionally Copyright (c) 1997 Y&Y Inc.
+
+----------------------------------------------------
+
+	 This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+Kristoffer Høgsbro Rose, Ph.D., prof.associé  <Kristoffer.Rose@ENS-Lyon.FR>
+Laboratoire de l'Informatique du Parallélisme  équipe PLUME, bureau LR5-026
+Ecole Normale Supérieure de Lyon; 46, Allée d'Italie; F-69364 Lyon 07 cedex
+phone: +33(0)4 7272 8642; fax:...8080    <http://www.ens-lyon.fr/~krisrose>
+

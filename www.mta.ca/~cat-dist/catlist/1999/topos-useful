@@ -1,0 +1,37 @@
+Date: Thu, 19 Nov 1998 11:53:12 +0000
+From: s.vickers@doc.ic.ac.uk (Steven Vickers)
+Subject: categories: Has this topos ever been found useful?
+
+After seeing Eric Goubault's work on directed homotopy, where he defines a
+notion of "locally partially ordered space", I found myself considering the
+following topos. Does anyone know if it has been used, for instance in
+algebraic geometry or algebraic topology?
+
+What I am trying to capture by the definition is the process of taking the
+lower semicontinuous reals in [0,1] (classically, [0,1] with its Scott
+topology, so that the numerical order becomes the specification order) and
+identifying 0 and 1. Then the specialization from 0 to 1 becomes a
+non-trivial endomorphism e of 0, so we are forced to consider the modified
+space as a topos, not a locale. In addition, an extra point will spring
+into existence, namely the (filtered) colimit of
+
+  0 --> 0 --> 0 --> ...
+     e     e     e
+
+The topos is given by a site as follows. Let Q+ be the additive monoid of
+non-negative rationals and Q/Z the rationals modulo the integers. Q+ acts
+on Q/Z by addition. Let C be the corresponding category of elements (object
+= element [q] of Q/Z, morphisms ([q],f): [q] -> [q+f] for f in Q+) and
+generate a Grothendieck topology on C^op by letting any object [q] of C be
+cocovered by all the morphisms ([q],f) for f > 0.
+
+Let E be the topos corresponding to this site on C^op. Its points are flat
+presheaves F on C with the condition that if x is in F([q]) then x =
+([q],f)y for some f > 0, y in [q+f]. The points arising from the
+wrapped-round [0,1] are like half-infinite helices (F([q]) = N for all q),
+and the new point is like an infinite helix (F([q]) = Z for all q).
+
+Steve Vickers.
+
+
+

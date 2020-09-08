@@ -1,0 +1,122 @@
+Path: news.gmane.org!not-for-mail
+From: "John Baez" <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Does duality categorify?
+Date: Thu, 27 Apr 2006 20:00:13 -0700 (PDT)
+Lines: 88
+Approved: news@gmane.org
+Message-ID: <E1FZpNp-0002v8-As@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019196 8007 80.91.229.2 (29 Apr 2009 15:33:16 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:33:16 +0000 (UTC)
+To: categories@mta.ca (categories)
+Original-X-From: rrosebru@mta.ca Sat Apr 29 10:31:54 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 29 Apr 2006 10:31:54 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1FZpNp-0002v8-As
+	for categories-list@mta.ca; Sat, 29 Apr 2006 10:21:13 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 69
+Status: O
+Content-Length: 3532
+Original-Lines: 87
+Xref: news.gmane.org gmane.science.mathematics.categories:3271
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3271>
+
+Vaughn Pratt asks:
+
+> Does duality categorify?  If so, how?  If not, why not?
+
+Of course this is a huge question, but the answer is:
+surely it must!
+
+My own favorite duality is between compact Hausdorff spaces
+and commutative C*-algebras, because my advisor was Irving
+Segal.  Elements of such a C*-algebra can be thought of as
+continuous functions on its "spectrum", which is a compact
+Hausdorff space.  This map from the algebra to function on
+its spectrum is called the "Gelfand transform"; you can think
+of the Fourier transform as a special case.
+
+If you categorify this you get something called the
+Doplicher-Robert theorem, which is a duality between certain
+"compact groupoids" and certain "symmetric monoidal C*-categories".
+I tried to explain this here:
+
+http://front.math.ucdavis.edu/q-alg/9609018
+
+However, if I really wanted to categorify dualities in general,
+I'd start with less complicated examples.
+
+> For example distributive lattices categorify to distributive algebras.
+> The dual of a distributive lattice is a partially ordered Stone space.
+> What does categorification do here?
+
+Unfortunately I don't know what a distributive algebra is
+or in what sense it's a categorified distributive lattice.
+
+If I had to think about this, I'd probably start with something
+I understand ever so slightly better, like the duality between
+finite posets and finite distributive lattices.
+
+Best,
+jb
+
+PS - there's some nice feedback on our questions about the
+algebraic closure of the rationals here:
+
+http://groups.google.com/group/sci.math.research/browse_thread/thread/61e30c22ee6c27b6/f647aee0763a349c?&hl=en#f647aee0763a349c
+
+Briefly, while the existence of an algebraic closure of Q
+can be shown without choice, it uniqueness-up-to-isomorphism
+seems to require choice.  Also, while arithmetic operations
+in Qbar are computable, they seem to present interesting challenges.
+Quoting David Madore:
+
+ The usual manner is to represent a real element of Qbar by
+
+ * its minimal polynomial over Q (or perhaps, some polynomial, not
+ necessarily minimal, but probably at least separable, of which it is a
+ root),
+
+ * an interval which isolates the root from all other roots (or the
+ number of the root in the usual order on the reals).
+
+ Basically the trick is that sums and products can be computed by
+ universal rules (if P1 and P2 are polynomials over Q, there is a
+ polynomial, which can be given universally in function of the
+ coefficients of P1 and P2, whose roots are the sums of roots of P1 and
+ P2, and ditto for the product), and roots can always be isolated using
+ Sturm-Liouville (in other words, you can narrow the interval as much
+ as you want since Sturm-Liouville lets you count the number of roots
+ in any given interval).
+
+ This is for real algebraics; for the full Qbar, you just represent a
+ complex number by its real and imaginary parts (both of which are
+ algebraic if the complex is algebraic).
+
+ Actually programming this is *unbelievably* painful.  As for the
+ algorithmic complexity, I think it's not that bad, in the sense that
+ if x and y have small height (for any reasonable definition of
+ "height") then computing x+y can be done in a reasonable time, but
+ there's a catch: the height of x+y grows considerably larger than that
+ of x or y, so any actual computation can become terribly difficult.
+ (The same problem happens for rationals: computing r+s where r and s
+ are rationals is polynomial in the height of r and s, but try
+ computing something like 1/2+1/3+1/5+1/7+1/11+1/13+1/17...)
+
+
+
+
+
+
+

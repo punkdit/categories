@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: henry@phare.normalesup.org
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Uniform locales in Shv(X)
+Date: Mon, 25 Aug 2014 22:24:54 +0200
+Lines: 90
+Approved: news@gmane.org
+Message-ID: <E1XMI9T-0002Ti-W8@mlist.mta.ca>
+References: <E1XKnjs-0006jj-Uy@mlist.mta.ca> <E1XLiWZ-0002aK-R0@mlist.mta.ca>    <E1XLzao-0006BA-7t@mlist.mta.ca>
+Reply-To: henry@phare.normalesup.org
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1409064956 30342 80.91.229.3 (26 Aug 2014 14:55:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 26 Aug 2014 14:55:56 +0000 (UTC)
+Cc: categories@mta.ca
+To: "Jeff Egger" <jeffegger@yahoo.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Aug 26 16:55:51 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XMIA2-0005L3-Pq
+	for gsmc-categories@m.gmane.org; Tue, 26 Aug 2014 16:55:50 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:57719)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XMI9U-0005ah-Uj; Tue, 26 Aug 2014 11:55:16 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XMI9T-0002Ti-W8
+	for categories-list@mlist.mta.ca; Tue, 26 Aug 2014 11:55:16 -0300
+In-Reply-To: <E1XLzao-0006BA-7t@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8302
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8302>
+
+Hi,
+
+My point about the entourage approach was that it does not require
+overtness at least for the basic definitions:
+
+For example, you can state the axiom "for all entourage a there exists an
+entourage c such that c.c <= a$ as" using the following form instead of
+the composition of entourage:
+
+pi_12 ^* c (intersection) pi_23^* c <= pi_13^*a
+
+where pi_12, pi_23 and pi_13 denotes the three projection from X^3 to X^2.
+
+the uniformly below relation can also be defined as: a is uniformly below
+b if there exist an entourage c such that pi_1^* a (intersection) c <=
+pi_2^* b and hence you can state the admissibility axiom without
+overtness.
+
+The absence of overtness still yields a lots of problems: for example the
+uniformly below relation is no longer interpolative. (and I agree that it
+is not clear at all that this is the good way of doing things)
+
+When focusing on overt space everything work properly and one can defines
+for example completeness and completion (it is actually a direct
+consequence of the results about localic metric space in my thesis) but at
+some point it yields other problems related to the fact that subspaces of
+uniform spaces are no longer uniform space and this gives examples of
+things that should be uniform spaces but which are not overt.
+
+
+If you are willing to restrict to open maps then using the entourage
+approach give a not to awful answer to your initial question: a relative
+uniform structure on an open map f:Y ->X, is the given by a collection of
+a family of open sublocales of Y \times_X Y which correspond to open
+sublocales of the form {y_1,y_2,x | x \in U, (y_1,y_2) \in S(x) } for U an
+open subset of X and S a section over U of the sheaf of entourage of Y in
+sh(X). You just need to write down all the axioms that these things has to
+satisfy but they are going to be relatively natural (and if you are only
+interested to a notion of "basis of entourage" they I think they are not
+going to be to complicated)
+
+Cheers,
+Simon
+
+> Hi Toby,?
+>
+> Many thanks for your comments. ?
+>
+> Over the weekend, I noticed a (probable) mistake in my previous posting:
+> namely, the assertion that _only_ the admissibility axiom could require
+> overtness of the locale  in question. ?In fact, the natural way to define
+> composition of entourages (qua relations) is to apply first the inverse
+> image of?
+> ? 1xDeltax1 : LxLxL ---> LxLxLxL,?
+> and then the open image of?
+> ? 1x!x1: LxLxL ---> LxL. ?
+> Thus the intuitive way of writing down the square-refinement axiom also
+> requires L to be overt. ?(Btw, when discussing that axiom  in my previous
+> post, I carelessly wrote "epi" where I obviously meant "cofinal".)
+> ?Perhaps there is some other way of expressing that axiom, but I no longer
+> care: I've reconciled myself to the idea that uniformity requires
+> overtness.
+>
+> I also made some progress on?
+>
+>>> Perhaps, if we define a Weil pseudo-uniformity
+>>> on L to be exactly as above minus the admissibility axiom, it is
+>>> possible---at least in the case of a localic topos E=Shv(X)---to
+>>> describe
+>>> a second locale underlying the pseudouniformity? If so, then we don't
+>>> really need formulate the admissibility axiom in the internal language
+>>> of
+>>> the topos.
+>
+> Namely, I have an idea of how this might be done, but it requires a detour
+> through gauge spaces  (=uniformities defined via families of
+> pseudometrics, for those not familiar with the terminology) which I'm not
+> sure is constructively valid. ?In any case, I like this idea: in
+> particular, if it works, then one could apply it to the case where L is a
+> discrete locale and investigate to what extent the idea of a uniform space
+> as a _set_ together with a family of entourages fails to capture the
+> general idea. ?
+>
+> Cheers,
+> Jeff.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

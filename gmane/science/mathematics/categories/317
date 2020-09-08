@@ -1,0 +1,136 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Category Theory and Databases
+Date: Thu, 27 Feb 1997 15:53:43 -0400 (AST)
+Lines: 113
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.970227155335.28863A-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016888 25154 80.91.229.2 (29 Apr 2009 14:54:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:54:48 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Thu Feb 27 15:55:12 1997
+Original-Received: by mailserv.mta.ca; id AA17192; Thu, 27 Feb 1997 15:53:43 -0400
+Status: RO
+Content-Length: 5751
+Original-Lines: 112
+Xref: news.gmane.org gmane.science.mathematics.categories:317
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/317>
+
+Date: Wed, 26 Feb 1997 16:12:56 +0000
+From: Zinovy Diskin <diskin@fis.lv>
+
+I'd like to add some general words to the recent exchange of
+references on CT \& DB, and apologize in advance for the long reply.
+
+Texts on CT \& DB can be roughly divided into two groups. In the
+first one there are papers (papers-I) where a certain categorical
+apparatus is applied to a particular DB theory problem, for example,
+monads to modeling bulk data types, or the pull-back treatment of
+relational join operation, or the functorial treatment of relational
+algebra via indexed Boolean algebras and so on. Papers-II are those
+which pursue a more fundamental goal of stating an integrated
+framework in which DB theory (or its major components) can be
+developed.
+
+It may sound strange but it seems that papers-II potentially can be
+much more useful in practice. Indeed, it is commonly recognized that
+the entire field of software engineering suffers from lack of
+suitable specification languages. A particular but remarkable 
+example can be found in the concluding report to a recent high-level
+workshop (organized by an industry company!) where the abstract
+Wittgenstein's philosophy was invoked:
+\begin{quote}
+... It is clear that the problem of identifying and resolving
+semantic heterogeneity in a heterogeneous  database environment is
+far from solved, and that the problem itself is still at the stage of
+being understood.  ... Wittgenstein said long ago that if an idea was
+worth discussing, then it was worth having a language to discuss it.
+...Perhaps, one of the most difficult problems in developing
+integrated systems is in figuring out what schemas, data, and
+application code mean. 
+\end{quote}
+In this context, what is required first of all is a general language
+which allows to specify basic DB theory concepts like database
+schema, database state, query etc in a way independent of any
+specific data model (rather than a single universal data model
+capturing all other data models).
+
+For a DB theorist it seems impossible to speak substantially about
+database schemas and database states without a specific description
+of what they are: it appears to be a kind of  speaking about
+nothing. In contrast, for a category theorist such an abstract
+nonsense is a comfortable environment, the focus is to find a proper
+compromise between generality and applicability. In this respect
+papers-II existing today are not very successful:  the majority of
+them are either too abstract to be useful in real DB problems or too
+fragmentary to state a proper foundation.
+
+A categorical idea which seems promising in this respect is that of
+Makkai's sketches, more exactly, their suitable algebraic
+generalization. In Makkai's presentation, generalized sketches is a
+framework for managing logic of diagram predicates, the focus is on
+their inference. In the DB language, this is nothing but derivation
+of constraints on data. However, the core of the DB technology is
+derivation of the very data, that is, in the CT language, the focus
+is in operations like pull-back, push-out etc. Of course, it is
+possible to consider, say, the pull-back property as a diagram
+predicate (as Makkai does) but a more natural and DB-useful view is
+to treat it as a diagram operation.  Then complex generalized
+sketches which involve several marked diagrams must be considered as
+complex algebraic terms in the corresponding signature of diagram
+operations, and some parsing procedure is applicable. A notion of
+generalized sketch over a signature of diagram predicates and
+operations can be defined along these lines in parallel to the
+ordinary notion of logical theory over a signature of predicate and
+operation symbols. (It appears to be a truly graph-based logic in
+the spirit of Bagchi and Wells. A preliminary framework of basic
+definitions is described in the report "Databases as diagram
+algebras: specifying queries and views via the graph-based logic of
+sketches"  (on ftp: //ftp.cs.chalmers.se/pub/users/diskin/TR9602/*.ps
+).
+
+\bigskip 
+I study DB for more than five years. It is a very lively,
+rich and mobile world which significantly influences the modern
+information technology and culture. However, in the mathematical
+perspective DB theory is seen as a small campus of the relational
+data model surrounded by a vast savage forest of various notational
+and terminological systems without any denotational semantics. In my
+wanderings in the forest, CT served as a reliable guide and, at
+last, I have composed the following CT-map of DB:
+
+1) Database schemas (including ER-diagrams and the like) are
+generalized sketches in one or another signature;
+
+2) Database states are sketch morphisms from schema sketches into
+topos-like model sketches built over domains of values and data
+objects;
+
+3) Queries against databases are diagram operations, and query
+languages are monads over categories of generalized sketches;
+
+4) Databases are Eilenberg-Moore algebras of these monads while
+views and refinements of database schemas are Kleisly morphisms.
+
+5) Architecture schemas of distributed database systems are
+metasketches whose nodes are generalized sketches and arrows are
+their morphisms.
+
+I do not want to say that DB theory is an applied category theory:
+as any other advanced engineering discipline, DB is much richer than
+one or another formal theory used for modeling engineering  concepts.
+Thus, it is more correct to read statements "A is B" above as "It is
+useful to view A as B" . Nevertheless, CT-formulation of DB-concepts
+turned out to be extremely useful in the theory and even practice of
+DB design. In a sense, relations between CT and software engineering
+remind those between calculus and mechanics engineering.
+
+Thanks for your attention,
+Zinovy Diskin
+
+

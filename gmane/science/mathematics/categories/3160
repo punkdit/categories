@@ -1,0 +1,146 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Progressive or linear or ... monoids?
+Date: Sat, 25 Mar 2006 19:25:43 -0800
+Lines: 112
+Approved: news@gmane.org
+Message-ID: <E1FNS1F-0004xr-PE@mailserv.mta.ca>
+Reply-To: pratt@cs.stanford.edu
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019128 7497 80.91.229.2 (29 Apr 2009 15:32:08 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:32:08 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Mar 26 06:03:12 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 26 Mar 2006 06:03:12 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1FNS1F-0004xr-PE
+	for categories-list@mta.ca; Sun, 26 Mar 2006 05:58:45 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 106
+Status: O
+Content-Length: 5332
+Original-Lines: 111
+Xref: news.gmane.org gmane.science.mathematics.categories:3160
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3160>
+
+Thanks to Peter, Peter, and George for the uniformly equivalent answers
+to my question (in striking contrast to the decided lack of uniformity
+of the responses to other recent topics on this list).  (Bill's response
+was less an answer than a pointer to related work with "commutative" in
+place of "free" in my question, interesting but for different reasons.)
+  I should have noticed that free monoids were a red herring, and I have
+no idea why I restricted to z=1 in xy=xz->y=z.
+
+The crux of the obstacle to axiomatizing the nonabelian case is clearly
+brought out by Malcev's Condition Z cited by George Janelidze as
+
+ >
+ >   (as = bt) & (cs = dt) & (au = bv) => (cu = dv);
+ >
+
+If you could just shuffle the terms around, Z along with the larger
+"quasiidentities" would all collapse under cancellation, as everyone
+pointed out.
+
+At first glance one might think to organize Condition Z with proof nets
+of some kind, something along the lines of
+
+au = bv
+|    |
+as = bt
+.|    |
+cs = dt
+-------
+cu = dv
+
+and so on for longer such sorites along with (independent?) reflections
+of each side.  (The stray dot is against mailers that delete leading
+spaces, apologies to those not receiving this in a fixed-width font.)
+
+However googling for relevant material led to a 194-page St. Andrew's
+thesis submitted last July on "Presentations for subsemigroups of
+groups" by Alan Cain, available at
+
+http://www-history.mcs.st-and.ac.uk/~alanc/maths/publications/c_phdthesis/c_phdthesisonesided.ps
+
+The preface indicates how one can do better via J.-C. Spehner's notion
+of a Malcev presentation.  (Anyone know if this is the same J.-C.
+Spehner as does computational geometry at Labo MAGE?)
+
+> This thesis is largely concerned with subsemigroups of groups, and
+> from its pages a reader may discover much of their character and a
+> little of their history. The title is perhaps a little restrictive:
+> the body of the thesis approaches subsemigroups of groups from three
+> directions: `ordinary' semigroup presentations, Malcev presentations,
+> and automatic structures.
+>
+> Malcev presentations are semigroup presentations of a special type for
+> group-embeddable semigroups, introduced by Spehner (1977). Informally,
+> whilst an `ordinary' semigroup presentation defines a semigroup by
+> means of generators and defining relations, a Malcev presentation
+> defines a semigroup using generators, defining relations, and a
+> rule of group-embeddability. This rule of group-embeddability is
+> worth an infinite number of defining relations, in the sense that
+> a semigroup may admit a finite Malcev presentation but no finite
+> ordinary presentation.  During the three decades since Spehner's
+> definition, little research was carried out in the area. This
+> thesis should convince the reader that this neglect has been unfair.
+> In preparation for the main body of the thesis, Chapter 1 formally
+> defines Malcev presentations and establishes their basic properties.
+
+Spehner's basic idea, on the semantic side, is that if it is known by
+all parties (writers and readers) that the intended congruence on a
+semigroup S makes S/~ embeddable in a group, then one can uniquely
+determine ~ with less of it than without that knowledge.  The crucial
+fact here is that the family of all congruences ~ on a semigroup S for
+which S/~ embeds in a group is closed under arbitrary (including empty)
+intersection (consider the product of the witnessing embedding groups).
+Hence any binary relation R on a semigroup S has a unique minimal
+extension to such a congruence, namely the intersection of all such
+congruences containing R.  A Malcev presentation of a desired such
+congruence is any binary relation R that generates it in this way.
+
+So in particular if au = bv, as = bt, and cs = dt are all in R, then the
+conclusion cu = dv of Condition Z is in this "Malcev closure" of R.
+
+On the syntactic side, the appropriate term rewriting system
+incorporating this knowledge of group-embeddability augments the
+vocabulary with left and right inverses of generators, allowing this
+conclusion to be obtained equationally, without resorting to
+quasiidentities, as
+
+cu = csSu = dtSu = dBbtSu = dBasSu = dBau = dBbv = dv
+
+where I've written S for the right inverse of s and B for the left
+inverse of b for want of a third flavor of s and b in ASCII.
+
+After developing the basis for, and variants of, all this, the thesis
+then dives into automatic semigroups, a subject with a rich literature
+and some very deep results that I have so far been completely unable to
+motivate myself to participate in (starting with Michael Arbib's
+lectures on this general genre at Sydney University in the Australian
+winter of 1967, give or take a winter, and then more lectures in the
+same vein in 1969 by John Rhodes at Berkeley).  Maybe some day I'll see
+the point of it all, though so far I've had more success eventually
+seeing the point of Max Kelly's 1965 lectures on category theory, that
+only took two decades (slow learner).  I'm fine with algebraic logic
+(which was my route back to category theory in 1983), algebraic automata
+theory seems an altogether different kettle of fish -- the deployment of
+weapons of math destruction in an unwinnable war on the combinatorial
+complexity of automata and semigroups.
+
+Again, many thanks for the answers and pointers!
+
+Vaughan Pratt
+
+
+

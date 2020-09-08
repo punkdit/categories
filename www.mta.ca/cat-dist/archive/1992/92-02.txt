@@ -1,0 +1,1248 @@
+Subj:	monad morphisms
+From: koslowj@cis.ksu.edu (Juergen Koslowski)
+Date: Mon, 3 Feb 92 11:21:32 CST
+
+Defining a morphism <U,f> from an monad <S,e,m> on X
+to a monad <S',e',m'> on X' in such a way that U is
+a 1-cell (functor) from X to X', there are two choices
+for the direction of the 2-cell (nat. trans.) f. Street
+in "The formal theory of monads", JPAA 2(1972), 149--168,
+chooses f to go from the composit of U with X' to the
+composit of X with U, while Barr and Wells in TTT choose the
+other direction (although in their case X=X'). The second
+choice seems more intuitive to me, since the appropriate
+specialization gives ordinary monoid homomorphisms. What is
+the rationale for the first choice?
+
+J"urgen Koslowski
+Dept. of Math.
+Dept. of Comp. & Info. Sci.
+Kansas State University
+=========================================================================
+Subj:	Corrections for  "Categories, Allegories"
+Date: Mon, 3 Feb 92 14:40:03 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+
+Aside from some spelling, punctuation and font errors please note
+the following corrections to
+
+                      CATEGORIES, ALLEGORIES
+                                by
+                   Peter Freyd and Andre Scedrov.
+
+
+1.725 (p 120)
+
+  5'th line down (3'rd equation) should be:
+
+          z ^ (x <--> y)   =   z ^ [(z ^ x) <--> (z ^ y)].
+
+   using  <-->  for the double-arrow operation and  ^  for the meet operation.
+
+1.82(10)  (p 143)
+
+  13'th line down (first in italics) should be:
+
+      A functor that preserves pre-limits preserves limits.
+
+1.947  (p 172)
+
+  4'th line down.  Formula should read
+
+                              R(^F)  <  ^F
+
+  using  ^  for the intersection and  <  for containment.
+
+2.11   (p 196)
+
+  Please note that we begin by saying that an allegory is a category.
+  All equations of 1.1 are to be considered part of the definition
+  of allegory.
+
+2.158  (p 207-210) small print
+                     [thanks to Roger Maddox]
+
+  The sentence about graphs on page 209, 8 lines down, is false:
+  "If one identifies any one or any two of the pairs of vertices,
+  the resulting graph is not in G-bar."  The trouble is that if the
+  vertices labeled  s  and  t  are identified the result is in  G-bar.
+  Worse, the displayed formula _is_ a consequence of the allegory
+  equations (in which ' is used for reciprication):
+
+             1 ^ (R ^ R')(R ^ R')(S ^ S')(S ^ S )   <    [distributivity]
+                   1   4   2   3   2   3   1   4
+
+
+             1 ^ (R R ^ R'R')(S'S' ^ S S )   =           [2.124]
+                   1 2   4 3   2 1    3 4
+
+
+              Dom((R R ^ R'R') ^ (S'S'^ S S )')  =
+                    1 2   4 3      2 1   3 4
+
+
+              Dom((R R ^ S S) ^ (R R ^ S S )')   =       [2.124]
+                    1 2   1 2     3 4   3 4
+
+
+             1 ^ (R R ^ S S )(R R ^ S S ).
+                   1 2   1 2   3 4   3 4
+
+
+  The subscripts in the complicated formula in the middle of page 210
+  are remarkably wrong.  They should be:
+
+                       n-1
+  1 ^ (R  ^  R'   )[ INTERSECT (R    ^ R' )(S'   ^ S  )](S' ^ S    )
+        0     2n-1    i = 1      2i-1   2i   2i-1   2i    0    2n-1
+
+
+                   n-1
+       <         PRODUCT (R  R    ^ S  S    )
+                  i = 0    2i 2i+1   2i 2i+1
+
+
+  The argument that these formulas are not consequences of the allegory
+  equations is OK for  n > 2.
+
+2.357   (p 234)
+
+  9'th line down.  Of the two equations on this line the first
+    is, of course, just a restatement of the definition of domain
+    of simplicity.  The second, however,  should be referenced
+    with  [2.124].
+
+2.4  (p 235)
+
+  5'th line up.  Of the four  R's  two should be  F's.  The
+    subscripts should remain  R's.  The "numerators" should become
+    F's.
+
+2.412  (p 236)
+
+  12'th line up.  The reference  [2.357] is wrong.  It should be
+    [2.124]
+
+2.418  (p 238)  small print
+
+  16'th line up.  The formula  [X]/E  should be  X/I.
+
+2.444  (p 248)  small print
+
+   Not a correction but an improvement.  A nicer example of the
+   failure of the law of metonymy is the full sub-allegory of the
+   allegory of  Z-sets  (sets with automorphisms) of all those Z-sets
+   in which no orbit has more than 3 elements.  For power-objects
+   start with the usual construction and remove all orbits with
+   more than 3 elements.  If  A  is a 5-element  Z-set consisting
+   of two orbits (one with 2 and one with 3 elements) then the epsiloff
+   relation from  [A]  to  A  is not tabular.
+
+B.211  (p 272)
+
+    Last sentence.  There are two rules for existential
+    quantification and the second is needed for equality.  The
+    best correction seems to be simply to remove this last
+    sentence (and, of course, the index entry for Horn logic).
+
+B.229  (p 274)
+
+   Not a correction but an addition.  The rules for the commu-
+   tivity and idempotence of existential quantifiers are given.
+   The same rules for universal quantifiers should also be
+   given.
+
+B.3  (p 275-6)
+
+    The definition of DERIVED PREDICATE is correct but too terse.
+    Be warned.
+
+
+corrections for SUBJECT  INDEX
+
+page    Entries to be added:
+
+287     ASSEMBLIES                     2.153
+287     CARRIER                        2.153
+288     CAUCUSES                       2.153
+289    *effective topos                2.418
+292     MODULUS                        2.153
+
+Finally, there should not be an asterisk on the index entry for
+SUBTERMINATOR on page 295.
+=========================================================================
+Subj:	Re: monad morphisms
+From: Steven John Vickers <sjv@doc.imperial.ac.uk>
+Date: Wed, 5 Feb 92 11:24:26 GMT
+
+I believe Street defined both kinds of morphism, calling them "monad functors"
+and "monad opfunctors".
+
+The Eilenberg-Moore (category of algebras) construction is functorial with
+respect to the functors (this is touched on in MacLane's Categories for the
+Working Mathematician, exercise VI.2.3).
+
+The Kleisli construction is functorial with respect to the opfunctors.
+
+Steve Vickers.
+=========================================================================
+Subj:	Re: monad morphisms
+From: street@macadam.mpce.mq.edu.au (Ross Street)
+Date: Thu, 6 Feb 92 12:18:00 EST
+
+Defining morphisms between monads in a 2-category C (where C = Cat if you
+like) the way I do in "The formal thy of mnds", I obtain a 2-category
+Mnd(C) of monads in C such that the inclusion C --> Mnd(C) has the
+Eilenberg-Moore construction as its right adjoint. On page 159 of the paper,
+J"urgen will find the 2-cell which satisfies his intuition; these are good for
+Kleisli's construction.
+
+Of course, we now know that the EM-construction is just a weighted (or
+"indexed") limit in the Cat-enriched context ("Limits indexed by cat-valued
+2-functors" JPAA 1976?). Kleisli-construction is a weighted colimit. Also
+see SLNM 420 (Kelly-Street paper and "Elem cosmoi" Section 6 pp166-168).
+
+Regards,
+Ross
+
+=========================================================================
+Subj:	Steenrod
+Date: Tue, 11 Feb 92 13:15:49 -0500
+From: cxm7@po.CWRU.Edu (Colin Mclarty)
+
+
+I understand Steenrod was interested in axiomatizing homology in the 1940s.  An 
+anecdote says that when he first saw category theory he got the idea of 
+treating maps in homology on a par with homology groups (rather than as a 
+corollary to the construction of homology groups), and he found this was the 
+key to axiomatizing the subject.  Does anyone have accurate information on 
+this?
+=========================================================================
+Subj:	Re:  Steenrod
+Date: Wed, 12 Feb 92 07:40:22 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+In answer to Colin Mclarty's query about Steenrod: one of the first
+things he ever told me after he became my dissertation advisor is just
+that story.  It had not occured to him to say anything about the action
+on maps.  The resulting axiomatization of homology is, of course, his
+book with Eilenberg, The Foundations of Algebraic Topology.
+
+He did not deny inventing the phrase "generalized abstract nonsense" to
+describe the categorical approach, but he said that it was meant in
+the affectionate sense.
+
+=========================================================================
+Subj:	Re:  Steenrod
+Date: Wed, 12 Feb 92 09:36:45 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+The person to ask is Eilenberg.  I heard Sammy tell the following, though.
+he said that Eilenberg had said to him, upon seeing The general theory
+of natural transformations, that no paper had ever influenced his
+thinking more.  Sammy also repeated that P.A. Smith, a first rate
+algebraic topologist of the ``hard'' school had told him that he
+had never read a more trivial paper in his life.  Well, maybe it
+wasn't quite so strong.  Sammy thought both reactions quite reasonable.
+
+Certainly, Sammy told some such story about Steenrod wanting to axiomatize
+homology theory.  My recollection is that Steenrod told him that although
+they knew that there was the homology homomorphism induced by a 
+continuous map, he had never thought of using that fact as a basis
+for his axiomatization.  And that when he read GTNT, the scales fell
+from his eyes.  But you should really try to get this story straight
+from Sammy before it is too late.
+
+I suspect that one of the obstacles to taking maps seriously is that
+the map induced by an inclusion is not an inclusion.  This must have
+bothered people quite a lot in those days.  Homomorphism meant surjective
+homomorphism and really only subgroups and quotient groups were taken
+seriously.  I have often conjectured that were it not for that, 
+Birkhoff might have invented categories instead of lattices.
+
+Michael
+=========================================================================
+Subj:	Algebraically complete categories
+Date:         Wed, 12 Feb 92 16:01+0000
+From:         mxh%dcs.edinburgh.ac.UK@QUCDN.QueensU.CA
+
+
+Is it known which functions from N to N are representable in an
+algebraically closed ccc? (A ccc in which initial algebras for "all"
+endofunctors exist. "all" includes at least those definable by x and
+=> and those arising from initial algebras like e.g. the List functor.
+More precisely are there functions representable in F, which aren't in
+an algebraically closed category?
+
+-Martin Hofmann
+=========================================================================
+Subj:	Re:  Algebraically Complete Categories
+Date: Thu, 13 Feb 92 09:08:30 +0100
+From: dybkjaer@euler.ruc.dk (Hans Dybkjaer)
+
+A simply typed lambda-calculus with types x, =>, and natural numbers can
+express functions N->N equivalently to those provably total in first order
+Peano arithmetic (cf. [Girard 89]). This encompass, e.g., the Ackermann
+function. 
+
+Though I do not remember any reference, I do not think that more expressive
+power in terms of functions N->N is gained by adding other initial algebras,
+like List.
+
+You might also be interested in Tatsuya Hagino's categorical programming
+language CPL ([Hagino 87][Wraith 89][Dybkj{\ae}r 91]) which is based on
+(restricted) initial and final dialgebras (a dialgebra is an arrow f:
+F(A)->G(A) where F,G:C->D are functors). Dialgebras make it possible to define
+initial and final algebras, products, coproducts, and exponentials from
+scratch. 
+
+
+---Hans Dybkj{\ae}r
+
+
+Dybkj{\ae}r, Hans [1991]: "Category Theory, Types, and Programming Languages",
+	PhD thesis, DIKU, University of Copenhagen, May 1991. Tecnical report
+	91/11.
+
+Girard, Jean-Yves, Yves Lafont, and Paul Taylor [1989]: "Proofs and Types",
+	Cambridge University Press.
+
+Hagino, Tatsuya [1987]: "A Categorical Programming Language", PhD thesis, LFCS,
+	University of Edinburgh, September 1987. Technical report CST-47-87.
+
+Wraith, Gavin C. [1989]: "A Note on Categorical Datatypes", in "Category Theory
+	and Computer Science, Manchester UK, September 1989", Proceedings,
+	edited by David H. Pitt et al., Springer-Verlag, LNCS 389.
+=========================================================================
+Subj:	modified realizability topos and so on
+Date: Thu, 13 Feb 92 17:21:17 MET
+From: Thomas Streicher <streiche@fmi.uni-passau.de>
+
+
+It is well known that one can build toposes from realizability.
+This has been done quite successfully for Kleene realizability and  
+for extensional realizability.
+An excellent survey on these topics is contained in the Thesis by  
+Jaap van Oosten.
+
+There he also suggests how to give higher order variant of MODIFIED  
+REALIZABILITY - although only of that variant of modified  
+realizability called the "HRO variant" in Troelstras book (SLNM 344).
+
+I want to suggest an - I think more adequate - version.
+
+Jaaps approach :  propositions are modelled as as pairs  (p,P)
+                  where  p  is a subset of  P  which is a set of 
+
+                  natural numbers containing  0
+
+                  (p,P) |- (q,Q)   ("entailment")
+
+                  iff there is a natural number  n  such that
+               
+
+                    for all m in P :  {n}(m) terminates  and 
+
+          
+
+                                      {n}(m) is in Q   and
+
+                                      {n}(m) is in q  if  m  is in p 
+
+
+It is felt - and also explicitely expressed in Jaaps Thesis - that  
+the requirement " 0  in  P " is a very liberal way of expressing that  
+the set P  of  "potential realizers"  is NOT EMPTY.
+
+The intuition behind modified realizability is much stronger :
+
+a proposition should be a pair  (D,P)   where  D  is a  "domain of  
+potential realizers"  and  P  is an arbitrary subset of  D .
+Of course, the requirement that  D  is a domain is much stronger than  
+the claim that it contains a specified element (namely 0).
+
+Now my suggestion is that 
+
+
+PROPOSITIONS are  pairs  (D,P)  where  D  is an effective domain    
+and  P  is an arbitrary subset of  D .
+By "domain"  we either mean a complete Sigma extensional per or a  
+Sigma replete per with a least element (realized by the code of the  
+totally undefined function from N to N ).
+
+Now one does know that families of pers form a hyperdoctrine over SET  
+and so do families of domains in the sense specified above.
+
+NOW THE POINT IS that this holds also for families of pers with a  
+predicate on it.
+We give the skeleton of a definition below.
+
+We construct the following posetal hyperdoctrine over  SET .
+
+Let DOM be any of the subsets of PER mentioned above.
+
+An object over  X  is a pair  (F,P)  where  F : X -> DOM  and  P   
+associates with any  x  in  X  a subset  P(x)  of  F(x).
+
+Now if  (F,P)  and  (G,Q)  are objects over  X  then  (F,P) |- (G,Q)   
+iff there is a natural number  n  such that
+
+  -  for any  x  in  X :  n realizes a morphism f(x) : F(x) -> G(x)
+
+  -  for all x in  X  and  d  in  P(x) :  f(x)(d)  is in  Q(x)   .
+
+Obviously, any fibre is a pre-Heyting algebra and it is complete in  
+the sense that right adjoints to reindexing exist and are themselves  
+preserved by reindexing.
+
+We also have a generic element over
+
+  Prop := { (D,P) |  D  in  DOM  and   P  is a subset of  D }
+
+where the generic object in the fibre is given by  (F_gen,P-Gen) :
+
+  F_gen(D,P) = D    and    P_gen(D,P) = P  .
+
+Now from this MODIFIED REALIZABILITY TRIPOS one can construct the  
+associated  MODIFIED REALIZABILITY TOPOS .
+
+It remains as an open problem whether it is very different from the  
+one Jaap proposed.
+
+REMARKS  One could as well consider the triposes arising from 
+
+         families of predomains or families of extensional pers.
+
+         Our considerations were directed towards 
+
+         domains of partial elements.
+
+         Of course it is also possible to consider the collection of 
+
+         domains of total elements, e.g. all Delta replete pers
+         (where Delta is the 2-element discrete per) 
+
+         s.t. any constant total function with value  0  or  1  
+
+         realizes some element .
+
+    QUITE GENERALLY ANY SUBCOLLECTION OF PERS CLOSED UNDER PRODUCTS 
+
+    OF FAMILIES OVER UNIFORM omega-Sets  ALLOWS TO DEFINE A   
+
+    CORRESPONDING REALIZABILITY TRIPOS and ITS ASSOCIATED 
+
+    REALIZABILITY TOPOS.
+
+
+P.S.  Maybe all these facts are already well known to Martin Hyland !   
+
+      In his Como paper he says that he has checked several topoi 
+
+      arising from several versions of realizability or functional   
+
+      interpretation in form of "back-side of an envelope 
+
+      computations" .
+      Nevertheless the remarks above - I hope - might be interesting 
+
+      for some people (as e.g. me) who have not had such a close look 
+
+      at the backside of Martins envelopes.
+
+   For toposes derived from functional interpretation at first sight 
+
+   there is the problem that Dialectica categories are not ccc-s but 
+
+   categorical structures suitable for interpreting classical linear  
+
+   logic. But if one looks at the Kleisli coalgebra associated with 
+
+   the  !-comonad  on ecan again get a tripos corresponding to 
+
+   functional interpretation !
+
+
+Thomas Streicher
+=========================================================================
+Subj:	Q-construction  
+Date: Thu, 13 Feb 92 16:35:13 EST
+From: vladimir@math.harvard.edu (Vladimir Voevodsky)
+
+Notice that Quillen's Q-construction can be carried out in a non-abelian 
+category as well. Does anyone know what kind of classifying space one 
+gets applying Q-construction to an arbitrary topos? 
+( The answer for Sets is well-known and nontrivial: stable 
+homotopy type of spheres ). Thanks in advance.
+=========================================================================
+Subj:	Category Theory at the Isle of Thorns
+Date: Thu, 13 Feb 92 15:48 GMT
+From: MMFC6@cluster.sussex.ac.uk
+
+                     CATEGORY THEORY AT THE ISLE OF THORNS
+                          12TH JULY - 17TH JULY 1992
+
+
+The University of Sussex invites you to attend the Sixth International Meeting
+on Category Theory and its Applications to be held at the White House, the Isle
+of Thorns, Chelwood Gate, East Sussex, England, from Sunday, 12th July to
+Friday, 17th July, 1992.  The Isle of Thorns is the Conference Centre of the
+University of Sussex, situated in the Ashdown Forest, about 25 miles north of
+Brighton.
+
+The meeting follows the Joint Meeting of the American Mathematical Society and
+the London Mathematical Society to be held in Cambridge, England from Monday,
+29th June to Wednesday, 1st July, 1992, and the European Congress of
+Mathematicians to be held in Paris, France from Monday, 6th July to Friday,
+10th July 1992.
+
+In order to receive further details of the meeting, together with an
+application form for accommodation at the meeting, please reply by sending your
+name and postal address either electronically to
+c.j.mulvey@cluster.sussex.ac.uk, or postally to:
+
+                    Dr. Christopher J. Mulvey,
+                    Mathematics Division,
+                    University of Sussex,
+                    Falmer,
+                    BRIGHTON, BN1 9QH,
+                    United Kingdom.
+
+Any electronic request received will be acknowledged electronically, and the
+details sent by postal mail.  If you do not receive this acknowledgement, your
+message can be assumed not to have arrived.  In recent times, this has been a
+not infrequent occurrence.
+
+The completed application form must be returned by the closing date of 1st May,
+1992.  
+
+It would be appreciated if you would forward a copy of this notice to anyone
+who might be interested in receiving it who might otherwise not receive it.
+
+
+
+                                             Christopher Mulvey.iv
+=========================================================================
+Subj:	geometric functiors
+Date: Fri, 14 Feb 92 16:27:19 -0500
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+
+
+I would like to know more about geometric functors whose inverse
+images preserve universal quantifiers.  
+I've been told Mikkelson has studied something like these in
+connection with compactification.  Anyone know a reference?
+
+=========================================================================
+Subj:	New address
+Date: Sat, 15 Feb 92 13:58:41 EST
+From: barr@fermat.Math.McGill.CA (Michael Barr)
+
+As a temporary measure, all mail to triples.math.mcgill.ca should now
+be sent to fermat.math.mcgill.ca.
+In the future we will probably install a dept server and use the address
+math.mcgill.ca for all.  This will avoid a disaster when a machine goes
+kaput.  What happened is a long story, but I have bought my last Sun
+computer.  I'd sooner do business with a used car salesman.
+
+Michael
+=========================================================================
+Subj:	Algebraically Complete Categories
+Date:         Sun, 16 Feb 92 15:27+0000
+From:         mxh%dcs.edinburgh.ac.UK@QUCDN.QueensU.CA
+
+In "Re:  Algebraically Complete Categories" dybkjaer@euler.ruc.dk
+(Hans Dybkjaer) writes:
+
+    Though I do not remember any reference, I do not think that more expressive
+    power in terms of functions N->N is gained by adding other initial algebras
+,
+    like List.
+
+If we restrict our attention to initial algebras for a *polynomial*
+functor this is true, but in fact if we have an initial algebra for
+the functor T(X)=1+X+(N=>X) (Coquand-Huet's ordinal notations) we can
+express the functions $F_{\epsilon_0}$ [1] and even $F_{\Gamma_0}$ [2],
+where F_ denotes the fast growing hierarchy. These functions are not
+expressible in G"odel's T. I conjecture that algebraically complete
+categories are at least as expressive as system F.
+
+-- Martin Hofmann
+
+References:
+
+[1] T. Coquand and C. Paulin-Mohring: "Inductively defined
+     types" in LNCS 389
+
+[2] J. Gallier: "What's so special about Kruskal's theorem and the
+ordinal $\Gamma_0$" in Annals of pure and applied logic (July 1991)
+=========================================================================
+Subj:	Re:  Algebraically Complete Categories
+Date: Sun, 16 Feb 92 12:33:39 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Martin Hofmann asks:
+
+  Is it known which functions from N to N are representable in an
+  algebraically closed ccc? (A ccc in which initial algebras for "all"
+  endofunctors exist.)
+
+I don't know about algebraically closed ccc's but I should have answered
+this question in my Durham paper for the algebraically compact case.
+(Algebraically compact means every endofunctor has both an initial algebra
+and a final coalgebra and they are canonically isomorphic.)  The
+only algebraically compact ccc is the degenerated category, so we ask
+for it not to be a ccc but to be a reflective subcategory of an ambient ccc.
+To get off the ground for a (flat) natural numbers object, N, we ask that 
+the algebraically compact category have finite coproducts.  Then the answer
+is, essentially, that every recursive function appears as an endomorphism 
+of  N.  To make this precise, define a "point" of  N  to be a map thereto
+from the terminator, a "standard point" to be either the  0-point or one of
+its successors.  Any endomorphism on  N  induces a partial endomorphism
+on the standard points.  The result is that every recursive partial 
+function is induced by an endomorphism on  N.
+
+Since there is something of a free structure for this theory we can
+not expect to get more than the recursive.
+
+To return to the original question: does someone have a counterexample
+to back up Hans Dybkjaer's comment:
+
+  Though I do not remember any reference, I do not think that more expressive
+  power in terms of functions N->N is gained by adding other initial algebras
+=========================================================================
+Subj:	regular monos, epis and categories
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Mon, 17 Feb 92 14:50:58 GMT
+
+I am a bit confused about what is or should be the correct definitions of
+regular monos, epis and categories.  In the traditional examples from
+algebra there are plenty of limits and colimits around, so it doesn't
+much matter whether you say they're the (co)equalisers of arbitrary pairs
+or their (co)kernel pairs.
+
+Has anyone made use of these concepts in categories which have only the
+bare minimum (whatever that may be) of limits and colimits?
+
+Paul Taylor.
+=========================================================================
+Subj:	Re: Algebraically Complete Categories
+Date: Mon, 17 Feb 92 17:51:54 MET
+From: Thomas Streicher <streiche@fmi.uni-passau.de>
+
+Peter Freyd claims that any partial recursive function arises as  
+Hom(1,f)  for some endomorphism from  N  to  N . 
+
+From his comment I could not see why.
+If one assumes the solution
+
+      D = N + [N->N]
+
+then one may define the recursor  Y  in the usual lambda calculus  
+style.
+
+BUT how can one transform the exponentiation functor in the ambient  
+ccc to a functor on the reflective cat of strict maps ?
+
+I guess one needs a little bit more assumptions :
+
+e.g. that the category of predomains contains the reflective subcat  
+of domains and strict maps which in turn contains the category of  
+total strict maps (by the lift functor) which is equivalent to the  
+category of predomains .
+
+Can one axiomatize this situation in a sufficiently strong way, e.g.   
+that one can transfer the exponentiation functor from the category of  
+predomains to the category of domains and strict maps ?
+
+Thomas Streicher
+=========================================================================
+Subj:	jobad
+Date: Tue, 18 Feb 92 9:17 GMT
+From: MAS010@vaxa.bangor.ac.uk
+
+UNIVERSITY OF WALES FELLOWSHIP
+Applications are invited for a Fellowship for two years from 
+October 1, 1992, open to graduates of any University, and tenable 
+in the School of Mathematics, the University of Wales, Bangor.   
+The Fellowship is primarily for research, and candidates should 
+possess a research degree.  Preference is likely 
+to be given to candidates with expertise related to one or more of 
+Algebraic Topology, Category Theory, Theoretical Computer Science.
+
+The stipend will normally be (sterling) 12,129 (first year) rising to 
+12,860 (second year) (under review).
+
+The Fellowship is sponsored by the University's Validation Board, 
+and further details and application forms may be obtained from the 
+Secretary, University of Wales Validation Board, 22 Park Place, 
+Cardiff CF1 3DQ, United Kingdom, to whom completed forms should be 
+returned not later than March 20, 1992. 
+FAX:  International (+44)-222-230820    UK:  (0222) 230820
+EMAIL for School of Mathematics, Bangor.:
+MAS006@UK.AC.BANGOR
+FAX for School of Mathematics, Bangor: (248)355881
+=========================================================================
+Subj:	Re:  regular monos, epis and categories
+Date: Tue, 18 Feb 92 08:59:29 EST
+From: barr@fermat.Math.McGill.CA (Michael Barr)
+Here is what I think ought to be the definition in a general category.
+Say that f:A --> B is a regular epi if whenever g:A --> C is an arrow with
+the property that [(forall parallel pairs u,v with codmain A)
+(fu = fv ==> gu = gv)] ==> (exists! h:B --> C) (hf = g).  If there is
+a kernel pair, this is equivalent to the more common definition.
+Obviously, the dual definition should be used for regular monics.
+
+Michael
+=========================================================================
+Subj:	Re:  regular monos, epis and categories
+Date: Tue, 18 Feb 92 09:23:48 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Paul Taylor asks for the "correct" definition of regular monos
+and epis.  I think a regular epi has always been an epi that 
+appears as a coequalizer.  The lemma is that if an epi has a pullback
+with itself then it is regular iff it is the coequalizer of the
+relevant pair of maps from that pullback (aka the "kernel pair", the
+"level", the "congruence").  But I can't imagine anyone insisting 
+that split epis are regular only when they have kernel pairs.
+=========================================================================
+Subj:	Re: Algebraically Complete Categories
+Date: Tue, 18 Feb 92 09:35:59 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Thomas Streicher wrote:
+
+>Peter Freyd claims that any partial recursive function arises as  
+>Hom(1,f)  for some endomorphism from  N  to  N . 
+
+>From his comment I could not see why.
+>If one assumes the solution
+
+>      D = N + [N->N]
+
+>then one may define the recursor  Y  in the usual lambda calculus  
+>style.
+
+>BUT how can one transform the exponentiation functor in the ambient  
+>ccc to a functor on the reflective cat of strict maps ?
+
+
+Actually, I did not make that claim since  Hom(1,f)  can't be recursive
+if  Hom(1,N)  is, for example, an uncountably infinite set.  What I said
+was:
+
+ I don't know about algebraically closed ccc's but I should have answered
+ this question in my Durham paper for the algebraically compact case.
+ (Algebraically compact means every endofunctor has both an initial algebra
+ and a final coalgebra and they are canonically isomorphic.)  The
+ only algebraically compact ccc is the degenerated category, so we ask
+ for it not to be a ccc but to be a reflective subcategory of an ambient ccc.
+ To get off the ground for a (flat) natural numbers object, N, we ask that 
+ the algebraically compact category have finite coproducts.  Then the answer
+ is, essentially, that every recursive function appears as an endomorphism 
+ of  N.  To make this precise, define a "point" of  N  to be a map thereto
+ from the terminator, a "standard point" to be either the  0-point or one of
+ its successors.  Any endomorphism on  N  induces a partial endomorphism
+ on the standard points.  The result is that every recursive partial 
+ function is induced by an endomorphism on  N.
+
+There is a missing word, I'm afraid, in that paragraph.  The assumption
+should be that the algebraically compact category is a reflective _lluf_
+subcategory of a ccc (that is, the two categories have the same objects).
+If that word is left out, we are stuck with the fact that the full
+subcategory of the terminator is always a reflective algebraically compact
+subcategory (of any category with a terminator).   
+
+Let  S  be the reflection of the terminator (I denoted it with sigma
+in the Como and Durham papers).  Let  N  be the initial algebra for the
+functor \X. S+X  ( "\" for lambda,  + for the coproduct in the algebraically
+compact subcategory, denoted as "wedge" in the Como/Durham papers).  The 
+result stands as now stated, where  0:1 -> N  is the composition
+
+    1  ->  S  ->  S+N  ->  N     (the first arrow is the reflector, the
+                              second is from the coproduct structure and
+                              the third is the algebra structure on  N)
+
+and the successor map  N -> N  is 
+
+    N  ->  S+N  ->  N     (the first arrow is from the coproduct structure,
+                            and the second is the algebra structure on  N).
+
+The proof requires the existence a fixed-point operator, that is, a 
+dinatural transformation from  \X.(X=>X)  to  \X.X.  A proof is in the 
+Durham paper, which paper contains, I submit, a positive answer to 
+Streicher's question:
+
+>Can one axiomatize this situation in a sufficiently strong way, e.g.   
+>that one can transfer the exponentiation functor from the category of  
+>predomains to the category of domains and strict maps ?
+
+The answer is the theory of algebraically compact categories with
+finite coproducts which appear as reflective lluf subcategories of ccc's.
+=========================================================================
+Subj:	Re: regular monos, epis and categories
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Tue, 18 Feb 92 21:21:34 GMT
+
+Much as I try to get out of the habit of finding counterexamples to things,
+here, for what it's worth, is a category with a map satisfying Mike Barr's
+condition but which is not a coequaliser. 
+
+        * ====> * <==== *
+        | \   / | \   / |  
+        |  \ /  f  \ /  |
+        |   X   |   X   |
+        |  / \  |  / \  |
+        V V   V V V   V V
+        *       *       *
+
+or, more prettily,
+  $$\begin{diagram}
+    \bullet&\pile{\rArr\\\rArr}&A&\pile{\rArr\\\rArr}&\bullet\    \dArr&\SE\SW&\dArr~f&\SE\SW&\dArr\    \bullet&&B&&\bullet
+  \end{diagram}$$
+
+("=" above means a parallel pair. Believe it or not, I typed that without
+an editor!)
+
+A mono satisfying Mike's condition is invertible.  Can't see how to relate
+it to orthogonality (in the sense of factorisation systems) with monos.
+
+What I had in mind was that someone may have used coequalisers in distributive
+categories to model "while".  Only those coequalisers which, as relations and
+hence directed graphs (the node set being the target of the parallel pair),
+are directed arise in this way.
+
+Paul Taylor
+=========================================================================
+Subj:	Re:  regular monos, epis and categories
+Date: Wed, 19 Feb 92 12:38:36 EST
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+To make my remark, ("I think a regular epi has always been an epi 
+that appears as a coequalizer") compatible with Mike Barr's proposed
+definition just understand the word "coequalizer" to allow the case of 
+a (joint) coequalizer of a family of pairs of maps.
+=========================================================================
+Subj:	Re:  regular monos, epis and categories
+Date: Wed, 19 Feb 92 16:28:11 EST
+From: barr@fermat.Math.McGill.CA (Michael Barr)
+
+What Peter says about coequalizers of a family of pairs is consistent
+with what I said so long as you allow a family to be large.  As I wrote
+to PT earlier, these epics are strict, orthogonal to all monics and 
+are coequalizers of their kernel pairs, if such exist.  --Michael
+=========================================================================
+Subj:	Re:  regular monos, epis and categories
+From: street@macadam.mpce.mq.edu.au (Ross Street)
+Date: Fri, 21 Feb 92 10:01:47 EST
+
+My message related to Paul Taylor's question seems not to have been received
+since it has not yet appeared on the Bulletin Board:
+
+I recommend the following two papers in answer to this question of Paul Taylor:
+
+G.M. Kelly, Monomorphisms, epimorphisms, and pullbacks, J. Australian Math Soc
+Volume IX (1969) 124-142
+
+P. Freyd and G.M. Kelly, Categories of continuous functors I, J. Pure Appl
+Algebra Volume 2 #3 (1972) 169-191
+
+Regards,
+--Ross Street
+
+In any case, these references are also consistent with the comments of Mike
+Barr and Peter Freyd.
+
+--Ross
+=========================================================================
+Subj:	Paul Taylor's question
+Date: Fri, 21 Feb 92 23:52:16 +1100
+From: kelly_m@maths.su.oz.au (Max Kelly)
+
+I thought I had sent an answer to Paul Taylor's question,
+but - since I have not seen it on the bulletin board - I
+suppose I slipped up somewhere in transmitting it. Anyway,
+as Ross Street has pointed out in his message of today, the
+whole matter was discussed in detail in my old paper "Mono-
+morphisms, epimorphisms, and pull-backs", J.Austral. Math. Soc.
+9(1969),124-142 - which contains some interesting results,
+besides being couched in the generality that Paul seeks. Were
+I writing it today, I should change it in places; certainly,
+I should speak of ARBITRARY intersections of monos, or of
+strong monos, or of regular monos, rather than of SMALL
+intersections coupled with WELLPOWEREDNESS. There are good
+things in Freyd-Kelly, "Categories of continuous functors I",
+J.Pure Appl. Algebra 2(1972),169-191,but we chose there to
+speak not of STRONG epis but of EXTREMAL ones, these coin-
+ciding under our hypotheses there. In several later papers
+I have refined various points from that very early paper -
+but it contains the guts of the matter.
+
+                           Max Kelly, 21 Feb.
+=========================================================================
+Subj:	The ``monoid'' of endofunctors of some categories
+Date:    Wed, 26 Feb 1992 12:05:01 -0500 (EST)
+From:    D_FELDMAN@UNHH.UNH.EDU
+
+I would like to pose a question, first in the concrete situation where it
+arose, and then more abstractly.
+
+Let  n-MAN  be the category of (topological) n-manifolds and continuous
+maps.  My question is, what are the endofunctors of  n-MAN ?  
+
+To start with, there is no shortage.  Any functor
+                         F: n-MAN --> Set  
+gives rise to an endofunctor F': n-MAN --> n-MAN  as follows.
+On objects  M \in n-MAN ,   F'(M)=M x F(M) (where F(M) is given the discrete
+topology) and for morphisms f \in n-MAN ,  F'(f)(p,x)=(p,f(x)) .
+Let us call these endofunctors of set type.
+The endofunctors of set type form a proper class, since for any
+cardinal k  there is a set valued functor taking M to the underlying
+set of  M x k.  So one may ask if there are any others?  If there are,
+then one can ask a more refined question.
+The endofunctors of n-MAN form a (proper class based) monoid. 
+It still makes sense to consider the monoid ideal generated by the class of
+endofunctors of set type.  One might then try to form the
+quotient monoid and as a measure of how close the class of set type 
+endofunctors comes to exhausting the class of all endofunctors.
+
+Is this construction familiar?  If one considers instead the category
+of pointed n-manifolds, then one has the universal covering space endofunctor,
+which is not of set type; there the quotient monoid will be non-trivial.
+
+A few more thoughts:
+The construction above makes sense in any category with arbitrary
+coproducts, or even just copowers, if that is the right term.
+
+If instead of the category of n-manifolds, I had considered the
+category of connected n-manifolds (and continuous maps), then the
+set type endofunctors are no longer available - so is the monoid
+of endomorphism of this category related the quotient monoid alluded
+to above (same question for pointed connected n-manifolds.)
+
+In the case of the category of n-manifolds (but not pointed n-manifolds)
+there is a large supply of constant maps.  Given an n-manifold M,
+the lattice of subobjects of M.  Fixing another manifold N, consider all
+the constant maps from N to M or from N to a subobject of N.  If an endofunctor
+F preserves constant maps (and nontrivial endofunctors of set type don't)
+then considering all this structure, I don't expect that it will be
+difficult to show that F is trivial.
+
+I would appreciate any reactions or references to similar considerations
+in the literature.  Thanks,
+
+					David Feldman
+					University of New Hampshire
+=========================================================================
+Subj:	Union Conference
+Date: 26 Feb 92 15:07:00 EDT
+From: "NIEFIELD, SUSAN" <niefiels@gar.union.edu>
+
+
+UNION  COLLEGE  MATHEMATICS  CONFERENCES   April 25 and 26, 1992 
+
+CATEGORY THEORY    DYNAMICAL SYSTEMS    NUMBER THEORY
+
+	Keynote Speaker		JOHN MILNOR
+
+The Mathematics Department of Union College is pleased to announce
+its eighth occasional spring conference.  The meeting will feature
+a keynote address by John Milnor, as well as parallel sessions in
+Category Theory, Dynamical Systems, and Number Theory.
+
+-------------------------------------------------------------
+
+Invited Speakers for the Category Theory section:
+
+	       F. WILLIAM LAWVERE  and  JOAN PELLETIER
+
+Invited Speakers for the Number Theory Section:
+
+  KARL RUBIN  "Rational points on elliptic curves with complex multiplication"
+
+  JOSEPH SILVERMAN  "Canonical heights on varieties with morphisms"
+
+Invited Speakers for the Dynamical Systems section:
+
+                           To be announced
+
+-------------------------------------------------------------
+
+			  CONTRIBUTED TALKS
+
+Please contact one of the organizers of the parallel session in which you 
+would like to give a talk.  Such talks should be 20-30 minutes long.
+
+Conference Organizers for Category Theory:
+
+  Susan Niefield     niefiels@union.bitnet  or  niefiels@gar.union.edu
+  Kimmo Rosenthal    rosenthk@union.bitnet  or  rosenthk@gar.union.edu
+
+Conference Organizer for Dynamical Systems
+
+  Michael Frame        framem@union.bitnet  or  framem@gar.union.edu
+
+Conference Organizers for Number Theory:
+
+  William F. Hammond  (SUNY Albany)             hammond@csc.albany.edu
+  Karl Zimmermann    zimmermk@union.bitnet  or  zimmermk@gar.union.edu
+
+Department of Mathematics, Union College, Schenectady, NY  12308-2311
+	    Telephone (518) 370-6246   FAX (518) 370-6789
+
+-------------------------------------------------------------
+
+		   DETAILED CONFERENCE INFORMATION
+
+Department of Mathematics, Union College, Schenectady, NY  12308-2311
+	    Telephone (518) 370-6246   FAX (518) 370-6789
+
+Each session will include invited lectures and shorter contributed talks.  
+Your $25 registration fee will cover the cost of a reception Friday night, 
+and a cocktail hour, buffet dinner, and party on Saturday.  The fee for 
+graduate students is $15.
+
+--------------------------------------------------------------
+
+			    ACCOMMODATIONS
+
+To obtain a room at one of the rates listed below, mention Union College 
+when you call.  A block of rooms has been set aside at the Days Inn.  All 
+of the hotels are within easy walking distance of campus.
+
+1.   Days Inn     (518) 370-0851
+     $49 single       $49 double
+     (includes continental breakfast)
+
+2.   Holiday Inn  (518) 393-4141
+     $58 single       $63 double
+
+3.   Ramada Inn   (518) 370-7151
+     $60 single       $70 double
+
+----------------------------------------------------------------
+
+			       SCHEDULE
+
+Friday Evening, April 24
+
+ 9:00-11:00  Reception  /  2nd floor, Bailey Hall
+
+Saturday, April 25
+
+ 9:30-10:00  Registration, coffee & donuts  /  2nd floor, Bailey Hall
+10:00-12:00  Parallel sessions  /  2nd floor, Bailey Hall
+12:00- 1:30  Lunch  /  Hale House
+ 1:30- 3:30  Parallel sessions  /  2nd floor, Bailey Hall
+ 3:30- 4:00  Coffee  /  Social Sciences 016
+ 4:00- 5:00  Keynote Address by John Milnor  /  Social Sciences 016
+ 5:30- 6:30  Cocktails  /  Hale House Lower Lounge
+ 6:30- 8:00  Buffet Dinner  /  Hale House
+ 8:00-11:00  Dessert and Party  /  Milano Lounge
+
+Sunday, April 26
+
+ 9:00- 9:30  Coffee and donuts  /  2nd floor, Bailey Hall
+ 9:30-12:00  Parallel sessions  /  2nd floor, Bailey Hall
+12:00- 1:30  Lunch  /  Hale House
+ 1:30- 3:30  Parallel sessions  /  2nd floor, Bailey Hall
+
+The parallel sessions will take place in Bailey Hall, 2nd floor.
+A schedule and room assignments will be posted outside the Math lounge.
+
+For more information contact one of the organizers or contact:
+
+Department of Mathematics, Union College, Schenectady, NY  12308-2311
+	    Telephone (518) 370-6246   FAX (518) 370-6789
+
+------------------------------------------------------------
+
+		       REGISTRATION INFORMATION
+
+	 Registration Fee:  $25    (Graduate Students:  $15)
+
+Participants are urged to register in advance so that necessary arrangements 
+can be made.  If this is impossible, you may register on Saturday morning at 
+the conference, but please contact us in advance via e-mail or phone.
+
+If you have any questions or need assistance with your travel arrangements, 
+please call one of the organizers at (518) 370-6246.
+
+------------------------------------------------------------
+
+			  REGISTRATION FORM
+
+For advance registration please send this information by any convenient method 
+to one of the organizers or to the Mathematics Department, Union College at 
+the address above.
+
+
+         Name:
+
+  Institution:
+
+      Address:
+
+         City:
+
+        State:
+
+         Zip :
+
+        Phone:
+
+Email address:
+
+   Check here:     if you are interested in giving a contributed talk.
+
+            Session:
+
+              Title:
+
+=========================================================================
+Subj:	Temporary Lectureships
+Date:        Thu, 27 Feb 92 13:55:59 AST
+From:        <mikef%dcs.ed.ac.uk@UNBMVS1.csd.unb.ca>
+
+To: mikef
+Subject: Temporary Lectureships
+Date: Thu, 27 Feb 92 17:22:57 GMT
+From: Michael Fourman <mikef@ed.dcs>
+
+
+Please circulate the following announcement,
+apologies to those who have already seen this elsewhere.
+
+We hope to make *two* appointments.
+
+- - ---- Start of forwarded text ----
+> Received: from gruna.dcs.ed.ac.uk by dcs.ed.ac.uk id aa00780;
+>           30 Jan 92 16:02 GMT
+> Date: Thu, 30 Jan 92 16:02:01 GMT
+> Message-Id: <16831.9201301602@gruna.dcs.ed.ac.uk>
+> From: h o d <hod@uk.ac.ed.dcs>
+> Subject: Advert
+> To: lmp@uk.ac.ed.dcs
+> Status: RO
+>
+>
+>                            University of Edinburgh
+>                         Department of Computer Science
+>
+>
+>                             Temporary Lectureship
+>
+> Applications are invited for a temporary (five year) lectureship available
+> from October 1992. Applicants should be qualified to Ph.D. level and should
+> be able to teach across a range of topics and levels (including first-year)
+> within the subject.
+>
+> The successful candidate will be expected to make a strong contribution to
+> research in the Department which currently has major interests in parallel
+> computing through its links with the Edinburgh Parallel Computing Centre
+> (EPCC) and in theoretical topics through the work of the Laboratory for
+> Foundations of Computer Science (LFCS). Candidates with excellent records
+> in other areas are also encouraged to apply.
+>
+> The Department has a very high reputation for the quality of both its
+> teaching and research, and has excellent facilities which include over
+> 200 workstations and access to a Connection Machine and a Meiko Computing
+> Surface in EPCC. The existing staff complement consists of 28 lecturing
+> staff (including 5 professors) and over 20 research workers, supported by
+> computing officers and technical and secretarial staff.
+>
+> Initial salary will be on the Lecturer A scale   #12,860 - 17,827
+>
+> with placement according to age, qualifications and experience.
+>
+> Further particulars may be obtained by writing to:
+>
+>     The Personnel Office
+>     University of Edinburgh
+>     1 Roxburgh Street
+>     Edinburgh  EH8 9TB
+>
+> to whom applications should be sent before the closing date of 31 March 1992,
+> or by e-mail from Ms Laura Paterson <lmp@dcs.ed.co.uk>.
+>
+>
+- - ---- End of forwarded text ----
+
+- ------- End of Forwarded Message
+
+=========================================================================
+Subj:	Re: The ``monoid endofunctors of some categories
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Thu, 27 Feb 92 15:50:23 CST
+
+By way of comment on David Feldman's question. One can trivially produce
+lots of endofunctors of n-MAN. Since n-MAN had coproducts, so does
+any functor category targetted in n-MAN, in particular END(n-MAN).
+Second, note that given any endofunctor and a functor from n-MAN to
+SET, one can take a copower of the endofunctor by the set-valued
+functor. (Feldman's "functors of set-type" being an example of this
+in the case where the endofunctor is the identity, but one could
+just as easily take say X |----> pi_0(X) x A for a fixed n-manifold, A.)
+
+It might be better to stick to connected n-manifolds, in which case
+I'm not sure how to construct any endofunctors other than the constant
+ones and the identity.
+
+---David Yetter
+=========================================================================
+Subj:	alternative name for stable functors
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Wed, 26 Feb 92 22:30:14 GMT
+
+A stable functor has a left adjoint on each slice (multiajoint a` gauche,
+to quote Yves Diers).  The word stable was first used in this sense by
+Gerard Berry (I believe), but it's most unfortunate as it already has
+at least one generic meaning in category theory, namely preservation by
+pullbacks.
+
+Can anyone suggest a better name?  Here are some possibilities.
+
+1) Stable endofunctors of the category of sets have power series expansions, so
+	"analytic"
+(after Joyal) is a possibility. It goes nicely with continuous (in the sense of
+Dana Scott) although I don't want it to include preservation of filtered
+colimits.  Also, as used by Andre' Joyal and Franc,ois Lamarche, analytic
+functors need only send pullbacks to weak pullbacks.
+
+2) My definition of a functor U:M->C being stable is that every map X->UC
+in C factor as a *candidate* (diagonally universal map in Diers' terminology)
+followed by Uh for some h:A->B in M. cf factorisation systems.
+This suggests
+	"quotate" or "democratic"
+(ie there are enough candidates).
+
+3) Much of my work on stable functors as morphisms of domains is based on
+a technique of considering slices. This suggests
+	"laminated functor"
+and similarly laminated category, laminated ccc, laminated topos for the
+corresponding well-behaved categories (the last for a category every slice
+of which is a topos, not necessarily with a terminal object).
+
+4) Since they're functors with (non-chosen) adjoints on each slice,
+	"slice-adjunctible"
+is another possibility.
+
+5) I'm also interested in functors which just preserve (binary) pullbacks
+(between categories with them).  I'd like to use the word "cartesian" to
+refer to anything concerned with pullback squares (and not just products),
+and call a pullback-preserving functor
+	"cartesian"
+
+Any thoughts?
+
+Paul Taylor
+
+=========================================================================
+Subj:	New home telephone number for Max Kelly
+Date: Fri, 28 Feb 92 16:25:34 +11
+From: kelly_m@maths.su.oz.au (Max Kelly)
+
+From Mon 2 Mar this will be: (-61-2)- 983-9985.
+ Regards to all, Max - 28 Feb.

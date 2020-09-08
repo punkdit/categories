@@ -1,0 +1,116 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: categories of models of cartesian PROPs
+Date: Thu, 20 Aug 2015 10:28:19 +1000
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <E1ZSUsy-0005Lh-8t@mlist.mta.ca>
+References: <E1ZS3A0-00051h-Q0@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1440096547 2988 80.91.229.3 (20 Aug 2015 18:49:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 20 Aug 2015 18:49:07 +0000 (UTC)
+To: John Baez <baez@math.ucr.edu>, categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Aug 20 20:49:00 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSUtX-0006l4-My
+	for gsmc-categories@m.gmane.org; Thu, 20 Aug 2015 20:48:59 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43327)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSUsx-0002k8-5i; Thu, 20 Aug 2015 15:48:23 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSUsy-0005Lh-8t
+	for categories-list@mlist.mta.ca; Thu, 20 Aug 2015 15:48:24 -0300
+In-Reply-To: <E1ZS3A0-00051h-Q0@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8681
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8681>
+
+Dear John,
+
+Caveat lector - this is all rather off the cuff so there may be some
+mistakes in what follows:
+
+> Suppose you have a category with finite products, say T, and a symmetric
+> monoidal category, say C.   Let [T,C] be the category where
+>
+>     objects are symmetric monoidal functors from T to C,
+>     morphisms are monoidal natural transformations.
+>
+> *1.  What structure beyond a mere category does [T,C] automatically get
+> in
+> this sort of situation?*
+>
+> I haven't thought about this much.  Even if T were just symmetric
+> monoidal,
+> I think [T,C] should get a symmetric monoidal structure due to "pointwise
+> multiplication", just as the set of homomorphisms from one commutative
+> monoid to another becomes a commutative monoid where
+>
+> fg(x) := f(x) g(x)
+>
+> Should [T,C] also have some sort of "comultiplication"?  What extra
+> benefits do we get from T being cartesian?
+
+Yes, this pointwise structure exists; it's part of a monoidal bicategory
+structure on the 2-category of symmetric monoidal closed categories and
+symmetric strong monoidal functors. More generally if T is any symmetric
+pseudomonoidal 2-monad on Cat, then the 2-category of T-algebras and
+strong morphisms is a monoidal bicategory; see:
+
+Hyland, Power "Pseudo-commutative monads and pseudo-closed 2-categories"
+(2002)
+
+In the case you describe it seems that this pointwise structure on
+StrMon[T,C] is actually cartesian. The point is that, since each t in T
+is a cocommutative comonoid naturally in T, if F: T--->C is strong
+monoidal, then each Ft is a cocommutative comonoid, naturally in T. But
+this means that we have maps F ---> F * F for the pointwise tensor
+product on StrMon[T,C], making it into a cocommutative comonoid therein.
+Since these maps are actually natural in F, each object of StrMon[T,C]
+is naturally a cocommutative comonoid, so that the monoidal structure
+must be cartesian. There's some details I haven't checked here, because
+various things need to be strong monoidal functors and transformations,
+but my immediate impression is that all this should work.
+
+> *2.  What further structure do we get if C has some particular class of
+> limits or colimits?*
+
+For any symmetric monoidal T, it's easy to see that LaxMon[T,C] will
+inherit any pointwise limits existing in the mere functor category
+[T,C]. Likewise OplaxMon[T,C] will inherit any colimits. In order for
+some class of these pointwise limits or colimits to restrict back to
+StrMon[T,C], it seems that what you need is for the tensor functor C x C
+----> C and the unit functor I:1---->C to preserve limits or colimits in
+that class.
+
+In particular, if C had filtered colimits or reflexive coequalisers (or
+more generally any kind of sifted colimit) and these were preserved by
+the tensor product functor in each variable separately (which would
+happen if, for example, C were symmetric monoidal closed) then you could
+deduce that, actually, C x C ---> C and 1 ---> C preserved them, and so
+conclude that StrMon[T,C] had filtered colimits / reflexive coequalisers
+computed pointwise.
+
+Dually, if C had coreflexive equalisers preserved by tensor in each
+variable (for example, if C = Vect) then StrMon[T,C] would again have
+pointwise coreflexive equalisers. In particular, if T is cartesian, so
+that we have finite products given by the pointwise tensor product, then
+in this case we have all finite limits.
+
+Richard
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,563 @@
+
+Date: Mon, 2 Jul 90 10:23:54 -0700
+From: plotkin@src.dec.com (Gordon Plotkin)
+
+For an example recent use of ordered algebras see the book by Matthew
+Hennessy,1988, Algebraic Theory of Processes. As references he gives
+Guessarian, 1981, Algebraic Semantics, LNCS Vol99 , the ADJ Paper, Initial
+Algebra Semantics and Continuous Algebras, JACM, Vol24, no1, pp 102-124
+and recommends Nivat and Reynolds,1885, Algebraic methods in Semantics; it has
+useful papers and further references in it. I am sure there is lots, lots
+more, hardly a new thought!
+
+ Gordon Plotkin
+
+Date:        Wed, 04 Jul 90 17:10:55 EDT
+From:        Michael Barr <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+Here is some more on Vaughn's problem.  First off, I checked out the
+reference to the Bloom and Meseguer papers and they both concerned
+theories for which the operations were order-preserving (or even
+omega-sup preserving) and this is neither what Vaughn was proposing nor
+what I, in the last note, suggested.  Thus neither one would allow
+boolean algebras to be models and neither is really relevant.
+
+The other thing I checked out is Linton's paper on functorial semantics
+in SLNM vol. 80.  This is the first paper in volume, with a title
+something like, ``An outline of functorial semantics''.  His theory
+really does implement my suggestion of not having the operations
+preserve the order at all.  He doesn't look at the HSP question.  This
+note will consist of a brief sketch of Linton's paper, followed by some
+ideas of my own on the HSP problem.
+
+Let B be a category.  By a B-based theory, I will mean a category T,
+plus a functor F:B* --> T (B* is the opposite of B) that is an
+isomorphism on objects.  Think of T as having all the arrows of B (Manes
+would call them the crisp maps), together with others (that Manes calls
+fuzzy maps).  This is not literally true because F needn't be faithful,
+but it is a good way to think of this.  A model of this theory is a
+functor M:T --> Sets with the property that MF is representable.  In
+fact, it might be better to describe a model as an M, together with an
+object b of B such that MFa == B(a,b).  (Use == for isomorphic).  The
+reason the second way is better is that it avoids having to make
+choices.
+
+If you work out what this all means, it turns out that a model of the
+theory is an object b of B together with a family of maps Mf:B(a1,b) -->
+B(a2,b) correspnding to each morphism f:Fa_1 --> Fa_2 of T.  Recall that
+every object of T is of the form Fa for a unique object a of B.  This is
+subject to the conditions that if f=Fg:Fa1 --> Fa2, then Mf is the map
+B(g,b) induced by g and that M(f.g)=Mf.Mg.
+
+Where do these theories come from?  Well one way is as follows.  Let U:A
+--> B be a functor.  Let T have objects Fa in one-one correspondence
+with the objects of B.  Define T(a1,a2) = NT(B(a1,U-),B(a2,U-)).  This
+might be a proper class and certain care has to be taken in that case,
+but basically that is how such a category arises.  If U has a left
+adjoint L, then we will get T(a1,a2)=B(ULa2,ULa1), so the question of
+size cannot arise then.  In that case, T is simply the Kleisli category
+of the triple.
+
+Things start to get complicated (not to mention ugly) when you start to
+look at HSP theorems.  If all you want to do is add equations, there is
+no problem.  Here's why.
+
+An equation takes the form f=g for f,g:n --> m in T.  Although quotient
+categories are generally quite nasty, they aren't if you never identify
+objects and we don't.  It is easy to see that if M' is a submodel of M
+and M |- f=g, then so does M'.  Products are even easier and it follows
+from standard category theory that we have an epi-reflective
+subcategory.  For H, we take the set of epimorphisms that are split
+epimorphisms as posets.  Assumng that alpha:M -->> M' is such an
+epimorphism, represented by the split epimorhism b -->> b', and that M
+satisfies the equation, the fact that M' does follows from the square
+
+                 B(n,b) ---->> B(n,b')
+                  !  !          !  !
+                Mf!  !Mg     M'f!  !M'g
+                  !  !          !  !
+                  v  v          v  v
+                 B(m,b) ---->> B(m,b')
+
+especially the fact that the upper arrow is epic.  For the converse, the
+crucial is that every object is the target of a poset-split epi from a
+free algebra and hence if an HSP subcategory contains every free
+algebra, it contains every algebra.  If it doesn't, look at the
+reflections of those free algebras and there you will find the
+equations.
+
+Warning: what follows is ugly and inelegant.  Read on at your own risk.
+
+Now really, it seems highly unlikely that you aren't going to want to
+impose inequalities as well as equalities.  (Time out to complain
+about ``inequation''.  If a neologism is genuinely more informative than
+the old word, fine.  ``Inequality'' is criticized as not being
+antonomous to ``equality''.  A reasonable criticism.  In what earthly
+way is ``inequation'' an improvement?  Down with it!)  Now I have
+dropped the order relation from the operations and now I will need to
+reintroduce them for adding inequalities.  Yes, but that seems to be
+what is required.  Anyone who can find an elegant way of doing this,
+hats off.
+
+Structure is given by a map T(n,m) --> Hom(B(n,b),B(m,b)), the latter
+being the set of functions in sets.  B(n,b) and B(m,b) are taken to be
+the discrete sets of maps so that the operations don't preserve order.
+Now I am going to `remember' that b is ordered and that b(m,b) and in
+turn Hom(B(n,b),B(m,b)) inherit order relations from that of b.  Then I
+am going to suppose that T is a posets-category so that T(n,m) is
+ordered and suppose that the above arrow preserves order.  This doesn't
+make the operations order preserving, but rather that if f < g in the
+order, then the interpretation of f is < the interpretation of g.  Not
+that f and g individually preserve order.  You could transpose the above
+map and find a different way of putting it, but it looks just as ugly.
+If T arises from an underlying posets functor, you will see that T does
+naturally become a posets-category.  Now we can talk about M |- f<g and
+such like.  And we can look at the full subcategory of M that satisfy
+that condition.  It is no trouble to show that it is closed under
+products, strict subobjects and posets split epimorphisms and, while I
+haven't actually checked the details, I believe the converse is true as
+well.  The same argument with free algebras ought to work.  Of course,
+now the free algebra on some poset might be abstractly isomorphic to its
+previous value, but have a richer order relation.  That leads to a new
+inequality.
+
+For both equalities and inequalities, the antecedants will be Horn
+clauses in the predicates of equalities and inequalites.  This
+additional expressive power is what you get by using operations based on
+arbitrary posets, rather then sets.
+
+For the purposes of computer science, one probably ought to restrict to
+the case of an aleph_0, or at most aleph_1 accessible theory.  This
+basically means that need look only at finite (or finite and countable)
+ary operations.
+
+Regards, Mike
+
+Date: 11-JUL-1990 16:14:54.31
+From: PJOHNSON@Wesleyan.bitnet
+
+Dear Mike,  Why the fuss about allowing operations that don't preserve
+the order.  Surely no such operations could arise from algebras for
+triples over POS.  When handed a category B that has a cartesian closed
+structure, and (in your notation) a B-theory F, then it is a reasonable
+condition on a functor M that the composite MF is representable, in the
+sense of B.  To be more precise, M is a model if MF is an exponential
+functor, and all that makes no reference to any ambient set theory.  Lacking
+this definition, I don't see how the equivalence of theories and triples
+could possibly hold (my doubts in the second line).  What am I missing here?
+Sincerely, Paul
+
+From:       Paul Taylor <pt@doc.ic.ac.uk>
+Date:       Thu, 12 Jul 90 11:37:27 BST
+
+A new version of my commutative diagrams package is now available.  Users
+of the version released last September will know that it uses a matrix
+syntax for the objects and morphisms, and is able to stretch horizontal
+arrows to meet the objects at the endpoints. The new version is also able
+to stretch verticals, and the diagonals have been re-worked.
+
+Those who have Mike Barr's package will recognise the following diagram
+from his manual, or from the errata to Toposes, TRiples and Theories
+which he circulated on 25 April.  BITNET users suffering gross corruption
+may like to know that "\rArr?\mu" has a caret (superscript) symbol in
+the middle, whilst "\dArr^?\sigma TT'?" (following 4) has a tilde.
+$$\CellSize=4em
+\diagram
+TT   & \rArr^\mu       & T \\
+     & \SE_{TT\eta'}   & 1      & \SE^{T\eta}     \\
+\dArr^{T\eta'T} & 2    & TTT' &\pile{
+                                 \rArr^{\mu T'}\\
+                                 \rArr_{T\sigma}} & TT'   \\
+     &                 & \dArr^{T\eta'TT' }& 3    & \dArr^{T\eta'T'} &
+                                                       \llap{6\quad}\SE^{id} \\
+TT'T &\rArr^{TT'T\eta'}& TT'TT' &\rArr^{TT'\sigma}& TT'T' & \rArr^{T\mu'}&TT'\\
+\dArr^{\sigma T} & 4   & \dArr~{\sigma TT'}& 5    & \dArr~{\sigma T'}& 7 &
+                                                                \dArr_\sigma \\
+T'T & \rArr_{T'T\eta'} & T'TT' & \rArr_{T'\sigma} & T'T'  & \rArr_{\mu'} & T'\\
+\enddiagram$$
+
+Paper copies of the manual for my package will be available at Como, and
+I shall dispatch electronic copies of the package & manual just before
+I depart for Italy myself (to allow for last minute bug-fixes while I
+print my own papers!).  Known past users should get it automatically,
+but to be sure, please email me, including the word "diagrams" in your
+subject line.
+
+Paul Taylor, Dept. of Computing, Imperial College, London SW7 2BZ, UK
+email   pt@doc.ic.ac.uk   pt%ic.doc@ukacrl   or   ...!mcvax!ukc!icdoc!pt
+phone +44 71 589 5111 x 5057 fax +44 71 581 8024
+
+*************** PS LONDON PHONE NUMBERS HAVE CHANGED *******************
+
+From:       Mr David Murphy <dvjm@cs.glasgow.ac.uk>
+Date:       Wed, 18 Jul 90 16:32:25 BST
+
+
+I am becoming interested in sheaves valued over sets with order; poset
+valued sheaves and frame (or locale) valued sheaves in particular.
+Is there much work on the properties of categories of these sheaves ?
+Can I expect any kind of logic in these categories, or does the logical
+structure only appear in the set valued case ? I'm sorry this question
+is a little vague, but if I knew the question I really wanted to ask,
+I'd understand my problem much better ...
+
+Thanks.
+
+David Murphy
+dvjm%uk.ac.glasgow.cs@nsfnet-relay
+dvjm%uk.ac.glasgow.cs@ukc.uucp
+dvjm%uk.ac.glasgow.cs@UKACRL
+
+Date:        Wed, 18 Jul 90 20:22:03 EDT
+From:        Michael Barr <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+I now realize that I was overlooking something important in my previous
+memos on the subject of theories based on categories other then sets.  I
+am convinced that the questions raised are important, but they are not
+as easy as I thought.  I also remain convinced that operations should
+not be assumed to be morphisms in the underlying category.  Just as
+operations in a theory are not normally morphisms of the theory.
+
+What I forgot is that arrows have codomains as well as domains.  Thus a
+morphism n to m in a category is not---except in a metaphorical sense---
+simply an n-fold of m-ary operations.  So suppose 2 and 3 represent the
+2 and 3 element chains, resp.  An arrow 2 --> 3 does not simply
+represent a pair of 3-ary operations, but rather a pair of 3-ary
+operations of which the first is less than or equal to the second.  This
+means that such inequalities can be built directly into the theory.  It
+also means that the simple-minded HSP theorem I stated before is wrong.
+(It appears to be correct for the special kind of theories in which
+every arrow n-->m factors through the set of components of n, a very
+special case in which there are no non-trivial inequalities between
+distinct operations.)
+
+Now one the most interesting examples is going to be the theory whose
+models is the set of omega-complete posets; that is posets in which
+every increasing chain has a sup.  A lot can be learned by looking at
+that example in some detail.
+
+Begin with an operation theta:omega+1-->omega.  A model of such an
+operation will assign to each increasing sequence x={x_0<x_1<...} a
+sequence {theta_0(x)<theta_1(x)<...<theta_omega(x)}.  The first thing
+that has to be done is to put in the equation theta_i(x)=x_i, which is
+unproblematic and proceeds in the same way as in sets-based theories.  A
+model for the resultant theory assigns to each increasing sequence an
+upper bound for that sequence.  It needn't be the least upper bound,
+even if the sequence is eventually constant or even constant (although
+the latter could be added as an equation).  What is clearly needed is
+to add the condition that if x_i<y for all i, the theta_omega(x)<y.
+
+Now if we think of this in terms of subcategories, it is clear that the
+full subcategory of all models that satisfies is HSP, meaning quite
+precisely that it is closed under strong subobjects, arbitrary products
+and surjective epimorphisms.  Not ALL epimorphisms, even regular ones;
+here is an example.  Let B consist of countably pairs of elements
+u_i<v_i, not otherwise comparable.  Let theta_omega be the sup
+operation, in this case pretty trivial.  Let C be the quotient gotten by
+identifying v_i=u_{i+1}.  C now has a plethora of countable increasing
+sequences, all of which have to be provided with values of theta_omega.
+Since this has to be done freely, the value of theta_omega on each
+sequence (save only for the few that come from sequences in B) must be
+different from those of all the others, even though all the proper
+increasing sequence would have the same sup.  So this regular image
+doesn't lie in the subcategory (which means the inclusion doesn't
+preserve coequalizers, why should it?, and the category doesn't have
+effective equivalence relations).
+
+So provisionally at least, it seems that that ought to be taken as the
+definition of HSP.  It is not hard to show that a full HSP subcategory
+of a category of models that contains all the free algebras is the whole
+thing.  This is clearly a necessary condition.  If such a subcategory
+doesn't contain the free algebras, then any algebra it doesn't contain
+gives rise to an equation.  For example, in the case at hand, the free
+algebra generated by a countable chain is uncountable, since it contains
+one element corresponding to each possible subchain (including ones that
+are repetitious, even constant) and once the condition of being a sup is
+imposed, then the value of theta_omega at each eventually constant
+sequence is set equal to the element in question and the sups of all the
+not-eventually-constant sequences are identified.
+
+So far so good.  It looks like one could hope to say that corresponding
+to an HSP category, you get a quotient theory by imposing either
+equations or inequalities.  The problem is that this doesn't quite lead
+to a quotient theory.  Here's why.  A theory is a category with a
+contravariant functor from the base that is an isomorphism on objects.
+This means that a quotient theory wouldn't identify any objects.  But a
+quotient category that doesn't identify objects is more-or-less like a
+quotient among semigroups; in particular it is surjective.  But I will
+show now that HSP categories don't lead to surjectives at the object
+level.
+
+Let F--|U be the free and underlying functor between B and the category
+E of models.  Let E_0 be an HSP subcategory and let I:E_0-->E be the
+inclusion and L its left adjoint. Then LF--|UI is the adjoint pair
+between E_0 and B.  Let K and K_0 be the Kleisli categories for the
+triples.  These are dual to the theory categories.  The functor K-->K_0
+is induced by the morphism of triples.  K(m,n)=B(m,UFn) and K_0(m,n)=
+B(m,UILFn) and the induced map is surjective iff the map UFn-->UILFn
+is split epi, which isn't in the example above.
+
+I believe that the map from E-->ILE is surjective in this example, but
+it is not always the case.  To see this consider the theory that has
+just one 2-ary operation.  In other words it has an operation, call it
+sigma that takes pairs x<y to sigma(x,y).  Let us assume the equation
+sigma(x,x)=x.  Then the free algebra generated by x<y has just 3
+elements x,y and sigma(x,y).  Now add the inequality y<sigma(x,y).  now
+the free algebra generated by x<y is infinite.  It contains not only the
+three elements above, but also sigma(y,sigma(x,y)) and so on.  On the
+other hand, it does determine an HSP subcategory.
+
+It is clear that an equational theory cannot be just a quotient theory
+in a simple-minded sense; yet it does seem to be the insertion of
+(in)equalities in the right places.  So the question that seems to be
+open is to see in what sense the insertion of these inequalities
+corresponds to equations.
+
+For the converse, going from quotient theories to subcategories,
+analogous questions arise. If we suppose we have a quotient theory, then
+the algebras give a subcategory closed not only under strong subobjects,
+but under all of them.  So here too we see that the traditional idea of
+equational subcategory is not the right one.  So what is the right one?
+
+Another question that is unrelated (as far as I can see) is what is a
+sketch in this context?  When I said take an operation from omega+1 -->
+omega, it was clear that I had in mind some idea of sketching theories,
+not the theory itself.  Although Peter Johnstone described the use of
+sketches as retrograde in a review of TTT (analogous to going back from
+groups to generators and relations), the fact is that a sketch is
+frequently finite and a the theory isn't.  In fact, many interesting
+sketches are quite manageably finite and this is important in computing.
+I think of the difference between sketches and theories as analogous to
+that between lazy evaluation and (whatever is opposite to lazy, perhaps
+beaverish).
+
+Regards, Michael
+
+P.S. All those who object to non-categorical material on the net, please
+stop reading here.  This does not bear on category theory at all (except
+in a very remote sense of having to do with software verification), but
+I think it deserves as wide circulation as possible.  I got it from my
+son who found it on a Microsoft BB.  I cannot vouch for its accuracy,
+but it is consistent with whatever information has leaked about the HT
+fiasco.
+Subject: Hubble Telescope
+Date: Thu Jul 05 10:47:24 1990
+
+Here's something...(and how about that quote in the first
+signature!). I don't know what axaf is.
+
+- adam
+
+|The originator of this message is Dimitri Mihalas.
+|
+|For those who want the condensed version, the software that
+|Perkin-Elmer used to polish the mirror was faulty.
+|
+|Robert W. Spiker, UVa Dept. of Astronomy
+|-------------------------------+ It is truly written that a man has five
+|rws3n@astsun.astro.virginia.edu| times as many fingers as ears, but only
+|  or @bessel.acc.virginia.edu  | twice as many ears as noses.
+|
+|
+|Message follows:
+|----------------------------------------------------------------------
+|in case you have not heard: from a reliable inside source i found out
+|that the problem with ST is that the SOFTWARE driving the polisher was
+|defective. the corrections for spherical aberration were put in with the
+|wrong sign. consequently the mirror is not corrected for sph. abb., but
+|has an added dose of it.
+|
+|the error was not detected during testing because no test with collimated
+|light was ever done. (editorial remark: unthinkable!) apparently this was
+|a $30M economy measure in the face of the Challenger accident. likewise
+|none of the optics were ever tested in vacuum. the primary was and is
+|"perfect" relative to the specified curve; but alas the specification
+|was wrong. sigh.
+|
+|>from my amateur astronomer days (does that include 1990?) i recall that
+|spherical aberration is EASY to detect with the foucault test, which is
+|done with a pinhole, not collimated light. it is hard to believe that
+|ANYONE could have made such a blunder..
+|
+|the only reason that people know this much is that the same software
+|was used for AXAF. the errors there were so huge as to be immediately
+|noticeable, and when the software was corrected, the mirror was "perfect".
+|i don't know whether the information from axaf was available prior to
+|the launch of ST, but it seems that it had to be. in which case one
+|wonders why PE didn't issue a "hold everything!".
+|
+|the future: no chance of bringing the whole telescope down for a refit.
+|best plan is to design compensating optics into the lightpath for future
+|instruments: relatively easy to do. but that will still take 3-5 years.
+|
+|i suppose it's "win a few, lose a few..." but i personally think that
+|nasa, the government, and the people should stick it into PE and TURN
+|it hard until they agree to refund the cost of the mistake and of the repairs.
+|i'm sick of seeing defense and defense-related contractors get away
+|with bloody murder and just get fatter and fatter on the profits.
+|
+|back to theory
+|dimitri
+|---------------------------------------------------------------------------
+
+From:        INHB000 <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+This is, we all hope, the last communication on the subject of HSP
+theorems.  I will probably be giving a talk on it in Montreal and will
+try to have a paper ready for distribution then.  I will cast this in
+terms of posets, although it really all goes through for an arbitary
+locally presentable category and acessible theory.
+
+Let E/M be a factorization system on Pos such that maps in E are epi and
+in M are mono.  At first I thought there were only the two extremal such
+factorizations, but now I think there are others.  In any case, let it
+be chosen and fixed.  Suppose now that T is an accessible triple on Pos.
+The Kleisli category K is then accessible, as is the free functor F:Pos
+-->K.  It is folklore that the category of T algebras is equivalent to
+the category that has as objects pairs (G,b) where b is a poset and M:K*
+(that is the opposite of K) to Set such that GF=Hom(-,b). In fact, you
+don't have to include b as part of the structure, but it is convenient.
+Morphisms are natural transformations of functors (which induce unique
+morphisms between the representing objects.
+
+Let us say that (G,b) is an M/U-subobject of (G',b') if b-->b' is in M.
+By an HSP subcategory of the category C of T-algebras, I will mean a
+subcategory closed under U-split epis, M/U-subobjects and products.  One
+way of getting an HSP subcategory is the following.  By a Horn, I mean a
+diagram in K of the form
+                    Ff
+                 Fn----->Fm
+                  \
+                   \
+                    \
+                   g \
+                      \
+                       \
+                        v
+                         Fk
+
+such that f is in E.  An algebra (M,b) satisfies this Horn if there is a
+factorization as indicated:
+                     MFf
+                MFn<-----Fm
+                  ^       ^
+                   \      |
+                    \     |
+                  Mg \    |
+                      \   |
+                       \  |
+                        \ |
+                         Fk
+
+The full subcategory of objects that satisfy a Horn or any class thereof
+is an HSP subcategory of the category of algebras.  It would be nice if
+the converese were true, but it isn't.  What happens is that you can
+iterate this construction and get a new HSP subcategory.  In the right
+kind of example, the itereated construction is not describable as the
+objects that satisfy a Horn.  I will give some examples later.
+
+The theorem is that every HSP subcategory is given as the intersection
+of a possibly transfinite chain of HSP category each derived from the
+preceding ones either as an intersection at limit ordinals or by
+satisfying a class of Horns at non-limit ordinals.  And, of course,
+conversely.
+
+I still don't know how to characterize a single step HSP subcategory.
+That is probably still interesting.  Nonetheless, this seems to be the
+best one cne can do in general.  I also have a condition sufficient that
+a sequence of Horn constructions is a single one.
+
+A couple of examples.  Consider a theory with one 2-ary operation we
+will call sigma such that sigma(x,x)=x.  The free algebra generated by
+2, which we will represent as x<y has just three elements x,y and
+sigma(x,y).  Now form the Horn
+                    Ff
+              F(1+1)---->F2
+                  \
+                   \
+                    \
+                   g \
+                      \
+                       \
+                        v
+                         F2
+where f:1+1-->2 is the inclusion.  Here we are using the epi/regular
+mono factorization system.  g takes the first generator of F(1+1)
+(which, as it happens is 1+1) to y and the second one to sigma(x,y).  An
+algebras this Horn iff it satisfies
+             x<y ==> y<sigma(x,y)
+In the full subcategory defined by this Horn, the free algebra generated
+by 2 is now infinite, since it now includes elements like
+sigma(x,sigma(x,y)) and sigma(y,sigma(x,y)).  We could now take a Horn
+that forced these last two elements to be equal.  (The top of the Horn
+is F(1+1)-->F1).  The solutions of this Horn are still an HSP
+subcategory of the category of algebras.  But it cannot be given by one
+step because the terms that were set equal weren't even elements in the
+first free algebras.
+
+Here is an example in which we use the regular epi/mono factorization
+system.  Here we can use only equations, since the top of the Horns must
+be coequalizers, which means we are putting in equations.  It might seem
+that in this case, Horns can be composed, but isn't so.  Consider two
+operations phi and psi of type 1-->2.  This means essentially that we
+have operations phi_0<phi_1 and psi_0<psi_1.  Suppose in addition we
+have a 3-ary operation tau such that tau(x,x,y)=x and tau(x,y,y)=y.
+Then the free algebra generated by a single x has infinitely many
+elements like phi_0(x)<phi_1(x) and psi_0(phi_1(x))<psi_1(phi_1(x)), but
+no terms built from tau because there are no non-trivial 3 chains.  Now
+add the equation phi_1=psi_0 and all of a suddent there are 3 chains
+such as phi_0<phi_1=psi_0<psi_1.  Now we could add the equation
+x=tau(phi_0(x),phi_1(x),psi_1(x)).  This equation cannot be stated in
+the first algebra because the necessary elements weren't there.
+
+Here is an interesting example.  Begin with the theory of one omega-ary
+operation I will call lim.  So to each sequence x_0<x_1<... there is an
+element lim x_i.  Add the Horn that embodies the inequalities x_j<lim
+x_i for each j.  This is done by a Horn whose top is F(1+1)-->F2 as with
+the case of a binary op above.  The next Horn looks like
+                    Ff
+              F(1+1)---->F2
+                  \
+                   \
+                    \
+                   g \
+                      \
+                       \
+                        v
+                      F(omega+1)
+The map f is as before.  For g, take the map that takes the first
+element to lim x_i and the other to x_{omega}.  The Horn forces the
+condition lim x_i<x_{omega} and an algebra satisfies it, in addition to
+the ones above iff lim x_i is the least upper bound.  The algebras are
+the omega-CPOs.
+
+There is nothing to prevent you from sticking to discrete theories, in
+which all the ops have discrete domain and domain.  We can also make the
+ops be increasing in some variables and decreasing by looking at Horns
+of the form
+                    Ff
+              F(1+1)---->F2
+                  \
+                   \
+                    \
+                   g \
+                      \
+                       \
+                        v
+                      F(n2+m2)
+Here by n2, I mean the sum of n copies of 2 and similarly with m2.  Thus
+n2+m2 is the sum of n+m arrows, say x_i<y_i for i=1,...,n+m.  Given an
+operation sigma on n+m discrete elements, let g take the first element
+of 1+1 to sigma(x_1,...,x_n,y_{n+1},...,y_{n+m}) and the second element
+to sigma(y_1,...,y_n,x_{n+1},...,x_{n+m}).  An algebra satisfies this
+Horn iff it is increasing in the first n variables and decreasing in the
+last m. Thus this analysis actually can be specialized to the question
+as first posed.
+
+Michael

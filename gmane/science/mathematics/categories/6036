@@ -1,0 +1,107 @@
+Path: news.gmane.org!not-for-mail
+From: Gordon Plotkin <gdp@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Tensor of monads
+Date: Sun, 8 Aug 2010 20:24:27 +0100
+Lines: 67
+Approved: news@gmane.org
+Message-ID: <E1OiQv5-0003FQ-Et@mlist.mta.ca>
+References: <E1OeHE4-0004hy-TA@mlist.mta.ca> <E1Ofu7F-0006gv-8o@mlist.mta.ca>
+Reply-To: Gordon Plotkin <gdp@inf.ed.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1281354883 26174 80.91.229.12 (9 Aug 2010 11:54:43 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 9 Aug 2010 11:54:43 +0000 (UTC)
+Cc: categories@mta.ca
+To: Sergey Goncharov <sergey@informatik.uni-bremen.de>
+Original-X-From: majordomo@mlist.mta.ca Mon Aug 09 13:54:41 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OiQwB-0002vI-Lz
+	for gsmc-categories@m.gmane.org; Mon, 09 Aug 2010 13:54:40 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55258)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OiQvD-00064V-VI; Mon, 09 Aug 2010 08:53:39 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OiQv5-0003FQ-Et
+	for categories-list@mlist.mta.ca; Mon, 09 Aug 2010 08:53:31 -0300
+In-Reply-To: <E1OhWte-0004Gy-6Y@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6036
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6036>
+
+Dear Sergey, In the paper by Hyland,  Levy, Power and myself,
+Combining algebraic effects with continuations, there is a proof that
+the tensor of the continuations monad R^(R^-) (|R| >=3D 2) with itself,
+or, indeed with any monad T with a constant (i.e. such that T(0) is
+not empty), is the trivial monad.
+
+It is not hard to see this directly, via large Lawvere theories. The
+large Lawvere theory L of the continuations monad has:
+
+   L(X,Y) =3D Set(R^X,R^Y)
+
+and so the constants L(0,1) correspond to maps 1 --> R. Further, using
+two distinct constants, any two operations  R^X --> R^Y can be coded
+up into one operation R^(X +1) --> R^Y and then recovered via the two
+constants. Given maps of large Lawvere theories L_T ---> M <----L such
+that the images of any two operations in L_T and L commute, as L_T has
+a constant all (the images of) constants in L are identified, as
+usual, but then so are all images of any two operations R^X --> R^Y
+(which will, for example, include all pairs of projections) and so M
+is trivial.
+
+A more general theorem is also proved in the paper which has as a
+consequence that the tensor of any monad with rank with the
+continuations monad exists.
+
+On Thu, Aug 5, 2010 at 9:06 PM, Sergey Goncharov
+<sergey@informatik.uni-bremen.de> wrote:
+> Thank you Peter and Andr=E9
+> and all the participants of the discussion. It is indeed very helpful.
+>
+> Richard Garner wrote:
+>>
+>> On the other hand, Andr=E9's example raises a question which I find quit=
+e
+>> interesting. Andr=E9 describes two reflective subcategories of the order=
+ed
+>> class of ordinal numbers, and then says that, their intersection being
+>> empty, the tensor of the corresponding idempotent monads cannot exist. I
+>> would be inclined to say that this shows that the coproduct of these
+>> monads
+>> does not exist
+>
+> I guess it applies both to the tensor and to the sum as well as to any ot=
+her
+> case where we need to form a span of monad morphism: S -> R <- T and whic=
+h
+> precisely can not be formed in this case.
+>
+> It looks like there are two counterexamples, both of which are based on t=
+he
+> construction of tricky underlying categories. But what about existence of
+> the tensor over Sets? I guess this is still open. =A0I tried to think abo=
+ut
+> the tensor product of a continuation monad with itself as a possible
+> counterexample, without any success though. Usually, continuation monad
+> performs well when it comes to constructing counterexamples but it is
+> difficult to see what the tensor product of it with itself =A0is supposed=
+  to
+> look like.
+>
+> Thanks again,
+> Sergey.
+>
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

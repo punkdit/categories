@@ -1,0 +1,239 @@
+Date: Fri, 13 Feb 1998 17:40:06 -0800
+From: David Espinosa <espinosa@kestrel.edu>
+Subject: CATS Categorical model for Floyd-Hoare logic?
+
+
+Hopefully this is my last question for a while.
+
+Has there been work on a categorical model for "while programs" (or,
+equivalently, assembly language) and Floyd-Hoare logic?
+
+In the obvious model, objects are predicates on a store, and arrows
+are code sequences mapping stores to stores that satisfy the
+postcondition assuming the precondition.
+
+I'm interested to know:
+
+  (1) What is the structure of this category?
+      Does it have products, sums, etc?
+      What program constructs do they correspond to?
+
+  (2) What is the correct equality on arrows?  I would think that
+      we want the finest equality that yields nice structure.  Then we
+      can collapse afterward to obtain coarser categories.
+
+David
+
+
+Date: Sat, 14 Feb 1998 18:30:29 GMT
+From: "Roy L. Crole" <R.Crole@mcs.le.ac.uk>
+Subject: categories: CATS Re: Categorical model for Floyd-Hoare logic?
+
+There is some work by Paul Taylor on categorical models of while in
+Theory and Formal Methods 1993, Springer Workshops in Computing, p302
+on. 
+
+Roy Crole
+
+ 
+
+From: esik@inf.u-szeged.hu
+Date: Sun, 15 Feb 98 12:43 MET
+
+>From esik Sun Feb 15 12:43:53 +0100 1998 remote from inf.u-szeged.hu
+To: categories@mta.ca
+cc: esik
+Subject: CATS Re: Categorical model for Floyd-Hoare logic
+Date: Sun, 15 Feb 1998 12:43:53 +0100
+From: Esik Zoltan <esik@inf.u-szeged.hu>
+Received: from inf.u-szeged.hu by inf.u-szeged.hu; Sun, 15 Feb 1998 12:43 MET
+Content-Type: text
+Content-Length: 561
+
+
+> Has there been work on a categorical model for 
+> "while programs" (or,equivalently, assembly 
+> language) and Floyd-Hoare logic?
+
+
+The books
+
+E.G. Manes: Predicate Transformer Semantics,
+Cambridge University Press, 1992 
+
+S.L. Bloom and Z. Esik: Iteration theories, 
+Springer, 1993 (see in particular chapter 12
+and 14)
+
+and the paper
+
+S.L. Bloom and Z. Esik: Floyd-Hoare logic 
+in iteration theories, JACM, 38(1991), 887--934
+
+consider such models. The books also contain 
+references to other papers (including 
+papers by Elgot and others). 
+
+Zoltan Esik 
+
+
+Subject: categories: Re: CATS Categorical model for Floyd-Hoare logic?
+Date: Sat, 14 Feb 1998 20:41:25 +0000
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+>Has there been work on a categorical model for "while programs" (or,
+>equivalently, assembly language) and Floyd-Hoare logic?
+
+The first such was developed by Arbib and Manes in the mid-70's.  Manes
+went on to develop the theory in great detail, writing a near-book-length
+article on it a decade later, not sure where it appeared.
+
+  (1) What is the structure of this category?
+
+As I recall it was an additive (semiadditive?) category, with sequential
+composition represent by composition, and choice by sum within homsets.
+The objects were predicates, the arrows were programs (aka predicate
+transformers).
+
+      Does it have products, sums, etc?  What program constructs do they
+      correspond to?
+
+Not sure about products, but it certainly had sums.  which was how
+if-then-else was handled.
+
+  (2) What is the correct equality on arrows?
+ 
+My recollection is that it was fully abstract: the correct equality is
+equality.
+
+Vaughan Pratt
+
+
+Date: Sun, 15 Feb 1998 14:48:43 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: Categorical model for Floyd-Hoare logic?
+
+I see Roy Crole has already answered this question on my behalf.
+The paper to which he refers is called "An Exact Interpretation of While"
+and is "while-1993.dvi.gz" on my page at Hypatia
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+
+Manes' appraoach, as I recall, looks a bit like matrix algebra,
+with finite addition replaced by infinite union.  From a programming
+point of view this seems to me like replacing a WHILE program (which
+doesn't know a priori how many times it is going to go round) with
+an infinite SWITCH/CASE statement indexed by the number of iterations.
+
+My motication (in 1987 this was) was that it only takes finitely many
+characters to write the program, so its semantics should be given
+in a finitary form.  The bit of the (categorical) diagram which does
+the work is a coequaliser, and Barry Jay observed independently that
+this says in categorical language that the WHILE program is the
+"universal loop invariant".
+
+The coequaliser is not the whole story.  It does not say when to exit
+the loop: some modifications to the diagram using pullbacks are needed.
+Nor will coequalisers in any old category do (cd the need for at least
+distributive and preferably extensive categories for if-then-else).
+I spent a long time trying to formulate the need for "stable" coequalisers
+correctly, but this never worked.  It was necessary to fall back on
+stability of the formation of transitive or equivalence closures.
+
+There is a completely rewritten account of my work on WHILE programs
+in Section 6.4 of my book (not yet, I'm afraid, finished).
+
+The category theory does not match up quite as nicely as one would like
+("full abstraction") for WHILE or even IF-THEN-ELSE.  (The interpretation
+is sound, but what I know about it falls short of the equivalence
+which exists, for example, between lambda calculus and CCCs).
+
+My treatment of Floyd-Hoare logic is done in the greatest detail for
+what I call the direct declarative language (with assignments but no
+conditionals or loops).  This is integrated with the categorical 
+account of algebraic or finite-product theories.  I now think I can
+motivate the definition of category and product EASIER on the basis
+of programming than from traditional mathematics.
+
+Floyd-Hoare logic & algebraic theories are in Chapter IV, conditionals
+in Section 5.5.
+
+Paul
+
+PS Yes, I know I've got to get this book finished. There are just not
+enough hours in the day!
+
+
+Date: Sun, 15 Feb 1998 18:05:35 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: correction
+
+> My motication (in 1987 this was)
+This should have been 1984 (and motivation).
+
+I'd also like to add:
+
+I had some difficulty in getting my ideas about stable coequalisers
+across (partly, of course, my fault, because I didn't get the rigt
+answer, involving stable transitive closures, until 1993).  People
+said, "while programs can't possibly be described by finitary first
+order theories, because the theory of the natural numbers is an
+example".
+
+I knew that, and it wasn't what I meant.  This illustrates a subtlely
+in first order categorical logic: that the relevant structure consists
+of *less* than all finite (limits and) stable disjoint colimits. The
+categorical structure corresponding to first order logic is a (Heyting)
+pretopos, which need not have coequalisers of arbitrary parallel pairs.
+For example, the category of compact Hausdorff spaces is a pretopos but
+does not have all stable coequalisers. (I have a feeling I haven't
+got this quite right, and Peter Freyd is going to jump on me. I shouldn't
+be so foolish as to answer mathematical questions on the modem from home!)
+
+More recently, Jiri Rosicky and Peter Johnstone have considered the
+question of what theories can be expressed with finite sketches.
+As Peter Freyd showed in 1972, this includes the natural numbers.
+My results and those of Jiri and Peter are more complicated forms of
+Peter Freyd's original observation.
+
+Finally, since my more recent work on categorical recursion, I no
+longer think that a coequaliser diagram is the best way of presenting
+a WHILE program categorically (though the diagram I would use now
+expresses the same logical content).
+
+Paul
+
+
+Date: Mon, 16 Feb 1998 10:21:38 +1100 (EST)
+From: Barry Jay <cbj@socs.uts.edu.au>
+Subject: Re: categories: CATS Re: Categorical model for Floyd-Hoare logic?
+
+
+
+A semantics of loops (and while-loops) where objects are types (not
+predicates) can be found in
+
+@InProceedings(Jay91d,
+	Author={Jay, C.B.},
+	Title={Fixpoint and loop constructions as colimits},
+	Booktitle="Proceedings Summer Conference on Category Theory, 
+	Como 1990",
+	Editor="A.~Carboni, M.C.~Pedicchio and G.~Rosolini",
+	Series=Lecture Notes in Mathematics,
+	Volume=1488,
+	Publisher=sv,
+	Year=1991,
+	Pages={187--192})
+
+and their use to account for tail-recursion is in
+
+@Article(Jay93a,
+	Author={Jay, C.B.},
+	Title={Tail recursion through universal invariants},
+	Journal=Theoretcial Computer Science,
+	Volume=115,
+	Year=1993,
+	Pages={151--189})
+
+Barry Jay
+

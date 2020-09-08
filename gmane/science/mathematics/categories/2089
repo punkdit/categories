@@ -1,0 +1,184 @@
+Path: news.gmane.org!not-for-mail
+From: Taylor Paul <pt@di.unito.it>
+Newsgroups: gmane.science.mathematics.categories
+Subject: hereditarily finite sets
+Date: Thu, 9 Jan 2003 15:28:43 +0100 (MET)
+Lines: 151
+Approved: news@gmane.org
+Message-ID: <200301091428.h09EShMo006193@pianeta.di.unito.it>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018400 2378 80.91.229.2 (29 Apr 2009 15:20:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:00 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Jan  9 21:16:03 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 09 Jan 2003 21:16:03 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18Wnc9-0001Oy-00
+	for categories-list@mta.ca; Thu, 09 Jan 2003 21:05:37 -0400
+X-AntiVirus: Scanned for viruses by VirusFinder @2001-tecnici@di.unito.it - Email Clean
+X-SpamCheck: not spam (whitelisted), SpamAssassin (score=1.1, required 5.4,
+	DOUBLE_CAPSWORD)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 14
+Status: RO
+Content-Length: 6688
+Original-Lines: 150
+Xref: news.gmane.org gmane.science.mathematics.categories:2089
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2089>
+
+Galchin Vasili <vngalchin@yahoo.com> asked:
+
+> I would like to know if anybody is doing research on applying
+> category theory to hereditarily-finite sets, e.g. where an object is
+> a hereditarily set with some kind of structure to it and morphism
+> that preserves that structure.
+
+> Obviously, the subcategory of SET where objects are just hered. finite
+> sets and morphisms are functions between hered.  finite sets is not
+> "interesting". Also, the case where an object is a hered. set together
+> with an endomorphism doesn't sound "interesting".
+
+I take it that you want to capture the WELL FOUNDED ELEMENT RELATION,
+and also the SUBSET RELATION, from set theory. You may be interested in
+
+1. Gerhard Osius, "Categorical set theory: a characterisation of the
+   category of sets", Journal of Pure and Applied Algebra 4 (1974) 79--119.
+2. Peter Johnstone, "Topos Theory", Cambridge University Press, 1977,
+   of which chapter 9 has a summary of Osius's work.
+3. Andre Joyal & Ieke Moerdijk, "Algebraic Set Theory", LMS Lecture Notes
+   220, Cambridge University Press, 1995.
+4. Paul Taylor, "Intuitionistic Sets and Ordinals", Journal of Symbolic
+   Logic, 61 (1996) 705--744.
+5. Paul Taylor, "Practical Foundations of Mathematics", Cambridge
+   University Press, 1999, especially Sections 6.3, 6.7 and 9.5.
+      http://www.dcs.qmul.ac.uk/~pt/Practical_Foundations
+
+Gerhard Osius's work was significant in 1974 as one of the ways in
+which it was shown that toposes do the same thing as set theory.  In
+fact Osius's is, so far as I am aware, the only 1970s work that
+discusses *set* theory - Benabou, Joyal, Lawvere, Mitchell etc showed
+that toposes do the same thing as some form of *type* theory.  Of
+course, it is the latter that mathematicians actually use when they
+claim to be using set theory as foundations.  (See Section 2.2 of my
+book for a type-theoretic formulation of set theory as mathematicians
+actually use it.)
+
+Joyal and Moerdijk treat a model of set theory as a free algebra
+(within some larger world) for singleton and unions of specified size.
+If you are specifically interested in "finiteness" rather than the
+hereditary aspects in general, this might be the structure that you
+want (page 88).
+
+My JSL paper develops the notions of "transitive set" and "ordinal" in
+the sense of a carrier equipped with a binary relation with particular
+properties. Its style is therefore like order theory or other
+"ordinary" mathematics, since it attributes no ontological significance
+to the relation.  It gives a version of Mostowski's theorem,
+in which the extensional quotient of a well founded relation is
+constructed as the quotient by an equivalent relation, and not
+(as you will find the in the set theory textbooks) using Replacement.
+
+In both Joyal--Moerdijk and my work, it is shown that *several*
+qualitatively different notions of ordinal arise intuitionistically.
+
+What remains of considerable interest (once we have agreed that set theory
+is wrong, wrong, wrong) is Osius's categorical notion of recursion.
+
+The equation       f(x)  =   r( { f(y) | y in [=element_of] x } )
+
+he writes as the (3=1, not 2=2) commutative square
+
+                            P(f)
+  { y | y in x }   P(X)  --------->   P(A)
+       ^            ^                  |
+       |            |                  |
+       |            |                  |
+       |            |                  | r
+       |            |                  |
+       |            |                  |
+       -            |        f         v
+       x            X  ------------->  A
+
+which we may of course generalise to a "homomorphism" from any P-coalgebra
+to any P-algebra, where indeed P may be any functor instead of the covariant
+powerset functor.  The coalgebra admits recursion by definition if there is
+exactly one such "homomorphism" to any algebra whatever.
+
+Osius showed that coalgebra homomorphisms,
+
+              P(h)
+       P(A) --------> P(B)
+        |              |
+        |              |
+        | r            | s
+        |              |
+        |              |
+        v              v
+        A -----------> B
+
+capture the set-theoretic inclusion relation A<B.
+
+The exercises in Chapter VI of my book explore applications of the
+commutative square to recursive functional programs. In particular, a
+categorical treatment is given for the idea of an "accumulator" that
+functional programmers use to write tail-recursive list programs.
+
+Osius's 3+1 square is about RECURSION - defining functions or programs -
+but I have also considered INDUCTION - proving theorems - categorically.
+
+Again this is a property of coalgebras.
+
+                     P(m)
+     P(U)  >------------------------> P(A)
+      ^                                |
+      |                                |
+      |                                | r
+      | ----|                          |
+      |     |                          |
+      |     |                 m        v
+      H  >--------->  U  >---------->  A
+
+Suppose that, for any mono m, if the above diagram is a pullback, then
+m is in fact an isomorphism. The we say that r:PA->A is a WELL FOUNDED
+COALGEBRA.
+
+Sections 6.3 and 6.7 of the book give a sketch of the theory of well
+founded coalgebras, and the final section (9.5) shows how this
+categorical notion of ordinal can be used to define transfinite
+iterates of a functor (for example, internally in a topos)
+
+I have a long unfinished paper containing all of the details about
+well founded coalgebras. This shows how the various intuitionistic
+notions of ordinal (plus some new ones!) arise from considering the
+"lower sets" functor on Pos instead of the covariant powerset on Set.
+
+Besides the functor P and the underlying category, we can vary the
+class of maps that we call "monos".  In its role in the above "broken
+pullback" diagram, this controls the logical strength of the induction
+scheme, ie the number of quantifiers that we allow in the definition
+of the predicates for which induction is applicable.
+
+However, for characterising the ordinals, the interesting variability
+is in the class of "monos" used to define EXTENSIONALITY.
+
+The full subcategory of extensional coalgebras (those for which
+r:PA >--> A is "mono") is closed under arbitrary limits in the
+category of well founded coalgebras and coalgebra homomorphisms.
+However, depending on the particular situation, we need the axiom
+of REPLACEMENT to construct the reflection (left adjoint to the
+inclusion).  One day, I hope to use this to explore this
+frighteningly strong set theoretical principle categorically.
+
+Paul Taylor
+pt@di.unito.it
+www.di.unito.it/~pt
+PS I'm afraid this stuff took a back seat to Abstract Stone Duality.
+
+
+
+

@@ -1,0 +1,74 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Mike Stay <metaweta@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Names for these (di)natural transformations?
+Date: Sun, 21 Jan 2018 19:27:39 -0700
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E1edcY8-0007mF-4A@mlist.mta.ca>
+Reply-To: Mike Stay <metaweta@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Trace: blaine.gmane.org 1516629254 30482 195.159.176.226 (22 Jan 2018 13:54:14 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Mon, 22 Jan 2018 13:54:14 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon Jan 22 14:54:10 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1edcXo-0006YN-M4
+	for gsmc-categories@m.gmane.org; Mon, 22 Jan 2018 14:53:54 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:60276)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1edcZO-0007kS-LR; Mon, 22 Jan 2018 09:55:30 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1edcY8-0007mF-4A
+	for categories-list@mlist.mta.ca; Mon, 22 Jan 2018 09:54:12 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9512
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9512>
+
+Some monads on Set have algebras that can be thought of as data
+structures labeled by elements of a set.  For example, the free monoid
+on a set X can be thought of as the collection of finite lists whose
+elements are in X.
+
+The list monad T has a tensorial strength, a transformation
+    t_{X, Y}: X x TY -> T(X x Y),
+natural in X and Y.  The strength pairs x with each element of the list M:
+    t_{X, Y}(x, M) = T( y |-> (x, y) )(M).
+
+There are other transformations for which I'd like to know names and
+what coherence laws they have to satisfy.
+
+The first is a transformation
+    u_{X, Y}: T(X x Y) -> (X -> TY),
+natural in Y and dinatural in X.  In the case of lists,
+    u_{X, Y}(M) = x |-> flatten( T( (x',y) |-> [y] if x = x', []
+otherwise )(M) ).
+That is, it filters out those pairs in M that do not have x as the
+first element of the pair and lists the second elements of the pairs
+that do.
+
+The second is a transformation
+    v_{X, Y}: T(X -> Y) -> (X -> TY)
+natural in X and Y.  In the case of lists,
+    v_{X, Y}(M) = x |-> T( f |-> f(x) )(M) ).
+That is, it applies each f in M to x.
+
+I've worked out a few of the coherence laws relating these three
+transformations, but I'd like to be sure I haven't missed any.
+-- 
+Mike Stay - metaweta@gmail.com
+http://www.math.ucr.edu/~mike
+http://reperiendi.wordpress.com
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

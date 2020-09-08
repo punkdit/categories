@@ -1,0 +1,56 @@
+Path: news.gmane.org!not-for-mail
+From: zackluo@j4.com
+Newsgroups: gmane.science.mathematics.categories
+Subject: Monads over a subcategory
+Date: Thu, 09 Apr 2009 18:19:47 -0500 (CDT)
+Lines: 23
+Approved: news@gmane.org
+Message-ID: <E1LsG4u-00045r-IO@mailserv.mta.ca>
+Reply-To: zackluo@j4.com
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1239370517 896 80.91.229.12 (10 Apr 2009 13:35:17 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 10 Apr 2009 13:35:17 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Fri Apr 10 15:36:36 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LsGuJ-00041c-RL
+	for gsmc-categories@m.gmane.org; Fri, 10 Apr 2009 15:36:36 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LsG4u-00045r-IO
+	for categories-list@mta.ca; Fri, 10 Apr 2009 09:43:28 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:242
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/242>
+
+There is yet another way to see logic monoid => monad.
+
+Definition. Let N be a full subcategory of a category G. A monad (or clone) over N is a pair (K, T) where K is a category with Ob K = Ob N and T is a functor T: K -> G such that for any A, B, C in N
+(i) K(A, B) = G(A, TB).
+(ii) f(Tg) = fg for any f in K(A, B) and g in K(B, C) (the order of composition is from left to right).
+
+A monad over a category G (in the usual sense) is a monad over the subcategory N = G of G, with K as the Kleisli category and T the right adjoint of the adjunction. A monoid is simply a monad over a singleton (as a subcategory of the category of sets).
+
+Examples: Let G = Set be the category of sets.
+1. A clone over a singleton is (equivalent to) a monoid.
+2. A clone over a finite set is a unitary Menger algebra.
+3. A clone over a countably infinite set is simply called a clone.
+4. A clone over the subcategory of finite sets  is a clone in the classical sense (or a Lawvere theory), which corresponds to a locally finitary clone in the sense of 3 above.
+5. A clone over a one-object category is a Kleisli algebra  in the sense of E. Manes.
+
+For a monad the left algebras (Eilenberg-Moore algebras) represent the smantics (model) and right algebras represent the syntax (logic) of the monad. The theory of right algebras, which is missing from the classical approach to monads, may be applied to study mathematical logic, lambda calculus and recursion theory effectively.
+
+From: Clones and Genoids (http://www.algebraic.net/cag/)
+
+Zhaohua Luo
+
+
+

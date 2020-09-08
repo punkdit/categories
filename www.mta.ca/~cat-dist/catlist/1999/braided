@@ -1,0 +1,355 @@
+Date: Thu, 21 Sep 1995 23:46:24 -0300 (ADT)
+Subject: braided monoidal categories
+
+Date: Thu, 21 Sep 1995 12:47:24 -0700
+From: john baez <baez@math.ucr.edu>
+
+I am posting the following for James Dolan, jdolan@math.ucr.edu:
+
+is there any well-known way to "turn a braided monoidal category
+into a simplicial set"?
+
+in particular, have you ever heard of anything along the following
+lines:
+
+given a braided monoidal category x, get a simplicial set x# as
+follows:
+
+  there's only one 0-simplex.
+  there's only one 1-simplex.
+  the 2-simplexes are the objects of x.
+  the 3-simplexes with 2-faces (in order) a,b,c,d are morphisms
+
+                              a@c -> d@b.
+
+  the 4-simplexes with 3-faces (in order)
+
+                                  k
+                              a@d -> g@b
+
+                                  l
+                              a@e -> h@c
+
+                                  m
+                              b@f -> i@c
+
+                                  n
+                              d@f -> j@e
+
+                                  o
+                              g@i -> j@h
+
+  are commutative diagrams
+
+
+                  k@f            g@m            o@c
+                   ->    g@b@f    ->    g@i@c    ->
+
+          a@d@f                                        j@h@c
+
+                   ->    a@j@e    ->    j@a@e    ->
+                  a@n            *@e            j@l
+
+
+  where "*" is the braiding.
+  the simplexes of dimension 5 and higher are "co-skeletal".
+
+  the degeneracy maps are, well, i didn't try to work out what they
+  should be yet; maybe it's obvious what all of them should be or
+  maybe it isn't, but at worst you could just have x# be a "simplicial
+  set without degeneracy".
+
+
+
+
+there's obviously a relationship between the form of the data
+constituting a 3- or 4-simplex here and the yang-baxter equation (at
+least it's obvious if you can decipher my notation), but i'm not quite
+sure if the relationship is such that what i'm describing is just a
+completely obvious re-statement of the usual relationship between
+simplicial geometry and the yang-baxter equation.
+
+i'd also like to know of a nice description of some extra structure on
+the simplicial set x# that would amount to precisely the ability to
+reconstruct the braided monoidal category x from it.  (that's not
+quite a perfectly well-defined problem the way i just stated it,
+though.)
+
+of course a description of the general relationship between
+simplicial sets and some sort of "tri-categories" more general than
+braided monoidal categories would be just as good.
+
+
+Date: Fri, 22 Sep 1995 15:22:29 -0300 (ADT)
+Subject: Re: braided monoidal categories
+
+Date: Fri, 22 Sep 1995 22:16:09 +1000 (EST)
+From: Ross Street <street@macadam.mpce.mq.edu.au>
+Subject: Re: braided monoidal categories
+
+This is a response to the Dolan/Baez question
+under hard circumstances. I am at Oberwolfach
+and the delay on the computer via Macquarie University
+is extreme.
+
+In fact, in my talks here at the Descent Theory conference I have
+described how to construct a descent n-category
+of a cosimplicial n-category. On the way I defined the nerve of any
+"file". A 1-file is a category, a 2-file is 2-category,
+a 3-file is a Gray-category in the sense of
+Gordon-Power-Street.
+A 1-object, 1-arrow 3-file is a
+braided strict monoidal category. It is also
+possible to define the nerve of a tricategory;
+a 1 object, 1 arrow tricategory is a general
+braided monoidal category.
+Actually, I like to distinguish the
+braided monoidal category V from the
+tricategory which I think of as the
+double suspension of V.
+
+The nerve of the double suspension gives the 2-fold
+delooping of the nerve of V as a
+mere category.
+
+I have written a bunch of notes for this
+conference where this is all spelt out
+pretty well.
+There is also a hint in the published paper
+
+JW Duskin
+The Azumaya complex of a commutative ring
+SLNM 1348 (1988) 107-117
+
+See page 116 where there is an explanation of a
+suggestion from me.
+
+The point about interpreting the 4-simplex in
+a tricategory (or Gray-category)
+is that the pentagonal condition
+becomes a hexagon since there
+is a middle-4-interchange needed in the middle
+of the short path around the hexagon. Since Gray-categories
+don't admit a unique
+horizontal composition of 2-cell, an extra edge is introduced pentagon.
+
+
+Bye for now.
+Ross
+
+
+Date: Mon, 25 Sep 1995 15:43:08 -0300 (ADT)
+Subject: Re: braided monoidal categories
+
+Date: Sat, 23 Sep 95 17:43:48 CDT
+From: David Yetter <dyetter@math.ksu.edu>
+
+Regarding the construction of a simplicial set from a bmc:
+
+        This is a special case of constructing the nerve of a tri-category.
+
+        A monoidal category is a bicategory with one object.
+        A monoid in monoidal categories is a braided monoidal category.
+        A braided monoidal category is a tri-category with one object
+and one map.
+
+        (Citations anyone? or are these all folk theorems?)
+
+David Yetter
+
+
+Date: Sat, 30 Sep 1995 14:25:17 -0300 (ADT)
+Subject: Braided monoidal 2-categories
+
+Date: Fri, 29 Sep 1995 16:27:23 -0700
+From: john baez <baez@math.ucr.edu>
+
+Martin Neuchl and I have written a paper entitled "Higher-dimensional
+algebra I: braided monoidal 2-categories".  In it, we begin with
+a brief sketch of what is known and conjectured concerning braided
+monoidal 2-categories and their relevance to 4d topological quantum
+field theories and 2-tangles.  Then we give concise definitions of
+semistrict monoidal and braided monoidal 2-categories, and show how
+these may be unpacked to give definitions similar to, but not quite
+the same as, those given by Kapranov and Voevodsky.  Finally, we
+describe how to construct a semistrict braided monoidal 2-category
+as the "center" of a semistrict monoidal 2-category, in a manner
+analogous to the construction of a braided monoidal category as
+the center (or "quantum double") of a monoidal category.  As a corollary
+this yields a strictification theorem for braided monoidal 2-categories.
+
+This paper is available by anonymous ftp to math.ucr.edu.  It is
+the file bm2cat in the directory baez.  It is in uuencoded, compressed
+form, because it is 51 pages with lots of pictures.  To print it,
+first save the file as "bm2cat" and do "uudecode bm2cat".  This
+should produce a file "bm2cat.dvi.Z".  Then do "uncompress bm2cat.dvi.Z".
+This should produce a file "bm2cat.dvi," which you can print out
+in the way you usually print dvi files.
+
+John Baez
+
+
+Date: Tue, 3 Oct 1995 20:57:44 -0300 (ADT)
+Subject: Re: braided monoidal categories
+
+Date: Tue, 3 Oct 1995 09:24:12 -0400
+From: Stephen Chase <chase@math.cornell.edu>
+
+This is a belated reply to the query of John Baez regarding the nerve of
+a braided monoidal category.
+
+I'm no expert on these matters and hence may be way off target, but it seems
+to me that, for a *symmetric* monoidal category, the appropriate (and most
+useful) analogue of the classifying space should be the spectrum whose
+homotopy groups yield the algebraic K-theory of the category.  There is a
+simplicial version of spectra which should then provide a suitable nerve.
+Some of the relevant literature on this is listed below (see especially
+[4, Section 5] and [5, pp. 1599-1600]).
+
+[1] D. Grayson, Higher algebraic K-theory II (after D. Quillen), Springer
+LNM 551 (1976).
+
+[2] M. Jardine, Supercoherence, J. Pure Appl. Alg. 75 (1991), 103-194.
+
+[3] G. Segal, Categories and cohomology theories, Topology 13 (1974), 293-
+312.
+
+[4] R. Thomason, Algebraic K-theory and etale cohomology, Ann. Scient. Ec.
+Norm. Sup. 13 (1980), 437-552.
+
+[5] ____________, First quadrant spectral sequences in algebraic K-theory
+via homotopy colimits, Comm. in Alg. 19 (1982), 1589-1668.
+
+It is natural to ask whether a stable weak n-category (in the sense of
+Section 5 of the recent preprint by Baez and Dolan, "Higher-dimensional
+Algebra and Topological Quantum Field Theory") also has a "classifying
+space" spectrum.  Such an object, if it exists, should provide a means of
+constructing cohomolgy theories in which such n-categories are used as
+coefficients, in a manner analogous to that in which cochain complexes
+are used as coefficients in the hypercohomology theories of ordinary
+homological algebra.
+
+In general, I think that algebraic K-theory, which makes heavy use of
+both category theory and stable homotopy theory, should provide clues
+regarding what phenomena to expect in higher-dimensional algebra.
+
+Steve Chase
+
+
+Date: Tue, 10 Oct 1995 10:03:43 -0300 (ADT)
+Subject: Re: braided monoidal categories
+
+Date: Mon, 09 Oct 1995 10:57:22 -0400 (EDT)
+From: MTHDUSKN@ubvms.cc.buffalo.edu
+
+        The question that you raised was exactly the on that I addressed
+in my talk at the recent Dalhousie conference in July. The abstract
+follows but if you will send me a snail mail address, I will send the
+full manscript with the full set of rather pleasing geometric diagrams
+which , in my view, makes the role of the braiding quite transparent.
+
+Abstract: SOME APPLICATIONS OF 2-CATEGORY TECHNIQUES IN THE THEORY OF
+BRAIDED TENSOR CATEGORIES John Duskin SUNY/Buffalo Two years ago, in a
+Montreal talk before an audience composed mostly of category theorists,
+Pierre Cartier suggested that the theory of 2-categories might prove
+useful in the study of quantum groups and related topics. This work is the
+result of one such investigation.
+        A strict tensor (=monoidal) category may be equivalently viewed as
+a monoid object in Cat or a category object in Mon. As a cat-monoid, its
+nerve is a simplicial monoid whose underlying double complex is that of
+2-category with a single object(= 0-cell) with 1-cells provided by the
+objects of the tensor category and composition of 1-cells provided by the
+tensor product . The arrows of the tensor category and their composition
+give the 2-cells and their composition, and the functoriality of the
+tensor product give the *-composition of 2-cells and the "interchange
+law". Strict tensor functors between tensor categories become strict
+2-functors between 2-categories with a single object, and it is from this
+entirely equivalent point of view that we wish to pursue the subject of
+this talk.
+        First, about Joyal-Street "braidings": In any 2-category one can
+form the  double category of "lax-(commutative) squares" which consists
+squares of composable 1-cells together with a 2-cell connecting the
+compositions of the 1-cells on each side of the diagonal. There is an
+obvious  "horizontal composition" of such lax-squares as well as a
+vertical one and they are easily seen to satisfy the interchange law of a
+double category. Moreover, there is an obvious way to introduce 2-cells
+between lax-squares which makes the lax-squares  into a category object
+in 2-Cat which plays it play the role of representing "lax functors
+between 2-categories". Now, among these lax-squares are those which
+define the "epi-center" of the 2-category, the lax squares whose two
+vertical 1-cells are identical and whose horizontal 1-cells are as well.
+This condition forces all of the corners of square to be the same 0-cell
+and to have its "interior" to be 2-cell of the form A*B=>B*A when the
+2-category is that associated to a strict tensor category. We  define a
+(normalized) braiding on a 2-category with a single object C as a
+bi-functorial (i.e., functorial in each variable) section c of the
+epi-center of C cA.B:A*B=>B*A is easily seen to satisfy exactly the
+conditions of the Joyal-Street definition, including naturality, when the
+associativity isomorphisms are all identities, except that cA.B is not
+required to be invertible but we require c1.B=id(B) and cA.1=id(A),
+"normalization".
+        The chief advantage of this 2-category point of view of strict
+tensor categories is that it gives an  easy " geometric" way to handle
+braidings using the Sydney-School's highly efficient way of dealing with
+equations and proofs in 2-categories using "pasting diagrams".
+        Now any 2-category C has its own "oriented geometric nerve" which
+can be defined as the simplicial set which has the 0-cells of C for
+0-simplices and the 1-cells for 1-simplices. 2-simplices x are defined as
+triangles of 1-cells together with a 2-cell x: d1(x)=>d2(x)*d0(x) for
+interior. 3-simplices consist of the "commutative tetrahedra" each made
+of four  compatible 2-simplices of the foregoing sort for which the
+unique composition  of the odd faces is equal to that of the even faces,
+a condition easily expressed as an equality  of the corresponding pasting
+diagrams. Degeneracies are equally well supplied, and the full nerve is
+just the coskeleton of the just defined truncated complex. From a
+simplicial point of view this nerve just corresponds to the classifying
+space of the simplicial category defined by the original 2-category which
+is its fiber. In the case here at hand of a tensor category this
+geometric nerve is a reduced (i.e., only one 0-simplex) simplicial set
+and its fiber is the simplicial monoid defined by the strict tensor
+category. The nerve is thus seen to form the first step in a simplicial
+spectrum as we will see below. (One equally well has the oppositely
+oriented version of this nerve where the 2-simplices interior is of the
+form x:d0(x)*d2(x) =>d1(x). Both are needed in the applications).
+        Now suppose that the tensor category has a braiding c, then the
+nerve of C has the structure of a simplicial monoid which is trivial in
+dimension 0, has the composition of 1-cells (tensor product) as
+multiplication in dimension 1, but uses the braiding to define the product
+of two arbitrary 2-simplices x and y using their interiors by pasting the
+square c(x2,y0) between the triangles x and y to form a new 2-simplex
+whose faces are exactly the products of the corresponding 1-cell faces (so
+that the face maps become homomorphisms). this product is associative and
+untitary (using s0(1) as unit) and the product of commutative tetrahedra
+is commutative. Thus a braiding defines the structure of a simplicial
+monoid on the classifying space of (C) with C as its loop complex. This
+allows us to iterate the construction for one more step and obtain a new
+simplicial set 2(C) which has 1(C) as its fiber.[2(C) is dgenerate in
+dimensins 0 and 1,2-simplices are provided by the 1-cells of C viewed as
+the "interiors of 2-simplices all of whose faces are degenerate.
+3-simplices are squares of 1-cells numbered in the odd-to -even fashion
+with 2-cells now forming the interior. 3-simplices are "commutative cubes"
+made out of the simplicial kernel with the braiding furnishing the
+"missing square"] 2(C) is supplied the structure of a simplicial monoid if
+and only if the braiding is symmetric (c2= id), in which case the
+iteration can be continued indefinitely. (That symmetric monoidal
+categories are infinite loop spaces was first observed by Peter May, so
+what we have here is the low dimensional fragment of the symmetric case.)
+        Now given any structure of a simplicial monoid on the nerve of a
+tensor category viewed in the fashion which has C as its kernel, the
+product of the degenerate 2-simplices s1(x)s0(y) may be seen to define a
+2-cell c(x,y):x*y=>y*x which may be seen to define a braiding on the
+original tensor category C and we have the Theorem: There is a bijective
+correspondence between braidings on a strict tensor category and
+simplicial monoid structures on it nerve. They define   spectra if and
+only if the braiding is symmetric.
+        Note: Most of the objects of interest in braided tensor
+categories such as algebras, co-algebras, bialgebras, braided-algebras,
+commutative algebras modules etc. have a pretty geometric picture when
+put in this 2-category frame, for example, an associative co-algebra is
+just a commutative tetrahedron in the above sense which has all of its
+1-cell faces equal.
+
+
+
+
+

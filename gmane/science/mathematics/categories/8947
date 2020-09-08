@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: discrete probability functor on Rel
+Date: Wed, 27 Jul 2016 12:27:56 +0100
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <E1bSkOK-00085Y-Sl@mlist.mta.ca>
+Reply-To: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1469708842 26602 80.91.229.3 (28 Jul 2016 12:27:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 28 Jul 2016 12:27:22 +0000 (UTC)
+To: "categories@mta.ca" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Jul 28 14:27:13 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bSkPB-0005oL-3n
+	for gsmc-categories@m.gmane.org; Thu, 28 Jul 2016 14:27:13 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34446)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bSkOX-0003l3-Iu; Thu, 28 Jul 2016 09:26:33 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bSkOK-00085Y-Sl
+	for categories-list@mlist.mta.ca; Thu, 28 Jul 2016 09:26:20 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8947
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8947>
+
+Dear all,
+
+I learnt years ago that the following definition gives an endofunctor D
+on the category Rel of sets and relations.  But I have never seen a proof.
+
+- For a set A, let DA be the set of discrete probability distributions
+on A, i.e. functions from A to nonnegative reals whose sum is 1.  (Such
+functions are necessarily countably supported.)
+
+- For a relation R : A -> B, let DR : DA -> DB relate d in DA to d' in
+DB when for every subset U of A, we have d(U) <= d'(R[U]), writing R[U]
+for the set of all R-images of elements of U.  (It follows that for
+every subset V of B, we have d'(V) <= d(R^c[V]), writing R^c for the
+converse of R.)
+
+To show D is a functor, the hard part is to show that, for relations R :
+A --> B and S : B --> C, and d in DA and d'' in DC with (d,d'') in
+D(S.R), there exists d' in DB such that (d,d') in DR and (d',d'') in DS.
+I would like to see a proof of this.
+
+It's the discrete case of Theorem 1 (i)=>(ii) in
+
+https://projecteuclid.org/euclid.aop/1176995659
+
+where two proofs are mentioned.  Firstly, Nawrotski's, which is in
+German, which I can't read:
+
+Nawrotski K (1962) Eine Montonieeigenschaft zufaelliger Punktfolgen,
+Math. Nachr. 24, pages 193-200.
+
+Secondly, Strassen's:
+
+https://projecteuclid.org/euclid.aoms/1177700153
+
+which is in English but beyond my comprehension.  Strassen also cites
+papers of Kellerer (in German) that might also contain a proof.
+
+Can anyone give me a proof, please?
+
+Two other things:
+
+- For the subfunctor D_f of finitely supported distributions, the result
+is easier.  It's the "splitting lemma" of probabilistic powerdomain
+theory, and was proved by Jones, and later by Jung and Tix, and earlier
+by Berge and dall'Aglio (cited by Strassen).  But these proofs (at
+least, the ones I've seen) don't seem to adapt to the countably
+supported case.
+
+- I know that D, being an endofunctor on Set that preserves weak
+pullbacks, has a unique extension to an endofunctor on Rel.  But that
+doesn't help.
+
+Regards,
+Paul
+
+
+
+
+
+
+
+
+
+-- 
+Paul Blain Levy
+School of Computer Science, University of Birmingham
+http://www.cs.bham.ac.uk/~pbl
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

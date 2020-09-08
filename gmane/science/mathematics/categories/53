@@ -1,0 +1,74 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "Kantor dust"
+Date: Sun, 8 Feb 2009 16:31:34 -0800
+Lines: 41
+Approved: news@gmane.org
+Message-ID: <E1LWZYd-0000nY-TQ@mailserv.mta.ca>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1234201377 14465 80.91.229.12 (9 Feb 2009 17:42:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 9 Feb 2009 17:42:57 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon Feb 09 18:44:12 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LWaAp-0006Ma-Tk
+	for gsmc-categories@m.gmane.org; Mon, 09 Feb 2009 18:44:00 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LWZYd-0000nY-TQ
+	for categories-list@mta.ca; Mon, 09 Feb 2009 13:04:31 -0400
+Content-Disposition: inline
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:53
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/53>
+
+Steve Stevenson wrote in part:
+
+>How about IEEE 754 reals? They're really "scientific notation".  There
+>has been a tremendous amount of work on them by William Kahan and others
+>and now are the standard for the numerical analysis world and computers.
+>Since this is the basics for computation, I'd propose that they can be
+>tightened up even more to suit constructivist purposes.
+
+Floating-point reals have terrible theoretical properties;
+they're not even a ring (not even classically).
+This is why even after all of Kahan's good work on algorithms,
+rounding errors are unavoidable (the "Table-Maker's Dilemma").
+
+A floating-point real basically consists of a rational number x
+together with a rational maximum error e, subject to the condition
+that, for some integer n, 10^n x is an integer and e = 10^{-n}/2.
+(There is some redundancy in this simplified description.)
+This is not acceptable constructively, since one cannot prove
+(even with countable choice, impredicative power sets, etc)
+that every real number has such a floating-point representation.
+
+At the very least, one must add some epsilon to the maximum e;
+to keep it simple, I would set e to 10^{-n} (so that 1.6 is acceptable
+as the result of 5/3, although good algorithms would probably give 1.7).
+This would remove rounding errors from the Table-Maker's Dilemma.
+I believe (but I may be wrong through unfamiliarity with the literature)
+that most researchers prefer instead to allow arbitrarily large e,
+thus using interval arithmetic, even though this is more complicated.
+
+(Actual implementations of floating-point arithmetic
+usually also have maximum allowed values of both n and 10^n x,
+leading to rounding errors from underflow and overflow.
+However, overflow errors already arise in natural-number arithmetic,
+so this is not really the fault of the floating-point idea.
+One can delay all such errors until run-time memory limits.)
+
+
+--Toby
+
+
+

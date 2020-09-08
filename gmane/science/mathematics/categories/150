@@ -1,0 +1,163 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: free algebras in ASD
+Date: Thu, 12 Mar 2009 22:02:59 -0700
+Lines: 130
+Approved: news@gmane.org
+Message-ID: <E1LiIgz-0004Xz-Mw@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1236996858 28506 80.91.229.12 (14 Mar 2009 02:14:18 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sat, 14 Mar 2009 02:14:18 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Sat Mar 14 03:15:35 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LiJPQ-0003wc-4a
+	for gsmc-categories@m.gmane.org; Sat, 14 Mar 2009 03:15:32 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LiIgz-0004Xz-Mw
+	for categories-list@mta.ca; Fri, 13 Mar 2009 22:29:37 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:150
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/150>
+
+
+Paul Taylor wrote:
+> I observed that
+>      N   is   overt    discrete    Hausdorff      not compact
+>    2^N   is   compact  Hausdorff   not discrete   overt
+> which Toby attributed to the fact that N is the free algebra for +1
+> whereas 2^N is the cofree coalgebra for a functor that is not directly
+> analogous.
+
+As Toby noted, the functor is x2.  However it is more than merely
+analogous, it is the dual of +1 when 2 is taken to be the dual of 1 (as
+with the original Stone duality for Boolean algebras, more generally
+distributive lattices, more generally yet Chu(Set,2)), product of course
+being the dual of sum.
+
+> ASD might make things clearer here.   Its 1-level theory, like that
+> of an elementary topos, is not self-dual.
+
+By "1-level" do you mean first order?  *-autonomous categories
+constitute a natural elementary notion of abstract Stone duality that is
+self-dual.  What advantage of the elementary fragment of ASD over
+*-autonomous categories justifies its failure of duality?  And how does
+the *-autonomous abstraction of Stone duality relate to ASD's
+abstraction of it?
+
+Toby Bartels wrote:
+> Perhaps the asymmetry is simply between initial algebras and final colagebras.
+> One is a colimit and the other is a limit;
+> there are already several asymmetries between these,
+> such as that products distribute over sums but not vice versa.
+> Indeed, if final coalgebras preserve "some"s,
+> this might be more than just a bad pun.
+
+In general 2 is not the dual of 1.  In order to exhibit a duality
+between N and 2^N, they should be defined in a self-dual category that
+does make 2 the dual of 1.  The most general such that I'm aware of is
+Chu(Set,2) --- Chu(Set,3) embeds Chu(Set,2) (in 3x2 = 6 ways) but it
+makes 3 the dual of 1.  If you know of another category that makes 2 the
+dual of 1 that does not embed in Chu(Set,2) I'm all ears.  In situations
+where 2 is not the dual of 1 it's not clear to me why one should expect
+2^N to turn out to be dual to N in a way where all properties of one
+have their dual counterpart of the other; in Chu(Set,K) the natural
+functor for a final coalgebra dual to N is FX = XxK.
+
+In the context of duality the way to think about X in a Chu space
+(A,X,r) is that it is the dual of A, with the relation r characterizing
+  the particular duality: the dual of (A,X,r) is (X,A,r^) where r^ is
+the converse of r.  The first component constitutes the underlying set
+while the second can be thought of as a generalized frame of open sets,
+generalized by dispensing with the traditional frame operations of
+finite meets and arbitrary sups, with r simply the binary relation of
+membership of points in open sets.
+
+For this reason, absent alternatives to Chu(Set,2) there is no
+alternative to taking 1 to be the Chu space (1,2) if you want 2 to turn
+out to be the dual of 1.  Note that in doing so 2 becomes the Chu space
+(2,1), the coarsest possible consistent topology on 2 (thinking of (2,0)
+as inconsistent).  It should be distinguished from discrete 2 = 1+1,
+which is (2,4).
+
+Taking 1 in Chu(Set,2) to be the discrete Chu space (1,2), the initial
+algebra for +1 is (1,2) + (1,2) + ... = (N,2^N), 2^N being the power set
+of N, a complete atomic Boolean algebra.  The final coalgebra for x2
+when 2 = (2,1), as the dual of the initial algebra for +1, is the dual
+of (N,2^N), namely (2^N,N).
+
+Back to Paul:
+ > The symmetry between
+ >      =>  T  /\   =    some   overt    discrete   free     algebra
+ > and  <=  F  \/   !=   all   compact   Hausdorff  cofree   coalgebra
+ > is very strong in this, but not perfect, because
+ >      N   is   overt    discrete    Hausdorff      not compact
+ >    2^N   is   compact  Hausdorff   not discrete   overt
+ > I have not managed to isolate convincingly the precise point where
+ > the symmetry breaks down.
+
+If ASD makes 2 the dual of 1 then it's suspiciously non-abstract.  The
+only framework I know of for analyzing this duality is Chu(Set,K) for K
+= 2.  Any larger K doesn't work, the concreteness of Chu(Set,3) etc.
+notwithstanding, unless you set things up so that the final coalgebra of
+the functor XxK is independent of the cardinality of K (which can be
+done as Bill Lawvere noted long ago, making 3^N equivalent to 2^N, but
+I'd be very impressed if ASD incorporated Bill's machinery).
+
+In Chu(Set,2), if one takes X in (A,X,r) to be the open sets, with
+r(a,x) membership of a in x, then (N,2^N,r) is discrete (the discrete
+Chu spaces over 2 being those of the form (A,2^A,r)), Hausdorff (by
+discreteness), not compact (because infinite and discrete), and overt
+(because spatial, Elephant C3.1.16).
+
+There are two ways of computing which of these four properties
+(2^N,N,r^) has, depending on whether one applies the elementary
+definitions of the properties to the "chupology" (taking r^ to be the
+converse of membership, i.e. a subset of N can "belong" to an element of
+N), or organizes 2^N as a topological Boolean algebra with the (Stone)
+topology serving to make it a CABA so that the continuous ultrafilters
+are all and only the elements of N, in order for the duality to work.
+Here are the two ways, alongside what Paul claims for comparison.
+
+Chupology   not compact   not Hausdorff   not discrete  ?~?overt?
+Stone          compact       Hausdorff    not discrete  overt
+Paul           compact       Hausdorff    not discrete  overt
+
+(The chupology is not compact because the whole space is not open, in
+fact {} is not "in" any natural number.  It is not Hausdorff because no
+two opens are disjoint to begin with.  And it's obviously not discrete.
+  However unless there's a definition of "overt" meaningful for all
+chupologies I don't know what "overt" would mean for chupologies whose
+open sets don't form frames---they do in (N,2^N) but not in (2^N,N).)
+
+Interestingly we have perfect agreement between the usual Stone topology
+one imposes on a Boolean algebra to make it a CABA (to make the duality
+work) and the topology Paul has in mind for 2^N.  Paul, is this because
+you have in mind the Stone topology, with 2^N obviously being spatial
+hence overt, or for some other reason?
+
+If the former then that is the "precise point where the symmetry breaks
+down:"  you don't take the precise dual of this when dualizing back to
+(N,2^N), which you leave instead as the original Chu space (N,2^N).
+This is a perfectly fine discrete, Hausdorff, overt, but not compact
+space, again in perfect agreement with you.  However comparing it with
+the topology of a topological Boolean algebra is apples to oranges.
+
+If the latter however then I have no explanation and the ball is back in
+your court.
+
+Vaughan Pratt
+
+
+

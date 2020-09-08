@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: dagger not evil
+Date: Thu, 7 Jan 2010 01:50:34 -0400 (AST)
+Lines: 73
+Approved: news@gmane.org
+Message-ID: <E1NT44t-00036a-Or@mailserv.mta.ca>
+References: <E1NSiEF-00008B-Sa@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1262917668 32645 80.91.229.12 (8 Jan 2010 02:27:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 8 Jan 2010 02:27:48 +0000 (UTC)
+To: toby+categories@ugcs.caltech.edu
+Original-X-From: categories@mta.ca Fri Jan 08 03:27:41 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NT4Zf-00018Y-Qc
+	for gsmc-categories@m.gmane.org; Fri, 08 Jan 2010 03:27:40 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NT44t-00036a-Or
+	for categories-list@mta.ca; Thu, 07 Jan 2010 21:55:51 -0400
+In-Reply-To: <E1NSiEF-00008B-Sa@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5491
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5491>
+
+Toby Bartels wrote:
+>
+> Andr=E9 Joyal wrote in small part:
+>
+> >In other words the forgetful functor DCat ---> Cat is wrong.
+>
+> This reminds me of the fact that the obvious forgetful functor
+> Ban -> Set or Hilb -> Set (where now Hilb is just a category,
+> with short linear maps as morphisms, not a dagger category) is wrong.
+> That is, the wrong forgetful functor takes the set of points,
+> whereas the right one takes the set of points in the closed unit ball.
+> (Of course, both functors exist, but the right one is representable.)
+>
+> While the obvious forgetful functor DCat -> Cat is wrong,
+> is there a right one?  In particular, we have a functor
+> Cat -> Grpd that takes the lluf subcategory (LS) of invertible morphisms
+> and the functor DCat -> Grpd that takes the LS of unitary morphisms;
+> is there a functor DCat -> Cat that completes a commutative triangle?
+
+There is, because Cat -> Grpd is right invertible, but that is
+probably not the functor you had in mind.
+
+> Less rigorously but more concretely, can we start with Hilb+
+> (the dagger category with all bounded linear maps as morphisms)
+> and systematically derive the class of short linear maps,
+> much as we can systematically derive the class of unitary maps?
+> Offhand, I don't see how to do this.
+>
+> (Note: "short" = "Lipschitz with Lipschitz constant at most 1",
+> so "short linear" = "bounded linear with norm at most 1".)
+>
+> --Toby
+
+As far as I know, you can't do this with a dagger structure alone;
+however, if you regard Hilb+ as a dagger category with dagger
+biproducts, then the short linear maps are definable as those maps
+f: A -> B satisfying
+
+(1)  there exists some g: A -> C such that
+               (f^dagger o f) + (g^dagger o g) = id,
+
+or equivalently,
+
+(2)  there exists some h: D -> B such that
+               (f o f^dagger) + (h o h^dagger) = id.
+
+In Hilb+, conditions (1) and (2) are equivalent for a given f.  In a
+general dagger category with dagger biproducts, they are not
+equivalent (as the example Rel shows), and one should in general
+define a "short linear" morphism to be an f that satisfies both (1)
+and (2). The always form a dagger subcategory.
+
+In general, invertible + short linear, in this sense, does not imply
+unitary. A counterexample is chosen-basis vector spaces over Z_2 (with
+dot product as inner product), where all maps are short linear, but
+not all invertible maps are unitary.
+
+However, if one further assumes that the category satisfies the
+following strictness condition:
+
+(3)      1 + (g o g^dagger)  = 1     implies    g = 0,
+
+then invertible + short linear implies unitary. So something like your
+"right" forgetful functor DCat' -> Cat can be defined, where DCat' is
+DCat equipped with these additional hypotheses. I don't know whether
+there is a more organic definition that works in greater generality.
+
+-- Peter
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,217 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: the definition of "evil"
+Date: Sun, 3 Jan 2010 03:23:08 -0400 (AST)
+Lines: 184
+Approved: news@gmane.org
+Message-ID: <E1NRRk6-0000Cr-SG@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1262531167 11483 80.91.229.12 (3 Jan 2010 15:06:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 3 Jan 2010 15:06:07 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: categories@mta.ca Sun Jan 03 16:05:59 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NRS1l-0000jk-Bu
+	for gsmc-categories@m.gmane.org; Sun, 03 Jan 2010 16:05:57 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NRRk6-0000Cr-SG
+	for categories-list@mta.ca; Sun, 03 Jan 2010 10:47:42 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5459
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5459>
+
+Dear all,
+
+sorry for sending yet another message on the topic of "evil"
+structures on categories. After some interesting private replies, as
+well as Dusko's latest message (which should have appeared on the list
+by the time you read this), I noticed that not everyone is agreeing on
+the technical meaning of the term "evil". I will therefore attempt to
+state a more precise technical definition of the term as I have used
+it. Perhaps 2-category theorists already have another name for this.
+
+The information definition I had used is that a structure is "evil" if
+it does not "transport along equivalences of categories". I thought it
+was reasonably obvious what was meant by "transport along", but there
+is actually a lot of variation in what people understand this phrase
+to mean.
+
+John Baez gave a pointer to a website containing a technical
+definition of "evil": http://ncatlab.org/nlab/show/evil.
+Unfortunately, this site only speaks of properties, not structures. It
+is easy to state what it means for a property of categories to be
+transported along equivalences: namely, if C has the property, and C
+and C' are equivalent, then C' has the property. Structures are more
+tricky.
+
+Certainly, it should not just mean that if C admits such a structure,
+and C' is a category equivalent to C, then C' admits such a structure.
+(Then "admitting a structure" would merely be a property).  This seems
+to be the definition Dusko has used. If we used this definition, there
+would be almost no evil structures; in particular, the original
+(strict) notion of dagger category is not evil in this sense.  Dagger
+structure is reflected by full and faithful functors, and therefore by
+one half of an equivalence. The point is that the other half won't
+respect it.
+
+At least to me, "transported" suggests that the given equivalence
+respects the structure in some sense. So here is my attempt at a
+definition.
+
+ DEFINITION. Let X be some structure on categories. By this, I mean
+ that there is a given 2-category called X-Cat, whose objects are
+ called X-categories, whose morphisms are called X-functors, and whose
+ 2-cells are called X-transformations, and for which there is a given
+ 2-functor U to Cat, called the forgetful functor.
+
+ We say that X is "transported along equivalences of categories" if the
+ following holds. Given an X-category D', with underlying category D =
+ U(D'), and a category C, and an equivalence (F,G,e,h) of categories D
+ and C, where F: D -> C, G: C -> D, and e: FG -> id_C, h: GF -> id_D,
+ it is then possible to find:
+
+ (1) an X-category C' whose underlying category U(C') is isomorphic
+     [not equivalent!] to C. Let c : U(C') -> C be the isomorphism
+     (i.e., an invertible functor in Cat) with inverse c': C -> U(C');
+
+ (2) an X-equivalence of X-categories (F',G',e',h'), where
+     F': D' -> C', G': C' -> D', e': F'G' -> id_C', and h': G'F' -> id_D'
+     [the concept of equivalence makes sense in any 2-category];
+
+ such that
+
+ (3) (U(F'), U(G'), U(e'), U(h')) = (cF, Gc', cec', h).
+
+ Here, cF and Gc' denotes composition of functors, and cec' denotes
+ whiskering.
+
+ The structure X is called "evil" iff it is not transported along
+ equivalences of categories.
+
+ This finishes the definition.
+
+More informally, "transported along equivalences" therefore means that
+if D and C are equivalent, and D has an X-structure, then there is a
+way to equip C with an X-structure and to lift the original equivalence
+to an X-equivalence.
+
+There was a need for the isomorphism c in the definition, because the
+forgetful functor U : X-Cat -> Cat may not be strictly speaking
+surjective onto 0-cells in some real-life examples (and in any case,
+this forgetful functor may sometimes only be well-defined up to
+isomorphism). It is important that c is an isomorphism, rather than an
+equivalence, because else the definition becomes vacuous (and we are
+precisely interested in notions that are not well-defined up to
+equivalence).
+
+Also note that I didn't require the data (C',F',G',e',h') to be
+unique, not even up to equivalence in X-Cat. Although in practice, it
+will often be unique in this sense. So my definition allows for a
+given structure to be transported "in essentially more than one way"
+along a given equivalence. I am open to strengthening the definition
+to forbid this.
+
+It is clear that the definition generalizes to any 2-category instead
+of Cat, so one might for example speak of structures on monoidal
+categories, or on categories-with-a-distinguished-subcategory, or even
+on dagger categories, as being evil or not.
+
+Here are some examples of structures:
+
+* monoidal structure on categories is non-evil (for concreteness,
+  taken with strong monoidal functors and monoidal natural
+  transformations).
+
+* strict monoidal structure is evil, when taken with strict monoidal
+  functors. With strong monoidal functors, I think it is still evil,
+  but I am not sure at this late hour.
+
+* dagger structure is evil. More generally, any structure X with which
+  one can equip FHilb (the category of finite dimensional Hilbert
+  spaces), and which allows a definition of unitary map that includes
+  all identities and that coincides with the usual one on FHilb, and
+  for which the full and faithful X-functors preserve and reflect
+  unitary maps, is evil. Here is the technical argument again, as it
+  seems to have been misunderstood. The forgetful functor
+  F : FHilb -> FVect induces an equivalence, whose other half
+  G : FVect -> FHilb requires a choice of inner product on each finite
+  dimensional vector space. Define such a G in some way. Fix some
+  X-structure on FVect. Let V be some non-trivial vector space, and
+  let i and j be two different inner products on V. Then (V,i) and
+  (V,j) are Hilbert spaces, so different objects of FHilb.  Consider
+  the morphism (in FHilb) f:(V,i) -> (V,j) given by f(v) = v. It is
+  evidently not unitary. However, we have F(f) = id_V: V -> V, which
+  is unitary, no matter the X structure that was chosen on FVect.
+  So F does not reflect unitary maps. QED.
+
+  Note that it is F, not G, that is causing problems. As remarked
+  above, since G is full and faithful, it is possible to successfully
+  reflect the dagger structure along G to FVect. This amounts to
+  arbitrarily choosing some inner product on each vector space. But it
+  won't be compatible with F.
+
+  Also note that this argument is independent of the definition of the
+  2-cells of X-Cat. So it is even valid for some weaker definitions of
+  "evil", for example, if one only requires F and G to lift to
+  X-functors, rather than to an X-equivalence.
+
+  I will argue that any structure X that claims to be a "weak" version
+  of dagger structure should at least satisfy the conditions I listed
+  as preconditions for the argument above. This is the basis for my
+  claim that no construction such as Toby's or Dusko's can succeed in
+  producing a non-evil equivalent of dagger structure.
+
+* the structure of "being equipped with a chosen Frobenius structure
+  on each object" is evil, relative to monoidal categories.
+
+* the structure of "being equipped with an identity-on-objects
+  covariant functor" is evil.
+
+* more generally, the structure of "being equipped with a chosen
+  subcategory" is evil, unless the subcategory is required, as part of
+  the structure, to contain all isomorphisms (in which case it is not
+  evil).
+
+* poset-enrichment (with composition f o g monotone in f and g) is
+  non-evil.
+
+* The following structure is evil: equip a category with a partial
+  order on each hom-set, so that composition f o g is monotone in g,
+  but not necessarily in f. Proof: Given such a structure on any
+  category, define g:A->B to be "monotone" if (X,g) : (X,A) -> (X,B)
+  is monotone for all X.  Consider the category whose objects are
+  partially-ordered sets, and whose morphisms are *all* functions
+  (thanks to Fred Linton for this example). It can be equipped with
+  the aforementioned structure, by giving the pointwise ordering to
+  the functions in each hom-set.  As a category, it is equivalent to
+  Set. The rest of the argument proceeds as above for Hilbert spaces,
+  with "monotone" instead of "unitary": take some non-trivial set with
+  two different partial orders, then the identity is non-monotone,
+  etc.
+
+The last example is almost an enrichment in Poset, but instead of the
+usual cartesian product on Poset, we have used another bifunctor on
+Poset, given by cartesian product P x Q of the underlying sets, with
+the non-standard order defined by (p,q) <= (p',q') iff p=p' and
+q<=q'. This operation is bifunctorial and associative, but not quite
+monoidal, because it lacks a right unit. More generally, taking
+"enrichments" in such almost-monoidal categories often yields evil
+structures. An analogous example works for the category of finite
+abelian groups and all set-theoretic functions.
+
+Happy new year to all, -- Peter
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

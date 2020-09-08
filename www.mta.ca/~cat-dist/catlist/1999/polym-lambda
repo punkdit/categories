@@ -1,0 +1,346 @@
+Date: Thu, 18 Mar 1999 11:33:10 -0300 (EST)
+From: Elaine Gouvea Pimentel <pimentel@dcc.ufmg.br>
+Subject: categories: Polymorphic lambda-calculus
+
+Hi!
+
+I'd like to know if there is any categorical model for
+polymorphic lambda-calculus.
+
+
+Thanks,
+
+Elaine.
+
+
+
+Date: Thu, 18 Mar 1999 19:31:58 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: polymorphic lambda-calculus.
+
+Elaine Gouvea Pimentel would "like to know if there is any categorical model
+for polymorphic lambda-calculus".
+
+Oh dear. I can see that this one is going to haunt me for the rest of
+my life, besides provoking some "discussion" here.  I wrote my thesis
+on this subject.
+
+Perhaps I will be personally rid of this albatross when my book comes out.
+Chapter VIII contains the definitive account of [my] notion of a "category
+with a class of display maps" (or, more briefly, display category).  This
+is how I deal with dependent types at the algebraic level (superseding
+essentially algebraic theories encoded as categories with all finite limits).
+In my view, discussion of quantifiers (whether first order or over types)
+should be based on this, as is in fact done in Chapter IX.
+
+There are several different things that you might mean by "polymorphic
+lambda-calculus", and no doubt Bart Jacobs or Thomas Streicher will
+contribute an overview of the "Barendregt cube".  [Robert Seely also
+did some work in this area before most of the other people.]
+
+One thing is that types are expressions involving type variables, with
+a universal quantifier over types. Girard calls this System F, and there
+is an introductory account in "Proofs and Types" - Girard's book that
+Yves Lafont and I translated.
+
+Numerous domain theoretic models of System F were found in the later 1980s,
+using both "Scott"-like "continuous" domains and "stable" domains which
+were introduced by Berry and popularised by Girard.
+
+ALL of the domain theoretic models, so far as I am aware, had THE SAME
+interpretation of type-dependency and the quantifier.  I have seen this
+interpretation attributed to Girard, but I regarded it as "well known"
+when I was writing my thesis - before Girard's models - and my guess is
+that it is due to Gordon Plotkin, probably in the "Pisa notes".
+
+This interpretation of the dependency of the type T[x] on x:X, where X
+is in the first instance a domain (and in particular a poset, therefore
+a category) is most simply described as a functor T:X->Dom^adj
+where Dom^adj denotes the category whose objects are domains and whose
+morphisms are [left] adjoint pairs of continuous functions. Many authors
+took embeddings (monos with continuous right adjoints) instead, but
+the restriction is irrelevant.  The functor T must also be continuous
+in the sense of taking directed joins to filtered colimits of left adjoints,
+which are also the cofiltered limits of the right adjoints.
+
+For the stable case, replace "continuous" by "stable", where a stable
+functor preserves pullbacks, and the unit and counit of the adjunctions
+have pullbacks for their naturality squares.   This situation is so
+over-constrained that some pretty amazing things (that I discovered but
+never wrote up) happen.
+
+The universal quantifier is most concisely described as the category of
+sections of the fibration (Grothendieck construction) corresponding to
+the functor T above.
+
+That was for first order dependency over a particular domain X.  For
+dependency over all domains (System F), replace X by Dom^adj.  It doesn't
+matter whether this category happens to be one of your (poset) domains,
+so long as you only want System F. (At the time of my thesis I considered
+this to be cheating, and laboriously constructed a poset-domain that
+"covered" Dom^adj in a suitable sense.  Thierry Coquand and his co-authors
+did not consider this to be cheating, and thereby beat me to finding
+a model of System F.)  If Dom^adj really is a domain then you get a
+model of Coquand's Calculus of Constructions.
+
+Such a model of CoC was described by Martin Hyland and Andy Pitts in the
+Boulder proceedings in 1987.    If I still had the inclination to work
+on such matters, I could give a simpler version of their model (replacing
+the lex categories by display categories).  This was on the "to do" list
+throughout the writing of my book - I wanted to include this "simplified"
+version as a sequence of exercises - but it was always just over the 
+horizon of what could be done with the tools available, given that the
+necessary domain-theoretic techniques had been debarred from the book
+from its conception.
+
+Another model, whose types are named by countable groupoids (or by the
+corresponding presheaf toposes of G-sets) is to be found in my paper
+"Quantitative Domains, Groupoids and Linear Logic" in the proceedings
+of the 1989 Manchester CTCS.  When I was writing this paper I tried to
+get Francois Lamarche to read it, but he said he didn't know anything
+about / hated permutation representations.  Nobody else, so far as I can
+gather, has ever read it, and now I can no longer follow the most 
+difficult calculations.  However, it is a very pretty model nevertheless.
+
+All of this was a bit of a Holy Grail.  When you come to calculate the
+interpretations of types like   Pi X. X -> (X->X) -> X,  they turn out
+to be the most horrendous mess.   The "coherence space" model in "Proofs
+and Types" may well be the only one in which you can give an explicit
+desciption of Pi X. X -> X -> X, and even that has four elements, where
+there are only two closed lambda terms.
+
+There are of course other ways of finding models of the polymorphic
+lambda calculus, such as using the "small complete category" in Hyland's
+effective topos, but I'll leave someone else to write about that.
+
+In conclusion, this particular dragon's den has already been explored,
+and the corpses are still there to prove it.
+
+Paul
+
+You can find this stuff on my page at Hypatia,
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+and on the corresponding pages of the other people mentioned above.
+
+
+Date: Thu, 18 Mar 1999 18:26:32 -0500 (EST)
+From: "R.A.G. Seely" <rags@math.mcgill.ca>
+Subject: categories: Re: Polymorphic lambda-calculus
+
+My 1987 JSL paper is a start - "Categorical Semantics for
+Higher-Order Polymorphic Lambda Calculus", JSL 52 (1987) 4, 
+pp 969 - 989.  In particular, look at section 3, where the
+model of closure operators is described in categorical terms.
+
+= rags =
+
+On Thu, 18 Mar 1999, Elaine Gouvea Pimentel wrote:
+
+> I'd like to know if there is any categorical model for
+> polymorphic lambda-calculus.
+
+
+=================================
+<rags@math.mcgill.ca>
+<http://www.math.mcgill.ca/~rags>
+
+
+Date: Fri, 19 Mar 1999 14:51:20 +0100
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Subject: categories: They often come in pairs
+
+Perhaps some precisions should be added to Paul's msg.
+
+> Another model, whose types are named by countable groupoids (or by the
+> corresponding presheaf toposes of G-sets) is to be found in my paper
+> "Quantitative Domains, Groupoids and Linear Logic" in the proceedings
+> of the 1989 Manchester CTCS.  When I was writing this paper I tried to
+> get Francois Lamarche to read it, but he said he didn't know anything
+> about / hated permutation representations.  Nobody else, so far as I can
+> gather, has ever read it, and now I can no longer follow the most
+> difficult calculations.  However, it is a very pretty model nevertheless.
+
+Because of my thesis' work (on not-unrelated subjects to those mentioned
+by Paul) I had already dealt with permutations in power types when Paul
+started pushing his groupoid models. They indeed give rise to "the most
+horrendous mess". This was a long time ago, my memory is vague, but I
+probably told him, or hinted, that in my opinion they were most likely a
+blind alley. I still think that if I started working again in this
+field, the problem I would zero in would be to get rid of the
+permutation groups, by "unraveling" them by the means of actions (the
+groupoid associated with the action of a group on a set can be made much
+simpler than the group itself). The point of semantics is to give you
+insights about the logic, so simplicity is... a big plus.
+
+And since I refereed his CTCS paper, I *did* read it.
+
+Francois
+
+
+Date: Fri, 19 Mar 1999 19:05:39 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: my groupoid model
+
+
+Francois Lamarche says:
+> I still think that if I started working again in this field,
+> the problem I would zero in would be to get rid of the permutation groups,
+
+
+This would be a great pity.
+
+
+Girard's coherence spaces (see "Proofs and Types"), ordinary relational
+algebra (in which Shroeder identified the par, writing   +,   for it,
+I think,  in 1895)  and my model with groupoids all illustrate a common
+theme in the workings of models of linear logic.
+
+In all of these structures, there are extremely natural ways of defining
+the structure on disjoint unions and cartesian products,  and of turning
+the structure inside out or upside down.  These turn out to be the additive,
+multiplicative and negative connectives in linear logic.
+
+There are less natural ways of defining the structure on powersets,
+finite powersets and other variations on this theme.  These are the
+exponentials.  It is important to note that there are several different
+exponential operations available to interpret ! and ? .
+
+Girard got function spaces out of such constructions (as did Francois,
+myself and numerous other people).   What I hope to show soon is how to
+get higher order logic too.
+
+Paul
+
+
+Date: Fri, 19 Mar 1999 16:13:02 +0000 (GMT)
+From: Ronnie Brown <r.brown@bangor.ac.uk>
+Subject: categories: Naive question on Polymorphic lambda-calculus, etc
+
+This is written from the point of view of someone who would like to see a 
+computational system which is much nearer to real mathematics than the 
+current widely used systems (Maple, Mathematica, and various more 
+specialised systems, e.g. Singular). 
+
+Of these the only one which is clearly typed is Singular. There is also 
+AXIOM,  which has parametrised types, types can be variables, there 
+is multiple inheritance and coercion. It looks much nearer to what should 
+be mathematics. On the other hand, its literature 
+does not include any theory of the type system, so consistency is not 
+clear, and it is not generally used. 
+
+So my question is: does all this general theory of types give a clear 
+indication as to what should be, not necessarily a final, but certainly a 
+convenient theory adequate for expressing a majority of present day maths?
+
+Let's make up a test case: one should be able to code reasonably 
+conveniently the type  of a general groupoid acting on exterior algebras 
+over a commutative ring, and also of course the category of such objects. 
+A groupoid acting on exterior algebras with zero multiplication should be 
+coercible to a groupoid acting on graded modules. 
+
+I would prefer the sytem to be so simple that it will allow tests for 
+consistency of new proposed types. Also it should be easy to understand, 
+since it would represent nicely current practice. 
+
+Is this idea a mirage? 
+
+Ronnie
+
+
+
+
+
+
+
+On Thu, 18 Mar 1999, R.A.G. Seely wrote:
+
+> My 1987 JSL paper is a start - "Categorical Semantics for
+> Higher-Order Polymorphic Lambda Calculus", JSL 52 (1987) 4, 
+> pp 969 - 989.  In particular, look at section 3, where the
+> model of closure operators is described in categorical terms.
+> 
+> = rags =
+> 
+> On Thu, 18 Mar 1999, Elaine Gouvea Pimentel wrote:
+> 
+> > I'd like to know if there is any categorical model for
+> > polymorphic lambda-calculus.
+> 
+> 
+> =================================
+> <rags@math.mcgill.ca>
+> <http://www.math.mcgill.ca/~rags>
+> 
+> 
+
+Prof R. Brown, School of Mathematics, 
+University of Wales, Bangor      
+Dean St., Bangor, Gwynedd LL57 1UT, United Kingdom                               
+Tel. direct:+44 1248 382474|office:     382475
+fax: +44 1248 383663    
+World Wide Web:
+home page: http://www.bangor.ac.uk/~mas010/
+New article: Higher dimensional group theory
+
+
+Symbolic Sculpture and Mathematics:
+http://www.bangor.ac.uk/SculMath/
+Mathematics and Knots:
+http://www.bangor.ac.uk/ma/CPM/exhibit/welcome.htm
+
+
+Date: Fri, 19 Mar 1999 19:23:37 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: Ronnie Brown's type-dream
+
+Ronnie Brown asked,
+> This is written from the point of view of someone who would like to see a 
+> computational system which is much nearer to real mathematics than the 
+> current widely used systems (Maple, Mathematica, and various more 
+> specialised systems, e.g. Singular). 
+....
+> So my question is: does all this general theory of types give a clear 
+> indication as to what should be, not necessarily a final, but certainly a 
+> convenient theory adequate for expressing a majority of present day maths?
+> 
+> Let's make up a test case: one should be able to code reasonably 
+> conveniently the type  of a general groupoid acting on exterior algebras 
+> over a commutative ring, and also of course the category of such objects. 
+> A groupoid acting on exterior algebras with zero multiplication should be 
+> coercible to a groupoid acting on graded modules. 
+> 
+> I would prefer the sytem to be so simple that it will allow tests for 
+> consistency of new proposed types. Also it should be easy to understand, 
+> since it would represent nicely current practice. 
+>
+> Is this idea a mirage? 
+
+No, I don't think it's a mirage, though [help me somebody I need a good pun
+here] the answer I have in mind may involve some altered states of perception.
+
+For the moment I want to steer clear of the "computational" question,
+as I haven't begun work on that, and would like to read his "current
+widely used systems" to refer to set theory, elementary toposes,
+Martin-Lof type theory and so on.
+
+That being said, I wonder whether the discussion and results in my
+	"Abstract Stone Duality"
+paper (that I advertised on "categories" in the new year and which
+has since been revised) might appeal to Ronnie.
+
+It bases "set theory" on topology and not vice versa.
+
+It identifies categories of open discrete and compact Hausdorff spaces
+that are both pretoposes, and therefore suitable for doing algebra in,
+though the open discrete spaces are more appropriate for this as they
+admit free algebras.
+
+I do, as I said, have a computational model in mind, but am not yet in
+a position to say anything about it.
+
+Paul
+
+This paper, like most of what I talk about, is accessible from my Hypatia page
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+
+

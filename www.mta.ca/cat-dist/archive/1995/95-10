@@ -1,0 +1,1317 @@
+Date: Tue, 3 Oct 1995 20:56:27 -0300 (ADT)
+Subject: Re: braided monoidal categories
+
+Date: Tue, 3 Oct 1995 09:24:12 -0400
+From: Stephen Chase <chase@math.cornell.edu>
+
+This is a belated reply to the query of John Baez regarding the nerve of
+a braided monoidal category.
+
+I'm no expert on these matters and hence may be way off target, but it seems
+to me that, for a *symmetric* monoidal category, the appropriate (and most
+useful) analogue of the classifying space should be the spectrum whose
+homotopy groups yield the algebraic K-theory of the category.  There is a
+simplicial version of spectra which should then provide a suitable nerve.
+Some of the relevant literature on this is listed below (see especially
+[4, Section 5] and [5, pp. 1599-1600]).
+
+[1] D. Grayson, Higher algebraic K-theory II (after D. Quillen), Springer
+LNM 551 (1976).
+
+[2] M. Jardine, Supercoherence, J. Pure Appl. Alg. 75 (1991), 103-194.
+
+[3] G. Segal, Categories and cohomology theories, Topology 13 (1974), 293-
+312.
+
+[4] R. Thomason, Algebraic K-theory and etale cohomology, Ann. Scient. Ec.
+Norm. Sup. 13 (1980), 437-552.
+
+[5] ____________, First quadrant spectral sequences in algebraic K-theory
+via homotopy colimits, Comm. in Alg. 19 (1982), 1589-1668.
+
+It is natural to ask whether a stable weak n-category (in the sense of
+Section 5 of the recent preprint by Baez and Dolan, "Higher-dimensional
+Algebra and Topological Quantum Field Theory") also has a "classifying
+space" spectrum.  Such an object, if it exists, should provide a means of
+constructing cohomolgy theories in which such n-categories are used as
+coefficients, in a manner analogous to that in which cochain complexes
+are used as coefficients in the hypercohomology theories of ordinary
+homological algebra.
+
+In general, I think that algebraic K-theory, which makes heavy use of
+both category theory and stable homotopy theory, should provide clues
+regarding what phenomena to expect in higher-dimensional algebra.
+
+Steve Chase
+
+
+Date: Fri, 6 Oct 1995 11:00:28 -0300 (ADT)
+Subject: if a functor locally has a right adjoint does it have a global one ? 
+
+Date: Fri, 06 Oct 1995 14:36:29 MEZ
+From: Thomas Streicher <streicher@mathematik.th-darmstadt.de>
+
+Let  F : A->B be a functor. We say that F has "locally right adjoints" iff for
+any object I of A the (obvious) functor F^(I) : A/I->B/FI has a right adjoint
+U^(I).
+My question now is :
+
+  What are sufficient conditions guaranteeing 
+  that such an F has itself a right adjoint ?
+
+What I know is that if A has a terminal object and B has binary products, 
+then if F has locally right adjoints then F has a right adjoint.
+The reason is that F = Sigma_FI o F^(1) and -  as B has binary products the 
+functor Sigma_F1 has right adjoint (F1)* - F has right adjoint U^(1) o (F1)*.
+
+The main case I am interested in is the cxase where both A and B are 
+"partial lex", i.e. have binary(!) pullbacks and products.  
+  
+I vaguely remember that some time ago on this network there was a discussion 
+on functors having locally right adjoints. Maybe one of the persons involved 
+in this discussion coiuld provide me with a hint.
+
+Thanks, Thomas Streicher
+
+
+
+Date: Tue, 10 Oct 1995 10:03:12 -0300 (ADT)
+Subject: Re: braided monoidal categories 
+
+Date: Mon, 09 Oct 1995 10:57:22 -0400 (EDT)
+From: MTHDUSKN@ubvms.cc.buffalo.edu
+
+	The question that you raised was exactly the on that I addressed 
+in my talk at the recent Dalhousie conference in July. The abstract 
+follows but if you will send me a snail mail address, I will send the 
+full manscript with the full set of rather pleasing geometric diagrams 
+which , in my view, makes the role of the braiding quite transparent.
+
+Abstract: SOME APPLICATIONS OF 2-CATEGORY TECHNIQUES IN THE THEORY OF
+BRAIDED TENSOR CATEGORIES John Duskin SUNY/Buffalo Two years ago, in a
+Montreal talk before an audience composed mostly of category theorists,
+Pierre Cartier suggested that the theory of 2-categories might prove
+useful in the study of quantum groups and related topics. This work is the
+result of one such investigation.
+	A strict tensor (=monoidal) category may be equivalently viewed as
+a monoid object in Cat or a category object in Mon. As a cat-monoid, its
+nerve is a simplicial monoid whose underlying double complex is that of
+2-category with a single object(= 0-cell) with 1-cells provided by the
+objects of the tensor category and composition of 1-cells provided by the
+tensor product . The arrows of the tensor category and their composition
+give the 2-cells and their composition, and the functoriality of the
+tensor product give the *-composition of 2-cells and the "interchange
+law". Strict tensor functors between tensor categories become strict
+2-functors between 2-categories with a single object, and it is from this
+entirely equivalent point of view that we wish to pursue the subject of
+this talk.
+	First, about Joyal-Street "braidings": In any 2-category one can 
+form the  double category of "lax-(commutative) squares" which consists 
+squares of composable 1-cells together with a 2-cell connecting the  
+compositions of the 1-cells on each side of the diagonal. There is an 
+obvious  "horizontal composition" of such lax-squares as well as a 
+vertical one and they are easily seen to satisfy the interchange law of a 
+double category. Moreover, there is an obvious way to introduce 2-cells 
+between lax-squares which makes the lax-squares  into a category object 
+in 2-Cat which plays it play the role of representing "lax functors 
+between 2-categories". Now, among these lax-squares are those which 
+define the "epi-center" of the 2-category, the lax squares whose two 
+vertical 1-cells are identical and whose horizontal 1-cells are as well. 
+This condition forces all of the corners of square to be the same 0-cell 
+and to have its "interior" to be 2-cell of the form A*B=>B*A when the 
+2-category is that associated to a strict tensor category. We  define a 
+(normalized) braiding on a 2-category with a single object C as a 
+bi-functorial (i.e., functorial in each variable) section c of the 
+epi-center of C cA.B:A*B=>B*A is easily seen to satisfy exactly the 
+conditions of the Joyal-Street definition, including naturality, when the 
+associativity isomorphisms are all identities, except that cA.B is not 
+required to be invertible but we require c1.B=id(B) and cA.1=id(A), 
+"normalization". 
+	The chief advantage of this 2-category point of view of strict 
+tensor categories is that it gives an  easy " geometric" way to handle 
+braidings using the Sydney-School's highly efficient way of dealing with 
+equations and proofs in 2-categories using "pasting diagrams".
+	Now any 2-category C has its own "oriented geometric nerve" which 
+can be defined as the simplicial set which has the 0-cells of C for 
+0-simplices and the 1-cells for 1-simplices. 2-simplices x are defined as 
+triangles of 1-cells together with a 2-cell x: d1(x)=>d2(x)*d0(x) for 
+interior. 3-simplices consist of the "commutative tetrahedra" each made 
+of four  compatible 2-simplices of the foregoing sort for which the 
+unique composition  of the odd faces is equal to that of the even faces, 
+a condition easily expressed as an equality  of the corresponding pasting 
+diagrams. Degeneracies are equally well supplied, and the full nerve is 
+just the coskeleton of the just defined truncated complex. From a 
+simplicial point of view this nerve just corresponds to the classifying 
+space of the simplicial category defined by the original 2-category which 
+is its fiber. In the case here at hand of a tensor category this 
+geometric nerve is a reduced (i.e., only one 0-simplex) simplicial set 
+and its fiber is the simplicial monoid defined by the strict tensor 
+category. The nerve is thus seen to form the first step in a simplicial 
+spectrum as we will see below. (One equally well has the oppositely 
+oriented version of this nerve where the 2-simplices interior is of the 
+form x:d0(x)*d2(x) =>d1(x). Both are needed in the applications). 
+	Now suppose that the tensor category has a braiding c, then the
+nerve of C has the structure of a simplicial monoid which is trivial in
+dimension 0, has the composition of 1-cells (tensor product) as
+multiplication in dimension 1, but uses the braiding to define the product
+of two arbitrary 2-simplices x and y using their interiors by pasting the
+square c(x2,y0) between the triangles x and y to form a new 2-simplex
+whose faces are exactly the products of the corresponding 1-cell faces (so
+that the face maps become homomorphisms). this product is associative and
+untitary (using s0(1) as unit) and the product of commutative tetrahedra
+is commutative. Thus a braiding defines the structure of a simplicial
+monoid on the classifying space of (C) with C as its loop complex. This
+allows us to iterate the construction for one more step and obtain a new
+simplicial set 2(C) which has 1(C) as its fiber.[2(C) is dgenerate in
+dimensins 0 and 1,2-simplices are provided by the 1-cells of C viewed as
+the "interiors of 2-simplices all of whose faces are degenerate. 
+3-simplices are squares of 1-cells numbered in the odd-to -even fashion
+with 2-cells now forming the interior. 3-simplices are "commutative cubes"
+made out of the simplicial kernel with the braiding furnishing the
+"missing square"] 2(C) is supplied the structure of a simplicial monoid if
+and only if the braiding is symmetric (c2= id), in which case the
+iteration can be continued indefinitely. (That symmetric monoidal
+categories are infinite loop spaces was first observed by Peter May, so
+what we have here is the low dimensional fragment of the symmetric case.)
+	Now given any structure of a simplicial monoid on the nerve of a 
+tensor category viewed in the fashion which has C as its kernel, the 
+product of the degenerate 2-simplices s1(x)s0(y) may be seen to define a 
+2-cell c(x,y):x*y=>y*x which may be seen to define a braiding on the 
+original tensor category C and we have the Theorem: There is a bijective 
+correspondence between braidings on a strict tensor category and 
+simplicial monoid structures on it nerve. They define   spectra if and 
+only if the braiding is symmetric. 
+	Note: Most of the objects of interest in braided tensor 
+categories such as algebras, co-algebras, bialgebras, braided-algebras, 
+commutative algebras modules etc. have a pretty geometric picture when 
+put in this 2-category frame, for example, an associative co-algebra is 
+just a commutative tetrahedron in the above sense which has all of its 
+1-cell faces equal.
+
+
+
+
+
+
+Date: Tue, 10 Oct 1995 10:04:09 -0300 (ADT)
+Subject: workshop on Games, Processes and Logic 
+
+Date: Mon, 09 Oct 1995 14:02:44 +0100
+From: Andrew Pitts <Andrew.Pitts@cl.cam.ac.uk>
+
+
+
+		     A Newton Institute Workshop
+
+		      GAMES, PROCESSES and LOGIC
+		  
+			 6 - 10 November 1995
+		   Newton Institute, Cambridge, UK
+
+			Call for Registration
+
+BACKGROUND 
+
+The workshop will take place as part of the Newton Institute programme
+on the Semantics of Computation. The general aims of the programme are
+twofold. First, to refine the current framework for the semantics of
+computation so that it is capable of dealing with the more subtle
+computational features present in the programming languages of today
+and tomorrow.  Secondly, to provide a framework for interaction
+between such fundamental research and the issues confronted by
+language designers and software engineers. We particularly have in
+mind current developments such as object-based concurrent programming,
+and projects to develop the next generation of advanced programming
+languages, such as ML 2000.  The range of technical and conceptual
+challenges involved in this work requires active collaboration and
+flow of information between overlapping communities of mathematicians,
+computer scientists and computer practitioners.
+
+
+WORKSHOP PROGRAMME
+
+Games
+=====
+
+There are long-standing connections between games and logic (e.g.
+determinacy of games in Set theory, Ehrenfeucht-Fraisse  games in Model
+theory, dialogue games in Proof theory, etc. etc.)
+More recently, games have been applied to the semantics of computation,
+in a variety of ways:
+
+ - Games provide an intrinsic model of interaction, e.g. between a system
+ and its environment, with processes modelled as strategies.
+ This has led to refined models of various logics,  type theories and
+ programming languages.
+
+ - ``Abstract'' notions of games (Chu spaces, Dialectica categories)
+   have been used to model Linear Logic, and a variety of computational
+   situations.
+
+ - Games can be used to  characterize notions of equivalence between
+ processes, such as bisimulation; and to characterize provability
+ in various logical systems.
+
+ - Probabilistic games have been used to characterize complexity classes;
+ these games have been related to provability in certain fragments of
+ Linear logic.
+
+ - Game  formalisms have been used in  proving decidability of a number
+ of second-order systems.
+
+ Processes
+ =========
+
+ The notion of  concurrent process can be seen as one of the few key 
+ conceptual contributions of Computer Science with no evident precursor
+ in Logic or Mathematics. As such, it sets new challenges for logical
+ formalization. Apart from the extensive work on applying modal and temporal
+ logic to concurrency, there is also much current activity on trying
+ to combine process calculi with lambda-calculus and type theory in a
+ unified setting. The modelling of imperative and functional features
+ in combination, as in ML or ``Algol-like'' languages, is also very
+ challenging.
+ Milner's action calculi aim to provide a unifying formalism in a categorical
+ framework; there are many other current approaches.
+
+
+ The aim of the Workshop is to  bring together researchers pursuing these
+ various strands, to compare and contrast the different approaches, and take
+ stock of current progress and future directions.
+
+ The following people have already agreed to speak at the Workshop:
+
+ Martin Hyland (dialogue games, semantics of proofs and functional programs)
+ Robin Milner (action structures)
+ John Mitchell, Andre Scedrov (probabilistic games, IP and Linear Logic)
+ Luke Ong (dialogue games and semantics of proofs in Classical logic)
+ Vaughan Pratt (Chu spaces)
+ Colin Stirling (games for bisimulation and  proof tableaux in modal 
+		 mu-calculus)
+ Philip Scott (process interpretations of Linear Logic)
+
+
+The organizers invite offers of contributed talks. These will be
+selected on the basis of submitted abstracts.  Abstracts in English
+(up to 2 pages) should be sent (preferably by email) to
+
+			Prof. Samson Abramsky (GPL)
+			Department of Computing
+			Imperial College
+			180 Queen's Gate
+			London SW7 2BZ
+
+			email: sa@doc.ic.ac.uk
+
+In addition to an indication of the results to be presented in the
+talk and their relevance to the theme of the workshop, the abstract
+should give the talk title and the speakers's name, address, telephone
+number, fax number and email address (when available).
+
+
+CONFERENCE LOCATION, COSTS AND REGISTRATION
+
+The workshop will take place in the Newton Institute's
+purpose-designed building, in a pleasant area in the west of
+Cambridge, about one mile from the centre of the City. There will be a
+registration fee of 40 pounds (includes the cost of lunches, coffee
+and tea breaks). The Newton Institute can provide assistance with
+finding local accommodation---the cost of which is likely to be 40
+pounds per day including breakfast.
+
+To register, please return the appended REGISTRATION FORM to:
+
+                        Mike Sekulla
+			Isacc Newton Institute
+			20 Clarkson Road
+			Cambridge CB3 0EH
+
+			Tel: +44 1223 335984
+			Fax: +44 1223 330508
+			Email: M.F.Sekulla@newton.cam.ac.uk
+
+
+For more information or further enquiries about the workshop contact:
+
+                        Prof. Samson Abramsky <sa@doc.ic.ac.uk>
+
+
+---------------------------------------------------------------------------
+
+			  REGISTRATION FORM
+
+		 [Return to M.F.Sekulla@newton.cam.ac.uk]
+
+	    
+
+	      Newton Institute for Mathematical Sciences
+			     Workshop on
+		 
+	             GAMES, PROCESSES and LOGIC	
+
+			   6 - 10 November 1995
+			  
+
+Name:
+
+Organization:
+
+Address:
+
+Telephone:
+
+Fax:
+
+Email:
+
+Accomodation needed?  
+
+If yes, which nights [5, 6, 7, 8, 9, 10 recommended]?
+
+   Sunday 5 
+   Monday 6 
+   Tuesday 7 
+   Wednesday 8 
+   Thursday 9 
+   Friday 10 
+
+Offering contributed talk?
+[If yes, send abstract direct to sa@doc.ic.ac.uk]
+  
+----------------------------------------------------------------------
+
+
+
+
+Date: Mon, 9 Oct 1995 10:38:05 -0300 (ADT)
+Subject: Re: if a functor locally has a right adjoint does it have a 
+
+Date: Mon, 9 Oct 1995 10:16:16 +0100
+From: BOERGER <Reinhard.Boerger@FernUni-Hagen.de>
+
+One sufficient condition can be found in my joint paper with Walter 
+Tholen "Abschwaechungen des Adjunktionsbegriffs", manuscripta math. 
+19 (1976), 19-45 as Theorem 14, part 2: A lcally riht adjoint functor 
+is right adjoint if it is weakly final and preserves binary products 
+and if binary products exist in the domain category. Obviously, weak 
+finality and product presevation are also necessary.
+
+           Greetings          Reinhard Boerger
+
+
+Date: Mon, 9 Oct 1995 10:37:18 -0300 (ADT)
+Subject: Oktoberfest meeting 
+
+Date: Sun, 8 Oct 1995 20:19:26 -0400
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+
+For those planning to attend the Oktoberfest meeting 
+in Montreal next weekend:  I have added a short info
+link giving the weather reports to the Oktoberfest
+Home page on the net (URL below).  General info is
+there too.
+
+= rags =
+
+URLS
+
+Oktoberfest info page:
+ ftp://triples.math.mcgill.ca/pub/rags/oktoberfest.html
+CRTC/CTRC Home page
+ ftp://triples.math.mcgill.ca/ctrc.html
+ ftp://triples.math.mcgill.ca/crtc.html
+
+
+Date: Tue, 10 Oct 1995 21:08:44 -0300 (ADT)
+Subject: Oktoberfest 
+
+Date: Tue, 10 Oct 1995 17:04:04 -0400
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+Note for those attending the meeting in Montreal 14 - 15 October:
+
+The talks will be held in the Bronfman Building, NOT Burnside Hall as is
+usual.  The Bronfman Building is located on Sherbrooke St one block "west"
+of the main gates to the campus.  The meeting room is No. 151, and the
+first talk Saturday will be at 9:00 am. 
+
+
+
+Date: Wed, 11 Oct 1995 10:31:50 -0300 (ADT)
+Subject: CT95 Proceedings Web Page 
+
+Date: Tue, 10 Oct 1995 10:02:15 -0300 (ADT)
+From: Bob Rosebrugh <rrosebru@mta.ca>
+
+                            CT95 
+                  WEB PAGE AND PROCEEDINGS
+
+
+This is to announce the availability of the CT95 Web page which includes:
+
+- list of speakers and their topics
+- link to the abstracts (dvi format)
+- links to material provided by speakers (the Proceedings)
+- link to information on the CT Summer School
+
+The URL is
+http://www.mta.ca/~cat-dist/ct95.html
+and a link is provided from the categories home page:
+http://www.mta.ca/~cat-dist/
+
+CT95 speakers wishing to add a link to material related to their talk may 
+write to Bob Rosebrugh, rrosebrugh@mta.ca. 
+
+
+
+Date: Wed, 11 Oct 1995 10:32:00 -0300 (ADT)
+Subject: CT95 Proceedings Web Page 
+
+Date: Tue, 10 Oct 1995 10:02:15 -0300 (ADT)
+From: Bob Rosebrugh <rrosebru@mta.ca>
+
+                            CT95 
+                  WEB PAGE AND PROCEEDINGS
+
+
+This is to announce the availability of the CT95 Web page which includes:
+
+- list of speakers and their topics
+- link to the abstracts (dvi format)
+- links to material provided by speakers (the Proceedings)
+- link to information on the CT Summer School
+
+The URL is
+http://www.mta.ca/~cat-dist/ct95.html
+and a link is provided from the categories home page:
+http://www.mta.ca/~cat-dist/
+
+CT95 speakers wishing to add a link to material related to their talk may 
+write to Bob Rosebrugh, rrosebrugh@mta.ca. 
+
+
+
+Date: Wed, 11 Oct 1995 13:21:27 -0300 (ADT)
+Subject: where are Iossif and Suzuki? 
+
+Date: Wed, 11 Oct 1995 14:51:33 +0100
+From: Jaap van Oosten <jvoosten@daimi.aau.dk>
+
+
+Via Stefano Kasangian I've come in the possession of a typed
+manuscript entitled "The concept of computational varieties",
+written by Michael Iossif and Yoshindo Suzuki.
+According to Stefano, this dates back to the (early?) 80's.
+The authors develop an abstract idea of "computable function",
+using sheaves; and they finally prove that their computable
+functions are closed under primitive recursion.
+Has anyone heard of these people? At the time of the manuscript
+they worked at the Logic Division of the university of Sussex
+(presumably England).
+I'd be very grateful for a pointer.
+
+Jaap van Oosten
+
+
+Date: Thu, 12 Oct 1995 10:40:48 -0300 (ADT)
+Subject: Tentative speakers list (+ 1 abstract) 
+
+Date: Wed, 11 Oct 1995 23:04:33 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+Dan Christensen <jdchrist@math.mit.edu>
+Phantom phenomena in triangulated categories
+ 
+Leopold Roman <lroman@servidor.unam.mx>
+Quantic nuclei and conuclei in several lattices
+ 
+Fox <fox@triples.math.mcgill.ca>
+TBA
+ 
+Jim Lambek <lambek@triples.math.mcgill.ca>
+TBA
+ 
+Dieter Pumpluen <Dieter.Pumpluen@FernUni-Hagen.de>
+The Eilenberg-Moore Algebras of Base-normed Banach Spaces
+ 
+Francisco Marmolejo <marmol@cs.dal.ca>
+TBA
+ 
+Mike Wendt <wendt@cs.dal.ca>
+Bochner Integration and Algebraic Theories
+ 
+Robert A. G. Seely <rags@triples.math.mcgill.ca>
+Circuits for categories with general context
+ 
+RJ Wood <rjwood@cs.dal.ca>
+Starred pointed equipments
+ 
+Ioannis Raptis
+Axiomatic Quantum Timespace Structure:  A preamble to the Quantum
+Topos Conception of the Vacuum
+ 
+Dan Mackinnon <dan@cs.dal.ca>
+A New Construction of the Simplicial 2-Category
+ 
+Bob Rosebrugh <rrosebru@mta.ca>
+Minimal Realization and Process Bicategories
+(joint work with R. F. C. Walters)
+This is part of a general program to describe automata as 1-cells of
+bicategories equipped with various operations.  Our goal here is to study
+reachability, minimization and minimal realization in these bicategories
+of processes.  Along the way we consider appropriate notions of behaviour
+for morphisms.  We use (co)lax (co)monads to describe reachability and
+minimization.  Our main results are minimal realization theorems which
+extend classical minimal realization to account for serial composition.
+ 
+Xiaomin Dong <xdong@mathstat.yorku.ca>
+Span --| Map adjunction in preordered categories
+ 
+Jack Duskin <MTHDUSKN@ubvms.cc.buffalo.edu>
+Braided k-algebras
+ 
+Hongde Hu <hu@math.uqam.ca>
+Relative bicompletions and free bicompletions
+ 
+Peter Freyd <pjf@saul.cis.upenn.edu>
+Paracategories
+ 
+
+
+Date: Fri, 13 Oct 1995 13:57:18 -0300 (ADT)
+Subject: Re: Tentative speakers list (+ 1 abstract) 
+
+Date: Fri, 13 Oct 1995 11:49:28 -0400 (EDT)
+From: MTHDUSKN@ubvms.cc.buffalo.edu
+
+Minor Correction: The title of my talk will be "Braided cat-k-algebras"
+Jack Duskin
+
+
+Date: Mon, 16 Oct 1995 12:16:19 -0300 (ADT)
+Subject: 3rd WoLLIC'96 
+
+Date: Sun, 15 Oct 95 17:35:41 EST
+From: Ruy de Queiroz <ruy@di.ufpe.br>
+
+\documentstyle[a4]{article}
+
+\renewcommand{\thepage}{}
+
+\begin{document}
+
+\begin{center}
+{\large\bf 3rd Workshop on Logic, Language, Information and Computation
+(WoLLIC'96)}\\[1.0ex]
+%{\large and}\\
+%{\large\bf 11th Brazilian Conference on Mathematical Logic}\\
+%{\large\bf (EBL'96)}\\[.8ex]
+{\large May 8--10, 1996}\\[.8ex]
+{\large Salvador (Bahia), Brazil}\\[1.0ex]
+\end{center}
+\bigskip
+\noindent
+The {\bf 3rd Workshop on Logic, Language, Information and Computation}
+({\bf WoLLIC'96})
+%, together with the {\bf 11th Brazilian Conference on
+%Mathematical Logic} (`{\bf 11o.\ Encontro Brasileiro de L\'ogica}' --
+%{\bf EBL'96})
+will be held in Salvador, Bahia (Brazil), from the 8th to the
+10th May 1996.  Contributions are invited in the form of two-page (600 words)
+abstract in all areas related to logic, language, information and computation,
+including: pure logical systems, proof theory, model theory, type theory,
+category theory, constructive mathematics, lambda and combinatorial calculi,
+program logic and program semantics, nonclassical logics, nonmonotonic logic,
+logic and language, discourse representation, logic and artificial intelligence,
+automated deduction, foundations of logic programming, logic and computation,
+and logic engineering.\\
+There will be a number of guest speakers, including:\\
+S.\ Abramsky (London) (*), J.\ Barwise (Indiana) (*), A.\ Blass (Michigan),
+S.\ Feferman (Stanford), J.\ Groenendijk (Amsterdam), H.\ Kamp (Stuttgart) (*),
+P.\ Martin-L\"of (Stockholm) (*),
+G.\ Plotkin (Edinburgh) (*)
+\noindent (`*' denotes unconfirmed).\\
+%{\bf EBL'96}/
+{\bf WoLLIC'96} is part of a larger biennial event in computer
+science being held in the campus of the Federal University of Bahia from the
+6th to the 10th of May 1996: the {\bf 6th SEMINFO} (6th Informatics Week).  The
+{\bf 6th SEMINFO} will involve parallel sessions, tutorials, mini-courses, as
+well as a Workshop on Distributed Systems ({\bf WoSiD'96}).\\
+{\bf Submission}:
+Two-page abstracts, preferably by e-mail to ***~wollic96@di.ufpe.br~*** must be
+RECEIVED by MARCH 8th, 1996 by the Chair of the Organising Committee. Authors
+will be notified of acceptance by April 8th, 1996.  The {\bf 3rd WoLLIC'96} is
+officially sponsored by the Interest Group in Pure and Applied Logics (IGPL) and
+The European Association for Logic, Language and Information (FoLLI).
+% The
+%{\bf EBL'96} is the annual meeting of Brazilian Logic Society.
+ Abstracts will
+be published in the Journal of the IGPL (ISSN 0945-9103) as part of the meeting
+report.  Selected contributed papers will be invited for submission (in full
+version) to a special issue of the Journal.\\
+{\bf The location}:
+Salvador, Capital of the Bahia state, the first European settlement of
+Portuguese America and the first Capital of Brazil, is where all the most
+important colonial buildings were constructed: churches, convents, palaces,
+forts and many other monuments.  Part of the city historical center has been
+safekept by UNESCO since 1985. Five hundred years of blending Native American,
+Portuguese, and African influences have left a rich culture to its people, which
+can be felt on its music, food, and mysticism.  Salvador is located on the
+northeastern coast of Brazil and the sun shines year round with the average
+temperature of 25 degrees Celsius.  It is surrounded by palm trees and beaches
+with warm water.  City population is around 2.5 million and life style is quite
+relaxed.\\
+{\bf Programme Committee}:
+W.\ A.\ Carnielli (UNICAMP, Campinas), M.\ Costa (EMBRAPA, Brasilia),
+V.\ de Paiva (Cambridge Univ., UK), R.\ de Queiroz (UFPE, Recife),
+A.\ Haeberer (PUC, Rio), T.\ Pequeno (UFC, Fortaleza),
+L.\ C.\ Pereira (PUC, Rio), K.\ Segerberg (Uppsala Univ., Sweden),
+A.\ M.\ Sette (UNICAMP, Campinas), P.\ Veloso (PUC, Rio).\\
+For further information, contact the Chair of Organising Committee:
+R.\ de Queiroz, Departamento de Inform\'atica, Universidade Federal de
+Pernambuco (UFPE) em Recife, Caixa Postal 7851, Recife, PE 50732-970, Brazil,
+e-mail: ruy@di.ufpe.br, tel: +55~81~271~8430, fax +55~81~271~8438.
+(Co-Chair: T.\ Pequeno, LIA, UFC, tarcisio@lia1.ufc.br, fax +55~85~223~1333)\\
+Web homepage: http://www.di.ufpe.br/simposios/wollic.html
+
+\end{document}
+
+
+Date: Mon, 16 Oct 1995 14:21:58 -0300 (ADT)
+Subject: CFP: 1996 Federated Logic Conference (text/Latex) 
+
+Date: Mon, 16 Oct 95 11:38 EDT
+From: Doug Howe <howe@research.att.com>
+
+[A postscript version of this announcement is available on the web at
+ http://www.research.att.com/lics/FLoC/, and by ftp from
+ research.att.com,  directory /dist/floc.]
+
+[Our apologies if you receive multiple copies of this announcement.]
+
+
+
+			   Call For Papers
+
+		   1996 FEDERATED LOGIC CONFERENCE
+
+			       FLoC'96
+
+    July 27 - August 3, 1996, Rutgers University, New Jersey, USA
+
+
+As part of its Special Year on Logic and Algorithms, DIMACS will host
+the 1996 Federated Logic Conference (FLoC).  FLoC is modeled after the
+successful Federated Computer Research Conference (FCRC), and brings
+together synergetic conferences that apply logic to computer science.
+The participating conferences are: Conference on Automated Deduction
+(CADE), Conference on Computer-Aided Verification (CAV), IEEE
+Symposium on Logic in Computer Science (LICS), and Conference on
+Rewriting Techniques and Applications (RTA).
+
+LICS and RTA will be held in parallel during the first four days of
+FLoC.  CADE and CAV will be held during the last four days, with CADE
+workshops running in parallel with the last day of LICS.  Plenary
+events involving all the conferences are scheduled.
+
+       CADE:    July 30 - August 3
+       CAV:     July 31 - August 3
+       LICS:    July 27 - July 30
+       RTA:     July 27 - July 30
+
+
+PAPER SUBMISSION: FLoC itself does not have a separate submissions
+process.  Submissions must be directed to the individual conferences.
+Parallel submissions are not allowed: a paper may not be submitted to
+more than one of the participating conferences.  The calls for papers
+of the participating conferences can be obtained via the FLoC web
+page, or via anonymous ftp.  Submission deadlines:
+
+       CADE:    January 12, 1996
+       CAV:     January 4, 1996
+       LICS:    December 13, 1995
+       RTA:     January 15, 1996
+
+WWW:  http://www.research.att.com/lics/FLoC/.
+
+FTP:  From research.att.com, directory /dist/floc/.
+
+FURTHER INFORMATION: For e-mail enquiries regarding the participating
+meetings, use rta96@mpi-sb.mpg.de, cade13@cisr.anu.edu.au,
+lics96@cs.cmu.edu, or cav96@research.att.com.  Information about the
+DIMACS Special Year on Logic and Algorithms can be found in
+http://dimacs.rutgers.edu/.
+
+
+CONFERENCE COMMITTEE CHAIR:           CONFERENCE COMMITTEE:
+Jon G. Riecke                         Rajeev Alur, AT&T Bell Labs
+AT&T Bell Laboratories                Leo Bachmair, SUNY Stony Brook
+600 Mountain Avenue, Rm 2B-430        Amy Felty, AT&T Bell Labs
+Murray Hill, NJ 07974, USA            Douglas J. Howe, AT&T Bell Labs
+riecke@research.att.com               Jon G. Riecke, AT&T Bell Labs
+Phone: (607) 582-4517
+Fax: (607) 582-7550
+
+
+STEERING COMMITTEE CHAIR:             STEERING COMMITTEE:
+Moshe Y. Vardi                        Steve Mahaney, DIMACS
+Department of Computer Science        Moshe Y. Vardi, Rice
+Rice University
+6100 S. Main Street
+Houston, Texas 77005-1892, USA
+vardi@cs.rice.edu
+
+
+
+%-------------------- Latex version below (cut here) ----------------------
+
+\documentstyle{article}
+
+\topmargin 0pt
+\advance \topmargin by -\headheight
+\advance \topmargin by -\headsep
+
+\textheight 8.9in
+
+\oddsidemargin 0pt
+\evensidemargin \oddsidemargin
+\marginparwidth 0.5in
+
+\textwidth 6.5in
+
+\renewcommand{\i}[1]{{\it #1 \/}}
+
+\textwidth 6.5in
+
+\begin{document}
+
+
+
+
+\thispagestyle{empty}
+
+\begin{center}
+{\small CALL FOR PAPERS}\\[3ex]
+{\large\bf 1996 Federated Logic Conference }\\[2ex]
+{\Large\bf FLoC'96 }\\[2ex]
+{\large\it July 27 - August 3, 1996, Rutgers University, New Jersey, USA}
+\end{center}
+\vspace{.2in}
+
+\medskip
+
+
+\begin{minipage}[t]{2.00in}% first column
+
+\newcommand{\itemskip}{\bigskip\bigskip\bigskip}
+\small
+
+\parskip 4pt
+
+{\bf Conference Committee Chair:} \\[1mm]
+Jon G. Riecke\\
+AT\&T Bell Laboratories\\
+600 Mountain Avenue, Rm 2B-430\\
+Murray Hill, NJ 07974, USA\\
+{\tt riecke@research.att.com}\\
+Phone: (607) 582-4517\\
+Fax: (607) 582-7550\\
+
+\itemskip
+
+{\bf Conference Committee:} \\[1mm]
+Rajeev Alur, \i{AT\&T Bell Labs}\\
+Leo Bachmair, \i{SUNY Stony Brook} \\
+Amy Felty, \i{AT\&T Bell Labs}\\
+Douglas J. Howe, \i{AT\&T Bell Labs}\\
+Jon G. Riecke, \i{AT\&T Bell Labs}\\
+
+\itemskip
+
+{\bf Steering Committee Chair:}\\[1mm]
+Moshe Y.~Vardi\\
+Department of Computer Science\\
+Rice University\\
+6100 S.~Main Street\\
+Houston, Texas 77005-1892, USA\\
+{\tt vardi@cs.rice.edu}\\[1mm]
+
+\itemskip
+
+{\bf Steering Committee:} \\[1mm]
+Steve Mahaney, \i{DIMACS}\\
+Moshe Y.~Vardi, \i{Rice}\\
+
+
+\end{minipage}
+\hskip .25 in
+\begin{minipage}[t]{3.85in}% second column
+%\small
+\parskip 4pt
+
+As part of its Special Year on Logic and Algorithms, DIMACS will host
+the 1996 Federated Logic Conference (FLoC).  FLoC is modeled after the
+successful Federated Computer Research Conference (FCRC), and brings
+together synergetic conferences that apply logic to computer science.
+The participating conferences are: Conference on Automated Deduction
+(CADE), Conference on Computer-Aided Verification (CAV), IEEE
+Symposium on Logic in Computer Science (LICS), and Conference on
+Rewriting Techniques and Applications (RTA).
+
+LICS and RTA will be held in parallel during the first four days of
+FLoC.  CADE and CAV will be held during the last four days, with CADE
+workshops running in parallel with the last day of LICS.  Plenary
+events involving all the conferences are scheduled.
+
+\begin{center}\em
+\begin{tabular}{{ll}}
+CADE: &   July 30 -- August 3 \\
+CAV: &  July 31 -- August 3\\
+LICS: & July 27 -- July 30 \\
+RTA: & July 27 -- July 30 \\
+\end{tabular}
+\end{center}
+
+{\bf Paper submission:} FLoC itself does not have a separate
+submissions process.  Submissions must be directed to the individual
+conferences.  Parallel submissions are not allowed: a paper may not
+be submitted to more than one of the participating conferences.  The
+calls for papers of the participating conferences can be obtained via
+the FLoC web page, or via anonymous ftp.  Submission deadlines:
+
+\begin{center}\em
+\begin{tabular}{ll}
+%\multicolumn{2}{l}{\bf Submission Deadlines:} \\
+CADE:   & January 12, 1996 \\
+CAV:    & January 4, 1996 \\
+LICS:   & December 13, 1995 \\
+RTA:    & January 15, 1996 \\
+\end{tabular}
+\end{center}
+
+{\bf WWW:}\ \ {\em http://www.research.att.com/lics/FLoC/}.
+
+{\bf FTP:}\ \  From {\em research.att.com}, directory {\em /dist/floc/}.
+
+{\bf Further Information:} For e-mail enquiries regarding the
+participating meetings, use rta96@\-mpi-sb.mpg.de, cade13@\-cisr.anu.edu.au,
+lics96@\-cs.cmu.edu, or cav96@\-research.att.com.  Information about the
+DIMACS Special Year on Logic and Algorithms can be found in
+http://dimacs.rutgers.edu/.
+
+\end{minipage}
+\end{document}
+
+
+Date: Wed, 18 Oct 1995 10:35:57 -0300 (ADT)
+Subject: a question 
+
+Date: Wed, 18 Oct 1995 09:33:34 +0100
+From: TONOLO@PDMAT1.MATH.UNIPD.IT
+
+Dear Professors,
+
+I wish to know if complete lattices with the following property have
+been considered and named:
+
+         h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary meet)
+for each h and each directed family {a_i | i\in I} of elements of the lattice.
+
+
+Thanking for the attention, with my best regards
+
+Alberto Tonolo
+
+
+
+Date: Wed, 18 Oct 1995 11:43:27 -0300 (ADT)
+Subject: Re: a question 
+
+Date: Wed, 18 Oct 1995 14:22:17 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>I wish to know if complete lattices with the following property have
+>been considered and named:
+>
+>         h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary
+>meet)
+>for each h and each directed family {a_i | i\in I} of elements of the lattice.
+
+The condition is equivalent to binary meets distributing over directed
+joins, and it's well known (e.g. Johnstone's "Stone Spaces" Lemma VII.4.1)
+that this holds for all continuous lattices.
+
+Posets that have finite meets and directed joins and this distributivity
+have been called "preframes" by Banaschewski, so if you are genuinely
+interested in complete lattices with preframe distributivity you might
+plausibly call them complete preframes.
+
+Steve Vickers.
+
+
+
+
+Date: Wed, 18 Oct 1995 16:01:52 -0300 (ADT)
+Subject: Re: a question 
+
+Date: Wed, 18 Oct 1995 14:34:11 -0400 (EDT)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+<<I wish to know if complete lattices with the following property have
+been considered and named:
+    h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary meet)
+for each h and each directed family {a_i | i\in I} of elements of the lattice.>>   
+
+You have the meet-continuous lattices introduced in 1948 by G. Birkhoff
+and O. Frink. The usual definition is, for each up-directed family {a_i}
+and each h,h : sup a_i = sup h : a_i (in your notation). This is easily
+seen to be equivalent. There is a lot known about them by now. 
+         Yours,    John Isbell
+
+
+Date: Wed, 18 Oct 1995 21:05:58 -0300 (ADT)
+Subject: 2-cats 
+
+Date: Wed, 18 Oct 1995 15:04:06 -0400 (EDT)
+From: James Stasheff <jds@math.unc.edu>
+
+For a grad student, what's a good *expositiory* intro to
+2-cats and bicats...?
+thanks
+
+	Jim Stasheff		jds@math.unc.edu
+	Math-UNC		(919)-962-9607
+	Chapel Hill NC		FAX:(919)-962-2568
+	27599-3250
+
+May 15 - August 15:
+	146 Woodland Dr
+	Lansdale PA 19446	(215)822-6707
+
+
+
+Date: Thu, 19 Oct 1995 10:09:17 -0300 (ADT)
+Subject: Re: 2-cats 
+
+Date: Thu, 19 Oct 1995 11:44:57 +1000 (EST)
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+	Date: Wed, 18 Oct 1995 15:04:06 -0400 (EDT)
+	From: James Stasheff <jds@math.unc.edu>
+
+	For a grad student, what's a good *expositiory* intro to
+	2-cats and bicats...?
+	thanks
+
+		Jim Stasheff		jds@math.unc.edu
+		Math-UNC		(919)-962-9607
+		Chapel Hill NC		FAX:(919)-962-2568
+		27599-3250
+
+	May 15 - August 15:
+		146 Woodland Dr
+		Lansdale PA 19446	(215)822-6707
+
+
+
+______-
+Why not START with Kelly-Street, Review of the elements of 2-categories,
+Lecture Notes in Math. 420, 75-103? Then go on to some of Ross Street's
+expository articles - I'm sure he will suggest some when he returns from
+a holiday at the end of this week. However the article above contains some
+beautiful stuff, and should be better known - you'ld probably find it fun
+to read it yourself.
+
+Regards, Max Kelly.
+
+
+Date: Fri, 20 Oct 1995 10:36:54 -0300 (ADT)
+Subject: Re: "a question" 
+
+Date: 19-OCT-1995 19:34:07.42
+From: Fred E.J. Linton <FLINTON@EAGLE.WESLEYAN.EDU>
+
+Alberto Tonolo asks about complete lattices with the following property 
+(I replace his meet-symbol ":" with the symbol "^" instead):
+
+>            h < sup a_i  ==>  
+>
+>            h = sup( h ^ a_i)                 (*_h)
+>
+> for each h and each directed family {a_i | i in I} of elements of the lattice.
+
+I can point out only that, in any lattice (complete 
+or not) in which the family  a_i  (i in I)  has a sup, 
+to require  (*_h)  for each  h < sup a_i  is the same as 
+to require the distributivity  
+
+	     h ^ sup a_i = sup (h ^ a_i)       (d_h)
+
+for just all  h .  
+
+Indeed, the relations  (d_h)  and  (*_h)  coincide, and are trivial, 
+when  h < sup a_i ; and when  h = sup a_i  they not only coincide but
+are tautologous.  In particular,  (d_h)  for all  h  guarantees  (*_h)
+for  h < sup a_i ,  and  (*_h)  for  h < sup a_i  guarantees  (d_h)
+at least for all  h  that are  <  or  =  to  sup a_i .
+
+For general  h' , let  h = h' ^ sup a_i .  Then  either  h < sup a_i
+or  h = sup a_i ; in either case,  (d_h)  holds.  To see that  (d_h')
+holds as well, just calculate:
+                                                                    
+	since h = h' ^ sup a_i ,  either  h <  or  h = sup a_i  ;  
+
+and, by  (*_h) ,
+
+	h' ^ sup a_i = h = sup (h ^ a_i) = sup ((h' ^ sup a_i) ^ a_i) = 
+
+	             = sup (h' ^ ((sup a_i) ^ a_i)) = sup (h' ^ a_i) .
+
+In particular, *every*  h ^ (-)  will distribute through whatever joins
+happen to satisfy  (*_h)  for  just all smaller  h  than the join; 
+if the lattice is complete and satisfies the (*_h) condition for all
+joins and all  h  smaller than them, it is a frame; and, I guess, if
+I'm not utterly confused by what the term "continuous lattice" means,
+if the lattice has directed joins and the (*_h) condition holds for all 
+directed joins and all  h  smaller than them, then it's a continuous lattice 
+(or, anyway, *every*  h ^ (-)  distributes through every directed join).  
+
+Hope this helps.  And I'm sure someone will correct me if I've misunderstood
+the meaning of "continuous lattice" :-) .
+
+-- FEJ
+
+[PS: Address change: please make a note of it --
+
+  the address  fejlinton @ attmail.com  is officially dead
+
+(AT&T Mail's recent trebling of their monthly fee made me leave their service).
+
+Still valid are  FLinton @ Wesleyan.EDU , the older and more complicated
+ FLinton @ eagle.Wesleyan.EDU , the still older  FLinton @ WESLEYAN.bitnet , 
+and  fejlinton @ mcimail.com .
+
+Thanks for your attention.     - FEJ ]
+
+
+Date: Mon, 23 Oct 1995 11:34:36 -0300 (ADT)
+Subject: Re: "a question" 
+
+Date: Mon, 23 Oct 1995 09:36:12 EDT5EST
+From: Philipp Sunderhauf <PSUNDER@payson.usm.maine.edu>
+
+Fred E.J. Linton in an answer to the question of Alberto Tonolo:
+
+> I guess, if
+> I'm not utterly confused by what the term "continuous lattice" means,
+> if the lattice has directed joins and the (*_h) condition holds for all 
+> directed joins and all  h  smaller than them, then it's a continuous lattice 
+> (or, anyway, *every*  h ^ (-)  distributes through every directed 
+> join). 
+> Hope this helps.  And I'm sure someone will correct me if I've misunderstood
+> the meaning of "continuous lattice" :-) .
+
+1) "continuous lattice" refers to complete lattices only, so the 
+condition of existing directed sups is obsolete.
+
+2) The equational characterisation of continuous lattices is directed 
+sups distributing over *arbitrary* infs. As pointed out by John 
+Isbell, the lattices referred to by Alberto Tonolo are known as "meet-
+continuous".
+
+3) Detailed answers to this and related questions may be found in 
+The Compendium:
+G Gierz, KH Hofmann, K Keimel, JD Lawson, M Mislove, D Scott:
+A Compendium of Continuous Lattices. Springer 1980.
+
+Philipp.
+------
+Philipp S"underhauf
+Department of Mathematics and Statistics
+University of Southern Maine
+Portland, ME 04103
+psunder@usm.maine.edu
+
+
+Date: Mon, 23 Oct 1995 11:33:36 -0300 (ADT)
+Subject: Re: a question 
+
+Date: Sun, 22 Oct 1995 11:20:07 -0700
+From: William H. Rowan <rowan@crl.com>
+
+Dear Alberto,
+
+It would seem your property is implied by one form of continuity, I think
+it is upper continuity.  I think algebraic lattices also have your property.
+
+Best,
+
+Bill Rowan
+
+
+Date: Mon, 30 Oct 1995 16:37:30 -0400 (AST)
+Subject: Shape papers 
+
+Date: Mon, 30 Oct 1995 13:47:03 GMT
+From: Barry Jay <cbj1@doc.ic.ac.uk>
+
+
+
+The following papers on 
+
+		SHAPE
+
+may be of interest to category theorists and computer scientists.  
+The titles are:
+
+"A semantics for shape"				shape_semantics.ps.Z
+"Data categories and functors"			datacats.dvi.Z
+"Covariant types"				covtypes.dvi.Z
+"Polynomial Polymorphism"			(in directory P2)
+"Type-free term reduction for covariant types"	typefree.dvi.Z
+"Shape analysis for parallel computing"		parshape.dvi.Z
+
+All are available by anonymous ftp from
+
+	ftp.socs.uts.edu.au
+
+in the directory
+
+	Users/cbj
+
+*Some* can be acessed from my www home page at
+
+	http://linus.socs.uts.edu.au/~cbj
+
+The rest of this message describes the main results of the papers, and
+some of the goals of the Shape project.
+
+Barry Jay
+University of Technology, Sydney
+cbj@socs.uts.edu.au
+
+Reply-To: cbj21@newton.cam.ac.uk 
+(until 30/11/95)
+
+
+
+
+A semantics for shape
+=====================
+
+The basic observation behind shape theory is that most of the functors
+F used to model data types share a common characteristic; they have a
+cartesian natural transformation into a functor used to store
+unstructured data. In the simplest case, the latter is the list (or
+free monoid) functor:
+
+	data: F => L
+
+The main result of this paper is that in a locos (an extensive
+category with all finite limits and lists) all functors shapely over
+lists are closed under the formation of initial algebras. The proof is
+constructive - simply build a parser for the initial algebra,
+using the existing lists and pullbacks.
+
+
+Data categories and functors
+============================
+
+The functors which are cartesian over lists are good for handling
+first order structures, but they are not closed under exponentiation,
+and so are inadequate for higher-order types. This defect is remedied
+by changing the functor used to store data from lists to a *position
+functor* given by an object of positions P. Such a functor maps an
+object A to the object
+
+	P --> A+1 .
+
+A *data functor* is a functor F with a given cartesian transformation
+to such a position functor. Now, for any object X the functor which
+maps A to the object
+
+	X --> FA
+
+is also a position functor, with object of positions XxP.
+
+The key result about data functors is that every natural
+transformation between two such is given by a uniform, or parametric
+natural transformation. More precisely, if F is a data functor with
+object of positions P, and G is a data functor, then every natural
+transformation
+
+	F ==> G
+
+is determined by a morphism 
+
+	F1 --> GP
+
+This fact makes the data functors suitable for modelling higher types.
+
+
+Covariant Types
+===============
+
+The data categories, in which the theory of data functors is
+developed, include the usual semantic categories, such as Sets, and
+bottomless c.p.o.'s. However, Reynolds proved that "Polymorphism is
+not set-theoretic" by showing that the second-order polymorphic lambda
+calculus (system F) has no set-theoretic models. This leads us to ask
+what kind of polymorphism is modelled by the data functors. This leads
+to the covariant type system in which function types are replaced by
+*transformation types*. The system is strong enough to capture the
+usual polymorphism of lists and trees, while still having
+set-theoretic models. Thus,
+
+	Polymorphism *can* be set-theoretic
+
+
+Polynomial Polymorphism
+=======================
+
+As a sub-system of F, the covariant types do not capture
+functoriality.  For shape (or functorial) polymorphism to make sense,
+there must be a polymorphic algorithm for evaluating the action of
+functors on morphisms, i.e. a polymorphic map. Such an algorithm was
+first developed in the type system P2, as described in the following
+paper.
+
+
+Type-free term reduction for covariant types
+============================================
+
+A generic algorithm for mapping requires the detection of the data to
+which the mapped function must be applied. One method of doing this is
+to *tag* the data using a single system of tags appropriate for all
+the functors under discussion. A naive approach leads to the tagged
+types of this paper.
+
+
+Functorial types
+================
+
+Current work aims to have functors represented directly by types so
+that, for example, composition of functors is a primitive operation on
+types. This is intended to extend the notion of category theory as a
+programming technique.
+
+
+Shape analysis for parallel computing
+=====================================
+
+
+While shape polymorphism allows us to "ignore" the shape, shape
+analysis uses detailed shape information to improve errr detection and
+compilation. This is particularly important in parallel programming,
+where the shape of the data structures, and their distribution, are
+central concerns. This paper presents a survey of the issues, and a
+computational paradigm, that will be developed by the 
+
+	Algorithms and Languages Group 
+	University of Technology, Sydney
+	http://linus.socs.uts.edu.au/~shape
+
+
+
+

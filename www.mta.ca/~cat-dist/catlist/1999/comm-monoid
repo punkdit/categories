@@ -1,0 +1,255 @@
+Subject: categories: commutative monoids
+Date: Thu, 26 Nov 1998 19:56:18 +0000 (GMT)
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+
+
+A commutative monoid is a strict monoidal category with one object, so in
+this sense one can talk about a category enriched in a commutative
+monoid. Has anyone looked very hard at such things?
+
+Thanks,
+Tom
+
+
+Date: Thu, 10 Dec 1998 23:23:38 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Subject: categories: Question of Tom Leinster of 26 Nov: one-object closed categories
+
+
+Tom observed that an abelian monoid is a symmetric monoidal closed
+category with one object, and asked whether anyone had studied categories
+enriched in such a closed category.
+
+Eilenberg and I, in our long article [Closed categories, in Proc. Conf. on
+Categorical Algebra (La Jolla, 1965), Springer-Verlag 1966, 421 - 562]
+remarked in our "Examples" section (Ch.4, Section3, page 553) that these
+are, to within isomorphism, the only one-object s.m.closed categories. The
+odd thing is that we don't seem to have looked at V-categories for such a
+V - perhaps we did not want to give trivial-looking examples, although we
+gave other little examples such as Heyting algebras.
+
+The use we made of such a V arising from an abelian monoid M was to give an
+interesting but unusual example of a monoidal functor. We observed that a
+monoidal functor f: V --> Ab was the same thing as an M-algebra, commutative
+precisely when the monoidal functor f is symmetric.
+
+Anyway, I had a brief look at V-categories for such a V tonight, but with
+too few details so far to say much about them before bedtime. Queer little
+creatures, aren't they? A V-category A has objects a, b. c. and so on, but
+each A(a,b) is the unique object * of V. All the action takes place at the
+level of j: I --> A(a,a) and M: A(b,c) o A(a,b) --> A(a,c). Sorry to use the
+traditional M for composition, when it was the monoid. Let the monoid be G.
+When G is an abelian group, the M and j seem to be determined by elements
+N_a,b depending on two objects of A. There is more meat in a V-functor. I
+look forward to working through this - as I suppose Tom has done - and
+looking especially at the cases where G is a two-element monoid. The
+underlying ordinary category A_o of the V-category A seems to be an odd beast.
+
+While I don't remember ever working through this, it still rings a bell.
+Somewhere I have seen arrows decorated with something like numbers (elements
+of G ?). Ross Street and his colleagues at Macquarie often use the word
+"suspension" for the process of seeing an abelian as a one-object monoidal
+category, a monoidal category as a one-object bicategory, and such things -
+I don't know the full definition of "suspension"; but they and numerous
+others are well aware of, for instance, the tricategory with one object,
+whose 1-cells are commutative rings, whose 2-cells are two-sided algebras,
+whose 3-cells are bimodules, and whose 4-cells are bimodule-homomorphisms.
+Clearly I got that wrong; I think the objects should have been the 
+commutative rings. Anyway, people doing this work are very likely to have
+seen and used such one-object V.
+
+Still, it looks like fun; and I've never seen an exposition of V-Cat for
+the case where G is the two-element group. I'm taking it to bed.
+
+Max Kelly.
+
+
+Subject: categories: Re: one-object closed categories
+Date: Thu, 10 Dec 1998 19:20:03 +0000 (GMT)
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+
+> From: maxk@maths.usyd.edu.au (Max Kelly)
+> 
+> Tom observed that an abelian monoid is a symmetric monoidal closed
+> category with one object, and asked whether anyone had studied categories
+> enriched in such a closed category.
+> 
+ [...]
+> 
+> Anyway, I had a brief look at V-categories for such a V tonight, but with
+> too few details so far to say much about them before bedtime. Queer little
+> creatures, aren't they? A V-category A has objects a, b. c. and so on, but
+> each A(a,b) is the unique object * of V. All the action takes place at the
+> level of j: I --> A(a,a) and M: A(b,c) o A(a,b) --> A(a,c).
+ [...]
+
+Since I asked the question I've found a few examples; they've all got
+the same flavour about them, so I'll just do my favourite.
+
+If V is the commutative monoid, then a V-enriched category is a set A plus
+two functions
+	[-,-,-]: A x A x A ---> V
+	    [-]:         A ---> V
+satisfying
+	[a,c,d] + [a,b,c] = [a,b,d] + [b,c,d]
+	  [a,a,b] + [a] = 0 = [a,b,b] + [b]
+for all a, b, c, d. 
+
+The example: let A be a subset of the plane. Choose a smooth path P(a,b) from
+a to b for each (a,b) in A x A, and define [a,b,c] to be the signed area
+bounded by the loop
+	P(a,b) then P(b,c) then (P(a,c) run backwards);
+also define [a] to be 
+	-(area bounded by P(a,a)). 
+(There's meant to be an orientation on the plane, so that areas can be
+negative.)  Then the equations say obvious things about area - don't think
+I'm up to that kind of ASCII art, though.
+
+Tom
+
+
+Date: Sat, 12 Dec 1998 23:31:20 +0200 (EET)
+From: Mamuka Jibladze <jib@rmi.acnet.ge>
+Subject: categories: Re: one-object closed categories
+
+Concerning categories enriched in monoidal categories with a single
+object: another example is given by cocycles. It can be presented in
+various ways. For example, a "\v Cech style" version: given an open cover
+of X by Ui and a (suitably normalized) \v Cech 3-cocycle c of this cover
+with values in M, this enrichs in the evident way the category whose
+objects are the i's, with hom(i,j) either a singleton or empty according
+to inhabitedness of the intersection of Ui and Uj. Other variations
+suggest things like morphisms of simplicial sets to the nerve of M
+considered as a 2-category with a single 1-cell. This is related to
+K(M,2)-torsors, etc. Quite probably there are several publications
+exploiting this. At least cocycles with values in monoids rather than
+groups certainly have been considered. 
+
+What I certainly have not seen is a backwards generalization: has anybody
+considered analogs of K(M,2)-torsors for general enrichments? Would be
+very interested in a reference.
+
+Happy holidays to all!
+Mamuka
+
+
+Date: Sat, 12 Dec 1998 19:31:36 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Subject: categories: V-categories where V "is" an abelian monoid.
+
+Since I wrote some first thoughts the other night about Tom Leinster's
+question on the above, I've had some second thoughts which are perhaps
+a little more sensible, and may remove some of the mystery from these
+strange critters (which may be quite beautiful - I've just seen Tom's
+example of 10 Dec.).
+
+To get the notation straight, let G be an abelian monoid (perhaps a
+group), and V_o the category with one object * and V_o(*,*) = G. Then
+V_o underlies a symmetric monoidal closed category V with one object *,
+with tensor product o given on objects by *o* = * and on maps by fog = fg,
+with unit object I = *, and with internal-hom given on objects by [*,*] = *,
+and on maps by [f,g] = fg. 
+
+So we can speak of V-categories, V-functors, and V-natural transformations
+at the level of my old paper with Eilenberg, incloding the ordinary category
+A_o underlying a V-category A. However all the richer theory of V-categories
+etc., as in my book on the subject, needs completeness of V_o for the
+definition of functor-categories, and hence for limit- and colimit-notions,
+Kan extension, and so on; as well as cocompleteness too, for these to work
+well.
+
+So, to this extent, V is a lousy closed category, being neither complete nor
+cocomplete. However there is a cure for incompleteness, called "completion";
+although "cocompletion" works more smoothly. So let us embed V_o by Yoneda
+in its free cocompletion, the ordinary functor-category [V_o^op, Set]. We don't
+need the "op" here, since G is abelian. This functor-category is nothing but
+the presheaf category of G-sets (sets with an action of G, with the usual
+axioms (fg)x = f(gx) and 1x = x). This has a cartesian-closed structure, but
+forget that; it also has a symmetric monoidal closed structure arising from
+that on V using Day's convolution process. This is nothing but the Linton-
+-type s.m.closed structure where the tensor-product A o B represents the
+bi-homomorphisms out of A x B, and the internal-hom [A,B] is the G-set of
+all homomorphisms of G-sets from A to B. Explicitly, A o B is the quotient of
+A x B by the relation (fx,y) = (x,fy).
+
+Let us call THIS s.m.closed category W. Then V is embedded in W by Yoneda,
+and the image in W of * is the G-set G itself, seen as a G-set using its own
+multiplication - the "regular representation". So we may see V as this "part"
+of W.
+
+Now a V-category is nothing but a W-category whose hom-objects all happen to
+lie in V (which is a sub-monoidal category of W). Such a category A, with
+objects a,b, c, and so on, no longer need be said to have each A(a,b) equal
+to *, but instead to have A(a,b) = G.
+
+So the V-categories are nothing but these very special W-categories, and W
+is a highly-respectable s.m.closed category, first cousin to R-Mod for a
+commurative ring R.
+
+In fact, there is a "free" W-category F(B) on any ordinary category B; it 
+has the same objects as B, and (F(B))(a,b) is the free G-set on the set
+B(a,b). The V-categories are just those W-categories of the form F(B) where
+the ordinary category B is CHAOTIC; that is to say, each B(a,b) is a
+singleton.
+
+So at least these nice new objects have a kind of legitimate origin.
+
+Max Kelly.
+
+
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Subject: Re: categories: Re: one-object closed categories
+Date: Fri, 11 Dec 1998 22:15:22 -0500 (EST)
+
+> From Tom Leinster:
+> 
+> Since I asked the question I've found a few examples; they've all got
+> the same flavour about them, so I'll just do my favourite.
+> 
+> If V is the commutative monoid, then a V-enriched category is a set A plus
+> two functions
+> 	[-,-,-]: A x A x A ---> V
+> 	    [-]:         A ---> V
+> satisfying
+> 	[a,c,d] + [a,b,c] = [a,b,d] + [b,c,d]
+> 	  [a,a,b] + [a] = 0 = [a,b,b] + [b]
+> for all a, b, c, d. 
+
+A few remarks: In the case where V is an abelian group, the first
+axiom already implies the other two if we define [a] = -[a,a,a].
+Namely, by letting a=b in the first axiom, it follows that [a,a,c] is
+independent of c.
+
+If V is an abelian group, then one can get an example of the above
+structure from an arbitrary map {-,-} : A x A ---> V by letting
+[a,b,c] = {a,b}+{b,c}-{a,c} and [a] = -{a,a}. Tom's "area" example is
+of this form.
+
+In fact, if V is an abelian group, then *any* example of a V-enriched
+category is (non-uniquely) of the form described in the previous
+paragraph: Fix some x in A (if any), and define {a,b} = [a,b,x].
+
+What about the non-group case? In general, [a,b,c] need not always be
+invertible in V. In fact, [a,b,a] need not be invertible. For a simple
+example of this, let V be the natural numbers and define
+
+ [a]     = 0,
+ [a,b,c] = 0, if a=b or b=c,
+           1, if a,b,c pairwise distinct,
+           2, otherwise (i.e., if a=c but a,b distinct).
+
+This indeed works. 
+
+Best wishes, 
+-- Peter Selinger
+
+> The example: let A be a subset of the plane. Choose a smooth path P(a,b) from
+> a to b for each (a,b) in A x A, and define [a,b,c] to be the signed area
+> bounded by the loop
+> 	P(a,b) then P(b,c) then (P(a,c) run backwards);
+> also define [a] to be 
+> 	-(area bounded by P(a,a)). 
+> (There's meant to be an orientation on the plane, so that areas can be
+> negative.)  Then the equations say obvious things about area - don't think
+> I'm up to that kind of ASCII art, though.
+

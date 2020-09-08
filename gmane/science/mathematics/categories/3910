@@ -1,0 +1,128 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "prime" monads?
+Date: Sat, 15 Sep 2007 01:02:37 -0700
+Lines: 94
+Approved: news@gmane.org
+Message-ID: <E1IWcWR-0007MD-8X@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019599 10822 80.91.229.2 (29 Apr 2009 15:39:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:59 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Sep 15 15:46:15 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 15 Sep 2007 15:46:15 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IWcWR-0007MD-8X
+	for categories-list@mta.ca; Sat, 15 Sep 2007 15:37:39 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 34
+Status: O
+Content-Length: 4575
+Original-Lines: 93
+Xref: news.gmane.org gmane.science.mathematics.categories:3910
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3910>
+
+Fred E.J. Linton wrote:
+> There ARE a few monads for which the Kleisli and E-M categories
+> "coincide," however, beyond the identity monads. First example
+> coming to mind is the FreeVectorSpace monad on SETS. I'm sure
+> other Categories-readers will point out more.
+
+Fred, your numbering makes the example preceding your "first example"
+(the identity monad) your zeroth example, but I'll number them 1 and 2
+anyway.  Example 2 should work for all Archimedean fields (and
+presumably all ordered fields).  Does it also work for fields not of
+characteristic 0, or for the complex number field?
+
+For more examples, all on Set, how about the following?  Example 3
+extends example 1 (i.e. the identity monad is a submonad of example 3),
+the rest (examples 4-9) are submonads of example 2.  This should bring
+the crop of examples of Kl=EM up to 6 if I'm not mistaken (a big if),
+with examples 7-9 not contributing.  All of 1-9 are finitary monads,
+unlike for example the covariant power set monad whose signature is a
+proper class.
+
+3.  The lift monad 1+X on Set.  Obviously Kl=EM in this case.
+
+But not for 1+1+X: the free bipointed sets are in a natural bijection
+with the non-free ones, the latter having the two points
+identified--this must be about the simplest nontrivial instance of
+obtaining an algebra as a quotient of a free algebra, not a bad
+introductory example when explaining how to get algebras from free algebras.
+
+4.  The FreeAffineSpace monad on Set as the submonad of example 2
+consisting of those operations whose coefficients sum to 1, i.e.
+barycentric weightings where the individual weights can be any real.  I
+noticed this the other day and assumed it must be well known (is it?).
+It gives an alternative to France Dacar's equations yesterday showing
+that the affine spaces are algebraic over Set.  The Kleisli-EM
+identification certainly holds for finite-dimensional affine spaces (any
+quotient is a space of lower dimension, but all spaces of a given finite
+dimension are dense and therefore isomorphic); is there any reason why
+the proof (with Choice) for infinite-dimensional vector spaces would not
+go through for the affine case?
+
+By way of insight into this monad, if you take those operations whose
+coefficients sum to 3 say (still as a "submonad" of example 2), the
+multiplication produces exactly the operations whose coefficients sum to
+9, so that would-be monoid isn't closed under multiplication.  If you
+think to fix this by taking the operations whose coefficients sum to 0
+(remember we're allowing negative coefficients) then that attempt
+doesn't have a unit.  That just leaves the barycentric operations as the
+only possible submonad of example 2 consisting of operations of a fixed
+total weight.
+
+My guess would be that Kl=EM for the next two, by density (cf. examples
+7 and 8).  Do statisticians know about these monads?
+
+5.  Conservative statistics.  The submonad of example 4 where the
+coefficients must be positive (and hence in (0,1]).  The next example
+shows the sense in which this is "conservative."
+
+6.  Lossy statistics.  The submonad of example 2 where both the
+individual coefficients *and* their sum (over the coefficients of an
+operation) are in (0,1].  Lossy statistics permits its sample spaces to
+leak out through a wormhole.
+
+The following two are examples in this vein where EM > Kl.
+
+7.  The lattice monad (JAMS-friendly lattices, not that quaint
+order-theoretic stuff that went out with the Bauhaus,
+http://www.math.rutgers.edu/~zeilberg/Opinion81.html).  The submonad of
+example 2 restricted to integer coefficients.  The free lattice on n
+generators is Z^n; for n <= 2 I think all non-free quotients must be a
+circle, cylinder, or torus, but for n = 3, (x,y,z) |--> (2x+z,2y+z)
+produces the 2D checkerboard as an infinite quotient of Z^3 with no
+cycles, pointing up the role of density in 4 above.
+
+8.  Affine lattices.  The intersection of examples 4 and 7 (still
+allowing negative coefficients).   This is the appropriate monad for
+studying crystalline structure, which has no origin.  The free lattices
+are the cubical crystals and all other crystalline structures are
+non-free.  Unless I'm missing something the quotient (x,y,z) |-->
+(2x+z,2y+z) works here too to show EM > Kl.
+
+9.  The intersection of examples 5 and 7 (same as 6 and 7).  Isn't this
+just example 1?
+
+The chances of all my guesses being right are pretty slim, but if they
+are we'd now be up to six examples of Kl=EM, namely 1 to 6 above.
+
+What is the structure of the submonads of a monad on Set?  Anything like
+algebraic lattices?
+
+Vaughan
+
+
+
+

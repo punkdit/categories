@@ -1,0 +1,229 @@
+Path: news.gmane.org!not-for-mail
+From: Marco Bernardo <bernardo@sti.uniurb.it>
+Newsgroups: gmane.science.mathematics.petri-nets,gmane.comp.lang.caml.inria,gmane.science.mathematics.categories,gmane.comp.science.types.announce
+Subject: SFM-15:MP school on multicore programming -- last call for
+ participation
+Date: Thu, 5 Mar 2015 14:06:17 +0100 (CET)
+Lines: 146
+Approved: news@gmane.org
+Message-ID: <alpine.DEB.2.02.1503051404150.10720@dechirico.sti.uniurb.it>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1425589600 3643 80.91.229.3 (5 Mar 2015 21:06:40 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 5 Mar 2015 21:06:40 +0000 (UTC)
+Cc: Einar Broch Johnsen <einarj@ifi.uio.no>
+To: agents@cs.umbc.edu, caml-list@inria.fr, categories@mta.ca, 
+	concurrency@listserver.tue.nl, ecoop-info@ecoop.org, events@fmeurope.org,
+	fmics@inrialpes.fr, isabelle-users@cl.cam.ac.uk, 
+	logic-announce@uclink4.berkeley.edu, logic-list@helsinki.fi, 
+	moca-announce@list.it.uu.se, mycolleagues@mailman.ufsc.br, 
+	papm@informatics.ed.ac.uk, performance@merlot.usc.edu, 
+	petrinet@informatik.uni-hamburg.de, prog-lang@diku.dk, 
+	puml-list@cs.york.ac.uk, pvs@csl.sri.com, qest-announce@iti.uiuc.edu, 
+	seworld@sigsoft.org, theorem-provers@ai.mit.edu, theory-logic@cs.cmu.edu,
+	theorynt@listserv.nodak.edu, types-announce@lists.seas.upenn.edu
+Original-X-From: petrinet-bounces@mailhost.informatik.uni-hamburg.de Thu Mar 05 22:06:31 2015
+Return-path: <petrinet-bounces@mailhost.informatik.uni-hamburg.de>
+Envelope-to: gsmp-petrinet@gmane.org
+Original-Received: from mailhost.informatik.uni-hamburg.de ([134.100.9.70])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <petrinet-bounces@mailhost.informatik.uni-hamburg.de>)
+	id 1YTcyU-0006H0-TR
+	for gsmp-petrinet@gmane.org; Thu, 05 Mar 2015 22:06:31 +0100
+Original-Received: from mailhost.informatik.uni-hamburg.de (localhost [127.0.0.1])
+	by mailhost.informatik.uni-hamburg.de (Postfix) with ESMTP id 71C01544;
+	Thu,  5 Mar 2015 22:04:25 +0100 (CET)
+X-Original-To: petrinet@informatik.uni-hamburg.de
+Original-Received: from localhost (localhost [127.0.0.1])
+	by mailhost.informatik.uni-hamburg.de (Postfix) with ESMTP id 9ACFCDB0
+	for <petrinet@informatik.uni-hamburg.de>;
+	Thu,  5 Mar 2015 14:16:29 +0100 (CET)
+X-Virus-Scanned: amavisd-new at informatik.uni-hamburg.de
+Original-Received: from mailhost.informatik.uni-hamburg.de ([127.0.0.1])
+	by localhost (mailhost.informatik.uni-hamburg.de [127.0.0.1])
+	(amavisd-new, port 10024)
+	with LMTP id QiygZ6earp2R for <petrinet@informatik.uni-hamburg.de>;
+	Thu,  5 Mar 2015 14:16:24 +0100 (CET)
+Original-Received: from stimail.sti.uniurb.it (stimail.sti.uniurb.it [90.147.0.131])
+	by mailhost.informatik.uni-hamburg.de (Postfix) with ESMTP id 9B338DA9
+	for <petrinet@informatik.uni-hamburg.de>;
+	Thu,  5 Mar 2015 14:16:24 +0100 (CET)
+Original-Received: by stimail.sti.uniurb.it (Postfix, from userid 5001)
+	id CF83B88081; Thu,  5 Mar 2015 14:06:19 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sti.uniurb.it;
+	s=stimail; t=1425560779;
+	bh=GPUOAVednzLyF+nhVYkhdj23J8Mv8oIxmspP5G2hoMk=;
+	h=Date:From:To:cc:Subject:From;
+	b=nhzXyODkeUKpWrrU8fxNKQgp+XAX2/sNeN/k1e/wRVonGZKIzdiP758XAj0NyJc+j
+	nkMugjCdF3CJq+j/WxjRG9rs2f1OOD73CWK8nrEAjJGopfchGNsOrUacbFMkAURmxn
+	qGLR/pwBdoP6lMqiJEwEmXr1g3mHfN4vvu4ts7zw=
+Original-Received: from dechirico.sti.uniurb.it (www.sti.uniurb.it [193.205.2.135])
+	(Authenticated sender: bernardo@sti.uniurb.it)
+	by stimail.sti.uniurb.it (Postfix) with ESMTPSA id EC3448806C;
+	Thu,  5 Mar 2015 14:06:15 +0100 (CET)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sti.uniurb.it;
+	s=stimail; t=1425560776;
+	bh=GPUOAVednzLyF+nhVYkhdj23J8Mv8oIxmspP5G2hoMk=;
+	h=Date:From:To:cc:Subject:From;
+	b=vAcsfHwwTGcSM7ywo90MQeg0hqLtUhY7bdzsd/tDlAVt0z8gcx29MTjV3tHokPZM6
+	pBW8XB5dIWoxvfaFPe9i4U0/yj2kBXZNuo6Bl70PwBIpSjp/O3iThs8P6h4EUPh0At
+	uF0frLaI/3cLhqXulrIQYpvtqjAfigURtNKqEzJc=
+User-Agent: Alpine 2.02 (DEB 1266 2009-07-14)
+X-Mailman-Approved-At: Thu, 05 Mar 2015 22:03:36 +0100
+X-BeenThere: petrinet@mailhost.informatik.uni-hamburg.de
+X-Mailman-Version: 2.1.17
+Precedence: list
+Errors-To: petrinet-bounces@mailhost.informatik.uni-hamburg.de
+Original-Sender: "Petrinet" <petrinet-bounces@mailhost.informatik.uni-hamburg.de>
+Xref: news.gmane.org gmane.science.mathematics.petri-nets:4418 gmane.comp.lang.caml.inria:62163 gmane.science.mathematics.categories:8527 gmane.comp.science.types.announce:5137
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.petri-nets/4418>
+
+***********************************************************
+*                                                         *
+*                        SFM-15:MP                        *
+*                                                         *
+*               15th International School on              *
+*             Formal Methods for the Design of            *
+*      Computer, Communication and Software Systems:      *
+*                  Multicore Programming                  *
+*                                                         *
+*           Bertinoro (Italy), 15-19 June 2015            *
+*                                                         *
+*        http://www.sti.uniurb.it/events/sfm15mp/         *
+*                                                         *
+***********************************************************
+*                 CALL FOR PARTICIPATION                  *
+*                (deadline: 21 March 2015)                *
+***********************************************************
+
+
+GENERAL INFORMATION ABOUT SFM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Formal methods are emerging in computer science as a prominent
+approach to the rigorous design of computer, communication and
+software systems.
+
+The aim of the SFM series is to offer a good spectrum of
+current research in foundations as well as applications of
+formal methods, which can be of interest for graduate students
+and young researchers who intend to approach the field.
+
+This year SFM is devoted to multicore programming and covers
+topics such as concurrency and coordination mechanisms,
+architecture and memory models, and type systems.
+
+
+COURSES AND LECTURERS
+^^^^^^^^^^^^^^^^^^^^^
+
+The school features the following lectures:
+
+   "Parallel Objects for Multicores"
+     Dave Clarke (Uppsala U, SE)
+
+   "Concurrency in Java"
+     Doug Lea (SUNY Oswego, US)
+
+   "Coordinating Multicore Computing"
+     Farhad Arbab (CWI Amsterdam, NL)
+
+   "Automated Inference of Atomic Sets for Safe Concurrent Execution"
+     Gul Agha (UI Urbana-Champaign, US)
+
+   "Modeling of Architectures"
+     Jade Alglave (UC London, UK)
+
+   "Memory Models for Programming Languages"
+     Francesco Zappa Nardelli (INRIA Paris-Rocquencourt, FR)
+
+   "Multiparty Session Types"
+     Nobuko Yoshida (IC London, UK)
+
+   "Ownership Types"
+     Sophia Drossopoulou (IC London, UK)
+
+   "Types and Permissions in Mezzo"
+     Francois Pottier (INRIA Paris-Rocquencourt, FR)
+
+   "Safe Concurrent Programming with Linear Behavioral Types"
+     Luis Caires (UN Lisbon, PT)
+
+All participants will receive a copy of a tutorial book published by
+Springer as a volume in the Lecture Notes in Computer Science series.
+
+
+LOCATION
+^^^^^^^^
+
+SFM-15:MP will be held in the medieval hilltop town of Bertinoro.
+
+This place is in Emilia Romagna, about 70 km south-east of Bologna,
+at an elevation of about 230 m. It can be reached in a couple of
+hours from the international airport "G. Marconi" of Bologna by
+shuttle (from the airport to the railway station) + train (from
+Bologna to Forli`) + bus/taxi (from the railway station to Bertinoro).
+
+Bertinoro is close to many splendid locations such as Urbino,
+Gradara, San Leo, and the Republic of San Marino, as well as some
+less well-known locations like the thermal springs of Fratta Terme.
+Bertinoro can also be a base for visiting some of the better-known
+Italian locations such as Bologna, Parma, Rimini, Ravenna, Ferrara,
+Padova, Venezia, Verona, Firenze, Pisa, Lucca, and Siena.
+
+Bertinoro itself is picturesque, with its narrow streets and
+walkways winding around the central peak. The school will be held
+at the Centro Residenziale Universitario (CRU), an ex-episcopal
+fortress that has been converted into a modern conference center.
+From the fortress, it is possible to enjoy a beautiful vista stretching
+from the Apennines to the Adriatic Coast and the Alps over the Po Valley.
+
+
+ORGANIZATION
+^^^^^^^^^^^^
+
+Scientific directors:
+* Marco Bernardo       (U Urbino, IT)
+* Einar Broch Johnsen  (U Oslo, NO)
+
+Secretary:
+* Monica Michelacci    (CRU Bertinoro, IT)
+
+
+APPLICATION
+^^^^^^^^^^^
+
+Prospective participants should send by 21 March 2015
+the application form, available on the school website,
+to the two e-mail addresses below:
+
+   Marco Bernardo
+   marco.bernardo AT uniurb.it
+
+   Monica Michelacci
+   mmichelacci AT ceub.it
+
+The registration fee is 300 euros and includes the school material.
+
+The accommodation fee is 350 euros and covers the period June 14-20
+(6 nights), double room (to share with another participant),
+half board (breakfast and lunch from June 15, lunch of June 20 excluded).
+
+The reduced accommodation fee for the participants who do not
+need a room is 100 euros and covers the period June 15-19
+(5 lunches).
+
+A very limited number of grants is available to cover
+the registration fee (no grant can be requested
+to cover the accommodation fee or the travel expenses).
+
+Notification of accepted/rejected applications and
+grant requests will be communicated by March 31.
+
+Registration to the school, including payment of fees,
+is due by April 20.
+
+No refund is possible for cancellation after May 15.

@@ -1,0 +1,123 @@
+Path: news.gmane.org!not-for-mail
+From: Alan Jeffrey <ajeffrey@bell-labs.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Does Bind beat Kleisli in Hilbert space?
+Date: Wed, 10 Oct 2007 12:36:23 -0500
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1Ifhtn-0006y7-Ra@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019651 11236 80.91.229.2 (29 Apr 2009 15:40:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:51 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Oct 10 17:11:31 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 10 Oct 2007 17:11:31 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Ifhtn-0006y7-Ra
+	for categories-list@mta.ca; Wed, 10 Oct 2007 17:11:19 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 54
+Status: O
+Content-Length: 4411
+Original-Lines: 88
+Xref: news.gmane.org gmane.science.mathematics.categories:3997
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3997>
+
+I appreciate the long-term vision of your VCs.
+
+For your Haskell engineers, isn't this exactly what arrows are designed
+to do?  For your category theorists, isn't this exactly what a
+premonoidal category or a Freyd category are designed to do?
+
+In both cases, it seems that the mismatch is due to the monadic
+requirement that thunks be first-class citizens: this results in types
+such as T(T(X)) existing, which seem to be at the root of your problem
+with overflow exceptions.
+
+Of course, premonoidal categories are not as prevalent in the industry
+as monads are, and the arrows API is not as heavily adopted as the
+monads API, so you may have problems interfacing to the large existing
+monadic code-base.  I'm sure your leadership team of strategic
+visionaries will see the value-add.
+
+Alan.
+
+John Hughes, Generalising Monads to Arrows, in Science of Computer
+Programming 37, pp67-111, May 2000.
+
+John Power and Edmund Robinson. Premonoidal Categories and Notions of
+Computation, in Mathematical Structures in Computer Science
+7(5):453-468, 1997.
+
+John Power and Hayo Thielecke. Closed Freyd- and kappa-categories,
+ICALP'99, LNCS 1644, pp 625-634, Springer, 1999.
+
+Vaughan Pratt wrote:
+> Project:            Operation QCvac
+> Sensitivity level:  Black hole
+> Situation report:   Unanticipated overflow exception in a monad
+> Reporting analyst:  Vaughan Pratt
+> Project status:     On hold pending resolution
+> Action item:        Solicit qualified expert opinion
+> Date:               October 7, 2007
+>
+> Situation summary.  We're working on a quantum computer in anticipation
+> of a Request for Proposal (RFP) for the next One Laptop Per Child (OLPC)
+> computer for a value of "next" that is acceptable to our venture
+> capitalists (VCs) yet feasible for our engineers.
+>
+> To be sure of not being out-competed we've assembled a crack team of
+> physicists from Fermilab to get the physics right, category theorists
+> from Fairfield, Iowa to design the linear algebra implementation,
+> electrical engineers (EEs) from Silicon Valley to build the machine,
+> Haskell programmers from Glasgow to implement the ideal third-party
+> value-add software environment, and marketers from Boston to understand
+> the market's needs and tastes.
+>
+> Marketing feels we have to be able to offer lots of storage (qubits).
+> The physicists said no problem, they work in separable (countably
+> dimensioned) Hilbert space all the time.  (You see how physics
+> works---physics is scale-invariant, what's good for describing the
+> universe is good for describing computers.)  Marketing said great,
+> countably infinite storage will make us unbeatable, even Google will
+> want one.
+>
+> Marketing wants to pitch the reliability of our machine.  The category
+> theorists said no problem, on their previous consulting job, D-Wave's
+> 16-qubit quantum computer, they'd represented linear algebra as God's
+> own monad, a monoid object (T,mu,eta) of Set^Set implementing matrix
+> multiplication via the Kleisli construction.  They took the functor T(X)
+> to be the set C^X of X-dimensional almost-everywhere-zero complex
+> vectors with T(f:X->Y): C^X --> C^Y sending v: C^X to the vector u: C^Y
+> describable as starting with u = 0 and adding v_x to u_{f(x)} for all x
+> in X, the multiplication mu_X: C^(C^X) --> C^X to send V: C^(C^X) to u:
+> C^X with u_x the sum of V_v * v_x over all v in C^X (dot product), and
+> the unit eta_X: X --> C^X as eta_X(x)(y) = (x=y) (the unit vectors).  It
+> worked like a charm.  (You see how category theory works in
+> computers---everything is an adjunction, or was in the 1970s, nowadays
+> it's all done with monads.)
+>
+> The EEs expressed concern about the ambitious number of qubits.  The
+> category theorists reassured them that infinity held no fears for them
+> as the infinite set C^(2^16) had worked fine in the D-Wave machine since
+> mu only encountered finitely many nonzero values when summing over the
+> domain C^(2^16) of T(f): C^(C(2^16)) --> C(2^16).  The physicists
+> reassured them that linear algebra lifted reliably to infinite
+> dimensions provided the vectors were kept square summable as confirmed
+> by a vast body of experimental evidence, so even though the sums would
+> now be infinite they would still converge.  (You see how systems
+> analysis works---if monads and square-summability each coordinate well
+> with the world they must coordinate well with one another.)
+>
+...
+
+

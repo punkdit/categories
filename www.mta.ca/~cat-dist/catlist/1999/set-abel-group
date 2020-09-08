@@ -1,0 +1,434 @@
+Date: Sun, 17 Mar 1996 22:22:14 -0400 (AST)
+Subject: defining sets from abelian groups
+
+Date: Sun, 17 Mar 1996 08:54:16 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+I want to say something along the lines of "You can define abelian
+groups in the internal logic of Set, but you can't define sets in the
+internal logic of Ab."
+
+Is this intuition supportable?  Ideally there would be a precise
+technical sense in which it is provably the case.
+
+Vaughan Pratt
+
+
+Date: Mon, 18 Mar 1996 10:35:49 -0400 (AST)
+Subject: Re: defining sets from abelian groups
+
+Date: Mon, 18 Mar 1996 07:47:40 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan says -- correctly I think -- that "you can't define sets in the
+internal logic of Ab." I suspect that the proof will have to use the
+dualities that reside in Ab. Let  Gr  be the category of all groups,
+abelian or not. Then:
+
+    The category of co-groups in  Gr  is equivalent to  Set.
+
+Cf:
+
+    The category of co-groups in  Ab  is equivalent to  Ab.
+
+"Co-group" means, of course, "group in the opposite category". The second
+of the two assertions above holds for any additive category: it's easy to
+show that each object in any additive category has a unique co-group
+(indeed, a unique co-monoid) structure (the co-multiplication is the
+diagonal map). I know no citation for the first assertion. To prove it,
+one shows that the only groups with co-group structures are free groups
+and that the only co-multiplication on  Free(X)  is such that
+X -> Free(X) -> Free(X+X)  is the point-wise product of the two functions
+of the form  X -> X+X -> Free(X+X).
+
+
+Date: Mon, 18 Mar 1996 10:51:02 -0400 (AST)
+Subject: Re: defining sets from abelian groups
+
+Date: Mon, 18 Mar 1996 09:39:51 -0500
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+- I want to say something along the lines of "You can define abelian
+- groups in the internal logic of Set, but you can't define sets in the
+- internal logic of Ab."
+-
+- Is this intuition supportable?  Ideally there would be a precise
+- technical sense in which it is provably the case.
+-
+- Vaughan Pratt
+-
+-
+I don't know, since I don't understand these issues sufficiently
+well, but if you can define the free abelian group cotriple, you can
+then define the coalgebra category for that cotriple and that is the
+category of sets.  In fact, that is a ! operation, in Girard's
+sense, on the fragment of linear logic that Ab satisfies.  (This
+last was an observation of Jim Otto's.)
+
+Michael Barr
+
+
+Date: Mon, 18 Mar 1996 16:08:20 -0400 (AST)
+Subject: Re: defining sets from abelian groups
+
+Date: Mon, 18 Mar 1996 13:28:17 -0500 (EST)
+From: MTHFWL@ubvms.cc.buffalo.edu
+
+
+
+   In the Spring of 1971 at Chicago, Peter Freyd gave some very
+interesting lectures in which he showed how to construct a topos
+from a symmetric monoidal closed category by considering certain
+structured co-commutative co-algebras.  This was done in such a
+way that for a group G one could recover the topos of G-sets
+(and hence the group itself) from the category of linear
+representations.  Since the category of abelian groups has a
+unique closed monoidal structure, this should refute Vaughan
+Pratt's conjecture.  It should have even many more applications
+than that, which is why I have long urged Peter to write it up.
+
+Bill Lawvere
+
+
+Date: Mon, 18 Mar 1996 16:31:26 -0400 (AST)
+Subject: Re: defining sets from abelian groups
+
+Date: Mon, 18 Mar 1996 10:46:38 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        I don't know, since I don't understand these issues sufficiently
+        well, but if you can define the free abelian group cotriple, you can
+        then define the coalgebra category for that cotriple and that is the
+        category of sets.
+
+Peter Freyd succinctly shows you can't with
+
+        The category of co-groups in  Ab  is equivalent to  Ab.
+
+Interesting that Peter used duality to prove it, since my reason for
+strongly believing it was also duality-based.  The general principle I
+used for my reasoning was that the only categories "definable" in the
+internal logic of a self-dual category are full subcategories of it.
+FinAb is self-dual, but FinSet does not fully embed in FinAb.
+
+If only I knew what "definable" meant this would be a proof.
+
+I came to appreciate this principle while investigating Chu(Set,K).
+All notions of "definable" I understand (e.g. first order definable)
+are subsumed by this principle.  However that's not sufficient reason
+to call it a theorem, since someone may have a method of definition I
+don't know about that violates it.  For example I have not yet figured
+out whether the method of sketches violates it, though I can't imagine
+how it could.
+
+        In fact, that is a ! operation, in Girard's
+        sense, on the fragment of linear logic that Ab satisfies.  (This
+        last was an observation of Jim Otto's.)
+
+Is Jim's statement even well-defined?  ! is a functor projecting LL
+onto a cartesian closed full subcategory of itself.  For the above to
+make sense you would need a full embedding of the coalgebra category,
+namely Set, back into Ab.  But unless I'm dreadfully confused (which I
+often am) there isn't such.  What could a set reasonably be other than
+the free abelian group on it?  But when you're inside Ab, Ab(G,H) = H
+for H a fag, so that's not it.  Similar deal with Rel or CSLat.
+
+I was dreadfully confused about this in 1991 when I first got involved
+with duality via CSLat and their sibling Event spaces.  I wish someone
+had pointed out to me that my ! *didn't* produce a cartesian closed
+category as I was claiming.  Instead I had a long period of waiting for
+my vision problems to clear up.
+
+Adding ! to LL stretches LL out a lot, much wider than Ab with respect
+to the Stone gamut (the Set<->Set\op axis).  Enough in fact to make it
+look rather like Chu(Set,K) for indefinite K, less such amenities as
+induction and such obscurities as 1 par 1 |- 1 (noticed by Lafont and
+Streicher---with its contrapositive _|_ |- _|_ @ _|_, the two objects
+1 par 1 and _|_ become sort of the "two halves" of a single coalgebra
+in Chu(Set,K)).  You just have to take the bad with the good when you
+have a nice model like Chu(Set,K).
+
+I've incorporated my proof that Set is a bicomplete equational topos
+(meaning one with all natural isos identities) into my LL'96 paper,
+"Linear Logic complements Classical Logic," sent off last night.  In
+the light of Peter Johnstone's remarks it seemed prudent to add an
+explanatory paragraph as a sort of talisman against the nonmonotonic
+logic of antiChoice fundamentalism extolled on Sundays.  This is now
+available as ftp://boole.stanford.edu/pub/llcocl.ps.gz, with tex and
+dvi counterparts in the usual subdirectories, /pub/TEX and /pub/DVI.
+I'll post the abstract here shortly, or look it up yourself in the file
+ABSTRACTS in the same directory.  This is paper 45 in that directory,
+getting time to compress its scattered ideas down a bit.
+
+Vaughan Pratt
+
+
+Date: Tue, 19 Mar 1996 21:01:08 -0400 (AST)
+Subject: Re: defining sets from abelian groups
+
+Date: Tue, 19 Mar 1996 15:12:22 -0500 (EST)
+From: Andre Joyal <joyal.andre@uqam.ca>
+
+
+Peter Freyd's assertion
+> Let  Gr  be the category of all groups,
+> abelian or not. Then:
+>
+> The category of co-groups in  Gr  is equivalent to  Set.
+>
+is slightly incorrect. A better formulation should use the category
+$Set_*$ of pointed sets instead of $Sets$.
+As such this is essentially an old result of
+Peter Hilton and Beno Eckmann.
+They proved that any cogroup in the category of groups is free.
+
+I would like to say that the younger generation is not always
+aware that Eckmann and Hilton have fundamental contributions
+to category theory. They have provided basic examples
+of objects equipped with algebraic structures in categories.
+Consequently opening the road to further abstractions,
+like the concept of algebraic theory in the sense of Lawvere.
+
+Among other things, Eckmann and Hilton where interested in identifying
+all cogroups in the homotopy category $hTop_*$ of pointed topological spaces.
+A basic example of such cogroup is the circle $S^1$.
+It explains why the functor $\pi_1(-)=[S^1,-]:hTop_*\to Sets$
+has a natural group structure. If $G$ is a cogroup
+in $hTop_*$ then so is the smash product
+$X\smash G$ for any pointed topological space $X$
+This is because $X\smash(-)$ preserves coproduct since it
+has a right adjoint (here we are supposing that Top is a convenient category
+of topological space). In particular, the spheres $S^{n+1}=S^n\wedge S^1$
+have a cogroup structure. Any wedge (topologists call the coproduct
+the wedge) of cogroups is obviously a cogroup. In
+particular, any wedge of spheres of dimension $n\geq 1$
+has a co-group structure.
+All the known examples of cogroups in $hTop_*$ are obtained
+by taking a smash $X\smash S^1$.
+It was conjecture by Eckmann and Hilton that all cogroups
+in $hTop^*$ are of the form $X\smash S^1$.
+They observe that $\pi_1(G)$ is a cogroup in $Groups$
+when $G$ is a cogroup in $hTop_*$.
+This is because the functor
+$\pi_1: hTop_*\to Groups$ preserves coproducts
+by Van Kampen theorem.
+In support to their conjecture
+they proved that
+any cogroup in $Groups$ is free.
+It follows that all cogroups in $Groups$ are of the form
+$\pi_1(X\smash S^1)$ where $X$ is a pointed set.
+
+Andre Joyal
+
+
+Date: Wed, 20 Mar 1996 11:39:24 -0400 (AST)
+Subject: Definition of "definable in"
+
+Date: Tue, 19 Mar 1996 19:57:06 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+After giving more thought to my question about Set vs. Ab I decided
+that it was hopeless to try to resolve as a theorem, and that the
+only way out was to resolve it with a definition.
+
+Definition.  A category C is *definable in* a closed category D when it
+embeds fully (as a category) in every self-dual closed category
+embedding D (as a closed category).
+
+This definition settles by fiat the question of whether *finite* sets
+can be defined from finite groups, since FinAb is self-dual, as I
+mentioned previously.  Extending this to Ab is a matter of checking
+that Set does not embed in Ab\op x Ab, which would surprise me
+greatly.
+
+If Set actually does embed in Ab, as some have been telling me
+privately, this does not contradict my definition, it merely answers my
+original question in the other direction.  To convince me that Set
+embeds in Ab it will suffice for you to give me representatives of 2
+and 3 whose homobjects between them are the representatives of 4, 8, 9,
+and 27.
+
+If you have a more productive notion of "definable in", meaning one
+that lets you define categories not possible with the above, there is a
+possibility that some trace of Set has leaked into your definition.
+If, after convincing yourself that all traces of Set have been
+eliminated, it is *still* more productive, then this would be a notion
+of "definable in" well worth discussing.
+
+Vaughan Pratt
+
+
+Date: Thu, 21 Mar 1996 13:33:38 -0400 (AST)
+Subject: Re: Definition of "definable in"
+
+Date: 21 Mar 96 15:59:04 +0100
+From: Reinhard Brger, Prof. Pumpl n <Reinhard.Boerger@FernUni-Hagen.de>
+
+Since the set of maps from a non-empty set to the empty set is empty
+and since Ab x Ab\op has no empty hom-sets, there is no full
+embedding from Set to Ab x Ab\op. Does that answer your question?
+
+                                    Reinhard Boerger
+Date: Thu, 21 Mar 1996 23:14:45 -0400 (AST)
+Subject: Re: Definition of "definable in"
+
+Date: Thu, 21 Mar 1996 13:08:38 -0800
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+
+        From: Reinhard Brger, Prof. Pumpl n <Reinhard.Boerger@FernUni-Hagen.de>
+
+        Since the set of maps from a non-empty set to the empty set is empty
+        and since Ab x Ab\op has no empty hom-sets, there is no full
+        embedding from Set to Ab x Ab\op. Does that answer your question?
+
+Not if I understand you, for two reasons.  First, you said the word
+"hom-set" which isn't allowed in Ab---you have to say homgroup (or
+homab).  There being no empty group, if Set embeds in Ab then the empty
+set must embed as a nonempty group.  Emptiness in the sense definable
+via the forgetful functor U:Ab->Set is not a predicate known to be in
+Ab.  Emptiness needs to be defined in terms of the Abelian group
+representing the empty set.
+
+You have to analyze any proposed embedding by treating both the objects
+and the homobjects between them as Abelian groups.
+
+The second problem is my fault.  I noticed yesterday that my definition
+(repeated below, near the end) is too weak.  As a simple
+counterexample, groups are well known to be definable in Set, but Grp
+certainly does not fully embed as a category in the closed self-dual
+category Set + Set\op (= Chu(Set,0)), which embeds Set as a closed
+category (that is, the embedding respects tensor products, not
+necessarily cartesian products).  The objects are just sets and
+antisets, clearly nowhere to store Grp.
+
+I was basing my definition on two theorems of mine.
+
+1. Every category of relational structures, and hence every full
+subcategory thereof definable by any wacky language you want, far
+wilder and less computable than first order logic, fully embeds in
+Chu(Set,2^k) where k is the total arity of the structure.
+
+To determine total arity k of a multisorted multirelation structure,
+form the disjoint union of all the carriers, add one unary predicate
+per carrier as a marker, and then form the "natural join" of all the
+relations.  The embedding works for total arities up to any ordinal;
+for a proof look near the end of
+
+        http://boole.stanford.edu/gamut.ps.gz
+
+
+2.  Every small concrete category embeds in Chu(Set,K) for some set K.
+
+Proof: Take K to be the disjoint union of the carriers of the objects,
+and proceed as in
+
+        http://boole.stanford.edu/embed.ps.gz
+
+On the strength of these two theorems I speculated that any method of
+defining a category that confined its language to that of V would embed
+in Chu(V,k) for a suitable object of k.
+
+What does "confine language" mean?  Terrible things!  It might even
+entail giving up conventional equality in favor of weighted limits when
+V is not cartesian closed, as with Ab.  Some of you might enjoy a world
+where equality didn't exist, not in the sense you have to settle for in
+Set where you have to convince skeptical students that equality doesn't
+exist, but in the more pragmatic sense that no one else in that world
+uses it either, because it really doesn't exist!
+
+What I forget to allow for in my definition was the variability of k.
+Larger k lets you define more.  k functions as a simple but effective
+and pure notion of signature.  Pure in the sense that the 256 colors on
+your monitor are the clean signature of pixel depth, purified of the
+grubby representational issues implied by talking instead of the 8
+pixel planes as though each plane were a real thing.  This
+representation is clearly meaningless for people whose computers have 6
+pixel planes coding 729 colors in ternary.
+
+I had foolishly thought that the essence of the Chu construction could
+be purified to a statement about duality, but had clean forgotten to
+allow for the possibility that a definitional method might cunningly
+think to use language to express the definition!
+
+Just how little language can be present in a self-dual category
+embedding Set can be can be seen from the example above of Chu(Set,0),
+a self-dual category consisting *only* of sets and antisets (aka CABA's
+if you ignore concreteness issues).  The sets are realized as the
+inconsistent Chu spaces (A,0), the antisets as the empty Chu spaces
+(0,A), with (0,0) as the one set that is also an antiset.  (Obviously
+this doesn't work for what Dusko Pavlovic calls "little Chu," no
+repeated rows and columns.) Chu(Set,0) understood skeletally consists
+of just the "dynamic integers," thinking of (0,A) as minus (A,0).  The
+only subcategories of this sparse category have as their objects some
+sets and some antisets.  This does not even embed Set\op x Set =
+Chu(Set,1), which also is too small for anything much, e.g. no posets,
+which enter at Chu(Set,2).
+
+I see nothing for it for now but to be upfront about putting Chu in the
+definition.
+
+Old definition.  A category C is *definable in* a closed category V
+when it embeds fully (as a category) in every self-dual closed category
+embedding V (as a closed category).
+
+New definition 1.  A category C is *definable in* a closed category V
+when it embeds fully in the category Chu(V,k) for some k in ob(V).
+
+This definition steers between the Scylla of arbitrarily large
+self-dual categories and the Charibdis of self-dual categories barely
+bigger than V.  It is also a tad shorter.
+
+But there is *still* a problem.  In Set it is not hard to define
+Chu(Set,*) as a colimit of Chu(Set,K1) < Chu(Set,K2) < ...  For example
+the category of hypergraphs described in
+
+        @Article(
+DW80,   Author="D{\"o}rfler, W. and Waller, D.A.",
+        Title="A category-theoretical approach to hypergraphs",
+        Journal="Archives of Mathematics", Volume=34, Number=2,
+        Pages="185-192", Year=1980)
+
+does not to my knowledge embed in any Chu(Set,K) for any fixed K.
+(This is an open question, I imagine mainly because no one has looked
+hard at it.)  But any *small* subcategory of it does, by the general
+result above that *every* small concrete category embeds in Chu(Set,K)
+for some K.
+
+This too is easily fixed.  There is a *nonclosed* category
+Chu(Set,Set).  The definition looks no different from the usual
+definition of Chu, except that in all small interactions (no proper
+class of participants), all Chu spaces involved are taken to be over
+the colimit of all their K's.  The only failure of this category to be
+closed is its lack of tensor unit 1 and its dual _|_ (I've switched to
+Girard's notation because these days it makes a lot more sense to me).
+The rest of linear logic is fine; furthermore the absence of 1 and _|_
+removes the odd-ball property 1@1 |- 1 that Lafont and Streicher
+noticed.
+
+With that and MIX gone, about all LL should need now is induction, and
+Chu(Set,Set) should then be a complete model of LL without
+multiplicative units.
+
+If there is any justice, all this should generalize to Chu(V,V) by
+arranging to embed the k's of any interaction of V-enriched Chu spaces
+in the appropriate colimit of them in V before letting them interact.
+
+This leads to the even shorter:
+
+New definition 2.  A category C is *definable in* a closed category V
+when it embeds fully in the category Chu(V,V).
+
+In view of Dusko Pavlovic's paper on the couniversality of Chu, about
+the only improvement likely for this definition (barring further bugs,
+sigh) is to replace the explicit Chu construction by its abstract
+properties.  The effect will be the same either way, though the
+definition is presumably not going to get any shorter that way!
+
+One residual question is how to do enriched category theory from
+scratch in V.  Max, help!
+
+Vaughan Pratt
+
+

@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on exact sequence
+Date: Tue, 10 Nov 2009 14:22:57 +1100
+Lines: 79
+Approved: news@gmane.org
+Message-ID: <E1N7q9a-0004rZ-QS@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1257859618 17569 80.91.229.12 (10 Nov 2009 13:26:58 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 10 Nov 2009 13:26:58 +0000 (UTC)
+To: Michael Barr <barr@math.mcgill.ca>, categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Tue Nov 10 14:26:51 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1N7qiK-0000k4-O0
+	for gsmc-categories@m.gmane.org; Tue, 10 Nov 2009 14:24:52 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1N7q9a-0004rZ-QS
+	for categories-list@mta.ca; Tue, 10 Nov 2009 08:48:58 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5222
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5222>
+
+Dear Michael,
+
+This is the sort of thing that Enrico Vitale has been working on with
+various people for a number of years. I'm sure he'll provide more  precise
+references, but the idea is that you think of the vertical morphisms in your
+diagrams as internal categories:
+
+A               A+A'
+|               | |
+| f    <--->    | |
+v               v v
+A'               A'
+
+(an internal category in Ab amounts to just a morphism - I'll abbreviate
+this to just (A,A').)
+
+and then an exact sequence of internal categories, in a suitably defined
+sense of exactness, induces a long exact sequence involving the pi_0's and
+pi_1's. (pi_0 of an internal category is the cokernel of the corresponding
+morphism, while pi_1 is the kernel.)
+
+In your diagram (the "curious" one), the morphism 1:C-->C is saying that
+the corresponding internal functor (A,C)-->(B,C) is (not just essentially
+surjective but) the identity on objects. This is the relevant notion of
+"epi". The morphism 1:A-->A says that the corresponding internal functor
+(A,B)-->(A,C) is (among other things) faithful. This is the relevant notion
+of "mono". There is also an exactness condition at (A,C).
+
+Vitale, with various coauthors, has studied such exactness conditions at
+varying levels of generality, but the simplest of these is just internal
+categories in Ab.
+
+Steve.
+
+On 10/11/09 9:57 AM, "Michael Barr" <barr@math.mcgill.ca> wrote:
+
+> I have recently discovered a curious fact about abelian categories.
+> First, let me briefly describe the well-known snake lemma.  If we have a
+> commutative diagram with exact rows (there are variations without the 0
+> at the left end of the top and without the 0 at the right end of the
+> bottom, but here is the strongest form)
+>
+>       0 ---> A ----> B ----> C ----> 0
+>              |       |       |
+>              |       |       |
+>              |f      |g      |h
+>              |       |       |
+>              v       v       v
+>       0 ---> A' ---> B' ---> C' ---> 0
+>
+> then there is an exact sequence
+>   0 --> ker f --> ker g --> ker h --> cok f --> cok g --> cok h --> 0
+>
+> The curious discovery is that you have any pair of composable maps f: A
+> --> B and h: B --> C and you form the diagram (with g = hf)
+>                  1       f
+>              A ----> A ----> B
+>              |       |       |
+>              |       |       |
+>              |f      |g      |h
+>              |       |       |
+>              v       v       v
+>              B ----> C ----> C
+>                  h       1
+> you get the same exact sequence.  So I would imagine that there must be
+> a "master theorem" of which these are two cases.  Does anyone know what
+> it says?  The connecting map here is just the inclusion of ker h into B
+> followed by the projection on cok f.
+>
+> Michael
+>
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

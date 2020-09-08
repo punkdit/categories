@@ -1,0 +1,1393 @@
+Date: Tue, 6 Aug 1996 19:02:15 -0300 (ADT)
+Subject: extensive stuff
+
+Date: Tue, 6 Aug 1996 14:24:15 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+The phrase  DISTRIBUTIVE  CATEGORY  is established as referring to a
+category with finite products and coproducts wherein coproducts
+distribute with products. The phrase  EXTENSIVE  CATEGORY  refers to
+a cartesian category (that is, one with finite limits) with finite
+coproducts wherein coproducts are preserved by pullbacks.
+
+(Bill, they tell me you gave it this name because measurements tend
+to be valued in such. Right?)
+
+An equivalent definition of an extensive category is a cartesian
+category that's _locally_ distributive, that is, every slice category
+is distributive.
+
+I've recently finally been able to find the right expansion of what
+I've called "cartesian logic" (the syntax of cartesian categories) to
+what I guess I will have to call "extensive logic" (the syntax of
+extensive categories). Cartesian logic can be sloganized as the logic
+of _unique_ existentials. For extensive logic add _exclusive_
+disjunctions. (Yes, all you purists, "sloganized" is in the OED.
+Actually, the American Heritage Electronic Dictionary would seem to
+define it as the result of turning something into a Scottish war cry.)
+
+With cartesian logic we first obtain a completeness theorem with
+respect to the semantics of cartesian categories (by constructing the
+free cartesian category from a given theory and noting what rules of
+inference are needed to make the construction work) and then we obtain
+a completeness theorem with respect to the "elemental semantics" by
+using the fact that set-valued representations for any small cartesian
+category are collectively faithful. By the time we're done we need
+that the representations reflect not just equality and isomorphisms
+but non-split-epis into non-epis. (The Cayley representations, of
+course, do all this.)
+
+Similarly for extensive logic. Here we need the fact that the
+set-valued representations of any small extensive category are
+collectively faithful, indeed, collectively reflect (not just equality
+and isomorphisms but) split epis. By "representation" I mean a functor
+that preserves finite limits and finite coproducts. It would not be
+enough to preserve just finite products and coproducts for the
+semantics. That is, I must work in the context of extensive categories
+not distributive categories. (Cayley, of course, no longer suffices.)
+
+Do distributive categories arise in nature that aren't extensive?
+
+The quickest artificial example is the full subcategory, *A*, of
+(*S*)x(*S*), where  *S*  is the category of sets.  A pair  <X,Y>  is
+in  *A*  if either both  X  and  Y  are non-empty or both are empty.
+*A*  is coreflective, hence cartesian. It's closed under the formation
+of products and coproducts, hence distributive (indeed, it's closed
+under the formation of exponentials, hence an exponential category).
+
+*A*  is not an extensive category.  <{a,b},{a,b}>  is the coproduct of
+<{a},{a}>  and  <{b},{b}>.  The intersection of each of these
+subobjects with  <{a},{b}>  is  <{},{}>  hence pulling back along the
+inclusion map of  <{a},{b}>  does not preserve coproducts.
+
+But I seem to have stumbled across a more natural example. In Cats and
+Alligators a pair of idempotents  e, e'  are said to be "neighbors"
+if  ee'e = e  and  e'ee' = e'. So, let's understand a  SEMIGROUP  OF
+NEIGHBORING  IDEMPOTENTS  to mean a semigroup satisfying the further
+equations:
+             xx = x,
+            xyx = x.
+
+Note that as a consequence:  xyz = (xzx)yz = x(z(xy)z) = xz.
+
+The category of semigroups of neighboring idempotents is a
+distributive category because, even better, it's an exponential
+category. Construct  A => B  in the naive way, that is, as the set of
+homomorphisms from  A  to  B. The semigroup structure on  A => B  is
+given pointwise: for homomorphisms  f,g:A -> B, define
+fg = \a.(fa)(ga). The equation xyz = xz  forces  fg  to be a
+homomorphism.
+
+A homomorphism  h:X*A -> B  curries to a homomorphism  h':X ->(A => B)
+where the naive definition works for  h', to wit, h' = \x.(\a.f<x,a>).
+The equation  xx = x  is just what's needed to see that  h'x  is a
+homomorphism for each  x, and then to see that  h'(xy) = (h'x)(h'y).
+
+To see that the category of semigroups of neighboring idempotents is
+not an extensive category consider the four-element semigroup with
+multiplication given by:
+                            a b c d
+                           ________
+                         a |a c c a
+                         b |d b b d
+                         c |a c c a
+                         d |d b b d
+
+It is a coproduct (in the category of semigroups of neighboring
+idempotents) of its one-element subsemigroups {a}, {b}.  (In other
+words, it's the free semigroup of neighboring idempotents generated
+by  a  and  b.)  Now intersect these generating subsemigroups with the
+one-element subsemigroup  {c} to see that pulling back along the
+inclusion map of  {c}  does not preserve coproducts.
+
+Still here? Guess what. The two categories are equivalent and the
+equivalence carries one example to the other.
+
+Given an object, <X,Y>, in  *A*  turn  XxY  into a semigroup by
+defining  <x,y><x',y'> = <x,y'>. This is how the equivlence gets from
+*A*  to the category of neighboring idempotents. Getting back is left
+to the reader.
+
+Now the real question: how much of all this is already in Johnstone?
+
+
+Date: Wed, 7 Aug 1996 12:55:55 -0300 (ADT)
+Subject: Peter Freyd's letter of 6 Aug
+
+Date: Wed, 7 Aug 1996 17:44:00 +1000 (EST)
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+I refer to Peter Freyd's interesting letter of 6 Aug concerning
+distributive and extensive categories.
+
+Peter, you have not got quite right the current nomenclature for
+these: the definitive account of their interconnexions is in
+[Carboni, Lack, Walters, Introduction to extensive and distributive
+categories, JPAA 84 (1983), 145-158]. Their name for your "extensive"
+is "lextensive", which I think is due to Bill Lawvere; it means "lex
+and extensive", where "lex' is used to mean "having all finite limits".
+(By the way, I absolutely detest this usage of "lex"; a CATEGORY cannot
+be left exact!) Their "extensive" categories have only finite COPRODUCTS
+as part of the structure; but these are to be such that the
+canonical A/a x A/b --> A/(a+b) is to be an equivalence of categories.
+The point is important because a MORPHISM of extensive categories
+need preserve only finite coproducts, not finite limits (as a morphism
+of lextensive categories must). So the 2-categories involved are
+quite different, and this affects the notion of free category-with-
+-structure.
+
+One other thing: those semigroups you discuss are what I called
+"middle-ignoring semigroups" in my paper with Pultr [ On algebraic
+recognition of direct-product decompositions, JPAA 12(1978), 207-224],
+where I showed them equivalent to pairs of sets with neither empty
+or both - only as the simplest and most trivial example of our
+extension of Michael Barr's result on algebras for the "n-th
+power monad" sending A to A^n in any category. The funny thing is
+that I spoke on this as your guest in the colloquium at Philadelphia
+in 1977. Anyway, the more general situation of that paper may give
+more examples of distributive categories - I haven't yet had time
+to think about it. The category of middle-ignoring semigroups, by
+the way, and more generally the category of algebras for the n-th
+power monad P_n on the category of sets, is symmetric monoidal
+closed by Fred Linton's old result, since this monad is
+commutative - at least I think it must be so, without stopping
+now to check it.
+
+About the nomenclature: do people agree that "lex" is really
+terrible? Peter Johnstone in Sussex recently called it
+something like a twice-dead metaphor - but now I forget what
+he wanted in its place - was it Peter Freyd's "cartesian" ?
+
+Max Kelly.
+
+
+Date: Wed, 7 Aug 1996 12:57:05 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Wed, 7 Aug 96 10:17 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+>Now the real question: how much of all this is already in Johnstone?
+
+Not much of it, if you mean what is in Johnstone's published work,
+rather than in Johnstone's mind. But my paper "A syntactic approach
+to Diers' localizable categories" in Springer LNM 753 (the 1977 Durham
+Symposium proceedings) is relevant: in it I introduced what I then
+called "disjunctive logic", which is exactly what Peter now wants to
+call "extensive logic" (and I guess that's a better name). What I was
+doing there was to describe a class of theories whose model categories
+(in Sets) were just the "localizable categories" (aka multiply
+presentable categories) introduced by Yves Diers in his thesis: there
+is nothing about extensive categories in my paper, because I didn't
+know the concept at that time. However, I've known for some years now
+that extensive categories are exactly the class of categories in which
+this fragment of logic should be modelled -- but I haven't found a
+suitable opportunity to set this down in print.
+
+Incidentally, the corresponding class of sketches (those with arbitrary
+finite cones, but only discrete finite cocones) has been studied by
+many people -- see for example Barr & Wells (TTT), page 292.
+
+Peter Johnstone
+
+
+Date: Wed, 7 Aug 1996 12:57:56 -0300 (ADT)
+Subject: Extensive stuff
+
+Date: Wed, 7 Aug 96 10:41 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+A quick PS: since "semigroups of neighbouring idempotents" satisfy the
+identity xyz = xz, they already have a name: they are what the
+semigroup-theorists call "rectangular bands". As such, they appear in
+my paper "Collapsed toposes and cartesian closed varieties" (J. Algebra
+129 (1990); see top of p. 462), as the simplest nontrivial example of
+what I called a "commutative hyperaffine theory". The fact that they
+form a category equivalent to the two-valued collapse of Set x Set is
+in my paper (though it was known long before), as is the fact that this
+category is cartesian closed but not locally cartesian closed -- and from
+the proof that it's not lcc you can easily extract a proof that it's not
+extensive.
+
+Peter Johnstone
+
+
+Date: Wed, 7 Aug 1996 12:59:18 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Wed, 7 Aug 1996 09:40:48 -0300
+From: RJ Wood <rjwood@cs.dal.ca>
+
+Dear Peter
+Everybody keeps rediscovering your *A*. It probably belongs in Insights.
+Mike Barr's ``The Point of the Empty Set'' shows that the I-fold product
+functor, restricted to the full subcategory of *S*^I determined by the
+``pure functors'', is monadic, in fact VTT. For I=2 the monad in question
+is  TX=X^2 and a T-algebra is thus a set with a binary operation
+satisfying
+xx=x
+(xy)(zw)=xw
+(These are obviously equivalent to associativity and the equations you
+gave.) Anyway, this explains the equivalence of categories you mentioned.
+
+I certainly wasn't aware that *A* is distributive but not extensive. I'd
+just like to point out that *A* and its generalizations is also useful for
+showing that certain apparently multisorted algebraic categories are actually
+single sorted. For example, the obvious category of all modules over
+all rings is monadic over *A* and thus by the above also monadic over *S*.
+Others will have more to say on this. On a personal note, I first learned of
+*A* from my friend Kip Howlett who picked it up at some conference around
+`71. He realized that it was what I needed for my MSc thesis that involved
+M-sets with variable M and applications to automata theory. Anyway, sorting
+out *A* got me into category theory.
+Best regards
+RJ
+
+> The quickest artificial example is the full subcategory, *A*, of
+> (*S*)x(*S*), where  *S*  is the category of sets.  A pair  <X,Y>  is
+> in  *A*  if either both  X  and  Y  are non-empty or both are empty.
+> *A*  is coreflective, hence cartesian. It's closed under the formation
+> of products and coproducts, hence distributive (indeed, it's closed
+> under the formation of exponentials, hence an exponential category).
+>
+> *A*  is not an extensive category.  <{a,b},{a,b}>  is the coproduct of
+> <{a},{a}>  and  <{b},{b}>.  The intersection of each of these
+> subobjects with  <{a},{b}>  is  <{},{}>  hence pulling back along the
+> inclusion map of  <{a},{b}>  does not preserve coproducts.
+>
+> But I seem to have stumbled across a more natural example. In Cats and
+> Alligators a pair of idempotents  e, e'  are said to be "neighbors"
+> if  ee'e = e  and  e'ee' = e'. So, let's understand a  SEMIGROUP  OF
+> NEIGHBORING  IDEMPOTENTS  to mean a semigroup satisfying the further
+> equations:
+>              xx = x,
+>             xyx = x.
+>
+> Note that as a consequence:  xyz = (xzx)yz = x(z(xy)z) = xz.
+>
+> The category of semigroups of neighboring idempotents is a
+> distributive category because, even better, it's an exponential
+
+
+Date: Wed, 7 Aug 1996 13:01:16 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Wed, 7 Aug 1996 11:07:35 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Yikes! Paul Taylor has pointed out to me that I left out one of the
+conditions for distributive and extensive categories, to wit, the
+disjointness of coproducts. (Please note, however, that all the
+categories that I said were distributive are distributive.)
+
+He also points out that finite limits are not needed to say that
+coproducts are stable. Of course. But they're certainly needed for
+extensive logic. So: should the standard definition of extensive
+categories include finite limits? Or should I -- help! -- go around
+talking about "locally distributive logic"? (I included finite limits
+in the definition of locally distributive, but needn't have done so:
+the condition that the category and that every slice of the category
+be distributive easily implies finite limits.)
+
+
+Date: Wed, 7 Aug 1996 13:20:36 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Wed, 7 Aug 1996 09:13:45 -0700
+From: james dolan <jdolan@math.ucr.edu>
+
+-Still here? Guess what. The two categories are equivalent and the
+-equivalence carries one example to the other.
+-
+-Given an object, <X,Y>, in  *A*  turn  XxY  into a semigroup by
+-defining  <x,y><x',y'> = <x,y'>. This is how the equivlence gets from
+-*A*  to the category of neighboring idempotents. Getting back is left
+-to the reader.
+
+
+yes, the algebraic theory of semigroups retracts onto the initial
+theory in two ways (left projection and right projection), so we get a
+theory morphism to the square of the initial theory that's surjective
+for some reason or other.  the square of the initial theory is also
+the natural structure theory of the right adjoint but very slightly
+non-monadic functor "binary cartesian product of sets".
+
+i think these funny semigroups are some variety of "bands".
+unfortunately i can't remember what a "band" is exactly.
+
+
+-Now the real question: how much of all this is already in Johnstone?
+
+
+don't remember seeing it discussed there, but at least the part about
+the funny semigroups being the algebras for the monad associated to
+the slightly non-monadic adjunction between sets and pairs of sets is
+probably well-known, i'd guess.
+
+
+Date: Sat, 10 Aug 1996 23:52:22 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Thu, 8 Aug 1996 11:43:51 +1000 (EST)
+From: stevel@maths.su.oz.au
+
+Dear Peter,
+
+I too ``rediscovered'' your *A*, precisely in looking
+for an example of a distributive category which failed
+to be locally distributive, but never realized that it
+had such an illustrious history.
+
+As for distributive categories which fail to be extensive,
+there is another important and natural class of examples.
+Any distributive lattice, thought of as a preorder, is a
+distributive category, indeed a locally distributive category
+but has coproducts which are very far from being disjoint
+and so fails to be extensive.
+
+In a distributive category admits a subdirect decomposition
+into a distributive and extensive category, and a distributive
+preorder, in the following way. Given a distributive category D, one
+can form the preorder reflection D_pr, and this is a distributive
+preorder and the projection D ---> D_pr a distributive functor.
+On the other hand, one can form the ``extensive reflection'' D_ext
+of D (this is the image of D under the left biadjoint to the
+inclusion of the 2-category of distributive and extensive cats
+in the 2-category of distributive cats), and the projection
+D ---> D_ext is also a distributive functor, and moreover the
+induced functor D ---> D_ext x D_pr is fully faithful. This is
+similar to a result of Cockett which fully embeds a _locally_
+distributive category in the product of a lextensive category
+and a distributive preorder.
+
+The category  D_ext has a very simple construction.
+An object of D_ext is an arrow a:A-->1+1 in D.
+An arrow from a:A-->1+1 to b:B-->1+1 is an arrow f:A-->B+1 in D
+satisfying the condition
+                    f
+                A ----> B+1
+                |        |
+              a |        | b+1
+                |        |
+                v        v
+                1+1---> 1+1+1
+                   inj_13
+
+
+Steve.
+
+
+Date: Sat, 10 Aug 1996 23:53:19 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Thu, 8 Aug 1996 11:59:20 +1000 (EST)
+From: stevel@maths.su.oz.au
+
+>
+> He also points out that finite limits are not needed to say that
+> coproducts are stable. Of course. But they're certainly needed for
+> extensive logic. So: should the standard definition of extensive
+> categories include finite limits? Or should I -- help! -- go around
+> talking about "locally distributive logic"? (I included finite limits
+> in the definition of locally distributive, but needn't have done so:
+> the condition that the category and that every slice of the category
+> be distributive easily implies finite limits.)
+>
+>
+
+As Max Kelly pointed out, an extensive category with finite limits
+has been called a lextensive category.
+
+The problem still remains what one should call an extensive category
+with finite products (such a category being necessarily distributive).
+``Extensive and distributive category'' is a bit of a mouthful, and
+prextensive is obviously unacceptable. Other possibilities that have
+been suggested include ``2-rig'' and ``arithmetic category''.
+
+Steve.
+
+
+Date: Sat, 10 Aug 1996 23:54:20 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Thu, 8 Aug 96 09:55 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+Max asks:
+
+>About the nomenclature: do people agree that "lex" is really
+terrible? Peter Johnstone in Sussex recently called it
+something like a twice-dead metaphor - but now I forget what
+he wanted in its place - was it Peter Freyd's "cartesian" ?
+
+and Peter asks:
+
+should the standard definition of extensive
+categories include finite limits? Or should I -- help! -- go around
+talking about "locally distributive logic"?
+
+Yes, I've been a convert for some time now to the Freydian use of
+"cartesian" for categories having (or functors preserving) all finite
+limits. I know this annoys the computer-science people who want to
+use it for (finite products but not equalizers), but I can't think of
+a better term. Actually, as applied to categories, "left exact" is a
+thrice-dead metaphor (twice-dead as applied to functors, since "exact
+sequence" is a dead metaphor for "exact differential", and "left exact"
+as applied to functors is a dead metaphor for "preserving the left-
+hand ends of exact sequences"). What status that gives to the term
+"lextensive" for "extensive plus all finite limits", I shudder to
+think.
+
+Should the standard definition of extensive categories include
+finite limits? Obviously Max (and Bob Walters, and Steve Lack, and
+probably Bill Lawvere) would say "no". But if you want to develop
+a syntax for these categories, you're not going to get very far
+without the finite limits; so we do need a name for "extensive plus
+finite limits". Perhaps, after all, we should revive the term
+"disjunctive" from my SLNM 753 paper, and call them "disjunctive
+categories". What do other people think?
+
+Peter Johnstone
+
+P.S. - If anyone was confused by the two messages I contributed to
+this discussion yesterday, please note that they were sent out in
+the reverse of the order in which I sent them in. Not that it
+matters very much.
+
+
+Date: Sat, 10 Aug 1996 23:55:28 -0300 (ADT)
+Subject: Re: Peter Freyd's letter of 6 Aug
+
+Date: Thu, 8 Aug 1996 11:47:50 +0200
+From: Dr. Reinhard B/rger (Prof. Dr. Pumpl^nn) <Reinhard.Boerger@FernUni-Hagen.de>
+
+Just for completeness, I think that the category of middle-ignoring
+semigroups is equivalent to the category of pairs of sets which are
+either both empty or both non-empty. Another example of a category
+which is distributive but not extensive is the dual of the category
+of unital rings; note that the dual of the category of unital
+commutative rings is even extensive.
+
+                                   Greetings
+                                   Reinhard
+
+
+Date: Wed, 14 Aug 1996 23:04:48 -0300 (ADT)
+Subject: disjunctive stuff
+
+Date: Sun, 11 Aug 1996 16:11:09 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Regarding some comments of Peter Johnstone:
+
+I haven't succeeded in interpreting disjunction in arbitrary wcartesian
+extensive categories and would therefore hesitate in calling them
+"disjunctive categories."
+
+Computer scientists used to use the phrase "concrete" to mean "well-
+pointed" but seemed to have stoped as they became aware of the clash
+with existing category terminology. (By the way, I can't think at the
+moment of many people in CS, other than Robin C and friends, who use
+"cartesian" just to mean products.)
+
+
+Date: Wed, 14 Aug 1996 23:06:33 -0300 (ADT)
+Subject: alternating stuff
+
+Date: Sun, 11 Aug 1996 17:15:58 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+How about "alternating categories"? Alternatives, in ordinary
+language, are usually understood to be mutually exclusive. So an
+extensive cartesian category (i.e. a locally distributive category
+with terminator) would be called an "alternating category" and the
+corresponding syntax, "alternating logic".
+
+A major problem: it would be hard to keep others -- since I find it
+hard to keep myself -- from corrupting this to "alternative logic".
+(On the other hand, whenever one is an environment where "linear
+logic" is sure to be totally misinterpreted, one could claim also to
+be studying "alternative logic".)
+
+Let me go on record here for the syntax. As in cartesian logic
+conjunction is the only connective and the only terms are conjunctions
+of primitive predicates each followed by an appropriate sequence of
+variables. Cartesian logic has just one primitive assertion, written
+A ue> B, where  A  and  B  are terms. Given an elemental interpretation
+of the primitive predicates,  A ue> B  is satisfied in the elemental
+cartesian semantics if for every instantiation of the variables of  A
+such that  A  holds there is a unique instantiation of the remaining
+variables of  B  such that  B  holds. In alternating logic the
+primitive assertions are written
+                                      A ue> B1|B2|...|Bn
+where  A, B1, B2,...,Bn  are terms.  Such an assertion is said to be
+satisfied in the elemental alternating semantics if for every
+instantiation of the variables of  A  such that  A  holds there is a
+unique index, i,  such that the remaining variables of  Bi  can be
+instantiated so that  Bi  holds and, further, there is just one such
+instantiation of the remaining variables of Bi.
+
+E.G.: for (decidable) fields, add to the cartesian theory of unital
+rings the alternating axiom
+                               x=x  ue>  (x=0)|(xy=1).
+
+As for the categorical semantics, given an alternative category in
+which each primitive predicate has been interpreted, extend the
+interpretation to terms -- just as for cartesian logic -- using finite
+limits.
+
+(For example: if  A  has variables  x  and  y, and  B  has variables
+y  and  z  then, using brackets to designate the interpretations,
+the interpretation of  A^B  is characterized by
+
+                                [A^B]
+                               l/   \r
+                              [A]   [B]
+                              / \   / \
+                            [x]  [y]  [z]
+
+where the rhombus is a pullback.)
+
+Note that the interpretation of a conjunction comes equipped with
+the two maps, l  and  r.
+
+In cartesian logic the key definition:
+
+    A ue> B  is satisfied iff  l:[A^B] -> [A]  is an isomorphism.
+
+In alternating logic:
+
+  A ue> B1|B2|...|Bn  is satisfied iff the  l's  combine to give
+  an isomorphism    [A^B1] + [A^B2] +...+ [A^Bn]  ->  [A].
+
+
+te: Sun, 18 Aug 1996 11:29:00 -0300 (ADT)
+Subject: alternating stuff
+
+Date: Thu, 15 Aug 1996 00:22:45 -0400
+From: James Otto <otto@triples.math.mcgill.ca>
+
+   Date: Sun, 11 Aug 1996 17:15:58 -0400
+   From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+   How about "alternating categories"? Alternatives, in ordinary
+   language, are usually understood to be mutually exclusive. So an
+
+Alternating (Turing) machines are fundamental to complexity and logic
+programming.  The alternation is of bounded quantifiers.
+
+The exclusive, inclusive distinction is captured by the orthogonal,
+injective distinction, which is a strong model, weak model
+distinction.
+
+   extensive cartesian category (i.e. a locally distributive category
+   with terminator) would be called an "alternating category" and the
+   corresponding syntax, "alternating logic".
+   ...
+
+   Let me go on record here for the syntax. As in cartesian logic
+   ....
+   In cartesian logic the key definition:
+
+       A ue> B  is satisfied iff  l:[A^B] -> [A]  is an isomorphism.
+
+On the models side of dualities, this is precisely being orthogonal to
+a map.
+
+   In alternating logic:
+
+     A ue> B1|B2|...|Bn  is satisfied iff the  l's  combine to give
+     an isomorphism    [A^B1] + [A^B2] +...+ [A^Bn]  ->  [A].
+
+On the models side of dualities, this is precisely being orthogonal to
+a small cone with discrete base.  E.g. see Ad\'amek and Rosick\'y's
+book including its historical remarks e.g. on Y. Diers.
+
+I like P. Johnstones's `multi-' for the map, cone distinction.
+
+On the theory side of dualities, P. Johnstones's remarks may help me.
+
+Just out of curiousity, if one drops the `closed' (which I do not)
+from `cartesian closed' or `locally cartesian closed', what would one
+expect to have?
+
+Regards, Jim Otto
+
+
+Date: Sun, 18 Aug 1996 11:29:59 -0300 (ADT)
+Subject: Re: alternating stuff
+
+Date: Thu, 15 Aug 1996 17:01:33 +1000 (EST)
+From: stevel@maths.su.oz.au
+
+> Date: Wed, 14 Aug 1996 23:06:24 -0300 (ADT)
+> From: categories <cat-dist@mta.ca>
+>
+> Date: Sun, 11 Aug 1996 17:15:58 -0400
+> From: Peter Freyd <pjf@saul.cis.upenn.edu>
+>
+> How about "alternating categories"? Alternatives, in ordinary
+> language, are usually understood to be mutually exclusive. So an
+> extensive cartesian category (i.e. a locally distributive category
+> with terminator) would be called an "alternating category" and the
+> corresponding syntax, "alternating logic".
+>
+
+An extensive cartesian category is _not_ the same as a locally
+distributive category with terminator: as has already been pointed
+out, extensive categories are also required to have disjoint
+coproducts, which locally distributive categories need not, as the
+example of distributive lattices shows.
+
+Although I entirely agree that calling a category ``lex'' if it has
+finite limits is a bad thing, and am not thrilled about the name
+lextensive for an extensive category with finite limits, I do think
+that the name does have some advantages. In particular it makes clear
+that the two notions are closely linked. As various people have
+pointed out, for many uses the extensive categories won't be much use
+unless you have the finite limits as well; the reason, at least from
+my point of view, for isolating the extensive categories is to
+emphasize the fact that they are in fact categories with finite
+coproducts satisfying a certain _property_ which does not depend on
+the _structure_ of having all finite limits.
+
+As an ``excuse'' for the name lextensive, one can think of it as
+standing for (finite )l(imits +)extensive.
+
+
+Steve.
+
+
+Date: Sun, 18 Aug 1996 11:31:13 -0300 (ADT)
+Subject: Re: disjunctive stuff
+
+Date: Thu, 15 Aug 96 10:27 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+I'm not sure about `alternating logic' and `alternating categories';
+perhaps I just need time to get used to them. I think the trouble is
+that in everyday speech `alternating' means something dynamic
+(switching back and forth between two states), and the logic doesn't
+have any such feature. `Alternative' doesn't have the same connotation,
+but I agree that `alternative logic' is impossible.
+
+The original reason for `disjunctive' was a pun: it stands for both
+`disjunction' and `disjoint'. The way I formulated the syntax
+(essentially, an extension of Michel Coste's version of cartesian logic),
+you are allowed to write down a disjunction of formulae if you can
+prove that it's disjoint (just as you can use an existential quantifier
+if you can prove that the thing being quantified is unique).
+
+Peter Johnstone
+
+
+Date: Sun, 18 Aug 1996 11:33:04 -0300 (ADT)
+Subject: Re: extensive stuff
+
+Date: Thu, 15 Aug 1996 13:31:16 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+If "lex" fills a need in our vocabulary - "having finite limits" when
+applied to structures, "preserving finite limits" when applied to
+transformations -, can't we forgive it the deadness of its metaphorical
+origins? I suspect there are other metaphorically dead words in mathematics
+- what about ring or field?
+
+The fundamental problem with "Cartesian" now is that it is ambiguous.
+Whenever it's used we have to investigate whether non-product limits are
+required.
+
+Steve Vickers.
+
+
+Date: Sun, 18 Aug 1996 11:34:04 -0300 (ADT)
+Subject: Re: disjunctive stuff
+
+Date: Thu, 15 Aug 1996 15:09:14 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+A propos the discussion of "cartesian", I might add that I think
+Descartes also invented the idea of the graph of a function
+and that is an equalizer.  FWIW.
+
+Michael
+
+
+Date: Sun, 18 Aug 1996 11:37:23 -0300 (ADT)
+Subject: strongly (or exclusive) disjunctive logic: Hu, Tholen
+
+Date: Sat, 17 Aug 1996 11:22:07 -0400
+From: James Otto <otto@triples.math.mcgill.ca>
+
+Dear People,
+
+Perhaps I already said more about strongly (or exclusive) disjunctive
+logic than I wished.  (So this is 2 of 2.)  But I should note
+
+ H. Hu, W. Tholen, Limits in free coproduct completions, JPAA 105
+ ('95)
+
+Rather than a duality as in
+
+ P. Gabriel, F. Ulmer, Springer LNM 221 ('71)
+
+ M. Makkai, A. Pitts, TAMS 299 ('87)
+
+but somewhat as in
+
+ P. Johnstone, In Springer LNM 753 ('79)
+
+they construct a dual and a double dual:
+
+ small with multi-limits of finite diagrams
+
+  | flat functors to set
+  v
+
+ finitely accessible with connected limits
+
+  | functors to set preserving filtered colimits and connected limits
+  v
+
+ having finite limits and stable disjoint small coproducts
+
+with net image the coprimes.
+
+By the way, for accessible categories one could see
+
+ J. Ad\'amek, J. Rosick\'y, Cambridge ('94)
+
+ F. Borceux, Volumes 1-2, Cambridge ('94)
+
+for alternating Turing machines
+
+ D. Bovet, P. Crescenzi, Prentice Hall ('94)
+
+and for quantifiers, games, and interactive proofs (a book which I am
+less familiar with than the previous 4)
+
+ J. K\"obler, U. Sch\"oning, J. Tor\'an, Birkh\"auser ('93)
+
+Regards, Jim Otto
+
+
+Date: Thu, 22 Aug 1996 09:27:03 -0300 (ADT)
+Subject: Re: cartesian/(L)extensive/... stuff
+
+Date: Tue, 20 Aug 1996 15:38:11 -0600 (MDT)
+From: Robin Cockett <robin@cpsc.ucalgary.ca>
+
+
+(1) First, in response to Peter's earlier comments about the term "cartesian":
+I would certainly like to consider Peter as a friend!  Some names for
+mathematical concepts are like old jeans: the more threadbare and holes
+they have the more comfortable they feel.  I suspect the term cartesian
+might be one such.
+
+I tend to think of a "cartesian tensor" as being a product - as
+saying a bit of structure is cartesian usually means it arises
+from limits -  and have abused terminology by calling what I should have
+probably called a "cartesian tensor category" (or a "cartesian monoidal
+category") a "cartesian category" -- yes this is a category with products.
+I am usually careful, however, to make this usage explicit as I am aware
+that equalizers are often assumed.
+
+(2) Another article of comfy clothing is the term extensive!  I agree
+with Steve Lack that it is unfortunate that extensive categories are not
+assumed to have a final object (as these creatures are the more common)
+I merrily suggest abusing terminology to avoid that hiccup.  I would be less
+happy, however, to let the LEXness - or should I say cartesianness - be
+carried by the context.  My reason for this hesitation is as follows:
+
+If you start with a distributive category and form its extensive completion,
+as explained by Lack, then all datatypes (natural numbers, lists, etc.) lift
+into that completion.  These datatypes are shapely in the sense of
+Barry Jay (naturallity square are cartesian etc.).  However, if you,
+taking the construction from another angle, freely add equalizers to a
+distributive category with datatypes (i.e. finitely complete it) all bets
+are off: certainly datatypes which do lift need not be shapely but I conjecture
+that there is, in fact, no guarantee that they lift at all ...
+
+Conjecture: There is a distributive category X with (strong) NNO  such that
+==========  E(X) is its equalizer completion does not have a (strong) NNO.
+
+I do not have a proof that this is so ...or not!
+
+Coproducts appear to lift as the equalizer completion 2-functor
+preserves products.  However, clearly (consider a distributive lattice) the
+resulting coproducts need not be extensive -- although, of course, the category
+E(X) is distributive (another source of non-extensive distributive categories).
+
+If the distributive category is separated (or decidable) in the appropriate
+sense then certainly datatypes lift (as the extensive completion and
+equalizer completion then coincide).  This is the reason why the initial
+distributive category with (strong) datatypes may be finitely completed to
+preserve all datatypes.
+
+This makes me sensitive about the passage to Lextensive even from extensive.
+To obtain a completion in a RIGHT SENSE may be a little more delicate (or
+brutish ... depending on your approach).  The point is there are some
+outstanding issues here ..
+
+(3) Lastly a remark on the connection between distributive categories
+and categorical proof theory:
+
+One motivation for developing the theory of weakly distributive categories
+(wdc) was to provide a unification of the proof theory of "classical" and
+linear logic.  In particular, we supposed that the "and--or" fragment of
+classical logic has as a proof theory the free distributive category on
+its propositions.  Accordingly, in that original paper, we sketched a proof
+that distributive categories are cartesian wdc's (i.e. wdc's in which the
+tensor is a product and the cotensor a coproduct). Subsequently we never
+revisited the result.
+
+Over the summer while studying the nucleus of these categories we realized
+something was amiss.  Re-examing the proof we realized that one of the
+"obvious" coherence conditions was obviously false.  In fact, so
+badly does it fail for distributive categories that the revision of the
+result states:
+
+Prop.  A cartesian wdc which is simultaneously
+       a distributive category is necessarily a preorder.
+
+It should be mentioned that cartesian wdc's abound: pointed sets, vector
+spaces, semi-lattices, ... are examples.  Thus cartesian wdc's definitely do
+not collapse.
+
+(Back to names!!!!
+
+This does remove one of our motivations for the name "weakly distributive
+categories":  Barr suggested the term "linearly distributive".  However,
+to us the original name is now one of those comfy bits of clothing
+(even if somewhat frayed) ... In fact, if we had NOT made this
+oversight it is likely we would have been altogether more hesitant
+in the development of weakly distributive categories!  Mathematics
+moves in mysterious ways.)
+
+There is philosophical significance to the correct result: classical
+semantic settings separate at an earlier stage than we had suspected from
+(categorical) proof theoretic settings.  In particular, distributive
+categories (a core fragment of classical setting) do not permit the
+process of cut elimination (unless they are preorders).
+
+
+-robin
+(Robin Cockett)
+
+(p.s. Revised papers are available under Seely's home page:
+
+      ftp://triples.math.mcgill.ca/pub/rags/ragstriples.html)
+
+
+Date: Thu, 22 Aug 1996 22:46:00 -0300 (ADT)
+Subject: Re: cartesian/(L)extensive/... stuff
+
+Date: Fri, 23 Aug 1996 11:02:53 +1000 (EST)
+From: Steve Lack <stevel@maths.su.oz.au>
+
+>
+> (2) Another article of comfy clothing is the term extensive!  I agree
+> with Steve Lack that it is unfortunate that extensive categories are not
+> assumed to have a final object (as these creatures are the more common)
+
+I can't quite imagine in what context I might have said that; it is
+certainly true that life becomes easier when the extensive category
+in question has a terminal object, but the whole point is that the
+notion of extensivity is a property of finite coproducts. (So in
+particular an extensive functor is one that preserves finite
+coproducts only, although of course it then follows that pullbacks
+along coproduct injections are also preserved.)
+
+>
+> If you start with a distributive category and form its extensive completion,
+> as explained by Lack, then all datatypes (natural numbers, lists, etc.) lift
+> into that completion.  These datatypes are shapely in the sense of
+> Barry Jay (naturallity square are cartesian etc.).  However, if you,
+> taking the construction from another angle, freely add equalizers to a
+> distributive category with datatypes (i.e. finitely complete it) all bets
+> are off: certainly datatypes which do lift need not be shapely but I conjecture
+> that there is, in fact, no guarantee that they lift at all ...
+>
+> Conjecture: There is a distributive category X with (strong) NNO  such that
+> ==========  E(X) is its equalizer completion does not have a (strong) NNO.
+>
+> I do not have a proof that this is so ...or not!
+>
+> Coproducts appear to lift as the equalizer completion 2-functor
+> preserves products.  However, clearly (consider a distributive lattice) the
+> resulting coproducts need not be extensive -- although, of course, the category
+> E(X) is distributive (another source of non-extensive distributive categories).
+
+In fact,
+        (1) If X is distributive then E(X) is locally distributive
+but
+        (2) If X is distributive and E(X) is extensive then X is
+        equivalent to the trivial category 1.
+To (freely) pass from a distributive category to a lextensive one, you
+first form E(X) and then the slice category p/E(X) where p is the equalizer
+                  i
+                 --->
+        p ---> 1 ---> 1+1
+                  j
+of the coproduct injections i,j:1--->1+1.
+
+The passage from extensive categories to lextensive categories, is, as
+Robin says, more delicate.
+
+
+Steve Lack.
+
+
+Date: Sat, 24 Aug 1996 11:44:46 -0300 (ADT)
+Subject: Re: cartesian/(L)extensive/... stuff
+
+Date: Fri, 23 Aug 1996 11:53:12 -0600 (MDT)
+From: Robin Cockett <robin@cpsc.ucalgary.ca>
+
+I did mean extensive + products and mistyped "final object."  The point
+being that these are common beasties which deserve a snappy name!
+
+Further, Steve Lack is correct about the fact that if E(X) is extensive and
+X is distributive then X = 1.  So I should correct my comments about when
+the equalizer completion and extensive completion coincide!  ... and I
+have to chuckle at this point as I have tripped on my own snag ...
+
+The problem is the initial object.
+
+In a distributive category this object is only one way connected to the rest
+of the category so that the poset collapse of a distributive category is always
+non-trivial while the category itself is. This means the added equalizer
+                  i
+                 --->
+        p ---> 1 ---> 1+1
+                  j
+of the coproduct injections i,j:1--->1+1 in E(X) is never isomorphic to the
+initial object.  Hence Steve Lack's comment.
+
+Some time ago (when I was in Oz, in fact) I sensitized the community
+there to exactly these issues.  In fact, I became a bit of a heretic by
+considering distributive categories without an initial object (I called these
+predistributive).  It is the initial of these gadgets (with "non-empty"
+inductive datatypes) which has E(X) extensive ... and the initial object is
+provided precisely by the added equalizer p, above.
+
+However, it really is infinitely better to talk about LEXT(X), the
+lextensive completion, not the raw E(X) where some preinitial baggage
+may still be present.
+
+The conjecture still stands but is better expressed in the form:
+
+Conjecture: There is a distributive category X with (strong) NNO  such that
+==========  LEXT(X) is its lextensive completion does not have a (strong) NNO.
+
+
+-robin
+
+
+Date: Tue, 27 Aug 1996 10:19:53 -0300 (ADT)
+Subject: terminology
+
+Date: Mon, 26 Aug 1996 11:07:26 +1000 (EST)
+From: Steve Lack <stevel@maths.su.oz.au>
+
+
+Regarding the debate on cartesian/extensive, we'd like to suggest
+the name "arithmetic category" for an extensive category with products.
+
+Certainly such categories seem well structured enough to do some
+arithmetic, and free such are closely enough related to the free
+analogies in the algebraic context (ie rigs) to be thought of as
+behaving "arithmetically" in some sense.
+
+Robbie Gates
+Steve Lack
+--
+----------------------------------------------------------------------
+      robbie gates      |
+  apprentice algebraist |    http://cat.maths.usyd.edu.au/~robbie
+    pgp key available   |
+
+
+Date: Wed, 28 Aug 1996 10:42:44 -0300 (ADT)
+Subject: Re: terminology
+
+Date: Tue, 27 Aug 1996 14:45:24 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>Regarding the debate on cartesian/extensive, we'd like to suggest
+>the name "arithmetic category" for an extensive category with products.
+>
+>Certainly such categories seem well structured enough to do some
+>arithmetic, and free such are closely enough related to the free
+>analogies in the algebraic context (ie rigs) to be thought of as
+>behaving "arithmetically" in some sense.
+>
+>Robbie Gates
+>Steve Lack
+
+The phrase "Arithmetic Category" with this sense doesn't sit comfortably
+next to Joyal's "Arithmetic Universes", in which the word "arithmetic" also
+conveys recursive structure.
+
+Steve Vickers.
+
+
+Date: Thu, 29 Aug 1996 13:19:42 -0300 (ADT)
+Subject: Re: alternating stuff
+
+Date: Thu, 29 Aug 1996 14:59:54 +0200 (MET DST)
+From: Jiri Rosicky <rosicky@math.muni.cz>
+
+In a recent paper (An algebraic description of locally multipresentable
+categories, TAC 2 (1996), 40-54), we have introduced
+essentially multialgebraic theories and showed that they correspond
+to locally finitely multipresentable categories in the same way as
+essentially algebraic theories correspond to locally finitely
+presentable categories.
+                             J.Adamek, J.Rosicky
+
+
+Date: Thu, 29 Aug 1996 13:19:00 -0300 (ADT)
+Subject: Re: terminology
+
+Date: Thu, 29 Aug 1996 03:00:41 -0400 (EDT)
+From: F William Lawvere <wlawvere@ACSU.Buffalo.EDU>
+
+
+The term   EXTENSIVE was applied to certain categories in 1991
+by Carboni, Lawvere, and Walters on the basis of the following
+considerations.
+
+For centuries, mathematical philosophy has distinguished between
+extensive quantities and intensive quantities, for example in
+thermodynamics of inhomogeneous bodies, volume, mass, energy, and
+entropy on the one hand are distinguished from pressure, density,
+temperature on the other.  Lawvere in 1982  (SLNM 1174) and in
+1990 (Categories of Space and of Quantity) had proposed to
+explain these as modes of variation of quantity. Quantities vary
+over a domain of variation in both cases. ( A domain of variation
+is a "space" , which in turn is an object in a category of space,
+which will be rather more determinate than "category" in general).
+An extensive quantity type is a covariant functor from a category
+of space, preserving finite coproducts, to a linear category (=
+one in which coproducts and products coincide). A distribution,
+a measure, a current, a homology class on a sum domain is
+given by a tuple of such , one on each summand ; thus all these
+are elements of extensive quantity types. An intensive quantity
+type is a contravariant functor from a category of space which
+also takes coproducts to products ; but more: intensive quantities
+usually act linearly on extensive quantities, lending them (not only
+a linear but also a) multiplicative structure which is also preserved
+by the contravariant functorality. For example, functions act as
+densities on distributions and measures, similarly differential
+forms act on currents, and cohomology classes act on homology classes.
+Often intensive quantity types are representable and related extensive
+types are definable  as linear duals ( Riesz, Pontrjagin, Eilenberg- Mac
+Lane etc),but these are not the only possibilities.
+
+A fundamental example of a linear "category" is the 2-category of
+all categories with coproducts; it has an obvious abstraction functor
+to the linear category of commutative monoids, by taking isomorphism-
+classes. Part of the idea of K-theory and of K-homology and of
+the "non-linear K-theory" which I with Schanuel and others have been
+pursuing under the name of "objective number theory" is that it is
+useful to "objectify" quantities by lifting their type across this
+abstraction functor.
+
+The most fundamental measure of a thing is the thing itself. But measures
+can be pushed-forward ( a common colloquial expression for the covariant
+functorality of extensive quantity).However pullback is more familiar
+(already in 1844 Grassmann complained that intensives were more familiar
+than Ausdehnungen) :  On any category with pullbacks, there is the
+contravariant functor to cat which takes the "slice" categories
+of each object.This functor is commonly viewed as consisting if
+"functions", namely functions whose values are the fibers. Indeed if the
+category satisfies suitable conditions , this will be an intensive
+quantity type. But what extensives will it act on ?
+
+On any category at all the slice categories constitute an even simpler
+covariant  cat-valued functor, simply composing the transforming map
+following the structural map to define the new structural map. It is
+often appropriate to consider that the structural map distributes
+the total in the base ( though distributions usually do not have values
+at points, they do often have totals ) and that the mentioned composing
+pushes the distribution forward. Indeed if the category has coproducts,
+this naive pushing forward is automatically linear.
+
+Thus a category with coproducts defines an extensive quantity type on
+itself if and only if it is an extensive category.
+
+
+If we call lextensive any extensive category with (finite) limits, then
+also by pullback, the intensives act on the extensives in a way that
+satisfies all reasonable functoralities, including the crucial CCR
+or "projection formula". More exactly, note that there will typically be
+lots of subcategories of such a "category of space" which are extensive
+but do not themselves have products or even a terminal object;
+it suffices to be closed under sums and summands. Namely the empty
+space together with all spaces of dimension exactly 7. Any such
+subcategory A defines the extensive quantity type "distributions
+of A-dimensional spaces " in each base space X, namely the subslice
+category. Given A and B  two extensive subcategories, there is an
+objective intensive quantity type which acts roughly as " B-A dimensional
+cohomology" namely for any X consider the category of all those spaces
+over X such that for any space over X whose total is in A, the pullback
+has total in B ; this pulls back along any  change of X.
+
+Of course many extensive subcategories of a (lextensive) category of space
+will have products, for example (as Joyal pointed out to me in 1984)
+if A=B is the "compact" objects , thus defining the extensive notion
+of distributing a compact object in a base space, the corresponding
+intensive quantities which act on these are the proper fiberings
+.
+
+
+Date: Fri, 30 Aug 1996 13:57:50 -0300 (ADT)
+Subject: Re: terminology
+
+Date: Fri, 30 Aug 1996 12:08:55 -0400 (EDT)
+From: F William Lawvere <wlawvere@ACSU.Buffalo.EDU>
+
+
+
+The following is an improved version of the text sent Thurs. Any
+suggestions for further improvements will be welcome . Note that
+the distinction between the objective  extensive and the objective
+intensive is essentially "sampling/sorting" distinction discussed in
+Conceptual Mathematics.     Bill
+
+
+
+The term   EXTENSIVE was applied to certain categories in 1991
+by Carboni, Lawvere, and Walters on the basis of the following
+considerations.
+
+For centuries, mathematical philosophy has distinguished between
+extensive quantities and intensive quantities, for example in
+thermodynamics of inhomogeneous bodies, volume, mass, energy, and
+entropy on the one hand are distinguished from pressure, density,
+temperature on the other.  Lawvere in 1982  (SLNM 1174) and in
+1990 (Categories of Space and of Quantity) had proposed to
+explain these as modes of variation of quantity. Quantities vary
+over a domain of variation in both cases. ( A domain of variation is a
+"space" ,
+which in turn is an object in a category of space,
+which will be rather more determinate than "category" in general).
+An extensive quantity type is a covariant functor from a category
+of space, preserving finite coproducts, to a linear category (=
+one in which coproducts and products coincide). A distribution,
+a measure, a current, a homology class on a sum domain is
+given by a tuple of such , one on each summand ; thus all these
+are elements of extensive quantity types. An intensive quantity
+type is a contravariant functor from a category of space which
+also takes coproducts to products ; but more:  intensive quantities
+usually act linearly on extensive quantities, lending them (not only
+a linear but also a) multiplicative structure which is also preserved
+by the contravariant functorality. For example, functions act as
+densities on distributions and measures, similarly differential
+forms act on currents, and cohomology classes act on homology classes.
+Often intensive quantity types are representable and related extensive
+types are definable  as linear duals ( Riesz, Pontrjagin, Eilenberg- Mac
+Lane etc),but these are not the only possibilities.
+
+A fundamental example of a linear "category" is the 2-category of
+all categories with coproducts; it has an obvious abstraction functor
+to the linear category of commutative monoids, by taking isomorphism-
+classes. Part of the idea of K-theory and of K-homology and of
+the "non-linear K-theory" which I with Schanuel and others have been
+pursuing under the name of "objective number theory" is that it is
+useful to "objectify" quantities by lifting their type across this
+abstraction functor.
+
+The most fundamental measure of a thing is the thing itself. But measures
+can be pushed-forward ( a common colloquial expression for the covariant
+functorality of extensive quantity).However pullback is more familiar
+(already in 1844 Grassmann complained that intensives were more familiar
+than Ausdehnungen) :  On any category with pullbacks, there is the
+contravariant functor to cat which takes the "slice" categories
+of each object.This functor is commonly viewed as consisting of
+"functions", namely functions whose values are the fibers. Indeed if the
+category satisfies suitable conditions , this will be an intensive
+quantity type. But what extensives will it act on ?
+
+On any category at all the slice categories constitute an even simpler
+COVARIANT  cat-valued functor, simply composing the transforming map
+following the structural map to define the new structural map. It is
+often appropriate to consider that the structural map distributes
+the total in the base ( though distributions usually do not have values
+at points, they do often have totals ) and that the mentioned composing
+pushes the distribution forward. Indeed if the category has coproducts,
+this naive pushing forward is automatically linear.( But even though the
+slice categories have terminal objects, these are not preservedby
+the relevant extensive functorality.)
+
+THUS A CATEGORY WITH COPRODUCTS DEFINES
+ AN EXTENSIVE QUANTITY TYPE ON ITSELF
+IF AND ONLY IF IT IS AN EXTENSIVE CATEGORY.
+
+
+If we call lextensive any extensive category with (finite) limits, then
+also by pullback, the intensives act on the extensives in a way that
+satisfies all reasonable functoralities, including the crucial CCR
+or "projection formula". More exactly, note that there will typically be
+lots of subcategories of such a "category of space" which are extensive
+but do not themselves have products or even a terminal object ;
+it suffices to be closed under sums and summands. Namely the empty
+space together with all spaces of dimension exactly 7. Any such
+subcategory A defines the extensive quantity type "distributions
+of A-dimensional spaces " in each base space X, namely the subslice
+category. Given A and B  two extensive subcategories, there is an
+objective intensive quantity type which acts roughly as " B-A dimensional
+cohomology" namely for any X consider the category of all those spaces
+over X such that for any space over X whose total is in A, the pullback
+has total in B ; this pulls back along any  change of X.
+
+Of course many extensive subcategories of a (lextensive) category of space
+will have products, for example (as Joyal pointed out to me in 1984)
+if A=B is the "compact" objects , thus defining the extensive notion
+of distributing a compact object in a base space, the corresponding
+intensive quantities which act on these are the PROPER fiberings
+.
+
+
+Date: Thu, 5 Sep 1996 14:11:33 -0300 (ADT)
+Subject: Correction to paper - distributive is not weakly distributive
+
+Date: Tue, 3 Sep 1996 16:13:35 -0400
+From: Robert A. G. Seely <rags@triples.math.mcgill.ca>
+
+The following notice and discussion amplifies some recent remarks made
+by Robin Cockett on the CATEGORIES list.
+
+
+We wish to announce a correction to a statement in the paper
+
+                   Weakly distributive categories
+
+                   by J.R.B. Cockett and R.A.G. Seely
+
+
+An error in Proposition 3.1, where we claimed that distributive
+categories are weakly distributive, was found in proof.  The result is
+totally incorrect: a distributive category is a cartesian weakly
+distributive category if and only if it a preorder.  (Note: a weakly
+distributive category may be cartesian - by which we just mean the
+tensor and cotensor ("par") are cartesian product and coproduct
+respectively - without being a preorder; it is the distributivity that
+causes the collapse.)
+
+In particular, any distributive category which satisfies equation (13):
+
+                           \delta^R_R
+             (A+B)x(C+D)  ------------>  A+(Bx(C+D))
+                  |                           |
+       \delta^L_L |                           |
+                  v                           |
+             ((A+B)xC)+D                      | 1 + \delta^L_L
+                  |                           |
+   \delta^R_R + 1 |                           |
+                  v              a            v
+             (A+(BxC))+D  ------------>  A+((BxC)+D)
+
+   (where we write x for the tensor, + for the cotensor (par),
+    and 1 for identity)
+
+for the choice of weak distributions described in the paper is
+immediately a preorder.  This because in that diagram if A=D=1 and B=C=0
+then, up to equivalence, we obtain for the two sides of diagram the
+coproduct embeddings of 1 into 1+1.  This suffices to cause collapse.
+The argument can be modified to show that in any distributive category
+which is simultaneously weakly distributive (no matter how the weak
+distributions are defined), Boolean negation must have a fixed point.
+This also suffices to cause collapse.
+
+A consequence of this observation is that the categorical proof theory
+of not-necessarily-intuitionist AND/OR logic is somewhat subtle.  In the
+absence of any connective for implication, there is no apparent a priori
+reason not to have multiple-conclusion sequents; let's see what this
+yields.  We start with the premise that a good semantics for AND/OR
+logic ought to be a polycategory; in particular, that the morphisms
+interpreting the following two derivations must be equal.  (That these
+are equal is a consequence of the polycategory definition, but you can
+judge them on their own merits if you like.  This type of permutation of
+cuts is pretty standard, and categorical cut elimination then would
+demand that they be equal.)
+
+(Notation: I use -> for the sequent turnstile, and x and + for AND and
+OR.  The interpretation of the commas is, as is usual in such logics,
+AND on the left and OR on the right, so there are evident identity maps
+representing A,B -> AxB and A+B -> A,B.  All deduction steps are cuts.
+The cut rule is  XX,A -> YY  and  WW -> A,UU  entail  XX,WW -> YY,UU
+and variants via exchange.)
+
+
+  B,C -> BxC   A+B -> A,B
+ -------------------------
+      A+B,C -> A,BxC      C+D -> C,D
+     --------------------------------
+            A+B,C+D -> A,BxC,D
+
+
+
+                       B,C -> BxC   C+D -> C,D
+                      -------------------------
+         =                 B,C+D -> BxC,D      A+B -> A,B
+                          --------------------------------
+                                 A+B,C+D -> A,BxC,D
+
+
+But here's the catch - with the obvious interpretation, these come out
+different in SETS: think of the image of a pair <a,d> in (A+B)x(C+D),
+where a \in A and d \in D.  For the top map, this is mapped to a,
+whereas for the bottom map it is mapped to d.  This is just our equation
+(13) again, so the point of our initial comment is that in any
+distributive category, with any interpretation, these two maps are equal
+iff the category is a preorder.
+
+This is a pretty "stripped down" example - it seems that categorical cut
+elimination is inconsistent with using distributive categories for
+AND/OR logic and general sequents. This problem is averted of course if
+one restricts oneself to "intuitionist" sequents (with the right of the
+turnstile restricted to single formulas), but then this result may be
+seen as indicating how the folkloric result concerning the collapse of
+categorical proof theory for classical logic (Joyal) doesn't really
+depend on very much structure - note that we have assumed no structure
+rules beyond cut, and the linear versions of the AND/OR sequent rules;
+the collapse just needs multiple-conclusion sequents and distributivity.
+
+It is interesting to note, however, that by carefully choosing the weak
+distributions one can construct a cartesian weakly distributive category
+from an elementary distributive category by simply passing to the
+Kleisli category of the ``exception monad'' E(X) = X+1. So, for example,
+although SETS is not weakly distributive itself, POINTED_SETS is.
+
+The error means, of course, that all discussion in the paper of
+non-posetal distributive categories as examples of weakly distributive
+categories must be discounted.  This mainly affects the Introduction and
+Section 3, where Proposition 3.1 must be restated as indicated above,
+and the surrounding text must take this restatement into account.  In
+particular, Theorem 3.3, although still correct, ought to be stengthened
+to state that a cartesian weakly distributive category is a preorder if
+and only if it has a strict initial object.
+
+A version of this paper which contains a rewritten Introduction and
+Section 3 may be found on rags' WWW home page at this URL:
+     <http://www.math.mcgill.ca/~rags>.
+These comments will also appear in the published version of the paper
+(to appear in JPAA).
+
+Finally, the inevitable controversy about terminology: we have decided
+to continue calling these categories "weakly distributive", since we
+have done so for so long and in so many places.  Besides, Hyland and
+dePaiva had arrived at the same name for the "weak distributivities",
+independently, and at the same time.  But we keep an open mind about
+these matters: if another name seems to have near-universal approval, we
+will adopt it too.  The most promising seems to be Barr's suggestion of
+"linearly distributive".  Indeed, had that suggestion been made in 1991,
+we might have adopted it then (it certainly beats "dissociative
+categories"!)
+
+Robin Cockett
+Robert Seely
+(for ftp help: rags@math.mcgill.ca)
+

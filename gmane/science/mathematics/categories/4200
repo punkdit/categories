@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: question about monoidal categories
+Date: Thu, 7 Feb 2008 22:36:24 +0000 (GMT)
+Lines: 97
+Approved: news@gmane.org
+Message-ID: <E1JNYMo-0004Ix-RO@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1241019789 12187 80.91.229.2 (29 Apr 2009 15:43:09 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:43:09 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb  8 15:00:05 2008 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 08 Feb 2008 15:00:05 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JNYMo-0004Ix-RO
+	for categories-list@mta.ca; Fri, 08 Feb 2008 14:54:30 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 22
+Status: O
+Content-Length: 2650
+Original-Lines: 96
+Xref: news.gmane.org gmane.science.mathematics.categories:4200
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4200>
+
+
+Dear Paul,
+
+Here is one possible answer to your question.
+
+One has a notion of action of a monoidal category V on an
+arbitrary category X, which generalises that of action by a
+monoid on a set; thus we have a functor
+
+(-) * (-): X x V --> X
+
+together with natural isomorphisms x * I ~ x and x * (v * w)
+~ (x * v) * w satisfying pentagon and triangle axioms.
+Formally, one may define an action of V on X to be a strong
+monoidal functor V --> [X, X], where the latter is equipped
+with its compositional monoidal structure.
+
+If we are given two categories X and Y equipped with an
+action by V, then we have a notion of equivariant morphism
+between them; namely a functor F: X --> Y together with
+natural morphisms
+
+   m_{x, v} : F(x) * v  --> F(x * v)
+
+obeying axioms like those for a monoidal functor. This is
+what one might call a lax equivariant morphism; if the m_{x, v}'s
+are all invertible we should rather call it strong,
+whilst if they point in the opposite direction then what we
+have is an oplax morphism.
+
+The situation you have described is a special case of an lax
+equivariant morphism. You have a monoidal category M, and a
+functor F : M --> S. Now, M has a canonical action on itself
+induced by tensoring on the right (the "right regular
+representation"); and it has a trivial action on S given by
+s * m = s for all s and m.  Your natural transformation beta
+can now be written as
+
+beta(p, a) : F(p) * a --> F(p * a),
+
+and your two axioms are precisely the axioms required for
+beta to equip F with the structure of a lax equivariant
+morphism.
+
+This whole area of monoidal actions is slightly folklorish
+but a useful source is:
+
+George Janelidze and Max Kelly, "A note on actions of a
+monoidal category", TAC Vol. 9, No. 4
+
+Also worth mentioning is the work of Paddy McCrudden who has
+studied actions by a symmetric monoidal V under the name
+"V-actegories".
+
+Hope this is of some help,
+
+Richard
+
+
+--On 07 February 2008 20:05 Paul B Levy wrote:
+
+>
+>
+>
+> Let F be a functor from a monoidal category M to a category S.
+>
+> We are given
+>
+>        beta(p,a) : F(p) --> F(p*a)
+>
+> natural in p,a in M.
+>
+> If I tell you that, in addition to naturality, beta is "monoidal", I'm
+> sure you will immediately guess what I mean by this, viz.
+>
+> (a) for any p,a,b in M
+>
+>   beta(p,a) ; beta(p*a,b) = beta(p,a*b) ; F(alpha(p,a,b))
+>
+> (b) for any p in M
+>
+>   beta(p,1) = F(rho(p))
+>
+> Yet I cannot see any reason for giving the name "monoidality" to (a)-(b).
+>
+> It doesn't appear to be a monoidal natural transformation in the official
+> sense.  There are no monoidal functors in sight.
+>
+> Can somebody please justify my usage?
+>
+> Paul
+>
+>
+>
+
+
+

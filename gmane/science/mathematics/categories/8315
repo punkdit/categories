@@ -1,0 +1,121 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is the category of group actions LCCC?
+Date: Fri, 05 Sep 2014 11:05:12 +1000
+Lines: 82
+Approved: news@gmane.org
+Message-ID: <E1XPss0-0005NG-6P@mlist.mta.ca>
+References: <E1XOyNa-0002FN-DU@mlist.mta.ca> <E1XPYUE-0003Of-Jl@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1409921093 17704 80.91.229.3 (5 Sep 2014 12:44:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 5 Sep 2014 12:44:53 +0000 (UTC)
+Cc: categories@mta.ca
+To: Ross Street <ross.street@mq.edu.au>, Timothy Revell <timothy.revell@strath.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 05 14:44:47 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPssg-0008Fh-SM
+	for gsmc-categories@m.gmane.org; Fri, 05 Sep 2014 14:44:47 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:42519)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPss1-0004Dm-Pe; Fri, 05 Sep 2014 09:44:05 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPss0-0005NG-6P
+	for categories-list@mlist.mta.ca; Fri, 05 Sep 2014 09:44:04 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8315
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8315>
+
+It seems that the following is in fact true:
+
+Let p: E ----> B be a fibration. If B is cartesian closed, each fibre is
+cartesian closed with exponents stable under pullback, and Pi's exist
+along product projections (and satisfy BCC), then E is cartesian closed.
+
+The product of (a, phi) with (b, psi) in E is of course (a x b,
+pi_1^*(phi) x pi_2^*(psi)) with pi_1 : a <--- a x b ----> b : pi_2 the
+product projections in B.
+
+The internal hom [(b, psi), (c, gamma)] is Pi_{pi_1} [pi_2^*(psi),
+ev^*(theta)], where pi_1 : [b,c] <---- [b,c] x b ----> b : pi_2 and=20
+ev: [b,c] x b ----> c in B.
+
+This in particular applies to Cat//=E2=80=99Set=E2=80=99 as in Ross' messag=
+e, seen as a
+fibration over Cat with reindexing along f:A--->B given by
+[f,1]:[B,Set]--->[A,Set]. This fibration has right adjoints to
+pullbacks, but they don't satisfy BCC; however, right adjoints to
+pullback along product projections are given just by (conical) limit
+functors, and these do satisfy BCC. So the preceding construction
+applies (and a bit of fiddling about shows that this does indeed agree
+with Ross' prescription).
+
+As for local cartesian closure: if B is lccc, each fibre is lccc with
+fibrewise Pi's stable under pullback, and E--->B has all products, then
+it seems that each slice fibration p/A: E/A--->B/pA will satisfy the
+conditions in the second paragraph, whence E is also lccc.
+
+Richard
+
+On Thu, Sep 4, 2014, at 10:19 AM, Ross Street wrote:
+> On 1 Sep 2014, at 7:12 pm, Timothy Revell <timothy.revell@strath.ac.uk>
+> wrote:
+>=20
+>> I'm wondering whether the category of ALL group actions is locally
+>> Cartesian closed.=20
+>=20
+> This is what I answered Timothy:
+> =3D=3D=3D=3D=3D=3D
+> No, it=E2=80=99s not.
+> Since the category has a terminal object (1,1), being a LCCC would imply
+> it
+> was cartesian closed. However, that would imply (G,X) \times =E2=80=94 pr=
+eserved
+> the initial object (1,0), which is false: (G,X)\times (1,0) =3D (G,0).
+> =3D=3D=3D=3D=3D=3D
+>=20
+> But it seems there is more to the story.=20
+> The thing stopping the category of actions from
+> being cartesian closed is that the category Gp of groups is not. However,
+> the category Gpd of groupoids and the category Cat of categories are.
+> The (2-)category Cat//=E2=80=99Set=E2=80=99 of all category actions is de=
+fined as
+> follows:
+> objects (A,F) are functors F : A =E2=80=94> Set and morphisms (f,t) : (A,=
+F) =E2=80=94>=20
+> (B,G)
+> are functors f : A =E2=80=94> B with natural transformation t : F =3D=3D>=
+  G f.
+> This (2-)category is cartesian closed: the internal hom [(B,G),(C,H)] is
+> ([B,C], K) where [B,C] is the functor category and K(g) =3D [B,Set](G, H
+> g).
+>=20
+> However Cat//=E2=80=99Set=E2=80=99 is not locally cartesian closed basica=
+lly because Cat
+> is not. It is not even locally cartesian closed as a bicategory.
+> The 2-category Gpd is cartesian closed; it is not locally cartesian
+> closed;
+> it is locally cartesian closed as a bicategory.=20
+>=20
+> Similarly, Gpd//=E2=80=99Set=E2=80=99 is locally cartesian closed as a bi=
+category.
+> Often, in dealing with groups, we find groupoids help.
+> This case is a good example and I hope helps in the applications
+> you have in mind, Timothy.
+>=20
+> Ross
+>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Barr question
+Date: Wed, 6 Sep 2000 13:43:13 -0400 (EDT)
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <200009061743.e86HhCQ25057@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017969 32084 80.91.229.2 (29 Apr 2009 15:12:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:49 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Sep  6 20:05:13 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA07440
+	for categories-list; Wed, 6 Sep 2000 19:03:08 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: O
+Content-Length: 3956
+Original-Lines: 90
+Xref: news.gmane.org gmane.science.mathematics.categories:1615
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1615>
+
+  Mike Barr asked:
+
+    Suppose  X  is an abelian category and  T:X --> Ab  is a left- 
+    exact functor. Say an object  E  is  T-effaceable if for every 
+    exact sequence  0 --> E --> B --> A --> 0, the induced  TB --> TA  
+    is surjective. Now suppose that  0 --> E' --> E --> E'' --> 0  is 
+    an exact sequence in which  E  and  E' are  T-effaceable. Does it 
+    follow that  E'' is?
+
+  (Well, actually he asked the dual question. But they're equivalent.)
+
+  The answer is no.
+
+  Suppose we have an abelian category with a map  x:E --> E  where
+
+     1)  E is injective;
+     2)  the image of  x  is not injective; and
+     3)  x  is not a zero-divisor in the ring of endomorphisms of E.
+
+  Let  E'  denote the kernel of  x, E'' the image and  F  the 
+cokernel. Let  T  be the representable functor  (F,-).
+
+In order of difficulty:
+
+   E  is  T-effaceable because being condition 1 says that it's 
+T-effaceable for any old  T.
+
+   E'' is not  T-effaceable because if the exact sequence
+0 --> E'' --> E --> F --> 0  were to be carried into an exact sequence
+0 --> (F,E'') --> (F,E) --> (F,F) --> 0  then the identity element in
+(F,F)  would have a pre-image and the  0 --> E'' --> E --> F --> 0  
+would split, forcing  E'' to be injective (violating condition 2).
+
+   E' is  T-effaceable because given  0 --> E' --> B --> A --> 0  
+exact we show that  0 --> (F,E') --> (F,B) --> (F,A) --> 0  exact by 
+showing that any  F --> A  has a pre-image in  (F,B); we do that by 
+first constructing the exact diagram (add your own downwards 
+arrowheads):
+                      0 --> E'--> C --> F --> 0     
+
+                           1|     |     |
+
+                      0 --> E'--> B --> A --> 0  
+
+by taking the right-hand square as a pullback; we need to show that
+the top sequence splits; construct:
+
+                      0 --> E'--> C --> F --> 0     
+
+                           1|     |     |
+
+                      0 --> E'--> E --> E''--> 0     
+
+by using the injectivity of  E  to obtain the middle vertical and
+the exactness of the rows to obtain the right-hand vertical; note
+         x
+that  E --> E --> F --> E'' --> E  is necessarily the zero-map, 
+hence  E --> F --> E'' --> E  is a zero-divisor for  x, and condition
+3 together with the epiness of  E --> F  and the mononess of  E'' -> E
+forces  F --> E'' to be the zero-map; that forces  C --> E --> E''
+to be the zero-map; and that says that  C --> E  can be factored 
+through  E' --> E; but that implies that  E' --> C  is a split mono;
+so  C --> F  is a split epi.
+
+   How do we know that the three numbered conditions can be met? 
+There must be an easier way, but the one that occurs to me is to use
+the category Joel Cohen named in his book the Freyd Category (named 
+not after me, he says, but my daughter). It's the abelian category in
+which the stable-homotopy category of finite complexes appears as
+the full subcategory of injective-projectives.  Take  E  to be 
+the sphere. Its ring of endomorphisms is the ring of integers and
+we can take  x = 2.  Using that the endomorphisms form a connected
+ring (no non-trivial idempotents) we know that  x  is not epi (else
+it would be a split epi) and its image, being a proper non-trivial
+subobject, can't be injective.
+
+  (If you try for a dual example by replacing "injective" with
+"projective", avoid the temptation of taking  E  to be free -- can't
+work.)
+
+  When Mike and I started, category theory was classified (by MR and 
+just about everybody) as homological algebra. Mike was right, in fact,
+when he said, "I thought this would be a simple application of the
+snake lemma", albeit in the other direction. Assuming that  T  could
+be taken as a functor of the form  (F,-)  a little homological algebra
+says that what's needed is an object  E'  where  Ext(F,E')  is trivial
+but  Ext^2(F,E')  is not. I thought it might be best -- since category
+theory is no longer a subset of homological algebra -- to get rid of
+the Exts.
+
+

@@ -1,0 +1,177 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Modeling infinitesimals with 2x2 matrices
+Date: Fri, 23 Apr 2004 23:45:19 -0700
+Lines: 147
+Approved: news@gmane.org
+Message-ID: <200404240645.i3O6jJxJ017210@coraki.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018815 5219 80.91.229.2 (29 Apr 2009 15:26:55 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:26:55 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Apr 24 15:24:15 2004 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 24 Apr 2004 15:24:15 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1BHRoc-0002mL-00
+    for categories-list@mta.ca; Sat, 24 Apr 2004 15:23:50 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 43
+Status: RO
+Content-Length: 5894
+Original-Lines: 146
+Xref: news.gmane.org gmane.science.mathematics.categories:2664
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2664>
+
+At some point I'll try to collect my thoughts on Sol Feferman's Thursday
+lecture on his alternative to Grothendieck universes, which he objected to
+as entailing an infinity of inaccessible cardinals.  (What was Grothendieck's
+view of inaccessible cardinals vis a vis his universes?)
+
+During the lecture it struck me that his approach was quite like Robinson's
+approach to infinitesimals, in that it constructed lots of models of what
+was needed, took the common theory, then constructed a single model from
+the many, using techniques of Vaught and others to avoid losing too much
+of the common spirit of the many guided by the common theory (not sure if
+that captures the idea completely faithfully, but it's something like that).
+
+Thus distracted, I found myself wondering yet again why the d^2 = 0 property
+was so difficult for an infinitesimal d.  Having been mulling over the
+quaternions lately, it seemed to me there was something of an analogy there,
+some property so built into our very psyche that we can't let go of it.
+Hamilton finally dropped commutativity, along with any reservations he
+might have harbored about vandalizing stone bridges in his own town.
+
+For the quaternions, d^2 = 0 implies d = 0, so this doesn't help.  However the
+quaternions have a sibling algebra, just as noncommutative, and of exactly
+the same vector space dimension (in fact the only Clifford such, i.e. the
+only other real 4D vector space for which ij+ji=0 for all orthogonal vectors
+i,j having no real component), that is even better known than the quaternions
+(imagine that).
+
+Namely the Clifford algebra of 2x2 real matrices, as a 4D real vector space,
+made an algebra with matrix multiplication.
+
+Why not model d as the matrix
+0 1
+0 0?
+
+This is a perfectly good quantity, adding and scaling just like any
+real, e.g. 2d =
+0 2
+0 0.
+
+And obviously d^2 = 0.
+
+Standard reals x would have the form
+
+x 0
+0 x
+
+1+d would therefore be
+
+1 1
+0 1
+
+(1+d)^2 then becomes
+
+1 2
+0 1
+
+as common sense would indicate.
+
+The determinant of d being 0, one can't divide by it.  But who in their
+right mind would want to divide by a quantity infinitesimally close to zero?
+Obviously that's going to produce an infinitely large quantity; if you want
+to do that, why not just go ahead and divide by zero itself?  As Douglas
+Adams pointed out, you may think the store down the road is a fair way away,
+but other galaxies are even further away.  To a nematode they're all far away.
+
+On the other hand
+1 2
+0 1
+has a perfectly good reciprocal, namely
+1 -2
+0 1
+again as suggested by common sense.
+
+So the proposal is to base calculus on a field-like object that is a field
+in the large, but zero divide errors set in when one gets infinitesimally
+close to zero.  Basically what happens with IEEE floating point arithmetic,
+but modeled with 2x2 real matrices rather than 64-bit numbers.
+
+Oh, but what about the noncommutativity of 2x2 matrices, might that mess
+something up?
+
+Actually no, this two-dimensional algebra consisting of matrices of the form
+a b
+0 a
+is commutative.  So only the zero divisors really close to 0 constitute
+any departure at all from the field axioms.
+
+The diagonal element a is the standard real part and the off-diagonal
+element b in the upper right gives the infinitesimal displacement.
+
+So we have a real commutative associative algebra of refined numbers,
+having a real part and an infinitesimal part, whose only zero divisors are
+the infinitesimals.  We don't *have* to think of them as matrices because
+we can just write its elements as x+yd by analogy with x+iy, where d is
+the above matrix representing the prototypical infinitesimal.  The square
+of i is -1, and the square of d is 0.
+
+Moreover x and y in x+yd can be complex.  We then have numbers x+iy+ud+ivd,
+which can parsed as either refined complex numbers, namely complex numbers
+with refined coefficients x+ud+i(y+vd), or complex refined numbers, namely
+refined numbers with complex coefficients x+iy+(u+iv)d.  This is still a
+real associative algebra, which through force of habit people will no doubt
+want to call a complex commutative associative algebra, but it could just
+as legitimately be called a refined associative algebra.
+
+Ok, what about commutative?  Well, the complex numbers are commutative and
+the refined numbers are commutative, so how could refining complex numbers
+make any difference?
+
+Well, the reason I wrote x+yd rather than x+dy is that, even though the
+*natural* thing to do is to make i commute with d, if instead we make
+id+di=0, the defining condition for Clifford algebras, then we can fit the
+whole thing into 2x2 *real* matrices!
+
+Here I'm using the following 2x2 real matrices for i and d respectively:
+
+(0 -1) (0 1)
+(1  0) (0 0)
+
+But now notice that the matrices for 1,i,d,id form a basis for all the
+2x2 matrices.  In fact *any* 2x2 matrix [[a,b],[c,d]] can be decomposed as
+
+(d -c) + (a-d b+c)
+(c  d)   ( 0   0 )
+
+(I'd appreciate feedback from anyone for whom the above doesn't typeset
+readably.)
+
+So to read an arbitary 2x2 real matrix as a refined complex number, take the
+bottom row reversed as the complex part and the departure of the top row from
+the usual matrix representation of complex numbers as the infinitesimal part,
+taking care to get both signs right.
+
+How did I notice this?  Simple.  I knew (i) that id+di=0 would make it a
+Clifford algebra, (ii) there are only two 4D Clifford algebras, and (iii) d^2
+= 0 -> d = 0 in the quaternions.  This narrows things down to the 2x2 real
+matrices, there are no other associative algebras with these properties.
+Getting the above decomposition was then just a matter of solving some
+trivial linear equations.
+
+This is so simple, and the infinitesimals have been worried at for so long,
+that this *has* to be known already.  But then it would really bug me to
+have been the last to learn about it -- why wasn't I told, as they say?
+
+Vaughan Pratt
+
+
+

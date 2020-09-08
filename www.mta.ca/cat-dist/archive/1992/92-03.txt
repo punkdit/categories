@@ -1,0 +1,1823 @@
+Subj:	Stable functors
+Date:         Tue, 03 Mar 92 13:58:08 EST
+From:         Walter Tholen <THOLEN@VM1.YorkU.CA>
+
+Here are some more names for stable functors, in addition to those
+provided by Paul Taylor. I believe that they first appeared in a paper
+by J.J. Kaput (Ill.J. Math. 16 (1972) 86-94) under the name "locally
+(left) adjunctable functor". I used "locally right adjoint functor"
+in my paper with Borger (Manuscripta Math. 19 (1976) 19-45) and in the
+more comprehensive paper (Comment. Math. Univ. St. Pauli 28 (1979) 179-
+202). Both papers deal with the particular case of "locally reflective
+subcategories" for which there are new results to be found in a recent
+paper by Adamek and Volger ("On locally reflective categories of struct-
+ures").
+Walter Tholen
+=====================================================================
+Subj:	re: Stable functors
+Date: Thu, 5 Mar 92 10:26:01 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I don't much like the locally as suggested by Walter, but it is probably
+too late to do much about it.  I prefer multi-adjoint.  Locally P means that
+P holds in every slice.
+
+Mike
+=====================================================================
+Subj:	re: stable functors
+Date:         Thu, 5 Mar 92 18:05+0000
+From:         cbj@dcs.edinburgh.ac.UK
+
+Here is another contribution to the baptism of "stable functors".
+
+When a functor F represents a datatype construction, such as lists,
+trees or matrices, then it typically preserves pullbacks (in fact, all
+connected limits) and when applied to the terminal object 1 yields the
+"basic shape" F1 whose "elements" are the shapes of general data. For
+example, the list functor applied to 1 is a NNO since the shape of a
+list is its length. In this setting it is attractive to call
+pullback-preserving functors "shapely".
+
+Similarly, the natural transformations representing the generic
+operations on the datatypes (e.g. the appending of lists or flattening
+of trees) often have the property that the commuting squares arising
+in their definition are actually pullbacks. Such natural
+transformations are commonly known as cartesian natural
+transformations, but in this setting could also be called "shapely
+natural transformations". Thus there is a 2-category consisting of
+categories with finite (connected?) limits, shapely functors and
+shapely natural transformations, which is convenient for studying the
+general theory of datatypes.
+
+Barry Jay
+
+=====================================================================
+Subj:	Stable functors
+Date:         Mon, 09 Mar 92 12:32:46 EST
+From:         Walter <THOLEN@VM1.YorkU.CA>
+
+No problem with Mike's remark that "locally P" should mean "P holds in
+every slice". This is for a property of a category. When using "locally
+right adjoint" almost two decades ago I asked myself whether the func-
+tor  A/a --> B/Fa induced by  F:A-->B  (and an A-object a)  is an accep-
+table notion of "slice of the functor F", decided that would be okay,
+and therefore used the name.  Diers' notion of multi-adjointness gives
+more than just right adjointness of the slices  A/a --> B/Fa : there is
+a smallness condition on the number of non-isomorphic "local units",
+and these are F-epic. Hence it would be confusing to use the name in a
+more general sense now.
+I may be wrong in assuming that the notion of "slice of a functor"
+as above is acceptable. Comments welcome.
+Walter Tholen.
+=====================================================================
+Subj:	Re: Stable functors
+Date: Tue, 10 Mar 92 07:39:22 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I guess Walter is right.  At least in the case of an initial object, it is
+the case that having a multi-initial object is having an initial object
+in each slice. What I hadn't thought through was the fact that if a 
+category has a multi-initial object and has a terminal object, then it has
+an initial object.  So having an initial object in each slice does not
+imply having an initial object (whereas for most properties P, locally P
+implies P).  There is a minor problem with duality.  While it is true
+that a category with a multi-terminal object has a terminal object in
+each slice, that is also true of a category without a multi-terminal
+object.  So you want that for every co-slice.  
+
+Michael
+=====================================================================
+Subj:	Latest corrections to TTT
+Date: Tue, 10 Mar 92 10:12:18 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+\documentstyle{article}
+\input diagram
+\textheight9in \headsep 0in \headheight0in \topmargin0in
+\textwidth 6.5in \oddsidemargin0in
+\long\def\ig#1{\relax}
+\def\pf{\par\addvspace{\medskipamount}\noindent Proof.\enskip}
+\mathchardef\Bsc="0242
+\let\imp=\Rightarrow
+\let\meet=\wedge
+ 
+\font\tensfb=cmssbx10
+ 
+\makeatletter
+\def\@xpt{%
+\textfont11=\tensfb \scriptfont11=\tensfb \scriptscriptfont11=\tensfb
+} \makeatother
+ 
+\mathchardef\T="0B54
+\mathchardef\P="0B50
+\def\lnm#1{Lecture Notes in Mathematics {\bf#1}}
+\def\o{\circ}
+\def\op{^{\rm op}}
+\def\mathrm#1{\expandafter\def\csname#1\endcsname{\mathop{\rm#1}\nolimits}}
+\def\mathbf#1{\expandafter\def\csname#1\endcsname{\mathop{\rm\bf#1}\nolimits}}
+\def\x{\times}
+\mathrm{id}
+\mathrm{Hom}
+\mathrm{Set}
+\mathrm{Sh}
+\mathrm{Sub}
+\mathbf{Cat}
+\begin{document}
+ 
+\begin{center}{\Large\bf Corrections to {\it Toposes, Triples and
+Theories}}\\
+Michael Barr and Charles Wells\\ \today\end{center}
+ 
+The corrections are listed by page number.  The name in parentheses
+after the page number shows who told us of the error.
+ 
+\begin{trivlist}
+ 
+\item[GENERAL COMMENT] Our text is intended primarily as an exposition
+of the mathematics, not a historical treatment of it.  In particular, if
+we state a theorem without attribution we do not in any way intend to
+claim that it is original with this book.  We note specifically that
+most of the material in Chapters 4 and 8 is an extensive reformulation
+of ideas and theorems due to C. Ehresmann, J. B\'enabou, C. Lair and
+their students, to Y. Diers, and to A. Grothendieck and his students.
+We learned most of this material second hand or recreated it, and so
+generally do not know who did it first.  We will happily correct
+mistaken attributions when they come to our attention.
+ 
+\item[p. 9] (Peter Johnstone).  Exercise (SGRPOID) is incorrect as it
+stands;
+a semilattice without identity satisfies (i) through (iii) but is not a
+category.  Condition (iii) must be strengthened to read:
+Say an element $e$ has the {\bf identity property} if $e\o f= f$
+whenever $e\o f$ is defined and $g\o e= g$ whenever $g\o e$ is
+defined.  Then we require that for any
+element $f$, there is an element $e$ with the identity property
+for which $e\o f$ is defined and an element $e'$ with the identity
+property for which $f\o e'$ is defined.
+ 
+\item[p. 26] (D. \v{C}ubri\'c).  Property (ii) of Exercise (SUBF)
+should read ``If $f:A\to B$, then $F(f)$ restricted to $G(A)$
+is equal to $G(f)$.''
+ 
+\item[p. 27] (Dwight Spencer), second line from bottom:  $T:S\to T$
+should be $t:S\to T$.
+ 
+\item[pp. 39-40] (Peter Johnstone).  It should be noted that the product
+of an empty collection of objects in a category must be a terminal
+object.  Then the phrase after the comma on line 4 of p. 40 should read,
+``which by an obvious inductive argument is equivalent to requiring that
+the category have a terminal object and that any two objects have a
+product.''
+ 
+\item[p. 43] (Peter Johnstone).  Exercise (PROD)(b) should read:  ``Show
+that if a category has a terminal object and all products of pairs of
+objects, then it has all finite products.''
+ 
+\item[p. 49] (Peter Johnstone).  Exercise (FCR) uses the concept of
+small category without defining it.  It is used in the main body of the
+text on page 66 and later, and ``small sketch''{} occurs on p. 146.  A
+graph or a category is {\bf small} if its arrows constitute a set.  A
+sketch is small if its graph is small and its cones and cocones
+constitute a set.  In connection with the discussion of foundations on
+page ix of the Preface, no matter what set theory is used, one is going
+to have to deal with categories and graphs whose arrows do not
+constitute sets.
+ 
+\item[p. 49]  Closing parenthesis missing at end of Exercise (EAPL)(a).
+ 
+\item[p. 53] (Dwight Spencer) The display in the middle of the page
+should be:  $i(T,LA)(L(f\o h)) = \eta A\o f\o h = RLf\o \eta D\o h =
+RLf\o i(T,LD)(Lh) = i(T,LA)(Lf\o Lh)$
+ 
+In diagram (7), just below, the vertical arrows should be pointing
+upward.
+ 
+\item[p. 54] lines 5 from the bottom:  (Dwight Spencer) change ``arrow
+for'' to ``element of the functor''.  Add to the last sentence ``(A
+universal element of $\Hom(A,R(-))$ is called a {\bf universal arrow}
+for $R$ and $A$.)''
+ 
+\item[p. 55] line 4:  (Dwight Spencer) change $RLA$ to $RWA$.
+ 
+\item[p. 55] line 14:  (Dwight Spencer) Change $Ry$ to $y$.
+ 
+\item [p. 64] (Dwight Spencer) The diagram at the bottom should be
+labeled (1).  (I don't think it is actually referred to, but the diagram
+numbering in this section begins with (2).)
+ 
+\item[p. 68] (D. \v{C}ubri\'c).  The end of line 5 should be
+$\Sub(F\x E)$.
+ 
+\item[p. 69] (V. Pratt) The reference to Section 1.4 (line 13) should be
+to Subsection, ``Global elements'' on page 24, more precisely the second
+paragraph.
+ 
+\item[p. 72] (D. \v{C}ubri\'c).  In the next to last line,
+$p:LF\to X$.
+ 
+\item[p. 75] Geometric morphisms are discussed in Chapter 6, not
+Chapter 5.
+ 
+\item[p. 90] (D. \v{C}ubri\'c).  In diagram (1), the leftmost
+arrow should be labeled $T\mu$.
+ 
+\item[p. 94] (D. \v{C}ubri\'c).   In the next to last line,
+$R:\Set/|X|\to\Sh(X)$.
+ 
+\item[p. 95] (D. \v{C}ubri\'c).   The end of Proposition 2
+should say, ``is a cotriple on $\cal B$''.
+ 
+\item[p. 100] (D. \v{C}ubri\'c).   Line 3 should have
+$U^{\sf T}:{\cal C}^{\sf T}\to{\cal C}$,
+$F^{\sf T}:{\cal C}^{\sf T}\to{\cal C}$.
+ 
+\item[p. 110] (D. \v{C}ubri\'c).  In Diagram (19), the arrow
+$\eta C:TC\to T^2C$ should be $T\eta C:TC\to T^2C$.
+ 
+\item [p. 125] Third line from bottom.  The word ``morphism'' is
+repeated.
+ 
+\item[p. 126] (Felipe Gago-Couso).  Proposition 1 has an omitted
+hypothesis.  We include here a complete restatement of the proposition
+and its proof:
+ 
+\item[]The following proposition gives one method of constructing
+morphisms of triples.  We are indebted to Felipe Gago-Couso for finding
+the gap in the statement and proof in the first edition and for finding
+the correct statement.
+ 
+\noindent{\bf Proposition 1.}  {\em In the notation of the preceding
+paragraphs, let
+$\sigma:TT'\to T'$ be a natural transformation for which
+\begin{center}
+\qtriangle[T'`TT'`T';\eta T'`\id`\sigma]
+\end{center}
+%\ig{\bfig
+%                      \eta%T'
+%                  T'----------\>TT'
+%                   \             |
+%                    \            |
+%                     \           |
+%                      \          |
+%                       \         |
+% (3)                    \        |
+%                     \id \       |\sigma\l
+%                          \      |
+%                           \     |
+%                            \    |
+%                             \   |
+%                              \  |
+%                               \ |
+%                               \vvb
+%                                T'
+%\efig}
+and
+\begin{center}
+\xext=1500 \yext=700
+\adjust[`\mu T';`T\sigma;`\sigma;`\mu']
+\bfig
+\putsquare(0,200)[TTT'`TT'`TT'`T';\mu
+T'`T\sigma`\sigma`\sigma]
+\putsquare(1000,200)[TT'T'`TT'`T'T'`T';T'\mu%
+`\sigma T'`\sigma`\mu']
+\put(250,0){\makebox(0,0){{\rm(a)}}}
+\put(1250,0){\makebox(0,0){{\rm(b)}}}
+\efig
+\end{center}
+% \ig{\bfig
+%                  \mu%T'                        T\mu'
+%             TTT'------\>TT'             TT'T'------\>TT'
+%              |           |                |           |
+%              |           |                |           |
+%              |           |                |           |
+%  (4)    T\sigma|     \sigma|        \sigma%T'|     \sigma|
+%              |           |                |           |
+%              |           |                |           |
+%             \v          \v               \v          \v
+%              TT'-------\>T'              T'T'-------\>T'
+%                 \sigma                         \mu'
+%
+%                 $(a)$                          $(b)$
+% \efig
+% }
+commute.  Let $\alpha = \sigma\o T\eta':T\to T'$.  Then
+$\alpha$ is a morphism of triples.}
+ 
+\pf That (1) commutes follows from the commutativity of
+\begin{center}
+\xext=500 \yext=1000
+\adjust[`\eta;`\eta';`T\eta';T'`]
+\bfig
+\resetparms
+\putsquare(0,500)[\id`T`T'`TT';\eta`T'`T\eta'`\eta']
+\settriparms[0`1`1;500]
+\putqtriangle(0,0)[``T';`\id`\sigma]
+\efig
+\end{center}
+% \ig{\bfig
+%                               \eta
+%                  \id------------\>T
+%                    |              |
+%                    |              |
+%                    |              |
+%                    |              |
+% \r            \eta'|  \r    T\eta'|
+%                    |              |
+%                    |              |
+%                   \v    \eta'    \v
+%                    T'----------\>TT'
+%   (5)               \             |
+%                      \            |
+%                       \           |
+%                        \          |
+%                         \         |
+%                      \id \        |\l\sigma
+%                           \       |
+%                            \      |
+%                             \     |
+%                              \    |
+%                               \   |
+%                                \  |
+%                                 \ |
+%                                 \vvb
+%                                   T'
+% \efig
+% }
+In this diagram, the square commutes because $\eta$ is a natural
+transformation and the triangle commutes by (3).
+ 
+The following diagram shows that (2) commutes.
+\begin{center}
+\bfig
+\putmorphism(0,2100)(0,-1)[``T\eta'T]{1400}1l
+\putmorphism(0,2100)(1,0)[TT`T`\mu]{700}1a
+\putmorphism(0,2100)(1,-1)[`TTT'`TT\eta']{700}1l
+\putmorphism(700,2100)(1,-1)[`TT'`T\eta]{700}1r
+\put(700,1750){\makebox(0,0){1}}
+\putmorphism(700,1420)(1,0)[\phantom{TTT'}`\phantom{TT'}`\mu
+  T']{700}1a
+\putmorphism(700,1380)(1,0)[\phantom{TTT'}`%
+  \phantom{TT'}`T\sigma]{700}1b
+\putsquare<0`1`1`1;700`700>(700,700)[TTT'`TT'`TT'TT'`TT'T';`T\eta'TT'``]
+\putmorphism(700,700)(1,0)[\phantom{TT'TT'}`%
+  \phantom{TT'T'}`TT'\sigma]{700}1a
+\put(300,1400){\makebox(0,0){2}}
+\put(950,1050){\makebox(0,0){3}}
+\settriparms[0`1`0;700]
+\putbtriangle(1400,700)[``TT';T\eta'T'`id`]
+\putmorphism(1400,700)(1,0)[\phantom{TT'T'}`%
+  \phantom{TT'}`T\mu']{700}1a
+\put(1600,1050){\makebox(0,0){6}}
+\putsquare<1`1`0`1;700`700>(0,0)[TT'T`\phantom{TT'TT'}`T'T`T'TT';%
+  TT'T\eta'`\sigma T``T'T\eta']
+\putmorphism(700,0)(1,0)[\phantom{T'TT'}`%
+  \phantom{T'T'}`T'\sigma]{700}1b
+\putsquare<0`0`1`1;700`700>(1400,0)[``T'T'`T';``\sigma`\mu']
+\putmorphism(700,700)(0,-1)[``\sigma TT']{700}1m
+\putmorphism(1400,700)(0,-1)[``\sigma T']{700}1m
+\put(300,350){\makebox(0,0){4}}
+\put(1050,350){\makebox(0,0){5}}
+\put(1750,350){\makebox(0,0){7}}
+\efig
+\end{center}
+% \ig{\bfig
+%                 \mu
+%          TT-------------\>T
+%          |\                \
+%          | \                \
+%          |  \                \
+%          |   \                \
+%          |    \                \
+%          |     \                \
+%          |      \                \
+%          |       \        1       \
+%          |  TT\eta'\          T\eta'\
+%          |         \                \
+%          |          \                \
+%          |           \                \
+%          |            \                \
+%          |            \lr    \mu%T'    \lr
+%          |             TTT'-----------\>TT'
+%    T\eta'T|      2      |  -----------\>| \
+%          |              |    T\sigma    |  \
+%          |              |               |   \
+%          |              |               |    \
+%          |      T\eta'TT'|     3 T\eta'T'| 6  \\$id$\l
+% (6)      |              |               |      \
+%          |              |               |       \
+%         \v  TT'T\eta'  \v   TT'\sigma  \v  T\mu' \lr\l
+%         TT'T---------\>TT'TT'-------\>TT'T'----\>TT'
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%     \sigma%T|  4 \sigma%TT'|   5  \sigma%T'| 7    |\sigma\l
+%          |              |               |         |
+%          |              |               |         |
+%         \v             \v              \v        \v
+%          T'T---------\>T'TT'---------\>T'T'-----\>T'
+%              T'T\eta'      T'\sigma         \mu'
+% \efig
+% }
+In this diagram, square 1 commutes because $\mu$ is a natural
+transformation, squares 2 and 3 because $T\mu'$ is and squares 4 and 5
+because $\sigma$ is.  The commutativity of square 6 is a triple identity
+and square 7 is diagram 4(b).  Finally, diagram 4(a) above says that
+$\sigma\o\mu T'=\sigma\o T\sigma$ which means that although the two
+arrows between $TTT'$ and $TT'$ are not the same, they are when followed
+by $\sigma$, which makes the whole diagram commute.
+ 
+Squares 1 through 5 of diagram (6) are all examples of part (a) of
+Exercise (GOD), Section 1.3.  For example, to see how square 1 fits,
+take ${\cal B}$, ${\cal C}$ and ${\cal D}$ of the exercise to be
+${\cal C}$, $F=\id$, $G=T'$, $H=T^2$ and $K=T$, and
+$\kappa=\eta'$, $\mu=\mu$.  Then square 1
+is $\eta'\mu$.
+ 
+\noindent{\bf Corollary 2.} {\em With $T$ and $T'$ as in Proposition
+1, suppose $\sigma:T' T \to T'$ is such that $\sigma\o T'\eta =\id$,
+$\sigma\o\sigma T' = \sigma\o \eta T:T\to T'$ is a morphism of triples.}
+ 
+\pf This is Proposition 1 stated in $\Cat\op$ (which means: reverse the
+functors but not the natural transformations).
+ 
+\item[p. 134] (Colin McLarty).  In the second through fourth paragraphs
+of the proof of (a), every occurrence of ``$L$'' should be ``$W$''.
+ 
+\item[p. 137] (Jim Otto).  Theorem 5 has too few hypotheses and
+Proposition 4 too many to apply the latter in the proof of the former.
+There are various possibilities of getting it right, including adding
+the finite limits and colimits to the hypotheses of Theorem 5.
+Nevertheless, Theorem 5 is true as it stands.  The problem occurs with
+the last sentence of Theorem 5. Probably the best approach is to point
+out first that only equalizers and coequalizers are needed and then only
+the $U$-contractible ones.  Then, if we suppose only the
+$U$-contractible equalizers exist (any that exist will be preserved by a
+functor that has a left adjoint), that is enough to do Theorem 5
+(Exercise, using the fact that the underlying functor of a tripleable
+functor creates limits) and from that will follow that the
+$U$-contractible equalizers exist.
+ 
+As for Proposition 4, if we suppose that $\Bsc$ has $U$-contractible
+equalizers, the dual of Theorem 5 would imply that $U$-contractible
+equalizers exist.  Hence sufficient for Proposition 4 is that {\em
+either\/} $U$-contractible equalizers or $U$-contractible coequalizers
+exist.  Does anyone want to find an example to show that any
+completeness hypothesis is necessary?
+ 
+\item[p. 139] (Samuel Eilenberg) The story told at the end of the second
+paragraph is not exact.  In fact the word was chosen as the manuscript
+was in final preparation.  Nonetheless, the main point of the story,
+the care that went into choosing the name of an important concept,
+remains.
+ 
+\item[p. 139] (F-J de Vries) l. -3:  ``subststantially'' should read like
+``substantially''
+ 
+\item[p. 140] (F-J de Vries) l. 9:  ``Kiesler'' should be ``Keisler''
+ 
+General comment about chapters 4 and 8 (C.  Lair).  In many places we
+state that some extension of a functor is unique, when in fact it is
+only unique up to isomorphism of functors in the functor category.
+These occur on p. 153 (Theorem 4), p. 156 (Theorem 2), and implicitly in
+p. 293, Theorem 2 and p. 294, Theorem 1.
+ 
+\item[p. 146.] C. Lair has told us that Ehresmann proved a more general form
+of Kennison's Theorem in Ehresmann [1967a], [1967b].
+ 
+\item[p. 162] (C.  Lair).  The sketch for LE categories constructed here
+has LE categories with specified limits of finite diagrams as models,
+and morphisms of models are functors which preserve the specified
+limits.  A similar remark should be made about the sketch for toposes on
+p. 165.
+ 
+\item[p. 168] (F-J de Vries) l. -15: ``Kiesler'' should be ``Keisler''
+ 
+\item[p. 172] Second sentence:  $\P$ having a left adjoint does not
+imply $T$ does.  The sentence and following one should be combined as
+follows:  ``Since $T$ is the composite of a functor and its right
+adjoint, it is the functor part of a triple $(T,\eta:1\to T,\mu:T^2\to
+T)$.''
+ 
+\item[p. 110] (D. \v{C}ubri\'c).  Second line in the proof of
+Theorem 1 should begin ``map ${\cal E}/A\to {\cal E}$.
+ 
+\item[p. 179], Proposition 2 (D. \v{C}ubri\'c).  This
+proposition should say that ${\bf P}'\o L$ is naturally
+isomorphic to $L^{\rm op}\o \bf P$.
+ 
+\item[p. 183] (F-J de Vries) l. -7:  Kock [1982] should be Kock [1981]
+(SDG)
+ 
+\item[p. 197] Lemma 3 (Francisco Marmolejo). Dropping the subscript on
+the arrows leaves it too ambiguous.  Part (a) should read,
+``$D\meet(B\imp_AC)=D\meet B\imp_DD\meet C$.''
+ 
+\item[p. 200], line $-4$ (Francisco Marmolejo).  The sentence should be
+expanded to, ``Observe that any sheaf is $\j$-closed inside any
+separated presheaf.  ({\bf Separated} isn't defined until page 233, but
+it simply means that in the definition of sheaf in the middle of page
+69, the unique existence is replaced by the assumption that there is at
+most one element $x$ such that $X|U_i=x_i$.)''
+ 
+\item[p. 205] (Francisco Marmolejo).  In the last line of Exercise TPPB,
+change ``induce'' to ``constitutes''.
+ 
+\item[p. 213], last line  (Francisco Marmolejo). Should read, ``products
+commute with reflexive coequalizers.''  In fact, a product of a fixed
+object with any coequalizer is a coequalizer.  This fact follows from
+Lemma 6 on page 158-159.
+ 
+\item[p. 214]  The reference, third line from bottom, to section 6.4
+should be to section 7.3.
+ 
+\item[p. 215] (D. \v{C}ubri\'c).  In Corollary 7, both
+occurrences of ``$E$'' should be ``${\cal E}$''.
+ 
+\item[p. 225] (D. \v{C}ubri\'c).  In Exercise (SEP), ``given''
+should be ``give''.
+ 
+\item[p. 233]  ``Epimorphic family'' should be boldface and indexed.
+ 
+\item[p. 234] second paragraph (J\"urgen Koslowski): Change Corollary 5
+of Section 5.4 to Corollary 8 of Section 5.3.  Also, Exercise CANON
+doesn't exist; delete the reference.
+ 
+\item[p. 236] (D. \v{C}ubri\'c). In Proposition 4, we should
+have noted that (a) and (b) are equivalent by definition.  The
+last sentence of the proof should read "Hence (b), and therefore
+(a), is true.''
+ 
+\item[p. 238] (B. Howard).
+Sums in a category are {\bf disjoint} if for any objects $A$ and $B$,
+the commutative diagram
+$$
+\bfig
+\settriparms[1`1`0;400]
+\putAtriangle(0,400)[0`A`B;``]
+\settriparms[0`1`1;400]
+\putVtriangle(0,0)[``A+B;``] \efig
+$$
+(in which the arrows to $A+B$ are the canonical injections) is a
+pullback, and the canonical injections are monic.
+ 
+\item[p. 242]  ``Cocontinuous'', in Theorem 12, was not defined.  A
+cocontinuous functor is one which preserves all colimits.
+ 
+\item[p. 250]  Fourth line is broken.
+ 
+\item[p. 250]  Theorem 7 is referred to several times elsewhere as
+Freyd's embedding theorem, and should be named as such here.
+ 
+\item[p. 261] second line from bottom:  Freyd's Theorem is Theorem 7 of
+7.1, not Theorem 5 of 7.2.
+ 
+\item[p. 267] (F-J de Vries) l. 267:  ``Mikkelson'' should be ``Mikkelsen''
+ 
+\item[p. 293] (Peter Johnstone).  In Exercise (TOTO), the maps should be
+strictly increasing rather than nondecreasing.
+ 
+\item[p. 294]  We should point out the connections between Theorem 1
+here and Theorem 12, p. 242 and Theorem 2, p. 263.
+ 
+\item[p. 295] second line before exercises.  ``Function'' misspelled.
+ 
+\item[p. 295] (Peter Johnstone).  The description of the realizability
+topos is completely incorrect; in particular, the realizability topos is
+not a classifying topos, so the reference does not belong here at all.
+The reference which {\it does} belong here is to Mulry [1982].
+ 
+\item[p. 296]  Same change for Exercise (DLO) as for Exercise (TOTO)
+above.
+ 
+\item[p. 297] (Peter Johnstone and many others).  Theorem 1 omits the
+very important fact that models of geometric theories have filtered
+colimits.
+ 
+\item[p. 300]  The statement on line 6 that filtered colimits of regular
+functors are regular deserves some discussion, or at least should be
+made an exercise!
+ 
+\item[p. 301]  In connection with the first sentence beginning on this
+page, we now know that the category of orthodox semigroups and their
+morphisms is the category of models of an LE-sketch and is regular, but
+is not the category of models of an FP-sketch.  (An orthodox semigroup
+is one in which the product of idempotents is an idempotent.)
+ 
+\item[p. 302] (Peter Johnstone).  Because models of geometric theories
+preserve filtered colimits (see correction to p. 297), the answer to
+Exercise (CYCGRP)(c) is easily seen to be:  No.
+ 
+\item[p. 307] diagram (5).  The two rightmost arrows lack labels.  The
+one from $UB$ to $C$ is $c$ and the one from $C$ to $UB$ is $s$.
+ 
+\item[p. 318] (Colin McLarty).  Exercise (DL) should say that all
+composites {\it of length three} are the identity.
+ 
+\item[p. 325] (Peter Johnstone).  In line 15, $(R:C)$ is not a full
+subcategory of the comma category $(R,C)$.
+ 
+\item[p. 337] (F-J de Vries) ``Mikkelson'' should be ``Mikkelsen''
+ 
+\item[p. 338] (F-J de Vries) ``J.Shonfield'' should read as ``J.R.
+Shoenfield''
+ 
+\end{trivlist}
+ 
+ 
+INDEX, pp. 342ff.  Some omissions:
+ 
+{\obeylines
+Beck's Tripleability Theorem, 112.
+Butler's Theorem, 135.
+epimorphic family, 233.
+Freyd's Representation Theorem, 246ff.
+Freyd's characterization of natural number objects, 273.}\vskip1ex
+ 
+\subsection*{Supplemental Bibliography}
+ 
+\noindent C. Ehresmann, Introduction to the theory of structured
+categories.  Charles Ehresmann, \oe uvres compl\`etes et
+comment\'ees III, 2, 591-676. (Noted by V. Topencharov.)
+ 
+\vskip1ex\noindent C. Ehresmann, Probl\`emes universels relatifs aux
+cat\'egories n-aires.  C.R.A.S. 264 (273-276), 1967a.\vskip1ex
+ 
+\vskip1ex\noindent C. Ehresmann, Sur les structures alg\'ebriques.
+C.R.A.S. 264 (840-843), 1967b.
+ 
+\vskip1ex\noindent C. Ehresmann, Esquisses et types de
+structures alg\'ebriques.   Bul. Inst. Polit. Ia\c{s}i t.
+XIV(XVIII), Fasc. 1-2 (1968), 1-14.  Reprinted in
+\OE uvres compl\`etes et
+comment\'ees IV, 1, 19-33. (Noted by V. Topencharov.)
+ 
+\vskip1ex\noindent H. Cartan and S. Eilenberg, {\bf Homological
+Algebra}.  Princeton University Press, 1952.  (Noted by Fer-Jan de
+Vries.)
+ 
+\vskip1ex\noindent Anders Kock, {\bf Synthetic Differential Geometry}.
+London Mathematical Society Lecture Note Series 51.  Cambridge
+University Press, 1981.  (Noted by Fer-Jan de Vries.)
+ 
+\vskip1ex\noindent
+P. Mulry, Generalized Banach-Mazur functionals in the topos of recursive
+sets.  J. Pure Applied Algebra, 26 (1982), 71-83.
+ 
+\vskip1ex\noindent G. Osius, Categorial set theory: a characterization
+of the category of sets.  J. Pure Applied Algebra, {\bf 4} (1974),
+79--119.  (Noted by J\"urgen Kozlowski.)
+ 
+\vskip1ex\noindent G. Osius, Logical and set theoretical tools in
+elementary topoi.  Model Theory and Topoi, \lnm{445} (1975), 297--346.
+(Noted by J\"urgen Kozlowski.)
+ 
+ 
+\end{document}
+=====================================================================
+Subj:	Latest ctcs corrections
+Date: Tue, 10 Mar 92 10:20:59 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+\documentstyle[12pt]{article}
+\input diagram
+\newcounter{lister}
+\newenvironment{labeledlist}[1]
+{\begin{list}{{\rm#1\arabic{lister}. }}{\usecounter{lister}
+}}%begin text
+{\end{list}}%
+\def\blist#1{\begin{labeledlist}{#1}}
+\def\elist{\end{labeledlist}}
+ 
+\newcommand{\afour}{\oddsidemargin 18pt\evensidemargin 18pt
+\textwidth 420pt\textheight 45\baselineskip\advance\textheight by \topskip}
+%% Kludge to make article.sty width correct for A4
+%% This works only for article.sty using the standard margin given
+ 
+\textheight8in \headsep 0in \headheight0in \topmargin0in
+\textwidth 6.5in \oddsidemargin0in
+\mathchardef\Csc="0243
+\mathchardef\Dsc="0244
+\mathchardef\Esc="0245
+\mathchardef\Gsc="0247
+\mathchardef\Ssc="0253
+\def\lncs#1{Lecture Notes in Computer Science {\bf#1}}
+\def\springer{Sprin\-ger-Ver\-lag}
+\def\mathrm#1{\expandafter\def\csname#1\endcsname{\mathop{\rm#1}\nolimits}}
+\def\mathbf#1{\expandafter\def\csname#1\endcsname{\mathop{\rm\bf#1}\nolimits}}
+\mathrm{id}
+\mathrm{eval}
+\mathrm{mult}
+\mathrm{proj}
+\mathbf{R}
+\mathbf{Set}
+\mathbf{Cat}
+\mathbf{Mod}
+\mathbf{Rel}
+\mathrm{Hom}
+\def\op{{}^{\rm op}}
+\let\x=\times
+\def\o{\mathop{\raise.3ex\hbox{$\scriptscriptstyle\circ$}}}
+\mathcode`\<="4268 %left delimiter
+\mathcode`\>="5269 %right delimiter
+\def\inc{\subseteq}
+\def\iso{\cong}
+\def\[{[\kern-1.3pt [}
+\def\]{]\kern-1.3pt ]}
+ 
+ 
+\begin{document}
+ 
+%\afour
+ 
+\title{Category Theory for Computing Science: \\ Update}
+ 
+ 
+\author{Michael Barr and Charles Wells}
+ 
+\maketitle
+ 
+We intend to maintain
+our text, {\bf Category Theory for Computing Science}, Prentice Hall,
+1990 (ISBN 0-13-120486-6),
+% Our text, {\bf Category Theory for Computing Science}, Prentice Hall,
+% 1990 (ISBN 0-13-120486-6) has just been published.
+% We intend to maintain the text
+in the sense that programmers maintain their programs,
+by keeping a list of known errors and also of additions to the text that
+we think might be useful.  (The latter will probably come in spurts as
+we go to meetings and find out about wonderful new applications of
+category theory to computing science.)
+ 
+We will periodically
+announce new errata and addenda on the category theory bulletin board.
+The latest TeX version of the complete list is available by e-mail or
+p-mail from either author.
+ 
+The update consists of three parts: \ref{errors}: A list of errors discovered
+so far.  \ref{newtext}: Additional examples, problems and pointers to the
+literature. \ref{refs}: Additions and updates
+to the list of references, pp. 417ff. of
+the text.  Page references refer to the text.
+ 
+Any further corrections or suggestions for additional text will be welcome.
+ 
+{\footnotesize
+\begin{center}\begin{tabular}{ll}
+Michael Barr & Charles Wells \\
+Department of Mathematics & Department of Mathematics \\
+Burnside Hall & Case Western Reserve University \\
+McGill University & University Circle \\
+805 Sherbrooke St. West &  Cleveland, OH 44106-7058, USA \\
+Montr\'eal, P. Q., Canada H3A 2K6 & cfw2@po.cwru.edu \\
+barr@triples.math.mcgill.ca & \end{tabular}\end{center}
+}
+\newpage
+ 
+ 
+\section{Errors}\label{errors}
+ 
+\begin{description}
+ 
+\item[p. xv] In the Chapter Dependency Chart, there should be a diagonal
+line from Chapter 5 to Chapter 7.
+ 
+\item[p. 23] (Jean-Pierre Marquis). SM--2 should read, ``If $m$,
+$n\in S$, then $mn\in S$''.
+ 
+\item[p. 31] (Jean-Pierre Marquis). S--1 should say
+$\Dsc_0\inc\Csc_0$ and $\Dsc_1\inc\Csc_1$.
+ 
+\item[p. 34] (Nils Andersen).  l. 16 ``$f\neq f'$ or $g\neq g'$ should
+be ``$f\neq g$ or $f'\neq g'$
+ 
+\item[p. 34] (Nils Andersen).  Third line above 2.6.10:
+``a {\bf indexed}'' should be ``an {\bf indexed}''.
+ 
+\item[p. 43] (Nils Andersen).  Lines 3 through 5 are nonsense.
+Replace them by the statement: ``The relation $\sim$ is
+symmetric by definition.''
+ 
+\item[p. 47] (Nils Andersen).  l. -5 ``The left inverse'' should
+be ``This arrow $f$''.
+ 
+\item[p. 52] (Nils Andersen).  Line 3 of Example 3.1.2: ``object
+to $M$'' should read ``object
+of $M$''.
+ 
+\item[p. 54] (Andrew Malton). Line 8: read ``$g \o h = f$'' for ``$h \o
+g = f$''
+ 
+\item[p. 56] (Han Yan). Line 7: $g:C\to C$ should be $g:B\to C$.
+ 
+\item[p. 57] (Han Yan). Line 1: $f:A\to A$ should be $f:C\to A$.
+ 
+\item[p. 57] (Han Yan). Line 2: $g:B\to C$ should be $g:B\to D$.
+ 
+\item[p. 63] (Jean-Pierre Marquis). Last line: $TF(S)$ should
+be $FT(S)$.
+ 
+\item[p. 64] (Jean-Pierre Marquis). Definition 3.3.2, line 4:
+$G(f)$ should be $F(g)$.
+ 
+\item[p. 66] (Jean-Pierre Marquis). Section 3.3.10, line 2: ``is
+to said'' should be ``is said''.
+ 
+\item[p. 73] (Jean-Pierre Marquis). The reference to Wells [1989]
+should be deleted.
+ 
+\item[p. 74] (Jean-Pierre Marquis). The reference to Wells [1989]
+should be to  Wells [1990] (see updated reference
+in Section~\ref{refs} of this document).
+ 
+\item[p. 83] (Andrew Malton). Line --7: change ``of shape $U$'' to ``of
+shape ${\cal U}$''.
+ 
+\item[p. 79] (Al Vilcius). Line 7: replace ``$\id_i$'' by $\id_{D_i}$.
+ 
+\item[p. 79]  Line 3: ``diagram'' should be capitalized.
+ 
+\item[p. 87] (Al Vilcius).  In Theorem 4.2.20, line 2 replace ``$\Csc$''
+by ``$\Gsc$'.  In the last line replace ``$\Mod(\Gsc,\Csc)$'' by
+``$\Mod(\Gsc,\Dsc)$''.
+ 
+\item[p. 90] (Andrew Malton). Line 5: change ``$f:  {\cal E}\to V{\cal
+G}_1$'' to ``$f:  {\cal E} \to {\cal G}_1$''
+ 
+\item[p. 92] In Proposition 4.3.12 and its proof, the letter $C$ (not
+the script $\Csc$) is
+used with two different meanings.  This can be corrected by changing $C$
+to $S$ in the first line of the proposition, third line (first occurrence
+only), fourth line (last occurrence only) and in the first line of the
+proof (second occurrence only).
+ 
+\item[p. 96] The reference to Seely should be [1987] (the entry in the
+list of references, p. 425, was incomplete and is updated in the
+list of references below.)
+ 
+\item[p. 101] (Jean-Pierre Marquis, Han Yan).
+In the figure, $\Hom(f,C)$ should be
+$\Hom(C,f)$.
+ 
+\item[p. 102] ``The'' not ``the'' in line 7.
+ 
+\item[p. 103] (Al Vilcius).  Change ``set'' to ``collection'' in the
+second line of 4.6.2 and the sixth line of 4.6.3.  [We are using
+``collection'' as an informal synonym for ``class'', without getting
+into set theory.]
+ 
+\item[p. 103] Between the fourth and fifth lines of 4.6.3, add the following:
+``We write $M:\Ssc\to\Csc$ for such a model.  This use of the same
+symbol to denote both the sketch homomoprhism and the graph homomorphism
+is a bit of notational overloading that in practice is always
+disambiguated by context.''
+ 
+\item[p. 104] (Nils Andersen).  The second sentence of Example
+4.6.6 should be deleted.
+ 
+\item[p. 105] (Nils Andersen).  l. 4, ``with an arrow
+$s:N\to A$'' should be ``with  arrows
+$s:N\to A$ and $\id_N:N\to N$''
+ 
+\item[p. 105] (Nils Andersen).  The first sentence of the second
+paragraph should read:
+``The surprise is that a homomorphism $\alpha:M\to M'$ of models of
+this sketch must take the particular loop $M(s)(n)$ to $M'(s)(\alpha
+N(n))$.''
+ 
+\item[p. 105] The sentence before 4.6.9 has a misplaced parenthesis.  It
+should read
+"If you want a sketch for graphs which have a loop on every node, but not
+a distinguished loop (so that a homomorphism takes the loop on $n$ to
+some loop on $\alpha N(n)$, but it does not matter which one), you will
+have to wait until we can study regular sketches in 9.4.5."
+ 
+\item[p. 105] (Jean-Pierre Marquis). LT--1, second line: $a$
+should be $f$.
+ 
+\item[p. 108] (Al Vilcius).  Change ``set'' to ``collection'' in line 3
+of 4.7.2.
+ 
+\item[p. 108] (Nils Andersen).  In the second line of Definition
+4.7.3, ``$\Csc$'' should be ``${\rm\bf Set}$''.
+ 
+\item[p. 109] (Nils Andersen). The heading for 4.7.6 should be
+``Term models''.
+ 
+\item[p. 131] (Nils Andersen).  In line 8 of 5.3.12,
+``the property that $P.A\o<f,g>$'' should read
+``the property that $P.A\o<f,g>=f$ and
+$P.B\o<f,g>=g$''.
+ 
+\item[p. 137] (Jean-Pierre Marquis). Line 3 of proof of Theorem
+5.5.5: $u_i\o s$ should be $s\o u_i$.
+ 
+\item[p. 165] (Nils Andersen).  In Diagram (a), the left arrow from
+$1$ to $n$ should go from $n$ to $1$.
+ 
+\item[p. 166] (Nils Andersen). In Diagram (f), $\id\x\succ$
+should be $\id_n\x\succ$.
+ 
+\item[p. 173] (Jean-Pierre Marquis). The second line of N--5
+should be
+$$f_1\x f_2\x\cdots\x f_n:a_1\x a_2\x\dots\x a_n\to
+b_1\x b_2\x\cdots\x b_n$$
+(no angle brackets around the arrow).
+ 
+\item[p. 184] (Jean-Pierre Marquis). In the next to last line of
+Example 7.7.3, ``sort $\tau$'' should be ``sort $\sigma$''.
+ 
+\item[p. 186] (Jean-Pierre Marquis). Line 4 of Example 7.7.7:
+``Let $u$ be the term $x$ of arity $\sigma$ and sort
+`$\sigma$' '' should
+be changed to
+``Let $u$ be the term $x$ of arity `$\sigma$' and sort
+$\sigma$''.
+ 
+\item[p. 186] (Jean-Pierre Marquis). In line 8 of Example 7.7.7,
+the path of $u$ is $\id:\sigma\to\sigma$.
+ 
+\item[p. 190] (Nico Verwer).There is a series of errors in FE--5 to
+FE--8.  The correct versions are as follows:
+\blist{FE--}\setcounter{lister}{4}
+ 
+\item$ + \o < {\id} , 0 \o <> > =
++ \o < 0 \o <> , {\id} > =
+  \id : f \to f$
+ 
+\item
+$ * \o < j , {j} \o 1 \o <> > =
+  * \o < {j} \o 1 \o <> , j > =
+  j : u \to f$
+ 
+\item
+$ + \o {< \id , - >} =
+  + \o {< - , \id >} =
+  0 \o <> : f \to f$
+\item
+$ * \o (j \times j) \o {< \id , ()^{-1} >} =
+  * \o (j \times j) \o {< ()^{-1} , \id >} =
+  1 \o <> : u \to u$
+\elist
+ 
+ 
+\item[p. 201] (Nils Andersen).  Line 3 of Definition 8.1.2.
+In addition to the property mentioned here, an
+equalizer $j:A\to A$ of $f,g:A\to B$ must also have the property that
+$j$ equalizes $f$ and $g$.  This will follow from the rest of
+the definition if there is {\it some\/} arrow that equalizes $f$
+and $g$, but there needn't be such a thing.
+ 
+\item[p. 205] (Nils Andersen).  The fourth sentence of 8.2.6
+should read:
+``An object of this category is a commutative cone $\{p_i:C\to Di\}$ and
+an arrow to $\{p'_i:C'\to Di\}$ is an arrow $f:C\to C'$ such that
+$p'_i\o f=p_i$ for all $i$.''
+  The sixth sentence should read:
+``A terminal object in ${\rm cone}(D)$, if one exists, is a commutative
+cone over $D$ to which every other commutative cone over $D$ has a
+unique arrow.''
+ 
+\item[p. 208] (Al Vilcius).  Top diagram should have a $B$, not $C$ in
+the SE corner.  The fourth line should say that $p_2$, not $p_1$ is the
+pullback of $f$ along $g$.
+ 
+\item[p. 208] (Nils Andersen).  Fourth line under top diagram:
+``that $p_1$ is'' should be ``that $p_2$ is''.
+ 
+\item[p. 211] (Nils Andersen).  l. -6:  $p_1$ should be $p_2$.
+ 
+\item[p. 227] (Jean-Pierre Marquis). Line 2 of Exercise 2 should
+have $B_i$ for $B$ and $C_i$ for $C$.
+ 
+\item[p. 228] (Al Vilcius). Last line:  Word ``be'' is missing.
+ 
+\item[p. 229] (Nils Andersen). In the diagram in N-8, $p$
+should be $a\x_c b$.
+ 
+\item[p. 232] (Jean-Pierre Marquis). The first line of the second
+paragraph of section 9.1.5 has a font error (it is not
+mathematically wrong): the second parenthesized expression
+should read $(D,\mult_D,{\rm unit}_D)$
+ 
+\item[p. 235] (Nils Andersen). In the first figure, $d$ should
+be $n$.
+ 
+\item[p. 235] (Nils Andersen). The left diagram near the bottom
+of the page, the one containing the arrow labeled ``false'', is
+redundant and should be omitted.  The phrase ``be diagrams''
+directly underneath that diagram should become ``be a diagram''.
+ 
+\item[p. 244] (Nils Andersen).  In line 6 of 10.2.3, the
+sentence
+``We use nodes $t^+,\ t$ and $d$'' should read
+``We use nodes $1, t^+,\ t$ and $d$''.
+ 
+\item[p. 244] (Nils Andersen).  In the diagram at the bottom of
+the page, {\bf Stack} should be {\bf BinTree} and $G$  should be
+$H$.
+ 
+\item[p. 249] (Nils Andersen).  l. 7 should read
+``For any sketch $\Ssc$, let ${\rm\bf Mod}_{\Csc}(\Ssc)$ be
+the category of models of $\Ssc$ in $\Csc$ (we called this
+${\rm\bf Mod}(\Ssc,\Csc)$ in Section 9.1).''
+ 
+\item[p. 255] (Al Vilcius). Line --5:  Replace ``cleavage'' by
+``opcleavage''.
+ 
+\item[p. 256] (Al Vilcius). Line --8: the expression has misplaced
+brackets.  Should be $$Fg[Ff(u)] \o\kappa(g,Ff(X))\o\kappa(f,X)$$
+ 
+\item[p. 256] (Al Vilcius) Line --2 should be ``functors $\Csc\op\to\Cat$.''
+ 
+\item[p. 258] (Al Vilcius).  Definition 11.2.3: GS--1 should be ``object
+of $G_0(\Csc,F)$''.
+ 
+\item[p. 259] (Al Vilcius). Line 8 should read ``$x'=Ff(x)$''.
+ 
+In paragraph starting line 11, orientation of $G_0(\Csc,F)$ requires the
+functor $G_0(F)$ to be the projection on the second coordinate, not
+first.
+ 
+\item[p. 261] (Al Vilcius).  In Theorem 11.2.9,  first projection should
+be second as above.
+ 
+\item[p. 263] (Jean-Pierre Marquis and Han Yan).
+Line 15: Change ``then $F(C)$ and
+$G(C)$'' to ``then $F(C)$ and $F(D)$''.
+ 
+\item[p. 264] (Al Vilcius).  In Definition 11.3.4, FI--1, replace
+``$P:\Esc\to\Cat$'' by ``$P:\Esc\to\Csc$''.
+ 
+\item[p. 271] (Nils Andersen).   l. -3 ``monoid to be'' should be
+``monoid $M$ to be''.
+ 
+\item[p. 272] (Jean-Pierre Marquis). Line --4: The reference to
+12.1.2 should be to 12.1.1.
+ 
+\item[p. 279] (Nils Andersen).  In the diagram, the diagonal
+arrow should be labeled $<q_1,q_2>$.
+ 
+\item[p. 281] (Jean-Pierre Marquis). In Exercise 1,
+$f(S_0)\inc T_0$ should be $f_{*}(S_0)\inc T_0$.
+ 
+\item[p. 287] (Jean-Pierre Marquis). The second line should read
+$$\Hom_{\Csc/A}(u\x v,w) =\Hom_{\Csc/A}(\Sigma_u(u^*(v)),w)$$
+ 
+\item[p. 302] Line --4ff should say, `` In particular, ${\rm\bf Cat}$
+is enriched over ${\rm\bf Cat}$ itself, since its hom sets are
+themselves categories (with the arrows as objects and the natural
+transformations as arrows) and the hom functors preserve the extra
+structure.''
+ 
+\item[p. 303] (Jean-Pierre Marquis). In the second line of SP--4,
+the $E$ should be $A$.
+ 
+\item[p. 307] (Jean-Pierre Marquis). In line 5 of the second
+paragraph, $(a_0, a_1, a_2, a_4\ldots)$ should be
+$(a_0, a_1, a_2, a_3\ldots)$.
+ 
+\item[p. 310] (Nils Andersen).  In the first diagram,
+$\Sub(k'\o k)$ should be
+$\Sub(k\o k')$.
+ 
+\item[p. 311] (Nils Andersen).  In Example 14.1.3, $\chi$ should
+be defined by
+$$\chi(x)=\left\{
+\begin{array}{ll}
+{\rm true}&\hbox{\rm if $x\in S_0$}\\
+{\rm false}&\hbox{\rm if $x\notin S_0$}
+\end{array}
+\right.$$
+ 
+\item[p. 319] (Jean-Pierre Marquis). $G_0$ and $G$ in the diagram
+should be $\Gsc_0$ and $\Gsc$.
+ 
+\item[p. 331] (Jean-Pierre Marquis). Line 2:  ``That of (C)''
+should be ``That of (c)''.
+ 
+\item[p. 333] (Jean-Pierre Marquis).  In line 4 of the paragraph
+after REAL--2, $\[fa_1=fa_2\]$ should be $\[\phi a_1=\phi
+a_2\]$.
+ 
+\item[p. 334] (Nils Andersen). l.  11  $Q(A)$ should be $Q(a)$.
+ 
+\item[p. 335] In the fourth paragraph of the discussion of the
+internal category of modest sets, the sentence, ``We want to describe
+this subset as consisting of those relations that are symmetric and
+transitive'', should have the following phrase added:
+``and double negation closed''.
+ 
+\item[p. 345] Line 2 of the answer to exercise 12.a: the last letter
+should be ``B'', not ``b''.
+ 
+\item[p. 357] (Jean-Pierre Marquis) In the top diagram, one of
+the arrows from BOOLEAN to BOOLEAN should be reversed.
+ 
+\item[p. 358] (Jean-Pierre Marquis) In the answer to Exercise 5,
+delete the phrase ``$\beta$ satisfies''.
+ 
+\item[p. 365] In the answer to problem 8, $\beta C:\Hom(C,C)\to F(C)$.
+ 
+\item[p. 368] (Jean-Pierre Marquis) In the second line of the
+answer to Exercise 3, the $B$'s should be $C$'s.
+ 
+\item[p. 370] (Jean-Pierre Marquis) Line --2:  Both occurrences
+of $f$ should be $F$.
+ 
+\item[p. 372] (Jean-Pierre Marquis) In the answer to Exercise 1,
+the arguments to $f$ are reversed.  The end of the sentence
+should read:
+``$\ldots$by letting $f(b,0)=f_0(b)$ and having
+defined $f(b,i)$ for $i\le n$, define $f(b,n+1)=t(f(b,n))$''.
+ 
+\item[p. 373] (Jean-Pierre Marquis) In the answer to Exercise 1
+of Section 6.1, every occurrence of $(\lambda\o\eval)$ should be
+$\lambda(\eval)$.
+ 
+\item[p. 380] (Jean-Pierre Marquis) In the diagram in the answer
+to Exercise 2, the upper right arrow (labeled $<\id,e\o<>>$)
+should go in the opposite direction.
+ 
+\item[p. 381] (Jean-Pierre Marquis) The answer  to number 3 is
+confused.  Here is the entire answer rewritten:
+We give the answer for the case of real vector spaces; the other is
+similar.  We assume the real number field $\R$ as a given structure.  We
+suppose, for each $r\in R$, a unary operation we will denote $r^*:s\to
+s$.   We require a unit element $z:1\to s$ for the operation $c$
+and a diagram similar to the previous exercise to say that $z$ is the
+unit element.   The following diagram says that $c$ is
+commutative:
+$$
+\Atriangle[s\x s`s\x s`s;<\proj_2,\proj_1>`c`c]
+$$
+We have to add a unary negation operator $n:s\to s$ together with a
+diagram to say it is the negation operator:
+$$\bfig
+\setsqparms[0`1`1`1;1500`500]
+\putsquare(0,0)[s`s\x s`1`s;`<>`c`z]
+\putmorphism(0,500)(1,0)[\phantom{s}`s\x s`<\id,\id>]{750}1a
+\putmorphism(750,500)(1,0)[\phantom{s\x s}`\phantom{s\x s}`\id\x
+n]{750}1a
+\efig$$
+In addition, we need diagrams that express the following identities:
+\begin{eqnarray*}
+0^*(x)&=&z\\
+r^*(c(x,y))&=&c(r^*(x),r^*(y))\\
+(r+s)^*(x)&=&c(r^*(x),s^*(x))\\
+1^*(x)&=&x\\
+r^*(s^*(x))&=&(rs)^*(x)
+\end{eqnarray*}
+We give, for example,
+the diagram required to express the third of the equations above:
+$$
+\settriparms[1`1`1;600]
+\qtriangle[s`s\x s`s;<r^*,s^*>`(r+s)^*`c]
+$$
+ 
+\item[p. 386] (Jean-Pierre Marquis) Line 4 of answer to 3b:
+$D_m$ should be $Dm$.
+ 
+\item[p. 388] (Nils Andersen).  After the change is made on p.208,
+the answer to number 6 should read:
+``In ${\rm\bf Set}$, the pullback is
+$$P=\{(a,b)\mid f(a)=g(b)\}$$
+Since $f$ is surjective, for any $b\in B$, there is a $a\in A$
+such that $f(a)=g(b)$.  Then $p_2(a,b)=b$.  Thus $p_2$ is
+surjective.''
+ 
+\item[p. 402] (Jean-Pierre Marquis). The answer to Exercise 6 of
+12.2 (page 281) uses Theorem 12.3.6, which comes in a later
+section.  Here is an answer using only the definition of
+adjoint:  If the functor defined in 12.2.4 has a left adjoint
+$F$, then by definition of left adjoint there is for any set $X$
+an arrow $\eta X:X\to FX\x A$ with the property that for any
+function $f:X\to Y\x A$ there is a unique function $g:FX\to Y$
+for which $(g\x A)\o \eta X=f$.  Now take $Y=1$, the terminal
+object (any one element set).  There is only one function
+$g:FX\to 1$, so there can be only one function $f:X\to 1\x A\iso
+A$.  If $A$ has more than one element, this is a contradiction.
+ 
+\item[p. 431] The word ``relation'' should also be indexed on p. 21.
+ 
+\end{description}
+ 
+\section{Additional text}\label{newtext}
+ 
+\begin{description}
+ 
+\item[p. xiii] (First paragraph).  Another book that develops
+most of the topics further, except sketches, is [Freyd-Scedrov,
+1990].  (Additional comment).  The reader may find the following
+discussions of the uses of category theory in computing science
+useful:  The tutorials in [Pitt, Abramsky, Poign\'e and
+Rydeheard, 1986], and [Goguen, 1991].
+ 
+\item[p. xiii] (Second paragraph).Another collection of papers is
+[Pitt, Rydeheard, Dybjer, Pitts and Poign\'e, 1989].
+ 
+\item[p. 17] [Additional example of category.]
+Let $\alpha$ be a relation from a set $A$ to a set $B$
+and $\beta$ a relation\index{relation}
+from $B$ to $C$ (see 1.3.4).  The {\bf
+composite} $\beta\o\alpha$ is the relation from $A$ to $C$ defined
+as follows: If $x\in A$ and $z\in C$, $(x,z)\in\beta\o\alpha$ if and
+only if there is an element $y\in B$ for which $(x,y)\in\alpha$ and
+$(y,z)\in\beta$.  With this definition of composition, the {\bf
+category of sets and relations} has sets as objects and relations
+as arrows.
+ 
+\item[p. 53] Add to third paragraph of 3.1.7:  Freyd-Scedrov
+[1990], pages 9 and 19, give a formal definition of forgetful functor.
+ 
+\item[p. 71] [New exercise] Show that the category of sets and relations
+is equivalent, in fact isomorphic, to its own dual (see 2.6.7).
+Answer: Let $\Rel$ denote the category of sets and relations.
+For a relation $\alpha$ from $A$ to $B$, that is, a subset of
+$A\x B$, let $\alpha\op$ denote the subset $\{(b,a)\mid (a,b)\in A\x B\}$
+of $B\x A$.
+Let $F:\Rel\to\Rel\op$ be the identity on objects and
+for a relation $\alpha:A\to B$,
+let $F(\alpha)=\alpha\op$.  $F(\alpha)$ is a relation from $B$ to
+$A$ in $\Rel$, hence a relation from $F(A)=A$ to $F(B)=B$ in $\Rel\op$.
+It is easy to check that if $\beta:B\to C$, then $F(\beta\o\alpha)=
+\alpha\op\o\beta\op$ in $\Rel$, so $(\beta\o\alpha)\op=\beta\op\o\alpha\op$
+in $\Rel\op$.  This says $F(\beta\o\alpha)=F(\beta)\o F(\alpha)$, so
+$F$ preserves composition.  The identity relation on $A$ is $\Delta_A=
+\{(a,a)\mid a\in A\}$, so $\Delta=\Delta\op$ and $F$ preserves
+identities.  Since for any relation $\alpha$, $(\alpha\op)\op=\alpha$,
+we have $F\o F$ is the identity functor on $\Rel$, so is its own inverse.
+Hence  $F$ is an isomorphism.  By Exercise 1, it is therefore an
+equivalence of categories.
+ 
+\item[p. 96]
+The applications of 2-categories have mushroomed and include
+[Ji-Feng and Hoare, 1990], [Moggi, 1989] and [Power, 1989] in
+addition to the papers already listed.
+ 
+\item[p. 97] Second paragraph of Section 4.5:  In addition to generalizing
+the Cayley Theorem, the Yoneda Lemma also has as a special case the
+embedding of a poset into its down-closed subsets.
+Also: set-valued functors are studied further in Sections 11.2 and 14.4.
+ 
+\item[p. 158] The assumption that every object in a cartesian
+closed category has fixed points is inconsistent with other
+desirable assumptions on the category.  See [Huwig-Poign\'e,
+1990].
+ 
+\item[p. 213] Freyd-Scedrov [1990] have a different but closely
+related definition of ``regular''.  If a category is regular in
+our sense it is regular in theirs, and if it is regular in their
+sense and has coequalizers, then it is regular in our sense.
+ 
+\item[p. 257] Besides [Coquand, 1988], Moggi [1989] also uses
+the Grothendieck construction in modeling polymorphism.
+ 
+\item[p. 283] Another reference for the Adjoint Functor Theorem
+(with a different point of view) is [Freyd-Scedrov, 1990], pages
+144-146.
+ 
+\item[p. 287] Just before the exercise: See also [Ehrhard, 1989].
+ 
+\item[p. 301] Some applications of triples (monads) in computing
+science are in [Moggi, 1991], [Power, 1990]
+ 
+\item[p. 318] Add comment: We considered presheaves as actions in Section
+3.2.  They occur in other guises in the categorical and computer science
+literature, too.  For example,
+a functor $F:A\to\Set$, where $A$ is a set treated as a
+discrete category, is
+a ``bag'' of elements of $A$.  If $a\in A$, the set $F(a)$ denotes the
+multiplicity to which $a$ occurs in $A$.  See [Taylor, 1989] for
+an application in computing science.
+ 
+\item[p. 325] Goguen [1990] has developed a sheaf semantics for object
+oriented programs.
+ 
+\end{description}
+ 
+\section{Additional references}\label{refs}
+\fontdimen2\twlrm=4.3pt% space instead of 3.91663
+\fontdimen3\twlrm=4.2pt%stretch instead of 1.95831
+\fontdimen4\twlrm=1.7pt%shrink instead of 1.30554
+\begin{list}{}{\leftmargin 8mm \itemindent -8mm
+\parsep 0pt \itemsep 0pt plus 1pt}
+\def\itm{\item[]}
+ 
+\itm \mbox{T.  Ehrhard}, {\it Dictoses}.  In {\bf Category theory and
+computer science}, D. H. Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts
+and A. Poign\'e, editors.  \lncs{389}, \springer, 1989.
+ 
+\itm \mbox{P. Freyd and A. Scedrov}, {\bf Categories,
+Allegories}.  North-Holland Mathematical Library {\bf39},
+North-Holland, 1990.
+ 
+\itm \mbox{J.\ Goguen}, {\it Semantics of concurrent interacting
+objects}.  Preprint, Programming Research Group, Computing Laboratory,
+Oxford University, Oxford OX1 3QD, England.
+ 
+\itm \mbox{J. Goguen}, {\it A categorical manifesto}.
+Mathematical Structures in Computer Science {\bf 1}, 1991,
+49--68.
+ 
+\itm \mbox{C.\ A.\ R.\ Hoare}, He Jifeng and C. Martin, {\it
+Pre-adjunctions in order-enriched categories}.  Preprint, Programming
+Research Group, Computing Laboratory, Oxford University, Oxford OX1 3QD,
+England.
+ 
+\itm \mbox{He Ji-Feng and C. A. R. Hoare},
+{\it Categorical semantics for programming languages}.
+In M.\ Main {\it et al.}, eds., {\bf Mathematical
+Foundations of Programming Semantics}. \lncs{442},
+\springer,  1990, 402--417.
+ 
+\itm\mbox{H. Huwig} and A. Poign\'e, {\it A note on
+inconsistencies caused by fixpoints in a cartesian closed
+category}.  Theoretical Computer Science {\bf73}, 1990,
+101--112.
+ 
+\itm \mbox{E.  Moggi}, {\it A category-theoretic account of program
+modules}.
+Mathematical Structures in Computer Science {\bf 1}, 1991,
+103--139.
+% In {\bf Category theory and computer science}, D. H. Pitt, D.
+% E. Rydeheard, P. Dybjer, A. M. Pitts and A. Poign\'e, editors.
+% \lncs{389}, \springer, 1989.
+ 
+\itm \mbox{D.\ Pitt}, D. Rydeheard, P. Dybjer, A. Pitts and A. Poign\'e,
+eds.  {\bf Category theory and computer science}.  \lncs{389},
+\springer, 1989.
+ 
+\itm \mbox{A.\ J.\ Power}, {\it An abstract formulation for rewrite
+systems}.  In {\bf Category theory and computer science}, D. H. Pitt, D.
+E. Rydeheard, P. Dybjer, A. M. Pitts and A. Poign\'e, editors.
+\lncs{389}, \springer, 1989.
+ 
+\itm \mbox{A. J. Power},
+{\it An algebraic formulation for data refinement}.
+In M.\ Main {\it et al.}, eds., {\bf Mathematical
+Foundations of Programming Semantics}. \lncs{442},
+\springer,  1990, 390--401.
+ 
+\itm \mbox{R.\ Seely}, {\it Modelling computations:  a $2$-categorical
+framework.} In {\bf Proceedings of the Conference on Logic in Computer
+Science}, IEEE, 1987.  [Corrected reference].
+ 
+\itm \mbox{P.\ Taylor}, {\it Quantitative domains, groupoids and linear
+logic}.  In {\bf Category theory and computer science}, D. H. Pitt, D.
+E. Rydeheard, P. Dybjer, A. M. Pitts and A. Poign\'e, editors.
+\lncs{389}, \springer, 1989.
+ 
+\item \mbox{C.\ Wells}, {\it A generalization of the concept of
+sketch}.  Theoretical Computer Science {\bf 70} (1990), 159-178.
+[Updated reference].
+\pagebreak[3]
+ 
+\end{list}
+ 
+\end{document}
+=====================================================================
+Subj:	Regular epis, revisited 
+Date: Tue, 10 Mar 92 10:01:14 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I thought some of the people on the net might be interested in the
+outcome of the correspondence I've been having with Paul Taylor on
+regepis.  Basically, he wanted the definition extended further so that
+if there were a multi-coequalizer, then every candidate should also be
+considered a regepi.  It seems that that all works too.  One thing was
+that I also wanted to be able to define stable in the absence of
+pullbacks and show that the composite of regepis is regepi if they are
+stable.
+ 
+A couple of loose ends.  Does anyone know of a natural example of a
+category with multicoequalizers that does have pullbacks (or at least
+kernel pairs) and a candidate for a multicoequalizer that is not itself
+the coequalizer of its kernel pair?
+ 
+I could have sworn that Joyal once claimed to have shown that if you
+have an E/M factorization system and if E is stable under pullbacks,
+then E =  regepis (and M = monos).  Maybe it was assumed that E incin
+epis and M incin monos.  Why isn't posets with E = surjective on objects
+and M = full inclusions a counter-example?  In fact, why isn't Cat, with
+the same two classes, a counter-example?
+ 
+Follows, with minor changes, is the letter I wrote to PT:
+ 
+Paul:
+ 
+With help from Dusko Pavlovic at a crucial point, here is the proof that
+if regular epis in my sense are stable, in my sense, then they are also
+closed under composition.  Dusko also claims that this can even be made
+to work for candidates in the way you want it to work.  I haven't
+checked, but I guess if he says it works I believe him.
+ 
+First the simple case.  For an arrow q: A --> Q, let Kerp(q) (in
+contrast with kerp(q), the usual kernel pair) denote the class of all
+pairs of arrows <x0,x1> such that f.x0=f.x1.  (Here and later, I will
+let the domain/codomain requirements be inferred from the composites and
+equations written down, so that from the above, x0 and x1 have to be
+parallel and their codomain has to be the domain of q.)  Then my defn of
+regular epi is that q is regular epi iff Kerp(q) incin Kerp(f)
+==> E! g such that g.q = f.  I will say that regular epis are stable
+iff given a regepi q and a map f: Q' --> Q, there is a commutative
+square f.q' = q.g and q' is a regepi.
+ 
+Prop. If regepis are stable, they are closed under composition.
+ 
+Proof. Suppose q: A --> Q and p: Q --> P are regepi.  Suppose Kerp(p.q)
+incin Kerp(f).  Then Kerp(q) incin Kerp(p.q) incin Kerp(f) so E! g such
+that f = g.q.  Now suppose that <u0,u1> in Kerp(p).  Begin by choosing
+squares
+               q'0                                q'1
+         A'0 -------> Q'                    A'1 -------> Q'
+          |           |                      |           |
+          |           |                      |           |
+       u'0|           |u0                 u'1|           |u1
+          |           |                      |           |
+          |           |                      |           |
+          v     q     v                      v     q     v
+          A --------> Q                      A --------> Q
+ 
+with q'0 and q'1 regepic.  Then find a square
+                                  t0
+                            A' --------> A'0
+                            |             |
+                            |             |
+                          t1|             |q'0
+                            |             |
+                            |             |
+                            v     q'1     v
+                           A'1 ---------> Q'
+with t0, and therefore q' = q'0.t0 = q'1.t1 epic.  Then we have q.u'0.t0
+= u0.q'0.t0 = u0.q and similarly q.u'1.t1 = u1.q.  From p.u0 = p.u1, we
+conclude that p.q.u'0.t0 = p.u0.q = p.u1.q = p.q.u'1.t1 and thus g.u0.q' =
+g.q.u'0.t0 = f.u'0.t0 = f.u'1.t1 = g.q.u'1.t1 = g.u1.q'.  But q' is epi
+and so g.u0 = g.u1 and so E! h such that h.p = g.
+ 
+Now for the multi-coequalizer case, Dusko suggest the following.  Let
+Coeq(Kerp(q)) be the set of candidates for thhe multicoequalizer,
+assuming it exists.  Define a predicate Z(q;f,g) that is true whenever
+Kerp(q) incin Kerp(f) & Kerp(g) and f and g are in the same component
+of the cocone of all arrows with that property.  Then by sprinkling Zs
+at appropriate places in the above, he says that it all works.  I
+haven't tried it, but I see no reason it wouldn't work.
+ 
+Michael
+=====================================================================
+Subj:	corrections to corrections
+Date: Wed, 11 Mar 92 15:03:49 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+corrections to corrections
+
+There is an omission in the corrections to ctcs.  The definition
+\mathrm{Sub} has to be added.  A couple of people have written me that
+it wouldn't tex with their version of the diagram macros.  I can suppose
+only that they have old or small versions of tex.  However, it has far fewer
+macros than the book itself and we did that with a 1989 or so version that 
+was considerably smaller than the one I have today.  There may also be 
+a problem with the new font selection scheme that I have not yet adopted.
+
+I will see that the latest version of the diagram macros are in the 
+ftp/pub/texmacros directory.
+
+Michael
+=====================================================================
+Subj:	regepis, stablefunctors...
+Date: Thu, 12 Mar 92 10:41:13 EST
+From: Michel Hebert <mhebert@mat.ulaval.ca>
+
+Ref.: The last message of M. Barr on  regepis, etc..., and the one of P. Taylor
+	
+The claim of Joyal  is probably the one mentioned on p.292 of [Cassidy-Hebert-
+Kelly; J.Austr. Mat.Soc.38 (1985)], where it is assumed that (E,M) = (Strong 
+Epis, Monos) (it is Kelly who reported that). Certainly it is not true for all
+E: to be more precise, Th. 3.3 and 4.7 of the paper imply that factorization 
+ systems (E,M) with E stable under pullbacks (in a finitely complete and well-
+powered category A) are exactly those couples (E,E*) with  
+E = { f ; r(f) iso }for some left-exact reflection functor r from A and 
+E* obtained by the diagonalproperty (Hence in particular all localisation 
+morphisms a-->r(a) are in such an E, and classical cases give counterexamples).
+
+About a previous message about slices, it seems to me that the existence of a 
+multi-initial object (in the sense of Diers) does not imply the existence of an
+initial object in each slice, unless you assume the existence of equalizers (A
+counterexample being the algebraically closed fields).(Am I using a different
+definition of multi-initial object?).In fact, at least for axiomatic categories
+of finitary models, the existence and preservation of equalizers by the 
+forgetful functor is precisely what makes the difference between multi-
+adjointness and "local adjointness" (in the sense of [Kaput] and [Adamek-
+Volger] mentioned by Tholen). 
+
+About preservation of pullbacks only, note that in axiomatic categories of
+finitary models, the existence and preservation by the forg.funct. of 
+pullbacks imply the one of wide pullbacks (and filtered colimits) 
+(This follows from results of [Pare, Can. J. Math 42 (1990), 731-746] 
+and  Volger: see [Volger, Initial and quasi-initial models of theories, 
+manuscript, 1991]). Doesn't this permit to simplify the definition of a 
+locally-finitely poly-presentable category (as an accessible category 
+with pullbacks)?
+=====================================================================
+Subj:	Re:  regepis, stablefunctors...
+Date: Thu, 12 Mar 92 14:46:05 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Diers' notion of multi-adjoint includes a uniqueness so that algebraically
+closed fields^op is not an example.  Essentially, it is that there is an
+initial object in each component, so it follows by definition.
+
+You are probably right about Joyal's claim, but it is even easier to see
+that if regepis are closed under composition (implied by pullback 
+stability), then every strong epi is regular.  Oh well, I guess my
+memory was faulty.
+
+What are wide pullbacks?  How can pullback preservation imply anything
+about filtered colimits?  In any case, it is easy to find limit preserving
+underlying functors that don't preserve filtered colimits.
+
+Michael
+=====================================================================
+Subj:	Hopf algebras
+Date: Thu, 12 Mar 92 17:27:21 -0500
+From: James Stasheff <jds@lucie.math.unc.edu>
+
+Bill Schmitt asks:
+From SCHMITTW@hermes.msci.memst.edu Thu Mar 12 16:58:24 1992
+Message-Id: <MAILQUEUE-99.920312160208.666@hermes.msci.memst.edu>
+To: jds@charlie.math.unc.edu
+From: SCHMITTW@hermes.msci.memst.edu
+Date:     8 Mar 92 15:59:24 CDT
+Subject:  question
+X-Mailer: Pegasus Mail v2.1c R5.
+Status: R
+
+Dear Jim,
+
+    Do you know to whom the following theorem should be attributed?
+
+If H is a cocommutative, connected (i.e., pointed and irreducible)
+Hopf algebra over a field K of char. 0, then H is isom. to the
+universal enveloping algebra of the Lie algebra of primitives P(H).
+
+Milnor and Moore prove this for H graded, is this more general result
+due to Kostant?  Or is Kostant's theorem the statement that a general
+cocommutative H is a product of a univ. env. algebra and a group
+algebra?
+
+Milnor and Moore also extend this to the case when char K=p.  Do you
+know of any extension for K a general commutative ring with unit?
+
+I think the theorem holds for K a comm. ring exactly as stated above
+except with the following added condition on H:
+
+Let I be the identity map and 1 be the convolution identity in the
+convolution algebra of all linear maps Hom(H,H).  Then for all
+n>0, and all x in H, (I-1)^{n}(x) is divisible by n in H.
+
+I've proved this for H also commutative, but would like to know if
+it would be an interesting extension of the above result (or if it's
+already been done) before trying to prove it in general.
+I greatly appreciate any help you can give.
+
+         Yours,
+                Bill
+
+
+=====================================================================
+Subj:	commutative Ext
+Date: Thu, 12 Mar 92 17:28:43 -0500
+From: James Stasheff <jds@lucie.math.unc.edu>
+
+If A is Hopf, then Ext_A(k,k) is graded commutative
+what is the earliest or best PUBLISHED  proof?
+=====================================================================
+Subj:	Congratulations
+Date:         Fri, 13 Mar 92 11:38+0000
+From:         mxh@dcs.edinburgh.ac.UK 
+
+...to Gordon Plotkin, on becoming a Fellow of the Royal Society.
+=====================================================================
+Subj:	multi, poly, stable, etc.
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Fri, 13 Mar 92 17:34:06 GMT
+
+In reply to Michel Hebert:
+> ...it seems to me that the existence of a multi-initial object (in the sense
+> of Diers) does not imply the existence of an initial object in each slice,
+> unless you assume the existence of equalizers.
+
+No, the other way round. The category of algebraically closed fields does have
+an initial object in each slice, alias initial candidates, alias a polyinitial
+family.  The "poly" initial (etc) family is "multi" iff the relevant functor
+preserves equalisers.
+
+As I have said, all of these things become much simpler if you consider
+slices instead of these confusing collections (multiple-valued adjoints).
+
+> Doesn't this permit to simplify the definition of a locally-finitely
+> poly-presentable category (as an accessible category with pullbacks)?
+
+Indeed it does. I'm afraid my own work on this never got beyond the "notes"
+stage, but those notes are available by anonymous ftp
+	from theory.doc.ic.ac.uk as /theory/papers/Taylor/LFPP.dvi
+Probably Pierre Ageron or Francois Lamarche has an account of the same thing.
+
+I don't like the term "locally finitely presentable", but given that after
+twenty years there's no changing it, "locally finitely multi- or poly-
+presentable" describes the corresponding categories with multi- or poly-
+(finite) colimits.  There is a characterisation of the connections between
+how "poly" the colimits are in terms of finite limits in the same notes.
+
+Paul
+=====================================================================
+Subj:	stable, multi, poly and slice things
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Wed, 11 Mar 92 18:02:54 GMT
+
+Perhaps I should make more effort to share with the community what I know 
+about stable functors.  I am grateful to Walter Tholen for pointing out some
+old work of his about which I knew nothing.
+
+I started writing a much longer survey to send to "categories" but decided
+it was getting too technical, so I shall just point out one thing.
+
+Diers had quite a lot of results about adjoining formal products or coproducts,
+to get a multiple-valued adjoint.  Mike Barr seems to have those results in
+mind.  In my view they make matters far more complicated than they really are.
+
+The point in quite simply this:
+ (1) A functor is stable (in my sense) iff it has a left adjoint on each slice.
+ (2) The candidates are the universal maps in the slices.
+     There may be many of them, but they're all as good as each other at being
+     universal maps, coequalisers or whatever.
+ (3) Each object (slice, cocone) only gets to see one candidate.
+     As far as that slice is concerned, that candidate is the real thing.
+     If you can draw a diagram entirely within one slice (for example if it
+     is the square expressing the orthogonality property of a factorisation
+     system) then a coequaliser (or whatever) candidate behaves in exactly
+     the same way as a universal coequaliser would.
+ (4) So long as whatever structure you're interested in (colimits, say) is
+     preserved by pullbacks (as colimits are in a locally cartesian closed
+     category) then yes, the slices are guaranteed to fit together nicely.
+     Hence my word "laminated".  I could use "locally", and I'd like a
+     "cartesian" category to be one with pullbacks, but these words are too
+     sullied with overuse.
+ (5) The interesting cases arise when the categories do not have terminal
+     objects.  If Max Kelly had dropped this assumption when he investigated
+     "shape transformations" he would have discovered a lot of beautiful
+     results.
+
+What's the difference between Diers' "multi" and Lamarche's "poly"?
+Answer: "poly" is what's true in each slice; this becomes "multi" if the
+functor preserves equalisers (and hence all connected limits) instead of
+just wide pullbacks. Of course this is automatic in preorders.
+
+Why don't I know of any examples of genuinely multi or poly coequalisers?
+Because most (all?) of Diers' examples from generalised algebraic theories
+are full subcategories of the monomorphisms in an equational underlying
+theory.
+
+The inclusion of the formal monos in any factorisation system is a stable
+functor, whose candidates are the formal epis.  If you want to find an example
+with nontrivial behaviour vis-a-vis coequalisers, you'll have to start with
+a factorisation system which is completely different from epi-mono.
+I suggest the final/discrete-fibration factorisation.
+Alternatively, you can paste slices together.
+
+A discussion of multi/poly adjoints, stable functors and candidates will be
+found in my unpublished paper
+	"The trace factorisation of stable functors".
+in	theory.doc.ic.ac.uk	/theory/papers/Taylor/trace.dvi
+The third section (of three) of this paper discusses adjunctions in the
+2-category of stable functors and cartesian transformations.  Amongst other
+things it shows that all such adjunctions are comonadic, and that an ordinary
+left adjoint belongs to such an adjunction iff it is a discrete fibration.
+The paper didn't get published because the referee considered this
+irrelevant technicality, even though it also served as the proof of something
+the alleged absence of the proof of which he described as "scandalous".
+It will will never now be published because, as is the nature of research,
+I can now prove many of the results more easily.
+
+Paul Taylor
+
+PS I have reverted to magnified computer modern fonts as the default for our
+latex, even though design size fonts look better.
+=====================================================================
+Subj:	Pfn
+Date: Thu, 26 Mar 92 10:57:52 +0100
+From: Lars Birkedal <birkedal@diku.dk>
+
+Does there exist a comprehensive treatment of the category Pfn, objects are
+sets and morphisms are partial functions - specifically I`m interested to know
+if someone has proven the existence of colimits and other such concepts in Pfn.
+
+Thanks,
+
+Lars Birkedal (birkedal@diku.dk)
+=====================================================================
+Subj:	Re: Pfn (times 2)
+Date: Fri, 27 Mar 1992 09:51 ADT
+From: RDAWSON@HUSKY1.STMARYS.CA
+
+	Maybe I'm being naive here, but isn't Pfn isomorphic in a rather 
+natural way to Set*, the category of pointed sets? Everything that doesn't
+get mapped anywhere by a partial function P:X-->Y gets mapped to *(Y) by
+the corresponding function P*: X* --> Y*: so * acts as a sort of 'wastebasket'.
+So it would seem that coproducts, etc., would follow from that.
+	-Robert Dawson
+++++++++++++++++++++++
+
+Date: Fri, 27 Mar 92 09:35:12 EST
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+The category of sets and partial functions is equivalent to that of 
+pointed sets and base point preserving morphisms, the algebras for the
+triple X |---> 1 + X with obvious structural maps, and, as such, is as
+complete and cocomplete as one could wish.
+
+Michael Barr
+=====================================================================
+Subj:	Omega completeness of retraction categories.
+Date: 30 Mar 92   11:48:05 EST
+From: <cxm7@pop.cwru.edu>
+
+-------------
+	Asperti and Longo say it is an open question whether there are 
+non-trivial cartesian closed categories with omega complete retraction
+categories.  (Their book, p.249.)  Here I show that any category _C_ 
+with binary coproducts has omega complete retraction category iff
+_C_ is a preorder.  The theorem does not even use all binary coproducts.  
+It is constructive so it applies to categories over any topos.
+
+	To define the terms: a "chain" in _C_ is an infinite sequence
+of objects, with an initial member, each with a map to the next.  
+A category is "omega complete" if every chain in it has a colimit.
+Given any category _C_ the "retraction category" is called _C_^Ret 
+and has the same objects as _C_.  An arrow in _C_^Ret from A to A'
+is a retraction pair making A a retract of A'.
+
+	If _C_ is a preorder then _C_^Ret is a groupoid and trivially
+omega complete.  To connect this with the converse notice that _C_ is
+a preorder iff every object of _C_ is subinitial (i.e. it has at most
+one map to any object).
+
+Theorem:  Suppose a category _C_ has an object A which is not subinitial 
+but which does have a coproduct with every object of _C_.  Then _C_^Ret 
+is not omega complete.  
+
+Proof:  Define a sequence of objects An this way:  A0=A and for every 
+n we let A(n+1) be the coproduct (An)+A.  "The map of A onto the last 
+summand of An" means the coproduct injection of A into A(n-1)+A if n
+is not 0, and the identity if n=0.  Each An is a retract of A(n+1) in
+a canonical way where the monic is the coproduct injection and the 
+splitting epic from An+A to A acts as the identity on An and maps A onto
+the last summand of An.  These retractions give a chain in _C_^Ret.
+	Suppose the chain has a colimit B.  Then there is a map from A to B so 
+B is a retract of B+A.  Define a cone over the chain this way:  The vertex 
+is B+A.  For each An in the chain the monic to B+A is the colimit monic to 
+B followed by the inclusion into B+A.  The splitting epic from B+A to An 
+acts as the colimit epic on B and maps A to the last summand in An.
+	But since A is not subinitial the map of A onto the last summand in 
+A(n+1) does not factor through the inclusion of An.  Thus no splitting epic 
+from B+A to B to commutes with the cone projections, and so B is NOT a 
+colimit.  Our chain has no colimit. 
+
+Colin McLarty
+
+=====================================================================
+Subj:	Re: Pfn (times 2)
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+Date: Mon, 30 Mar 92 11:51:40 BST
+
+Robert Dawson says "am I being naive?". Well, Robert, you asked for it, but
+yes you are, because you're assuming excluded middle.
+
+Pfn is the Kleisli category (of *free* algebras) for the partial element
+(lift) monad.  Classically, every (Eilenberg-Moore) algebra is free,
+and so what Robert & Mike say is true.
+
+Intuitionistically, lift(1) is the object of truth values. Every algebra
+carries a partial order, which, for free algebras, is a powerset in each slice.
+In general it need not be distributive, because the category of algebras
+is closed under retracts (splitting idempotents).
+Indeed any algebra for a monad is a coequaliser of a pair of maps between
+free algebras, so colimits naturally take you outside the Kleisli category.
+The diagram may nevertheless still have a (different) colimit inside.
+
+This makes the question of colimits a little more complicated than Mike
+suggests, but then he's probably still the best person to say exactly how
+complete and cocomplete the category is.
+
+Here is an example of computer science interest, and a counterexample to what
+I claimed (privately) at the recent Manchester PSSL.
+David Rydeheard's book discusses unification (as used in logic and functional
+programming) as a coequaliser in the Kleisli category for the monad for an
+algebraic theory with no equations.
+A very simple example shows that this is *not* the coequaliser in the
+category of algebras.
+Take one unary operation f and two variables x,y. Then as a unification
+problem the equation f(x)=f(y) implies x=y, but the coequaliser as an algebra
+is essentially "N with two zeroes".
+
+Paul Taylor
+

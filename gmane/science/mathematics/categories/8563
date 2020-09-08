@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Giorgio Mossa <mossa@poisson.phc.unipi.it>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Partial functors ..
+Date: Tue, 17 Mar 2015 20:08:18 +0100
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <E1YYD0C-0006JF-6X@mlist.mta.ca>
+References: <E1YXpYI-0003sU-Sx@mlist.mta.ca>
+Reply-To: Giorgio Mossa <mossa@poisson.phc.unipi.it>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+X-Trace: ger.gmane.org 1426681475 17709 80.91.229.3 (18 Mar 2015 12:24:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Mar 2015 12:24:35 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: David Yetter <dyetter@ksu.edu>
+Original-X-From: majordomo@mlist.mta.ca Wed Mar 18 13:24:22 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD1H-0005iV-7n
+	for gsmc-categories@m.gmane.org; Wed, 18 Mar 2015 13:24:19 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43989)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD0D-00035k-8F; Wed, 18 Mar 2015 09:23:13 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD0C-0006JF-6X
+	for categories-list@mlist.mta.ca; Wed, 18 Mar 2015 09:23:12 -0300
+In-Reply-To: <E1YXue5-0006Gx-3h@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8563
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8563>
+
+It seems to me that this way of modelling partial functors via functors 
+doesn't work too.
+
+Consider the following example:
+let C be a category with two objects, let's call them x0 and x1
+and suppose that
+
+* C[x0,x1] = C[x1,x0] are singletons whose elements we will call i and j respectively
+that are one inverse to each other
+* C[x0,x0] = C[x1,x1] = N the monoid of natural numbers
+
+S is the full subcategory of C containing just the object x0, i.e. is the monoid
+of natural number N seen as a category.
+
+There's an obvious functor P : S -> N, which is an isomorphism, by definition.
+This gives us a *non trivial* partial functor, nonetheless
+if we take by N~ to be the category obtained by adding freely a zero object to N
+a functor P' : C -> N~ that sends the object x1 in the zero object of N~
+should send also x0 in the zero object because x0 and x1 are isomorphic in C and
+functors preserve isomorphisms. Since N~ is obtained by adding freely a zero
+object this implies that P' should be a constant functor and it could be the only
+functor sending the objects of C not in S in the zero object.
+
+This example seems to show that the adding a zero object may not be a solution to the problem.
+
+If I correctly understood Robin Cockett's construction below it seems something like this
+
+The category of partial functor from C to D should be a subcategory of the comma-category
+(Cat,D) where:
+
+* objects are functors P : S -> D, where S is a subcategory of C
+* morphisms from an object P : S -> D to an object P' : S' -> D are
+pairs (I,a) where I : S -> S' is an embedding of (sub)categories and
+a : P -> P'?I is a natural transformation between these two functors in Cat[S,D].
+
+Composition between functors (in order to get a 2-category) should be defined in the obvious way.
+
+Giorgio
+
+On Tue, Mar 17, 2015 at 03:04:54PM +0000, David Yetter wrote:
+> The previous suggestion of considering functors to D + 1 was a false start for reasons Fred and Uwe pointed out, but it suggests a better approach:  consider functors to the category D~ formed from D by freely adjoining a zero object.  Arrows not in S now have somewhere to go (the zero arrow with the appropriate source and target).
+>
+> I think at the one-categorical level, taking Hom(C,D) to be the zero-preserving functors from C~ to D~, and letting C and D range over all small categories gives  a category isomorphic to that of small categories with partial  functors as arrows.
+>
+> Natural transformations between (zero-preserving) functors from C~ to D~ would
+> then give a reasonable notion of partial natural transformations.  It certainly captures some, at least, of the natural transformations "more partial"  than their source functor, since there will be a zero natural transformation between any two partial functors, corresponding to a "defined nowhere" partial natural transformation when zero-ness is interpreted as undefined as  it was in the correspondence between zero-preserving functors from C~ to D~ and partial functors from C to D.
+>
+> I'm not sure how this fits with the restrictions Robin points out.  It seems to allow more partial natural transformations than Robin's observation, since zero arrows can fill in whenever the image object under either the source or target functor is undefined, a partial natural transformation to be a natural transformation between the restrictions of the two partial functors to the intersections of their domain of definition (or a subcategory thereof).
+>
+> Best Thoughts,
+> David Yetter
+> ________________________________________
+> From: Robin Cockett <robin@ucalgary.ca>
+> Sent: Monday, March 16, 2015 6:12 PM
+> To: Categories list
+> Subject: categories: Partial functors ..
+>
+> David Leduc <david.leduc6 <at> googlemail.com> writes:
+>
+>> A partial functor from C to D is given by a subcategory S of C and a
+>> functor from S to D. What is the appropriate notion of natural
+>> transformation between partial functors that would allow to turn small
+>> categories, partial functors and those "natural transformations" into
+>> a bicategory? The difficulty is that two partial functors from C to D
+>> might not have the same definition domain.
+>
+>
+> Here is a basic and quite natural interpretation (if someone has not
+> already pointed this out):
+>
+> One can have a n.t  F => G iff F is less defined than G and on their common
+> domain (which is just the domain of F) there is a natural transformation
+> from F => \rst{F} G.   Partial functors, of course, form a restriction
+> category so they are naturally partial order enriched (by restriction).
+> This 2-cell structure must simply respect this partial order ...
+>
+> This is certainly not the only possibility, unfortunately ... for example
+> why not also allow partial natural transformations ... which are less
+> defined than the functor.   Here one does have to be a bit careful: a
+> natural transformation must "know" the subcategory it is working with ...
+> thus defining the natural transformation as a function on arrows (rather
+> than just objects) is worthwhile adjustment (see MacLane page 19, Excercise
+> 5).  This then works too ....
+>
+> I hope this helps.
+>
+> -robin
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

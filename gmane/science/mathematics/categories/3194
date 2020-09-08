@@ -1,0 +1,83 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <mbarr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Fundamental theorem
+Date: Thu, 30 Mar 2006 19:43:55 -0500 (EST)
+Lines: 51
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0603301918400.32286-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241019148 7654 80.91.229.2 (29 Apr 2009 15:32:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:32:28 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Mar 30 20:56:13 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 30 Mar 2006 20:56:13 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1FP7vG-0007HG-LZ
+	for categories-list@mta.ca; Thu, 30 Mar 2006 20:55:30 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 140
+Status: O
+Content-Length: 2721
+Original-Lines: 50
+Xref: news.gmane.org gmane.science.mathematics.categories:3194
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3194>
+
+The proof that Vaughan outlined is found in almost exactly the same form
+in Courant & Robbins, published around 60 years ago.
+
+Here is a proof I learned in grad school, based on three facts, one
+analytic and two algebraic.  The analytic fact, which is an irreducible
+minimum, given that the reals cannot be defined algebraically (except as a
+real closed field of continuum transcendence degree, which misses the
+point) is the intermediate value theorem.  In other words, order
+completeness.  From this follows the fact that every odd order polynomial
+has a (real) root and that every real number--and with a bit of
+manipulation, every complex number--has a complex square root.  The
+algebraic facts are the existence of a splitting field and the theorem on
+elementary symmetric functions, neither of which is quite trivial, nor
+very deep.
+
+The way you do it is by proving that every real polynomial of degree n =
+2^k*m with m odd has a complex root, by induction on k.  The case k = 0 is
+quite trivial, of course.  So suppose that f is a real polynomial of even
+degree n and, in some splitting field has roots r_1,...,r_n.  For each
+integer s form the polynomial f_s = \prod{i<j}(x - r_i - r_j - sr_ir_j)
+which has degree n(n-1)/2, which is less 2 divisible than n.  The theorem
+on symmetric functions implies it is real and hence for some i and j
+dependent on s, r_i + r_j + sr_ir_j is in C.  Since there are only
+finitely many pairs i and j and infinitely many integers, there are
+distinct s and t for which both r_i + r_j + sr_ir_j and r_i + r_j +
+tr_ir_j belong to C.  Given that C has square roots, one easily discovers
+that r_i and r_j are both complex numbers.  To go from real to complex
+polynomials, just multiply a complex polynomial by its conjugate; for a
+root r of the product, one of r and its conjugate is a root of the
+original.  And the process of factoring completely is well-known.
+
+Incidentally, it is the case that if K is an algebraic extension of L and
+every polynomial with coefficients in L has at least one root in K, then K
+is an algebraic closure of L.  The argument above pretty much does the
+characteristic 0; the prime case is trickier.
+
+This is not entirely elementary, but then neither is the winding number
+argument.  Comparing them is difficult because the algebraic argument I
+have given could all be taught in a lower division course, while the
+winding number argument, intuitively appealing, really requires some
+sophisticated stuff to deal with rigorously.
+
+Which raises an interesting question.  If we agree, as we seem to, that
+proof is the essence of what we mean by mathematics, then what does it
+mean to give an intuitively appealing non-proof and call it a proof?
+
+Michael
+
+
+
+

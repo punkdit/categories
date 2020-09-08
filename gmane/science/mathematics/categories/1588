@@ -1,0 +1,159 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Reality check
+Date: Mon, 31 Jul 2000 11:44:45 -0400 (EDT)
+Lines: 131
+Approved: news@gmane.org
+Message-ID: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017950 31968 80.91.229.2 (29 Apr 2009 15:12:30 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:30 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jul 31 20:39:13 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id UAA31399
+	for categories-list; Mon, 31 Jul 2000 20:38:00 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 31
+Status: O
+Content-Length: 5950
+Original-Lines: 130
+Xref: news.gmane.org gmane.science.mathematics.categories:1588
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1588>
+
+In an earlier posting I showed how to define co-inductively the closed
+interval, in particular I showed that its elements are named by 
+sequences of  0s  and  1s  with the usual binary-expansion equivalence
+relation. There is a well-known computational problem with this 
+approach, already in the definition of the midpoint operation: at what
+point can you determine the first digit of the midpoint of .0000...  
+and  .1111...? 
+
+At the Como meeting I learned from Andrej Bauer about a  better
+approach. Take the elements of  [-1,1]  to be named by infinite
+sequences of _signed_ binary digits, that is -1, 0, +1.
+
+[Just to confuse matters, Scedrov and I once used signed _ternary_ 
+digits (n Cats and Allegators for the "Freyd curve"). The signed binary
+expansions  .+1 -1  and  .0 +1  describe the same number, to wit, 1/4.]
+
+Using signed binary expansions one can compute midpoints with a little
+3-state machine that takes as input the sequence of pairs of signed 
+binary digits of the given numbers  x  and  y, and produces as output
+a sequence of signed binary digits for the midpoint  x|y. (There may,
+indeed, be momentary delays in the output, but there will not be an
+indefinite delay -- indeed, the number of output digits will never be
+more than one less than the number of pairs of input digits).
+
+The challenge is to revise the co-induction so that it is this better 
+version that emerges.
+
+In the previous version I worked in the category of posets with
+_distinct_ top and bottom, that is, those posets for which
+
+                      not[(B = x) and (x = T)].
+
+In the revised version I'll strengthen the condition by working in the
+category of posets with _separated_ top and bottom:
+
+                         [(B < x) or (x < T)].
+
+(The conditions are equivalent in the presence of De Morgan's law. In
+a topos the top and bottom of omega are always distinct but they are
+separated only when De Morgan's law is satisfied throughout.)
+
+In the previous setting I defined what I'll now call the _thin_ 
+version of the ordered-wedge of  X  and  Y, to wit, the set of pairs,
+<x,y>  satisfying the condition:
+
+                          (x = T) or (B = y).
+
+The _thick_ version is the set of pairs, <x,y>  satisfying the two 
+weaker conditions:
+                          (x < T) => (B = y)
+                          (B < y) => (x = T)
+
+(each of which is classically equivalent to the single condition used 
+in the thin version).
+
+Easy exercise: if top and bottom are separated in  X  and  Y, then 
+they are separated in the thick version of the ordered-wedge  XvY.
+(Indeed, it's enough for top and bottom to be separated in just one of
+X  and  Y . No, it is not enough to assume just that they are distinct
+in each.)
+
+A map  X -> XvX  is thus given by a pair  d,u: X -> X  such that for
+all  x:
+                         (dx < T) => (B = ux)
+                         (B < ux) => (dx = T)
+
+The final coalgebra for  XvX  is still the closed interval, but now in 
+the better computational sense. Let me explain.
+
+Given an arbitrary coalgebra  d,u : X -> X, I need to describe a 
+coalgebra homomorphism  f: X -> I. where  I  is the set of equivalence
+types of infinite sequences of signed binary digits.
+
+The first step is to work not with elements of  X  but elements of 
+XvX. Consider a machine that given  <x,y>:XvX  asks in parallel the
+questions:
+                         "B < y?"
+                         "B < ux  and  dy < T?"
+                         "x < T?"
+
+Exercise: If the top and bottom of  X  are separated and  d,u 
+describe a map to the thick ordered-wedge  XvX, then at least one of
+these questions has a positive answer.
+
+Given  z:X  obtain a sequence of signed binary digits by starting with
+the pair  <x,y> = <dz,uz>  and iterating the  non-deterministic 
+procedure:
+
+  If  B < y               
+    then emit  +1  as output and replace  <x,y>  with  <dy,uy>;
+  If  B < ux  and  dy < T  
+    then emit   0  as output and replace  <x,y>  with  <ux,dy>;
+  If  x < B      
+    then emit  -1  as output and replace  <x,y>  with  <dx,ux>.
+
+Not-so-easy exercises: regardless of the non-determinism, the element 
+fz:[-1,+1]  named by the resulting sequence is determined. Moreover,
+f(uz) = u(fz)  and  f(dz) = df(z).
+
+
+PS. There is some geometry behind this stuff. Let me here mention just
+this: given a pair  <x,y>  in  XvX  map it into the four-fold 
+ordered-wedge  XvXvXvX. Think of each of the four copies of  X  as one
+"quarter" of the whole. If  B < y  then the point lies inside the "top
+half" (the 3rd and 4th quarters). If  B < ux  and  dy < T  then the 
+point lies inside the "middle half" (the 2nd and 3rd quarters). If 
+x < B  then the  point lies inside the bottom half" (the 1st and 2nd
+quarters). Clearly any point is inside at least one of these three 
+halves. The output-digit registers which of the three halves is moved
+to and the corresponding pair-replacement effects that move.
+
+
+PPS. On 22 Dec I gave a Dedekind-cut proof that the interval  [0,1]  
+constructed in the standard fashion from (unsigned) binary sequences 
+is the final coalgebra for the functor that sends  X  (with distinct 
+top and bottom) to the thin version of  XvX. That proof should be 
+replaced. First note that the midpoint-algebra homomorphism from  [0,1]
+to  [-1,1]  can be effected simply by replacing each  0  with  -1  and
+keeping each  1  as  +1. Given  d,u:X -> X  such that for all  x  it is
+the case that either  dx = T  or  ux = B , consider a machine that upon
+given  x:X  asks in parallel the questions  "dx = T?"  and  "ux = B?".
+ 
+ If  dx = T  then emit  +1  as output and replace  x  with  ux, 
+ If  ux = B  then emit  -1  as output and replace  x  with  dx. 
+
+Given  x:X  one may iterate this (non-deterministic) procedure to
+obtain a sequence of  +1s  and  -1s. Pretty-easy exercises: regardless
+of the non-determinism, the element  fx:[-1,+1]  named by the
+resulting sequence is determined; f(ux) = u(fx); f(dx) = df(x).
+
+

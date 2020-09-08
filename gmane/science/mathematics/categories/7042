@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: The boringness of the dual of exponential
+Date: Wed, 9 Nov 2011 22:17:45 -0400 (AST)
+Lines: 53
+Approved: news@gmane.org
+Message-ID: <E1ROacd-0006id-RG@mlist.mta.ca>
+References: <E1RNo1R-00088Q-MC@mlist.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1320954653 25697 80.91.229.12 (10 Nov 2011 19:50:53 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 10 Nov 2011 19:50:53 +0000 (UTC)
+Cc: categories@mta.ca (categories)
+To: david.leduc6@googlemail.com
+Original-X-From: majordomo@mlist.mta.ca Thu Nov 10 20:50:45 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ROae4-0002Mk-De
+	for gsmc-categories@m.gmane.org; Thu, 10 Nov 2011 20:50:44 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55009)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ROach-00074Y-Jm; Thu, 10 Nov 2011 15:49:19 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ROacd-0006id-RG
+	for categories-list@mlist.mta.ca; Thu, 10 Nov 2011 15:49:15 -0400
+In-Reply-To: <E1RNo1R-00088Q-MC@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7042
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7042>
+
+David Leduc wrote:
+>
+> On Mon, Nov 7, 2011 at 07:59, Ross Street <ross.street@mq.edu.au> wrote:
+>> The conjecture is false.
+>> Take any category E where exponentiable is interesting.
+>> Then the dual of exponentiable is not boring in E^op.
+>
+> Indeed! And this is clearly true of the example given by Thomas,
+> namely Set^op.
+>
+> However, I am not yet satisfied. Let me precise my thoughts. In the
+> textbooks and lecture notes on category category that I have read,
+> there are always product and coproduct, pullback and pushout,
+> equalizer and coequalizer, monomorphism and epimorphism, and so on.
+> However exponential is always left alone. That is why I assumed it is
+> boring. If it is not boring, why is it never mentioned in textbooks
+> and lecture notes on category theory?
+
+For what it's worth, I have seen such co-exponentials natually occur
+in programming language semantics. They seem to occur in certain
+extensions of lambda calculus. More specifically, in call-by-value
+functional programming languages with call/cc style control
+operators. When I say they occur "naturally", I mean that they exist
+in such languages, not that they are typically used in any meaningful
+way by programmers.
+
+Very roughly speaking, in such languages, if A is a type, then (not A)
+is the type of environments that can consume an element of type A and
+then proceed with some task (called a "continuation" for A in
+programming language lingo). A continuation for a function f : A -> B
+is a pair of type A * (not B). In other words, an environment hoping
+to interact with some function has to supply (1) an input to the
+function, which is of type A, and (2) some task to complete after
+receiving the output, i.e., something of type (not B).  It so happens
+that in a call-by-value language with sufficient support for
+continuations, there will be a one-to-one correspondence between
+programs of type (A * not B) -> C and programs of type A -> B + C.
+
+This is spelled out in long and very technical detail in my paper
+"Control categories and duality" [1], sections 4.2 (definition of
+co-control categories) and 7.3 (the call-by-value lambda-mu-calculus
+is an internal language for co-control categories). The idea itself is
+10 years older and is due to Andrzej Filinski [2], where
+co-exponentials appear explicitly on p.33, second paragraph.
+
+[1] http://www.mathstat.dal.ca/~selinger/papers.html#control
+[2] http://www.diku.dk/hjemmesider/ansatte/andrzej/papers/DCaCD.ps.gz
+
+-- Peter
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

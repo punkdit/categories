@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: S Vickers <s.j.vickers@open.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: Why binary products are ordered
+Date: Thu, 01 Feb 2001 11:10:06 +0000
+Lines: 66
+Approved: news@gmane.org
+Message-ID: <3.0.5.32.20010201111006.00822860@TESLA.open.ac.uk>
+References: <ACAB691EBFADD41196340008C7F35585C2BE87@tesla.open.ac.uk>
+ <ACAB691EBFADD41196340008C7F35585C2BE87@tesla.open.ac.uk> <20010131135719.A5824@kamiak.eecs.wsu.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241018124 626 80.91.229.2 (29 Apr 2009 15:15:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:24 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Feb  1 14:24:28 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f11HdiO30959
+	for categories-list; Thu, 1 Feb 2001 13:39:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: sjv22@TESLA.open.ac.uk
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.5 (32)
+In-Reply-To: <20010131135719.A5824@kamiak.eecs.wsu.edu>
+Original-References: <ACAB691EBFADD41196340008C7F35585C2BE87@tesla.open.ac.uk>
+ <ACAB691EBFADD41196340008C7F35585C2BE87@tesla.open.ac.uk>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: RO
+Content-Length: 2921
+Original-Lines: 65
+Xref: news.gmane.org gmane.science.mathematics.categories:1819
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1819>
+
+[David Benson asked me:
+>This looks extremely useful...  Where might I read more about this
+>formulation of limits?
+>
+>> The product of f: X -> M is then a universal solution to the problem of
+>> finding
+>> 
+>>    g: YxM -> X  over M
+>> 
+>> and this is equivalent to the usual characterization once you have chosen
+>> the isomorphism between M and 2.
+>
+Perhaps readers of the list can suggest sources I'd overlooked.] 
+
+
+Dear David,
+
+The underlying idea is a very broad one, namely to look for limits of
+internal diagrams. You will find these described in Johnstone's "Topos
+Theory" and (I think - I haven't got it to hand) Mac Lane and Moerdijk.
+
+Suppose, working in a suitable category S (let's say a topos), you have an
+internal category C. Then you can define a notion of internal diagram over
+C (C-shaped diagram of S-objects) and they are the objects of an external
+category S^C, another topos.
+
+If D is another internal category in S and F: C -> D is a functor, then
+there is a functor F^*: S^D -> S^C defined using pullbacks in S and it has
+both right and left adjoints. In fact it defines an essential (if I
+remember the right word) geometric morphism from S^C to S^D.
+
+Now consider the situation when D is the terminal category, one object and
+one morphism. S^D is just S. The the right and left adjoints of F^*
+calculate internal limits and colimits of internal diagrams. This is easy
+to see, since F^*(X) is just the constant diagram, X everywhere, and a
+morphism (natural transformation) between an internal diagram D and F^*(X)
+is just a cone or cocone over D from or to X. The adjunctions then express
+exactly the universal properties of limits and colimits.
+
+I was describing situations where C was a discrete category, so the
+internal limit is an internal product.
+
+I also considered the question of whether the construction of the internal
+limit was geometric - preserved under inverse image functors of geometric
+morphisms. I have written about this kind of question in my own work, for
+instance "Topical Categories of Domains". (See my website,
+http://mcs.open.ac.uk/sjv22 .) Geometricity in general rules out the use of
+exponentiation in the topos, but exponentiation Y^X is geometric if X is
+finite with decidable equality (Johnstone and Wraith, ??"Algebraic theories
+in a topos"). My proposal is that the record type construction should be
+seen as a solution to the problem of internal products, but that it relies
+on finite decidability of the set of field names - hence it's related to
+geometricity of the internal product.
+
+In a different direction, note that internal products make sense in
+categories other than toposes, even if they don't always exist. For
+instance, if f: X -> Y is a continuous map of spaces, then the internal
+product, if it exists, is a space of continuous sections of f. I bet that's
+explored somewhere in the literature, but I don't know where.
+
+Best regards,
+
+Steve.
+
+
+

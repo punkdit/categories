@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Abelian-topos (AT) categories
+Date: Sun, 2 Nov 1997 14:53:51 -0400 (AST)
+Lines: 115
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971102145324.32294A-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017006 26049 80.91.229.2 (29 Apr 2009 14:56:46 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:46 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Sun Nov  2 14:54:49 1997
+Original-Received: by mailserv.mta.ca; id AA05915; Sun, 2 Nov 1997 14:53:52 -0400
+Status: RO
+Content-Length: 6379
+Original-Lines: 114
+Xref: news.gmane.org gmane.science.mathematics.categories:507
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/507>
+
+Date: Sun, 02 Nov 1997 06:52:02 -0800
+From: Vaughan R. Pratt <pratt@cs.stanford.edu>
+
+
+Surely a natural name for these "abelian-topos" categories would be
+abelian-topos categories, AT categories for short.  (I barely grasp
+them, I only found out what abelian categories were a week ago, when
+someone on sci.math asked about them and I looked them up and answered
+him because I wanted to know too.  It struck me as interesting that
+they had so much in common with toposes, whence my question about
+intersecting their respective theories.  I made language a parameter
+because it seemed intuitively obvious that a strong enough language
+would make the models of that intersection the union of the respective
+classes.  But as Peter points out this is already a triviality for any
+theory closed under classical disjunction, which I still can't believe
+I didn't know.)
+
+On the question of the right language for defining AT, I fully agree
+with Peter that universal Horn sentences are the appropriate logical
+strength of language.  (I take back what I said before about
+"universal" not making a difference.  Peter showed that for the Horn
+theory, i.e. allowing existential quantification, the models are
+representable as products AxT of an abelian category A with a pretopos
+T.  Presumably the weaker universal Horn theory admits in addition the
+appropriate subcategories thereof.)  So would it be correct to say that
+this makes AT a quasivariety in CAT with functors preserving the
+signature Peter is using?
+
+What I'm less clear about than the logical strength is the choice of
+signature.  In particular what about the closed structure?
+
+Without the closed structure we have Peter's AxT representation
+theorem, with the theory finitely axiomatized to boot.  Presumably this
+remains unchanged by the introduction of closed structure: we retain
+only those categories AxT such that A and T independently admit closed
+structure, and can finitely axiomatize the separate closed structure of
+each in terms of the associated retractions A and T (ugh, overloading),
+thereby axiomatizing the joint closed structure.
+
+For example the tensor unit I of AxT will be (Z,1) (Z the tensor unit
+of A), with AI = (Z,0) != I (except for pure abelian categories) and TI
+= (0,1) = 1 != I (except for pure pretoposes).  But for objects a,b of
+A and t,u of T, the tensor product (a,t)@(b,u) will be (a@b,txu), with
+A(a@b,txu) = (a@b,0) = (a,0)@(b,0) = A(a,t)@A(b,u) and T(a@b,txu) =
+(0,txu) = (0,t)@(0,u) = T(a,t)@T(b,u).  (So the retractions preserve
+tensor product but not tensor unit---TI just gives the terminator, but
+AI furnishes a new constant.)
+
+So should there perhaps be two classes, the AT categories and the
+closed AT categories?  The latter would add I and @ to the signature
+(and presumably \aleph\lambda\rho, bless them).
+
+For the closed AT categories, TX can be neatly defined as 1@X, with the
+T-type objects identified as those having only one map to I (Mike Barr
+pointed out to me that strictness of 0, maps to 0 only from initial
+objects, would do this job), and with a topos defined as a closed AT
+category for which I is terminal (or 0 is strict).
+
+But although people seem comfortable working with toposes as opposed to
+pretoposes, what about abelian closed categories (if that's the right
+word order)?  Despite Ab itself being a closed category, I don't see
+much discussion of closed structure for abelian categories.  Why is
+this?  Am I just reading the wrong stuff, or is the closed structure of
+abelian categories boring, or what?  Or is FinAb (abelian but not
+abelian closed---no suitable tensor unit) too desirable to discard in
+this way?  (What comparably interesting pretoposes are so lost?  Not
+the topos FinSet.)  Does the requirement of being closed kill off too
+many desirable abelian categories?  I would have thought lack of closed
+structure would greatly impair the utility of a category, however
+beautiful its objects might be.
+
+I'm interested in these classes, especially those whose categories
+admit closed structure, because toposes sit at or near the left
+(geometric or discrete) end of what I've been calling the Stone gamut,
+while abelian categories sit near the middle.  AT categories offer an
+entirely different approach to the Chu construction for mixing
+categories from strategic positions on the Stone gamut.  The Chu
+construction Chu(V,k) mixes two closed categories, V and V\op,
+symmetrically positioned about the center of the Stone gamut, to yield
+all categories "in between" V and V\op (and "all"--certainly all
+small--categories period when V and V\op are at the outermost points,
+viz. Set and Set\op).  In contrast AT categories mix categories from
+the far left (represented by Set) and the center (represented by Ab) to
+get a qualitatively different effect that I'm not sure how to relate to
+the Chu construction but which seems in some vague sense dual to it.
+
+One such sense is as follows.  AT is the quasivariety generated just by
+Set and Ab alone.  So in this sense at least it is the smallest
+quasivariety spanning the left half of the Stone gamut, assuming that
+the quasivariety generated by either Set or Ab alone does not span the
+gamut but crowds around their two respective positions on the gamut,
+left and middle.  Include the duals of AT categories (not necessarily
+expanded to a quasivariety, see below) and now you cover the whole
+gamut in this minimal sense.  On the other hand the various
+comprehensiveness properties I've been pointing out for the concrete
+subcategories of Chu(Set,K) for large enough K (including all small
+categories, even when concreteness is a requirement unlike the
+comprehensiveness results of the 1960's) make "sub-Chu" maximal over
+the Stone gamut.
+
+Vague question.  The minimality of AT and the maximality of Chu is a
+very weak sort of duality, analogous to the minimal structure of sets
+vs. the maximal structure of Boolean algebras.  Is there a more formal
+duality here, analogous to the duality of Set and CABA?  That the
+retracts AX and TX seem to be dual notions, being respectively
+coreflective and reflective, gives them some of the flavor of Chu.  But
+is AT itself dual to Chu in any categorical sense?
+
+More precise question.  Is the quasivariety generated by all three of
+Set, Ab, and Set\op (aka CABA) finitely axiomatizable?  And if not,
+does using Bool instead of CABA help or hinder?
+
+Vaughan
+
+

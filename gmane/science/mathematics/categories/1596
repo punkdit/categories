@@ -1,0 +1,127 @@
+Path: news.gmane.org!not-for-mail
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Freyd = Dedekind (plus 128 years)
+Date: Sat, 5 Aug 2000 11:32:42 +0100 (BST)
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <E13L1Fy-0005mO-00@penguin.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017956 32005 80.91.229.2 (29 Apr 2009 15:12:36 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:36 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Aug  5 08:06:24 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA09127
+	for categories-list; Sat, 5 Aug 2000 08:04:52 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.5 PL3]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 8
+Status: O
+Content-Length: 5030
+Original-Lines: 94
+Xref: news.gmane.org gmane.science.mathematics.categories:1596
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1596>
+
+Peter Freyd's constructive version of his description of (a closed interval in)
+the reals as a final coalgebra, posted on this network on 31 July, in fact
+constructs (a closed interval in) the Dedekind reals in any topos with NNO.
+Peter's attempt to show using signed binary expansions that his construction
+produces the Cantor (or Cauchy) reals doesn't work, unless you assume countable
+dependent choice (in which case, of course, the Cantor reals coincide with the
+Dedekind reals).
+
+The proof has two parts. First you have to show that a closed interval in the
+Dedekind reals is a coalgebra for Peter's ordered-wedge functor (for which the
+structure map is an isomorphism). This is not completely trivial, because in
+Peter's description of the `thick' ordered wedge
+
+     XvY = { <x,y> | ((x < T) => (B = y)) and ((B < y) => (x = T)) }
+
+the strict order-relation (x < y) that he uses is simply the negation of 
+(y \leq x): thus, in the Dedekind reals, it is the double-negation closure of
+what we usually think of as the strict order-relation. However, it doesn't
+matter, because in the Dedekind reals the assertions (B = y) and (x = T) are
+double-negation stable (equality being the negation of apartness), and thus the
+assertions
+
+     ((x < T) => (B = y))     and    (\neg\neg(x < T) => (B = y))
+
+(where `<' now denotes the `real' strict order relation) have the same
+truth-value for any x and y. Using this, it's easy to see that (for example)
+the ordered wedge [-1,0] v [0,1] is isomorphic to [-1,1], via the maps
+
+     <x,y> |-> x + y      and     z |-> <min(z,0),max(z,0)>  .
+
+Note that this already tells us that the final coalgebra can't be the Cantor
+reals, because if it were, then in a topos (e.g. sheaves on a locally connected
+space) where the Cantor and Dedekind reals are different we would have a
+retraction from Dedekind to Cantor --- which surely doesn't exist.
+
+Now, given a coalgebra
+
+     <d,u>: X --> XvX  ,
+
+we have to produce a mapping from X to (say) the Dedekind interval [-1,1]. 
+We do this in exactly the way that Peter tried to construct a signed binary
+expansion, except that we use the output of Peter's three-state machine to
+produce a pair of sets of (dyadic) rationals rather than a sequence of digits.
+(The reason why it won't do the latter is its non-determinism: for any natural
+number n, it will produce a nonempty set of sequences of length n, and any
+sequence of length n can be extended to a sequence of length n+1, but (without
+dependent choice) that's not enough to ensure that it will produce a nonempty
+set of *infinite* sequences. But non-determinism doesn't matter if you're
+simply trying to construct two sets of rationals: if you get positive answers
+to two questions, telling you to put different rationals into your sets, you
+simply obey both instructions.)
+
+Thus the idea is that, given an element x of our coalgebra, we construct
+the pair of sets <L,U> as follows: we ask the three questions
+
+     "B < ux?"
+     "B < udx and dux < T?"
+     "dx < T?"
+
+knowing that our machine will produce a positive answer to at least one of
+these questions. If the answer to the first is yes, we put 0 (and all rationals
+less than it) into L, if the answer to the second is yes we put -1/2 into L and
++1/2 into U, and if the third is yes we put 0 into U. Keep going in this way,
+and define L and U to be the unions of the sequences of sets you construct. We
+have to show that the result really is a Dedekind real, of which the only
+interesting bit is showing that it satisfies the positive version
+
+     ((q < r) => ((q \in L) or (r \in U)))
+
+of the `zero distance apart' condition. Given q and r, we know an n such that
+2^{-n} < r - q, and we know that running our machine for n+2 steps will pin
+down x to an interval of length 2^{-n}. So we simply run the machine for this
+length of time, and look to see where we've got to.
+
+Of course, we also have to show that the map (f,say) defined by this procedure
+is the unique coalgebra homomorphism from X to [-1,1]. But this is easy, given
+that equality of Dedekind reals is a negative statement: given a (putative)
+other such map g, all we have to do is assume (fx < gx) for some x \in X and
+derive a contradiction. And if fx < gx, we can find a dyadic rational q which
+separates them; then we run our machine until it has assured us that fx < q,
+and derive a contradiction to the assumption that g is order-preserving (and
+commutes with d and u).
+
+Aside: one thing that bothered me (and, I believe, people in Edinburgh) about
+Peter's construction was its use of the `negative' strict order relation: since
+we know that the positive strict order on the reals is the one that really
+matters, why doesn't it appear in the definition? Well, it doesn't; but you can
+define it purely in terms of the coalgebra structure: x < y iff there is some
+finite sequence of d's and u's that takes x to B and y to T. (Proving from
+first principles that this yields a transitive relation on the final coalgebra
+is an interesting exercise.)
+
+Peter Johnstone
+
+

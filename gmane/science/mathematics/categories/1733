@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: Philippe Gaucher <gaucher@irmasrv1.u-strasbg.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: localization : more precise question
+Date: Sun, 3 Dec 2000 00:33:28 +0100 (MET)
+Lines: 80
+Approved: news@gmane.org
+Message-ID: <200012022333.AAA11616@irmast2.u-strasbg.fr>
+Reply-To: Philippe Gaucher <gaucher@irmasrv1.u-strasbg.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241018053 32648 80.91.229.2 (29 Apr 2009 15:14:13 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:14:13 +0000 (UTC)
+To: categories@mta.ca, jdc@julian.uwo.ca
+Original-X-From: rrosebru@mta.ca Sun Dec  3 10:42:04 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eB3E9eI18068
+	for categories-list; Sun, 3 Dec 2000 10:09:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Content-MD5: j4IgY+mMIPsZwfCwzuww1w==
+X-Mailer: dtmail 1.3.0 CDE Version 1.3 SunOS 5.7 sun4u sparc 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 6
+Status: O
+Content-Length: 3352
+Original-Lines: 79
+Xref: news.gmane.org gmane.science.mathematics.categories:1733
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1733>
+
+
+>The question is whether the functor C[S^{-1}] --> D is faithful.
+>
+>I suspect that this is true in general, but can only prove it if
+>you restrict yourself to CW-complexes with a finite number of cells.
+
+I believe that you are wrong somewhere. The explanation is in 
+post-scriptum (borrowed from a question in sci.math.research which 
+is not yet posted by now). Or maybe I am wrong in the reasonning ?
+
+>For infinite CW-complexes, this Ore condition doesn't hold, but I
+>still suspect that the functor is faithful.  In part it depends upon
+>what you mean by "orientation preserving".  Does this mean "having a
+>'positive' derivative at all times"?  Or 'non-negative'?  Or can the
+>map go forwards and backwards as long as overall it has degree one?
+
+I meant 'non-negative'. Maybe the definition of the category still needs 
+to be debugged. I don't know. (The motivation of this question was to encode
+the notion of 1-dimensional HDA up to dihomotopy for those who know the
+subject in a "true" category such that isomorphism classes represent 
+1-dimensional HDA up to dihomotopy). "having a 'positive' derivative at 
+all times" would be also sufficient I think.
+
+
+Cheers. pg.
+
+
+PS : 
+
+
+
+The natural conjecture is that C[S^{-1}] is equivalent to the category
+D whose objects are that of C and whose morphisms from A to B are the
+subset of C^0(A,B) (the set of continuous maps from A to B) containing
+all composites of the form g_1.f_1^{-1}.g_2...g_n.f_n^{-1}.g_{n+1}
+where g_1,...,g_{n+1} are morphisms of C and f_1,...,f_n morphisms in
+S.
+
+If U is a universe containing all sets, let V be a universe with U\in
+V. The categorical construction of C[S^{-1}] (let us call it
+"C[S^{-1}]") gives a V-small category. "C[S^{-1}]"(A,B) is generally
+not a set. To see that, take an object like g_1.f_1^{-1}.g_2 with g_1
+and g_2 not invertible in C (this is a reduced form which cannot be
+simplified in "C[S^{-1}]"). Then replace f_1^{-1} by
+
+f_1^{-1} \sqcup Id_{codom(f_1^{-1})} \sqcup Id_{codom(f_1^{-1})}
+\sqcup...
+
+and g_1 by 
+
+g_1 \sqcup g_1 \sqcup g_1 ...
+
+Then "C[S^{-1}]"(dom(g_2),codom(g_1)) has as many elements as the sets
+of U-small cardinals. Therefore "C[S^{-1}]"(dom(g_1),codom(g_2)) is
+not a set.
+
+The relation between "C[S^{-1}]" and D is as follows.  There is a
+canonical V-small map g : "C[S^{-1}]"(A,B) --> Sets(A,B) and D(A,B) is
+the quotient of the V-small set "C[S^{-1}]"(A,B) by the V-small
+equivalence relation "x equivalent to y iff g(x)=g(y)".  The above
+element of "C[S^{-1}]"(dom(g_2),codom(g_1)) are all of them identified
+by this equivalence relation : it is the reason why the homset from
+dom(g_2) to codom(g_1) becomes a set.
+
+The obvious functor from C-->D does invert the morphisms of S. But one
+has to prove that for any functor C-->E inverting the morphisms of S,
+C-->E factorizes through C-->D by a unique functor from D-->E. Such
+functor C-->E factorizes through "C[S^{-1}]" but for proving the
+factorization through D, one has to prove that E is a sort of concrete
+category (a category with a faithful functor to Sets). Of course there
+is no reason for E to be concrete but because of the functor F:C-->E,
+Im(F) is not too far from a concrete category. C is a concrete
+category, constructed with oriented graphs.  I never heard about a
+general way of constructing localizations of concrete categories. Does
+it exist ?
+
+
+
+
+

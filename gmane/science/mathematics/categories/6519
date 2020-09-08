@@ -1,0 +1,109 @@
+Path: news.gmane.org!not-for-mail
+From: Marek Zawadowski <zawado@mimuw.edu.pl>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: colimits of polynomial functors
+Date: Thu, 03 Feb 2011 18:04:46 +0100
+Lines: 69
+Approved: news@gmane.org
+Message-ID: <E1PlRib-0001G6-Mw@mlist.mta.ca>
+References: <E1PjxtH-000495-PM@mlist.mta.ca>
+Reply-To: Marek Zawadowski <zawado@mimuw.edu.pl>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1296849229 5730 80.91.229.12 (4 Feb 2011 19:53:49 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 4 Feb 2011 19:53:49 +0000 (UTC)
+Cc: categories@mta.ca
+To: Ondrej Rypacek <ondrej.rypacek@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Fri Feb 04 20:53:45 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlRiy-0000vV-8h
+	for gsmc-categories@m.gmane.org; Fri, 04 Feb 2011 20:53:44 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:41755)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlRig-0004Rp-5z; Fri, 04 Feb 2011 15:53:26 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlRib-0001G6-Mw
+	for categories-list@mlist.mta.ca; Fri, 04 Feb 2011 15:53:22 -0400
+In-Reply-To: <E1PjxtH-000495-PM@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6519
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6519>
+
+
+
+W dniu 2011-01-31 16:13, Ondrej Rypacek pisze:
+> Dear all
+>
+> Does the category of (dependent) polynomial functors and strong
+> natural transformation have all/some colimits ?
+> In general, what is known about them ?
+>
+> Many thanks!
+> Ondrej
+>
+
+In order to make life simpler, I will assume in this note
+that polynomial functors are finitary wide
+pullback preserving functors on slices of Set.
+There are different ways one might organize polynomial functors.
+I like to think that they form a fibration over Set
+(see Section 6 of  LMF
+http://www.mimuw.edu.pl/~zawado/Papers/MonFib.pdf for details).
+Then the fiber over 1 is the category of finitary  wide
+pullback preserving endofunctors on Set with cartesian
+natural transformations as morphisms. If there are any
+limits or colimits of polynomial functors any sense this
+this category should have them, as well. But this category
+is a Kleisli category and one should not expect much from it
+in terms of having limits or colimits.
+
+It goes as follows. The category of (algebraic) signatures
+(i.e. just operations, no relations) is equivalent to Set/N.
+There is a symmetrizations monad S on it. It takes a signature
+A-->N and returns a signature S(A)-->N. For each operation a\in A
+over n\in N, S(A)  has operation (a,\sigma) for each
+permutations \sigma of {1,..,n}. The Kleisli algebras
+for this monad form the category of signatures with non-standard
+amalgamations considered by Hermida-Makkai-Power.
+This category is equivalent to the category of polynomial functors
+described above (see LMF). The Eilenberg-Moore category for this monad
+is the category of symmetic (non-colored) signatures considered by
+Baez-Dolan.
+It is equivalent to the category of analytic functors
+(by which I mean here the category of finitary  endofunctors on Set
+weakly preserving wide pullbacks with wealky cartesian
+natural transformations as morphisms c.f.  A. Joyal,
+Foncteurs analytiques et especes de structures, Lecture Notes Math.
+1234, Springer 1986, 126-159., see also section 7 of LMF for the colored
+version).
+
+Thus if one take (co)limits of polynomial functors one takes
+(co)limits of free S-algebras and expect to have as a result
+an S-algebra i.e. an analytic functor. Not surpisingly,
+most of the time this functor is not polynomial. A particular example
+of a coequalizer that is analytic but not polynomial was given
+by Torsten and commented by Joachim.
+
+
+NB. I have been talking about the symmetrization monad in Genova
+and last two PSSL's reporting joint work with my student S. Szawiel.
+Note that here and in many different places it is important that
+this monad S is acting directly on signature not on non-symetric operad.
+Some people missed this point in Genova, but it is very important
+in the above and in many other places.
+
+Best regards,
+Marek
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

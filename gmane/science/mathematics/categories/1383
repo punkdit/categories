@@ -1,0 +1,125 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <Andrej.Bauer@CS.cmu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Freyd's couniversal characterization of [0,1]
+Date: 26 Jan 2000 00:28:26 -0500
+Lines: 93
+Approved: news@gmane.org
+Message-ID: <vkaaelt766d.fsf@localhost.localdomain>
+References: <200001241914.UAA23504@agaric.ens.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241017789 30967 80.91.229.2 (29 Apr 2009 15:09:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:49 +0000 (UTC)
+Cc: mhe@dcs.st-and.ac.uk
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Jan 26 13:26:23 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA18029
+	for categories-list; Wed, 26 Jan 2000 11:31:18 -0400 (AST)
+X-Authentication-Warning: localhost.localdomain: andrej set sender to Andrej.Bauer@cs.cmu.edu using -f
+In-Reply-To: "Martin H. Escardo"'s message of "Mon, 24 Jan 2000 20:14:36 +0100 (MET)"
+User-Agent: Gnus/5.0803 (Gnus v5.8.3) XEmacs/20.4 (Emerald)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3317
+Original-Lines: 91
+Xref: news.gmane.org gmane.science.mathematics.categories:1383
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1383>
+
+
+"Martin H. Escardo" <Martin.H.Escardo@ens.fr> writes:
+> It would be interesting to test Freyd's couniversal characterization
+> of the unit interval in many other categories.
+> 
+> Here I test it in Top, the category of topological spaces and
+> continuous maps, and various full subcategories, where one would hope
+> to get the unit interval with the Euclidean topology.
+> 
+> ----------------------------------------------------------------------
+> Summary of the outcome of some tests:
+> 
+>     (1) In Top, the final coalgebra for Freyd's functor exists. Its
+> underlying object, however, is an indiscrete space (unsurprisingly).
+> 
+>     (2) In the category of T0 spaces, it doesn't exist.
+> 
+>     (3) In the category of normal spaces it does exist, and, as one
+> would hope, its underlying object is indeed the unit interval with the
+> Euclidean topology.
+> 
+> See remark below for weakening normality in (3) as much as possible. 
+> ----------------------------------------------------------------------
+> Arguments follow. 
+> 
+> [text deleted]
+>> ----------------------------------------------------------------------
+> Question: What does one get in full subcategories of locales and of
+> equilogical spaces?
+
+I can answer this for equilogical spaces.
+
+The functor F: Bi[Equ] ---> Bi[Equ] has a final coalgebra. It
+is the equilogical space (C, ~) where C is the Cantor space
+
+        C = 2^N = infinite sequences of 0's and 1's
+
+and ~ is the equivalence relation defined by
+
+        a ~ b  iff  r(a) = r(b)
+
+where r: C --> [0,1] is defined by
+
+        r(a) = \sum_{k=0}^\infty a_k / 2^{k+1}
+
+(This equivalence relation can easily be defined without reference to
+the closed interval [0,1].) Thus, the final coalgebra is the
+_(unsigned) binary digit representation_ of the closed interval [0,1].
+The structure map d: (C,~) ---> F(C,~) is induced by the canonical
+isomorphism C ---> C + C = 2 x C.
+
+Unfortunately, this closed interval is not what we would hope for.
+Ideally, we would want the _signed_ binary digit representation of
+the interval [-1,1], i.e., the space ({-1,0,1}^N, :=:) where :=: is
+defined by
+
+        a :=: b  iff  s(a) = s(b)
+
+        s(a) = \sum_{k=0}^\infty a_k / 2^{k+1}
+
+We want this because the real numbers object in Equ is the built from
+the _signed_ representation of reals.
+
+I do not see how to adapt the construction so that it yields the
+signed representation. We would have to "glue" more than just a couple 
+of points. But how do we say what should be glued, without reference
+to [0,1] or C?
+
+Let me explain briefly why (C, ~) is the final coalgebra. In Equ, in
+the pushout
+
+      1 -------> X
+      |          |
+      |          |
+      |          |
+      |          |
+      V          V
+      X -------> FX
+
+the underlying space of FX is |FX| = |X| + |X|. This is a "small" but
+crucial difference between Top and Equ. We can first find the final
+coalgebra in Top_0 for the functor A --> A + A, which is the Cantor
+space C, and then compute the equivalence relation on C. In this case
+it is easy to verify that all the continuous maps obtained from the
+coalgebraic structure of C actually preserve the equivalence
+relations. By the way, the two distinguished points of (C, ~) are
+0^\infty and 1^\infty, of course (and it doesn't matter, since C is
+homogeneous).
+
+--
+Andrej Bauer
+
+

@@ -1,0 +1,635 @@
+Path: news.gmane.org!not-for-mail
+From: baez@newmath.UCR.EDU
+Newsgroups: gmane.science.mathematics.categories
+Subject: (-1)-categories and (-2)-categories
+Date: Thu, 14 Dec 2000 13:07:32 -0800 (PST)
+Lines: 602
+Approved: news@gmane.org
+Message-ID: <200012142107.eBEL7WQ24612@math-cl-n03.ucr.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018075 32758 80.91.229.2 (29 Apr 2009 15:14:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:14:35 +0000 (UTC)
+To: categories@mta.ca (categories)
+Original-X-From: rrosebru@mta.ca Thu Dec 14 19:29:18 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eBEMCDL23236
+	for categories-list; Thu, 14 Dec 2000 18:12:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.5 PL2]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 27
+Status: O
+Content-Length: 27786
+Original-Lines: 601
+Xref: news.gmane.org gmane.science.mathematics.categories:1754
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1754>
+
+
+Frank Atanassow emailed me saying that he's "dying to know" the
+answer to my puzzle about (-1)-categories and (-2)-categories.  
+That's good!  So far the silence has been deafening, and I can't
+tell if it indicates bewilderment, lack of interest, or disgust 
+with an imprecisely posed question.  
+
+I guess I'll give away the answer.  
+
+As I said, the trick is to figure out what (-1)-groupoids and 
+(-2)-groupoids are, and then cross our fingers and hope that 
+the answer is the same for (-1)-categories and (-2)-categories.   
+
+We start with the basic principle that people use when trying
+to cook up definitions of "weak n-groupoid": weak n-groupoids should
+be the same as nice topological spaces of homotopy dimension n.  
+
+Here "nice" means something like a CW complex, and "the same" must
+be taken in a suitably n-categorical/homotopical spirit.  But
+what does "homotopy dimension n" mean?  
+
+Well, the usual definition is that a space has homotopy dimension n
+if all its homotopy groups above the nth are trivial.  But if we 
+carefully unpack this, we'll see it's an interesting condition even
+when n is -1 or -2.  
+
+Here goes:
+
+A topological space X has homotopy dimension n if given k > n,
+any continuous map from the k-sphere to X extends to a continuous
+map from the (k+1)-disc to X.
+
+So: X has homotopy dimension 0 if its arc-components have 
+vanishing homotopy groups.  If X is nice, this means it's a
+disjoint union of contractible spaces, so it's the same as a *set*.  
+That's good: 0-groupoids should be sets.   
+
+(See?  I'm using "the same" in a suitably homotopical spirit!
+A disjoint union of nice contractible spaces is homotopy equivalent
+to a set with the discrete topology.) 
+
+Next: X has homotopy dimension -1 if it has homotopy dimension 
+0 and also any continuous map from the 0-sphere to X extends to
+a continuous map from the 1-disc to X.  In other words, X is either
+empty, or it consists of a single arc-component with vanishing 
+homotopy groups.  If X is nice, this means it's the same as a
+*set with cardinality 0 or 1*.  So we declare that a (-1)-groupoid
+is a set with cardinality 0 or 1.  
+
+Next: X has homotopy dimension -2 if it has homotopy dimension 
+-1 and also any continuous map from the (-1)-sphere to X extends
+to a continuous map from the 0-disc to X.  The 0-disc is a single
+point, and its boundary the (-1)-sphere is the empty set.  So X
+must be a *nonempty* space with homotopy dimension -1.   So X
+consists of a single arc-component with vanishing homotopy groups.
+If X is nice, this means it's the same as a *set with cardinality
+1*.  So we declare that a (-2)-groupoid is a set with cardinality 1.
+
+Crossing our fingers, we therefore guess:
+
+A (-1)-category is a set with cardinality 0 or 1.
+A (-2)-category is a set with cardinality 1.
+
+This may seem silly, but it's not!  There is a nice relation
+between all this business and the notion of "n-stuff".  But I'm 
+getting worn out, so instead of explaining that, I'll just quote
+some articles that James Dolan and Toby Bartels wrote on 
+sci.physics.research when they were first figuring out this "n-stuff" stuff.
+
+Frank also asked if the error in our definition of n-categories 
+appears in HDA3.  Yes!  We will correct it in HDA5, which will 
+be about Feynman diagrams and "n-stuff".  As I said, it's easy 
+to fix: just one number is wrong.  
+
+John Baez
+
+.........................................................................
+
+
+From: "james dolan" <jdolan@math.ucr.edu>
+Subject: Re: Just Categories now
+Date: 16 Nov 1998 00:00:00 GMT
+Message-ID: <72pusp$3o5$1@pravda.ucr.edu>
+Organization: Department of Mathematics, University of California, Riverside
+Newsgroups: sci.physics.research
+X-Newsposter: Pnews 4.0-test50 (13 Dec 96)
+
+toby bartels writes:
+
+-john baez wrote:
+->I will leave it to James Dolan to explain the technical
+->distinction between "extra properties", "extra structure",
+->and "extra stuff" - there is a nice category-theoretic way
+->of making this precise.
+-
+-Ooh, let me guess!
+-
+-Given a functor U: C -> D, interpret U as a forgetful functor.
+-Then C is D with extra *structure* if U is surjective on the
+-objects and, given a pair of objects, injective on the
+-morphisms between them; and C is D with extra *properties* if
+-U is injective on the morphisms (meaning injective on the
+-objects and on the morphisms between a given pair); Otherwise,
+-I guess C is just D with extra *stuff* if, given a pair of
+-objects, U is injective on the morphisms between them.
+
+
+here's my classification:
+
+given groupoids c,d and a functor u:c->d, the objects of c can
+be thought of via the forgetful functor u as objects of d with
+an extra _property_ iff u is full and faithful, as objects of d
+with extra _structure_ iff u is faithful, and as objects of d
+with extra _stuff_ regardless.
+
+(some category-theoretic jargon:
+
+1.  a "groupoid" is a category where all the morphisms are
+invertible.  it may very well be interesting to generalize the
+subject matter of this discussion to the case where c and d are
+not necessarily groupoids, but to keep things simple for now i
+won't do that in this post.
+
+2.  a functor u:c->d is "full" iff for any pair c1,c2 of
+objects in c, the map from the hom-set hom(c1,c2) to the
+hom-set hom(u(c1),u(c2)) given by u is surjective.
+
+3.  a functor u:c->d is "faithful" iff for any pair c1,c2 of
+objects in c, the map from the hom-set hom(c1,c2) to the
+hom-set hom(u(c1),u(c2)) given by u is injective.)
+
+one reason i don't (as i think toby was suggesting) require the
+forgetful functor u to be surjective on (isomorphism classes
+of) objects in order for the objects of c to qualify as objects
+of d with extra "structure" is as follows:
+
+consider for example the case where c is the category of rings,
+d is the category of groups, and u is the functor assigning to
+each ring its underlying additive group.  clearly the objects
+of c are objects of d with extra "structure" in the intuitive
+sense that i'm trying to capture; we can say that "a ring is
+defined to be a group (henceforward referred to as "the
+underlying additive group of the ring") equipped with an extra
+multiplication operation on it satisfying certain equational
+laws...", and although this may sound like the equational laws
+only constrain the ring structure on the additive group, they
+in fact also implicitly constrain the additive group itself:
+it's easy to show that even if you don't explicitly require the
+additive group of a ring to be commutative, it will
+automatically be forced to be commutative by the other clauses
+in the usual definition of "ring" (left and right
+distributivity plus multiplicative unit laws, in combination
+with the group axioms for addition, should do it, i think).
+
+thus this example is supposed to demonstrate the fact that as
+soon as you generally allow yourself to invent a new "type of
+structure that an object of d can be equipped with" by starting
+with an arbitrary existing such type of structure and
+constraining the structures to satisfy some property, it's
+awkward to prevent an arbitrary "property that can be
+predicated of an object of d" from being considered as a "type
+of structure that an object of d can be equipped with" by being
+looked at as a constraint on [the degenerate "type of structure
+that an object of d can be equipped with" given by "no extra
+structure at all"].  thus you should probably broaden your
+concept of "type of structure that an object of d can be
+equipped with" to include "property that can be predicated of
+an object of d" as a special case.
+
+for similar reasons you should probably broaden your concept of
+"type of stuff that an object of d can be equipped with" to
+include "type of structure that an object of d can be equipped
+with" as a special case, if it isn't that broad already.
+
+
+-For example, the forgetful functor Groups -> Sets shows tha
+-groups are sets with extra structure, while the forgetful
+-functor Abelian Groups -> Groups shows that Abelian groups are
+-groups with extra properties.
+
+
+i agree with those examples (at least if i interpret them in
+accordance with my self-imposed restriction to consider only
+the case where all of the morphisms in c and d are invertible).
+
+
+
+-Or you can turn around and use
+-the free functor Sets -> Groups and say that sets are groups
+-with extra properties (to wit, the property of being free).
+
+
+i disagree with that example, for reasons that hopefully are
+clear from my explanations above.  thus i would _not_ say that
+a set is a group with the extra property of being free; rather
+i'd say that a set is a group with the extra _structure_ of
+being equipped with a favored "basis" of mutually free mutual
+generators.
+
+
+
+-OTOH, the Abelianization functor Groups -> Abelian groups is
+-surjective on the objects (and on the morphisms for that
+-matter), but groups are not Abelian groups with extra
+-structure, because the functor isn't injective on the
+-morphisms between a given pair.
+
+
+i think i agree with this, but it sounds like you're using
+my rules here rather than the rules i thought you tried to
+spell out in your post.
+
+another example of an object equipped with extra "stuff" would
+be a set equipped with another _set_; that is, take c to be
+the category of ordered pairs of sets, d to be the category of
+sets, and u to be the "projection" functor assigning to an
+ordered pair (x,y) of sets its first coordinate x.  i hope
+this example helps to show why i consider the terminology
+"stuff" reasonably descriptive of the intuition involved.
+
+another example (maybe or maybe not causing some additional
+(?) number of people to see this post as having some relevance
+to physics) of an object equipped with extra "stuff" rather
+than merely with extra "structure" is a manifold equipped with
+an unfortunately so-called "spin structure".  the point is
+that if we define the concept of "morphism between spin
+manifolds" in what seems to me to be the most advantageous
+way, then taking c to be the category of spin manifolds, d the
+category of manifolds, and u the hopefully obvious forgetful
+functor assigning to a spin manifold its underlying ordinary
+manifold, u is not faithful.
+
+thus a "spin structure" is not merely "structure"; it's
+"stuff".  so what is this extra "stuff"??  you can think of it
+as "spin frames" if you want to.  (a "spin frame" is what a
+spin manifold has two of where an ordinary manifold has only
+one.)  or you can think of it as "spinors"; morphisms between
+spin manifolds have an extra discrete degree of freedom to
+flip the sign of spinors even after their action on ordinary
+manifold points has been completely nailed down.
+
+a deeper understanding of how the classification offered here
+arises involves the relationship between groupoid theory and
+homotopy theory, as follows:
+
+for any integer n greater than or equal to -1, a space x is
+defined to be of "homotopy dimension n" iff for any integer
+j strictly greater than n, every continuous map from the
+j-dimensional sphere s^j to x is homotopic to a constant map.
+using this terminology, every space of homotopy dimension n
+is also of homotopy dimension m for any integer m greater than
+n.  a crucial fact is that the world of spaces of homotopy
+dimension 1 is secretly isomorphic in a very strong way to the
+world of groupoids; there's an amazingly perfect "dictionary"
+linking concepts from the world of spaces of homotopy
+dimension 1 to their secret equivalents in the world of
+groupoids.  the groupoid corresponding to a space x of
+homotopy dimension 1 is called the "fundamental groupoid" of
+x, and the space of homotopy dimension 1 corresponding to a
+groupoid g is called the "classifying space" of g.
+
+inside the world of spaces of homotopy dimension 1 are of
+course the sub-world of spaces of homotopy dimension 0, and
+the sub-sub-world of spaces of homotopy dimension -1.  the
+secret equivalent inside the world of groupoids of the
+sub-world of spaces of homotopy dimension 0 is the sub-world
+of so-called "discrete groupoids", and the secret equivalent
+of the sub-sub-world of spaces of homotopy dimension -1 is
+the sub-sub-world of just those special discrete groupoids
+which have either just one object and one morphism, or no
+objects and morphisms at all.
+
+the discrete groupoids are also known as "sets", or
+(exploiting the [homotopy dimension 1]/groupoids dictionary)
+"groupoids of homotopy dimension 0".  the special discrete
+groupoids corresponding to the spaces of homotopy dimension
+-1 are called "truth values", or "groupoids of homotopy
+dimension -1".  the groupoid with just one object and one
+morphism is called "true" (aka "the terminal groupoid" aka
+"yes" aka "in") while the empty groupoid is called "false"
+(aka "the initial groupoid" aka "no" aka "out").
+
+given a pair c,d of groupoids and a functor u:c->d and an
+object d1 in d, we can construct a new groupoid called "the
+homotopy fiber of u over d1".  roughly, the homotopy fiber
+of u over d1 is the groupoid of "objects of c equipped with
+designated isomorphisms from their images under u to d1";
+the morphisms in the homotopy fiber are required to preserve
+the designated isomorphisms.  as you might guess from the
+name "homotopy fiber", the groupoid-theoretic concept of
+"homotopy fiber" has a very direct equivalent in homotopy
+theory.
+
+we can now re-state the definitions of "property",
+"structure", and "stuff" in terms of homotopy dimension of
+homotopy fibers, as follows:
+
+given groupoids c,d and a functor u:c->d, the objects of c can
+be thought of via the forgetful functor u as objects of d with
+an extra _property_ iff the homotopy fibers of u are all of
+homotopy dimension -1, as objects of d with extra _structure_
+iff the homotopy fibers of u are all of homotopy dimension 0,
+and, and as objects of d with extra _stuff_ iff the homotopy
+fibers of u are all of homotopy dimension 1.
+
+hopefully this makes the intuition behind the concepts a bit
+clearer.  a "property" is something which, if you possess it
+at all, then you have no choice in _how_ to possess it, you
+just do.  a "structure" is something which if you possess it
+then possessing it involves picking a particular structure in
+a way analogous to picking an element of a set.  "stuff" is
+something which if you possess it then possessing it amounts
+to picking some particular stuff in a way analogous to picking
+an object of a groupoid.
+
+of course as with most concepts of groupoid theory, the
+concepts discussed here should be generalized to the case of
+"higher-dimensional groupoid theory" which corresponds to
+the homotopy theory of spaces with arbitrary homotopy
+dimension in the same way that ordinary groupoid theory
+corresponds to the homotopy theory of spaces of homotopy
+dimension 1.  thus the stunted progression property,
+structure, stuff becomes a genuine open-ended progression:
+property, structure, stuff, eka-stuff, eka-eka-stuff, ...  .
+thus given arbitrary spaces c,d and a continuous map u:c->d,
+we should say that "the objects of the fundamental
+infinity-groupoid of c can be thought of via the forgetful
+infinity-functor induced by u as objects of the fundamental
+infinity-groupoid of d equipped with extra eka^n-stuff" iff
+all of the homotopy fibers of u are of homotopy-dimension
+n+1.
+
+
+
+
+
+From: james dolan <jdolan@math.ucr.edu>
+Subject: Re: Just Categories now
+Date: 05 Jan 1999 00:00:00 GMT
+Message-ID: <76rulr$h7d$1@pravda.ucr.edu>
+References: <726r22$qr$1@news-1.news.gte.net> <3647A029.6FB4@easyon.com> <72agsd$ook$1@pravda.ucr.edu> <72b3pd$709@gap.cco.caltech.edu>
+Organization: Department of Mathematics, University of California, Riverside
+Newsgroups: sci.physics.research
+X-Newsposter: Pnews 4.0-test50 (13 Dec 96)
+
+toby bartels writes:
+
+-james dolan <jdolan@math.ucr.edu> wrote:
+-
+->given groupoids c,d and a functor u:c->d, the objects of c can
+->be thought of via the forgetful functor u as objects of d with
+->an extra _property_ iff u is full and faithful, as objects of d
+->with extra _structure_ iff u is faithful, and as objects of d
+->with extra _stuff_ regardless.
+-
+->A "groupoid" is a category where all the morphisms are
+->invertible.  it may very well be interesting to generalize the
+->subject matter of this discussion to the case where c and d are
+->not necessarily groupoids, but to keep things simple for now i
+->won't do that in this post.
+-
+-You seem to agree with John Baez's classification,
+-but he doesn't feel the need to limit to groupoids;
+-perhaps a word on how you think that complicates things?
+
+it complicates things in the obvious way: a single concept in groupoid
+theory (for example the concept of "faithful functor between
+groupoids") may bifurcate into non-equivalent concepts in category
+theory (for example the concepts of "faithful functor between
+categories" and "functor between categories which is faithful on
+isomorphisms"); the necessity of worrying about the distinctions
+between such non-equivalent concepts is eliminated by discussing only
+the groupoid case.  but presumably you're also asking why it is that
+in this tradeoff between simplicity and generality i chose simplicity,
+so i'll try to say something about that too.
+
+
+-Or is it just that groupoids are needed for the deep homotopy connection?
+
+that's part of my motivation by now, but i think my original
+motivation had less to do with the "dictionary" that relates groupoid
+theory to a special part of homotopy theory than with a different but
+in its own way equally powerful "dictionary" relating groupoid theory
+to a special kind of predicate logic.  in the world of predicate logic
+there's an obvious sense in which adding extra "properties" to the
+models of a theory means adding new axioms to the theory, adding extra
+"structure" to the models means adding new predicate symbols (possibly
+supplemented by new axioms) to the theory, and adding extra "stuff" to
+the models means adding new "types" (possibly supplemented by new
+predicate symbols and axioms) to the theory.  this
+property/structure/stuff distinction in predicate logic matches
+perfectly the property/structure/stuff distinction in groupoid theory
+if groupoids are interpreted as a certain sort of logical theories in
+a certain way.
+
+the more i think about this the more it seems that there should be
+some nice big picture that links together the predicate logic aspects
+of the situation with the homotopy theory aspects of the situation,
+but if so it's a bit too big for me to fully grasp yet so i won't try
+to say any more about it at the moment.
+
+i will say though that if someone would show how to generalize the
+correspondence between groupoids and logical theories of a certain
+sort to a correspondence between categories and logical theories of
+some more general sort, then i might be willing to agree that there is
+some obvious way of extending the property/structure/stuff
+classification of groupoid theory to apply to category theory as well.
+i have a vague suspicion that in fact this has already been done and
+that the logical theories corresponding to categories differ from the
+logical theories corresponding to groupoids more or less precisely in
+being "intuitionistic" rather than "classical", but i'm not at all
+clear on the details of how this works if it's even correct.
+
+
+->a deeper understanding of how the classification offered here
+->arises involves the relationship between groupoid theory and
+->homotopy theory, as follows:
+-
+->for any integer n greater than or equal to -1, a space x is
+->defined to be of "homotopy dimension n" iff for any integer
+->j strictly greater than n, every continuous map from the
+->j-dimensional sphere s^j to x is homotopic to a constant map.
+-
+-You can even generalize this to n = -2, noting that s^{-1} is the empty set.
+
+yes, very much so, though i don't think i thought about this until
+afterwards.
+
+
+-Of course, no map from s^{-1} to any space can ever be homotopic to a
+-constant, yet there is always some map from s^{-1} to any space (the
+-empty map), so no space has homotopy dimension -2, which must be why
+-nobody talks about it.
+
+hmm.  first of all, i think i should revise my definition of homotopy
+dimension to eliminate the idea of "homotopic to a constant map",
+because people seem to disagree on the meaning of "constant map" when
+the domain is empty.  (some people think that constantness of maps is
+the property of factoring through the one-point set, others think it's
+the _structure_ of being equipped with a specific factorization
+through the one-point set, and toby apparently thinks it's the
+property of having the one-point set as image.)
+
+here's the revised version:
+
+for any integer n greater than or equal to -2, a space x is defined to
+be of "homotopy dimension n" iff for every continuous map m from the
+[n+1]-dimensional sphere s^[n+1] to x, the space of extensions of m to
+the [n+2]-dimensional disk d^[n+2] is contractible.
+
+(here the sphere s^[-1] is defined to be empty, the disk d^[j+1] is
+defined to be the mapping cylinder of the map s^j->1, and the sphere
+s^[j+1] is defined to be the pushout d^[j+1] +_[s^j] d^[j+1].
+"contractible" means equivalent to the 1-point space.)
+
+hopefully with this revised definition it's still true that being of
+homotopy dimension n implies being of homotopy dimension n+1.  the
+spaces of homotopy dimension -2 are the contractible spaces, and the
+spaces of homotopy dimension n for higher n are hopefully just as
+before.
+
+the spaces of homotopy dimension n taken from a sufficiently
+"convenient" category s of spaces form a cartesian closed category
+s_n, and the spaces of homotopy dimension n+1 in s are the spaces
+equivalent to classifying spaces of groupoids enriched over s_n.
+
+the class of continuous maps with all homotopy fibers of homotopy
+dimension -2 is the class of all homotopy equivalences.  in the world
+of groupoids this corresponds to the class of all functors that are
+"invertible up to natural isomorphism".  thus eka^[-3]-stuff is
+_vacuous_ properties; that is, given groupoids c,d and a functor
+f:c->d with f invertible up to natural isomorphism, objects of c can
+be thought of as objects of d equipped with a _vacuous_ property.  (as
+throughout this discussion, we are interested in everything only "up
+to natural isomorphism" or "up to homotopy" in groupoid theory or in
+homotopy theory theory respectively.)
+
+notice that the class of all maps with all homotopy fibers of homotopy
+dimension n is closed under composition because the homotopy fibers of
+a composite map fg are themselves the total spaces of fibrations with
+base spaces which are homotopy fibers of g and fibers which are
+homotopy fibers of f, and because the class of spaces of homotopy
+dimension n is closed under the process of forming a new space as the
+total space of a fibration with its base and all its fibers in the
+class.
+
+finally, if there's anything such as "spaces of homotopy dimension
+-3", i don't want to hear about it.
+
+
+
+From: jdolan@galaxy.ucr.edu (james dolan)
+Subject: Re: Just Categories now
+Date: 15 Jan 1999 00:00:00 GMT
+Message-ID: <77k9fr$va6$1@pravda.ucr.edu>
+References: <3647A029.6FB4@easyon.com> <72b3pd$709@gap.cco.caltech.edu> <76rulr$h7d$1@pravda.ucr.edu> <77h2qd$ohj@gap.cco.caltech.edu>
+Organization: none
+Newsgroups: sci.physics.research
+
+toby bartels wrote:
+
+-james dolan <jdolan@math.ucr.edu> wrote:
+-
+->Toby Bartels <toby@ugcs.caltech.edu> wrote:
+-
+->>Or is it just that groupoids are needed for the deep homotopy
+->>connection?
+-
+->that's part of my motivation by now, but i think my original
+->motivation had less to do with the "dictionary" that relates groupoid
+->theory to a special part of homotopy theory than with a different but
+->in its own way equally powerful "dictionary" relating groupoid theory
+->to a special kind of predicate logic.  in the world of predicate logic
+->there's an obvious sense in which adding extra "properties" to the
+->models of a theory means adding new axioms to the theory, adding extra
+->"structure" to the models means adding new predicate symbols (possibly
+->supplemented by new axioms) to the theory, and adding extra "stuff" to
+->the models means adding new "types" (possibly supplemented by new
+->predicate symbols and axioms) to the theory.  this
+->property/structure/stuff distinction in predicate logic matches
+->perfectly the property/structure/stuff distinction in groupoid theory
+->if groupoids are interpreted as a certain sort of logical theories in
+->a certain way.
+-
+-OK, I tried to think about this, but I don't really know where to
+-start.  Give me a clue: what famous groupoid corresponds to what I've
+-been taught to regard as the basic predicate calculus: ordinary logic
+-with forall, forsome, and equality?
+
+
+the correspondence is between individual groupoids and individual
+_theories_ of a particular form of predicate logic.  the particular
+form of predicate logic involved is pretty much just "the basic" form,
+with the allowed syntactic constructions including:
+
+
+1.  the usual finitary boolean connectives obeying the usual finitary
+boolean equational laws
+
+2.  the universal quantifier "for all" (and therefore also the
+existential quantifier "for some" via the equivalence between "for
+some x, p(x)" and "not (for all x, (not p(x)))")
+
+3.  the built-in binary predicate "equality" with it's usual built-in
+reflexivity, symmetry, transitivity, and substitutability properties
+
+
+plus one more construction going beyond what's ordinarily considered
+"the basic":
+
+
+4.  the restriction in #1 above against the _infinitary_ boolean
+connectives (such as n-fold conjunction for an arbitrary infinite
+cardinality n) is lifted.
+
+
+given a theory t expressed in this kind of logic, we obtain the
+groupoid of models of t.  when all the i's are dotted and the t's
+crossed in the right way, this process of passing from the theory t to
+the groupoid of models of t becomes a "bi-equivalence from the
+bi-category of theories to the bi-category of groupoids".
+
+for example, let t be the theory presented by giving no predicate
+symbols, plus the one axiom "there are exactly seven things".  (of
+course this axiom can be expressed using the allowed syntatic
+constructions.)  the groupoid of models of t is the groupoid of
+seven-element sets.  this groupoid has just one isomorphism class
+because the theory t is "categorical" (in a sense of the word
+"categorical" having not much relationship to category theory!).
+
+
+
+that's not a complete exposition of the situation, rather just a clue
+of the sort i hope you wanted.  i will mention further though that to
+develop the full correspondence between theories and groupoids, the
+theories should be allowed to be "multi-typed".  if only
+"single-typed" theories are considered then the most straightforward
+correspondence is not with "abstract" groupoids but rather with
+"concrete" groupoids, a "concrete groupoid" being a groupoid equipped
+with a faithful functor to the groupoid of sets.  it might be a good
+idea to develop the correspondence between single-typed theories and
+concrete groupoids before developing the full correspondence between
+multi-typed theories and abstract groupoids.  one of the basic lemmas
+you should try to understand is as follows:
+
+let x be a set.  let c be the collection of all pairs (s,p) with s a
+(possibly infinite) set and p an s-ary relation on x.  let d be the
+hyper-collection of all sub-collections of c that are closed under all
+of the operations on relations alluded to in #1-#4 above.  then d is
+in canonical bijection with the set of subgroups of the group of
+permutations of x (taking "permutation" to mean "auto-bijection").
+
+(in the above lemma, among the operations that should count as
+"alluded to" is the operation of replacing an s-ary relation by the
+obvious corresponding t-ary relation given a bijection from s to t,
+even though this operation was perhaps _not_ very explicitly alluded
+to.)
+
+
+
+
+

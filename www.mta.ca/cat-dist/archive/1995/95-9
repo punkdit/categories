@@ -1,0 +1,1440 @@
+Date: Mon, 4 Sep 1995 08:59:38 -0300 (ADT)
+Subject: limits of finite monoids 
+
+Date: Sat, 2 Sep 95 20:22:16 EDT
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+Surely it must be known that a topological monoid, compact, hausdorff
+and zero dimensional is a filtered limit of finite monoids.  Can someone
+supply a reference?
+ 
+Michael Barr
+
+
+Date: Wed, 6 Sep 1995 15:49:12 -0300 (ADT)
+Subject: ANNOUNCE: Xy-pic version 3.1 released! 
+
+Date: Tue, 5 Sep 1995 22:59:43 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.1 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a RELEASE of my DIAGRAM TYPESETTING PACKAGE:
+
+			       Xy-pic 3.1
+
+This is a maintenance release where many little problems of the major
+release of Xy-pic 3.0 (from July) have been solved.
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the
+distribution.
+
+-----------------------------------------------------------------------
+				  NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 is a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to users).
+However, full backwards compatibility is maintained (except for the
+unavoidable but fully documented obscure cases).
+
+Release 3.1 fixes the following problems of release 3.0:
+
+* Improved framing and curve code (in particular dashed curves).
+
+* More & improved DVI driver support (includes the em-TeX driver)!
+
+* User's Guide now available as hypertext (HTML)!
+
+and many other little fixes in code & documentation (all described in
+the ChangeLog file in the source distribution).
+
+Thanks to Robert Kiessling, Antonio Possolo, Jvrg Knappen, Michael J
+Healy, Clemens Beckstein, Michel Goossens, Dierdrik Wiersma, Dan
+Christensen, and Vladimiro Sassone, for your bug reports !
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home page':
+
+  URL:			http://www.diku.dk/~kris/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN :		/tex-archive/macros/generic/diagrams/xypic
+
+and from the archives of the authors:
+
+  ftp.diku.dk : 	/diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for the exact details.
+
+-----------------------------------------------------------------------
+				CREDITS
+-----------------------------------------------------------------------
+
+Xy-pic was created by Kristoffer H. Rose, DIKU, U of Copenhagen.  Most
+of the rewrite was accomplished in collaboration with Ross Moore while
+visiting Macquarie U, Sydney (Jan-May 1994), supported by the Australian
+Research Council, Macquarie University, and using donated DEC equipment.
+
+Xy-pic is Copyright (c) 1991-1995 by Kristoffer H. Rose under GNU
+COPYLEFT which means that you can use the package for any purpose but if
+you provide the macros or any code derived from them to a third party
+then you are obliged to include the entire Xy-pic package (full details
+in the file COPYING).
+
+-----------------------------------------------------------------------
+
+	  This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+	       Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+      DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+      Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+	    World Wide Web  <URL: http://www.diku.dk/~kris/>
+
+-----------------------------------------------------------------------
+
+
+Date: Wed, 6 Sep 1995 15:51:48 -0300 (ADT)
+Subject: Re: limits of finite monoids 
+
+Date: Tue, 5 Sep 95 10:30 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+See Theorem VI 2.9 (page 242) in "Stone Spaces" (and Example (a)
+following it).
+
+Peter Johnstone
+
+[Also noted by Steve Vickers.]
+
+Date: Wed, 6 Sep 1995 20:26:46 -0300 (ADT)
+Subject: ANNOUNCE: kuvio.tex - diagrams for dvips users 
+
+Date: Wed, 6 Sep 95 14:27:49 -0700
+From: Anders Svensson <svensson@math.ubc.ca>
+
+Since Kris has just announced a new version of XY-pic, allow me to offer up
+my own diagram package for users of dvips.
+
+The macros in kuvio.tex use PostScript embedded in \special control sequences
+to rotate arrows from the horizontal. Features include:
+
+ 1. Input uses an alignment syntax not unlike some other packages.
+
+ 2. Rigid and flexible grids for vertex placement. (Warning for new users:
+    \Diagram \endDiagram and \Dg \endDg behave quite differently.)
+
+ 3. Diagram compilation for improved performance.
+
+ 4. Diagram types allow one to customize the setup for a named class of
+    diagrams.
+
+ 5. Almost every choice made by the macros in kuvio.tex is adjustable by
+    the user.
+
+ 6. A labelling scheme for typesetting material on top of diagrams or
+    included PostScript figures.
+
+ 7. Arrows can be attached to points on other arrows.
+
+ 8. Since arrows are rotated from the horizontal, anything which can
+    be typeset horizontally can be used as an arrow in a diagram.
+    New arrow types are easily defined. (For those who care about such
+    things, there is a predefined type, To, whose arrowhead is that of
+    \rightarrow .)
+
+ 9. General purpose macros for rotation, reflection and framing.
+
+For anyone who's interested, the following files can be found at
+/pub/svensson/kuvio:ftp.math.ubc.ca.
+
+   kuvio-p209+245.tar.gz           kuvio.tex plus documentation in both source
+                                   and PostScript (letter size) form.
+
+   kuvio-p209+245A4.tar.gz         kuvio.tex plus documentation in both source
+                                   and PostScript (A4) form.
+
+   kuvio-p209+245ps.tar.gz         kuvio.tex plus documentation in PostScript
+                                   (letter size) form only.
+
+   kuvio-p209+245A4ps.tar.gz       kuvio.tex plus documentation in PostScript
+                                   (A4) form only.
+ 
+   kuvio-p209+245src.tar.gz        kuvio.tex plus documentation in source
+                                   form only. Not worth the effort unless
+                                   you already know what you're in for.
+
+   kuvio-p209.tar.gz               kuvio.tex sans documentation.
+
+   examples.ps.gz                  Teasers from the documentation - the
+   examples-A4.ps.gz               table of contents plus 12 pages of
+                                   example diagrams.
+
+As far as I know, everything works so if you run into any trouble don't
+hesitate to contact me.
+
+Anders
+
+
+
+Date: Tue, 12 Sep 1995 22:06:44 -0300 (ADT)
+Subject: Programme for 1st Tbilisi Symposium on LLC 
+
+Date: Tue, 12 Sep 95 17:44:38 +0100
+From: tbilisi@cogsci.ed.ac.uk
+
+
+Programme of the 1st Tbilisi Symposium on Language, Logic and Computation
+19-22 October, 
+Gudauri, Georgia.
+
+A selection of papers from the conference will appear in a book
+in the Lecture Notes series published by CSLI.
+
+
+Thursday, 19 October
+
+Session I: Applied Logic. 
+
+9:30 Invited Talk:    `Concepts, contexts, and non-monotonic reasoning'
+Peter G\"ardenfors (Lund University, Sweden)
+
+10:30  Oliver Lemon:  (University of Edinburgh, Scotland) `First-order
+Theory Change systems and their Dynamic Semantics.' 
+
+11:00 Camilla Schwind:  (CNRS, Marseille, France)`A Logic-based framework
+for Action Theories.'
+
+Coffee break
+
+12:00 Carl Vogel: (IMS, Stuttgart, Germany)`A Generalizable Semantics for
+an Inheritance Reasoner.'
+
+12:30 Michael Bejanishvili:  (Georgian Academy of Sciences, Georgia)
+Knowladge, Belief, Entailment.
+
+Lunch
+
+Session II: Formal Semantics.
+
+2:30 Rodger Kibble:   (University of Edinburgh, Scotland)`Modal
+subordination, focus and complement anaphora.'
+
+3:00 Pascal Amsili and Anne Le Draoulec: (Universite Paul
+Sabatier, France)`An account of negated sentences in DRT .'
+
+3:30 Sheila Glasbey:  (University of Edinburgh, Scotland)`A Situation
+Theoretic interpretation of bare plurals.'
+
+Coffee break
+
+4:30 Eter Soselia:    (Institute for Oriental Studies, Tbilisi)`Some
+Remarks about semantics and Evolution of Basic Color Terms Systems.'
+
+5:00 Pat Healey:   (University of Manchester, England)`Reconciling
+Cognition and Content.'
+
+5:30 Invited Talk:   Robin Cooper (University of Edinburgh/Gothenburg
+ University) (TBA)
+
+7:30  Dinner
+
+Friday, 20 October:
+
+Session III:  Linguistics. 
+
+9:00 Invited Talk:  Hans Uszkoreit  (Universit\"at des Saarlandes,
+Germany) (TBA)
+
+10:00 Louise McNally: (Ohio State University, USA)`On recent formal
+analyses of ``topic''.'
+
+10:30 Maya Sachokiya:  (Institute for Oriental Studies,
+Tbilisi)`Diachrony and partial typology in morphosyntax (Indo-European
+and Ka\-rtvelian).'
+
+Coffee break
+
+
+11:30 Dimitra Kolliakou: (University of Edinburgh, Scotland)`An
+Inheritance-based Account of the Syntax and Semantics of Noun Phrases'.
+
+12:00 Rusudan Asatiani:     (Institute for Oriental Studies,
+Tbilisi)`Dominant category in the grammatical system of the language.'
+
+12:30 Graziella Saccon: (University of Texas, Austin)`Dissociating
+ne-cliticization  from  syntactic and semantic unaccusativity.'
+
+Lunch
+
+Session IV: Computational Logic. 
+
+2:30 John Longley and Gordon Plotkin:    (University of Edinburgh,
+ Scotland)`Logical full abstraction for functional programming languages.'
+
+3:00 Konstantin Pkhakadze: (Tbilisi State University,
+Georgia)`Indefinite-valued propositional logic and some of its
+ applications in mechanical theorem proving.'
+
+Coffee break
+
+4:00 Igor Zaslavsky: (Yerevan, Armenia)`On Logically But Not
+Functionally Complete Calculus In Three - Valued Logic.'
+
+4:30 Teimuraz Kutsia:   (Tbilisi State University, Georgia)`Towards
+fixpoint semantics of general logic programs.'
+
+5:00 Invited Talk: L. Esakia (Georgian Academy of Sciences, Tbilisi)
+`An outline for an Amended Intuitionistic Logic and Kindred Modal
+Systems'         
+
+7:00
+
+Banquet
+
+Saturday, 21 October:
+
+Session V: Computational Linguistics.
+
+9:00 Invited Talk:  Aravind Joshi (University of Pennsylvania, USA) \\
+  `Partial Proof Trees and Categorial Grammars'
+
+10:00 Thorsten Brants:  (Universit\"at des Saarlandes,
+Germany)`Estimating HMM Topologies.'
+
+10:30 Beatrice Daille, \'Eric Gaussier and Jean-Marc Lang\'e:
+ (Universite Paris 7, France)`An Evaluation of Statistical word association.'
+
+Coffee break
+
+11:30 \'Eric Laporte\,: (Universit\'e de Marne-la-Vall\'ee,
+France.)`Lexical Disambiguation with Fine-Grained Tagsets.'
+
+12:00 George Chikoidze:   (Georgian Academy of Sciences,
+Georgia)`Computer representation of linguistic knowledge.'
+
+12:30 Elisabeth Godbert: (CNRS, Marseille, France)`Computing incoherence
+of sentences from a logical representation of their semantics.'
+
+Lunch
+
+Session VI: Theoretical Computer Science.
+
+2:30 Morten Heine Sorensen: (DIKU, Copenhagen, Denmark)`Characterisation
+of Infinite Reduction paths in Untyped Lambda Calculus.'
+
+3:00 Stefano Guerrini:   (Universit\`a di Pisa, Italy)`Sharing-graphs,
+sharing-morphisms and (optimal) $\lambda$-graph reductions.'
+
+Coffee break
+
+4:00 Dieter Hofbauer (Technische Universit\"at Berlin, Germany),\\ Maria
+Huber, Gregory Kucherov (LORIA, France)`How to get rid of projection
+rules in context-free tree grammars'.
+
+4:30 Martin Hansen, Hans H\"uttel and Josva Kleist: (Aalborg
+ University, Denmark)`Bisimulations for asynchronous mobile processes.'
+
+5:00 Invited Talk: Anne Preller (Montpelier, France) \\
+`Individuals in Modal Logic'
+
+7:00
+
+Dinner
+
+8:00
+
+Business meeting
+
+Sunday, 22 october:
+
+Session VII: Logic.
+
+9:00 Invited Talk: H. Ono (Ishikawa, Japan) \\
+ `Decidability and the finite model property of
+      some substructural logics'
+
+10:00 Rezo Grigolia: (Georgian Academy of Sciences, Tbilisi)`Strong
+Monadic  Heyting and Diagonalizable Algebras.'
+
+10:30 Vladimir Smirnov:  (Institute for Philosophy, Moscow, Russia)`Free
+Logic and Quite Free Logic.'
+
+Coffee break
+
+11:30 David Basin, Sean Matthews and Luka Vigano`: (MPG, Saarbr\"ucken,
+ Germany)`A Modular Presentation of Modal Logics in a Logical Framework.'
+
+12:00 Guram Bejanishvili:  (Georgian Academy of Sciences, Tbilisi) `Some
+Results in Monadic Heyting Algebras.' 
+
+Monday, 23 October
+
+(Invited speakers: TBA)
+9:00: Closing Session
+
+12:00: Excursion
+
+
+Travel: we recommend flying with Air Georgia from Frankfurt on flight AG
+621/622 which will be leaving Oct 18, returning Oct 25.
+
+   Tbilisi - Frankfurt - Tbilisi    AG 621/622 (Air Georgia)
+
+ Dep.Frank.      15:10  Arr. Tbilisi     22:40 (Georgia time is GMT +3)
+ Dep Tbilisi     12:50  Arr.Frank.       14:05
+
+We have arranged a special group flight price (which will be ca. 500$
+R/T, the actual price will be fixed by the number of people who take
+this flight.)
+
+Location: the conference will take place in Gudauri, a winter resort in
+the Caucasus. On the way back from Gudauri on Oct 22, there will be a
+short excursion to the ancient Georgian capital, Mtskheta. On the Monday
+(Oct 23) there will be a short session in Tbilisi and, for those
+interested, following that an excursion in the wine country (Kakhetia)
+will take place on Monday. Tuesday will be a free day in
+Tbilisi. Accommodation and board for all days (incl Oct 22, 23, 24: in
+the vicinity of Tbilisi) will be available.
+
+Visas: there is no need to get a visa ahead of time. Visas will be
+arranged on arrival in Tbilisi. Cost: 30$, colour photo needed.
+
+
+
+Date: Wed, 13 Sep 1995 15:35:49 -0300 (ADT)
+Subject: New addresses in Genoa 
+
+Date: Wed, 13 Sep 1995 15:42:18 +0200
+From: Marco Grandis <grandis@dima.unige.it>
+
+Dear colleagues,
+
+the two departments of mathematics and of computer sciences, in Genoa, have
+moved to a new common building, some 10min walking from the site of the old
+two.
+New addresses, email and telephone numbers are listed below.
+Please note that Pino Rosolini's email address changed.
+
+With best regards
+Aurelio Carboni, Marco Grandis, Eugenio Moggi, Pino Rosolini.
+
+****
+
+1. Aurelio Carboni
+
+Dipartimento di Matematica
+Universita` di Genova
+via Dodecaneso 35
+16146 GENOVA, Italia
+
+email:  carboni@vmimat.mat.unimi.it
+            carboni@dima.unige.it
+tel:  +10.353 6804    fax: +10.353 6752
+
+****
+
+2.Marco Grandis
+
+Dipartimento di Matematica
+Universita` di Genova
+via Dodecaneso 35
+16146 GENOVA, Italia
+
+email:  grandis@dima.unige.it
+tel:  +10.353 6805     fax: + 10.353 6752
+
+****
+
+3. Eugenio Moggi
+
+Dipartimento di Informatica
+Universita` di Genova
+via Dodecaneso 35
+16146 GENOVA, Italia
+
+email:  moggi@disi.unige.it
+tel: +10.353 6629   fax: +10.353 6699
+
+****
+
+4. Pino Rosolini
+
+Dipartimento di Matematica
+Universita` di Genova
+via Dodecaneso 35
+16146 GENOVA, Italia
+
+email:  rosolini@disi.unige.it
+tel: +10.353 6630   fax: +10.353 6699
+
+
+
+Date: Wed, 13 Sep 1995 15:37:01 -0300 (ADT)
+Subject: LICS'96 Call for Papers 
+
+Date: Wed, 13 Sep 95 12:30 EDT
+From: Amy Felty <felty@research.att.com>
+
+
+[A postscript version of the call for papers is available via the LICS
+ web page at http://www.research.att.com/lics/, and via anonymous ftp
+ from research.att.com, directory /dist/lics.]
+
+[Our apologies if you receive multiple copies of this announcement.]
+
+
+                   Eleventh Annual IEEE Symposium on
+                      LOGIC IN COMPUTER SCIENCE
+           July 27-30, 1996, New Brunswick, New Jersey, USA
+
+                           CALL FOR PAPERS
+
+The LICS Symposium aims to attract original papers of high quality on
+theoretical and practical topics in computer science that relate to
+logic in a broad sense, including algebraic, categorical and
+topological approaches.
+
+Suggested, but not exclusive, topics of interest include: abstract
+data types, automated deduction, categorical models, concurrency,
+constraint programming, constructive mathematics, database theory,
+domain theory, finite model theory, hybrid systems, logics of
+knowledge, lambda and combinatory calculi, linear logic, logical
+aspects of computational complexity, logics in artificial
+intelligence, logic programming, modal and temporal logics, model
+checking, program logic and semantics, rewriting, logical aspects of
+symbolic computing, software specification, type systems,
+verification.
+
+Paper submission: Send 12 copies of an extended abstract (not a full
+paper) to the program chair to be received by December 13, 1995.  This
+deadline is firm; late submissions will not be considered.  Authors
+without access to copiers may submit a single copy.  Authors will be
+notified of acceptance or rejection by March 7, 1996.  Accepted papers
+in a specified format for the proceedings will be due May 7, 1996.
+
+The first page of the extended abstract should include the title of
+the paper, names and affiliations of authors, a brief synopsis, and
+the contact author's name, address, phone number, fax number, and
+email address, if available.
+
+The extended abstract may not exceed 10 typed pages in no less than
+11-point font, with a line spacing of no less than 1.5.  It must be in
+English and provide sufficient detail to allow the program committee
+to assess the merits of the paper.  It should begin with a succinct
+statement of the issues, a summary of the main results, and a brief
+explanation of their significance and relevance to the conference, all
+phrased for the non-specialist.  References and comparisons with
+related work should be included.  Technical development directed to
+the specialist should follow.  Submissions departing significantly
+from these guidelines risk rejection.
+
+Dual submissions: The results must be unpublished and not submitted
+for publication elsewhere, including the proceedings of other symposia
+or workshops (see exception below).  All authors of accepted papers
+will be expected to sign copyright release forms.  One author of each
+accepted paper will be expected to present the paper at the
+conference.
+
+As a one-time experiment, submissions to LICS this year can also be
+submitted to the Israeli Symposium on the Theory of Computing and
+Systems (ISTCS), provided this is clearly indicated on the cover page
+of the submission.  If the paper is accepted to both LICS and ISTCS,
+then the paper will be included in the LICS proceedings, and the ISTCS
+proceedings will include only a 1-page abstract with a pointer to the
+LICS proceedings.
+
+IMPORTANT DATES:
+	Submission deadline: December 13, 1995
+	Notification: March 7, 1996
+	Final papers due: May 7, 1996
+	Conference: July 27-30, 1996
+
+The symposium is part of the Federated Logic Conference (FLoC),
+July 27-August 3, 1996, being hosted by the Center for Discrete
+Mathematics and Computer Science, Rutgers University, as part of its
+Special Year on Logic and Algorithms.  In addition to LICS, FLoC
+includes the following related conferences: Rewriting Techniques and
+Applications (RTA), Conference on Automated Deduction (CADE), and
+Computer-Aided Verification (CAV).  LICS and RTA will be held in
+parallel during the first four days of FLoC.  CADE and CAV will be
+held during the last four days, with CADE workshops running in
+parallel with the last day of LICS.  Plenary events involving all the
+conferences are scheduled.  For further information on FLoC and the
+participating conferences, see the FLoC home page at
+  http://www.research.att.com/lics/floc/.
+Information about the Special Year can be found in
+  http://dimacs.rutgers.edu/.
+
+The symposium is sponsored by the IEEE Technical Committee on
+Mathematical Foundations of Computing in cooperation with the
+Association for Symbolic Logic, the European Association for
+Theoretical Computer Science, and the Association for Computing
+Machinery.
+
+Kleene Award for Best Student Paper: An award of $500, in honor of the
+late S.C. Kleene, will be given to the best paper, as judged by the
+program committee, written solely by one or more students.  A
+submission is eligible if all authors are full-time students at the
+time of submission.  This should be indicated in the submission
+letter.  The program committee may decline to make the award or may
+split it among several papers.
+
+
+PROGRAM CHAIR:
+  Edmund M. Clarke
+  Department of Computer Science
+  Carnegie Mellon University
+  Pittsburgh, PA 15228
+      lics96@cs.cmu.edu
+      Phone: (412) 268-2628
+      Fax: (412) 268-5576
+
+PROGRAM COMMITTEE:
+   S. Buss, UC San Diego                 P. Lincoln, SRI
+   E. Clarke, CMU                        J. Mitchell, Stanford
+   A. Emerson, UT Austin                 U. Montanari, Univ. Pisa
+   S. German, IBM Watson                 P. Panangaden, McGill
+   G. Gottlob, TU Vienna                 F. Pfenning, CMU
+   O. Grumberg, Technion                 J. Rushby, SRI
+   D. Howe, AT&T Bell Labs               C. Stirling, Edinburgh
+   C. Kirchner, INRIA & CRIN             A. Stolboushkin, UCLA
+   K. Kunen, Wisconsin                   G. Winskel, Aarhus
+
+CONFERENCE CHAIR:
+   Jon G. Riecke
+   AT&T Bell Laboratories
+   600 Mountain Avenue
+   Murray Hill, NJ 07974, USA
+      riecke@research.att.com
+
+LICS GENERAL CHAIR:
+   Moshe Y. Vardi
+   Department of Computer Science
+   Rice University
+   6100 S. Main Street
+   Houston, Texas 77251-1892, USA
+       vardi@cs.rice.edu
+
+ORGANIZING COMMITTEE:
+   M. Abadi, S. Abramsky, S. Artemov, E. Boerger, A. Borodin,
+   W. Brauer, A. Bundy, S. Buss, E. Clarke, R. Constable, A. Felty,
+   U. Goltz, D. Howe, G. Huet, J.-P. Jouannaud, D. Kapur, C. Kirchner,
+   P. Kolaitis, D. Kozen, T. Leighton, D. Leivant, A.R. Meyer,
+   D. Miller, J. Mitchell, Y. Moschovakis, M. Okada, P. Panangaden,
+   J. Remmel, J. Riecke, S. Ronchi della Rocca, A. Scedrov, D. Scott,
+   J. Tiuryn, M.Y. Vardi
+
+PUBLICITY CO-CHAIRS:
+   Amy Felty and Douglas Howe
+   AT&T Bell Laboratories
+   600 Mountain Avenue,
+   Murray Hill, NJ 07974, USA
+	 felty@research.att.com, howe@research.att.com
+
+
+
+
+%************************************************************************
+%************************ LATEX VERSION *********************************
+%************************************************************************
+
+\documentstyle[11pt]{article}
+
+\topmargin-0.5in
+
+\marginparwidth 0pt \oddsidemargin  0pt \evensidemargin  0pt
+\marginparsep 0pt
+\textwidth 6.5in \textheight 10.0in\parskip 6pt \parindent 0pt
+\renewcommand{\i}[1]{{\it #1 \/}}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\bf CALL FOR PAPERS}\\[2ex]
+{\large Eleventh Annual IEEE Symposium on }\\[2ex]
+{\Large\bf LOGIC IN COMPUTER SCIENCE }\\[2ex]
+{\large\it July 27--30, 1996, New Brunswick, New Jersey, USA}
+\end{center}
+\vspace{.2in}
+\begin{minipage}[t]{2.20in}% first column
+\parskip 4pt
+
+{\bf Program Chair:} \\[1mm]
+Edmund M.~Clarke\\
+Department of Computer Science\\
+Carnegie Mellon University\\
+Pittsburgh, PA 15228\\
+{\tt lics96@cs.cmu.edu} \\
+Phone: (412) 268-2628 \\
+Fax: (412) 268-5576\\[1mm]
+
+\smallskip
+{\bf Program Committee:}\\[1mm]
+S.~Buss, \i{UC San Diego}\\
+E.~Clarke, \i{CMU}\\
+A.~Emerson, \i{UT Austin}\\
+S.~German, \i{IBM Watson}\\
+G.~Gottlob, \i{TU Vienna}\\
+O.~Grumberg, \i{Technion}\\
+D.~Howe, \i{AT\&T Bell Labs}\\
+C.~Kirchner, \i{INRIA \& CRIN}\\
+K.~Kunen, \i{Wisconsin}\\
+P.~Lincoln, \i{SRI}\\
+J.~Mitchell, \i{Stanford}\\
+U.~Montanari, \i{Univ.~Pisa}\\
+P.~Panangaden, \i{McGill}\\
+F.~Pfenning, \i{CMU}\\
+J.~Rushby, \i{SRI}\\
+C.~Stirling, \i{Edinburgh}\\
+A.~Stolboushkin, \i{UCLA}\\
+G.~Winskel, \i{Aarhus }\\[1mm]
+
+\smallskip
+{\bf Conference Chair:} \\[1mm]
+Jon G.~Riecke\\
+AT\&T Bell Laboratories\\
+600 Mountain Avenue\\
+Murray Hill, NJ 07974, USA\\
+{\tt riecke@research.att.com}
+
+\end{minipage}
+\hspace{.25in}
+\begin{minipage}[t]{4.2in}% second column
+\parskip 4pt
+
+The {\bf LICS} Symposium aims to attract original papers of high
+quality on theoretical and practical topics in computer science that
+relate to logic in a broad sense, including algebraic, categorical and
+topological approaches.
+
+Suggested, but not exclusive, topics of interest include: {\em
+abstract data types, automated deduction, categorical models,
+concurrency, constraint programming, constructive mathematics,
+database theory, domain theory, finite model theory, hybrid systems,
+logics of knowledge, lambda and combinatory calculi, linear logic,
+logical aspects of computational complexity, logics in artificial
+intelligence, logic programming, modal and temporal logics, model
+checking, program logic and semantics, rewriting, logical aspects of
+symbolic computing, software specification, type systems,
+verification.}
+
+{\bf Paper submission:} Send 12 copies of an extended abstract (not a
+full paper) to the {\bf program chair} to be {\bf received} by {\bf
+December 13, 1995}.  {\sl This deadline is firm; late submissions will
+not be considered.}  Authors without access to copiers may submit a
+single copy.  Authors will be notified of acceptance or rejection by
+March 7, 1996.  Accepted papers in a specified format for the
+proceedings will be due May 7, 1996.
+
+The first page of the extended abstract should include the title of
+the paper, names and affiliations of authors, a brief synopsis, and
+the contact author's name, address, phone number, fax number, and
+email address, if available.
+
+The extended abstract may not exceed 10 typed pages in no less than
+11-point font, with a line spacing of no less than 1.5.  It must be in
+English and provide sufficient detail to allow the program committee
+to assess the merits of the paper.  It should begin with a succinct
+statement of the issues, a summary of the main results, and a brief
+explanation of their significance and relevance to the conference, all
+phrased for the non-specialist.  References and comparisons with
+related work should be included.  Technical development directed to
+the specialist should follow.  Submissions departing significantly
+from these guidelines risk rejection.
+\end{minipage}
+
+\newpage
+
+\begin{minipage}[t]{2.20in}% first column
+\parskip 4pt
+
+{\bf General Chair:}\\[1mm]
+Moshe Y.~Vardi\\
+Department of Computer Science\\
+Rice University\\
+6100 S.~Main Street\\
+Houston, Texas 77005-1892, USA\\
+{\tt vardi@cs.rice.edu}\\[1mm]
+
+\smallskip
+{\bf Organizing Committee:}\\[1mm]
+M.~Abadi, S.~Abramsky,\\
+S.~Artemov, E.~B\"orger,\\
+A.~Borodin, W.~Brauer,\\
+A.~Bundy, S.~Buss,\\
+E.~Clarke, R.~Constable,\\
+A.~Felty, U.~Goltz, D.~Howe,\\
+G.~Huet, J.-P.~Jouannaud,\\
+D.~Kapur, C.~Kirchner,\\
+P.~Kolaitis, D.~Kozen,\\
+T.~Leighton, D.~Leivant,\\
+A.R.~Meyer, D.~Miller,\\
+J.~Mitchell, Y.~Moschovakis,\\
+M.~Okada, P.~Panangaden,\\
+J.~Remmel, J.~Riecke,\\
+S.~Ronchi della Rocca,\\
+A.~Scedrov, D.~Scott,\\
+J.~Tiuryn, M.Y.~Vardi. \\[1mm]
+
+\smallskip
+{\bf Publicity Co-Chairs:}\\[1mm]
+Amy Felty \& Douglas Howe\\
+AT\&T Bell Laboratories\\
+600 Mountain Avenue\\
+Murray Hill, NJ 07974, USA\\
+{\tt felty@research.att.com}\\
+{\tt howe@research.att.com}\\
+
+\end{minipage}
+\hspace{.25in}
+\begin{minipage}[t]{4.2in}% second column
+\parskip 4pt
+
+{\bf Dual submissions}:
+The results must be unpublished and not submitted for publication
+elsewhere, including the proceedings of other symposia or workshops
+(see exception below).  All authors of accepted papers will be expected
+to sign copyright release forms.  One author of each accepted paper will
+be expected to present the paper at the conference.
+
+As a one-time experiment, submissions to LICS this year can also be
+submitted to the Israeli Symposium on the Theory of Computing and
+Systems (ISTCS), provided this is clearly indicated on the cover page
+of the submission.  If the paper is accepted to both LICS and ISTCS,
+then the paper will be included in the LICS proceedings, and the ISTCS
+proceedings will include only a 1-page abstract with a pointer to the
+LICS proceedings.
+
+The symposium is part of the {\bf Federated Logic Conference} (FLoC),
+July 27--August 3, 1996, being hosted by the Center for Discrete
+Mathematics and Computer Science, Rutgers University, as part of its
+Special Year on Logic and Algorithms.  In addition to LICS, FLoC
+includes the following related conferences: Rewriting Techniques and
+Applications (RTA), Conference on Automated Deduction (CADE), and
+Computer-Aided Verification (CAV).  LICS and RTA will be held in
+parallel during the first four days of FLoC.  CADE and CAV will be
+held during the last four days, with CADE workshops running in
+parallel with the last day of LICS.  Plenary events involving all the
+conferences are scheduled.
+For further information on FLoC and the
+participating conferences, see the FLoC home page at {\tt
+  http://www.research.att.com/lics/floc/}.
+Information about the Special Year can be found in
+{\tt http://dimacs.rutgers.edu/}.
+
+
+The symposium is sponsored by the IEEE Technical Committee on
+Mathematical Foundations of Computing in cooperation with the
+Association for Symbolic Logic, the European Association for
+Theoretical Computer Science, and the Association for Computing
+Machinery.
+
+{\bf Kleene Award for Best Student Paper:}
+An award of \$500, in honor of the late S.C.\ Kleene, will be given to
+the best paper, as judged by the program committee, written solely by
+one or more students.  A submission is eligible if all authors are
+full-time students at the time of submission.  This should be
+indicated in the submission letter.  The program committee may decline
+to make the award or may split it among several papers.
+\end{minipage}
+\end{document}
+
+
+Date: Wed, 20 Sep 1995 10:51:22 -0300 (ADT)
+Subject: ANNOUNCE: Xy-pic version 3.2 released! 
+
+Date: Tue, 19 Sep 1995 22:16:46 +0200
+From: Kristoffer H. Rose <kris@diku.dk>
+
+Dear category theorist,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic.
+I hope you will find it useful.
+
+Sincerely,
+            Kristoffer H. Rose
+
+=======================================================================
+     ANNOUNCING the Xy-pic version 3.2 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a RELEASE of the DIAGRAM TYPESETTING PACKAGE:
+
+			       Xy-pic 3.2
+
+This is a maintenance release where a few more bugs of the previous
+major release of Xy-pic 3 (from July) have been eliminated.
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further details on the package are in the README file of the
+distribution.
+
+-----------------------------------------------------------------------
+				  NEWS
+-----------------------------------------------------------------------
+
+Xy-pic version 3 is a thorough rewrite of the prior major version,
+version 2 (last version 2 release was release 2.6; several beta-test
+releases of version 3, numbered 2.7-2.12, were made available to users).
+However, full backwards compatibility is maintained (except for the
+unavoidable but fully documented obscure cases).
+
+Release 3.2 fixes the following relative to release 3.1:
+
+* Arrow labels now typeset using the correct style in all cases.
+
+* Circles in old-style diagrams now work again...
+
+* PostScript pattern support now compatible with GhostScript.
+
+as well as several minor fixes in code & documentation (all described in
+the ChangeLog file in the source distribution).
+
+Thanks to J|rgen Koslowski, Young U. Ryu, Fred T. Krogh, Clemens
+Beckstein, and Ralf Gaertner, for your bug reports!
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:			http://www.diku.dk/~kris/Xy-pic.html
+  URL:			http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN :		/tex-archive/macros/generic/diagrams/xypic
+
+and from the archives of the authors:
+
+  ftp.diku.dk : 	/diku/users/kris/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for the exact details.
+
+-----------------------------------------------------------------------
+				CREDITS
+-----------------------------------------------------------------------
+
+Xy-pic version 2 was created by Kristoffer H. Rose, DIKU, U of
+Copenhagen.  The rewrite that has become version 3 is a collaboration
+with Ross Moore, Macquarie U, Sydney, initiated through a visit to
+Macquarie (Jan-May 1994 supported by the Australian Research Council,
+Macquarie University, and using donated DEC equipment).
+
+Xy-pic is Copyright (c) 1991-1995 by Kristoffer H. Rose and 1994-1995 by
+Ross Moore under GNU COPYLEFT which means that you can use the package
+for any purpose but if you provide the macros or any code derived from
+them to a third party then you are obliged to include the entire Xy-pic
+package (full details in the file COPYING).
+
+-----------------------------------------------------------------------
+
+	  This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+	       Kristoffer H{\o}gsbro ROSE  <kris@diku.dk>
+      DIKU, Universitetsparken 1, 2100 K{\o}benhavn {\O}, DANMARK
+      Phones: +45 35321400 direct: +45 35321420 fax: +45 35321401
+	    World Wide Web  <URL: http://www.diku.dk/~kris/>
+
+-----------------------------------------------------------------------
+
+
+Date: Thu, 21 Sep 1995 23:45:47 -0300 (ADT)
+Subject: braided monoidal categories 
+
+Date: Thu, 21 Sep 1995 12:47:24 -0700
+From: john baez <baez@math.ucr.edu>
+
+I am posting the following for James Dolan, jdolan@math.ucr.edu:
+
+is there any well-known way to "turn a braided monoidal category
+into a simplicial set"?
+
+in particular, have you ever heard of anything along the following
+lines:
+
+given a braided monoidal category x, get a simplicial set x# as
+follows:
+
+  there's only one 0-simplex.
+  there's only one 1-simplex.
+  the 2-simplexes are the objects of x.
+  the 3-simplexes with 2-faces (in order) a,b,c,d are morphisms
+
+                              a@c -> d@b.
+
+  the 4-simplexes with 3-faces (in order)
+
+                                  k
+                              a@d -> g@b
+
+                                  l
+                              a@e -> h@c
+
+                                  m
+                              b@f -> i@c
+
+                                  n
+                              d@f -> j@e
+
+                                  o
+                              g@i -> j@h
+
+  are commutative diagrams
+
+
+                  k@f            g@m            o@c
+                   ->    g@b@f    ->    g@i@c    ->
+
+          a@d@f                                        j@h@c
+
+                   ->    a@j@e    ->    j@a@e    ->    
+                  a@n            *@e            j@l
+
+
+  where "*" is the braiding.
+  the simplexes of dimension 5 and higher are "co-skeletal".
+
+  the degeneracy maps are, well, i didn't try to work out what they
+  should be yet; maybe it's obvious what all of them should be or
+  maybe it isn't, but at worst you could just have x# be a "simplicial
+  set without degeneracy".
+
+
+
+
+there's obviously a relationship between the form of the data
+constituting a 3- or 4-simplex here and the yang-baxter equation (at
+least it's obvious if you can decipher my notation), but i'm not quite
+sure if the relationship is such that what i'm describing is just a
+completely obvious re-statement of the usual relationship between
+simplicial geometry and the yang-baxter equation.
+
+i'd also like to know of a nice description of some extra structure on
+the simplicial set x# that would amount to precisely the ability to
+reconstruct the braided monoidal category x from it.  (that's not
+quite a perfectly well-defined problem the way i just stated it,
+though.)
+
+of course a description of the general relationship between
+simplicial sets and some sort of "tri-categories" more general than
+braided monoidal categories would be just as good.
+
+
+
+Date: Fri, 22 Sep 1995 15:21:56 -0300 (ADT)
+Subject: Re: braided monoidal categories 
+
+Date: Fri, 22 Sep 1995 22:16:09 +1000 (EST)
+From: Ross Street <street@macadam.mpce.mq.edu.au>
+
+This is a response to the Dolan/Baez question
+under hard circumstances. I am at Oberwolfach
+and the delay on the computer via Macquarie University
+is extreme.
+
+In fact, in my talks here at the Descent Theory conference I have
+described how to construct a descent n-category
+of a cosimplicial n-category. On the way I defined the nerve of any
+"file". A 1-file is a category, a 2-file is 2-category,
+a 3-file is a Gray-category in the sense of
+Gordon-Power-Street.
+A 1-object, 1-arrow 3-file is a 
+braided strict monoidal category. It is also
+possible to define the nerve of a tricategory;
+a 1 object, 1 arrow tricategory is a general
+braided monoidal category.
+Actually, I like to distinguish the
+braided monoidal category V from the
+tricategory which I think of as the 
+double suspension of V.
+
+The nerve of the double suspension gives the 2-fold
+delooping of the nerve of V as a 
+mere category.
+
+I have written a bunch of notes for this
+conference where this is all spelt out
+pretty well.
+There is also a hint in the published paper
+
+JW Duskin
+The Azumaya complex of a commutative ring
+SLNM 1348 (1988) 107-117
+
+See page 116 where there is an explanation of a 
+suggestion from me.
+
+The point about interpreting the 4-simplex in
+a tricategory (or Gray-category)
+is that the pentagonal condition
+becomes a hexagon since there
+is a middle-4-interchange needed in the middle
+of the short path around the hexagon. Since Gray-categories don't admit a unique
+horizontal composition of 2-cell, an extra edge is introduced pentagon.
+
+
+Bye for now.
+Ross
+
+
+Date: Sat, 23 Sep 1995 10:55:39 -0300 (ADT)
+Subject: pseudonatural transformations 
+
+Date: Fri, 22 Sep 95 16:57:49 BST
+From: john baez <baez@math.ucr.edu>
+
+Is there a good reference somewhere for the definition of
+a "pseudonatural transformation" between strict 2-functors between
+2-categories, and of a "modification" between such pseudonatural
+transformations?  In Springer Lecture Notes 420, Kelly and Street
+define lax natural transformations between strict 2-functors, 
+and (apparently following Benabou) modifications between strict natural
+transformations.  The definitions I want are hopefully straightforward
+modifications of these, but I don't actually know if anyone has given
+them anywhere.  Perhaps it's up to me?  
+
+John Baez
+
+
+
+
+Date: Mon, 25 Sep 1995 15:43:15 -0300 (ADT)
+Subject: Re: braided monoidal categories 
+
+Date: Sat, 23 Sep 95 17:43:48 CDT
+From: David Yetter <dyetter@math.ksu.edu>
+
+Regarding the construction of a simplicial set from a bmc:
+
+	This is a special case of constructing the nerve of a tri-category.
+
+	A monoidal category is a bicategory with one object.
+	A monoid in monoidal categories is a braided monoidal category.
+	A braided monoidal category is a tri-category with one object
+and one map.
+
+	(Citations anyone? or are these all folk theorems?)
+
+David Yetter
+
+
+Date: Wed, 27 Sep 1995 07:24:06 -0300 (ADT)
+Subject: RE: pseudonatural transformations 
+
+Date: Wed, 27 Sep 1995 09:35:08 +0100
+From: Marco Grandis <grandis@dima.unige.it>
+
+As John Baez points out, a "pseudonatural transformation between strict
+2-functors between 2-categories" is just the obvious particular case of a
+lax natural transformation; the paper by Kelly-Street he refers too, in
+SLNM 420, provides a general, coherent terminology for relaxed
+2-categorical notions, as well as references to their earlier appearences.
+I think it already provides the reference he is looking for.
+
+The following paper might contain things connected with his interests. A
+definition of the precise cases he is interested in, pseudonatural
+transformations and their modifications, is written out in S 0.6
+
+R. Betti - M. Grandis,
+Complete theories in 2-categories,
+Cahiers Top. Geom. Diff. Cat. 29 (1988), 9-57.
+
+Marco Grandis.
+
+
+
+Date: Wed, 27 Sep 1995 14:37:57 -0300 (ADT)
+Subject: pseudonatural transformations 
+
+Date: Wed, 27 Sep 1995 11:58:13 +0100
+From: Prof R. Brown <mas010@bangor.ac.uk>
+
+
+
+In the groupoid case a theory of higher homotopies is written out in terms
+of the monoidal 
+closed structures on the categories of \omega-groupoids (= 
+``cubical'' \omega-groupoids with connections, in some other terminology) 
+and the equivalent category of crossed complexes in the paper
+R.  BROWN and  P.J. HIGGINS, ``Tensor products and homotopies for 
+$\omega$-groupoids and crossed complexes'', {\em J. Pure Appl.
+Alg.}, 47 (1987) 1-33. 
+
+In these categories, we easily deal with ``lax equivalences'' as 
+``homotopies'', i.e. maps C \otimes I \to D, where I is the usual unit 
+interval groupoid. Since these categories are equivalent to that of
+``globular'' infinity- (omega?)-groupoids, (Brown and Higgins, CTGDC, 1981) 
+one gets a corresponding theory there, but without such explicit formulae. 
+So I suppose it is not quite so clear this theory extends the 
+lax 2-groupoid theory, but it seems highly likely. 
+
+There are quite a few recent applications of these methods, for example to 
+coherent and to equivariant homotopy theory. See for example 
+
+R. Brown,  M. Golasinski, T.Porter and A.P.Tonks), ``On function
+spaces of equivariant maps and the equivariant homotopy theory
+of crossed complexes''. 
+
+A.P. Tonks, ``Theory and applications of crossed complexes'', 
+Bangor PhD Thesis, 1993. 
+
+I expect that recent work of Crans, Steiner, Street et al (not all 
+together) gives a category version of 
+these groupoid formulations for the omega-category case, but  
+for the cubical version (preferably with connections?) it all seems clear,
+since 
+one uses cubes to define tensor. 
+
+Ronnie Brown
+
+Prof R. Brown                                   
+School of Mathematics                            
+Dean St                                           
+University of Wales                          
+Bangor                                             
+Gwynedd LL57 1UT                             
+UK
+Tel: (direct)  +44 1248 382474  
+  (office) +44 1248 382475
+  Fax: +44 1248 355881
+  email: mas010@bangor.ac.uk
+ wwweb for maths: http: //www.bangor.ac.uk/ma
+
+
+
+Date: Wed, 27 Sep 1995 16:50:40 -0300 (ADT)
+Subject: Re: octoberfest 
+
+Date: Wed, 27 Sep 1995 15:23:57 -0400
+From: Thomas F. Fox <fox@triples.math.mcgill.ca>
+
+C --- R
+ |   /  |  CENTRE de RECHERCHE en THEORIE des CATEGORIES
+ | /    |  CATEGORY THEORY RESEARCH CENTER
+T --- C
+
+
+        CATEGORY THEORY OCTOBERFEST: SECOND ANNOUNCEMENT
+                  McGill University, Montreal
+              Saturday-Sunday, October 14-15, 1995
+
+
+Dear Colleague,
+
+Once again this October the Category Theory Research Center will sponsor 
+a weekend meeting at McGill University.  This annual event brings
+together mathematicians interested in the categorical aspects of logic,
+computer science, combinatorics, universal algebra, homological algebra,
+topology, analysis, and theoretical physics. 
+
+We will meet in the basement of Burnside Hall, 805 Sherbrooke West, 
+at 8:30 on Saturday for cofee.  The first talk will be at 9:00.  If you wish 
+to speak, please contact Mike Barr at barr@triples.math.mcgill.ca as soon as
+possible.  The final schedule of talks be drawn up the morning of Oct 14.  
+There will be a dinner party Saturday evening.
+
+The registration fee of $40 for faculty, $20 for students, may be paid 
+Saturday morning.  However, we must have a firm list of participants and
+their dinner guests by October 6, so please let us know if you intend
+to join us by sending a short email to fox@triples.math.mcgill.ca.  Below
+you will find a list of those who have already indicated they will attend.
+
+If you have any further questions, please contact Tom Fox or check our
+web page at ftp://triples.math.mcgill.ca/ctrc.html.
+
+
+List of Participants (as of September 27)
+
+Dan Christensen (MIT)
+Peter Freyd (UPenn)
+John Isbell (Buffalo)
+William Keigher (Rutgers)
+Yefim Katsov (Hanover)
+Bill Lawvere (Buffalo)
+Fred Linton (Wesleyan) 
+Francisco Marmolejo (Dalhousie)
+Susan Niefiels (Union)
+Robert Pare (Dalhousie)
+Joan Wick Pelletier (York)
+Dieter Pumpln (Hagen)
+Leopoldo Roman (Mexico)
+Robert Rosebrugh (MtA)
+John Rucell (UPenn)
+Jim Stasheff (UNC)
+Don VanOsdol (UNH)
+Mike Wendt (Dalhousie)
+
+(from Montreal):
+Michael Barr
+Bill Boschuck
+Tom Fox
+Jim Lambek
+Michael Makkai
+Arturo Sangalli
+Robert Seely
+
+
+
+Date: Thu, 28 Sep 1995 11:06:17 -0300 (ADT)
+Subject: PSSL
+
+Date: Thu, 28 Sep 1995 11:24:51 
+From: ajp@dcs.ed.ac.uk
+
+
+
+Peripatetic Seminar on Sheaves and Logic
+
+59th Meeting -- Second Announcement
+
+
+The 59th meeting of the seminar will be held at the University of
+Edinburgh's Computer Science Department over the weekend of 7-8
+October 1995. The meeting is dedicated to Peter Freyd in celebration
+of his 60th birthday. Peter of course will attend. The seminar
+welcomes talks using or addressing category theory or logic, either
+explicitly or implicitly, in the study of any aspect of mathematics or
+science.
+
+Proceedings will begin on Saturday at 9:30 am in Room 2511, the James
+Clerk Maxwell Building, the King's Buildings (the science campus of
+Edinburgh University), when we will finalise the timetable and start
+talks. A light lunch will be provided each day in the adjoining room,
+as well as coffee and biscuits.
+
+We plan to publish a proceedings of the meeting as a special issue of
+the Journal of Pure and Applied Algebra, dedicated to Peter.
+Obviously, it is impractical for many scientists from outside western
+Europe to attend the meeting, so we will allow submissions to the
+proceedings by people who cannot attend but would like to participate.
+
+Here is a current list of speakers and titles:
+
+Philip Scott    Linear Lauchli Semantics
+Mamuka Jibladze A Presentation of the Initial Lift-Algebra
+Peter Johnstone Cartesian Functors Between Toposes
+
+Mike Fourman    Classifying Cardinalities
+Barry Jay       Data Categories
+John Stell      Order-Sorted Theories
+
+Edmund Robinson Fibrations and Premonoidal Categories
+Jaap van Oosten The Modified Realizability Topos
+Chris Townsend  Local Priestly Duality
+Jim Otto        Sketches, Deductions and Resolutions
+
+There is no registration fee.
+
+Those who have requested accommodation should already have received
+details by electronic mail or fax.  If you would like to help in
+booking accommodation, please contact Tracy, with the form below.
+
+
+As part of the social activities there will be a welcome gathering on
+Friday the 6th (from 8:00 pm) at 
+
+   Maxie's Bistro & Wine Bar
+   32b West Nicolson Street.
+
+And on Saturday the 7th there will be a dinner to celebrate Peter 
+Freyd's 60th birthday at
+
+   Marrakech Restaurant
+   30 London Street
+
+The people who wish to attend the dinner should contact Marcelo Fiore 
+(mf@dcs.ed.ac.uk) as soon as possible. 
+
+
+Marcelo Fiore
+Mike Fourman
+John Power
+Alex Simpson
+
+................................................................................
+
+Please return to Tracy Combe, Dept of Computer Science, University of
+Edinburgh, The King's Buildings, Edinburgh EH9 3JZ, tlc@dcs.ed.ac.uk.
+
+I intend to come to the 59th meeting of the PSSL
+
+* I intend to give a talk entitled .....................................
+
+* Please reserve accommodation for Friday/Saturday/Sunday night(s)
+
+Name .......................................  Address
+..........................................................
+............................................................................
+...................................................
+Email  ...................................... Tel No
+..............................................................
+
+*Delete if inapplicable
+
+
+Date: Sat, 30 Sep 1995 14:25:24 -0300 (ADT)
+Subject: Braided monoidal 2-categories 
+
+Date: Fri, 29 Sep 1995 16:27:23 -0700
+From: john baez <baez@math.ucr.edu>
+
+Martin Neuchl and I have written a paper entitled "Higher-dimensional
+algebra I: braided monoidal 2-categories".  In it, we begin with
+a brief sketch of what is known and conjectured concerning braided
+monoidal 2-categories and their relevance to 4d topological quantum
+field theories and 2-tangles.  Then we give concise definitions of
+semistrict monoidal and braided monoidal 2-categories, and show how
+these may be unpacked to give definitions similar to, but not quite
+the same as, those given by Kapranov and Voevodsky.  Finally, we 
+describe how to construct a semistrict braided monoidal 2-category
+as the "center" of a semistrict monoidal 2-category, in a manner
+analogous to the construction of a braided monoidal category as
+the center (or "quantum double") of a monoidal category.  As a corollary
+this yields a strictification theorem for braided monoidal 2-categories.
+
+This paper is available by anonymous ftp to math.ucr.edu.  It is
+the file bm2cat in the directory baez.  It is in uuencoded, compressed
+form, because it is 51 pages with lots of pictures.  To print it,
+first save the file as "bm2cat" and do "uudecode bm2cat".  This
+should produce a file "bm2cat.dvi.Z".  Then do "uncompress bm2cat.dvi.Z".
+This should produce a file "bm2cat.dvi," which you can print out
+in the way you usually print dvi files.  
+
+John Baez
+
+
+

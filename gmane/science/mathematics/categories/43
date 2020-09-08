@@ -1,0 +1,121 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "Kantor dust"
+Date: Wed, 04 Feb 2009 12:24:41 -0800
+Lines: 88
+Approved: news@gmane.org
+Message-ID: <E1LV44l-0006Jv-C9@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1233842172 12714 80.91.229.12 (5 Feb 2009 13:56:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 5 Feb 2009 13:56:12 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Thu Feb 05 14:57:24 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from [138.73.1.1] (helo=mailserv.mta.ca)
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LV4jI-0001pt-S5
+	for gsmc-categories@m.gmane.org; Thu, 05 Feb 2009 14:57:21 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LV44l-0006Jv-C9
+	for categories-list@mta.ca; Thu, 05 Feb 2009 09:15:27 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:43
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/43>
+
+
+
+Prof. Peter Johnstone wrote:
+> On Mon, 2 Feb 2009, Vaughan Pratt wrote:
+>
+>> How about the converse: does N entail K?  In any topos with NNO N the
+>> underlying object of the final coalgebra of FX = X+X is presumably 2^N.
+>>  Does the Elephant prove that 2^N can be made a final coalgebra of X+X?
+>>
+> It's not in the Elephant; but it's an easy exercise in primitive
+> recursion, given a coalgebra structure X \to X + X, to define the
+> transpose N x X \to 2 of the unique coalgebra morphism X \to 2^N.
+
+Ah, good, thanks.  In that case it should be almost as easy, given a
+suitably "easy" coalgebra structure X --> N x X, to define the transpose
+N x X --> N of the unique coalgebra morphism X --> N^N.
+
+> How do you (constructively) give N^N the order type of the nonnegative
+> reals?
+
+The easiest one is forward lexicographic order (s < t when s(i) < t(i)
+at the least i where distinct sequences s and t differ), which has the
+order type of [0,oo), equivalently [0,1).
+
+One way to see this is to replace the 0's in the usual binary expansion
+of x \in [0,1) by commas and read the resulting comma-separated blocks
+of 1's as tally notation.
+
+Alternatively, any monotone bijection f: [0,oo) --> [0,1), such as
+x/(x+1) giving one kind of continued fraction, or 2*atan(x)/pi for
+"circular continued fractions", induces the monotone bijection
+R: N^N --> [0,oo) defined coinductively as
+
+   R(s) = s(0) + f(R(s o succ)).
+
+These are among the coalgebraic presentations of the reals Dusko
+Pavlovic and I spoke about in Amsterdam on 3/20/99 at CMCS, see ENTCS
+19, 133-147 (1999), journal version TCS 280(1-2):105-122 (2002).
+
+> I know how to give it the order type of the irrationals, but
+> that's still zero-dimensional.
+
+Reverse lexicographic order gives the irrationals, and is the one
+usually encountered with the continued fractions used by "spigot
+algorithm" programmers such as Bill Gosper, who don't seem to mind that
+the space they're working in is totally disconnected.  This results from
+not bothering to correct for the antimonotonicity of 1/(x+1).  Pedantic
+spigot programmers who prefer working in a connected space can easily
+substitute its monotonic complement, 1-1/(x+1) = x/(x+1), but
+(digressing from mathematical reality for a moment) to what practical
+advantage?  Presumably Brouwer would take Gosper's side here, it's not
+as if the real line is going to crumble into dust when it becomes
+totally disconnected by omitting a countable subset, it's still held
+together by its metric.  Nature abhors topology.  A demonstrably
+nondiscrete Hausdorff space in either nature or computer engineering
+would be a great discovery worthy of the Nobel prize in physics or the
+Turing award respectively.
+
+Back to mathematical reality.
+
+> However, Freyd's presentation of the
+> real unit interval as a final coalgebra is done constructively (for any
+> topos with NNO) in the Elephant, D4.7.17.
+
+Freyd's post of 12/22/99 to this list introducing his presentation,
+
+   http://north.ecc.edu/alsani/ct99-00(8-12)/msg00039.html
+
+gives the general provenance for the coalgebraic approach to the reals
+as our CMCS paper.  Our respective approaches to connecting up the bits
+of our coalgebras to form a continuum differ mainly in that Peter
+explicitly glues the abutting ends of 2xX ~ X+X together while we
+exploit the open-ended nature of N (least but no greatest element, as
+the discretization of a half-open interval) for a glue-less connection
+at the expense of the additional induction needed when replacing 2 by N.
+  The choice of poisons is therefore manual glue vs. double induction.
+
+In light of your remark at the start of D4.7 that "there are different
+constructions of the reals which are classically equivalent but may
+yield different results in a non-Boolean topos," is there a topos in
+which the order type of the Freyd coalgebra is not that of the (forward)
+lexicographic ordering of N^N (modulo endpoints)?  Are they the same in
+Grph, for example?
+
+Vaughan Pratt
+
+
+

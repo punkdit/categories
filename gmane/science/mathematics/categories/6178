@@ -1,0 +1,81 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: why it matters that fibrations are "evil"
+Date: Thu, 16 Sep 2010 10:50:15 +0200
+Lines: 42
+Approved: news@gmane.org
+Message-ID: <E1OwQGk-0002ey-Sw@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca>
+Reply-To: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1284689065 17094 80.91.229.12 (17 Sep 2010 02:04:25 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 17 Sep 2010 02:04:25 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 17 04:04:24 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQJL-0003Vi-NF
+	for gsmc-categories@m.gmane.org; Fri, 17 Sep 2010 04:04:24 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:60541)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQGr-0002cL-BN; Thu, 16 Sep 2010 23:01:49 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQGk-0002ey-Sw
+	for categories-list@mlist.mta.ca; Thu, 16 Sep 2010 23:01:43 -0300
+Content-Disposition: inline
+In-Reply-To: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6178
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6178>
+
+Let BB be a (base) topos. Then split fibrations over BB correspond to
+categories internal to Psh(BB). (Well, in Psh(BB) = Set^{BB^op} one has to
+choose Set big enough!). Thus in Psh(B) one can speak about split fibrations
+over BB as categories internal to Psh(BB).
+To which extent can this be extended to arbitrary fibrations P : XX -> BB
+typically not split. In a recent paper by Mike Shulman this has been
+exercised for the fundamental fibration P_BB : BB^2 -> BB. (Well, he was even
+exploiting that P_BB is a stack w.r.t. the regular topology on BB). But it
+works for every fibration P. One can speak about P in a first order
+dependently typed language L(P) without equality of objects. Generalized
+elements of sort "object" at stage I are objects of the fibre P(I) and
+similarly for morphisms. Now this language can be given a Kripke-Joyal
+interpretation in BB. If P is a JJ-stack then one thinks of BB as endowed with
+the topology JJ and incorporates this into the Kripke-Joyal interpretation.
+The key trick is that implicitly one quantifies over all possible reindexings.
+First I was quite enthusiastic about this because I thought that it augments
+the usual fibrational foundations of category theory over an arbitrary base
+topos with a linguistic framework entending that of the internal language
+of the base (or rather (pre)sheaves over it).
+
+But when trying to test the viability of this approach I came across the
+following problem. It is not enough to quantify over objects but one also
+has to quantify over families of objects indexed objects of BB.
+This leads one to consider also the family fibration Fam(P) over BB together
+with the cartesian functor FFam(P) from Fam(P) to P_BB. One can now easily
+cook up a language speaking about P, Fam(P) and the cartesian functor FFam(P).
+The first thing one wants to show is that the proposition
+"Fam(P) is a fibration" holds under the Kripke-Joyal interpretation. But
+when writing this down one sees that one cannot escape equality of objects
+which has been dropped to make the whole thing possible.
+
+Thus it might be easier to replace P by an equivalent split fibration Sp(P)
+and reason about this in Psh(BB). Nothing seems to be lost when one considers
+everything up to isomorphism. The question rather is whether this excessive
+prevention of "evil" is appropriate. I have some doubts since it prevents
+us from speaking about fibrations in a natural way.
+
+Thomas
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

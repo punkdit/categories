@@ -1,0 +1,267 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction: definable equationally?
+Date: Sat, 28 Oct 2000 02:23:02 -0700
+Lines: 235
+Approved: news@gmane.org
+Message-ID: <200010280923.CAA10190@coraki.Stanford.EDU>
+References: <87itqexbja.fsf@phiwumbda.dyndns.org>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018007 32337 80.91.229.2 (29 Apr 2009 15:13:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:27 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sat Oct 28 17:39:07 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9SK4p703903
+	for categories-list; Sat, 28 Oct 2000 17:04:51 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: Message from jesse@andrew.cmu.edu (Jesse F. Hughes) 
+   of "27 Oct 2000 16:40:57 EDT." <87itqexbja.fsf@phiwumbda.dyndns.org> 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 27
+Status: O
+Content-Length: 9786
+Original-Lines: 234
+Xref: news.gmane.org gmane.science.mathematics.categories:1669
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1669>
+
+
+1.  Is there a variety embedding coinduction?
+
+Jesse Hughes distinguishes induction from recursion in terms of natural
+numbers.  For him induction is Peano's mathematical induction, while
+recursion is the uniqueness of the map from the (unique up to a unique
+isomorphism) initial algebra to an arbitrary algebra.
+
+To me induction is on the one hand a slightly more general notion, yet on
+the other sufficiently tractable that it can be axiomatized equationally
+when suitably expressed, as I'll now describe.  In particular there
+exists a variety embedding induction, meaning one in which an induction
+principle holds.  Whether the additional generality makes induction
+equal to recursion is another story.
+
+The context in which all this arose, namely answers to Al Vilcius'
+question about coinduction, naturally prompts the question, is there a
+variety embedding coinduction, to which I'll return at the end.
+
+2.  Nature of Induction
+
+Suppose, somewhere out there in the universe, a world exists where
+kicking a nonworking TV set always leaves it in its nonworking state.
+Then in that world (certainly not ours), it is surely the case that
+repeated kicking can do no better.
+
+The general principle here is that if performing a certain action on
+a system cannot under any circumstance destroy a certain property of
+that system, then neither can _repeatedly_ performing that action on
+that system.
+
+I submit that this is the essence of induction, of which mathematical
+induction is just an instance.
+
+This principle may be expressed more logically as
+
+        PQ  |- P
+        -------            (IND)
+        PQ* |- P
+
+The premise is that Q preserves P.  That is, if first P and then
+afterwards Q, it follows that P.
+
+The conclusion is that Q* preserves P.  That is, if first P and then
+afterwards Q repeatedly, it follows that P.  Here we understand Q*
+as the reflexive transitive closure of Q, in the spirit of Kleene's
+regular expressions, which we take to denote the performance of Q zero
+or more times.
+
+By itself (IND) serves only to bound Q* from above, which would allow
+us to satisfy (IND) with Q* = 0 for all Q.  We may bound Q* from below
+by adding that Q* is a closure of Q, namely Q <= Q*, and is transitive
+--- Q*Q* <= Q* --- and reflexive --- 1 <= Q*.  These additional
+conditions make Q* the least reflexive transitive element greater or
+equal to Q (proved below), thereby uniquely determining it.
+
+3.  Equational Expression of Induction
+
+The earliest description to my knowledge of a finitely based variety
+embedding an induction principle is Tarski and Ng's RAT [1] (1977).
+(The second is DALG, dynamic algebras, which I described two years later
+[2] (1979), independently of [1], which I did not learn about until 1989.)
+The following, based on [3] (1990), generalizes the Boolean setting for
+RAT to residuated semirings.  Others who have worked on finitely based
+varieties embedding induction include Kozen, Bloom, and Esik, to name
+just a few.
+
+Take as the ambient variety that of semirings with unit.  The signature
+is 2-2-0-0, notated (X, ., +, 0, 1).  The equations are:
+
+1.  (X,+,0) is a semilattice with unit: + is associative (1), commutative
+(2), and idempotent (3), with identity 0 (4).
+
+2.  (X,.,1) is a monoid:  . is associative (5), with identity 1 (6,7).
+
+3.  Distributivity:
+        x.(y+z) = x.y + x.y              (8)
+        (x+y).z = x.z + y.z              (9)
+
+(Distributivity could be weakened to monotonicity for our purposes,
+but since (RR) and (LR) below force it anyway we may as well put it in
+here to justify calling this a semiring.)
+
+We make the following abbreviations.
+
+        xy for x.y
+        x <= y for x+y = y (inequations are expressible equationally)
+        x |- y for x <= y (i.e. for x+y = y), to look more logical
+
+The induction principle IND may then be understood as being about such
+a semiring expanded with a unary operation *.
+
+Thus far the signature has constants 0 and 1, binary operations + and
+., and a unary operation *, amounting to Kleene's language of regular
+expressions.  The addition of two further binary operations, suitably
+axiomatized equationally, permits a purely equational expression of
+the foregoing.
+
+The desired language expansion adds right and left residuation, x\y and
+x/y (of which just the first suffices for our immediate purposes).
+
+              PQ <= R iff Q <= P\R (right residuation)     (RR)
+                      iff P <= R/Q (left residuation)      (LR)
+
+These axioms, recognizable in this forum of course as making P\ and
+/P the polarities of a Galois connection or posetal adjunction, serve
+to define P\Q and Q/P uniquely in terms of the semiring operations.
+In particular they force P\Q (resp. Q/P) to be the greatest, i.e. weakest,
+element satisfying P(P\Q) <= Q (resp. (Q/P)P <= Q).
+
+If we interpret PQ logically as a noncommutative conjunction P _then_ Q,
+then P\Q, or P -> Q, may be understood logically as "if previously P, then R".
+Similarly Q/P, or Q <- P, becomes "Q provided eventually P".  One way of
+looking at this is that we are furnishing the signature with internal
+conditionals in order to express the external conditionals in (IND),
+(RR), and (LR) purely equationally.
+
+(RR) and (LR) serve not merely to axiomatize residuation but to define
+it, in the sense that for any given semiring there exists at most one
+interpretation of right residuation satisfying (RR).  Hence (RR) serves
+(a) to pick out those semirings having exactly one such interpretation,
+and (b) to enforce that interpretation.  Similarly for (LR).
+
+The nonequational definition of residuation given by (RR) and (LR)
+has the following equipollent equational expression (exercise):
+
+        P\(Q+R) = P\Q + P\R               (10)
+        P(P\Q) <= Q <= P\(PQ)             (11)
+        (P+Q)/R = P/R + Q/R               (12)
+        (Q/P)P <= Q <= (QP)/P             (13)
+
+(Actually (10) and (12) are overkill, it suffices to state that P\Q
+and Q/P are monotone in Q, viz. P\Q <= P\(Q+R) and similarly for Q/P.
+Also left residuation along with (LR), (12), and (13) are redundant for
+the purposes of the present story.)
+
+Three more equations complete the promised variety.
+
+        1 + P*P* + P <= P*                (14)
+        P* <= (P+Q)*                      (15)
+        (P\P)* <= P\P                     (16) (induction, equationally) [1]
+
+Equation (14) says that P* is a reflexive transitive element greater or
+equal to P.
+
+Equation (15) merely asserts the monotonicity of *.
+
+Equation (16) is the equational expression of induction.  It is
+equivalent to
+
+        P(P\P)* <= P                      (16')
+
+That is, the repeated action of P\P preserves P.
+
+The interest in P\P is first of all that it preserves P, i.e.
+
+        P(P\P) <= P
+
+as an immediate consequence (by (RR)) of P\P <= P\P; and second that
+it is the weakest (greatest) preserver of P, since if PQ <= P then
+Q <= P\P (by (RR)).
+
+This makes (16') the instance of induction in which the preserver of P
+happens to be P\P.
+
+But since P\P is the _weakest_ preserver of P, we can now obtain the
+general (nonequational) induction principle, namely from PQ <= P infer
+PQ* <= P, from this specific equationally expressible instance of it, viz.
+
+        PQ  <= P
+        Q   <= P\P          by (RR)
+        Q*  <= (P\P)*       by (15) (monotonicity of *)
+        PQ* <= P(P\P)*      by (9) (additivity of P. implies its monotonicity)
+            <= P            by (16')
+
+That is, the induction principle (IND) holds in the variety axiomatized by
+(1)-(16).
+
+More than this however, the unary operation * is uniquely determined
+by (14)-(16) by virtue of P* being the least (hence unique) reflexive
+transitive element of the semiring greater or equal to P.  To see this,
+consider any reflexive transitive X.  By transitivity XX <= X so X <=
+X\X, whence X* <= (X\X)* <= X\X.  Hence XX* <= X.  Concatenating X* on the
+right of each side of 1 <= X yields X* <= XX* <= X.  Now suppose P <= X.
+Then P* <= X* <= X, making P* the least reflexive transitive element >= P.
+
+The residuals are of course uniquely determined by (10)-(13).  So any
+semiring can be expanded with residuation and star so as to satisfy
+(10)-(16) in at most one way.  That is, those seven equations not only
+single out those semirings admitting such an expansion but serve to fully
+define pre- and post-implication as well as reflexive transitive closure,
+entirely in terms of the given semiring.
+
+Given the well-known difficulties of defining the natural numbers using
+Peano's mathematical induction, or by any other first order means, it is
+a pleasant change to see an ostensibly intractable operation such as P*
+pinned down exactly in this way, and even more pleasant that it is all
+done purely equationally.
+
+4.  Back to the question
+
+We may now reword the original question in the light of the foregoing.
+
+To what variety can one similarly associate suitable operations fully
+defined equationally so as to include an equationally expressed principal
+of coinduction?
+
+--
+Vaughan Pratt
+
+[1]
+        @Article(
+NT77,   Author="Ng, K.C. and Tarski, A.",
+        Title="Relation algebras with transitive closure,
+                {A}bstract 742-02-09",
+        Journal="Notices Amer. Math. Soc.", Volume=24, Pages="A29-A30",
+        Year=1977)
+
+[2]
+	@InProceedings(
+Pr79c,	Author="Pratt, V.R.",
+	Title="Models of program logics",
+	BookTitle="20th Symposium on foundations of Computer Science",
+	Address="San Juan", Month=Oct, Year=1979)
+
+[3]
+        @InProceedings(
+Pr90b,  Author="Pratt, V.R.",
+        Title="Action Logic and Pure Induction",
+        BookTitle="Logics in AI: European Workshop JELIA '90", Series=LNCS,
+        Volume=478,
+        Editor="J. van Eijck", Publisher="Springer-Verlag", Pages="97-120",
+        Address="Amsterdam, NL", Month=Sep, Year=1990)
+
+

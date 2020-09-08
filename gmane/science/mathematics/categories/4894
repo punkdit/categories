@@ -1,0 +1,149 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <Dusko.Pavlovic@comlab.ox.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  patenting colimits?
+Date: Tue, 26 May 2009 05:46:09 +0100 (BST)
+Lines: 118
+Approved: news@gmane.org
+Message-ID: <E1M97mX-00044A-He@mailserv.mta.ca>
+Reply-To: Dusko Pavlovic <Dusko.Pavlovic@comlab.ox.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1243389531 23459 80.91.229.12 (27 May 2009 01:58:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 27 May 2009 01:58:51 +0000 (UTC)
+To: Toby Bartels <toby+categories@ugcs.caltech.edu>, categories@mta.ca
+Original-X-From: categories@mta.ca Wed May 27 03:58:48 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1M98Po-0004kf-2s
+	for gsmc-categories@m.gmane.org; Wed, 27 May 2009 03:58:48 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1M97mX-00044A-He
+	for categories-list@mta.ca; Tue, 26 May 2009 22:18:13 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4894
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4894>
+
+hi.
+
+On Mon, 25 May 2009, Toby Bartels wrote:
+> Ronnie Brown wrote:
+[snip]
+>> it seems like patenting mathematics, and to be deplored
+>> intensely.
+>> [...]
+> I trust that it was published in one of the cited journal articles.
+>
+> As (at least) one of the listed inventors is a reader of the list,
+> we might hear the other side; I'd be interested.
+
+yes, i stand guilty as accused: we patented colimits. but just the
+*hereditary* ones. so if you compute 1+1, you don't owe me anything. but
+if you compute 1+(1+0), then expect a letter from my lawyers, the same
+ones representing MPAA, RIAA and elsevier.
+
+but those 1s that you are computing with must be software specifications,
+ie in the form "spec 1 endspec", or something like that...
+
+in fact i prolly shouldn't be joking about this. patent laws are a deadly
+serious symptom.
+
+speaking of diseases, do you know that about 30% of human genome is
+patented? most of the potential cancer and parkinson disease genes are
+owned by a couple of companies. that means that if i want to test whether
+i have some cancer-related gene, i have to go to a lab that has the
+monopoly on testing that gene (since they rarely license to others). they
+will charge me a monopoly price, and if i want to test 5 genes, i may have
+to write to 5 different labs. if i want a second opinion about the test,
+whoever gives it to me may be sued. and there is no second test.
+
+the motivation for this statute is that it provides incentives for
+research.
+
+in contrast with the genes, mathematics cannot be patented, nor
+copyrighted, even according to the current crazy laws. officially and
+explicitly not. if you say in a patent application that you have this
+extremely original result, which never occurred to anyone else, and you
+would like to patent it --- they will reject it. the same with copyright:
+if you try to copyright a theorem, it will not work: anyone can cite your
+theorem without paying you.
+
+*but* if you write a book, and present pythagora's theorem in it, you will
+not only be able to copyright it, but it will actually be almost
+impossible for you to distribute your book without copyright it, and
+without selling the copyright to a publisher. so anyone who wants to use
+your version of pythagoras' theorem has to ask your publisher's
+permission.
+
+patents are crazier than copyright --- but maybe not that much crazier.
+you cannot patent mathematics, but you can patent "method and apparatus"
+for a particular application of pythagoras' theorem. (they always call it
+"method and apparatus".) you cannot patent modular exponentiation, nor the
+conjecture that inverting it (ie computing the discrete logarithms) is
+computationally unfeasible. but you can patent a method and apparatus to
+share a public key by exchanging and multiplying two modular exponents.
+the essence of your originality argument will rely upon the novel use of
+the conjecture that the discrete logarithms are hard to compute, on which
+the security of your system is based.
+
+what i just described is the *diffie-hellman* patent of public key
+cryptography. it may sound crazy to pure mathematicians, but there is very
+little doubt that the diffie-hellman invention changed the world of
+cryptography, networks, the web. our banks would work differently without
+diffie-hellman. (ironically, it turned out that some british civil
+servants working at GCHQ discovered the diffie-hellman discovery 9 years
+before diffie and hellman, see http://jya.com/nsam-160.htm but the UK
+governement classified it all, and even paid royalties for the
+diffie-hellman patent.)
+
+our colimits patent was, of course, not of comparable importance, although
+the underlying math was perhaps slightly less obvious. i'll only comment
+about it because toby asked. many people in software specification
+community (starting with goguen and burstall) thought that colimits were a
+good tool for composing sofware specifications. the objects of the
+category where you are computing the colimits are theories in some formal
+language, and the morphisms are the interpretations that map axioms to
+theorems. many people studied that approach, and a couple of tools really
+used it. but when you really start building software with such a tool, you
+find that the method hampers software reuse and evolution: a colimit
+composes your components by cooking them up into a big unreadable
+specification. so you find yourself saving the diagram of your colimit all
+the time, and trying to relate the content of the colimit spec with its
+nodes. (which ironically repeats the first lesson about the colimits: the
+colimit is not just the tip of the cocone, but the whole thing.)
+
+anyway, instead of computing the colimits of specs and then building new
+diagrams of the resulting unreadable specs to compute even more unreadable
+(and unmodifiable!) specs as colimits, we wanted to build a category where
+the objects would be diagrams of diagrams of diagrams... of specs, and the
+morphisms would be such that each diagram (of diagrams...) would be a
+colimit of itself, when externalized. that is what the requirement of a
+non-destructive colimit operation amounts to.
+
+what is patented is not that category, but the method to implement and use
+it to build and maintain software specs. we did some of implementing and
+using, and some of it was fun, but definitely not the shortest way to
+building the kind of software that needed to be built.
+
+i don't think that we published anything about this construction. the
+patent description was written by the lawyer (a very bright woman, i think
+with an MIT PhD, who now runs the world for google). some other things
+that we didn't publish were perhaps closer to a mathematical result. but
+the purpose of it all was to build software, not to publish mathematical
+results.
+
+we just patented it so that all those geneticists have to pay us some day,
+or give us some free genetic testing in exchange for hereditary diagrams
+;)
+
+-- dusko
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

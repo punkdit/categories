@@ -1,0 +1,117 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: dualities
+Date: Wed, 03 May 2006 09:40:43 -0700
+Lines: 92
+Approved: news@gmane.org
+Message-ID: <25729.005438234$1241019207@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019207 8086 80.91.229.2 (29 Apr 2009 15:33:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:33:27 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed May  3 17:43:28 2006 -0300
+X-Keywords: 
+X-UID: 167
+Status: O
+Content-Length: 5106
+Original-Lines: 91
+Xref: news.gmane.org gmane.science.mathematics.categories:3290
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3290>
+
+John Baez wrote:
+> [...]
+> So, can we find equally nice examples [of representable dualities] where C and D are instead
+> 2-categories?  In particular, can we find examples where C and D
+> are 2-categorical generalizations of the 1-categorical examples
+> we already know?
+>
+> In particular, he suggested taking the example where C is the
+> category of finite distributive lattices and finding an analogous
+> example where C is the 2-category of (maybe finite, in some sense?)
+> distributive categories.
+
+Enrico Vitale just sent me the answer for that one:  C = the 2-category
+of idempotent-closed categories, D = the 2-category of presheaf
+categories.  This categorifies C = Pos, D = StoneDLat by passing from 2
+to Set as the enriching autonomous category (so in that sense one could
+say we were in 3-CAT all along, though presumably only trivially so by
+virtue of only having identity modifications when V = 2, I think).
+
+Although I'd heard the phrase "Morita equivalence" many times over the
+years, it meant nothing to me until recently when Bill Lawvere was
+talking about graphs as presheaves on the monoid consisting of the three
+monotone functions on the ordinal 2 and I finally woke up to the
+connection between splitting the two idempotents and ME (the
+equivalence, not the condition).  The idempotent closure of that monoid,
+meaning the result of splitting the idempotents, is just the initial
+segment of Delta of length 2, aka the ordinals 1 and 2 and their
+monotone functions.  The impact on the models, here graphs, is that
+splitting the idempotents results in giving the self-loops that were
+playing the role of vertices their own datatype V, as coded by the
+ordinal 1.  This new category of graphs is not the old one as its
+objects now have vertices in their own right, but it is equivalent to
+the old one.  {2} and {1,2}, each made a category with respectively 3
+and 7 monotone functions, are Morita equivalent: they have equivalent
+idempotent closures, and homming into Set maps them to equivalent
+categories, the iff that makes Morita equivalence important.
+
+ME is the kernel of idempotent closure, which is a categorification,
+with Set in place of 2, of the functor Ord --> Pos (Ord the category of
+preordered sets, Pos of posets) that collapses the cliques.  The reason
+there is no representable duality between Ord and a suitable cousin of
+StoneDLat (FinOrd and FinDLat for the Stonaphobes) is that preorders are
+equivalent to posets and the Yoneda embedding taking elements of P to
+primes in 2^P, while fully faithful, is only good up to equivalence.
+(The homfunctor being transposed here is the order <= : P\op x P --> 2.)
+
+The categorification of this, meaning in this case not the passage from
+2-CAT to 3-CAT but from enrichment in 2 to enrichment in Set, still has
+to deal with equivalence in the same way (though here it goes with the
+territory and so is less noticeable than back down at Ord vs. Pos where
+we tend to think isomorphism rather than equivalence).  But Hom: C\op x
+C --> Set is not itself an equivalence but only a "retract that retracts
+retracts", the essence of Morita equivalence (a dual of Freyd's "trivial
+for a trivial reason"?).  In order to take the "log to the base Set" we
+can't really "retract all the retracts" because we may need to keep some
+of them around but then which ones (like picking a dense subset of a
+continuum: which subset?).  We can however put them all in, which is to
+say, split all the idempotents, so we do that in order to get a normal form.
+
+The rest of this duality is then the triviality that the internal hom of
+CAT is contravariant in its first argument.  Morita equivalence is the
+only thing to be worried about.
+
+Proposition 5.28 of Kelly's "Basic Concepts of Enriched Category
+Theory", namely that Cauchy completion (Kelly's name for the enriched
+counterpart of idempotent closure) permits taking logs to any autonomous
+base V, then produces a proper class of dualities, one for every
+autonomous V.  In particular we can recover Pos\op ~ StoneDLat by taking
+V = 2.  (Pos and Ord, preordered sets, while not equivalent any more
+than CAT and its subcategory of idempotent-closed categories are
+equivalent, have equivalent objects which is all we need ask of a
+duality.)  There are two "good" 3-object V's, the non-Heyting one of
+which enriches the "prossets" that Haim Gaifman and I wrote about in
+LICS'87, so these have their dual objects in the same way, by homming
+into 3, a construct I talked about incomprehensibly at the Newton
+Institute meeting on geometry in computation some years ago, not
+recognizing that it was a duality.  Metric spaces, another duality
+there.  And so on.
+
+But then every such duality has its subdualities, for example Set\op ~
+CABA as a subduality of Pos\op ~ StoneDLat, so a great many more
+dualities there.
+
+Enrico also mentioned the Gabriel-Ulmer duality for locally finitely
+presentable categories, and the Adamek-Lawvere-Rosicky duality for
+varieties.  Are these in addition to the above or can they be recovered
+from them?  Likewise for the duality Peter Johnstone mentioned?
+
+Vaughan Pratt
+
+
+

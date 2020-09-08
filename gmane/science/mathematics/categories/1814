@@ -1,0 +1,188 @@
+Path: news.gmane.org!not-for-mail
+From: S.J.Vickers@open.ac.uk
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Michael Healy's question on math and AI
+Date: Mon, 29 Jan 2001 15:21:19 -0000
+Lines: 156
+Approved: news@gmane.org
+Message-ID: <ACAB691EBFADD41196340008C7F35585C2BE83@tesla.open.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+X-Trace: ger.gmane.org 1241018121 604 80.91.229.2 (29 Apr 2009 15:15:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:21 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jan 29 18:15:10 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0TLEGU00677
+	for categories-list; Mon, 29 Jan 2001 17:14:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 45
+Status: RO
+Content-Length: 7705
+Original-Lines: 155
+Xref: news.gmane.org gmane.science.mathematics.categories:1814
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1814>
+
+Todd Wilson asks:
+> As someone who is "striving to realize the dream of a theoretical
+> computer science", I would better like to understand the point that
+> Lawvere is making here.  Am I right in assuming that, in using terms
+> such as "spurious ingredients" and "rigidification", Lawvere is
+> referring to the fact that (to use some computer science terminology)
+> set theory is too much implementation and not enough specification?
+> That the rigid epsilon-structure of set theory cannot represent
+> abstract mathematical structure faithfully, without introducing
+> unwanted details?
+
+Executive summary of a long reply
+-------------------------------------------------
+
+* Spaces - for instance topological spaces - cannot always be analysed as
+set + structure.
+* Category theory enables structure to be found amongst the
+morphisms.(generalized elements) instead of within the objects (amongst
+concrete elements in a set-theoretic analysis).
+* Variation of kind of space bears some relation to variation of logic.
+* The logical questions are important in computer science, even if topology
+and geometry at first appear not to be.
+------------------------------------------------------------------
+
+
+The discussion of Cartesian product does illustrate set theory vs.
+categories as implementation vs. specification, and, sure, there's a lot to
+be said for specifying categorically before you implement set-theoretically.
+
+However, Bill's point is much deeper than that. He is saying that set theory
+is actually inadequate as an implementation language in many contexts.
+
+I'll set out my own understanding of this, but I hope I'm not
+misrepresenting Bill if I draw on his note.
+
+I think within his note you already see two criticisms of set theory.
+
+The less deep of the two is of the "rigidity" of the epsilon-structure. Most
+mathematicians would probably agree that it doesn't make much sense to
+investigate the elements of pi (say), yet still view set theory as a
+remarkably successful encoding of mathematics into an epsilon-structure,
+successful enough to be used as foundations.
+
+The deeper criticism is that even for things that are unambiguously
+collections of some kind, so they really do have elements, the set-theoretic
+approach is inadequate. Bill refers to "cohesive and variable sets (or
+`spaces')", and I take it that an example of "cohesive" set is a topological
+space. There it is not enough to know merely what the elements are. They
+also "cohere", sit in rather subtle relationship with each other. Maps
+should respect the coherence, i.e. be continuous.
+
+One way to view this is that in order to know the coherence in a space X you
+need to know not just its "point-like" elements but also its line-like,
+plane-like or any-shape-you-choose elements - as Bill said, "Volterra
+already recognized that spaces have elements other than points". These are
+the "generalized elements", the maps from other spaces to X. Hence in the
+category of spaces the structure of X is seen not within the object but
+amongst the morphisms.
+
+Correspondingly, we get two approaches to topological spaces.
+
+1) Set theory - structure within objects. Space = set + topology. The
+topology provides criteria so that out of all the functions, mostly
+discontinuous, between the sets of points, some can be identified as
+continuous.
+
+2) Category theory - structure amongst morphisms. We are now free to
+describe the objects in point-free ways, for instance the frames of locale
+theory, the schemes of algebraic geometry, or Grothendieck toposes as
+generalized spaces, and still hope to get (via the generalized elements) a
+good spatial feel for the objects.
+
+Given a choice, why use the point-free ways at all?
+
+But in fact there's less of a choice than one might think, as the geometers
+discovered.
+
+Approach (1) does not generalize well to situations where you want to vary
+the set theory. This want arises naturally, for concrete mathematical
+reasons, when you start working with sheaves, since the class of sheaves
+over a space provides a non-standard set theory, usually non-classical, and
+one in which rigid "element of" or "subset of" are not useful. As you vary
+the set theory there are ways of transforming sets in one to sets in
+another, but it turns out that sets of points of spaces cannot be
+transformed in the same way: the space and its set of points part company.
+[See Appendix for a technical discussion.]
+
+Examples thus show that the decomposition "space = set + topology" is not
+stable under change of set theory.
+
+The inadequacies of point-set topology are well known in constructive
+mathematics, where the point-set statements of important results such as the
+Heine-Borel theorem turn out to be false while point-free versions still
+hold.
+
+Note that category theory in itself doesn't tell you what category to use
+(sheaves? locales? toposes? schemes?). But it does help you to see what you
+are looking for in a category of spaces that goes beyond space =
+set+structure.
+
+Computer science
+---------------------------
+
+That was a long preamble to say Beware! Spaces might not be sets!
+
+But why should workers on Knowledge Interchange Formats worry about this?
+Why can't they just use first-order logic, assume a classical set-theoretic
+semantics and keep well away from sheaves?
+
+One reason lies in the classical first-order logic itself. It works in a
+blandly uniform way on its formulae that ignores any difference in status as
+knowledge. For instance, maybe a knowledge database should distinguish
+between formulae that represent observed facts and those that represent
+background assumptions or scientific hypotheses. It could make a difference
+to what negation means or how negation behaves. But such nuances are not
+present in classical first-order logic.
+
+These logical questions could be a natural part of the theory of knowledge
+representation.
+
+The interesting thing is that the variability of logic can be connected to
+the possible un-set-likeness of spaces. When you replace set theory's
+elements by category theory's generalized elements, you sometimes get a
+calculus that's almost like set theory but with different logic. For
+instance, intuitionistic logic (internal logic of toposes) for sheaves,
+geometric logic for spaces. The effect is of enabling the point-free spaces
+and maps to be handled just like sets and functions - describe a space by
+its points, define a map without needing to prove continuity - but with a
+funny logic.
+
+Hence although Knowledge Interchange Formats might seem a million miles away
+from topology or algebraic geometry, subtle logical questions might create
+direct links. (My particular favourite is geometric logic, whose distinction
+between formulae and sentences actually looks quite like that between
+observed facts and background assumptions.)
+
+Steve Vickers.
+
+Appendix
+-------------
+Let f: X -> Y be a map between spaces and let f^* be the inverse image
+functor on sheaves. It is the way of transforming "sets over Y" to "sets
+over X". If p: Z -> Y is a local homeomorphism - one way of describing a
+sheaf - then its inverse image f^*(p): f^*(Z) -> X is just the pullback of p
+along f. Just from the categorical property of pullback one can say that the
+(generalized) points of f^*(Z) are the pairs (x,z), x a point of X and z a
+point of Z, such that f(x) = p(z).
+
+Now it makes good sense to say that a space over Y is just an arbitrary map
+(not necessarily a local homeomorphism) g: W -> Y and again it is natural to
+use pullback to transform it to a space g': Z' -> X over X. Any such space
+over Y has a corresponding sheaf over Y, its "set of points". However, f^*
+of the set of points is not in general the set of points of the pullback
+space.
+
+

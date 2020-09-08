@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Towards not mixing signatures in ...
+Date: Sun, 02 Mar 2014 10:49:02 +0200
+Lines: 92
+Approved: news@gmane.org
+Message-ID: <E1WKHRF-0006cZ-Vc@mlist.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1393809225 27245 80.91.229.3 (3 Mar 2014 01:13:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 3 Mar 2014 01:13:45 +0000 (UTC)
+Cc: Patrik Eklund <peklund@cs.umu.se>
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Mon Mar 03 02:13:56 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WKHS8-0008Cl-25
+	for gsmc-categories@m.gmane.org; Mon, 03 Mar 2014 02:13:56 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36384)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WKHRG-0007RZ-W5; Sun, 02 Mar 2014 21:13:03 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WKHRF-0006cZ-Vc
+	for categories-list@mlist.mta.ca; Sun, 02 Mar 2014 21:13:01 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8039
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8039>
+
+We have been working with "levels of signatures" and thereby been
+puzzled about the way type theory seems to have alternate solutions for
+Church's 'o' type which appears in his 1940 paper. There seems to a
+"consensus in intuition" about Church's 'iota' type, but indeed, the 'o'
+type has been treated differently, even by the same authors over times.
+
+Below I try to express my point and I need to choose context and
+language in order to make myself as clear as possible. I choose notation
+in Agda for this purpose.
+
+I was reading the reference manual of Agda, and the "inductive data type
+declaration". I looks to me that it mixes "levels of signatures".
+Similarly, type theory in general, including lambda-calculus,
+Martin-L??f's type theory, and Homotopy Type Theory, mixes levels of
+signatures, or simply doesn't care about that mixture. It is almost like
+making the 'o' "untyped".
+
+The declaration
+
+    data Nat : Set where
+      zero : Nat
+      suc : Nat ??? Nat
+
+defines not just the ordinary Sigma_NAT = (S, Omega) signature, where S
+= {Nat} and Omega is
+
+      zero : Nat
+      suc : Nat ??? Nat
+
+but it also says that "Nat is Set". This "Set" should then be what
+Church denoted as iota in his 1940 paper.
+
+Then it seems to me as '???' in
+
+      suc : Nat ??? Nat
+
+is not the same '???' as in
+
+      add : Nat ??? Nat ??? Nat
+
+where the latter is a lambda term on "another level" as compared to the
+former.
+
+In the latter, the '???' is the "function type constructor", which is an
+operator on the level of signatures where 'Set', i.e., Church's iota
+resides. Denoting this type constructor as '==>', I would have
+
+      ==> : Set ??? Set
+
+on the signature level residing "between" the "primitive level" and the
+"lambda level".
+
+This formalization of "levels of signatures"
+
+http://www.glioc.com/files_glioc/ModernEyesOnLambdaCalculus.pdf
+
+requires a strict definition of the category of signatures, and a formal
+construction of term monads:
+
+http://www.sciencedirect.com/science/article/pii/S0165011413000997
+
+Generally, I feel 'o' is hard because it reflects "sentence", not
+"term". A term has a type given its construction from operators using
+sorts, but a sentence "having a sort" is another story. Terms involve
+possibilities for composable substitutions, whereas sentences do not
+allow for composable "substition" because sentence functors are
+"non-monadic". Term functors are monadic.
+
+I wonder if anybody would care to comment.
+
+Best regards,
+
+Patrik
+
+-- 
+
+Prof. Patrik Eklund
+Ume?? University
+Department of Computing Science
+SE-90187 Ume??
+Sweden
+
+-------------------------
+
+mobile +46 70 586 4414
+website www8.cs.umu.se/~peklund
+Skype patrikeklund
+Virtual office: https://connect.sunet.se/patrikeklund/
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

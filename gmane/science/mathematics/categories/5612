@@ -1,0 +1,134 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Composing modifications
+Date: Fri, 5 Mar 2010 15:59:41 +0000 (GMT)
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <E1NngHU-0006fd-0t@mailserv.mta.ca>
+References: <E1NlT0U-0004p0-QA@mailserv.mta.ca>
+Reply-To: Richard Garner <rhgg2@hermes.cam.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=ISO-8859-1; FORMAT=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+X-Trace: dough.gmane.org 1267831021 14238 80.91.229.12 (5 Mar 2010 23:17:01 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 5 Mar 2010 23:17:01 +0000 (UTC)
+To: Ronnie Brown <ronnie.profbrown@btinternet.com>
+Original-X-From: categories@mta.ca Sat Mar 06 00:16:57 2010
+connect(): Connection refused
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1NnglL-0004kA-2A
+	for gsmc-categories@m.gmane.org; Sat, 06 Mar 2010 00:16:55 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NngHU-0006fd-0t
+	for categories-list@mta.ca; Fri, 05 Mar 2010 18:46:04 -0400
+In-Reply-To: <4B8F6048.7000903@btinternet.com>
+Content-ID: <Pine.LNX.4.64.1003051526171.6992@hermes-2.csi.cam.ac.uk>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5612
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5612>
+
+
+Dear Ronnie,
+
+There are a number of "cubical" notions of bicategory or=20
+higher in the literature with which I am sure you are=20
+familiar; the earliest being Dominic Verity's double=20
+bicategories (which are really a particular kind of triple=20
+category), and later the weak (or pseudo) double categories=20
+studied in a series of papers by Bob Par=E9 and Marco Grandis.=20
+However, none of these quite seem to fit the spirit of what=20
+you are asking for, and certainly do not describe the=20
+singular cubical complex of a space.
+
+One approach which is indicated in the literature is based on=20
+Michael Batanin's theory of higher operads. In particular,=20
+Tom Leinster, in the refined presentation of this theory=20
+given in his book, discusses the possibility of using it to=20
+give a notion of weak cubical omega-category, though he does=20
+not go into any details. The basic idea is straightforward.=20
+On the category of cubical sets (without diagonals or=20
+symmetries) one has the monad T for strict cubical=20
+omega-categories; and one aims to define the monad for weak=20
+cubical omega-categories as a suitable deformation T' of this=20
+monad. In the language of homotopy theory, one would like T'=20
+to be a cofibrant replacement for T; this then ensures both=20
+that T' looks sufficiently like T, and also that its algebras=20
+are homotopy-invariant in a suitable sense.
+
+To make this more formal, one defines a cubical operad to be=20
+a monad S on the category of cubical sets together with a=20
+cartesian monad morphism S =3D> T. The existence of such a=20
+monad morphism---which I think will be unique if it=20
+exists---places some strong restrictions on the shapes of the=20
+operations out of which the monad S is built: a typical such=20
+operation will take an n_1 x n_2 x ... x n_k grid of=20
+k-dimensional hypercubes, and stick them together in some way=20
+to yield a single k-dimensional hypercube. This is precisely=20
+what one wants for a notion of (weak) cubical category.
+
+To ensure that the monad S looks sufficiently like the monad=20
+T, one needs the notion of a contraction (=3D acyclic=20
+fibration). In fact, we only need to know how to say that the=20
+monad morphism S =3D> T has a contraction, and this is quite=20
+simple. Suppose we are given a n_1 x ... x n_k grid of=20
+k-dimensional hypercubes as before. Suppose we are also given=20
+operations s_1, ..., s_2k in S which indicate how to compose=20
+up the (k-1)-dimensional grids of hypercubes obtained as the=20
+faces of the original grid. Then we require that there should=20
+be given an operation of S which acts on n_1 x ... x n_k=20
+grids, and whose actions on each of the (k-1)-dimensional=20
+faces are given by s_1, ..., s_2k.
+
+There now arises a category whose objects are cubical operads=20
+S equipped with a contraction on S =3D> T, and whose morphisms=20
+are monad maps over T which commute to the contractions in=20
+the obvious sense. This category is locally presentable, and=20
+hence has an initial object; which we declare to be the monad=20
+T' for weak cubical omega categories. One may in fact show=20
+that T' is a cofibrant replacement for T in a suitable model=20
+structure on cubical operads.
+
+One may of course specialise this construction to low=20
+dimensions, and I have just sat down to work it out in the=20
+case where n=3D2. Rather surprisingly, it seems that there=20
+might not be a finite axiomatisation of the resultant=20
+structure; at least, one does not immediately leap off the=20
+page which is the usual situation. The best I have been able=20
+to do is the following (which is not exactly the result of=20
+applying the above construction but is a perfectly good=20
+surrogate).
+
+Definition. A cubical bicategory is given by sets of objects,=20
+of vertical arrows, of horizontal arrows and of squares,=20
+satisfying the obvious source and target criteria, together=20
+with operations of identity and binary composition for=20
+vertical and horizontal arrows, satisfying no laws at all;=20
+and finally, for every n x m grid of squares (where possibly=20
+n or m are zero), and every way of composing up the=20
+horizontal and vertical boundaries using the nullary and=20
+binary compositions, a composite square with those=20
+boundaries. The coherence axioms which this structure must=20
+satisfy say that any two ways of composing up a diagram of=20
+squares must give the same answer.
+
+I would be very interested to know if anyone can extract from=20
+this definition a finite collection of composition operations=20
+on squares, and a finite collection of equations between=20
+them, which together generate all the others. The key=20
+obstable seems to be problem that identity 1-cells are not=20
+strict in either direction.
+
+Richard
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

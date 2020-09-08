@@ -1,0 +1,198 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Cauchy completeness of Cauchy reals
+Date: Tue, 28 Jan 2003 12:51:27 -0800
+Lines: 163
+Approved: news@gmane.org
+Message-ID: <3E36ED4F.4070807@kestrel>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018435 2658 80.91.229.2 (29 Apr 2009 15:20:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:35 +0000 (UTC)
+To: CATEGORIES mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Tue Jan 28 19:56:07 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 28 Jan 2003 19:56:07 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18dfXn-0003N4-00
+	for categories-list@mta.ca; Tue, 28 Jan 2003 19:53:31 -0400
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.1) Gecko/20021003
+X-Accept-Language: en-us, en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 61
+Status: O
+Content-Length: 6153
+Original-Lines: 162
+Xref: news.gmane.org gmane.science.mathematics.categories:2136
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2136>
+
+
+[this is a copy of my post of monday morning, which bounced between
+bob and me a couple of times, courtesy of our mailers. -- dusko]
+
+
+thanks for the replies. sorry to clog people's mailboxes, but i'll
+permit myself one more post on cauchy.
+
+(i think this does deserve some general interest because we often say
+that categories capture real mathematical practices --- but as it
+happens, cauchy reals are not complete, and the mean value theorem
+fails, and so on. i was hoping to understand where does the usual
+intuition of continuum fail, and what categorical property do we need
+to do basic calculus. i came to think that coalgebras help with this,
+since they capture the various notions of completeness, and wondered
+why they don't capture the standard cauchy completeness argument in
+this context. hence my post that invoked the reactions.)
+
+On Sat, 25 Jan 2003 Prof. Peter Johnstone wrote:
+
+>>>> > >If so, what
+>>>> > >would "Cauchy reals" mean precisely in this general context?
+>>>> > >
+>>>
+>>>
+>>> > it means fundamental sequence, with the equivalence relation in the
+>>> > "lazy" mode, a la bishop, as described in andrej bauer's message.
+>>> >
+>>
+>>
+>> I'm sorry, but this won't do. In a topos, equality is equality; you can't
+>> treat it "lazily". So a Cauchy real has to be an equivalence class of
+>> Cauchy sequences, and there is in general no way of choosing a
+>> canonical representative for it.
+>
+>
+
+one would hope that equality in a topos is widely understood, even by
+me. treating fundamental sequences up to an equivalence relation in a
+lazy mode just means not taking their quotient, but carrying the
+explicit equivalence relation. such structures are commonly considered
+in toposes. on the other hand, many constructivists (martin-lof,
+bishop) say that this is the way to do constructivist
+mathematics. (although i am not sure whether i came to think of cauchy
+reals in this way because constructivist education left some trace, or
+because undergraduate analysis didn't.)
+
+sorry i didn't make all this clear. martin escardo's remark to which i
+responded was rather cursory, he just attributed two things, so i kept
+mine short. moreover, toposes were not mentioned, and as far as i
+remember, the validity in toposes was not discussed either by freyd,
+or by vaughan and me. we all talked about streams of digits and it
+seemed to me that we were talking about cauchy reals (the
+constructivist ones), until peter johnstone observed that freyd =
+dedekind++.
+
+On Sat, 25 Jan 2003 Alex Simpson wrote:
+
+>> The question is: does every Cauchy sequence (x_i) in R_C have a
+>> limit in R_C
+>>
+>> Here we are not starting off with a Cauchy sequence of rationals;
+>> not even a Cauchy sequence of Cauchy sequences.
+>
+>
+
+i realized that i typed "let a = (a_i) be a sequence of rationals"
+instead of "a sequence of cauchy reals" as soon as i woke up, the
+morning after i typed it, and sent a correction a couple of hours
+after the post --- but our watchful moderator for some reason didn't
+forward it to the list.
+
+in any case, i said i thought that the construction went through for
+cauchy sequences of constructivist cauchy reals, as described in
+andrej bauer's message:
+
+
+>> (2) we say that a real _is_ a fundamental sequence, where two reals
+>> are claimed "equal" if they coincide (the approach taken by Bishop).
+>
+>
+
+now it turns out that such cauchy reals don't count, that cauchy reals
+must be
+
+
+>> (1) we say that a real is an equivalence class of fundamental
+>> sequences under the relation ~,
+>
+>
+
+well, call me irresponsible, but i think that the same idea still
+applies: the irredundant coalgebraic reals give canonical
+representatives for equivalence classes too. with them, one can prove
+completeness as usually.
+
+here is a slight modification of sequences from my previous post. let
+Q be the set of rationals between 0 and 1, D <= Q dyadic rationals and
+N natural numbers. a cauchy real A is now a subobject of Q^N such that
+
+     exists x in A
+     forall x in A holds: |xm - xn| < 1/m+1/n
+     forall x in A and all y in Q^N holds: |xm - yn| < 2/m+2/n iff y in A.
+
+consider maps b: Q^N --> Q^N, c: Q^N --> D^N and d : D^N --> Q^N,
+defined
+
+     b(x)i = x(2^(i+3))
+     c(x)i = p/2^n, such that |xi - p/2^n| < 1/2^(i+2)
+                         and  |xi - q/2^m| < 1/2^(i+2) implies m>=n of q>=p
+     d(x)i = x truncated after i'th digit
+
+** i claim that the image dcb(A) of A along is a representative of A, ie
+**
+** 1. it is a singleton, and
+** 2. an element of A.
+
+this means that the function dcb : Q^N-->Q^N induces a choice function
+from Q^N/~ to Q^N, assigning to each cauchy real a cauchy sequence of
+ratioanls representing it.
+
+the proofs proceed like for the corresponding sequences in my previous
+post. in particular, for every x,y : A holds
+
+     |cb(x)i - cb(y)i| <= |cb(x)i - b(x)i| + |b(x)i-b(y)i| + |b(y)i-cb(y)i| <
+                       <  1/2^(i+2)    + 2/2^(i+3)+2/2^(i+3) +    1/2^(i+2) =
+                       =  1/2^i
+
+means that cb(x)i and cb(y)i have the first i digits equal. hence
+dcb(x)i =dcb(y)i. since this holds for all i, dcb(x) = dcb(y).
+
+now, as everyone has been pointing out, the dyadic representation
+depends on markov's principle. in order to prove that the map c is
+total, we need the fact that for every e>0 in Q there is some k such
+that 1/2 + 1/4 +...+ 1/2^k > 1-e. in other words, that there is k
+s.t. 1/2^k < e. this is *equivalent* to markov's principle.
+
+how bad is markov's principle? well, i think that markov proposed it
+as a valid *intuitionistic* principle:
+
+** given an algorithm, if i can prove that it terminates, then i
+** should be able to construct its output.
+
+it would be nice to know that this is all we need in order to have
+cauchy complete cauchy reals.
+
+also, if this is the case, the challenge topos, where cauchy reals are
+not complete, would be the realizability topos invalidating markov:
+the cauchy sequence without a cauchy limit would have to be the one
+that can be proven different from 0, but cannot be proven apart from
+0.
+
+is there still an error? please ignore the trivial ones this time, and
+i'll try to learn from errors.
+
+all the best,
+-- dusko
+
+
+
+
+
+

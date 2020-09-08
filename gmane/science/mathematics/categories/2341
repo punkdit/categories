@@ -1,0 +1,81 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: topos logic arising nicely
+Date: Sun, 8 Jun 2003 13:39:40 +0200 (CEST)
+Lines: 43
+Approved: news@gmane.org
+Message-ID: <200306081139.NAA21518@fb04305.mathematik.tu-darmstadt.de>
+References: <16096.24299.686053.329698@ithif51.inf.tu-dresden.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018591 3674 80.91.229.2 (29 Apr 2009 15:23:11 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:23:11 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jun  9 11:41:33 2003 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 09 Jun 2003 11:41:33 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 19PNmh-0002SZ-00
+	for categories-list@mta.ca; Mon, 09 Jun 2003 11:38:07 -0300
+In-Reply-To: <16096.24299.686053.329698@ithif51.inf.tu-dresden.de> from Hendrik
+ Tews at "Jun 6, 2003 11:29:15 am"
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+X-MailScanner: Found to be clean
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 32
+Status: O
+Content-Length: 1739
+Original-Lines: 42
+Xref: news.gmane.org gmane.science.mathematics.categories:2341
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2341>
+
+Dear Hendrik,
+
+>    But I would be surprised if HOL has subtype formation as from a logical
+>    point of view subtypes are neither necessary nor convenient. Adding subtypes
+>    is only necessary for getting a topos out of a model of HOL.
+>
+> I don't know, if I miss the point here. However, PVS has a HOL
+> system with predicate subtypes. And it is _very very_ convenient
+> (because of the predicate subtypes).
+>
+> I don't know if it is a necessity, but the absence of subtypes in
+> Isabelle/HOL leads to a representation of partial functions, that
+> allows you to prove unexpected results. Despite what the Isabelle
+> tutorial says at page 187, you _can_ prove
+>
+>   hd [] = last []
+>
+> (saying that the head of the empy list equals its last element)
+
+thanks for the interesting information; you really pinpoint why subtypes
+are used in practice, namely for avoiding partial functions; if one wants
+to avoid subtypes and treat partial functions directly one might use the
+Fourman/Scott variant of the interpretation of topos logic; an alternative
+and actually the one common in mathematical practice is to introduce subtypes;
+however, to do this constructively one is forced to either treat partial functions
+as single-valued realtions OR to explicitly introduce proof objects as in Martin-Loef
+type theory; I am pretty certain that in systems like HA_\omega one cannot quantify
+over partial functions as these subsume prediacte types;
+but if one has Higher Order Logic already it seems more natural to treat partial functions
+as single valued relations; quantification over subtypes can then be reduced to pure Higher
+Order Logic via a straightforward translation (which, however, needs some care as one sees
+from HOL)
+
+Thomas
+
+
+
+
+
+
+
+
+

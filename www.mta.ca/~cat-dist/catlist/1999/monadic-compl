@@ -1,0 +1,95 @@
+Date: Fri, 6 Aug 1999 11:41:17 +0100 (BST)
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: monadic completion of adjunctions
+
+		MONADIC COMPLETION OF ADJUNCTIONS
+
+A famous theorem of Jon Beck says that an adjunction
+			A
+		      ^    |
+		      |    |
+		    F | -| | U
+		      |    |
+		      |    v
+			C
+
+is monadic (equivalent to its category of Eilenberg--Moore algebras)
+iff U satisfies a certain condition involving "U-split coequalisers".
+
+Given any adjunction, of course one may "force" it to be monadic by
+replacing the category A by the category of algebras for the monad U.F,
+and there is a comparison functor.
+
+
+(1) My question is this: is there an explicit account in the literature
+somewhere of the construction obtained by "freely adding" the conditions
+of Beck's theorem (the U-split coequalisers) to A?
+
+
+(2) Further, has anyone considered what happens when one forces an adjunction
+to be BOTH monadic and comonadic?
+
+Steve Lack gave me a verbal answer to the second question, although he
+hasn't shown me his notes:
+(a) if we force U to be monadic, and then (the new) F to be comonadic,
+    (the third) U need NOT be monadic, but
+(b) if we force U to be monadic again then (the fourth) F IS still comonadic.
+
+
+In my investigation of this question and similar ones that have arisen
+from my abstract Stone duality programme, I have found a construction 
+due to Hayo Thielecke very useful,  though it seems appropriate to 
+generalise it considerably beyond either his or my interests:
+
+(3) Given an adjunction, or just the functor U, above, let H (for Hayo) be
+the category with
+   objects:     those of A
+   morphisms:   H(a, b) = C(Ua, Ub)
+Does anyone have an account of this category, maybe in the even more abstract
+framework of a 2-category?
+
+
+(4) The usefulness of the category H is that it provides a framework in
+which to lift an endofunctor  S:A->A  to  the category of algebras, so
+long as T has a "de Morgan dual"   P:C->C such that  U.S=P.U.   For example
+if S is (- x a) for some object a in A,  or (which is what interests both
+Hayo and me) if U is  Sigma^-: C^op -> C^op   and S is  (- x c), or
+the same situation with a symmetric monoidal (closed) structure.
+
+
+Making use of the construction of H, my sketch solution to question (2)
+is as follows:
+
+(i) As wide or lluf subcategories (all objects, some morphisms) of H we find
+the categories that freely make U faithful (f), or faithful and reflect
+invertibility (fri - this is the usage of "faithful" in Freyd & Scedrov);
+call these A_f and A_fri.
+
+(ii) F-|U extends to left adjoints
+        F_f -| U_f : A_f -> C    and    F_fri -| U_fri : A_fri -> C
+and if F was faithful or fri then so is F_f or F_fri.
+
+(iii) Therefore the processes of making U and F faithful (or fri) commute,
+so we need only do each of them once.
+
+(iv) The auxillary category H is also convenient for representing freely
+adjoined U-split coequalisers, in a similar way to the "Karoubi completion"
+of a category to one with splittings of idempotents, but it's too messy
+to describe in this note.
+
+(v) Freely adding U-split coequalisers
+    - commutes with freely forcing U (and F) to be faithful, and
+    - commutes with freely adding F-split equalisers, and
+    - preserves the properties that U or F are faithful or fri, but
+    - DOES NOT COMMUTE with freely forcing U to reflect isomorphisms, and
+    - DOES NOT COMMUTE with freely forcing F to reflect isomorphisms.
+
+(vi) This justifies Steve Lack's claims. (I have counterexamples in (v),
+though not actually to support (2a).)   Resolving the construction of
+the monadic reflection of U (and the comonadic reflection of F) into
+forcing them to be fri and then to have split co/equalisers, we find that
+there is just one obstacle to the commutation of the four operations,
+but this is overcome by a single repetition as in (2b).
+
+Paul
+

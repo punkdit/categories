@@ -1,0 +1,177 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Yoneda Theorem < Yoneda Lemma < Dense Yoneda Theorem
+Date: Sun, 28 Jun 2009 21:11:02 -0700
+Lines: 144
+Approved: news@gmane.org
+Message-ID: <E1MNTR1-0006UL-Ge@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1246809664 4080 80.91.229.12 (5 Jul 2009 16:01:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 5 Jul 2009 16:01:04 +0000 (UTC)
+To: Categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Sun Jul 05 18:00:57 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MNU96-0005yo-Qj
+	for gsmc-categories@m.gmane.org; Sun, 05 Jul 2009 18:00:53 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MNTR1-0006UL-Ge
+	for categories-list@mta.ca; Sun, 05 Jul 2009 12:15:19 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5039
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5039>
+
+(This continues the "no fundamental theorems please" thread under a more
+apropos heading.)
+
+On 6/24/2009 8:17 AM, Steve Vickers wrote:
+ > Vaughan Pratt wrote:
+ >> ...  The Yoneda Lemma usually states that J embeds (meaning
+ >> fully) in [J^op,Set], ...
+ > The usual statement is significantly stronger than that (see e.g. Mac
+ > Lane, Mac Lane and Moerdijk, or Wikipedia). It says that, for
+ > contravariant functors F: C ->  Set, the elements of FX are in bijection
+ > with transformations to F from the representable functor for X. Your
+ > statement can be deduced by considering the particular case where F too
+ > is representable.
+
+Quite right, I should have used something other than "lemma" for that
+weaker statement.  Misplaced force of habit.
+
+Googling "Theorem 5.1 (Yoneda)" returns section 5, on full completeness,
+of Phil Scott's nice Handbook of Algebra chapter.  Phil introduces that
+section with "The most basic representation theorem of all is the Yoneda
+embedding: Theorem 5.1 (Yoneda) If J is locally small, the Yoneda
+functor Y: J --> [J^op,Set], where Y(j) = J(-,j), is a fully faithful
+embedding."
+
+(Phil's A is my J, which I'll use throughout as the base whether small
+or not in order to make it easier to compare theorems.)
+
+If "theorem" is good enough for Phil it's good enough for me.  For
+definiteness let's name the theorems as follows.
+
+YT (Yoneda Theorem): [J^op,Set] fully extends J.
+
+YL (Yoneda Lemma): For any functor F: J^op --> Set and object j of J,
+F(j) is in bijection with [J^op,Set](J(-,j),F).  (This replaces C in
+Steve's version with J^op.)
+
+DYT (Dense Yoneda Theorem):  C is equivalent to a category of presheaves
+on a *small* category J if and only if C densely extends J.
+
+Here a category of presheaves on J means a full subcategory of
+[J^op,Set] containing the functors J(-,j) for all objects j of J (that
+is, "on J" qualifies not just the individual presheaves but the whole
+category of them, as in "free group on X"(*)).  C densely extends J just
+when there exists a full, faithful, and dense functor K: J --> C.  (If
+someone has a use for a broader notion of dense extension I wouldn't
+object to saying "fully densely extends.")
+
+For now assume "dense" is defined as in X.6 of CWM, namely that every
+object of C arises as a colimit of FP for the evident functor P: (K,c)
+--> J, (K,c) being the comma category whose morphisms are of the form
+Kj-->c, j in ob(J).  (I'll consider equivalent ways of defining density
+in a followup message.)  This has the effect of representing each object
+c of C as the presheaf C(K-,c): J^op --> Set (namely C(Kj,c) is the set
+of morphisms of (K,c) of the form Kj-->c) and each homset C(c,d) as
+[J^op,Set](C(K-,c),C(K-,d)) (that is, Nat(C(K-,c),C(K-,d)) in the CWM
+notation Steve is using), via the adjunction defining "colimit."
+
+The homsets [J^op,Set](J(-,j),F) used by YL (and hence YT) are always
+small even if J isn't.  DYT however deals with arbitrary homsets
+[J^op,Set](F,G), which may be large when J is, whence DYT's requirement
+that J be small.  (Steve Lack would be the person to ask what form DYT
+might take for large J.)
+
+The applicability of YL and YT to large J makes them incomparable with
+DYT.  However if we require J to be small then we have YT < YL < DYT in
+the sense that each of them represents entities by using progressively
+more of [J^op,Set].  YT uses just the image of the Yoneda embedding to
+represent J, YL takes one step beyond YT by using all the homsets from
+that image to an arbitrary presheaf in [J^op,Set] to represent carriers
+of algebras with unary operations (aka presheaves), and DYT takes one
+more step than YL by using homsets between more general presheaves of
+[J^op,Set] to represent *all* homsets of C.
+
+Replacing "equivalent to" by "representable as" in DYT makes more
+explicit the sense in which DYT is unambiguously a representation
+theorem for certain abstractly defined categories, namely dense
+extensions of a small category, which are of greater generality than the
+categories contemplated in YT or YL.
+
+ > There can be no doubt that this strong Yoneda Lemma is vitally important
+ > when calculating with presheaves - for example, it shows immediately how
+ > to calculate exponentials and powerobjects. If F and G are two
+ > presheaves, then the exponential G^F is calculated by
+ >
+ >     G^F(X) = nt(Y(X), G^F)    (by Yoneda's Lemma)
+ >            = nt(Y(X) x F, G)  (by definition of exponential)
+
+I would only buy that reasoning for small J (otherwise why should G^F be
+a functor to Set?), where YL isn't benefiting from the additional
+generality of YL over DYT.  Is there any other reason to prefer YL to
+DYT?  It doesn't seem a very natural candidate for theorem-hood (perhaps
+that's why it's relegated to the status of a lemma).  It's hard to argue
+for it as the fundamental theorem of CT when it's sandwiched in between
+YT and DYT, both of which *do* come across as real theorems (the reason
+I'm comfortable calling both of them theorems).  Anyone remember the
+history of why YL rose to the top?
+
+ > I don't think you can get it and its useful consequences from your
+ > weaker statement, even if you start strengthening yours in the way you
+ > suggest by supplying converses.
+
+Don't underestimate the power of the converse.  YL < DYT because it's
+only a partial converse, DYT is the whole thing.
+
+ > Another closely related and important result, though not known as
+ > Yoneda's Lemma as far as I know, is that the presheaf category over C is
+ > a free cocompletion of C, and the Yoneda embedding is the injection of
+ > generators.
+
+The colimit-based definition of dense functor shows that this is pretty
+much equivalent to DYT and therefore stronger than YL in what I take to
+be the sense in which you consider YL stronger than YT. (Is there a
+stronger sense of "stronger," e.g. a natural nonstandard model in which
+YT is true and YL false, or YL true and DYT false?)
+
+Michael Shulman's comment about the enriched case is apropos here:
+defining cocompletion for conical (co)limits isn't sufficient when V
+doesn't permit them (for want of diagonal functors).  This limitation
+can be avoided with left Kan extensions as treated in Chapter 4 of
+Kelly, "Basic Concepts of Enriched Category Theory."  Kelly arrives at
+the notion of free cocompletion 15 pages into Chapter 4 and long after
+indexed (nowadays weighted) colimits (Chapter 3) as a satisfactory
+generalization of conical colimits.
+
+(Incidentally, of what use are non-free cocompletions?  Is there any
+reason not to define "cocompletion" to make it free?  I seem to recall
+people being happy to drop "free" in this context.  Who ordered "free"?)
+
+This post is quite long enough already so I'll stop it here with the
+interesting question (to me anyway), what is the earliest point in the
+development of (ordinary or unenriched) category theory at which one can
+introduce either cocompletion or density in order to have functors that
+are dense, full, and faithful?  Can either be usefully introduced before
+functor categories, for example?  And can this be done with sufficient
+generality to carry over essentially unchanged to the enriched case?  I
+imagine this would reduce to just avoiding conical colimits.
+
+Vaughan Pratt
+
+(*) But not as in "free beer on Stallman."
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

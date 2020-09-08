@@ -1,0 +1,87 @@
+Path: news.gmane.org!not-for-mail
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Newsgroups: gmane.science.mathematics.categories
+Subject: V-categories where V "is" an abelian monoid.
+Date: Sat, 12 Dec 1998 19:31:36 +1100 (EST)
+Lines: 61
+Approved: news@gmane.org
+Message-ID: <199812120831.TAA05290@milan.maths.usyd.edu.au>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017392 28581 80.91.229.2 (29 Apr 2009 15:03:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:03:12 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Sun Dec 13 16:17:07 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA08601
+	for categories-list; Sun, 13 Dec 1998 15:11:29 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3164
+Original-Lines: 60
+Xref: news.gmane.org gmane.science.mathematics.categories:964
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/964>
+
+
+Since I wrote some first thoughts the other night about Tom Leinster's
+question on the above, I've had some second thoughts which are perhaps
+a little more sensible, and may remove some of the mystery from these
+strange critters (which may be quite beautiful - I've just seen Tom's
+example of 10 Dec.).
+
+To get the notation straight, let G be an abelian monoid (perhaps a
+group), and V_o the category with one object * and V_o(*,*) = G. Then
+V_o underlies a symmetric monoidal closed category V with one object *,
+with tensor product o given on objects by *o* = * and on maps by fog = fg,
+with unit object I = *, and with internal-hom given on objects by [*,*] = *,
+and on maps by [f,g] = fg. 
+
+So we can speak of V-categories, V-functors, and V-natural transformations
+at the level of my old paper with Eilenberg, incloding the ordinary category
+A_o underlying a V-category A. However all the richer theory of V-categories
+etc., as in my book on the subject, needs completeness of V_o for the
+definition of functor-categories, and hence for limit- and colimit-notions,
+Kan extension, and so on; as well as cocompleteness too, for these to work
+well.
+
+So, to this extent, V is a lousy closed category, being neither complete nor
+cocomplete. However there is a cure for incompleteness, called "completion";
+although "cocompletion" works more smoothly. So let us embed V_o by Yoneda
+in its free cocompletion, the ordinary functor-category [V_o^op, Set]. We don't
+need the "op" here, since G is abelian. This functor-category is nothing but
+the presheaf category of G-sets (sets with an action of G, with the usual
+axioms (fg)x = f(gx) and 1x = x). This has a cartesian-closed structure, but
+forget that; it also has a symmetric monoidal closed structure arising from
+that on V using Day's convolution process. This is nothing but the Linton-
+-type s.m.closed structure where the tensor-product A o B represents the
+bi-homomorphisms out of A x B, and the internal-hom [A,B] is the G-set of
+all homomorphisms of G-sets from A to B. Explicitly, A o B is the quotient of
+A x B by the relation (fx,y) = (x,fy).
+
+Let us call THIS s.m.closed category W. Then V is embedded in W by Yoneda,
+and the image in W of * is the G-set G itself, seen as a G-set using its own
+multiplication - the "regular representation". So we may see V as this "part"
+of W.
+
+Now a V-category is nothing but a W-category whose hom-objects all happen to
+lie in V (which is a sub-monoidal category of W). Such a category A, with
+objects a,b, c, and so on, no longer need be said to have each A(a,b) equal
+to *, but instead to have A(a,b) = G.
+
+So the V-categories are nothing but these very special W-categories, and W
+is a highly-respectable s.m.closed category, first cousin to R-Mod for a
+commurative ring R.
+
+In fact, there is a "free" W-category F(B) on any ordinary category B; it 
+has the same objects as B, and (F(B))(a,b) is the free G-set on the set
+B(a,b). The V-categories are just those W-categories of the form F(B) where
+the ordinary category B is CHAOTIC; that is to say, each B(a,b) is a
+singleton.
+
+So at least these nice new objects have a kind of legitimate origin.
+
+Max Kelly.
+
+

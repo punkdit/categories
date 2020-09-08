@@ -1,0 +1,132 @@
+Path: news.gmane.org!not-for-mail
+From: Meredith Gregory <lgreg.meredith@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: naive questions about sets
+Date: Fri, 27 Mar 2009 18:07:12 -0700
+Lines: 99
+Approved: news@gmane.org
+Message-ID: <E1LnXw4-000264-9f@mailserv.mta.ca>
+Reply-To: Meredith Gregory <lgreg.meredith@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1238247120 30818 80.91.229.12 (28 Mar 2009 13:32:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sat, 28 Mar 2009 13:32:00 +0000 (UTC)
+To: Toby Bartels <toby+categories@ugcs.caltech.edu>, categories@mta.ca
+Original-X-From: categories@mta.ca Sat Mar 28 14:33:18 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LnYey-0001E4-SL
+	for gsmc-categories@m.gmane.org; Sat, 28 Mar 2009 14:33:17 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LnXw4-000264-9f
+	for categories-list@mta.ca; Sat, 28 Mar 2009 09:46:52 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:205
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/205>
+
+Toby,
+
+Thanks for your note. A longer reply is forthcoming, but in regards to
+notation, in CS-y conventions it is now standard to separate out the "free"
+syntax from the relations. So, you're right, of course, that the * denotes a
+list. (It originates from the Kleene operator.) The standard treatment is to
+whack this down by what is called a structural equivalence relation. In this
+case, you have something like
+
+n1,n2 = n2,n1
+n1,n1 = n1
+
+for the structural relations. This is roughly equivalent to specifying
+models as algebras, i.e. a free monad plus a a structure map. i find the
+ghettoization of the CS notations -- which are extremely compact and well
+aligned with category theoretic sensibilities -- to be a source of unending
+frustration in communications with the larger mathematical communities. i
+really need to write a tutorial.
+
+Best wishes,
+
+--greg
+
+On Fri, Mar 27, 2009 at 5:35 PM, Toby Bartels <
+toby+categories@ugcs.caltech.edu <toby%2Bcategories@ugcs.caltech.edu>>wrote:
+
+> Meredith Gregory wrote in part:
+>
+> >My
+> >daughter and i decided that what went into the physical containers were
+> >little promisory notes that could be redeemed for actual things. In this
+> >version of the construction you only get flat structures, a set never
+> >contains a set. That left the problem of the language in which the
+> promisory
+> >notes were written. Why not use the language of containers?
+> >   - Container ::= {c| Note* |c}             // BlackSet ::= {b| RedSet*
+> |b}
+> >   - Note ::= {n| Container* |n}             // RedSet ::= {r| BlackSet*
+> |r}
+>
+> Not to denigrate your interesting variation,
+> but you get a result more like traditional set theory
+> if you say that each container contains a *single* note
+> which itself has a list of containers written on it:
+>   - Container ::= {c| Note |c}
+>   - Note ::= {n| Container* |n}
+> (You could also have a list of notes, each of which has one container.)
+>
+> Of course, this is functionally equivalent to
+>   - Container ::= {c| Container* |c}
+> This is the usual model of what pure sets are like,
+> but (as you and your daughter noted) this give an unphysical metaphor.
+> However, you could just as easily do things like this:
+>   - Note ::= {n| Note* |n}
+> Since {n|...|n} contains things by writing down names for them,
+> rather than having them physically present as {c|...|c} implies,
+> there is no physical impossibility here.
+>
+> Incidentally, the notation X* suggests to me a list,
+> where order and repetition matter and only finitely many terms can appear.
+> Of course, sets are not like this, as you know.
+> So instead of X* I would write P(X), using "P" for "power".
+>
+> This matches how category theorists model pure sets
+> (the sets that appear in ZF-style set theory).
+> A _universe of pure sets_ consists of a set U
+> and a function from U to the power set P(U) of U,
+> or if you prefer a binary relation E (for 'epsilon') on U,
+> satisfying a few axioms (extensionality and well-foundedness,
+> although it's also interesting to consider ill-founded sets).
+> You get paradoxes like Russell's if you add the axiom
+> that the function U -> P(U) is invertible.
+>
+> Of course, I said "set" above, but there I just meant
+> an object of the category of sets as category theorists think of it.
+> That is, simply a collection of atoms that may be equal
+> but have no other structure (and in particular are not themselves sets).
+> So this shows how to model ZF-style set theory in categorial set theory.
+> (I apologise for repetition if you already know all about that.)
+>
+>
+> --Toby
+>
+
+
+
+-- 
+L.G. Meredith
+Managing Partner
+Biosimilarity LLC
+806 55th St NE
+Seattle, WA 98105
+
++1 206.650.3740
+
+http://biosimilarity.blogspot.com
+
+
+

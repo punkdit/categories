@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <r.h.g.garner@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Tensor of monads
+Date: Tue, 3 Aug 2010 16:39:25 +1000
+Lines: 75
+Approved: news@gmane.org
+Message-ID: <E1OgavZ-00071D-6S@mlist.mta.ca>
+References: <E1OeHE4-0004hy-TA@mlist.mta.ca>
+Reply-To: Richard Garner <r.h.g.garner@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1280916711 22163 80.91.229.12 (4 Aug 2010 10:11:51 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 4 Aug 2010 10:11:51 +0000 (UTC)
+Cc: Categories mailing list <categories@mta.ca>
+To: Paul Levy <pbl@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Wed Aug 04 12:11:50 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ogawu-0007p4-ES
+	for gsmc-categories@m.gmane.org; Wed, 04 Aug 2010 12:11:48 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:38969)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ogavh-0002wV-GQ; Wed, 04 Aug 2010 07:10:33 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OgavZ-00071D-6S
+	for categories-list@mlist.mta.ca; Wed, 04 Aug 2010 07:10:25 -0300
+In-Reply-To: <E1Og3Zs-0002cB-Mo@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6028
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6028>
+
+Dear Paul,
+
+Thanks for your perspicuous message. Your general definition of tensor
+product really cuts to the heart of the matter, and agrees with the cases
+where I knew how to take tensors previously. Has it been written down
+somewhere? It seems very natural.
+
+It can actually be generalised further still. Let C be any symmetric
+monoidal category. In this setting, your last definition, which to me looks
+to be the key one, still makes sense:
+
+Now a cocone of strong monads
+>
+>     S -----> M <----- T
+>
+> is said to "commute" when for all C-objects X and Y the two C-morphisms
+> from SX * TY to M(X * Y) are equal.
+>
+
+In this generality we may _define_ the tensor product S * T to be the vertex
+of the universal commuting cospan, if such exists (and even if it doesn't,
+we still get a multicategory). To see that this agrees with your definition
+in the case where C is monoidal closed, we make a few observations.
+
+1) For every X in C, there's a strong monad [X,X] such that strong monad
+morphisms S -> [X,X] correspond to S-algebra structures on X; it's the
+continuation monad A |-> (A -o X) -o X.
+
+2) For every f : X -> Y, there's a monad {f,f} and a monomorphism of monads
+{f,f} --> [X,X] x [Y,Y] such that a strong monad morphism k: S --> [X,X] x
+[Y,Y] factors through {f,f} if and only if f is an S-algebra morphism with
+respect to the S-algebra structures
+on X and Y classified by k. Explicitly, we have {f,f}A given by the pullback
+of (A -o X) -o X and (A -o Y) -o Y over (A -o X) -o Y.
+
+3) Given morphisms of monads f : S -> M, g : T -> M and j : M -> N, if jf
+commutes with jg and j is a monomorphism, then also f commutes with g. In
+other words, if the tensor product S * T exists, then the pair of maps S -->
+S * T <-- T are jointly strongly epic.
+
+4) Taking (3) together with (2) we deduce that (S * T)-Alg will be a full
+subcategory of S-Alg x_C T-Alg.
+
+5) It remains only to ascertain the objects which lie in this full
+subcategory: and these will be those (X, theta, phi) in S-Alg x_C T-Alg for
+which the corresponding pair of monad maps S --> [X,X] <-- T commute: which
+are precisely those satisfying your equivalent conditions (1), (2) and (2').
+
+It's interesting to note the parallel between this setting and Dominique
+Bourn's notion of "intrinsic centrality". Using his terminology, we might
+say that monad maps S --> M <-- T "cooperate", rather than "commute". We
+would then call a monad morphism S -> M "central" if it cooperated with the
+identity on M: and call M "commutative" if the identity on M cooperated with
+itself. This last, rather fortunately, coincides with the established
+monad-theoretic terminology. This parallel provides a context for the
+following proposition about the tensor product of monads that I previously
+had no good explanation for:
+
+Prop: For a strong monad M, the following are equivalent:
+1) M is commutative.
+2) M is a commutative monoid with respect to the tensor product of monads.
+3) M is a unitary magma with respect to the tensor product of monads.
+
+Finally, this also tells us how to construct the commutative reflection of a
+monad in an extremely compact manner: take the coequaliser of the two maps S
+--> S*S. More constructively: take the full subcategory D of S-Alg whose
+objects are algebras theta : SX -> X such that (X, theta, theta) commutes in
+your sense. If D -> C has a left adjoint, then the monad so generated is the
+commutative reflection of S.
+
+Richard
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,172 @@
+Path: news.gmane.org!not-for-mail
+From: Matt Brin <matt@math.binghamton.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: A question about literature on operads and coherence
+Date: Wed, 10 Jan 2007 12:34:31 -0500
+Lines: 146
+Approved: news@gmane.org
+Message-ID: <40424.4664627642$1241019385@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;  charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019385 9314 80.91.229.2 (29 Apr 2009 15:36:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:36:25 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Jan 10 13:34:39 2007 -0400
+Content-Disposition: inline
+X-Keywords: 
+X-UID: 65
+Status: O
+Content-Length: 6051
+Original-Lines: 145
+Xref: news.gmane.org gmane.science.mathematics.categories:3573
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3573>
+
+I am writing up material that has been taking shape over a number of 
+years.  The question is of the type "how much of this has been done 
+before?"  
+
+The shape of the math is that questions of coherence of categories with 
+multiplication can be given a group theory flavor and so groups are 
+injected in the middle of the discussion.  I expect that little 
+recognition will take place after the introduction of the groups, so my 
+question focuses on what happens before the groups show up.
+
+I circulated this question a bit with the aid of a pdf file, but this 
+list won't take attachments, so I will have to make do with some latex.
+
+The latex follows the signature.
+
+Any communication should be by direct email.  I am far from a category 
+theorist and do not follow this list.
+
+Thanks for any information,
+Matt Brin
+
+\documentclass[oneside]{amsart}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+
+
+\DeclareMathAlphabet\EuScript{U}{eus}{m}{n}
+
+
+\newcommand{\scr}[1]{\EuScript{#1}}
+
+
+\begin{document}
+
+\newcommand{\ldoublet}{\xy(-4,-2); (0,2)**@{-}; (2,0)**@{-}; (-2,0);
+(0,-2)**@{-}; \endxy}
+\newcommand{\rdoublet}{\xy(4,-2); (0,2)**@{-}; (-2,0)**@{-}; (2,0);
+(0,-2)**@{-}; \endxy}
+
+
+
+If \(\scr{C}\) is a category with (functoral) mutliplication
+\(\otimes\), then inside the operad \(End_\scr{C}\) there is a
+suboperad \(\bigotimes\) derived from the multiplication \(\otimes\)
+and an obvious surjective map of operads \(h:\scr{T}\rightarrow
+\bigotimes\) whose domain is the operad of finite binary trees.
+This map will take, for example, the tree \(\rdoublet\) to the
+functor \begin{equation} \label
+{ExFunctA}(X,Y,Z)\mapsto X\otimes(Y\otimes Z)\end{equation} in
+\(End_{\scr{C}}\) and the tree \(\ldoublet\) to the functor
+\begin{equation} \label {ExFunctB} (X,Y,Z)\mapsto
+(X\otimes Y)\otimes Z \end{equation} in \(End_{\scr{C}}\).
+
+If there is a natural isomorphism \(\alpha\) given from the functor
+(\ref{ExFunctA}) to the functor (\ref{ExFunctB}) in \(End_{\scr{C}}\),
+then the isomorphisms generated in the usual way from (composites of
+expansions of instances of) \(\alpha\) and \(\alpha^{-1}\) and the
+identity isomorphisms on the functors in \(\bigotimes\) gives a
+category structure to \(\bigotimes\).
+
+There are now two category structures that we can put on the operad
+\(\scr{T}\) of finite binary trees.  One is a ``pullback'' category
+structure that we get from the category structure on \(\bigotimes\)
+where we use \(h:\scr{T}\rightarrow \bigotimes\) to do the
+pullback.  (Morphisms from \(T_1\) to \(T_2\) are just the morphisms
+from \(h(T_1)\) to \(h(T_2)\).)  The other category structure on
+\(\scr{T}\) is the trivial structure in which every pair of trees
+with the same number of leaves gets a uniqe (iso)morphism between
+them in each direction.  We let \(\bigotimes^h\) denote the pullback
+category and reuse the notation \(\scr{T}\) for the trivial category
+structure.
+
+There is a forgetful functor from \(\bigotimes^h\) to \(\scr{T}\)
+that is the identity on objects.  The point of the coherence question is 
+to
+ask whether this forgetful functor is an isomorphism.
+
+At this point we probably leave the realm that might seem familiar.
+However, I will press on in case
+the ``probably'' is wrong, and to tell what the point of all
+this is.
+
+Particularly pleasant properties of the operad \(\scr{T}\) allow one
+to compute two groups: one \(T(\bigotimes^h)\) from \(\bigotimes^h\)
+and another \(F\) from \(\scr{T}\).  The second group is well known
+and is usually referred to as ``Thompson's group \(F\)'' so we have
+kept the letter \(F\) for it.
+
+There is a surjective homomorphism (call it a comparison
+homomorphism) \(\sigma\) from \(T(\bigotimes^h)\) to \(F\).  The
+surjectivity is standard and the arguments are in
+MacLane paper noted below.
+
+Under the assumption that the multiplication \(\otimes\) has an
+identity (an object \(K\) in \(\scr{C}\) with a natural isomorphism
+\(\iota\) from the identity on \(\scr{C}\) to the functor \(X\mapsto
+X\otimes K\) with no further restrictions such as the satisfaction
+of a coherence property on the isomorphism \(\iota\)), then one
+proves easily that the associativity morphism \(\alpha\) makes the
+pentagonal diagrams commute if and only if the comparison
+homomorphism \(\sigma\) is an isomorphism.  In fact, once a certain
+``non-collapsing'' fact is proven from the existence of the identity
+\(K\), the rest is just a quote of definitions.
+
+Thus \(\scr{C}\) is a monoidal category if and only if the
+``identity isomorphism'' \(\iota\) satisfies the usual coherence
+conditions on identities and the comparison homomorphism \(\sigma\)
+is an isomorphism.
+
+One can do exactly the same thing with symmetric, monoidal
+categories (in which case the comparison homomorphism is to a well
+known group known as Thompson's group \(V\)) and braided tensor
+categories (in which case the comparison homomorphism is to a group
+\(BV\) of mine that I call the braided version of \(V\)).  In the
+case of symmetric, monoidal catetgories, the argument again boils
+down to a check of definitions once certain basic facts are
+established.  In the case of braided tensor categories, there are
+real calculations that must be done since the definition of braided
+tensor categories reads very differently than it does for monoidal
+and symmetric, monoidal categories.
+
+This ends the summary.
+
+I can clarify my question a bit.  I am familiar with the paper of
+MacLane in the Rice journal of 1963 on Natural associativity and
+commutativity.  I am familiar with little else.  This pretty much
+identifies the scope of my question.
+
+The language of operads does not appear in MacLane's paper and I am
+wondering how much of MacLane's results have been reworked to
+exploit operads and their structures.  Referring to the summary
+above, I am curious about the structures that preceed the
+introduction of the group \(T(\bigotimes)\).
+
+
+
+\end{document}
+
+-- 
+matt brin / math. dept / SUNY / Binghamton, NY 13902-6000 / 
+(607)-777-2147
+FAX: (607)-777-2450
+EMAIL: matt@math.binghamton.edu
+WWW: http://math.binghamton.edu/matt
+
+

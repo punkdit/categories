@@ -1,0 +1,254 @@
+Path: news.gmane.org!not-for-mail
+From: Barry Jay <cbj@socs.uts.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: the FISh language
+Date: Mon, 11 May 1998 22:27:43 +1000 (EST)
+Lines: 226
+Approved: news@gmane.org
+Message-ID: <199805111227.WAA03019__23930.6365758695$1241017143$gmane$org@algae.socs.uts.EDU.AU>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017142 27073 80.91.229.2 (29 Apr 2009 14:59:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:59:02 +0000 (UTC)
+To: skeletons@dcs.edinburgh.ac.uk, types@cs.indiana.edu, categories@mta.ca,
+        it-announce@staff.cs.su.oz.au, staff@socs.uts.edu.au,
+        researchers@socs.uts.edu.au
+Original-X-From: cat-dist Tue May 12 13:49:33 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA11573
+	for categories-list; Tue, 12 May 1998 10:22:54 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 7837
+Original-Lines: 225
+Xref: news.gmane.org gmane.science.mathematics.categories:723
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/723>
+
+ [apologies for multiple announcements]
+
+
+	***********************************
+	* Functional = Imperative + Shape *
+	***********************************
+
+FISh is a new array programming language that combines (and extends)
+the
+	       EXPRESSIVE POWER 
+
+of functional programming with the 
+
+	      EFFICIENT EXECUTION 
+
+of imperative, or procedural, programming by performing
+
+	     STATIC SHAPE ANALYSIS
+
+on all programs. This shape computation reduces higher-order
+functional programs to simple imperative forms, i.e. F - Sh = I.
+Conversely, FISh works best when functions are constructed from
+imperative procedures and shape functions, as recommended by the
+slogan that gives the language its name.
+
+	         F = I + Sh
+
+FISh execution speeds on typical array problems are SEVERAL TIMES
+FASTER than other higher-order, polymorphic languages.
+
+This announcement, research papers, reference material and the
+implementation are all available from
+
+     http://linus.socs.uts.edu.au/~cbj/FISh/announcement.html
+
+The main themes are introduced in the paragraphs below.
+
+
+Barry Jay
+http://linus.socs.uts.edu.au/~cbj
+
+
+	***********************************
+
+
+
+Expressive Power 
+~~~~~~~~~~~~~~~~
+
+FISh supports 
+
+- the usual functional features
+
+such as strong typing, higher-order functions and parametric
+polymorphism. It also supports 
+
+ - simple imperative features 
+
+such as assignment, for- and while-loops, and local variables, using a
+type of commands. Procedures are represented as functions into
+commands, as in Algol-like languages. 
+
+Unlike existing Algol-like languages, it also supports data types of
+arrays, so that array programs may be polymorphic in the size of the
+array. Now this has been extended to
+support
+
+ - poly-dimensional array programming.
+
+If a is any array type then [a] is the type of all arrays with entries
+in a that are
+
+ - finite dimensional, and 
+ - regular, 
+
+such as vectors, matrices, three-dimensional arrays, etc. Thus,
+poly-dimensional array programs can be written that act on a vector,
+matrix, or higher-dimensional array. For example, the standard prelude
+supports a polymorphic constant
+
+              map : (a -> b) -> [a] -> [b] 
+
+which will map a function over a vector, matrix, or higher-dimensional
+array. Note that a matrix of integers, or type [int] has a different
+type from a vector of vectors of type [[int]]. Thus, given 
+sum_int : [int] -> int which adds up an array of integers, we have
+
+             map sum_int : [[int]] -> [int]
+
+which will sum each entry of the outer array. This is useful when 
+
+ - representing complex numbers as arrays of length 2, or
+ - each entry in an array has an associated array of data, e.g.
+      - each entry is given an array of nearest neighbours, or
+ - decomposing an array into an array of blocks, e.g. 
+      - a matrix into a matrix of matrices.
+
+
+
+Efficiency
+~~~~~~~~~~
+
+
+-------------------------------------------------------------
+|               |Map   Reduce  Q'sort  FFT   MM-loops  MM-ip |
+|_______________|____________________________________________|
+|---------------|--------------------------------------------|
+|FISh           |1.04  0.37     1.93   3.57  4.36       7.05 |
+|---------------|--------------------------------------------|
+|Ocaml(in-lined)|4.00  2.66     3.53                         |
+|---------------|--------------------------------------------|
+|Ocaml          |5.99  4.59    15.47   8.16  7.71      60.61 |
+|---------------|--------------------------------------------|
+|speedup        |5.8   12.4     8.0    2.3   1.8        8.6  |
+--------------------------------------------------------------
+
+		Benchmark user times 
+
+See http://linus.socs.uts.edu.au/~cbj/FISh/Benchmarks for more
+details.
+
+
+Static Shape Analysis
+~~~~~~~~~~~~~~~~~~~~~
+
+Shape analysis is used to determine the number of dimensions, and the
+size in each dimension, of every array appearing in a program. (A
+program is a closed term of array or command type.) In particular, it
+checks that every array is regular, i.e. is a hyper-cube whose
+entries all have the same shape. The latter requirement is necessary
+to ensure that every entry in a vector of vectors has the same length,
+i.e. that a vector of vectors is a matrix. As well as detecting
+irregularities, it is able to detect all other shape errors, such as
+multiplying matrices of innapropriate sizes, or having incompatible
+numbers of dimensions. It is the power of shape analysis that makes
+poly-dimensional programming feasible.
+
+Knowledge of the shapes can be used to improve memory management
+during compilation of the resulting imperative program. In particular,
+FISh supports a clear stack discipline, and so does not require a
+garbage collector. The existing FISh compiler translates programs in
+to simple C code, which is then compiled and executed in the usual
+way. This approach is also being applied in the design and
+implementation of a parallel version of FISh, called GoldFISh.
+
+
+F = I + Sh
+~~~~~~~~~~
+
+The slogan is represented within the standard prelude by a function
+
+     proc2fun : (var a -> var b -> comm) -> (#b -> #a) -> b -> a 
+
+for converting procedures (and shapes) to functions. proc2fun pr sh x
+uses the shape function sh and the shape #x of the array x to
+determine the shape of the result. It then creates a local variable y
+of this shape, and invokes the procedure pr on and a stored value of
+x, finally returning the value of y.
+
+
+Semantics
+~~~~~~~~~
+
+Shape analysis is supported by a clean and powerful categorical
+semantics, in which the shape-data (or shape-entry) decomposition is
+represented by a pullback. For multi-dimensional arrays, this is
+
+                                    entries	 
+                      	       [a] ---------> List a
+                                |   |           |
+                                |___|           |
+                          shape |               | map #
+                                |               |
+                               \/               \/ 
+                           List N x #a -----> List #a 
+                                         c
+
+where c takes the list of numbers ns and the a-shape sh and produces a
+list of length given by the product of ns whose entries are all sh.
+In other words, all entries of an array must have the same shape.
+
+
+Poly-dimensionality 
+~~~~~~~~~~~~~~~~~~~
+
+FISh supports the usual Hindley-Milner style of polymorphism. It also
+supports polymorphism in array sizes (unlike earlier Algol-like
+languages) and in the number of dimensions of an array. That is, FISh
+supports polydimensional programming. For example, the map function
+is defined to have type
+
+                             map : (a -> b) -> [a] -> [b]
+
+
+and so may act on a vector, matrix or higher-dimensional
+array. However, the existence of the simple imperative features means
+that this can be compiled into a sequence of nested for-loops
+corresponding to the number of dimensions of the array argument. 
+Polydimensionality is a form of *shape polymorphism*. 
+
+
+Array Programming
+~~~~~~~~~~~~~~~~~
+
+Poly-dimensionality means that many array programs, e.g. numerical
+recipes, can be written for any number of dimensions while maintaining
+static type and shape checking. For example, FISh supports
+poly-dimensional stencilling and a poly-dimensional difference
+equation solver (see Sample Programs).
+
+
+Parallel Programming 
+~~~~~~~~~~~~~~~~~~~~
+
+Size and shape are important parameters in estimating the cost of
+alternative parallel implementations. FISh has been designed to
+support a parallel variant, called GoldFISh, currently under
+development. GoldFISh will support additional parallel combinators for
+some of the existing FISh functions that express the usual
+second-order constants and also the usual array distributions (see
+Sample Programs).
+
+
+	***********************************
+
+

@@ -1,0 +1,86 @@
+Path: news.gmane.org!not-for-mail
+From: Barry Jay <cbj@socs.uts.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Naturality Squares and Pullbacks
+Date: Mon, 6 Apr 1998 13:15:54 +1000 (EST)
+Lines: 57
+Approved: news@gmane.org
+Message-ID: <199804060315.NAA11006@algae.socs.uts.EDU.AU>
+References: <199803240215.LAA10126@etlclu.etl.go.jp>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017128 26969 80.91.229.2 (29 Apr 2009 14:58:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:48 +0000 (UTC)
+Cc: categories@mta.ca
+To: nxg@cs.bham.ac.uk
+Original-X-From: cat-dist Mon Apr  6 12:16:43 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA01222
+	for categories-list; Mon, 6 Apr 1998 10:14:22 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: <199803240215.LAA10126@etlclu.etl.go.jp> (nxg@etl.go.jp)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1729
+Original-Lines: 56
+Xref: news.gmane.org gmane.science.mathematics.categories:698
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/698>
+
+
+>A natural transformation is an indexed family of arrows such that a
+>certain diagram commutes. One could require a stronger condition,
+>namely that the said diagram is a pullback. What would such a
+>transformation be called? I'm sure I've seen this in the literature
+>before but I cant remember where. Pointers?
+
+Cartesion natural transformations data:F=>L into the list functor have
+	been used to represent the data-shape decomposition of many
+	data types of the form FX.
+
+	    data_X
+	FX --------> LX 
+	|  |         |
+F! = 	|  |         | L! =
+shape	|--          | length
+	|            |
+	F1 --------> L1 
+	   data_1 =
+	   arity
+
+Examples include tree types and array types. See, for example
+
+@Article{Jay95b,
+	Author= cbj,
+	Title={A semantics for shape},
+        Journal={Science of Computer Programming},
+        Volume=25,
+	Year={1995},
+        Pages={251--283}
+        }
+
+and other papers at http://linus.socs.uts.edu.au/~cbj.
+
+
+>This problem arose in the context of finitary monads where 
+>T(X) is the derived operations over a set X for some signature. 
+>The naturality square for the unit turns out to be a pullback. 
+>This then implies that the unit of the monad is a monic - 
+>presumably this is a result in the literature somewhere. 
+>Again, pointers?
+>
+>Neil Ghani
+
+If T(X) = mu_Y. X + P(X,Y) for some polynomial P then the
+	cartesian-ness of the unit for the monad follows from one of
+	the main theorems of the paper above, which shows that taking
+	initial algebras preserves cartesian-ness. Here it is applied
+	to the (cartesian) inclusion X -> X + P(X,Y). 
+
+Barry Jay
+
+| Associate Professor C. Barry Jay   www: linus.socs.uts.edu.au/~cbj
+| Reader in Computing Sciences	     ftp: ftp.socs.uts.edu.au/Users/cbj
+
+
+

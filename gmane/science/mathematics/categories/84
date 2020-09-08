@@ -1,0 +1,91 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <andrej.bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Dedekind versus Cauchy reals
+Date: Fri, 13 Feb 2009 01:07:08 +0100
+Lines: 58
+Approved: news@gmane.org
+Message-ID: <E1LXnX2-0000fe-Lh@mailserv.mta.ca>
+Reply-To: Andrej Bauer <andrej.bauer@andrej.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1234493090 13739 80.91.229.12 (13 Feb 2009 02:44:50 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 13 Feb 2009 02:44:50 +0000 (UTC)
+To: categories@mta.ca, Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Original-X-From: categories@mta.ca Fri Feb 13 03:46:06 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LXo45-0007MV-Hl
+	for gsmc-categories@m.gmane.org; Fri, 13 Feb 2009 03:46:05 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LXnX2-0000fe-Lh
+	for categories-list@mta.ca; Thu, 12 Feb 2009 22:11:56 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:84
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/84>
+
+This is a reply to Thomas's post about "Dedekind vs. Cauchy". I am too
+young to know why Cauchy reals were preferred by the early
+constructivists, so I will reply only to remarks that regard
+real-number computation, of which I have more experience.
+
+Thomas gives pragmatic reasons for preferring Cauchy sequences,
+actually the rapid ones, with rate of convergence 2^-n. Given a rapid
+Cauchy sequence we can easily get an approximation to any desired
+degree. On the other hand, Thomas says, a Dedekind real is implemented
+as a semidecision procedure, which forces us to _guess_ approximations
+to the real. And he says this must be done in parallel, which just
+makes things worse.
+
+Firstly, I think arguments which are based too heavily on efficiency
+are on a shaky ground. C is faster than Haskell, therefore everyone
+should use C. Perhaps nobody has rally tried to implement efficient
+Dedekind reals so how can we tell? In fact, as far as I know, nobody
+has until last year. By the way, Cauchy sequences with a fixed rate of
+convergence are a bad idea if you worry about efficiency. As Norbert
+Mueller has demonstrated over the years, it is better to allow Cauchy
+sequences (actually sequences of eventually shrinking intervals)
+_without_ a priori conditions on the rate of convergence. Somewhat
+paradoxically, by allowing arbitrarily slow rate of convergence we are
+able to write _faster_ real arithmetic. This is a non-obvious fact
+which the practitioners have been trying to get across, but it's not
+sticking with the theorists for some reason. Thomas's argument about
+AC_N being of only moderate help is true, but in a twisted way: in
+practice AC_N is just never used explicitly, and moduli of continuity,
+even fixed ones like 2^-n, are avoided at all cost.
+
+Secondly, there are other criteria by which we should judge an
+implementation. One of them is expressivity and the level of
+abstraction. With the Dedekind reals certain concepts are more easily
+expressed. For example, if one wants to talk constructively about
+compactness of the closed interval, Cauchy reals will not be of much
+help (unless you essentially declare [0,1] to be compact), whereas
+locale-theoretic constructions in the style of Dedekind will work
+better.
+
+Lastly, since my computer believes in number choice, there really is
+no dilemma. The Cauchy and Dedekind reals _must_ be equivalent to the
+computer. Paul Taylor and I have devised algorithms for efficient,
+sequential computation with Dedekind reals which use the equivalence
+with Cauchy reals under the hood (at least I think that's what is
+going on, but I do not fully understand the whole thing yet). There is
+no need to think of a Dedekind real as a clumsy semidecision
+procedure. Instead, the left and the right cut may be seen as
+instructions for calculating better approximations from existing ones.
+This can be done quite efficiently with Newton's method (the variant
+for interval arithmetic). The computation that comes out then behaves
+very much like an iterative procedure for computing a Cauchy sequence.
+
+Best regards,
+
+Andrej
+
+
+

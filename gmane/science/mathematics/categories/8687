@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: Claudio Hermida <claudio.hermida@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coherence for symmetric monoidal and (co)affine categories
+Date: Sun, 23 Aug 2015 22:44:16 -0300
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1ZUESN-0000tk-A0@mlist.mta.ca>
+References: <E1ZTVmA-0001s4-LN@mlist.mta.ca>
+Reply-To: Claudio Hermida <claudio.hermida@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1440510117 1839 80.91.229.3 (25 Aug 2015 13:41:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 25 Aug 2015 13:41:57 +0000 (UTC)
+To: Paul Blain Levy <P.B.Levy@cs.bham.ac.uk>, categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Tue Aug 25 15:41:50 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZUETy-0006tS-6v
+	for gsmc-categories@m.gmane.org; Tue, 25 Aug 2015 15:41:46 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:44468)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZUESM-0006tD-Ui; Tue, 25 Aug 2015 10:40:06 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZUESN-0000tk-A0
+	for categories-list@mlist.mta.ca; Tue, 25 Aug 2015 10:40:07 -0300
+In-Reply-To: <E1ZTVmA-0001s4-LN@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8687
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8687>
+
+Dear Paul,
+
+On 2015-08-22 11:06 AM, Paul Blain Levy wrote:
+> Dear all,
+>
+> Given a category C, define symm(C) to be the following category:
+>
+> - an object is a finite family [or finite sequence, if preferred] of
+> C-objects
+>
+> - a morphism from (C_i | i in I) to (D_j | j in J) consists of an
+> bijection f : I --> J and, for each i in I, a C-morphism C_i --> D_fi.
+>
+> Define coaff(C) likewise but with "injection" instead of "bijection".
+>
+> It seems to be folklore that
+>
+> (1) symm(C) is the free symmetric monoidal category on C
+>
+> (2) coaff(C) is the free coaffine category (symmetric monoidal category
+> with initial unit) on C.
+>
+> In the special case where C is discrete, these statements follow from
+> the coherence arguments in Mac Lane's "Natural associativity and
+> commutativity" and Petric's "Coherence in substructural categories".
+>
+> But for general C, where are these statements proved?
+>
+> Paul
+>
+>
+>
+
+The 'coaffine envelope' construction of [HT12, Cor 2.12] provides the
+free coaffine category 'D' over a symmetric one D (wrt strong symmetric
+functors). So combining this construction with Symm, one gets
+
+Coaff(C) = 'Symm(C)'
+
+The explicit construction in ibid does not spell out this special case,
+except for C =1, where one gets the familiar category of finite sets and
+injections (with sum as tensor). The general description yields
+
+Coaff(C) ( X, Y) = [ \Coprod_{W\in Symm(C)} Symm(C)(X \tensor W, Y)]_~
+
+that is, morphisms f:X \tensor W -> Y, indexed by W, subject to an
+equivalence relation via directed paths. It reduces to the explicit
+description of Coaff(C) above by noting that every equivalence class has
+a unique underlying injection i:|X| -> |Y| between the underlying index
+sets, which gives a canonical representative of ~-classes with W = (|W|,
+{Y_w}_{w\in |W|}) where |W| is the complement of the image of i in |Y|.
+
+As for Symm(C), I am not positive about the original reference, but
+surely it is worthwhile referring to the classical [JS93] which gives an
+explicit description of the free braided monoidal category on a given
+category (Prop. 2.2(b) and Cor. 2.4). One easily gets Symm(C) by
+restricting to braidings which are symmetries (so the construction
+involves permutation groups rather braid groups). The general
+construction (a Grothendieck construction) is introduced in Kelly's
+theory of clubs [K74]. The general theory that encompasses these monadic
+constructions is that of *polynomial monads*, as in the recent [W15]
+(and references therein for this rich theory), which includes the
+construction of Symm among the many examples.
+
+Claudio
+
+
+REFERENCES
+
+[HT12] - Hermida, Claudio, and Robert D. Tennent. "Monoidal
+indeterminates and categories of possible worlds."/Theoretical Computer
+Science/430 (2012): 3-22.
+
+[JS93] - Joyal, Andr??, and Ross Street. "Braided tensor
+categories."/Advances in Mathematics/102.1 (1993): 20-78.
+
+[K74] - Kelly, Gregory Max. "On clubs and doctrines."/Category seminar/.
+Springer Berlin Heidelberg, 1974.
+
+[W15] - Weber, Mark. "Polynomials in categories with pullbacks."/Theory
+and Applications of Categories/30.16 (2015): 533-598.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

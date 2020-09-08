@@ -1,0 +1,91 @@
+Path: news.gmane.org!not-for-mail
+From: Aleks Kissinger <aleks0@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Indiscrete objects in a functor category
+Date: Sat, 19 Dec 2015 11:48:21 +0100
+Lines: 55
+Approved: news@gmane.org
+Message-ID: <E1aARRG-00021K-F2@mlist.mta.ca>
+Reply-To: Aleks Kissinger <aleks0@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Trace: ger.gmane.org 1450569763 25843 80.91.229.3 (20 Dec 2015 00:02:43 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 20 Dec 2015 00:02:43 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sun Dec 20 01:02:36 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aARSN-0003qx-DF
+	for gsmc-categories@m.gmane.org; Sun, 20 Dec 2015 01:02:35 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34011)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aARRH-00081s-TC; Sat, 19 Dec 2015 20:01:27 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aARRG-00021K-F2
+	for categories-list@mlist.mta.ca; Sat, 19 Dec 2015 20:01:26 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8769
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8769>
+
+It's common to describe the category of (directed, multi-) graphs as a
+functor category Graph := [2, Set], where 2 here is the category with
+2 objects and 2 parallel arrows (s & t).
+
+For a pair of sets (V,E), one can construct the indiscrete graph
+I(V,E) as a graph with vertices V and edges E x V x V, where the
+source and target maps are just the 2nd and 3rd projection
+respectively. This gives a right adjoint to the forgetful functor from
+Graph to pairs of sets. This enables one to construct a category of
+graphs with a fixed set of vetex/edge labels as a slice over Graph:
+
+Graph / I(Lv, Le)
+
+since a graph hm G --> I(Lv,Le) is the same as a map U(G) --> (Lv,Le),
+which is just a pair of functions assigning labels to the vertices and
+edges of G.
+
+
+This seems to me like a pretty standard trick, which extends to any
+functor category from a C which is in some sense "suitably acyclic".
+For instance, consider a category of "partitioned graphs" [3, Set],
+where 3 has objects (P,V,E) and arrows:
+
+E --s--> V, E --t--> V, and V --p--> P
+
+where, p assigns each of the vertices a partition. For a triple
+(P,V,E) we can form the indiscrete partitioned graph with:
+
+- partitions P
+- vertices V x P
+- edges E x (V x P) x (V x P)
+- p = pi2, s = pi2, t = pi3
+
+which gives a right-adjoint to the forgetful functor from partitioned
+graphs to triples of sets. This is clearly an instance of a general
+recipe, whereby you start with the objects with no arrows out, and
+work your way backwards, always adding copies of the codomain of every
+out-arrow. Again one can attach labels to partitioned graphs by
+slicing:
+
+[3,Set] / I(Lp,Lv,Le)
+
+
+So, my question: Is the general case a known/studied construction? If
+so, could someone provide a reference?
+
+
+
+Best,
+
+Aleks
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

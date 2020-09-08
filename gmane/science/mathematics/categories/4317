@@ -1,0 +1,89 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt08@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: replacement and iterated powersets
+Date: Sun, 16 Mar 2008 16:25:31 +0000
+Lines: 55
+Approved: news@gmane.org
+Message-ID: <844283ef33e889f4665922a47f56511d@PaulTaylor.EU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019868 12734 80.91.229.2 (29 Apr 2009 15:44:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:28 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Mar 16 21:56:29 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 16 Mar 2008 21:56:29 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Jb3Zi-0005r8-6V
+	for categories-list@mta.ca; Sun, 16 Mar 2008 21:51:38 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 81
+Status: O
+Content-Length: 1678
+Original-Lines: 54
+Xref: news.gmane.org gmane.science.mathematics.categories:4317
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4317>
+
+Maybe I should wave my hands a bit less, and actually spell out a
+concrete example.
+
+Here is how you can say that the display map  X-->Nx2  in an elementary
+topos with a natural numbers object is the sequence of iterated
+powersets, starting with X[0,0]=N, where X[0,1] is the union of X[n,0].
+In set-theoretic language, X is then the cardinal  beth_{omega.2}.
+
+Of course, the following is not a CONSTRUCTION of this display map,
+just a SPECIFICATION of it:  we need Replacement to say that there
+EXISTS a display map that satisfies this specification.
+
+First we define the strict arithmetical order on Nx2:
+   (n,0) < (m,0)  if n < m
+   (n,0) < (m,1)  always
+   (n,1) < (m,1)  if n < m
+   (n,1) < (m,0)  never
+Nx2 is also a poset, with the reflexive order <= defined as < or =.
+
+Let D(Nx2) be the lattice of lower subsets of Nx2 wrt <=.
+
+Let  parse: Nx2 --> D(Nx2)  by  parse(p) = {q | q < p}.
+
+Now let  X-->Nx2  be a discrete fibration in Pos.
+This means that, whenever  q<=p,  there is a function  X[q]->X[p],
+and this system respects identities and composition.
+
+The powerset functor of the ambient elementary topos is fibred,
+so we can construct another discrete fibration
+    Y-->D(Nx2)
+in which    Y[U] = colim {Y[q] | q in U}.
+
+In particular,  if  U = parse (0,1) = { (n,0) | n in N },
+Y[U] is the colimit of Y[n,0]  for  n in N  and the maps between them.
+
+Now, we need to say that  Y[parse(p)] = X[p], up to isomorphism.
+
+But this is just the statement that
+
+     X  --------->  Y
+     |    |         |
+     |    |         |
+     |----+         |
+     |              |
+     |              |
+     V   parse      V
+    Nx2 -------> D(Nx2)
+
+is a pullback.
+
+Paul Taylor
+
+
+
+

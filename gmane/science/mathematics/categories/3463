@@ -1,0 +1,793 @@
+Path: news.gmane.org!not-for-mail
+From: John Baez <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: cartesian closed categories and holodeck games
+Date: Sun, 22 Oct 2006 18:26:06 -0700
+Lines: 759
+Approved: news@gmane.org
+Message-ID: <E1GbyUm-0003ax-Fj@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241019321 8866 80.91.229.2 (29 Apr 2009 15:35:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:35:21 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct 23 09:09:24 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 23 Oct 2006 09:09:24 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GbyUm-0003ax-Fj
+	for categories-list@mta.ca; Mon, 23 Oct 2006 09:01:32 -0300
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 26
+Status: O
+Content-Length: 25315
+Original-Lines: 758
+Xref: news.gmane.org gmane.science.mathematics.categories:3463
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3463>
+
+Dear Categorists -
+
+This contains a popularization of Dolan and Trimble's work on
+game theory and the free cartesian closed category on one object.
+It also has links to more detais.
+
+Best,
+jb
+
+....................................................................
+
+Also available as http://math.ucr.edu/home/baez/week240.html
+
+October 22, 2006
+This Week's Finds in Mathematical Physics (Week 240)
+John Baez
+
+[stuff deleted]
+
+In my seminar this year, we're focusing on two topics: quantization
+and cohomology, and classical versus quantum computation.  I'm
+trying out something new: not only are the notes available on the
+web, there's also a blog entry for each class, where you can ask
+questions, make comments and correct my mistakes!
+
+4) John Baez, Fall 2006 seminars: Quantization and cohomology, and
+Classical versus quantum computation.  Notes by Derek Wise, homeworks
+and blog entries available at http://math.ucr.edu/home/baez/qg-fall2006/
+
+I hope more people blend teaching with blogging.  It's not too much
+work if someone with legible handwriting takes notes and the lectures
+can actually be followed from the notes.  You can use blogging to
+interactively teach people scattered all over the planet!
+
+This week, James Dolan gave a talk on something he's been working on for a
+long time: games and cartesian closed categories.  Lately he's been
+making a lot of progress with Todd Trimble.  Let me introduce you to
+what they did, because it's really cool.
+
+Let's play a game.  I have a set X in my pocket, and I'm not telling
+you what it is.  Can you pick an element of X in a systematic way?
+
+No, of course not: you don't have enough information.  X could even
+be empty, in which case you're clearly doomed!  But even if it's nonempty,
+if you don't know anything about it, you can't pick an element in a
+systematic way.
+
+So, you lose.
+
+Okay, let's play another game.  Can you pick an element of
+
+X^X
+
+in a systematic way?   Here A^B means the set of functions from B to A.
+So, I'm asking if you can pick a function from X to itself in a systematic
+way.
+
+Yes!  You can pick the identity function!  This sends each element
+of X to itself:
+
+x |-> x
+
+You don't need to know anything about X to describe this function.
+X can even be empty.
+
+So, you win.
+
+Are there any other ways to win?  No.
+
+Now let's play another game.  Can you pick an element of
+
+X^(X^X)
+
+in a systematic way?
+
+An element in here takes functions from X to itself and turns them into
+elements of X.  When X is the set of real numbers, people call this sort
+of thing a "functional", so let's use that term.  A functional eats
+functions and spits out elements.
+
+You can scratch your head for a while trying to dream up a systematic
+way to pick a functional for any set X.  But, there's no way.
+
+So, you lose.
+
+Let's play another game.  Can you pick an element of
+
+(X^X)^(X^X)
+
+in a systematic way?
+
+An element in here eats functions and spits out functions.  When X is
+the set of real numbers, people often call this sort of thing an
+"operator", so let's use that term.
+
+Given an unknown set X, can you pick an operator in a systematic
+way?  Sure!  You can pick the identity operator.  This operator
+eats any function from X to itself and spits out the same function.
+We can write any function from X to itself as
+
+x |-> y,
+
+where y is something depending on x.  So, we can write the identity
+operator as
+
+(x |-> y) |-> (x |-> y)
+
+Anyway: you win.
+
+Are there any other ways to win?  Yes!  There's an operator that
+takes any function and spits out the identity function:
+
+(x |-> y) |-> (z |-> z)
+
+This is a bit funny-looking, but I hope you get what it means: you
+put in any function x |-> y, and out pops the identity function z |-> z.
+
+This arrow notation is very powerful.  It's usually called the
+"lambda calculus", since when Church invented it in the 1930s, he
+wrote it using the Greek letter lambda instead of an arrow: instead of
+
+x |-> y
+
+he wrote
+
+lambda x.y
+
+But this just makes things more confusing, so let's not do it.
+
+Are there more ways to win this game?  Yes!  There's also an operator
+that takes any function f from X to itself and "squares" it - in other
+words, does it twice.  If we write the result as f^2, this operator is
+
+f |-> f^2
+
+But, we can express this operator without using any special symbol
+for squaring.  If we write our function f as
+
+(x |-> y)
+
+and apply it to some element z, we get
+
+(x |-> y)(z)
+
+So, if we apply f^2 to z, we get
+
+(x |-> y)((x |-> y)(z))
+
+So, the function f^2 does this:
+
+z |-> (x |-> y)((x |-> y)(z))
+
+and our squaring operator f |-> f^2 does this:
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)(z)))
+
+This looks pretty complicated.  But, it shows that our systematic
+way of choosing an element of
+
+(X^X)^(X^X)
+
+can still be expressed using just the lambda calculus.
+
+Now that you know "squaring" is a way to win this particular game,
+you'll immediately guess a bunch of other ways: "cubing", and so on.
+It turns out all the winning strategies are of this form!  We can
+list them all using the lambda calculus:
+
+(x |-> y) |-> (z |-> z)
+
+(x |-> y) |-> (z |-> (x |-> y)(z))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)(z)))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)((x |-> y)(z))))
+
+etc.  Note that the second one is just a longer name for the
+identity operator.  The longer name makes the pattern clear.
+
+The moral of this game is that all systematic methods for picking
+an element of (X^X)^(X^X) for an unknown set X can be written
+using the lambda calculus.  So, from now on, we'll take this
+as our *definition* of a "systematic way".
+
+Now let's play another game.  Can you pick an element of
+
+X^(X^(X^X))
+
+in a systematic way?
+
+An element in here eats functionals and spits out elements of X.
+So, it's called a "functionalal" on X.  At least that's what Jim
+calls it.
+
+If I have an unknown set in my pocket, can you pick a functionalal
+on this set in a systematic way?
+
+Yes!  You just need to pick a recipe that takes functionals on X
+and turns them into elements of X.   Here's one recipe: take any
+functional and evaluate it on the *identity* function, getting
+an element of x.
+
+In lambda calculus notation, this recipe looks like this:
+
+((x |-> y) |-> z) |-> ((x |-> y) |-> z)(w |-> w)
+
+Can you think of other ways to win this game?  I hope so: there are
+infinitely many!  Jim and Todd figured out a systematic way to list
+them all.
+
+Now let's play another game.  Can you pick an element of
+
+X^(X^(X^(X^X)))
+
+in a systematic way?  Such a thing eats functionalals and spits out
+elements of X, so it's called a "functionalalal".
+
+So, can you find a functionalalal on an unknown set in some systematic
+way?
+
+The answer is no: you lose.
+
+How about picking an element of
+
+((X^X)^(X^X))^((X^X)^(X^X))
+
+in a systematic way?  Such a thing eats operators and spits out operators,
+so it's called an "operatorator".
+
+The answer is yes: there are lots of ways to win this game.  The real
+challenge is listing them!  This is the sort of question Dolan and
+Trimble's work answers: for any game of this sort, it lets you list
+all the ways to win.
+
+In fact, instead of moving on to functionalators, operatorals,
+operatoralatorals, and so on, let me just tell you trick for instantly
+deciding which of all these games you can win.
+
+You just take your game, like this:
+
+((X^X)^(X^X))^((X^X)^(X^X))
+
+and evaluate it by setting X = 0.  If you get 0, there's no way to
+win.  If you get 1, there's at least one way to win.
+
+To use this trick, you need to know that
+
+0^0 = 1
+
+This is something they don't teach in school!  In analysis, X^Y
+can approach anything between 0 and 1 when X and Y approach 0.  So,
+teachers like to say 0^0 is undefined.  But X^X approaches 1 when X -> 0.
+More importantly, in set theory, A^B stands for the set of functions
+from B to A, and the number of elements in this set is
+
+|A^B| = |A|^|B|
+
+When A and B are empty, there's just one function from B to A, namely
+the identity.  So, for our purposes we should define 0^0 = 1.
+
+Consider the case of functionals, which are elements of X^(X^X).
+If we evaluate this at X = 0 we get
+
+0^(0^0) = 0^1 = 0
+
+So, there are no functionals when X is the empty set.  So, you can't
+pick a functional on a unknown set in a systematic way.  That's why
+you lose when your game evaluates to 0.  It's more interesting to
+prove that for games evaluating to 1, there's a way to win.
+
+But we'd really like to understand *all* the ways to win.  And for this,
+Dolan and Trimble needed the theory of holodeck games.
+
+In Star Trek, the "holodeck" is a virtual reality environment where
+you can play various games.  On the holodeck, if you regret a move
+you made, you can back up to any earlier point in the game and make
+a new move.
+
+Actually I'm deviating from the technical specifications of the
+holodeck on Star Trek, as explained here:
+
+6) Wikipedia, Holodeck, http://en.wikipedia.org/wiki/Holodeck
+
+So, if you're a Star Trek purist, it's better to imagine a video game
+where you can save your game at any state of play, and go back to these
+saved games whenever you want.  And, you have to imagine being so paranoid
+that you *always* save your game before making a move.  This allows games
+to go on forever, so we only say you have a winning strategy if you can win
+in a finite number of moves, no matter what the other player does.
+
+To make this completely precise, we consider two-player games where the
+players take turns making moves.  When a player can't make a move,
+they lose.  Any such game can be written as a "game tree", like this:
+
+     | \/
+   \ | /
+    \|/
+
+In this example, the first player has three choices for her first move.
+If she picks the middle branch, the second player has one choice for his
+first move.  Then the first player has one choice for her second move.
+Then the second player has no choice for his second move - so he loses.
+
+So, in this particular example the second player has no winning strategy.
+
+A cool thing about such a game is that we can take its game tree and
+turn it into an expression built from some variable X using products
+and exponentials.  To do this, just put an X at each vertex of the tree
+except the root:
+
+     X  X  X
+     |   \/
+ X   X   X
+  \  |  /
+   X X X
+    \|/
+
+Then blow on the tree with a strong westerly wind, so strong that the
+branches blow away and only the X's are left:
+
+        X   XX
+   X   X   X
+  X   X   X
+
+This is just a way of writing an expression built from X using products and
+exponentials:
+
+X^X X^(X^X) X^(X^(XX))
+
+Conversely, any such expression can be turned back into a tree, at least
+after we simplify it using these rules:
+
+(AB)^C = A^C B^C
+
+(A^B)^C = A^(BC)
+
+For example, consider the set of operators:
+
+(X^X)^(X^X)
+
+If we simplify this, we get
+
+X^(X X^X)
+
+or
+
+     X
+  X X
+ X
+
+giving the tree
+
+        X
+       /
+  X   X
+   \ /
+    X
+    |
+
+or in other words
+
+      /
+   \ /
+    |
+
+And here's a cool fact: if you take any expression built from X
+using products and exponentials, and evaluate it at X = 0, you can
+tell which player has a winning strategy for the game described by
+the corresponding tree!  If you get 1, the second player has a winning
+strategy; if you get 0, they don't.
+
+It's pretty easy to prove: try it.
+
+But if you've been paying attention, you'll have noticed something weird.
+
+I've told you TWO ways to get a game from any expression built from X
+using products and exponentials.  First, the game of systematically
+picking an element of the resulting set.  Second, the game we get by
+turning this expression into a game tree, like I just did.
+
+For *both* these games, you can decide if there's a winning
+strategy by evaluating the expression at X = 0.
+
+But are they the same game?  No!  One is the holodeck version of the other!
+
+Let's look at the familiar example of operators:
+
+(X^X)^(X^X) = X^(X X^X)
+
+This evaluates to 1 at X = 0.  So, if we turn it into a tree
+
+      /
+   \ /
+    |
+
+we get a game where the second player has a winning strategy.
+
+This game is not very exciting, but it becomes more exciting if you
+call it "The Lady or the Tiger".  In this game, the first player
+has only one first move: he takes the second player to a room
+with two doors, corresponding to the two branches of the above tree.
+
+Then it's the second player's turn.
+
+If he opens the left door, a beautiful lady pops out and they instantly
+get married and live happily ever after.  If he opens the right door,
+the first player opens a tiger cage.  Then the tiger jumps out and eats
+the second player.
+
+In this game, the second player has just ONE winning strategy:
+on his first move he should choose the left door.
+
+Next look at the game of defining an element of
+
+(X^X)^(X^X) = X^(X X^X)
+
+using the lambda calculus.  We've seen there are INFINITELY MANY
+strategies for winning this:
+
+(x |-> y) |-> (z |-> z)
+
+(x |-> y) |-> (z |-> (x |-> y)(z))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)(z)))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)((x |-> y)(z))))
+
+and so on.  These correspond to 2nd-player winning strategies
+for the *holodeck version* of The Lady or the Tiger.
+
+What are these strategies?
+
+One is just to play the game and win by choosing the left door.
+
+Another is to choose the right door - and then, just when the
+tiger is about to eat you, back up and choose the left door!
+
+Another is to choose the right door - and then, just when the
+tiger is about to eat you, back up and choose... the right door!
+Whoops!  Then, when the tiger is about to devour you again, back
+up again, and this time choose the left door.
+
+And so on: for each n, there's a strategy where you choose the
+right door n times before wising up and choosing the left door.
+
+Now, if you want a really nice math project, ponder the pattern
+relating all these strategies to the corresponding lambda calculus
+expressions:
+
+(x |-> y) |-> (z |-> z)
+
+(x |-> y) |-> (z |-> (x |-> y)(z))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)(z)))
+
+(x |-> y) |-> (z |-> (x |-> y)((x |-> y)((x |-> y)(z))))
+
+etc.
+
+Then, figure out how to prove Dolan and Trimble's "Fundamental Theorem".
+This sets up a 1-1 correspondence between winning second-person
+strategies for the holodeck verson of any 2-person game, say:
+
+     | \/
+   \ | /
+    \|/
+
+and ways of using the lambda calculus to define elements of the
+corresponding set:
+
+X^X X^(X^X) X^(X^(XX))
+
+If you get stuck, first try these notes from Dolan's talk, and
+then Trimble's more rigorous, technical treatment:
+
+7) James Dolan, Holodeck strategies and cartesian closed categories,
+lecture at UCR, notes by John Baez, Oct. 19, 2006, available at
+http://math.ucr.edu/home/baez/qg-fall2006/f06week03b.pdf
+
+8) Todd Trimble, Holodeck games and CCCs, available at
+http://math.ucr.edu/home/baez/trimble/holodeck.html
+
+Dolan's talk also explains some other fun stuff, like how to multiply
+and exponentiate games.  So, if you read these notes, you'll learn how
+to play
+
+          chess x go
+
+and
+
+          chess^{go}
+
+at least after chess and go have been "improved" so games never last
+forever and the last player able to make a move wins.
+
+But, if you're planning to study this stuff, I'd better admit now
+that Dolan and Trimble formalize the concept of "systematically
+picking an element of an unknown set" with the help of cartesian
+closed categories.
+
+A category is "cartesian" if it has finite products - or in other words,
+binary products and a terminal object.  It's "cartesian closed" if it
+also has exponentials.  All these terms are carefully defined in the
+week 2 and week 3 notes of my classical versus quantum computation course,
+so let me just illustrate them with an example: the category of sets.
+Here the product A x B of two sets A and B is their usual Cartesian
+product.  The exponential A^B is the set of functions from B to A.
+Any 1-element set is a terminal object.
+
+What Dolan and Trimble really study is the "free cartesian closed
+category on one object x", which I like to call CCC[x].  Any object
+in CCC[x] is built from the object x by means of binary products,
+exponentials and the terminal object.  For example, we have objects
+like this:
+
+x^1 1^(x^x) (x x)^(x 1 x^(x^x))
+
+where I've omitted the times symbols for products.
+
+However, every object is isomorphic to one in "tree form".  For example,
+the above object is isomorphic to
+
+x x^(x x^(x^x)) x^(x x^(x^x))
+
+which we can draw as a tree:
+
+   x     x
+   |    /
+ x x x x
+  \| |/
+ x x x
+  \|/
+
+Dolan and Trimble consider the set of elements of any object in CCC[x],
+where an "element" is a morphism from the terminal object, e.g.
+
+f: 1 -> x x^(x x^(x^x)) x^(x x^(x^x))
+
+And, they show these elements are in 1-1 correspondence with second-player
+winning strategies for the holodeck version of the game whose tree is
+constructed as above.
+
+If we pick any set X, the universal property of CCC[x] gives a functor
+
+F: CCC[x] -> Set
+
+This maps elements of any object in CCC[x] to elements of the corresponding
+object in Set:
+
+F(f): 1 -> X X^(X X^(X^X)) X^(X X^(X^X))
+
+So, the element f gives a "systematic way of picking elements" of
+any set built from any arbitrary set X using finite products and
+exponentials.  There might be *other* things that deserve to be
+called "systematic ways of picking elements", but while that's an
+interesting question, it's not really the point here.
+
+By the way, in a cartesian closed category, there's a 1-1 correspondence
+between morphisms
+
+f: B -> A
+
+and elements
+
+f: 1 -> A^B
+
+So, Dolan and Trimble's work really gives a complete description of
+objects and morphisms in the free cartesian closed category on one object!
+They also can describe *composition* in terms of games, and maybe Jim
+will talk about this next Tuesday.  So, they have a complete description
+of CCC[x] in terms of games.
+
+Now let me give you some references on cartesian closed categories, the
+lambda calculus, categorical semantics, and games.  It's an interesting
+network of subjects.
+
+Categorical semantics was born in Lawvere's celebrated 1963 thesis on
+algebraic theories:
+
+9) F. William Lawvere, Functorial Semantics of Algebraic Theories,
+Dissertation, Columbia University, 1963.  Also available at
+available at http://www.tac.mta.ca/tac/reprints/articles/5/tr5abs.html
+
+Semantics deals with theories and their models.  Dual to the concept of
+semantics is the concept of "syntax", which deals with proofs.  In the
+case of algebraic theories, the syntax was studied before Lawvere in
+the subject called "universal algebra":
+
+10) Stanley Burris and H.P. Sankappanavar, A Course in Universal
+Algebra, available at http://www.math.uwaterloo.ca/~snburris/htdocs/ualg.html
+
+Lawvere modernized universal algebra by realizing that an algebraic
+theory is just a cartesian category, and a model is a product-preserving
+functor from this theory into Set or some other cartesian category -
+hence his thesis title, "Functorial Semantics".  I explained this in
+much more detail back in "week200".
+
+The relevance of all this to computer science becomes visible when we
+note that a proof in universal algebra can be seen as a rudimentary form
+of computation.  The "input" of the computation is a set of assumptions,
+while the "output" is the equation to be proved.
+
+Treating proofs as computations may seem strained, but it becomes less
+so when we move to richer formalisms which allow for more complex logical
+reasoning.  One of best-known of these is the lambda calculus, invented
+by Church and Kleene in the 1930s as a model of computation.  Any function
+computable by the lambda calculus is also computable by a Turing machine,
+and according to the Church-Turing thesis these are all the functions
+computable by any sort of systematic process.  Moreover, computations in
+the lambda calculus can actually be seen as proofs.
+
+The usefulness of this way of thinking was brought out in Landin's
+classic paper:
+
+11) P. Landin, A correspondence between ALGOL 60 and Church's
+lambda-notation, Comm. ACM 8 (1965), 89-101, 158-165.
+
+This began a long and fruitful line of research - see for example this:
+
+12) H. Barendregt, The Lambda Calculus, its Syntax and Semantics,
+North-Holland, 1984.
+
+The power of the lambda calculus is evident in the textbook developed for
+MIT's introductory course in computer science, which is available online:
+
+13) H. Abelson, G. J. Sussman and J. Sussman, Structure
+and Interpretation of Computer Programs, available at
+http://www-mitpress.mit.edu/sicp/
+
+It cites pioneers like Haskell Curry, and it even has a big "lambda"
+on the cover!
+
+Students call it "the wizard book", because the cover also features a
+picture of a wizard.  It's used at over 100 colleges and universities,
+and it has spawned a semi-mythical secret society called The Knights
+of the Lambda Calculus, whose self-referential emblem celebrates the
+ability of the lambda calculus to do recursion.
+
+In 1980, Lambek made a great discovery:
+
+14) Joachim Lambek, From lambda calculus to Cartesian closed categories,
+in To H. B. Curry: Essays on Combinatory Logic, Lambda Calculus
+and Formalism, eds. J. P. Seldin and J. Hindley, Academic Press, 1980,
+pp. 376-402.
+
+He showed that just as algebraic theories can be regarded as cartesian
+categories, theories formulated in the lambda calculus can be regarded
+as cartesian closed categories (or CCCs, for short).
+
+Lambek's discovery introduced a semantics for the lambda calculus,
+since it lets us to speak of &quot;models&quot; of theories formulated
+in the lambda calculus, just as we could for algebraic theories.  In
+computer programming, the importance of a model is that it gives a
+picture of what a program actually accomplishes.  A model in the
+category of Sets, for example, sends any program to an actual function
+between sets.
+
+There's no way to list all the interesting references to CCCs and the
+lambda-calculus, but here are some online places to get going on them,
+starting out easy and working up to the harder ones:
+
+15) Wikipedia, Lambda calculus, available at
+http://en.wikipedia.org/wiki/Lambda_calculus
+
+16) Mark Chu-Carroll, Lambda calculus, available at
+http://goodmath.blogspot.com/2006/06/lamda-calculus-index.html
+
+Mark Chu-Carroll, Category theory, available at
+http://scienceblogs.com/goodmath/goodmath/category_theory/
+
+17) Peter Selinger, Lecture notes on the lambda calculus, available
+at http://www.mscs.dal.ca/~selinger/papers.html#lambdanotes
+
+18) Phil Scott, Some aspects of categories in computer science,
+available at http://www.site.uottawa.ca/~phil/papers/handbook.ps
+
+and here's a classic:
+
+19) Joachim Lambek and Phil Scott, Introduction to Higher Order
+Categorical Logic, volume 7 of Cambridge Studies in Advanced Mathematics,
+Cambridge U. Press, 1986.
+
+Dolan and Trimble are not the first to study the relation between games
+and categories.  In the 1970s, Conway invented a wonderful theory of
+games and surreal numbers:
+
+20) John H. Conway, On Numbers and Games, Academic Press, New York, 1976.
+Second edition: A. K. Peters, Wellesley, Massachusetts, 2001.
+
+21) Elwyn Berlekamp, John H. Conway, Richard Guy, Winning Ways, vols. 1-2,
+Aadmic Press, New York, 1982.  Second edition, vols. 1-4, A. K. Peters,
+Wellelsey, Massachusetts, 2001-2004.
+
+22) Dierk Schleicher and Michael Stoll, An introduction to Conway's games
+and numbers, available as math.CO/0410026.
+
+In 1977, Joyal modified Conway's work a bit and related it explicitly
+to category theory:
+
+23) Andre Joyal, Remarques sur la theorie des jeux a deux personnes,
+Gazette des Sciences Mathematiques du Quebec, Vol I no 4 (1977), 46-52.
+
+For an online version in English, try:
+
+24) Andre Joyal, trans. Robin Houston, Remarks on the theory of
+two-person games, 2003.  Available at
+http://www.ma.man.ac.uk/~rhouston/Joyal-games.ps
+
+I don't know the subsequent history very well - I'm no expert on any
+of this stuff! - but by 1990 Martin Hyland was giving lectures on
+Conway games and linear logic, and I think this triggered a lot of
+work on "game semantics" for logic, where propositions are interpreted
+as games and proofs are winning strategies:
+
+25) Samson Abramsky and Radha Jagadeesan, Games and full completeness
+for multiplicative linear logic, Journal of Symbolic Logic, 59 (1994),
+543 - 574.   Also available at http://citeseer.ist.psu.edu/564168.html
+
+26) Martin Hyland and C.-H. L. Ong, Fair games and full completeness
+for multiplicative linear logic without the MIX-rule, available at
+http://citeseer.ist.psu.edu/hyland93fair.html
+
+For a good introduction to all this work, try these:
+
+27) Robin Houston, Categories of Games, M.Sc. thesis, U. Manchester, 2003.
+Available at http://www.cs.man.ac.uk/~houstorx/msc.pdf
+
+Robin Houston, Mathematics of Games, continuation report, U. Manchester,
+2004.  Available at http://www.cs.man.ac.uk/~houstorx/continuation.pdf
+
+Finally, for more on categories, intuitionistic logic, and linear logic,
+see "week227".
+
+----------------------------------------------------------------------
+
+Previous issues of "This Week's Finds" and other expository articles on
+mathematics and physics, as well as some of my research papers, can be
+obtained at
+
+http://math.ucr.edu/home/baez/
+
+For a table of contents of all the issues of This Week's Finds, try
+
+http://math.ucr.edu/home/baez/twfcontents.html
+
+A simple jumping-off point to the old issues is available at
+
+http://math.ucr.edu/home/baez/twfshort.html
+
+If you just want the latest issue, go to
+
+http://math.ucr.edu/home/baez/this.week.html
+
+
+
+
+
+
+

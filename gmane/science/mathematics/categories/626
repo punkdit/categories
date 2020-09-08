@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Insights: adjunctions and languages
+Date: Thu, 29 Jan 1998 16:16:33 -0400 (AST)
+Lines: 104
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.980129161618.27693G-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017079 26571 80.91.229.2 (29 Apr 2009 14:57:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:57:59 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Thu Jan 29 16:16:54 1998
+Original-Received: (from cat-dist@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id QAA19519;
+	Thu, 29 Jan 1998 16:16:34 -0400 (AST)
+Status: O
+Content-Length: 4753
+Original-Lines: 103
+Xref: news.gmane.org gmane.science.mathematics.categories:626
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/626>
+
+Date: Thu, 29 Jan 1998 17:55:05 +1100 (AEDT)
+From: Jonathan Burns <burns@latcs1.cs.latrobe.edu.au>
+
+
+Hello and goodwill
+
+Now that I have my PhD dissertation submitted, I've had a while to
+stand back from the material, and consider the categorial territory
+that I stumbled into in the last year or so. Although I'm acquainted
+with a mere fraction of the crucial concepts here, what I have found
+seems to contain really elegant insights into computer languages, and
+I want to clarify these to myself, as a philosophical basis for
+future study.
+
+It may well be that it will all be old news here, but the introductory
+texts don't spell things out in quite the way I perceive them. (My
+reading started out wide, but narrowed down mainly to MacLane, Barr
+and Wells, and articles by Ridenour in some S-V workshop proceedings
+some years back. Asperti and Longo has been good too.)
+
+To cut to the chase, consider Cartesian closure. If we leave out matters
+of storage, scoping and other time-related resources, a Lisp-family
+language is lambda-calculus with a reduction policy - that is, a set
+of decisions that one expression form is to be replaced by another.
+(For Lisp, the policy is to do beta- and eta-reduction in some order
+until no more redexes can be found.) And lambda is a CCC with name
+binding - as opposed to expressing everything with projectors.
+
+But more: a CCC is defined by adjunctions: unique-terminal, diagonal-
+product, product-exponential. These adjunctions define isomorphisms
+between expression forms:
+
+	f = n (F g)
+	g = (G f) u
+
+where u and n are unit and counit. In other words, the isomorphisms are
+determined by natural transformations, of a very simple and intuitive
+kind: if you can have one of a thing, you can have two of them; if you
+can have one thing and another, you can have both together in a product;
+if you have a product expression, then you can have a product expression
+constructor (exponential) with one term curried out.
+
+These natural transformations are universal structural operators;
+inherently polymorphic or domain-free, in programming terms. And using
+only a handful of them, you can define these isomorphisms, which then
+constitute an equational theory for a language - in the sense that
+lambda is the equational theory behind Lisp.
+
+Whatever can be defined by adjunctions is what they call "referentially
+transparent": equals are substituted only for equals. It's stronger than
+that, in fact, because with an adjunctive system like this, an expression
+can be substituted for another only when there is also a rule for the
+reverse substitution. E.g.
+
+	x * x = square x
+
+The referentially-transparent equational theory stands by itself. But on
+top of it, we may now impose reduction policies, ("games") of various kinds:
+
+1. We can substitute equals for equals by hand: "just doing algebra".
+
+2. We can specify an algorithm for substitutions: intepreters.
+
+3. We can extend this to interpreters where we introduce new reduction
+   rules as we go along: symbolic algebra systems.
+
+4. We can specify a data-directed backtracking algorithm, which is allowed
+   to apply a reduction rule in either order: equational logic systems.
+
+5. We can specify a data-directed heuristic backtracking algorithm:
+   dunno quite what we call these, maybe constraint systems.
+
+6. We can specify systems which not only use backtracking and heuristics,
+   but assert and retract additional rules as we go along: traditional AI.
+
+"Extending the rules" is a dangerous game, of course; you have the
+responsibility for maintaining referential transparency. Nobody I've
+read has hinted at the possibility of automating the definition of
+equational rules by adjunction. Even if such a thing could only be
+done in a very restrained sense, though, it would still be very
+powerful. Vaguely, I think the rubric has to be: OK, here's the kind
+of data we want to work on - regular expressions, perms and coms,
+machine code, whatever - now, what are the equivalences we see in
+these domains, and are they isomorphisms? And if so, _why_ are they
+isomorphisms, and what natural transformations might possibly define
+them by adjunction?
+
+The key insight for me, the thing that categories has revealed, is that
+reduction polices for equational theories are _the_ bridge between the
+declarative and the procedural; and equational theories can be built
+by adjunction from universal constructors. It's so beautiful I just
+want to sit and gaze at it. It's one of those obvious things that you
+see side-on for years, and then suddenly you see it directly.
+
+More later.
+
+
+
+Jonathan Burns        |  
+burns@latcs1.lat.oz.au|  A student approached Susskind, in hopes 
+Computer Science Dept |   of understanding the lambda-nature...
+La Trobe University   | 
+
+

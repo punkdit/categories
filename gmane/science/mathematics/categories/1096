@@ -1,0 +1,236 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Is Zermelo-Fraenkel set theory inconsistent?
+Date: Thu, 1 Apr 1999 13:10:47 +0100 (BST)
+Lines: 210
+Approved: news@gmane.org
+Message-ID: <199904011210.NAA21705@wax.dcs.qmw.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017564 29487 80.91.229.2 (29 Apr 2009 15:06:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:04 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Apr  1 10:24:48 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA04316
+	for categories-list; Thu, 1 Apr 1999 08:17:14 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 10109
+Original-Lines: 209
+Xref: news.gmane.org gmane.science.mathematics.categories:1096
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1096>
+
+
+		IS ZERMELO-FRAENKEL SET THEORY INCONSISTENT?
+
+At the end of this message is a sketch of an argument that leads to
+the conclusion that Zermelo-Fraenkel set theory is inconsistent.
+
+The impact on mathematics is not as devastating as the incautious
+observer might suppose.   Recall that ZERMELO set theory (1908), which
+is essentially equivalent to the categorists' notion of ELEMENTARY TOPOS
+with natural numbers and the axiom of choice,  is adequate for
+most of the purposes of mathematics, though not, as I shall try to
+explain, logic (and theoretical computer science).
+
+ZERMELO-FRAENKEL set theory is the extension of this system by the
+axiom-scheme of REPLACEMENT, which was first formulated by Adolf
+(later Abraham) Fraenkel, Nels Lennes and Thoralf Skolem in 1922,
+although Dimitry Mirimanoff already had something of the idea in 1917.
+Notice that this is some two decades after the appearance of the famous
+"antinomies" of set theory, so presumably the set theorists' guard had
+dropped by that time, and they had begun again to assert megalomaniac
+axioms.   On the other hand, it is a decade before the second generation
+of paradoxical results, Godel's incompleteness theorem and Turing's
+unsolvability of the Halting Problem.
+
+Whenever I see set theory books in a library or bookshop, I turn to
+the index to find out what they have to say about Replacement.  Usually
+there is some trivial result, such as the existence of what categorists
+call image factorisation, that could have been proved from Zermelo's
+axioms with a little more facility in set-theoretic constructions.
+
+The basic use of Replacement, that you will find in the better set theory
+books, is the recursive construction of sets (in substance -- types or
+objects to type-theorists and categorists -- rather than their names).
+
+For example, Mostowski's theorem states that every well founded extensional
+binary relation < is isomorphic to the membership relation for a unique
+transitive set.  This is found, recursively, by means of the formula
+	f(x)  =   { f(y) |  y < x },
+which also provides the extensional reflection (quotient) of any well
+founded relation. In fact the latter result (where the quotient relation
+is merely another relation, rather than a membership relation) can be
+proved using the topos or Zermelo axioms alone, and not Replacement [1],
+although there are categorical generalisations of this that certainly do
+need Replacement.
+
+Richard Montague [2] proved a result that should have been taken as a
+warning of the perilous nature of Replacement, though I suspect that
+Montague's personal eccentricities may have been the reason why he was
+ignored. ZF can prove the consistency, not only of Zermelo set theory (Z)
+itself, but also of Z extended by any single theorem of ZF.
+
+Adrian Mathias has claimed [3] that Bourbaki was "ignorant" of Replacement,
+ie that it did not occur in "Theorie des Ensembles" [4].   Although
+Bourbaki is hardly very clear on this matter, it does include a
+version of Replacement in its axioms, indeed one that is in widespread
+use in category theory and other parts of mathematics, namely that one
+can form the UNION of any SET-INDEXED FAMILY of SETS.
+
+One application of N-indexed unions in theoretical computer science is
+Scott's "D-infinity" construction of models of the untyped lambda calculus.
+Starting from any domain D0=D, one may form its function-space D1=(D0->D0),
+and similarly D2=(D1->D1), etc., linking these together with embedding-
+projection pairs.  If D was one of the examples of L-domains, having a
+pair of elements with infinitely many minimal upper bounds, then one can
+show (classically) that D-infinity has the cardinality of a model of
+Zermelo set theory, so need not exist within such a model unless it also
+satisfies Replacement.
+
+These two ways of seeing Replacement have a common theme: we use N-indexed
+or transfinite unions to unfold a free(ish) model of one logic within
+a model of another.
+
+Having seen this in the context of a messy domain-theoretic construction,
+we may think in a more disciplined way about free models of the lambda
+calculus, the topos axioms, etc.  In fact, there is no difficulty in
+constructing these models, as they are merely TERM ALGEBRAS.  The problem
+lies in proving that the term algebra has the universal (initiality)
+property that qualifies it as "free":
+
+	Let S be the universe (the category of ZF-sets, for example)
+	and F the term algebra (internal to S) for the logic L.
+	Suppose that S itself is a model of L.
+
+	Then there is a unique interpretation functor []:F->S
+	that takes each syntactic operation of F (eg prod(a,b))
+	to the semantics ([a] x [b]) in S.
+
+It is merely unique up to unique isomorphism if the L-structure in S is
+defined by universal properties rather than being chosen.
+
+This initiality property may also be expressed type-theoretically.
+Per Martin-Lof [5] introduced objects with such a property, called UNIVERSES,
+observing the analogy with Replacement.  This point of view stresses that
+the above property is a RECURSION SCHEME.
+
+Let me explain how I came to realise that the existence of []:F->S depends,
+in general, on Replacement.
+
+There is an amazingly simple but incredibly powerful argument, due to
+Peter Freyd and known variously as (Artin-Wraith) glu(e)ing, sconing,
+the Freyd cover, logical relations and other names.  It is based on some
+very elementary categorical investigations of a certain comma category 
+involving F and S.   This argument has been developed rather a long way
+(the most recent paper that I know of is [6]), and we are pretty close
+to having a purely categorical proof of the strong normalisation theorem
+for lambda calculi that, unlike the syntactic proofs, is completely
+generic with regard to the calculus in question.
+
+Freyd originally showed that the terminal object (1) of the free topos (F)
+is projective, and more generally the "global sections functor" 
+F(1,-) : F -> S preserves colimits.   In particular, it preserves the
+initial object (0), which is categorical jargon for saying that S proves
+the consistency of F, because the S-set of F-morphisms 1->0 is the
+initial (empty) S-set.
+
+I found this suspicious, because the punch-line of Andre Joyal's 1973
+(but as yet unpublished and unavailable) categorical proof of Godel's
+incompleteness theorem is that such a functor F(1,-) : F -> S does *not*
+preserve the initial object.
+
+The more careful amongst categorists ought also to be suspicious when
+I speak of "a functor F(1,-) or [] : F -> S" where F is an INTERNAL 
+category in S.   The meaning that we must give to this phrase is that
+it is "syntactic sugar" for a certain FIBRATION  p: V -> F, where V is
+also an internal category and p and internal functor in S.
+
+This brings us back to the relationship between Replacement as a recursive
+construction of objects and Replacement as infinitary colimits:
+"p: V -> F"  is the colimit (in a 2-category whose objects are fibrations)
+of a recursively defined diagram vaguely similar to that which gives Scott's
+D-infinity.
+
+I have come to the conclusion that attempts to define "colimits" such as
+this are inherently circular: what, after all, does it mean to have a
+"cocone" to test such an alleged colimit?
+
+My categorical formulation of Replacement speaks about fibrations
+and smaller colimits defined internally in the style of Benabou.
+This is to be found in the final section (9.5) of my book [7],
+Section 7.7 of which also gives an account of Freyd's gluing construction.
+
+This book is officially due to be published in mid-May,  but it is
+already in stock (and I have my own copy in front of me), and is
+available direct from the publishers at 50 pounds (inclusive of overland
+postage and packing).   Please contact
+	Richard Knott,
+	email:  rknott@cup.cam.ac.uk
+	fax:    +44 1223 315 052
+	tel:    +44 1223 325 916 (but other methods are preferable)
+	snail:  Cambridge University Press, The Edinburgh Building,
+                Shaftesbury Road, Cambridge, CB2 2RU, UK
+with your address and credit card number.  (2.50 pounds extra for airmail.)
+
+Having seen that Replacement provides a UNIFORM way of proving
+consistency of any fragment of logic, we come at last to the
+inconsistency argument:
+
+	Let L(0) be Zermelo set theory
+	(or the axioms for an elementary topos).
+
+	For each n,  let L(n+1)  be   L(n)  plus
+	as much of the axiom-scheme of replacement as is needed
+	to justify the gluing construction that shows that
+
+		L(n+1) |-  ``L(n) is consistent.''
+
+	Now let   L(infinity)   be   the union of  L(n) over n:N.
+
+	If    L(infinity) |- false   then   L(n) |- false   for some n.
+
+	But   L(infinity) |-  ``L(n) is consistent,''
+
+	so    L(infinity)   proves its OWN consistency,
+	contradicting Godel's theorem.
+
+	However,  L(infinity)   has a standard non-trivial interpretation
+	in Zermelo--Fraenkel set theory, which is therefore inconsistent.
+
+[1] Paul Taylor, Intuitionistic Sets and Ordinals, JSL 61 (1996) 705-44
+
+[2] Richard Montague, Fraenkel's Addition to the Axioms of Zermelo,
+    pp 91--114 of Bar-Hillel, et al., eds., Essays on the Foundations of 
+    Mathematics, Magnes Press, Hebrew University, 1966 (distributed
+    by Oxford University Press).
+
+[3] Adrian Mathias, The Ignorance of Bourbaki, Mathematical Intelligencer,
+    14 (1992) 4-13.
+
+[4] Nicolas Bourbaki, Elements de Mathematique XXII: Theories des Ensembles,
+    Livre I, Structures, Hermann, 1957 (English translation 1968).
+
+[5] Per Martin-Lof, An Intuitionistic Theory of Types: Predicative part,
+    pp 73--118 in Rose and Sheperdson, eds., Logic Colloquium '73,
+    North-Holland, Studies in Logic and the Foundations of Mathematics #80,
+    1975
+
+[6] Djordje Cubric, Peter Dybjer and Philip Scott, Normalisation and the 
+    Yoneda Embedding, MSCS 8 (1998) 153--192.
+
+[7] Paul Taylor, Practical Foundations of Mathematics, Cambridge University
+    Press, Cambridge Studies in Advanced Mathematics #59, xii+572pp, 1999.
+
+    http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/
+
+Paul Taylor  <pt@dcs.qmw.ac.uk>  19990401
+
+This message may be copied elsewhere,
+ON CONDITION that it is quoted in its ENTIRETY.
+
+

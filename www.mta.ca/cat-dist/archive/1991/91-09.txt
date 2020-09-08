@@ -1,0 +1,585 @@
+Subj:	Re: Partial Morphisms in a Topos
+Date: Wed, 28 Aug 91 18:05:22 BST
+From: Philip Mulry <psm@uk.ac.ed.dcs>
+
+
+Concerning categories of partial maps there are many  sources dealing with
+this subject including [CO], [J], [Mo], [Mu1], [Mu2], [Rom], [Ros], [RR].
+
+The idea that the (~) functor is a strong monad was well known
+early on in topos theory (check for example Kock and Wraith's notes).
+
+In my thesis in 1980 I generalized this idea by constructing refined truth
+value objects (omega sub p) and their corresponding partial map classifiers
+(~)p which again were strong monads. These refined truth value objects (and
+therefore their corresponding subobjects) had to satisfy certain properties
+including for example closure under composition & pullbacks. Thus m was a
+p-subobject  meant that  the characteristic map of m:A p>--> B factored
+through omega sub p. These constructions were used in several different
+contexts including describing various refined notions of partial maps,
+computations and partial higher type objects. Although these were used
+primarily in a recursive setting, the method was clearly more general. More
+recently Rosolini, in the general context of p-categories, used the notation
+dominance to describe such objects [Ros].
+
+This also seems to be a good time to mention the following. One of the most
+often mentioned categories  of partial maps is the partial cartesian closed
+categories which are supposed to have a terminal object, products and partial
+function spaces.When I first heard of such categories the  partial function
+spaces seemed strikingly similar to the partial higher type objects defined
+in my thesis.  More precisely the classes of subobjects used to define partial
+maps are just the p-subobjects for some omega sub p. Of course one is not
+generally dealing with a topos but there is always one nearby via Yoneda.
+Thus for any ccc with a refined partial map classifier (~)p the corresponding
+Kleisli category is equivalent to a  pCCC. Conversely every pCCC can be fully
+embedded inside the Kleisli category of such a category(just take the Kleisli
+category of the corresponding monad (~)p for the topos). These points and some
+of the history were found in a preprint I wrote (Partial Map Classifiers and
+PCCC's) though some details are also mentioned in  [Mu2]. Many of the other
+references also discuss similar ideas though none seem to directly mention
+the connection to omega sub p and (~)p.
+
+[CO] Curien, Obtulowicz, Partiality, Cartesian Closedness and Toposes,
+                         Information and Computation, 1989.
+
+[J] Jay, Extending Properties to Categories of Partial Maps, LFCS Tech Report
+         90-107, 1990.
+
+[Mo] Moggi, Partial Morphisms in Categories of Effective Objects, Information
+            and Computation, 1988.
+
+[Mu1] Mulry, Thesis, 1980.
+
+[Mu2] Mulry, Monads and Algebras in the Semantics of Partial Data Types, 1989,
+            (to appear in TCS).
+
+[Rom] Roman, On Partial Cartesian Closed Categories, Contemporary Mathematics,
+             vol 92, 1989.
+
+[Ros] Rosolini, Thesis, 1986
+
+[RR] Robinson, Rosolini,  Categories of Partial Maps, JSL, date ??.
+
+==============================
+Subj:	ftp on triples
+Date: Wed, 4 Sep 91 22:13:34 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+Triples has just had an anonymous ftp installed on it.  The files of
+interest are in the directory called pub, or rather its subdirectories.
+So far there are only two, one called texmacros, which is self-explanatory
+and includes the macro files necessary to tex my papers, as well as the
+file diagdoc.tex of documentation of diagram.tex, the diagram macros.
+The other, called barr, contains a number of my recent papers, including
+the latest update of CTCS and the latest corrections to TTT.
+
+Michael Barr
+================================
+Subj:	Review of CTCS
+Date: Fri, 6 Sep 91 12:05:43 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+David Murphy has written a review of CTCS in the journal Formal
+Aspects of Computing, Vol. 3, No.2, in which he says, in part,
+``Category Theory for Computer [sic] Science was written in TeX and
+is available by ftp''.  Leaving aside that he got the name of the
+book wrong, the whole book is not available by ftp.  The publisher
+owns the copyright and probably would take a dim view of that.  What
+is available (but only since about 36 hours ago) is a file of
+updates. It is available by anonymous ftp from triples.math.mcgill.ca
+(Internet: 132.206.150.30) under the name pub/barr/ctcsupdate.tex.
+
+====================================
+Subj:	Apology to David Murphy
+Date: Sat, 7 Sep 91 19:46:58 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+David Murphy has accused me of ``dragging [his] name[...] through the
+mud in a public forum'', in which case I apologize.
+
+Michael Barr
+
+=====================================
+Subj:	Index for papers at triples
+Date: Sat, 7 Sep 91 19:58:12 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+There is now an Index.barr file in /pub/barr at triples.math.mcgill.ca.
+I attach that index to this letter. 
+It contains only the papers' titles, but that ought to
+be enough.  I am willing to send an email to anyone who
+doesn't have anonymous ftp capability.  If people send me a note, I
+will take care of it, but obviously I would prefer it if they could
+do it themselves.  It is also the case that ftp is MUCH more reliable.
+
+acclinlo.tex: Accessible categories and models of linear logic
+ctcsupdate.tex: CTCS update
+fuzlinlo.tex: Fuzzy models of linear logic
+hsp.tex: Functorial semantics and HSP type theorems
+hsppos.tex: HSP type theorems in the category of posets
+staracll.tex: *-Autonomous categories and linear logic
+termobj.tex: Terminal coalgebras in well-founded set theory
+tttcorr.tex: Corrections to TTT
+
+=================================
+Subj:	embar cats
+Date: Sun, 8 Sep 91 10:15:30 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Barr asks if it is known that the category of sets is an  EMBAR
+CATEGORY, that is, if for every endofunctor on the category  of
+sets it is the case that the canonical map from the initial
+algebra to the final coalgebra is monic (assuming, of course, that
+both exist).  Herewith is a proof.  First, however,  some
+counterexamples.
+
+On any category suppose that   f: A -> B   is a map such that
+there is no map at all from  B  back to  A.  Then there is an
+endofunctor, T, such that  A  is an initial  T-algebra,  B  is a
+final  T-coalgebra and  f  is the canonical map.  For example:
+
+  TX  =   if there's a map  X -> A  then  A  else  B.
+
+  T(x:X -> Y)  =  if  TX = TY  then  1:TX -> TY  else  f: A -> B.
+
+This construction says that embar categories are a bit rare.   If
+a topos (indeed, any positive prelogos) is embar then it is two-
+valued, that is, if there's a proper non-trivial subterminator,
+0 < U < 1,  then the map  U+U -> 1  is not monic but is as
+required for the above construction.  The only boolean embar topoi
+are well-pointed.  Embarcation is therefore very fragile under
+slicing.  (sets)/X  is embar iff  X = 0 or 1.  The category of
+G-sets is embar iff the group  G  is trivial  but  (G-sets)/G
+is always embar (where the last  G  means the regular G-set).  But
+booleaness is not necessary for embar.  The proof below works for
+the category of  S-sets where  S  is the sierpinski monoid  (0,1
+under multiplication).  The relevant property is that all non-zero
+objects be injective.
+
+I will say that a PRE-INVARIANT OBJECT for an endofunctor, T, is a
+_monomorphism_  TA -> A.  (If it's an isomorphism it's an
+invariant object.)  A MINIMAL PRE-INVARIANT OBJECT  is one that
+contains no proper pre-invariant objects, that is, one such that
+for every commutative diagram of monomorphisms:
+
+                  TA' ->  TA
+
+                   |       |
+
+                   A' ->   A
+
+it is the case that the horizontal maps are isomorphisms.
+
+Recalling the co-Lambek lemma that the structure map of any final
+coalgebra is an isomorphism one can easily see that the following
+proposition says that the category of sets is embar:
+
+Proposition:
+
+  Let  T  be an endofunctor on the category of sets. Any pre-
+  invariant object for  T  contains a minimal pre-invariant object.
+  Any minimal pre-invariant object is an initial algebra.
+
+Proof:
+
+If T0 = 0  everything is quite clear.  We suppose therefore that
+T0  is non-empty.  Let  m: TA -> A  be a monic.  Let  K be the
+subset of  A  defined as the image of  (T0 -> TA -> A).  Let  P
+be the lattice of all subsets of  A  that contain  K.  Consider
+the order-preserving endofunction, t, on  P  that sends  A'  to
+the image of  (TA' -> TA -> A).  By Tarski, if it isn't the case
+that there's a minimal pre-fixed point for  t.  But since  T
+preserves all monomorphisms from non-empty sources, pre-fixed
+points of  t  are automatically pre-invariant objects for  T.
+So there.
+
+Now suppose that  m: TA -> A  is minimal pre-invariant.  Let
+b: TB -> B  be arbitrary.  Now let  K  be the partial map from  A
+to  B  whose graph is the image of  (T0 -> (TA)x(TB) ->  AxB).
+Let  P  be the CPO of all partial maps from  A  to  B  that
+contain  K.  Let  t  be the order-preserving endofunction  that
+sends a partial map tabled by
+
+       A'      to the partial map tabled by      TA'
+      /  \                                      /   \
+     A    B                                    TA    TB
+                                              /       \
+                                             A         B.
+
+By Scott, if it isn't the case that we have a fixed point for  t.
+The domain of this partial map is a pre-invariant object,
+therefore it's all of  A.  The partial map is a map.
+
+If there were two T-algebra maps from  A  to  B  their equalizer
+would have to be smaller pre-invariant object.  So there aren't
+two maps.  Done.
+
+==============================
+Subject: peejayeff functors
+Date: Mon, 9 Sep 91 09:51:26 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+I have been trying to figure out a good name for an endofunctor for which
+the canonical map from the intial algebra to the terminal coalgebra is
+an isomorphism.  After reading the latest from PJF, it suddenly hit me.
+
+MB
+
+==============================
+Subj:	PJF Functors
+Date: Tue, 10 Sep 91 22:39:00 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+A paper has been added to my ftp directory with the above title.  It is
+a preliminary version only.  An abstract follows:
+
+In a previous paper, we investigated the relation between the initial
+algebra and terminal coalgebra for an endofunctor on the category of
+sets.  In this one we study conditions on a functor to be PJF, which
+means that the canonical comparison morphism between those objects is an
+isomorphism.
+
+The /pub/texmacros directory has slightly modified versions of mtex.tex
+and diagram.tex.  The differences are described in a file called
+changes.tex.
+
+Michael
+==============================
+Subj:	PJF's contribution
+Date: Thu, 12 Sep 91 15:09:34 EDT
+From: barr@triples.math.mcgill.ca (Michael Barr)
+
+When I went to read finally what Peter wrote earlier this week, I
+realized that there was a problem with it.  Not that the conclusion, or
+even the argument, was wrong (although there are two sentences in it I
+cannot parse), but the tossed off statement, ``The relevant property ?of
+Set? is that all non-zero objects be injective.''  But the conclusion is
+false for the opposite of Set and there _every_ object is injective.  So
+what is really involved?  The argument breaks into two parts.  First
+that every pre-invariant T-alg (that is one whose structure TA --> A is
+1-1) includes a minimal subobject and that is pre-invariant.  As a
+matter of fact, that is obvious; just take the intersection of all the
+subobjects.  It is trivial in fact to show that that is invariant.  But
+Peter adopts a curiously complicated proof.  For clarity (it doesn't
+actually matter), assume that T preserves _all_ monics.  Peter then says
+that you can begin with 0 and take the image of T0 --> TA --> A and so
+build up a family of subobjects whose union is this minimal subobject.
+Well, I thought, if it turns him on...
+
+The second part of the proof is to show that this minimal invariant
+object is initial.  I am going to reword Peter's argument in a way that
+I find a bit more congenial, but it is his argument.  Let TA --> A be
+this minimal invariant algebra and TB --> B be any algebra.  Let TC -->
+C be the smallest subalgebra of A x B.  Now C can of course be
+constructed as the intersection of all the subalgebras of A x B or it
+can be built up from below.  But the first argument works in any
+sufficiently complete category and we know the result is false in most
+categories, including ones in which every functor preserves monics.  (It
+is also, of course, false for functors in arbitrary categories that
+preserves monics.)  So what is the crucial difference?  Well, if you
+begin with 0 >--> A x B, the composite 0 >--> A x B --> A is also monic.
+Then so is the composite T0 >--> T(A x B) --> TA = A (= means the
+structure map is an isomorphism).  Thus the image of T0 >--> T(A x B)
+--> A x B also has the property that its inclusion followed by the
+projection on A is monic.  And so on.  When you take the colimit you get
+a subalgebra of A x B that maps monically (and, it is easy to show,
+epically) to A.  Thus this is the graph of a map A to B.  The rest of
+the argument is routine.
+
+The moral is that the basic thing that is working here is that the
+colimit of monics is monic.  In other words, the accessibility of sets
+is the crucial property.  Of course, other properties are also needed.
+
+This very much illustrates the principal of versality Peter made in his
+recent preprint on algebraically complete categories about the
+importance of things with both universal and couniversal mapping
+properties.
+
+Later:
+
+I just realized that there appears to be a minor flaw in Peter's
+argument.  He writes:  ``Now let K be the partial map from A to B whose
+graph is the image of (T0 -> (TA)x(TB) -> AxB).''  The problem is that
+the composite K >--> A x B --> A isn't necessarily monic, so K isn't
+necessarily the graph of a partial function A to B. One way around this
+is to use the argument I gave in my paper on Terminal objects in
+well-founded set theory that replaces T by a functor T^# that preserves
+_all_ monics and has the same initial and terminal object as T. Isn't it
+amazing how often the empty set comes round and stings us!
+
+Michael
+
+=================================
+Subj:	NEW ADDRESS/FTP SITE
+Date: Thu, 12 Sep 1991 17:36:21 EDT
+From: Bob Rosebrugh <rrosebrugh@mta.ca>
+
+***********************************************************
+*                                                         *
+*           NEW ADDRESS FOR CATEGORIES                    *
+*                                                         *
+***********************************************************
+
+As many of you will have noted, categories is now sent from the
+internet host:
+mta.ca  
+
+Please send mail to
+categories@mta.ca  (for postings)    or
+rrosebrugh@mta.ca  (for administrative messages).
+*****Note that categories-request is no longer a valid user.*****
+
+For about a month, the host mta.bitnet  will continue to be available,
+but the new addresses are evidently preferable and provide more accurate
+service.
+
+************ ARCHIVES AVAILABLE BY FTP *********************
+
+Anonymous ftp from macc2.mta.ca is also now available. 
+Archives of the categories mailing list are available 
+up to December 1990 (and shortly to June 1991.)
+in subdirectories of [anonymous.categories]
+It is also intended that the directory [anonymous.categories.macro]
+will contain an archive of diagram macro packages for TeX, 
+or pointers to ftp sites offering such packages.
+
+Please note the host: macc2.mta.ca
+
+DANGEROUS BEND!!!!
+
+VMS (Vax) syntax must be used in changing default directories
+so, for example, to descend from the current directory type
+
+cd [.subnode]     (change to the `subnode' directory)
+
+to ascend one node in the directory tree type
+
+cd [-]
+
+Example, after anonymous login
+
+cd [.categories]   (go to the categories directory)
+dir                (what's there?)
+cd [.cats90]       (go to the 1990 archive, CATS90.DIR was in the directory.)
+dir
+get 90-06.txt      (messages from June 1990)
+cd [-]             (go back up to [.categories])
+quit               (or exit!)
+
+Each directory contains a file named
+00README.TXT
+which explains the directory contents.
+
+Any queries or problem reports should be directed to me.
+
+Bob Rosebrugh  <rrosebrugh@mta.ca>
+======================================
+Subj:	PJF on Barr on PJF
+Date: Sat, 14 Sep 91 11:08:37 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Mike complains when he quotes me as saying:
+   ``The relevant property [of Set] is that all non-zero objects
+    be injective.''
+His point is that I am using other properties of the category.  Of
+course I was.  I thought I was writing in the context of topoi.
+(Mike does seem to understand that I was writing in the context of
+locally complete categories, indeed, he wants to use more local
+completeness than I was willing to use.)
+
+He further writes:
+    The problem is that the composite K >--> A x B --> A isn't
+    necessarily monic..
+Given the definition of  K  and the condition on  T  it is necessarily
+monic.
+
+I should note here that the argument I gave says that the category
+of countable sets is an algebraically complete category, that is,
+every endofunctor has an initial algbra.  Adamek has already observed
+that every endofunctor has an invariant object.  His other similar
+examples work as well:  for any cardinal the category of all sets of
+that cardinality or less is algebraically complete; the category of
+all vector spaces (for a chosen field) of dimension that cardinality
+or less is algebraically complete (using the axiom of choice in the
+non-countable cases).
+
+==============================
+Subj:	Re: A diagram lemma
+Date: Wed, 18 Sep 1991 09:51:23 -0400
+From: "Fred E.J. Linton" <FLINTON@Wesleyan.bitnet>
+
+In a message with [Subject: A diagram lemma] Mike Barr asks:
+
+> Has anyone seen the following diagrammatic lemma?
+
+Sure -- in the general case.  Remember the business about
+"lim-pacing" functors in Lawvere's Columbia PhD thesis?
+
+A functor  C ---> D  is lim-pacing iff:  for every diagram, anywhere,
+of shape  D ,  if the "restricted" diagram of shape  C  has a limit,
+then so does the original one, and the canonical "comparison" between
+those two limits is an isomorphism.  There are n.a.s.c.'s internal
+to  C  and  D  for the lim-pacing condition (some comma category
+being non-empty and connected); and your "diagrammatic lemma"
+is just the instance of all these obtained with  C = NNO^op
+and  D = (NNO x NNO)^op  (and  C ---> D  the diagonal).
+
+[No one would probably want to bother promoting this particular case
+to the status of a "lemma".]
+
+Hope this helps.
+
+-- Fred
+
+==================================
+Subj:	Fred Linton's reply
+Date: Wed, 18 Sep 91 17:04:16 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Following Fred's lead, I discovered the following in Lawvere's thesis:
+(reworded to make the language more modern).  Suppose u: C --> D is
+a functor such that C is small (I'm not sure it matters), every
+coterminous pair of maps in D is the front half of a commutative
+square and u is cofinal in the sense that for any d in D, there is a
+c in C and a map uc --> d.  Then for any functor f: D --> E any
+limit of fu is a limit of f.  These conditions are readily seen to
+be satisfied for the inclusion of the diagonal into the double
+sequence, so Fred's memory is completely accurate on this.
+
+Michael
+
+=================================
+Subj:	Re: A diagram lemma
+Date: Wed, 18 Sep 91 22:12+0000
+From: Paul Taylor <pt@doc.imperial.ac.UK>
+
+Yes. Please excuse me if I think of (filtered) colimits instead, but this
+says that the co/limit over N, then over another N is that over NxN,
+in which the diagonal is co/final.
+
+=========================
+Subj:	Re: A diagram lemma
+Date: Thu, 19 Sep 91 11:59:31 +10
+From: kelly_m@maths.su.oz.au (Max Kelly)
+
+There are many arguments of this kind, one of them (as I recall) in
+my paper with Pultr in JPAA 12(1978), 207 - 244. Isn't the point
+merely that the diagonal is initial in the product?
+
+                                              Max Kelly, 19 Sept.
+=========================
+Subj:	Re: A diagram lemma
+From: street@macadam.mpce.mq.edu.au (Ross Street)
+Date: Fri, 20 Sep 91 15:05:30 GMT
+
+Mike and Fred,
+The modern term is "initial functor" (dual to "final" which Mac Lane preferred
+to "cofinal" which is classical for posets).
+Ross
+
+==========================
+Subj:	Re:  A diagram lemma
+Date: Sat, 21 Sep 91 22:33+0000
+From: Paul Taylor <pt@doc.ic.ac.UK>
+
+Please make it clear to us which is final and which initial.
+==========================
+Subj:	Re:  A diagram lemma
+From: street@macadam.mpce.mq.edu.au (Ross Street)
+Date: Wed, 25 Sep 91 12:35:29 GMT
+
+>
+> Date: Sat, 21 Sep 91 22:33+0000
+> From: Paul Taylor <pt@doc.ic.ac.UK>
+>
+> Please make it clear to us which is final and which initial.
+>
+
+Restriction along a final functor induces an isomorphism between colimits.
+{ Of interest may be the fact that every functor factors into a final functor
+followed by a discrete fibration (Street-Walters Bull. AMS 79 (1973));
+a discussion of such functors is contained there. Unfortunately, the proof
+of the factorisation contains a misleading step about composites of Kan
+extensions; we were over-zealous in trying to keep the account short for the
+Bulletin (we had proved it other ways).}
+Regards,
+Ross
+
+===============================
+Subj:	Re:  A diagram lemma
+Date: Wed, 25 Sep 91 12:32:46 +10
+From: kelly_m@maths.su.oz.au (Max Kelly)
+
+	From categories@mta.ca Tue Sep 24 19:11:01 1991
+	Received: from macc1.mta.ca by adder.maths.su.oz.au with SMTP (5.61++/10.0)
+		id AA10186; Tue, 24 Sep 91 19:10:44 +1000
+	Date: Tue, 24 Sep 1991 00:26:58 EDT
+	From: categories@mta.ca
+	To: sydcat@maths.su.oz.au
+	Message-Id: <0094f18d.df2677a0.4226@mta.ca>
+	Subject: Re:  A diagram lemma
+
+	Date: Sat, 21 Sep 91 22:33+0000
+	From: Paul Taylor <pt@doc.ic.ac.UK>
+
+	Please make it clear to us which is final and which initial.
+
+K: A ---> C is initial if lim TK = lim T for all T: C ---> B, either
+existing if the other does. See Section 4.5 of my book "Basic Concepts
+of Enriched Category Theory", C.U.P. 1982, for a complete treatment of
+both the classical and enriched cases.
+                         Max Kelly, 25 Sept.91.
+=========================
+Subj:	Call for papers - CT91
+Date: Thu, 26 Sep 91 15:09:30 EDT
+From: rags@triples.Math.McGill.CA (Robert A. G. Seely)
+Subject: Call for papers - reminder for participants
+
+
+
+                       CATEGORY THEORY 1991 - Montreal
+
+                          CALL FOR PAPERS (reminder)
+
+ To: All participants of the CT'91 meeting in Montreal, June 1991
+     (including invited speakers, other speakers, and other attendees)
+
+
+ As announced at the meeting:
+
+ The proceedings of this meeting will be published by the American
+ Mathematical Society, we hope before next summer, in the Conference
+ Proceedings series of the Canadian Mathematical Society.
+ These proceedings will be referreed, following the usual journal
+ standards and procedures.  We are inviting submissions from invited speakers
+ and ALL other participants.
+
+ Papers in category theory or its applications in any of the subjects
+ covered at the meeting are welcome.  Please send three (3) copies to the
+ address below.  (The usual exceptions apply:  people in places that cannot
+ provide sufficient xerox facilities may submit one copy; in emergency
+ electronic submissions may be considered---please check with Robert Seely
+ first.)
+
+ To keep to our schedule, we are asking that submissions be sent before
+ 1 December 1991.  (In the event that we exceed our page limit, late
+ submissions may not be considered.)
+
+ We hope to be able to notify authors of the acceptance of papers by March
+ 1992.
+
+ Send the three copies (by 1 December 1991) to:
+
+         Category Theory 1991 - Proceedings
+         c/o R.A.G. Seely
+         Department of Mathematics
+         McGill University
+         805 Sherbrooke St. W.
+         Montreal, Quebec
+         CANADA    H3A 2K6
+
+ (email:  rags@triples.math.mcgill.ca )
+ (fax:    514 - 398 3899 )
+
+
+

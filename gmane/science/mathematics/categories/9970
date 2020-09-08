@@ -1,0 +1,151 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: Paul Taylor <cats@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: constructive Brouwer fixed point theorem
+Date: Mon, 29 Jul 2019 14:16:09 +0100 (BST)
+Approved: news@gmane.org
+Message-ID: <E1hsSqS-0006xt-90@mlist.mta.ca>
+Reply-To: Paul Taylor <cats@PaulTaylor.EU>
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed; charset=US-ASCII
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="56288"; mail-complaints-to="usenet@blaine.gmane.org"
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Tue Jul 30 16:12:26 2019
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by blaine.gmane.org with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.89)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hsSrZ-000EUr-Pp
+	for gsmc-categories@m.gmane.org; Tue, 30 Jul 2019 16:12:25 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36914)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hsSrB-000103-ND; Tue, 30 Jul 2019 11:12:01 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hsSqS-0006xt-90
+	for categories-list@mlist.mta.ca; Tue, 30 Jul 2019 11:11:16 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9970
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9970>
+
+Constructive Brouwer fixed point theorem
+
+I would like some help from a homotopy theorist who is fluent
+in the low-level old-fashioned techniques of the subject such
+as dividing up polyhedra but who is not frightened by the word
+"constructive".
+
+In particular I would like to know whether there is a name or
+some theory for a certain kind of higher connectiveness.
+
+Of course I would also like to know whether anyone has already
+proved the result that I sketch below, since it does seem rather
+a natural one.
+
+The Intermediate Value Theorem and Brouwer's Fixed Point Theorem,
+as usually presented, are non-constructive because the proofs
+assume that equality in R is decidable, ie you can do one thing
+if a=b and another if a<b or a>b.
+
+The counterexample for the IVT is a function that rises to a
+"shelf", where it "hovers" for a bit and then rises again,
+where the height of the shelf is a value a for which we don't
+know whether a=0, a<0 or a>0 and therefore whether the zero is
+at the right or left end of the shelf.
+
+There are constructive versions of both results that find places
+where the function is zero/fixed within epsilon, without
+restricting the (continuous) function.  However, my interest
+is in identifying the appropriate restriction on the function
+to obtain "exact" results.  Other constructivity questions may
+also be raised, such as the use of Dependent Choice and the
+"finite open sub-cover" definition of compactness, but I do
+not believe that there is any interesting theorem without these.
+
+For the IVT, the condition on the function is that, in any
+inhabited open interval, there is some point where it is
+nonzero/nonfixed.
+
+The Brouwer fixed point theorem has a counterexample in 2D:
+there is a computable endofunction of the square all of whose
+fixed points have one or other coordinate non-computable.
+
+Topologically, these fixed points form a rectangular grid,
+so that the subspace of non-fixed points is highly disconnected.
+
+Returning to the theorem, there is a well known proof based on
+Sperner's Lemma, which is about sub-dividing simplices.
+
+This proof is non-constructive because it assumes at the outset
+that the function is non-fixed EVERYWHERE.   However, what is
+actually needed to make the proof work is to be able to construct
+the sub-division in such a way that the function be non-fixed
+on the (n-1)-skeleton.
+
+Therefore the condition on the function that we need to prove
+the theorem and avoid the counterexample is a certain higher
+connectedness of the (open) subspace of nonfixed points:
+
+Any filled-in (n-1)-simplex such that the function is non-fixed
+on its (n-2)-boundary is homotopic (within any neighbourhood)
+to a filled-in (n-1)-simplex with the same (n-2)-boundary such
+that the function is non-fixed throughout.
+
+This condition is a variant on (n-1)-connectedness, but is not
+the same as LOCAL (n-1)-connectedness and I do not know a name
+for it.
+
+Recall that a space U is k-connected if for each h <= k, every
+continuous map s : S^h -> U is contractible (to a point).
+
+This can be said more abstractly in the form that all of the
+homotopy groups pi_n(U) are trivial, but we need a more concrete
+form: any hollow k-simplex in U may be filled in within U.
+
+I have a sketch proof of the Brouwer fixed point theorem based
+on this hypotheses.   However, a lot of infrastructure about
+sub-dividing polyhedra is needed, but this is not my subject
+and I am not familiar with it.   Besides, there is no point on
+working on this if someone else has already done it.
+
+Also, my real interest is not in the fixed point theorem itself
+but in the Sperner proof as an example of the notion of an OVERT
+SUBSPACE.
+
+References:
+
+For an introduction to overtness using the IVT as an example,
+see my paper
+     "A Lambda Calculus for Real Analysis"
+     Journal of Logic and Analysis, 2 (2010) 1-115.
+     www.paultaylor.eu/ASD/lamcra
+
+This 3-page lecture note by Jacob Fox (formerly of MIT, now
+Stanford) contains
+- a neat combinatorial proof of Sperner's Lemma and
+- its application to the classical Brouwer Fix Point Theorem:
+- but not actually the manner of sub-dividing simplices.
+math.mit.edu/~fox/MAT307-lecture03.pdf
+
+I don't recall the details of the counterexample in 2D,
+which is due to G\"unter Baigger,  but Petrus Potgieter
+sketched it for me when I went to Pretoria in 2006 and
+in the paper below:
+
+G\"unter Baigger,
+Die Nichtkonstruktivit\"at des Brouwerschen Fixpunktsatzes,
+Arch. Math. Log., 1985
+
+Petrus Potgieter,
+Computable counter-examples to the Brouwer fixed-point theorem,
+arxiv.org/abs/0804.3199
+
+Paul Taylor
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

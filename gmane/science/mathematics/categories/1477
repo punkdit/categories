@@ -1,0 +1,101 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@barrs.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: AB4.5
+Date: Mon, 3 Apr 2000 18:12:19 -0400 (EDT)
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.10.10004031810530.14821-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017856 31408 80.91.229.2 (29 Apr 2009 15:10:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:56 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Apr  3 20:02:43 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id UAA23577
+	for categories-list; Mon, 3 Apr 2000 20:00:08 -0300 (ADT)
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+X-Sender: barr@triples.math.mcgill.ca
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3769
+Original-Lines: 71
+Xref: news.gmane.org gmane.science.mathematics.categories:1477
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1477>
+
+A day after I sent my previous note, I realized the (or an) answer.  In
+fact, I seem to have discovered a new infinite exactness condition that
+is between AB4 and AB5 and, inevitably, I call AB4.5.  So far I know
+only that it is implied by AB5, implies AB4 and, since module categories
+satisfy both AB5 and AB4.5*, it is definitely weaker than AB5.  I do
+not, at this time, know that it is stronger than AB4.
+
+Here is how it works.  Call a poset superdirected if it is directed and
+all down segments are finite.  The natural numbers is one example and
+the set of finite subsets of any set is another.  If I is superdirected,
+A an abelian category and F,G:  I --> A are two diagrams, say that a
+natural transformation alpha:  F --> G is supernatural (OK, suggestions
+for better names welcome) if for any i in I, the following:  Look at the
+diagram consisting of all the Fj for j =< i and all the Gj for j < i.
+The arrows in the diagram are all the alpha j, for j =< i, as well as
+all the arrows from the restrictions of F and G. The diagram has a
+cocone to Gi and that cocone is monic (meaning the natural map from the
+colimit to Gi is monic) for each i in I, call alpha supernatural.  Now
+the condition is that whenever alpha is supernatural, the induced colim
+F --> colim G is monic.
+
+To see that this implies AB4, suppose for all x in X, A_x >--> B_x.  Let
+I consist of all the finite subsets of X.  For i in I, let Fi be the
+direct sum of all the A_x, x in i and Gi be the direct sum of the
+correspnding B_x.  The supernaturality is satisfied and hence the sum of
+the A_x maps monically to the sum of the B_x.
+
+The application to my question comes as follows.  To recall, I am
+supposing that
+       del            del
+  ... -----> (C_n,d) -----> (C_{n-1},d) ---> ... ---> (C_0,d) --> 0
+ is a chain complex of differential abelian groups, except that we
+assume d.del = -del.d.  Suppose (C_n,d) is exact for each n. Let C be
+the direct sum of the C_n with boundary given by the matrix
+          (   d     0     0   ...    )
+          (  del    d     0   ...    )
+          (   0    del    d   ...    )
+          (   .     .     .   .      )
+          (   .     .     .    .     )
+          (   .     .     .     .    )
+ The finite truncations F^n = C_0 +...+ C_n are readily
+shown to be exact:  F^0 = C_0 is by hypothesis and there is an exact
+sequence     0 --> F^{n-1} --> F^n --> C_n --> 0.  Thus each F^n is
+exact.  Now let Z^n and B^n be the kernel and image, resp. of the
+boundary operator on F^n. Then the rows of
+       0 ----> Z^n -------> F^n -------> B^n ----> 0
+                |            |            |
+                |            |            |
+                |            |            |
+                v            v            v
+       0 --> Z^{n+1} ---> F^{n+1} ---> B^{n+1} --> 0
+ Since the right hand vertical arrow is monic, it follows that the left
+hand square is a pullback, which in turn implies that the induced map
+F^n +_{Z^n} Z^{n+1} ---> F^{n+1} is monic.  Taking colimits, and using
+this Ab4.5 condition together with the right exactness of
+colimits implies that 0 --> colim Z^n --> C --> B --> 0 is exact, so
+that Z = colim Z^n and then B^n = Z^n for all n implies B = Z.
+
+As for AB4.5* on module categories (for which it is sufficient to prove
+it for Ab), it is a bit complicated notationally for this medium, but
+not hard.  The point is that when you try to construct an element in the
+inverse limit, the crucial thing is that you can do it one index at a
+time and no choice you make at an earlier stage ever has to be changed
+at a later one, so you can just continue.  Of course, AC is involved.
+This might a way to find a category that satisfies AB4*, but not AB4.5*;
+the trouble is that AC is also used to show AB4*.
+
+Michael
+
+
+
+

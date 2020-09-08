@@ -1,0 +1,93 @@
+Date: Sun, 29 Jun 1997 11:38:04 -0300 (ADT)
+Subject: algebraic logic via arrows 
+ 
+Date: Mon, 23 Jun 1997 17:39:12 +0000
+From: Zinovy Diskin <diskin@fis.lv>
+ 
+I'd be grateful for comments on the following question motivated by a problem 
+in categorizing algebraic logic a la Tarski.
+ 
+Let C be a  complete category with a factorization
+system (E,M). Given an object A\in C, let us call a pair (m,e) with 
+m\in M, cod(m)=A and e\in E, dom(e)=A, {\it compatible}, m~e, if the
+square
+ 
+                                * --m--> A
+                                |               |
+                               e'              e
+                               |                |
+                               v              v 
+                               *--m'--> A/e
+ 
+is pull-back  (where (e',m') factorizes m;e ).            
+ 
+In SET with the standard surjection-injection factorization, m~e iff 
+for all a,b\in A, a\in A_m and e(a)=e(b)  entail b\in A_m where A_m 
+is the subset of A corresponding to m.
+ 
+Now let (e_i, i\in I) be a family of congruences compatible with
+some m:*--->A,  e_i ~ m for all i\in I.  The question is what
+properties of (C,E,M) are required to provide sup(e_i, i\in I) ~ m ?
+(the collection CongA of e:A-->*, e\in E is a meet-complete semilattice due
+to products, sup is join-via-meets in this lattice). 
+ 
+If C is a category of finitary algebras over SET with the standard
+epi-mono factorization, then sup(e_i) ~ m always holds due to
+the finitary deduction property of taking sup in the congruence 
+lattice: 
+ 
+(a,b)\in sup(e_i) iff there exists a finite subfamily  e_1,...,e_k 
+and c_0,...,c_k \in A s.t. a=c_0, b=c_k and e_j(c_{j-1}) =e_j(c_j) 
+for  all j=1,...,k .
+ 
+Zinovy Diskin
+ 
+
+Date: Mon, 30 Jun 1997 23:42:44 -0300 (ADT)
+Subject: Re: algebraic logic via arrows 
+ 
+Date: Mon, 30 Jun 1997 11:07:12 +0100
+From: Marco Grandis <grandis@dima.unige.it>
+ 
+This is a collateral remark, but I would be surprised if there were no
+connections.
+ 
+In an abelian category  C,  a square of epis and monos as considered by
+Zinovy Diskin
+ 
+       *  --m-->  A
+        |                 |
+        e'               e
+        |                 |
+       v                v
+      X  --m'-->  *
+ 
+is a pullback iff it is a pushout.  Such a bicartesian square represents a
+"subquotient"  X  of  A  (a subobject  m'  of a quotient  e,  and a
+quotient  e'  of a subobject  m);  and it is a subobject  X  >-+->  A  in
+the category of relations  RelC.  Subquotients are a crucial tool in
+homological algebra, where everything - from homology to the terms of
+spectral sequences - is a subquotient of some "main object" (or an induced
+morphism between subquotients). See MacLane, "Homology".
+ 
+A categorical study of subquotients in abelian categories and their
+extensions can be found in the following papers of mine. The last setting
+("semiexact" and "homological" categories) is much more general than the
+classical abelian one
+ 
+M. Grandis, Sous-quotients et relations induites dans les categories
+exactes, Cahiers Top. Geom. Diff. 22 (1981), 231-238.
+ 
+-, On distributive homological algebra, I. RE-categories; II. Theories and
+models; III. Homological theories. Cahiers Top. Geom. Diff. 25 (1984),
+259-301; 353-379; 26 (1985), 169-213.
+ 
+-, On the categorical foundations of homological and homotopical algebra,
+Cahiers Top. Geom. Diff. Categ. 33 (1992), 135-175.
+ 
+ 
+With best regards
+Marco Grandis
+ 
+
+

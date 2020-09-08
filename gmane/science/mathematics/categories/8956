@@ -1,0 +1,126 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: discrete probability functor on Rel
+Date: Mon, 5 Sep 2016 12:32:10 +0100
+Lines: 87
+Approved: news@gmane.org
+Message-ID: <E1bgz5M-00056m-IJ@mlist.mta.ca>
+References: <9c30184e-b113-c156-f86c-f71c6b31149c@cs.bham.ac.uk>
+Reply-To: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Trace: blaine.gmane.org 1473101904 20058 195.159.176.226 (5 Sep 2016 18:58:24 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Mon, 5 Sep 2016 18:58:24 +0000 (UTC)
+To: "categories@mta.ca" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon Sep 05 20:58:20 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.28])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bgz5z-0004Cg-VD
+	for gsmc-categories@m.gmane.org; Mon, 05 Sep 2016 20:58:16 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:59076)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bgz5Z-0002H3-7T; Mon, 05 Sep 2016 15:57:49 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bgz5M-00056m-IJ
+	for categories-list@mlist.mta.ca; Mon, 05 Sep 2016 15:57:36 -0300
+In-Reply-To: <9c30184e-b113-c156-f86c-f71c6b31149c@cs.bham.ac.uk>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8956
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8956>
+
+Dear Nathan,
+
+Your suggestion of deducing the countable splitting lemma from the
+finite one using the finite intersection property doesn't work, because
+the set of distributions on Nat is not compact.  For example, let d_n be
+the distribution that is 1 on n and 0 everywhere else.  This converges
+pointwise to the "distribution" that is 0 everywhere.
+
+So I still don't know how to prove the countable splitting lemma.  Maybe
+you can get a student to write up Nawrotsky's algorithm in English...
+
+Paul
+
+
+On 27/07/16 12:27, Paul B Levy wrote:
+> Dear all,
+>
+> I learnt years ago that the following definition gives an endofunctor D
+> on the category Rel of sets and relations.  But I have never seen a proof.
+>
+> - For a set A, let DA be the set of discrete probability distributions
+> on A, i.e. functions from A to nonnegative reals whose sum is 1.  (Such
+> functions are necessarily countably supported.)
+>
+> - For a relation R : A -> B, let DR : DA -> DB relate d in DA to d' in
+> DB when for every subset U of A, we have d(U) <= d'(R[U]), writing R[U]
+> for the set of all R-images of elements of U.  (It follows that for
+> every subset V of B, we have d'(V) <= d(R^c[V]), writing R^c for the
+> converse of R.)
+>
+> To show D is a functor, the hard part is to show that, for relations R :
+> A --> B and S : B --> C, and d in DA and d'' in DC with (d,d'') in
+> D(S.R), there exists d' in DB such that (d,d') in DR and (d',d'') in DS.
+> I would like to see a proof of this.
+>
+> It's the discrete case of Theorem 1 (i)=>(ii) in
+>
+> https://projecteuclid.org/euclid.aop/1176995659
+>
+> where two proofs are mentioned.  Firstly, Nawrotski's, which is in
+> German, which I can't read:
+>
+> Nawrotski K (1962) Eine Montonieeigenschaft zufaelliger Punktfolgen,
+> Math. Nachr. 24, pages 193-200.
+>
+> Secondly, Strassen's:
+>
+> https://projecteuclid.org/euclid.aoms/1177700153
+>
+> which is in English but beyond my comprehension.  Strassen also cites
+> papers of Kellerer (in German) that might also contain a proof.
+>
+> Can anyone give me a proof, please?
+>
+> Two other things:
+>
+> - For the subfunctor D_f of finitely supported distributions, the result
+> is easier.  It's the "splitting lemma" of probabilistic powerdomain
+> theory, and was proved by Jones, and later by Jung and Tix, and earlier
+> by Berge and dall'Aglio (cited by Strassen).  But these proofs (at
+> least, the ones I've seen) don't seem to adapt to the countably
+> supported case.
+>
+> - I know that D, being an endofunctor on Set that preserves weak
+> pullbacks, has a unique extension to an endofunctor on Rel.  But that
+> doesn't help.
+>
+> Regards,
+> Paul
+>
+>
+>
+>
+>
+>
+>
+>
+>
+
+-- 
+Paul Blain Levy
+School of Computer Science, University of Birmingham
+http://www.cs.bham.ac.uk/~pbl
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

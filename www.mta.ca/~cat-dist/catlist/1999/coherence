@@ -1,0 +1,150 @@
+Date: Sat, 1 Oct 1994 12:44:50 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: ??? coherent , T_{0} => sober ???
+
+Date: Sat, 1 Oct 1994 05:23:38 +0100
+From: Maria Joao Frade <mjf@di.uminho.pt>
+
+Dear Group,
+
+I would be very greatful if someone could help me to make clear the following
+situation  (doubt) :
+
+
+In article "Domain Theory in Logical Form" (1991) S. Abramsky says
+(definition 2.3.2) that
+
+   a space X is coherent if the \Omega(X) is a coherent local
+
+and in theorem 2.3.3 (iii) he writes
+
+          CohSp \simeq CohLoc \simeq DLat^{op}
+
+where CohSp is the category of coherent T_{0} spaces, and continuous
+maps which preserve compact-open subsets under inverse image.
+
+
+But, in Johnstone's book "Stone Spaces" (1982) it is written (II.3.4)
+that
+
+    a space X is coherent if it is sober and \Omega(X) is a coherent local
+
+and in the corollary (Stone's representation theorem for distributive
+lattices) he writes
+
+    The category DLat is dual to the category CohSp of coherent spaces
+    and coherent maps between them.
+
+
+>From the above definitions and results, I wonder if the following
+result is true:
+    If the space X is T_{0} and \Omega(X) is a coherent local
+    then the space X is sober
+
+I have looked around and I didn't find that result. Am I
+misunderstanding something ?
+
+
+I'm finishing my MSc. thesis on "Behavior and State" and for the
+work I'm developing a result like the above would be very helpful.
+So, I would be very greatful if you could help me.
+
+
+Thanks in advance for time and trouble,
+
+        Maria Joao Frade
+
+------------------------------------------------------
+Maria Joao Gomes Frade        e-mail: mjf@di.uminho.pt
+Assistant Lecturer and MSc. student
+Departamento de Informatica,  Universidade do Minho
+
+Date: Mon, 3 Oct 1994 16:53:09 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Re: ??? coherent , T_{0} => sober ???
+
+Date: Mon, 3 Oct 1994 10:56:46 +0000
+From: Steven Vickers <sjv@doc.ic.ac.uk>
+
+>In article "Domain Theory in Logical Form" (1991) S. Abramsky says
+>(definition 2.3.2) that
+>
+>   a space X is coherent if the \Omega(X) is a coherent local
+>
+>and in theorem 2.3.3 (iii) he writes
+>
+>          CohSp \simeq CohLoc \simeq DLat^{op}
+>
+>where CohSp is the category of coherent T_{0} spaces, and continuous
+>maps which preserve compact-open subsets under inverse image.
+>
+>
+>But, in Johnstone's book "Stone Spaces" ... [standard defns omitted]
+>
+>>From the above definitions and results, I wonder if the following
+>result is true:
+>    If the space X is T_{0} and \Omega(X) is a coherent local
+>    then the space X is sober
+
+The standard definitions of coherent - or spectral - space (e.g. Hochster's
+in Trans AMS 142, 1969) clearly include sobriety as part of the definition
+(in Hochster: every closed irreducible subspace has a generic point), and
+that "T_0 + Omega X coherent" is insufficient.
+
+For a counterexample, let D be the Kahn domain of finite and infinite bit
+streams (i.e. order is prefix order, topology is Scott), and let D' be the
+subspace formed by removing a single infinite point. The inclusion D' -> D
+gives an isomorphism between Omega D' and Omega D, which is coherent, and
+D' is T_0. However, D' is not sober, because it lacks the point that was
+taken out.
+
+I think therefore that Samson's Defn 2.3.2 ought to be modified to include
+sobriety as part of the definition, and that Theorem 2.3.3 needs mild
+rewording (e.g. delete "T_0"). Apart from that, I'd be very surprised if
+there's anything else in the whole paper that has to be changed as a
+result.
+
+Steve Vickers.
+
+Date: Mon, 3 Oct 1994 16:56:24 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Re: ??? coherent , T_{0} => sober ???
+
+Date: Mon, 3 Oct 1994 11:32:58 +0100 (BST)
+From: Samson Abramsky <sa@doc.ic.ac.uk>
+
+I'm afraid this was a slip of the pen on my part. I should have included
+sobriety in the definition of coherent space (and then omitted T_0 in
+2.3.3(iii)).
+
+This is what comes of trying to be ``helpful'' ...
+I included this material as general background only. Theorem 2.3.3 is
+never used in the remainder of the paper.
+
+Samson Abramsky
+
+Date: Mon, 3 Oct 1994 16:59:03 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: query of M.J.Frade
+
+Date: Mon, 3 Oct 94 14:27:29 -0500
+From: James Madden <madden@marais.math.lsu.edu>
+
+In response to Maria Joao Frade <mjf@di.uminho.pt>, I believe the
+following is true:
+
+Let $X$ be an infinite space with the cofinite topology, i.e.,
+$U\subseteq X$ is open if and only if $U$ is empty or the complement
+of $U$ is finite.  This space is ${\bf T}_0$---${\bf T}_1$,
+even---but it is not sober, since $X$ is irreducible closed, but $X$
+is not the closure of any point.  (You can make $X$ into a coherent
+space by adding a generic point for $X$.)
+
+$\Omega(X)$ is coherent.  It is isomorphic to ${\rm Idl}(L)$, where
+$L$ is the lattice of all $\{0,1}\}$-valued functions on $X$ that are
+$1$  except at finitely many points.
+
+
+J. Madden
+
+

@@ -1,0 +1,144 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Wed, 26 Oct 2011 12:31:45 +0100
+Lines: 106
+Approved: news@gmane.org
+Message-ID: <E1RJ3MS-0005yw-Fo@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk> <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu> <E1RIgcZ-0000YV-SW@mlist.mta.ca> <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+Reply-To: Paul Levy <P.B.Levy@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v936)
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1319635145 16660 80.91.229.12 (26 Oct 2011 13:19:05 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 26 Oct 2011 13:19:05 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 26 15:19:01 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3Nh-0005dF-LO
+	for gsmc-categories@m.gmane.org; Wed, 26 Oct 2011 15:18:57 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:47771)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3MU-00006H-4y; Wed, 26 Oct 2011 10:17:42 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3MS-0005yw-Fo
+	for categories-list@mlist.mta.ca; Wed, 26 Oct 2011 10:17:40 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7004
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7004>
+
+
+On 25 Oct 2011, at 19:02, Vaughan Pratt wrote:
+
+> The rationale I gave on Monday for sticking to the standard
+> axiomatization of first order logic, which proves Dusko's formula,
+> Steve's objection to it notwithstanding, was as follows.
+>
+>> But it is just as reasonable to say there are variables even when
+>> they
+>> don't occur free in the formula, e.g. when they occur bound, and the
+>> opposite result then obtains.  The wffs of propositional calculus,
+>> L_0,
+>> don't even contain bound variables.  Since this convention seems to
+>> create fewer problems I'm inclined to prefer it.
+>
+> "Seems to create fewer problems" being the sort of sentence any
+> Wikipedia editor would these days tag as "weasel words", I should be
+> more explicit about the sorts of problems it can create.
+>
+> If I've understood Steve's reasoning, he accepts
+>
+> TRUE(a) --> (exists) x. TRUE(x)
+>
+> as a theorem of FOL that holds even in the empty universe, on the
+> ground
+> that it is "vacuously true" (where I would have said vacuously valid).
+
+I think a source of confusion in this debate is the idea that there is
+a single FOL.
+
+Surely we should speak of FOL(Sigma), where Sigma is a signature i.e.
+a collection of function symbols and predicate symbols, each with an
+arity.
+
+If P is a unary predicate in Sigma, then
+
+(for all x. P(x)) => (exists x. P(x))
+
+is a theorem of FOL(Sigma) iff Sigma contains at least one constant
+(nullary function symbol).
+
+That is for single-sorted predicate logic.  More generally, given a
+set S of "sorts", we can take Sigma to be an S-sorted signature
+(meaning that each function symbol has a sort, and each position
+within each arity has a sort).   If P is a predicate in Sigma with one
+argument of sort A, then
+
+(for all x:A. P(x)) => (exists x:A. P(x))
+
+is a theorem of FOL(Sigma) iff there is at least one closed term of
+sort A built from the function symbols of Sigma.  For example, if
+Sigma contains a constant of sort A.
+
+I think the multi-sorted setting makes the whole issue clearer,
+because it's perfectly natural and indeed useful to have a variety of
+sorts of which some are empty and some are not.
+
+regards,
+Paul
+
+
+>
+> The same reasoning would also appear to justify
+>
+> TRUE(a)
+>
+> as a theorem of FOL.  (Note that both formulas are standard FOL
+> theorems, with both holding in every nonempty universe.)
+>
+> But by Modus Ponens, which I can't imagine Steve rejecting, we obtain
+>
+> (exists) x. TRUE(x)
+>
+> which Steve has judged as false.
+>
+> Since falsehood is the criterion by which Steve has been judging
+> theoremhood, unless I've misinterpreted Steve it seems to me that his
+> approach to handling the empty universe is unsound.
+>
+> For ease of reference I've put online my proof that cylindric algebra
+> semantics handles all this in stride by making the pertinent Boolean
+> algebra the one-element inconsistent one whenever Steve and Dusko
+> disagree on this point.  Currently it's at
+> http://boole.stanford.edu/Empty/ but I'm open to suggestions for a
+> suitable more permanent resting place.
+>
+> Vaughan
+
+--
+Paul Blain Levy
+School of Computer Science, University of Birmingham
++44 (0)121 414 4792
+http://www.cs.bham.ac.uk/~pbl
+
+
+
+
+
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

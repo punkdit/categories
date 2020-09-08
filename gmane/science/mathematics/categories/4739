@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Isomorphism of enriched categories
+Date: Mon, 08 Dec 2008 14:47:54 +1100
+Lines: 74
+Approved: news@gmane.org
+Message-ID: <E1L9gES-0000Mc-BT@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0Content-type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241020141 14632 80.91.229.2 (29 Apr 2009 15:49:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:49:01 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Dec  8 09:38:03 2008 -0400
+Return-path: <categories@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Dec 2008 09:38:03 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1L9gES-0000Mc-BT
+	for categories-list@mta.ca; Mon, 08 Dec 2008 09:33:04 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 45
+Status: O
+Content-Length: 2410
+Original-Lines: 73
+Xref: news.gmane.org gmane.science.mathematics.categories:4739
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4739>
+
+
+On 6/12/08 10:21 AM, "Bockermann Bockermann" <tonymeman1@googlemail.com>
+wrote:
+
+> Dear mathematicians,
+>
+> could anybody give me a hint if the following assertion is true?
+> Let V be a complete and co-complete symmetric monoidal closed category. The
+> category sV of simplicial objects in V is also complete and co-complete
+> symmetric monoidal closed with the pointwise tensor. There is a V-adjunction
+> D:V<-->sV:Z
+> of the V-functor Z which evaluates in 0 and the discrete V-functor D. Does
+> this induce a V-Isomorphism of V-categories
+> V-Fun(K,ZC)~sV-Fun(DK,C)
+> for any small V-category K and any sV-category C?
+>
+> Please note that a similar statement is true for the non-enriched case [e.g.
+> Borceux2, Proposition 6.4.8.].
+>
+> Thank you for any help.
+>
+> Tony
+>
+>
+Dear Tony,
+
+Yes, it is true. More generally, let F-|U:W-->V be a monoidal adunction.
+
+This means that V and W are monoidal categories, F and U are monoidal
+functors, monoidal natural transformations 1-->UF and FU-->1 satisfying the
+triangle equations.
+
+(A monoidal functor F:V-->W involves maps FX\otimes FY-->F(X\otimes Y)
+and I_W-->F(I_V), not necessarily invertible, but satisfying coherence
+conditions. In a monoidal adjunction, as above, the monoidal functor F is
+necessarily strong, so that the comparison maps are invertible. The
+comparison maps for U need not be invertible.)
+
+For a small V-category K and a W-category C we do indeed have an isomorphism
+    V-Fun(K,UC) = U(W-Fun(FK,C))
+of V-categories. I'll do my best to explain this via ascii.
+
+
+V-functors from K to UC are in bijection with W-functors from FK to C; this
+takes care of the object-part. For V-functors M,N:K-->UC,
+the hom-object V-Fun(K,UC)(M,N) is the equalizer of the evident maps
+               --->
+Pi_k UC(Mk,Nk) ---> Pi_{k,l} [K(k,l), UC(Mk,Nl)]
+in V, where the products run over all objects k and l of K.
+
+On the other hand, U(W-Fun(FK,C)(M,N)) is given by the equalizer of
+                 -->
+U(Pi_k C(Mk,Nk)) --> U Pi_{k,l} [FK(k,l),C(Mk,Nl)]
+or equivalently, since U is a left adjoint, the equalizer of
+               -->
+Pi_k UC(Mk,Nk) --> Pi_{k,l} U[FK(k,l),C(Mk,Nl)]
+
+So we are now left to prove
+
+Lemma: U[FX,Y]=[X,UY], for X in V and Y in W.
+Proof:
+
+V(Z,U[FX,Y]) = W(FZ,[FX,Y]) = W(FZ\otimes FX,Y) = W(F(Z\otimes X),Y)
+             = V(Z\otimes X,UY) = V(Z,[X,UY])
+
+naturally in Z and so U[FX,Y]=[X,UY] as required.
+
+Regards,
+
+Steve Lack.
+
+
+
+

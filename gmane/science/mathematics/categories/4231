@@ -1,0 +1,160 @@
+Path: news.gmane.org!not-for-mail
+From: Neil Ghani <nxg@Cs.Nott.AC.UK>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Mismatch in lcc pretoposes with W-types?
+Date: Thu, 28 Feb 2008 15:41:47 +0000
+Lines: 126
+Approved: news@gmane.org
+Message-ID: <E1JUugd-0000z8-Gm@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v752.3)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019807 12316 80.91.229.2 (29 Apr 2009 15:43:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:43:27 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Feb 28 22:22:05 2008 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 28 Feb 2008 22:22:05 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JUugd-0000z8-Gm
+	for categories-list@mta.ca; Thu, 28 Feb 2008 22:09:23 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 53
+Status: O
+Content-Length: 4952
+Original-Lines: 125
+Xref: news.gmane.org gmane.science.mathematics.categories:4231
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4231>
+
+Hi All,
+
+Since we have a semantic characterisation of containers, we can look
+at Thorstens question
+
+> Alternatively for containers: Every endofunctor which has an
+> initial algebra is a container. Obviously, this will only hold in
+> the syntax of Type Theory, i.e. the classifying predicative
+> pretopos with W-types.
+
+Surely, it must be the case that all syntactically definable
+endofunctors are accessible.
+
+And, being syntactic constructions, I'd not be too surprised if they
+preserved connected limits ...
+
+Unless I've got the wrong end of the stick which is entirely possible.
+
+All the best
+Neil
+
+
+
+On 28 Feb 2008, at 15:32, Thorsten Altenkirch wrote:
+
+> Hi Sam,
+>
+> the issue you address has to do with the question of predicative
+> vs. impredicative, I think.
+>
+> As you say in a topos any monotone operator on the lattice of
+> subsets of a given type has a least (and greatest fixpoint). In a
+> predicative theory like Martin-Loef's Type Theory these fixpoints
+> only exist if the monotone operator is defined in a *strictly*
+> positive way.
+>
+> There seems to be no simple example of such a fixpoint because all
+> simple examples turn out to be strictly positive. Here is the
+> simplest one I can think of in the moment: Let (A,@) be a partial
+> combinatory algebra, e.g. the natural number with an encoding of
+> Turing machines. Then choose a subset R \subseteq A to define an
+> antitone operator F on subsets of A by
+>
+> 	F P = { x:A | all y:A.P y -> R (x @ y) }
+>
+> Now clearly FF (do F twice) is monotone and hence will have a least
+> fixpoint in a topos. However, by a proof-theoretic analysis (I
+> think) we can show that the fixpoint cannot be constructed in
+> Martin-Loef Type Theory. (It would be nicer to have a semantical
+> argument).
+>
+> Btw this is just an encoding of Reynold's construction to show that
+> there are no set-theoretic models of System F. In System F you get
+> a fixpoint of (X -> 2) -> 2 which corresponds to choosing R to be
+> an encoding of 2, e.g.
+> R = {\xy.x,\xy.y}.
+>
+> There is a semantic characterisation of strictly positive operators
+> on subsets which is similar to the concept of containers, I have
+> used this in joint work with Andreas Abel a while ago (our JFP 2002
+> paper and TYPES 99). It would be nice, if one could show that all
+> operators which have fixpoints are one of those. Alternatively for
+> containers: Every endofunctor which has an initial algebra is a
+> container. Obviously, this will only hold in the syntax of Type
+> Theory, i.e. the classifying predicative pretopos with W-types.
+>
+> I am not sure this mismatch is a problem: Do you ever need
+> fixpoints of non-strict positive operators?
+>
+> Cheers,
+> Thorsten
+>
+> On 27 Feb 2008, at 19:07, Sam Staton wrote:
+>
+>> Various people (including Moerdijk & Palmgren, Hyland & Gambino,
+>> Abbott & Altenkirch & Ghani) have considered locally cartesian closed
+>> pretoposes with W-types, ie initial algebras for generalized
+>> polynomial functors, aka 'containers'. (These W-types are an
+>> appropriate analysis of the fixed points of intensional constructions
+>> and so these categories have been motivated as "constructive
+>> toposes",
+>> as models of a particular version of Martin-Lof's type theory).
+>>
+>> Lcc pretoposes are Heyting pretoposes. For any object X, consider
+>> those monotone endofunctions on the class Sub(X) that can be
+>> constructed from the pullback functors and their left and right
+>> adjoints. By my calculations, in a topos, these monotone
+>> endofunctions
+>> have least and greatest fixed points (by internalizing them and then
+>> using Tarski's fixed point theorem).
+>>
+>> It seems that, in general, these monotone endofunctions will not have
+>> least or greatest fixed points in lcc pretoposes with W-types. (I
+>> haven't proved this, though, and perhaps I have missed a neat trick.)
+>>
+>> If I'm not mistaken, this is a mismatch. Lcc pretoposes let you work
+>> both intensionally and extensionally, yet when it comes to W-
+>> types, we
+>> only consider the intensional constructions. Is there a reason for
+>> this?-- are these fixed points "non-constructive" or "impredicative"
+>> in some sense?
+>>
+>> Has anybody thought about these things before? Have I missed
+>> something? All the best, Sam
+>>
+>>
+>> [My example is bisimilarity for transition systems, as studied in
+>> concurrency theory. This is conventionally calculated as a maximum
+>> fixed point for a monotone endofunction on the lattice of binary
+>> relations. I can define a 'constructive' version of bisimilarity
+>> using
+>> W-types, and then take the image. This differs from the usual notion,
+>> unless choice is assumed.]
+>>
+>>
+>
+
+
+This message has been checked for viruses but the contents of an attachment
+may still contain software viruses, which could damage your computer system:
+you are advised to perform your own checks. Email communications with the
+University of Nottingham may be monitored as permitted by UK legislation.
+
+
+
+

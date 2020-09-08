@@ -1,0 +1,125 @@
+Path: news.gmane.org!not-for-mail
+From: Josh Nichols-Barrer <jnb@math.mit.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Small semirings
+Date: Thu, 4 Jan 2007 19:25:44 -0500 (EST)
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <20897.1171443865$1241019384@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241019384 9306 80.91.229.2 (29 Apr 2009 15:36:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:36:24 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Jan  4 20:25:51 2007 -0400
+X-Keywords: 
+X-UID: 63
+Status: O
+Content-Length: 4328
+Original-Lines: 100
+Xref: news.gmane.org gmane.science.mathematics.categories:3571
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3571>
+
+Hi Andrej,
+
+Here are some odds and ends:
+
+You can build a semiring from any semiring R with no nonzero additive 
+inverses by attaching an element at infinity (\infty+x = \infty for all x 
+and and \infty * x = \infty for nonzero x).  Iterating this, you can have 
+a hierarchy of elements at infinity, I suppose.  For example, take your 
+cutoff semiring and add an element at infinity; this gives some new 
+specimens.
+
+More generally, you can use finitely generated semirings (over a given 
+finite semiring, for example).  The above construction would be the 
+quotient of R[x] where every polynomial of degree greater than 0 is 
+identified with x.
+
+For another example, any finite linearly ordered commutative monoid is 
+naturally a semiring, where the addition is max and the multiplication is 
+given by the monoid law.  For example, "cutoff monoids" of N.  This 
+example is somehow lifted from tropical geometry, which is (speculatively) 
+relative algebraic geometry over the semiring R\cup {-\infty}, where 
+R here denotes the reals, the addition law is max and the multiplication 
+is addition in R.
+
+Maybe a easier question is what are the "minimal" finite semirings, for 
+some appropriate notion of minimal.  I'm thinking something analogous to 
+the notion of field for rings, although even to classify the finite fields 
+takes a bit of clever work...
+
+Here is a different approach to the question (after a conversation with K. 
+Kedlaya):
+
+Given a semiring R, you can "mod out by elements with additive inverses" 
+by identifying a and b whenever there are x and y with a+x=b and b+y=a.  
+This produces a new semiring R' where no element other than 0 has an 
+additive inverse; the operation kills all rings and fixes distributive 
+lattices and cutoff semirings.  The resulting semiring has a natural 
+ordering, namely a <= b iff there is an x with a+x = b (so that 0 is the 
+least element).  I don't know what to call these, maybe ordered semirings?
+
+As a next step, you can take an ordered semiring R as above and identify 1 
+with 2 to produce something even simpler.  We still have a partial 
+ordering, of course, and moreover addition is join: if b <= a and c <= a, 
+then b+c <= a+a = a.  This does nothing to distributive lattices or the 
+ordered commutative monoids above, but it turns cutoff semirings into the 
+semiring with elements {0,1} and 1+1=1.  You might call these "tropical 
+semirings."
+
+Finally, you might want to transform the multiplication in a tropical 
+semiring R into meet.  I guess this would be done by identifying 
+everything greater than or equal to 1 with 1, and then identifying x^2 
+with x for each x.
+
+Summarizing, I guess, the forgetful functors
+
+BddDistLat --> TropSemiRing --> OrdSemiring --> Semiring
+
+all seem to have left adjoints.  Maybe another way to look into semirings 
+would be to study the fibres of the left adjoints?  The adjunction between 
+bounded distributive lattices and tropical semirings already looks 
+interesting...
+
+Another thing that would be cool to see would be a duality theory for 
+tropical semirings, maybe like the duality theory for bounded distributive 
+lattices, as a way to get a handle on tropical semirings at least...  Of 
+course, what I'd really like to see is a geometric picture of Spec R for 
+any semiring R, but that might take a little more work...
+
+Best,
+Josh
+
+On Wed, 3 Jan 2007, Andrej Bauer wrote:
+
+> Dear categorists,
+> 
+> I have no idea where to ask the following algebra question. Hoping that
+> some of you are algebraists, I am asking it here.
+> 
+> I am looking for examples of small (finite and with few elements, say up
+> to 8) commutative semirings with unit, by which I mean an algebraic
+> structure which has +, *, 0 and 1, both operations are commutative and *
+> distributes over +. The initial such structure are the natural numbers.
+> 
+> Here are the examples I know:
+> 
+> 1) Modular arithmetic, i.e., (Z_n, +, *, 0, 1)
+> 
+> 2) Distributive lattices with 0 and 1.
+> 
+> 3) "Cut-off" semiring, in which we compute like with natural numbers,
+> but if a value exceeds a given constant N, then we cut it off at N. For
+> example, if N = 7 then we would have 3 + 3 = 6, 3 + 6 = 7, 4 * 4 = 7,
+> etc. Do such semirings have a name?
+> 
+> There must be a census of small commutative rings, or even semirings.
+> Does anyone know?
+> 
+> Andrej
+> 
+
+

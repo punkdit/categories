@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <m.escardo@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: adjoints to lax-idempotent algebra structures
+Date: Tue, 19 Nov 2013 10:04:58 +0000
+Lines: 98
+Approved: news@gmane.org
+Message-ID: <E1Vir2S-000584-U4@mlist.mta.ca>
+References: <E1Vi2Xr-0007nE-4w@mlist.mta.ca> <f19fee6fc4884cb3b334a8dc69ad9470@LANDO.ad.sandiego.edu> <E1ViZQ8-0001FH-Ia@mlist.mta.ca>
+Reply-To: Martin Escardo <m.escardo@cs.bham.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1384889608 27090 80.91.229.3 (19 Nov 2013 19:33:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 19 Nov 2013 19:33:28 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: Michael Shulman <shulman@sandiego.edu>
+Original-X-From: majordomo@mlist.mta.ca Tue Nov 19 20:33:34 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Vir3D-0004pj-Sv
+	for gsmc-categories@m.gmane.org; Tue, 19 Nov 2013 20:33:32 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:41028)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Vir2T-0000xB-Mc; Tue, 19 Nov 2013 15:32:45 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Vir2S-000584-U4
+	for categories-list@mlist.mta.ca; Tue, 19 Nov 2013 15:32:44 -0400
+In-Reply-To: <E1ViZQ8-0001FH-Ia@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7923
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7923>
+
+Mike,
+
+On 18/11/13 20:40, Michael Shulman wrote:
+> Thanks again to everyone who replied with examples and comments.  I've
+> created an nLab page which hopefully includes everything I learned:
+> http://ncatlab.org/nlab/show/continuous+algebra
+
+Some more examples and comments follow.
+
+In about 1996, I considered the special case in which the
+2-categorical structure is a poset-enrichment, because I had in mind
+applications to topological spaces and locales wrt the specialization
+order. In that case, your Theorem 1 in the nLab has an additional
+equivalent condition, when T is a Kock-Zoberlein monad:
+
+    (4) The underlying object of the algebra A is injective wrt to
+    T-embeddings, where a T-embedding is a map f:X->Y such that Tf has a
+    reflective left adjoint.
+
+(I deemly recall that Jonathon Funk may have mentioned to me in 2004
+in Cambridge during a PSSL in a pub conversation that (4) holds for
+the general 2-categorical case, but he would have to confirm or reject
+that, as I can't find references after a quick search.)
+
+This was in the paper
+
+     (i) Properly injective spaces and function spaces, Topology and its
+         Applications, v89, n1-2, pp75-120, 1998, as Theorem 4.2.2.
+
+In this paper and a series of other papers following that, a number of
+examples are given in the categories of topological spaces and of
+locales, namely
+
+    (ii) Injective Spaces via the Filter Monad, Topology Proceedings,
+         1997.
+
+    (iii) Semantic domains, injective spaces and monads, ENTCS, 1999,
+          with R. Flagg.
+
+    (iv) Injective locales over perfect embeddings and algebras of the
+         upper powerlocale monad. Applied General Topology, volume 4,
+         number 1, pp. 193-200, 2003.
+
+Using the theorem with conditions (1)-(4), one can unify Alan Day's
+characterization of the algebras of the filter monad as the continuous
+lattices with Dana Scott's characterization of the injective T0
+topological spaces as the continuous lattices under the Scott
+topology.  This is in paper (ii), which also considers the densely
+injective topological characterized as the continuous Scott domains
+under the Scott topology (again Scott's result), using the proper
+filter monad.
+
+Then there are many other examples of classes of filters one may
+consider, to get new and previously known injectivity results using
+the theorem with the added condition (4).
+
+These examples are in the paper (iii) with Flagg: The stably compact
+spaces are the injective spaces with respect to flat embeddings (as
+defined in Johnstone's book Stone spaces). Here one uses the monad of
+prime filters, and Harold Simmons characterizations of their algebras
+as the stably compact spaces (under another name) in his paper "A
+couple of triples". The injectives over completely flat embeddings are
+the sober spaces (use the monad of completely prime filters). The
+injectives over perfect embeddings in the category of core-compact
+spaces are the continuous meet-semilattices under the Scott topology
+(use the monad of Scott open filters). The injective spaces over
+locally dense embeddings in the category of locally connected T0
+spaces are the L-domains under the Scott topology (use connected open
+filters).  The injectives over open embeddings are the spaces with a
+least element in the specialization order. The injectives over closed
+embeddings are the spaces with a largest, isolated point in the
+specialization order.  The injectives over semi-open embeddings are
+algebras of the lower hyperspace.
+
+In the paper (iv), I considered locales. The injectives over perfect
+embeddings (=embeddings such that the right adjoint of the frame map
+preserves directed joins) are the algebras of the upper powerlocale
+monad (perfect + Frobenius = proper). They can also be characterized
+by a sort of "continuity" condition. Define U<V for opens of a locale
+to mean that every Scott closed collection of opens that covers V has
+U as a member (Scott closed = lower set closed under directed
+joins). Then a locale is injective/an algebra iff every open V is the
+join of the opens U<V and the relation < is multiplicative. In the
+section "Remarks" I give many more examples like this. For example, we
+get stably compact locales via the ideal-completion monad.
+
+Of course, this is related to the paper by Jiri Adamek, Lurdes Sousa
+and Jiri Velebil advertised on the 11th this month.
+
+And Dirk Hofmann did much work related to that.
+
+Best,
+Martin
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

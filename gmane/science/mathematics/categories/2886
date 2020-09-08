@@ -1,0 +1,368 @@
+Path: news.gmane.org!not-for-mail
+From: jim stasheff <jds@math.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: fibrations as ...
+Date: Sun, 20 Nov 2005 09:18:17 -0500
+Lines: 328
+Approved: news@gmane.org
+Message-ID: <438085A9.3090403@math.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018963 6219 80.91.229.2 (29 Apr 2009 15:29:23 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:29:23 +0000 (UTC)
+To: Categories List <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Nov 20 21:09:25 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 20 Nov 2005 21:09:25 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ee02z-0004s8-Bg
+	for categories-list@mta.ca; Sun, 20 Nov 2005 21:00:41 -0400
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)
+X-Accept-Language: en-us, en
+X-Scanned-By: MIMEDefang 2.53 on 128.91.55.26
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on mx1.mta.ca
+X-Spam-Level: 
+X-Spam-Status: No, score=0.0 required=5.0 tests=none autolearn=disabled
+	version=3.0.4
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 31
+Status: O
+Content-Length: 13486
+Original-Lines: 327
+Xref: news.gmane.org gmane.science.mathematics.categories:2886
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2886>
+
+John and anyone else who cares to weigh in,
+here are some comments from the purely topological
+or rather homtopy theory side:
+
+For both bundles and fibrations (e.g. over a paracompact base), your
+last slogan is the oldest:
+
+  FIBRATIONS WITH FIBER F OVER THE SPACE B
+                             ARE "THE SAME" AS
+                MAPS FROM B TO THE CLASSIFYING SPACE OF AUT(F)
+
+`the same as' referring to homotopy classes
+
+For bundles, Aut(F) now means the structure group of the bundle
+
+This standard approach is great - I'm not knocking it - but Schreier theory
+is more general: it's really a branch of "nonabelian cohomology theory".
+It's not all that hard to explain, either.  So, I'll explain it and then
+talk about various simplifying assumptions people make.
+
+The goal of Schreier theory is to classify short exact sequences of groups:
+
+1 -> F -> E -> B -> 1
+
+for a given choice of F and B.  "Exact" means that the arrows stand
+for homomorphisms and the image of each arrow is the kernel of the next.
+Here this just means that F is a normal subgroup of E and B is the quotient
+group E/F.  Such a short exact sequence is also called an "extension of B
+by F", since E is bigger than B and contains F.  The simplest choice is to
+let E be the direct sum of F and B.  Usually there are other more
+interesting
+extensions as well.
+
+To classify these, the trick is to use the analogy between group theory
+and topology.
+
+As I explained in "week213", you can think of a group as a watered-down
+version of a connected space with a chosen point.  The reason is that
+given such a space, we get a group consisting of homotopy classes of
+loops based at the chosen point.  This is called the "fundamental group"
+of our space.  There's a lot more information in our space than this group.
+But pretty much anything you can do for groups, you can do for such spaces.
+It's usually harder, but it's completely analogous!
+
+In particular, classifying short exact sequences is a lot like
+classifying "fibrations":
+
+1 -> F -> E -> B -> 1
+
+where now the letters stand for connected spaces with a chosen point, and
+the arrows stand for continuous maps.   If you're a physicist or geometer
+you may prefer fiber bundles to "fibrations" - but luckily, they're so
+similar we can ignore the difference in a vague discussion like this.
+The idea is basically just that E maps onto B, and sitting over each point
+of B we have a copy of F.  We call B the "base space", E the "total space"
+and F the "fiber".
+
+If we want to classify such fibrations we can consider carrying the fiber
+F around a loop in B and see how it twists around.  For example, if all our
+spaces are smooth manifolds, we can pick a connection on the total space
+E and see what parallel transport around a loop in the base space B does
+to points in the fiber F.  This gives a kind of homomorphism
+
+Omega(B) -> Aut(F)
+
+sending loops in B to invertible maps from F to itself.  And, the cool
+thing is: this homomorphism lets us classify the fibration!
+
+Here I say "kind of homomorphism" since Omega(B), the space of loops in B
+based at the chosen point, is only "kind of" a topological group: the
+group laws only hold up to homotopy.
+
+As Peter May points out, you can use the strict monoid of Moore loops
+instead of Poincare's, but kind of homomorphism" still does not mean strict
+but rather A-\infty map even though both domain and range are strictly
+associative
+
+So intrepreted, the equivalence with B --> Aut F is clear.
+
+If you wnat a strict homomorphism, try using a classical connection -
+at least in the smooth case.
+
+ But let's not worry about this
+technicality  - especially since I'm being vague about all sorts of other
+equally important issues!
+
+The reason I can get away with not worrying about these issues is that
+I'm trying to explain a very robust powerful principle - one that can
+easily survive a dose of vagueness that would kill a lesser idea.  Namely,
+if B is a connected space with a chosen basepoint,
+
+               FIBRATIONS OVER THE BASE SPACE B WITH FIBER F
+                          ARE "THE SAME" AS
+         HOMOMORPHISMS SENDING LOOPS IN B TO AUTOMORPHISMS OF F.
+
+This could be called "the basic principle of Galois theory", for reasons
+explained in "week213".  There I explained the special case where the
+fiber is discrete.  Then our fibration called a "covering space", and
+the basic principle of Galois theory boils down to this:
+
+                    COVERING SPACES OVER B WITH FIBER F
+                           ARE "THE SAME" AS
+    HOMOMORPHISMS FROM THE FUNDAMENTAL GROUP OF B TO AUTOMORPHISMS OF F.
+
+Okay.  Now let's use the same principle to classify extensions of a group
+B by a group F:
+
+1 -> F -> E -> B -> 1
+
+The group B here acts like "loops in the base".  But what acts like
+"automorphisms of the fiber"?
+
+You might guess it's the group of automorphisms of F.  But, it's
+actually the *2-group* of automorphisms of F!
+
+A 2-group is a categorified version of a group where all the usual group
+laws hold up to natural isomorphism.  They play a role in higher gauge
+theory like that of groups in ordinary gauge theory.  In higher gauge
+theory, parallel transport along a path is described by an *object* in
+a 2-group, while parallel transport along a path-of-paths is described
+by a *morphism*.  In 2-form electromagnetism we use a very simple "abelian"
+2-group, which has one object and either the real line or the circle as
+morphism.  But there are other more interesting "nonabelian" examples.
+
+If you want to learn more about 2-form electromagnetism from this
+perspective, try "week210".  For 2-groups in general, try this paper:
+
+9) John Baez and Aaron Lauda, Higher-dimensional algebra V: 2-groups,
+Theory and Applications of Categories 12 (2004), 423-491. Available
+online at
+http://www.tac.mta.ca/tac/volumes/12/14/12-14abs.html or as math.QA/0307200.
+
+Anyway: it turns out that any group F gives a 2-group AUT(F) where the
+objects are automorphisms of F and the morphisms are "conjugations" -
+
+and conjugations correspond to homtopies at the classifying space level
+
+elements of F acting to conjugate one automorphism and yield another.
+And, extensions
+
+1 -> F -> E -> B -> 1
+
+are classified by homomorphisms
+
+B -> AUT(F)
+
+where we think of B as a 2-group with only identity morphisms.  More
+precisely:
+
+                EXTENSIONS OF THE GROUP B BY THE GROUP F
+                            ARE "THE SAME" AS
+               HOMOMORPHISMS FROM B TO THE 2-GROUP AUT(F)
+
+It's fun to work out the details, but it's probably not a good use of
+our time together grinding through them here.   So, I'll just sketch
+how it works.
+
+Starting with our extension
+
+         i     p
+1 --> F --> E --> B --> 1
+
+we pick a "section"
+
+                s
+            E <-- B
+
+meaning a function with
+
+p(s(b)) = b
+
+for all b in B.  We can find a section because p is onto.  However,
+the section usually *isn't* a homomorphism.
+
+Given the section s, we get a function
+
+alpha: B -> Aut(F)
+
+where Aut(F) is the group of automorphisms of F.  Here's how:
+
+alpha(b) f = s(b) f s(b)^{-1}
+
+However, usually alpha *isn't* a homomorphism.
+
+So far this seems a bit sad: functions between groups want to be
+homomorphisms.  But, we can measure how much s fails to be a homomorphism
+using the function
+
+g: B2 -> F
+
+given by
+
+g(b,b') = s(bb') s(b')^{-1} s(b)^{-1}
+
+Note that g = 1 iff s is a homomorphism.
+
+We can then use this function g to save alpha.  The sad thing about
+alpha is that it's not a homomorphism... but the good thing is, it's
+a homomorphism up to conjugation by g!  In other words:
+
+alpha(bb') f = g(b,b') [alpha(b) alpha(b') f] g(b,b')^{-1}
+
+Taken together, alpha and g satisfy some equations ("cocycle conditions")
+which say precisely that they form a homomorphism from B to the 2-group
+AUT(F).  Conversely, any such homomorphism gives an extension of B by F.
+
+In fact, isomorphism classes of extensions of B by F correspond
+in a 1-1 way with isomorphism classes of homorphisms from B to AUT(F).
+So, we've classified these extensions!
+
+In fact, something even better is true!  It's evil to "decategorify" by
+taking isomorphism classes as we did in the previous paragraph.  To avoid
+this, we can form a groupoid whose objects are extensions of B by F, and a
+groupoid whose objects are homomorphisms B -> AUT(F).  I'm pretty sure
+that if you form these groupoids in the obvious way, they're equivalent.
+And that's what this slogan really means:
+
+                EXTENSIONS OF THE GROUP B BY THE GROUP F
+                            ARE "THE SAME" AS
+               HOMOMORPHISMS FROM B TO THE 2-GROUP AUT(F)
+
+Ah, your 2-group must be hiding my homotopies - I'd love to see that
+
+Next, let me say how Schreier theory reduces to more familiar ideas in two
+special cases.
+
+People have thought a lot about the special case where F is abelian and
+lies in the center of E.  These are called "central extensions".  This
+is just the case where alpha = 1.  The set of isomorphism classes of
+central extensions is called H2(B,F) - the "second cohomology" of B
+with coefficients in F.
+
+People have also thought about "abelian extensions".  That's an even
+more special case where all three groups are abelian.  The set of
+isomorphism classes of such extensions is called Ext(B,F).
+
+Since we don't make any simplifying assumptions like this in Schreier
+theory, it's part of a subject called "nonabelian cohomology".  It was
+actually worked out by Dedecker in the 1960's, based on much earlier
+work by Schreier:
+
+10) O. Schreier, Ueber die Erweiterung von Gruppen I, Monatschefte fur
+Mathematik and Physick 34 (1926), 165-180.  Ueber die Erweiterung von
+Gruppen II, Abh. Math. Sem. Hamburg 4 (1926), 321-346.
+
+11) P. Dedecker, Les foncteuers Ext_Pi, H2_Pi and H2_Pi non abeliens,
+C. R. Acad. Sci. Paris 258 (1964), 4891-4895.
+
+More recently, Schreier theory was pushed one step up the categorical
+ladder by Larry Breen.  As far as I can tell, he essentially classified
+the extensions of a 2-group B by a 2-group F in terms of homomorphisms
+B -> AUT(F), where AUT(F) is the *3-group* of automorphisms of F:
+
+12) Lawrence Breen, Theorie de Schreier superieure, Ann. Sci. Ecole Norm.
+Sup. 25 (1992), 465-514.  Also available at
+http://www.numdam.org/numdam-bin/feuilleter?id=ASENS_1992_4_25_5
+
+We can keep pushing Schreier theory upwards like this, but we can also
+expand it "sideways" by replacing groups with groupoids.  You should have
+been annoyed by how I kept assuming my topological spaces were connected
+and equipped with a specified point.   I did this to make them analogous
+to groups.  For example, it's only spaces like this for which the
+fundamental
+group is sufficiently powerful to classify covering spaces.  For more
+general
+spaces, we should use the fundamental *groupoid* instead of the fundamental
+group.  And, we can set up a Schreier theory for extensions of groupoids:
+
+13) V. Blanco, M. Bullejos and E. Faro, Categorical non abelian cohomology,
+and the Schreier theory of groupoids, available as math.CT/0410202.
+
+In fact, these authors note that Grothendieck did something similar
+back in 1971: he classified *all* groupoids fibered over a groupoid
+B in terms of weak 2-functors from B to Gpd, which is the 2-groupoid of
+groupoids!  The point here is that Gpd contains AUT(F) for any fixed
+groupoid F:
+
+14) Alexander Grothendieck, Categories fibrees et descente (SGA I),
+Lecture Notes in Mathematics 224, Springer, Berlin, 1971.
+
+Having extended the idea "sideways" like this, one can then continue
+marching "upwards".  I don't know how much work has been done on this,
+but the slogan should be something like this:
+
+                  n-GROUPOIDS FIBERED OVER AN n-GROUPOID B
+                             ARE "THE SAME" AS
+            WEAK (n+1)-FUNCTORS FROM B TO THE (n+1)-GROUPOID nGpd
+
+aha, weak or lax as much above will likely be also
+
+Grothendieck also studied this kind of thing with categories replacing
+groupoids, so there should also be an n-category version, I think...
+but it's more delicate to define "fibrations" for categories than
+for groupoids, so I'm a bit scared to state a slogan suitable for
+n-categories.
+
+However, I'm not scared to go from n-groupoids to omega-groupoids, which
+are basically the same as spaces.  In terms of spaces, the slogan goes
+like this:
+
+                        SPACES FIBERED OVER THE SPACE B
+                               ARE "THE SAME" AS
+                    MAPS FROM B TO THE SPACE OF ALL SPACES
+
+This is how James Dolan taught it to me.  Most mortals are scared of "the
+space of all spaces" - both for fear of Russell's paradox, and because we
+really need a *space* of all spaces, not just a mere set of them.  To avoid
+these terrors, you can water down Jim's slogan by choosing a specific space
+F to be the fiber:
+
+                  FIBRATIONS WITH FIBER F OVER THE SPACE B
+                             ARE "THE SAME" AS
+                MAPS FROM B TO THE CLASSIFYING SPACE OF AUT(F)
+
+where AUT(F) is the topological group of homotopy self-equivalences of F.
+The fearsome "space of all spaces" is then the disjoint union of the
+classifying spaces of all these topological groups AUT(F).  It's too large
+to be a space unless you pass to a larger universe of sets, but otherwise
+it's perfectly fine.  Grothendieck invented the notion of a "Grothendieck
+universe" for precisely this purpose:
+
+14) Wikipedia, Grothendieck universe,
+http://en.wikipedia.org/wiki/Grothendieck_universe
+
+-----------------------------------------------------------------------
+
+
+

@@ -1,0 +1,2732 @@
+From cat-dist Thu May  6 23:29:26 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA07955
+	for categories-list; Thu, 6 May 1999 22:48:20 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <372FFFC0.60201EB2@uni-paderborn.de>
+Date: Wed, 05 May 1999 10:22:24 +0200
+From: Reiko Heckel <reiko@uni-paderborn.de>
+Organization: Uni Paderborn
+X-Mailer: Mozilla 4.51 [en] (X11; I; SunOS 5.6 sun4u)
+X-Accept-Language: de-DE, en
+MIME-Version: 1.0
+To: Categories Mailing List <categories@mta.ca>
+Subject: categories: Kleisli bi-categories
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Dear Category Theorists,
+
+I'm looking for a reference on the following bi-categorical variant of
+the construction of Kleisli categories.
+
+Start from a pseudo-free construction $F$ between (2-)categories $\cat
+C$ and $\cat D$. In the case I'm interested in, $F$ arises from a finite
+cocompletion. For example, $\cat C$ is the category of small categories
+and $\cat D$ is the category of small categories with finite colimits.  
+
+Constructing (in the usual way) the Kleisli category $\cat K$ for $F$
+leads to a bi-category since the universal property used to define the
+composition in $\cat K$ holds only up to a unique natural isomorphism.   
+
+Then, there exists a (unique?) homomorphism of bi-categories $G: \cat K
+\to \cat D$ which commutes with the obvious embedding of $\cat C$ into
+$\cat K$ and (the pseudo functor induced by) $F$. 
+
+I understand that pseudo-free constructions of the above kind can be
+axiomatized by means of Kock-Zoeberlein (KZ) monads. Thus, any reference
+on Kleisli-like constructions for KZ monads would do. 
+For me, it was simpler to work directly with the universal properties,
+in particular since all the coherence laws are automatic.
+
+Any hints or references to relevant literature would be much
+appreciated.
+
+Best regards,
+Reiko Heckel.
+
+-- 
+ Reiko Heckel                             E-Mail:reiko@uni-paderborn.de
+ Univ. GH Paderborn, FB 17                Tel: ++49-05251-60-3356
+ Warburger Str. 100, E4.130               Fax: ++49-05251-60-3431
+ 33098 Paderborn, Germany
+
+
+From cat-dist Thu May  6 23:34:11 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA09211
+	for categories-list; Thu, 6 May 1999 22:54:59 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: exmh version 2.0.2+CL 2/24/98
+To: categories@mta.ca, concurrency@cwi.nl
+cc: Luca.Cattani@cl.cam.ac.uk, gwinskel@brics.dk, marcelo@cogs.susx.ac.uk
+Subject: categories: Weak Bisimulation and Open Maps
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Thu, 06 May 1999 12:54:46 +0100
+From: Luca Cattani <Luca.Cattani@cl.cam.ac.uk>
+Message-Id: <E10fMjq-00036J-00@heaton.cl.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+The following paper, to be presented at LICS '99, is available from my home 
+page:
+
+    
+               http://www.cl.cam.ac.uk/~glc25/weabom.html .
+
+
+
+
+                        Weak Bisimulation and Open Maps
+
+     Marcelo Fiore             Gian Luca Cattani            Glynn Winskel
+         COGS                 Computer Laboratory               BRICS
+   Univ. Sussex, UK           Univ. Cambridge, UK          Univ. Aarhus, DK 
+
+
+                                   Abstract
+
+A systematic treatment of weak bisimulation and observational congruence on
+presheaf models is presented.  The theory is developed with respect to a
+``hiding'' functor from a category of paths to observable paths.  Via a view
+of processes as bundles, we are able to account for weak morphisms (roughly
+only required to preserve observable paths) and to derive a saturation monad
+(on the category of presheaves over the category of paths).  Weak morphisms
+may be encoded as strong ones via the Kleisli construction associated to the
+saturation monad.  A general notion of weak open-map bisimulation is
+introduced, and results relating various notions of strong and weak
+bisimulation are provided.  The abstract theory is accompanied by the concrete
+study of two key models for concurrency, the interleaving model of
+synchronisation trees and the independence model of labelled event structures.
+
+
+Comments are welcome.
+
+Luca
+
+-- 
+-----------------------------------------------------------
+Gian Luca Cattani          Phone: +44 (0)1223 334697
+Cambridge University       Fax:   +44 (0)1223 334678
+Computer Laboratory,       email: Luca.Cattani@cl.cam.ac.uk
+New Museums Site,
+Pembroke Street,
+CB2 3QG, Cambridge, 
+United Kingdom
+-----------------------------------------------------------
+
+
+
+
+
+
+From cat-dist Thu May  6 23:34:33 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA09195
+	for categories-list; Thu, 6 May 1999 22:49:01 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 5 May 1999 10:56:27 +0200
+From: Philippe Gaucher <gaucher@irmast1.u-strasbg.fr>
+Message-Id: <199905050856.AA04136@irmast1.u-strasbg.fr>
+To: categories@mta.ca
+Subject: categories: question about weak omega category
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Content-Md5: Euc/9sKQD1d14kX/w8LLWw==
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Bonjour,
+
+
+Let us call cubical omega-category a cubical complex
+with connections and operations +_j like in the
+paper "On the algebra of cube", Brown & Higgins or
+like in Al-Agl's PhD "Aspect of multiple categories".
+There is a conjecture which claims that the category 
+of cubical omega-categories is equivalent to the category 
+of globular omega-categories. If I understand correctly, 
+the conjecture was proved  in some richer framework 
+but seems to be (in my knowledge) still open as stated 
+above. 
+
+My question is : is there a similar conjecture for 
+weak omega-category ? Is there a notion of cubical
+weak omega-category somewhere in the literature
+and a notion of globular weak omega-category ?
+
+Any reference is welcome. I have found nothing with
+the usual research engine but maybe I did not use
+the good key-word.
+
+
+pg.
+
+
+From cat-dist Fri May  7 11:08:54 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA31981
+	for categories-list; Fri, 7 May 1999 09:47:42 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m10dYo5-00029HC@pc34.mcs.le.ac.uk>
+Date: Sat, 1 May 1999 13:23:45 +0100 (BST)
+From: "Roy L. Crole" <R.Crole@mcs.le.ac.uk>
+To: categories@mta.ca, types@cis.upenn.edu
+Subject: categories: Lectureship in Computer Science
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+Dear Colleagues,
+
+I would like to announce a Lectureship in Computer Science, which
+may be of interest to CATEGORIES and TYPES readers. 
+
+Leicester has a research group in Semantics which includes myself,
+Simon Ambler and Neil Ghani. Current research areas include
+Operational Semantics, Mechanized Reasoning, and Categorical Models of
+Programming Languages. Further, the Distributed Systems group is
+working on Security.  All are directly or indirectly connected with
+the theory and practice of categories and types.
+
+Please note the tight deadline for applications: 14 May 1999.
+
+Roy Crole
+
+--------------------------------------------------------
+
+LEICESTER UNIVERSITY
+
+DEPARTMENT OF MATHEMATICS AND COMPUTER SCIENCE
+
+LECTURESHIP (GRADE A/B) IN COMPUTER SCIENCE (1 POST)
+
+Applications are invited for a permanent Lectureship in Computer Science in
+the Department of Mathematics and Computer Science at the University of
+Leicester.  There is no restriction regarding the area of research and
+applicants with expertise in any area of Computer Science are welcomed.
+The lectureship is tenable from as soon as possible.
+
+The Department of Mathematics and Computer Science is divided into three
+groups: Computer Science, Pure Mathematics and Applicable Mathematics.  The
+lectureship is intended to strengthen the Computer Science Group with
+regard to both teaching and research.  The Computer Science Group is firmly
+research oriented and current activities are concentrated within three
+research areas: Logic, Algebra and Complexity; Theory of Distributed
+Systems; and Semantics.
+
+The successful applicant will be ambitious, able to develop his or her own
+research within a multi-faceted environment, and have a strong research
+record and potential.  The new lecturer will be required to teach at
+undergraduate and postgraduate level, and to perform administrative duties
+as directed by the Head of Department.  This is a superb opportunity for a
+person of energy, drive and ambition to assume a rewarding role and to
+establish themselves in a young, dynamic and rapidly developing department.
+Initial salary, dependent upon qualifications and experience, will be on
+the Lecturer Grade A or B scale UKpounds 16,655 to UKpounds 29,048 p.a.
+
+Candidates who are interested in the Lectureship are invited, if they so
+wish, to contact Professor Iain Stewart, Head of Computer Science and Head
+of Department (telephone (+44) 116 252 3885, e-mail
+i.a.stewart@mcs.le.ac.uk) or Professor Rick Thomas, Deputy Head of
+Department (telephone (+44) 116 252 3411, email r.thomas@mcs.le.ac.uk), who
+will be pleased to discuss the Lectureship further.  Information about all
+aspects of the Department is available from its World Wide Web pages
+[http://www.mcs.le.ac.uk].
+
+Further particulars (which are also available on the World Wide Web) and
+application forms are available from the Personnel Office (Academic
+Appointments), University of Leicester, University Road, Leicester LE1 7RH,
+telephone (+44) 116 252 2758.
+
+The closing date for applications is 14 May 1999.
+
+
+
+From cat-dist Fri May  7 11:49:00 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA04001
+	for categories-list; Fri, 7 May 1999 10:14:17 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b00b35873545f97@[130.251.60.170]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Fri, 7 May 1999 11:51:07 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Preprint: Combinatorial homology and image analysis
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The following preprint is available, at my home page and by ftp:
+
+
+Combinatorial homology and image analysis
+M. Grandis
+
+ABSTRACT. This is the sequel of a paper, cited as Part I ("An intrinsic
+homotopy theory for simplicial complexes, with applications to image
+analysis"), introducing intrinsic homotopies and homotopy groups for
+simplicial complexes. We study here the relations of this intrinsic
+homotopy theory with the well-known intrinsic homology theory of simplicial
+complexes.
+     Also here, the applications are aimed at image analysis. A metric
+space  X  has a structure  t_e(X)  of simplicial complex at each resolution
+e > 0;  the corresponding *metric combinatorial homology groups*  H_n(
+t_e(X)) can be directly computed, in cases of interest for applications,
+via the Mayer-Vietoris exact sequence and a study of deformation retracts
+given in Part I.
+
+
+http://www.dima.unige.it/STAFF/GRANDIS/
+
+"ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/Cmb2.May99.ps
+
+
+With best regards
+
+Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+
+e-mail: grandis@dima.unige.it
+tel: +39.010.353 6805
+fax: +39.010.353 6752
+
+
+
+
+From cat-dist Fri May  7 11:55:31 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA04821
+	for categories-list; Fri, 7 May 1999 10:15:28 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: question about weak omega category
+To: categories@mta.ca
+Date: Fri, 7 May 1999 10:51:00 +0100 (BST)
+In-Reply-To: <199905050856.AA04136@irmast1.u-strasbg.fr> from "Philippe Gaucher" at May 5, 99 10:56:27 am
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E10fhHY-0003ZU-00@carp.dpmms.cam.ac.uk>
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+> There is a conjecture which claims that the category 
+> of cubical omega-categories is equivalent to the category 
+> of globular omega-categories. If I understand correctly, 
+> the conjecture was proved  in some richer framework 
+> but seems to be (in my knowledge) still open as stated 
+> above. 
+> 
+> My question is : is there a similar conjecture for 
+> weak omega-category ? Is there a notion of cubical
+> weak omega-category somewhere in the literature
+> and a notion of globular weak omega-category ?
+
+There is certainly a notion of globular weak omega-category: in fact, there
+are at least two such. One is Batanin's, another is mine. (If you already
+have an early version of the preprint of mine cited below then it will say
+that the definition I present *is* Batanin's. He's since pointed out that
+it's different.) I've also sketched out how one might define weak cubical
+omega-category in a similar style, although there's one important hole in
+this which I haven't been able to fill. There have probably been other
+attempts to get a notion of weak cubical omega-category.
+
+I think that the conjecture you describe (for *weak* omega-categories) must
+be beyond our reach for a little while yet, if it's even plausible. One
+reason is that we have to say what the morphisms are in the category of weak
+[cubical] omega-categories. If you took the morphisms to be strict functors
+(i.e. those preserving composition on the nose) then I suspect the conjecture
+would fail. A more natural and plausible choice would be the weak functors
+(those maps preserving composition up to coherent equivalence). However,
+we seem not to understand weak functors very well at the moment. Batanin has
+a definition of weak functor for the notion of weak omega-category he
+presents, but I don't know that a similar thing has been done in the cubical
+context. So it may not even be possible to *formulate* the conjecture in
+today's language, let alone prove it.
+
+Tom
+
+
+References:
+
+M. Batanin,
+Monoidal globular categories as a natural environment for the theory of weak
+$n$-categories (1997). Advances in Mathematics 136, pp. 39--103. 
+Also available via 
+http://www-math.mpce.mq.edu.au/~mbatanin/papers.html 
+
+Tom Leinster,
+Structures in higher-dimensional category theory (1998).
+Available via http://www.dpmms.cam.ac.uk/~leinster/ 
+(chapter II is the relevant bit) 
+
+
+From cat-dist Fri May  7 12:03:03 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA05038
+	for categories-list; Fri, 7 May 1999 10:17:18 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199905071122.NAA18462@vega.upv.es>
+Comments: Authenticated sender is <hkunzi@mail.upv.es>
+From: "Hans Peter Albert Kunzi" <hkunzi@mat.upv.es>
+Organization: Universidad Politecnica
+To: categories@mta.ca
+Date: Fri, 7 May 1999 13:22:19 +0000
+MIME-Version: 1.0
+Content-type: text/plain; charset=US-ASCII
+Content-transfer-encoding: 7BIT
+Subject: categories: Catop 2000 
+Reply-to: hkunzi@mat.upv.es
+X-mailer: Pegasus Mail for Windows (v2.23)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+
+FIRST ANNOUNCEMENT
+
+On July 4-6 (Tuesday-Thursday) 2000, a conference on "categorical topological
+methods" will take place at the University of Fribourg in Switzerland under the
+title "CATOP 2000", organized by H.-P. Kuenzi (Bern) and E. Ruh (Fribourg).
+
+
+Invited lectures will be given by: Arhangel'ski (Moscow, Russia), Barr
+(McGill, Montreal, Canada), Clementino (Coimbra, Portugal), Hess (ETH Lausanne,
+Switzerland), Lowen (Antwerp, Belgium), Priestley (Oxford, England), Pumpluen
+(Hagen, Germany), Watson (York, Canada).
+
+Further information on registration and accommodation as well as on the definite
+program will be contained in a second announcement. 
+
+
+
+
+
+
+
+
+
+
+
+From cat-dist Fri May  7 12:10:07 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA02699
+	for categories-list; Fri, 7 May 1999 10:12:40 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 6 May 1999 23:21:13 +0200 (MET DST)
+From: "LPNMR'99" <lpnmr99@dbai.tuwien.ac.at>
+To: multiple mailing lists: ;
+Subject: categories: LPNMR'99 Call for Papers
+Message-ID: <Pine.GSO.4.10.9905062318220.14358-100000@markab.dbai.tuwien.ac.at>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=ISO-8859-1
+Content-Transfer-Encoding: 8BIT
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+                            *******************                   
+                            * CALL FOR PAPERS *
+                            *******************                   
+   
+                   5th International Conference on Logic
+                   Programming and Nonmonotonic Reasoning
+
+                                  LPNMR'99
+                                      
+                   El Paso, Texas USA, December 2--4, 1999
+                   
+                    http://www.dbai.tuwien.ac.at/lpnmr99/
+   
+                                   
+   LPNMR'99 is the fifth in the series of international meetings on logic
+   programming and nonmonotonic reasoning. Four previous meetings were
+   held in Washington, U.S.A., in 1991, in Lisbon, Portugal, in 1993, in
+   Lexington, U.S.A., in 1995, and in Dagstuhl, Germany, in 1997.
+
+   LPNMR'99 will be coordinated with the ICLP'99, which starts on November
+   29 in Las Cruces, approximately 40 miles from El Paso.   
+
+   The proceedings of LPNMR'99 will be published by Springer in the
+   LNCS/LNAI series (http://www.springer.de/comp/lncs/).
+
+Location
+
+   El Paso, Texas is a city of nearly three-quarters of a million people,
+   which sprawls across hundreds of square miles of desert and rambling
+   foothills. The Franklin Mountains, southern tip of the Rockies, slice
+   El Paso nearly in two. With its classic Western geography and
+   tri-cultural history, El Paso makes an interesting place to visit.
+ 
+   El Paso is the gateway to Juarez, Mexico (US citizens do not need a
+   visa for a short visit across the border), and to southern New Mexico
+   with such recognized attractions as Fort Bliss, Carlsbad Caverns and
+   White Sands National Memorial.  El Paso's dry, sunny, warm desert
+   climate earned the city the nickname Sun City.
+   
+Aim and Scope
+
+   The aim of the conference is to facilitate interactions between
+   researchers interested in the design and implementation of logic based
+   programming languages and database systems and researchers who work in
+   the areas of knowledge representation and non-monotonic reasoning.
+   
+   A non-exhaustive list of topics of interest include:
+
+    1. Development and mathematical investigation of logical systems with
+       non-monotonic entailment relations. This includes (but is not
+       limited to)
+         1. Extensions of ``classical'' LPNMR languages by new logical
+            connectives and new inference capabilities such as abduction,
+            reasoning by cases, etc;
+         2. Semantics of new and existing languages;
+         3. Relationship between various formalisms;
+         4. Complexity and expressive power;
+         5. Development and implementation of inference mechanisms for
+            LPNMR systems;
+         6. Updates and other operations on LPNMR systems;
+         7. LPNMR systems with uncertainty.
+
+    2. Applications of LPNMR systems.
+         1. Methodology of representing knowledge in LPNMR languages.
+            Theory and practice;
+         2. LPNMR languages and algorithms in planning, diagnoses,
+            software engineering, and other domains;
+         3. Implemented LPNMR systems: Descriptions, Comparisons,
+            Evaluations and Benchmarks.
+       
+Submission of Papers
+
+   Papers must not exceed twelve (12) pages including references and
+   figures, with a maximum of 38 lines per page and an average of 75
+   characters per line (corresponding to the LaTeX article style, 12 pt).
+   Further information is available on the Springer website at
+   http://www.springer.de/comp/lncs/authors.html.
+   
+   Papers must be written in English and include a cover page containing:
+   title, abstract, keywords, postal and email addresses of all authors,
+   voice and fax number of the contact author.
+   
+   Accepted papers must be presented at the conference.
+
+   Please consult our web page for detailed submission information.
+   
+Important Dates
+
+   Friday May 28, 1999: Papers due
+   Monday July 26, 1999: Notification of acceptance/rejection
+   Monday August 30, 1999: Final camera-ready papers due
+   Thursday--Saturday December 2--4, 1999: LPNMR'99
+   
+Program Co-Chairs
+
+   Michael Gelfond (University of Texas at El Paso, USA)
+   Nicola Leone (Vienna University of Technology, Austria)
+   
+Program Committee
+
+   Jose Julio Alferes (Universidade de Evora, Portugal)
+   Chitta Baral (University of Texas at El Paso, USA)
+   Nicole Bidoit (Université de Bordeaux 1, France)
+   Jürgen Dix (University of Koblenz, Germany)
+   Thomas Eiter (Vienna University of Technology, Austria)
+   Fangzhen Lin (The Hong Kong University of Science and Technology, China)
+   Jack Minker (University of Maryland, USA)
+   Anil Nerode (Cornell University, USA)
+   Ilkka Niemela (Helsinki University of Technology, Finland)
+   Dino Pedreschi (University of Pisa, Italy)
+   Pasquale Rullo (University of Calabria, Rende, Italy)
+   Chiaki Sakama (Wakayama University, Japan)
+   V.S. Subrahmanian (University of Maryland, USA)
+   Francesca Toni (Imperial College, London, U.K.)
+   Miroslaw Truszczynski (University of Kentucky at Lexington, USA)
+   Hudson Turner (University of Minnesota at Duluth, USA)
+   Moshe Y. Vardi (Rice University, USA)
+   Jia-Huai You (University of Alberta, Canada)
+
+Invited Speakers
+
+   Marco Cadoli (Università di Roma "La Sapienza", Italy)
+   Vladimir Lifschitz (University of Texas at Austin, USA)
+   Leora Morgenstern (IBM T.J. Watson Research Center, USA)   
+
+Publicity Chair
+
+   Gerald Pfeifer (Vienna University of Technology, Austria)
+
+
+For further details and up-to-date information please check our
+web page http://www.dbai.tuwien.ac.at/lpnmr99/
+
+
+
+
+From cat-dist Tue May 11 20:54:21 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA10522
+	for categories-list; Tue, 11 May 1999 19:36:20 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3736D89C.54C33016@info.uaic.ro>
+Date: Mon, 10 May 1999 13:01:16 +0000
+From: Dorel Lucanu <dlucanu@infoiasi.ro>
+Organization: University "A.I.Cuza",  Faculty of Computer Science
+X-Mailer: Mozilla 4.04 [en] (X11; I; Linux 2.0.33 i586)
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: 2nd Call for Papers WDS99
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+===========================================================================
+           ___________________________________________         
+                 
+          Apologies if you receive this more than once!
+         ______________________________________________       
+
+			 2nd Call for Papers
+
+		   Workshop on Distributed Systems
+                           
+    Satellite Workshop to FCT'99 (12th International Symposium on
+		 Fundamentals of Computation Theory)
+
+		 September 2-3, 1999, Iasi, Romania
+
+Topics:
+
+Papers presenting new results in all areas of formal methods applied
+to distributed systems are welcome. Special topics of interests are:
+action calculi, Chu spaces, coalgebraic methods, concurrency theory,
+data-flow networks, interaction categories, linear logic based models,
+mixed control and data-flow models, mobile networks, Petri nets,
+process algebra and related calculi, reactive and real-time systems,
+etc.
+
+Invited Speakers:
+
+Joseph Goguen (University of California at San Diego, USA)
+Matthew Hennessy	(Sussex University, UK)
+Dan Moldovan (Southern Methodist University, Dallas, USA)
+Ugo Montanari (University of Pisa, Italy)
+
+Program Committee:
+
+M. Broy		(Munich, D)
+R. Diaconescu	(Bucharest, RO)
+J. Esparza	(Munich, D)
+J.F. Groote	(Amsterdam, NL)
+R. Grosu	(Philadelphia, USA)
+M. Kanovitch	(Moscow, RU)
+D. Lucanu	(Iasi, RO)
+B. Moller	(Augsburg, D)
+F. Moller	(Uppsala, S)
+A. Ponse	(Amsterdam, NL)
+T. Rus		(Iowa City, USA)
+E. Stark	(Stony Brock, USA)
+Gh. Stefanescu	(Bucharest, RO) - chair
+D. Walker	(Oxford, UK)
+
+Important Dates
+
+Submission		May 31st, 1999	
+Notification		June 30th, 1999
+Final paper     	July 15th, 1999
+Workshop		Sept. 2-3, 1999
+
+Venue
+
+The workshop will be held at Iasi, Romania between 
+	September 2-3, 1999
+in conjunction with FCT'99, 
+12th International Symposium on Fundamentals of Computation Theory.
+
+Submission information
+
+Send your contribution (up to 15 pages) as a Postscript file to the
+address below. A volume with  accepted papers will be made available 
+at the workshop. Depending on the value of the papers there is a 
+possibility to publish selected papers in a special issue of the 
+    Journal of Universal Computer Science (Springer-Verlag)
+See also the workshop home page for more or updated information.
+
+Email address for submission:
+	ghstef@funinf.math.unibuc.ro
+Snail address: 	
+	WDS'99, Attn: Prof.Dr. Gh. Stefanescu
+	Faculty of Mathematics, University of Bucharest
+	Str. Academiei 14, RO 70109 Bucharest, Romania
+See also the workshop home page at
+        http://www.infoiasi.ro/~fct99/wds.html
+
+Organizing Committee: 
+
+Bucharest Team:  
+  Gh. Stefanescu (co-chair), R. Ceterchi, C. Dima, A. Stefanescu
+Iasi Team: 
+  D. Lucanu (co-chair), L. Ibanescu, S. Orzan, V. Tablan
+      
+=====================================================================
+
+
+
+===========================LATEX VERSION=============================
+\documentstyle{article}
+\hoffset -2.6cm\voffset -3.5cm\setlength{\textwidth}{19cm}
+\setlength{\textheight}{26cm}
+\parskip=1ex\parindent=0cm
+
+\title{{\huge\bf 2$^{\bf nd}$ Call for Papers}\\{\huge\bf WDS'99}
+\\{\bf Workshop on Distributed Systems}}
+\date{}
+\author{{\Large Satellite Workshop to FCT'99}\\ 
+(12th International Symposium on Fundamentals of Computation Theory)
+\vspace*{.4cm}\\{\Large\bf September 2--3, 1999, Ia\c si, Romania}}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{tabular}{c@{\hspace*{.5cm}}|@{\hspace*{.5cm}}l}
+\parbox[t]{5.5cm}{\small
+
+\subsection*{\small\bf Program Committee (PC)}
+M. Broy		\hfill{(Munich, D)}\vspace*{.1cm}\\
+R. Diaconescu 	\hfill{(Bucharest, RO)}\vspace*{.1cm}\\
+J. Esparza	\hfill{(Munich, D)}\vspace*{.1cm}\\
+J.F. Groote 	\hfill{(Amsterdam, NL)}\vspace*{.1cm}\\
+R. Grosu 	\hfill{(Philadelphia, USA)}\vspace*{.1cm}\\
+M. Kanovitch	\hfill{(Moscow, RU)}\vspace*{.1cm}\\
+D. Lucanu 	\hfill{(Ia\c si, RO)}\vspace*{.1cm}\\
+R. De Nicola    \hfill{(Firenze, I)}\vspace*{.1cm}\\
+B. M\"oller 	\hfill{(Augsburg, D)}\vspace*{.1cm}\\
+F. Moller 	\hfill{(Uppsala, S)}\vspace*{.1cm}\\ 
+A. Ponse 	\hfill{(Amsterdam, NL)}\vspace*{.1cm}\\
+T. Rus 		\hfill{(Iowa City, USA)}\vspace*{.1cm}\\
+E. Stark 	\hfill{(Stony Brock, USA)}\vspace*{.1cm}\\
+Gh. Stefanescu 	\hfill{(Bucharest, RO) {\em chair}}\vspace*{.1cm}\\
+D. Walker 	\hfill{(Oxford, UK)}\vspace*{.1cm}\\
+
+\subsection*{\small\bf Organizing Committee}
+{\em Bucharest Team:}\\ 
+Gh. Stefanescu (co-chair), R. Ceterchi, C. Dima, A. Stefanescu
+\vspace*{.1cm}\\ 
+{\em Ia\c si Team:}\\ 
+D. Lucanu (co-chair), L. Ibanescu,\\ S. Orzan, V. Tablan\vspace*{.1cm}\\
+
+
+\subsection*{\small\bf Important Dates}
+Submission		\hfill{May 31st, 1999}\vspace*{.1cm}\\
+Notification		\hfill{June 30th, 1999}\vspace*{.1cm}\\
+Final paper     	\hfill{July 15th, 1999}\vspace*{.1cm}\\
+Workshop		\hfill{Sept. 2-3, 1999}\vspace*{.1cm}\\
+%Final paper		\hfill{Sept. 1999}
+} 
+&
+\parbox[t]{10.5cm}{\normalsize
+
+\subsubsection*{Topics}
+Papers presenting new results in all areas of formal methods applied
+to distributed systems are welcome. Special topics of interests are:
+action calculi, Chu spaces, coalgebraic methods, concurrency theory,
+data-flow networks, interaction categories, linear logic based models,
+mixed control and data-flow models, mobile networks, Petri nets,
+process algebra and related calculi, reactive and real-time systems,
+etc.
+
+\subsubsection*{Invited Speakers (IS)}
+{\large\it Joseph Goguen} 	
+\hfill{(University of California at San Diego, USA)}\vspace*{.1cm}\\
+{\large\it Matthew Hennessy} 	
+\hfill{(Sussex University, UK)}\vspace*{.1cm}\\ 
+{\large\it Dan Moldovan} 	
+\hfill{(Southern Methodist University, Dallas, USA)}\vspace*{.1cm}\\
+{\large\it Ugo Montanari} 	
+\hfill{(University of Pisa, Italy)}\vspace*{.1cm}
+
+\subsubsection*{Venue}
+The workshop will be held at Ia\c si, Romania between {\bf September
+2--3, 1999} in conjunction with 12th International Symposium on
+Fundamentals of Computation Theory, FCT'99.
+
+\subsubsection*{Submission information}
+
+Send your contribution (up to 15 pages) as a Postscript file to the
+address below. A volume with accepted papers
+will be available at the workshop. Depending on the value of the
+papers it is possible to publish selected papers in a special issue of
+the {\bf Journal of Universal Computer Science} (Springer-Verlag).
+\\\\
+Email address for submission:
+\mbox{ }\hfill{\tt\bf ghstef@funinf.math.unibuc.ro}\\
+%\mbox{ }\hfill{\tt\bf stefanes@informatik.tu-muenchen.de}\\\\
+Snail address: 	\hfill{WDS'99, Attn: Prof.Dr. Gh. Stefanescu}\\
+\mbox{ }\hfill{Faculty of Mathematics, University of Bucharest}\\
+\mbox{ }\hfill{Str. Academiei 14, RO 70109 Bucharest, Romania}\\
+URL address for the workshop home page:\\ 	
+\mbox{ }\hfill{{\tt http://www.infoiasi.ro/\~{}fct99/wds.html}}\\
+%\mbox{ }\hfill{{\tt 
+%http://www4.informatik.tu-muenchen.de/\~{}stefanes/wds99/}}
+}
+\end{tabular}
+
+\vspace*{.5cm}\begin{center}{\sc PLEASE POST}\end{center}
+\end{document}
+
+===============================================================
+-- 
+=========================================
+Dorel Lucanu
+Universitatea "A.I.Cuza"
+Facultatea de Informatica
+str. Berthelot 16
+6600 Iasi, Romania
+
+e-mail: dlucanu@infoiasi.ro
+home page: http://www.infoiasi.ro/~dlucanu/
+tel: home       40 32 156487
+     office     40 32 146141
+     department 40 32 216560
+=========================================
+
+
+From cat-dist Tue May 11 20:54:22 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA09565
+	for categories-list; Tue, 11 May 1999 19:41:33 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: robin@cpsc.ucalgary.ca (Robin Cockett)
+Date: Tue, 11 May 1999 15:12:16 -0600 (MDT)
+Message-Id: <199905112112.PAA14401@ci.cpsc.ucalgary.ca>
+To: categories@mta.ca
+Subject: categories: FMCS 99
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+        *************************************************
+        *                                               *
+        * FFFFF  M    M   CCC  SSSS     9999    9999    *
+        * F      MM  MM  C    S        9    9  9    9   *
+        * FFFFF  M MM M  C     SSS      99999   9999    *
+        * F      M    N  C        S         9       9   *
+        * F      M    M   CCC SSSS      9999    9999    *
+        *                                               *
+        **********************FMCS 99********************
+
+CALL FOR PARTICIPATION:
+
+The Department of Computer Science at the University of Calgary is hosting 
+the Foundational Methods in Computer Science workshop on June 3rd - 6th, 
+1999 at the Kananaskis Field Station in Alberta, Canada.
+
+The workshop is an informal meeting to bring together researchers in 
+mathematics and computer science with a focus on the application of 
+category theory in computer science.  It is a three day meeting, that 
+starts with a day of tutorials aimed at students and newcomers to 
+category theory, followed by a day and a half of research talks.
+
+The meeting this year has a little website (the schedule and speakers 
+will be announced on the site) see:
+
+     http://www.cpsc.ucalgary.ca/~fmcs99 
+
+The workshop will have approximately the same format as last year,  
+with a day of tutorials on friday June 4 and shorter research 
+presentations on June 5 and 6.  
+
+Tutorials will be given by:
+     Ernie Manes         More monads ...
+     Rick Blute          Linear Logic
+     Phil Mulry          Partial maps
+     David Benson        Sketches and complexity
+
+Due to the location (in the foothills of the Rockies) we shall be 
+adopting a mountain conference schedule: lectures will run 
+9:00am - 12:00pm, packed lunches (a chance for walks and talks etc.), 
+supper at 5:30pm, and lectures resume 7:00pm - 10:00pm.  The area 
+offers walks of all standards in some of the most stunning mountain 
+scenery of the Rockies.  In June the evenings still get quite cool.
+
+We do have limited support for student participation (for which one 
+must apply) as usual student participation and talks are encouraged.
+If you would like to attend this year please visit the web site and 
+send in your registration form!
+
+I look forward to seeing you at FMCS ... 
+
+Robin Cockett
+
+
+
+From cat-dist Tue May 11 20:55:15 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA06176
+	for categories-list; Tue, 11 May 1999 19:39:49 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from sirocco.cc.mcgill.ca (sirocco.CC.McGill.CA [132.206.27.12])
+	by mailserv.mta.ca (8.9.3/8.9.3) with ESMTP id LAA25328
+	for <rrosebru@mta.ca>; Mon, 10 May 1999 11:07:58 -0300 (ADT)
+X-Received: from [198.168.184.178] (B57-58.DAS.McGill.CA [198.168.184.178])
+	by sirocco.cc.mcgill.ca (8.9.1/8.9.1) with ESMTP id KAA19793
+	for <rrosebru@mta.ca>; Mon, 10 May 1999 10:09:17 -0400 (EDT)
+Message-Id: <l03130302b35c95d37e4f@[198.168.184.178]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Date: Mon, 10 May 1999 10:08:27 -0400
+To: rrosebru@mta.ca
+From: Marta Bunge <bunge@triples.math.mcgill.ca>
+Subject: categories: Summer address for categories
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id LAA25328
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+-----------------------------------------------------------------------------
+Marta Bunge wishes to communicate her mailing address and personal fax/phone
+for the period June 1st-August 31st 1999. Mailing Address: c/o Margarita
+Desengrinis, Ag. Dimitriou 6, 49100 CORFU, Greece. Personal Fax/Telephone:
+663 41584. An email address will be added later if it becomes available.
+----------------------------------------------------------------------------
+Marta Bunge                            Dept.of Mathematics & Statistics
+bunge@math.mcgill.ca                   McGill University
+Phone: 514-933-6191(H)/398-3810(O)     Sherbrooke Street West 805
+Fax: 514-933-8741(H)/398-3899(O)       Montreal, QC
+http://www.math.mcgill.ca/~bunge       Canada H3A 2K6
+
+
+
+
+From cat-dist Tue May 11 20:56:59 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA10716
+	for categories-list; Tue, 11 May 1999 19:38:04 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 11 May 1999 09:59:39 +0100 (BST)
+From: Marta Z Kwiatkowska <M.Z.Kwiatkowska@cs.bham.ac.uk>
+Message-Id: <199905110859.JAA09487@chip.cs.bham.ac.uk>
+To: categories@mta.ca
+Subject: categories: PROBMIV'99: Final Call for Papers
+Cc: M.Z.Kwiatkowska@cs.bham.ac.uk
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+[Please circulate this to anyone interested.  Apologies for multiple 
+copies.]
+
+_________________________________________________________________________
+
+                         2nd CALL FOR PAPERS
+
+                             PROBMIV'99     
+
+  2nd International Workshop on Probabilistic Methods in Verification
+
+                  http://fmt.cs.utwente.nl/probmiv99/ 
+
+                       a satellite to CONCUR'99
+ 
+                       Eindhoven, 23rd Aug 1999 
+           (to coincide with EXPRESS'99, another satellite)
+_________________________________________________________________________
+
+   
+SCOPE OF THE WORKSHOP 
+  
+Probability inherently features in software and hardware systems,
+either as a means to derive efficient solutions (e.g. randomization),
+or as a result of unreliable or unpredictable behaviour (e.g.
+fault-tolerant systems, computer networks, etc).  *Probabilistic
+verification* encompasses a range of theoretical, algorithmic and
+programming methods that assist in establishing the correctness of
+probabilistic systems against specifications.  Typically this involves
+calculating the probability bounds for a temporal logic formula being
+satisfied, based on an appropriate probability space on computations,
+but also includes properties such as cost analysis and long-run
+average.  Additionally, probabilistic verification can provide
+guarantees the specifications hold with satisfactory probability in
+cases when conventional model checking is not feasible.
+
+
+The idea of this workshop is to bring together researchers that apply
+probabilistic methods across the whole spectrum of verification. The
+meeting aims to enable cross-fertilisation of ideas and techniques
+between areas that are usually not in regular contact through
+conferences, from semantics, probability theory, performance analysis
+and computational linear algebra, through randomized algorithms,
+probabilistic  logics, model checking, abstract interpretation, to
+practical experimental work, tools and applications.
+
+This is the second workshop of this kind.  The first meeting,
+PROBMIV'98 was held in 1998 as a satellite to LICS.  In 1999, the
+workshop takes place as a satellite to CONCUR.
+
+_________________________________________________________________________
+ 
+ 
+INVITED SPEAKERS 
+
+   Rance Cleaveland, SUNY at Stony Brook
+   Bengt Jonsson, University of Uppsala
+   Kim G. Larsen, Aalborg University
+   Oded Maler, Verimag
+
+_________________________________________________________________________
+                                      
+
+STEERING AND PROGRAM COMMITTEE 
+                                      
+   Rajeev Alur, University of Pennsylvania 
+   Christel Baier, University of Mannheim
+   Luca de Alfaro, University of California at Berkeley   
+   Michael Huth, Kansas State University
+   Joost-Pieter Katoen, University of Twente 
+   Marta Kwiatkowska, University of Birmingham (chair)
+   Roberto Segala, University of Bologna    
+   Prakash Panangaden, McGill University
+
+_________________________________________________________________________
+ 
+
+SUBMISSION GUIDELINES
+  
+We are seeking papers on the following example (non-exclusive) topics:
+ * Modelling and verification of probabilistic and stochastic systems,
+   including real-time and hybrid systems 
+ * Formal models and verification techniques for randomized algorithms 
+ * Semantics of probabilistic and stochastic processes 
+ * Probabilistic  logics 
+ * Design of verification support tools 
+ * Tool demonstrations 
+ * Case studies 
+
+Submissions may be of two forms: short abstracts of up to 4 pages or
+full papers of 10-15 pages (previously unpublished).  Simultaneous
+submission to other conferences or journals is *only* allowed for short
+abstracts.  Because of the informal character of the workshop, we
+encourage work in progress reports.
+
+Authors should send their papers preferably electronically to the
+address probmiv99@cs.bham.ac.uk (as platform-independent PostScript
+files printable on A4 paper and 8-1/2" x 11" paper, plus a plain text
+message containing the submissions's title, abstract, and the main
+author's address including e-mail and FAX) by the deadline shown
+below.
+
+Alternatively, authors may instead send 3 copies of the hardcopy of
+their paper to
+ 
+     Marta Kwiatkowska (Chair) 
+     School of Computer Science 
+     University of Birmingham 
+     Edgbaston, B15 2TT, UK 
+     Tel +44 (121) 414-7264 (voice)
+     FAX +44 (121) 414-4281
+     mzk@cs.bham.ac.uk 
+   
+All submissions will be refereed in the normal manner.  Preliminary
+proceedings, excluding short abstracts, will be published
+electronically and as a Technical Report of the University of
+Birmingham, to be available at the workshop.  We are currently
+investigating the possibility of publishing proceedings after the
+workshop as a volume of ENTCS jointly with the EXPRESS'99 workshop.
+
+_________________________________________________________________________
+   
+
+IMPORTANT DATES
+
+   17 May 1999    ***Submissions due***
+   21 June 1999   Notification of acceptance or rejection
+   19 July 1999   Final versions due for preliminary proceedings
+
+_________________________________________________________________________
+
+                                      
+LOCAL ORGANISATION
+                                      
+Holger Hermanns, University of Twente
+Erik de Vink, Free University Amsterdam
+
+_________________________________________________________________________
+                                      
+ 
+FURTHER INFORMATION
+
+For more information please see URLs
+
+PROBMIV'99      http://fmt.cs.utwente.nl/probmiv99/
+CONCUR'99       http://www.win.tue.nl/concur99/
+EXPRESS'99      http://www.docs.uu.se/~victor/Express/express99.shtml
+PROBMIV'98      http://www.cs.bham.ac.uk/~mzk/probmiv98.html
+
+_________________________________________________________________________
+
+ 
+ 
+
+
+From cat-dist Thu May 13 17:03:21 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA22484
+	for categories-list; Thu, 13 May 1999 15:41:42 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14137.30888.122000.616340@turing.loria.fr>
+Date: Wed, 12 May 1999 14:48:40 +0200 (MET DST)
+From: Christophe Ringeissen <Christophe.Ringeissen@loria.fr>
+To: fg121@informatik.uni-ulm.de, acl2@cli.com, atp@logic.tuwien.ac.at,
+        qed@mcs.anl.gov, eacsl@dimi.uniud.it, lprolog@cis.upenn.edu,
+        rewriting@ens-lyon.fr, colibri@let.uu.nl, nvti-list@cwi.nl,
+        categories@mta.ca, fsdm@it.uq.edu.au
+Cc: frocos@loria.fr
+Subject: categories: FroCoS'2000: First Call for Papers
+X-Mailer: VM 6.51 under 20.4 "Emerald" XEmacs  Lucid
+Reply-To: Christophe.Ringeissen@loria.fr
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+[We apologize for multiple copies]
+
+			First Call for Papers
+
+		     Third International Workshop
+
+		  ``Frontiers of Combining Systems''
+			     FroCoS'2000
+
+		  March 22-24, 2000, Nancy, France
+
+	     http://www.loria.fr/conferences/frocos2000/
+
+
+In various areas of computer science, such as logic, computation,
+program development and proof, artificial intelligence, there is an
+obvious need for using specialized formalisms and inference mechanisms
+for special tasks. In order to be usable in practice, these
+specialized systems must be combined with each other, and they must be 
+integrated into general purpose systems.  The development of general 
+techniques for the combination and integration of special systems has
+been initiated in many areas.
+
+The two previous international workshops on ``Frontiers of Combining
+Systems'' were held in Munich (1996) and in Amsterdam (1998). 
+Like its predecessors, FroCoS'2000 is intended to offer a common
+forum for research activities in the general area of combination and 
+integration of systems, and on their practical use. 
+
+Suggested, but not exclusive topics of interest for the workshop are: 
+
+ * combination of logics 
+
+ * combination of constraint solving techniques, of decision procedures,
+   of term rewriting systems
+
+ * combination of deduction systems and computer algebra
+
+ * integration of decision procedures and other solving processes into
+   constraint programming and deduction systems 
+
+ * modelisation of hybrid systems 
+
+ * logic modelling of multi-agent systems.
+
+
+We expect to attract high quality original papers that cover relevant
+aspects of these topics. All submissions will be thoroughly evaluated.
+On the basis of the referee reports, papers will be selected for
+presentation at the conference and for the published post-conference 
+proceedings.
+
+
+Program Committee:
+
+F. Baader (RWTH Aachen)
+D. Basin (U. Freiburg)
+F. Benhamou (U. Nantes)
+T. Fruehwirth (LMU Muenchen)
+F. Giunchiglia (ITC-IRST Trento)
+B. Gramlich (TU Wien)
+H. Kirchner (LORIA Nancy) 
+C. Kreitz (Cornell U.)
+T. Mossakowski (U. Bremen)
+J. Pfalzgraf (U. Salzburg)
+M. de Rijke (U. Amsterdam)
+C. Ringeissen (LORIA Nancy)
+T. Scott (U. Paderborn/INRIA)
+M. Wallace (IC-Parc London)
+
+
+Program Chairs:
+
+H. Kirchner and C. Ringeissen
+LORIA & INRIA-Lorraine
+Campus Scientifique - BP 239
+54506 Vandoeuvre-les-Nancy Cedex
+France
+E-mail: frocos@loria.fr
+
+
+Local Organization:
+
+C. Bergeret, A.-L. Charbonnier, A. Demange, H. Kirchner,
+C. Ringeissen, L. Vigneron.
+
+
+Paper Submissions:
+
+Authors are encouraged to use LaTeX and the standard article
+class/style file (10pt). The primary means of submission will be
+electronic, in PostScript format.  Papers should be compressed, then
+uuencoded, and e-mailed to the program chairs. Papers should not
+exceed 15 pages, and should be received via e-mail by October 1,
+1999. Results must be unpublished, and not submitted for publication
+elsewhere.  Submissions should start with title, author(s) 
+(names, correspondence addresses, e-mail addresses), and abstract.  
+
+
+Important Dates:
+
+   Paper Submissions: October 1, 1999
+         E-mail for paper submissions: frocos@loria.fr
+
+   Notification of Acceptance: December 20, 1999
+   Final Versions due: February 5, 2000
+   Conference: March 22-24, 2000
+
+FroCoS'2000 is just before ETAPS'2000 (Berlin, March 25-April 2,2000) 
+so that attendance to both conferences can be suitably combined.
+
+
+Information on FroCoS'2000 is available by WWW:  
+   http://www.loria.fr/conferences/frocos2000/
+
+
+From cat-dist Thu May 13 17:05:38 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA24702
+	for categories-list; Thu, 13 May 1999 15:42:01 -0300 (ADT)
+X-Authentication-Warning: caruaru.di.ufpe.br: ruy owned process doing -bs
+Date: Thu, 13 May 1999 09:56:56 -0300 (EST)
+From: Ruy de Queiroz <ruy@di.ufpe.br>
+X-Sender: ruy@caruaru
+To: categories@mta.ca
+Subject: categories: WoLLIC'99 - Call for Participation
+Message-ID: <Pine.GSO.3.95.990513095642.16585F-100000@caruaru>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+PROGRAMME AND CALL FOR PARTICIPATION
+
+6th Workshop on Logic, Language, Information and Computation (WoLLIC'99)
+May 25-28, 1999
+
+http://www.di.ufpe.br/~wollic/wollic99/
+
+Hotel Simon,
+Itatiaia National Park, Rio de Janeiro, Brazil
+
+(In conjunction with "XII Encontro Brasileiro de Logica - EBL'99")
+
+SCIENTIFIC SPONSORSHIP
+Interest Group in Pure and Applied Logics
+European Association for Logic, Language and Information (FoLLI)
+Association for Symbolic Logic (ASL)
+Sociedade Brasileira de Computaco (SBC)
+Sociedade Brasileira de Logica (SBL)
+
+FUNDING
+CAPES, CNPq, Facolta di Scienze, Univ. di Verona
+
+ORGANISATION
+Departamento de Informatica, Universidade Federal de Pernambuco
+Facolta` di Scienze, Universita` degli Studi di Verona
+Centro de Logica, Epistemologia e Historia da Ciencia, Univ.Campinas
+
+PROGRAMME
+
+TUESDAY MAY 25th, 1999 (Tutorial Day)
+
+Tutorials:
+
+08:00-10:00 (with a 10min break)
+  Introduction to Game Semantics
+  by Samson Abramsky
+
+10:00-10:15 Coffee/tea break
+
+10:15-12:15 (with a 10min break)
+  Markov Decision Processes and Bayesian Networks
+  by Craig Boutilier
+
+12:15-14:00 Lunch break
+
+14:00-16:00 (with a 10min break)
+  A Crash Course in Distributive Lattices
+  by Francisco Miraglia
+
+16:00-16:15 Coffee/tea break
+
+16:15-18:15 (with a 10min break)
+  Stability and Finite Model Theory
+  by John Baldwin
+
+18:15-18:30 Coffee/tea break
+
+18:30-20:30 (with a 10min break)
+  Bounded Arithmetic, Nonstandard Models
+  by Alan Woods
+
+WEDNESDAY MAY 26th, 1999
+
+Morning: Logic and Computation
+
+08:30 OPENING
+
+09:00-10:00 (Invited talk WoLLIC'99/EBL'99)  Chair: John Baldwin
+  Concurrent Games and Full Completeness
+  by Samson Abramsky, Division of Informatics, Edinburgh University, UK
+
+10:00-10:15 Coffee/tea break
+
+10:15-11:15 3 contributed papers (20min each)  Chair: Ruy de Queiroz
+ 
+   10:15-10:35 omega-continuos cpo's, omega-algebraic cpo's, SFP domains and
+               retract of SFP domains as information systems
+               by Benjamin Callejas Bedregal, Departamento de Informatica e
+                  Matematica Aplicada, Universidade Federal do Rio Grande do
+                  Norte, Brazil
+
+   10:35-10:55 Alpha Conversion in Simply Typed Lambda Calculus
+               by Ana Bove, Department of Computing Science, Chalmers
+                  University of Technology, Goteborg, Sweden, and
+                  Paula Severi, Centro de Matematica, Facultad de Ciencias,
+                  Universidad de la Republica, Uruguay
+
+   10:55-11:15 Dependence Analysis Through Type Inference
+               by Ozan Hafizogullari and Christoph Kreitz, Department of
+                  Computer Science, Cornell University, USA
+
+
+11:15-11:30 Coffee/tea break
+
+11:30-12:30 (Invited talk EBL'99/WoLLIC'99)  Chair: Valeria de Paiva
+            (TBA)
+            by Paulo Veloso, Departamento de Informatica, Pontificia
+               Universidade Catolica do Rio de Janeiro, Brazil
+
+12:30-14:00 Lunch break
+
+Afternoon: Logic and Information
+
+14:00-15:00 (Invited talk)  Chair: Alan Woods
+            Abstraction and Decomposition Techniques for Markov Decision
+            Processes
+            by Craig Boutilier, Department of Computer Science, University
+               of British Columbia, Canada
+
+15:00-15:15 Coffee/tea break
+
+15:15-16:15 3 contributed papers (20min each)  Chair: Ana Teresa C. Martins
+
+   15:15-15:35 A little note about Maxichoice and Epistemic Entrenchment
+               by Eduardo Ferme, Departamento de Computacion, Universidad
+                  de Buenos Aires, Argentina  
+
+  15:35-15:55 Irrevocable Belief Revision and Epistemic Entrenchment
+               by Eduardo Ferme, Departamento de Computacion, Universidad
+                  de Buenos Aires, Argentina  
+
+   15:55-16:15 A logic-based system for controlling inconsistencies in
+                 evolutionary databases
+               by Walter A. Carnielli, Centro de Logica, Universidade
+                  Estadual de Campinas, Brazil, and
+                  Sandra de Amo, Departamento de Informatica, Universidade
+                  Federal de Uberlandia, Minas Gerais, Brazil
+
+
+THURSDAY MAY 27th, 1999
+
+Morning: Logic, Model Theory and Complexity Theory
+
+09:00-10:00 (Invited talk WoLLIC'99/EBL'99)  Chair: Francisco Miraglia
+            Finite and Infinite Model Theory
+            by John Baldwin, Department of Mathematics, Statistics and
+               Computer Science, University of Illinois at Chicago, USA
+
+10:00-10:15 Coffee/tea break
+
+10:15-11:15 3 contributed papers (20min each)  Chair: E. Hermann Hauesler
+
+   10:15-10:35 Model theory of the recursively enumerable many-one degrees
+               by Andre O. Nies, Department of Mathematics, University of
+                  Chicago, USA
+
+   10:35-10:55 On clausal models
+               by Dusan Guller, Institute of Informatics, Comenius University,
+                  Slovakia
+
+   10:55-11:15 (tba)
+               by (tba)
+
+11:15-11:30 Coffee/tea break
+
+11:30-12:30 (Invited talk)  Chair: Craig Boutilier
+            Intrinsic theories: a methodology for reasoning about functional
+            programs and their computational complexity
+            by Daniel Leivant, Department of Computer Science,
+               Indiana University, USA
+
+12:30-14:00 Lunch break
+
+Afternoon: Categorical Logic and Non-Classical Logics
+
+14:00-15:00 (Invited talk WoLLIC'99/EBL'99)  Chair: Samson Abramsky
+           A Lattice-Theoretic Concept of Logical Connective
+           by Francisco Miraglia, Instituto de Matematica e Estatistica,
+              Universidade de Sao Paulo, Brazil
+
+15:00-15:15 Coffee/tea break
+
+15:15-16:15 3 contributed papers (20min each)  Chair: Mario Benevides
+
+   15:15-15:35 Hybrid logic is the bounded fragment of first order logic
+               by Carlos Areces, University of Amsterdam, The Netherlands,
+                  Patrick Blackburn, Universitaet des Saarlandes, Germany, and
+                  Maarten Marx, University of Amsterdam, The Netherlands
+
+   15:35-15:55 A Dynamic Modal Arrow Logic for the Interpretation of
+                 Verb Stems and Voice Affixes in Tagalog
+               by Ralf Naumann and Anja Latrouite, Seminar fuer Allgemeine
+                  Sprachwissenschaft, Universitaet Duesseldorf, Germany
+
+   15:55-16:15 The Taming (Timing) of the States
+               by Angelo Montanari, Adriano Peron and Alberto Policriti,
+                  Dipartimento di Matematica e Informatica, Universita`
+                  di Udine, Italy
+
+
+FRIDAY MAY 28th, 1999
+
+Morning: Logic and Proof Theory
+
+09:00-10:00 (Invited talk WoLLIC'99/EBL'99)  Chair: Daniel Leivant
+            Bounded Arithmetic from a Rational Perspective
+            by Alan Woods, Department of Mathematics, University of
+               Western Australia, Australia
+
+10:00-10:15 Coffee/tea break
+
+10:15-11:15 3 contributed papers (20min each)  Chair: Luiz Carlos Pereira
+
+   10:15-10:35 A Cut-Free Gentzen Formulation of Modal Logic S5
+               by Torben Brauner, Centre for Philosophy and Science-Theory,
+                  Aalborg University, Denmark
+
+   10:35-10:55 A Sequent Calculus for a Paraconsistent Default Logic
+               by Ana Teresa de C. Martins, Tarcisio Pequeno and
+                  Marcelino Pequeno, Departamento da Computacao,
+                  Universidade Federal do Ceara', Brazil
+
+   10:55-11:15 A sequent calculus for Lukasiewicz's three-valued logic based
+               on Suszko's bivalent semantics
+               by Jean-Yves Beziau, LNCC/CNPq, National Laboratory for
+                  Scientific Computing, Rio de Janeiro, Brazil
+
+
+11:15-11:30 Coffee/tea break
+
+11:30-12:30 (Invited talk EBL'99/WoLLIC'99)  Chair: (tba)
+            (TBA)
+            by (to be announced)
+
+12:30 CLOSING
+
+------
+
+
+
+
+From cat-dist Sat May 15 14:46:44 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id NAA07869
+	for categories-list; Sat, 15 May 1999 13:44:55 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199905141924.PAA12048@nslocum.cs.bell-labs.com>
+To: types@cis.upenn.edu, categories@mta.ca
+Subject: categories: Recursive types in polymorphic lambda calculus
+Date: Fri, 14 May 1999 15:24:32 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+There is a fairly standard encoding of recursive types
+into polymorphic lambda calculus, given by
+
+	rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+where F[X] is a type in which the type variable X appears only
+covariantly.  Recall that every covariant type corresponds to a
+covariant functor, so for every h:X->Y we have F[h]:F[X]->F[Y].
+If we abbreviate T = rec X.F[X], then the key functions on this
+type are given by the polymorphic lambda terms:
+
+	fold : all X.(F[X] -> X) -> T -> X
+	fold = Lam X.lam k:F[X]->X.lam t:T.t{X}(k)
+
+	in   : F[T] -> T
+	in   = lam u:F[T].Lam X.lam k:F[X]->X.k(F[fold{X}(k)](u))
+
+	out  : T -> F[T]
+	out  = fold{F[T]}(F[in])
+
+Questions: Who first had this insight?  Where is a good place to find
+this spelled out in the literature?  Please send results to me, and I
+will summarize them for the list.  Cheers, -- P
+
+
+From cat-dist Sun May 16 22:17:15 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA05370
+	for categories-list; Sun, 16 May 1999 21:05:28 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Sender: duskin@mail.buffnet.net
+Message-Id: <v04020a00b364837671a0@[207.41.195.117]>
+Date: Sun, 16 May 1999 10:37:25 -0400
+To: categories@mta.ca
+From: John Duskin <duskin@math.buffalo.edu>
+Subject: categories: Illness of John Isbell
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The many readers of the "Categories" list will be saddened to hear that our
+friend and colleague and long time contributor to the list, John Isbell, is
+critically ill in Millard Fillmore Hospital here in Buffalo, suffering from
+a very serious blood infection. At present, his condition is stable, but
+remains critical. His family and friends here in Buffalo know that you join
+us in wishing him a speedy and complete recovery.
+
+
+From cat-dist Fri May 21 12:44:15 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA14790
+	for categories-list; Fri, 21 May 1999 10:50:31 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 20 May 1999 16:47:02 +0200 (MET DST)
+From: Natalia Ioustinova <ustin@informatik.uni-rostock.de>
+Message-Id: <199905201447.QAA07586@mammut.informatik.uni-rostock.de>
+To: categories@mta.ca
+Subject: categories: OOSDS99 Call for papers
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+========================================================================
+This message contains public information, only, and the receiver
+is allowed, and invited, to copy it and distribute it further.
+
+Our apologies if you received duplicates of this message due to the
+mailing list aliases.
+
+You can also visit the OOSDS'99 web site at
+http://www.tec.informatik.uni-rostock.de/IuK/congr/oosds99/
+
+========================================================================
+			   CALL FOR PAPERS
+
+			       OOSDS'99
+				   
+	Workshop on Object-Oriented Specification Techniques
+	        for Distributed Systems and Behaviours
+
+		Paris, France, September 27, 1999
+	http://www.tec.informatik.uni-rostock.de/IuK/congr/oosds99/
+	
+========================================================================
+
+SCOPE OF WORKSHOP:
+=================
+The workshop is focused on specification languages for distributed 
+systems which are extensions of object-oriented languages or have an 
+object-oriented kind of base structure. The aim is to bring together
+researchers interested in incorporating object-oriented concepts 
+and  formal methods for specification of distributed systems and
+behaviours. 
+
+TOPICS (NOT EXCLUSIVE LIST):
+============================
+Object-oriented approaches to specification of distributed systems 
+and behaviours.
+
+Semantic models for concurrency and object-orientation (e.g. based on the 
+lambda-calculus, process algebra, pi-calculus, linear logic).
+
+Characteristic examples of object-oriented specification from real 
+application domains (e.g. distributed algorithms, workflow specification, 
+communication protocols).
+
+Logic reasoning on distributed systems and behaviours.
+
+SUBMISSION:
+===========
+The deadline for submission is September 2, 1999. 
+Submission is in electronic form only.
+Submission may be of two forms:
+	Extended abstracts: up to 3 pages.
+	Papers and reports: up to 6 pages.
+In both cases a separate page with the following information: 
+        title, author(s), corresponding author,
+        contact information and a 12-15 lines summary 
+should be included.
+The papers and/or abstracts should be sent by e-mail to 
+oosds99@informatik.uni-rostock.de.
+Selection for presentation will be carried out by the organizers.
+Emphasis is put on the potential of the submission to stimulate 
+discussions in the above-mentioned scope.
+Notification of acceptance is expected for September 14, 1999.
+
+PUBLICATION:
+============
+The accepted submissions will be published electronically,
+i.e. they will remain available from the workshop web page.
+Furthermore, selected papers will be invited for post
+workshop publication. 
+
+RELATED EVENTS:
+==============
+This workshop is organized as a satellite workshop of PPDP'99, 
+The 1999 International Conference on  Principles and Practice 
+of Declarative Programming, Paris, France, September 29-October 1, 1999. 
+http://www.dmi.ens.fr/~fages/PPDP99/
+
+ORGANIZATION COMMITTEE:
+=======================
+Clemens H. Cap  (Rostock University, Germany) 
+Natalia Ioustinova  (Rostock University, Germany) 
+Javier Oliver  (Technical University of Valencia, Spain) 
+Nobuko Yoshida  (University of Sussex, UK)
+
+ADDITIONAL INFORMATION:
+=======================
+WEB: http://www.tec.informatik.uni-rostock.de/IuK/congr/oosds99/
+MAIL: oosds99@informatik.uni-rostock.de
+
+
+
+
+From cat-dist Wed May 26 17:47:20 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA06431
+	for categories-list; Wed, 26 May 1999 16:13:26 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 25 May 1999 12:43:45 +0200 (SAST)
+From: Peter Jipsen <pjipsen@proof.mth.uct.ac.za>
+Reply-To: luatcs99@na.rau.ac.za
+To: Undisclosed recipients:  ;
+Subject: categories: LUATCS'99 2nd announcement
+Message-ID: <Pine.LNX.3.96.990525124013.14262A-100000@proof.mth.uct.ac.za>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+
+Dear Colleagues and Students,
+
+Apologies if you receive more than one copy of this message.
+Included below is the second announcement for the LUATCS
+Summer School and Workshop, as well as a registration form.
+The same information can also be obtained from the LUATCS webpage
+at http://proof.mth.uct.ac.za/~pjipsen/luatcs99
+
+We hope you are interested in this event and also make this
+information known to your friends and students.
+
+Regards
+Val Goranko and Peter Jipsen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     FIRST SOUTHERN AFRICAN SUMMER SCHOOL AND WORKSHOP ON 
+
+  LOGIC, UNIVERSAL ALGEBRA, AND THEORETICAL COMPUTER SCIENCE
+
+                        (LUATCS'99)
+
+    Rand Afrikaans University, Johannesburg, South Africa 
+
+                     December 1-10, 1999
+
+
+                     SECOND ANNOUNCEMENT
+                  AND CALL FOR PARTICIPATION
+
+
+LUATCS'99 is organized under the auspices of the Department of
+Mathematics at the Rand Afrikaans University (RAU) in Johannesburg,
+South Africa, the National Research Foundation of South Africa (NRF),
+the Laboratory for Formal Aspects and Complexity in Computer Science
+(FACCS-Lab) at the University of Cape Town, and the Interest Group in
+Logic, Universal Algebra and Theoretical Computer Science at the South
+African Mathematical Society (SAMS).
+
+
+  ADVISORY BOARD:
+  Samson Abramsky (University of Edinburgh, UK)
+  Hajnal Andreka (Math. Inst. of the Hungarian Acad. of Sciences)
+  Johan van Benthem, Chair (University of Amsterdam, Netherlands) 
+  Chris Brink (University of Wollongong, Australia) 
+  Robin Hirsch (University College London, UK) 
+  Wilfrid Hodges (Queen Mary and Westfield College, UK) 
+  Bjarni Jonsson (Vanderbilt University, USA) 
+  Istvan Nemeti (Math. Inst. of the Hungarian Acad. of Sciences) 
+  Jeff Zucker (McMaster University, Canada)
+
+  ORGANIZING COMMITTEE: 
+  Isabella Burger (Rand Afrikaans University, local arrangements),
+  Val Goranko (Rand Afrikaans University, co-chair), 
+  Peter Jipsen (University of Cape Town, co-chair).
+
+
+I. ACTIVITIES: Short introductory and advanced courses, tutorials and
+workshops on each of the three subjects: Logic, Universal Algebra and
+Theoretical Computer Science, as well as combined courses and
+tutorials/workshops on specific topics within the scope of the
+school. Also, there will be open sessions with contributed talks.
+
+The courses and tutorials will be given by invited lecturers and will
+be grouped in two parts: introductory and advanced.
+
+The purpose of the single-subject courses is to give a concise
+introduction into the basics, and some advanced topics of the subject
+for participants with little or no background (for the introductory
+courses) and with basic knowledge (for the advanced courses) in the
+subject.
+
+The purpose of the interdisciplinary courses, tutorials, and workshops
+is to discuss the interaction between the subjects of the school.
+
+A general purpose of the school is to reflect the current development
+of each of the three subjects and the interaction between them, with
+an emphasis on recent trends and research topics in them.
+
+The introductory part is aimed at lower graduate (honours and masters)
+students but will be accessible for undergraduates majoring in
+mathematics and computer science too. Essentially no special
+knowledge, but some formal background, will be expected for these
+courses. The advanced part will be suitable for higher graduate
+(masters and doctoral) students and researchers.
+
+
+1) PART 1: Introductory courses. December 1-4, RAU-Island (Vaal Dam,
+see below).  Each course will comprise four sessions and will give a
+general background into the subject(s), necessary to follow the
+advanced courses.
+
+  COURSES AND LECTURERS: 
+
+(Legend: L:Logic, UA: Universal Algebra, TCS: Theoretical Computer Science)
+
+  L: Patrick Blackburn (University of Saarland) 
+
+  UA: Matt Valeriote (McMaster University, Canada) 
+
+  TCS: Austin Melton (Kent State Univ., USA)
+
+  L&UA: Yde Venema (University of Amsterdam, Netherlands) 
+
+  L&TCS: Holger Schlingloff (University of Bremen, Germany) 
+
+  UA&TCS: H. Peter Gumm (University of Marburg, Germany)
+
+
+2) PART 2: Advanced courses, tutorials, workshops, open
+sessions. December 6-10, Rand Afrikaans University, Johannesburg. (NB:
+the duration of the school has been extended by 1 day since the 1st
+announcement.) Each of the modules listed below will consist of a
+tutorial part, possibly followed by a workshop part.
+
+2.1) LECTURERS/WORKSHOP ORGANIZERS AND TOPICS:
+
+-) Hajnal Andreka, Istvan Nemeti (Math. Inst. Hungarian Acad. of
+   Sciences): Logic, relativity theory and Tarskian geometry.
+
+-) Johan van Benthem (Univ. of Amsterdam, Netherlands): 
+   Game theory and modal logic.
+
+-) Zhou Chaochen, (United Nations Univ., Macau): 
+   Duration Calculus.
+
+-) Anuj Dawar (Univ. of Cambridge, UK): 
+   Fixed point logics and finite model theory.
+
+-) Brian Davey (La Trobe Univ., Australia):  
+   Advanced universal algebra. 
+
+-) Mai Gehrke (New Mexico State Univ., USA): 
+   Lattices with additional  operations.
+
+-) Robin Hirsch (Univ. College London, UK): 
+   Algebraic logic.  
+
+-) Wilfrid Hodges (Queen Mary and Westfield College,UK): 
+   Advanced logic.
+
+-) Bart Jacobs (University of Nijmegen, Netherlands) and 
+   Jan Rutten (Centre for Mathematics and Computer Science, Netherlands):
+   Co-algebra, theory and applications.
+
+-) Thomas Jech (Penn State Univ., USA): 
+   Left-distributive algebras.
+
+-) Maarten de Rijke (Univ. of Amsterdam, Netherlands): 
+   Computational logic and automated theorem proving.
+
+-) Moshe Vardi (Rice Univ., USA): 
+   Automata-theoretic approach to design verification.
+
+-) Jeff Zucker (McMaster Univ., Canada):
+   Computability on abstract algebras.  
+
+
+2.2) WORKSHOPS and OPEN SESSIONS: 
+
+Participants will have the opportunity to present their research at
+open sessions and special workshop sessions.
+
+If you wish to contribute a talk to any of the workshops, please
+contact the respective organizer(s) BEFORE AUGUST 1 (see webpage
+for email addresses).
+
+For participation in the open session, send or e-mail in either plain
+text, standard LaTeX, or Postscript, a one A4 page abstract to the
+address of the school, to reach us BY AUGUST 1.
+
+Notification of acceptance/rejection will be send to you soon after
+submission, and not later than AUGUST 15, unless otherwise specified
+by the workshop organizers.
+
+More details on the courses, tutorials and workshops and detailed
+programme of the School will be placed in due course on our Webpage at
+       http://proof.mth.uct.ac.za/~pjipsen/luatcs99 
+and sent to the registered participants with the 3rd announcement.
+
+
+2.3) CREDITS: 
+The courses offered at the school can be taken for official credit and
+recognized (by prior arrangements with respective heads of
+departments) as modules for graduate courses, after successful
+completion of assignments given by the respective lecturers.
+
+
+II. TIME: December 1-10, 1999. 9 working days, and a free/relocation
+day on December 5. (Note that this is an early summer time in the
+Southern hemisphere.)
+
+
+III. PLACES AND ACCOMMODATION:  
+
+Part I: December 1-4 1999, RAU-Island. This is a fairly large island
+in the Vaal Dam, some 100 km south of Johannesburg. The island is a
+nature reserve, with various game on it to be seen: springboks,
+blesboks, gemsboks, zebras, gnus, etc. Besides the wilderness, it also
+has conference, accommodation, and recreation facilities including: 3
+lecture rooms with boards and overhead projectors (one of them with an
+aircon); full board (accommodation and 3 meals a day), barbecue area,
+swimming pool, rugby field, volley-ball court etc.
+
+ARRIVAL AND REGISTRATION: November 30. We shall provide bus
+transportation for all participants from RAU campus to the Island on
+that day. There will be two buses, the first leaving at 12.00, and the
+second at 16.00. We can transport, upon prior request, participants
+from the Johannesburg International Airport to RAU on November 30,
+between 10.00 and 15.00h. (Please book your trip to Johannesburg so as
+to reach RAU campus in time, because there is no regular transport to
+the Island.)
+
+On December 5 all participants will be transported back to RAU campus.
+
+ACCOMMODATION: 
+The accommodation on the island is somewhat primitive (yet
+satisfactory, at least in summer time) and includes a few individual
+rooms (which will be reserved for invited lecturers), while the
+participants will be accommodated in two large sleeping barracks (for
+men and women) each with toilet and shower facilities. The FULL
+PACKAGE (transportation by bus-boat between RAU and the Island,
+accommodation, 3 meals and refreshments for 5 days) will cost R550
+pp. Note that the access between the mainland and the island is by a
+special boat only, which can be hired at a cost.
+
+NB: Because of the limited accommodation facilities on the island, the
+number of participants in the first part of the school will be
+limited, so early registration for that part is essential.
+
+PART II: December 6-10, 1999, RAU campus. The university campus is
+situated in Auckland Park, a relatively quiet and safe suburb off the
+business center of Johannesburg. It has very good conference
+facilities, and the participants will be provided with computers and
+access to Internet during this part of the event. For more info about
+RAU, visit its Web site at http://www.rau.ac.za.
+
+ARRIVAL AND REGISTRATION: December 5. There will be a Welcome
+reception at RAU during and after the registration of that evening.
+
+ACCOMMODATION: 
+We offer 3 main options for the accommodation during the 2nd part of
+the school:
+
+A) Hotel. The following special rates have been negotiated with
+Randburg Towers Hotel (3 star, near Waterfront in Randburg, about 30
+min drive to RAU), between which and RAU we shall provide twice daily
+bus transport.
+
+	Single rooms: R244 pp/pd, incl. breakfast.  
+        Double and twin rooms: R230 per room/pd, excl. breakfast @ R29
+	per person.
+
+	All rooms are with bath en suite, aircon, telephone, and TV. 
+
+B) There are limited possibilities for accommodation in guest-houses
+within walking distance from the university, offering good, more
+intimate environment, with prices ranging from R200-300 pp/pd,
+breakfast included. The guest-houses have limited capacities and will
+be booked on the basis of first registered - first booked.
+
+C) Student hostels of the University of Witwatersrand (Wits), about
+10-15 min drive from RAU. A DAILY PACKAGE of single room, breakfast,
+and bus transportation to and from RAU during December 5-10 will cost
+R100 pp/pd. In addition, dinners can be booked at the hostels at
+R25. The last night for which we have booked the hostels is December
+10/11. Those who wish to stay there longer should make their own
+arrangements.
+
+For more luxurious accommodation and additional options, check out our
+Web-page, but please note that if you choose an accommodation not
+listed above, you should make your own booking and transport
+arrangements.
+
+
+IV. GRANTS: 
+
+We offer a limited number of student grants covering, partly or fully,
+registration fee and the local expenses of participants who are
+academically deserving and need financial support for the attendance
+of the school. Graduate students and young researchers from
+disadvantaged communities, interested in the subjects of the School
+are encouraged to apply.
+
+The grant applications should include:
+  i) letter of application;
+ ii) short curriculum vitae
+iii) short description of completed and currently studied graduate
+     courses, topic(s) of master/doctoral theses (if applicable), and
+     research interests.
+ iv) reference from the supervisor. 
+
+The applications should reach us soon as possible and NOT LATER THAN
+JULY 1, 1999, electronically or per ordinary mail to our postal
+address given at the end of this announcement.
+
+
+V. PRE-REGISTRATION: 
+
+The registration form is attached separately or can be downloaded from
+our Web page. Please complete and send it per e-mail, fax or mail, to
+reach us BY SEPTEMBER 1.
+
+
+VI. PAYMENTS:  
+
+1) REGISTRATION FEE covering the attendance of the courses, tutorials
+and workshops, up to 6 sets of course readers per part, and
+refreshments.
+
+The EARLY fees, payable by SEPTEMBER 1, 1999 are as follows (at
+present 1US $ trades for approx. 6 rands):
+
+   -) Students: R 100 (Part 1), R100 (Part 2), R200 (both).  
+   -) Academic participants: R 200 (part 1), R200 (part 2), R400 (both). 
+   -) Accompanying persons: R 50 (part 1), R50 (part 2), R100 (both). 
+      (excl. course readers). 
+   -) Other participants: R 300 (part 1), R300 (part 2), R600 (both).
+
+NB:  FROM SEPTEMBER 1, ALL FEES ABOVE GO UP BY 20%.  
+Deadline for payment: NOVEMBER 1, 1999.
+
+2) An ACCOMMODATION DEPOSIT of R200 is payable at pre-registration, or
+NOT LATER THAN NOVEMBER 1, 1999. The remaining part of the
+accommodation will be settled directly by the participants (in the
+hotels and guest-houses) or paid to the organizers on arrival (for the
+Island and Wits hostels).
+
+3) Cancellation policy: before November 1: full refund, less
+administrative costs. After November 1: 50% of the registration fee
+plus the deposit, if still refundable to us.
+
+4) The methods of payment are indicated in the registration form. 
+
+VII. Summary of DEADLINES: 
+1) For grant applications: JULY 1.
+2) For submissions to the workshops and the open sessions: AUGUST 1. 
+3) For notification AUGUST 15 (unless otherwise specified by the organizers). 
+4) For registration and payment of EARLY fees: SEPTEMBER 1. 
+5) For FULL payment of registration fees and accommodation deposit: NOVEMBER 1.
+
+VIII. OTHERS: All prices below are payable on arrival. 
+1) Lunch packages of 5 lunches will be arranged during the second part
+   of the school at R150.
+2) A banquet will be organized on December 8 at R70 per person.
+3) One-day outings will be organized on December 11 to Gold Reef City
+   (Johannesburg), and to the Rhino and Lion Nature reserve and
+   Sterkfontein Caves (about 30-40 km away from Johannesburg) each at
+   approx. R50 pp. Details will be included in the 3rd announcement and
+   placed on the Web.
+
+If you are interested in additional touring, excursions, entertainment
+and other recreational activities in South Africa you can contact
+Brenda or Tania from Melville Travel at Meltrav@yebo.co.za,
+tel. ++27-11-726-7166, fax: ++27-11-726-7485, or any other South
+African travel agency. Visit our Webpage for more details.
+
+
+IX. FURTHER INFORMATION AND ENQUIRES: 
+
+For updates and further information, check out our Webpage at:
+
+             http://proof.mth.uct.ac.za/~pjipsen/luatcs99 
+
+For all correspondence, enquires, and to be included on the mailing
+list, please write to:
+                       luatcs99@na.rau.ac.za
+or send a letter to:
+
+LUATCS'99
+Department of Mathematics
+Rand Afrikaans University
+PO BOX 524
+Auckland Park 2006
+South Africa
+
+You can also contact us directly: 
+
+Val Goranko at       vfg@na.rau.ac.za or  
+Peter Jipsen at      pjipsen@maths.uct.ac.za or  
+Isabella Burger at   icb@na.rau.ac.za.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+   LUATCS '99     REGISTRATION FORM
+   ==========     =================
+
+Wherever requested to indicate choices, please mark with an X in the
+brackets or leave blank. The completed registration form should reach
+us by SEPTEMBER 1 per e-mail, fax, or ordinary mail.
+
+1. PERSONAL INFORMATION
+Title, surname, and first name(s):.....................................
+Affiliation:...........................................................
+Address:...............................................................
+.......................................................................
+Telephone:.............
+Fax:...................
+E-mail address:................................
+
+Student[ ]   Academic[ ]  Other[ ]  (Please choose one of these.)
+
+Accompanying persons:     Yes[ ] / No[ ]
+If yes: Name(s):..............................................
+
+2. DETAILS ON PARTICIPATION
+2.i) Which parts of the school would you like to attend?        
+        Part 1 [ ]              Part 2 [ ]              Both parts [ ]
+
+2.ii) Which courses and tutorials/workshops do you intend to attend? 
+(This is just preliminary info for us. You can change your mind later.)
+
+Part 1 (1-4 Dec): 
+Blackburn[ ]                    Gumm[ ]                 Melton[ ]
+Schlingloff[ ]                  Valeriote[ ]            Venema[ ]
+
+Part 2 (6-10 Dec):   
+Andreka/Nemeti[ ]               Chaochen[ ]             Davey[ ]
+Dawar[ ]                        de Rijke[ ]             Gehrke[ ]
+Hirsch[ ]                       Hodges[ ]               Jacobs/Rutten[ ]
+Jech[ ]                         van Benthem[ ]
+Vardi[ ]                        Zucker[ ]
+
+2.iii) Which sets of course notes/readers do you want to receive? 
+(The cost of 6 sets per part is included in the registration fee; 
+the rest will cost up to R20 per set - payable on arrival.)
+
+Part 1 (1-4 Dec): 
+Blackburn[ ]                    Gumm[ ]         Melton[ ]
+Schlingloff[ ]                  Valeriote[ ]            Venema[ ]
+
+Part 2 (6-10 Dec): 
+Andreka/Nemeti[ ]               Chaochen[ ]             Davey[ ]  
+Dawar[ ]                        de Rijke[ ]             Gehrke[ ]
+Hirsch[ ]                       Hodges[ ]               Jacobs/Rutten[ ]
+Jech[ ]                         van Benthem[ ]  
+Vardi[ ]                        Zucker[ ]
+
+
+
+2.iv) Do you intend to give a talk in a workshop or an open session? 
+              Workshop[ ] / Open session[ ] / None [ ] 
+
+If yes, please give a title and specify the workshop (if applicable):
+.................................................................
+3.  TRAVEL
+3.i) Arrival date and time, airline and flight number (if already known):
+     ............................................................
+3.ii) Departure date and time:...................................
+
+Do you need transportation from and to Johannesburg bus station or
+airport? Station[ ] / Airport[ ]
+
+4.  ACCOMMODATION (If you have accompanying persons, please book for
+                   them, too.)
+4.i) Part 1: December 1-4. 
+Arrival and registration day: Nov 30. Departure: Dec 5. 
+
+RAU Island: total package of R550 per person, including accommodation,
+3 meals a day, refreshments, and bus/boat transport to and from the
+island.
+
+4.ii) Part 2: Dec 6-10, RAU Campus. Arrival and registration day: Dec 5. 
+      Departure: evening of Dec 10, or later; 
+      for the hostels: not later than Dec 11 unless arranged individually.  
+
+Please indicate your preferences for accommodation in a priority
+order, choosing from the options below. All prices are per room per
+night, for single rooms including breakfast, for double rooms
+excluding breakfast (@R29 per person).
+
+1:
+2:
+3:
+
+If sharing a double room in the hotel, the name of your roommate:
+
+Note that a R200 accommodation deposit is required, payable with
+registration fee.
+
+A) Hotel                SINGLE                  DOUBLE 
+                        R244                    R230
+
+B1) Guest-house  at R200 - R250.
+B2) Guest-house  at R250 - R300.
+
+C) Student hostel: R100.
+
+D) My own arrangement. 
+
+5. VARIA.  If you have accompanying persons, please book for them as
+well, by putting a number in the brackets. All payments are due on
+arrival.
+
+5.i) Would you like lunch package(s) during Dec 6-10 (@ R150 per
+package)? Yes [ ] No[ ].
+
+Please specify any dietary restrictions:
+
+5.ii) Would you like to attend the banquet on Dec 8 (@ R70 per
+person)? Yes [ ] No [ ].
+
+5.iii) Would you like to join the outing on Saturday, Dec 11 (@ approx. R50)?
+- to Gold Reef City, Johannesburg [  ] 
+- to the Rhino and Lion Nature Reserve and Sterkfontein Caves [  ].
+
+
+6. PAYMENTS. 
+6.i) Please indicate the registration fee applicable to you (IF
+PAYABLE AFTER SEPTEMBER 1, PLEASE ADD 20% TO THE RATES BELOW) here: [ ]
+
+Part 1          Part 2          Both
+
+*Student                        R100            R100            R200
+Academic                        R200            R200            R400
+Accomp. person                   R50             R50            R100
+Other                           R300            R300            R600
+
+*Please attach proof.
+
+TOTAL PAYMENT DUE: (Deposit and registration fee) [       ]
+
+
+6.ii) MEANS OF PAYMENT.
+
+A) Personal or bank cheque PAYABLE IN SOUTH AFRICAN RANDS, made out
+to: RAU LUATCS '99.
+Send to: LUATCS'99, Department of Mathematics, PO Box 524, Auckland
+Park 2006, SOUTH AFRICA.
+
+   Cheque enclosed :  Yes[ ] / Will be sent later [ ].
+
+B) Please debit my credit card:
+   Card type: Visa[ ]   Master[ ]  Euro[ ]  
+              American Express[ ]  Diners Club [ ]
+   Card number :                          Expiry date :
+   Name as it appears on the card:
+   Authorisation for total amount:
+
+C) Bank Transfer To: ABSA Bank, Auckland Park, Branch number 33510524,  
+Account number : 284 0000 136. 
+
+PLEASE NOTE: if you use bank transfer, your surname and initials as
+well as this reference number: 9331 8659 05 MUST APPEAR on the deposit
+slip, of which a copy must be sent to us.
+
+
+7) REMARKS (if any):
+
+
+
+
+
+
+SIGNATURE:...............................      DATE:...............
+
+
+
+From cat-dist Mon May 31 16:25:01 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id OAA04682
+	for categories-list; Mon, 31 May 1999 14:24:42 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199905311609.MAA18959@nslocum.cs.bell-labs.com>
+To: categories@mta.ca
+Subject: categories: Re: Recursive types in polymorphic lambda calculus 
+In-reply-to: Your message of "Fri, 14 May 1999 15:24:32 EDT."
+             <199905151242.IAA02714@saul.cis.upenn.edu> 
+Date: Mon, 31 May 1999 12:09:46 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Thanks to all for the responses to my question, and sorry for the
+delay in summarising the replies.  The concensus seems to be that
+Reynolds (83) and Bohm-Berarducci (85) understood the concept, and
+that Reynolds-Plotkin (preprint in 88) spelled out the categorical
+construction, with many other pieces of related work.  -- P
+
+========================================================================
+The question:
+========================================================================
+
+To: types@cis.upenn.edu, categories@mta.ca
+Subject: categories: Recursive types in polymorphic lambda calculus
+Date: Fri, 14 May 1999 15:24:32 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+
+There is a fairly standard encoding of recursive types
+into polymorphic lambda calculus, given by
+
+	rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+where F[X] is a type in which the type variable X appears only
+covariantly.  Recall that every covariant type corresponds to a
+covariant functor, so for every h:X->Y we have F[h]:F[X]->F[Y].
+If we abbreviate T = rec X.F[X], then the key functions on this
+type are given by the polymorphic lambda terms:
+
+	fold : all X.(F[X] -> X) -> T -> X
+	fold = Lam X.lam k:F[X]->X.lam t:T.t{X}(k)
+
+	in   : F[T] -> T
+	in   = lam u:F[T].Lam X.lam k:F[X]->X.k(F[fold{X}(k)](u))
+
+	out  : T -> F[T]
+	out  = fold{F[T]}(F[in])
+
+Questions: Who first had this insight?  Where is a good place to find
+this spelled out in the literature?  Please send results to me, and I
+will summarize them for the list.  Cheers, -- P
+
+========================================================================
+The answers:
+========================================================================
+
+Date: Sat, 15 May 1999 23:40:29 -0400
+From: "P. Scott" <scpsg@matrix.cc.uottawa.ca>
+To: wadler@research.bell-labs.com
+Subject: Re:  Recursive types in polymorphic lambda calculus
+Cc: scpsg@matrix.cc.uottawa.ca
+
+Dear Phil:
+
+    I can give you a bit of the history of the functorial
+type approach, as far as I know it.  I will start with recent
+history, then mention a few ancient tidbits.
+
+RECENT HISTORY
+
+Syntactically, the fact that for any multisorted finitary algebraic
+signature, that the elements of initial algebras can be represented by
+closed normal terms of polymorphic type is well-known.  It is implicit in
+Girard's Phd thesis (by Curry-Howard), and explicit in Reynolds 1983
+paper "Types, abstraction, and parametric polymorphism", as well as in
+Bohm-Berarducci "Automatic synthesis of typed \Lambda-programs on term
+algebras,  TCS 39 (1985), 135-154.  More recently, of course, one can
+look at Girard-Lafont-Taylor, Section 11.5, and also the interesting
+discussion in John Mitchell's Foundations for Programming Languages,
+MIT Press, 1996, Section 9.3. 
+
+Categorically, the first place I saw the functorial approach published
+in detail--and the fact that in System F, \forall p [ T(p) ==> p ==> p ]
+is a weakly initial T-algebra  (for definable covariant functors T) is in
+Reynolds-Plotkin "On Functors Expressible in the Polymorphic Typed Lambda
+Calculus  (Inf. & Computation, 1993, reprinted in  "Logical Foundations
+of Functional Programming", edited by G. Huet, Addison-Wesley, 1990).
+
+The second place where this is done in detail is the paper
+"Functorial Polymorphism", by Bainbridge, Freyd, Scedrov, and me
+(TCS 70 (1990), Subsection 4.9 of  "Reynolds' Parametricity".
+
+A closely related work to the above is by R. Hasegawa, "Categorical data
+types in parametric polymorphism, MSCS 4, 1994, pp. 71-109.
+ 
+A basic categorical reference for some of this is Roy Crole's book
+"Categories for Types", CUP, Chapter 5.  More advanced remarks on formal
+category theory are also in John Mitchell's book, Section 9.3, loc. cit.
+
+Finally, I can recommend a few papers on related material:
+
+Abadi, Cardelli, Curien "Formal parametric polymorphism, TCS 121
+(1993), pp. 9-58, 
+
+ Plotkin & Abadi, "A logic for parametric polymorphism"
+TLCA'93, SLNCS 664, 1993, pp. 361-375
+
+R. Hasegawa, A logical aspect of parametric polymorphism,
+CSL'95, SLNCS 1092, 1995.
+
+
+PRE-HISTORY:
+
+It's been known since Russell that in higher-order logic (using
+quantification over propositional and higher-type variables) that we can
+define various propositional connectives, and can even form a version of
+type theory based on equality.  For example, in Lambek-Scott, our
+treatment of Full Impredicative Intuitionistic Type Theory (e.g. Part II,
+Chap. 1, p. 129) and type theory based on Equality (Part II, Chap. 2, p.
+133) were inspired not only by Prawitz's 1965 book (Natural Deduction) but
+some formulas were literally taken from Russell's 1908 article.
+
+If you then add Curry-Howard to the mixture, assigning proof terms to the
+formulas involved, one essentially moves into the modern realm of data
+types above.
+
+
+				Cheers,
+				Phil Scott
+				
+========================================================================
+
+From: Daniel Leivant <leivant@cs.indiana.edu>
+Subject: Re: Recursive types in polymorphic lambda calculus
+To: wadler@research.bell-labs.com (Philip Wadler)
+Date: Sat, 15 May 1999 10:31:06 -0500 (EST)
+
+Certainly the basic ideas have been known (for inductive definitions
+of sets) by mathematical loogicians for many years before the
+second order lambda calculus was invented.  
+I am sure Kleene had a big role here.
+I can vouch on the fly for the exact pedigree, but a good
+reference for tracking things down is probably Moschovakis's
+1974 monograph "elementary indcution on abstact structures"
+
+For the lambda calculus I am not sure who was first, but I
+did things independently from scratch in my paper "contracting proofs
+to programs" in odifreddi volume "logic and computer science",
+academic press 1990.  See in particular chapter 6, but also chapters
+5 and 3.
+
+I hope this useful.  let me know if I can help otherwise.
+I hope you have my paper above, if not i'll email you 
+a source and/or hard copy.
+
+best wishes -- Daniel
+
+========================================================================
+
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Re: Recursive types in polymorphic lambda calculus 
+Date: Sat, 15 May 1999 17:25:37 -0400
+From: Jon Riecke <riecke@research.bell-labs.com>
+
+I'm not exactly sure to whom this is due, but my impression was
+that it went back a long way.  Also, isn't parametricity required
+to prove that the encoding yields an initial algebra?  
+
+There's some more recent work of Plotkin's that others might not
+be aware of: if one takes *linear* polymorphic lambda calculus
+with term recursion, plus some modest axioms for parametricity,
+one can code up recursive types whose type variable appears with
+any variance (covariant, contravariant, or mixed variance).  I can
+dig up precise references to his talks on the subject.
+
+-Jon
+
+========================================================================
+
+From: "John C Mitchell" <mitchell@cs.stanford.edu>
+To: "Philip Wadler" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+
+I think this is Reynolds and Plotkin, the first incarnation of
+the idea coming from Reynolds. I remember looking into this when
+I was a graduate student, but I think it was their idea first.
+The idea comes from category theory, or Smyth-Plotkin approach, 
+most specifically -- the obvious type for an initial F-algebra
+is All t. (F(t) -> t) -> t.
+
+John
+
+========================================================================
+
+To: Philip Wadler <wadler@research.bell-labs.com>
+cc: Andrew.Pitts@cl.cam.ac.uk
+Subject: Re: Recursive types in polymorphic lambda calculus 
+Date: Mon, 17 May 1999 09:02:39 +0100
+From: Andrew Pitts <Andrew.Pitts@cl.cam.ac.uk>
+
+I think the best place in the literature to look is
+
+@Article{ReynoldsJC:funept,
+  author =	 {J.~C.~Reynolds and G.~D.~Plotkin},
+  title =	 {On Functors Expressible in the Polymorphic Typed
+                  Lambda Calculus},
+  journal =	 {Information and Computation},
+  year =	 1993,
+  volume =	 105,
+  pages =	 {1--29}
+}
+
+There is some discussion of the origin of the encoding at the
+beginning of this paper. I guess special cases of it were known to
+Girard (he covers some in Proofs and Types, without history of
+course). The case of algebraic signatures (ie T a sum of products) was
+worked out in full generality in Bohm & Berarducci (TCS
+39(1985)135--154), although the Reynolds-Plotkin paper also refers to
+a paper by Leivant in 24th FOCS (1983) for this case. However, the
+general case of a definable covariant functor T seems to be down to
+Reynolds-Plotkin. I've taken to referring to this general case as the
+"Reynolds-Plotkin" lemma when I refer to it in lectures. One important
+question is what properties tyhe encoding has. Up to beta conversion,
+
+ rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+gives a weak initial algebra for F. In the presence of relational
+parametricity properties, one can deduce that it is actually
+initial. Which brings me to the final place in the literature to look
+for material on this topic: 
+
+@inproceedings{PlotkinGD:logpp,
+  author =	 {G.~D.~Plotkin and M.~Abadi},
+  title =	 {A Logic for Parametric Polymorphism},
+  booktitle =	 {Typed Lambda Calculus and Applications},
+  editor =	 {M.~Bezem and J.~F.~Groote},
+  volume =	 664,
+  series =	 {Lecture Notes in Computer Science},
+  year =	 1993,
+  publisher =	 {Springer-Verlag, Berlin},
+  pages =	 {361--375},
+}
+
+Best wishes,
+
+Andy
+
+========================================================================
+
+Date: Mon, 17 May 1999 11:03:10 +0200
+From: Giuseppe Rosolini <rosolini@disi.unige.it>
+To: Philip Wadler <wadler@research.bell-labs.com>
+CC: Edmund Robinson <E.P.Robinson@dcs.qmw.ac.uk>
+Subject: Re: categories: Recursive types in polymorphic lambda calculus
+
+Dear Phil,
+
+in a paper at LICS 5, Edumnd Robinson and I use an adaptation of the
+usual argument you quote. We assumed that it came from the original
+work of Reynolds and Plotkin on non-existence of set-theoretic models
+for polymorphic lambda calculus.
+
+Hope this is useful.
+
+Ciao Pino
+
+@article {MR94h:03036,
+   AUTHOR = {Reynolds, John C. and Plotkin, Gordon D.},
+    TITLE = {On functors expressible in the polymorphic typed lambda
+             calculus},
+  JOURNAL = {Inform. and Comput.},
+ FJOURNAL = {Information and Computation},
+   VOLUME = {105},
+     YEAR = {1993},
+   NUMBER = {1},
+    PAGES = {1--29},
+     ISSN = {0890-5401},
+}
+@incollection {MR86e:03016,
+   AUTHOR = {Reynolds, John C.},
+    TITLE = {Polymorphism is not set-theoretic},
+BOOKTITLE = {Semantics of data types (Valbonne, 1984)},
+    PAGES = {145--156},
+PUBLISHER = {Springer},
+  ADDRESS = {Berlin},
+     YEAR = {1984},
+}
+@incollection {MR1099156,
+   AUTHOR = {Robinson, Edmund and Rosolini, Giuseppe},
+    TITLE = {Polymorphism, set theory, and call-by-value},
+BOOKTITLE = {Fifth Annual IEEE Symposium on Logic in Computer Science
+             (Philadelphia, PA, 1990)},
+    PAGES = {12--18},
+PUBLISHER = {IEEE Comput. Soc. Press},
+  ADDRESS = {Los Alamitos, CA},
+     YEAR = {1990},
+}
+
+========================================================================
+
+From: Mitchell Wand <wand@ccs.neu.edu>
+Date: Mon, 17 May 1999 09:37:40 -0400 (EDT)
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Recursive types in polymorphic lambda calculus
+
+Are you thinking of the Bohm-Berarducci coding?  The Bohm-Berarducci coding
+types the integers
+
+rec X. (1 + X)
+
+as 
+
+all X. (X->X) -> (X -> X)
+
+which is not far from  all X. ((1 + X) -> X) -> X , depending on how you want
+to treat + .  I usually cite Girard-Lafont-Taylor for this.
+
+--Mitch 
+
+
+========================================================================
+
+From: Nick Benton <nick@microsoft.com>
+To: "'Philip Wadler'" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+Date: Mon, 17 May 1999 09:03:32 -0700
+
+I'd say algebraic or inductive rather then recursive in this context.
+(Though of course, there's a coalgebraic version too, but recursive seems to
+imply mixed-variance) I think the usual references for the fact that one can
+construct weakly initial algebras for expressible functors are:
+
+C. Bohm and A. Berarducci. Automatic synthesis of typed \Lambda-programs on
+term algebras. TCS 39 (1985)
+
+D. Leivant. Reasoning about functional programs and complexity classes
+associated with type disciplines. FOCS 24 (1983)
+
+G. Takeuti. Proof Theory. North-Holland studies in logic and the foundations
+of mathematics. (1975)
+
+The construction is explained in Proofs and Types (Girard Lafont Taylor, CUP
+1989) Chapter 11. The construction gives strongly initial algebras if the
+calculus satisfies some parametricity theorems.
+
+I think I first saw the coalgebraic version in something by Gavin Wraith,
+but I seem to have misplaced the reference.
+
+  Nick
+
+========================================================================
+
+From: Robert Harper <Robert.Harper@cs.cmu.edu>
+To: "'Philip Wadler'" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+Date: Mon, 17 May 1999 13:46:55 -0400
+
+Hi Phil:
+
+	I don't know who discovered this, but certainly Reynolds exploited
+it in his paper (eventually with Plotkin) "Polymorphism is not
+Set-Theoretic".  There he uses F[X] = (X -> 2) -> 2, where X occurs doubly
+negatively, hence positively (but not strictly positively).  The argument is
+essentially Cantor's diagonal argument, once you get down to it.  The crux
+of the issue is that the syntax provides only weakly initial algebras for
+definable functors (no uniqueness condition on the mediating morphism),
+whereas a set model gives initial algebras, hence we'd have a set isomorphic
+to its double powerset, which is impossible.  The key is that Set has enough
+equalizers to turn any weakly initial algebra into an initial algebra;
+models like Cpo have essentially no equalizers, so they form a valid model.
+
+	Bob
+========================================================================
+
+Date: Mon, 17 May 1999 18:15:57 +0200
+From: Pawel Urzyczyn <urzy@mimuw.edu.pl>
+To: wadler@research.bell-labs.com
+Subject: Re: Recursive types in polymorphic lambda calculus
+Cc: urzy@absurd.mimuw.edu.pl, zs@pwr.wroc.pl
+
+Dear Philip, 
+ 
+As far as I know, representation in \2 of inductive data types (least 
+fixpoints of monotonic operators) like natural numbers 
+or lists dates back to the paper of Bohm and Berarducci in
+TCS 1985. A generic translation similar to the one you mention
+in your types message was probably first given in
+
+H.~Geuvers.
+Inductive and coinductive types with iteration and recursion.
+In {\em Proceedings of the Workshop on Types for Proofs and
+  Programs}, B{\aa}stad, Sweden, 1992, 193--217.
+
+but to my understanding it is implicitly present in 
+
+Leivant, D., Contracting proofs to programs, 
+      in: {\it Logic in Computer Science\/} (P.~Odifreddi, ed.),
+      Academic  Press, 1990, pp. 279--327.
+
+Let me point out however that there are various definitions
+of inductive and recursive types and it is not the case that 
+all these are equivalent. In general the systems with "iterators"
+can be defined within system F, while those with "recursors" can not. 
+A discussion of these issues is given in the PhD Thesis of Zdzislaw
+Splawski:
+
+Sp\l awski, Z., {\it Proof-Theoretic Approach to Inductive 
+     Definitions in ML-like Programming Language versus Second-Order Lambda 
+     Calculus\/}, PhD Thesis, Wroc\l aw University, 1993.
+
+The following paper contains the main results about translatability 
+between various systems with inductive types, including the new result
+that recursors cannot be implemented within system F by means of beta 
+reduction. It should be made available in a few weeks (we will post
+an anouncements on types when it is ready).
+
+Splawski, Z., Urzyczyn, P., Type Fixpoints: Iteration versus Recursion, 
+            to appear in Proc. 4th ICFP, Paris, France, September 1999. 
+
+Sincerely yours,
+Pawel Urzyczyn
+
+========================================================================
+
+Date: Mon, 17 May 1999 23:35:27 +0200
+From: Bernhard Reus <reus@informatik.uni-muenchen.de>
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Re: categories: Recursive types in polymorphic lambda calculus
+
+Dear Phil,
+
+Well, in fact this is not quite the recursive type you "really" want
+since you cannot prove uniqueness of elimination. You just have a weakly
+initial solution of your domain equation F(X) = X. So you must e.g. add
+an induction principle if you want to prove something. In a dependently
+typed calculus (CoC) with an impredicative universe you could even
+express the *initial* solution.
+Categorically, this goes back to FAFT and the "solution set condition"
+where the existence of a left adjoint is related to the existence of
+initial objects. If the category of discourse is locally small and
+internally complete, then the category has an initial object:
+I = { x \in W | forall h \in Hom(W,W). h(p) = p }
+where W is the weakly initial object constructed as T above and  "all"
+ranges over the set of objects of the category. (this is e.g. discussed
+in  Crole's book "Categories for Types", if I remember correctly, and
+maybe there one can find more references.)
+
+Type theoretically speaking, you can find the encoding already in Girard
+et al.'s "Proofs and Types". Just with the difference that maps k :
+F(X)->X are spelled out for concrete examples of F. "Fold" is called
+"It" there and "in" is again given in form of several constructors
+depending on the concrete form of F. "Out" is obviously a simple
+application of "fold" and was not treated there.
+
+I'm not sure that this really is what you are searching for, so if not
+-- e.g. if you want to find a reference with "exactly" the formulation
+you mentioned --, please accept my excuses.
+
+Regards,
+  Bernhard
+
+========================================================================
+Philip Wadler                             wadler@research.bell-labs.com
+Bell Labs, Lucent Technologies      http://www.cs.bell-labs.com/~wadler
+600 Mountain Ave, room 2T-402                   office: +1 908 582 4004
+Murray Hill, NJ 07974-0636                         fax: +1 908 582 5857
+USA                                               home: +1 908 626 9252
+-----------------------------------------------------------------------
+   "Verbosity leads to unclear, inarticulate things." --Dan Quayle
+-----------------------------------------------------------------------
+
+
+
+

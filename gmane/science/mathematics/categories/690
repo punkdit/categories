@@ -1,0 +1,106 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@triples.math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Neil Ghani's question
+Date: Sat, 4 Apr 1998 09:07:35 -0500 (EST)
+Lines: 78
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.3.95.980404090557.9640B-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017123 26938 80.91.229.2 (29 Apr 2009 14:58:43 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:43 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Sat Apr  4 11:28:58 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA14213
+	for categories-list; Sat, 4 Apr 1998 10:23:53 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3351
+Original-Lines: 77
+Xref: news.gmane.org gmane.science.mathematics.categories:690
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/690>
+
+A week or two ago, Neil Ghani asked about natural transformations
+between set-valued functors (I think they were set-valued, but anyway
+that is what my answer refers to and is probably true for any reasonably
+complete codomain category although a different argument would be
+required), say a: F ---> G, such that for any arrow f: A ---> B of the
+domain category, the square
+                      aA
+                FA --------> GA
+                |            |
+                |            |
+                |Ff          |Gf
+                |            |
+                |            |
+                v     aB     v
+                FB --------> GB
+ is a pullback.  At the time, I sent Neil a private reply, but it
+bounced for some reason.  (I said that that I thought that this
+condition was reasonable only when restricted to monic f and then such
+an a is called an elementary embedding.)  Then a couple of people
+answered that it was called a cartesian arrow and I didn't try to resend
+my answer.  Well, there is a simpler answer.  In that generality, such
+an a is called a natural equivalence.  In other words, non-trivial
+examples do not exist.
+
+To see this, it is useful to translate it, using Yoneda, into the
+following form.  As usual, I will say that of two classes E and M of
+arrows in a category, E _|_ M (E is orthogonal to M) if in any diagram
+                  e
+              A ----> B
+              |       |
+              |       |
+              |       |
+              v   m   v
+              C ----> D
+ with e in E and m in M, there is a unique arrow B ---> C (called a
+diagonal fill-in) making both triangles commute.  Let us denote by h^A
+the covariant functor represented by A and for f:  A ---> B, denote by
+h^f, the induced natural transformation h^B ---> h^A.  Let E be the
+class of all h^f.  Then a is cartesian iff E _|_ {a}.
+
+Now suppose a is cartesian.  First I show that a is monic (that is
+injective).  If not, there is an object A and two different arrows u, v:
+h^A ---> F such that aA(u) = aA(v).  Let E be the equalizer of u and v
+and let h^B ---> E be any arrow.  Then the square
+
+                 B        A
+                h -----> h
+                |        |
+                |        |aA(u)=aA(v)
+                |        |
+                v   a    v
+                F -----> G
+ has two diagonal fill-ins, u and v.  Here the arrow h^B ---> h^A is the
+composite h^B ---> E ---> h^A and the arrow h^B ---> F is the composite
+h^B ---> E ---> h^A ---> F, the latter via u or v.  In a similar way, we
+can show that a is surjective.  In fact, given u: h^A ---> G, let E be a
+pullback of a and u and let h^B ---> E be arbitrary.  Then we have a
+commutative square
+
+                B         A
+               h  -----> h
+               |         |
+               |         |u
+               |         |
+               v    a    v
+               F ------> G
+ whose diagonal fill-in gives a lifting of u.
+
+It therefore seems appropriate to restrict the question to certain
+classes of arrows A ---> B, for example monics.  Here are a couple of
+examples.  If g:  C --->> D is a regular (or just strict) epimorphism
+between objects of the domain category, then for E the class of h^f for
+all monic f, we have E _|_ {h^g}.  Similarly if E is the class of h^f
+for all strict monic f and g is any epimorphism, E _|_ {h^g}.
+
+
+
+

@@ -1,0 +1,94 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: The division lattice as a category:  is 0 prime?
+Date: Wed, 26 Sep 2007 15:01:05 -0700
+Lines: 60
+Approved: news@gmane.org
+Message-ID: <46FAD6A1.8090408@cs.stanford.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019613 10967 80.91.229.2 (29 Apr 2009 15:40:13 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:13 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Sep 26 23:49:28 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 26 Sep 2007 23:49:28 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IajMA-00014k-Pg
+	for categories-list@mta.ca; Wed, 26 Sep 2007 23:44:02 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 57
+Status: O
+Content-Length: 2805
+Original-Lines: 59
+Xref: news.gmane.org gmane.science.mathematics.categories:3933
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3933>
+
+Has the division lattice been organized as a category somewhere in the
+literature in a way that accounts somehow for 0?
+
+A simplistic construction is [FinSet^N] denoting the finitary
+finite-set-valued functors from the discrete category N.  ("Finitary" in
+the sense of being zero almost everywhere.)
+
+Interpreting N as indexing the primes and coproduct as numeric
+multiplication, product becomes gcd and the pushout of (a,b) over its
+gcd is its lcm.
+
+It is simplistic by virtue of omitting (numeric) 0, which is standardly
+placed at the top of the division lattice.  Unlike the rest of the
+lattice 0 is not generated from the primes by finite coproducts,
+suggesting it needs to feature in some sort of basis for the complete
+lattice.
+
+The natural thing would be to remove all but the primes and 0 from the
+division lattice and then try to put them back finitarily.  This makes
+the starting point the inverted flat CPO N^* where N consists of the
+primes and "bottom" * is now at the top, denoting 0.  (That convention
+makes N_* the usual flat CPO of natural numbers.)
+
+If I'm not mistaken the completion of N^* under finite coproducts has as
+objects two copies of the natural numbers.  Below * is [FinSet^N]
+understood as previously.  Above * is FinSet, which was created from *
+by completion under coproducts.  This amounts to FinSet + [FinSet^N]
+joined at the hip with a shared initial object (numeric 1) and a shared
+final object (numeric 0, or *).
+
+ From the Yoneda standpoint the objects are functors from N_* (the usual
+CPO) to FinSet.  The ones below are the functors that are 0 at * and
+cofinitely many elements of N.  The ones above are 0 at N, with *
+unconstrained.
+
+Yoneda's hands are a bit tied here because we are only taking
+coproducts.  Closing under finite colimits presumably frees up Yoneda to
+produce FinSet x [FinSet^N]  = [FinSet^{N_*}].  This might come in handy
+when one wants a system of pairs of numbers (m,n) for which
+(m,n)+(m',n') = (m+m',nxn').
+
+Is there some abstract nonsense reason why coproducts produced the sum
+(actually pushout over the initial and final objects) while colimits
+produced the product?
+
+I arrived at all this after Steve Vickers mentioned on the univalg
+mailing list that ring theorists define 0 to be a prime number because
+then they could define n to be prime just when the ring Z/nZ extends to
+a field.  This got me to wondering how this could be reflected in the
+division lattice, which has 0 at the top without however being
+considered a prime.  I personally am too old to believe that 0 is a
+prime, but I can see where a younger generation could be hoodwinked.
+Even with the above understanding however I don't see how 0 can be
+understood as just another ordinary prime, any more than bottom is just
+another ordinary number in N_*.
+
+Vaughan Pratt
+
+
+

@@ -1,0 +1,123 @@
+Date: Sun, 28 Aug 1994 13:01:35 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: distributivity 
+
+Date: Sat, 27 Aug 94 14:47:55 EDT
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I pass on to you a curious fact that was mentioned to me by Richard
+Squire and he credited it to Jim Loveys.  Let P and Q be quantifiers.
+(What is a quantifier?  Well as a first approximation it is a map from
+X--o L to L which is in some obscure (to me) sense polymorphic.  Limits
+(both in categories and posets), integrals and, evidently, univeral and
+existential quantifiers in logic, where L is the object of truth values.
+Looking at all the examples, you realize immediately that polymorphism
+is certainly not functoriality and if some of them give inequalities or
+morphisms, they do so in different directions (say SUP vs INF or A vs
+E).)
+ 
+    Well, anyway, P and Q are quantifiers.  Say that P distributes over
+Q if there is an equation
+    P(x:X).Q(y:Y).f(x,y) = Q(s:X--o Y).P(x:X).f(x,s(x))
+    One aspect of polymorphism is that this makes sense.  Here f: X x Y
+--> L and if treat this as a map Y --> (X--o L), then the LHS makes
+sense.  As for the RHS, we are doing the same thing with X x (X--o Y)
+--> X x Y --> L, where the first map is <id,eval> and the second is f.
+Here are 2 1/2 examples: If P is universal quantification, Q is
+existential and L is the object of truth values in a topos, then this is
+the axiom of choice.  If P is sup in a lattice and Q is inf and if X and
+Y are restricted to finite sets, then this is the statement of
+distributivity.  If P is SUP in a complete lattice and Q is INF, then
+this is the complete distributivity identity.  Now here is the startling
+fact.  In all three cases, the distributivity of P over Q implies that
+of Q over P!  For the lattices, these facts are well-known.  For the AC,
+it is easy to see (at least in a boolean topos) since you can negate and
+replace f by its complementary relation.  (Yes a topos that satisfies AC
+is boolean, but it does not immediately follow that these two
+complementary conditions are equivalent, since perhaps only one of them
+implies AC in the non-boolean case.)  This doesn't always hold.  For
+example, in a topos, finite products distribute over (finite) sums, but
+the converse is certainly false.
+
+
+Date: Tue, 30 Aug 1994 20:20:42 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: re: distributivity
+
+Date: Tue, 30 Aug 1994 12:56:51 -0400 (EDT)
+From: Andreas Blass <Andreas.Blass@math.lsa.umich.edu>
+
+This is a comment tangential to Michael Barr's message about
+quantifiers.  His 2 1/2 examples can be improved to 3, because the
+condition he calls complementary to AC also implies classical logic.
+Recall that this condition reads:
+
+(exists x:X) (forall y:Y) f(x,y) iff
+(forall s: X --> Y) (exists x:X) f(x,s(x)).             (*)
+
+The left-to-right implication here is trivial, but I claim the
+right-to-left implication implies  (not not u) ==> u  and thus Boolean
+logic.  
+
+The easiest proof proceeds as follows in the internal logic.  Given an
+arbitrary truth value  u , let  X={.|u}, i.e., X has at most one
+element and it's inhabited iff u, and let Y be empty.  Then
+(not not u) implies the right side of (*) [vacuously: the existence of
+such an s implies  not u ], while the left side of (*) implies  u .
+
+For people who would like to banish the empty set at the cost of some
+simplicity (universal algebraists?), there is an alternate argument
+using only inhabited sets.  Again, let a truth value  u  be given, let
+Y=2, i.e., a set with exactly two, definitely distinct elements, and
+let  X  be the quotient of Y in which the two elements have been
+identified iff  u .  Let  f(x,y)  mean that the canonical projection
+from Y to X sends y to x.  Again, one can check that  (not not u)
+implies the right side of (*) and that the left side of (*) implies u.
+
+It is curious that the same X, Y, and f as in this second proof are
+also used for the (internal) proof of Diaconescu's theorem that AC
+implies classical logic.
+
+Andreas Blass
+ablass@umich.edu
+
+
+Date: Wed, 31 Aug 1994 09:09:35 +0500 (GMT+4:00)
+Subject: Re: distributivity 
+
+Date: Tue, 30 Aug 1994 22:55:07 -0300
+From: Richard Wood <rjwood@cs.dal.ca>
+
+Here is another comment somewhat tangential to Mike's post about 
+distributivity. If a lattice is completely distributive, CD, then
+the fact that the opposite distributivity holds might be written
+AC==>(CD<==>CD^op), for at least some aspect of choice seems to
+be necessary. Write CCD, "constructive complete distributivity",
+for the apparent weakening of CD that requires distributivity, in
+the sense Mike posted, of infs over sups of down-closed subsets.
+Then AC<==>(CD<==>CCD). On the other hand, writing BOO for the
+axiom which states that the object of truth values is Boolean, one
+has BOO<==>(CCD<==>CCD^op). Combining these results gives an 
+indirect proof of AC==>BOO.
+
+The fact that BOO is necessary for CCD<==>CCD^op is, at first,
+surprising. The equivalence of CCD and CCD^op rests entirely on
+whether or not the object of truth values, which is always CCD,
+is CCD^op. In set^2, the object of truth values being 3--->2,
+one expects a counterexample to the claim. The pitfall here is
+that distributivity of binary sup over binary inf does not extend
+to distributivity of sups over infs of up-closed subobjects. To
+sketch a proof of the necessity of BOO, show that CCD==>HEY.
+Unlike the situation for general Heyting algebras, it follows
+from a lemma attributed to both Benabou and Reyes that if the
+opposite of the object of truth values is Heyting then it is
+Boolean.
+
+These observations are simplified by the fact that CCD(L) is
+equivalent to the statement that sup:DL--->L has a left adjoint,
+where DL is the lattice of down-closed subobjects of L, and DL
+is equivalent to ord(L^op, Omega), where Omega is the object of 
+truth values.
+
+RJ
+

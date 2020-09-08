@@ -1,0 +1,316 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Applications for Category Theory
+Date: Thu, 28 Aug 1997 15:44:28 -0300 (ADT)
+Lines: 293
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.970828154418.7059B-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016986 25908 80.91.229.2 (29 Apr 2009 14:56:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:26 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Thu Aug 28 15:45:06 1997
+Original-Received: by mailserv.mta.ca; id AA05351; Thu, 28 Aug 1997 15:44:28 -0300
+Status: O
+Content-Length: 16268
+Original-Lines: 292
+Xref: news.gmane.org gmane.science.mathematics.categories:471
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/471>
+
+Date: Thu, 28 Aug 1997 20:47:09 +0000
+From: Zinovy Diskin <diskin@fis.lv>
+
+For  last several years I try to marry category theory (CT, a rather
+strict and refined lady) and software engineering (SE, a rich
+gentleman) via (i) building some software theories (semantic
+modeling, modeling OO databases, metadata modeling) on categorical
+foundations, (ii) demonstrating the power and relevance of CT in
+managing  some actual practical problems in SE
+(object-oriented-relational database design, heterogeneous schema
+integration, structuring schema repositories) and (iii) conducting
+here, at Frame Inform Systems, a project on implementing a new
+generation CASE-tool based on categorical principals.  During this
+time I had a few occasions to discuss perspectives of applying CT
+with experts in SE (together with presenting them a prototype of our
+CASE-tool), and now could summarize these discussions as follows. 
+Each expert side has (let's suppose) a good knowledge of its subject
+and a rather fuzzy notion of the opposite subject, correspondingly,
+each expert's opinion about possibilities of CT-applications is
+necessarily fuzzy. Nevertheless, up to my feeling of SE and, on the
+other hand, up to SE experts' understanding of my explanations of 
+the (essence of the) CT-approach,  both sides had agreed that
+CT-applications in SE seem to be extremely promising and just to the
+point, and both sides were somewhat excited by this coordination of
+abstract mathematics and practical matters. 
+
+My colleagues' and my experience in this field is summarized  in a
+declarative document "The Arrow Manifesto: Towards software
+engineering based on comprehensible yet rigorous graphical
+specifications" (on ftp:
+//ftp.cs.chalmers.se/pub/users/diskin/MANIFEST/arrfest.ps); the
+presentation is intended for software people who are seeking for a
+universal specification language suitable for  SE (and allow the
+possibility of practically useful theory, these two restrictions
+single out a limited but definitely non-empty set).
+
+The present discussion in categories mailing list is a one more
+justification of the remarkable coordination mentioned above. Let me
+continue with a somewhat diverse set of distinct replies (to, mainly,
+Dan Yoder's and Vaughan Pratt's messages).
+
+>           are there any attempts to map category theory (or type
+>           theory or set theory -- I am not sure where the boundaries
+>           are) to applications (versus theory per se), roughly
+>           analogous to Z or VDM, that might be comprehensible to
+>           somewhat without the
+>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>             formal framework?
+>            ^^^^^^^^^^^^^^^^
+>
+> This last condition is the kicker.  Applying category theory without
+> a grasp of the formal framework is like operating a car without a
+> grasp of how to drive.  So I would say a definite "not".
+> 
+
+The situation is not so hopeless. During my studies of the area of
+information modeling (or else conceptual modeling, or semantic
+modeling) I found that the community is, in fact, trying to deal
+implicitly with topos-theoretic concepts. Of course, all is utterly
+intermixed -- there are neither a consistent conceptual framework
+nor even a consistent terminology -- but it turned out to be not very
+difficult to explain what is the topos SET to qualified
+practitioners in information modeling . Now I can assert that the
+SET-specialization of topos-theoretic concepts can be explained to
+any qualified software man familiar with entity-relationship
+diagrams, or with object class-reference schemas used in OO-software
+design, or with any other of similar notations (of course,
+this does not mean that the notion of abstract topos can be easily explained
+but this notion is not so important for what I'd call engineering CT,
+see below).
+
+Another software subcommunity well prepared for grasping categorical
+ideas is that of object-oriented programming.  OO is a way of thinking
+of the world rather than merely a technique for software design. One
+corner stone of this way is to view the world as consisting  of object
+classes -- nodes, and references between them -- arrows,  which is
+essentially the categorical view. Another corner stone  of OO is the
+so called encapsulation -- accessing objects only via explicitly
+defined interfaces to them. Note however that this is nothing but the
+basic CT idea that objects have no internal structure other than that
+embodied into arrow diagrams adjoint to objects (Lawvere perfectly
+phrased this as "objectify means to mappify").  In other words,  the
+most fundamental OO-principle of encapsulation can be well seen as a
+software realization of the fundamental CT principle of mappifying.
+(Of course, it would be too strong to say that OO is CT-modulated
+programming but saying "CT is OO-mathematics" seems to be a reasonable 
+thesis).
+
+Nevertheless, in spite of good preconditions,  the problem of
+applying CT for SE is extremely hard. It is determined by inherited,
+genetic gaps between mathematics and engineering. A special case of
+this general problem is that of  teaching CT to software people.
+
+>
+>                  If not is there a sequence of study you would
+>                  recommend for
+>                   proceeding?
+> 
+> It would be interesting to have some comparison of the effectiveness
+> of the various texts and articles that are aimed at computer
+> scientists and set at a reasonably elementary level.  There are
+> quite a few of these, some easily identifiable from their titles.  I
+> have no idea which ones work best in practice for beginners.
+> 
+> But there are first steps to category theory that one can take that
+> do not require any category text.  How comfortable are you with
+> graphs and partially ordered sets (definable as transitive acyclic
+> graphs)?  If not very, then this is an excellent place to start. 
+> Graphs and posets are more fundamental than categories, in the
+> respective senses that a graph is a basic underlying structure of a
+> category while a poset is a primitive kind of category.  Moreover
+> they are versatile and useful concepts that will stand you in good
+> stead in many areas of computer science and elsewhere.
+> 
+
+In contrast to Vaughan, I do not believe that a software person is
+able to grasp CT as a mathematical theory by tracing some
+mathematical way how well adapted it would be (via graphs, or
+posets, or toposes). Normally, a mathematician and an engineer are
+humans of different cultures of thinking for which  not only criteria
+of well formed intellectual construction are different but their very
+notions of reasonable intellectual construction differ too. However,
+I do believe that a software person is quite able to grasp the basic
+ideas of CT if the latter are  explained in software terms and on
+the ground of this person special professional intuition (like,
+e.g., it was in my experience of explaining Makkai's sketches as a
+generalization of ER-diagrams). Of course, such an explanation will
+not present CT as a formal mathematical theory but hopefully will
+make it possible to proceed  --   to use categorical ideas in software
+design and development. So, I'd advise  Daniel Yoder to invite a
+mathematician trained in CT, to pay her or him enough money to
+motivate going into details of software problems Dan tries to manage,
+and then I believe the mathematician will explain to the employer the
+essence of CT-approach to employer's problem in terms quite clear
+and transparent to him.  (One of possible answers to the traditional
+question "What is mathematics needed for?"  is "Mathematics  is
+necessary to generate mathematicians").
+
+To summarize, let us return to the initial point: 
+....
+>           VDM, that might be comprehensible to somewhat without the
+>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>             formal framework?
+>            ^^^^^^^^^^^^^^^^
+>
+> This last condition is the kicker.  Applying category theory without
+> a grasp of the formal framework is like operating a car without a
+> grasp of how to drive.  So I would say a definite "not".
+
+I would not take the responsibility to say a definite "yes" but I am
+sure enough to state a definite "not" on  Vaughan's definite "not"
+(maybe, a specialist in modal logic would infer more from this data
+:-)
+
+
+
+Relations between CT and software applications is a special case of
+general problem of relating mathematics and engineering. To my mind,
+discussion of such questions needs to involve the notion of what I
+would call engineering mathematics (e-mathematics) to distinguish it from
+mathematics of mathematicians (m-mathematics). Mathematicians are 
+inclined to identify mathematics with m-mathematics but this is a too
+puristic and actually poor view. Consider, for example, the situation
+with engineering being of analysis.  In fact, engineers are familiar
+with operational rules of differentiation and integration but have
+a rather fuzzy notion of their denotational semantics.  I mean that
+usually engineers have a rather fuzzy notion of the precise
+definitions of differentiation and especially integration but successfully use
+these constructs in their everyday work. (And before inventing the
+non-standard analysis by A. Robinson, the intersection of e-analysis
+and m-analysis was not too large).  
+
+Back to CT: what I want to say in this respect is that the field of
+CT-applications in SE will hopefully grow and as this process goes a
+new discipline of  *engineering CT* ( e-CT) will begin to emerge.
+Though it is difficult to predict at present what discipline e-CT
+will be, some important points can be seen already today.  More
+accurately, what can be seen today is some aspects of me-CT -- a
+subsystem of m-CT which could  serve as a mathematical foundation of
+e-CT (like the non-standard analysis is a foundation of e-analysis). 
+
+First of all, the very notion of category is not very important in
+applications. What an engineer actually needs is an effective and
+comprehensible presentation of a category (and an additional
+structure on the top of it). In contrast, categorists prefer to work
+with closed structures rather than their presentations: categories
+instead of graphs, monads instead of terms and equations,
+classifying categories instead of formulas and axioms. So,
+development of presentation-centered specification machinery within
+CT should be a must for e-CT (and me-CT supporting it).  
+
+Two main techniques for specifying presentations were developed in
+CT. One is to use internal logic (the Mitchell-Benabou language) --
+this is suitable for theoretical and teaching  purposes  but is not
+satisfactory for applications as the advantages of the graphical
+CT-syntax are lost in this approach. The other technique is
+associated with the concept of Ehresmann's sketches which were
+directly intended for graphical yet formalized presentation of
+complex strucrtures (but note, complex in the m-   rather than
+e-sense). However, these sketch specifications are based on a very
+special kind of logic -- the logic of universal diagram properties
+whereas applications need a much more flexible logic where signatures
+would be user-defined like, e.g.,  in the first-order logic, FOL.
+(Analogously,  the possibility to derive all Boolean operations from a
+single one -- Sheffer's stroke -- is a nice result but it is hardly
+useful for everyday practical work and applications.) What would be
+desirable for SE is a graph-based logic and algebra combining the
+flexibility of the internal logic approach and graph-basedness of
+sketches. 
+
+A suitable framework is described in my TechReport "Generalized
+sketches ..." (on ftp:
+//ftp.cs.chalmers.se/pub/users/diskin/REPORTS/tr9703.ps). It is based
+on the constructs of diagram predicate and diagram operation treated
+as a direct generalization of the ordinary (string-based) predicates
+and operations considered in FOL. Surprisingly, but the elementary
+treatment of the  elementary notions of diagram predicate and diagram
+operation was somehow missed in CT.  (Of course, some reservations to
+this statement are needed. As for diagram predicates, they are
+considered by Makkai in his generalized sketches framework but his
+presentation hides (i) the elementary nature of these notions and
+(ii) their  parallelism with ordinary string-based predicates. As for
+diagram operations, they were invented by Burroni but, again, his
+presentation has a drawback (ii) and, in addition, Burroni's
+operations produce only one item (arrow or node) while it is quite
+natural and practically useful to consider diagram operations
+producing diagrams from diagrams. In addition, there are
+non-elementary versions of these constructs where too many things are
+internilized and considered abstract object rather than sets ) . In
+contrast, the presentation in the TechReport constitutes an
+elementary treatment of graph-based logic and algebra  (and augments
+it  with e-CT-oriented sentiments  :-). 
+
+Maybe, some details would be relevant. As it was said, diagram
+predicates/operations defined in the report  appear as an *immediate*
+generalization of their ordinary (string-based) counterparts
+considered in FOL.  A diagram predicate is a predicate symbol coupled
+with a graph of place-holders -- the shape of the predicate, while
+an ordinary predicate  has a set (arrow-free graph) of
+place-holders. A diagram operation is a diagram predicate whose shape
+has an additional structure -- a designated subgraph of the input
+place-holders. The direct string-based counterpart is a set of
+ordinary operations whereas a single such operation has a set of
+place-holders in which only one element is not among the input
+place-holders. A natural next step is to consider shapes (graphs of
+place-holders) which carry some diagram predicates and operations
+defined on previous stages, i.e., to consider shapes which are not
+graphs but generalized operational sketches. When one considers only
+diagram predicates (operations are absent), this is just Makkai's
+setting. 
+
+This framework is quite natural but I'm not aware of its explicit
+formulation. This  is the more surprising as categorists actually
+use the constructs described above  in their everyday work when they
+draw and chase diagrams. In addition, an accurate formalization of
+these everyday graphical images leads not to ordinary sketches as it
+is usually thought but to a bit different constructs which  I call 
+*visual sketches*. The latter are based on visual graphs: a visual
+graph is a surjective graph morphism g: G_v --> G_n where G_v is to
+be thought of as a graph-as-it-is-drawn (the visual presentation of
+g) and G_n is to be thought of as a graph of names (the name graph of
+g). In particular, the shape of the identity arrow predicate is the
+evident mapping from the graph  [ o-->o ] to the loop [ o<-----    ]. 
+                                                                                             |___| 
+These considerations give rise to a consistent framework of
+generalized visual sketches (close to Makkai's generalized sketches
+but in our setting there are else diagram operations, and they  are
+important ). I believe that nice and practically useful mathematics
+could be developed along these lines, it should be attributed (in my
+terminology) to me-CT.
+
+Let me finished with a nice imaginary picture. In some (short?) time
+some engineering discipline,  e-CT, will emerge and then  CT will be
+understood as an amalgamation of m-CT and e-CT. This new e-CT under
+the name of CT will be a basic discipline in the standard
+undergraduate course of software engineer, a lot of  (good and poor)
+textbooks on CT (actually teaching students to  e-CT) will appear,
+in all advanced software companies there will be a position of
+CT-consultant and so on.  Now the first question is  whether this
+CT-paradise is good for m-CT -- I believe that it is. If so, the
+second question is  must mathematicians work hardly to speed up
+appearance of this paradise or it is more wise to wait while it will
+grow up itself  of efforts of software engineers? 
+
+Thank you for your attention,
+Zinovy Diskin
+
+P.S. I'm indebted to Ilya Beylin for comments on a preliminary 
+version of this message (and many occasional discussions of the 
+subject).
+
+
+

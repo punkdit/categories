@@ -1,0 +1,86 @@
+Date: Mon, 16 Jan 1995 22:13:18 -0400 (AST)
+Subject: is union associative?
+
+Date: Sat, 14 Jan 1995 15:09:39 +0000 (GMT)
+From: Ilya Beylin <ilya@cs.chalmers.se>
+
+
+I suspect that the following question is very natural and
+a known solution has to exist, but I cannot find any reference
+in books I have.
+
+Consider the following diagram
+
+        A
+        |a
+        V    b
+        W <----- B
+
+and define union of two morphisms a U b := Pushout(Pullback(X))
+
+In the category Set this operation is obviously associative:
+for any arrows a,b,c with common target,
+
+        a U (b U c) = (a U b) U c ,
+
+Can anybody tell,  what conditions should be imposed to a
+category to guarantee this associativity?
+
+Thank you in advance,
+Ilya Beylin
+
+Date: Fri, 20 Jan 1995 14:16:18 -0400 (AST)
+Subject: Re: is union associative?
+
+Date: Thu, 19 Jan 1995 13:47:09 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Subject: Re: is union associative?
+
+Ilya Beylin asked for which categories is union associative, where
+union is defined by:
+                        Consider the following diagram
+
+                           A
+                           |a
+                           V    b
+                           W <----- B
+
+and define union of two morphisms a U b := Pushout(Pullback(X))
+
+(I'm a little troubled with a non-idempotent operation being called a
+union.)
+
+It's true in any pre-topos. For a proof I would specialize to the case
+that  W  is the terminator (move to the slice category if it isn't).
+Let me use  @  for the binary operation on isomorphism types
+characterized by the pushout diagram
+
+             A x B
+            /     \
+           A       B               (add downward arrows)
+            \     /
+             A @ B
+
+(where it's understood that the top half is a product diagram}. Given
+a subobject  X' in  X  recall that  X/X'  is characterized by the
+pushout
+
+               X'
+             /   \
+            X     Spt(X')
+             \   /
+              X/X'
+
+where  Spt(X'), the support of  X', is the image of  X; -> 1.  Then
+
+  A @ B   =    (A + B)/(AxSpt(B) + Spt(A)xB)).
+
+Beyond the pre-topos case, I have no idea of just what's needed. For a
+counterexampe take the category of  Z-sets (an object is a set with an
+automorphism) in which all orbits have three or fewer elements, take
+A  to be a two-element orbit, B  to be a three-element orbit. Then
+A @ (B @ B)  is the terminator and  (A @ B) @ B  is isomoprhic to
+A + 1.  (B @ B  is the terminator and in any category  1 @ X  =  1.
+A @ B  is  A + B.)
+

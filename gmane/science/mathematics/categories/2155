@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: John Longley <jrl@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Realizibility and Partial Combinatory Algebras
+Date: Fri, 07 Feb 2003 15:26:02 +0000 (GMT)
+Lines: 76
+Approved: news@gmane.org
+Message-ID: <1044631562.3e43d00ae7e2c@mail.inf.ed.ac.uk>
+References: <20030204022954.98645.qmail@web12202.mail.yahoo.com>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018453 2752 80.91.229.2 (29 Apr 2009 15:20:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:53 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Feb  8 10:48:23 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 08 Feb 2003 10:48:23 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18hW9s-0004Eh-00
+	for categories-list@mta.ca; Sat, 08 Feb 2003 10:40:44 -0400
+In-Reply-To: <20030204022954.98645.qmail@web12202.mail.yahoo.com>
+X-Originating-IP: 129.215.58.96
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: O
+Content-Length: 3594
+Original-Lines: 75
+Xref: news.gmane.org gmane.science.mathematics.categories:2155
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2155>
+
+
+>  I understand (to some degree) full combinatory algebra, but I don't
+>  understand the motivation behind the definition of a partial combinatory
+>  algebra. E.g. why do we have Sxy converges/is defined? Or Kxy ~ x?
+
+Here's another way to motivate the definition of PCAs, which
+I believe also shows (in response to Peter Johnstone's message)
+where the definedness condition is used in the standard
+realizability construction.
+
+Let A be any set with a partial binary operation (thought of
+as "application"). Let PA be the powerset of A. The idea is that
+we want to use PA as a little model for minimal implicational logic.
+We think of sets X \in PA as "propositions", and elements
+a \in X as "proofs" or "witnesses" for X. We think of the
+empty set as "false" since it has no witnesses. We next
+define an operation => on PA, corresponding to "implication",
+as follows:
+   X => Y  =  { a \in A | for all b \in X. ab defined and ab \in Y }
+[Idea: a proof of X=>Y should map any proof of X to a proof of Y.]
+The basic idea here is often attributed to Dana Scott.
+
+Now, given any formula \phi built up from propositional variables
+p_1,...,p_n using implication, and any valuation v assigning
+elements of PA to these variables, we can interpret \phi in PA
+to get an element [[\phi]]_v \in PA. Let us say \phi holds
+in our model ( A |= \phi ) if there's some a \in A such that
+for all valuations v we have a \in [[\phi]]_v. [In other words,
+there's a uniform proof that all instances of \phi are true.]
+
+We'd like this model to be sound for the (intuitionistic) logic
+of pure implication. As is well known, the two axioms
+	p -> q -> p
+	(p -> q -> r) -> (p -> q) -> (p -> r)
+and the modus ponens rule suffice for deriving all theorems of
+this logic. Since modus ponens is clearly sound for the above
+interpretation, we just need to assume we have "uniform proofs"
+in A of the above two formulae.
+
+Now suppose A contains elements k,s satisfying the axioms of a PCA.
+Then it is simple to show that k,s respectively provide realizers
+for the above two formulae, and hence A soundly models minimal
+implicational logic. The condition "sxy defined" is important here,
+as can be seen by interpreting p as \emptyset, and q and r as A.
+
+The question of the converse is quite interesting. I have occasionally
+suggested that the definition of PCA should be weakened to allow
+sxyz >~ (xz)(yz), where >~ means "if the RHS is defined then so is
+the LHS and they are equal". Some support for this proposal could perhaps
+be drawn from the following result, which I had not noticed before:
+
+  Let A be any partial applicative structure.
+  Then (PA,=>) as above soundly models minimal implicational logic
+   iff there exist k,s \in A satisfying
+       kxy = x,  sxy defined,  sxyz >~ (xz)(yz)
+
+(I do have examples of structures that are PCAs in this weaker sense
+but not in the standard sense, but they are a little obscure.)
+
+Anyhow, the "PA construction" above is an important part of the
+tripos-theoretic construction of realizability models, so I think this
+shows that "sxy defined" is needed even to ensure the realizability model
+is a model for implicational logic. (My suggestion regarding internal
+categories in my previous message was overkill!)
+
+Incidentally, a few years ago, Hyland and Ong considered structures
+called "conditionally partial combinatory algebras", where one assumes
+sx defined but not sxy defined. They observed that the standard
+realizability construction does not in general work for CPCAs, but
+(in certain interesting cases) a modified realizability construction does.
+
+Cheers, John
+
+
+
+

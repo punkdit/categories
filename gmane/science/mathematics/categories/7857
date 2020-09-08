@@ -1,0 +1,164 @@
+Path: news.gmane.org!not-for-mail
+From: Jeremy.Gibbons@cs.ox.ac.uk
+Newsgroups: gmane.science.mathematics.categories
+Subject: Oberwolfach Seminar on Mathematics for Scientific Programming
+Date: Thu, 05 Sep 2013 14:55:58 +0100
+Lines: 127
+Approved: news@gmane.org
+Message-ID: <E1VHvoI-0000q7-LD@mlist.mta.ca>
+Reply-To: Jeremy.Gibbons@cs.ox.ac.uk
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1378473139 24911 80.91.229.3 (6 Sep 2013 13:12:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 6 Sep 2013 13:12:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 06 15:12:23 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VHvpm-0006Yi-P1
+	for gsmc-categories@m.gmane.org; Fri, 06 Sep 2013 15:12:23 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:37750)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VHvoJ-0007eH-VB; Fri, 06 Sep 2013 10:10:51 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VHvoI-0000q7-LD
+	for categories-list@mlist.mta.ca; Fri, 06 Sep 2013 10:10:50 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7857
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7857>
+
+Call for Participation
+
+OBERWOLFACH SEMINAR ON=20
+MATHEMATICS FOR SCIENTIFIC COMPUTATION
+
+Mathematisches Forschunginstitut Oberwolfach
+24th to 30th November 2013
+http://www.mfo.de/occasion/1348a
+
+
+MOTIVATION
+
+Computational science today depends crucially on simulations, which are t=
+ypically based on algorithms that have a sound mathematical justification=
+.  For example, an iterative procedure such as Newton's method is motivat=
+ed by appealing to the properties of twice continuously differentiable fu=
+nctions and their Taylor expansion, which also yield convergence conditio=
+ns and approximation estimates.
+
+These algorithms are then implemented on a computer, using a programming =
+language such as Fortran or C++.  Often, the implementation will introduc=
+e new computational steps and otherwise modify the structure of the mathe=
+matical algorithm - for handling or reducing round-off errors, enabling m=
+ore efficient memory access, exploiting parallelization, and so on.  As a=
+  result, the final implementation usually looks very different from the m=
+athematical algorithm, and the justification given for the latter does no=
+t directly extend to the former.  But if we are to ensure the correctness=
+  of simulations, we need mathematical certainty for both.
+
+We aim to bring to the scientific programming community mathematical tech=
+niques that allow us to achieve the transition from mathematical algorith=
+m to efficient implementation in a principled manner, with each step moti=
+vated by the application of a mathematical theorem. The intended particip=
+ants are students and researchers in computational science (including are=
+as such as engineering, biology, and economics), and any scientists dissa=
+tisfied with state of the art in transforming mathematics into code. They=
+  will be equipped subsequently to make a significant contribution to incr=
+easing the correctness of the simulations that play such an important rol=
+e in current scientific activity.
+
+
+CONTENT
+
+This rigorous approach to programming is most easily presented in the fra=
+mework of functional programming: program calculation can be reduced to s=
+traightforward equational reasoning, provided that all program variables =
+are immutable.  Accordingly, we will introduce the basic syntax and ideas=
+  using Haskell, currently the one of the most successful functional progr=
+amming languages.  The emphasis is not on functional programming as such,=
+  and even less so on a specific language such as Haskell; but rather, on =
+the mathematics behind program development, which can then be transferred=
+  to other contexts, such as imperative programming, or parallel programmi=
+ng.
+
+This mathematical foundation lies in category theory, which unifies what =
+could otherwise appear as a large collection of "bite-sized" theorems for=
+  program development, too many for any developer to remember and use effi=
+ciently.  Category theory is a broad subject: we will limit ourselves to =
+what is essential as a framework for datatypes and programs (functors, un=
+iversal properties, algebras, monads). The many examples, such as fusion =
+(loop elimination), optimal bracketing (important for non-associative ope=
+rations such as those on floating-point numbers), or parallel programming=
+  skeletons (such as Google's MapReduce), will be readily understandable a=
+nd relevant to scientific computing practitioners.
+
+One of the most effective ways to counter floating-point errors and to ob=
+tain validated results is to use interval analysis, which however require=
+s more complex data structures and algorithms than is common in other are=
+as of scientific computation.  Extending a function on real or floating-p=
+oint numbers to one on intervals is a matter of symbolic computation, sim=
+ilar to the symbolic differentiation or integration that is performed by =
+tools such as Mathematica.  The problem of obtaining the best extension i=
+s complicated by the fact that some familiar properties (such as that x-x=
+=3D0 for any x, and distributivity of multiplication over addition) do no=
+t apply to intervals, and is a good source of examples for calculational =
+programming.
+
+Finally, we will present a larger application, a generic program for inte=
+r-temporal optimization with dynamic programming.  This kind of problem i=
+s ubiquitous in economic modeling, and hence in many integrated assessmen=
+t models, such as those aiming to compute costs of climate change. It has=
+  both algebraic aspects (the organization of the computation for backward=
+  induction), which can be tackled with the categorical methods presented,=
+  and numerical ones (the local optimization techniques), where interval a=
+nalysis can be used.
+
+The Seminar is organized by:
+
+* Paul Flondor, Professor of Mathematics at Politehnica University Buchar=
+est
+   (pflondor@yahoo.co.uk)
+* Jeremy Gibbons, Professor of Computing at the University of Oxford
+   (jeremy.gibbons@cs.ox.ac.uk)
+* Cezar Ionescu, researcher at Potsdam Institute for Climate Impact Resea=
+rch
+   (ionescu@pik-potsdam.de)
+
+
+HOW TO APPLY
+
+Applications to participate should include
+
+* full name and address, including e-mail address
+* short CV, present position, university
+* name of supervisor of PhD thesis
+* a short summary of previous work and interest
+
+and should be sent preferably by e-mail (pdf files) to:
+
+   Prof. Dr. Dietmar Kr=F6ner
+   Mathematisches Forschungsinstitut Oberwolfach
+   Schwarzwaldstr. 9-11
+   77709 Oberwolfach-Walke
+   Germany
+   seminars@mfo.de
+
+The deadline for applications is 15th September, and the number of partic=
+ipants is restricted to 25. The Institute covers accommodation and food; =
+thanks to support from the Carl Friedrich von Siemens Foundation, some co=
+ntribution may also be made towards travel expenses. For more information=
+, contact the organizers or see the Institute's webpage:
+
+   http://www.mfo.de/scientific-programme/meetings/oberwolfach-seminars
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

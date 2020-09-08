@@ -1,0 +1,138 @@
+Date: Mon, 7 Oct 1996 16:34:59 -0300 (ADT)
+Subject: Local smallness in Gabriel-Zisman
+
+Date: Mon, 7 Oct 1996 15:19:49 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I have been looking at Gabriel-Zisman.  It seems clear from things that
+they say that their categories are intended to be locally small.  On the
+other hand, they say nothing about the local smallness of the categories
+of fractions they construct.  Am I missing something or is there a
+problem there.  Even when there is a calculus of fractions, it is
+not obvious.  I am especially interested in the case of chain complexes
+with homology isomorphisms inverted.
+
+Michael
+
+
+Date: Tue, 8 Oct 1996 08:36:12 -0300 (ADT)
+Subject: Re: Local smallness in Gabriel-Zisman
+
+Date: Mon, 7 Oct 1996 17:51:57 -0400 (EDT)
+From: Dan Christensen <jdchrist@math.mit.edu>
+
+Michael Barr wrote:
+
+| I have been looking at Gabriel-Zisman.  It seems clear from things that
+| they say that their categories are intended to be locally small.  On the
+| other hand, they say nothing about the local smallness of the categories
+| of fractions they construct.  Am I missing something or is there a
+| problem there.  Even when there is a calculus of fractions, it is
+| not obvious.
+
+There is definitely a problem, one that they chose (consciously, I'm
+sure) to ignore.
+
+| I am especially interested in the case of chain complexes
+| with homology isomorphisms inverted.
+
+If you take chain complexes of R-modules then there is no problem.
+(In fact, any AB 5 abelian category will do in place of R-modules, I
+believe; see Weibel's book on homological algebra.)  More generally,
+in any closed model category Quillen proved that you can invert the
+weak equivalences and get a locally small category.  Sometimes the
+entire point of a closed model structure is to show that the category
+of fractions is locally small; a good example is Bousfield's proof
+that you can invert the h_*-isomorphisms in the category of spaces,
+where h_*(-) is any generalized homology theory.
+
+Dan
+
+
+Date: Tue, 8 Oct 1996 08:37:49 -0300 (ADT)
+Subject: Re: Local smallness in Gabriel-Zisman
+
+Date: Tue, 8 Oct 1996 12:12:28 +1000
+From: Murray Adelman <murray@zeus.mpce.mq.edu.au>
+
+I looked at this problem long ago when I was considering quotients of
+the free abelian category (which is something like chain complexes mod
+homotopy.)  Here is what I remember.
+
+Even if you have a calculus of fractions and even if the category is
+locally small, the maps in the quotient are bounded from below by the
+relations.  If the category is not well-powered, there is no reason to
+expect a (small) set of relations.
+
+All this doesn't apply to your category because it doesn't have finite
+limits, but I think that Peter Freyds proof that the homotopy category
+is not concrete might be modifiable into an example where a caluclus
+of fractions is not small.
+
+All of this, of course doesn't say anything about the case where
+homology isos are inverted, but I think it does show that it needs
+proving.
+
+        Murray
+
+
+Date: Tue, 8 Oct 1996 08:36:59 -0300 (ADT)
+Subject: Local smallness in Gabriel-Zisman
+
+Date: Tue, 8 Oct 1996 11:46:01 +1000
+From: Ross Street <street@mpce.mq.edu.au>
+
+Michael Batanin and I have been discussing the question of
+Michael Barr: when is the category of fractions of a locally
+small category locally small?
+
+Let  C  be a locally small category and  S  a (possibly large)
+set of arrows in  C.  In general, the category  F  of fractions
+of  C  wrt  S  is not locally small.  If  S  admits a calculus of
+left fractions then the hom  F(a,b)  is a colimit of homs  C(a,s)
+where  b --> s  runs over the filtered category  b/S.  What we
+need is a small final subcategory of  b/S.  Sometimes this can be
+found using a well-copowered factorization system in  C.
+
+But this does not work when  C  is chain complexes in a locally small
+abelian category  A  and  S  consists of chain maps inverted by homology
+(although  S  does admit a calculus of both left and right fractions).
+Then  F = K(A)  is called the derived category of  A  which is probably
+not locally small in general.  However, if  A  has enough projectives,
+K(A)  is equivalent to the category of projective chain complexes in
+A  with homotopy classes of chain maps.  This is an aspect of the general
+theory of Quillen model structures.
+
+So, if  A  is locally small abelian and has enough projectives (or
+enough injectives), then  K(A)  is locally small.
+
+Regards,
+Ross
+
+
+Date: Thu, 10 Oct 1996 21:56:20 -0300 (ADT)
+Subject: Derived local smallness (corrections)
+
+Date: Thu, 10 Oct 1996 11:25:56 +1000
+From: Ross Street <street@mpce.mq.edu.au>
+
+Since no-one has corrected me by now, I had better do it.
+
+The derived category D(A) (not K(A)) of an abelian category
+A  is the category of fractions obtained from the category of
+chain complexes in  A  by inverting the chain maps inverted by
+homology. But I am not sure what is needed on  A  for there to be a
+Quillen model structure on chain complexes with  D(A)  as the
+homotopy category (perhaps finite homological dimension will do?).
+
+If you take  A  to have enough projectives and restrict to chain
+complexes bounded below, you do get a model structure (see SLNM 43).
+
+Now it seems to me that, since every chain complex is a filtered colimit
+of chain complexes bounded below, we can use this to deduce the
+result I claimed before: that the derived category  D(A)  is locally
+small if  A  is locally small abelian with enough projectives.
+
+Regards,
+Ross
+

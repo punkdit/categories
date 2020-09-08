@@ -1,0 +1,118 @@
+Path: news.gmane.org!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equality again
+Date: Wed, 26 May 2010 04:27:58 +0200 (MEST)
+Lines: 81
+Approved: news@gmane.org
+Message-ID: <E1OHd7z-0005uN-NO@mailserv.mta.ca>
+References: <E1OEt8E-00071o-4W@mailserv.mta.ca> <E1OGWxJ-0002pb-Cg@mailserv.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=iso-8859-1; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1274967877 31100 80.91.229.12 (27 May 2010 13:44:37 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 27 May 2010 13:44:37 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Thu May 27 15:44:35 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OHdNt-000056-CN
+	for gsmc-categories@m.gmane.org; Thu, 27 May 2010 15:44:29 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OHd7z-0005uN-NO
+	for categories-list@mta.ca; Thu, 27 May 2010 10:28:03 -0300
+In-Reply-To: <E1OGy6C-0003wd-Vf@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5856
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5856>
+
+I may have missed some parts of the equality message exchange, but here=20
+a few lines from general equational programming point of view.
+
+I believe it is always important to note where equality or its genetic=20
+siblings reside. As far as I understand we do category theory mostly over=
+=20
+ZFC, so ZFC is a metalanguage for category theory. The equality for "the=20
+diagram commutes" is in ZFC, but the "equation" t1 =3D t2 involving two=20
+terms over a signature is more tricky. You might say it's an ordered pair=
+=20
+(t1,t2), and that structure is in ZFC. The objective of rewriting is to=20
+find a substitution (Kleisli morphism) s so that s(t1)=3Ds(t2). More=20
+precisely, the substitution is a morphism s : X -> TY, so you extend it t=
+o
+Ts : TX -> TTY, and bring it to mu_Y o Ts : TX -> TY with the mu from the=
+=20
+term monad. All this is done over Set, i.e. T is a monad over Set, and=20
+therefore TX and TY are sets in ZFC. So, the equality in mu o Ts(t1) =3D =
+mu=20
+o Ts(t2) is the equality in ZFC. Incidently, Set is already here in=20
+question as Set covers only the one-sorted signatures case. Moving over t=
+o=20
+many-sorted signatures you need more.
+
+However, you can use composed monads instead of T, and you don't have to=20
+be over Set, or its multisorted cousin. Even more so, is it really only=20
+about ordered pairs? In the end, we are looking for a substitution=20
+bringing that "possibly something else than just an ordered pair" to=20
+something close to a 'singleton', where the notion of 'singleton' then=20
+should reside mostly in the purely categorical language, rather than in=20
+only and exclusively in ZFC.
+
+General logics (Meseguer, Goguen, Burstall et al) in a general monadic=20
+setting both for terms as well as sentences, invites to this thinking,=20
+even if admittedly the programing examples at this point, for the monadic=
+=20
+extensions, are rather artificial.
+
+Also note that syntactics has for quite a while been studied with respect=
+=20
+to categorization, but semantics is mostly seen in the metalanguage of se=
+t=20
+theory. Doesn't have to be so? Cannot be so? We are obviously trying to=20
+complicate things as much as possible in syntactics, and when it comes to=
+=20
+semantics, our semantics domains are mostly sets, and equality is like=20
+the emperor, changing clothes all the time.
+
+Best regards,
+
+Patrik
+
+
+
+On Mon, 24 May 2010, Joyal, Andr=E9 wrote:
+
+> Dear Colin,
+>
+> You wrote:
+>
+>> It is an interesting impulse in higher category theory to avoid
+>> identity in favor of isomorphism on the level of objects, and to avoid
+>> isomorphism in favor of equivalence on the level of categories.   But
+>> so far as I know no one has yet articulated a way to avoid ever using
+>> identity of objects and identity of categories.
+>
+> I love the equality symbol more than an isomorphism symbol,
+> and an isomorphism symbol more than an equivalence symbol.
+> I always try to use the equality symbol whenever possible.
+> I often use the equality symbol for a canonical isomorphism.
+> Is there a special symbol for canonical isomorphism? (as oppose
+> to a plain isomorphism). I would love to write something like
+>
+>  A times (B times C) =3D' (A times B) times C
+>
+> Andr=E9
+>
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

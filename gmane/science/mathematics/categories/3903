@@ -1,0 +1,135 @@
+Path: news.gmane.org!not-for-mail
+From: France Dacar <France.Dacar@ijs.si>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Stupid question: what space was Euclid  working in?
+Date: Fri, 14 Sep 2007 10:24:02 +0200
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <E1IWL2v-0004zm-KD@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019592 10789 80.91.229.2 (29 Apr 2009 15:39:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:52 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Sep 14 21:02:20 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 14 Sep 2007 21:02:20 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IWL2v-0004zm-KD
+	for categories-list@mta.ca; Fri, 14 Sep 2007 20:58:01 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 27
+Status: O
+Content-Length: 5006
+Original-Lines: 100
+Xref: news.gmane.org gmane.science.mathematics.categories:3903
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3903>
+
+Bourbaki in his Algebra, and MacLane & Birkhoff in their Algebra,
+have similar definitions.  I do not know the one you cite.  However,
+the definition I have given describes an affine space as an honest
+equationally presented algebraic structure; usually they just
+assert that given any two points a and b, there exists a unique
+vector v such that a + v = b.  With the difference of points an
+explicitly given operation of the structure, the axiom
+a + (b - a) = b gives the existence, and the axiom (a + v) - a = v
+the uniqueness.
+
+Using an n-dimensional real space instead of beloved R^n gets rid
+of the `canonical' basis.  Observing vectors as translations of
+the space of points does away with an a priory origin.  My contribution
+was that to do without an a priory unit of length, let the metric
+of the Euclid's space be given by a class of mutually proportinal
+positive definite forms, instead of a single form.
+
+ > "An affine space is, roughly speaking, a vector space,
+ > but without a particular vector being chosen as zero."
+Or shall we say that an affine space is a perfect geometric communism
+where all points are equal, while in a vector space one vector is
+more equal than others.
+
+-- France
+
+
+Ellis D. Cooper wrote:
+> FYI, Hassler Whitney, "Geometric Information Theory", 1957, Appendix
+> I, Section 10, presents the notion of "affine space" essentially as
+> you describe: "An affine space is, roughly speaking, a vector space,
+> but without a particular vector being chosen as zero."
+>
+>>Funny you should ask this just as I was trying to find a satisfying
+>>answer to this question.  Now we are so accustomed that an Euclidean
+>>space has some orthonormal system plonked down somewhere in it,
+>>or that it has at least a fixed origin and the scalar product that
+>>defines lengths and angles.  But, like Eve and Adam were created
+>>without navels, Euclid's space was created without an origin; also
+>>it was created completely flat (with curvature 0 in modern lingo),
+>>so that there is no 'canonical' unit of length; and it was created
+>>without a priory orientation.  But you can measure one line segment
+>>with another in it, you can also mesure angles, and you can _choose_
+>>one of the two possible orientations and call it positive.
+>>To capture all this I cooked up some structure; you decide if it
+>>does the job.
+>>
+>>First, an Euclid's space (let's call it that, to avoid confusing it
+>>with an Euclidean space) is a real affine space (V,P), where
+>>V is a real vector space of _vectors_ in the space, and P is the set
+>>of its _points_.  There are also two operations +: P >< V -> P and
+>>-: P >< P -> V; the first is an action of the additive group of V on P,
+>>so it satisfies a + 0 = a and (a + u) + v  = a + (u + v) for all
+>>points a and all vectors u, v.  Moreover, the two operations are
+>>'local inverses' of each other in the sense that (a + u) - a = u and
+>>a + (b - a) = b for all points a, b and all vectors u.  This definition
+>>eliminates the need for an a priory origin.  To make life easier,
+>>assume V is finite dimensional.
+>>
+>>Morphism (V,P) -> (U,Q) of affine spaces is a pair of maps
+>>h: V -> U and f: P -> Q, where h is a linear map and
+>>f(a + v) = f(a) + h(v) for all points a in P and all vectors v in V.
+>>
+>>Now, the metric of the Euclid's space.  There are positive-definite
+>>(symmetric bilinear) forms on V.  Call two such forms similar if they
+>>differ by a constant positive factor; a similarity class is therefore
+>>a ray (open half-line with the endpoint the zero form) in the space
+>>of all symmetric bilinear forms on V.  Now consider the structure
+>>E = (V, P, m), where (V,P) is a real affine space and m is a similarity
+>>class of positive-definite forms on V: this is my proposed structure
+>>of Euclid's space.
+>>
+>>Let S be the group of all automorphisms (h,f) of the affine space
+>>(V,P) that preserve m:  for every g in m, g(h(u),h(v)) = c g(u,v)
+>>for some positive constant c (depending on h, not depending on u and v
+>>and the choice of g in m)
+>>and all vectors u, v.  These are the similarity trasformations of E,
+>>defining the similarity geometry of E.  If A is any structure built
+>>from vectors and points (and lines etc) in E, then the orbit of A
+>>under S is the object studied in this geometry.
+>>
+>>Let R be the group of all automorphisms (h,f) of the affine space
+>>(V,P) that preserve some form in m, and therefore preserve
+>>_every_ form in m: g(h(u),h(v)) = g(u,v) for all g in m and all
+>>vectors u, v.  This is the group of rigid motions of E.
+>>
+>>Orientation: if dim V = n, then there is a one-dimensional
+>>space of alternating n-linear forms on V; choosing one of the
+>>two rays (half-lines with the endpoint at the zero form) in this
+>>space chooses the orientation.
+>>
+>>-- France
+
+-- 
+Dr. France Dacar                      Email: france.dacar@ijs.si
+Intelligent Systems Department        Phone: +386 1 477-3813
+Jozef Stefan Institute                Fax:   +386 1 425-3131
+Jamova 39, 1000 Ljubljana, Slovenia
+
+
+
+

@@ -1,0 +1,118 @@
+Path: news.gmane.org!not-for-mail
+From: Jeff Egger <jeffegger@yahoo.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: subgroupoids of V-categories
+Date: Wed, 20 Nov 2013 07:53:32 -0800 (PST)
+Lines: 80
+Approved: news@gmane.org
+Message-ID: <E1VjVP2-00075Y-OW@mlist.mta.ca>
+References: <E1Vir4i-0005Cv-JA@mlist.mta.ca>
+Reply-To: Jeff Egger <jeffegger@yahoo.ca>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1385044791 31185 80.91.229.3 (21 Nov 2013 14:39:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 21 Nov 2013 14:39:51 +0000 (UTC)
+To: Categories <categories@mta.ca>, Emily Riehl <eriehl@math.harvard.edu>
+Original-X-From: majordomo@mlist.mta.ca Thu Nov 21 15:39:54 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VjVQA-0006sF-6M
+	for gsmc-categories@m.gmane.org; Thu, 21 Nov 2013 15:39:54 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43989)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VjVP4-0004lP-AJ; Thu, 21 Nov 2013 10:38:46 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VjVP2-00075Y-OW
+	for categories-list@mlist.mta.ca; Thu, 21 Nov 2013 10:38:44 -0400
+In-Reply-To: <E1Vir4i-0005Cv-JA@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7931
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7931>
+
+Hi Emily,
+
+I'm a bit worried about the notion of "local monomorphism".
+If V is, say, a poset, then every arrow in it is (tautologously)
+monic, and therefore every V-functor is a local monomorphism.
+
+Let us consider, for instance, generalised metric spaces.
+
+Suppose C has two vertices, p and q, with C(p,q)=0 and
+C(q,p)=oo (infinity). Then, for any e>0, we can choose G_e
+with G_e(p,q)=e and G(q,p)=oo, and the identity-on-objects
+functor G_e --> C has the property you desire.
+
+[I'm sure you realise that the definition of "isomorphism"
+you gave is equivalent to that of "isomorphism in the
+underlying category"; the underlying category of C is "the
+arrow", whereas that of G_e is discrete.]
+
+So "the maximal subgroupoid" of C is not defined uniquely,
+except up to "equivalence of underlying category". Moreover,
+whenever e>d>0, the i-o-o functor G_e --> C factors through
+G_d, so there is not even an "optimal" choice of e.
+
+More precisely, if one were to define a V-groupoid to be a
+V-category whose underlying category is a groupoid (which
+is, implicitly, what you seem to be doing), then I've just
+shown that the forgetful functor from [0,oo]-groupoids to
+[0,oo]-categories does not have a right adjoint.
+
+Of course, I think it would be better to define a V-groupoid
+in a more Hopf-y kind of way---e.g., in terms of what one
+might call a co-Maltsev operation---but that might not suit
+your purposes, and would seem to make things much
+more difficult, at least in general.
+
+Cheers,
+Jeff.
+
+--------------------------------------------
+On Tue, 11/19/13, Emily Riehl <eriehl@math.harvard.edu> wrote:
+
+  Subject: categories: subgroupoids of V-categories
+  To: "Categories" <categories@mta.ca>
+  Received: Tuesday, November 19, 2013, 1:51 PM
+
+  Hi all,
+
+  For general V (closed symmetric monoidal, bicomplete), is
+  there a general
+  way to construct the maximal subgroupoid of a V-category C?
+
+  I think I know how to *detect* the maximal subgroupoid. A
+  map in C is an
+  isomorphism iff it is representably so: Writing 1 for the
+  monoidal unit,
+  we say f : 1 -> C(x,y) is an iso iff the induced map f_*
+  : C(z,x) ->
+  C(z,y) is an iso in V for all z. So we might say that a
+  V-category G with
+  the same objects and C and an identity-on-objects local
+  monomorphism G ->
+  C is the maximal subgroupoid provided that a morphism f
+  factors through
+  G(x,y) -> C(x,y) just when f is an isomorphism.
+
+  In examples, this is probably good enough, but I still would
+  feel better
+  if I had a general construction of the maximal subgroupoid.
+  I feel like
+  this should be some sort of weighted limit, perhaps with
+  some additional
+  structure on V?
+
+  Thanks,
+  Emily
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

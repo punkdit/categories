@@ -1,0 +1,137 @@
+Path: news.gmane.org!not-for-mail
+From: Barry Jay <cbj@socs.uts.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: two questions about universal quantification
+Date: Thu, 28 Jan 1999 18:40:37 +1100 (EST)
+Lines: 111
+Approved: news@gmane.org
+Message-ID: <199901280740.SAA22067@algae.socs.uts.EDU.AU>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017466 28945 80.91.229.2 (29 Apr 2009 15:04:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:04:26 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Jan 28 04:59:04 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id DAA31240
+	for categories-list; Thu, 28 Jan 1999 03:55:10 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3848
+Original-Lines: 110
+Xref: news.gmane.org gmane.science.mathematics.categories:1008
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1008>
+
+
+Can anyone help with the following two questions? 
+Barry Jay
+
+
+
+Question 1 
+~~~~~~~~~~
+
+Has the following lemma been seen before? 
+
+Lemma: If D is a cartesian closed category having all finite limits
+then so is its arrow category.
+
+Proof
+
+Finite limits in the arrow category are constructed pointwise. 
+Arrows from a: A -> I to b: B-> J In the arrow category are given by
+commuting squares (all vertical lines are arrows pointing down)
+
+      f
+  A -----> B
+  |        |
+ a|        |b
+  |        |
+  I -----> J
+      u
+
+The object of such appropriate pairs (f,u) is given by the pullback
+
+  E -----> A->B
+  |         |
+  |         | A->b
+  |         |
+ I->J ---> A->J
+     a->J
+
+The universal property follows directly. QED
+
+The proof uses a form of universal quantification over A.
+Similar constructions arise with the use of ends and dinatural
+transformations. I also used them aggresively in my paper on data
+categories (http://linus/~cbj/Publications/data_categories.ps.gz) to
+quantify over all paths through a tree. The lemma generalises to other
+functor categories over D provided there are sufficient limits in D to
+express all of the constraints.
+
+
+Question 2 
+~~~~~~~~~~
+
+The proof above shows how pullbacks and cartesian closure interact to
+provide a form of universal quantification.  Call this new
+construction quantification by exponentiation. What is its expressive
+power?
+
+Discussion
+~~~~~~~~~~
+
+Universal quantification wrt an arrow f : X -> Y is usually given as a
+right adjoint to the functor D/Y --> D/X which pulls back along f.
+Call this quantification by adjunction. When it is specialised to a
+projection XxY ---> X then it can be thought of as quantification over
+the object Y. Quantification by exponentiation can be seen as
+supplying some of the ingredients necessary for this special case. For
+example, consider the equaliser E of two functions into an
+exponential:
+
+  f,g : X --> (A->B)
+
+If the quantifier by adjunction exists for the projection XxA ---> X
+then E is given by applying it to the equaliser of the uncurried forms
+of f and g from XxA to B. 
+  
+Motivation
+~~~~~~~~~~
+
+One the one hand, this structure is weaker than that normally assumed,
+which may sometimes be a good thing. On the other hand, the power
+resulting from this combination of features may still be more than
+desired.
+
+Many models of computation assume both cartesian closure and and all
+finite limits but this is already more than we need to model the types
+of most languages, i.e. a type corresponding to one of the objects
+produced by quantification by exponentiation would have undecidable
+membership, so that values would need to come equipped with a proof of
+their membership. So (assuming that cartesian closure is a given) the
+question becomes whether there is a smaller class of limits which are
+good enough to model programming languages. 
+
+One candidate is to work in an extensive category, in which only
+pullbacks along coproduct inclusions are presumed. A short argument
+shows that if Z has decidable equality then any cospan over it has a
+pullback. Actually, there is a rich, but under-explored class of
+pullbacks implied by this innocuous assumption. For example, the list
+functor preserves such pullbacks (this is not quite trivial). There
+may well be other, better candidates. I would be glad to hear of them.
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,	  http://www-staff.socs.uts.edu.au/~cbj	|
+| Australia.			        FISh homepage ... ~cbj/FISh     |
+*************************************************************************
+
+
+

@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@open.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: Category Theory from RFC Walters' book
+Date: Wed, 1 Nov 2000 10:04:16 -0000
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <000201c043eb$18d5bc50$d40a6c89@open.ac.uk>
+References: <F112R3XgbPhRaUMNGCX000043d1@hotmail.com>
+Reply-To: "s.j.vickers" <s.j.vickers@open.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018014 32376 80.91.229.2 (29 Apr 2009 15:13:34 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:34 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Nov  1 08:46:52 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eA1CFhT23111
+	for categories-list; Wed, 1 Nov 2000 08:15:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Priority: 3 (Normal)
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook 8.5, Build 4.71.2173.0
+In-Reply-To: <F112R3XgbPhRaUMNGCX000043d1@hotmail.com>
+Importance: Normal
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: O
+Content-Length: 2874
+Original-Lines: 71
+Xref: news.gmane.org gmane.science.mathematics.categories:1677
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1677>
+
+> Hello Category Theory community,
+>
+>      I am rereading RFC Walters' "Categories and Computer Science".
+> In chapter 1 Section 3 (starting on pg . 10), Walters discusses the
+> the notion of generators and relations to generate categories. He
+> gives several examples of this concept. E.g. "Example 15. Consider
+> the category presented by one object A, one arrow e:A->A, and the
+> one relation e.e.e.e = 1subA. From this, he deduces by hand the
+> category has additional arrows e .e, e.e.e. I have two questions:
+>
+> 1) Walters shows that e.e.e = e is not "deducible". What kind of
+>      formal system/inference rule system is "at  work" here that
+>      allows us to deduce
+>      formally any additional arrows and allows us to deduce
+>      arrow relations from the "axiom" relation, i.e. e.e.e.e = 1subA??
+>     Is this some kind of equational logic? Please specify in detail.
+>
+> 2) Given generators and relations are we guaranteed to get a category?
+
+It is folklore that the method of generators and relations works for any
+essentially algebraic theory with finitary operators, as well as for some
+more general ones. "Algebraic" means defined by operators and equational
+laws (could be many-sorted); "essentially" means that the operators may be
+partial, with their domains of definition described by finite sets of
+equations.
+
+The way the method works is that from the presentation by generators and
+relations one can derive a universal property of the desired algebra, so the
+problem is whether an algebra does indeed exist with that property. If it
+does, then it is unique up to isomorphism.
+
+The theory of categories is essentially algebraic, so generators and
+relations for a category do present a category.
+
+I wish I knew of an introductory text describing the techniques at this
+level of generality, but unfortunately I'm not aware of any - maybe somebody
+can suggest one. Manes's book "Algebraic Theories" is quite good on the
+algebraic case.
+
+Here's a sketch of a formal system.
+
+>>>>>>>>>>>>>>>>>>>>>>>>
+Terms are of two sorts: object and arrow.
+
+Term formation is by function symbols s, t, i and c, with the obvious
+arities, for source, target, identity and composition. (Note at this level
+that a term exists for the composite of any two arrows, regardless of
+whether they are composable.)
+
+Equality of terms is symmetric and transitive, but _not_ reflexive.
+
+Rules include the following (x and y are objects, f and g are arrows).
+
+  f=g |- s(f)=s(g)
+  f=g |- t(f)=t(g)
+  x=y |- i(x)=i(y)
+  f1=f2, g1=g2, t(f1)=s(g1), t(f2)=s(g2) |- c(f1,g1)=c(f2,g2)
+
+Also rules for the usual equational laws of category theory (associativity
+etc.), and
+
+  |- u=u    for each generator u (object or arrow)
+  |- r        for each equational relation r
+
+The category is then got by taking all terms z for which z=z, modulo
+equality.
+<<<<<<<<<<<<<<<<<<
+
+Steve Vickers.
+
+
+

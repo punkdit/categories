@@ -1,0 +1,98 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  partial categories
+Date: Wed, 28 Sep 2011 23:18:59 -0300 (ADT)
+Lines: 58
+Approved: news@gmane.org
+Message-ID: <E1R9Fpz-0004NR-Gb@mlist.mta.ca>
+References: <E1R92mj-0001a9-J1@mlist.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1317299829 18533 80.91.229.12 (29 Sep 2011 12:37:09 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 29 Sep 2011 12:37:09 +0000 (UTC)
+Cc: categories@mta.ca
+To: eriehl@math.harvard.edu
+Original-X-From: majordomo@mlist.mta.ca Thu Sep 29 14:37:03 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.30])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1R9FrG-00066s-Ve
+	for gsmc-categories@m.gmane.org; Thu, 29 Sep 2011 14:36:59 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34906)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1R9Fq1-0002cc-8x; Thu, 29 Sep 2011 09:35:41 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1R9Fpz-0004NR-Gb
+	for categories-list@mlist.mta.ca; Thu, 29 Sep 2011 09:35:39 -0300
+In-Reply-To: <E1R92mj-0001a9-J1@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6925
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6925>
+
+Dear Emily,
+
+one notion of "partial category" that has been studied is Freyd's
+notion of "paracategory". It differs from what you wrote below as
+follows: instead of taking compositions of two arrows as the primitive
+operation, one takes compositions of n arrows as primitive operations,
+for all n. So if f1, ..., fn are n arrows (so that the codomain of
+each is the domain of the next), then [f1, ..., fn] is their
+composition, which may be defined or undefined.
+
+In the case of (total) categories, adding n-ary compositions makes no
+difference, since they are already definable in terms of identities
+and binary composition. But in the partial case, it does make a
+difference, as it is possible, for example, that [f,g,h] is defined,
+but [f,g] and [g,h] are undefined.
+
+The axioms are:
+
+(a) [] : A -> A is defined (the composition of the empty path from A to A)
+(b) [f] is defined and equal to f, for all arrows f,
+(c) if ff, gg, hh are are (composable) paths, and if [gg] is defined,
+     then [ff,[gg],hh] is defined if and only if [ff,gg,hh] is defined,
+     and in this case, they are both equal.
+
+The main representation theorem is:
+
+Every reflexive subgraph of a category is a paracategory; conversely,
+every paracategory can be faithfully completed to a category.
+
+It is not the only possible notion of partial category, and may not
+always be the notion that one wants.
+
+-- Peter
+
+Emily Riehl wrote:
+>
+> A colleague of mine is wondering if anyone has studied "partial
+> categories," by which she means directed graphs with identities but with
+> only some compositions (including all identity compositions) defined.
+>
+> A partial category can be thought of as a category enriched in pointed
+> sets (with smash product as tensor and S^0 as unit). The slogan is that
+> the basepoint in each hom-set stands in for "does not exist". But enriched
+> functors don't give the right notion of maps; these should preserve
+> identities and all specified compositions. Enriched functors behave
+> appropriately with regards to the identites but may "forget" extant
+> arrows and in particular need not preserve composites. So perhaps this
+> perspective is not useful.
+>
+> I'll happily pass along any suggestions.
+>
+> Thanks,
+> Emily Riehl
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

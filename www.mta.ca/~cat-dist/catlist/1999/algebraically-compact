@@ -1,0 +1,304 @@
+Date: Tue, 10 Jan 1995 12:57:07 -0400 (AST)
+Subject: algebraically compact categories
+
+
+Date: Tue, 10 Jan 1995 11:05:10 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+When I first introduced the notions of algebraically complete
+categories (every endo-functor has an initial algebra) and
+algebraically compact categories (every endo-functor has an initial
+algebra naturally isomorphic to a terminal co-algebra) I thought that
+such things would exist in the classical foundations only in
+degenerate form. It was a surprise when I noticed that the categories
+of countable sets and of countably dimensioned vector spaces are
+algebraically complete. I'm now surprised by:
+
+  The category of separable Hilbert spaces and linear operators of
+  bound at most  1  is algebraically compact.
+
+As in the earlier cases one doesn't really need the controlling
+cardinal number to be aleph-naught. To avoid using the axiom of choice
+one can state the more general result by taking an arbitrary Hilbert
+space  A  and defining  *A*  by:
+  Objects of  *A*:  all those Hilbert spaces that can be isometrically
+       embedded in  A;
+  Maps of  *A*: all linear operators thereon of bound at most  1.
+
+Then:
+         *A*  is algebraically compact.
+
+The theorem holds for both the real and complex cases.
+
+In the proof I use the surprising (to me) fact that in the categories
+in question every half-invertible map has a _unique_ half-inverse.
+(That is, every map has at most one left-inverse and one right-
+inverse.) All the other examples from nature that I can think of are
+categories in which the only half-invertibles are invertible. Are
+there others?
+
+  Peter Freyd
+
+Date: Sat, 14 Jan 1995 09:33:45 -0400 (AST)
+Subject: Hilbert space proof
+
+Date: Sat, 14 Jan 1995 07:47:49 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+On request:
+
+Theorem:
+
+  The category of separable Hilbert spaces and linear operators of
+  bound at most  1  is algebraically compact.
+
+More generally,
+
+Theorem:
+
+  Let  A  be a Hilbert space.  Let  *A*  be the category whose objects
+  are all Hilbert spaces that can be isometrically embedded in  A  and
+  whose maps are all linear operators therebetween of bound at most 1.
+  Then  *A*  is algebraically compact.
+
+(The axiom of choice says that the objects of  *A*  can be described
+as all Hilbert spaces of (orthonormal) dimension bounded by a given
+cardinal.) The proofs work for both the real and complex cases.
+
+For the proof we'll need a few lemmas about  *A*  and its
+endofunctors. First note that any isometric embedding  B -> C  is
+a retract with the adjoint operator  C -> B  serving as its right-
+inverse. Left to the reader is the surprising fact (to me) that right-
+inverses are unique. So are left-inverses. That is, in  *A*  every map
+has at most one right-inverse and one left-inverse and all left-
+inverses are isometric embeddings and all right-inverses are
+orthogonal projections.
+
+Because any functor preserves the existence of right-inverses we may
+conclude that any given endofunctor, T, carries isometric embeddings
+to isometric embeddings. For convenience we'll replace  T  with a
+naturally equivalent functor that is invariant on the lattice of
+subobjects of  A  (that is, the subcategory of all closed subspaces of
+A  and all inclusion maps therebetween). First choose a single
+isometric embedding  TA -> A.  For each  A' contained in  A  define
+T'A'  to be the image of TA' -> TA -> A  where  TA' -> TA  is  T
+applied to the inclusion map  A' -> A. Let  TA' -> T'A' be the obvious
+isomorphism. For all objects, B, not contained in  A  define  T'B  to
+be  TB  and  TB -> T'B  to be the identity map. Define  T' to be the
+unique endofunctor that turns this collection of isomorphisms into a
+natural equivalence. For an inclusion map  A' -> A  we have that
+T'A' -> T'A  is an inclusion map. And from that we may conclude that
+any inclusion map between subobjects of  A  is carried by  T' to an
+inclusion map.
+
+We'll drop the dash-mark on  T  and notationally assume that our given
+functor preserves the lattice of subobjects of  A. At this point it is
+clear (a la Tarski) what the initial T-algebra must be: any
+endofunctor on a complete lattice has a minimal fixed point, indeed,
+to domain theorists (a CS term) it is clear how to prove it to be the
+initial T-algebra: start by using the bottom-up construction for the
+minimal fixed-point for  T  as it operates on the lattice of
+subobjects of  A. Define an ordinal sequence of subspaces of  A  as
+follows: for a limit ordinal 'a, take  F['a]  to be the supremum of
+the previous values; for a successor ordinal  1+'b  take  F[1+'b]  to
+be  T(F['b]). Note that for the limit ordinal  0  we have that  F[0]
+is the trivial (one-element) subspace.  And note that for all other
+limit ordinals, 'a, we have that  F['a]  is the closure of the union
+of the previous values. By an inductive argument this sequence is an
+increasing sequence (but, of course, not forever strictly increasing):
+for a limit ordinal 'a, we have that F['b] < F['a]  for all  'b < 'a
+(using  <  for the containment sign) hence  T(F['b]) < T(F['a])  that
+is, F[1+'b] < F[1+'a]  for all 'b < 'a  and the construction of  F['a]
+forces F['a] < T(F['a]) = F[1+'a]; for a successor ordinal  1+'b  we
+may (inductively) assume that  F['b] < F[1+'b]  hence
+T(F['b]) < T(F[1+'b]), that is, F[1+'b] < F[1+1+'b].
+
+The sequence can not forever be strictly increasing. It stabilizes at
+a value  F.  We take  'c  as the first limit ordinal such that
+F = F['c].  We need that  F  is not just the supremum of the
+constructing sequence as defined in the lattice but its colimit as
+defined in the entire category. Actually we need the general fact that
+for any limit ordinal 'a  it is the case that  F['a]  is the colimit
+of the ordinal diagram of previous values. The proof is straigh-
+forward using again the fact that the maps in the category are of
+bound at most  1.)
+
+Given a  T-algebra  b:TB -> B  we must construct a map  x:F -> B  so
+that
+         F
+    Tx /   \ x
+      TB -> B
+         b          (add downward arrowheads).
+
+We define, inductively, a sequence of maps  x['b]:F['b] -> B  such
+that
+           x['b]                         T(x['b])     b
+     F['b] -----> B  =  F['b] -> F[1+'b] --------> FB -> B
+
+where the unlabeled map is the inclusion map. For successor-ordinals
+define  x[1+'b]  as
+                     T(x['b])     b
+             F[1+'b] --------> FB -> B.
+
+The inductive verification that
+
+             x[1+'b]                             T(x[1+'b])     b
+     F[1+'b] -------> B  =  F[1+'b] -> F[1+1+'b] ----------> FB -> B
+
+is straight-forward diagram chasing.
+
+For limit-ordinals define  x['a]:F['a] -> B  using the fact that F['a]
+is a colimit of the previous values. For the verification of
+
+           x['a]                         T(x['a])     b
+     F['a] -----> B  =  F['a] -> F[1+'a] --------> FB -> B
+
+it suffices to verify, for each  'b < 'a, that
+
+               x['a]                                T(x['a])     b
+F['b] -> F['a] -----> B = F['b] -> F['a] -> F[1+'a] --------> FB -> B
+
+where, just as before, each unlabeled arrow is an inclusion map. This
+follows, inductively, from the two equations
+
+                  x['a]              x['b]
+   F['b] -> F['a] -----> B  =  F['b] -----> B,   and
+
+   F['b] -> F['a] -> F[1+'a]  =  F['b] -> F[1+'b] -> F[1+'a]
+
+where the last map (still an inclusion map) is the result of applying
+T  to the inclusion map from  F['b]  to  F['a].
+
+The uniqueness can be verified, inductively, for each 'b.
+Alternatively, given a possibly different solution  y:F -> B, let
+A' be the equalizer of  x  and  y  using the standard construction:
+A' is the closed subspace of points on which  x  and  y  agree. It
+follows that  T(A')  is contained in  A', that is, A' is a "prefixed
+point" of  T.  But -- as is clear from the top-down construction --
+minimal fixed points are automatically minimal prefixed points and  F
+must be contained in  A'.
+
+We have shown that  T  has an initial algebra (that is, the category
+is algebraically complete). Since the category is self-dual (via the
+adjoint-operator construction) it follows that  T  also has a final
+co-algebra (that is, the category is algebraically co-complete). But
+for compactness we need the two to be naturally isomorphic. We have
+reduced to the case that the structure map on the initial algebra is
+the identity map which means that the naturally isomorphic co-algebra
+is given by the same identity map. That is, we must show for every
+b:B -> TB  the existence of a unique  x:B -> F  such that
+(add downward arrowheads)                     b
+                                            B -> TB
+                                           x \  / Tx
+                                               F.
+
+F is not just the colimit of the ordinal sequence of inclusion maps,
+it's the limit of the ordinal sequence of their adjoint operators, the
+orthogonal projections. The comments at the very beginning, that  T
+necessarily preserves the unique right-inverses, says that this
+ordinal sequence of orthogonal projections has all the requisite
+properties for the (dual) of the proof we've just seen. Done.
+
+Having done all this I must now note that my original purpose for
+algebraic compactness has been frustrated: the fact that contravariant
+functors and mixed-variance functors have minimal invariant objects
+was already evident for this category. I'm refering to the general
+theorem that given any algebraically compact category and  "sesqui"-
+endofunctor, TXY, contravariant on  X, covariant on Y, there's a
+T-invariant object, that is, an object  F  together with an
+isomorphism from  TFF  to  F; indeed there is a _minimal_ T-invariant
+object, that is, one that appears uniquely as a natural retract of
+every T-invariant object. The trouble is that if we replace  TXY  with
+TX'Y,  where  X'  denotes the adjoint-operator functor (which, note,
+is the identity operation on objects) then it's easy to see that the
+intial algebra of  TX'Y  is as desired. That is, algebraic
+completeness is enough when in the presence of an anti-involution that
+fixes identity maps.
+
+  Peter Freyd
+
+
+Date: Mon, 16 Jan 1995 22:18:00 -0400 (AST)
+Subject: Re: Hilbert space proof
+
+Date: Sat, 14 Jan 95 15:26:17 EST
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I haven't checked the precise claim, but I think that what Peter claims
+is in my paper in JPAA in 1992 called Algebraically Compact Functors.
+The paper was, if I recall correctly, transmitted by guess who.  Actually,
+Peter asked me in 1990 when I was leave at Penn if this were true.
+The paper is also available for ftp (don't tell North-Holland).
+I haven't studied Peter's argument, so I don't know how much it differs
+from mine.  Actually, I haven't look at mine in several years either.
+A similar category, with a similar result is that of sets are injective
+partial functions.  Interestingly, if you want to know on what category
+it is natural to define l^2 as a functor, it is sets and partial injections.
+
+Michael
+
+
+Date: Tue, 17 Jan 1995 09:33:59 -0400 (AST)
+Subject: Re: Hilbert space proof
+
+Date: Mon, 16 Jan 1995 19:07:54 +0000 (GMT)
+From: Samson Abramsky <sa@doc.ic.ac.uk>
+
+Peter,
+
+Do you have any interesting examples of ``domain equations'' over this
+category?
+There is certainly no model of the lambda calculus there.
+
+Samson
+
+Date: Tue, 17 Jan 1995 09:38:00 -0400 (AST)
+Subject: neologism
+
+Date: Mon, 16 Jan 1995 09:50:00 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+In answer to the obvious query: yes, I did indeed check the standard
+sources before I let that word pass. And I decided the standard
+sources need to be improved.
+
+Now I must agree we've lived all these years without feeling the need
+for yet another adverb that starts out with "there-". The O.E.D. lists
+38 of them:
+
+  thereabout, thereabove, thereafter, thereafterward, thereagain,
+  thereagainst, thereamong, thereat, thereaway, therebefore,
+  therebeside, thereby, theredown, thereforth, therefrom, therehence,
+  therein, thereinto, there-nigh, thereof, thereon, thereout,
+  thereover, therethrough, theretill, thereto, theretofore,
+  theretoward, thereunder, thereuntill, thereunto, thereup, thereupon,
+  thereward, therewhile, therewith, therewithal, therewithin
+
+But none of these works as a replacement for "therebetween" in either
+of the following two lines from my recent missive:
+
+  the category whose objects are all Hilbert spaces that can be
+  isometrically embedded in  A  and whose maps are all linear
+  operators therebetween of bound at most  1.
+
+  the subcategory of all closed subspaces of  A  and all inclusion
+  maps therebetween.
+
+So why not shoot for 39?
+
+Best thoughts,
+  Peter
+
+Date: Tue, 17 Jan 1995 22:59:06 -0400 (AST)
+Subject: answer to Samson
+
+Date: Tue, 17 Jan 1995 08:58:28 -0500
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+As my last paragraph tried to make clear, we can't expect much.  If we
+define Hom(X,Y) as (adj X) tensor Y then the functor
+
+     A directsum Hom(x,Y)
+
+ looks as if it ought to have an interesting fixed point.  It doesn't.
+

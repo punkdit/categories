@@ -1,0 +1,493 @@
+Subject: categories: Recursive types in polymorphic lambda calculus
+Date: Fri, 14 May 1999 15:24:32 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+
+There is a fairly standard encoding of recursive types
+into polymorphic lambda calculus, given by
+
+	rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+where F[X] is a type in which the type variable X appears only
+covariantly.  Recall that every covariant type corresponds to a
+covariant functor, so for every h:X->Y we have F[h]:F[X]->F[Y].
+If we abbreviate T = rec X.F[X], then the key functions on this
+type are given by the polymorphic lambda terms:
+
+	fold : all X.(F[X] -> X) -> T -> X
+	fold = Lam X.lam k:F[X]->X.lam t:T.t{X}(k)
+
+	in   : F[T] -> T
+	in   = lam u:F[T].Lam X.lam k:F[X]->X.k(F[fold{X}(k)](u))
+
+	out  : T -> F[T]
+	out  = fold{F[T]}(F[in])
+
+Questions: Who first had this insight?  Where is a good place to find
+this spelled out in the literature?  Please send results to me, and I
+will summarize them for the list.  Cheers, -- P
+
+
+Subject: categories: Re: Recursive types in polymorphic lambda calculus 
+Date: Mon, 31 May 1999 12:09:46 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+
+Thanks to all for the responses to my question, and sorry for the
+delay in summarising the replies.  The concensus seems to be that
+Reynolds (83) and Bohm-Berarducci (85) understood the concept, and
+that Reynolds-Plotkin (preprint in 88) spelled out the categorical
+construction, with many other pieces of related work.  -- P
+
+========================================================================
+The question:
+========================================================================
+
+To: types@cis.upenn.edu, categories@mta.ca
+Subject: categories: Recursive types in polymorphic lambda calculus
+Date: Fri, 14 May 1999 15:24:32 -0400
+From: Philip Wadler <wadler@research.bell-labs.com>
+
+There is a fairly standard encoding of recursive types
+into polymorphic lambda calculus, given by
+
+	rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+where F[X] is a type in which the type variable X appears only
+covariantly.  Recall that every covariant type corresponds to a
+covariant functor, so for every h:X->Y we have F[h]:F[X]->F[Y].
+If we abbreviate T = rec X.F[X], then the key functions on this
+type are given by the polymorphic lambda terms:
+
+	fold : all X.(F[X] -> X) -> T -> X
+	fold = Lam X.lam k:F[X]->X.lam t:T.t{X}(k)
+
+	in   : F[T] -> T
+	in   = lam u:F[T].Lam X.lam k:F[X]->X.k(F[fold{X}(k)](u))
+
+	out  : T -> F[T]
+	out  = fold{F[T]}(F[in])
+
+Questions: Who first had this insight?  Where is a good place to find
+this spelled out in the literature?  Please send results to me, and I
+will summarize them for the list.  Cheers, -- P
+
+========================================================================
+The answers:
+========================================================================
+
+Date: Sat, 15 May 1999 23:40:29 -0400
+From: "P. Scott" <scpsg@matrix.cc.uottawa.ca>
+To: wadler@research.bell-labs.com
+Subject: Re:  Recursive types in polymorphic lambda calculus
+Cc: scpsg@matrix.cc.uottawa.ca
+
+Dear Phil:
+
+    I can give you a bit of the history of the functorial
+type approach, as far as I know it.  I will start with recent
+history, then mention a few ancient tidbits.
+
+RECENT HISTORY
+
+Syntactically, the fact that for any multisorted finitary algebraic
+signature, that the elements of initial algebras can be represented by
+closed normal terms of polymorphic type is well-known.  It is implicit in
+Girard's Phd thesis (by Curry-Howard), and explicit in Reynolds 1983
+paper "Types, abstraction, and parametric polymorphism", as well as in
+Bohm-Berarducci "Automatic synthesis of typed \Lambda-programs on term
+algebras,  TCS 39 (1985), 135-154.  More recently, of course, one can
+look at Girard-Lafont-Taylor, Section 11.5, and also the interesting
+discussion in John Mitchell's Foundations for Programming Languages,
+MIT Press, 1996, Section 9.3. 
+
+Categorically, the first place I saw the functorial approach published
+in detail--and the fact that in System F, \forall p [ T(p) ==> p ==> p ]
+is a weakly initial T-algebra  (for definable covariant functors T) is in
+Reynolds-Plotkin "On Functors Expressible in the Polymorphic Typed Lambda
+Calculus  (Inf. & Computation, 1993, reprinted in  "Logical Foundations
+of Functional Programming", edited by G. Huet, Addison-Wesley, 1990).
+
+The second place where this is done in detail is the paper
+"Functorial Polymorphism", by Bainbridge, Freyd, Scedrov, and me
+(TCS 70 (1990), Subsection 4.9 of  "Reynolds' Parametricity".
+
+A closely related work to the above is by R. Hasegawa, "Categorical data
+types in parametric polymorphism, MSCS 4, 1994, pp. 71-109.
+ 
+A basic categorical reference for some of this is Roy Crole's book
+"Categories for Types", CUP, Chapter 5.  More advanced remarks on formal
+category theory are also in John Mitchell's book, Section 9.3, loc. cit.
+
+Finally, I can recommend a few papers on related material:
+
+Abadi, Cardelli, Curien "Formal parametric polymorphism, TCS 121
+(1993), pp. 9-58, 
+
+ Plotkin & Abadi, "A logic for parametric polymorphism"
+TLCA'93, SLNCS 664, 1993, pp. 361-375
+
+R. Hasegawa, A logical aspect of parametric polymorphism,
+CSL'95, SLNCS 1092, 1995.
+
+
+PRE-HISTORY:
+
+It's been known since Russell that in higher-order logic (using
+quantification over propositional and higher-type variables) that we can
+define various propositional connectives, and can even form a version of
+type theory based on equality.  For example, in Lambek-Scott, our
+treatment of Full Impredicative Intuitionistic Type Theory (e.g. Part II,
+Chap. 1, p. 129) and type theory based on Equality (Part II, Chap. 2, p.
+133) were inspired not only by Prawitz's 1965 book (Natural Deduction) but
+some formulas were literally taken from Russell's 1908 article.
+
+If you then add Curry-Howard to the mixture, assigning proof terms to the
+formulas involved, one essentially moves into the modern realm of data
+types above.
+
+
+				Cheers,
+				Phil Scott
+				
+========================================================================
+
+From: Daniel Leivant <leivant@cs.indiana.edu>
+Subject: Re: Recursive types in polymorphic lambda calculus
+To: wadler@research.bell-labs.com (Philip Wadler)
+Date: Sat, 15 May 1999 10:31:06 -0500 (EST)
+
+Certainly the basic ideas have been known (for inductive definitions
+of sets) by mathematical loogicians for many years before the
+second order lambda calculus was invented.  
+I am sure Kleene had a big role here.
+I can vouch on the fly for the exact pedigree, but a good
+reference for tracking things down is probably Moschovakis's
+1974 monograph "elementary indcution on abstact structures"
+
+For the lambda calculus I am not sure who was first, but I
+did things independently from scratch in my paper "contracting proofs
+to programs" in odifreddi volume "logic and computer science",
+academic press 1990.  See in particular chapter 6, but also chapters
+5 and 3.
+
+I hope this useful.  let me know if I can help otherwise.
+I hope you have my paper above, if not i'll email you 
+a source and/or hard copy.
+
+best wishes -- Daniel
+
+========================================================================
+
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Re: Recursive types in polymorphic lambda calculus 
+Date: Sat, 15 May 1999 17:25:37 -0400
+From: Jon Riecke <riecke@research.bell-labs.com>
+
+I'm not exactly sure to whom this is due, but my impression was
+that it went back a long way.  Also, isn't parametricity required
+to prove that the encoding yields an initial algebra?  
+
+There's some more recent work of Plotkin's that others might not
+be aware of: if one takes *linear* polymorphic lambda calculus
+with term recursion, plus some modest axioms for parametricity,
+one can code up recursive types whose type variable appears with
+any variance (covariant, contravariant, or mixed variance).  I can
+dig up precise references to his talks on the subject.
+
+-Jon
+
+========================================================================
+
+From: "John C Mitchell" <mitchell@cs.stanford.edu>
+To: "Philip Wadler" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+
+I think this is Reynolds and Plotkin, the first incarnation of
+the idea coming from Reynolds. I remember looking into this when
+I was a graduate student, but I think it was their idea first.
+The idea comes from category theory, or Smyth-Plotkin approach, 
+most specifically -- the obvious type for an initial F-algebra
+is All t. (F(t) -> t) -> t.
+
+John
+
+========================================================================
+
+To: Philip Wadler <wadler@research.bell-labs.com>
+cc: Andrew.Pitts@cl.cam.ac.uk
+Subject: Re: Recursive types in polymorphic lambda calculus 
+Date: Mon, 17 May 1999 09:02:39 +0100
+From: Andrew Pitts <Andrew.Pitts@cl.cam.ac.uk>
+
+I think the best place in the literature to look is
+
+@Article{ReynoldsJC:funept,
+  author =	 {J.~C.~Reynolds and G.~D.~Plotkin},
+  title =	 {On Functors Expressible in the Polymorphic Typed
+                  Lambda Calculus},
+  journal =	 {Information and Computation},
+  year =	 1993,
+  volume =	 105,
+  pages =	 {1--29}
+}
+
+There is some discussion of the origin of the encoding at the
+beginning of this paper. I guess special cases of it were known to
+Girard (he covers some in Proofs and Types, without history of
+course). The case of algebraic signatures (ie T a sum of products) was
+worked out in full generality in Bohm & Berarducci (TCS
+39(1985)135--154), although the Reynolds-Plotkin paper also refers to
+a paper by Leivant in 24th FOCS (1983) for this case. However, the
+general case of a definable covariant functor T seems to be down to
+Reynolds-Plotkin. I've taken to referring to this general case as the
+"Reynolds-Plotkin" lemma when I refer to it in lectures. One important
+question is what properties tyhe encoding has. Up to beta conversion,
+
+ rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+gives a weak initial algebra for F. In the presence of relational
+parametricity properties, one can deduce that it is actually
+initial. Which brings me to the final place in the literature to look
+for material on this topic: 
+
+@inproceedings{PlotkinGD:logpp,
+  author =	 {G.~D.~Plotkin and M.~Abadi},
+  title =	 {A Logic for Parametric Polymorphism},
+  booktitle =	 {Typed Lambda Calculus and Applications},
+  editor =	 {M.~Bezem and J.~F.~Groote},
+  volume =	 664,
+  series =	 {Lecture Notes in Computer Science},
+  year =	 1993,
+  publisher =	 {Springer-Verlag, Berlin},
+  pages =	 {361--375},
+}
+
+Best wishes,
+
+Andy
+
+========================================================================
+
+Date: Mon, 17 May 1999 11:03:10 +0200
+From: Giuseppe Rosolini <rosolini@disi.unige.it>
+To: Philip Wadler <wadler@research.bell-labs.com>
+CC: Edmund Robinson <E.P.Robinson@dcs.qmw.ac.uk>
+Subject: Re: categories: Recursive types in polymorphic lambda calculus
+
+Dear Phil,
+
+in a paper at LICS 5, Edumnd Robinson and I use an adaptation of the
+usual argument you quote. We assumed that it came from the original
+work of Reynolds and Plotkin on non-existence of set-theoretic models
+for polymorphic lambda calculus.
+
+Hope this is useful.
+
+Ciao Pino
+
+@article {MR94h:03036,
+   AUTHOR = {Reynolds, John C. and Plotkin, Gordon D.},
+    TITLE = {On functors expressible in the polymorphic typed lambda
+             calculus},
+  JOURNAL = {Inform. and Comput.},
+ FJOURNAL = {Information and Computation},
+   VOLUME = {105},
+     YEAR = {1993},
+   NUMBER = {1},
+    PAGES = {1--29},
+     ISSN = {0890-5401},
+}
+@incollection {MR86e:03016,
+   AUTHOR = {Reynolds, John C.},
+    TITLE = {Polymorphism is not set-theoretic},
+BOOKTITLE = {Semantics of data types (Valbonne, 1984)},
+    PAGES = {145--156},
+PUBLISHER = {Springer},
+  ADDRESS = {Berlin},
+     YEAR = {1984},
+}
+@incollection {MR1099156,
+   AUTHOR = {Robinson, Edmund and Rosolini, Giuseppe},
+    TITLE = {Polymorphism, set theory, and call-by-value},
+BOOKTITLE = {Fifth Annual IEEE Symposium on Logic in Computer Science
+             (Philadelphia, PA, 1990)},
+    PAGES = {12--18},
+PUBLISHER = {IEEE Comput. Soc. Press},
+  ADDRESS = {Los Alamitos, CA},
+     YEAR = {1990},
+}
+
+========================================================================
+
+From: Mitchell Wand <wand@ccs.neu.edu>
+Date: Mon, 17 May 1999 09:37:40 -0400 (EDT)
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Recursive types in polymorphic lambda calculus
+
+Are you thinking of the Bohm-Berarducci coding?  The Bohm-Berarducci coding
+types the integers
+
+rec X. (1 + X)
+
+as 
+
+all X. (X->X) -> (X -> X)
+
+which is not far from  all X. ((1 + X) -> X) -> X , depending on how you want
+to treat + .  I usually cite Girard-Lafont-Taylor for this.
+
+--Mitch 
+
+
+========================================================================
+
+From: Nick Benton <nick@microsoft.com>
+To: "'Philip Wadler'" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+Date: Mon, 17 May 1999 09:03:32 -0700
+
+I'd say algebraic or inductive rather then recursive in this context.
+(Though of course, there's a coalgebraic version too, but recursive seems to
+imply mixed-variance) I think the usual references for the fact that one can
+construct weakly initial algebras for expressible functors are:
+
+C. Bohm and A. Berarducci. Automatic synthesis of typed \Lambda-programs on
+term algebras. TCS 39 (1985)
+
+D. Leivant. Reasoning about functional programs and complexity classes
+associated with type disciplines. FOCS 24 (1983)
+
+G. Takeuti. Proof Theory. North-Holland studies in logic and the foundations
+of mathematics. (1975)
+
+The construction is explained in Proofs and Types (Girard Lafont Taylor, CUP
+1989) Chapter 11. The construction gives strongly initial algebras if the
+calculus satisfies some parametricity theorems.
+
+I think I first saw the coalgebraic version in something by Gavin Wraith,
+but I seem to have misplaced the reference.
+
+  Nick
+
+========================================================================
+
+From: Robert Harper <Robert.Harper@cs.cmu.edu>
+To: "'Philip Wadler'" <wadler@research.bell-labs.com>
+Subject: RE: categories: Recursive types in polymorphic lambda calculus
+Date: Mon, 17 May 1999 13:46:55 -0400
+
+Hi Phil:
+
+	I don't know who discovered this, but certainly Reynolds exploited
+it in his paper (eventually with Plotkin) "Polymorphism is not
+Set-Theoretic".  There he uses F[X] = (X -> 2) -> 2, where X occurs doubly
+negatively, hence positively (but not strictly positively).  The argument is
+essentially Cantor's diagonal argument, once you get down to it.  The crux
+of the issue is that the syntax provides only weakly initial algebras for
+definable functors (no uniqueness condition on the mediating morphism),
+whereas a set model gives initial algebras, hence we'd have a set isomorphic
+to its double powerset, which is impossible.  The key is that Set has enough
+equalizers to turn any weakly initial algebra into an initial algebra;
+models like Cpo have essentially no equalizers, so they form a valid model.
+
+	Bob
+========================================================================
+
+Date: Mon, 17 May 1999 18:15:57 +0200
+From: Pawel Urzyczyn <urzy@mimuw.edu.pl>
+To: wadler@research.bell-labs.com
+Subject: Re: Recursive types in polymorphic lambda calculus
+Cc: urzy@absurd.mimuw.edu.pl, zs@pwr.wroc.pl
+
+Dear Philip, 
+ 
+As far as I know, representation in \2 of inductive data types (least 
+fixpoints of monotonic operators) like natural numbers 
+or lists dates back to the paper of Bohm and Berarducci in
+TCS 1985. A generic translation similar to the one you mention
+in your types message was probably first given in
+
+H.~Geuvers.
+Inductive and coinductive types with iteration and recursion.
+In {\em Proceedings of the Workshop on Types for Proofs and
+  Programs}, B{\aa}stad, Sweden, 1992, 193--217.
+
+but to my understanding it is implicitly present in 
+
+Leivant, D., Contracting proofs to programs, 
+      in: {\it Logic in Computer Science\/} (P.~Odifreddi, ed.),
+      Academic  Press, 1990, pp. 279--327.
+
+Let me point out however that there are various definitions
+of inductive and recursive types and it is not the case that 
+all these are equivalent. In general the systems with "iterators"
+can be defined within system F, while those with "recursors" can not. 
+A discussion of these issues is given in the PhD Thesis of Zdzislaw
+Splawski:
+
+Sp\l awski, Z., {\it Proof-Theoretic Approach to Inductive 
+     Definitions in ML-like Programming Language versus Second-Order Lambda 
+     Calculus\/}, PhD Thesis, Wroc\l aw University, 1993.
+
+The following paper contains the main results about translatability 
+between various systems with inductive types, including the new result
+that recursors cannot be implemented within system F by means of beta 
+reduction. It should be made available in a few weeks (we will post
+an anouncements on types when it is ready).
+
+Splawski, Z., Urzyczyn, P., Type Fixpoints: Iteration versus Recursion, 
+            to appear in Proc. 4th ICFP, Paris, France, September 1999. 
+
+Sincerely yours,
+Pawel Urzyczyn
+
+========================================================================
+
+Date: Mon, 17 May 1999 23:35:27 +0200
+From: Bernhard Reus <reus@informatik.uni-muenchen.de>
+To: Philip Wadler <wadler@research.bell-labs.com>
+Subject: Re: categories: Recursive types in polymorphic lambda calculus
+
+Dear Phil,
+
+Well, in fact this is not quite the recursive type you "really" want
+since you cannot prove uniqueness of elimination. You just have a weakly
+initial solution of your domain equation F(X) = X. So you must e.g. add
+an induction principle if you want to prove something. In a dependently
+typed calculus (CoC) with an impredicative universe you could even
+express the *initial* solution.
+Categorically, this goes back to FAFT and the "solution set condition"
+where the existence of a left adjoint is related to the existence of
+initial objects. If the category of discourse is locally small and
+internally complete, then the category has an initial object:
+I = { x \in W | forall h \in Hom(W,W). h(p) = p }
+where W is the weakly initial object constructed as T above and  "all"
+ranges over the set of objects of the category. (this is e.g. discussed
+in  Crole's book "Categories for Types", if I remember correctly, and
+maybe there one can find more references.)
+
+Type theoretically speaking, you can find the encoding already in Girard
+et al.'s "Proofs and Types". Just with the difference that maps k :
+F(X)->X are spelled out for concrete examples of F. "Fold" is called
+"It" there and "in" is again given in form of several constructors
+depending on the concrete form of F. "Out" is obviously a simple
+application of "fold" and was not treated there.
+
+I'm not sure that this really is what you are searching for, so if not
+-- e.g. if you want to find a reference with "exactly" the formulation
+you mentioned --, please accept my excuses.
+
+Regards,
+  Bernhard
+
+========================================================================
+Philip Wadler                             wadler@research.bell-labs.com
+Bell Labs, Lucent Technologies      http://www.cs.bell-labs.com/~wadler
+600 Mountain Ave, room 2T-402                   office: +1 908 582 4004
+Murray Hill, NJ 07974-0636                         fax: +1 908 582 5857
+USA                                               home: +1 908 626 9252
+-----------------------------------------------------------------------
+   "Verbosity leads to unclear, inarticulate things." --Dan Quayle
+-----------------------------------------------------------------------
+
+
+

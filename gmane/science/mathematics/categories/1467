@@ -1,0 +1,71 @@
+Path: news.gmane.org!not-for-mail
+From: Jiri Adamek <adamek@iti.cs.tu-bs.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: bounded = accessible
+Date: Wed, 29 Mar 2000 10:43:24 +0200 (MET DST)
+Lines: 41
+Approved: news@gmane.org
+Message-ID: <200003290843.KAA03913@lisa.iti.cs.tu-bs.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017850 31374 80.91.229.2 (29 Apr 2009 15:10:50 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:50 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Mar 29 18:42:30 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id SAA22932
+	for categories-list; Wed, 29 Mar 2000 18:42:12 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.5 PL2]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2173
+Original-Lines: 40
+Xref: news.gmane.org gmane.science.mathematics.categories:1467
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1467>
+
+
+In the community investigating coalgebras of functors F: K-> K (i.e.,
+comma-categories Id/F ) the following condition in case  K = Set is 
+quite often used:
+
+Definition: A set functor is called bounded if there exists a cardinal
+k  such that for every element  a  of every coalgebra there exists
+a subcoalgebra of cardinality less than  k  containing  a . ("Bounded
+at  k " is used  for the given  k.)
+
+So I wondered how this is related to accessibility, and here is the answer:
+
+Proposition: A set functor is bounded iff it is accessible.
+
+In fact, if  k  is an infinite, regular cardinal, then k-accessible = 
+bounded at  k . For, suppose that  F  is bounded at  k , then we
+prove that in the usual category of elements of  F  for every object  
+(A,a) there exists a morhpism  m: (B,b) -> (A,a) with  card B  < k .
+It then follows easily that  F  is k-accessible (see e.g. 2.17 in the book
+of Rosicky and myself). We can assume  A  nonempty, and choose  x  in  A.
+Let p:A -> FA be the coalgebra given by the constant map to  a . There
+exists a subcoalgebra m: (B,q) -> (A,p) for some  q: B -> FB with
+card B < k  such that  x = m(y) for an element  y  of  B . Then                 b = q(y) clearly fulfills a = Fm(b), as requiered.
+Conversely, suppose that  F  is k-accessible. Given a coalgebra  
+p: A -> FA , consider the collection  m_i: A_i -> A  of all subsets
+of cardinality less than  k  . Since  F  preserves k-directed unions,
+for each  i  there exists an i' such that m_i  is contained in  m_i'
+and  the image of p.m_i  is contained in that of Fm_i' . After
+iterating i -> i' -> (i')' ... k times we find a  j  such that
+m_i  is contained in  m_j , and  the image of  p.m_j  is contained in that
+of Fm_j. The latter means that  p  can be restricted to  p_j: A_j -> FA_j
+forming a subcoalgebra of the coalgebra above. Since every element of
+FA  is contained in the image of some  Fm_i , this proves that  F  is
+bounded at  k .
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+alternative e-mail address (in case reply key does not work):
+J.Adamek@tu-bs.de
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+

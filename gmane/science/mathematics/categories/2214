@@ -1,0 +1,73 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Inductive datatypes in toposes
+Date: Mon, 3 Mar 2003 18:30:18 +0100 (CET)
+Lines: 35
+Approved: news@gmane.org
+Message-ID: <200303031730.SAA17354@fb04209.mathematik.tu-darmstadt.de>
+References: <3E6323AE.80107@tzi.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018500 3075 80.91.229.2 (29 Apr 2009 15:21:40 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:40 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Mar  3 15:57:03 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 03 Mar 2003 15:57:03 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18pw2K-0002lH-00
+	for categories-list@mta.ca; Mon, 03 Mar 2003 15:55:44 -0400
+In-Reply-To: <3E6323AE.80107@tzi.de> from Lutz Schroeder at "Mar 3, 2003 10:43:10
+ am"
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+X-MailScanner: Found to be clean
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 4
+Status: O
+Content-Length: 1723
+Original-Lines: 34
+Xref: news.gmane.org gmane.science.mathematics.categories:2214
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2214>
+
+concerning the question
+
+> is there a good reference for the construction of inductive datatypes
+> (lists, trees etc.) in a topos with nno (assuming that my guess that
+> such a construction is indeed possible is correct)?
+
+The situation appears to me as follows.
+I those toposes where IZF (intuitionistic Zermelo Fraenkel set theory) is
+available (as e.g. Grothendieck and realizability toposes) business is as
+usual for functors preserving \omega-colimits: you simply construct mu(F) as
+colim_{n \in \omega} F^n(0). Notice, however, that there is a tacit appeal
+to the axiom of replacement when constructing the family (F^n(0))_{n\in\omega}.
+In general there is no reason why this family should exist. Of course, for the
+above mentioned examples like lists, trees etc. you can construct such
+inductive data types because both List(A) and Tree(A) appear as inductively
+defined subsets of P(\tilde{A}^N) where \tilde{A} is the partial map
+classifier. The reason is that trees and lists over A can be coded as partial
+maps from N to A.
+The point is that toposes (due to their impredicative nature) support inductive
+definitions of predicates on a type A given in advance. However, they don't
+support construction of inductively defined types as one cannot define
+sufficiently many families of types.
+It is not clear to me to which extent one can characterise those inductive
+types that can be reduced to inductively defined predicates in HAH.
+However, one knows that assuming W-types (`a la Martin-Loef) one can reduce
+most inductive types to W-types in extensional type theory. As far as I
+understand that's the reason why Moerdijk and Palmgren introduced lccc's with
+W-types as sort of ``predicative toposes''.
+
+Thomas
+
+
+
+
+

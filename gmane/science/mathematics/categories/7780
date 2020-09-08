@@ -1,0 +1,111 @@
+Path: news.gmane.org!not-for-mail
+From: =?iso-8859-1?Q?Joyal=2C_Andr=E9?= <joyal.andre@uqam.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: Quipper: a quantum programming language
+Date: Thu, 20 Jun 2013 16:27:21 -0400
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <E1Uplp9-0007Ud-Gs@mlist.mta.ca>
+References: <20130620193647.DBF5F8C0162@chase.mathstat.dal.ca>
+Reply-To: =?iso-8859-1?Q?Joyal=2C_Andr=E9?= <joyal.andre@uqam.ca>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1371761548 23824 80.91.229.3 (20 Jun 2013 20:52:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 20 Jun 2013 20:52:28 +0000 (UTC)
+Cc: "Categories List" <categories@mta.ca>
+To: "Peter Selinger" <selinger@mathstat.dal.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Jun 20 22:52:29 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1UplqF-0003mI-1o
+	for gsmc-categories@m.gmane.org; Thu, 20 Jun 2013 22:52:27 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36083)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Uplp9-0007Zx-4a; Thu, 20 Jun 2013 17:51:19 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Uplp9-0007Ud-Gs
+	for categories-list@mlist.mta.ca; Thu, 20 Jun 2013 17:51:19 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7780
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7780>
+
+Dear Peter,
+
+I thank you for your answer.
+
+Is it possible to "simulate" quantum=20
+computing on ordinary computers?
+Operator algebra is matrix algebra.
+Surely, there will be a loss of efficiency.
+But it might help understanding
+the nature of quantum computations.
+
+Best wishes,
+-Andr=E9
+
+
+-----Original Message-----
+From: Peter Selinger [mailto:selinger@mathstat.dal.ca]
+Sent: Thu 6/20/2013 3:36 PM
+To: Joyal, Andr=E9
+Cc: Categories List
+Subject: Re: categories: Quipper: a quantum programming language
+=20
+Dear Andre,
+
+the answer, unfortunately, is no. At least we don't think so. We
+developed this programming language for IARPA, an agency of the
+U.S. government, and effectively nobody knows whether they have a
+quantum computer or not.
+
+In any case, the language is designed so that it *could* run on a
+quantum computer, if there was one. So now we are just standing by
+until somebody builds the hardware :)
+
+There is actually one kind of quantum computer that is already on the
+market: the DWave quantum computer. Unfortunately, our language is not
+compatible with it; the DWave machine uses a technology called
+"adiabatic quantum computing", and people are still figuring out how
+to program it. Our language would be compatible with quantum computers
+based on the quantum circuit model.
+
+Maybe the underlying point of your question is: why would anybody care
+about a quantum programming language, when there is no quantum
+computer?
+
+One possible answer is: to help figure out how much it would actually
+cost to build one. It is one thing for a quantum algorithm to appear
+in a research paper. You will find a lot of statements like "it is
+well-known that such-and-such can be done in O(n^2) operations", "by
+applying such-and-such trick this problem can be reduced to another
+problem with polynomial overhead", and so on. It is quite a different
+thing to actually program the algorithm, and to worry about how to do
+so efficiently. The difference between using 10^10 operations or 10^50
+operations matters a lot in practice, but not in theory. Moreover, one
+can then account for additional overhead that people don't usually
+think about much, like the cost of adding many layers of error
+correction, physical fail-safe mechanisms, and so on. By coding up
+some algorithms for "realistic" problem sizes, we get a much better
+idea of what kind of computing resources this would actually require.
+("Realistic" can be defined as the problem size where a hypothetical
+quantum computer would actually outperform a classical computer
+running the best known classical algorithm for the problem).
+
+Finally, there is some interesting theory that we can discover by
+considering programming languages for quantum computing. To our
+surprise, we even found a minor, yet satisfying, application of
+identity types from type theory.
+
+Best wishes, -- Peter
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

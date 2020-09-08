@@ -1,0 +1,139 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt08@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Equalisers of powers - correction
+Date: Wed, 14 May 2008 20:52:27 +0100
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <E1Jwxx2-0007lQ-AW@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019918 13098 80.91.229.2 (29 Apr 2009 15:45:18 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:45:18 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri May 16 08:24:09 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 16 May 2008 08:24:09 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Jwxx2-0007lQ-AW
+	for categories-list@mta.ca; Fri, 16 May 2008 08:18:16 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 18
+Status: O
+Content-Length: 4516
+Original-Lines: 104
+Xref: news.gmane.org gmane.science.mathematics.categories:4395
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4395>
+
+I am sure that you will have gathered that I interpreted the "powers"
+in Mike Barr's question in a different way from the others that replied,
+and indeed from the way in which he intended it.  His "powers" were
+set-indexed products of the object with itself, whilst mine were
+in the sense of a cartesian closed category.
+
+Nevertheless, it is interesting that we have two conflicting answers.
+Those who are more familiar with the algebraic examples that Eduardo
+Dubuc,  George Janelidze and Stev Lack have discussed  may like to
+consider where the differences lie, notwithstanding what I am about
+to say..
+
+Unfortunately, as Mike pointed out to me privately, there was first
+carelessness, and then an actual error, in what I wrote:
+> Now if  Y and Z are sober and  X >--->  Y ====>  Z  is an equaliser,
+> we can form a  3x3  square of objects,  whose rows and columns (with
+> one a priori exception)  are equalisers,   and then  check that the
+> last is an equaliser too,  ie X is sober.
+
+The carelessness was that I only intended the top row and two
+columns to be equalisers, not five rows/columns.   The error
+was that  $$X--->$$Y apparently needs to be mono.   The proof,
+in all its gory ASCII detail, follows.
+
+I apologise for the error.  I was reciting results from ASD without
+checking that all of the relevant hypotheses were present.
+
+The correct ASD results are that this is true when
+
+either    i:X>-->Y  is a Sigma-split inclusion,
+           so  $i  is split epi and $$i is split mono
+
+or        we have the more general structure that I intend
+           to talk about in Calais.
+
+Mike also asked me for a reference for the relationship between
+my abstract notion of sobriety and the traditional one that
+every irreducible closed subset is the closure of a unique point.
+
+This is discussed (as you might have guessed) in
+    "Sober Spaces and Continuations"   TAC 2002
+    www.PaulTaylor.EU/ASD
+
+However, the relationship is conceptual and not extensional.  The
+point is that a sober "space" is one whose points agree with the
+"primes" of the corresponding algebra,  under some Stone-type duality.
+The paper makes some attempt to set up an extensional equivalence,
+but such a thing is really not meaningful.
+
+Gamma .......................
+   |                         :
+   |        __________ h _________________________
+   |       |                 :         f         |
+   |       |        i        v ----------------> v
+   |       X >-------------> Y         g         Z
+   |       |                 v ----------------> v
+   |       |                 |                   |
+   |       |eta U            |eta Y              |eta Z
+   |       |                 |                   |
+   |       |                 |       $$ f        |
+   |       v       $$ i      v   ------------->  v
+   |----> $$ X -----------> $$ Y      $$ g      $$ Z
+          |  |              |  | -------------> |  |
+eta $$ X |  |        eta$$Y|  |          eta$$Z|  |
+          |  |$$etaX        |  |$$etaY          |  |$$etaZ
+          |  |              |  |                |  |
+          |  |              |  |   $$$$ f       |  |
+          v  v    $$$$ i    v  v -------------> v  v
+         $$$$ X ---------> $$$$ Y    $$$$ g    $$$$ Z
+                                 ------------->
+
+Suppose that the top row and Y and Z columns are equalisers,
+i;f = h = i;g   and  Gamma-->$$X  has equal composites to $$$$ X,
+and therefore continuing to $$$$ Y.   (We'll consider $$$$ Z later.)
+
+Since eta$$ and $$eta are natural (wrt i),  the two squares from
+$$X to $$$$Y commute.   Therefore  Gamma-->$$X-->$$Y  has equal
+composites  as far as  $$$$Y.   In other words,  it tests the
+equaliser  Y>-->$$Y===>$$$$Y,   so there is a unique fill-in
+(dotted)  Gamma-->Y  that makes a commutative kite  at  $$Y.
+
+Now, ignore the fact that we have parallel maps  f  and  g  etc,
+and just consider their composite h:Z-->Z with i.   By exactly
+the same argument as we have just used for  Y  and  i,   the
+map  Gamma-->$$X-->$$Z  has equal composites at $$$$Z,  ie it
+tests Y as the equaliser,  and has a uniqe fill-in  Gamma-->Z
+that makes a commutative kite at $$Z.
+
+Now, there are two other candidates for the fill-in  Gamma-->Z,
+namely the two composites  Gamma--->Y===>Z,  so these are all
+equal.   This tests the equaliser   X>--->Y====Z,  so there is
+a unique fill-in  Gamma-->X.
+
+Now here was my error:  why should the composite  Gamma-->X-->$$X
+be equal the original map?   Well, it is, so long as  $$X-->$$Y
+is mono.
+
+Paul Taylor
+
+
+
+
+
+
+

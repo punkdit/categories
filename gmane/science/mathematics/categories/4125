@@ -1,0 +1,153 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: On defining *-autonomous categories
+Date: Mon, 17 Dec 2007 14:29:17 -0400 (AST)
+Lines: 119
+Approved: news@gmane.org
+Message-ID: <E1J4QxK-0006kQ-5C@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019733 11815 80.91.229.2 (29 Apr 2009 15:42:13 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:42:13 +0000 (UTC)
+To: categories@mta.ca (Categories list)
+Original-X-From: rrosebru@mta.ca Mon Dec 17 21:17:18 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 17 Dec 2007 21:17:18 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1J4QxK-0006kQ-5C
+	for categories-list@mta.ca; Mon, 17 Dec 2007 21:09:10 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 19
+Status: O
+Content-Length: 5503
+Original-Lines: 118
+Xref: news.gmane.org gmane.science.mathematics.categories:4125
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4125>
+
+Dear Mike,
+
+first, the definition that you "never noticed before" appears as
+Definition C in your paper "Non-symmetric *-autonomous categories"
+(Theoretical Computer Science, 139 (1995), 115-130). Okay, there are
+minor differences, e.g., in that paper you considered the
+non-symmetric case and you didn't require * to be an involution.
+
+The definition precisely as stated in your email (and not in your
+paper) is problematic: one obtains two canonical isomorphisms A ->
+A**, and they do not in general coincide. Namely, the first such
+morphisms is the isomorphism invol : A -> A** that comes from the
+requirement "contravariant involution". The second one is lift : A ->
+A** and comes from the monoidal closed structure. It is given
+explicitly by the following string of equivalences:
+
+= Hom(X, A)
+= Hom(A*, X*)
+= Hom(I, (A* @ X)*)  ax
+= Hom(I, (X @ A*)*)  sym
+= Hom(X, A**)        ax
+
+To see that they do not, in general, coincide, consider a *-autonomous
+category C in which there exists a non-trivial natural isomorphism
+eta_A : A -> A from the identity functor to itself (for example,
+finite dimensional vector spaces where eta is multiplication by -1).
+Consider the usual functor (-)* and the usual isomophism Hom(A @
+B,C*) = Hom(A,(B @ C)*). Let invol : A -> A** be the usual involution,
+and let invol' = invol o eta: A -> A -> A**. Then invol' defines
+another structure of "contravariant involution" on the functor
+(-)*, different from lift.
+
+Therefore, in general, for this definition to be useable, one needs
+another coherence condition stating that invol = lift.  Or else, one
+can just drop the a priori requirement that * is involutive, and just
+let it follow from the other structure (as you did in the above-cited
+paper).
+
+This seems a good moment to mention that another definition of
+*-autonomous category, which occasionally appears in the literature,
+suffers from a similar affliction. Some authors define a *-autonomous
+category to be a symmetric monoidal category C together with a functor
+(-)* : C^op -> C and a natural isomorphism Hom(A @ B, C) = Hom(A, (B @
+C*)*). Although this definition does not a priori assume * to be
+involutive, it still yields two canonical maps C -> C** that do not in
+general coincide, and therefore, it is missing a coherence condition.
+The two competing maps f_1 and f_2 are given as follows:
+
+   (A, A)   ==   (A x I, A)
+            ==   (A, (I x A*)*)            (ax)
+            ==   (A, A**).
+
+   (A*, A*) ==   (A*, (A x I**)*)          (##)
+            ==   (A* x A, I*)              (ax)
+            ==   (A x A*, I*)
+            ==   (A, (A* x I**)*)          (ax)
+            ==   (A, A**)                  (##)
+
+Here, (ax) is the axiom, and (##) denotes an application of the
+isomorphism I = I**, which can be obtained by letting A=B=C in (ax).
+To see that they don't in general coincide, consider the same
+counterexample as above, and modify the isomorphism (ax) by
+multiplication with the scalar -1. Since it is used an odd number of
+times in the definition of f_1, but an even number of times in the
+definition of f_2, it follows that f_1 != f_2.
+
+
+On the other hand, none of the above matters in some sense, due to a
+theorem proved last year by Robin Houston (it was previously unknown
+at least to me):
+
+ Theorem. Let C be a symmetric monoidal category, and let D be an object.
+ If there *exists* a natural isomorphism f : A -> (A -o D) -o D,
+ then the *canonical* natural transformation g : A -> (A -o D) -o D
+ (coming from the symmetric monoidal structure) is an isomorphism
+ (although it may in general be different from f).
+
+Therefore, in the definition of *-autonomous category, the mere
+existence of an isomorphism (not necessarily satisfying coherence
+conditions) already implies the existence of a (possibly different)
+isomorphism satisfying all the coherence conditions. In this sense,
+both the Hom(A @ B,C*) = Hom(A,(B @ C)*) definition and the Hom(A @
+B,C*) = Hom(A,(B @ C)*) definition are correct: they certainly imply
+that the underlying category is *-autonomous - although not necessarily
+with the given structure!
+
+-- Peter
+
+
+Michael Barr wrote:
+>
+> I got a note from a student named Benjamin Jackson saying that someone had
+> told him that to define a *-autonomous category, you need only a symmetric
+> monoidal category and a contravariant involution * such that Hom(A @ B,C*)
+> = Hom(A,(B @ C)*).  Here "=" means natural equivalence and @ is the tensor
+> product.  Not only is this apparently true but that equivalence is needed
+> only for A = I, the tensor unit.  Of course, what is going on is that all
+> the coherence is built-in to the structure of a symmetric monoidal
+> category.
+>
+> First define A --o B = (A @ B*)*.  Then the isomorphism above implies that
+>     Hom(A,B) = Hom(I @ A,B) = Hom(I,(A @ B*)*) = Hom(I,A --o B)
+> Next we see that
+>     (A @ B) --o C = (A @ B @ C*)* = A --o (B @ C*)* = A --o (B --o C)
+> and, applying Hom(I,-), that
+>        Hom(A @ B,C) = Hom(A,B --o C)
+> Also we have that
+>   A --o I* = (A @ I)* = A* and A --o B = (A @ B*)* = (B* @ A)* = B* --o A*
+> which gives the structure of a *-autonomous category with dualizing
+> object I*.
+>
+> The trouble with this is that generally speaking it is the --o which is
+> obvious and the tensor is derived from it.  The coherences involving
+> internal hom alone are much less well-known, although they are included
+> in the original Eilenberg-Kelly paper in the La Jolla Proceedings.
+> Still I am surprised that I never noticed this before.
+
+
+

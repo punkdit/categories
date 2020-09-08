@@ -1,0 +1,120 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Fri, 21 Oct 2011 15:06:22 -0700
+Lines: 81
+Approved: news@gmane.org
+Message-ID: <E1RHaSQ-0001Zf-6g@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1319285741 30045 80.91.229.12 (22 Oct 2011 12:15:41 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 22 Oct 2011 12:15:41 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Oct 22 14:15:37 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RHaUC-0006wX-S0
+	for gsmc-categories@m.gmane.org; Sat, 22 Oct 2011 14:15:37 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:48436)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RHaSR-0001rD-Ku; Sat, 22 Oct 2011 09:13:47 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RHaSQ-0001Zf-6g
+	for categories-list@mlist.mta.ca; Sat, 22 Oct 2011 09:13:46 -0300
+In-Reply-To: <4EA1807A.1060802@cs.bham.ac.uk>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6979
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6979>
+
+On 10/21/2011 7:23 AM, Steve Vickers wrote:
+> What Vaughan called the "clean-shaven gods" argument is, I think, the
+> normal logicians' excuse for barring empty carriers.
+
+That's my alternative to St. Augustine's proof of the existence of god,
+with "clean-shaven" thrown in to draw attention away from the real
+fallacy (one would no more portray God without a beard than Santa Claus).
+
+What I don't understand is why the emphasis on existence to the
+exclusion of uniqueness, given that monotheism is the intellectual
+descendant not of atheism but polytheism.  The only explanation I've
+been able to come up with is that uniqueness is an equational property
+(g = g') and therefore admissible as an axiom, say as part of the
+definition of god.  Postulating existence in a definition is an obvious
+cheat since the definition might be inconsistent.  A minimal requirement
+for an existence proof is a consistency proof, which are tough to begin
+with and get increasingly tougher with increasing scientific understanding.
+
+>
+> The logical deduction
+>
+>    (all) x. P(x)
+>    -------------
+>    P(a)
+>    -------------
+>    (exists) x. P(x)
+
+Even simpler: P(a) --> (exists) x. P(x) is a theorem of the pure
+predicate calculus, which is "clearly" false in the empty universe when
+P is taken to be the identically true predicate.
+
+> The fix was discovered by Mostowski (I believe). To use a free variable
+> such as a is to hypothesize a denotation for it in the carrier.
+> Therefore in each deduction one should be explicit about the context of
+> free variables that may be used. This deals cleanly with empty carriers.
+
+If you use cylindric algebras B as the subalgebras of the Boolean
+algebra 2^D^V of all V-ary relations on a domain D, there is nothing to
+fix.   Given a first order language L of wffs over a set X of variables,
+for each subset V of X, let L_V denote those wffs of L using variables
+from V, and for each D and each B as above let I_B: L_V --> B interpret
+the wffs of L_V in B subject only to requirement T0 below.  Define the
+theory T(L) to consist of those wffs P of L such that every I_B having P
+in its domain map P to the top element of B.  Requirement T0 is that the
+intersection of T(L) and L_0 consist of the propositional tautologies.
+
+(Every reasonable notion of classical pure predicate calculus must
+surely satisfy these extremely mild conditions, which shouldn't be too
+hard to phrase appropriately for intuitionist logic as well.)
+
+Claim.  T(L) is independent of whether D = 0 is forbidden.
+
+Proof.  Allowing D = 0 can only decrease T(L).  There are two cases.
+
+1.  V > 0.  In this case D^V = 0 whence B has only one element and so
+I_B maps *every* wff to the top element of B.  This cannot decrease T(L).
+
+2.  V = 0.  This is propositional calculus, for which requirement T0
+makes the choice of D irrelevant.  QED
+
+I noticed this property of cylindric algebras when I first ran across
+them in mid-1979 and assumed it must be well-known since Tarski and
+Henkin had been playing around with them since the 1950s and could
+hardly have overlooked such an elementary fact.  A month later I
+attended the sixth International Congress of Logic, Methodology, and
+Philosophy of Science in Hannover where I met a number of algebraic
+logicians for the first time: Routley, Dunn, Nemeti, Andreka, Maksimova,
+etc.  When Nemeti and Andreka told me they were working with Henkin,
+Monk and Tarski on Vol. 2 of Cylindric Algebras, I asked them if they
+were aware that cylindric algebra semantics solved the
+logic-of-the-empty-universe problem.  They said no so I showed them the
+argument.  Since they were much better connected to the cylindric
+community than I, I figured they'd pass it on, relieving me of any
+obligation to write up what seemed to me little more than a passing
+remark.  I was hoping it might appear in Vol. 2 but I don't see it there.
+
+Vaughan
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,134 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on exact sequence
+Date: Sat, 14 Nov 2009 11:24:40 -0500 (EST)
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <E1N9fVk-0005yB-A7@mailserv.mta.ca>
+References: <E1N8PC3-0007CL-1m@mailserv.mta.ca> <E1N8d4l-0000zy-0v@mailserv.mta.ca>
+Reply-To: Michael Barr <barr@math.mcgill.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1258294904 2173 80.91.229.12 (15 Nov 2009 14:21:44 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 15 Nov 2009 14:21:44 +0000 (UTC)
+To: George Janelidze <janelg@telkomsa.net>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Sun Nov 15 15:21:37 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1N9fyy-0005iw-FY
+	for gsmc-categories@m.gmane.org; Sun, 15 Nov 2009 15:21:36 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1N9fVk-0005yB-A7
+	for categories-list@mta.ca; Sun, 15 Nov 2009 09:51:24 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5274
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5274>
+
+I think I have now come to understand this, at least in part.  A couple
+things you said triggered this realization.  First the point that this
+was taking place in the arrow category.  Second that maybe sometimes you
+needed a map to get the connecting homomorphism and sometimes not.
+
+The first point made me think maybe rather than the arrow category I
+should perhaps be thinking about the category of chain complexes.  The
+second somehow made me think about the difference between homology and
+homotopy equivalences.
+
+Perhaps this explanation amounts to shooting flies with elephant guns,
+but it satsifies me that it has fully explained things.  Let me start by
+discribing an important difference between the two situations.  Both
+diagrams:
+
+0 --> A --> B --> C --> 0.......A --> A --> B
+......|.....|.....|.............|.....|.....|
+......|.....|.....|.............|.....|.....|
+......|.....|.....|.............|.....|.....|
+......v.....v.....v.............v.....v.....v
+0 --> A'--> B'--> C'--> 0.......B --> C --> C
+
+with maps as in earlier posts, give 6 term exact sequences, but the
+second continues continues to do so when you apply a homfunctor Hom(D,-)
+or Hom(-,D), which is not generally true of the first.  Now this, had I
+noticed it earlier, would have immediately put me in mind of the
+difference between homotopy and homology.  It is a fact that a homology
+equivalence between two chain complexes is a homotopy equivalence iff it
+remains an equivalence if you apply any covariant (or any contravariant)
+homfunctor.  This fact, along with a couple other things I will mention
+below, is proved somewhere in "Acyclic Models".  Next, when I drew the
+diagram
+
+0 ---> A ---> A + B ---> B ---> 0
+.......|........|........|.......
+.......|........|........|.......
+.......|........|........|.......
+.......|........|........|.......
+.......v........v........v.......
+0 ---> B ---> B + C ---> C ---> 0
+
+which was marked by a peculiar appearance of - signs, I recognized that
+it looked like a mapping cone of something and, had I only worked out of
+what, I might have realized sooner what was going on.  It is actually
+the mapping cone of the map
+
+0 ---> A
+|......|
+|......|
+|......|
+v......v
+B ---> B
+|......|
+|......|
+|......|
+v......v
+C ---> 0
+
+Finally, the observation that the chain complex 0 ---> A ---> C ---> 0
+is homotopic to 0 ---> A + B ---> B + C ---> 0 is a complete triviality.
+
+So what is the general situation.  Let me raise the question in this
+form.  Suppose f: C' ---> C and g: C ---> C'' is a map of chain
+complexes.  When can we expect an exact triangle
+
+  H(C') ------> H(C)
+...^............./
+....\.........../
+.....\........./
+......\......./
+.......\...../
+........\.../
+.........\.v
+.........H(C'')
+
+Clearly we need something to induce the map H(C'') ---> H(C').  The
+obvious thing would be a map S(C'') ---> C' (S is the suspension
+functor).  The example of two-length sequences shows that this is too
+much to hope for.  It looks like what you need is a relation from S(C'')
+--> C' that induces, somehow a map on homology.  This assumption holds
+for the case 0 --> C' --> C --> C' --> 0 and also holds for the original
+curious sequence (the suspension is what saves the day here, as seen
+above).  Is there a better way to express this?  I don't see one.
+Perhaps the last word on this hasn't been said yet.
+
+Another question I haven't answered but should be doable is whether the
+existence of a relation S(C'') - - - -> C' that you assume induces a
+morphism on homology is sufficient to make the triangle exact.  Beyond
+this, I have some inchoate ideas that I will explore.  Clearly there has
+to be some compatibility between R and f and g.
+
+As I said, this explanation is perhaps a little heavy but I know no
+simpler one.
+
+Michael
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

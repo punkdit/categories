@@ -1,0 +1,234 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: in defense of evil
+Date: Wed, 30 Dec 2009 22:01:59 -0400 (AST)
+Lines: 201
+Approved: news@gmane.org
+Message-ID: <E1NQUm4-0007Yi-A2@mailserv.mta.ca>
+References: <E1NPykr-0001KX-SZ@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+X-Trace: ger.gmane.org 1262305267 14630 80.91.229.12 (1 Jan 2010 00:21:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 1 Jan 2010 00:21:07 +0000 (UTC)
+Cc: categories@mta.ca
+To: Dusko.Pavlovic@comlab.ox.ac.uk
+Original-X-From: categories@mta.ca Fri Jan 01 01:21:00 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NQVGF-0000gP-Ie
+	for gsmc-categories@m.gmane.org; Fri, 01 Jan 2010 01:20:59 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NQUm4-0007Yi-A2
+	for categories-list@mta.ca; Thu, 31 Dec 2009 19:49:48 -0400
+In-Reply-To: <E1NPykr-0001KX-SZ@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5447
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5447>
+
+Dear Dusko,
+
+your proposed definition of a non-evil dagger structure is a nice try,
+but it doesn't work at all.
+
+Before I dissect your definition, let me state again the reason why
+*every* such definition will fail. It is a hard fact that the notion
+of dagger, however defined, intrinsically does not transport along
+equivalences. By "hard fact", I mean that it is a consequence of
+examples, rather than definitions. There is no way to fudge the
+definitions to make this fact go away, unless one changes the
+definitions so radically that they no longer fit the fundamental
+example.
+
+The fundamental example is the category of finite dimensional complex
+vector spaces vs. the category of finite dimensional Hilbert spaces.
+They are equivalent, the latter has a dagger structure, and the former
+does not. This shows that the notion is evil. For this argument, it is
+irrelevant how dagger structure is actually defined (strict, weak,
+abstract, concrete...): all that is required is that the definition is
+strong enough to yield a notion of unitary map, and that this unitary
+notion coincides with the "usual" one in the category of Hilbert
+spaces.
+
+Now let me comment on your definitions in detail.
+
+> DEF. Let CC be a monoidal category. a *dagger* on CC is a functor
+> P: CC^op ---> CC which is
+>
+> * self-adjoint
+> * equivalence
+> * given together with the dinaturals
+> ** e_X : X (x) PX ---> I
+> ** h_X : I--->PX (x) X
+> which make PX -| X.
+
+Assuming here that the category is symmetric monoidal, this is
+precisely the definition of a compact closed structure. The first two
+conditions are redundant.
+
+The point of Abramsky and Coecke's work on dagger categories was to
+explain, in categorical terms, that the adjoint (i.e., dagger) of a
+linear function f:A->B is *not* the same as the transpose. The adjoint
+goes B -> A, whereas the transpose goes B* -> A*. This is something
+people used to be confused about. Abramsky and Coecke cleared up the
+confusion; the above definition reintroduces it.
+
+To remove the distinction between a morphism B* -> A* and a morphism
+B -> A, you next assume that each object A is equipped with a chosen
+isomorphism A* -> A. (You actually assume chosen Frobenius algebra
+structures, which is a stonger assumption, but only the isomorphisms
+are needed for the present purpose). With this assumption, given a map
+f : A -> B, we can take the transpose f* : B* -> A*, and then compose
+it with the given isomorphisms to get a map B -> B* -> A* -> A.  This
+is of the type required for a (strict) dagger structure.
+
+There are a number of things wrong with this:
+
+1) The main example, which is the category of finite dimensional
+Hilbert spaces, does not have the structure you require. It isn't
+equipped with chosen Frobenius structures (equivalently chosen bases),
+nor with chosen isomorphisms A* -> A. However, to continue the
+argument, let's assume that we have arbitrarily chosen such additional
+structure.
+
+2) In the main example, the category of finite dimensional Hilbert
+spaces, your definition does not coincide with reality. Namely, the
+*actual* definition of the adjoint of a linear map does not coincide
+with what one gets as the result of your definition. To see this,
+assume chosen bases, and note that the matrix of the map
+B -> B* -> A* -> A is exactly the transpose of the matrix of
+f : A -> B, in the given bases of A and B. On the other hand, the matrix
+of f+ : B -> A is the adjoint.
+
+3) Moreover, contrary to what you wrote, the structure of "having a
+chosen Frobenius structure on each object" is itself an evil structure
+on categories.  Namely, there will be some isomorphisms of the
+category that don't preserve the Frobenius structure (think linear map
+that does not preserve the chosen bases). Choose one such isomorphism
+s : U -> V, and construct an equivalence F to some other category such
+that the chosen isomorphism is sent to an identity.  By transporting
+the Frobenius structure along F, you end up with two different
+Frobenius structures on F(U)=F(V). So there is no coherent way to
+transport. The same argument shows that the structure of "having a
+chosen isomorphism A* -> A on each object" is also evil.
+
+In summary, your definition does not coincide with the intended
+example (linear adjoints in Hilbert spaces), and ends up being evil
+anyway, so doesn't solve the problem. It also assumes too much
+structure (for example, the usual definition of a dagger category
+neither requires a monoidal structure nor a closed one. It works on
+any category).
+
+I hope we can agree that, to capture something essential about Hilbert
+spaces, some amount of evil structure is required, and we should
+embrace the evil definition and live with it. In fact, I am surprised
+that there are not more well-known examples of evil structures in
+category theory. In principle, any structure that allows the
+definition of a distinguished subcategory of isomorphisms (in this
+case, the unitary ones) should be evil. Does anybody know further
+examples?
+
+-- Peter
+
+
+Dusko Pavlovic wrote:
+>
+> [yesterday john baez sent his message only to me, and i replied only to
+> him. he actually meant to send it to the list, and encouraged me to resend
+> the reply. i apologize for posting so much these days. -- dusko (in bed
+> with a flu and a computer)]
+>
+> hi john,
+>
+> thanks for your note. the notion of evil is an interesting challenge in any
+> context.
+>
+> > A dagger-category is a category C with a functor
+> >
+> > F: C -> C^{op}
+> >
+> > which is the identity on objects and has F^2 = 1.
+> >
+> > Category theorists will note that the above definition is "evil", in the
+> > technical sense of that term:
+> >
+> > http://ncatlab.org/nlab/show/evil
+> >
+> > Namely, it imposes equations between objects, so we cannot transport a
+> > dagger-category structure along an equivalence of categories.
+> >
+> > Often evil concepts (like the concept of "strict monoidal category") have
+> > non-evil counterparts (like the concept of "monoidal category").  But in
+> > this particular case I know no way to express the idea without equations
+> > between objects.  Both Hilb and nCob are dagger-categories.  This fact is
+> > important.  Try saying it in a non-evil way!
+>
+> let me try.
+>
+> DEF. Let CC be a monoidal category. a *dagger* on CC is a functor
+> P: CC^op ---> CC which is
+>
+> * self-adjoint
+> * equivalence
+> * given together with the dinaturals
+> ** e_X : X (x) PX ---> I
+> ** h_X : I--->PX (x) X
+> which make PX -| X.
+>
+> LEMMA. Suppose that every object in CC comes with a Frobenius algebra
+> structure. Then there are coherent natural isomorphisms PX-->X.
+>
+> PROOF. The Frobenius algebra structure induces
+>
+> ** ee_X : X (x) X ---> I
+> ** hh_X : I---> X (x) X
+>
+> which make X-|X. the natural isomorphisms PX-->X are composed from the
+> adjunction equipment (along the proof that an adjoint is unique up to a
+> coherent iso).
+> QED
+>
+> DEF. A strict dagger is a functor D:CC^op ---> CC obtained by transferring a
+> dagger along the canonical isomorphisms from the lemma.
+>
+> COROLLARY. strict daggers are not evil: they are preserved under the
+> equivalences.
+>
+> PROOF. daggers are obviously preserved. frobenius algebras are preserved. hence
+> the canonical isomorphisms are preserved.
+>
+> FACT 1. a frobenius algebra structure on a hilbert space is just a choice of a
+> basis. (hence we can a non-evil adjoint by first defining  a
+> preadjoint to be the conjugate of the dual operator, and then transferring
+> along the isomorphism X^* ---> X induced by the chosen basis.)
+>
+> FACT 2. a frobenius algebra structure in nCob is the underwear structure.
+>
+> -- dusko
+>
+> PS the hope is that this provides a nonevil view of the daggers in FHilb
+> and nCob. i guess the general suggestion might be to define dagger compact
+> structure by a self-adjoint equivalence, plus a requirement that every
+> object admits a frobenius algebra structure. that structure is not evil,
+> and it is carried by all examples considered so far.
+>
+> i don't think that there is a general solution for the problem of evil in
+> categories: we can only pin down a particular object, as an element of an
+> isomorphism class, in the lucky cases when there is some additional
+> structure that characterizes it. but in general, evil exists. every
+> functor can be factored as an identity-on-the-objects-functor (ioof),
+> followed by an embedding. the embedding is good, but ioofs are evil, and i
+> think that they deserve their name. lord knows how much we use them.
+>
+> in a sense, category theory can be distinguished from set theory by the
+> presence of evil.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

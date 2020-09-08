@@ -1,0 +1,163 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Thu, 19 Mar 2009 11:18:22 -0300 (ADT)
+Lines: 130
+Approved: news@gmane.org
+Message-ID: <E1LkT4G-00021E-Eq@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237513299 24530 80.91.229.12 (20 Mar 2009 01:41:39 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 20 Mar 2009 01:41:39 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: categories@mta.ca Fri Mar 20 02:42:55 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LkTl9-0007AJ-BZ
+	for gsmc-categories@m.gmane.org; Fri, 20 Mar 2009 02:42:55 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LkT4G-00021E-Eq
+	for categories-list@mta.ca; Thu, 19 Mar 2009 21:58:36 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:185
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/185>
+
+Hi all,
+
+I am surprised that, in answer to one of Andrew Stacey's original
+questions (i.e., how are mathematical functions related to functions
+in computer programming), nobody has mentioned Moggi's work. I
+originally replied to Andrew privately, thinking that surely my reply
+would be one of dozens of more or less identical ones.
+
+Here is what I wrote:
+
+> Your wider question, on how functions in mathematics relate to
+> functions in computing, is an interesting and well-studied question.
+> In its simplest form, computer functions are the same as math
+> functions, i.e., they input an argument from a set, and compute an
+> output from another set. However, computer functions can have
+> additional behaviors known as "side effects". Here are some examples
+> of possible side-effects:
+>
+> (a) non-termination (loops forever)
+> (b) non-determinism (can output several possible values on the same input)
+> (c) probability (can call a random number generator)
+> (d) input/output (can write stuff to the screen or to a file)
+> (e) state (can "remember" some information from the last time it was called)
+> (f) exceptions (can indicate an error condition, to be handled elsewhere)
+> ...
+>
+> Interestingly, all of the above can be dealt with by using category
+> theory. Each of these notions of side-effect corresponds to a
+> particular strong monad on the category of sets. Each notion of
+> function corresponds to a morphism in the corresponding Kleisli
+> category.  This was discovered by Moggi in the 1980's, see the
+> following paper, and particularly Example 1.1:
+>
+> Eugenio Moggi, "Notions of computation and monads". Information And
+> Computation, 93(1), 1991.
+> http://www.disi.unige.it/person/MoggiE/ftp/ic91.pdf
+
+And I may further elaborate, in case it is not obvious, what the monad
+is in each of the 6 examples of side-effects mentioned above:
+
+(a) TX = X+1
+(b) TX = powerset(X)
+(c) TX = probability distributions on X
+(d) For output: TX = X x Sigma^*
+    For input: TX = X + Sigma->X + Sigma^2->X + ...
+    (Here, Sigma is an alphabet, and Sigma^* the free monoid generated
+    by it).
+(e) TX = S -> (X x S), where S is a fixed set of states.
+(f) TX = X + E, where E is a fixed set of exceptions.
+
+It is straightforward to equip each of these operations with the
+structure of a strong monad, and to convince yourself that the Kleisli
+category in each case is the desired category of side-effecting
+functions.
+
+Of course this is not the end of the story: much further work has been
+devoted to the question of how to combine several such monads (for
+example, probability and state, or probability and non-determinism).
+Also, in the presence of higher-order functions, Set is not always
+good enough as a base category, and one typically considers other base
+categories such as a suitable category of DCPOs.
+
+So the question is not, as some have put it, whether non-termination
+(or other side effects) are "good" or "bad" to have in a programming
+language, but rather, what monad you would like to work with.
+
+In response to Bill Lawvere's question: laziness refers to an
+evaluation strategy where subterms are evaluated only if they are
+actually needed. For example, an "eager" evaluation of the arithmetic
+expression 0*(2+3) would first compute 2+3=5, then multiply the result
+by 0. A "lazy" evaluation would recognize that computing 2+3 is
+unnecessary. The question is not only one of efficiency, but also one
+of termination: if instead of 2+3, we use a non-terminating
+expression, then the lazy evaluation will terminate, whereas the eager
+one will not. In a lazy language such as Haskell, you can implement a
+function that computes the first 5 prime numbers as follows: (1)
+compute the list L of all prime numbers, in increasing order, and (2)
+take the first 5 elements of L. Since Haskell is lazy, it will
+automatically only do as much work in step (1) as is actually needed
+in step (2), i.e., it will not attempt to compute an infinite list.
+This leads to a quite natural programming style, often reminiscent of
+mathematical notation.
+
+-- Peter
+
+Andrew Stacey wrote:
+>
+> Here's a question for those who know about translating between
+> category theory for mathematicians and category theory for computer
+> programmers.
+>
+> In class today I was discussing functions with domain the empty set.
+> The students don't have much background in formal set theory (and
+> none in category theory though I'm doing my best to sneak it in
+> where I can) so they were trying to get to grips with the idea that
+> the _are_ functions from the empty set, but just not very many of
+> them.
+>
+> Afterwards, one student asked about how this related to functions as
+> used in computer programming.  It seemed from what he said that he
+> had some understanding of the formal relationship between functions
+> in mathematics and functions in computer programs - beyond them
+> having the same name.  He said that a function that takes no input
+> is known as a "constant function" and so wasn't sure how to fit the
+> two notions together.
+>
+> I, on the other hand, am at the level of "Ooo, look!  Mathematicians
+> and computer programmers both use the word 'function'.  So do
+> biologists and event organisers.  Maybe we should organise a
+> function whose function would be to investigate all these different
+> uses.' so I didn't know what answer to give.
+>
+> The best that I could think of was that program functions have a
+> 'hidden' input: the fact that they have been called.  So a function
+> defined on the empty set corresponds to a function that can never be
+> called.
+>
+> Can anyone help me straighten this out?
+>
+> Extra kudos for answers that I can just pass on to the student!
+>
+> Thanks,
+>
+> Andrew Stacey
+>
+>
+
+
+
+

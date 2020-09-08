@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@math.uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: intersections of classes
+Date: Thu, 12 Nov 2009 21:31:52 -0600
+Lines: 70
+Approved: news@gmane.org
+Message-ID: <E1N91dO-00047p-1g@mailserv.mta.ca>
+References: <E1N8PKo-00008h-DL@mailserv.mta.ca>
+Reply-To: Michael Shulman <shulman@math.uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1258141971 6707 80.91.229.12 (13 Nov 2009 19:52:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 13 Nov 2009 19:52:51 +0000 (UTC)
+To: Andrew Salch <asalch@math.jhu.edu>, categories@mta.ca
+Original-X-From: categories@mta.ca Fri Nov 13 20:52:44 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1N92CJ-0005ch-QB
+	for gsmc-categories@m.gmane.org; Fri, 13 Nov 2009 20:52:43 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1N91dO-00047p-1g
+	for categories-list@mta.ca; Fri, 13 Nov 2009 15:16:38 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5266
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5266>
+
+Andrew Salch wrote:
+> let C be a class, and consider a family of subclasses C_i of C, which
+> are indexed by an index class I. Am I allowed to take the intersection
+> of a family of classes indexed by a class? Is the result a class?
+
+In ZF, "proper class" means "first-order formula," the formula phi(x)
+being regarded as a stand-in for "the class of sets x such that phi(x)".
+ In this case the only meaning that can be given to "a family of classes
+indexed by a class" is that we have a formula with two variables
+phi(x,y), so that each y indexes "the class of sets x such that
+phi(x,y)".  In this case, as Andrej has said, the intersection of these
+classes is represented by the formula "for all y, phi(x,y)", so there is
+no problem.
+
+In set-class theories such as NBG and MK, classes are things in their
+own right (rather than having to be represented by first-order
+formulas).  However, in neither of these theories can a class be an
+*element* of another class, so "a family of classes indexed by a class"
+can't mean "a class whose elements are classes" or "a class function
+whose values are classes"---instead it has to be similar to the meaning
+in ZF, such as a single class P whose elements are ordered pairs, where
+each set y indexes the class { x | (x,y) \in P }.  Again in these
+theories there is no trouble with the intersection of such an indexed
+family of classes, it is just the class { x | (x,y) \in P for all y }.
+
+However, in your example:
+
+> The intersection of reflective topologizing subcategories is again
+> reflective and topologizing, so I would like to be able to take the
+> intersection of all the reflective topologizing subcategories of X
+> containing both Y and Z
+
+I don't think that "the class of reflective topologizing subcategories
+of X" is a legitimate class in the sense of ZF, NBG, or MK.  Each
+reflective topologizing subcategory is itself a proper class, and (in
+NBG and MK) classes can't be elements of other classes, so there is no
+class of all reflective topologizing subcategories of X, and thus no
+class to "index" the intersection you want to take.
+
+I think you *can* still define this intersection in MK, however: it is
+the class
+
+{ a \in ob(X) | a \in W for any reflective topologizing subcategory W of
+X that contains both Y and Z }
+
+This is allowable in MK because its comprehension axiom for classes
+allows formulas that can quantify over classes.  The comprehension axiom
+of NBG only allows formulas that do not quantify over classes, so I
+don't think this construction can be done in NBG.  Note that while NBG
+is conservative over ZFC (it can't prove any new theorems about sets),
+MK is not.
+
+All of these problems go away, of course, if you assume a Grothendieck
+universe U and replace your sets by U-small sets and your classes by
+U-large ones.
+
+> More generally, if there is a book or paper on set theory which covers
+> some of the basic operations you can and can't do with classes, "for the
+> working mathematician," I'd really like to hear about it.
+
+I'm not sure if this is quite what you're looking for, but my paper "Set
+theory for category theory" addresses some of these issues
+(arXiv:0810.1279).
+
+Best,
+Mike
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

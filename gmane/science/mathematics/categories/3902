@@ -1,0 +1,110 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Stupid question: what space was Euclid working in?
+Date: Thu, 13 Sep 2007 23:21:39 -0700
+Lines: 76
+Approved: news@gmane.org
+Message-ID: <E1IWL1K-0004ss-Mi@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019592 10787 80.91.229.2 (29 Apr 2009 15:39:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:52 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Sep 14 21:02:20 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 14 Sep 2007 21:02:20 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IWL1K-0004ss-Mi
+	for categories-list@mta.ca; Fri, 14 Sep 2007 20:56:22 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 26
+Status: O
+Content-Length: 3263
+Original-Lines: 75
+Xref: news.gmane.org gmane.science.mathematics.categories:3902
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3902>
+
+From: Steve Vickers
+> That seems to require a new notion of torsor, and I can't see how it
+> would work technically.
+
+I don't know if it's a new notion, but the following construction of
+what I'll call Aff(C), the affinitization (affination?) of C, should
+work for any category C concrete over Ab  via a faithful functor
+U: C --> Ab.  (Ab(Z,-): Ab --> Set automatically makes Ab concrete over
+Set.)  The subcategories of Vct_k we've been talking about, in
+particular Euc with origin but liberal morphisms, are all instances of
+such a C.  If this is different from torsors I'd appreciate some insight
+into the difference.
+
+Definition:
+
+Take the objects of Aff(C) to be those of C.  A morphism in Aff(C) from
+c to d is a pair (h, m) where m: c --> d is a morphism of C and
+h: U(c) --> U(d) is any group homomorphism such that
+
+     h(x) - h(y)  =  U(m)(x - y)    for all x, y in U(c).
+
+End definition.
+
+The effect of this construction is to make the objects of Aff(c)
+generalized metric spaces.  Reading between the lines of the above, an
+implicit metric D(x, y) is given by the group structure in the form
+x + D(x, y) = y, or equivalently D(x, y) = y - x; there is no need to
+make D explicit with its own symbol.
+
+All four Frechet axioms follow after modifying them to make the triangle
+inequality an equality and D(x, y) = -D(y, x) (symmetry becomes
+antisymmetry).  The morphism (h, m) maps the points of the metric space
+via h subject to coherently (over the whole space) maintaining the
+distance with m.
+
+That should do it for Euc.  France Dacar did things in the other order:
+torsor first, liberate from scale second.  I guess they commute ... but:
+
+To be sure we've been talking about the same category Euc of what France
+called Euclid's spaces, for the Euc I have in mind, Euc(E_m,E_n) has
+(m+1)n - (m+1 choose 2) + 1 degrees of freedom when 1 <= m <= n.
+Outside that range Euc(E_m,E_n) has n degrees of freedom, with rigidity
+obliging E_m for m > n to collapse to E_0.  When m = n > 0 this reduces
+to 1 + n + (n choose 2), corresponding to the one dilatation, n
+translations, and rotation group of order (n choose 2) = n(n-1)/2 in
+E_n.  Here's a table.
+
+.    0   1   2   3   4   5   6   7   8   9
+-----------------------------------------
+0 |  0   1   2   3   4   5   6   7   8   9
+1 |  0   2   4   6   8  10  12  14  16  18
+2 |  0   1   4   7  10  13  16  19  22  25
+3 |  0   1   2   7  11  15  19  23  27  31
+4 |  0   1   2   3  11  16  21  26  31  36
+5 |  0   1   2   3   4  16  22  28  34  40
+6 |  0   1   2   3   4   5  22  29  36  43
+7 |  0   1   2   3   4   5   6  29  37  45
+8 |  0   1   2   3   4   5   6   7  37  46
+9 |  0   1   2   3   4   5   6   7   8  46
+
+In contrast Aff_R(A_m,A_n) (affine spaces) has (m+1)n degrees of
+freedom, while Vct_R(V_m,V_n) (vector spaces) has mn.
+
+If Euler invented affine geometry as being somehow cleaner than
+Euclidean geometry he was going in the right direction, with vector
+spaces making things simpler yet via familiar mxn matrices.
+
+Regarding Bob Knighten's question on approaches to synthetic Euclidean
+geometry such as Hilbert's axiomatization, has anyone axiomatized more
+than E_3 (Euclid Books 11-13)?  A satisfactory definition of Euclidean
+space needs to account for all finite dimensions.
+
+Vaughan
+
+
+

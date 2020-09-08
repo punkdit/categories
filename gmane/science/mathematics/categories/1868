@@ -1,0 +1,162 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: toposes vs. sets - another aspect
+Date: Mon, 19 Feb 2001 16:46:40 +0100 (CET)
+Lines: 129
+Approved: news@gmane.org
+Message-ID: <200102191546.QAA14750@fb04209.mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018163 903 80.91.229.2 (29 Apr 2009 15:16:03 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:03 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Feb 19 13:31:36 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f1JGgOq18610
+	for categories-list; Mon, 19 Feb 2001 12:42:24 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 50
+Status: O
+Content-Length: 7149
+Original-Lines: 128
+Xref: news.gmane.org gmane.science.mathematics.categories:1868
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1868>
+
+I want to take up the discussion on ``toposes vs. sets'' from another point
+of view. Over the years a few questions have accumulated and I'd be interested 
+in the opinion of the experts.
+
+As Bill Lawvere has pointed out in his reply to the original question there 
+are several meanings in which one can understand the relation  
+
+               ``toposes vs. set theory''.
+
+One such distinction is static sets vs. variable sets and one can hardly deny
+that the latter are of enormous importance for understanding modern mathematics
+from a conceptual point of view. That's probably what most categorists have in
+mind when they defend categories as superior to traditional set theory. 
+Another argument probably is that the official language of axiomatic set 
+theory is most inconvenient for actual formalisation of mathematics. One
+knows that in principle one always can eliminate function symbols in favour
+of relation symbols but that leads to an explosion of length of formulas and
+ends in something fairly uncomprehensible.Thus, categorists and also quite a
+few logicians are in favour of formal systems based function application and 
+predication instead of using just one single relation  \epsilon  besides 
+equality because function application and predication are the basic 
+constitutents of actual mathematical statements and, moreover, appear most 
+naturally from the categorical notion of topos. In the end this amounts to 
+the point of view that HAH (Higher Order Arithmetic), the internal language 
+of the free topos with NNO, is the formal system which is most suitable for 
+formalizing mathematics (if one wants to embark on such an endeavour at all).
+
+Well, but there are some reasons why HAH may be considered as non-sufficient 
+at least from a logical point of view. As Zermelo-Fraenkel set theory ZF(C) 
+and, actually, already Zermelo's Set Theory Z(C) prove the consistency of HAH 
+and accordingly they are non-conservative extensions of HAH. Well, one might 
+argue that this lack of conservativity only affects "meta-statements" and not 
+``real mathematical statements''. Even hard boiled set theorists would admit 
+that "99% of modern mathematics can be formalised in HAH" (such a statement 
+for Zermelo's Z(C) instead of HAH can be found e.g. in Kunen's monograph on 
+set theory). However, there  do exists natural mathematical statements which 
+can be formulated in the language of HAH but proved only in ZF though they are
+fairly different in character from ``meta-statements''. 
+A typical such example is Borel Determinacy (BD) saying that for every Borel
+set X in Baire space either player or opponent has a winning strategy for the 
+game G_X where in each step each player plays a natural number and in the end 
+(after \omega steps) player has won if and only if the resulting sequence of 
+numbers lies in X.
+>From this point of view I think one can hardly insist that HAH is the ultima 
+ratio as it prevents us from proving meaningful statements which can be
+formulated in HAH. Of course, one might still have in mind an open-ended 
+axiomatization of HAH where one adopts an axiom, as e.g. BD, whenever 
+convenient. This seems to be the attitude for example in SDG where one 
+postulates by need axioms ensuring the existence of particular functions such
+as  cos  and  sin  instead of constructing them via some series. It seems to 
+me that such an attitude is absolutely ok as long as one is interested only 
+in appropriate formalism for expressing mathematical facts and not in the 
+strength of axiomatizations.
+
+However, if one wants to arrive at a formal system which allows one to derive 
+(in principle) "all current mathematics" then I think one has to accept that
+HAH is not satisfactory simply because it is too weak. On the other hand it
+still is the case that traditional syntax of ZF is not very convenient as a 
+formalisation of mathematical practice. Therefore, it might be worthwhile to
+look for formal systems of a type-theoretic character equiconsistent to ZF(C)
+and including ZF(C) via translation. Well, such a language is available, namely
+the so-called "Calculus of Inductive Constructions" an impredicative type
+theory with an infinite hierarchy of universes. This is described in
+
+   Werner, Benjamin
+   Sets in types, types in sets. 
+   Theoretical aspects of computer software (Sendai, 1997), 530--546, 
+   Lecture Notes in Comput. Sci., 1281, 
+   Springer, Berlin, 1997.  
+   ftp://ftp.inria.fr/INRIA/Projects/coq/Benjamin.Werner/zfc.ps.gz
+
+where one also can find (sketches of) proofs of the meta-theoretic properties 
+mentioned above.
+The reason why systems like the "Calculus of Inductive Constructions" are as
+strong as ZF(C) is that they allow one to 
+
+     define FAMILIES of TYPES by structural recursion.
+
+which is precisely what the set theoretic axiom of replacement is good for.
+However, type theoretic language does bring this to the point more clearly
+than the set-theoretic axiom of replacement which is often used in mathematical
+practice to formulate the image of a function  f : A -> B namely as 
+{ f(a) | a \in A} which certainly has to be considered as sort of an overkill
+because this can be formulated in HAH as well. The real strength of the axiom
+of replacement is used when defining `images of functions without a codomain'
+as e.g. families of sets indexed by some inductive type (e.g. an ordinal).
+The very purpose of type-theoretic universes is to provide a codomain for
+such `functions without codomain'.
+According to these observations I get the impression that what topos logic
+is missing is a concept of universe which allows one to define by recursion
+not only families of objects but also families of types.
+
+I want to conclude my remarks with a pointer to a recent paper by Alex Simpson
+on 
+
+    Solving Domain Equations in Models of Intuitionistic Set Theory
+
+(to be found at http://www.dcs.ed.ac.uk/home/als/Research/rde.ps.gz) where in
+the last paragraph of section 5 (p.12) he gives a counterexample to the claim 
+that 
+
+     in a topos satisfying the usual axioms of SDT (Synthetic Domain Theory) 
+     one always can solve domain equations.
+
+The reason is that the topos considered there doesn't allow one to construct
+certain N-indexed families. (This is a style of argument well-known from the
+usual proofs in set theory showing that Z(C) is weaker than ZF(C)!)
+
+
+I hope that it has got clear from my formulations that I am not at all 
+``anti-category''. However, I always found it most confusing when in some
+texts on toposes I read the statement that the logic of toposes coincides
+with intuitionistic set theory. I think that most classically trained 
+logicians get immediately puzzled by such statements because they know very
+well that set theory is stronger than type theory and, therefore, feel sort
+of repelled by such oversimplifying statements.
+Moreover, during the 90ies there have been developed fascinating categorical
+accounts of constructive set theory by Joyal, Moerdijk, Simpson, Butz and 
+Palmgren. I think it would be an interesting question to clarify the relation
+between this account and the one by universes.
+
+Thomas Streicher
+
+
+
+
+
+
+

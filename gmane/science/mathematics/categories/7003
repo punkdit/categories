@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <andrej.bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Wed, 26 Oct 2011 12:46:56 +0200
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1RJ3LJ-0005xJ-25@mlist.mta.ca>
+References: <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+Reply-To: Andrej Bauer <andrej.bauer@andrej.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1319635082 16179 80.91.229.12 (26 Oct 2011 13:18:02 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 26 Oct 2011 13:18:02 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: Vaughan Pratt <pratt@cs.stanford.edu>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 26 15:17:58 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3Mk-0005C1-Bv
+	for gsmc-categories@m.gmane.org; Wed, 26 Oct 2011 15:17:58 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55271)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3LK-0008PH-PR; Wed, 26 Oct 2011 10:16:30 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RJ3LJ-0005xJ-25
+	for categories-list@mlist.mta.ca; Wed, 26 Oct 2011 10:16:29 -0300
+In-Reply-To: <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7003
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7003>
+
+> If I've understood Steve's reasoning, he accepts
+>
+> TRUE(a) --> (exists) x. TRUE(x)
+>
+> as a theorem of FOL that holds even in the empty universe, on the ground
+> that it is "vacuously true" (where I would have said vacuously valid).
+>
+> The same reasoning would also appear to justify
+>
+> TRUE(a)
+>
+> as a theorem of FOL. =C2=A0(Note that both formulas are standard FOL
+> theorems, with both holding in every nonempty universe.)
+>
+> But by Modus Ponens, which I can't imagine Steve rejecting, we obtain
+>
+> (exists) x. TRUE(x)
+>
+> which Steve has judged as false.
+
+The discussion is going in circles, it should have occurred over
+several rounds of beer. Anyhow, what Steve is pointing out that you
+must not forget the typing context, as any categorical logician will
+tell you. Let me write
+
+  a:A | .....
+
+to indicate that stuff is hapenning in the context in which a is a
+free variable of type A. Then what we have above is the instance of
+Modus Ponens rule:
+
+a:A | TRUE(a)                       a:A | TRUE(a) -> exists x:A, TRUE(x)
+---------------------------------------------------------------------------=
+-----------------------
+                       a:A | exists x:A, TRUE(x)
+
+Thus, the conclusion is _not_
+
+   | exists x:A, TRUE(x)
+
+but rather
+
+   a:A | exists x:A, TRUE(x)
+
+and that's an important difference. Out of curiosity I tested Coq to
+see what it would do:
+
+-----
+Parameter A : Set.
+Parameter P : U -> Prop.
+
+Theorem vaughn:
+   (forall a : A, P a) -> exists x : A, P x.
+Proof.
+   firstorder.
+-----
+
+Coq answered with the following:
+
+-----
+1 subgoal
+
+   H : forall a : A, P a
+   =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D
+    A
+-----
+
+Coq is telling me that in order to finish the proof, I must provide an
+element of A. Just as it should. Of course, the same theorem in the
+context a : A goes through:
+
+-----
+Theorem steve (a : A):
+   (forall a : A, P a) -> exists x : A, P x.
+Proof.
+   firstorder.
+Qed.
+-----
+
+Now coq says "proof completed".
+
+With kind regards,
+
+Andrej
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: John Longley <jrl@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Realizability and Partial Combinatory Algebras
+Date: Wed, 12 Feb 2003 10:58:29 +0000 (GMT)
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <1045047509.3e4a28d50d86b@mail.inf.ed.ac.uk>
+References: <Pine.LNX.3.96.1030207232203.24941A-100000@siskin.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018462 2823 80.91.229.2 (29 Apr 2009 15:21:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Feb 12 11:30:57 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 12 Feb 2003 11:30:57 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18iyou-0003O7-00
+	for categories-list@mta.ca; Wed, 12 Feb 2003 11:29:08 -0400
+In-Reply-To: <Pine.LNX.3.96.1030207232203.24941A-100000@siskin.dpmms.cam.ac.uk>
+User-Agent: IMP/PHP IMAP webmail program 2.2.8
+X-Originating-IP: 129.215.32.128
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 23
+Status: O
+Content-Length: 5253
+Original-Lines: 100
+Xref: news.gmane.org gmane.science.mathematics.categories:2168
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2168>
+
+
+Peter Johnstone wrote:
+
+> However, the point I was trying to make was that the
+> construction of the quasitopos of A-valued assemblies, and the proof
+> that its effectivization is a topos, make no use whatever of the
+> condition that Sxy is always defined.
+
+As far as I can see, Peter Johnstone is essentially correct.
+Even without the condition "sxy is defined", Asm(A) is locally cartesian
+closed (though the correct construction of local exponentials is not quite
+the "obvious" one), and its exact/regular completion is a topos. Peter
+Lietz's argument (which is the one that occurred to me too) seems to fail
+at his point 1: to get a realizer for the mediating morphism from the
+true local exponential to the object he constructs, one actually needs
+the condition "sxy is defined". For the record, in Peter L's example,
+the true exponential m^m in the slice over Nabla(P(A)), for instance,
+may be described as follows:
+	   |T| = P(A)
+   [|X \in T|] = {a | for all b \in X. akb \in X}
+(where k plays the role of an arbitrary element which forces the "thunked"
+operation X -> X to manifest itself.)
+
+I think I can now appreciate Peter Johnstone's point of view, though it
+seems to me that to follow it through consistently would require some
+substantial changes to the way one develops the whole theory.
+For instance, in defining the category Asm(A), one really ought to say
+e.g. that an element r \in A *tracks* f : X -> Y iff
+
+   for all x \in X, a \in A.  a \in [|x \in X|] => rka \in [|f(x) \in Y|]
+
+so as not to get mired down in case splits on whether X is inhabited,
+which (I humbly submit) are here an abomination and totally out of keeping
+with the spirit of realizability and topos theory in general. [Classically,
+of course, the above definition leads to exactly the same category as the
+usual one.] One can then do everything else in the same way, and it all
+works out - e.g. there is a perfectly respectable tripos over A (with Heyting
+implication defined as in the object T above), and the theory of internal
+categories such as PER also works fine.
+
+I don't think one can really call this "standard realizability" any more,
+in the sense of being derived from (a simple abstraction of) Kleene's
+realizability interpretation. Of course, one might say that doesn't matter
+much, but for my part, I feel one loses something of the directness of
+standard realizability, where application in the PCA corresponds immediately
+to function application in Asm(A) and also to Modus Ponens in the logic.
+There is also of course the evident analogy with the Brouwer-Heyting-
+Kolmogorov interpretation of intuitionistic logic. If one adopts the above
+alternative, there is less of a clear intuition about what the significance
+of application in the PCA is.
+
+However, no sooner has one reached this point, than one notices that
+doing realizability of the above kind over A is just tantamount to doing
+standard realizability over the "derived PCA" a la Freyd [?], where
+application is defined by a.b ~ akb. Indeed, one has the following easy
+proposition:
+
+   For any PCA A (where we don't assume "sxy defined"), there is an
+   applicatively equivalent PCA B (in the sense of my thesis) in which
+   sxy is always defined. In particular, the realizability topos on A
+   (constructed as outlined above) is equivalent to the (usual) standard
+   realizability topos on B.
+
+   Proof: Let B have the same set as A, and define application in B by
+   a.b ~ akb. It's easy to construct K,S \in B such that K.a.b = a,
+   S.a.b.c ~ a.c.(b.c), and with a little additional care one can arrange
+   that S.a.b is always defined. Now, application in B is realized in A
+   by \lambda ab. akb (constructed as normal); and application in A is
+   realized in B by i=skk, since i.a.b = ikakb = kakb = ab.
+   The equivalence of toposes can now most easily be seen by noticing that
+   the categories Asm(A), Asm(B) are equal on the nose.
+
+So, it seems it's largely just a question of taste whether one adopts the
+definedness condition. For my money, I would rather adopt this condition,
+retain the directness of standard realizability and all the familiar
+constructions, do all the proofs in an "effective" spirit, and know that
+I'm not sacrificing any generality. Who could ask for anything more?
+
+(Quite a lot of the above was new to me, and was all good fun!)
+
+Finally, I'd like to remark briefly on the other issue in the definition
+of PCA, which Jaap, Peter L and myself have now all mentioned: whether
+one should require sxyz ~ xz(yz) or just sxyz >~ xz(yz). I know of no
+reason not to adopt the latter, more general condition, and it seems
+to me much more in the spirit of realizability: e.g. one never cares if
+a realizer for a morphism assemblies is defined on more elements than
+required. On the other hand, I do not have any particular use yet for
+any of the extra examples admitted by this definition.
+
+An interesting case in point is Kleene's second model, K_2. It is a PCA
+in the sense of the axiom with ~, but the "natural" construction of an
+element s gives one that only satisfies the axiom with >~. Some artificial
+hackery is needed to produce an element s satisfying the stronger axiom -
+and of course, my attitude would be: why bother?
+
+Best wishes,
+John
+
+
+
+

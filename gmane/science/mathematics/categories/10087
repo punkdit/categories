@@ -1,0 +1,620 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: Riccardo Treglia <riccardo.treglia-Ob+gDNbliO0@public.gmane.org>
+Newsgroups: gmane.comp.science.types.announce,gmane.science.mathematics.logic.coq.club,gmane.comp.lang.agda,gmane.science.mathematics.categories
+Subject: Types 2020: Final Call for Papers (Due on 10 Jan,
+ 2020)
+Date: Fri, 3 Jan 2020 12:00:04 +0100
+Approved: news@gmane.org
+Message-ID: <CADq_2ntwM+iyevn0NPN0tQ9hbCCSW4KoqW=zYWRL-Mr--Kdt6g@mail.gmail.com>
+Mime-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============3359317720248651251=="
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="56264"; mail-complaints-to="usenet@blaine.gmane.org"
+Cc: "Ugo De' Liguoro" <ugo.deliguoro-Ob+gDNbliO0@public.gmane.org>
+To: eutypes-Mttm5w9jbbk@public.gmane.org, coq-club-MZpvjPyXg2s@public.gmane.org, agda-TrQ0NnR75azkdzWRgU60H7NAH6kLmebB@public.gmane.org,
+        categories-59hdLBrVOVU@public.gmane.org, types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org
+Original-X-From: types-announce-bounces-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org Sat Jan 04 16:38:32 2020
+Return-path: <types-announce-bounces-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org>
+Envelope-to: gcst-types-announce-Uylq5CNFT+jYtjvyW6yDsg@public.gmane.org
+Original-Received: from rhizome.seas.upenn.edu ([158.130.69.24])
+	by blaine.gmane.org with esmtp (Exim 4.89)
+	(envelope-from <types-announce-bounces-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org>)
+	id 1inlVR-000ELU-HQ; Sat, 04 Jan 2020 16:38:25 +0100
+Original-Received: from RHIZOME.SEAS.UPENN.EDU (localhost.upenn.edu [127.0.0.1])
+	by RHIZOME.seas.upenn.edu (8.15.2/8.14.3) with ESMTP id 004FZdfA010175;
+	Sat, 4 Jan 2020 10:35:59 -0500
+X-Mailman-Handler: $Id: mm-handler,v 1.2 2002/04/05 19:41:09 bwarsaw Exp $
+Original-Received: from psychopathy.seas.upenn.edu (psychopathy.seas.upenn.edu
+ [158.130.67.191])
+ by RHIZOME.seas.upenn.edu (8.15.2/8.14.3) with ESMTP id 003B0ikp017576
+ for <types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org>; Fri, 3 Jan 2020 06:00:44 -0500
+Original-Received: from mx0a-000c2a01.pphosted.com (mx0a-000c2a01.pphosted.com
+ [148.163.151.92])
+ by psychopathy.seas.upenn.edu (8.15.2/8.15.2) with ESMTPS id 003B0gmW043193
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org>; Fri, 3 Jan 2020 06:00:43 -0500
+Original-Received: from pps.filterd (m0128479.ppops.net [127.0.0.1])
+ by mx0a-000c2a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ 003AtCSt029975
+ for <types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org>; Fri, 3 Jan 2020 06:00:42 -0500
+Authentication-Results: ppops.net;
+ spf=pass smtp.mailfrom=riccardo.treglia-Ob+gDNbliO0@public.gmane.org
+Original-Received: from mail-wr1-f68.google.com (mail-wr1-f68.google.com
+ [209.85.221.68])
+ by mx0a-000c2a01.pphosted.com with ESMTP id 2x63bybtfr-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT)
+ for <types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org>; Fri, 03 Jan 2020 06:00:41 -0500
+Original-Received: by mail-wr1-f68.google.com with SMTP id y11so42032006wrt.6
+ for <types-announce-nHFbR+4dATOoZA3Q9b/B0PZ8FUJU4vz8@public.gmane.org>;
+ Fri, 03 Jan 2020 03:00:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=unito.it; s=google;
+ h=mime-version:from:date:message-id:subject:to:cc;
+ bh=xNxewKHhADr01n06zF3FeoZiqpkyQKKWeMUZJDbZUbU=;
+ b=PXPhsa7ErMBuB1ENyhCOLHoSo5w9p5kXxeNtlFLMCmH4Aa73EsyLfUnfokC8vjAe8D
+ EXKR5XkbkWeYowTPY8n5cnf/JqxgHus660C/+uW/OOuVWSt6XUYf/vqNSrP5PfiX6P2R
+ T3FHAwjvHuSkEcXUay9kVQ7fG+nbwoPWco9OU=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
+ bh=xNxewKHhADr01n06zF3FeoZiqpkyQKKWeMUZJDbZUbU=;
+ b=sspIHbT18s9jzCvMw7CDOfpkRNVuqzoimbpPc7btDP92f7ndJI6G4RClzidjpzAxZD
+ rL0f5HraOVw1mVXcYvvi065cNYsCIQQC4DLBwKIMH4zDlEwRams4ZxWG7MTqlgIrNCw9
+ 8jsJWj+JoJ1rezVyveiCK4nkfL1vKhJwL0HOfZrncmxPQfwnJB0ErWhhLfYIZbcSIWzj
+ xNnYt2Q5EmZWO+9mZGmeNmu7uTGG7CfVukNLS//TUDLTw2DZITmdiFHDb64GUuFxvT1P
+ TwD26nloHmTRIZjbQzsrTrj1hW3RmCjhZ1BJBnilW9f/HsCNDP8U1/Hl5mOpP0AysdJb
+ qrTg==
+X-Gm-Message-State: APjAAAW1W9sBuj6HvD9WDgy7iwrJ6Z/qDX1MQN/8Zjp28vf9e9SOoTdC
+ UjrU1IZ07S0hrqGDmpvTgPpaOe4stSpFK1vgyzCpaw==
+X-Google-Smtp-Source: APXvYqwH4QgSC0UfBcc8OwzSxfo68Y4tFSVTa0pXh7hYy70KGRXEMdBB9KxX16ZIoyTsRcc+ZvNIcoop3KZpUNxFTFQ=
+X-Received: by 2002:adf:fe0e:: with SMTP id n14mr86851901wrr.116.1578049239556; 
+ Fri, 03 Jan 2020 03:00:39 -0800 (PST)
+X-CLX-Response: 1TFkXGBseEQpMehcTHxEKWUQXZWNhcmNsZFwTQE0RClhYF2FuehhGUmdtZ14
+ dEQp4Thdtf2hLQEFkYGRQaxEKeUwXaWFHHB1jXXJlckMRCnlDF2lBf3JBAWQYAVBfEQpDSBcHGR
+ 8fEQpDWRcHGxsdEQpDSRcaBBoaGhEKWU0XZ2ZyEQpZSRcacRsGGncGEh4GGRpCGxgGGgYbGhoGG
+ nEaEBp3BhoGGgYaBhoGGgYacRoQGncGGhEKWV4XaGN5EQpJRhdfWk9ERFlPS1l1QkVZXk9OEQpD
+ ThdQf1ltQEl6H3JrQE1CYF9QeWhLfEgdf1lJGxoSZk5FTxEKWFwXHwQaBBsTGwdMGRlOThseSQU
+ bGgQbGhoEHhIEGBgQGx4aHxoRCl5ZF3x4Z2QbEQpNXBcYGxkRCkxaF2hpTWtrEQpCTxdoWF5QSQ
+ USXHtkexEKQ1oXGBoTBBIfBBgYGwQcEhEKQl4XGxEKRF4XHxEKREkXGxEKQlwXGhEKQkUXbx5nU
+ 0Rkf0EfZQURCkJOF21/aEtAQWRgZFBrEQpCTBdhbnoYRlJnbWdeHREKQmwXZhtDXB1gbh4cbHgR
+ CkJAF2BcYUlPb0JhHE5PEQpCWBdvREdPenxdTFtMaBEKTV4XBxsRClpYFxwRCnBoF2NaGR9yTn4
+ BEnIZEAcZGhEKcGgXaWJEQUlHQUJZAU4QBxkaEQpwaBd6QW9LSX1CbGh7WhAHGRoRCnBoF2tlAU
+ JgH2NGU39nEAcZGhEKcGgXYhh9SHNHaRxdUEwQBxkaEQpwfRdjGXocExlFS3peehAHGRoRCnB9F
+ 2wdRWJpAWt+X3MZEAcZGhEKcH0Xb2RrXEUSSGgeTxgQBxkaEQpwf 
+X-CLX-Shades: MLX
+X-Proofpoint-SPF-Result: pass
+X-Proofpoint-SPF-Record: v=spf1 ip4:130.192.119.34 ip4:130.186.3.0/24
+ ip4:130.186.31.160/27
+ ip4:130.186.7.110 include:spf.mailjet.com include:spf.mandrillapp.com
+ include:_spf.cineca.it  include:_spf.google.com ~all]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.95,18.0.572
+ definitions=2020-01-03_02:2020-01-02,2020-01-03 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=95 adultscore=0
+ mlxlogscore=999 impostorscore=0 spamscore=0 clxscore=214 suspectscore=0
+ malwarescore=0 lowpriorityscore=0 phishscore=0 bulkscore=0 mlxscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-1910280000
+ definitions=main-2001030103
+X-Mailman-Approved-At: Sat, 04 Jan 2020 10:35:37 -0500
+X-BeenThere: types-announce-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org
+X-Mailman-Version: 2.1.29
+Precedence: list
+List-Id: Announcements of interest to the TYPES community
+ <types-announce.LISTS.SEAS.UPENN.EDU>
+List-Unsubscribe: <https://LISTS.SEAS.UPENN.EDU/mailman/options/types-announce>, 
+ <mailto:types-announce-request-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org?subject=unsubscribe>
+List-Archive: <http://LISTS.SEAS.UPENN.EDU/pipermail/types-announce/>
+List-Post: <mailto:types-announce-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org>
+List-Help: <mailto:types-announce-request-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org?subject=help>
+List-Subscribe: <https://LISTS.SEAS.UPENN.EDU/mailman/listinfo/types-announce>, 
+ <mailto:types-announce-request-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org?subject=subscribe>
+Errors-To: types-announce-bounces-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org
+Original-Sender: "Types-announce" <types-announce-bounces-0AtTguNXcGkudfPDI7pAfjevRRvlBcP1@public.gmane.org>
+Xref: news.gmane.org gmane.comp.science.types.announce:8836 gmane.science.mathematics.logic.coq.club:22873 gmane.comp.lang.agda:11442 gmane.science.mathematics.categories:10087
+Archived-At: <http://permalink.gmane.org/gmane.comp.science.types.announce/8836>
+
+--===============3359317720248651251==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
+[ The Types Forum (announcements only),
+     http://lists.seas.upenn.edu/mailman/listinfo/types-announce ]
+
+
+--===============3359317720248651251==
+Content-Type: multipart/alternative; boundary="0000000000005cb863059b3a38cd"
+
+--0000000000005cb863059b3a38cd
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+*-------------------------------------Call For Contributions TYPES
+2020-------------------------------------=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D26th
+INTERNATIONAL CONFERENCE ON TYPES FOR PROOFS AND PROGRAMS
+2020=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3Dhttps://types20=
+20.di.unito.it
+<https://types2020.di.unito.it>Turin, Italy, 2.-5. March
+2020--------------------------------------------------------------------Sub=
+mission
+link:  https://easychair.org/conferences/?conf=3Dtypes2020
+<https://easychair.org/conferences/?conf=3Dtypes2020>.Abstract Submission
+Deadline: 10.1.2020Notification:
+1.2.2020-------------------------------------------------------------------=
+-BACKGROUNDThe
+TYPES meetings are a forum to present new and ongoing work in allaspects of
+type theory and its applications, especially in formalisedand computer
+assisted reasoning and computer programming.The TYPES areas of interest
+include, but are not limited to:* foundations of type theory and
+constructive mathematics;* applications of type theory;* dependently typed
+programming;* industrial uses of type theory technology;* meta-theoretic
+studies of type systems;* proof assistants and proof technology;*
+automation in computer-assisted reasoning;* links between type theory and
+functional programming;* formalizing mathematics using type theory.We
+encourage talks proposing new ways of applying type theory. In thespirit of
+workshops, talks may be based on newly published papers,work submitted for
+publication, but also work in progress.The EUTypes Cost Action CA15123
+(eutypes.cs.ru.nl <http://eutypes.cs.ru.nl>) focuses on the same research
+topics as TYPES and partially sponsors the TYPES.Conference:Part of the
+program is organised under the auspices of EUTypes.INVITED SPEAKERS* Ulrik
+Buchholtz* Pierre Marie-P=C3=A9drot * Leonardo de Moura * Sara NegriCONTRIB=
+UTED
+TALKSWe solicit contributed talks:Selection of those will be based on
+extended abstracts/short papers of 2 pp (not including bibliography)
+formatted with easychair.cls. The submission site
+ishttps://easychair.org/conferences/?conf=3Dtypes2020
+<https://easychair.org/conferences/?conf=3Dtypes2020>.Important dates:*
+abstract submission: 10 January 2020, anywhere on Earth* notification of
+acceptance/rejection: 1 February 2020* camera-ready version of abstract: 15
+February 2020Camera-ready versions of the accepted contributions will be
+published in an informal book of abstracts for distribution at the
+workshop.POST-PROCEEDINGSSimilarly to TYPES 2011 and TYPES 2013-2019, a
+post-proceedings volume is planned in the Leibniz International Proceedings
+in Informatics (LIPIcs) series (confirmation pending). Submission to that
+volume will be open to everyone.CONTACTEmail: ugo.deliguoro-Ob+gDNbliO0@public.gmane.org
+<ugo.deliguoro-Ob+gDNbliO0@public.gmane.org>PROGRAM COMMITTEE    Ugo de=E2=80=99 Liguoro (Unive=
+rsity of
+Turin) (chair)    Stefano Berardi (University of Turin)
+(co-chair)    Marino Miculan (University of Udine)    Marc Bezem
+(University of Bergen)    Gilles Dowek (INRIA =E2=80=93 ENS
+Paris-Saclay)    Takeshi Tsukada (University of Tokyo)    Jos=C3=A9 Esp=C3=
+=ADrito
+Santo (University of Minho)    Herman Geuvers (Radboud University
+Nijmegen)    Ralph Matthes (IRIT =E2=80=93 CNRS and University of
+Toulouse)    Henning Basold (University of Leiden)    Aleksy Schubert
+(University of Warsaw)    Anton Setzer (University of Swansea)    Thorsten
+Altenkirch (University of Nottingham)    Silvia Ghilezan (University of
+Novi Sad)    =C3=89tienne Miquey (INRIA, University of Nantes)    Elaine
+Pimentel (Federal University of Rio Grande do Norte)    Tarmo Uustalu
+(Reykjavik University)    Alexandre Miquel (University of the Republic,
+Montevideo)    Thierry Coquand (Chalmers University of
+Technology) Organisers:Ugo de'Liguoro (University of Turin, chair)Stefano
+Berardi (University of Turin, co-chair)Riccardo Treglia (University of
+Turin)Luca Ciccone (University of Turin)*
+
+--0000000000005cb863059b3a38cd
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><b id=3D"gmail-docs-internal-guid-7400b5bf-7fff-781a-e70f-=
+604314123943" style=3D"font-weight:normal"><p dir=3D"ltr" style=3D"line-hei=
+ght:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fo=
+nt-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpa=
+rent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:=
+none;vertical-align:baseline;white-space:pre-wrap">------------------------=
+-------------</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top=
+:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Cou=
+rier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:40=
+0;font-style:normal;font-variant:normal;text-decoration:none;vertical-align=
+:baseline;white-space:pre-wrap">Call For Contributions TYPES 2020</span></p=
+><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"=
+><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rg=
+b(0,0,0);background-color:transparent;font-weight:400;font-style:normal;fon=
+t-variant:normal;text-decoration:none;vertical-align:baseline;white-space:p=
+re-wrap">-------------------------------------</span></p><br><p dir=3D"ltr"=
+ style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D=
+"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);backgr=
+ound-color:transparent;font-weight:400;font-style:normal;font-variant:norma=
+l;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D</span></p><p dir=3D"ltr" s=
+tyle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"f=
+ont-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);backgrou=
+nd-color:transparent;font-weight:400;font-style:normal;font-variant:normal;=
+text-decoration:none;vertical-align:baseline;white-space:pre-wrap">26th INT=
+ERNATIONAL CONFERENCE ON TYPES FOR PROOFS AND PROGRAMS 2020</span></p><p di=
+r=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span=
+ style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,=
+0);background-color:transparent;font-weight:400;font-style:normal;font-vari=
+ant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wra=
+p">=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D</span></p><br><p =
+dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><sp=
+an style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,=
+0,0);background-color:transparent;font-weight:400;font-style:normal;font-va=
+riant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-w=
+rap"><a href=3D"https://types2020.di.unito.it">https://types2020.di.unito.i=
+t</a></span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;mar=
+gin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New=
+&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-s=
+tyle:normal;font-variant:normal;text-decoration:none;vertical-align:baselin=
+e;white-space:pre-wrap">Turin, Italy, 2.-5. March 2020</span></p><br><p dir=
+=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0=
+);background-color:transparent;font-weight:400;font-style:normal;font-varia=
+nt:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap=
+">--------------------------------------------------------------------</spa=
+n></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom=
+:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;col=
+or:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:norma=
+l;font-variant:normal;text-decoration:none;vertical-align:baseline;white-sp=
+ace:pre-wrap">Submission link:=C2=A0 <a href=3D"https://easychair.org/confe=
+rences/?conf=3Dtypes2020">https://easychair.org/conferences/?conf=3Dtypes20=
+20</a>.</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier N=
+ew&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font=
+-style:normal;font-variant:normal;text-decoration:none;vertical-align:basel=
+ine;white-space:pre-wrap">Abstract Submission Deadline: 10.1.2020</span></p=
+><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"=
+><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rg=
+b(0,0,0);background-color:transparent;font-weight:400;font-style:normal;fon=
+t-variant:normal;text-decoration:none;vertical-align:baseline;white-space:p=
+re-wrap">Notification: 1.2.2020</span></p><p dir=3D"ltr" style=3D"line-heig=
+ht:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fon=
+t-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpar=
+ent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:n=
+one;vertical-align:baseline;white-space:pre-wrap">-------------------------=
+-------------------------------------------</span></p><br><p dir=3D"ltr" st=
+yle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"fo=
+nt-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);backgroun=
+d-color:transparent;font-weight:400;font-style:normal;font-variant:normal;t=
+ext-decoration:none;vertical-align:baseline;white-space:pre-wrap">BACKGROUN=
+D</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;mar=
+gin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New=
+&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-s=
+tyle:normal;font-variant:normal;text-decoration:none;vertical-align:baselin=
+e;white-space:pre-wrap">The TYPES meetings are a forum to present new and o=
+ngoing work in all</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margi=
+n-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quo=
+t;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weig=
+ht:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-=
+align:baseline;white-space:pre-wrap">aspects of type theory and its applica=
+tions, especially in formalised</span></p><p dir=3D"ltr" style=3D"line-heig=
+ht:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fon=
+t-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpar=
+ent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:n=
+one;vertical-align:baseline;white-space:pre-wrap">and computer assisted rea=
+soning and computer programming.</span></p><br><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11p=
+t;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:tra=
+nsparent;font-weight:400;font-style:normal;font-variant:normal;text-decorat=
+ion:none;vertical-align:baseline;white-space:pre-wrap">The TYPES areas of i=
+nterest include, but are not limited to:</span></p><br><p dir=3D"ltr" style=
+=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-=
+size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-c=
+olor:transparent;font-weight:400;font-style:normal;font-variant:normal;text=
+-decoration:none;vertical-align:baseline;white-space:pre-wrap">* foundation=
+s of type theory and constructive mathematics;</span></p><p dir=3D"ltr" sty=
+le=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"fon=
+t-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background=
+-color:transparent;font-weight:400;font-style:normal;font-variant:normal;te=
+xt-decoration:none;vertical-align:baseline;white-space:pre-wrap">* applicat=
+ions of type theory;</span></p><p dir=3D"ltr" style=3D"line-height:1.38;mar=
+gin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&q=
+uot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-we=
+ight:400;font-style:normal;font-variant:normal;text-decoration:none;vertica=
+l-align:baseline;white-space:pre-wrap">* dependently typed programming;</sp=
+an></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-botto=
+m:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;co=
+lor:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:norm=
+al;font-variant:normal;text-decoration:none;vertical-align:baseline;white-s=
+pace:pre-wrap">* industrial uses of type theory technology;</span></p><p di=
+r=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span=
+ style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,=
+0);background-color:transparent;font-weight:400;font-style:normal;font-vari=
+ant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wra=
+p">* meta-theoretic studies of type systems;</span></p><p dir=3D"ltr" style=
+=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-=
+size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-c=
+olor:transparent;font-weight:400;font-style:normal;font-variant:normal;text=
+-decoration:none;vertical-align:baseline;white-space:pre-wrap">* proof assi=
+stants and proof technology;</span></p><p dir=3D"ltr" style=3D"line-height:=
+1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-f=
+amily:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent=
+;font-weight:400;font-style:normal;font-variant:normal;text-decoration:none=
+;vertical-align:baseline;white-space:pre-wrap">* automation in computer-ass=
+isted reasoning;</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-=
+top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;=
+Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight=
+:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-al=
+ign:baseline;white-space:pre-wrap">* links between type theory and function=
+al programming;</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-t=
+op:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;C=
+ourier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:=
+400;font-style:normal;font-variant:normal;text-decoration:none;vertical-ali=
+gn:baseline;white-space:pre-wrap">* formalizing mathematics using type theo=
+ry.</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;m=
+argin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier N=
+ew&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font=
+-style:normal;font-variant:normal;text-decoration:none;vertical-align:basel=
+ine;white-space:pre-wrap">We encourage talks proposing new ways of applying=
+ type theory. In the</span></p><p dir=3D"ltr" style=3D"line-height:1.38;mar=
+gin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&q=
+uot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-we=
+ight:400;font-style:normal;font-variant:normal;text-decoration:none;vertica=
+l-align:baseline;white-space:pre-wrap">spirit of workshops, talks may be ba=
+sed on newly published papers,</span></p><p dir=3D"ltr" style=3D"line-heigh=
+t:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font=
+-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpare=
+nt;font-weight:400;font-style:normal;font-variant:normal;text-decoration:no=
+ne;vertical-align:baseline;white-space:pre-wrap">work submitted for publica=
+tion, but also work in progress.</span></p><br><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11p=
+t;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:tra=
+nsparent;font-weight:400;font-style:normal;font-variant:normal;text-decorat=
+ion:none;vertical-align:baseline;white-space:pre-wrap">The EUTypes Cost Act=
+ion CA15123 (<a href=3D"http://eutypes.cs.ru.nl">eutypes.cs.ru.nl</a>) focu=
+ses on the=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-=
+top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;=
+Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight=
+:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-al=
+ign:baseline;white-space:pre-wrap">same research topics as TYPES and partia=
+lly sponsors the TYPES.</span></p><br><p dir=3D"ltr" style=3D"line-height:1=
+.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-fa=
+mily:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;=
+font-weight:400;font-style:normal;font-variant:normal;text-decoration:none;=
+vertical-align:baseline;white-space:pre-wrap">Conference:</span></p><p dir=
+=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0=
+);background-color:transparent;font-weight:400;font-style:normal;font-varia=
+nt:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap=
+">Part of the program is organised under the auspices of EUTypes.</span></p=
+><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:=
+0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;colo=
+r:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:normal=
+;font-variant:normal;text-decoration:none;vertical-align:baseline;white-spa=
+ce:pre-wrap">INVITED SPEAKERS</span></p><br><p dir=3D"ltr" style=3D"line-he=
+ight:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;f=
+ont-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transp=
+arent;font-weight:400;font-style:normal;font-variant:normal;text-decoration=
+:none;vertical-align:baseline;white-space:pre-wrap">* Ulrik Buchholtz</span=
+></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:=
+0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;colo=
+r:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:normal=
+;font-variant:normal;text-decoration:none;vertical-align:baseline;white-spa=
+ce:pre-wrap">* Pierre Marie-P=C3=A9drot=C2=A0</span></p><p dir=3D"ltr" styl=
+e=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font=
+-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-=
+color:transparent;font-weight:400;font-style:normal;font-variant:normal;tex=
+t-decoration:none;vertical-align:baseline;white-space:pre-wrap">* Leonardo =
+de Moura=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-to=
+p:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Co=
+urier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:4=
+00;font-style:normal;font-variant:normal;text-decoration:none;vertical-alig=
+n:baseline;white-space:pre-wrap">* Sara Negri</span></p><br><p dir=3D"ltr" =
+style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"=
+font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);backgro=
+und-color:transparent;font-weight:400;font-style:normal;font-variant:normal=
+;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">CONTRIB=
+UTED TALKS</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-to=
+p:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Co=
+urier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:4=
+00;font-style:normal;font-variant:normal;text-decoration:none;vertical-alig=
+n:baseline;white-space:pre-wrap">We solicit contributed talks:</span></p><b=
+r><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt=
+"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:r=
+gb(0,0,0);background-color:transparent;font-weight:400;font-style:normal;fo=
+nt-variant:normal;text-decoration:none;vertical-align:baseline;white-space:=
+pre-wrap">Selection of those will be based on extended abstracts/short pape=
+rs=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;=
+margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier =
+New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;fon=
+t-style:normal;font-variant:normal;text-decoration:none;vertical-align:base=
+line;white-space:pre-wrap">of 2 pp (not including bibliography) formatted w=
+ith easychair.cls.=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38=
+;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-famil=
+y:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;fon=
+t-weight:400;font-style:normal;font-variant:normal;text-decoration:none;ver=
+tical-align:baseline;white-space:pre-wrap">The submission site is</span></p=
+><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"=
+><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rg=
+b(0,0,0);background-color:transparent;font-weight:400;font-style:normal;fon=
+t-variant:normal;text-decoration:none;vertical-align:baseline;white-space:p=
+re-wrap"><a href=3D"https://easychair.org/conferences/?conf=3Dtypes2020">ht=
+tps://easychair.org/conferences/?conf=3Dtypes2020</a>.</span></p><br><p dir=
+=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0=
+);background-color:transparent;font-weight:400;font-style:normal;font-varia=
+nt:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap=
+">Important dates:</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:=
+&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">* abstract submission: 10 January =
+2020, anywhere on Earth</span></p><p dir=3D"ltr" style=3D"line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family=
+:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font=
+-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vert=
+ical-align:baseline;white-space:pre-wrap">* notification of acceptance/reje=
+ction: 1 February 2020</span></p><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:=
+&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">* camera-ready version of abstract=
+: 15 February 2020</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:=
+&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">Camera-ready versions of the accep=
+ted contributions will be published=C2=A0</span></p><p dir=3D"ltr" style=3D=
+"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-siz=
+e:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-colo=
+r:transparent;font-weight:400;font-style:normal;font-variant:normal;text-de=
+coration:none;vertical-align:baseline;white-space:pre-wrap">in an informal =
+book of abstracts for distribution at the workshop.</span></p><br><br><p di=
+r=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span=
+ style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,=
+0);background-color:transparent;font-weight:400;font-style:normal;font-vari=
+ant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-wra=
+p">POST-PROCEEDINGS</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;=
+margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family=
+:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font=
+-weight:400;font-style:normal;font-variant:normal;text-decoration:none;vert=
+ical-align:baseline;white-space:pre-wrap">Similarly to TYPES 2011 and TYPES=
+ 2013-2019, a post-proceedings=C2=A0</span></p><p dir=3D"ltr" style=3D"line=
+-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11p=
+t;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:tra=
+nsparent;font-weight:400;font-style:normal;font-variant:normal;text-decorat=
+ion:none;vertical-align:baseline;white-space:pre-wrap">volume is planned in=
+ the Leibniz International Proceedings in Informatics (LIPIcs) series (conf=
+irmation pending). Submission to that volume will be open to everyone.</spa=
+n></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bo=
+ttom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;=
+;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:n=
+ormal;font-variant:normal;text-decoration:none;vertical-align:baseline;whit=
+e-space:pre-wrap">CONTACT</span></p><p dir=3D"ltr" style=3D"line-height:1.3=
+8;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-fami=
+ly:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;fo=
+nt-weight:400;font-style:normal;font-variant:normal;text-decoration:none;ve=
+rtical-align:baseline;white-space:pre-wrap">Email: <a href=3D"mailto:ugo.de=
+liguoro-Ob+gDNbliO0@public.gmane.org">ugo.deliguoro-Ob+gDNbliO0@public.gmane.org</a></span></p><br><p dir=3D"ltr" s=
+tyle=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"f=
+ont-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);backgrou=
+nd-color:transparent;font-weight:400;font-style:normal;font-variant:normal;=
+text-decoration:none;vertical-align:baseline;white-space:pre-wrap">PROGRAM =
+COMMITTEE</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt=
+;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier=
+ New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;fo=
+nt-style:normal;font-variant:normal;text-decoration:none;vertical-align:bas=
+eline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Ugo de=E2=80=99 Liguoro=
+ (University of Turin) (chair)</span></p><p dir=3D"ltr" style=3D"line-heigh=
+t:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font=
+-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpare=
+nt;font-weight:400;font-style:normal;font-variant:normal;text-decoration:no=
+ne;vertical-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0St=
+efano Berardi (University of Turin) (co-chair)</span></p><p dir=3D"ltr" sty=
+le=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"fon=
+t-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background=
+-color:transparent;font-weight:400;font-style:normal;font-variant:normal;te=
+xt-decoration:none;vertical-align:baseline;white-space:pre-wrap">=C2=A0=C2=
+=A0=C2=A0=C2=A0Marino Miculan (University of Udine)</span></p><p dir=3D"ltr=
+" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);bac=
+kground-color:transparent;font-weight:400;font-style:normal;font-variant:no=
+rmal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">=C2=
+=A0=C2=A0=C2=A0=C2=A0Marc Bezem (University of Bergen)</span></p><p dir=3D"=
+ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span styl=
+e=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);ba=
+ckground-color:transparent;font-weight:400;font-style:normal;font-variant:n=
+ormal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">=
+=C2=A0=C2=A0=C2=A0=C2=A0Gilles Dowek (INRIA =E2=80=93 ENS Paris-Saclay)</sp=
+an></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-botto=
+m:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;co=
+lor:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:norm=
+al;font-variant:normal;text-decoration:none;vertical-align:baseline;white-s=
+pace:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Takeshi Tsukada (University of Tokyo=
+)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-=
+bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quo=
+t;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-style=
+:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;wh=
+ite-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Jos=C3=A9 Esp=C3=ADrito Santo (=
+University of Minho)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;mar=
+gin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&q=
+uot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-we=
+ight:400;font-style:normal;font-variant:normal;text-decoration:none;vertica=
+l-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Herman Geuve=
+rs (Radboud University Nijmegen)</span></p><p dir=3D"ltr" style=3D"line-hei=
+ght:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;fo=
+nt-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transpa=
+rent;font-weight:400;font-style:normal;font-variant:normal;text-decoration:=
+none;vertical-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0=
+Ralph Matthes (IRIT =E2=80=93 CNRS and University of Toulouse)</span></p><p=
+ dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><s=
+pan style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0=
+,0,0);background-color:transparent;font-weight:400;font-style:normal;font-v=
+ariant:normal;text-decoration:none;vertical-align:baseline;white-space:pre-=
+wrap">=C2=A0=C2=A0=C2=A0=C2=A0Henning Basold (University of Leiden)</span><=
+/p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0p=
+t"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:=
+rgb(0,0,0);background-color:transparent;font-weight:400;font-style:normal;f=
+ont-variant:normal;text-decoration:none;vertical-align:baseline;white-space=
+:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Aleksy Schubert (University of Warsaw)</=
+span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bot=
+tom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;=
+color:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:no=
+rmal;font-variant:normal;text-decoration:none;vertical-align:baseline;white=
+-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Anton Setzer (University of Swanse=
+a)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin=
+-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&qu=
+ot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-styl=
+e:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;w=
+hite-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Thorsten Altenkirch (Universit=
+y of Nottingham)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-=
+top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;=
+Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight=
+:400;font-style:normal;font-variant:normal;text-decoration:none;vertical-al=
+ign:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Silvia Ghilezan =
+(University of Novi Sad)</span></p><p dir=3D"ltr" style=3D"line-height:1.38=
+;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-famil=
+y:&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;fon=
+t-weight:400;font-style:normal;font-variant:normal;text-decoration:none;ver=
+tical-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0=C3=89ti=
+enne Miquey (INRIA, University of Nantes)</span></p><p dir=3D"ltr" style=3D=
+"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=3D"font-siz=
+e:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);background-colo=
+r:transparent;font-weight:400;font-style:normal;font-variant:normal;text-de=
+coration:none;vertical-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=
+=A0=C2=A0Elaine Pimentel (Federal University of Rio Grande do Norte)</span>=
+</p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0=
+pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color=
+:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:normal;=
+font-variant:normal;text-decoration:none;vertical-align:baseline;white-spac=
+e:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Tarmo Uustalu (Reykjavik University)</s=
+pan></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bott=
+om:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;c=
+olor:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:nor=
+mal;font-variant:normal;text-decoration:none;vertical-align:baseline;white-=
+space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Alexandre Miquel (University of the=
+ Republic, Montevideo)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;m=
+argin-top:0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:=
+&quot;Courier New&quot;;color:rgb(0,0,0);background-color:transparent;font-=
+weight:400;font-style:normal;font-variant:normal;text-decoration:none;verti=
+cal-align:baseline;white-space:pre-wrap">=C2=A0=C2=A0=C2=A0=C2=A0Thierry Co=
+quand (Chalmers University of Technology)=C2=A0</span></p><br><p dir=3D"ltr=
+" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);bac=
+kground-color:transparent;font-weight:400;font-style:normal;font-variant:no=
+rmal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">Org=
+anisers:</span></p><br><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:=
+0pt;margin-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Cour=
+ier New&quot;;color:rgb(0,0,0);background-color:transparent;font-weight:400=
+;font-style:normal;font-variant:normal;text-decoration:none;vertical-align:=
+baseline;white-space:pre-wrap">Ugo de&#39;Liguoro (University of Turin, cha=
+ir)</span></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margi=
+n-bottom:0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&q=
+uot;;color:rgb(0,0,0);background-color:transparent;font-weight:400;font-sty=
+le:normal;font-variant:normal;text-decoration:none;vertical-align:baseline;=
+white-space:pre-wrap">Stefano Berardi (University of Turin, co-chair)</span=
+></p><p dir=3D"ltr" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:=
+0pt"><span style=3D"font-size:11pt;font-family:&quot;Courier New&quot;;colo=
+r:rgb(0,0,0);background-color:transparent;font-weight:400;font-style:normal=
+;font-variant:normal;text-decoration:none;vertical-align:baseline;white-spa=
+ce:pre-wrap">Riccardo Treglia (University of Turin)</span></p><p dir=3D"ltr=
+" style=3D"line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:11pt;font-family:&quot;Courier New&quot;;color:rgb(0,0,0);bac=
+kground-color:transparent;font-weight:400;font-style:normal;font-variant:no=
+rmal;text-decoration:none;vertical-align:baseline;white-space:pre-wrap">Luc=
+a Ciccone (University of Turin)</span></p></b><br class=3D"gmail-Apple-inte=
+rchange-newline"><div><br></div></div>
+
+--0000000000005cb863059b3a38cd--
+
+--===============3359317720248651251==--
+

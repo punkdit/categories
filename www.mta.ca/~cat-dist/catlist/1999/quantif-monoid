@@ -1,0 +1,339 @@
+Date: Sat, 28 Feb 1998 23:24:32 -0600 (CST)
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+Subject: categories: Quantifiers for monoids
+
+In studying Algol-like languages, I repeatedly run into operators that
+have an interesting structure.  I am wondering if such operators are
+studied somewhere.
+
+Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+natural transformations E_A : [A => M] -> M that satisfy the following
+equations (in the internal language of the CCC):
+
+    E_A(\lambda x. 1)  =  1
+    E_A(\lambda x. a * g`x) = a * E_A(g)
+    E_A(\lambda x. g`x * a) = E_A(g) * a
+    E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+These operators "feel" like existential quantifiers.  In fact, if M is
+a subobject classifier with the monoid structure ofh conjunction, then
+the existential quantifier E satisfies all of these equations (though
+it is not a natural transformation).
+
+In the applications I am interested in, M is a type of commands, with
+* as sequential composition and 1 as the null action.  An example of
+E is a local variable declaration.  
+
+Is there some algebra or theory related to these kinds of operators?
+
+Cheers,
+Uday Reddy
+
+
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+Subject: categories: Re: Quantifiers for monoids
+Date: Mon, 2 Mar 1998 11:16:12 +0000 (GMT)
+
+[Note from moderator: apologies to Dusko for prepending nonsense to his
+post, regards, Bob]
+
+Uday S. Reddy:
+
+ > Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+ > natural transformations E_A : [A => M] -> M that satisfy the following
+ > equations (in the internal language of the CCC):
+ > 
+ >1)     E_A(\lambda x. 1)  =  1
+ >2)     E_A(\lambda x. a * g`x) = a * E_A(g)
+ >3)     E_A(\lambda x. g`x * a) = E_A(g) * a
+ >4)     E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+ > 			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+The naturality of E_A in A seems to be a very strong requirement
+(provided that am not misuncerstanding anything, ofcourse).
+
+Let T the terminal object (since 1 already denotes the unit of
+M). Equations (1) and (2) imply
+
+	E_T(\lambda x. a) = a, 
+
+so E_T is iso. The naturality, on the other hand, implies that for
+every a,b : T --> A holds
+
+	a=>M ; E_T   =   E_A   =   b=>M ; E_T
+
+Such E_A, I think, shouldn't be thought of as a quantifier: modulo
+E_T, it actually boils down to the *evaluation* at (ie substitution
+of) an arbitrary global point of A:
+
+	E_A(g)  = g`a = g`b
+
+Instanciating A = M and g = \lambda x. x yields a = 1, ie 1: T --> M
+is the only global point of M. If T generates, M is T.
+
+On the other hand, if there is an initial object 0 in the CCC, the
+naturality in A implies that all E_A are constantly 1...
+
+Without the naturality, conditions (1--4) seem to be rather easy to
+satisfy. For a fixed A, conditions (2) and (3) are a kind of
+naturality on E_A itself. To make this precise, define on A=>M the
+pointwise monoid structure
+
+	g * h   =  \lambda x. g`x * h`x
+	
+Thinking of M and A=>M as categories, each with one object *, we have
+the Hom-functors from M^op x M and from A=>M^op x A=>M to the CCC
+where they live.
+
+On the other hand, there is the monoid morphism
+
+	I : M ---> A=>M
+	      m |--> \lambda x. m
+
+which can be construed as a functor. Precomposing Hom_{A=>M} with I^op
+and I, we get a functor from M^op x M. Conditions (2) and (3) are now
+exactly the naturality of
+
+	E_A : Hom_{A=>M} (I*, I*) ---> Hom_M (*,*)
+
+in each of the arguments. Hom_M thus appears as a retract of the
+functor Hom_{A=>M} o (I^op x I)... All together, E_A thus appear as a
+weak kind of *abstraction operators* (like in
+www.cogs.susx.ac.uk/users/duskop/papers/CLNA.ps.gz).
+
+All this may not be enlightening at all, but it does seem to help pin
+down the models: eg, evaluations/substitutions of the arbitrary points
+will work again, as well as, when M is a complete lattice, the infima
+and the suprema, corresponding to the quantifiers... (No naturality in
+A, ofcourse.)
+
+Apologies if I got carried away a bit. It's a nice question. I hope
+others will tell more.
+
+Regards,
+-- Dusko Pavlovic
+
+
+Date: Tue, 3 Mar 1998 07:32:55 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: Reddy's question
+
+Uday Reddy poses the following (with a few changes in notation]:
+
+>Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+>are natural transformations  E:[-,M] -> M  that satisfy the
+>following equations (in the internal language of the CCC):
+>
+>               E_A(\x.e)  =  e
+>         E_A(\x. a * gx)  =  a * E_A(g)
+>         E_A(\x. gx * a)  =  E_A(g) * a
+>    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+
+I wonder if naturality is really desired: it would seem to force  M  to
+be trivial. By the familiar Yoneda-lemma argument, E  must be constant
+as far as the "points" of  [A,M]  are concerned. (Actually one doesn't
+need the argument, just the lemma itself; consider the transformation
+that  E  induces between set-valued functors  (-,M) -> (1,M); Yoneda
+says it must be constant.) The condition
+
+    E_A(\x.e)  =  e
+
+forces just which constant it is. That is, for any  f:A -> M  it will
+be the case that  E_A  will send  f  to  e.
+
+But then either condition
+
+    E_A(\x. a * gx) = a * E_A(g)
+
+or
+
+    E_A(\x. gx * a) = E_A(g) * a
+
+will force  M  to be trivial. (It's clear in the \-calculus notation.
+But that argument would be implicitly using the fact that  E_A  is
+constant and we officially know only that it's constant on points.
+So take, say, the second condition. It says in diagrammatic language:
+
+
+              1 x K                 P            [A,*]
+   [A,M] x M  -----> [A,M] x [A,M] ---> [A,MxM]  -----> [A,M]
+
+         |                                                |
+         |  E_A x 1_M                                     |  E_A
+         |                                                |
+                                    *
+       M x M   ---------------------------------------->  M
+
+
+where  K  is the standard "constant-map" operator that's adjoint to
+the projection  AxM -> M  and  P  is the standard operator that
+defines  MxM  (given products in Set). Specialize to  A = M  and
+precompose with  <f,1>: M -> [M,M] x M  where  f  doesn't matter. If
+the commutative rectangle above is chased clockwise one obtains the
+map constantly valued  e. Chased counterclockwise one obtains the
+identity map. And, of course, it didn't matter what  f  is.)
+
+
+Date: Tue, 3 Mar 1998 22:59:35 -0600 (CST)
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+Subject: Re: categories: Reddy's question
+
+Response by Peter Freyd to a question of mine:
+
+> >Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+> >are natural transformations  E:[-,M] -> M  that satisfy the
+> >following equations (in the internal language of the CCC):
+> >
+> >               E_A(\x.e)  =  e
+> >         E_A(\x. a * gx)  =  a * E_A(g)
+> >         E_A(\x. gx * a)  =  E_A(g) * a
+> >    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+> 
+> I wonder if naturality is really desired: it would seem to force  M  to
+> be trivial. 
+
+Indeed!  (Peter Johnstone and Dusko Pavlovic also pointed out that I
+went wrong in asking for naturality.)  Something got lost in
+abstracting from my application domain.  My examples had additional
+parameters which made naturality possible.  But, discarding those
+parameters in the interest of abstration seems to have produced a
+statement that is quite impossible to satisfy.  My apologies.
+
+Dusko Pavlovic pointed out some of what we could do once we discard
+the naturality condition.  The second and third equations can be
+regarded as naturality properties by thinking of M and [A,M] as
+categories and E_A as a functor.  (That is good, because it singles
+out the first equation as a "pretender."  So, I shouldn't be worried
+when it breaks.)
+
+On the other hand, I don't know what to make of the fourth equation.
+It says that for E_A to be an abstraction operator (tentatively using
+Pavlovic's terminoloty), it has to commute with every other
+abstraction operator E_B.  For one, that prevents me from giving a
+local definition of what an abstraction operator is.  One needs to
+define the whole collection of abstraction operators at one go.  (Now
+that naturality is gone out the window, there is no reason to require
+even that the family of operators be indexed by objects.  There could
+be any number of maps for an object A.)  Secondly, looking at it from
+the application point of view, there is something "intrinsic" about
+these operators that makes them commute with each other.  It is not
+really a property of the whole collection of operators.  The presence
+or absence of another operator in the collection shouldn't matter.  I
+really have no idea how to capture this kind of "uniformity" in the
+commutativity property.  Some hyperdoctrine-like idea, perhaps?
+
+Despite the fact the first equation doesn't hold in all toposes, I
+think the example of the existential quantifier is an illuminating
+one.  Evaluation at a particular point is a "degenerate" example in
+that it also satisfies
+
+      E_A(\x. fx * gx) = E_A(f) * E_A(g)
+
+The existential quantifier gives a better intuition for the idea of
+these operators.
+
+Hope this explains the question better.
+
+Uday Reddy
+
+
+Date: Wed, 4 Mar 1998 17:43:42 +0100 (CET)
+From: Reinhold Heckmann <heckmann@cs.uni-sb.de>
+Subject: categories: Uday's question
+
+When reading the last message of Uday Reddy,
+I got three ideas.
+
+1) Several people have pointed out that naturality is impossible.
+Yet a weaker form of naturality may be appropriate.
+Consider existential quantification on sets.
+If f: A -> B is a function and p: B -> M (= Bool) a predicate,
+then  exists x in A: p(fx)  iff  exists x in f(A): p x
+This suggests to require naturality  E_A (p o f) = E_B p
+for *epis*  f: A -> B  only.
+
+2)  Uday Reddy asked about the significance of the third equation:
+    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+This equation looks a bit like the Foubini theorem
+in integration theory.
+The difference is that in Foubini's theorem,
+there is a third mediating term, whose analogue would be
+    E_(A x B) (\(x,y). hxy) .
+[Distinguish the product symbol x in A x B from the variable x.]
+
+3) The analogy with integration also shows that
+something may be missing from the present setting:
+The integral depends on the function to be integrated
+and also on a measure.  It is in fact an operator
+    I_A: [A->M] x M(A) -> M
+where M are the (non-negative?) reals
+with the multiplicative monoid structure,
+and M(A) is the set of measures on A.
+[Distinguish the operator M from the monoid M.
+ Yet there is some connection: M(1) = M
+ if M is taken to consist of the non-negative reals.]
+
+Now, we get
+         I_A(\x. a * gx, m)  =  a * I_A(g, m)
+         I_A(\x. gx * a, m)  =  I_A(g, m) * a
+by linearity of integration, and
+         I_A(\x.1, m) = m(A)
+(= 1, if only normalised measures are considered, but then M = M(1) is lost)
+Of course, integration has many more properties, e.g.
+additivity in the function, and linearity in m.
+
+The last equation becomes
+  I_A (\x. I_B (\y. hxy, mb), ma) = I_B (\y. I_A (\x. hxy, ma), mb)
+  =  I_(A x B) (\(x,y). hxy, ma x mb)   with the product measure ma x mb.
+
+There is also kind of naturality, namely the law of substitution:
+For  f: A -> B,  I_A (p o f, ma) = I_B (p, ma o f^-1)
+	(for  p: B -> M  and  ma in M(A) ).
+This becomes a bit more categorical
+by noting that  M(-)  is a functor  with  M(f) (ma) = ma o f^-1
+and so   I_A ( [f->] p, ma) = I_B (p, M(f) ma) .
+
+Much of this can be formulated abstractly with a functor M.
+For the mediating term of the Foubini theorem,
+a natural transformation  x_AB: M(A) x M(B) -> M(AxB)  is needed
+to form the product measure.
+
+It may be useful to introduce a natural transformation
+eta_A: A -> M(A), giving point measures.
+    I_A (p, eta_A(x)) = p(x)  holds for p: A -> M  and  x in A.
+
+The transformation x_AB induces a binary operation on  M(1) = M(1 x 1),
+and for  1 = {()},  eta_1 ()  is an element of  M(1).
+This gives a monoid structure on M(1),
+giving back the original monoid M.
+
+Back to existential quantification:
+===================================
+Take  M(A) = P(A), the powerset of A,  and M = P(1) = Bool
+and define  E_A (p, S) = exists x in S: p(x)
+for  p: A -> M  and  S in P(A).
+Then all the equations for integration hold
+(with  x_AB : P(A) x P(B) -> P(A x B)  being cartesian product
+ and  eta_A(x) = {x} )
+
+Instead of considering  E_A: [A->M] x P(A) -> M,
+one may, using CC, also consider  E'_A: P(A) -> [[A->M]->M] .
+This is even a monad homomorphism from the power set monad
+to the monad  [[- -> M] -> M]  (known as continuation monad
+with "final answers" M).
+
+A similar thing is possible in the category of domains,
+with P being some power domain construction
+(see my paper  "Power Domains and Second Order Predicates",
+ TCS 111, 59 - 88 (1993) ).
+
+Maybe, this is the essence of Uday's work:
+defining a monad homomorphism from some monad used
+in the semantic description of a language to the continuation monad.
+
+Regards,
+Reinhold Heckmann
+Universitaet des Saarlandes
+
+

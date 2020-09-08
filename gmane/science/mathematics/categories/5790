@@ -1,0 +1,370 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Batanin <mbatanin@ics.mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: calculus, homotopy theory and more (corrected)
+Date: Thu, 13 May 2010 16:56:02 +1000
+Lines: 333
+Approved: news@gmane.org
+Message-ID: <E1OCY36-0007DM-Ms@mailserv.mta.ca>
+References: <E1OAsS6-0001ay-ER@mailserv.mta.ca> <4BE81F26.4020903@dm.uba.ar> <E1OBzd8-0007RP-D2@mailserv.mta.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F57F6@CAHIER.gst.uqam.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F57F8@CAHIER.gst.uqam.ca>
+Reply-To: Michael Batanin <mbatanin@ics.mq.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1273757523 17681 80.91.229.12 (13 May 2010 13:32:03 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 13 May 2010 13:32:03 +0000 (UTC)
+To: Andre Joyal <joyal.andre@uqam.ca>
+Original-X-From: categories@mta.ca Thu May 13 15:32:01 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OCYW8-0000Bu-AN
+	for gsmc-categories@m.gmane.org; Thu, 13 May 2010 15:32:00 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OCY36-0007DM-Ms
+	for categories-list@mta.ca; Thu, 13 May 2010 10:02:00 -0300
+In-Reply-To: <B3C24EA955FF0C4EA14658997CD3E25E370F57F8@CAHIER.gst.uqam.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5790
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5790>
+
+Dear Andre,
+
+thank you for your very nice posting. If I understood correctly your=20
+proof of stabilization hypothesis it is based on classical Freudenthal
+theorem. I can not resist sketching another proof (this is joint work=20
+with Clemens Berger and Denis-Charles Cisinski) from which Freudenthal=20
+theorem is a consequence.
+
+It is based on the use of higher braided operads. Classically one can=20
+consider nonsymmetric, braided and symmetric operads with the values in=20
+a symmetric monoidal category V. If V is in addition a model category=20
+one can speak about contractible operads.  When V =3D Cat, for example,th=
+e=20
+category of  algebras of contractible nonsymmetric (braided, symmetric)=20
+operads is (=3DQuillen equivalent) to the category of monoidal categories=
+=20
+(braided, symmetric). This prompts a line of thinking that the category=20
+   of  k-braided (weak) n-categories must  be an algebra of a=20
+contractible k-braided operad with values in Cat_n.
+
+It is well known that we can not define k-braided operads in classical
+terms (i.e. a sequence of objects with action of some groups  and a=20
+compatible substitution). The contradiction here is that for a=20
+contractible such operad to have a right homotopy type the  quotient of=20
+   its m-th space  by group actions must have the homotopy type of space=20
+of (nonordered) configuration of m-points in R^k. And this is not a=20
+K(\pi,1) space unless k=3D1,2,\infty.
+
+Nevertheless, one can overcome this difficulty if instead of group=20
+action we consider an action of a category. Formally we consider a=20
+category of quasibijections of k-ordinals (or maps of pruned k-trees,=20
+which are bijections on the highest level) Q_k. The m-th connected=20
+component of the nerve of this category has homotopy type of the space=20
+of (nonordered) configuration of m-points in R^k. Then a k-collection is=20
+a contravaliant functor Q_k --> V. One can construct a category of=20
+operads  O_n(V) which have k-collections as underlying collections:
+
+arXiv:0804.4165 Locally constant n-operads as higher braided operads. M.=20
+A. Batanin.
+
+Finally, we define a k-braided operad to be an object of O_k(V) such=20
+that the action of any quasibijection is a weak equivalence. Obviously a=20
+contractible k-operad is a k-braided operad.
+
+We want, actually, a bit more and define a model category of k-braided=20
+operads. This can be done by an appropriate Bousfield localization=20
+O_k^loc(V) of the model category O_k(V). The fibrant objects in=20
+O_k^loc(V) are precisely fibrant k-braided operads.
+
+There is also a simple functor
+
+    S: O_{k+1}(V) --> O_k(V)
+
+induced by inclusion
+
+s: Q_k --> Q_{k+1}
+
+(add a tail to any pruned tree of height k).
+
+This functor has a left adjoint, moreover, this pair of adjoint induces=20
+a pair of Quillen functors between localised categories
+   S^{loc}: O_{k+1}^{loc}(V) <=3D=3D> O_k^{loc}(V):F^{loc}
+
+Theorem [Operadic stabilisation]:
+Let V be n-truncated as a model category and k is greater or equal to n+2=
+.
+Then the Quillen adjunction
+         S^{loc} |- F^{loc}
+   is a Quillen equivalence. Moreover,
+in this case the symmetrisation functor
+
+sym:O_k^{loc}(V) --> SO(V)
+
+is the left Quillen equivalence (SO(V) is the category of symmetric=20
+operads).
+
+Proof. It follows from an explicit calculation of the derived left Kan=20
+extension along the functor s: Q_k --> Q_{k+1} and the fact that s=20
+induces an isomorphism of the m-th homotopy groups of the nerves when
+m < k-2 , k>2 (k=3D2 is special and corresponds to the canonical=20
+homomorphism from  braid groups to symmetric groups).
+
+
+Let us define the model category Br_k(V) of k-braided object in V as the=20
+category of one object, one arrow, ..., one (k-1)-arrow algebras of a=20
+contractible cofibrant k-operad. The (derived) Eckman-Hilton argument=20
+shows that it is Quilen equivalent to the category E_k(V) of=20
+E_k-algebras in V.
+
+
+Let V be an n-truncated symmetric monoidal model category and k is=20
+greater or equal to n+2.
+Then the total left derived functor  LF^{loc}   map contractible=20
+k-operads to contractible (k+1)-operads and Lsym map contractible=20
+operads to E_{\infty}-operads. So we have a Quillen equivalence of the=20
+categories
+
+    E_k(V) --> Br_k(V) --> Br_{k+1}(Cat_n)--> E_{\infty}(V).
+
+Corollary 1[BBD stabilization hypothesis]
+Take V=3DCat_n (for example, Cat_n =3D Rezk n-categories).
+
+Corollary 2 [Freudenthal theorem]
+   V =3D n-homotopy types.
+
+I have little understanding of Goodwillie calculus but I know that=20
+operads play an important role in it.
+It would be very interested to see what corresponds in calculus to=20
+operadic stabilization.
+
+with best regards,
+Michael.
+
+
+
+
+
+Joyal wrote:
+> Dear All,
+>=20
+> The shift n-->n+1 which occurs in the terminologies
+>=20
+> "n-braided monoidal category" =3D "(n+1)fold monoidal category"
+>=20
+> "n-connected spaces" =3D "(n+1)fold loop spaces"
+>=20
+> is very natural. A similar shift occurs in calculus.
+> The analogy between calculus and homotopy theory is far reaching.
+> It is the basis of the theory of analytic functors of Goodwilie.
+>=20
+> http://www.math.brown.edu/faculty/goodwillie.html
+> http://arxiv.org/abs/math/0310481
+> http://ncatlab.org/nlab/show/Goodwillie+calculus
+>=20
+> I would to describe the very elementary aspects of this theory.
+> I will also say a few things about the Breen-Baez-Dolan Stabilisation=20
+> Hypothesis,
+> claiming that it is a theorem.
+>=20
+> Let me denote by K[[x]] the ring of formal power series in one
+> variable over a field K. The ring K[[x]] bears some ressemblance
+> with the category of pointed homotopy types (=3D pointed spaces up
+> to weak homotopy equivalences). The category of pointed
+> homotopy types is a ring (the product is the smash product
+> and the sum is the wedge).
+>=20
+> K =3D=3D=3D the category of pointed sets
+>=20
+> K[[x]]=3D=3D=3D the category of pointed homotopy types
+>=20
+> x =3D=3D=3D the pointed circle.
+>=20
+> The augmentation K[[x]]-->K
+> =3D=3D=3D the functor  pi_0: pointed homotopy types ---> pointed sets
+>=20
+> The augmentation ideal J
+> =3D=3D=3D the subcategory of pointed connected spaces.
+>=20
+> The n+1 power of the augmentation ideal J^{n+1}
+> =3D=3D=3D the subcategory of pointed n-connected spaces.
+>=20
+> The product of an element in J^{n+1} with an element of J^{m+1}
+> is an element of J^{n+m+2}
+> =3D=3D=3D the smash product of a n-connected space with
+> a m-connected space is (n+m+1)-connected.
+>=20
+> Multiplication by x =3D=3D=3D the suspension functor.
+>=20
+> Division by x =3D=3D=3D the loop space functor.
+> Notice here the difference: the loop functor is right adjoint to
+> the suspension functor, not its inverse. Moreover,
+> the loop space of a space has a special structure (it is a group).
+> The ideal J=3DxK[[x]] is isomorphic to K[[x]] via division by x.
+> Similarly, the category of pointed connected spaces is equivalent to
+> the category of topological groups via the loop space functor
+> (it is actually an equivalence of model categories).
+> More generally, the ideal J^{n+1} is isomorphic to K[[x]] via division=20
+> by x^{n+1}.
+> Similarly, the category of n-connected space is equivalent to
+> the category of (n+1)-fold topological group (it is actually an
+> equivalence of model categories) via the (n+1)-fold loop space functor.
+>=20
+>=20
+>=20
+> The quotient ring K[[x]]/J^{n+1} =3D=3D=3D the category of n-truncated=20
+> homotopy types (=3Dn-types)
+>=20
+> The sequence of approximations of a formal power series f(x)=3Da_0+a_1x=
++...
+> a_0
+> a_0+a_1x
+> a_0+a_1x+a_2x^2
+> ...
+> ...
+>=20
+> =3D=3D=3D the Postnikov tower of a pointed homotopy type X:
+> [pi0X]
+> [pi0X;pi1X]
+> [pi0X;pi1X,pi2X]
+> ...
+> ...
+> Here, pi0X is the set of components of X,
+> [pi0X;pi1X] is the fundamental groupoid of X,
+> [pi0X;pi1X,pi2X] is the fundamental 2-groupoid of X, etc.
+>=20
+>=20
+> The differences between f(x) and its successives approximations
+>=20
+> R0 =3D f(x)-a_0               =3D a_1x+a_2x^2+a_3x^3+....
+> R1 =3D f(x)-(a_0+a_1x)        =3D      a_2x^2+a_3x^3+a_4x^4+....
+> R2 =3D f(x)-(a_0+a_1x+a_2x^2) =3D             a_3x^3+a_4x^4+a_5x^5+....
+>=20
+> =3D=3D=3Dthe Whitehead tower of X,
+>=20
+> C_0=3D[0;pi1X, pi2X, pi3X,....]
+> C_1=3D[0;0,pi2X,pi3X, pi4X,....]
+> C_2=3D[0;0,0,pi3X,pi4X,pi4X,....]
+> ....
+> ....
+> Here, C_0 is the connected component of X at the base point,
+> C_1 is the universal cover of X constructed by from paths starting at=20
+> the base point,
+> C_2 is the universal 2-cover of X constructed from paths starting the=20
+> base point, etc.
+>=20
+>=20
+> Division by x is shifting down the coefficients of a power series
+> If f(x)=3Da_1x+a_2x^2+..., then f(x)/x=3D a_1+a_2x+...
+> Similarly, the loop space functor is shifting down the homotopy groups
+> of a pointed space: if X=3D[a_0;a_1,a_2,...] then Loop(X)=3D[a_1;a_2,..=
+..].
+>=20
+> Unfortunately, the suspension functor does not shift up the homotopy=20
+> groups of a space.
+> It is however shifting the first 2n homotopy groups of n-connected spac=
+e=20
+> X (n geq 1)
+> by a theorem of Freudenthal:
+>=20
+> http://en.wikipedia.org/wiki/Freudenthal_suspension_theorem
+> http://en.wikipedia.org/wiki/Hans_Freudenthal
+>=20
+> For example, if X=3D[0;0,a_2, a_3,...] (n=3D1) then Susp(X)=3D[0;0,0,a_=
+2,b_3...],
+> and if X=3D[0;0,0, a_3, a_4, a_5,...] (n=3D2) then Susp(X)=3D[0;0,0, 0,=
+  a_3,=20
+> a_4, b_5,...].
+> In other words, the canonical map
+>=20
+> X-->LoopSusp(X)
+>=20
+> is a 2n-equivalence if X is n-connected (n geq 1).
+> If X[2n] denotes the 2n-type of X (the 2n-truncation of X),
+> then we have a homotopy equivalence
+>=20
+> X[2n]-->LoopSusp(X)[2n]=3DLoop(Susp(X)[2n+1]).
+>=20
+> It follows that if X is a n-connected 2n homotopy type then
+> we have a homotopy equivalence
+>=20
+> X--->Loop(X')
+>=20
+> where X'=3DSusp(X)[2n+1]. The space X' is said to
+> be a *delooping* of X. By iterating this construction
+> we can construct an infinite sequence of spaces
+>=20
+> X=3DX_0, X_1, X_2,....
+>=20
+> such that X_n=3DLoop(X_{n+1}). In other words,
+>=20
+> *a n-connected 2n homotopy type is an infinite loop space (canonically)=
+*
+>=20
+> The (n+1)-fold loop space of a n-connected space
+> is an E(n+1)-space (a E(n)-space is a model of the little n-cubes
+> operad of Boardman and Vogt, a E(1)-space is a monoid,
+> a E(2)-space is a braided monoid,...).
+> The (n+1)-fold loop space functor induces an equivalence between the=20
+> category of n-connected spaces and the category of group-like E(n+1)-sp=
+ace
+> (a monoid M is said to be group-like if pi0(M) is a group).
+> Observe that the (n+1)-fold loop space of a 2n-type is a (n-1)-type.
+> Freudenthal theorem implies that
+>=20
+> *If a (n-1) homotopy type has the structure of a group-like E(n+1)-spac=
+e
+>   then it has also the structure of an E(infty)-space (canonically)*
+>=20
+> A nicer statement is obtained by shifting the index n by one.
+>=20
+> * If a n-type has the structure of a group-like E(n+2)-space then it
+> has also the structure of an E(infty)-space (canonically)*
+>=20
+> The group-like condition can be dropped:
+>=20
+> *If a n-type has the structure of an E(n+2)-space then it has
+> the the structure of an E(infty)-space (canonically)*
+>=20
+> This is a special case of the Stabilisation Hypothesis of Breen-Baez-Do=
+lan;
+>=20
+> *If a n-category has the structure of an E(n+2)-category then it has th=
+e=20
+> structure of
+> symmetric monoidal category (canonically)*
+>=20
+> (Equivalently, *If a monoidal n-category is (n+1)-braided then it has=20
+> the structure of
+> symmetric monoidal category (canonically)*)
+>=20
+> It is not difficult to verify that these statements are formally equiva=
+lent.
+>=20
+> The Breen-Baez-Dolan Stabilisation Hypothesis is a theorem.
+>=20
+>=20
+> Best,
+> Andr=E9
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+>=20
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

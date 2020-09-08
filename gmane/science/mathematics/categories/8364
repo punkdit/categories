@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richardgarner@fastmail.fm>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  non-unital monads
+Date: Tue, 21 Oct 2014 10:22:48 +1100
+Lines: 79
+Approved: news@gmane.org
+Message-ID: <E1Xh52T-0006Y4-FY@mlist.mta.ca>
+References: <E1Xfuky-00062U-DQ@mlist.mta.ca> <E1XgKci-0006AD-Pu@mlist.mta.ca>
+Reply-To: Richard Garner <richardgarner@fastmail.fm>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1414019442 14161 80.91.229.3 (22 Oct 2014 23:10:42 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 22 Oct 2014 23:10:42 +0000 (UTC)
+Cc: categories@mta.ca
+To: Tarmo Uustalu <tarmo@cs.ioc.ee>, Vladimir Voevodsky <vladimir@ias.edu>
+Original-X-From: majordomo@mlist.mta.ca Thu Oct 23 01:10:36 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Xh535-000316-HD
+	for gsmc-categories@m.gmane.org; Thu, 23 Oct 2014 01:10:35 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:58936)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Xh52S-00055T-5F; Wed, 22 Oct 2014 20:09:56 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Xh52T-0006Y4-FY
+	for categories-list@mlist.mta.ca; Wed, 22 Oct 2014 20:09:57 -0300
+In-Reply-To: <E1XgKci-0006AD-Pu@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8364
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8364>
+
+With reference to Tarmo's examples---it's perhaps worth pointing out the
+notion of an "ideal monad" on a category with coproducts. One way of
+defining an ideal monad is in terms of an endofunctor T together with a
+natural transformation m:T(1+T)--->T satisfying two axioms:=20
+
+- m.T(inl) =3D 1: T--->T
+- m.T(inr.m) =3D m.(m.Tinr)(1+T): TT(1+T) ---> T.=20
+
+This is something stronger than a non-unital monad; if (T,m) is as
+above, then (T, m.T(inr)) is a non-unital monad. The extra strength
+means that from such a pair (T,m) one obtains a monad structure on 1+T
+in an obvious way. All of the examples Tarmo mentions possess this extra
+strength.
+
+Some references:
+
+P. Aczel, J. Adamek, S. Milius and J. Velebil, Infinite trees and
+completely iterative theories: a coalgebraic view. Theor. Comput. Sci.
+300 (2003) 1=E2=80=9345.
+
+Neil Ghani and Tarmo Uustalu, Coproducts of ideal monads, Theoretical
+Informatics and Applications 38 (2004), no. 4, 321=E2=80=93342.
+
+Richard
+
+> 2. "Non-unital monads" are not difficult to find.
+>=20
+> On Set, you can consider, for example,
+>=20
+> - T X  =3D  X x S   where (S, *) is some semigroup
+>=20
+>                            ass                 X x *
+>     mu_X  =3D  (X x S) x S -------> X x (S x S) ----- -> X x S
+>=20
+>     The simplest special case is given by right zero semigroups: Take
+>     any set S and define s * s' =3D s'; one gets
+>=20
+>                          fst x S
+>     mu_X  =3D  (X x S) x S -------> X x S
+>=20
+>     (For S with 2 or more elements, there is no unit.)
+>=20
+> - T X  =3D  lists over X of length at least n, for some fixed n
+>=20
+>     mu_X  =3D  flattening of a list of lists into a list
+>=20
+>     (For n \geq 2, there is no unit.)
+>=20
+> - For an endofunctor F, the free non-unital monad on F would be
+>=20
+>     F^+ X  =3D  F (F^* X)  \cong  F^* (F X)
+>=20
+>     where F^* is the free monad on F (assuming this exists).
+>=20
+>     So concretely you can construct F+ in terms of initial algebras by
+>=20
+>     F^+ X  =3D  F (mu Z. X + F Z)  \cong  mu Z. F X + F Z
+>=20
+>     (for comparison, F^* X  \cong  mu Z. X + F Z)
+>=20
+>     The free non-unital monad exists precisely when the free monad does,
+>     as you also have
+>=20
+>     F^* X  \cong  X + F^+ X
+>=20
+>     For your example, F X  =3D  X x X, one gets that F X is the set of all
+>     composite terms over variables from X, for a signature with one
+>     binary
+>     operation.
+>=20
+>     (And free would mean left adjoint to forgetful as usual.)
+>=20
+> Kind regards,
+>=20
+> Tarmo U
+>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

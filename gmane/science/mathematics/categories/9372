@@ -1,0 +1,189 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functionally complete/universal basis for graph homomorphisms?
+Date: Sun, 1 Oct 2017 20:58:51 -0700
+Lines: 149
+Approved: news@gmane.org
+Message-ID: <2cf3c324-2f2c-6787-bbeb-6d605ba8dacb@cs.stanford.edu>
+References: <E1dwrt5-0004cr-IJ@mlist.mta.ca> <E1dxdIN-0007xx-KT@mlist.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1506971379 21581 195.159.176.226 (2 Oct 2017 19:09:39 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Mon, 2 Oct 2017 19:09:39 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: John Baez <baez@math.ucr.edu>
+Original-X-From: majordomo@mlist.mta.ca Mon Oct 02 21:09:34 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dz65t-0004rW-CG
+	for gsmc-categories@m.gmane.org; Mon, 02 Oct 2017 21:09:33 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:47447)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dz66O-00041S-1Z; Mon, 02 Oct 2017 16:10:04 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dz64b-0004EL-Df
+	for categories-list@mlist.mta.ca; Mon, 02 Oct 2017 16:08:13 -0300
+Content-Language: en-US
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9372
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9372>
+
+Addressing the nLab article cited by John Baez, if we take "graph" to
+mean a heterogeneous algebra with two carriers V and E and two lawless
+operations s,t: E --> V, then I don't see any definition in that article
+that would make graphs algebraic in sets, contrary to my claim that they
+are.?? The article contains "inequivalent definitions" in about the same
+sense that Republican senators have inequivalent notions of climate change.
+
+A simple way to fix this (that should satisfy all Republicans) is to
+interpret "graph" as meaning "reflexive graph", namely a graph in the
+above sense further equipped with an operation i: V --> E satisfying sis
+= s and tit = t.?? By Morita (details later), this is equivalent to
+having just the one sort E with s,t: E --> E being two idempotents, ss =
+s, tt = t, satisfying in addition ts = s, st = t.
+
+With only one sort we clearly have an algebraic category of graphs of
+the kind envisaged in the nLab article.?? The underlying set U(G) of the
+graph G is simply its set of edges, and the free graph F(X) is a graph
+with X independent edges in the sense that the adjacency relation
+between their 2X endpoints of those edges is empty.?? Put differently, in
+the free graph no edge touches itself or any other edge, entirely dual
+to free love.?? Honest Republicans will understand.
+
+But this is not the only solution.?? Completely missing from the article
+is any mention of a functor A: T --> Set as an algebra in its own right,
+as distinct from a functor U: A --> V as a V-valued forgetful functor
+from an algebraic category A?? per section 5, References, of the
+article.???? Such a functor A: T --> Set is a heterogeneous "T-algebra" in
+the sense that it is a model of the (small) category T understood as a
+theory.?? We understand the objects of T as its sorts, and its morphisms
+as its (unary) operation symbols.?? The algebra A interprets the sorts ??
+of T as sets A(??) and the operation symbols of T as unary operations
+acting on those sets.?? The functor category Set^T is the category of all
+T-algebras (in this sense) and their homomorphisms, namely their natural
+transformations.
+
+This logical development mirrors (literally) the geometric notion of a
+presheaf A: J' --> Set on a base J = T' = T^op, with the category Set^T
+of T-algebras (in this sense) being identical to the presheaf category
+Psh(J).
+
+Had we required T to have finite products it would be a Lawvere theory
+whose models are functors preserving those products.?? However products
+are not needed when all operations are unary.?? If we define a Lawvere
+theory to have *specified* products, and a model thereof to preserve
+only the specified ones, then T in this context is vacuously a Lawvere
+theory because no products have been specified.
+
+If Bill has a different suggestion I'm all ears.?? If this is already a
+standard convention however then hopefully it will find its way onto the
+appropriate nLab/Wikipedia/Mathworld/whatever articles. Bearing in mind
+that every presheaf category is a topos, respect for products is
+disrespectful to toposes so don't insist on the former if your point
+whatever it is doesn't need it.
+
+When T consists of two objects v and e and two morphisms s,t: e --> v,
+along with the obligatory identity morphisms at v and e required to
+round out T to a category, a graph G is simply a functor G: T --> Set
+interpreting v and e as sets G(v) and G(e) of respectively vertices and
+edges, and s and t as functions G(s), G(t): G(e) --> G(v) yielding
+respectively the source and target vertices of each edge in G(e).?? The
+functor category Set^T is then the category of graphs thus defined,
+representing graphs as functors and the homomorphisms between those
+graphs as the natural transformations between those functors.
+
+T-algebras being presheaves on T' (= T^op), the homfunctor T' x T -->
+Set transposes as the Yoneda embedding Y: T' --> Set^T (more usually
+written as Y: J --> Set^J').?? Y is a fully faithful functor that
+interprets T' as a small subcategory of Set^T consisting of primitive
+algebras, one per sort.
+
+In the case of graphs, Y interprets T' as two graphs, one consisting of
+a lone vertex Y(v), the other of a lone edge Y(e), and interprets s and
+t as graph homomorphisms mapping the lone vertex to respectively the
+source and target of the lone edge.
+
+Note the contravariance of Y in T, aka the covariance of Y in T'. This
+is an elementary example of the duality of word (a small theory T with
+operation symbols s and t) and object (a small category T' of
+fundamental graphs Y(v) and Y(e) and homomorphisms Y(s) and Y(t) from
+Y(v) to Y(e)).
+
+We don't need to go this route in order to make reflexive graphs
+algebraic in the sense of the nLab article, as noted earlier.?? But in
+the spirit of making mathematics difficult we should attempt that North
+Face, in the process explaining Morita equivalence as promised.
+
+Take T to be the three-element monoid (one-object category) {1,s,t}
+satisfying xy = y when y is not the identity. ?? This T is an idempotent
+monoid in the sense that every element is an idempotent. (But it is not
+the *free* idempotent monoid on generators s and t, which would also
+contain st, ts, sts, and tst as distinct elements, thanks to the
+additional equations st = t, ts = s.)?? The reflexive graphs of our
+second paragraph can be seen to be the functors from this T to Set, and
+as homogeneous algebras they are algebraic in the sense of the nLab
+article John cited.?? More generally, for any monoid M, the category of
+M'-sets, or models of M, is algebraic in that sense as well as in the
+sense of the functor category Set^M. (The opposite of a monoid M is of
+course a monoid M', so M-sets generally understood are the same thing
+whether you're thinking of some monoid either as a theory or as a base
+for presheaves.)
+
+Now if we split each of the idempotents s and t in T = {1,s,t} to give
+their respective retracts (the Karoubi envelope or free Cauchy
+completion of T), and then identify the two retracts as v (which
+therefore splits both s and t), we have a Cauchy completion T* of T with
+two objects and morphisms s,t: E --> V and i: V --> E.
+
+When Set^C and Set^D are equivalent we say that C and D are *Morita
+equivalent*.???? It is a theorem that splitting idempotents in a category
+C yields a category that is Morita equivalent to C.?? It therefore
+follows that Set^T* is equivalent to Set^T.?? This gets us to the
+two-sorted theory of reflexive graphs, but by Morita equivalence its
+category is still algebraic in the sense of that nLab article, even
+though it does not consist of homogeneous algebras.
+
+In general categories A of heterogeneous algebras with two or more sorts
+don't have forgetful functors U: A --> Set with left adjoints, but it's
+nice to have the occasional counterexample.
+
+Vaughan Pratt
+
+On 09/30/17 11:25 AM, John Baez wrote:
+> Patrik Eklund wrote:
+>
+>     I will under the CATLIST and at this point not reply more in
+>     detail, but
+>
+>     let me just now say that your "categories are not algebraic in
+>     sets, at
+>     least they are algebraic in graphs, which in turn are algebraic in
+>     sets"
+>     is within the realm of "algebraic categories".
+>
+>
+> That depends on your definition of "algebraic categories".?? There are
+> a number
+> of inequivalent definitions in common use:
+>
+> https://ncatlab.org/nlab/show/algebraic+category
+>
+> What definition are you using above?
+>
+> Best,
+> jb
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

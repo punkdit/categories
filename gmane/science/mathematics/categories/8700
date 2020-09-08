@@ -1,0 +1,123 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Computability and Complexity of Categorical Structures
+Date: Mon, 21 Sep 2015 11:10:25 +0100
+Lines: 83
+Approved: news@gmane.org
+Message-ID: <E1ZePo2-00030l-To@mlist.mta.ca>
+References: <E1ZdoIW-0000us-9f@mlist.mta.ca>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0 (1.0)
+Content-Type: text/plain;	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1442936964 11897 80.91.229.3 (22 Sep 2015 15:49:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 22 Sep 2015 15:49:24 +0000 (UTC)
+Cc: categories@mta.ca
+To: "Noson S. Yanofsky" <noson@sci.brooklyn.cuny.edu>
+Original-X-From: majordomo@mlist.mta.ca Tue Sep 22 17:49:12 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePod-00038G-9O
+	for gsmc-categories@m.gmane.org; Tue, 22 Sep 2015 17:49:11 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51357)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePo2-00046I-8I; Tue, 22 Sep 2015 12:48:34 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePo2-00030l-To
+	for categories-list@mlist.mta.ca; Tue, 22 Sep 2015 12:48:34 -0300
+In-Reply-To: <E1ZdoIW-0000us-9f@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8700
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8700>
+
+Dear Noson,
+
+It seems to me it's an oversimplification to say that categories can solve t=
+he Halting Problem. There's a logical principle involved.
+
+In your proof on p.23, the central step is that if H: =CF=89 -> 2 is a funct=
+or (where =CF=89 and 2 are the posets of natural numbers and {0,1}), then it=
+  has a colimit H': 1 -> 2. H(t) describes whether the computation has halted=
+  by step t. (By the way, you use =CF=89_i, the indiscreet natural numbers, f=
+or the type of t. That's a typo, isn't it? Since 2 is antisymmetric, that wo=
+uld imply H is constant.)
+
+Does the colimit exist? That's not a fact of pure category theory, but a log=
+ical principle of "omniscience". If you go beyond classical logic (and categ=
+ory theory facilitates this) then the colimit might not exist.
+
+For example, it will not work in a topos. To find the colimit you will need t=
+o embed 2 in =CE=A9, the poset on the subobject classifier. There you still h=
+ave the classical objects 0 and 1 (false and true), but also intermediate ob=
+jects corresponding to truth values of other propositions such as "this comp=
+utation halts". This switch from 2 to =CE=A9 corresponds to relaxing decidab=
+ility to semidecidability - and semidecidability of the halting problem is t=
+rivial.
+
+If my calculations are correct, you can see this in the topos of sheaves ove=
+r the 1-point compactification of =CF=89. This is the classifying topos for f=
+unctors H, and the generic H has no colimit.
+
+An alternative way to understand this is what you see in denotational semant=
+ics. Here, when a map to 2 takes the value 0 ("bottom"), that is interpreted=
+  as meaning that the assignment of result to argument gets ensnared in a div=
+ergence.
+
+Regards,
+
+Steve.
+
+> On 18 Sep 2015, at 16:30, Noson S. Yanofsky <noson@sci.brooklyn.cuny.edu> w=
+rote:
+>=20
+> Dear Category Theorists,
+>=20
+>=20
+>=20
+> I recently uploaded a new paper to the arxiv.
+>=20
+>=20
+>=20
+> http://arxiv.org/abs/1507.05305
+>=20
+>=20
+>=20
+> Title: Computability and Complexity of Categorical Structures
+>=20
+> Author: Noson S. Yanofsky
+>=20
+>=20
+>=20
+> Abstract: We examine various categorical structures that can and cannot be=
+
+> constructed. We show that total computable functions can be mimicked by
+> constructible functors. More generally, whatever can be done by a Turing
+> machine can be constructed by categories. Since there are infinitary
+> constructions in category theory, it is shown that category theory is
+> strictly more powerful than Turing machines. In particular, categories can=
+
+> solve the Halting Problem for Turing machines. We also show that categorie=
+s
+> can solve any problem in the arithmetic hierarchy.
+>=20
+>=20
+>=20
+> I am very interested in any criticisms and comments.
+>=20
+>=20
+>=20
+> Sincerely,
+>=20
+> Noson (Yanofsky)
+>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

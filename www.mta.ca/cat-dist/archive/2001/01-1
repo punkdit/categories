@@ -1,0 +1,4879 @@
+From rrosebru@mta.ca Wed Jan  3 14:40:20 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f03Hccs16768
+	for categories-list; Wed, 3 Jan 2001 13:38:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 2 Jan 2001 19:02:25 -0500 (EST)
+From: Jason C Reed <jcreed@andrew.cmu.edu>
+To: categories@mta.ca
+Subject: categories: Right adjoint of internal category functor?
+Message-ID: <Pine.GSO.4.21L.0101021853140.12547-100000@unix14.andrew.cmu.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 1
+
+Say Fcc is the category of all (small) finitely complete categories with
+finite-limit-preserving functors as morphisms, and Int is the functor
+which takes an object C of Fcc to the (finitely complete) category of
+internal category objects* and internal functors in C, and takes an arrow
+f : C -> D of Fcc to Int(f) defined by Int(f)(H, d_0, d_1, comp) := (f(h),
+f(d_0), f(d_1), f(comp)).
+
+Does Int have an obvious right adjoint, or does it at least preserve
+colimits?
+
+---Jason
+
+* I honestly don't know what the most official definition of these are,
+(and I can't get to a library for a couple weeks) but I had the one in
+mind where an internal category is an object H of C, and arrows d_0,d_1 :
+H -> H and comp : H \times_H H -> H satisfying the appropriate diagrams,
+and internal functors are the obvious thing)
+
+
+
+From rrosebru@mta.ca Wed Jan  3 19:42:14 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f03NF4l24747
+	for categories-list; Wed, 3 Jan 2001 19:15:04 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Todd Wilson <twilson@csufresno.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14931.40881.870584.819395@goedel.engr.csufresno.edu>
+Date: Wed, 3 Jan 2001 13:54:57 -0800 (PST)
+To: categories@mta.ca
+Subject: categories: Szabo's Algebra of Proofs
+X-Mailer: VM 6.75 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 2
+
+In the book
+
+    M. E. Szabo, Algebra of Proofs, Studies in Logic and the
+    Foundations of Mathematics, Vol. 88, North-Holland, 1978.
+
+the author, according to a 1980 review by Carlo Cellucci published in
+Mathematical Reviews (80b:03097),
+
+    [...] studies the algebraic properties of the proof theory of
+    intuitionistic first-order logic in a categorical setting. [...]
+    Following the Introduction (Chapter I), there are twelve
+    additional chapters, in which the author studies twelve theories
+    of varied linguistic and deductive strength. The theories are
+    divided into two main types: the monoidal type, in which theories
+    based on the common algebraic properties of conjunction and
+    disjunction are investigated, and the Cartesian type, in which
+    conjunction and disjunction have their proper meanings. In every
+    chapter the author follows the same scheme. He first constructs a
+    category of a certain type as an algebraic model for the class of
+    formal proofs being considered. Then he proves a completeness
+    theorem to the effect that the arrows of the constructed category
+    can be represented by formal proofs in a Gentzen-style sequent
+    calculus with cut elimination. In the propositional cases the
+    algorithmic character of the cut-elimination process is used to
+    provide an effective description of the arrows of the category
+    constructed and to develop decision procedures, in the form of
+    Church-Rosser theorems, for the commutativity of the finite
+    diagrams of these categories. In the last chapter, the author also
+    shows how to accommodate quantifiers in the calculus of adjoints
+    and describes the topos-theoretic setting required in order to
+    develop the proof theory of intuitionistic first-order logic.
+
+The book itself contains a wealth of technical detail that includes
+many dozens of claims whose proofs are not worked out in detail.  I'm
+writing to ask whether anyone has any knowledge about the degree to
+which this work was refereed and/or whether the results have been
+verified independently.  I'm appealing especially to those who work in
+categorical logic or those interested in automatic proof verification
+in category theory, both of which groups, it would seem, should be
+interested in Szabo's work.
+
+-- 
+Todd Wilson                               A smile is not an individual
+Computer Science Department               product; it is a co-product.
+California State University, Fresno                 -- Thich Nhat Hanh
+
+
+
+From rrosebru@mta.ca Wed Jan  3 20:17:34 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f03NqKv30672
+	for categories-list; Wed, 3 Jan 2001 19:52:20 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Re: Szabo's Algebra of Proofs
+To: categories@mta.ca
+Date: Wed, 3 Jan 2001 23:49:05 +0000 (GMT)
+In-Reply-To: <14931.40881.870584.819395@goedel.engr.csufresno.edu> from "Todd Wilson" at Jan 03, 2001 01:54:57 PM
+X-Mailer: ELM [version 2.5 PL3]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <E14DxeT-0001FA-00@plover.dpmms.cam.ac.uk>
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+X-Scanner: exiscan *14DxeT-0000PR-00*U1gWsyiz2/U* http://duncanthrax.net/exiscan/
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 3
+
+
+I don't know anything about the subject itself, but according to math. review
+93a:03062 there's a paper by Barry Jay refuting one of Szabo's claims.  The
+paper is `Coherence in category theory and the Church-Rosser property', 
+Notre Dame J Formal Logic 33 (1992), no 1, 140-143. 
+
+Tom
+
+
+Todd Wilson wrote: 
+> 
+> In the book
+> 
+>     M. E. Szabo, Algebra of Proofs, Studies in Logic and the
+>     Foundations of Mathematics, Vol. 88, North-Holland, 1978.
+
+[...]
+
+> The book itself contains a wealth of technical detail that includes
+> many dozens of claims whose proofs are not worked out in detail.  I'm
+> writing to ask whether anyone has any knowledge about the degree to
+> which this work was refereed and/or whether the results have been
+> verified independently.  I'm appealing especially to those who work in
+> categorical logic or those interested in automatic proof verification
+> in category theory, both of which groups, it would seem, should be
+> interested in Szabo's work.
+
+
+
+From rrosebru@mta.ca Thu Jan  4 20:50:46 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f04NxYv04846
+	for categories-list; Thu, 4 Jan 2001 19:59:34 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: triples.math.mcgill.ca: rags owned process doing -bs
+Date: Wed, 3 Jan 2001 19:47:12 -0500 (EST)
+From: "Robert A.G. Seely" <rags@math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: Re: Szabo's Algebra of Proofs
+In-Reply-To: <E14DxeT-0001FA-00@plover.dpmms.cam.ac.uk>
+Message-ID: <Pine.LNX.4.10.10101031943250.31214-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 4
+
+On Wed, 3 Jan 2001, Tom Leinster wrote:
+
+> 
+> I don't know anything about the subject itself, but according to math. review
+> 93a:03062 there's a paper by Barry Jay refuting one of Szabo's claims.  The
+> paper is `Coherence in category theory and the Church-Rosser property', 
+> Notre Dame J Formal Logic 33 (1992), no 1, 140-143. 
+
+The interested reader might also want to look at the recent paper by
+Borisavljevic, Dosen and Petric ("On permuting cut with contraction")
+in Math Struc in Comp Sci, Vol 10 (2000) (the Lambekfestschrift) which
+corrects and amplifies another matter in the Szabo book.
+
+-= rags =-
+
+==================
+R.A.G. Seely
+<rags@math.mcgill.ca>
+<http://www.math.mcgill.ca/rags>
+
+
+
+From rrosebru@mta.ca Thu Jan  4 20:54:08 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f04NwSC04286
+	for categories-list; Thu, 4 Jan 2001 19:58:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Uffe Henrik Engberg <engberg@brics.dk>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14931.50258.214705.158094@harald.daimi.au.dk>
+Date: Thu, 4 Jan 2001 01:31:14 +0100
+To: categories@mta.ca
+Subject: categories: jobs: BRICS PhD grants, fellowships, and research positions
+X-Mailer: VM 6.88 under Emacs 20.7.1
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 5
+
+[Please accept our apologies if you receive this more than once]
+
+	      BRICS - Basic Research in Computer Science
+
+	 at the Universities of  Aarhus  and Aalborg, Denmark
+
+This is a call for applications for:
+
+    PhD admission and PhD grants,
+    Marie Curie Training Site Fellowships, and
+    Research Positions.
+
+BRICS, a centre  for Basic Research in Computer  Science, is funded by
+the   Danish   National  Research   Foundation.   It  compromises   an
+International PhD School with an associated Research Laboratory.
+
+BRICS  is  based  on  a  commitment to  develop  theoretical  computer
+science, covering core areas such as:
+
+  - Semantics of Computation,
+  - Logic,
+  - Algorithms and Data Structures,
+  - Complexity Theory,
+  - Data Security and Cryptology, and
+  - Verification,
+
+as well as a number of spin-off activities including
+
+  - Web Technology,
+  - Quantum Informatics,
+  - Bio Informatics, and
+  - Networks and Distributed Real-Time Systems.
+
+BRICS  has  a  substantial  number  of new  PhD  grants  and  research
+positions available,  starting in 2001. Applications  can be submitted
+at  any time.  However, the  application deadline  for PhD  grants and
+positions starting August 2001 is February 15, 2001.
+
+PhD admission and grants:
+  Any student with at least four years of studies in computer science is
+  eligible to apply for PhD admission and grants.
+
+Marie Curie Training Sites Fellowships:
+  These  fellowships  are  offered  within Interactive  Computation  -
+  Methodology, Security, and Efficiency - and are open to PhD students
+  who are nationals of a member  state of the European Community or an
+  associated state, and  who wish to spend time  (from three months to
+  twelve months) at BRICS, as part of their PhD studies.
+
+Research positions:
+  These positions are open to  applicants already holding a PhD degree
+  in computer science.
+
+Further information,  including instructions on  how to apply,  can be
+found at: www.brics.dk/Positions and  general information on BRICS at:
+www.brics.dk.
+
+Kindly forward this information  to interested students and colleagues
+at your university or research institute.
+
+Thank you very much.
+
+
+From rrosebru@mta.ca Mon Jan  8 17:29:42 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f08KtPh12123
+	for categories-list; Mon, 8 Jan 2001 16:55:25 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-WebMail-UserID:  wadt2001@disi.unige.it
+Date: Mon, 8 Jan 2001 14:47:43 +0100
+From: wadt2001 <wadt2001@disi.unige.it>
+To: wadt2001@disi.unige.it
+X-EXP32-SerialNo: 00002935
+Subject: categories: WADT/CoFI 2001 - FINAL CALL FOR ABSTRACTS
+Message-ID: <3A3008D2@Webmail.unige.it>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="ISO-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Mailer: WebMail (Hydra) SMTP v3.61.07
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 6
+
+15th International Workshop on Algebraic Development Techniques
+                                 joint with
+             General Workshop of the CoFI WG & CASL Tutorial
+
+                               Genova, Italy
+                               1-3 April 2001
+                     http://www.disi.unige.it/wadt2001/
+
+Aims and Scope
+==============
+The  algebraic approach to system  specification and development, born
+as a formal  method for  abstract  data types,  encompasses today  the
+formal    design of integrated  hardware    and software systems,  new
+specification   frameworks     and programming  paradigms    (such  as
+object-oriented, logic and  higher-order functional programming) and a
+wide  range of   application  areas (including  information   systems,
+concurrent and distributed systems).
+
+The topics of the workshop include, but are not limited to:
+
+   -   algebraic specification
+   -   other approaches to formal specification
+   -   specification languages and methods
+   -   term rewriting and proof systems
+   -   specification development systems (concepts, tools, etc.)
+
+The workshop will provide an opportunity to present recent and ongoing
+work, to meet colleagues, and to discuss new ideas and future trends.
+
+The workshop will start with a full day tutorial on CoFI, the Common
+Framework Initiative for algebraic specification and development of
+software, see http://www.brics.dk/Projects/CoFI.  This tutorial will
+also be available to people who do not wish to participate in the rest
+of the workshop.  Besides the tutorial, there will be CoFI Task Group
+meetings and presentation on related topics during the workshop.
+
+Selected presentations will  appear after the workshop as a volume of
+Springer Lecture Notes in Computer Science.
+
+The workshop will be a satellite event of the European Joint Conferences
+on Theory and Practice of Software (ETAPS2001).
+Special deals will be available for participants wishing to attend
+WADT/CoFI 2001 together with other events of ETAPS.
+
+SEE THE ETAPS EXCITING PROGRAM  AT http://www.disi.unige.it/etaps2001/.
+
+Submissions
+===========
+
+The scientific programme of the workshop will include up to about 30
+presentations of recent results and ongoing research.  The presentations
+will be selected according to originality, significance, and general
+interest, on the basis of submitted abstracts.  The selection committee
+consists of the WADT Steering Committee together with the local organizers
+(listed below).
+
+The abstracts must be in pdf (or standard postscript) format, up to 2 pages
+long in the style for publication in Lecture Notes in Computer Science (see
+http://www.springer.de/comp/lncs/authors.html), and should be sent by
+e-mail to wadt2001@disi.unige.it.
+
+The deadline for submission of abstracts is
+
+    10 January, 2001.
+
+Abstracts that substantially depart from the required format, style or
+length may be rejected without consideration.
+
+The final versions of the selected abstracts (due by 26 February) will be
+made available on the workshop web page, and included in a hand-out for the
+workshop participants.
+
+After the workshop, selected authors will be invited to submit full
+papers for the refereed proceedings, which will be published
+as a volume of Springer Lecture Notes in Computer Science
+(http://www.springer.de/comp/lncs/).
+
+Location
+========
+WADT/CoFI 2001 will be held in Genova.
+Information are also be available on the web at the page
+                    http://www.disi.unige.it/wadt2001/
+
+**********************************************************************
+************************** Important Dates ***************************
+**********************************************************************
+*      Deadline for abstracts:            10 January, 2001           *
+*      Notification sent to authors:      26 January, 2001           *
+*      Final abstract due:                26 February, 2001          *
+*      Workshop dates:                    1-3 April, 2001            *
+**********************************************************************
+
+WADT Steering Committee
+=======================
+       Michel Bidoit             (Cachan, France)
+       Hans-Joerg Kreowski       (Bremen, Germany)
+       Peter Mosses, chair       (Aarhus, Denmark)
+       Fernando Orejas           (Barcelona, Spain)
+       Francesco Parisi-Presicce (Rome, Italy)
+       Donald Sannella           (Edinburgh, Scotland)
+       Andrzej Tarlecki          (Warsaw, Poland)
+
+Sponsors
+========
+The  workshop  is organized by IFIP WG1.3 (Foundations of System
+Specification) jointly with CoFI WG.
+
+Local Organizers
+================
+                Maura Cerioli     Gianna Reggio
+                              DISI
+               Universita' degli Studi di Genova
+                         Genova - Italy
+
+Email: wadt2001@disi.unige.it
+----------------------------------------------------------------------
+
+
+
+From rrosebru@mta.ca Mon Jan  8 17:30:03 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f08Ks8X13390
+	for categories-list; Mon, 8 Jan 2001 16:54:08 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 8 Jan 2001 13:39:58 +0100
+Message-Id: <200101081239.NAA09687@tosca.dmi.unict.it>
+From: Vladimiro Sassone <vs@dmi.unict.it>
+To: categories@mta.ca
+Subject: categories: Lipari Summer School 2001
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 7
+
+    [[ -- Apologies for multiple copies of this message  -- \vs ]]
+
+
+              Foundations of Wide Area Network Programming
+              ============================================
+			(second announcement)
+ 
+       13th International School for Computer Science Researchers
+                    Lipari Island, July 1-14, 2001
+
+
+The 13th School for Computer Science Researchers addresses Ph.D. students
+and young researchers who want to get exposed to the forefront of research
+activity in the field of Wide Area Network Programming, with particular
+reference to the future of the World Wide Web and to issues of distributed
+architectures, software engineering, object oriented design, security,
+mobility, coordination, collaborative work and retrieval/handling of
+semistructured data.
+
+The school will be held in the beautiful surroundings of the island of
+Lipari. Participants will be arranged in a comfortable hotel at very
+special rates. The conference room (in the same hotel) is air conditioned
+and equipped with all conference materials. Special areas are reserved to
+students for the afternoon coursework and study. The island of Lipari can
+be easily reached from Milazzo, Palermo, Naples, Messina and Reggio
+Calabria by ferry or hydrofoil (50 minutes from Milazzo). The organization
+provides a round-trip bus from Catania airport (the third most important
+airport in Italy) to Milazzo hydrofoil terminal and viceversa. A
+proficiency final exam at the end of each chosen course is mandatory for
+students. A social tour to Stromboli with spectacular vulcano fireworks
+will be held on Sunday, July 8.
+
+The official language is English.
+
+
+Lipari International School Web Pages
+=====================================
+
+http://lipari.dmi.unict.it/Lipari/index.asp
+
+
+Directors of Lipari 2001
+========================
+
+Alfredo Ferro (University of Catania), Co-chair
+Ugo Montanari (university of Pisa), Co-chair
+Vladimiro Sassone (University of Catania), Co-chair
+
+
+Courses
+=======
+
+* Security Protocols and Formal Methods.
+
+Martin Abadi
+Bell Labs Research, Palo Alto
+abadi@research.bell-labs.com
+http://pa.bell-labs.com/~abadi/home.html
+
+Summary
+-------
+These lectures are an introduction to security protocols and to some of the
+formal approaches to their design and analysis. The lectures cover the
+basics of security protocols, with some examples (fragments of SSL, SSH,
+etc.) and principles. Then they focus on formal methods for modeling and
+reasoning about security protocols, and particularly on the spi calculus
+(an extension of the pi calculus with constructs for cryptography).
+
+
+* Principles of Wide Area Programming.
+
+Luca Cardelli
+Microsoft Research, Cambridge, UK
+luca@microsoft.com
+http://www.luca.demon.co.uk/
+
+Summary
+-------
+We discuss the challenges of computation on wide-area networks, and
+introduce a formalism, the Ambient Calculus, that matches some fundamental
+characteristics of wide-area networks and systems. Our approach (developed
+with Andrew Gordon) reflects the intuition that to function satisfactorily
+on a wide-area network, the existing "sea of objects" must be partitioned
+and made hierarchical, internally mobile, and secure.
+
+
+* Coordination Languages and Models.
+
+Paolo Ciancarini
+Universita' degli Studi, Bologna
+ciancarini@cs.unibo.it
+http://www.cs.unibo.it/~cianca/
+
+Summary
+-------
+The emergence of high bandwidth network technology, and the trend toward
+reusing whole applications as components of larger software configurations
+is fuelling the development of distributed software architectures and
+agent-oriented programming. Coordination languages are a class of
+programming languages which offer a variety of solutions to the problem of
+managing the interaction among computing entities, like agents or
+processes. These languages usually offer explicit support for composing and
+controlling software architectures made of interacting active components.
+Interestingly, most coordination languages are based on a few common
+notions, such as pattern-based, associative communication, that complements
+the name-oriented, data-based communication of traditional languages for
+parallel programming. A number of interesting models have been proposed and
+used to support coordination languages and systems. We will describe and
+discuss a number of these models and languages.
+
+
+* Mobility, Security and Proof-Carrying Code.
+
+Peter Lee
+Carnegie-Mellon University, Pittsburgh
+Peter.Lee@cs.cmu.edu
+http://www.cs.cmu.edu/~petel/
+
+Summary
+-------
+This course will provide an introduction to the security problems raised by
+mobile code, along with an overview of approaches to solving them. A
+portion of the overview will cover approaches used in current practice, but
+the majority of the course will focus on various forms of proof-carrying
+code (PCC), including the Necula/Lee approach as well as recent
+developments such as typed assembly language. A substantial part of the
+course will explain some of the "proof-engineering" issues that must be
+solved in order to make any approach to PCC practical.
+
+
+* Concurrent Object-Oriented Programming.
+
+Doug Lea
+State University of New York at Oswego
+dl@cs.oswego.edu
+http://gee.cs.oswego.edu/dl/
+
+Summary
+-------
+Topics include: Concurrent object models and their mappings to systems,
+general design constraints and patterns for exclusion, state dependence,
+sending messages, and creating threads, application-specific design
+patterns for computationally-intensive, event-driven, and IO-intensive
+programs, and for constructing distributed object system middleware.
+Programming examples will be in Java.
+
+
+* The Extensible Markup Language (XML).
+
+Michael I. Schwartzbach
+University of Aarhus
+mis@brics.dk
+http://www.daimi.au.dk/~mis/
+
+Summary
+-------
+XML is emerging as a unifying notation for structured data. Its main areas
+of application are Web contents and databases. In itself, XML is just a
+particular notation for labeled ordered trees. The potentially vast impact
+arises from a collection of generic tools that are being integrated into
+the Web infrastructure. The main tools deal with namespaces, schemas
+(grammars), linking, transformation, and querying. These lectures will
+present 'the XML vision' and its technological foundations.
+
+
+* Java, Jini and Related Technologies.
+
+Jim Waldo
+Sun Microsystems, Burlington, Mass.
+and Harvard University
+jim.waldo@sun.com
+
+Summary
+-------
+In this course, we will investigate the effect being able to move objects
+(including the code that implements the object) has in a distributed computing
+system. We will begin by looking at Java Remote Method Invocation, the base
+distributed computing infrastructure within Java. We will then see how Jini is
+built on the semantic model established by RMI, and how such a system allows
+abstraction from the communication protocols used in the system. Finally, we
+will look at some of the research challenges open in such a world of mobile
+objects.
+
+
+Advanced Seminars
+=================
+
+A few talks will be given by auditors or by experts visiting the School for
+short periods.
+
+
+Application
+===========
+
+Two kinds of partecipants are welcome.
+
+Students: Partecipants who are expected to do afternoon courseworks and
+take a final exam.
+Auditors: Partecipants who are not interested in taking the final exam.
+
+Up to 60 students and a limited number of additional auditors will be
+admitted. Deadline for application is March 31, 2001. Applicants must
+include a short curriculum vitae and specify two professors whom letters of
+recommendation will be asked to, if deemed necessary. Applicants will be
+notified about admission by April 14, 2001. Registration fee is 400 U.S.
+dollars (includes bus+hydrofoil Catania airport-Lipari-Catania airport,
+social tour to Stromboli, approx. 1000 pages of xeroxed course material).
+While electronic application is preferred, applications by mail to the
+following address will also be accepted:
+
+Lipari School Director:
+Prof. Alfredo Ferro
+Università degli Studi di Catania - Dipartimento di Matematica
+Città Universitaria - Viale A.Doria, 6 - 95125 Catania - ITALY
+Tel: +39 095 221012 / 7383071 / 330533(ext.666)
+Fax: +39 095 330094
+E-mail: mailto:ferro@dmi.unict.it
+
+
+From rrosebru@mta.ca Mon Jan  8 17:30:44 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f08Kqo008991
+	for categories-list; Mon, 8 Jan 2001 16:52:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <004501c076a8$87e6d850$2aaa5181@math.tulane.edu>
+Reply-To: "Michael Mislove" <mwm@math.tulane.edu>
+From: "Michael Mislove" <mwm@math.tulane.edu>
+To: "Categories" <categories@mta.ca>
+Subject: categories: MFPS 17 Finall Call for Papers
+Date: Thu, 4 Jan 2001 17:46:16 -0600
+Organization: Tulane University
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0042_01C07676.3CEC1FE0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.50.4133.2400
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 8
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0042_01C07676.3CEC1FE0
+Content-Type: text/plain;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Colleagues,
+  First, apologies to those who receive multiple copies of this message. =
+
+  This is the Final Call for Papers for this spring's seventeenth =
+conference on the Mathematical Foundations of Programming Semantics. =
+MFPS 17 will take place at Aarhus University in Aarhus, Denmark from May =
+24 to May 27, 2001. We encourage submissions in areas traditionally =
+represented at MFPS, and in related areas as well.=20
+=20
+The deadline for submissions also has been extended, til January 15, =
+2001.=20
+=20
+Please pass this announcement on to those whom you think would have an =
+interest in participating.=20
+=20
+An announcement providing registration details and more information =
+about the program will be forthcoming around February 20, 2001, when the =
+list of accepted papers will be posted.=20
+=20
+General information about MFPS can be found at =
+http://www.math.tulane.edu/mfps.html and information about MFPS 17 at =
+http://www.math.tulane.edu/mfps17.html If you have any questions about =
+the meeting, you can send email to mfps@math.tulane.edu.
+  Best regards,
+  Mike Mislove
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+             Final Call for Papers
+                   MFPS XVII
+
+         Seventeenth Conference on the
+          Mathematical Foundations of
+             Programming Semantics
+
+              Aarhus University
+               Aarhus, Denmark
+            May 24 - May 27, 2001
+
+Partially Supported by BRICS and the US Office of Naval Research
+
+The Seventeenth Conference on the Mathematical Foundations of
+Programming Semantics will take place on the campus of Aarhus
+University in Aarhus, Denmark from May 24 to May 27, 2001. The MFPS
+conferences are devoted to those areas of mathematics, logic and
+computer science which are related to the semantics of programming
+languages. The series particularly has stressed providing a forum
+where both mathematicians and computer scientists can meet and
+exchange ideas about problems of common interest. We also encourage
+participation by researchers in neighboring areas, since we strive to
+maintain breadth in the scope of the series.
+
+The invited speakers for MFPS 17 include:
+          Olivier Danvy  (Aarhus)
+          Neil Jones  (DIKU)
+          Kim Larsen  (Aalborg)
+          Prakash Panangaden  (McGill)
+          Jan Rutten  (CWI)
+          Glynn Winskel  (Cambridge)
+
+In addition to the invited talks, there will be three special sessions.  =
+The first will honor Neil Jones for his contributions to theoretical =
+computer science; it is being organized by Olivier Danvy and David =
+Schmidt (Kansas State).
+
+The second will be a special session on model-checking, and it is being =
+organized by Rance Cleaveland (Stony Brook) and Kim Larsen.=20
+
+The final special session will be on security, and it is being organized =
+by Catherine Meadows (NRL).
+
+The remainder of the program will consist of papers selected from =
+submissions we receive in response to this Call for Papers.
+
+The Organizing Committee for MFPS consists of Stephen Brookes (CMU), =
+Michael Main (Colorado), Austin Melton (Kent State University), Michael =
+Mislove (Tulane) and David Schmidt (Kansas State).  The
+Co-chairs for MFPS XVII are Olivier Danvy, Michael Mislove and David =
+Schmidt.
+
+The Program Committee Co-chairs for the meeting are Stephen Brookes and =
+Michael Mislove. The Program Committee also includes:
+   Lars Birkedal (ITU)
+   Rance Cleaveland (Stony Brook)
+   Marcelo Fiore (Sussex)
+   Matthew Hennessy (Sussex)
+   Alan Jeffrey (DePaul)
+   Achim Jung (Birmingham)
+   Gavin Lowe (Oxford)
+   Catherine Meadows (NRL)
+   Peter O'Hearn (Queen Mary and Westfield)
+   Susan Older (Syracuse)
+   Dusko Pavlovic (Kestrel Institute)
+   Uday Reddy (Birmingham)
+   Giuseppe Rosolini (Genoa)
+   Davide Sangiorgi (Inria - Sophia Antipolis)
+   Andre Scedrov (Penn)
+Submissions must be extended abstracts of 12 pages or less. They should =
+be in the form either of a PostScript file that can print on any =
+PostScript printer, or a pdf file. In particular, submissions
+should use the US letter size format, as opposed to the European A4 =
+size.
+
+Submissions can be sent by email to mfps@math.tulane.edu=20
+
+The Deadline for Submissions is January 15, 2001
+
+Information about decisions will be available by February 20, 2001, at =
+which time a list of accepted papers will be posted.
+
+As with MFPS XI, MFPS XIII and MFPS XV, the Proceedings of the =
+conference will be published as a volume of the Electronic Notes in =
+Theoretical Computer Science. For information about this series, access =
+the URL http://www.elsevier.nl/locate/entcs.
+
+General inquiries about MFPS XVII can be addressed to =
+mfps@math.tulane.edu.
+
+In addition to supporting the conference overall, the support provided =
+by the Office of Naval Research makes funds available to help offset =
+expenses of graduate students. Women and minorities also are
+encouraged to inquire about possible support to attend the meeting.
+
+               Registration Information
+Detailed information about registration and accommodations will be =
+available on February 20, 2001, when the list of papers accepted for the =
+meeting is posted.
+
+
+=20
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Michael W. Mislove
+Professor and Chairman                   Phone:  +1 504 862-3441
+Department of Mathematics             FAX:      +1 504 865-5063
+Tulane University                             Email:     =
+mwm@math.tulane.edu
+New Orleans, LA 70118                   URL:      =
+http://www.math.tulane.edu/~mwm
+USA
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+=20
+
+------=_NextPart_000_0042_01C07676.3CEC1FE0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content=3D"text/html; charset=3Dwindows-1252" =
+http-equiv=3DContent-Type>
+<META content=3D"MSHTML 5.00.3103.1000" name=3DGENERATOR>
+<STYLE></STYLE>
+</HEAD>
+<BODY bgColor=3D#ffffff>
+<DIV><FONT face=3DArial size=3D2>
+<DIV><FONT face=3DArial size=3D2>Dear Colleagues,</FONT></DIV>
+<DIV><FONT face=3DArial size=3D2>&nbsp; First, apologies to those who =
+receive=20
+multiple copies of this message. <BR>&nbsp; This is the Final Call for =
+Papers=20
+for this spring's seventeenth conference on the Mathematical Foundations =
+of=20
+Programming Semantics. MFPS 17 will take place at Aarhus University in =
+Aarhus,=20
+Denmark from May 24 to May 27, 2001. We encourage submissions in areas=20
+traditionally represented at MFPS, and in related areas as well.=20
+<STRONG></STRONG></FONT></DIV>
+<DIV><FONT face=3DArial size=3D2><STRONG></STRONG></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2><STRONG>The deadline for =
+submissions&nbsp;also has=20
+been extended, til January 15, 2001. </STRONG></FONT></DIV>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>Please pass this announcement on to =
+those whom you=20
+think would have an interest in participating. =
+<STRONG></STRONG></FONT></DIV>
+<DIV><FONT face=3DArial size=3D2><STRONG></STRONG></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2><STRONG>An announcement providing =
+registration=20
+details and more information about the program will be forthcoming =
+around=20
+February 20, 2001, when the list of accepted papers will be posted.=20
+</STRONG></FONT></DIV>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2>General information about MFPS can be =
+found at <A=20
+href=3D"http://www.math.tulane.edu/mfps.html">http://www.math.tulane.edu/=
+mfps.html</A>=20
+and information about MFPS 17 at <A=20
+href=3D"http://www.math.tulane.edu/mfps17.html">http://www.math.tulane.ed=
+u/mfps17.html</A>=20
+If you have any questions about the meeting, you can send email to <A=20
+href=3D"mailto:mfps@math.tulane.edu">mfps@math.tulane.edu</A>.<BR>&nbsp; =
+Best=20
+regards,<BR>&nbsp; Mike=20
+Mislove<BR><BR>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;=20
+Final Call for=20
+Papers<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;=20
+&nbsp;&nbsp;&nbsp;&nbsp; MFPS=20
+XVII<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Seventeenth =
+
+Conference on =
+the<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Mathematical Foundations=20
+of<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;=20
+Programming=20
+Semantics<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;=20
+Aarhus=20
+University<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Aarhus,=20
+Denmark<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;=20
+May 24 - May 27, 2001<BR><BR>Partially Supported by BRICS and the US =
+Office of=20
+Naval Research<BR><BR>The Seventeenth Conference on the Mathematical =
+Foundations=20
+of<BR>Programming Semantics will take place on the campus of=20
+Aarhus<BR>University in Aarhus, Denmark from May 24 to May 27, 2001. The =
+
+MFPS<BR>conferences are devoted to those areas of mathematics, logic=20
+and<BR>computer science which are related to the semantics of=20
+programming<BR>languages. The series particularly has stressed providing =
+a=20
+forum<BR>where both mathematicians and computer scientists can meet=20
+and<BR>exchange ideas about problems of common interest. We also=20
+encourage<BR>participation by researchers in neighboring areas, since we =
+strive=20
+to<BR>maintain breadth in the scope of the series.<BR><BR>The invited =
+speakers=20
+for MFPS 17 =
+include:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Olivier Danvy&nbsp;=20
+(Aarhus)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Neil=20
+Jones&nbsp; =
+(DIKU)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kim=20
+Larsen&nbsp; =
+(Aalborg)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Prakash Panangaden&nbsp;=20
+(McGill)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Jan=20
+Rutten&nbsp; =
+(CWI)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Glynn Winskel&nbsp; (Cambridge)<BR><BR>In addition to the invited talks, =
+there=20
+will be three special sessions.&nbsp; The first will honor Neil Jones =
+for his=20
+contributions to theoretical computer science; it is being organized by =
+Olivier=20
+Danvy and David Schmidt (Kansas State).<BR><BR>The second will be a =
+special=20
+session on model-checking, and it is being organized by Rance Cleaveland =
+(Stony=20
+Brook) and Kim Larsen. </FONT></DIV>
+<DIV><FONT face=3DArial size=3D2><BR>The final special session will be =
+on security,=20
+and it is being organized by Catherine Meadows (NRL).<BR><BR>The =
+remainder of=20
+the program will consist of papers selected from submissions we receive =
+in=20
+response to this Call for Papers.<BR><BR>The Organizing Committee for =
+MFPS=20
+consists of Stephen Brookes (CMU), Michael Main (Colorado), Austin =
+Melton (Kent=20
+State University), Michael Mislove (Tulane) and David Schmidt (Kansas=20
+State).&nbsp; The<BR>Co-chairs for MFPS XVII are Olivier Danvy, Michael =
+Mislove=20
+and David Schmidt.<BR><BR>The Program Committee Co-chairs for the =
+meeting are=20
+Stephen Brookes and Michael Mislove. The Program Committee also=20
+includes:<BR>&nbsp;&nbsp; Lars Birkedal (ITU)<BR>&nbsp;&nbsp; Rance =
+Cleaveland=20
+(Stony Brook)<BR>&nbsp;&nbsp; Marcelo Fiore (Sussex)<BR>&nbsp;&nbsp; =
+Matthew=20
+Hennessy (Sussex)<BR>&nbsp;&nbsp; Alan Jeffrey (DePaul)<BR>&nbsp;&nbsp; =
+Achim=20
+Jung (Birmingham)<BR>&nbsp;&nbsp; Gavin Lowe (Oxford)<BR>&nbsp;&nbsp; =
+Catherine=20
+Meadows (NRL)<BR>&nbsp;&nbsp; Peter O'Hearn (Queen Mary and=20
+Westfield)<BR>&nbsp;&nbsp; Susan Older (Syracuse)<BR>&nbsp;&nbsp; Dusko =
+Pavlovic=20
+(Kestrel Institute)<BR>&nbsp;&nbsp; Uday Reddy =
+(Birmingham)<BR>&nbsp;&nbsp;=20
+Giuseppe Rosolini (Genoa)<BR>&nbsp;&nbsp; Davide Sangiorgi (Inria - =
+Sophia=20
+Antipolis)<BR>&nbsp;&nbsp; Andre Scedrov (Penn)<BR>Submissions must be =
+extended=20
+abstracts of 12 pages or less. They should be in the form either of a =
+PostScript=20
+file that can print on any PostScript printer, or a pdf file. In =
+particular,=20
+submissions<BR>should use the US letter size format, as opposed to the =
+European=20
+A4 size.<BR><BR>Submissions can be sent by email to <A=20
+href=3D"mailto:mfps@math.tulane.edu">mfps@math.tulane.edu</A> =
+</FONT><FONT=20
+face=3DArial size=3D2><BR></DIV></FONT>
+<DIV><FONT face=3DArial size=3D2><STRONG>The Deadline for Submissions is =
+January 15,=20
+2001<BR><BR></STRONG>Information about decisions will be available by =
+February=20
+20, 2001, at which time a list of accepted papers will be =
+posted.<BR><BR>As with=20
+MFPS XI, MFPS XIII and MFPS XV, the Proceedings of the conference will =
+be=20
+published as a volume of the Electronic Notes in Theoretical Computer =
+Science.=20
+For information about this series, access the URL <A=20
+href=3D"http://www.elsevier.nl/locate/entcs">http://www.elsevier.nl/locat=
+e/entcs</A>.<BR><BR>General=20
+inquiries about MFPS XVII can be addressed to <A=20
+href=3D"mailto:mfps@math.tulane.edu">mfps@math.tulane.edu</A>.<BR><BR>In =
+addition=20
+to supporting the conference overall, the support provided by the Office =
+of=20
+Naval Research makes funds available to help offset expenses of graduate =
+
+students. Women and minorities also are<BR>encouraged to inquire about =
+possible=20
+support to attend the=20
+meeting.<BR><BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Registration Information<BR>Detailed information about registration and=20
+accommodations will be available on February 20, 2001, when the list of =
+papers=20
+accepted for the meeting is posted.<BR><BR></DIV></FONT>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial=20
+size=3D2>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D<BR>Michael=20
+W. Mislove<BR>Professor and=20
+Chairman&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Phone:&nbsp; +1 504 862-3441<BR>Department of=20
+Mathematics&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;=20
+FAX:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +1 504 865-5063<BR>Tulane=20
+University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb=
+sp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs=
+p;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+Email:&nbsp;&nbsp;&nbsp;&nbsp; <A=20
+href=3D"mailto:mwm@math.tulane.edu">mwm@math.tulane.edu</A><BR>New =
+Orleans, LA=20
+70118&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&n=
+bsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;=20
+URL:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <A=20
+href=3D"http://www.math.tulane.edu/~mwm">http://www.math.tulane.edu/~mwm<=
+/A><BR>USA<BR>=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT face=3DArial size=3D2></FONT>&nbsp;</FONT><FONT face=3DArial=20
+size=3D2></FONT></DIV></DIV></BODY></HTML>
+
+------=_NextPart_000_0042_01C07676.3CEC1FE0--
+
+
+
+From rrosebru@mta.ca Mon Jan  8 17:38:46 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f08Kv9v14858
+	for categories-list; Mon, 8 Jan 2001 16:57:09 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A59C632.5B0A4267@iml.univ-mrs.fr>
+Date: Mon, 08 Jan 2001 14:52:50 +0100
+From: Paul RUET <ruet@iml.univ-mrs.fr>
+Organization: Institut de =?iso-8859-1?Q?Math=E9matiques?= de Luminy
+X-Mailer: Mozilla 4.51 [en] (X11; I; Linux 2.2.5-15 i686)
+X-Accept-Language: fr, it, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: CFP : Book on Linear Logic (Reminder)
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 9
+
+
+
+     Reminder
+
+CALL FOR PAPERS
+Book on Linear Logic
+
+On the occasion of its International Summer School
+
+       http://linear.di.fc.ul.pt/
+
+held in the Azores from August 30 to September 7, 2000, the TMR Linear
+network
+
+       http://iml.univ-mrs.fr/ldp/LINEAR/
+
+wishes to edit a book devoted to recent advances in Linear Logic. This
+book will consist of a few invited papers and some refereed
+contributions (not necessarily written by people who gave a talk at the
+School). All submitted contributions will be refereed. They must be in
+English and may not exceed 25 pages, and the results must be unpublished
+and not submitted for publication elsewhere, including the proceedings
+of symposia or workshops. Submissions (in postscript format) must be
+sent by E-mail to
+
+       linear-tmr-book@iml.univ-mrs.fr
+
+by February 1st, 2001.
+
+Suggested, but not exclusive, topics of interest for submissions
+include:
+
+   * Proof theory: proof-nets, ludics, non-commutative logic, proof
+     theory of classical logic.
+   * Complexity: polynomial and elementary linear logics, decision
+     problems, feasible arithmetics.
+   * Semantics: phase semantics, categorical semantics, denotational
+     semantics, game semantics, geometry of interaction.
+   * Concurrency: categorical models for concurrency, interaction nets.
+   * Applications: sharing reductions in lambda-calculus and optimality,
+     linear functional programming, linear constraint logic programming,
+     proof search and focalisation.
+
+Submission deadline: February 1st, 2001.
+
+Tentative publisher:
+Cambridge University Press, in the "London Mathematical Society Lecture
+Note Series".
+
+Editorial board:
+Thomas Ehrhard
+Jean-Yves Girard
+Paul Ruet
+Phil Scott
+
+
+
+From rrosebru@mta.ca Wed Jan 10 15:05:11 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0AI8gV12299
+	for categories-list; Wed, 10 Jan 2001 14:08:42 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A5C50E2.54939D07@comlab.ox.ac.uk>
+Date: Wed, 10 Jan 2001 12:09:06 +0000
+From: Samson Abramsky <Samson.Abramsky@comlab.ox.ac.uk>
+Organization: Oxford University Computing Laboratory, UK
+X-Mailer: Mozilla 4.75 [en] (X11; U; SunOS 5.7 sun4u)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: job: lectureship position at Oxford
+Content-Type: text/plain; charset=iso-8859-1
+X-MIME-Autoconverted: from 8bit to quoted-printable by mail.comlab.ox.ac.uk id MAA10565
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id f0AC9Fg07257
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 10
+
+The following lectureship position at the Oxford University Computing
+Laboratory is now available.
+
+Informal enquiries may be made either to myself
+(samson@comlab.ox.ac.uk), or to Richard Bird (bird@comlab.ox.ac.uk).
+
+Samson Abramsky
+
+====================
+
+                         UNIVERSITY OF OXFORD
+                  in association with St Cross College
+                          Computing Laboratory
+           University Lecturership in Computer Science
+Applications are invited for the above post, tenable from as
+early a date as may be arranged. Stipend according to age on
+the scale £18,731 to £36,740 per annum. The successful
+candidate may be offered a non-tutorial fellowship by St
+Cross College.
+Applications will be welcome in any branch of Computer
+Science but especially from candidates whose interests
+include any of the following: foundations of computation,
+computer-assisted verification, modelling and reasoning about
+multi-agent systems, logical and/or probabilistic methods for
+uncertain reasoning, databases, intelligent systems.
+Applications with a full curriculum vitae and summary of
+research interests can be in electronic form (most formats
+accepted) but hard copy should follow in the mail.
+Applications should be sent to lecturership@comlab.ox.ac.uk
+or in paper form which should be addressed to: The
+Administrator, Oxford University Computing Laboratory,
+Wolfson Building, Parks Road, Oxford, OX1 3QD (please mark
+the envelope Lecturership Application) by 9 February 2001,
+together with the names and addresses of three referees.
+Further particulars may be obtained from the same address or
+from http://web.comlab.ox.ac.uk/oucl/jobs/
+
+
+From rrosebru@mta.ca Wed Jan 10 15:38:09 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0AJ8hO31416
+	for categories-list; Wed, 10 Jan 2001 15:08:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Message-Id: <200101091224.AA024253089@fb0448.mathematik.tu-darmstadt.de>
+Subject: categories: APPSEM Workshop Second Call
+To: categories@mta.ca
+Date: Tue, 9 Jan 2001 13:24:49 +0100 (MEZ)
+X-Mailer: ELM [version 2.4ME+ PL47 (25)]
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 12
+
+
+                          Second Call for
+
+                       THIRD APPSEM WORKSHOP
+                        19.-22. March, 2001
+                         Darmstadt, Germany
+
+
+>From 19th to 22nd March the third workshop of the ESPRIT Working Group 
+Applied Semantics (APPSEM) will be organized by the Darmstadt site of APPSEM
+at a place near Darmstadt. (Darmstadt itself is very close to Frankfurt 
+airport).
+
+The intention of the workshop is to present the achievements of our working
+group and to discuss new perspectives in particular of the application of 
+semantic methods to problems arising from applications.
+There will be several invited talks as e.g. by S.Abramsky, A.Gordon, 
+H.Herbelin, P.O'Hearn, G.Winskel.
+Participation of interested people not formally belonging to APPSEM is 
+definitely encouraged.  
+
+More details (in particular concerning registration) can be found at
+
+        www.mathematik.tu-darmstadt.de/appsem2001
+
+Hoping to see you in March,
+
+Thomas Streicher
+
+
+
+
+
+
+
+From rrosebru@mta.ca Wed Jan 10 15:42:37 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0AJ2wh28496
+	for categories-list; Wed, 10 Jan 2001 15:02:58 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 10 Jan 2001 15:13:24 +0000 (GMT)
+From: Eugenia Cheng <elgc2@hermes.cam.ac.uk>
+X-Sender: elgc2@yellow.csi.cam.ac.uk
+To: categories@mta.ca
+Subject: categories: preprints: higher-dimensional categories
+Message-ID: <Pine.SOL.4.21.0101101511060.15961-100000@yellow.csi.cam.ac.uk>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 13
+
+
+
+The following papers are available at my website:
+
+[1] The relationship between the opetopic and multitopic approaches to
+weak n-categories
+
+[2] Equivalence between approaches to the theory of opetopes
+
+These papers cover the work I presented at PSSL 73 in Braunschweig, and
+CT2000 in Como.  The following paper covers the work I presented at PSSL
+74 in Cambridge:
+
+[3] Equivalence between the opetopic and classical approaches to
+bicategories
+
+This currently has hand-drawn diagrams and so is available only on paper;
+I will be happy to send copies to anyone interested.
+
+The website is 
+
+http://www.dpmms.cam.ac.uk/~elgc2 
+
+Summaries follow below.
+
+Thank you,
+Eugenia Cheng
+
+The problem of defining a weak n-category has been approached in various
+ways, but so far the relationship between these approaches has not been
+fully understood.  The subject of the above papers is the approaches given
+by Baez/Dolan, Hermida/Makkai/Power and Leinster ([BD, HMP, Lei]); we
+exhibit a relationship between them.
+
+In each case the definition has two components. First, the language for
+describing k-cells is set up.  Then, a concept of universality is
+introduced, to deal with composition and coherence.  Any comparison of
+these approaches must therefore begin at the construction of k-cells.  
+This, in the language of Baez/Dolan, is the theory of opetopes.  Hermida,
+Makkai and Power use an analogous construction of 'multitopes'.  In [1] we
+exhibit a relationship between the constructions of opetopes and
+multitopes.  In [2] we exhibit a relationship between Baez/Dolan opetopes
+and Leinster opetopes.
+
+It must be pointed out that we do not use the opetopic definitions
+precisely as given in [BD], but rather, we develop a generalisation along
+lines which Baez and Dolan began but chose to abandon, for reasons unknown
+to the present author.  Baez and Dolan work with operads having an
+arbitrary *set* of types (objects), but at the beginning of the paper they
+use operads having an arbitrary *category* of objects, before restricting
+to the case where the category of objects is small and discrete.
+
+In fact, the use of a *category* of objects is a crucial aspect of our
+work.  The morphisms in this category keep account of the successive
+layers of symmetry arising from the Baez/Dolan use of symmetric operads.
+Abandoning this information destroys the relationship between the
+approaches; by retaining it, a clear relationship can be seen.
+
+In [3] we begin to examine the complete opetopic definition of weak
+n-category, with the modifications necessitated by our previous work.  We
+show how this modified definition is equivalent to the classical
+definitions for n <= 2.
+
+
+REFERENCES
+
+[BD] John Baez and James Dolan.  Higher-dimensional algebra III:
+n-categories and the algebra of opetopes.  Adv. Math., 135(2):145--206,
+1998.  Also available via http://math.ucr.edu/home/baez.
+
+[HMP] Claudio Hermida, Michael Makkai, and John Power.  On weak higher
+dimensional categories, 1997.  Available via
+http://triples.math.mcgill.ca.
+
+[Lei] Tom Leinster.  Structures in higher-dimensional category theory,
+1998.  Available via http://www.dpmms.cam.ac.uk/~leinster
+
+
+
+
+
+From rrosebru@mta.ca Mon Jan 15 15:35:24 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0FIiQE00215
+	for categories-list; Mon, 15 Jan 2001 14:44:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <200101151035.LAA11109@irmast2.u-strasbg.fr>
+Date: Mon, 15 Jan 2001 11:35:44 +0100 (MET)
+From: Philippe Gaucher <gaucher@irmasrv1.u-strasbg.fr>
+Subject: categories: preprint : About the globular homology of higher dimensional automata (new version)
+To: categories@mta.ca
+MIME-Version: 1.0
+Content-Type: TEXT/plain; charset=us-ascii
+Content-MD5: Xsx0dv2cXjZ+qFDm0y26sw==
+X-Mailer: dtmail 1.3.0 CDE Version 1.3 SunOS 5.7 sun4u sparc 
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 14
+
+Bonjour, 
+
+A new version of 
+"About the globular homology of higher dimensional automata" 
+is available at
+
+http://www-irma.u-strasbg.fr/~gaucher/sglob.ps.gz
+http://www-irma.u-strasbg.fr/~gaucher/sglob.pdf
+
+
+Abstract : 
+
+We introduce a new simplicial nerve of higher dimensional automata
+whose simplicial homology groups shifted by one yield a new definition
+of the globular homology.  With this new definition, the drawbacks
+noticed with the construction of \cite{Gau} disappear. Moreover the
+important morphisms which associate to every globe its corresponding
+branching area and merging area of execution paths become morphisms of
+simplicial sets.
+
+Comment : revised and augmented version
+
+
+
+From rrosebru@mta.ca Mon Jan 15 16:21:43 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0FIjR332441
+	for categories-list; Mon, 15 Jan 2001 14:45:27 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Resignation
+To: categories@mta.ca
+Date: Sun, 14 Jan 2001 17:32:48 +0000 (GMT)
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <E14Hr1M-0007it-00@owl.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 15
+
+Dear Colleagues,
+
+This message is to let the categorical community know that I have decided to
+resign from the Editorial Board of the Journal of Pure and Applied Algebra.
+I shall (eventually) deal with all papers submitted to me as editor before the
+end of 2000 (some of which have been subject to quite shameful delays -- see
+below), but I shall not handle any further papers. The following is an edited
+version of my letter of resignation, sent to the Managing Editors.
+
+"The primary reason for resigning is that it has become increasingly clear to
+me that I simply can't hope to find time for the volume of editorial work that
+comes my way, on top of my teaching and administrative commitments, and still
+have any time at all for my own research. Indeed, for some months now I have
+been unable to deal with editorial work at all, because the sheer volume of
+things awaiting my attention sent me into a depressed state every time I tried
+to tackle them.
+
+"The problem was compounded by the pressures of moving to our new building
+(after 24 years in the same office) in September, which meant that all my
+files had to be packed up some weeks beforehand; some of the JPAA material
+went missing in the move, and I still haven't got myself fully straightened
+out. But that isn't the root cause of the problem; it had started before then.
+
+"I think a more significant cause is the fact that I no longer believe in the
+value of the job that I'm doing as an editor of JPAA: I am very uncertain
+about the role of print journals, particularly commercial ones, in the 21st
+century. Why people still want to submit their papers to JPAA, rather than to
+an electronic journal such as "Theory and Applications of Categories" (of which
+I am also, and plan to remain, an editor), is something I don't understand.
+(And yes, I know that Elsevier will say that they are moving with the times in
+making their journals available in electronic form, but in fact their pricing
+policy for electronic access, which is such that even Cambridge University has
+stopped subscribing, reveals them for the dinosaurs that they are -- they
+deserve the extinction that will, in my view, soon come upon them. Indeed, I
+could rationalize my decision to resign by saying that I was doing so in
+protest at Elsevier's pricing policy for electronic access, and that wouldn't
+be wholly untrue.)"
+
+I apologize sincerely to all those people whose papers have been held up as a
+result of my inaction in recent months; I am determined to sort out the mess
+that I've created, if they will bear with me.
+
+Peter Johnstone
+
+
+From rrosebru@mta.ca Mon Jan 15 16:36:43 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0FJxg131154
+	for categories-list; Mon, 15 Jan 2001 15:59:42 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Sun, 14 Jan 2001 17:56:16 +0100
+Message-Id: <200101141656.RAA09386@tosca.dmi.unict.it>
+From: Vladimiro Sassone <vs@dmi.unict.it>
+To: categories@mta.ca
+Subject: categories: ConCoord: Concurrency and Coordination
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 16
+
+  [[ -- Apologies for multiple copies of this message  -- \vs ]]
+	
+			  First Announcement
+
+			       ConCoord
+	International Workshop on Concurrency and Coordination
+	======================================================
+
+			 Lipari Island, Italy
+			    6-8 July 2001
+
+           A workshop associated to the 13th Lipari School
+
+---------------------------------------------------------------------------
+
+Aims and Scope
+
+ During the last few years, the role of global computing, and 
+ in particular of web applications, has become more and more
+ widespread. The emerging programming paradigms require on the 
+ one hand mechanisms to support mobility of code and computations, 
+ and effective infrastructures to support coordination and control 
+ of dynamically loaded software modules. On the other hand, an
+ abstract semantic framework to formalize the model of computation 
+ of internet applications is clearly needed. Such a semantic framework
+ may provide the formal basis to discuss and motivate controversial
+ design/implementation issues and to state and certify properties in 
+ a rigorous way.
+
+ Similar aims have been pursued by two Esprit working groups, which
+ recently terminated their activity: CONFER-2 (CONcurrency and Functions:  
+ Evaluation and Reduction <http://para.inria.fr/confer/>) led by 
+ Jean-Jacques Lévy (Inria Roquencourt), with technical assistance of Lone
+ Leth and Bent Thomsen (ICL, London); and COORDINA (From COORDINAtion 
+ models to applications, <http://malvasia.di.fct.unl.pt/activity/coordina/>),
+ led by Antonio Porto (DI-FCT/UNL, Lisboa).
+
+ The goal of the workshop is to review the large range of results
+ achieved by the two working groups and to set the stage for future
+ scientific advances and collaboration. However contributions and
+ participation are encouraged by all those interested in the mentioned
+ topics. 
+
+---------------------------------------------------------------------------
+
+Location
+
+ The workshop is associated to the 13th Lipari School for Computer
+ Science Researchers, Lipari, July 1-14, 2001. The Lipari School 
+ (<http://lipari.dmi.unict.it/Lipari/index.asp>) is a well established
+ initiative attended every year by about 60 PhD students and researchers 
+ from Italy, Europe and the US. In 2001 the school will be dedicated to 
+ the foundations of Wide Area Network Programming and will consist of 
+ lectures by Martin Abadi, Bell Labs Research, Palo Alto; Luca Cardelli, 
+ Microsoft Research, Cambridge, UK; Paolo Ciancarini, University of
+ Bologna; Peter Lee, Carnegie-Mellon University, Pittsburgh; Doug Lea,
+ State University of New York at Oswego; Michael I. Schwartzbach,
+ University of Aarhus; and Jim Waldo, Sun Microsystems, Burlington,
+ Mass. and Harvard University.  
+
+ Lipari is the largest island of the Eolie Archipelago, located north
+ of Sicily, well known for its volcanic activities. It has sceneries
+ of incomparable beauty and contrasting character. It can be easily
+ reached from Milazzo, Palermo, Naples, Messina and Reggio Calabria by
+ ferry or hydrofoil (50 minutes from Milazzo).
+
+---------------------------------------------------------------------------
+
+Program
+
+ The program of the workshop will include invited talks by the
+ lecturers of the Lipari School (and possibly others), and talks
+ presenting submitted contributions.
+
+---------------------------------------------------------------------------
+
+Program Committee
+
+ Farhad Arbab, CWI
+ Jean-Jacques Lévy, Inria Roquencourt
+ Ugo Montanari, University of Pisa (co-chair)
+ Antonio Porto, Universidade Nova De Lisboa
+ Vladimiro Sassone, University of Catania (co-chair)
+ Bjorn Victor, Uppsala University
+ 
+---------------------------------------------------------------------------
+
+Submissions
+
+ Extended abstracts (of at most 8 pages) should be submitted
+ electronically as uuencoded postscript files at the address 
+ <mailto:concoord@tosca.dmi.unict.it>. A separate message should also
+ be sent, with a text-only one-page abstract and with mailing addresses
+ (both postal and electronic), telephone number and fax number of the
+ corresponding author. The proceedings will be published in the ENTCS
+ series. To make easier the preparation of the final versions, papers
+ should be formatted using Latex with the ENTCS style (look at
+ <http://www.elsevier.nl/gej-ng/31/29/23/show/Products/notes/index.htt>
+ for instructions)
+
+---------------------------------------------------------------------------
+
+Important Dates
+
+ Deadline for submission: 9 April 2001.
+ Notification of acceptance: 21 May 2001.
+ Final version due: 11 June 2001.
+ Workshop dates: 6-8 July 2001.
+
+---------------------------------------------------------------------------
+
+Registration and Hotel Reservation
+
+ Due to the high season in Lipari, hotel reservation will be
+ guaranteed only for those registering before May 31.
+
+---------------------------------------------------------------------------
+
+Organizers
+
+ Alfredo Ferro (Catania), Ugo Montanari (Pisa), Vladimiro Sassone (Catania).
+
+---------------------------------------------------------------------------
+
+For more information:
+
+ WWW:   <http://tosca.dmi.unict.it/concoord>
+ EMAIL: <mailto:concoord@tosca.dmi.unict.it>
+
+===========================================================================
+
+
+From rrosebru@mta.ca Tue Jan 16 18:11:09 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0GLI8c01932
+	for categories-list; Tue, 16 Jan 2001 17:18:08 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 16 Jan 2001 18:43:44 +0100
+Message-Id: <200101161743.SAA01220@bergamote.lsv.ens-cachan.fr>
+X-Authentication-Warning: bergamote.lsv.ens-cachan.fr: fl set sender to fl@bergamote.lsv.ens-cachan.fr using -f
+From: Francois Laroussinie <Francois.Laroussinie@lsv.ens-cachan.fr>
+Subject: categories: CSL 2001 -- First CALL FOR PAPERS
+Reply-to: Francois.Laroussinie@lsv.ens-cachan.fr (Francois Laroussinie)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 17
+
+
+
+
+
+		     CSL 2001 -- First CALL FOR PAPERS
+
+15th Annual Conference of the European Association for Computer Science Logic
+
+		   Paris, France, September 10-13, 2001
+
+		    http://www.lsv.ens-cachan.fr/csl01/
+
+
+CSL is intended for computer scientists whose research activities involve
+logic, as well as for logicians working on issues significant for computer
+science. Suggested topics of interest include: automated deduction and
+interactive theorem proving, constructive mathematics and type theory,
+equational logic and term rewriting, linear logic, logical aspects of
+computational complexity, finite model theory, higher order logic, logic
+programming and constraints, lambda and combinatory calculi, logical
+foundations of programming paradigms, modal and temporal logics, model
+checking, functions of program development (specification, extraction,
+transformation ...), categorical logic and topological semantics, domain
+theory, database theory.
+
+
+
+IMPORTANT DATES:
+
+   Paper submissions           :  March 15, 2001
+   Notifications of acceptance :  May 8, 2001
+   Final version due           :  June 1, 2001
+   CSL 2001 conference	       :  September 10-13, 2001
+
+
+PAPER SUBMISSIONS:
+
+Submitted papers must describe work not previously published. They must not
+be submitted concurrently to a journal or to another conference. Papers
+(co)authored by members of the Program Committee are not allowed.
+Submissions must not exceed 15 pages (in the usual format for Springer LNCS).
+
+
+For any further informations, see:  http://www.lsv.ens-cachan.fr/csl01/
+or send a message to: csl01@lsv.ens-cachan.fr 
+
+
+INVITED SPEAKERS:
+
+Jean-Yves Girard (IML, Marseille)
+Peter O'Hearn (QMW College, London)
+Jan Van den Bussche (U. Limburg)
+
+PROGRAM COMMITTEE:
+
+Andrea Asperti (U. Bologna)
+Julian Bradfield (U. Edinburgh)
+René David (U. Savoie)
+Gilles Dowek (INRIA)
+Laurent Fribourg (ENS Cachan) (chair)
+Daniel Leivant (Indiana U.)
+David McAllester (AT&T)
+Johann Makowsky (Technion Haifa)
+Aart Middeldorp (U. Tsukuba)
+Catuscia Palamidessi (Penn. State)
+Frank Pfenning (CMU)
+Philippe Schnoebelen (ENS Cachan)
+Iain Stewart (U. Leicester)
+Moshe Vardi (Rice U.)
+Philip Wadler (Bell Labs)
+Thomas Wilke  (U. Kiel)
+
+
+From rrosebru@mta.ca Tue Jan 16 21:06:15 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0H0Q4l28728
+	for categories-list; Tue, 16 Jan 2001 20:26:04 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 16 Jan 2001 16:17:19 -0800 (PST)
+From: mjhealy@redwood.rt.cs.boeing.com (Michael J. Healy 425-865-3123)
+Message-Id: <200101170017.QAA12492@lilith.rt.cs.boeing.com>
+To: categories@mta.ca
+Subject: categories: Question
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 18
+
+
+I'd like to ask category theorists how they would answer the attached message 
+from a colleague here.  Both he and the person with whom he is corresponding 
+are experts in the areas of knowledge representation within computer science 
+(ontologies and the like).  I thought it best to hide their identities since 
+I haven't asked permission to use them.  If you are interested, please respond 
+to me privately if you would.
+
+Thank you,
+Mike Healy
+------------------------------------------------------------------------------
+
+Message I received:----
+
+I would be delighted if there was no semantic conflict between
+category theory and set theory.  I kind of flagged this as a
+potential issue, but did not look  into it in detail, as it was
+not my main concern at the time.  However, I remain unconvinced.
+There has been some discussion of using set theory as the basis
+for a semantics for SUOKIF. If this is true, then I think it may
+be limiting to a CT based language. While it may be true that sets
+are common example of a catagory, my sense is that CT is much more
+powerful, and would be LIMITED if everything was forced into the
+single catagory of sets.
+
+Im a bit out of my element here, however, and need to defer to the
+formal expertise of others on this issue.
+
+
+Message to which the above was replying:---
+
+I agree that category theory is very powerful and could be
+an important basis for combining and sharing ontologies.
+But I disagree with the following point:
+
+>I think this idea has tremendous potential.  One problem is that the underlying
+
+>formal semantics of category theory is NOT set theory (which is what KIF uses),
+
+>furthermore, I think they may well be incompatible.
+
+First-order logic (including any and all notations for it,
+such as KIF, CGs, predicate calculus, existential graphs, etc.)
+is completely neutral with respect to set theory or category
+theory.  The version 3.0 of KIF did include a version of set
+theory, but that was removed in the KIF'99 version because it
+belongs to ontology rather than logic.
+
+And for that matter, there is no reason why you can't use both
+category theory and set theory together.  In fact, one of the
+most common examples of a category is the category of sets.
+
+Perhaps there may be incompatibilities between the methodology
+associated with Ontolingua and category-based techiques, but
+Ontolingua is not KIF.  Ontolingua simply uses KIF.
+--
+
+===========================================================================
+                                         e	     
+Michael J. Healy                          A
+                                  FA ----------> GA
+(425)865-3123                     |              |
+FAX(425)865-2964                  |              |
+                               Ff |              | Gf
+c/o The Boeing Company            |              |   
+PO Box 3707  MS 7L-66            \|/            \|/
+Seattle, WA 98124-2207            '              '
+USA                               FB ----------> GB
+-or for priority mail-                   e             "I'm a natural man."
+2760 160th Ave SE  MS 7L-66               B
+Bellevue, WA 98008
+USA
+
+michael.j.healy@boeing.com          -or-            mjhealy@u.washington.edu
+
+============================================================================
+
+
+
+From rrosebru@mta.ca Wed Jan 17 15:19:22 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0HIfH417257
+	for categories-list; Wed, 17 Jan 2001 14:41:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 16 Jan 2001 20:29:56 -0800
+From: "Joseph R. Kiniry" <kiniry@acm.org>
+Reply-To: "Joseph R. Kiniry" <kiniry@acm.org>
+To: categories@mta.ca
+Subject: categories: re: Question
+Message-ID: <10340000.979705796@kind.kindsoftware.com>
+In-Reply-To: <200101170017.QAA12492@lilith.rt.cs.boeing.com>
+X-Mailer: Mulberry/2.0.6b2 (Linux/x86)
+Organization: Department of Computer Science, Caltech
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 19
+
+Hello Michael,
+
+I believe that category theory is an excellent foundation for ontology 
+representation and manipulation -- I use it myself.
+
+However, choosing this foundation comes at a price.  Unless significant 
+work is done to hide this unfamiliar foundation, many users (of the theory, 
+the system, the language, &c) will be biased against the work from 
+minute-one.  This has as much to do with the unfamiliarity of CT as it does 
+with certain unfortunate negative biases regularly expressed by many 
+mathematicians and computer scientists - biases that, IMHO, are founded in 
+ignorance and not reason.
+
+Many computer scientists, mathematician, and users of knowledge 
+representation systems are quite familiar (at least in use, but probably 
+not in foundations or related complications) and comfortable with set 
+theory.  This familiarity is an incentive rather than an obstacle to using 
+related work.
+
+Personally, I chose not to pursue a set theoretical foundation because of 
+theoretical and representational complexity issues (e.g. witness the use of 
+a set theoretical foundation for the Z specification language) as well as 
+the unfortunate binding to a particular formalism that isn't necessarily 
+congruent with others that I work in and apply my work to (e.g. type theory 
+and programming languages).  To rephrase, I find using CT to be more clear 
+and tractable than set theory and I feel that my work can, as a result, say 
+and do more than it could if it had a set theory (plus some extra 
+formalisms) bases.
+
+Note that I also chose not to build my work (solely) on type theory and 
+order sorted algebras for the same reason, though my work has elements of 
+both of those fields as well.
+
+The comments about Ontolingua and KIF are on-target in my experience.  I 
+see no obstructions to the representation of CKML (the variant related to 
+KIF and RDF that I happen to know well) with my work.
+
+Finally, I should point out that I am but an infant in CT - I'm much more 
+comfortable with TT, OSA, PL, and others.  I've only been learning and 
+using CT for a few months and, while there have been some objection to my 
+choice, I feel that a dissertation founded in these three major fields (CT, 
+TT, and OSA) has significantly broader application and, implicitly, more to 
+say about its author. <grin>
+
+Best,
+Joe Kiniry
+-- 
+Joseph R. Kiniry                   http://www.cs.caltech.edu/~kiniry/
+California Institute of Technology       ID 78860581      ICQ 4344804
+
+
+--On Tuesday, January 16, 2001 04:17:19 PM -0800 "Michael J. Healy 
+425-865-3123" <mjhealy@redwood.rt.cs.boeing.com> wrote:
+
+>
+> I'd like to ask category theorists how they would answer the attached
+> message  from a colleague here.  Both he and the person with whom he is
+> corresponding  are experts in the areas of knowledge representation
+> within computer science  (ontologies and the like).  I thought it best to
+> hide their identities since  I haven't asked permission to use them.  If
+> you are interested, please respond  to me privately if you would.
+>
+> Thank you,
+> Mike Healy
+> -------------------------------------------------------------------------
+> -----
+>
+> Message I received:----
+>
+> I would be delighted if there was no semantic conflict between
+> category theory and set theory.  I kind of flagged this as a
+> potential issue, but did not look  into it in detail, as it was
+> not my main concern at the time.  However, I remain unconvinced.
+> There has been some discussion of using set theory as the basis
+> for a semantics for SUOKIF. If this is true, then I think it may
+> be limiting to a CT based language. While it may be true that sets
+> are common example of a catagory, my sense is that CT is much more
+> powerful, and would be LIMITED if everything was forced into the
+> single catagory of sets.
+>
+> Im a bit out of my element here, however, and need to defer to the
+> formal expertise of others on this issue.
+>
+>
+> Message to which the above was replying:---
+>
+> I agree that category theory is very powerful and could be
+> an important basis for combining and sharing ontologies.
+> But I disagree with the following point:
+>
+>> I think this idea has tremendous potential.  One problem is that the
+>> underlying
+>
+>> formal semantics of category theory is NOT set theory (which is what KIF
+>> uses),
+>
+>> furthermore, I think they may well be incompatible.
+>
+> First-order logic (including any and all notations for it,
+> such as KIF, CGs, predicate calculus, existential graphs, etc.)
+> is completely neutral with respect to set theory or category
+> theory.  The version 3.0 of KIF did include a version of set
+> theory, but that was removed in the KIF'99 version because it
+> belongs to ontology rather than logic.
+>
+> And for that matter, there is no reason why you can't use both
+> category theory and set theory together.  In fact, one of the
+> most common examples of a category is the category of sets.
+>
+> Perhaps there may be incompatibilities between the methodology
+> associated with Ontolingua and category-based techiques, but
+> Ontolingua is not KIF.  Ontolingua simply uses KIF.
+> --
+>
+> Michael J. Healy
+
+
+
+
+From rrosebru@mta.ca Wed Jan 17 16:07:54 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0HJWoG32710
+	for categories-list; Wed, 17 Jan 2001 15:32:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A65A891.24A8CF18@informatik.uni-bremen.de>
+Date: Wed, 17 Jan 2001 15:13:37 +0100
+From: Till Mossakowski <till@informatik.uni-bremen.de>
+X-Mailer: Mozilla 4.75 [en] (X11; U; SunOS 5.8 sun4u)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Categories <categories@mta.ca>
+Subject: categories: jobs: Research assistant positions in Bremen
+Content-Type: text/plain; charset=iso-8859-1
+X-MIME-Autoconverted: from 8bit to quoted-printable by nmh.informatik.uni-bremen.de id f0HEDbW01494
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id f0HEECg07488
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 20
+
+The following two research assistant positions
+are available at the University of Bremen, Germany.
+
+The Bremen Institute of Safe Systems in the Center for Computing 
+Technologies at the University of Bremen hosts the research projects
+ 
+"Multi-logic systems as a basis for heterogeneous specification 
+and development" (MULTIPLE) 
+
+and 
+
+"Algebraic specification + functional programming = 
+environment for formal software development" (HasCASL)
+
+funded by the Deutsche Forschungsgemeinschaft (DFG). 
+
+
+Within the framework of each of these projects, one position in the 
+working group of Prof. Dr. Krieg-Brückner is to be immediately 
+filled for at least  two years (additional option for another two
+years), 
+subject to availability of funds: 
+
+Research Assistant 
+Verg. Gr. IIa BAT (full time) 
+
+In addition to successful university studies in computer science, 
+experience and skills in functional programming (e.g. Haskell, ML) 
+are expected. Familiarity with at least one of formal specification 
+methods (like  CoFI/CASL), theorem proving or category theory is
+desirable. 
+
+Applicants with a PhD are welcome. However, there will also be the 
+oppurtunity to prepare a PhD thesis in connection with the research
+project. 
+
+In case of essentially equal qualification in the subject and personal 
+suitability, severely handicapped applicants will be preferred. The 
+University of Bremen intends to increase the share of women in 
+scientific activities and does therefore strongly encourage women to 
+apply for these positions. 
+
+More detailed information about the projects can be found under
+http://www.tzi.de/cofi/projects/multiple.html 
+http://www.tzi.de/cofi/projects/hascasl.html 
+
+Please address your application with the usual documents and the 
+reference number A164/00 (MULTIPLE) resp. A165/00 (HasCASL)
+before 01.02.2001 to: 
+
+UNIVERSITÄT BREMEN 
+Prof. Dr. B. Krieg-Brückner 
+Fachbereich 3 
+Postfach 33 04 40 
+28334 Bremen 
+e-Mail:  cofi@tzi.de 
+-- 
+Till Mossakowski                Phone: +49-421-218-4683, monday:
++49-4252-1859
+Dept. of Computer Science       Fax:   +49-421-218-3054
+University of Bremen            EMail: till@tzi.de           
+P.O.Box 330440, D-28334 Bremen  WWW:   http://www.tzi.de/~till
+
+
+From rrosebru@mta.ca Wed Jan 17 20:10:40 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0HNWuM30921
+	for categories-list; Wed, 17 Jan 2001 19:32:56 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 17 Jan 2001 16:51:06 -0500 (EST)
+From: Phil Scott <phil@mathstat.uottawa.ca>
+Message-Id: <200101172151.QAA14562@dinats.mathstat.uottawa.ca>
+To: categories@mta.ca
+Subject: categories: Grad studies at U. Ottawa
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 21
+
+The Logic Team at the Math Department of the University of Ottawa 
+announces that it anticipates having one or more openings in its graduate 
+program beginning in September. These would be at either the Master's 
+or Ph. D. level, and would come with funding in the form of tuition 
+and an additional stipend.
+
+The team is run by Phil Scott, Rick Blute and Peter Selinger, and 
+specializes in the following areas:
+
+-linear logic
+-categorical logic and proof theory
+-category theory, especially monoidal categories
+-logic and foundations of computer science 
+-models of concurrency
+
+We have close affiliations with the University of Ottawa School of 
+Information Technology and Engineering,  as well as the Category 
+Theory Research Centre in Montreal, and our students have many 
+opportunities to interact with the members of these institutions.
+
+The Math Department at the University of Ottawa has a wide range 
+of research interests and provides an excellent environment
+for graduate study. Students here also have the advantage of living in one
+of the most beautiful cities in Canada, and the national capital.
+
+For further information, please visit our department website at 
+www.science.uottawa.ca/mathstat, or contact Rick Blute at 
+rblute@mathstat.uottawa.ca or Phil Scott at phil@mathstat.uottawa.ca.
+
+
+
+
+
+
+From rrosebru@mta.ca Wed Jan 17 20:10:54 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0HNcWW26804
+	for categories-list; Wed, 17 Jan 2001 19:38:32 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mailing-List: contact fme2001cfp-help@di.uminho.pt; run by ezmlm
+X-No-Archive: yes
+Delivered-To: mailing list fme2001cfp@di.uminho.pt
+Date: Wed, 17 Jan 2001 10:31:35 -0500 (EST)
+From: Pamela Zave <pamela@research.att.com>
+Message-Id: <200101171531.KAA26216@raptor.research.att.com>
+To: categories@mta.ca
+Subject: categories: FME2001 Call for Participation
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 22
+
+To learn about Formal Methods Europe 2001, to be held in Berlin 12-16 March,
+please visit the symposium website at:
+
+www.informatik.hu-berlin.de/top/fme2001
+
+Registration and hotel reservation are available on the website.  The deadline
+for early registration is 9 February.
+
+Please register now so we can look forward to seeing you in Berlin!
+
+
+From rrosebru@mta.ca Fri Jan 19 10:22:57 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0JDlfp11721
+	for categories-list; Fri, 19 Jan 2001 09:47:41 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A672BF6.E7DD6DE1@lsi.upc.es>
+Date: Thu, 18 Jan 2001 18:46:30 +0100
+From: orejas <orejas@lsi.upc.es>
+X-Mailer: Mozilla 4.73 [en] (WinNT; I)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: ICALP 2001 (Final Call for Papers)
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 23
+
+           (Apologies if you receive multiple copies of this announcement.)
+
+                                      ICALP 2001.
+   Twenty - Eighth International Colloquium on Automata, Languages and
+   Programming
+                                          Crete, Greece, July 8 to 12, 2001
+
+                                              CALL FOR PAPERS
+
+
+
+The 28th International Colloquium on Automata, Languages and Programming
+
+(ICALP) will be held in  Crete, Greece, July 8-12, 2001,
+
+As with the Journal of Theoretical Computer Science (TCS), the scientific
+program of the Colloquium will be split into two parts: Track A of the
+meeting will correspond to Algorithms, Automata, Complexity and Games,
+while Track B to Logic, Semantics and Theory of Programming.
+
+The 28th International Colloquium on Automata, Languages and Programming
+will be organized back to back with the 33rd Annual ACM Symposium on
+Theory of Computing (STOC, July 6-8, 2001). Also, the Thirteenth Annual
+ACM Symposium on Parallel Algorithms and Architectures (SPAA '01, July
+4-6, 2001) will be organized two days before the 33rd Annual ACM Symposium
+on Theory of Computing (STOC)
+
+Authors are invited to submit extended abstracts of their papers,
+presenting original contributions to the theory of computer science.
+Papers should be submitted electronically (in Postscript) using the
+ICALP 2001 Submissions Server:
+
+                http://www.cs.uu.nl/CSCS/ICALP-2001.html
+
+following the instructions given there. Authors from countries where
+access to Internet is difficult should contact the conference chair.
+
+Submissions should consist of: a cover page, with the author's full
+name, address, fax number, e-mail address, a 100-word abstract, keywords
+and to which track (A or B) the paper is being submitted and an extended
+abstract describing original research. Papers should not be exceeding 12
+pages in the standard LNCS-style. Authors should indicate whether they
+wish their paper to be considered for the Best Student Paper Award. It
+is expected that accepted papers will be presented at the conference.
+Simultaneous submission to other conferences with published proceedings
+is not allowed.
+
+More details can be found on the conference web site:
+
+               http://www.cti.gr/engl_v/news/sc_conf/icalp.html
+
+Important Dates:
+
+        Deadline for Submissions:     January 27, 2001
+
+        Notification to authors:         April 9, 2001
+
+        Camera-ready:                     April 30, 2001
+
+
+
+Conference Chair:
+Prof. Paul Spirakis
+Computer Technology Institute (CTI)
+and University of Patras
+61 Riga Fereou, street
+26221 Patras, Greece
+phone: +30-61-220112
+fax: +30-61-222086
+email: spirakis@cti.gr
+http://www.cti.gr/structure/Paul_Spirakis/
+
+
+
+Program Committee:
+
+Track A (Algorithms, Automata, Complexity and Games)
+
+Maxime Crochemore, Marne-la-Vallie
+Leslie Goldberg, Warwick
+Mordecai Golin, Hong Kong
+Juraj Hromkovic, Aachen
+Pino Italiano, Rome
+Viggo Kann, Stockholm
+Ludek Kucera, Prague
+Bill McColl, Oxford and Sychron Inc.
+David Peleg, Rehovot
+Jose Rolim, Geneva
+Peter Sanders, Saarbruecken
+Erik M. Schmidt, Aarhus
+Maria Serna, Barcelona
+Jack S. Snoeyink, Chapell Hill
+Athanasios Tsakalidis, Patras
+Jan van Leeuwen, Utrecht (chair)
+Dorothea Wagner, Konstanz
+
+Track B (Logic, Semantics and Theory of Programming)
+
+Samson Abramski, U. Edinburgh
+Kim Bruce, Williams College, Williamstown
+Stavros Cosmadakis, U. Patras
+Hartmut Ehrig, TU Berlin
+Javier Esparza, TU Munich
+Tom Henzinger, Berkeley
+Jean-Pierre Jouannaud, U. Paris-Sud, Orsay
+Jose Meseguer, S.R.I. Int., Menlo Park
+Eugenio Moggi, U. Genova
+Ugo Montanari, U. Pisa
+Damian. Niwinski, U. Warsaw
+Fernando Orejas, UPC, Barcelona (chair)
+Catuscia Palamidessi, Penn. State
+Andreas Podelski, Max Planck I., Saarbruecken
+Hanne Riis Nielson, U. Aarhus
+
+
+Organizing Committee:
+
+C. Bouras, CTI and University of Patras
+S. Bozapalidis, Aristotle University of Thessaloniki
+R. Efstathiadou, CTI
+C. Kaklamanis, CTI and University of Patras
+C. Nikolaou, University of Crete and ICS-FORTH
+S. Nikoletseas, CTI and University of Patras
+P. Spirakis, CTI and University of Patras
+A. Tsakalidis, CTI and University of Patras
+S. Zachos, National Technical University of Athens
+C. Zaroliagis, CTI and University of Patras
+
+
+
+
+
+
+From rrosebru@mta.ca Fri Jan 19 10:23:27 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0JDdGW18889
+	for categories-list; Fri, 19 Jan 2001 09:39:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b00b68dabb3a6a4@[130.251.167.62]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Fri, 19 Jan 2001 09:41:22 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: preprint: On the monad of proper factorisation systems in categories
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 24
+
+The following preprint is available:
+
+M. Grandis
+"On the monad of proper factorisation systems in categories"  (8 pages).
+
+Abstract. It is known that factorisation systems in categories can be
+viewed as unitary pseudo algebras for the "squaring" monad P = (-)^2,  in
+Cat.
+   We show in this note that an analogous fact holds for proper (i.e.,
+epi-mono) factorisation systems and a suitable quotient of the former
+monad, deriving from a construct introduced by P. Freyd for stable
+homotopy.
+Some similarities of  P  with the structure of the path endofunctor of
+topological spaces are considered.
+
+Available in ps (148 K), from:
+
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/EMfs.Jan01.ps
+
+Also in ps.gz (45K), at:
+
+http://arXiv.org/abs/math.CT/0101154
+
+***
+
+Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+
+http://www.dima.unige.it/STAFF/GRANDIS/
+
+
+
+
+From rrosebru@mta.ca Fri Jan 19 10:28:59 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0JDcJC20743
+	for categories-list; Fri, 19 Jan 2001 09:38:19 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <200101180517.OAA50237@momo.etl.go.jp>
+To: categories@mta.ca
+Subject: categories: CFP: Workshop on Structure Preserving Relations
+Date: Thu, 18 Jan 2001 14:17:01 +0900
+From: KINOSHITA Yoshiki <yoshiki@etl.go.jp>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 25
+
+
+		   CALL FOR TALKS AND PARTICIPATION
+
+              Workshop on Structure Preserving Relations
+
+
+
+Relations are ubiquitous in Computer Science.  In particular, those
+which preserve structure are of central interest, appearing in the
+form of logical relations and bisimulation, and used to study
+abstraction and data and program refinement, for example.
+
+The workshop is intended to bring researchers on these topics together
+to present and compare their various approaches, and to allow
+potential users of these techniques to see which if any of these
+structures may be of use in their own more applied research.
+
+The workshop will be held at ETL/AIST in Amagasaki, which is a scenic
+coastal town near Kobe, with easy rail connections to the famous
+tourist sites of Kyoto and Nara. The meeting will commence at 2:00 pm
+on Monday, March 12, 2001, finishing sometime after lunch on
+Wednesday, March 14.
+
+Being supported by the COE project 'Global Informatics' funded by STA,
+the workshop is a successor to the Workshop on Refinement and
+Abstraction held at the same city in November, 1999 (see
+http://www.etl.go.jp/~yoshiki/WRA/ for more information about this).
+
+WORKSHOP ORGANISERS:
+
+      Masami Hagiya           The University of Tokyo
+      John Power              The University of Edinburgh
+      Yoshiki Kinoshita       ETL/AIST, Osaka
+
+
+INVITED SPEAKERS:
+
+      Ryu Hasegawa            The University of Tokyo
+      Bart Jacobs             Katholieke Universiteit Nijmegen
+      Edmund Robinson         Queen Mary and Westfield College, London
+      David Schmidt           Kansas State University
+
+
+PLACE:
+
+      Osaka LERC
+      ETL
+      Nakouji 3-11-46
+      Amagasaki-city, Hyogo
+      661-0974 Japan
+
+      Phone: +81-6-6494-7825
+      Fax: +81-6-6491-5028
+
+      The map may be found at the following URL:
+		http://www.etl.go.jp/~LERC/chizu.html
+
+
+TALKS AND THE PROCEEDINGS:
+
+      We wish to keep the informal atmosphere of the previous workshop
+      making it easier to go for fruitful discussions.  All
+      participants are welcome to give a talk on relations which
+      preserve some mathematical structure such as algebraic
+      structure.  We do not collect papers from the speakers in
+      advance of the workshop.  Rather, we will bundle a
+      post-proceedings of the workshop, which we plan to publish in a
+      volume of Electronic Notes in Theoretical Computer Science.  To
+      this post-proceedings, not only the speakers but all
+      participants will be invited to submit papers about topics
+      related to the workshop.
+
+ACCOMMODATION:
+
+      Hotel New Archaic, which is in reasonable distance from the
+      workshop place, offers a following rate to participants of this
+      workshop:
+
+      Single room : 7,507 Yen(including SVC,TAX)
+      Twin room : 12,705 Yen(including SVC,TAX)
+
+      To get this rate, you need to contact directly to the hotel
+      (note: they of course speak reasonable English as well as 
+      Japanese) BY PHONE or E-MAIL, to reserve your name BEFORE
+
+       $B!!!!(B Friday 28 February, 2001,
+
+      with the explicit statement that you are to participate the
+      Workshop sponsored by ETL.  PHONE is preferable for the reliable
+      reservation.
+
+      Phone number of the Hotel New Archaic for booking: +81-6-6488-3111
+      E-mail address of the Hotel New Archaic for booking:
+
+               TO: archaic@mxq.mesh.ne.jp
+               CC: midoriko@etl.go.jp                    
+
+      There are limited number of non-smoking rooms.  Quick
+      reservation would be recommended if you need one.
+
+
+
+REGISTRATION:
+
+      Participants are asked to fill in the following registration form
+      and send it to YOKOYAMA Midoriko (midoriko@etl.go.jp), no later than
+
+            February 28, 2001.
+
+      Registration fee is 13,000yen that includes: 
+
+         - admission to the workshop
+         - lunches during the workshop
+         - workshop dinner on March 13
+         - materials distributed during the workshop
+
+      Payments should be made in Yen currency by bank transfer.
+      Notice: Registration fee 13,000yen does not include the bank
+      charge.
+
+         Bank name : Sakura Bank
+         Branch bank name : Sonoda
+         Beneficiary's name : ETL YOSHIKI KINOSHITA
+         ID number : 357-4561405 (Ordinary bank account)
+
+      For those who have difficulty with bank transfer, we also accept
+      payment by cash on the first day of the workshop, but participants are
+      encouraged to use bank transfer.
+
+
+========================================================================
+
+                          REGISTRATION FORM
+
+              Workshop on Structure Preserving Relations
+
+
+- Names in full :
+
+- Address :
+
+- Phone/Fax :
+
+- Oranization :
+
+- Date of transfer to our bank :
+
+- Title and abstract of your talk (Note: if you intend to give a talk,
+  please give your title and abstract here):
+
+
+========================================================================
+
+
+From rrosebru@mta.ca Fri Jan 19 17:01:02 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0JKPjn04106
+	for categories-list; Fri, 19 Jan 2001 16:25:45 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 19 Jan 2001 16:21:48 -0400 (AST)
+From: Bob Rosebrugh <rrosebrugh@mta.ca>
+To: categories <categories@mta.ca>
+Subject: categories: TAC Contents: Volume 7
+Message-ID: <Pine.OSF.4.10.10101191618130.26208-100000@mailserv.mta.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 26
+
+Here is the table of contents and subscription information for Volume 7 of
+Theory and Applications of Categories. The Editors invite high quality
+submissions. The full table of contents is at
+www.tac.mta.ca/tac/
+
+
+             THEORY AND APPLICATIONS OF CATEGORIES          ISSN 1201-561X
+
+                     Volume 7 - 2000 
+
+
+1. On Branched Covers in Topos Theory 
+      Jonathon Funk, 1-22 
+
+2. A Pseudo Representation Theorem for Various Categories of Relations 
+      M. Winter, 23-37 
+
+3. Pure morphisms of commutative rings are effective descent morphisms for
+modules -- a new proof 
+      Bachuki Mesablishvili, 38-42 
+
+4. On saturated classes of morphisms 
+      Carles Casacuberta and Armin Frei, 43-46 
+
+5. Factorization systems for symmetric cat-groups 
+      S. Kasangian and E.M. Vitale, 47-70 
+
+6. Balanced coalgebroids 
+      Paddy McCrudden, 71-147 
+
+7. On the monadicity of categories with chosen colimits 
+      G. M. Kelly and Stephen Lack, 148-170 
+
+8. M-Completeness is seldom monadic over graphs 
+      J. Adamek and G. M. Kelly, 171-205 
+
+9. Normal functors and strong protomodularity 
+      Dominique Bourn, 206-218 
+
+10. Central extensions in Malt'sev varieties 
+      G. Janelidze and G. M. Kelly, 219-226 
+
+11. On the object-wise tensor product of functors to modules 
+      Marek Golasinski, 226-235 
+
+12. Quasi-varieties of presheaves 
+      Enrico M. Vitale, 236-238 
+
+13. Solution manifolds for systems of differential equations 
+      John F. Kennison, 239-262 
+
+14. A simplicial description of the homotopy category of simplicial
+groupoids 
+      A. R. Garzon, J. G. Miranda and R. Osorio, 263-283 
+
+15. Geometric and Higher Order Logic in terms of Abstract Stone Duality 
+      Paul Taylor, 284-338 
+
+
+SUBSCRIPTION/ACCESS TO ARTICLES 
+
+Subscribers to the journal receive abstracts of accepted papers by
+electronic mail. Compiled TeX (.dvi) and Postscript files of the full
+articles are available by Web/ftp.
+
+To subscribe, send a request to tac@mta.ca , including your name and a
+postal address. The journal is free to individuals.
+
+
+
+
+
+
+From rrosebru@mta.ca Fri Jan 19 17:01:16 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0JKOnw31453
+	for categories-list; Fri, 19 Jan 2001 16:24:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A66CC9D.73206BC3@dsic.upv.es>
+Date: Thu, 18 Jan 2001 11:59:43 +0100
+From: Salvador Lucas Alba <slucas@dsic.upv.es>
+Organization: ELP
+X-Mailer: Mozilla 4.7 (Macintosh; I; PPC)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: Salvador Lucas <slucas@dsic.upv.es>
+Subject: categories: WRS'2001 - First call for papers
+Content-Type: text/plain; charset=us-ascii; x-mac-type="54455854"; x-mac-creator="4D4F5353"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 27
+
+           [Apologies for multiple copies of this announcement]
+
+**************************************************************
+***************  first  call for papers and participation
+****************
+**************************************************************
+
+International Workshop on Reduction Strategies in Rewriting and
+                     Programming (WRS 2001)
+
+                      http://www.logic.at/wrs01/
+
+                 held in conjunction with RTA 2001
+               Utrecht, The Netherlands, May 26, 2001
+
+--------------------------------------------------------------------------
+
+BACKGROUND AND AIMS
+
+Reduction strategies in rewriting and programming have attracted an
+increasing attention within the last years. New types of reduction
+strategies have been invented and investigated, and new results on
+rewriting / computation under particular strategies have
+been obtained. Research in this field ranges from primarily
+theoretical
+questions about reduction strategies to very practical application and
+
+implementation issues. The need for a deeper understanding of
+reduction
+strategies in rewriting and programming, both in theory and practice,
+is obvious, since they bridge the gap between unrestricted general
+rewriting (computation) and (more deterministic) rewriting with
+particular strategies (programming). Moreover, reduction strategies
+provide a natural way to go from operational principles (e.g., graph
+and term rewriting, narrowing, lambda-calculus) and semantics (e.g.,
+normalization, computation of values, infinitary normalization,
+head-normalization) to implementations of programming
+languages.
+
+Therefore any progress in this area is likely to be of interest not
+only to the rewriting community, but also to neighbouring fields like
+functional programming, functional-logic programming, and termination
+proofs of algorithms.
+
+The workshop wants to provide a forum for the presentation and
+discussion of new ideas and results, recent developments, new research
+
+directions, as well as of surveys on existing knowledge in this
+area. Furthermore we aim at fostering interaction and exchange between
+
+researchers and students actively working on such topics.
+The workshop will be held in conjunction with RTA 2001 in Utrecht (The
+
+Netherlands) on May 26, 2001. It will feature 2 invited talks, a panel
+
+discussion, and contributed presentations selected from the
+submissions, with ample time for discussion.
+
+The workshop is (co-)organized by U Utrecht, TU Valencia and TU Wien.
+
+
+TOPICS OF INTEREST
+
+Topics of interest include, but are not restricted to,
+- theoretical foundations for the definition and semantic description
+  of reduction strategies
+- strategies in different frameworks (term rewriting, graph rewriting,
+
+  infinitary rewriting, lambda calculi, higher order rewriting,
+  conditional rewriting, rewriting with built-ins, narrowing,
+  constraint solving, etc.) and their application in (equational,
+  functional, functional-logic) programming (languages)
+- properties of reduction strategies / computations under
+  strategies (e.g., completeness, computability, decidability,
+  complexity, optimality, (hyper-)normalization, cofinality,
+  fairness, perpetuality, context-freeness, neededness, lazyness,
+  eagerness, strictness)
+- interrelations, combinations and applications of
+  reduction under different strategies (e.g., equivalence
+  conditions for fundamental properties like termination and
+  confluence, applications in modularity analysis, connections
+  between strategies of different frameworks, etc.)
+- program analysis and other semantics-based optimization techniques
+  dealing with reduction strategies
+- rewrite systems / tools / implementations with flexible /
+  programmable strategies as essential concept / ingredient
+- specification of reduction strategies in (real) languages
+- data structures and implementation techniques for reduction
+  strategies.
+
+
+SUBMISSIONS
+
+We solicit papers on all aspects of reduction strategies in
+rewriting and programming. Submissions should describe unpublished
+work, except for survey papers which are explicitly welcome,
+too. Submissions should not exceed 10 pages (however, survey papers
+may be longer) and be sent in postscript format to the PC co-chairs
+(wrs01@logic.at) by March 1, 2001. Selection of papers by the PC
+will be based on originality, significance, and correctness.
+Accepted papers will be included in the workshop proceedings that will
+
+be available at the workshop, and electronically on the web.
+Depending on the number and quality of submissions, formal publication
+of the proceedings is envisaged.
+
+Researchers just interested in attending the workshop may send a
+corresponding email to wrs01@logic.at by March 1, 2001, preferably
+together with a brief position paper (up to two pages in postscript)
+describing their interest and/or work in the area. However, we will
+also consider late requests for attendance.
+
+
+INVITED TALKS
+
+  Richard Kennaway (UEA Norwich, UK):
+    (to be confirmed)
+  Eelco Visser (U Utrecht, The Netherlands):
+    A Survey of Strategies in Program Transformation Systems
+
+
+PANEL DISCUSSION on ``Hot Topics in Reduction Strategies'' with
+
+  Michael Hanus                  U Kiel (Germany)
+  Tetsuo Ida                     U Tsukuba (Japan)
+  Paul Klint (to be confirmed)   CWI & U Amsterdam (The Netherlands)
+
+
+PROGRAM COMMITTEE
+
+  Maria Alpuente                 TU Valencia (Spain)
+  Rachid Echahed                 IMAG Grenoble (France)
+  Bernhard Gramlich (co-chair)   TU Wien (Austria)
+  Salvador Lucas (co-chair)      TU Valencia (Spain)
+  Vincent van Oostrom            U Utrecht (The Netherlands)
+  Rinus Plasmeijer               KU Nijmegen (The Netherlands)
+  Manfred Schmidt-Schauss        U Frankfurt a.M. (Germany)
+  Yoshihito Toyama               U Tohoku (Japan)
+
+
+LOCAL ORGANIZATION
+
+  Vincent van Oostrom            U Utrecht (The Netherlands)
+
+
+IMPORTANT DATES
+
+  Submission    March 1, 2001
+  Notification  March 31, 2001
+  Final version April 30, 2001
+  Workshop      May 26, 2001
+
+
+FURTHER INFORMATION
+
+  workshop website               http://www.logic.at/wrs01/
+  workshop email address         wrs01@logic.at
+
+
+**************************************************************************
+
+
+
+
+
+From rrosebru@mta.ca Mon Jan 22 13:06:44 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0MGBvC01240
+	for categories-list; Mon, 22 Jan 2001 12:11:57 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: "Walter Tholen" <tholen@mathstat.yorku.ca>
+Message-Id: <1010122104339.ZM218104@pascal.math.yorku.ca>
+Date: Mon, 22 Jan 2001 10:43:39 -0500
+X-Mailer: Z-Mail (4.0.1 13Jan97)
+To: categories@mta.ca
+Subject: categories: preprint: Lax factorization algebras
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 28
+
+
+
+
+The ps-file of the following paper is available via my website at
+
+www.math.yorku.ca/Who/Faculty/Tholen/research.html
+
+Please do not hesitate contacting me in case of difficulty.
+Walter.
+--------------------------------------------------------------------------
+
+"Lax factorization algebras"
+
+Jiri Rosicky' and Walter Tholen
+
+Abstract: It is shown that many weak factorization systems appearing in
+functorial Quillen model categories, including all those that are
+cofibrantly generated, come with a rich computational structure, defined
+by a certain lax algebra with respect to the "squaring monad" on CAT. This
+structure largely facilitates natural choices for left or right liftings
+once certain basic natural choices have been made. The use of lax
+homomorphisms of such lax algebras is also discussed, with focus on "lax
+freeness".
+
+
+
+
+
+
+From rrosebru@mta.ca Tue Jan 23 17:43:22 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0NL9uB03045
+	for categories-list; Tue, 23 Jan 2001 17:09:56 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3A6D1CB4.A1204553@kestrel.edu>
+Date: Mon, 22 Jan 2001 21:55:00 -0800
+From: Dusko Pavlovic <dusko@kestrel.edu>
+X-Mailer: Mozilla 4.72 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: Question
+References: <200101170017.QAA12492@lilith.rt.cs.boeing.com>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 29
+
+it's interesting that almost no one took michael healy's bait (attached).
+a couple of years ago, a similar question started a long battle between a
+group of categorists from this list, and a group of set theorists on
+another list. traces of that battle can still be found scattered on the
+web.
+
+i guess people got a bit tired. after all, for a working mathematician,
+foundations are a bit like esperanto: ok, all math can be translated to
+set theory, or to category theory, or to untyped lambda calculus --- so
+what? do foundations help me calculate an integral? does anyone use von
+neumann representation of numbers in arithmetic? no.
+
+but guys, note that the question this time comes from cs.boeing.com! if
+people at boeing think about categories, and sets, and foundations, then
+this probably makes a difference for them, and helps them compute
+something. might this not be worth your attention?
+
+so let me say what i think. i think foundations mean different things for
+different people.
+
+for logicians, foundations are metamathematics: analyzing consistency,
+independance etc of logical theories. this is what set theory was found to
+be good for.
+
+category theory, on the other hand, is not as handy for proving new
+independence results, but it tells you to look for adjunctions everywhere,
+or monads, or <the keyword from your last paper>. it is not
+metamathematics, but perhaps *structuralist maths*: it displays abstract
+structures... (i kno, this is getting to *just* the kind of philosophy you
+were hoping to avoid by the synchronized silence. so let me make the
+point.)
+
+for software engineers, foundations are the link with the meaning of their
+programs. having a slightly shorter history than math, they do not have
+languages as natural as arithmetic, or calculus, but have to chose between
+KIF and Ontolingua, and the various other versions of esperanto every day.
+categories dam the flood of structure in software engineering, just like
+they originally did in homology theory almost 60 years ago. some good math
+may come out of it if taken from a good side.
+
+-- dusko
+
+
+
+"Michael J. Healy 425-865-3123" wrote:
+
+> I'd like to ask category theorists how they would answer the attached message
+> from a colleague here.  Both he and the person with whom he is corresponding
+> are experts in the areas of knowledge representation within computer science
+> (ontologies and the like).  I thought it best to hide their identities since
+> I haven't asked permission to use them.  If you are interested, please respond
+> to me privately if you would.
+>
+> Thank you,
+> Mike Healy
+> ------------------------------------------------------------------------------
+>
+> Message I received:----
+>
+> I would be delighted if there was no semantic conflict between
+> category theory and set theory.  I kind of flagged this as a
+> potential issue, but did not look  into it in detail, as it was
+> not my main concern at the time.  However, I remain unconvinced.
+> There has been some discussion of using set theory as the basis
+> for a semantics for SUOKIF. If this is true, then I think it may
+> be limiting to a CT based language. While it may be true that sets
+> are common example of a catagory, my sense is that CT is much more
+> powerful, and would be LIMITED if everything was forced into the
+> single catagory of sets.
+>
+> Im a bit out of my element here, however, and need to defer to the
+> formal expertise of others on this issue.
+>
+> Message to which the above was replying:---
+>
+> I agree that category theory is very powerful and could be
+> an important basis for combining and sharing ontologies.
+> But I disagree with the following point:
+>
+> >I think this idea has tremendous potential.  One problem is that the underlying
+>
+> >formal semantics of category theory is NOT set theory (which is what KIF uses),
+>
+> >furthermore, I think they may well be incompatible.
+>
+> First-order logic (including any and all notations for it,
+> such as KIF, CGs, predicate calculus, existential graphs, etc.)
+> is completely neutral with respect to set theory or category
+> theory.  The version 3.0 of KIF did include a version of set
+> theory, but that was removed in the KIF'99 version because it
+> belongs to ontology rather than logic.
+>
+> And for that matter, there is no reason why you can't use both
+> category theory and set theory together.  In fact, one of the
+> most common examples of a category is the category of sets.
+>
+> Perhaps there may be incompatibilities between the methodology
+> associated with Ontolingua and category-based techiques, but
+> Ontolingua is not KIF.  Ontolingua simply uses KIF.
+> --
+>
+> ===========================================================================
+>                                          e
+> Michael J. Healy                          A
+>                                   FA ----------> GA
+> (425)865-3123                     |              |
+> FAX(425)865-2964                  |              |
+>                                Ff |              | Gf
+> c/o The Boeing Company            |              |
+> PO Box 3707  MS 7L-66            \|/            \|/
+> Seattle, WA 98124-2207            '              '
+> USA                               FB ----------> GB
+> -or for priority mail-                   e             "I'm a natural man."
+> 2760 160th Ave SE  MS 7L-66               B
+> Bellevue, WA 98008
+> USA
+>
+> michael.j.healy@boeing.com          -or-            mjhealy@u.washington.edu
+>
+> ============================================================================
+
+
+
+From rrosebru@mta.ca Tue Jan 23 17:43:22 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0NL7ht19764
+	for categories-list; Tue, 23 Jan 2001 17:07:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mime-Version: 1.0
+X-Sender: etaps2001@elios.disi.unige.it
+Message-Id: <a0432040bb6921ab6719c@[192.33.182.131]>
+Date: Mon, 22 Jan 2001 18:13:36 +0100
+To: etaps2001@disi.unige.it
+From: "TR"@lipn.univ-paris13.fr
+Subject: categories: ETAPS 2001 FIRST CALL FOR PARTICIPATION
+Content-Type: text/plain; charset="us-ascii" ; format="flowed"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 30
+
+                             ETAPS 2001
+                 APRIL 2 - 6, 2001 - GENOVA, ITALY
+
+The European Joint Conferences on Theory and Practice of Software
+(ETAPS) is a loose and open confederation of conferences and other
+events that has become the primary European forum for academic and
+industrial researchers working on topics relating to Software Science.
+
+                  http://www.disi.unige.it/etaps2001/
+-----------------------------------------------------------------------
+               5 Conferences - 10 Workshops - 10 Tutorials
+               7 Invited Lectures - 1 panel- 9 Tool Demos
+-----------------------------------------------------------------------
+
+PROGRAM - REGISTRATION FORM - HOTEL BOOKING
+-----------------------------------------------------------------------
+    see   http://www.disi.unige.it/etaps2001/
+
+    !!!!!!  ONLINE REGISTRATION AVAILABLE NOW   !!!!!!
+
+IMPORTANT DATES:
+-----------------------------------------------------------------------
+   FEBRUARY 10: deadline to register GETTING 10% DISCOUNT on fees
+
+   MARCH 2:      deadline to register having HOTEL GUARANTEED and
+                 AVOIDING 20% SURCHARGE on fees
+
+   April  2-6, 2001:  ETAPS 2001 in Genova
+
+   March 31 - April 8, 2001:  Satellite Events
+
+CONFERENCES
+-----------------------------------------------------------------------
+CC 2001: International Conference on Compiler Construction
+
+ESOP 2001, European Symposium On Programming
+
+FASE 2001, Fundamental Approaches to Software Engineering
+
+FOSSACS 2001,
+Foundations of Software Science and Computation Structures
+
+TACAS 2001,
+Tools and Algorithms for the Construction and Analysis of Systems
+
+WORKSHOPS
+-----------------------------------------------------------------------
+CMCS: Co-algebraic Methods in Computer Science
+
+ETI Day: Electronic Tool Integration platform Day
+
+JOSES: Java Optimization Strategies for Embedded Systems
+
+LDTA: Workshop on Language Descriptions, Tools and Applications
+
+MMAABS: Models and Methods of Analysis for Agent Based Systems
+
+PFM: Proofs For Mobility
+
+RelMiS: Relational Methods in Software
+
+UNIGRA:
+Uniform Approaches to Graphical Process Specification Techniques
+
+WADT: Workshop on Algebraic Development Techniques
+
+WTUML: Workshop on Transformations in UML
+
+TUTORIALS
+-----------------------------------------------------------------------
+T1: Common Framework Initiative for Algebraic Specification and Development
+of Software
+
+T2: Abstract State Machines:
+     Surveying their Theory and their Industrial Employment
+
+T3: Compiling object-oriented programming languages
+
+T4: Rule based programming using ELAN: a Tutorial
+
+T5: Mathematical Foundations for Software Architecture
+
+T6: Rigorous Analysis and Design with the Unified Modeling Language (UML)
+
+T7: Domain Analysis and Engineering with Sherlock -
+     producing Software Product Lines
+
+T8: Extreme Modeling - Closing the Gap between Modeling and XP
+
+T9: Precise Component Architectures with UML/Catalysis
+
+T10: TTCN-3 - The new testing language for telecom and datacom
+
+INVITED LECTURES
+-----------------------------------------------------------------------
+Luca Cardelli: Global Computing
+Michael Fourman: Propositional Reasoning
+Ole Lehrmann Madsen: Virtual Classes and their Implementation
+John Mitchell
+Gordon Plotkin: Adequacy for Algebraic Effects
+Bran Selic: Physical Programming: Beyond Mere Logic
+Moshe Y. Vardi: Branching vs. Linear Time: Final Showdown
+
+PANEL
+-----------------------------------------------------------------------
+Free software: the future of software engineering?
+
+
+From rrosebru@mta.ca Wed Jan 24 17:17:41 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0OKpOp07990
+	for categories-list; Wed, 24 Jan 2001 16:51:24 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <5351C3F6EB14D211B62D00A0C98F178D02684C@compnt.cs.unp.ac.za>
+From: Yuri Velinov <yuri@msmail.cs.unp.ac.za>
+To: "'categories@mta.ca'" <categories@mta.ca>
+Subject: categories: Conference Session Opportunity
+Date: Wed, 24 Jan 2001 16:02:07 +0200
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 31
+
+Dear Colleagues,
+There is an opportunity to organize a session on 
+FORMAL STRUCTURES IN COMPUTER SCIENCE
+in the framework of SCI2001 in Orlando, Florida (July 22-25-2001) (see
+www/iiis/org/sci for more information) .
+
+If you are interested please send me in the next couple of days the title an
+a short abstract of your possible contribution.
+
+Sincerely Yours
+ Y.Velinov 
+
+
+From rrosebru@mta.ca Wed Jan 24 17:17:49 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0OKnqj30346
+	for categories-list; Wed, 24 Jan 2001 16:49:52 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Steve Stevenson <steve@cs.clemson.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14958.55421.849074.256908@merlin.cs.clemson.edu>
+Date: Wed, 24 Jan 2001 08:28:29 -0500 (EST)
+To: categories@mta.ca
+Subject: categories: Machines in a Category
+X-Mailer: VM 6.72 under 21.1 (patch 11) "Carlsbad Caverns" XEmacs Lucid
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 32
+
+In the mid 70s, Anderson, Arbib, and Manes did some work on "Machines
+in a Category" (SIAM, 1976) A lot of this was in support of work in
+using category theory in control theory.
+
+Can anyone provide information about the state of this research or a
+bibliography of this work in unifying control theory and computation?
+
+Best regards,
+
+steve
+----
+D. E. (Steve) Stevenson, Department of Computer Science, Clemson
+
+At the genetic level, race does not exist. Studies of human DNA have 
+found that there is far more genetic variability between individuals 
+within any "given" group than between two such  groups. 
+Dawn Stover, <em> New York Times
+
+
+
+From rrosebru@mta.ca Wed Jan 24 17:18:03 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0OKgaq04210
+	for categories-list; Wed, 24 Jan 2001 16:42:36 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 23 Jan 2001 14:33:16 -0800 (PST)
+From: mjhealy@redwood.rt.cs.boeing.com (Michael J. Healy 425-865-3123)
+Message-Id: <200101232233.OAA14159@lilith.rt.cs.boeing.com>
+To: categories@mta.ca
+Subject: categories: Re: Question
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 33
+
+
+I'd like to respond to Dusko's note with an open message to all; I'll try 
+to be brief.  I'm grateful to Dusko for his posting, and also to the people 
+who responded to me privately as I'd requested.  My only reason for requesting 
+private replies was to avoid any intrusion people might feel if I started 
+another thread such as the "battle" to which Dusko referred:
+> 
+> it's interesting that almost no one took michael healy's bait (attached).
+> a couple of years ago, a similar question started a long battle between a
+> group of categorists from this list, and a group of set theorists on
+> another list. traces of that battle can still be found scattered on the
+> web.
+> 
+I mean to send a compilation of the responses I received to all respondents 
+because they've all expressed interest, either explicitly or implicitly by 
+responding.  I've been short of time and haven't done this yet, partly 
+because I also want to ask each individually if it's OK to use his/her 
+name attached to the response (otherwise, said response will be included 
+as "anonymous").  I will get to it within the next few weeks.  In the 
+meantime, I've enjoyed this as a learning experience!
+
+Thank you,
+Mike
+
+--
+
+===========================================================================
+                                         e	     
+Michael J. Healy                          A
+                                  FA ----------> GA
+(425)865-3123                     |              |
+FAX(425)865-2964                  |              |
+                               Ff |              | Gf
+c/o The Boeing Company            |              |   
+PO Box 3707  MS 7L-66            \|/            \|/
+Seattle, WA 98124-2207            '              '
+USA                               FB ----------> GB
+-or for priority mail-                   e             "I'm a natural man."
+2760 160th Ave SE  MS 7L-66               B
+Bellevue, WA 98008
+USA
+
+michael.j.healy@boeing.com          -or-            mjhealy@u.washington.edu
+
+============================================================================
+
+
+
+From rrosebru@mta.ca Thu Jan 25 14:38:40 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0PHu0c14539
+	for categories-list; Thu, 25 Jan 2001 13:56:00 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <200101251325.IAA29671@cs.clemson.edu>
+X-Sender: steve@mailhost.cs.clemson.edu
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.0.1 
+Date: Thu, 25 Jan 2001 08:26:07 -0500
+To: categories@mta.ca
+From: "D. E. (Steve) Stevenson" <steve@cs.clemson.edu>
+Subject: categories: Re: Machines in a Category
+In-Reply-To: <F188KMy5KINzq6xEfhz00001f00@hotmail.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 34
+
+The original paper is 
+
+Michael A. Arbib and Ernest G. Manes. "Machines in a Category: An expository
+introduction". SIAM Review. 16(2). April, 1974 (not 1976 as below). 163--192.
+
+Very available.
+
+steve
+
+At 12:45 AM 25-01-01 +0000, Bill Halchin wrote:
+>
+>Better how about a copy of the paper (assuming of course there is
+>a soft copy somewhere).
+>
+>Bill halchin
+>
+>>From: Steve Stevenson <steve@cs.clemson.edu>
+>>To: categories@mta.ca
+>>Subject: categories: Machines in a Category
+>>Date: Wed, 24 Jan 2001 08:28:29 -0500 (EST)
+>>
+>>In the mid 70s, Anderson, Arbib, and Manes did some work on "Machines
+>>in a Category" (SIAM, 1976) A lot of this was in support of work in
+>>using category theory in control theory.
+>>
+>>Can anyone provide information about the state of this research or a
+>>bibliography of this work in unifying control theory and computation?
+>>
+>>Best regards,
+>>
+>>steve
+>>----
+>>D. E. (Steve) Stevenson, Department of Computer Science, Clemson
+>>
+>>At the genetic level, race does not exist. Studies of human DNA have
+>>found that there is far more genetic variability between individuals
+>>within any "given" group than between two such  groups.
+>>Dawn Stover, <em> New York Times
+>>
+
+
+
+From rrosebru@mta.ca Thu Jan 25 14:38:55 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0PHsuw13460
+	for categories-list; Thu, 25 Jan 2001 13:54:56 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Originating-IP: [148.235.239.152]
+From: "F. William Lawvere" <wlawvere@hotmail.com>
+To: categories@mta.ca
+Subject: categories: Michael Healy's question on math and AI
+Date: Wed, 24 Jan 2001 23:26:27 
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+Message-ID: <F231XSXI3acH0xxDEA200004265@hotmail.com>
+X-OriginalArrivalTime: 24 Jan 2001 23:26:27.0993 (UTC) FILETIME=[1347D890:01C0865D]
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 35
+
+Re : Michael Healy’s question on math and AI
+
+
+This is to answer Mike and also several other people who have contacted me 
+recently asking how I would respond to queries about
+
+(1)	Artificial Intelligence, cognitive science, linguistic engineering, 
+knowledge representation, and related attempts at creating modern subjects, 
+and
+
+(2)	the relevance of category theory and of mathematics in general to these.
+
+     My basic response is strong advice to actually learn some category 
+theory, rather than resting content with slinging back and forth ill-defined 
+epithets like “set theory”, “contingency”, etc..
+
+So much confusion has been accumulated that an opposition of the form
+“set-theoretical versus non-set-theoretical” has at least seven wholly 
+distinct meanings, hence billions of electrons and drops of ink can be 
+spilled by surreptitiously identifying any two of these.  For example, the 
+opposition can concern whether or not large cardinal assumptions are needed 
+for a certain result, which is mathematically meaningful and hence 
+independent of whether or not the ZFvN rigidification of Cantor is being 
+used as a framework.  Another example is the opposition habitually used in 
+geometry between properties of spaces which can be explained in terms of 
+arbitrary mappings versus those which depend on the cohesion being studied 
+(e.g. “the underlying abstract group vs. the Lie group”). Obviously these 
+two oppositions are not the same although they may be related.
+
+One of the oppositions which I have emphasized since 1964 is
+    the ZFvN rigid hierarchy based on galactically “meaningful”       
+inclusion, requiring the totally arbitrary “singleton” operation of Peano 
+with the resulting chains of mathematically spurious rigidified membership, 
+on the one hand,
+                             versus
+    the category of abstract sets, involving many potential universes of
+discourse and arbitrary specific relations between them, on the other hand.
+(Abstract sets can CARRY structures of mathematical interest, but precisely 
+because of the need of flexibility in the latter, they themselves have only 
+very few properties, unlike the ZFvN “sets”).
+
+Within Cantor’s original conception itself there is a fundamentally 
+important opposition: the abstract sets, which he called “Kardinalzahlen”, 
+versus the cohesive and variable sets which he called “Mengen”.  (An 
+additional confusion stems from the use, by nearly all of Cantor’s 
+followers, of the term “cardinal number” to mean (not a 
+Kardinalzahl=abstract set, but) a label for an isomorphism class of abstract 
+sets, an invariant which Cantor of course also studied, but which is too 
+abstract to support the specific relations between abstract sets themselves, 
+the mappings, and hence cannot carry the needed mathematical structures).
+
+(A)    The real issue is that for purposes of pure AND applied mathematics, 
+we need to be able to represent (without spurious ingredients) these 
+cohesive and variable sets (or “spaces”) and their relationships.  The ZFvN 
+rigidification fails so miserably in doing this that even those geometers 
+and analysts who pay lip service to it as a “foundation” never in practice 
+use its formalism.
+
+(B)   Category theory made explicit some universal features of the 
+relationship between quantity and quality whose fundamental importance had 
+been forced into consciousness by the work of Volterra and Hurewicz (both of 
+whom made basic contributions to both functional analysis and algebraic 
+topology) and of many others. This relationship between quantitative and 
+qualitative aspects concerns cohesive and variable sets and structures built 
+on such spaces.  For example, Volterra already recognized that spaces have 
+“elements” other than points, and Hurewicz recognized the need for 
+cartesian-closed categories (even before the lambda-calculus formalism, or 
+category theory, was devised); moreover, the original fiber bundles were 
+explicitly modeling dynamical situations, etc.
+
+Many people working in the new fields, striving to realize the dream of a 
+theoretical computer science, do not seem to be aware of points like  (A) 
+and (B). It would certainly be a bad strategy for the advancement of science 
+to “hide” the fact that category theory belongs to the background of a new 
+result and thus to help perpetuate that sort of ignorance.
+
+The role of mathematics in general (not only of category theory) also
+seems to be widely misunderstood, even in those fields which definitely need 
+more mathematics in order to mature and make a real contribution.  For 
+example, some say that logic is more general than mathematics, partly 
+because of ignoring the strongly qualitative aspect of modern mathematics 
+and partly because of the philosophical tradition of hiding the fact that no 
+logic other than mathematical logic has had any significant real-world 
+applications. Because of the minimal
+mathematical education required of students of philosophy, the claim is too 
+easily accepted in many philosophical circles that “mathematics is 
+unsuitable” for some given issue of conceptual analysis; this conclusion 
+seems to be based on the syllogism:
+        mathematics is set theory (a misconception which the philosophers
+themselves have done much to disseminate),
+        set theory is clearly not suitable (actually because of the defects 
+of the ZFvN rigidification, which make it ill-suited for mathematics as 
+well)
+        hence ......
+This syllogism serves as an excuse to indefinitely postpone learning 
+mathematics (and category theory in particular).
+
+An older sort of excuse is the assertion that the proposed science should 
+concern the REAL WORLD, not pure mathematics. This superficially appealing 
+truism has frequently been used to mask the fact that comparing reality with 
+existing concepts does not alone suffice to produce the level of 
+understanding required to change the world; a capacity for constructing 
+flexible yet reliable SYSTEMS of
+concepts is needed to guide the process. This realization (not Platonism) 
+was the basis of the supreme respect for mathematics expressed by champions 
+of reality like Galileo, Maxwell, and Heaviside. For example, the 
+differential calculus provides the capacity to construct systems descriptive 
+of celestial motions, fluid interactions, electromagnetic radiation fields, 
+etc., and therefore engineers have learned it. The functorial calculus helps 
+to provide a similar capacity adequate to the requirements, not only of the 
+older sciences,
+but of the newer would-be sciences as well. Hence my response.
+
+                 Bill Lawvere
+
+
+
+
+
+
+From rrosebru@mta.ca Thu Jan 25 14:44:31 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0PHvK412237
+	for categories-list; Thu, 25 Jan 2001 13:57:20 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <5351C3F6EB14D211B62D00A0C98F178D02684F@compnt.cs.unp.ac.za>
+From: Yuri Velinov <yuri@msmail.cs.unp.ac.za>
+To: "'categories@mta.ca'" <categories@mta.ca>
+Subject: categories: Conf. Session Opportunity URL correction
+Date: Thu, 25 Jan 2001 17:48:27 +0200
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 36
+
+Dear all,
+Sorry for the misprint. This is what happens when you leave the work to a
+secretary.
+The correct URL http://www.iiis.org/sci
+
+Yours YV
+
+
+From rrosebru@mta.ca Thu Jan 25 14:51:54 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0PHrpi06458
+	for categories-list; Thu, 25 Jan 2001 13:53:51 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mime-Version: 1.0
+X-Sender: street@hera.mpce.mq.edu.au
+Message-Id: <v04210101b6951349d980@[137.111.90.45]>
+In-Reply-To: <14958.55421.849074.256908@merlin.cs.clemson.edu>
+References: <14958.55421.849074.256908@merlin.cs.clemson.edu>
+Date: Thu, 25 Jan 2001 10:22:52 +1100
+To: categories@mta.ca, Steve Stevenson <steve@cs.clemson.edu>
+From: Ross Street <street@ics.mq.edu.au>
+Subject: categories: Re: Machines in a Category
+Content-Type: text/plain; charset="us-ascii" ; format="flowed"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 37
+
+Brian Anderson is currently the President of the Australian Academy 
+of Science <http://www.science.org.au/> and not likely to have done 
+anything in the area since the paper with Arbib & Manes.
+
+--Ross
+
+
+From rrosebru@mta.ca Fri Jan 26 14:54:32 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0QHuYk11857
+	for categories-list; Fri, 26 Jan 2001 13:56:34 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Todd Wilson <twilson@csufresno.edu>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14960.59946.583406.499042@goedel.engr.csufresno.edu>
+Date: Thu, 25 Jan 2001 19:08:26 -0800 (PST)
+To: categories@mta.ca
+Subject: categories: Re: Michael Healy's question on math and AI
+In-Reply-To: <F231XSXI3acH0xxDEA200004265@hotmail.com>
+References: <F231XSXI3acH0xxDEA200004265@hotmail.com>
+X-Mailer: VM 6.75 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 38
+
+On Wed, 24 Jan 2001, F. William Lawvere wrote:
+> (A)    The real issue is that for purposes of pure AND applied mathematics, 
+> we need to be able to represent (without spurious ingredients) these 
+> cohesive and variable sets (or `spaces') and their relationships.  The ZFvN 
+> rigidification fails so miserably in doing this that even those geometers 
+> and analysts who pay lip service to it as a `foundation' never in practice 
+> use its formalism.
+> 
+> (B) [...]
+> 
+> Many people working in the new fields, striving to realize the dream of a 
+> theoretical computer science, do not seem to be aware of points like  (A) 
+> and (B). 
+
+As someone who is "striving to realize the dream of a theoretical
+computer science", I would better like to understand the point that
+Lawvere is making here.  Am I right in assuming that, in using terms
+such as "spurious ingredients" and "rigidification", Lawvere is
+referring to the fact that (to use some computer science terminology)
+set theory is too much implementation and not enough specification?
+That the rigid epsilon-structure of set theory cannot represent
+abstract mathematical structure faithfully, without introducing
+unwanted details?
+
+If so, can category theory really do better?  Can we give some
+concrete examples in both "pure AND applied mathematics" that really
+make the difference in representational ability clear?  (These
+questions, like the ones below, are not rhetorical or deprecatory; I'd
+really like to know some answers.)
+
+To take the first example that comes to mind, consider the cartesian
+product of two objects A and B.  The "implementation" of this in set
+theory as a set of ordered pairs (which are themselves specific
+doubleton sets) certainly introduces some "spurious ingredients", but
+the category-theoretic version has its own idiosynchrasies as well:
+
+- Although we constantly speak of "the" product, we really only have
+  "a" product (at least if we take the category-theoretic perspective
+  seriously).  What is really involved, formally, in making the move
+  from "a" to "the"?  A formal language translation scheme?  Coherence
+  theorems?  How much technical work is really involved here?
+
+- Related to this, what about the fact that if
+
+      (pi0: A x B -> A, pi1: A x B -> B)
+
+  is a product, then so is (pi1, pi0), indistinguishable categorically
+  from the other product?  Does the arbitrary choice between one of
+  these products introduce a "spurious ingredient"?  If we find this
+  particular "implementation detail" aesthetically displeasing, can we
+  abstract away from it by defining an "unordered cartesian product"?
+  (I couldn't see how to do it.)
+
+- Is there anything to be made of the fact that the set-theoretic
+  cartesian product is a local construction, involving only the sets A
+  and B and certain small sets made up of their elements, whereas
+  a/the category-theoretic product depends on the whole category
+ (because of the quantification in the universal property)?
+
+And if these idiosynchracies do carry any weight (and I'm not claiming
+that they do), why are they "better" idiosynchracies than those of the
+set-theoretic cartesian product?  And, finally, shouldn't "better"
+really be "better for what"?  In other words, aren't the two
+communities really just arguing past one another, like people arguing
+over types of automobile?  What really is the issue here?
+
+Sorry for all the questions (and all the "really"s).
+
+-- 
+Todd Wilson                               A smile is not an individual
+Computer Science Department               product; it is a co-product.
+California State University, Fresno                 -- Thich Nhat Hanh
+
+
+
+From rrosebru@mta.ca Fri Jan 26 14:54:32 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0QHwwV07640
+	for categories-list; Fri, 26 Jan 2001 13:58:58 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <ACAB691EBFADD41196340008C7F35585C2BE7F@tesla.open.ac.uk>
+From: S.J.Vickers@open.ac.uk
+To: categories@mta.ca
+Subject: categories: RE: Question
+Date: Fri, 26 Jan 2001 11:32:04 -0000
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: text/plain; charset="iso-8859-1"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 39
+
+Dusko says:
+> it's interesting that almost no one took michael healy's bait (attached).
+> 
+
+Here's a message I sent to Michael Healey privately:
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+There's a minefield of hotly held opinions behind this question, but let me
+try to give a couple of pragmatic considerations.
+
+1. What is the most appropriate characterization (for present purposes) of
+collections? By elements or by functions? Set theory postulates that a
+collection is entirely determined by its elements. If functions are better,
+that's beginning to look more like a categorical approach.
+
+Examples:
+Topology - a space is not fully defined by saying what its points are. You
+only capture continuity when you look at the maps between spaces.
+
+Type theory - syntactic terms in general have free variables in them,
+effectively parameters, and these really correspond to functions rather than
+simple elements.
+
+2. Do you want to consider a variety of logics? Set theory as such is
+solidly classical. To relax that you need to consider different formal
+systems, and then category theory usually provides tools for achieving
+better presentation independence than more syntactic approaches.
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+In this hurried response to Michael's posting I was trying to get across
+some sense of how category theory can help you see the wood for the trees -
+the "better presentation independence" is what Dusko refers to as
+"structuralist maths".
+
+> for software engineers, foundations are the link with the meaning of their
+> programs. having a slightly shorter history than math, they do not have
+> languages as natural as arithmetic, or calculus, but have to chose between
+> KIF and Ontolingua, and the various other versions of esperanto every day.
+> categories dam the flood of structure in software engineering, just like
+> they originally did in homology theory almost 60 years ago. some good math
+> may come out of it if taken from a good side.
+
+I agree.
+
+I looked up keywords like SUO (Standard Upper Ontology) and KIF (Knowledge
+Interchange Format) - they are about standard notations for expressing
+information - and some key issues seemed to be rather basic things like the
+meaning of first order logic.
+
+I found this depressing. As we know, categorical logic has some very clear
+accounts of this that have the great virtue of bringing out deep structure
+over superficialities of the logical syntax. It also makes it easier to
+question whether "self-evident" notation and axioms are actually meaningful
+and valid.
+
+But how can we bring these insights to the software engineering masses? It's
+not enough to say "first learn about category theory and then look for
+adjunctions, monads and <favourite keyword> everywhere". With this approach
+it seems all too easy to prescribe people categorical logic as a cure for
+their myopia, and then to find them trying to use it as reading glasses and
+wondering why it doesn't work.
+
+One of the things that makes Mac Lane's book such a masterpiece is the way
+it uncovers category theory as something already understood rather than
+presenting it as something new. The working mathematician is well familiar
+with reasoning about adjunctions and monads in special cases, and it's
+"just" a matter of uncovering the underlying pattern.
+
+Speaking for myself, after all these years I still understand a lot of
+category theory not in the abstract but through paradigms. Enriched
+categories? They're just rings, really. Or, at least, ringoids. Presheaves?
+They're just modules. Yoneda embedding? The free module on one generator is
+just the ring itself.
+
+The software engineer does not have the working mathematician's body of
+knowledge. I think to give them category theory we first have to explain,
+without mentioning categories, just why structure has to reside not inside
+the objects but amongst the morphisms: to explain a collection by its
+elements alone is not enough, even in a very basic logical framework.
+
+Steve Vickers
+Department of Pure Maths
+Faculty of Maths and Computing
+The Open University
+-----------
+Tel: 01908-653144
+Fax: 01908-652140
+Web: http://mcs.open.ac.uk/sjv22
+
+
+From rrosebru@mta.ca Sat Jan 27 10:37:51 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0RDxaK01891
+	for categories-list; Sat, 27 Jan 2001 09:59:36 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+Date: Fri, 26 Jan 2001 13:14:14 -0500 (EST)
+From: Michael Barr <barr@barrs.org>
+X-Sender: barr@triples.math.mcgill.ca
+To: categories@mta.ca
+Subject: categories: Re:  Michael Healy's question on math and AI
+In-Reply-To: <14960.59946.583406.499042@goedel.engr.csufresno.edu>
+Message-ID: <Pine.LNX.4.10.10101261301400.704-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 40
+
+At the risk of offering my head on a tray, I will make a stab at some of
+this.
+
+On Thu, 25 Jan 2001, Todd Wilson wrote:
+
+> On Wed, 24 Jan 2001, F. William Lawvere wrote:
+> > (A)    The real issue is that for purposes of pure AND applied mathematics, 
+> > we need to be able to represent (without spurious ingredients) these 
+> > cohesive and variable sets (or `spaces') and their relationships.  The ZFvN 
+> > rigidification fails so miserably in doing this that even those geometers 
+> > and analysts who pay lip service to it as a `foundation' never in practice 
+> > use its formalism.
+> > 
+> > (B) [...]
+> > 
+> > Many people working in the new fields, striving to realize the dream of a 
+> > theoretical computer science, do not seem to be aware of points like  (A) 
+> > and (B). 
+> 
+> As someone who is "striving to realize the dream of a theoretical
+> computer science", I would better like to understand the point that
+> Lawvere is making here.  Am I right in assuming that, in using terms
+> such as "spurious ingredients" and "rigidification", Lawvere is
+> referring to the fact that (to use some computer science terminology)
+> set theory is too much implementation and not enough specification?
+> That the rigid epsilon-structure of set theory cannot represent
+> abstract mathematical structure faithfully, without introducing
+> unwanted details?
+> 
+> If so, can category theory really do better?  Can we give some
+> concrete examples in both "pure AND applied mathematics" that really
+> make the difference in representational ability clear?  (These
+> questions, like the ones below, are not rhetorical or deprecatory; I'd
+> really like to know some answers.)
+> 
+> To take the first example that comes to mind, consider the cartesian
+> product of two objects A and B.  The "implementation" of this in set
+> theory as a set of ordered pairs (which are themselves specific
+> doubleton sets) certainly introduces some "spurious ingredients", but
+> the category-theoretic version has its own idiosynchrasies as well:
+> 
+> - Although we constantly speak of "the" product, we really only have
+>   "a" product (at least if we take the category-theoretic perspective
+>   seriously).  What is really involved, formally, in making the move
+>   from "a" to "the"?  A formal language translation scheme?  Coherence
+>   theorems?  How much technical work is really involved here?
+> 
+
+Any two products are uniquely isomorphic in a way that preserves the
+projections in the obvious way.  That is all that need be said.  There are
+coherence statements that can be made, but they follow from the above and
+are unnecessary.
+
+
+> - Related to this, what about the fact that if
+> 
+>       (pi0: A x B -> A, pi1: A x B -> B)
+> 
+>   is a product, then so is (pi1, pi0), indistinguishable categorically
+>   from the other product?  Does the arbitrary choice between one of
+>   these products introduce a "spurious ingredient"?  If we find this
+>   particular "implementation detail" aesthetically displeasing, can we
+>   abstract away from it by defining an "unordered cartesian product"?
+>   (I couldn't see how to do it.)
+> 
+
+The product is the product of the set {A,B}, which is equal to the set
+{B,A}, but our orthography forces us to write one or the other.  Of
+course, a product is really defined for {A_i|i in I} and is inherently
+unordered.  In set theory, the usual A x B is quite a different set from B
+x A and in category theory they are indistinguishable.  You seem to
+consider that a disadvantage to category theory, but I consider it an
+advantage.
+
+> - Is there anything to be made of the fact that the set-theoretic
+>   cartesian product is a local construction, involving only the sets A
+>   and B and certain small sets made up of their elements, whereas
+>   a/the category-theoretic product depends on the whole category
+>  (because of the quantification in the universal property)?
+> 
+
+Our familiar categories have regular generators and for them the product
+condition can be reduced to the universal mapping condition when the
+domain is/are the generator(s), which is local.  On the other hand, check
+out the product in the category of affine schemes that is really
+comprehensible only in terms of the categorical definition.
+
+> And if these idiosynchracies do carry any weight (and I'm not claiming
+> that they do), why are they "better" idiosynchracies than those of the
+> set-theoretic cartesian product?  And, finally, shouldn't "better"
+> really be "better for what"?  In other words, aren't the two
+> communities really just arguing past one another, like people arguing
+> over types of automobile?  What really is the issue here?
+> 
+> Sorry for all the questions (and all the "really"s).
+> 
+
+
+For another example, consider the traditional definition of Z as the set
+{0,{0},{0,{0}},{0,{0}{0,{0}}},...}
+and contrast that to the categorical specification.
+
+Michael Barr
+
+> -- 
+> Todd Wilson                               A smile is not an individual
+> Computer Science Department               product; it is a co-product.
+> California State University, Fresno                 -- Thich Nhat Hanh
+> 
+> 
+
+
+
+From rrosebru@mta.ca Sat Jan 27 10:39:19 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0RE0Qc24376
+	for categories-list; Sat, 27 Jan 2001 10:00:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <01C087E0.3DC4B6E0.petermcburney@attglobal.net>
+From: Peter McBurney <petermcburney@attglobal.net>
+To: "'categories@mta.ca'" <categories@mta.ca>
+Subject: categories: Re: Michael Healy's question on math and AI
+Date: Fri, 26 Jan 2001 21:37:46 -0000
+X-Mailer: Microsoft Internet E-mail/MAPI - 8.0.0.4211
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 41
+
+
+Professor Lawvere's message included the following sentence:
+
+On Wednesday, January 24, 2001 11:26 PM, F. William Lawvere 
+[SMTP:wlawvere@hotmail.com] wrote:
+
+>For > example, some say that logic is more general than mathematics, 
+partly
+> because of ignoring the strongly qualitative aspect of modern mathematics 
+> and partly because of the philosophical tradition of hiding the fact that 
+no
+> logic other than mathematical logic has had any significant real-world
+> applications.
+
+
+It's not entirely clear to me what is being asserted in the second part of 
+this sentence.  If what is being asserted includes the statement that the 
+only logic which has had any significant real-world applications is 
+mathematical logic, then this assertion is incorrect.  To give just one 
+example, over the last decade the Advanced Computation Laboratory of the 
+Imperial Cancer Research Fund (ICRF) in London, UK, has built intelligent 
+computer decision-support systems for medical applications using logics of 
+argumentation.  These logics typically use non-deductive modes of 
+reasoning, and are based on the work of philosophers of argumentation 
+dating from the 1950s; this work in philosophy was undertaken outside, and 
+in strong opposition to, the tradition of mathematical logic.  A 
+category-theoretic semantics has been provided for some of these logics of 
+argumentation.    The resulting decision-support systems have found 
+real-world application in cancer treatment advice, in drug prescription and 
+in the automated assessment of chemical properties, such as toxicity and 
+carcinogenicity.   Moreover, current research in Artificial Intelligence is 
+developing the use of non-deductive argumentation formalisms for automated 
+dialogues between autonomous software agents in multi-agent systems, work 
+that is likely to form the basis of next-generation e-commerce systems.
+
+
+
+
+
+
+Peter McBurney
+
+************************************************************************  
+**********
+Peter McBurney
+Agent Applications, Research and Technologies (Agent ART) Group
+Department of Computer Science
+University of Liverpool
+Liverpool L69 7ZF
+U. K.
+
+Email:  p.j.mcburney@csc.liv.ac.uk
+Web-page:  www.csc.liv.ac.uk/~peter
+
+************************************************************************  
+**********
+
+
+
+
+-----Original Message-----
+From:	F. William Lawvere [SMTP:wlawvere@hotmail.com]
+Sent:	Wednesday, January 24, 2001 11:26 PM
+To:	categories@mta.ca
+Subject:	categories: Michael Healy's question on math and AI
+
+Re : Michael Healy's question on math and AI
+
+
+This is to answer Mike and also several other people who have contacted me
+recently asking how I would respond to queries about
+
+(1)	Artificial Intelligence, cognitive science, linguistic engineering,
+knowledge representation, and related attempts at creating modern subjects, 
+and
+
+(2)	the relevance of category theory and of mathematics in general to 
+these.
+
+     My basic response is strong advice to actually learn some category
+theory, rather than resting content with slinging back and forth 
+ill-defined
+epithets like "set theory", "contingency", etc..
+
+So much confusion has been accumulated that an opposition of the form
+"set-theoretical versus non-set-theoretical" has at least seven wholly
+distinct meanings, hence billions of electrons and drops of ink can be
+spilled by surreptitiously identifying any two of these.  For example, the
+opposition can concern whether or not large cardinal assumptions are needed 
+for a certain result, which is mathematically meaningful and hence
+independent of whether or not the ZFvN rigidification of Cantor is being
+used as a framework.  Another example is the opposition habitually used in
+geometry between properties of spaces which can be explained in terms of
+arbitrary mappings versus those which depend on the cohesion being studied
+(e.g. "the underlying abstract group vs. the Lie group"). Obviously these
+two oppositions are not the same although they may be related.
+
+One of the oppositions which I have emphasized since 1964 is
+    the ZFvN rigid hierarchy based on galactically "meaningful"
+inclusion, requiring the totally arbitrary "singleton" operation of Peano
+with the resulting chains of mathematically spurious rigidified membership, 
+on the one hand,
+                             versus
+    the category of abstract sets, involving many potential universes of
+discourse and arbitrary specific relations between them, on the other hand.
+(Abstract sets can CARRY structures of mathematical interest, but precisely 
+because of the need of flexibility in the latter, they themselves have only 
+very few properties, unlike the ZFvN "sets").
+
+Within Cantor's original conception itself there is a fundamentally
+important opposition: the abstract sets, which he called "Kardinalzahlen",
+versus the cohesive and variable sets which he called "Mengen".  (An
+additional confusion stems from the use, by nearly all of Cantor's
+followers, of the term "cardinal number" to mean (not a
+Kardinalzahl=abstract set, but) a label for an isomorphism class of 
+abstract
+sets, an invariant which Cantor of course also studied, but which is too
+abstract to support the specific relations between abstract sets 
+themselves,
+the mappings, and hence cannot carry the needed mathematical structures).
+
+(A)    The real issue is that for purposes of pure AND applied mathematics, 
+we need to be able to represent (without spurious ingredients) these
+cohesive and variable sets (or "spaces") and their relationships.  The ZFvN 
+rigidification fails so miserably in doing this that even those geometers
+and analysts who pay lip service to it as a "foundation" never in practice
+use its formalism.
+
+(B)   Category theory made explicit some universal features of the
+relationship between quantity and quality whose fundamental importance had
+been forced into consciousness by the work of Volterra and Hurewicz (both 
+of
+whom made basic contributions to both functional analysis and algebraic
+topology) and of many others. This relationship between quantitative and
+qualitative aspects concerns cohesive and variable sets and structures 
+built
+on such spaces.  For example, Volterra already recognized that spaces have
+"elements" other than points, and Hurewicz recognized the need for
+cartesian-closed categories (even before the lambda-calculus formalism, or
+category theory, was devised); moreover, the original fiber bundles were
+explicitly modeling dynamical situations, etc.
+
+Many people working in the new fields, striving to realize the dream of a
+theoretical computer science, do not seem to be aware of points like  (A)
+and (B). It would certainly be a bad strategy for the advancement of 
+science
+to "hide" the fact that category theory belongs to the background of a new
+result and thus to help perpetuate that sort of ignorance.
+
+The role of mathematics in general (not only of category theory) also
+seems to be widely misunderstood, even in those fields which definitely 
+need
+more mathematics in order to mature and make a real contribution.  For
+example, some say that logic is more general than mathematics, partly
+because of ignoring the strongly qualitative aspect of modern mathematics
+and partly because of the philosophical tradition of hiding the fact that 
+no
+logic other than mathematical logic has had any significant real-world
+applications. Because of the minimal
+mathematical education required of students of philosophy, the claim is too 
+easily accepted in many philosophical circles that "mathematics is
+unsuitable" for some given issue of conceptual analysis; this conclusion
+seems to be based on the syllogism:
+        mathematics is set theory (a misconception which the philosophers
+themselves have done much to disseminate),
+        set theory is clearly not suitable (actually because of the defects 
+of the ZFvN rigidification, which make it ill-suited for mathematics as
+well)
+        hence ......
+This syllogism serves as an excuse to indefinitely postpone learning
+mathematics (and category theory in particular).
+
+An older sort of excuse is the assertion that the proposed science should
+concern the REAL WORLD, not pure mathematics. This superficially appealing
+truism has frequently been used to mask the fact that comparing reality 
+with
+existing concepts does not alone suffice to produce the level of
+understanding required to change the world; a capacity for constructing
+flexible yet reliable SYSTEMS of
+concepts is needed to guide the process. This realization (not Platonism)
+was the basis of the supreme respect for mathematics expressed by champions 
+of reality like Galileo, Maxwell, and Heaviside. For example, the
+differential calculus provides the capacity to construct systems 
+descriptive
+of celestial motions, fluid interactions, electromagnetic radiation fields, 
+etc., and therefore engineers have learned it. The functorial calculus 
+helps
+to provide a similar capacity adequate to the requirements, not only of the 
+older sciences,
+but of the newer would-be sciences as well. Hence my response.
+
+                 Bill Lawvere
+
+
+
+
+
+
+
+From rrosebru@mta.ca Sun Jan 28 21:35:59 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0T0dDb23617
+	for categories-list; Sun, 28 Jan 2001 20:39:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <3.0.6.16.20010127114528.1a6f6c7c@pop.cwru.edu>
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6 (16)
+Date: Sat, 27 Jan 2001 11:45:28
+To: categories@mta.ca
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Re: Michael Healy's question on math and AI
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 42
+
+Todd Wilson <twilson@csufresno.edu> wrote: 
+
+>- Although we constantly speak of "the" product, we really only have
+>  "a" product (at least if we take the category-theoretic perspective
+>  seriously).  What is really involved, formally, in making the move
+>  from "a" to "the"?  A formal language translation scheme?  Coherence
+>  theorems?  How much technical work is really involved here?
+
+	Actually, nothing is involved if we introduce a product operator.
+That is, we take operators _x_, p0_,_ p1_,_ and say:
+
+For any objects (or types) A and B the object AxB has arrows
+
+p0A,B:AxB --> A   and p1A,B:AxB -->B with the properties of a categorical
+product.
+
+	Notice that the categorical property is exactly what you want in a
+product type: From a record of type AxB you can recover the A entry, and
+the B entry, via the projections. And whenever you have a pair of values,
+one in A and one in B, there is a correspondng single value in AxB.
+Notice, the "values" may be parametrized, so we are actually dealing with
+operations f:T-->A and g:T-->B and the resulting (f,g):T-->AxB.
+
+	Then AxB will generally not be the only product of A and B in the
+category, but it will be one, and that is what we need. Coherence theorems
+indeed are important. But they are provable from the above. So there is no
+need to give them as part of specifying the product--the same as a computer
+need not have the Chinese remainder theorem programmed into it, to
+implement arithmetic.  
+
+>
+>- Related to this, what about the fact that if
+>
+>      (pi0: A x B -> A, pi1: A x B -> B)
+>
+>  is a product, then so is (pi1, pi0), indistinguishable categorically
+>  from the other product?  
+
+	Sadly, that is not a fact. The pair (pi0,pi1) gives a product of A
+and B, while (pi1,pi0) gives a product of B and A. This is revealed
+categorically by the fact that the codomain of pi0 is A, while the
+codomain of pi1 is B.
+
+	In programming terms, a data record of <your age in years, your
+height in inches> is different from a record of <your height in inches,
+your age in years>. It is quite important practically, as well as
+theoretically, to distinguish the product of A and B from that of B and A.
+
+	Even in a product BxB we need to keep the projections in order. For
+example, that is how we distinguish between pairs <x,y> of reals with x
+less than y, and pairs <x,y> of reals with y less than x. An important
+distinction. This is why a correct specification of the categorical product
+specifies the projection arrows as p0_,_ p1_,_, or in words:
+
+	"projection to the first of the following two objects"
+
+and	"projection to the second of the following two objects" 
+	 
+>- Is there anything to be made of the fact that the set-theoretic
+>  cartesian product is a local construction, involving only the sets A
+>  and B and certain small sets made up of their elements, whereas
+>  a/the category-theoretic product depends on the whole category
+> (because of the quantification in the universal property)?
+
+	This is one reason why a computer implementation of the categorical
+product, in any reasonably rich environment, will be incomplete. But it
+pales beside other reasons why computer implementations of any reasonably
+strong construction are incomplete. The ZF set-theoretic product will also
+be incomplete in any computer implementation
+
+	Compare the way Goedel's theorem shows that computer implementations of
+arithmetic will all be incomplete. It pales beside the fact that normal
+implementations don't try to implement induction at all. 
+
+>And, finally, shouldn't "better"
+>really be "better for what"?  In other words, aren't the two
+>communities really just arguing past one another, like people arguing
+>over types of automobile?  What really is the issue here?
+
+	There are many different issues, and correspondingly different
+arguments. Which one did you mean to address?
+
+
+From rrosebru@mta.ca Mon Jan 29 10:51:42 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0TDWSU30457
+	for categories-list; Mon, 29 Jan 2001 09:32:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+Date: Sat, 27 Jan 2001 19:07:58 -0500 (EST)
+From: Michael Barr <barr@barrs.org>
+X-Sender: barr@triples.math.mcgill.ca
+To: categories@mta.ca
+Subject: categories: Re: Michael Healy's question on math and AI
+In-Reply-To: <F37M5o1gXXX3kRC9QnC00001cc1@hotmail.com>
+Message-ID: <Pine.LNX.4.10.10101271906300.2186-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 43
+
+I mean the initial algebra for the theory with a nullary operation 0:1 -->
+N and a unary operation s:N --> N.  1 stands for the terminal object
+(empty product).
+
+On Sun, 28 Jan 2001, Bill Halchin wrote:
+
+> 
+> 
+> >For another example, consider the traditional definition of Z as the set
+> >{0,{0},{0,{0}},{0,{0}{0,{0}}},...}
+> >and contrast that to the categorical specification.
+>      ^^^ Michael, to make things more explicit I take you
+>       mean the category with one object N and two arrows, 0 & S,
+>    such that
+> 
+>        0:N->N and s:N->N
+> 
+>    Yes?
+> 
+>    Regards,
+> 
+>    Bill Halchin
+
+
+
+From rrosebru@mta.ca Mon Jan 29 18:08:57 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0TLBLU03429
+	for categories-list; Mon, 29 Jan 2001 17:11:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <4.1.20010129101330.00ad8560@mail.oberlin.net>
+X-Sender: cwells@mail.oberlin.net
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.1 
+Date: Mon, 29 Jan 2001 10:18:52 -0800
+To: categories@mta.ca
+From: Charles Wells <charles@freude.com>
+Subject: categories: Why binary products are ordered
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 44
+
+One might say that the ordering of binary products, with a first projection
+and a second projection, is spurious but inevitable.  
+
+The two components of a binary product must be distinguished, as Colin
+McLarty explained, but they must be allowed to be isomorphic.  The usual
+way we handle a situation like this in mathematics is to index them, in
+this case by a two-element set.  One could use {red,blue}.  As far as I
+know, in Western culture, this set has no canonical ordering, but
+nevertheless one knows that there is a redth component and a blueth
+component and they might or might not be different objects.  
+
+However, in practice the index set is {0,1}, {1,2} or {x,y} (the latter in
+analytic geometry).  All of these are canonically totally ordered in our
+culture, so inevitably binary products do have an order in practice.
+
+
+Charles Wells, 105 South Cedar St., Oberlin, Ohio 44074, USA.
+email: charles@freude.com. 
+home phone: 440 774 1926.  
+professional website: http://www.cwru.edu/artsci/math/wells/home.html
+personal website: http://www.oberlin.net/~cwells/index.html
+NE Ohio Sacred Harp website: http://www.oberlin.net/~cwells/sh.htm
+
+
+
+From rrosebru@mta.ca Mon Jan 29 18:15:10 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0TLEGU00677
+	for categories-list; Mon, 29 Jan 2001 17:14:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <ACAB691EBFADD41196340008C7F35585C2BE83@tesla.open.ac.uk>
+From: S.J.Vickers@open.ac.uk
+To: categories@mta.ca
+Subject: categories: Re: Michael Healy's question on math and AI
+Date: Mon, 29 Jan 2001 15:21:19 -0000
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: text/plain; charset="iso-8859-1"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 45
+
+Todd Wilson asks:
+> As someone who is "striving to realize the dream of a theoretical
+> computer science", I would better like to understand the point that
+> Lawvere is making here.  Am I right in assuming that, in using terms
+> such as "spurious ingredients" and "rigidification", Lawvere is
+> referring to the fact that (to use some computer science terminology)
+> set theory is too much implementation and not enough specification?
+> That the rigid epsilon-structure of set theory cannot represent
+> abstract mathematical structure faithfully, without introducing
+> unwanted details?
+
+Executive summary of a long reply
+-------------------------------------------------
+
+* Spaces - for instance topological spaces - cannot always be analysed as
+set + structure.
+* Category theory enables structure to be found amongst the
+morphisms.(generalized elements) instead of within the objects (amongst
+concrete elements in a set-theoretic analysis).
+* Variation of kind of space bears some relation to variation of logic.
+* The logical questions are important in computer science, even if topology
+and geometry at first appear not to be.
+------------------------------------------------------------------
+
+
+The discussion of Cartesian product does illustrate set theory vs.
+categories as implementation vs. specification, and, sure, there's a lot to
+be said for specifying categorically before you implement set-theoretically.
+
+However, Bill's point is much deeper than that. He is saying that set theory
+is actually inadequate as an implementation language in many contexts.
+
+I'll set out my own understanding of this, but I hope I'm not
+misrepresenting Bill if I draw on his note.
+
+I think within his note you already see two criticisms of set theory.
+
+The less deep of the two is of the "rigidity" of the epsilon-structure. Most
+mathematicians would probably agree that it doesn't make much sense to
+investigate the elements of pi (say), yet still view set theory as a
+remarkably successful encoding of mathematics into an epsilon-structure,
+successful enough to be used as foundations.
+
+The deeper criticism is that even for things that are unambiguously
+collections of some kind, so they really do have elements, the set-theoretic
+approach is inadequate. Bill refers to "cohesive and variable sets (or
+`spaces')", and I take it that an example of "cohesive" set is a topological
+space. There it is not enough to know merely what the elements are. They
+also "cohere", sit in rather subtle relationship with each other. Maps
+should respect the coherence, i.e. be continuous.
+
+One way to view this is that in order to know the coherence in a space X you
+need to know not just its "point-like" elements but also its line-like,
+plane-like or any-shape-you-choose elements - as Bill said, "Volterra
+already recognized that spaces have elements other than points". These are
+the "generalized elements", the maps from other spaces to X. Hence in the
+category of spaces the structure of X is seen not within the object but
+amongst the morphisms.
+
+Correspondingly, we get two approaches to topological spaces.
+
+1) Set theory - structure within objects. Space = set + topology. The
+topology provides criteria so that out of all the functions, mostly
+discontinuous, between the sets of points, some can be identified as
+continuous.
+
+2) Category theory - structure amongst morphisms. We are now free to
+describe the objects in point-free ways, for instance the frames of locale
+theory, the schemes of algebraic geometry, or Grothendieck toposes as
+generalized spaces, and still hope to get (via the generalized elements) a
+good spatial feel for the objects.
+
+Given a choice, why use the point-free ways at all?
+
+But in fact there's less of a choice than one might think, as the geometers
+discovered.
+
+Approach (1) does not generalize well to situations where you want to vary
+the set theory. This want arises naturally, for concrete mathematical
+reasons, when you start working with sheaves, since the class of sheaves
+over a space provides a non-standard set theory, usually non-classical, and
+one in which rigid "element of" or "subset of" are not useful. As you vary
+the set theory there are ways of transforming sets in one to sets in
+another, but it turns out that sets of points of spaces cannot be
+transformed in the same way: the space and its set of points part company.
+[See Appendix for a technical discussion.]
+
+Examples thus show that the decomposition "space = set + topology" is not
+stable under change of set theory.
+
+The inadequacies of point-set topology are well known in constructive
+mathematics, where the point-set statements of important results such as the
+Heine-Borel theorem turn out to be false while point-free versions still
+hold.
+
+Note that category theory in itself doesn't tell you what category to use
+(sheaves? locales? toposes? schemes?). But it does help you to see what you
+are looking for in a category of spaces that goes beyond space =
+set+structure.
+
+Computer science
+---------------------------
+
+That was a long preamble to say Beware! Spaces might not be sets!
+
+But why should workers on Knowledge Interchange Formats worry about this?
+Why can't they just use first-order logic, assume a classical set-theoretic
+semantics and keep well away from sheaves?
+
+One reason lies in the classical first-order logic itself. It works in a
+blandly uniform way on its formulae that ignores any difference in status as
+knowledge. For instance, maybe a knowledge database should distinguish
+between formulae that represent observed facts and those that represent
+background assumptions or scientific hypotheses. It could make a difference
+to what negation means or how negation behaves. But such nuances are not
+present in classical first-order logic.
+
+These logical questions could be a natural part of the theory of knowledge
+representation.
+
+The interesting thing is that the variability of logic can be connected to
+the possible un-set-likeness of spaces. When you replace set theory's
+elements by category theory's generalized elements, you sometimes get a
+calculus that's almost like set theory but with different logic. For
+instance, intuitionistic logic (internal logic of toposes) for sheaves,
+geometric logic for spaces. The effect is of enabling the point-free spaces
+and maps to be handled just like sets and functions - describe a space by
+its points, define a map without needing to prove continuity - but with a
+funny logic.
+
+Hence although Knowledge Interchange Formats might seem a million miles away
+from topology or algebraic geometry, subtle logical questions might create
+direct links. (My particular favourite is geometric logic, whose distinction
+between formulae and sentences actually looks quite like that between
+observed facts and background assumptions.)
+
+Steve Vickers.
+
+Appendix
+-------------
+Let f: X -> Y be a map between spaces and let f^* be the inverse image
+functor on sheaves. It is the way of transforming "sets over Y" to "sets
+over X". If p: Z -> Y is a local homeomorphism - one way of describing a
+sheaf - then its inverse image f^*(p): f^*(Z) -> X is just the pullback of p
+along f. Just from the categorical property of pullback one can say that the
+(generalized) points of f^*(Z) are the pairs (x,z), x a point of X and z a
+point of Z, such that f(x) = p(z).
+
+Now it makes good sense to say that a space over Y is just an arbitrary map
+(not necessarily a local homeomorphism) g: W -> Y and again it is natural to
+use pullback to transform it to a space g': Z' -> X over X. Any such space
+over Y has a corresponding sheaf over Y, its "set of points". However, f^*
+of the set of points is not in general the set of points of the pullback
+space.
+
+
+From rrosebru@mta.ca Tue Jan 30 20:42:04 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0UNpZZ12425
+	for categories-list; Tue, 30 Jan 2001 19:51:35 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <ACAB691EBFADD41196340008C7F35585C2BE87@tesla.open.ac.uk>
+From: S.J.Vickers@open.ac.uk
+To: categories@mta.ca
+Subject: categories: RE: Why binary products are ordered
+Date: Tue, 30 Jan 2001 16:43:32 -0000
+MIME-Version: 1.0
+X-Mailer: Internet Mail Service (5.5.2650.21)
+Content-Type: text/plain; charset="iso-8859-1"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 46
+
+ 
+> One might say that the ordering of binary products, with a first
+projection
+> and a second projection, is spurious but inevitable.  
+> 
+> The two components of a binary product must be distinguished, as Colin
+> McLarty explained, but they must be allowed to be isomorphic.  The usual
+> way we handle a situation like this in mathematics is to index them, in
+> this case by a two-element set.  ...
+
+Two points.
+
+First, even in computer programming, one can lose the need for an ordering
+by using what are often called "record types", so that
+
+  <your age in years=99, your height in inches=70>
+
+denotes the same record as
+
+   <your height in inches=70, your age in years=99>
+
+I don't think there's anything mysterious about this. A pair of sets can be
+described as a function f: X -> 2, and we can quite happily replace 2 by any
+isomorphic set (but we don't have to choose the isomorphism) such as
+
+   M = {"your height in inches", "your age in years"}
+
+The product of f: X -> M is then a universal solution to the problem of
+finding
+
+   g: YxM -> X  over M
+
+and this is equivalent to the usual characterization once you have chosen
+the isomorphism between M and 2.
+
+A second, and deeper, point is that constructively there are unorderable
+2-element sets, so there is a kind of binary product in which the ordering
+first vs. second projection is impossible. It uses the same "record type"
+construction.
+
+An example in sheaves over the circle O is the twisted double cover M (edge
+of a Mobius band). It is finite decidable set with cardinality 2. It is
+isomorphic to 2 (i.e. 2xO) locally but not globally. It has no global
+elements and no global total ordering. If you have a sheaf X with a map f: X
+-> M, then locally it falls into two parts whose product you can take. It
+can be expressed as
+
+  Pi f = {(i,x,j,y) in MxXxX | f(x) = i and f(y) = j and j = s(i)} / ~
+
+where s: M -> M swaps the two elements and ~ is the equivalence relation
+generated by (i,x,j,y) ~ (j,y,i,x).
+
+Globally, Pi f is the equalizer of two maps from X^M to M^M, namely f^M and
+the constant identity map: so set theoretically it is the set of sections,
+
+   {g: M -> X | g;f = Id_M}
+
+The universal property is that for any YxM -> X over M you get a unique
+corresponding Y -> Pi f.
+
+The second description with X^M probably looks more natural to a topos
+theorist, but the first one has the advantage of being geometric.
+ 
+
+Steve.
+
+
+From rrosebru@mta.ca Wed Jan 31 12:22:22 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0VFf1B05751
+	for categories-list; Wed, 31 Jan 2001 11:41:01 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mime-Version: 1.0
+X-Sender: duskin@mail.buffnet.net
+Message-Id: <p05001902b69cc3f60487@[208.28.188.38]>
+Date: Tue, 30 Jan 2001 14:54:53 -0500
+To: categories@mta.ca
+From: John Duskin <duskin@math.buffalo.edu>
+Subject: categories: Re: Michael Healy's question on math and AI
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 47
+
+At the risk of putting my head on a platter (as Mike Barr 
+said).....If you take the point of view of ``representable functors", 
+an object P, together with an orderded pair of arrows (pr_A:P --->A, 
+pr_B:P---->B) is a product of A with B iff for all objects T, the 
+mapping Hom(T,P)--->Hom(T,A)xHom(T,B) defined by 
+f|---->(f.pr_A,f.pr_B) is a bijection. If you compose this map with 
+the bijection
+(a,b)|--->(b,a): Hom(T,A)xHom(T,B)--->Hom(T,B)xHom(T,A), you get that 
+P, together with the ordered pair of arrows ( pr_B:P---->B, pr_A:P 
+--->A) represents a "product of B with A". and this is different even 
+if we are talking about a product of A with itself. In other words, 
+the "product we usually are thinking about"  is universal for ordered 
+pairs of arrows (a:T--->A,b:T--->B). If this means that "ordered 
+pair" needs to be made a primitive notion within the underlying logic 
+(as the Bourbakists did), so be it, because the simple translation of 
+the above statement out of "set theoretic" terms" into "category 
+theoretic" terms (no Hom-sets allowed) needs the notion of "ordered 
+pair" in order to state it independently of any overarching "theory 
+of sets".
+
+
+From rrosebru@mta.ca Wed Jan 31 12:15:57 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0VFk0w08188
+	for categories-list; Wed, 31 Jan 2001 11:46:01 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <004901c08b1b$e880d8f0$822f1b3f@cpu>
+From: "zdiskin" <zdiskin@email.msn.com>
+To: <categories@mta.ca>
+Subject: categories: Re: Michael Healy's question on math and AI
+Date: Tue, 30 Jan 2001 16:21:41 -0800
+MIME-Version: 1.0
+X-Priority: 3
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 48
+
+ It seems that a discussion "CT vs. ST " (despite some silent resistance 
+at the beginning :) has nevertheless started in this list too, and is 
+going in a few different directions ranging from rather technical thru 
+methodological to philosophical aspects. Probably it's unavoidable (and
+useful) when we talk about math in general and its applications but, as 
+Bill Lawvere pointed, too much quite different stuff is packed into the 
+same title of CTvsST and the type mismatch in the very discussion and 
+its comprehension by the (rather diverse as I could guess) audience is
+very possible. (Under type mismatch I mean something like this. Suppose 
+we discuss the result of  multiplication 3 x 3. If the alternatives  are 
+8,9 and, say, 12, we have good chances for a reasonable discussion, and 
+if even the alternatives are 12, 37 and 111, type correctness is still 
+respected and we have chances to achieve useful results, but if the 
+alternatives to be discussed are 8, 9, that triangle and that <favorite 
+keyword>, the situation is hopeless). So, some methodological 
+arrangement and figuring out explicitly the relevant meanings of the 
+CTvsST-problem would be useful.
+ Here are a few contexts already touched in the discussion, where we 
+deal with methodologically quite different problems whose merging under 
+the same title CTvsST may be misleading.
+
+ a). Ways of setting/defining math structures.
+
+ The actual meaning of CTvsST here is the opposition between the 
+following two ways (described by Steve Vickers yesterday, I'll just 
+rephrase slightly his presentation).
+
+--(1)  Math structure  Carrying set (of abstract elements) + 
+Structure over it defined in terms of the elements (so, structure 
+resides in elements of the carrier).
+
+--(2)  Math structure  Category (collection of abstract objects and 
+their morphisms) + Structure over it defined in terms of the morphisms 
+(and then structure on a carrier object  resides in morphisms adjoint to 
+it).
+
+ The title CTvsST may be misleading here since in the both ways we use 
+sets, their elements, mappings between them. To name the two ways 
+somehow, I'd propose to call the 1st  one Boubakian (since this way of 
+setting math structures got its classical completion in Bourbaki's 
+volumes), and the 2nd one categorical. So, the actual opposition here is 
+CatStr vs. BrbStr (but, of course, a category with structure is itself a 
+Bourbakian math structure)
+
+ This opposition is of extreme great relevance for software engineering, 
+business modeling, knowledge representation ... but even brief outline 
+of the reasons needs a more detailed description of the issue. Let's 
+postpone that for a next posting. 
+
+ b). Modeling (formalization) of set theory underlying the setting for 
+math structures and reasoning about them (usually referred to as 
+foundations).
+
+ The actual meaning of CTvsST here is "categorical set theory" vs. 
+"formal set theory(ies)" (ZF, NBG,...), or CatST vs. FrmST.
+
+ This context and meaning are totally irrelevant to applications i 
+question and asking about what is better, CT or ST, for applications in 
+AI,SE, ... is very much like asking what is better for applications in 
+mechanical engineering: the differential/integral calculi or ST;  or  
+what is better for general theory of relativity, the tensor calculus or 
+ST etc. 
+
+ c). Modeling (formalization) of reasoning about math structures (often 
+called metamathematics)
+
+ Of course, what we have here depends on which way of setting math 
+structures we consider: Bourbakian or categorical. Nevertheless, it's 
+possible and make sense to treat reasoning about Bourbakian  structures 
+categorically and, say, to treat reasoning about categories in a 
+elementwise fashion.
+
+ We again have two different approaches. Historically first (originated 
+by Tarsky and Mal'cev) was formalization of first order logic (FOL, 
+including syntax and semantics) in a quite immediate way now well known 
+to a wide audience of quite different backgrounds including computer 
+scientists and philosophers. This way is often referred to as "Tarskian 
+formalization of the notion of truth", and let's call this entire style 
+Tarskian MetaMathematics, TarMMath.
+
+ The other approach was developed in CT and is usually called  
+categorical logic, CatLog. So, the opposition we actually have here is 
+CatLog vs. TarMMath, or, if you prefer, CatMMath vs. TarMMath.
+
+ This oppostion, though of course connected with that in (a), CatStr vs. 
+BrbStr, has its own peculiarities which are of extreme high relevance 
+for knowledge representation, business modeling and similar domains. So, 
+details here would be very useful but I'd again postpone them for a next
+posting.
+
+ So, as it was said in Lawvere's note, there are a few aspects of CTvsST 
+(understood in the wide sense), some of them may be not relevant for 
+applications (for example, b) while others are of great importance and 
+deserve more detailed exposition (a,c).  On the other hand, all the 
+three context we have considered are special cases of a quite general 
+intellectual activity usually referred to as modeling. Mathematics is 
+itself a special (very refined) discipline of modeling, and foundations 
+and meta-mathematics are nothing but modeling math by math means (well, 
+there are other means, say, philosophical :). It seems that to make 
+these contexts more understandable for a wider audience (and for myself 
+:), not only more details should be provided but some sketch of what 
+modeling in general and math modeling in particular are, would be also 
+useful. So, I'd ventured to sketch some general tutorial on applying 
+math to engineering domains and to itself but certainly it's for a next 
+posting.
+
+ --Zinovy Diskin
+
+
+
+From rrosebru@mta.ca Wed Jan 31 17:48:49 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0VKq4Q29674
+	for categories-list; Wed, 31 Jan 2001 16:52:05 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <l0313030ab69d87b2e0be@[151.100.17.47]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 31 Jan 2001 11:17:20 +0200
+To: categories@mta.ca
+From: Anna Labella <labella@dsi.uniroma1.it>
+Subject: categories: FICS'2001 - CFP
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 49
+
+
+		FICS'2001 - CALL FOR PAPERS
+                          	Fixed Points in Computer Science
+		September 8, 2001, Florence, Italy
+		 http://www.dsi.uniroma1.it/~labella/FICS.html
+
+                    	A Satellite Workshop to PLI'2001
+Principles, Logics and Implementations of High-Level Programming Languages
+                 	September 3-7, 2001, Florence, Italy
+		 http://music.dsi.unifi.it/pli01
+
+Aim:
+Fixed points play a fundamental role in several areas of computer
+  science and logic by justifying induction and recursive definitions.
+  The construction and properties of fixed points have been investigated
+  in many different frameworks. The aim of the workshop is to provide a
+  forum for researchers to present their results to those members of the
+  computer science and logic communities who study or apply the
+  fixed point operation in the different fields and formalisms.
+  Previous workshops where held in 1998 in Brno and in 2000 in Paris.
+
+Topics:
+ Construction and reasoning about properties
+ of fixed points, categorical, metric and ordered fixed point
+ models, continuous algebras, relation algebras,
+ fixed points in process algebras and process calculi,
+ regular algebras of finitary and infinitary languages,
+ formal power series, tree automata and tree languages,
+ infinite trees, the mu-calculus and other programming logics,
+ fixed points in relation to dataflow and circuits,
+ fixed points and the lambda calculus, fixed points in logic
+ programming and data bases.
+Program Committee:
+ J. Adamek(Braunschweig)
+ R. Backhouse (Nottingham)
+ S. Bloom (Hoboken NJ)
+ R. De Nicola (Florence)
+ Z. 'Esik (Szeged)
+ I. Guessarian (Paris)
+ W. Kuich (Vienna)
+ A. Labella (Rome, chair)
+ M. Mislove (Tulane)
+ D. Niwinski (Warsaw)
+
+Invited speakers:
+J. Adamek (Braunschweig)
+Z. 'Esik (Szeged)
+ I. Guessarian (Paris)
+  C. Stirling (Edinburgh)
+ R. F. C. Walters (Sydney)
+
+Paper submission:
+ Authors are invited to send
+ three copies of an abstract not exceeding  three
+ pages to the PC chair. Electronic submissions in the form
+ of uuencoded postscript file are encouraged and can be sent to
+ labella@dsi.uniroma1.it.
+
+Important Dates:
+Submission: April 15, 2001
+Notification: June 15, 2001
+
+
+Proceedings:  preliminary proceedings containing the abstracts
+of the talks will be available at the meeting.
+Publication of final proceedings as a special issue of  Theoretical
+Informatics and Applications
+depends on the number and quality of the papers.
+
+
+Contact person:
+Anna Labella
+dip. Scienze dell'Informazione
+Universita` La Sapienza
+via Salaria 113
+00198, Rome, Italy
+labella@dsi.uniroma1.it
+phone:  +39 06 49918355
+fax: +39 06 8541842
+
+
+==============================================
+Prof. Anna Labella
+Dipartimento di Scienze dell'Informazione
+Universita` di Roma "La Sapienza"
+Via Salaria, 113    -  00198 Roma (ITALY)
+
+tel: +39 06 49918355   fax:  +39 06 8541842
+email: labella@dsi.uniroma1.it
+==============================================
+
+
+
+

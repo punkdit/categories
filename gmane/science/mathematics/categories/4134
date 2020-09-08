@@ -1,0 +1,127 @@
+Path: news.gmane.org!not-for-mail
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: On defining *-autonomous categories
+Date: Wed, 19 Dec 2007 12:04:56 +0000 (GMT)
+Lines: 94
+Approved: news@gmane.org
+Message-ID: <E1J54IV-000315-LZ@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1241019739 11849 80.91.229.2 (29 Apr 2009 15:42:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:42:19 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Dec 19 15:16:03 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 19 Dec 2007 15:16:03 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1J54IV-000315-LZ
+	for categories-list@mta.ca; Wed, 19 Dec 2007 15:09:39 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 28
+Status: O
+Content-Length: 3524
+Original-Lines: 93
+Xref: news.gmane.org gmane.science.mathematics.categories:4134
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4134>
+
+This result is a special case of a general fact about adjunctions,
+which appears (yes, really!) as Lemma A1.1.1 in the Elephant.
+I don't claim any originality for it, but I did comment in the
+text that it "seems not to be widely known".
+
+Lemma: Let F: C --> D be a functor having a right adjoint G.
+If there is any natural isomorphism between the composite FG and
+the identity functor on D, then the counit of the adjunction is
+an isomorphism.
+
+Proof: One can transport the comonad structure on FG across the
+isomorphism, to obtain a comonad structure on 1_D. But the monoid
+of natural endomorphisms of the identity functor on any category
+is commutative, so the counit and comultiplication of this comonad
+must be inverse isomorphisms. Transporting back again, the counit
+of (F -| G) is an isomorphism.
+
+Peter Johnstone
+
+On Tue, 18 Dec 2007, Robin Houston wrote:
+
+> On Mon, Dec 17, 2007 at 02:29:17PM -0400, Peter Selinger wrote:
+>> On the other hand, none of the above matters in some sense, due to a
+>> theorem proved last year by Robin Houston (it was previously unknown
+>> at least to me):
+>>
+>>  Theorem. Let C be a symmetric monoidal category, and let D be an object.
+>>  If there *exists* a natural isomorphism f : A -> (A -o D) -o D,
+>>  then the *canonical* natural transformation g : A -> (A -o D) -o D
+>>  (coming from the symmetric monoidal structure) is an isomorphism
+>>  (although it may in general be different from f).
+>
+> I suspect I may not have been the first to notice this, since it's
+> fairly easy, though I'm not aware that it's ever been mentioned
+> in print. (If anyone knows otherwise, I'd be interested to hear.)
+>
+>
+> Claim: Let C be a symmetric monoidal closed category, and
+> let D be an object of C. Then the following are equivalent:
+>
+> 1. There exists a natural isomorphism A = (A -o D) -o D,
+> 2. The functor (- -o D) is full and faithful,
+> 3. The canonical natural transformation A -> (A -o D) -o D is
+>   invertible.
+>
+>
+> Lemma 1. Let G: X -> Y and H: Y -> Z be functors. If HG is faithful
+> then G is faithful; if HG is full and G is essentially surjective,
+> then H is full.
+>
+> Proof: easy.
+>
+> Lemma 2. Let C be a category, and F: C -> C an endofunctor. If FF
+> is naturally isomorphic to 1_C, then F is an equivalence.
+>
+> Proof: Certainly F is essentially surjective, since every object
+> X in C is naturally isomorphic to FFX. It then follows by Lemma 1
+> that F is full and faithful.
+>
+>
+> For the implication 1 => 2, take F = (- -o D) in Lemma 2.
+>
+>
+> For the implication 2 => 3, consider the following sequence of
+> isomorphisms natural in A \in C:
+>
+>    C(A, A)
+> -> C(A -o D,  A -o D)       ;apply the functor (- -o D)
+> =  C((A -o D) @ A, D)       ;closure
+> =  C(A @ (A -o D), D)       ;symmetry of tensor
+> =  C(A,  (A -o D) -o D)     ;closure again
+>
+> By definition, this natural transformation corresponds under Yoneda
+> to the canonical A -> (A -o D) -o D. Since (- -o D) is full and faithful,
+> the first step is invertible; the others are necessarily so. Therefore,
+> by the Yoneda correspondence, the canonical natural transformation with
+> components A -> (A -o D) -o D is invertible.
+>
+> [ Robin Cockett pointed out to me that this can be decomposed into
+>  two steps, one easy and one well-known:
+>   a) The functor (- -o D) is self-adjoint on the right.
+>   b) For any adjunction, the left adjoint is full and faithful
+>      if and only if the unit of the adjunction is invertible. ]
+>
+>
+> Finally, the implication 3 => 1 is immediate.
+>
+> Robin
+>
+>
+>
+
+
+

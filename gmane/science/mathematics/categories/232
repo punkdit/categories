@@ -1,0 +1,190 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Where does the term monad come from?
+Date: Tue, 07 Apr 2009 00:32:17 -0700
+Lines: 157
+Approved: news@gmane.org
+Message-ID: <E1Lr9Qq-0001Ub-DZ@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1239106690 31632 80.91.229.12 (7 Apr 2009 12:18:10 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 7 Apr 2009 12:18:10 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Tue Apr 07 14:19:29 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LrAGU-0007rN-2I
+	for gsmc-categories@m.gmane.org; Tue, 07 Apr 2009 14:18:54 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Lr9Qq-0001Ub-DZ
+	for categories-list@mta.ca; Tue, 07 Apr 2009 08:25:32 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:232
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/232>
+
+Patrik Eklund wrote:
+> "Operads" are like sets of operations.
+>
+> A monad is an extension of a functor. If the functor is the term functor,
+> then the operations of the signature lies inside the functor, and the
+> "operations" eta and mu are identities, or at least something very
+> isomorphic to identities.
+>
+> In the filter functor eta is point filters and mu is Kowalsky's
+> diagonalization.
+>
+> In my view there is no logic monoid => monad, and I cannot see the
+> full idea behind using "operads", so help me Mona.
+
+In one paragraph, a monad can be understood as a set T of operations
+graded by their arity X, that is, a variable set T(X) where the set X is
+the parameter of variation.  This set is made a monoid by the operation
+of substitution interpreted as the multiplication of the monoid.
+Substitution is associative (terms of height three can be built top-down
+or bottom-up) and has a two-sided identity interpretable ambiguously as
+the identity operation of T (when applied to the top of a term) and
+substitution of variables for themselves (when applied to the bottom of
+a term).
+
+The back-to-back talks of Walter Taylor on his general theory of
+varieties and Fred Linton on monads at the Universal Algebra and
+Category Theory (UACT) meeting held at MSRI in 1993 were like ships
+passing in the night.  No one thought to mention, either before, during,
+or after the talks, that they were describing essentially the same thing
+(or if they did both George McNulty and I missed it), with the result
+that many of the algebraists at the meeting just assumed that these were
+unrelated talks.
+
+Monads can be explained in terms of their associated Kleisli category,
+or their Eilenberg-Moore category, or as the composition UF of any
+set-valued functor U with its left adjoint.  After Fred's talk I had
+lunch with George and tried out the third of these on him.  However we
+got bogged down in the definition of adjunction.
+
+In hindsight I think the quickest way to explain a monad to an
+algebraist is to do so directly in terms of T, \mu, and \eta, without
+the distraction of the additional machinery of the three above methods.
+  It would go something like the following, which of the above three is
+closest to the Kleisli category approach.  I'll ignore the inconsistent
+monads, those axiomatized by x=y, for which T(X) = 1 for nonempty X and
+T(0) <= 1.
+
+A monad specifies the language and equations of an equational theory.
+The functor T specifies the language by providing for each set X the set
+of operations (more properly polynomials or abstract terms) of arity X,
+e.g. T(2) is the set of binary operations of the theory.  The
+multiplication \mu_X: T(T(X)) --> T(X) specifies the theory by mapping
+terms of height at most two to operations (identified with terms of
+height at most one).  Terms s and t of height two identified by \mu,
+e.g. x(y+z) = xy+xz in the case of ring theory, constitute the axioms s
+= t of the theory determined by \mu.
+
+Hardware types and visual thinkers can picture T(X) as a black box
+containing all operations of arity X.  X can be thought of as a row (or
+any other layout, I like the unit interval [0,1] of reals for picturing
+an uncountable set as a row) of input sockets on one side and T(X) as a
+row of output plugs on the opposite side, one per operation.  The unit
+\eta_X: X --> T(X) at X, necessarily an injection, ensures that the
+operations include the variables, qua (formal) projections.  Thinking of
+T(X) as consisting of terms, define the height of each variable to be
+zero and that of the remaining operations of T(X) as one.
+
+Since T can take any set of variables it can take in particular T(X),
+whence there is also a box with input set T(X) and output set T(T(X)).
+The boxes containing T(X) and T(T(X)) can be plugged together to form a
+single black box with set X of inputs and set T(T(X)) of outputs.
+
+However this latter set must now be interpreted as consisting of
+entities of arity X instead of arity T(X).  Viewed syntactically (taking
+into account the separate contents of the two boxes and how they attach)
+we can consider the outputs of T(T(X)) as terms of height two in the
+variables in X, or rather at most two since the unit of the monad embeds
+X in T(X) and T(X) in T(T(X)).
+
+One can then ask whether any of these terms realize some operation not
+among those of T(X).  The function \mu_X: T(T(X)) --> T(X) accomplishes
+three things.
+
+(i) It interprets every term of height up to two as an operation of
+T(X), a form of abstract evaluation that hides the two-level term structure.
+
+(ii) In so doing it answers the above question in the negative: no new
+operations, all terms of height up to two realize operations already
+present in T(X).  In this sense T as a graded set of operations is
+closed under substitution.
+
+(iii) As noted above it axiomatizes the equational theory associated
+with the monad with all equations of that theory involving terms of
+height at most two, namely all equations s = t such that \mu_X maps s
+and t to the same operation of T(X).
+
+\mu can be extended to evaluate terms of height h inductively.  If
+\mu_h: T^h --> T evaluates terms of height up to h then the vertical
+composite \mu T(\mu_h): T^{h+1} --> T^2 --> T evaluates terms of height
+up to h+1, starting from \mu_2 = \mu.  (So \mu_h = \mu T(\mu)
+T^2(\mu)...T^{h-2}(\mu).)  This is the categorical counterpart of using
+equational logic to inductively build up the height of equations in the
+theory one level at a time via \mu, starting from the equations
+constituting the kernel of \mu.
+
+(Although height is always finite there is no such restriction on arity
+and hence on width of a term, which can be any set.  Even for a finitary
+monad an operation can take uncountably many arguments, e.g. for the
+monad for Vct_R as the variety of vector spaces over the reals, each
+operation in T(T(2)) takes as many parameters as there are linear
+combinations ax+by, namely uncountably many, though it depends on only
+finitely many of them because Vct_R is a finitary variety in the sense
+Steve Lack referred to on Friday.)
+
+If the boxes really do consist of operations then the two pluggings
+required to form a chain T(X), T(T(X)), T(T(T(X))) of three black boxes
+should have the same operational effect regardless of the order in which
+they're performed.  The associativity axiom for a monad enforces this
+property of black boxes containing operations.  The above inductive
+definition of \mu_h was bottom-up (T^{h+1} = TT^h) but there is an
+equivalent top-down one (T^h T) producing the same \mu_h.
+
+The Eilenberg-Moore category of a monad is the variety of algebras it
+axiomatizes, modulo details of the treatment of the associated
+signature.  In general the signature will be a proper class but in many
+  cases encountered in practice one can pick out of this class a (small)
+set sufficient for a basis of operations, e.g. +, -, and the scalar
+multiplications for Vct_k, or NAND and a constant for Boolean algebra.
+The variety of sigma-algebras is not finitary although it can still be
+furnished with a small signature, but this is not possible for the
+varieties of complete semilattices and of complete atomic Boolean
+algebras, which old-school algebraists would not consider varieties for
+that reason.
+
+The Kleisli category is the full subcategory of the variety consisting
+of its free algebras.  The latter is intimately linked to the above
+intuitions, and amounts to an equivalent way of seeing that T is closed
+under substitution by formulating substitution as the composition of the
+Kleisli category.
+
+The essential point of departure from the usual notion of a monoid as a
+fixed set is that for the type T^2 --> T of multiplication, T^2 is
+defined via composition instead of cartesian product.  Monads are
+therefore simply monoids adapted in this way to accommodate their
+variability.
+
+Monads need not be sets.  Just as a ring can be defined as a monoid
+object in Ab, with the domain of multiplication being formed via
+cartesian product in Ab, so can a monad be a monoid object in the
+category of endofunctors of Ab, with the domain of multiplication being
+formed by functor composition in Ab^Ab.  Although not all categories
+have finite products, T^2 is defined for every category C and
+endofunctor T: C --> C.
+
+Vaughan Pratt
+
+

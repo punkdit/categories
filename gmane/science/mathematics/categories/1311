@@ -1,0 +1,61 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Real midpoints
+Date: Sun, 26 Dec 1999 13:45:08 -0500 (EST)
+Lines: 33
+Approved: news@gmane.org
+Message-ID: <199912261845.NAA19441@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017742 30670 80.91.229.2 (29 Apr 2009 15:09:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Dec 27 13:12:35 1999 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA06855
+	for categories-list; Mon, 27 Dec 1999 11:15:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 20
+Status: O
+Content-Length: 1384
+Original-Lines: 32
+Xref: news.gmane.org gmane.science.mathematics.categories:1311
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1311>
+
+It could well be that Vaughan and I are defining the midpoint structure
+in the same way. Here's how I described it (using the conventions from
+my last posting).
+
+Let  F:I --> I v I  be a final coalgebra. We will denote the top of  I
+as  T  and the bottom as  B.  Construct the "halving" map,  h:I --> I,
+(on  [-1,1]  it will send  x  to  x/2)  as:  
+
+                   T v F v B             F'v F'        F'
+    I --> 1 v I v 1 ------> I v I v I v I ---> I v I  --> I
+
+where  F' denotes the inverse of  F, and, by a little overloading, T
+and  B  denote the maps constantly equal to  T  and  B.  The leftmost
+map records the fact that the terminator is a unit for the 
+ordered-wedge functor.
+
+Let  g  be the endo-function on  I x I  defined recursively by:
+
+    g<x,y> = if  dx = T  and  dy = T  then      <x,y>    else
+             if  dx = T  and  uy = B  then  h(g(dx,uy>)  else
+             if  ux = B  and  dy = T  then  h(g<ux,dy>)  else
+             if  ux = B  and  uy = B  then      <x,y>.
+
+The values of  g  lie in the first and third quadrants, that is, those
+points such that either  dx = dy = T  or  ux = uy = B.  The two maps
+
+           g       d x d                   g       u x u
+    I x I --> I x I --> I x I  and  I x I --> I x I --> I x I  
+
+give a coalgebra structure on  I x I.  The midpoint operation may be
+defined as the induced map to the final coalgebra.
+
+

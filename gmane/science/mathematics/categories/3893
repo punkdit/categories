@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Stupid question: what space was Euclid working in?
+Date: Tue, 11 Sep 2007 23:11:01 -0700
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <E1IVXIJ-0002Uo-Re@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019587 10756 80.91.229.2 (29 Apr 2009 15:39:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:47 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Sep 12 16:00:40 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 12 Sep 2007 16:00:40 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IVXIJ-0002Uo-Re
+	for categories-list@mta.ca; Wed, 12 Sep 2007 15:50:35 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 2772
+Original-Lines: 58
+Xref: news.gmane.org gmane.science.mathematics.categories:3893
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3893>
+
+Some helpful discussion with Dana Scott and Fred Linton got me to the
+point where I felt I could say reasonably succinctly exactly what a
+Euclidean space is (or ought to be).  The following summarizes my
+present understanding, which is a lot clearer than 24 hours ago.
+
+I've seen only two essentially different approaches so far, bottom-up
+(adding structure) and top-down (forgetting structure).
+
+Bottom-up:
+
+     A Euclidean space is
+     an affine space transformable only by similarities.
+
+Since affine spaces are already understood to be transformable only by
+affinities, the further restriction to similarities is equivalent to the
+preservation of circles, or of right isosceles triangles.  Affine spaces
+are in turn definable as an affine-closed subspace of a projective space
+transformable only by affinities.
+
+Constraining the morphisms in this way is morally equivalent to adding
+structure (of some unspecified kind), whence "bottom-up".
+
+Top-down:
+
+     A Euclidean space is
+     a torsor for a Euclidean inner product space E.
+
+A torsor, or principal homogeneous space, is (in this instance) a
+generalized metric space with vector distances in place of real
+distances so as to make the triangle inequality an equality, with d(x,y)
+= -d(y,x) and d(x,y) = 0 iff x = y.  Like metric spaces torsors have no
+origin.  E supplies the distances.  I put "Euclidean" as a modifier for
+"inner product space" to connote the liberalization of morphisms thereof
+to preserving inner product only up to a constant factor (as opposed to
+the presumed default of on the nose).  This liberalization accommodates
+scaling, and can be considered as forgetting the scale.  That and
+torsors for forgetting the origin makes this approach "top-down."
+
+I've used both approaches in software for things like surveying and
+computer graphics, using respectively top-down and bottom-up.  Top-down
+is simple at a low level, is primarily vector oriented, involves little
+or no multiplication, and works fine with single-precision floating
+point or even fixed point arithmetic.  Bottom-up is simple at a high
+level (if you don't try to follow the individual arithmetic steps when
+debugging), uses an extra dimension to express projective geometry
+(needed to represent the part at infinity dropped when passing to affine
+space), is primarily matrix oriented, involves lots of multiplication,
+and benefits from double precision.  All high-end video cards today use
+bottom-up exclusively, understandable for rendering which needs
+projective rather than Euclidean geometry, but its benefits for rigid
+solid modeling over top-down are less clear to me, though for
+articulated solid modeling bottom-up seems preferable.
+
+What other approaches to defining Euclidean space have been proposed?
+
+Vaughan
+
+
+

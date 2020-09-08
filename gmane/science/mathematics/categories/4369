@@ -1,0 +1,126 @@
+Path: news.gmane.org!not-for-mail
+From: Matthias Felleisen <matthias@ccs.neu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equational correspondence and equational embedding
+Date: Tue, 15 Apr 2008 10:06:57 -0400
+Lines: 92
+Approved: news@gmane.org
+Message-ID: <E1Jm6hR-0004zx-C2@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019902 12962 80.91.229.2 (29 Apr 2009 15:45:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:45:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Apr 16 09:36:54 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 16 Apr 2008 09:36:54 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Jm6hR-0004zx-C2
+	for categories-list@mta.ca; Wed, 16 Apr 2008 09:25:17 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 18
+Status: O
+Content-Length: 3709
+Original-Lines: 91
+Xref: news.gmane.org gmane.science.mathematics.categories:4369
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4369>
+
+
+Phil, Amr responded with the bare facts. Here is my path of
+discovery, with two additional lit ptrs:
+
+John Gately was an MS student at IU working in Indiana. I suggested
+to him that he work out a cbv theory of combinators in the spirit of
+Gordon Plotkin's CBN/CBV paper in TCS(1974). I also suggested that he
+read Barendregt (chapter 7, with an overview in chapter 2) because it
+summarizes the equational correspondence I was after. John dropped
+out from IU but rejoined me at Rice and published a paper on his CBV
+CL ~ lambda_v correspondence paper at some workshop (mathematical
+foundations of programming languages?).
+
+Around the same time, I started Eric Crank on a correspondence
+between cps(\lambda_v) and lambda with the hope that a reduction rule
+Bruce Duba and I had played with since 1985: (\x.E[x]) M  = E[M] for
+x not in fv(E) [beta_Omega]. While Eric preferred to switch to
+equational characterizations of imperative parameter passing, Amr
+came along and solved this puzzle.
+
+As Amr said, we tried to stay as close as possible to the source
+(Curry) with our write-up for LFP 1992.
+
+-- Matthias
+
+
+On Apr 15, 2008, at 8:07 AM, Philip Wadler wrote:
+> The notion of *equational correspondence* was defined by Sabry and
+> Felleisen in their paper:
+>
+>    Amr Sabry and Matthias Felleisen
+>    Reasoning about programs in continuation-passing style
+>    LISP and Symbolic Computation, 6(3--4):289--360, November 1993.
+>
+> We lay out below the definition, along with a related notion of
+> *equational embedding*.  We've seen relatively little about equational
+> correspondence in the literature, and nothing about equational
+> embedding.  Given that these seem to be fundamental concepts, we
+> suspect we've been looking in the wrong places.  Any pointers to
+> relevant literature would be greatly apprectiated.
+>
+> An *equational theory* T is a set of terms t of T, and a set of
+> equations
+> t =_T t' (where t, t' are terms of T).
+>
+> Let S, T be equational theories.  We say that f : S -> T and g : T -
+> > S
+> constitute an *equational correspondence* between S and T if
+>
+>   1.  g(f(s)) =_S s,  for all terms s in S
+>   2.  f(g(t)) =_T t,  for all terms t in T
+>   3.  s =_S s'  implies  f(s) =_T f(s'),  for all terms s, s' in S
+>   4.  t =_T t'  implies  g(t) =_S g(t'),  for all terms t, t' in T
+>
+> Let S, T be equational theories.  We say that f : S -> T and
+> g : f(S) -> S (where f(S) is the image of S under f, a subset of T)
+> constitute an *equational embedding* between S and T if
+>
+>   1.  g(f(s)) =_S s,  for all s in S
+>   2.  s =_S s'  implies  f(s) =_T f(s'),  for all s, s' in S
+>
+> It is easy to see that there is an equational embedding of S into T if
+> and only if there is a function from S to T that preserves and
+> reflects equations.
+>
+> Clearly, f and g constitute an equational correspondence between S and
+> T if f and g constitute an equational embedding of S into T and g and
+> f constitute an equational embedding of T into S.
+>
+> We conjecture that whenever there is an equational embedding of S into
+> T and of T into S that there is an equational correspondence between S
+> and T.  This is not immediate, because one equational embedding might
+> be given by f and g and the other by h and k, with no obvious relation
+> between the two.
+>
+> As I said, any pointers to relevant literature would be greatly
+> appreciated!
+>
+> Yours,  -- Sam Lindley, Philip Wadler, Jeremy Yallop
+>
+> --
+>  \ Philip Wadler, Professor of Theoretical Computer Science
+>  /\ School of Informatics, University of Edinburgh
+> /  \ http://homepages.inf.ed.ac.uk/wadler/
+>
+> The University of Edinburgh is a charitable body, registered in
+> Scotland, with registration number SC005336.
+>
+
+
+
+

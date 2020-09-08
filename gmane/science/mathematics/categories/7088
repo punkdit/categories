@@ -1,0 +1,122 @@
+Path: news.gmane.org!not-for-mail
+From: Jocelyn Ireson-Paine <popx@j-paine.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Interactive demonstrations of categorical constructions
+Date: Thu, 1 Dec 2011 06:14:07 +0000 (GMT)
+Lines: 84
+Approved: news@gmane.org
+Message-ID: <E1RWTE0-000350-6P@mlist.mta.ca>
+References: <E1RVO2j-0004Vd-A8@mlist.mta.ca>
+Reply-To: Jocelyn Ireson-Paine <popx@j-paine.org>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; format=flowed; charset=US-ASCII
+X-Trace: dough.gmane.org 1322832821 12269 80.91.229.12 (2 Dec 2011 13:33:41 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 2 Dec 2011 13:33:41 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Dec 02 14:33:37 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RWTFA-00088m-0a
+	for gsmc-categories@m.gmane.org; Fri, 02 Dec 2011 14:33:36 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:32990)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RWTE1-00048b-PY; Fri, 02 Dec 2011 09:32:25 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RWTE0-000350-6P
+	for categories-list@mlist.mta.ca; Fri, 02 Dec 2011 09:32:24 -0400
+In-Reply-To: <E1RVO2j-0004Vd-A8@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7088
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7088>
+
+With a new academic year, there will be new people learning category
+theory. So I'd like to (re)advertise the online category-theory
+demonstrations I've made available at
+http://www.j-paine.org/cgi-bin/webcats/webcats.php .
+
+The page contains buttons such as "generate and demonstrate an equaliser"
+and "generate and demonstrate a limit". Clicking on one will generate an
+example of the construct in the category of finite sets, and display it in
+a new Web page as a listing of its objects and arrows, and as a diagram.
+
+For limits and colimits, the demos generate a small random graph, convert
+it to a diagram, then compute and display its limit or colimit. For binary
+coproducts and products, coequalisers and equalisers, and other constructs
+whose diagrams are always the same shape, you can tell the program which
+objects (sets) and arrows (functions) to use.
+
+Some people have asked me how the program works. It's written in two
+programming languages: PHP and Prolog. PHP is a "scripting language" used
+for building interactive Web sites: everything from blogs to online shops.
+When you press a button and thereby submit the form, your Web browser
+sends a message to my Web server, telling it which button was pressed, and
+also encoding the sets and functions to be used, if you typed any.
+
+My Web server extracts and decodes this information, and then runs a
+program in the other language - Prolog - passing it the information.
+Prolog is a "logic programming language": a Prolog program consists of
+predicate definitions in a subset of first-order logic, and you run a
+program by asking it to prove from these whether some proposition is true.
+For example, I might ask it to prove from the categorical predicates I've
+written whether the proposition "there exists a binary coproduct of {a,b}
+and {x,y}" is true. The process of proving this may bind variables in the
+proposition, and in my case, these will contain graphs representing the
+diagram of the product.
+
+Actually, Prolog isn't only logic. It also contains features for doing
+non-logical stuff such as input and output. I'd say that writing Prolog
+feels 3/5 like doing logic, and 2/5 like using a more conventional
+language such as Java or C.
+
+Anyway, my server invokes a Prolog program, telling it which button you
+pressed and which sets and functions you wanted to use. If you didn't type
+any, the program calls an example generator, which generates small random
+sets and functions, chosen so that the construct they're to be used in
+does in fact exist.
+
+The program then computes a data structure representing the appropriate
+diagram, including new sets and functions to be used as the limit,
+coproduct, or whatever, and as the arrows connecting it to the original
+objects. For some of these computations, I used Prolog translations of the
+algorithms in the book "Computational category theory" by David Rydeheard
+and Rod Burstall.
+
+Having generated the diagram, my Prolog program needs to make a picture of
+it. It does this by running graph-visualisation program called GraphViz.
+This is written by AT&T, and available free from http://www.graphviz.org/
+. You can see examples of its output in the gallery at
+http://www.graphviz.org/Gallery.php .
+
+So my program converts the diagram to commands in a GraphViz input file,
+and then runs GraphViz to convert this into a picture of the diagram as a
+GIF file. It then writes out yet another file containing a Web page that
+explains the construct. The explanation lists the objects and arrows used,
+and also points to the GIF file, which therefore appears as an image near
+the bottom of the page.
+
+As an experiment, I also use GraphViz to plot the diagram in VRML,
+"virtual reality modelling language". If your browser has the right
+software, you can use your mouse to move the VRML picture around and turn
+it over. I thought this might make the diagram feel more real.
+
+Finally, my Prolog program terminates, and the PHP script that ran it
+takes over. It sends your browser a copy of the demonstrator's input form,
+but with a link added to it pointing to the page explaining the construct.
+And if you click on that, you see your results.
+
+Jocelyn Ireson-Paine
+http://www.j-paine.org
+
+Jocelyn's Cartoons
+http://www.j-paine.org/blog/jocelyns_cartoons/
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

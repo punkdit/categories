@@ -1,0 +1,100 @@
+Path: news.gmane.org!not-for-mail
+From: Erik Palmgren <palmgren@math.uu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is equality evil?
+Date: Sun, 19 Sep 2010 22:30:31 +0200 (CEST)
+Lines: 61
+Approved: news@gmane.org
+Message-ID: <E1Oximi-0005OL-Jc@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca> <E1OwQEy-0002cd-TZ@mlist.mta.ca> <E1OwmE5-00011l-T6@mlist.mta.ca> <E1OxKoj-0004xW-B9@mlist.mta.ca>
+Reply-To: Erik Palmgren <palmgren@math.uu.se>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1284998470 16120 80.91.229.12 (20 Sep 2010 16:01:10 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 20 Sep 2010 16:01:10 +0000 (UTC)
+Cc: Toby Bartels <toby+categories@ugcs.caltech.edu>, categories@mta.ca
+To: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Original-X-From: majordomo@mlist.mta.ca Mon Sep 20 18:01:08 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oxinj-0000oV-Q0
+	for gsmc-categories@m.gmane.org; Mon, 20 Sep 2010 18:01:08 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:59087)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oximr-0000DQ-H3; Mon, 20 Sep 2010 13:00:13 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oximi-0005OL-Jc
+	for categories-list@mlist.mta.ca; Mon, 20 Sep 2010 13:00:04 -0300
+In-Reply-To: <E1OxKoj-0004xW-B9@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6196
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6196>
+
+
+Thanks Thomas for bringing up the intensional type theory perspective. Here
+equality of objects in categories is a serious problem already for sets,
+or rather for their type theoretic counterpart, setoids (types with
+equivalence classes). The so-called identity types give a minimal
+equality on each type A: Id(A,a,b) are the proofs that a and b
+are equal in A. But the fact that these proofs are in general not
+unique and induces a groupoid structure makes it difficult to apply
+when e.g. A is a universe of types. Some remarks are contained in
+in this preprint
+
+http://www.mittag-leffler.se/preprints/files/IML-0910f-36.pdf
+
+
+If one tries to use the Id-types to define equality on (small) setoids
+one ends up with a groupoid of objects rather than a setoid objects.
+I think the situation can be described as follows for a general category K,
+which we think of as a category without equality of objects. We now
+want to induce an equality of objects on (a part of) K. Take a
+groupoid G and a functor F:G -> K. We define the groupoids of
+objects C_0, arrows C_1 and composable arrows C_2 in a natural
+way. C_0 is G and C_1 has for objects triples (a,b,f) where a,b in G
+and f:F(a) -> F(b), and a morphism (a,b,f) -> (a',b',f') is a pair of
+G morphisms r:a -> a' and s:b -> b' with F(s) f = f' F(r). C_2 has for
+objects pairs of morphisms composable with an mediating map m from G,
+i.e. ((a,b,f),(c,d,g),m). The composition is g F(m)f. The morphisms of
+C_2 are then pairs of C_1 morphisms
+
+((r,s), (t,u)): ((a,b,f),(c,d,g),m) -> ((a',b',f'),(c',d',g'),m')
+
+with m's= t m.
+
+When G is a discrete groupoid this becomes a standard category. When G is
+a groupoid it becomes almost a category. Notions of limits can be
+formulated in a natural fashion. At least when K=Setoids, C inherits
+limits from K. Perhaps some general results are known about this
+construction of C from functor F:G -> K on a groupoid G?
+
+
+Erik
+
+
+> It's no problem to come up with logics without equality predicates. Just
+> omit the equality predicate and its associated axioms. For ideological reasons
+> most logic texts give equality a distinguished status for historical reasons.
+> In case of extensional theories it suffices to have equality on base type and
+> lift it `a la logical relations. But then there might be operations which
+> don't respect this kind of equality. In other words identity types are not
+> necessary for doing constructive mathematics.
+> Intensional Id-types arise from putting the idea to an extreme that all logical
+> concepts are "inductively defined", i.e. are given by constructors and
+> eliminators.
+> The notion of equality of types you refer to is a different one. Namely
+> judgemental equality which cannot be used as an ingredient for forming
+> propositions.
+>
+
+......
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

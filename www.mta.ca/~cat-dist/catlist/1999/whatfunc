@@ -1,0 +1,52 @@
+Date: Tue, 19 Nov 1996 21:44:33 -0400 (AST)
+Subject: What kind of functor do I have here?
+
+Date: Tue, 19 Nov 1996 19:39:26 -0600
+From: Joshua Caplan <caplan@cs.uiuc.edu>
+
+Suppose I have an endofunctor F : C -> C on a category with finite
+products and exponents, and a natural transformation s : Exp => Exp o
+(Fop x F) such that, for all f in C(A,B),
+
+1
+|  \
+|   \
+|    \
+|[f]  \[Ff]
+v      v
+B^A--->FB^FA
+   s_AB
+
+where [f] is (f o pr_2)^, the name of f.
+
+Is this called a "strong functor", similar to the "strong monad" idea?
+
+---------------------------------+---------------------------------------------caplan@cs.uiuc.edu               |Joshua Caplan, Dept. of Computer Sci.
+http://acsl.cs.uiuc.edu/~caplan/ |Univ. of Illinois at Urbana-Champaign
+---------------------------------+---------------------------------------------
+
+
+Date: Wed, 20 Nov 1996 11:58:39 -0400 (AST)
+Subject: Re: What kind of functor do I have here?
+
+Date: Wed, 20 Nov 96 10:16:50 GMT
+From: Roy L. Crole <rlc3@mcs.le.ac.uk>
+
+
+
+Re: Joshua Caplan's question about strong functors.
+
+If you regard C as enriched over itself, with C(A,B) = B^A in obC, and the
+functor F is C-enriched, and also s_A,B : C(A,B) ---> C(FA,FB) is precisely
+the action of F on hom-objects, then F is often called a strong functor,
+and s a functorial strength.
+
+Connections between these ideas and tensorial strengths can be found in
+
+A. Kock, Strong Functors and Monoidal Monads, Archiv der Mathematik, 23
+1972.
+
+Basically the short answer to your question is "yes". Hope this helps.
+
+Roy Crole
+

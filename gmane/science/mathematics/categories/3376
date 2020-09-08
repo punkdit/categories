@@ -1,0 +1,132 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Laws
+Date: Tue, 8 Aug 2006 02:08:40 -0300 (ADT)
+Lines: 98
+Approved: news@gmane.org
+Message-ID: <E1GAQ2T-0007Pf-LP@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019268 8492 80.91.229.2 (29 Apr 2009 15:34:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:34:28 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Aug  8 08:51:12 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 08 Aug 2006 08:51:12 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GAQ2T-0007Pf-LP
+	for categories-list@mta.ca; Tue, 08 Aug 2006 08:46:25 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 9
+Status: O
+Content-Length: 4446
+Original-Lines: 97
+Xref: news.gmane.org gmane.science.mathematics.categories:3376
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3376>
+
+Hi Tom,
+
+a lot is known about this. I will leave it to more qualified others to
+give the category-theoretic account.  In set-like language, the answer
+to your question is provided by universal algebra.
+
+Denote by Th(G) the theory associated to a particular algebra G (over
+a given signature). More generally, to a class of algebras S (all over
+the same, from now on fixed, signature), associate Th(S), the theory
+of all those equations satisfied by all the algebras in S.  Also, to a
+given theory T, let V(T) be the class of all algebras satisfying the
+equations in T (also called a variety of algebras).
+
+Birkhoff's HSP theorem states that a class C of algebras is of the
+form V(T), for some T, if and only if C is closed under isomorphism,
+and under the operations of taking quotient algebras, subalgebras, and
+cartesian products. (HSP stands for "homomorphic image, subalgebra,
+product").
+
+As a direct consequence, let C=V(Th(G)), the class of all groups
+satisfying those equations that a particular group G satisfies. Then C
+is precisely the class of groups that can be obtained, up to
+isomorphism, from G by repeatedly taking quotients, subalgebras, and
+cartesian products. [Proof: certainly, the right-hand side is
+contained in C.  Conversely, by the HSP theorem, the right-hand side
+class is of the form V(T), for some T.  Since G is in the class, T can
+only contain equations that hold in G, thus T is a subset of Th(G). By
+contravariance of the "V" operation, it follows that C=V(Th(G)) is a
+subset of V(T)].
+
+Moreover, since a subalgebra of a quotient is a quotient of a
+subalgebra, and a cartesian product of quotients [subalgebras] is a
+quotient [subalgebra] of a cartesian product, the three HSP operations
+can be taken in this particular order: Thus, a group satisfies all the
+equations that G satisfies, if and only if it is isomorphic to a
+quotient of a subalgebra of some (possibly infinite) product G x ... x G.
+
+There are generalizations to properties other than equational ones,
+but I don't remember them as well. A "Horn clause" is an implication
+between equations, or more precisely a property of the form (forall
+x1...xn)(P1 and ... and Pn => Q), where P1,...,Pn,Q are equations.  Of
+course, every equation is trivially a Horn clause (for n=0), but not
+the other way around. A typical example of a Horn clause is cancellability,
+the property xz=yz => x=y. (This holds in groups, but not in monoids,
+and cannot be expressed equationally in monoids, because it is not
+preserved under quotients).
+
+If you want to consider the class of algebras (in general smaller than
+V(Th(G))) that satisfy all the Horn clauses that G satisfies, then you
+have to drop the homomorphic images. I believe that the algebras in
+question will be precisely the subalgebras of products of G, but
+someone might correct me if I remember this wrongly.
+
+-- Peter
+
+Tom Leinster wrote:
+>
+> Dear category theorists,
+>
+> Here's something that I don't understand.  People sometimes talk about
+> algebraic structures "satisfying laws".  E.g. let's take groups.  Being
+> abelian is a law; it says that the equation xy = yx holds.  A group G
+> "satisfies no laws" if
+>
+>     whenever X is a set and w, w' are distinct elements of the free
+>     group F(X) on X, there exists a homomorphism f: F(X) ---> G
+>     such that f(w) and f(w') are distinct.
+>
+> For example, an abelian group cannot satisfy no laws, since you could take
+> X = {x, y}, w = xy, and w' = yx.  There are various interesting examples
+> of groups that satisfy no laws.
+>
+> To be rather concrete about it, you could define a "law satisfied by G" to
+> be a triple (X, w, w') consisting of a set X and elements w, w' of F(X),
+> such that every homomorphism F(X) ---> G sends w and w' to the same thing.
+>  A law is "trivial" if w = w'.  Then "satisfies no laws" means "satisfies
+> only trivial laws".
+>
+> You could then say: given a group G, consider the groups that satisfy all
+> the laws satisfied by G.  (E.g. if G is abelian then all such groups will
+> be abelian.)  This is going to be a new algebraic theory.
+>
+> What bothers me is that I feel there must be some categorical story I'm
+> missing here.  Everything above is very concrete; for instance, it's
+> heavily set-based.  What's known about all this?  In particular, what's
+> known about the process described in the previous paragraph, whereby any
+> theory T and  T-algebra G give rise to a new theory?
+>
+> Thanks,
+> Tom
+>
+>
+>
+>
+
+
+
+

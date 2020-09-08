@@ -1,0 +1,120 @@
+Path: news.gmane.org!not-for-mail
+From: Zinovy Diskin <zdiskin@gsd.uwaterloo.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Re: "Databases are Categories"
+Date: Mon, 16 Aug 2010 12:07:40 -0400
+Lines: 80
+Approved: news@gmane.org
+Message-ID: <E1Ol9J9-0007XW-HT@mlist.mta.ca>
+References: <E1OkZis-0001ww-Es@mlist.mta.ca>
+Reply-To: Zinovy Diskin <zdiskin@gsd.uwaterloo.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1282002194 16133 80.91.229.12 (16 Aug 2010 23:43:14 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 16 Aug 2010 23:43:14 +0000 (UTC)
+Cc: categories@mta.ca
+To: =?UTF-8?Q?Mattias_Wikstr=C3=B6m?= <mattias.wikstrom@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Tue Aug 17 01:43:12 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ol9Kh-00049P-Ct
+	for gsmc-categories@m.gmane.org; Tue, 17 Aug 2010 01:43:11 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:38960)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ol9JC-0001Ft-GL; Mon, 16 Aug 2010 20:41:38 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ol9J9-0007XW-HT
+	for categories-list@mlist.mta.ca; Mon, 16 Aug 2010 20:41:35 -0300
+In-Reply-To: <E1OkZis-0001ww-Es@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6050
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6050>
+
+2010/8/14 Mattias Wikstr=C3=B6m <mattias.wikstrom@gmail.com>:
+> I think it makes sense to regard database schemas as theories and
+> databases as models of such theories. Given a theory T that models
+
+yes, this is the basic underlying assumption in a series of papers of
+Michael  Johnson and the moderator of this list.
+
+> some database schema S, a term in the language of T may be thought of
+> as a "database query" (to obtain the result of the query, simplify the
+> term),
+
+a query is a formula (defining a  derived table) rather than a term
+
+while a statement that two terms in the language of T are equal
+> may be thought of as a "database constraint" that one may want to add
+> to S.
+
+there are many types of non-equational constraints, for example,
+inclusion P=3D>Q with P,Q formulas
+
+>
+> What sort of theory should a database schema be? This surely depends
+> on what exactly one is trying to model: A schema in Company A's DBMS
+> (database management system) is rarely the same thing as a schema in
+> Company B's DBMS, and in any case one probably wants to work with some
+> idealised mathematical model.
+>
+
+a good question is what the place of SQL on the scale of logical
+doctrines is. Since models of SQL-theories include predefined infinite
+domains with operations (think of Integer and String), and  finite
+domains for tables, model theory for SQL is not classical. I'm not
+sure but it seems model-theorists call it "metafinite model theory"
+(Gradel and Gurevich).
+
+> David Spivak seems to offer two different answers. On the one hand, a
+> database schema may be the same thing as a category. On the other
+> hand, a database schema may be a labeled simplicial set. Both answers
+> may be found at http://www.uoregon.edu/~dspivak/cs/ .
+>
+
+I took a look at the slides of  "databases are categories" talk. It
+seems to be an overly simplified model.  Since an employee may work
+for several or none departments, data should be modeled by a functor
+into Rel rather than Set. 2-category structure may be important, and
+we often have a lax functor F(a;b)<F(a);F(b). For example, a Person
+_owns_ a Car, which is _parked_ at an Address, where the person
+_lives_, but a Person may not have a Car but still _live_ at an
+Address (arrow names are underlined, _lives=3Downs;parked_).
+Considering all columns as foreign keys, that is, disregarding the
+difference between value-valued and object-valued attributes, would
+look very strange for a practitioner.
+
+Z.
+
+> ----------------------------------------
+>> Date: Mon, 9 Aug 2010 11:12:34 -0500
+>> Subject: categories: "Databases are Categories" (again)
+>> From: vigalchin@gmail.com
+>> To: categories@mta.ca
+>>
+>> Hello,
+>>
+>> I stumbled across this tech talk:
+>> http://www.galois.com/blog/2010/05/27/tech-talk-categories-are-databases=
+/ I
+>> was wondering
+>> what others in this mail list think about Spivak's thesis. I apologize i=
+f
+>> already posted.
+>>
+>>
+>> Regards,
+>>
+>> Vasili
+>>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

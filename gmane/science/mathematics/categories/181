@@ -1,0 +1,144 @@
+Path: news.gmane.org!not-for-mail
+From: Mike Stay <metaweta@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Horizontal line notation.
+Date: Wed, 18 Mar 2009 10:26:36 -0700
+Lines: 112
+Approved: news@gmane.org
+Message-ID: <E1LkHwj-0003wj-Cf@mailserv.mta.ca>
+Reply-To: Mike Stay <metaweta@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1237470745 13062 80.91.229.12 (19 Mar 2009 13:52:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 19 Mar 2009 13:52:25 +0000 (UTC)
+To: Jeff Egger <jeffegger@yahoo.ca>,  categories@mta.ca
+Original-X-From: categories@mta.ca Thu Mar 19 14:53:42 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LkIgK-0007FT-8v
+	for gsmc-categories@m.gmane.org; Thu, 19 Mar 2009 14:53:12 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LkHwj-0003wj-Cf
+	for categories-list@mta.ca; Thu, 19 Mar 2009 10:06:05 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:181
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/181>
+
+On Tue, Mar 17, 2009 at 5:28 AM, Jeff Egger <jeffegger@yahoo.ca> wrote:
+>
+> Just to set the record straight...
+>
+>> The horizontal line notation was introduced by Gerhard Gentzen in his
+>> logical sequent calculus. If a set of formulas S =A0implies a and b, the=
+n S
+>> implies a/\b and vice-versa which was written as:
+>>
+>> S |- a,b
+>> ______
+>> S |- a/\b
+>
+> That's not quite correct: Gentzen uses
+> =A0a,b,... |- x,y,...
+> to mean "(a and b and ...) entails (x or y or ...)".
+> So what you have written is (if interpreted strictly
+> according to Gentzen's sequent calculus)
+> =A0if "S entails (a or b)" then "S entails (a and b)"
+> which is obviously incorrect.
+>
+> What Gentzen would write is this:
+> S |- a =A0 =A0 =A0 S |- b
+> -------------------
+> =A0 =A0 S |- a/\b
+> (if "S entails a" and "S entails b", then "S entails
+> (a and b)"); he would also write (separately)
+> S |- a/\b
+> ---------
+> =A0S |- a
+> (if "S entails (a and b)", then "S entails a") and
+> (again separately)
+> S |- a/\b
+> ---------
+> =A0S |- b
+> (if "S entails (a and b)", then "S entails b").
+>
+> The point here is that Gentzen did not actually intend
+> his =A0horizontal line notation to represent any sort of
+> bijection. =A0In fact, I rather suspect that he borrowed
+> the line from elementary-school arithmetic:
+> =A024
+> =A073
+> =A092
+> ----
+> =A0189.
+>
+> [The only reason for writing
+> S |- a =A0 =A0 =A0 S |- b
+> -------------------
+> =A0 =A0 S |- a/\b
+> instead of
+> =A0S |- a
+> =A0S |- b
+> ---------
+> S |- a/\b
+> is in case you want to append proofs of S |- a and
+> S |- b. =A0In this manner one represents (complete)
+> proofs as trees, where the leaves are axioms, and
+> the root is the theorem being proven.]
+>
+> But I don't think the fact that Gentzen did not intend
+> this horizontal line notation to represent the bijection
+> which is obviously there should stop us from doing it:
+> it's a very convenient way of discussing adjunctions,
+> and there is as little chance of confusing the older
+> use of this symbol with the newer one as confusing
+> either with elementary school arithmetic.
+>
+> Cheers,
+> Jeff.
+>
+
+
+The turnstile |- can be viewed as the hom functor (which in a poset is
+a truth value), while the horizontal bar is a (di)natural
+transformation.  A double bar is a natural isomorphism.  An empty
+"numerator" is the constant bifunctor T:C^op x C -> Set that picks out
+the one-element set.
+
+So, for example, we have
+
+------ (id)
+X |- X
+
+which is a dinatural transformation from T to (X, X); the
+corresponding commuting hexagon says that the identity is a left and a
+right unit.
+
+Y |- Z     X |- Y
+----------------- (cut)
+     X |- Z
+
+is a transformation that's natural in X, Z and dinatural in Y.  The
+commuting hexagon says that composition is associative.
+
+Currying is usually written as two rules, one for introduction of -o
+(linear implication =3D internal hom) and one for eliminating it.  But
+it's equivalent to use this natural isomorphism:
+
+X, Y |- Z
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D (curry)
+X |- Y -o Z
+
+which is an adjunction.
+--=20
+Mike Stay - metaweta@gmail.com
+http://math.ucr.edu/~mike
+http://reperiendi.wordpress.com
+
+
+

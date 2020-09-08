@@ -1,0 +1,160 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <mshulman@ucsd.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fibrations in a 2-category
+Date: Tue, 18 Jan 2011 15:45:42 -0800
+Lines: 121
+Approved: news@gmane.org
+Message-ID: <E1PfvPz-0000ja-1z@mlist.mta.ca>
+References: <E1PcdVr-0004A6-7N@mlist.mta.ca>
+Reply-To: Michael Shulman <mshulman@ucsd.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1295533420 8938 80.91.229.12 (20 Jan 2011 14:23:40 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 20 Jan 2011 14:23:40 +0000 (UTC)
+Cc: Michal Przybylek <michal.przybylek@gmail.com>, Categories <categories@mta.ca>
+To: David Roberts <droberts@maths.adelaide.edu.au>
+Original-X-From: majordomo@mlist.mta.ca Thu Jan 20 15:23:35 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfvQF-0004PO-6X
+	for gsmc-categories@m.gmane.org; Thu, 20 Jan 2011 15:23:35 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:35697)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfvQ4-0001H1-KQ; Thu, 20 Jan 2011 10:23:24 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PfvPz-0000ja-1z
+	for categories-list@mlist.mta.ca; Thu, 20 Jan 2011 10:23:19 -0400
+In-Reply-To: <E1PfAaZ-0007Pg-1k@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6481
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6481>
+
+On Mon, Jan 17, 2011 at 1:02 AM, David Roberts
+<droberts@maths.adelaide.edu.au> wrote:
+> Theorem: If Cat_ana(S) is equivalent to a 2-category Cat(C) for some
+> category C with finite products and coequalisers of reflexive pairs,
+> then covers are split in S.
+
+I don't think this argument quite works, but I think one can show
+something almost as good, namely that if S is a topos, C has finite
+limits, and Cat_ana(S) is equivalent to Cat(C), then S satisfies the
+*internal* axiom of choice.
+
+> Lemma: If B = Cat(C) for some category C with finite products and
+> coequalisers of reflexive pairs of arrows, then disc:C --> do(Cat(C))
+> is an equivalence.
+
+This isn't quite right; a discrete object in Cat(C) is essentially an
+internal equivalence relation in C, and so do(Cat(C)) is the category
+of equivalence relations and functors between them (not morphisms
+between their quotients).  This is a full subcategory of the free
+exact completion C_{ex/lex}, which contains the free regular
+completion C_{reg/lex} (the category of kernels).
+
+We can say that disc:C --> do(Cat(C)) is fully faithful, and its
+essential image consists of the projective objects in do(Cat(C))
+(assuming that C has finite limits).  In particular, do(Cat(C)) has
+enough projectives.
+
+> Lemma: if B = Cat_ana(S) for some site S with coequalisers of
+> reflexive pairs of arrows, then disc:S --> do(Cat_ana(S)) is an
+> equivalence.
+
+This I believe if S is exact, such as a topos.  The point is that an
+effective equivalence relation in  S, regarded as an internal category
+in S, admits a surjective weak equivalence to its quotient object,
+regarded as a discrete internal category.  Thus, the two become
+equivalent in Cat_ana(S), though not in general in Cat(S).
+
+> Lemma: Let F:B --> B' be an 2-functor. Then there is a 2-functor do(B)
+> --> do(B') (i.e. discrete objects are mapped to discrete objects). If
+> F is an equivalence then it reflects discrete objects.
+
+An equivalence of bicategories certainly preserves and reflects
+discrete objects, which is all that matters for this proof.  (But a
+general functor of bicategories need not preserve discrete objects.)
+
+> So if we have an equivalence Cat(C) --> Cat_ana(S)
+
+... then we can conclude that S, being equivalent to do(Cat_ana(S))
+and hence to do(Cat(C)), has enough projectives, namely C.
+
+Already this is a nontrivial restriction on a topos (or set-theoretic
+axiom), although it can hold in the absence of IAC.  However, we can
+say more.
+
+First, if we identify C with the subcategory of projectives in S, then
+the equivalence functor Cat(C) --> Cat_ana(S) must be, up to
+equivalence, the inclusion which regards internal categories in C as
+internal categories in S, and internal functors as internal
+anafunctors.  For being an equivalence, it in particular preserves lax
+codescent objects; but every internal category is a lax codescent
+object formed of discrete internal categories, and the functor C -->
+Cat(C) --> Cat_ana(S) is what we used to identify C with the
+projective objects of S.
+
+Therefore, since this functor is an equivalence, every internal
+category in S must be equivalent, in Cat_ana(S), to an internal
+category in C, i.e. an internal category in S formed of projective
+objects.  Now for any object A of S, we have an internal category
+1+A+1 \rightrightarrows 1+1 with "two objects" and A as the
+object-of-morphisms from one to the other (and only identity arrows
+otherwise).  If this category is equivalent in Cat_ana(S) to one
+composed of projective objects, then we must have a surjective weak
+equivalence to it from such a category, which is equivalent to giving
+a well-supported projective object P such that PxPxA is projective.
+Thus, any object A is "locally projective", which is sufficient for
+IAC.
+
+(If we are talking about set theoretical foundations, rather than
+working in a topos, we could then pick an element p of P, which exists
+since it is well-supported.  Then since the projectives are closed
+under finite limits, the fiber of PxPxA over (p,p), namely A, would be
+projective, and hence AC holds.)
+
+
+I also think it's worth mentioning that if S merely has enough
+projectives, then we can identify Cat_ana(S) (up to equivalence of
+bicategories) with a full sub-2-category of Cat(S), consisting of
+those internal categories whose object-of-objects is projective (but
+with no condition on the object-of-morphisms).
+
+In fact, such categories are the cofibrant objects in a model
+structure on Cat(S), in which everything is fibrant and whose weak
+equivalences are the internally fully-faithful and
+essentially-surjective functors.  Thus, this is a particular case of
+the fact that morphisms in the homotopy (2-)category of a model
+category are represented by maps from a cofibrant replacement to a
+fibrant replacement.
+
+(When S is a Grothendieck topos, there is also a model structure on
+Cat(S) with those weak equivalences in which every object is
+cofibrant, and in which the fibrant objects are stacks.  I believe
+this was proven by Joyal and Tierney in their paper "Strong stacks and
+classifying spaces".)
+
+The set-theoretic axiom that "there exist enough projective sets" is a
+weak form of choice called the "presentation axiom" or "COSHEP" ("the
+Category Of Sets Has Enough Projectives").  It implies dependent
+choice and some other weak forms of choice, and tends to hold in
+models arising from type theory.  So if one is willing to accept that
+axiom in lieu of full AC, or one is working in a topos that has enough
+projectives (such as, notably, the effective topos), then one can
+avoid talking about anafunctors by restricting to internal categories
+with projective object-of-objects.  I don't know whether there is a
+dual set-theoretic "axiom of small stack completions".
+
+Regards,
+Mike
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

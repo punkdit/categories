@@ -1,0 +1,131 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: trying to answer some of Paul's questions
+Date: Mon, 17 Mar 2008 16:17:03 +0100 (CET)
+Lines: 97
+Approved: news@gmane.org
+Message-ID: <E1JbMed-0005p9-TM@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019875 12784 80.91.229.2 (29 Apr 2009 15:44:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:35 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Mar 17 18:15:34 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 17 Mar 2008 18:15:34 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JbMed-0005p9-TM
+	for categories-list@mta.ca; Mon, 17 Mar 2008 18:14:00 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 93
+Status: O
+Content-Length: 4489
+Original-Lines: 96
+Xref: news.gmane.org gmane.science.mathematics.categories:4329
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4329>
+
+Dear Paul,
+
+I am trying to answer at least some of your questions.
+
+> what he might mean categorically by saying that
+> an external family of objects is a function I -> Ob(EE) where I is a
+> set unless his Ob(EE) is a "class" in either the sense of algebraic set
+> theory (ie an object in another category besides EE) or some similar
+> approach.
+
+You can't say this "categorically" as far as I can see. I am working
+informally on the meta-level and there both I and Ob(EE) are ome sets
+and it is clear what is a function from I to Set. If necessary I can also
+reveil the strength of my meta-level reasoning: ZFC plus the axiom that
+every set appears as member of some Grothendieck universe.
+
+> AST is an intellectually valid point of view on which much good
+> category theory has been done in the past few years.  However,
+> Mike Shulman and I would both like to know how one might formulate
+> replacement WITHOUT classes.
+
+Well, for the set theorist it's impossible anyway since he needs at
+least the class V of all sets which, of course, is carefully hidden
+as the (interpretation of the) single sort over which the variables
+of the language of set theory range. Well, and by using first order
+definable properties one has a lot of further classes not given official
+status but which are there as interpretations of those formulas. That's
+precisely the starting point of AST postulating a Heyting category EE
+and a "universe" V in it which has enough properties for V being a model
+of IZF. (Well, AST in its orginal form has also the ambition to construct
+this class V as a quotient of a W-type.)
+
+Only when reading your most recent mail it became clear to me that your
+intentions are quite different from ETCS. McLarty's replacement axiom does
+speak about external families which are syntactically definable in the
+language of ETCS whereas you - as I understand it - want to stick to
+internal families (aka display maps). The intention of my mail from Saturday
+was to argue that the external notion of family is (at least) problematic
+in a non-wellpointed context.
+
+Using universes in toposes (as in my paper with this title) one can
+formulate everything without using the external families and so one can
+in AST.
+
+> As I said before, they claim that replacement is necessary
+> to construct the ordinal omega+omega, whilst this order structure can
+> be constructed up to isomorphism very easily without it.
+
+Of course, one can construct even larger prim.rec. orders but one
+cannot prove their implementation as von Neumann ordinals. And that's
+what they want.
+
+> Thomas Streicher uses indexed/fibred category theory to link internal
+> and external notions.  I don't see, however, how he manages to give
+> the SPECIFICATION that a display map X-->N is the sequence of iterates
+> of the powerset on N.  The formulation that I gave at the end of my
+> previous posting and in Remark 9.6.16 in my book does do this.
+
+But it's very easy to express this specification in the internal language
+of a topos namely as
+
+   \forall n:N \exists i : X_{n+1} -> P(X_n)  Iso(i)
+
+>   the Artin gluing / Freyd cover / scone (Sierpinski cone) / logical
+>   relations construction,  which can be used to prove CONSISTENCY
+>   of various theories, once again by comparing the term model with
+>   the ambient universe.
+
+in PTJ's Elephant  3.6.3 (f) you find a description of sconing in a fibred
+setting, i.e. over an arbitrary base: if p : EE -> SS is a geom. morph. then
+sc_SS(EE) is just the glueing of  p_* : EE -> SS
+that's my answer to the question of how I would define sconing relative
+to an arbitrary base
+
+this certainly doesn't answer you question above; I can just give an honest
+answer: when using glueing I always used full power on the meta level including
+the common identification of families of sets indexed by I and maps to I
+
+asa far as AST is concerned there is no proof yet that models of AST are
+stable under soning; a first attempt you can find in a paper by M. Warren
+
+   Michael A. Warren.
+   Coalgebras in a category of classes.
+   Annals of Pure and Applied Logic, 146(1):60-71, 2007.
+
+That's what Benno van den Berg just told me when asking him about it.
+
+Sconing for the free topos with nno is of course not the issue here. But
+to show that models of AST are stable under sconing is subtle. The key point
+is that you seem to take for Set a big enough category containg a nontrivial
+notion of small map. Otherwise there are problems to define an object of
+small objects.
+
+Thomas
+
+
+

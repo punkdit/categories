@@ -1,0 +1,65 @@
+Date: Tue, 7 Feb 1995 02:08:07 -0400 (AST)
+Subject: Kleisli category for multiple monads?
+
+Date: Mon, 6 Feb 1995 14:07:19 -0500
+From: David Espinosa <espinosa@cs.columbia.edu>
+
+
+
+Is it possible to form the Kleisli category of several monads at once?
+I can imagine an indexed product of the individual Kleisli categories,
+but I lack the technical facility to describe it.
+
+In my thesis, I have a category with multiple monads, relating the
+different "levels" of a denotational semantics (environments, stores,
+etc).  See http://www.cs.columbia.edu/~espinosa/ for more info.
+
+The monad laws follow easily from the Kleisli formulation; they say
+that the Kleisli category is actually a category.  The monad morphism
+laws say that an arrow between monads is a functor between Kleisli
+categories.  What I expect from a "multi-Kleisli" formulation is that
+Kleisli compositions associate (when possible).
+
+Specifically, given monads P and PQ (where Q is another functor) and
+arrows
+
+        f : A  -> PQB
+        g : QB -> PQC
+        h : C  -> PQD
+
+we'd like
+
+        (oPQ (oP f g) h) = (oP f (oPQ g h))
+
+where oP and oPQ are the Kleisli compositions of the monads.
+
+I can postulate a category with this structure, but it would be nicer
+if it came from a general construction.
+
+David
+
+--------------------
+
+p.s. Other formulations of associativity are:
+
+        ;; bindT : TA * (A -> TB) -> TB
+
+        f : A  -> PQB
+        g : QB -> PQC
+
+        (bindP (bindPQ pqa f) g)
+          = (bindPQ pqa (lambda (a) (bindP (f a) g)))
+
+
+        ;; mapT  : (A -> B) * TA -> TB
+        ;; joinT : TTA -> TA
+
+        ;; f : A  -> PQB
+        ;; g : QB -> PQC
+
+        (joinP (mapP g (joinPQ (mapPQ f pqa))))
+          = (joinPQ (mapPQ (lambda (a) (joinP (mapP g (f a)))) pqa))
+
+        Can we rewrite this using join in a more natural way?
+
+

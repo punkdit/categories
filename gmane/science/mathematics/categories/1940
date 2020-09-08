@@ -1,0 +1,87 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <Andrej.Bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Limits
+Date: 02 May 2001 19:10:56 +0200
+Lines: 52
+Approved: news@gmane.org
+Message-ID: <vkaoftb3cdb.fsf@laurie.pc.cs.cmu.edu>
+References: <Pine.LNX.4.21.0105021457200.419-100000@pc12394>
+Reply-To: Andrej.Bauer@andrej.com
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241018219 1300 80.91.229.2 (29 Apr 2009 15:16:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:59 +0000 (UTC)
+To: Category Mailing List <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu May  3 09:33:27 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f43BhpX18409
+	for categories-list; Thu, 3 May 2001 08:43:51 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: Tobias Schroeder's message of "Wed, 2 May 2001 15:04:00 +0200 (CEST)"
+User-Agent: Gnus/5.0807 (Gnus v5.8.7) XEmacs/21.1 (Capitol Reef)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 8
+Status: O
+Content-Length: 2095
+Original-Lines: 50
+Xref: news.gmane.org gmane.science.mathematics.categories:1940
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1940>
+
+
+Tobias Schroeder <tschroed@Mathematik.Uni-Marburg.de> writes:
+> So I'd be very grateful for answers to one of the following:
+> - Can the limit of a sequence of real numbers be expressed
+>   as a categorical limit (of course it can if the sequence is
+>   monotone, but what if it is not)?
+
+With a little bit of cheating, you can use domain theory to express
+the limit as a sequence as a _colimit_ in a partially ordered set.
+
+Let D be the partial order consisting of all the closed intervals,
+including singletons [a,a], ordered by reverse inclusion. We can
+embed R into D by mapping it to the maximal elements a |---> [a,a],
+and under a suitable topology on D (the Scott topology), this is
+a topological embedding--purists may want to throw in R as the
+smallest element to obtain an honest continuous domain.
+
+Let x_i be a Cauchy sequence of real numbers. To say that x_i is a
+Cauchy sequence is to say that there exist numbers d_i such that
+
+(1) For j >= i, the interval [x_i - d_i, x_i + d_i]
+    contains [x_j + d_j, x_j + d_j].
+
+(2) The numbers d_i become arbitrarily small: for every k
+    there is i such that for all j >= i, d_i < 1/k.
+
+(Exercise for your students: show that this is equivalent to the usual
+definition of Cauchy sequence.)
+
+In terms of the partial order D, (1) says that the intervals
+[x_i - d_i, x_i + d_i] form an increasing sequence. Every increasing
+sequence in D has a supremum, because an intersection of a nested
+sequence of closed intervals is a closed interval, so let
+
+    [u,v] = sup_i [x_i - d_i, x_i + d_i]
+
+By (2), we get that u = v, and we have obtained the limit of the
+sequence (x_i) as a supremum. Supremums are the _colimits_ in a
+partial order. If you prefer limits, you can stand on your head.
+
+I do not see how to get by without using the _evidence_ that (x_i) is
+a Cauchy sequence, i.e., the numbers d_i. This is intuitionistic
+mathematics creeping in, which is just as well.
+
+> - Why have people chosen the term "limit" in category theory?
+>   (And, by the way, who has defined it first?)
+
+I am way too young to know the answer to this.
+
+Andrej
+
+

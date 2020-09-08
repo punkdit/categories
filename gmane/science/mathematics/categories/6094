@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <andrej.bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equality as an adjunction
+Date: Fri, 3 Sep 2010 00:54:39 +0200
+Lines: 53
+Approved: news@gmane.org
+Message-ID: <E1OrfeA-0007e2-3m@mlist.mta.ca>
+References: <E1Or9Uc-00034j-JW@mlist.mta.ca>
+Reply-To: Andrej Bauer <andrej.bauer@andrej.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1283556446 31435 80.91.229.12 (3 Sep 2010 23:27:26 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 3 Sep 2010 23:27:26 +0000 (UTC)
+Cc: categories@mta.ca
+To: David Leduc <david.leduc6@googlemail.com>
+Original-X-From: majordomo@mlist.mta.ca Sat Sep 04 01:27:24 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OrffI-0005kl-6a
+	for gsmc-categories@m.gmane.org; Sat, 04 Sep 2010 01:27:24 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36600)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OrfeD-0001BK-34; Fri, 03 Sep 2010 20:26:17 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OrfeA-0007e2-3m
+	for categories-list@mlist.mta.ca; Fri, 03 Sep 2010 20:26:14 -0300
+In-Reply-To: <E1Or9Uc-00034j-JW@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6094
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6094>
+
+On Thu, Sep 2, 2010 at 3:40 AM, David Leduc <david.leduc6@googlemail.com> w=
+rote:
+> He writes the definition as a bidirectional typing rule for the
+> internal language of a suitable category.
+>
+> =C2=A0 =C2=A0 =C2=A0 Phi |- P(x,x) =C2=A0 [x:A]
+> =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+> Phi, x=3Dx' |- P(x,x') =C2=A0 [x x':A]
+>
+> What are the left and right adjoint functors here?
+
+Short answer: the right adjoint is contraction, the left adjoint is
+(making conjunction with) equality.
+
+Long answer:
+
+To make things easier to understand, let me interpret types as sets,
+predicates as subsets and entailment |- a the subset relation. For a
+set X let Sub(X) be the powerset of X ordered by subset inclusion. Fix
+a set A and define functors (monotone maps between posets)
+
+G : Sub(A x A) --> Sub(A)
+
+F : Sub(A) --> Sub(A x A)
+
+by
+
+G(P) =3D {x \in A | P(x,x)}
+
+F(Q) =3D {(x,y) \in A x A | Q(x) and x =3D y}
+
+Thus G is composition with the diagonal map (a.k.a. contraction in
+logic) and F is intersection with the diagonal (equality relation).
+These two functors are adjoint, since for any P in Sub(A x A) and Q in
+Sub(A) we have
+
+Q \susbeteq G(P) <=3D=3D> F(Q) \susbeteq P
+
+If we write this in logical form and plug in definitions of F and G we get:
+
+Q(x) |- P(x,x) =C2=A0[x : A]
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D
+Q(x), x=3Dx' |- P(x,x') [x,x' : A]
+
+which is more or less what you wrote.
+
+With kind regards,
+Andrej
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

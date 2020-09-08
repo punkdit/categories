@@ -1,0 +1,120 @@
+Path: news.gmane.org!not-for-mail
+From: jesse@andrew.cmu.edu (Jesse F. Hughes)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction
+Date: 30 Oct 2000 18:09:53 -0500
+Lines: 86
+Approved: news@gmane.org
+Message-ID: <87wveqsz7i.fsf@phiwumbda.dyndns.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018012 32365 80.91.229.2 (29 Apr 2009 15:13:32 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:32 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct 30 20:13:46 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9UNZIq00795
+	for categories-list; Mon, 30 Oct 2000 19:35:18 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mail-Copies-To: poster
+In-Reply-To: Dusko Pavlovic's message of "Sun, 29 Oct 2000 19:38:08 -0800"
+User-Agent: Gnus/5.0807 (Gnus v5.8.7) XEmacs/21.1 (Carlsbad Caverns)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 33
+Status: O
+Content-Length: 3526
+Original-Lines: 84
+Xref: news.gmane.org gmane.science.mathematics.categories:1675
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1675>
+
+Dusko Pavlovic <dusko@kestrel.edu> writes:
+
+> 
+> > I have always considered the statement regarding existence of a
+> > unique function f to be the principle of recursion.
+> 
+> the recursion schema, as defined by godel in 1930, is a bit
+> stronger: g is allowed to depend on n, not only on f(n).
+
+Yes, I overlooked that point. But, is that principle any stronger than
+the principle you called induction?  I think it isn't, given products
+in our category.  
+
+Let N be the initial successor algebra.  Let c be in X and 
+g:N x X -> X. To define a function f such that
+f(0) = c
+f(n+1) = g(n,f(n)),
+I just have to cook up the appropriate structure map for N x X.  I
+think that
+<s o p_1,g> + <0,c>: (N x X) + 1 -> N x X
+does it (p_1 is the projection map).  Let <k,f>: N -> N x X be the
+unique function guaranteed by initiality.  One can show that f
+satisfies the equations above.  (Along the way, one shows that k is
+the identity.)
+
+(To add other parameters, one needs exponentials.  For instance,
+given
+h:A -> X
+g:A x N x X -> X
+to show that there is a unique f such that
+f(a,0) = h(a)
+f(a,n+1) = g(a,n,f(a,n))
+requires a structure map for (X x N)^A, if I'm not mistaken.)
+
+This shows that Godel's principle of recursion is equivalent to the
+statement "N is an initial algebra".  I.e., it is equivalent to the
+statement that there is a unique f such that
+f(0) = c
+f(n+1) = g(f(n)).
+
+> > The principle of
+> > induction is, in my mind, the weaker principle that says that if a
+> > property holds of 0 and is closed under successor, then it holds of N.
+> 
+> in a topos, this principle is equivalent with the above schema. and
+> the schema itself, of course, just means that [0,s] : 1+N --> N is
+> initial: any algebra [c,g] : 1+X --> X induces a unique homomorphism
+> f : N-->X. using the exponents, we do recursion.
+
+I am confused by this statement.  My principle of induction for
+successor algebras [0_X,s_X]:1+X -> X is this: For all subsets P of X,
+if 0_X is in P and P is closed under s_X, then P = X.  (Categorically,
+an algebra satisfies the principle of induction if it contains no
+proper subalgebras.)
+
+Consider the successor algebra X={x}, with the evident structure map 
+[0_X,s_X]:1+X -> X.  
+Surely, for every subset P of X, if 0_X is in P and P is closed under
+s_X, then P = X.  In other words, the algebra X satisfies the principle
+of induction in the sense that I gave.  This seems to contradict the
+equivalence you mention.  What am I overlooking?
+
+> as i said last time, induction and recursion have been in heavy use
+> for so long, that they really don't leave much space for redefining,
+> even for the sake of symmetry with coinduction and corecursion.
+
+I quite agree, but I didn't redefine induction, as far as I am
+concerned.  I learned that induction was the proof principle as I
+stated it and that recursion is the principle regarding the definition
+of functions many years ago.  I think that our disagreement in
+definitions is a disagreement that one will find elsewhere in the
+literature.  I also suppose that the term coinduction (as I use it)
+arose from the definition of induction that I offered.
+
+Are others unfamiliar with the distinction between induction and
+recursion as I drew it?  I assumed it was a more or less conventional
+distinction.  If my use is really idiosyncratic, then I'd be happy to
+drop it.
+
+-- 
+Jesse Hughes
+"Such behaviour is exclusively confined to functions invented by
+mathematicians for the sake of causing trouble."
+ -Albert Eagle's _A Practical Treatise on Fourier's Theorem_
+
+

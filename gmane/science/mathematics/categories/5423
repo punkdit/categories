@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Mike Stay <metaweta@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: additions
+Date: Thu, 24 Dec 2009 08:25:17 -0800
+Lines: 73
+Approved: news@gmane.org
+Message-ID: <E1NOGTv-0002nE-Je@mailserv.mta.ca>
+References: <E1NLRqY-0000cU-Ty@mailserv.mta.ca>
+Reply-To: Mike Stay <metaweta@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1261773455 15038 80.91.229.12 (25 Dec 2009 20:37:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 25 Dec 2009 20:37:35 +0000 (UTC)
+To: =?ISO-8859-1?Q?Carsten_F=FChrmann?= <c.fuhrmann@bath.ac.uk>
+Original-X-From: categories@mta.ca Fri Dec 25 21:37:24 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NOGua-00042F-Ds
+	for gsmc-categories@m.gmane.org; Fri, 25 Dec 2009 21:37:24 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NOGTv-0002nE-Je
+	for categories-list@mta.ca; Fri, 25 Dec 2009 16:09:51 -0400
+In-Reply-To: <4B3368C1.3000800@bath.ac.uk>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5423
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5423>
+
+2009/12/24 Carsten F=FChrmann <c.fuhrmann@bath.ac.uk>:
+> Dear Mike,
+>
+>> Thanks, everyone for your replies! =A0Many of you suggested the same
+>> approach as Steve, functional programming and monads. =A0At Google,
+>> however, we use Java, C++ and Python (collectively "JCP") for programs
+>> that run on our servers and JavaScript for programs that run in our
+>> webpages. =A0So there's not a lot of call for learning a functional
+>> programming language either.
+>
+> It might be worth noting that JavaScript is a functional language.
+> (It has a lambda operator ("function"), closures, and can pass
+> functions as parameters and return values.) However, because it has
+> eager evaluation, the whole monad business does not apply, at least not
+> in the way it applies to Haskell.
+>
+> In fact, JavaScript is probably the most widely used functional language
+> on the planet.
+
+I think you're confusing the existence of first-class functions with
+functional programming.  Functional programming avoids state and
+mutable data. It emphasizes the application of functions, in contrast
+to the imperative programming style, which emphasizes changes in
+state.
+
+It's certainly possible to write functional programs in any of these
+languages, but it takes a lot of conscious effort--in fact, I'd say
+it's harder to write a functional program in JavaScript because of the
+myriad of strange ways state changes occur.
+
+I'm not sure what you mean by "the whole monad business does not
+apply".  There are lots of monads, each doing something different.
+There are several monadic parsers I know of in JavaScript, for
+instance.  Here's a monad for making JavaScript be lazily evaluated
+instead of eager:
+  function e(x) { return function() { return x; } }
+  function m(x, y) { return function () { return x()(y()); } }
+
+> But there are two strange phenomena:
+>
+> - Functional-programming experts keep on overlooking JavaScript (probably
+> because it is so ugly from a theorists point of view)
+
+Probably because it's not functional.
+
+> - Most professional JavaScript programmers fail to see the enormous
+> functional potential of JavaScript.
+>
+> It is a very strange situation: the whole world uses a functional languag=
+e
+> and almost nobody is aware of it.
+>
+> Anyway, even though I am very category-prone, I must admit that category
+> theory might be a very tough sell for the JavaScript crowd :)
+
+Yes--most JavaScript development is done by amateurs who cut and paste
+someone else's code and try to tweak it to do what they want.  They
+are not mathematicians.
+
+> Best,
+> =A0Carsten
+>
+
+
+
+--=20
+Mike Stay - metaweta@gmail.com
+http://math.ucr.edu/~mike
+http://reperiendi.wordpress.com
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

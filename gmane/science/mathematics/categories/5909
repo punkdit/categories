@@ -1,0 +1,102 @@
+Path: news.gmane.org!not-for-mail
+From: "Peter LeFanu Lumsdaine" <plumsdai@andrew.cmu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equality and fibration
+Date: Tue, 1 Jun 2010 08:57:16 -0400
+Lines: 65
+Approved: news@gmane.org
+Message-ID: <E1OJnTI-0005lZ-3L@mailserv.mta.ca>
+References: <E1OIjRj-0006J0-RS@mailserv.mta.ca>
+Reply-To: "Peter LeFanu Lumsdaine" <plumsdai@andrew.cmu.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1275485714 10290 80.91.229.12 (2 Jun 2010 13:35:14 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 2 Jun 2010 13:35:14 +0000 (UTC)
+Cc: "Categories list" <categories@mta.ca>
+To: "=?iso-8859-1?Q?Andr=E9?=" <joyal.andre@uqam.ca>
+Original-X-From: categories@mta.ca Wed Jun 02 15:35:13 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OJo6C-0007r9-1s
+	for gsmc-categories@m.gmane.org; Wed, 02 Jun 2010 15:35:12 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OJnTI-0005lZ-3L
+	for categories-list@mta.ca; Wed, 02 Jun 2010 09:55:00 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5909
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5909>
+
+
+
+On Mon, May 31, 2010 23:26, Joyal, Andr=E9 wrote:
+
+> Dear category theorists,
+>
+> I have not been able to define the notion of Grothendieck fibration
+> without using the equality relation between the objects of the base
+> category. Can you?
+
+In a dependent language (eg ML, FOLDS, etc), this can be done.  The twist
+is that it is _not_ just some extra algebraic structure on a functor p: \=
+E
+--> \C; for an arbitrary such p, as you say, the lifting conditions can't
+be specified without referring to equality of objects.  Rather, it first
+of all requires the objects and arrows of \E to be dependent types over
+the objects of \C; then, the "equalities" needed become part of the
+_typing specification_ of a lifting.  This refinement of the definition
+complicates the theory a little, but is a quite natural requirement, I
+think.  (Just as in this setting, a fibration of types is no longer an
+arbitrary map f:A --> B, but rather a dependent type A over B.)
+
+=3D=3D=3D=3D=3D
+Precisely, you can define it as follows:
+
+Say \C is a category (i.e. a type C_0, and a dependent type C_1(a,b), for
+a,b: C_0, an "equality" type on C_1, and appropriate composition/identity
+operations).
+
+The a (cloven) Grothendieck fibration \E over \C is:
+
+a dependent type E_0(a), for a: C_0;
+a dependent type E_1(a,b;i,j), for a,b: C_0, i:E_0(a), j:E_0(b)
+(we can write just E_1(i,j), since a,b are implicit in the types of i,j);
+
+operations making this a category over E_0;
+
+and an operation which, given an arrow a,b:C_0, f:C_1(a,b), and a lift
+j:E_0(b) of the target, returns liftings i:E_0(a) and \bar{f}:E_1(i,j),
+with p(\bar{f}) =3D f, and appropriately cartesian.  (The definition of
+cartesian similarly doesn't need to refer to equality of objects, since
+they're included in the typings.)
+=3D=3D=3D=3D=3D
+
+If we were dealing with higher categories, and hence didn't have equality
+on C_1, then we would require E_1 to be a dependent type not just over
+a,b:C_0 and i:E_0(a), j:E_0(b), but also over f:C_1(a,b), so the conditio=
+n
+that \bar{f} is a lift of f would again be part of its typing.  This is
+reminiscent of latching/matching objects etc...
+
+Cheers,
+-Peter.
+
+
+--=20
+Peter LeFanu Lumsdaine
+Carnegie Mellon University
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

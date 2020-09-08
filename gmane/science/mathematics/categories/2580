@@ -1,0 +1,282 @@
+Path: news.gmane.org!not-for-mail
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: graphics: comment and a query
+Date: Sat, 28 Feb 2004 10:15:28 -0000
+Lines: 248
+Approved: news@gmane.org
+Message-ID: <021701c3fde4$3ae0fce0$01ee4c51@brown1>
+References: <Pine.LNX.4.44.0402271134510.21323-100000@prism.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018759 4818 80.91.229.2 (29 Apr 2009 15:25:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:25:59 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sat Feb 28 11:09:16 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 28 Feb 2004 11:09:16 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 1Ax65R-0000Gv-00
+	for categories-list@mta.ca; Sat, 28 Feb 2004 11:09:05 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 46
+Status: O
+Content-Length: 9820
+Original-Lines: 247
+Xref: news.gmane.org gmane.science.mathematics.categories:2580
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2580>
+
+reply to r.brown@bangor.ac.uk
+
+Comment: We are redoing the pictures in my old Topology book for reprinting
+and find
+Overpic (a standard tex package) convenient to superimpose Latex math code
+onto postscript pictures produced from a graphics package. An advantage is
+the ease in such a package of putting in colour and variable shading.
+
+Sometimes the dvi or postscript output from the file does not work, yet the
+dvi to pdf does, and you get a good pdf file. (see comments on overpic on
+the web).
+
+Query: I would like to use color in xypic, particularly xymatrix, but the
+reference guide is difficult to follow on this point. My dvi viewer (YAP)
+has no problem  with color. Can color be used in xymatrix? I would be
+grateful for some sample xymatrix or xy code using color for different
+arrows in a commutative diagram, such as those in the following file.
+
+
+Ronnie Brown
+http://www.bangor.ac.uk/~mas010
+
+
+
+
+%vktdiagrams.tex  16/02/04 19/02/04
+
+
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage{amsmath,amssymb,geometry,xypic,epic,eepic,color}
+\xyoption{all}  \geometry{textwidth=3D17cm}
+\def\io{^{-1}}
+\def\red{\textcolor{red}}
+
+\begin{document}
+
+\today
+
+\noindent{\bf van Kampen diagrams}
+
+This is a method of deducing consequences of relations, and indeed
+can be used to write an element as a consequence of the relations.
+
+\noindent { \sc Example 1:} The quaternion group of order 8 is
+usually presented in the form $$Q_8 =3D gp\langle x,y \mid x^4,
+x^2y^{-2}, y^{-1}xyx \rangle.$$ However the following diagram
+shows that the relation $x^4=3D1$ is a consequence of the other two
+relators. Set $r=3Dx^4, s=3Dx^2y^{-2}, t=3Dy^{-1}xyx$.
+
+$$\def\labelstyle{\textstyle}\xymatrix@R=3D1pc{A  \ar @{}[dr]  | s \ar =
+@{-}[rrr] | \tip ^ x &&& B \ar   @{-}[dddd] | \tip ^ x\\
+& E \ar   @{-}[urr] | \tip _ y \save[]+<4.5em,-1.3ex>*{ t}
+\restore
+ \save[]+<1em,-5ex>*{{s^{-1}} } \restore&& \\
+&& F \ar @{-} [ul]  | \tip _x  \ar @{-} [ddr]  | \tip ^y & \\ & G
+\save[]+<0.1em,2ex>*{ \bullet} \restore
+\ar @{} [drr] |t \ar @{-}[ur] | \tip _ x \ar @{-}[dl] | \tip ^ y && \\
+H  \save[]+<-1em,-0.5ex>*{\bullet}\restore\save[]+<0.4em,3.5ex>*{
+\bullet} \restore \save[]+<1.3em,0.8ex>*{ \bullet} \restore\ar
+@{-}[uuuu] | \tip _ x \ar @{-}[uuur] | \tip _ y && &
+\save[]+<-0.3em,3ex>*{ \bullet} \restore K\ar @{-}[lll] | \tip ^ x
+}
+$$
+
+In this diagram, each cell has to have a base point, represented
+in the diagram by a $\bullet$, which is where the reading of the
+boundary starts,  and an orientation. Here each label is read
+clockwise, and this explains why we have an $s$ and $s^{-1}$,
+since the latter is read counterclockwise.
+
+Now we have to show how we can deduce from this diagram the
+expression we want.
+
+We take the outside loop  starting from $H$ (which has a base
+point for the outside `cell') and then change it to traverse the
+boundary of each internal cell, obtaining the rule which you can
+easily verify:
+
+$$xxy\io y\io. y x\io x\io y. y\io xyx. x\io. y\io xyx .x =3D x^4.
+$$
+This can be reread as:
+$$s. y x\io x\io y . t. x\io. t.x=3Dx^4.$$
+But $y x\io x\io y=3D yx\io x\io .yyx\io x\io . xxy\io =3D (s \io )
+^{xxy\io}$. So our final result is that
+$$ s.(s \io )^{xxy\io}.t. t^x. r\io  $$is an identity among
+relators, or, alternatively, shows in a precise way how $x^4$ is a
+consequence of the other relators.
+
+\noindent {\sc Example 2:} To see the start of this process,
+consider the diagram: \red{
+$$\def\labelstyle{\textstyle}\xymatrix @R=3D3pc {B
+\ar @{-}@/^3pc/ [rr] | \tip ^d  \save[]+<3.2em,4ex>*{ t} \restore
+ \save[]+<1em,1ex>*{ \bullet} \restore\ar @{-} [rr] |\tip _b && C \ar =
+@{-} [dl] |\tip ^c \\
+& A \ar @{-} [ul] | \tip  ^a \save[]+<0em,5.5ex>*{s}  \restore
+\save[]+<0em,1.5ex>*{\bullet}\restore
+\save[]+<-1em,-0.5ex>*{\bullet}\restore & }
+$$}
+We write $\delta s=3D abc, \; \delta t =3D db\io$. Hence
+$$ adc =3D abc. c \io b \io . db\io .bc =3D (\delta s)( \delta (
+t^{bc})).$$ Of course $t^{bc}$ makes sense in the context of
+crossed modules of groupoids, since $t$ is based at $B$ whereas
+$t^{bc}$ is based at $A$.
+
+One context for van Kampen diagrams is clarified by the notion of
+{\it shelling} of such a diagram. This is a sequence of
+2-dimensional subcomplexes $K_0,K_1, \ldots, K_n$ each of which is
+formed from a union of 2-dimensional cells, with $K_0$ consisting
+of a chosen basepoint $*$, $K_1$ being a 2-cell $s_1$ with $*$ on
+its boundary, and such that for $i=3D2, \ldots, n$, $K_i$ is
+obtained from $K_{i-1}$ by adding a 2-cell $s_i$ such that $s_i
+\cap K_{i-1}$ is a non empty union of 1-cells which form a
+connected and 1-connected set, i.e. a path. Such a shelling will
+yield  a formula for the boundary of $K_n$ in terms of the
+boundaries of each individual cell, provided each cell is given  a
+base point and orientation.
+
+Here is a clear way of getting the formula (explained by Chris
+Wensley):
+
+Choose $* =3D K_0$ as base point for all the $K_i$.
+The relator for $K_0$ is the trivial word.
+If $B_1$ is the base point for $s_1$ and $P_1$ is the anticlockwise path
+around $s_1$ from $B_1$ to $*$ and $w_1$ is the word in the generators
+read off along $P_1$, then the relator for $K_1$ is =
+$\delta({s_1}^{w_1})$.
+For $i \geqslant 2$,
+let $B_i$ be the base point for $s_i$,
+and let $U_i, V_i$ be the first and last vertices in the intersection
+$s_i \cap K_{i-1}$ met when traversing the boundary of $K_{i-1}$
+in a clockwise direction
+(so that the intersection is a path $U_i \ldots V_i$).
+Then if $B_i$ lies on $U_i \ldots V_i$ let $P_i$ be the path
+$B_i \ldots U_i \ldots *$,   otherwise let $P_i$ be the path
+$B_i \ldots V_i \ldots U_i \ldots *$
+(traversing the boundary of $s_i$ in an anticlockwise direction
+and the boundary of $K_{i-1}$ clockwise).
+If $w_i$ is the word in the generators read off along $P_i$ then
+$$
+(\text{relator  for }  K_i) =3D (\text{relator for }
+K_{i-1}).\delta({s_i}^{w_i}).
+$$
+In Example 2,  $w_2 =3D bc$.
+
+
+
+\noindent {\sc Example 3:}
+
+The next example is the non obvious fact that the relators
+$$r=3D x^2yxy^3,\;\;  s=3D y^2xyx^3$$
+have $x^7$ as a consequence.  This follows from the next picture.
+We leave it as an exercise to check that base points and
+orientations can be assigned, and, harder, to give $x^7$ as a
+consequence of $r,s$. On the other hand, it is not clear what the
+use of such a formula would be.
+
+$$\def\labelstyle{\textstyle} \xymatrix@M=3D0.1pc =
+@C=3D2.7pc@R=3D1.3pc{&&&&\circ \ar [dr] |y
+\ar [ddllll] |x  &&&& \\
+&&& \circ \ar [ur] |y && \circ \ar [dr] |y&&& \\
+\circ \ar [ddddddd] _x&& \circ\ar [ur] |x\ar @{} [rrrr] |r&&&&
+\circ\ar [dr] |x && \circ \ar
+[uullll] _x \\
+& \circ \ar [ur] |y \ar [dr] |x &&&&&& \circ \ar@{-} [llllll]|(0.7)\tip  =
+^x \ar [dddddd] ^y& \\
+&&\circ \ar [dr] |y \ar @{} [rrrr] |{s^{-1}} & &&& \circ \ar [ur] |x && =
+\\
+\ar @{} [r] |{s^{-1}}&&& \circ \ar [dr] |y && \circ \ar [ur] |y &&\ar =
+@{}[r] |{s^{-1}}&\\
+ &\ar @{} [rrr] |r&&& \circ \ar [dl] |y \ar [ur] |x  &\ar @{} [rr] |r&&& =
+\\
+&& &\circ \ar [dl] |x && \circ \ar [ul] |x &&& \\
+&& \circ \ar [dl]|x \ar @{} [rrrr] |{s^{-1}} &&& &\circ \ar [ul]|y &&\\
+ \circ \ar [r] _x & \circ  \ar [uuuuuu] ^y\ar
+[rrrrrr] _x &&&&&& \circ \ar [r] _x
+ \ar [ul] |y  & \circ\ar [uuuuuuu] _x \\
+&&&&&&&& }
+$$
+
+
+
+These examples are from David Johnson's book on `Combinatorial
+group theory'. Other examples on van Kampen diagrams are in that
+book, and may also be found by a web search. The geometric and
+metric analysis of van Kampen diagrams has proved important in
+aspects of combinatorial group theory.
+
+There are in the literature van Kampen diagrams which are not
+shellable. The general context for this can be put as follows.
+
+A  {\it complete generalised van Kampen diagram} is a finite
+regular $CW$-structure $K$ on a  compact  subset of the sphere
+$S^2$.  {\it Regularity} here means that each attaching map $f_s:
+(S^1,1) \to (K^1,K^0)$ of a 2-cell $s$ is a homeomorphism into. By
+omitting one 2-cell $s_\infty$ from $K$ and using stereographic
+projection we can also regard $K\setminus s_\infty$ as a subset of
+the plane $\mathbb{R}^2$. The projection of $K\setminus s_\infty$
+gives a planar van Kampen diagram.
+
+Whitehead's theorem says essentially that $\Pi(K,K^1,K^0)$ is the
+free crossed $\pi_1(K^1,K^0)$-module on the characteristic maps of
+the 2-cells of $K$.=20
+
+
+\end{document}
+\setlength{\unitlength}{1mm}
+\begin{picture}(50,30)(10,10)
+\linethickness{1pt}
+ \put(90,0){\circle{20}}
+ \put(90,10){\circle*{1}}
+\put(100,){\circle*{1}} \put(90,-10){\circle*{1}}
+ \spline(90,10)(94,15)(102,8)(104,4)(100,0)
+
+\end{picture}
+
+
+> Can one formulate the shelling to give a formula? If the cells added =
+are
+> s_1, ...,s_n then you still need to choose a path from * to the base =
+point
+> of s_2 after going round s_1, and the idea is to use the intersection =
+of s_1
+> and s_2. ....
+
+Yes - here is the formula:
+
+Choose * =3D B_1 =3D base point for s_1 as base point for all the K_i.
+Then relator for K_1 =3D \delta(s_1). If  B_i  is the base point for
+s_i,
+    U_i is the first vertex in the intersection met when traversing
+        the boundary of K_{i-1} in a clockwise direction,
+    V_i is the last (traversing clockwise) vertex in the intersection
+       (so that the intersection is a path from U_i to V_i)
+then if B_i lies on U_i..V_i let P_i be the path B_i..U_i..*
+     otherwise let P_i be the path B_i..V_i..U_i..*
+    (traversing the boundary of s_i in an
+     anticlockwise direction and the boundary of K_{i-1} clockwise)
+and let w_i be the word in the generators read off along P_i. Then
+(relator for K_i) =3D (relator for K_{i-1}).\delta(s_i^{w_i}) In
+your example 2,  w_2 =3D bc.
+
+Chris
+
+
+
+
+

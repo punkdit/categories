@@ -1,0 +1,852 @@
+Subject: Re: graphs ad spaces
+Date: Sat, 06 Feb 93 21:32:04 PST
+From: pratt@CS.Stanford.EDU
+
+
+	From: "Allen Knutson" <aknaton@math.Princeton.EDU>
+	Date: Thu, 28 Jan 93 19:31:28 EST
+
+	> Whereas an edge is a subobject, an open set is a congruence class.
+
+	Mm? I would've called a closed set a congruence class - putting on an
+	equivalence relation should be like taking a (Hausdorff) quotient, which
+	unifies a closed subset, not an open one.
+
+	So I still think open sets are a red herring for your purposes.
+
+Not at all.  The distinction between open and closed sets is "static"
+in the sense that it applies only to the objects of Top, not their
+morphisms.  That the inverse image of a continuous function takes open
+sets to open implies that it takes closed sets to closed, *and
+conversely*.
+
+The generalization from topological spaces (T,O) to hyperspaces (T,O)
+(still a set of *points* paired with a set of its subsets called the
+*open sets*), obtained by dropping the requirement that unions and
+finite intersections of opens are open, removes even the static
+distinction.  It is then quite arbitrary whether one calls the
+distinguished subsets of a hyperspace open or closed.  I chose the
+former, but I'm open to arguments for calling them closed.
+
+This symmetry of open and closed does not obtain for hypergraphs (V,E),
+whose objects are as for hyperspaces (but now viewed as a set of
+*vertices* paired with a set of its subsets called the *edges*) but
+whose morphisms f:V->V' are such that the *direct* image of an edge in
+E is an edge in E'.  This does not imply that the direct image of the
+complement of an edge is the complement of an edge.  Whereas both
+inverse and direct images are complete semilattice maps, the inverse
+image preserves complements (i.e. is a CABA map) while the direct image
+instead preserves atoms.  It is the preservation of complements that
+gives both open and closed sets the characteristics of a congruence
+class.  The preservation of atoms makes edges look instead like
+subalgebras, but it does not make complements of edges look like
+subalgebras.  This is a crucial difference between edges and open sets.
+--
+Vaughan Pratt
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: ideals in additive categories
+Date: Wed, 10 Feb 93 21:49:12 -0500
+From: "Allan Adler" <ara@martigny.ai.mit.edu>
+
+Let C be an additive category. For every pair X,Y of  objects of C,
+let A(X,Y) be a subgroup of the additive group Hom(X,Y). Assume
+that for every  quadruple W,X,Y,Z of objects of C, we have
+Hom(W,X)xA(X,Y)xHom(Y,Z) --> Hom(W,Z) (by composition ) maps into
+A(W,Z). That seems like having an ideal and it seems like
+I should then be able to form a category in which the set of
+morphisms from  an object X to an object Y is Hom(X,Y)/A(X,Y).
+
+Is there a name for such a system A and is there a name for
+the construction of modding out by A? Where is this formalized?
+
+Allan Adler
+ara@altdorf.ai.mit.edu
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: ideals in additive categories
+Date:         Mon, 15 Feb 93 16:47:50 CET
+From:         max kelly <GMKELLY@Vm1.rice.ucl.ac.be>
+
+see "On the radical of a category" by G.M.Kelly, J.Austral.Math.Soc.(?),
+around 1962.
+Max Kelly.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: ideals in additive categories
+Date: Mon, 15 Feb 93 11:35:33
+From: sjv@doc.ic.ac.uk (Steve Vickers)
+
+> Let C be an additive category. For every pair X,Y of  objects of C,
+> let A(X,Y) be a subgroup of the additive group Hom(X,Y). Assume
+> that for every  quadruple W,X,Y,Z of objects of C, we have
+> Hom(W,X)xA(X,Y)xHom(Y,Z) --> Hom(W,Z) (by composition ) maps into
+> A(W,Z). That seems like having an ideal and it seems like
+> I should then be able to form a category in which the set of
+> morphisms from  an object X to an object Y is Hom(X,Y)/A(X,Y).
+> 
+> Is there a name for such a system A and is there a name for
+> the construction of modding out by A? Where is this formalized?
+> 
+> Allan Adler
+
+(I assume by "additive category" you just mean Abelian-group-enriched 
+category. These are sometimes called "ringoids" on the analogy of the 
+generalization from groups to groupoids.)
+
+This is just the start of a well-known theory of ringoids whose basic 
+message is that they behave very much like non-commutative rings. I'd call 
+the systems A you refer to just ideals. The main reference is Barry 
+Mitchell's "Rings with several objects", pp. 1-161 in Advances in 
+Mathematics 8 (1972), and I'm sure you'd find the construction there. I 
+haven't checked, but it's conceivable it's also in N. Popescu's "Abelian 
+categories with applications to rings and modules" (LMS Monographs 3, 
+Academic Press, London, 1973). There is also a discussion and some results 
+in my thesis.
+
+Incidentally, one way of viewing the theory is that it says that modules and 
+homomorphisms are "really" just functors and natural transformations (and I 
+guess that's what you see in Kelly's book on enriched categories). However, 
+I've also found it helpful to see it the other way round: even in the 
+non-additive context, it lets you see some functors (specifically functors 
+to Sets, e.g. presheaves) and natural transformations as modules and 
+homomorphisms, and that's helpful in understanding tensor products of 
+functors, flatness, etc.
+
+In "Quantales, observational logic and process semantics", with Samson 
+Abramsky (shortly to appear in Mathematical Structures in Computer Science), 
+we used "quantaloids", or sup-lattice enriched categories, and there are 
+similar results there.
+
+A good book about how to treat categories as algebras (though it doesn't 
+cover the additive case) is Philip Higgins' "Notes on categories and 
+groupoids" (Van Nostrand Reinhold, London, 1971).
+
+Steve Vickers.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: ftp sites
+Date: 22 Feb 93   14:23:15 EDT
+From: Charles Wells <cfw2@po.cwru.edu>
+
+Has anyone compiled a list of papers related to category theory
+available by ftp?  
+
+If not, I am willing to keep such a list if everyone will send
+me the locations where the papers are.  It would be useful if
+you sent the ftp address, the directories where papers related
+to category theory are, and the names of any files in those
+directories that describe the papers therein.  Any suggestions
+about better ways to do this are welcome.
+
+
+Charles Wells
+Department of Mathematics
+Case Western Reserve University
+10900 Euclid Avenue
+Cleveland, OH 44106-7058
+216-368-2893
+
+
+--
+Charles Wells
+Department of Mathematics, Case Western Reserve University
+University Circle, Cleveland, OH 44106-7058, USA
+216 368 2893
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: my new address
+Date: Tue, 23 Feb 93 11:15:04 EST
+From: cbj@socs.uts.EDU.AU
+
+I've left Edinburgh for a permanent position in 
+Sydney, Australia. Please send any correspondence to:
+
+Dr C. Barry Jay
+(Computing Methods Unit)
+School of Computing Sciences
+University of Technology, Sydney
+PO Box 123 Broadway NSW 2007
+Australia
+
+phone: ++(61)(2) 330-1814
+e-mail: cbj@socs.uts.edu.au
+
+Barry Jay
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: ftp sites
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Tue, 23 Feb 1993 17:20:59 +0000
+
+		FTP sites - directory & mirroring
+
+Charles Wells asked earlier whether anyone has a list of ftp sites
+containing category theory papers, and offered to maintain one.
+
+It is possible to do better than this, and "mirror" the files,
+ie copy them automatically.  Lee McLoughlin, who maintains an archive
+of general software in my department, SRC.doc.ic.ac.uk has written
+a program to do this, available as /packages/mirror/mirror.shar from there.
+
+[Please note that this is NOT the same archive as contains papers by
+my colleagues in the Theory & Formal Methods section and my TeX macros:
+that is THEORY.doc.ic.ac.uk]
+
+All that is needed is to collect the relevant information in an appropriate
+form.  I suggest that this is also a good place to keep address information
+in a machine readable format.  My entry in this database reads:
+
+package=TaylorP
+        comment=Papers by Paul Taylor at Imperial
+        site=theory.doc.ic.ac.uk
+        remote_dir=/theory/papers/Taylor
+        local_dir=TaylorP
+        # email=<pt@doc.ic.ac.uk>
+        # phone=+44 71 589 5111 x 5057
+        # fax=+44 71 581 8024
+        # address=Dept of Computing, Imperial College, London SW7 2BZ, UK
+
+This is to be found in the file /theory/papers/mirror-file
+in the theory archive.  This file forms part of the configuration
+data needed by mirror; other sites should provide similar files.
+
+It would be possible, I suppose, for me to extract this information for
+other sites by searching my "categories" and "types" mail from past years
+and exploring the various ftp archives, but I consider this is something
+that sites should do for themselves.
+
+So, if you use an ftp archive for your papers, please compile an entry
+in the above format, and put it together with the other files for the
+users of the same archive in an appropriate place. Then mail me either
+the file itself or a pointer to it in the archive. I will then keep these
+files in the directory /theory/FTP-sites on my archive, for general use,
+as well as using them to mirror your files on a weekly basis.
+
+                        B U T
+
+This will only work if people are organised about the maintainance of their
+archives.  In particular, there should be one directory(-tree) per person.
+Don't mix files by several authors in the same directory.
+
+This will be a very useful resource if we just put in a little bit of
+work to set it up.
+
+Paul Taylor
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Structures Directory
+Date:        Tue, 23 Feb 93 13:26:33 AST
+From: Vaughan Pratt <pratt@CS.Stanford.EDU>
+
+Time to post a fresh copy of the structures directory.  Please let me
+know of corrections and additions (are there people you know that you
+think should be in this directory?)
+
+Vaughan Pratt
+
+
+#     Structures Directory -- Email addresses of structure theorists
+#     Release 4.0, February 23, 1993
+#     Master copy: Boole.Stanford.EDU:^ftp/pub/structdir
+#     Maintainer: Vaughan Pratt, pratt@cs.stanford.edu
+#
+#
+# This is an email directory of logicians, algebraists, and programming
+# linguists working primarily on structural problems in mathematics and
+# computer science.  It is organized as a Unix aliases file and
+# may be appended directly to the aliases file that normally resides in
+# /usr/lib or /etc.  The most recent release of this directory may be
+# obtained at any time by anonymous ftp from Boole.Stanford.EDU as the
+# file /pub/structdir
+#
+# The purpose of this directory is to permit those listed in it to be
+# easily contacted individually by email.
+#
+# NOTICE: Please do not use any email address obtained from this
+# directory for other than the purpose stated above without first
+# obtaining the consent of the owner of that address.  Such proscribed
+# uses include adding an address obtained from this directory to a
+# mailing list used for broadcast mailings, and noting the fact of
+# inclusion in this directory in a profile of the included individual.
+#
+# The list observes the following conventions.  Column 1 is the alias,
+# which usually consists of the surname prefixed when necessary for
+# disambiguation with an initial or the whole first name.  It starts in
+# character column 1 and is restricted to the 26 characters a-z (no
+# capitals, digits, or punctuation), and usually includes any preceding
+# "de" or "van".  Column 2, which starts in character column 17, is the
+# email address in lower case with no %'s, and is either a regular
+# internet domain address, a .bitnet address, or a uucp address in !
+# format.  Column 3 is "(Forename" and column 4 the matching "Surname)".
+# The list is sorted by surname using the Unix sort command in the form
+# `sort +3` (sort ignoring the first three columns).  The "de" or "van"
+# if any is placed in whichever of columnn 3 or 4 achieves its owner's
+# preferred alphabetization.  Column 3 starts as close to column 57 as
+# possible subject to the other constraints and column 4 is separated
+# from column 3 by one space.  There are no tabs in the file, and no line
+# is longer than 79 characters.
+#
+# Although the directory contains no repeated aliases (column 1 entries),
+# the aliases file to which you append it may already contain aliases
+# that also appear here.  You should be aware that the resulting
+# conflicts will not be reported as such, but rather that the mailing
+# programs will select either the last or first repeated alias as the one
+# to use depending respectively on whether or not your mail system
+# preprocesses the aliases file for faster retrieval.
+#
+#                                   Vaughan Pratt
+#                                   Computer Science Department
+#                                   Stanford University
+#                                   Stanford, CA 94305
+#                                   pratt@cs.stanford.edu
+#                                   415-723-2943
+
+abadi:          ma@src.dec.com                          (Martin Abadi)
+abiteboul:      abitebou@inria.inria.fr                 (Serge Abiteboul)
+abramsky:       sa@doc.ic.ac.uk                         (Samson Abramsky)
+aceto:          luca@cogs.sussex.ac.uk                  (Luca Aceto)
+aczel:          petera@cs.man.ac.uk                     (Peter Aczel)
+adamek:         adamek@unipas.fmi.uni-passau.de         (Jiri Adamek)
+adams:          useradms@mtsg.ubc.ca                    (Bob Adams)
+adelman:        murray@macadam.mpce.mq.edu.au           (Murray Adelman)
+adler:          ara@lom1.math.yale.edu                  (Alan Adler)
+ait-kaci:       hak@decprl.dec.com                      (Hassan Ait-Kaci)
+aitchison:      iain@mundoe.munnari.oz.au               (Iain Aitchison)
+altenkirch:     alti@dcs.ed.ac.uk                       (Thorsten Altenkirch)
+amadio:         amadio@dmi.ens.fr                       (Roberto Amadio)
+ambler:         sja@dcs.qmw.ac.uk                       (Simon Ambler)
+anderson:       anderson@bright.math.uoregon.edu        (Frank Anderson)
+andreka:        h2644and@ella.hu                        (Hajnal Andreka)
+apt:            apt@cs.utexas.edu                       (Krzystof Apt)
+arnold:         arnold@geocub.greco-prog.fr             (Andre Arnold)
+(artemov:       art@log.mian.su                         Sergei Artemov)
+artemov:        sergei@artemov.mian.su                  (Sergei Artemov)
+asperti:        andrea.asperti@inria.fr                 (Andrea Asperti)
+astesiano:      astes@igecuniv.bitnet                   (Egidio Astesiano.)
+atkinson:       atkinson@math.toronto.edu               (Derek Atkinson)
+avron:          aa@math.tau.ac.il                       (Arnon Avron)
+bach:           rene@tech.ascom.ch                      (Rene Bach)
+baker:          kab@math.ucla.edu                       (Kirby Baker)
+baranoff:       sergei@hm.iias.spb.su                   (Sergei Baranoff)
+barr:           barr@triples.math.mcgill.ca             (Michael Barr)
+bartle:         rgb@math.ams.com                        (Bob Bartle)
+barwise:        barwise@phil.indiana.edu                (Jon Barwise)
+beck:           beck@mssun7.msi.cornell.edu             (Jon Beck)
+beeson:         beeson@ucscc.ucsc.edu                   (Michael Beeson)
+beigel:         beigel-richard@cs.yale.edu              (Richard Beigel)
+bellin:         glb@dcs.edinburgh.ac.uk                 (Gian-Luigi Bellin)
+benson:         dbenson@eecs.wsu.edu                    (David Benson)
+vanbenthem:     johan@fwi.uva.nl                        (Johan.van Benthem)
+bergman:        gbergman@cartan.berkeley.edu            (George Bergman)
+bergstra:       madelon@fwi.uva.nl                      (Jan Bergstra)
+berry:          berry@cma.cma.fr                        (Gerard Berry)
+betti:          betti@unimat.to.cnr.it                  (Renato Betti)
+bhadhuri:       pbhaduri@cs2.cs.wsu.edu                 (Purandar Bhadhuri)
+bier:           eric_bier.parc@xerox.com                (Eric Bier)
+birtwistle:     graham@cpsc.ucalgary.ca                 (Graham Birtwistle)
+blair:          ziggy@hx.lcs.mit.edu                    (Michael Blair)
+blass:          blass@um.cc.umich.edu                   (Andreas Blass)
+bbloom:         bard@cs.cornell.edu                     (Bard Bloom)
+sbloom:         bloom@sparc1.stevens-tech.edu           (Steve Bloom)
+lblum:          lblum@ernie.berkeley.edu                (Lenore Blum)
+mblum:          blum@ernie.berkeley.edu                 (Manuel Blum)
+blute:          blute@triples.math.mcgill.ca            (Richard Blute)
+vanemdeboas:    pveb@cwi.nl                             (Peter.van.Emde Boas)
+boehm:          boehm.pa@xerox.com                      (Hans Boehm)
+bonacina:       bonacina@sbcs.sunysb.edu                (M.Paola Bonacina)
+boolos:         boolos@athena.mit.edu                   (George Boolos)
+borceux:        fborceux@buclln11.bitnet                (Francis Borceux.)
+jborwein:       jborwein@cs.dal.ca                      (Jon Borwein)
+pborwein:       pborwein@cs.dal.ca                      (Peter Borwein)
+bouchard:       eomsg@acadvm1.uottawa.ca                (Monique Bouchard)
+boyer:          boyer@cli.com                           (Bob Boyer)
+bracho:         bracho@unamvm1.bitnet                   (Felipe Bracho)
+breazu:         val@linc.cis.upenn.edu                  (Val Breazu-Tannen)
+tannen:         val@cis.upenn.edu                       (Val Breazu-Tannen)
+breen:          math.univ-paris13.fr                    (Larry Breen)
+brink:          cbrink@ucthpx.uct.ac.za                 (Chris Brink)
+brinkman:       mabrink@dknkurz1.bitnet                 (Hans-Berndt Brinkman.)
+britz:          brtkat01@ucthpx.uct.ac.za               (Katarina Britz)
+brookes:        brookes@b.gp.cs.cmu.edu                 (Steve Brookes)
+cbrown:         cbrown@cs.chalmers.se                   (Carolyn Brown)
+rbrown:         r.brown@vaxa.bangor.ac.uk               (Ronnie Brown)
+broy:           broy@lan.informatik.tu-muenchen.dbp.de  (Manfred Broy)
+bruce:          kim@cs.williams.edu                     (Kim Bruce)
+brunner:        hbrunner@mun.bitnet                     (Herman Brunner)
+debukh:         ecomail@vms2.uni-c.dk                   (Per.de Bukh)
+bullejos:       mbullejos@ugr.es                        (Manuel Bullejos)
+buneman:        peter@cis.upenn.edu                     (Peter Buneman)
+bunge:          bunge@triples.math.mcgill.ca            (Marta Bunge)
+burroni:        burroni@mathp7.jussieu.fr               (Albert Burroni)
+burstall:       rb@dcs.edinburgh.ac.uk                  (Rod Burstall)
+buss:           sbuss@cs.ucsd.edu                       (Sam Buss)
+cannon:         cannon_j@maths.su.oz.au                 (John Cannon)
+carboni:        carboni@imiucca.unimi.it                (Aurelio Carboni)
+cardelli:       luca@src.dec.com                        (Luca Cardelli)
+carpenter:      carp@lcl.cmu.edu                        (Bob Carpenter)
+carr:           carrdm@snyplaba.bitnet                  (Donna Carr)
+carter:         nicola@mcgill1.bitnet                   (Nicola Carter)
+cartwright:     cork@rice.edu                           (Corky Cartwright)
+casley:         casley@cs.stanford.edu                  (Ross Casley)
+castellini:     g-castellini@upr1.upr.cun.edu           (G. Castellini)
+chandra:        ashok@watson.ibm.com                    (Ashok Chandra)
+chen:           chen@pchu.depaul.edu                    (Andy Chen)
+choi:           choi@grad1.cis.upenn.edu                (Jin-Young Choi)
+chou:           chou@rascal.ics.utexas.edu              (Shang-Ching Chou)
+chu:            chu@ace.bsd.uchicago.edu                (Po-Hsiang Chu)
+clarke:         clarke@a.cs.cmu.edu                     (Ed Clarke)
+clote:          clote@bcuxs2.bc.edu                     (Peter Clote)
+cockett:        robin@cpsc.ucalgary.ca                  (Robin Cockett)
+cocquand:       coquande@margaux.inria.fr               (Thierry Cocquand)
+cohen:          avrac@computer-lab.cambridge.ac.uk      (Avra Cohen)
+comer:          comers@citadel.bitnet                   (Stephen Comer)
+cooper:         cooper@cogsci.edinburgh.ac.uk           (Robin Cooper)
+cosmadakis:     stavros@saul.cis.upenn.edu              (Stavros Cosmadakis)
+cowen:          mthmjc@ubvms.bitnet                     (Mike Cowen)
+crans:          crans@math.ruu.nl                       (Sjoerd Crans)
+crew:           crew@cs.stanford.edu                    (Roger Crew)
+crole:          rlc@doc.imperial.ac.uk                  (Roy Crole)
+crossley:       jnc@bruce.cs.monash.oz.au               (John Crossley)
+crow:           crow@csl.sri.com                        (Judy Crow)
+cruciani:       cruciani@vaxrma.infn.it                 (Rosanna Cruciani)
+cubric:         cubric@triples.math.mcgill.ca           (Djordje Cubric)
+curien:         curien@dmi.ens.fr                       (Pierre-Louis Curien)
+davey:          davey@latcs1.lat.oz.au                  (Brian Davey)
+davis:          davism@acf4.nyu.edu                     (Martin Davis)
+dawson:         rdawson@husky1.stmarys.ca               (Robert Dawson)
+degano:         degano@di.unipi.it                      (Pier-Paolo Degano)
+delfour:        delfour@cc.umontreal.ca                 (Michel Delfour)
+diaconescu:     rdcbb@cunyvm.bitnet                     (Radu Diaconescu)
+diekert:        diekert@informatik.tu-muenchen.dbp.de   (Volker Diekert)
+diers:          diers@frcitl81.bitnet                   (Yves Diers)
+doh:            doh@ksuvax1.cis.ksu.edu                 (Kyung-Goo Doh)
+dolan:          v088kj6a@ubvms.cc.buffalo.edu           (James Dolan)
+doob:           mdoob@ccu.umanitoba.ca                  (Michael Doob)
+dragalin:       h2848dra@ella.hu                        (? Dragalin)
+duba:           duba@rice.edu                           (Bruce Duba)
+dubey:          rdubey@yoda.eecs.wsu.edu                (Rakesh Dubey)
+dubuc:          dcfden!edubuc@mate.edu.ar               (Eduardo Dubuc)
+duggan:         den@cs.umd.edu                          (Dominic Duggan)
+dunn:           dunn@iuvax.cs.indiana.edu               (Mike Dunn)
+duskin:         mthduskn@ubvms.bitnet                   (Jack Duskin)
+dybkjaer:       dybkjaer@diku.dk                        (Hans Dybkjaer)
+edalat:         ae@doc.ic.ac.uk                         (Abbas Edalat)
+ehlers:         map010@bangor.ac.uk                     (Philip Ehlers)
+ehresmann:      ehres@mathp7.jussieu.fr                 (Andree Ehresmann)
+ehrhard:        ehrhard@ens.fr                          (Thomas Ehrhard)
+ehrlich:        ehrlich@inria.inria.fr                  (Bobby Ehrlich)
+vaneijck:       jve@cwi.nl                              (Jan.van Eijck)
+emerson:        a.emerson@cs.utexas.edu                 (Alan Emerson)
+enderton:       hbe@math.ucla.edu                       (Herb Enderton)
+engeler:        engeler@math.ethz.ch                    (Erwin Engeler)
+ernst:          mernst@theory.lcs.mit.edu               (Michael Ernst)
+fagin:          fagin@almaden.ibm.com                   (Ron Fagin)
+faro:           v068p76v@ubvmsa.bitnet                  (Emilio Faro)
+fasel:          jhf@lanl.gov                            (Joe Fasel)
+feferman:       sf@csli.stanford.edu                    (Sol Feferman)
+feigenbaum:     jf@research.att.com                     (Joan Feigenbaum)
+feldman:        d_feldman@unhh.bitnet                   (David Feldman)
+ferguson:       mike@tel.inrs.cdn                       (Michael Ferguson)
+finkelstein:    stacy@saul.cis.upenn.edu                (Stacy Finkelstein)
+fischer:        fischer-michael@cs.yale.edu             (Mike Fischer)
+fitting:        mlflc@cunyvm.bitnet                     (Melvin Fitting)
+floyd:          floyd@cs.stanford.edu                   (Bob Floyd)
+foo:            norman@cs.su.oz.au                      (Norman Foo)
+fourman:        mikef@dcs.edinburgh.ac.uk               (Michael Fourman)
+fox:            fox@triples.math.mcgill.ca              (Thomas Fox)
+freese:         ralph@kahuna.math.hawaii.edu            (Ralph Freese)
+frei:           bitnet.arfr@ubcmtsg                     (Armin Frei)
+freire:         freire@seins.santiago.usc.es            (J.L. Freire)
+freyd:          pjf@linc.cis.upenn.edu                  (Peter Freyd)
+pamfreyd:       pam@linc.cis.upenn.edu                  (Pam Freyd)
+fritsch:        rudolf.fritsch@mathematik.uni-muenchen.dbp.de (Rudolph Fritsch)
+gago:           alzzs002@seins.santiago.usc.es          (Felipe Gago)
+gaifman:        gaifman@humus.huji.ac.il                (Haim Gaifman)
+gallier:        jean@saul.cis.upenn.edu                 (Jean Gallier)
+ganong:         ganong@vm1.yorku.ca                     (Richard Ganong)
+vangelder:      avg@cs.ucsc.edu                         (Allen.Van Gelder)
+genrich:        genrich@gmdzi.gmd.de                    (Hartmann Genrich)
+geramita:       anthony.v.geramita@queensu.ca           (Anthony Geramita)
+gerstenhaber:   gersten@penndrls.bitnet                 (Murray Gerstenhaber)
+gerth:          wsinrobg@eutrc3.urc.tue.nl              (Rob Gerth)
+ghelli:         ghelli@di.unipi.it                      (Giorgio Ghelli)
+girard:         girard@margaux.inria.fr                 (Jean-Yves Girard)
+givant:         givant@mills.berkeley.edu               (Steve Givant)
+vanglabbeek:    rvg@cs.stanford.edu                     (Rob.van Glabbeek)
+goguen:         joseph.goguen@prg.oxford.ac.uk          (Joseph Goguen)
+bgoldberg:      goldberg@cs.nyu.edu                     (Ben Goldberg)
+goldblatt:      rob@math.vuw.ac.nz                      (Rob Goldblatt)
+goltz:          gf1018@dbngmd21.bitnet                  (Ulla Goltz)
+goodaire:       edgar@munucs.mun.ca                     (Edgar Goodaire)
+gordon:         v5200e@templevm.bitnet                  (Bob Gordon.)
+grandis:        grandis@igecuniv.bitnet                 (Marco Grandis.)
+gratzer:        gratzer@ccm.umanitoba.ca                (George Gratzer)
+gray:           gray@math.uiuc.edu                      (John Gray)
+grove:          grove@cs.stanford.edu                   (Adam Grove)
+gruska:         gruska@rosun1.informatik.uni-hamburg.de (Jozef Gruska)
+guessarian:     ig@litp.ibp.fr                          (Irene Guessarian)
+guitart:        guitart@mathp7.jussieu.fr               (Rene Guitart)
+gunawardena:    jhcg@hplb.hpl.hp.com                    (Jeremy Gunawardena)
+cgunter:        gunter@central.cis.upenn.edu            (Carl Gunter)
+egunter:        elsa@research.att.com                   (Elsa Gunter)
+gupta:          vgupta@cs.stanford.edu                  (Vineet Gupta)
+gurevich:       gurevich@dip.eecs.umich.edu             (Yuri Gurevich)
+dhalpern:       jdan@sun.com                            (Dan Halpern)
+jhalpern:       halpern@almaden.ibm.com                 (Joe Halpern)
+hanna:          fkh@ukc.ac.uk                           (Keith Hanna)
+hardie:         hardieka@uctvax.uct.ac.za               (Kieth Hardie)
+harel:          harel@wisdom.weizmann.ac.il             (David Harel)
+harland:        jah@mullauna.cs.mu.oz.au                (James Harland)
+harper:         rwh@proof.ergo.cs.cmu.edu               (Robert Harper)
+hart:           wiawkph@dutrun2.tudelft.nl              (Klaas Hart)
+haveraaen:      magne@eik.ii.uib.no                     (Magne Haveraaen)
+hebert:         mhebert@mat.ulaval.ca                   (Michel Hebert)
+heckmann:       heckmann@cs.uni-sb.de                   (Reinhold Heckmann)
+heggie:         heggie@cad.uccb.ns.ca                   (Murray Heggie)
+hennessy:       matthewh@cogs.sussex.ac.uk              (Matthew Hennessy)
+henriksen:      henriksen@hmcvax.claremont.edu          (Mel Henriksen)
+henzinger:      tah@cs.stanford.edu                     (Tom Henzinger)
+herz:           herz@gauss.math.mcgill.ca               (Carl Herz)
+hill:           whill@hplwlh.hpl.hp.com                 (Walt Hill)
+hillebrand:     ggh@cs.brown.edu                        (Gerd Hillebrand)
+hindley:        majrh@pyr.swan.ac.uk                    (Roger Hindley)
+hoare:          julie@prg.oxford.ac.uk                  (Tony Hoare)
+hodgson:        bhodgson@vm1.ulaval.ca                  (Bernard Hodgson)
+hoehnke:        gabi@opal.cs.tu-berlin.de               (Hans-Jurgen Hoehnke)
+honsell:        honsell@uduniv.cineca.it                (Furio Honsell)
+hoofman:        raymond@cs.ruu.nl                       (Raymond Hoofman)
+hook:           hook@cse.ogi.edu                        (James Hook)
+hopcroft:       jeh@cs.cornell.edu                      (John Hopcroft)
+hsiang:         hsiang@sbcs.sunysb.edu                  (Jieh Hsiang)
+hudak:          hudak@cs.yale.edu                       (Paul Hudak)
+huet:           huet@inria.inria.fr                     (Gerard Huet)
+hunsaker:       ga3600@siucvmb.bitnet                   (W. Hunsaker)
+husberg:        nhu@dione.hut.fi                        (Nisse Husberg)
+huth:           mrh@tulmath.math.tulane.edu             (Michael Huth)
+hyland:         jmeh1@phoenix.cambridge.ac.uk           (Martin Hyland)
+israel:         israel@ai.sri.com                       (David Israel)
+istrail:        sistrail@eagle.wesleyan.edu             (Soren Istrail)
+ito:            ito@ito.ecei.tohoku.junet               (Takayasu Ito)
+iyer:           ramu@cadsun.corp.mot.com                (Ramu Iyer)
+jacobs:         bjacobs@math.ruu.nl                     (Bart Jacobs)
+jaffar:         joxan@watson.ibm.com                    (Joxan Jaffar)
+jagadeesan:     rj2@doc.imperial.ac.uk                (Radhakrishnan Jagadeesan)
+janssen:        theo@fwi.uva.nl                         (Theo Janssen)
+jardine:        jardine@uwovax.uwo.ca                   (John Jardine)
+jay:            cbj@dcs.edinburgh.ac.uk                 (Barry Jay)
+jeffrey:        alan.jeffrey@prg.oxford.ac.uk           (Alan Jeffrey)
+jenkins:        maj@qucis.bitnet                        (Mike Jenkins)
+mjohnson:       mike@macadam.mpce.mq.edu.au             (Mike Johnson)
+pjohnson:       pjohnson@eagle.wesleyan.edu             (Paul Johnson)
+jonsson:        jonssob@vuctrvax.bitnet                 (Bjarni Jonsson.)
+jouvelot:       jouvelot@ensmp.fr                       (Pierre Jouvelot)
+(joyal:          joyal@math.uqam.ca                      AfterJun92:Andre Joyal)
+joyal:          a.joyal@dpmms.cambridge.ac.uk           (ToJun92:Andre Joyal)
+joyce:          djoyce@ollie.clarku.edu                 (David Joyce)
+jung:           jung@mathematik.th-darmstadt.de         (Achim Jung)
+kahn:           kahn@mirsa.inria.fr                     (Gilles Kahn)
+kane:           kane@uwovax.uwo.ca                      (Richard Kane)
+kanellakis:     pck@cs.brown.edu                        (Paris Kanellakis)
+kao:            kao@iuvax.cs.indiana.edu                (Ming Kao)
+kapranov:       kapranov@mssun7.msi.cornell.edu         (Mikhail Kapranov)
+karp:           karp@ernie.berkeley.edu                 (Dick Karp)
+kasangian:      kasan@imiucca.unimi.it                  (Stefano Kasangian)
+kelly:          kelly_m@maths.su.oz.au                  (Max Kelly)
+kennaway:       jrk@sys.uea.ac.uk                       (Richard Kennaway)
+kennison:       jkennison@clarku                        (John Kennison)
+kfoury:         kfoury@bu-cs.bu.edu                     (Dennis Kfoury)
+kiehn:          kiehn@lan.informatik.tu-muenchen.dbp.de (Astrid Kiehn)
+klarlund:       klarlund@cs.cornell.edu                 (Nils Klarlund)
+kleisli:        kleisli@cfruni52.bitnet                 (Heinrich Kleisli.)
+klop:           jwk@cwi.nl                              (Jan Klop)
+knijnenburg:    peterk@cs.ruu.nl                        (Peter Knijnenburg)
+kochman:        kochman@nexus.yorku.ca                  (Stanley Kochman)
+kock:           matak@mi.aau.dk                         (Anders Kock)
+kolaitis:       kolaitis@cs.ucsc.edu                    (Phokion Kolaitis)
+koslowski:      koslowj@math.ksu.edu                    (Juergen Koslowski)
+kozen:          kozen@cs.cornell.edu                    (Dexter Kozen)
+kwiatkowska:    mzk@leicester.ac.uk                     (Marta Kwiatkowska)
+labute:         labute@gauss.math.mcgill.ca             (John Labute)
+ladkin:         ladkin@icsib8.berkeley.edu              (Peter Ladkin)
+ladner:         ladner@cs.washington.edu                (Richard Ladner)
+lafont:         lafont@dmi.ens.fr                       (Yves Lafont)
+lamarche:       lamarche@dmi.ens.fr                     (Francois Lamarche)
+lambe:          lambe@math.ethz.ch                      (Larry Lambe)
+lambek:         lambek@triples.math.mcgill.ca           (Joachim Lambek)
+lampe:          lampe@kahuna.math.hawaii.edu            (Bill Lampe)
+lamport:        lamport@src.dec.com                     (Leslie Lamport)
+lassez:         jll@watson.ibm.com                      (Jean-Louis Lassez)
+latch:          dml@bklyncis.bitnet                     (Dana Latch)
+launchbury:     jl@dcs.glasgow.ac.uk                    (John Launchbury)
+lawvere:        mthfwl@ubvmsb.cc.buffalo.edu            (Bill Lawvere)
+leavens:        leavens@bambam.cs.iastate.edu           (Gary Leavens)
+leeney:         stmt8015@iruccvax.ucc.ie                (Mark Leeney)
+leivant:        daniel.leivant@b.gp.cs.cmu.edu          (Daniel Leivant)
+lent:           aflent@theory.lcs.mit.edu               (Arthur Lent)
+levin:          lnd@cs.bu.edu                           (Leonid Levin)
+liao:           aliao@eagle.wesleyan.edu                (Andrew Liao)
+libkin:         libkin@saul.cis.upenn.edu               (Leonid Libkin)
+lifschitz:      lifschitz@cs.stanford.edu               (Vladimir Lifschitz)
+lilius:         jli@dione.hut.fi                        (Johan Lilius)
+lincoln:        lincoln@cs.stanford.edu                 (Pat Lincoln)
+linton:         flinton@eagle.wesleyan.edu              (Fred Linton)
+longo:          longo@dmi.ens.fr                        (Giuseppe Longo)
+lord:           hlord@csupomona.edu                     (Harriet Lord)
+loui:           mloui@note.nsf.gov                      (Michael Loui)
+lowry:          lowry@kestrel.edu                       (Mike Lowry)
+lubarsky:       r_lubarsky@faudm.bitnet                 (Robert Lubarsky)
+lubliner:       coby@ucbcevax.bitnet                    (Coby Lubliner)
+luckham:        dcl@anna.stanford.edu                   (David Luckham)
+lynch:          lynch@holmes.lcs.mit.edu                (Nancy Lynch)
+ma:             qingming.ma@cs.cmu.edu                  (Qingming Ma)
+macdonald:      macstone@bdc.ubc.ca                     (John MacDonald)
+mackenzie:      pm1kchm@primea.sheffield.ac.uk         (K.Charles.H. Mackenzie)
+macon:          nmacon@nsf.gov                          (Nat Macon)
+macqueen:       macqueen@research.att.com               (David Macqueen)
+maddux:         maddux@vincent.iaststa.edu              (Roger Maddux)
+madhav:         madhav@neon.stanford.edu                (Neel Madhav)
+mahmood:        arshad@dcs.edinburgh.ac.uk              (H. Mahmood)
+main:           main@boulder.colorado.edu               (Michael Main)
+majid:          shm10@phx.cam.ac.uk                     (Shahn Majid)
+makkai:         makkai@triples.math.mcgill.ca           (Michael Makkai)
+manna:          manna@cs.stanford.edu                   (Zohar Manna)
+marshall:       marshacd@snypotva.potsdam.edu           (Charlie Marshall)
+marti-oliet:    narciso@csl.sri.com                     (Narciso Marti-Oliet)
+martini:        martini@di.unipi.it                     (Simone Martini)
+mauri:          mauri@imiucca.unimi.it                  (Giancarlo Mauri)
+mccoll:         wfm@prg.oxford.ac.uk                    (Bill McColl)
+jmckay:         mckay@conu1.bitnet                      (John McKay)
+wmckay:         wendy@cc.umontreal.ca                   (Wendy McKay)
+mcnulty:        mcnulty@milo.math.scarolina.edu         (George McNulty)
+mcrobbie:       mam@arp.anu.oz.au                       (Michael McRobbie)
+meloni:         meloni@imiucca.unimi.it                 (Gian.Carlo Meloni)
+melton:         austin@cis.ksu.edu                      (Austin Melton)
+mercouroff:     nm@cs.brandeis.edu                      (Nicolas Mercouroff)
+meseguer:       meseguer@csl.sri.com                    (Jose Meseguer)
+meyer:          meyer@theory.lcs.mit.edu                (Albert Meyer)
+milner:         rm@dcs.edinburgh.ac.uk                  (Robin Milner)
+mints:          mints@csli.stanford.edu                 (Grigori Mints)
+mislove:        mwm@tulmath.math.tulane.edu             (Michael Mislove)
+misra:          misra@cs.utexas.edu                     (Jay Misra)
+mitchell:       jcm@cs.stanford.edu                     (John Mitchell)
+miyoshi:        miyoshi@slab.sfc.keio.ac.jp             (Hiroyuki Miyoshi)
+mochnacki:      stefan@centaur.astro.utoronto.ca        (Stefan Mochnacki)
+moggi:          moggi@igecuniv.bitnet                   (Eugenio Moggi.)
+moller:         fm@dcs.edinburgh.ac.uk                  (Faron Moller)
+molnar:         molnar@math.macalstr.edu                (Richard Molnar)
+monro:          monro_g@maths.su.oz.au                  (Gordon Monro)
+montanari:      ugo@di.unipi.it                         (Ugo Montanari)
+demoor:         Oege.de.Moor@prg.oxford.ac.uk           (Oege.de Moor)
+moschovakis:    ynm@math.ucla.edu                       (Yiannis Moschovakis)
+moshier:        mam@pic.ucla.edu                        (Drew Moshier)
+moss:           LMOSS@ucs.indiana.edu                   (Larry Moss)
+mosses:         pdmosses@daimi.aau.dk                   (Peter Mosses)
+muller:         muller@harvard.edu                      (Robert Muller)
+mulry:          psm@dcs.edinburgh.ac.uk                 (Phil Mulry)
+mulvey:         mmfc6@cluster.sussex.ac.uk              (Chris Mulvey)
+mumford:        mumford@zariski.harvard.edu             (David Mumford)
+murphy:         david@gmdzi.gmd.de                      (David Murphy)
+murthy:         murthy@cs.cornell.edu                   (Chet Murthy)
+murty:          murty@gauss.math.mcgill.ca              (Ram Murty)
+nation:         nation@kahuna.math.hawaii.edu           (James.B. Nation)
+nelson:         nealn@cse.ogi.edu                       (Neal Nelson)
+nerode:         nerode@mssun6.msi.cornell.edu           (Anil Nerode)
+nickau:         nickau@hrz.uni-siegen.dbp.de            (Hanno Nickau)
+denicola:       denicola@icnucevm.cnuce.cnr.it          (Rocco.De Nicola)
+niefield:       niefiels@gar.union.edu                  (Susan Niefield)
+nowakowski:     rjn@cs.dal.ca                           (Richard Nowakowski)
+ohearn:         ohearn@top.cis.syr.edu                  (Peter Ohearn)
+ohori:          ohori@okilab.oki.co.jp                  (Atsushi Ohori)
+okada:          okada@concour.cs.concordia.ca           (Mitsu Okada)
+oles:           oles@watson.ibm.com                     (Frank Oles)
+ong:            chlo@doc.ic.ac.uk                       (Luke Ong)
+orzech:         orzechm@qucdn.bitnet                    (Morris Orzech)
+otto:           otto@triples.math.mcgill.ca             (Jim Otto)
+overbeek:       overbeek@anl-mcs.arpa                   (Russ Overbeek)
+depaiva:        valeria.paiva@cl.cam.ac.uk              (Valeria.de Paiva)
+panangaden:     prakash@opus.cs.mcgill.ca               (Prakash Panangaden)
+papert:         seymour@media-lab.media.mit.edu         (Seymour Papert)
+pare:           pare@cs.dal.ca                          (Bob Pare)
+parikh:         ripbc@cunyvm.cuny.edu                   (Rohit Parikh)
+parker:         stott@cs.ucla.edu                       (Stott Parker)
+mpaterson:      msp@dcs.warwick.ac.uk                   (Mike Paterson)
+rpaterson:      rap@doc.ic.ac.uk                        (Ross Paterson)
+paulson:        lcp@cl.cam.ac.uk                        (Larry Paulson)
+pavlovic:       pavlovic@triples.math.mcgill.ca         (Dusko Pavlovic)
+pedicchio:      pedicchi@univ.trieste.it                (Cristina Pedicchio)
+pelletier:      jwpell@vm2.yorku.ca                     (Joan Pelletier)
+penon:          penon@mathp7.jussieu.fr                 (Jean Penon)
+peters:         Stanley.Peters@prg.ox.ac.uk             (Stanley Peters)
+pettorossi:     adp@irmiasi.rm.cnr.it                   (Alberto Pettorossi)
+pfenniger:      mas034@vaxa.bangor.ac.uk                (Markus Pfenniger)
+phillips:       phillips@uvvm.bitnet                    (John Phillips)
+pierce:         bcp@proof.ergo.cs.cmu.edu               (Benli Pierce)
+pigozzi:        dpigozzi@iastate.edu                    (Don Pigozzi)
+pinter:         pinter-shlomit@cs.yale.edu              (Shlomit Pinter)
+pitt:           dhp@mcs.surrey.ac.uk                    (David Pitt)
+pitts:          ap@cl.cam.ac.uk                         (Andy Pitts)
+plaice:         plaice@ift.ulaval.ca                    (John Plaice)
+plaisted:       plaisted@cs.unc.edu                     (David Plaisted)
+platek:         richard@oracorp.com                     (Richard Platek)
+platt:          ccm.umanitoba.ca                        (Craig Platt)
+plotkin:        gdp@dcs.edinburgh.ac.uk                 (Gordon Plotkin)
+pnueli:         amir@wisdom.weizmann.ac.il              (Amir Pnueli)
+poigne:         ap@gmdzi.gmd.de                         (Axel Poigne)
+poirot:         poirot@boole.stanford.edu               (Hercule Poirot)
+pollara:        pollara@csearn.bitnet                   (Victor Pollara)
+porst:          porst@ubrinf.uucp                       (H.-E. Porst)
+porter:         mas013@vaxc.bangor.ac.uk                (Tim Porter)
+power:          ajp@dcs.edinburgh.ac.uk                 (John Power)
+pratt:          pratt@cs.stanford.edu                   (Vaughan Pratt)
+priestley:      hap@vax.oxford.ac.uk                    (Hilary Priestley)
+probst:         probst@bond.crim.ca                     (Richard Probst)
+proute:         ap@mathp7.jussieu.fr                    (Alain Proute)
+pym:            dpym@dcs.edinburgh.ac.uk                (David Pym)
+quackenbush:    bquack@ccm.umanitoba.ca                 (Bob Quackenbush)
+rabin:          rabin@humus.huji.ac.il                  (Michael Rabin)
+rabinovich:     alik@watson.ibm.com                     (Alexander Rabinovich)
+rachev:         zarirach@bernoulli.ucsb.edu             (Zari Rachev)
+ramshaw:        ramshaw@src.dec.com                     (Lyle Ramshaw)
+randall:        randall@elbereth.rutgers.edu            (John Randall)
+raphael:        raphael@vax2.concordia.ca               (Robert Raphael)
+rattray:        cr@cs.stir.ac.uk                        (Charles Rattray)
+remmel:         remmel@kleene.ucsd.edu                  (Jeff Remmel)
+repin:          repin@log.mian.su                       (Nikolai Repin)
+reyes:          reyes@mathcn.umontreal.ca               (Gonzalo Reyes)
+reynolds:       john.reynolds@c.cs.cmu.edu              (John Reynolds)
+riecke:         riecke@theory.lcs.mit.edu               (Jon Riecke)
+riemens:        sriemens@vega.math.ualberta.ca        (Sherman Riemenschneider)
+ritter:         er@cl.cam.ac.uk                         (Eike Ritter)
+erobinson:      edmundr@cogs.susx.ac.uk                 (Edmund Robinson)
+krobinson:      kenr@elecvac.oz.au                      (Ken Robinson)
+deroever:       wsinwpr@eutrc3.urc.tue.nl               (Willem.de Roever)
+rolfsen:        Dale_Rolfsen@mtsg.ubc.ca                (Dale Rolfsen)
+roman:          lr@doc.ic.ac.uk                         (Leopoldo Roman)
+rosebrugh:      rrosebrugh@macc2.mta.ca                 (Bob Rosebrugh)
+rosenthal:      rosenthk@gar.union.edu                  (Kimmo Rosenthal)
+rosicky:        rosicky@cspuni12.bitnet                 (Jiri Rosicky)
+rosolini:       rosolini@ipruniv.bitnet                 (Pino Rosolini.)
+rota:           rota@math.mit.edu                       (Gian-Carlo Rota)
+rotman:         symcom!rotman@uxc.cso.uiuc.edu          (Joseph Rotman)
+rounds:         rounds@engin.umich.edu                  (Bill Rounds)
+rovan:          uniba!rovan@relay.eu.net                (Branislav Rovan)
+rozenberg:      rozenber@rulcri.leidenuniv.nl           (Grzegor Rozenberg)
+rozenfeld:      ar@alv.umd.edu                          (Azriel Rozenfeld)
+rudich:         arie@theory.lcs.mit.edu                 (Arie Rudich)
+rudie:          rudie@ecfb.toronto.edu                  (Karen Rudie)
+ruitenburg:     wimr@math.mscs.mu.edu                   (Wim Ruitenburg)
+rumbos:         rumbos@unamvm1.dgsca.unam.mx            (Beatriz Rumbos)
+rus:            rus@herky.cs.uiowa.edu                  (Theodor Rus)
+rutten:         janr@piring.cwi.nl                      (Jan Rutten)
+rydeheard:      david@r3.cs.man.ac.uk                   (David Rydeheard)
+sain:           h1468sai@ella.hu                        (Ildiko Sain)
+sakurai:        a87480@tansei.cc.u-tokyo.ac.jp          (Takafumi Sakurai)
+sankappanevar:  sankah@snynewba.bitnet        (Hanamantagouda.P. Sankappanevar)
+sannella:       dsannella@dcs.edinburgh.ac.uk           (Don Sannella)
+saraswat:       saraswat@parc.xerox.com                 (Vijay Saraswat)
+sato:           schuko@sun4.cc.kyushu-u.ac.jp           (Hiroyuki Sato)
+scedrov:        andre@cis.upenn.edu                     (Andre Scedrov)
+schelter:       wfs@cli.com                             (Bill Schelter)
+schmidt:        jschmidt@daimi.dk                       (Jorn Schmidt)
+schroeppel:     rcs@la.tis.com                          (Rich Schroeppel)
+schumacher:     schu@acadia.bitnet                      (Dietmar Schumacher)
+scollo:         scollo@cs.utwente.nl                    (Giuseppe Scollo)
+dscott:         dscott@risc.uni-linz.ac.at              (Dana Scott)
+pscott:         pjs@dcs.ed.ac.uk                        (Phil Scott)
+seely:          rags@triples.math.mcgill.ca             (Robert Seely)
+seldin:         seldin@alcor.concordia.ca               (Jonathan Seldin)
+seligman:       jerry@phil.indiana.edu                  (Jerry Seligman)
+shankar:        shankar@csl.sri.com                     (Natarajan Shankar)
+shapiro:        udi@wisdom.weizmann.ac.il               (Udi Shapiro)
+shieber:        shieber@das.harvard.edu                 (Stuart Shieber)
+shields:        m.shields@mcs.surrey.ac.uk              (Mike Shields)
+sichler:        sichler@ccm.umanitoba.ca                (Jiri Sichler)
+kurt:           sieber@fb10vax.informatik.uni-saarland.dbp.de (Kurt Sieber)
+isimon:         is@ime.usp.br                           (Imre Simon)
+simons:         simons@karlsruhe.gmd.de                 (Martin Simons)
+slifker:        slifker@svax.cs.cornell.edu             (Michael Slifker)
+smaill:         smaill@aipna.edinburgh.ac.uk            (Alan Smaill)
+small:          nwnexus!cjsa!jeff@uunet.uu.net          (Jeffery Small)
+gsmith:         dalcs!gretchen@uunet.uu.net             (Gretchen Smith)
+ssmith:         scott@cs.jhu.edu                        (Scott Smith)
+ssmolka:        sas@cs.sunysb.edu                       (Scott Smolka)
+gsmolka:        smolka@dfki.uni-sb.de                   (Gert Smolka)
+soare:          soare@gargoyle.uchicago.edu             (Bob Soare)
+sobral:         sobral@ciuc2.uc.rccn.pt                 (Manuela Sobral)
+spencer:        dwights@cse.ogi.edu                     (Dwight Spencer)
+spreen:         spreen@hrz.uni-siegen.dbp.de            (Dieter Spreen)
+srinivas:       srinivas@madeleine.ics.uci.edu          (Yellamraju Srinivas)
+staples:        staples@uqcspe.cs.uq.oz.au              (John Staples)
+stark:          stark@cs.sunysb.edu                     (Eugene Stark)
+steele:         steele@think.com                        (Guy Steele)
+steiner:        maths@vme.gla.ac.uk                     (Richard Steiner)
+stell:          john@cs.kl.ac.uk                        (John Stell)
+stewart:        cstewart@watserv1.uwaterloo.ca          (Cameron Stewart)
+stolboushkin:   aps1@node.ias.msk.su                    (Alex Stolboushkin)
+astone:         macstone@bdc.ubc.ca                     (Art Stone)
+stoughton:      allen@cogs.sussex.ac.uk                 (Allen Stoughton)
+stout:          lnstout@uxh.cso.uiuc.edu                (Lawrence Stout)
+strecker:       strecker@galois.math.ksu.edu            (George Strecker)
+street:         street@macadam.mpce.mq.edu.au           (Ross Street)
+streicher:      streiche@unipas.fmi.uni-passau.de       (Thomas Streicher)
+subrahmanyam:   ramesh@linc.cis.upenn.edu               (Ramesh Subrahmanyam)
+sun:            yong@minster.york.ac.uk                 (Yong Sun)
+suppes:         suppes@csli.stanford.edu                (Pat Suppes)
+swaminathan:    swami@cs.dal.ca                         (S. Swaminathan)
+szabo:          szabo@vax2.concordia.ca                 (Fred Szabo)
+takayama:       takayama@okilab.oki.co.jp               (Yukihide Takayama)
+talcott:        clt@sail.stanford.edu                   (Carolyn Talcott)
+tatsuta:        tatsuta@sato.riec.tohoku.ac.jp          (Makoto Tatsuta)
+taubner:        taubner@lan.informatik.tu-muenchen.dbp.de (Dirk Taubner)
+paultaylor:     pt@doc.ic.ac.uk                         (Paul Taylor)
+philiptaylor:   p.taylor@vax.rhbnc.ac.uk                (Philip Taylor)
+wtaylor:        wtaylor@boulder.colorado.edu            (Walt Taylor)
+tennent:        rdt@qucis.queensu.ca                    (Bob Tennent)
+thiagarajan:    pst@ssf.ernet.in                        (P.S. Thiagarajan)
+tholen:         tholen@vm1.yorku.ca                     (Walter Tholen)
+thomson:        tom@nw.stl.stc.co.uk                    (Tom Thomson)
+thurston:       wpt@math.princeton.edu                  (Bill Thurston)
+tierney:        tierney@math.uqam.ca                    (Myles Tierney)
+tiuryn:         tiuryn@cs.bu.edu                        (Jerzy Tiuryn)
+tonks:          map003@vaxa.bangor.ac.uk                (Andy Tonks)
+trakhtenbrot:   trakhte@math.tau.ac.il                  (Boris Trakhtenbrot)
+trnkova:        UMMVT@CSEARN.bitnet                     (Vera Trnkova)
+tschantz:       tschantz@athena.cas.vanderbilt.edu      (Steve Tschantz)
+tsuiki:         tsuiki@kurims.kyoto-u.ac.jp             (Hideki Tsuiki)
+turbak:         lyn@zurich.ai.mit.edu                   (Franklyn Turbak)
+urquhart:       urquhart@ai.toronto.edu                 (Alasdair Urquhart)
+valeriote:      matt@johnny.math.mcmaster.ca            (Matt Valeriote)
+vanosdol:       d_vanosdol@unhh.unh.edu                 (Donovan Van.Osdol)
+vardi:          vardi@almaden.ibm.com                   (Moshe Vardi)
+vermeulen:      jjcvmath.uctvax@f4.n494.z5.fidonet.org  (Japie Vermeulen)
+verwer:         nico@cs.ruu.nl                          (Nico Verwer)
+vianu:          vdvianu@ucsd.edu                        (Victor Vianu)
+vickers:        sjv@doc.ic.ac.uk                        (Steve Vickers)
+vitanyi:        paulv@cwi.nl                            (Paul Vitanyi)
+voevodsky:      vladimir@math.harvard.edu               (Vladimir Voevodsky)
+devries:        ferjan@cwi.nl                           (Fer-jan.de Vries)
+waarts:         orli@cs.stanford.edu                    (Orli Waarts)
+wachter:        wachter@itd.nrl.navy.mil                (Ralph Wachter)
+wadler:         wadler@dcs.glasgow.ac.uk                (Philip Wadler)
+wagner:         wagner@watson.ibm.com                   (Eric Wagner)
+wallen:         lw@prg.ox.ac.uk                         (Lincoln Wallen)
+walters:        walters_b@maths.su.oz.au                (Bob Walters)
+wand:           wand@corwin.ccs.northeastern.edu        (Mitchell Wand)
+wasilewska:     anita@sbcs.sunysb.edu                   (Anita Wasilewska)
+wells:          cfw2@po.cwru.edu                        (Charles Wells)
+wendt:          wendt@cs.dal.ca                         (Michael Wendt)
+white:          bwhite@inmet.inmet.com                  (Bill White)
+williams:       ewilliam@kean.ucs.mun.ca                (Ed Williams)
+winkler:        winkler@csl.sri.com                     (Timothy Winkler)
+winskel:        gwinskel@daimi.dk                       (Glynn Winskel)
+wirsing:        wirsing@unipas.fmi.uni-passau.de        (Martin Wirsing)
+wood:           rjwood@cs.dal.ca                        (Richard Wood)
+wraith:         gavinw@sussex.ac.uk                     (Gavin Wraith)
+wright:         gpwsg@acadvm1.uottawa.ca                (Graham Wright)
+wyler:          wyler@cs.cmu.edu                        (Oswald Wyler)
+yardini:        eyal@wisdom.weizmann.ac.il              (Eyal Yardini)
+yarroll:        piggy@gargoyle.uchicago.edu             (La.Monte Yarroll)
+yetter:         dyetter@math.ksu.edu                    (David Yetter)
+yoshida:        yoshida@icot.or.jp                      (Kaoru Yoshida)
+yoshiki:        yoshiki@etl.go.jp                       (Kinoshita Yoshiki)
+young:          young@xx.lcs.mit.edu                    (Jonathan Young)
+zawadowski:     warsaw@ccb.uib.es                       (Marek Zawadowski)
+zenith:         zenith@ensmp.fr                         (Steven Zenith)
+zhang:          gqz@caen.engin.umich.edu                (G.Q. Zhang)
+zocco:          dean.zocco@klb                          (Meg Zocco)

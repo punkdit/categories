@@ -1,0 +1,219 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Real coalgebra
+Date: Wed, 22 Dec 1999 11:49:50 -0500 (EST)
+Lines: 191
+Approved: news@gmane.org
+Message-ID: <199912221649.LAA14585@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017741 30645 80.91.229.2 (29 Apr 2009 15:09:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Dec 23 11:16:53 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA32601
+	for categories-list; Thu, 23 Dec 1999 09:24:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 10741
+Original-Lines: 190
+Xref: news.gmane.org gmane.science.mathematics.categories:1308
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1308>
+
+I've been looking at the Proceedings of the Second Workshop on
+Coalgebraic Methods in Computer Science (CMCS'99), Electronic Notes in
+Theoretical Computer Science, Volume 19, to be found at
+
+  www.elsevier.nl:80/cas/tree/store/tcs/free/noncas/pc/menu.htm
+
+There's a nice paper by Dusko Pavlovic and Vaughan Pratt. It's
+entitled On Coalgebra of Real Numbers and it has turned me on. Their
+abstract begins:
+
+  We define the continuum up to order isomorphism (and hence
+  homeomorphism) as the final coalgebra of the functor  X x omega,
+  ordinal product with omega. This makes an attractive analogy with
+  the definition of the ordinal omega itself as the initial algebra of
+  the functor  1;X, prepend unity, with both definitions made in the
+  category of posets.
+
+I thought of using another functor. And damned if it isn't just what
+I should have had for my CTCS talk last September at Edinburgh.
+
+In the category of posets with top and bottom consider the binary
+functor, X v Y, obtained by starting with the disjoint union  X;Y,
+with everything in  X  ordered below  Y,  and then identifying the 
+top of  X  with the bottom of  Y.  The functor  X v X  preserves the 
+terminator (the one-element poset) hence the terminator is its final
+coalgebra. So restrict to the category of posets with _distinct_ top
+and bottom. The functor  X v X  again has a final coalgebra: this time
+it's the closed interval, I.  (For Dusko and Vaughan's functor it's 
+the half-open interval. For yet another functor, one that ought to
+have the open interval as its final coalgebra, but doesn't, see PS
+below.)
+
+If  X v Y  is described as the subobject of the product  X x Y
+consisting of those pairs  <x,y>  such that either  x  is top or  y 
+is bottom, then a coalgebra structure for  X v X  can be described as 
+a pair of endo-functions  d,u  such that for each  x  either  d(x)
+is top or  u(x)  is bottom. On the interval  [a,b]  the 
+final-coalgebra structure is understood to be given by 
+d(x) = min (b, 2x - a)  and  u(x) = max (a, 2x - b).
+
+In fact, we didn't need to start in the category of posets. It would
+have sufficed to work in the category of sets with distinct top and
+bottom (see PPS below for a proof). The final coalgebra is still the
+closed interval and, yes, the ordering is implicit: it is the most 
+inclusive relation preserved by  d  and  u  that avoids placing top 
+below bottom. (It can also be obtained by constructing either of the 
+two lattice operations on  I  as the unique coalgebra map  I x I --> I
+for an appropriately chosen coalgebra structure on  I x I.  A similar 
+construction works for the Pavlovic-Pratt coalgebra.)
+
+Indeed, all of the structure of the closed interval is definable from
+this coalgebra definition. Go back to the category of posets with 
+distinct top and bottom. It is routine to verify that  X v X  commutes
+with the opposite-poset functor hence -- using the fact that that 
+functor is an equivalence -- its final coalgebra will be invariant
+under that functor. That is, there is an isomorphism from  I  to its
+opposite.
+
+It takes more work, but not an infinite amount, to construct a 
+coalgebra structure on  I x I  so that the induced binary operation 
+I x I --> I  is the midpoint operation, the values of which will be
+denoted here as  x|y.  It is pretty much characterized by the 
+equations: idempotence, x|x = x; commutativity, x|y = y|x; and middle-
+two-interchange, (u|v)|(x|y) = (u|x)|(v|y); together with cancelation:
+a|x = a|y  =>  x = y.  If one chooses a zero, then one may prove that
+there's an ambient abelian group with unique division by  2, such that 
+the given midpoint algebra is a subset closed under the operation
+x|y = (x + y)/2.  (There must be an existent reference for this.) 
+
+Actually we want that ambient abelian group for  I;  it's none other
+than the reals. The order-duality makes its construction easier than 
+in the general case. So let's use  1  to denote the top of the final
+coalgebra, I, -1  for the bottom, and  0  for their midpoint, -1|1.
+Let  h:I -> I  denote the "halving" map that sends  x  to  0|x.  Note
+that  h  is an endomorphism with respect to  0, the ordering, the 
+duality, the midpoint structure (and not, of course, the top and 
+bottom). For a moment enter the category of endomorphisms, and reflect
+the object  <I, h>  into the full subcategory of automorphisms. (The 
+reflection may be explicitly constructed as the colimit of the diagram
+   h     h     h
+I --> I --> I -->...)  The result is a poset-with-0-and-duality-and-
+midpoint-operation we'll denote as  R.  The midpoint operation 
+respects the order and commutes with duality.  0  is self-dual. By
+making  h  an automorphism we know that for all  y  there is a unique
+x  such that  0|x = y.  On  R  define  a + b  by the equation
+0|(a + b) = a|b  and verify  0 + b = b = b + 0  and 
+(a + b) + (c + d) = (a + c) + (b + d).  Use the duality to define  -a
+and verify  (-a) + a = 0.  Use  h  to define  a/2  and verify 
+a/2 + a/2 = a.  All of this makes  R  an abelian group with unique
+division by  2.
+
+Viewing  R  as an ordered abelian group it is easy to verify that any
+endomorphism is determined by where it sends  1  (inherited from 
+I -> R).  That, of course, allows us to define the multiplication.
+
+Those who heard my CTCS talk last September at Edinburgh, "Path 
+Integrals, Bayesian Vision, and Is Gaussian Quadrature Really Good?",
+(there's an abstract at the same website as above) can appreciate why 
+I'm particularly happy. I started by defining ordinary integration of
+continuous functions using -- without knowing it -- this coalgebra
+structure on  I.  Let  C  be the functor that assigns to a space  X
+the set, C(X), of continuous real-valued functions on  X.  The 
+"mean-value" function  M:C(I) -> R  can be characterized -- indeed,
+evaluated -- from its order-preservation together with what it does to
+constant functions and
+                                                MxM
+         C(I v I) -->  C(I + I) --> C(I) x C(I) ---> R x R
+  
+        C(F) |                                         | m
+             v                                         v         
+                                 M
+          C(I)  ------------------------------------>  R
+
+where  F:I -> I v I  is the coalgebra structure and  m  is the
+midpoint operation. If  C(F)  is inverted then this diagram can be 
+read as a fixed-point definition of  M.  (It's the unique fixed-point 
+of an operator acting on the set of all those order-preserving maps 
+from  C(I)  to  R  that do the right thing on constant functions.)
+
+
+PS
+Just for comparison, consider the category of posets and the functor
+that sends  X  to  X;1;X.  The open interval is an invariant object 
+for this functor but it is not the final coalgebra. For that we need
+-- as we called it in Cats and Alligators -- Wilson space. Actually,
+not the space but the linearly ordered set, most easily defined as the
+lexicographically ordered subset, W, of sequences with values in  
+{-1, 0, 1}  consisting of all those sequences such that for all  n 
+a(n) = 0  =>  a(n+1) = 0  (take a finite word on  {-1,1}  and pad it
+out to an infinite sequence by tacking on  0s).
+
+PPS
+Given a coalgebra structure described by endo-functions  d  and  u  on
+X, let  End(X)  be the monoid of endo-functions on  X.  We will need 
+to compose in the diagrammatic order: "ud" means "first  u  then  d".
+Let  {0,1}*  be the free monoid with generators named  0  and  1  and
+Let  M_X:{0,1}* --> End(X)  be the monoid homomorphism such that  
+M_X(0) = d  and  M_X(1) = u.  Given  x  in  X  let  L  be the subset of 
+{0,1}*  consisting of those words  w  such that  M_X(w)  sends  x  to
+top in  X.  The elements of  {0,1}*  may, of course, be  viewed as
+finite words on  0  and  1.  By catenating  "0."  on the left of any
+such word we obtain a description -- in binary -- of a dyadic rational
+in the half-open unit interval  [0,1).  Define  f:X -> I  by sending
+each  x  to the supremum in  [0,1]  of the dyadic rationals, r(L),
+named by the words in its corresponding  L.  The  L  corresponding to
+d(x)  can thus be obtained by taking each word in  L  that starts with
+0  and deleting that  0.  The resulting  r(L)  can be described by
+first throwing away each dyadic rational bounded below by  1/2  and
+then doubling each dyadic rational that remains, that is,doubling each
+dyadic rational bounded above by both  f(x)  and  1/2.  The resulting 
+supremum is thus  min (1, 2f(x)).  That's what  f(d(x))  is. And it's 
+also what d(f(x)) is. Same sort of argument for  u.
+
+A little too easy. The recipe above does work for  f  but the proof 
+that it works requires work. Note that the above argument requires --
+among other things -- that  r(L)  be a downdeal. (And note that it 
+never invoked the facts that  d  and  u  preserve top and bottom nor 
+the fact that  d(x)  is top or  u(x)  is bottom for all  x.)  I think 
+a  return to Dedekind works best. Besides defining the "lower" set, L, 
+define the "upper" set  U  as the subset of  {0,1}*  consisting of 
+those words  w  such that  M_X(w)  sends  x  to bottom. We have the
+facts:
+              w:L  =>  w0:L  and  w1:L            (using 
+              w:U  =>  w0:U  and  w1:U              ":"
+         w:{0,1}*  =>  w0:L  or   w1:U        for membership)
+
+We may infer, just from  w:L => w0:L  and  w:U => w0:U, that if a
+dyadic rational has a name in either  L  or  U  then it does not have
+a name in the other. Thus we obtain a disjoint pair of sets of dyadic
+rationals  r(L)  and  r(U).  For any pair of dyadic rationals 
+x,y:[0,1)  where  x is _not_ in  r(L)  and  x < y,  it is the case 
+that  y  is in  r(U):  it suffices to check, for any word  w, that if
+w0  can be prolonged to a name of  x, then  w0  is not in  L  forcing
+w1  to be in  U  and, hence, any prolongation of  w1  to be in  U.  It 
+follows that  r(U)  is an updeal and if there's a dyadic rational in
+[0,1)  that is in neither  r(U)  nor  r(L)  then there's only one such
+dyadic rational, to wit, the greatest lower bound of  r(U).  It
+follows that  r(L)  is a downdeal. The pair  r(L)  and  r(U)  thus
+forms a Dedekind cut and we can use it to name the value of  f(x). 
+The compatibility with  d  and  u  is a straightforward computation.
+
+For uniqueness, first verify that for every pair  a < b  in  I  
+there's a word  w:{0,1}*  such that  M_I(w)  sends  a  to bottom and
+b  to top. If  f,f':X -> I  were both coalgebra maps, and  x:X  were
+such that  f(x) < f'(x)  let  w  be as described. Note that  M_I(w0) =
+M_I(w) = M_I(w1).  But either M_X(w0)  sends  x  to top or  M_X(w1)  
+sends  x  to bottom. The first case contradicts that  M_I(w0)  sends
+f(x)  to bottom. The second case contradicts that  M_I(w1)  sends
+f'(x)  to top.
+
+

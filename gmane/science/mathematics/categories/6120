@@ -1,0 +1,145 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: String diagrams, adjunction and autonomous categories.
+Date: Sun, 5 Sep 2010 23:05:21 -0300 (ADT)
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <20100906020521.843735C163@chase.mathstat.dal.ca>
+References: <E1OrfhV-0007ke-BR@mlist.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1283778149 13661 80.91.229.12 (6 Sep 2010 13:02:29 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 6 Sep 2010 13:02:29 +0000 (UTC)
+Cc: categories@mta.ca (categories)
+To: baez@math.ucr.edu
+Original-X-From: majordomo@mlist.mta.ca Mon Sep 06 15:02:27 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsbL6-00054S-Pu
+	for gsmc-categories@m.gmane.org; Mon, 06 Sep 2010 15:02:25 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51669)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsbJk-0004xJ-Dm; Mon, 06 Sep 2010 10:01:00 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsbJh-0001Zu-Km
+	for categories-list@mlist.mta.ca; Mon, 06 Sep 2010 10:00:57 -0300
+In-Reply-To: <E1OrfhV-0007ke-BR@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6120
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6120>
+
+I agree that string diagrams for closed monoidal categories are quite
+a bit subtler than those for autonomous categories.
+
+Of course, because of the forgetful functor from autonomous categories
+to closed monoidal categories, there's a unique functor from the free
+closed monoidal category (over some generators) to the free autonomous
+category (over the same generators), i.e., string diagrams. So one can
+say, without doing any technical work, that morphisms of the free
+closed monoidal category are "certain" string diagrams, possibly with
+additional structure.
+
+The technical questions then are: which diagrams are "certain" ones
+(i.e., what's the image of this functor), and what, if anything, is
+the additional structure? One obvious piece of extra structure is that
+there are two binary connectives instead of one, namely, tensor and
+'-o'. In the Rosetta Stone paper (p.30), Baez and Stay use "clasps" to
+bind two strings together, to indicate an object A -o B. I am not sure
+how this will work for nested operations, such as (((A tensor B) -o C)
+tensor D) -o ((E -o F) tensor G). As John has already pointed out, the
+paper does not give details or theorems.
+
+On the other hand, the question of such string diagrams has been very
+extensively studied by logicians under the name "proof nets for linear
+logic". It turns out that one usually needs a condition logicians call
+a "correctness criterion" (originally invented by Girard) to identify
+the string diagrams that actually correspond to legal morphisms.
+Alternatively, it is possible to just draw a box around every
+operation (as done by Baez and Stay), and say that the legal diagrams
+are those built up using the operations of closed monoidal categories.
+But that is really just a graphical way of displaying the original
+term, together with its forgetful image in string diagrams.
+
+Most work on proof nets is for classical linear logic (corresponding
+to *-autonomous categories). Looking for the case of closed monoidal
+categories only, we need to look for intuitionistic linear logic.  By
+googling "proof nets for intuitionistic linear logic", I found this
+2008 paper by Lamarche (based on a 1994 technical report), which seems
+to contain the answer, with theorems:
+
+  http://hal.inria.fr/docs/00/34/73/36/PDF/prfnet1.pdf
+
+That paper actually contains a bit more than just the monoidal closed
+case; it also shows how to extend the diagrams to cartesian product
+(in addition to tensor), and it adds the exponential operator "!" of
+linear logic, in the presence of which one can then have diagrams for
+*cartesian* closed categories as well. I think an even earlier version
+of such string diagrams may already appear in Regnier's 1992 thesis
+(http://iml.univ-mrs.fr/~regnier/articles/these.ps.gz).
+
+So I guess the point is that one can save some time by exploiting what
+logicians have already done, using the connections between logic,
+category theory, and string diagrams, rather than re-inventing the
+wheel. Which is also precisely the point of the Baez/Stay "Rosetta
+Stone" paper.
+
+-- Peter
+
+John Baez wrote:
+>
+> Mike Shulman wrote:
+>
+> On the other hand, am I right that you (John) have also written about
+>> string diagrams in closed (non-autonomous) monoidal categories?
+>
+>
+> Right.
+>
+>
+>> Those are a bit subtler, and I don't recall them in the work of Joyal and
+>> Street (am I wrong?).
+>
+>
+> I think you're right - they're subtler, and I haven't seen anyone else using
+> them.  I never proved any *theorems* about them.   But I used them
+> extensively in my course on "Classical versus quantum computation", starting
+> here:
+>
+> http://math.ucr.edu/home/baez/qg-fall2006/index.html#computation
+>
+> I wanted to explain how beta-reduction in the lambda calculus is like
+> "straightening a zig-zag".
+>
+> There's a quick summary of this material in that "Rosetta Stone" paper with
+> Mike Stay, mentioned earlier:
+>
+> http://arxiv.org/abs/0903.0340
+>
+>
+>>  The original question used the word "autonomous" but the notation used
+>> suggested a merely closed monoidal category, so perhaps that's what he had
+>> in mind.
+>>
+>
+> Oh, okay.  Yeah, I was sort of disappointed that Micah credited me for
+> string diagrams in the autonomous case, where I didn't invent them, instead
+> of the closed case, where maybe I did.
+>
+> Best,
+> jb
+>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

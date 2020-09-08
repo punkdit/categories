@@ -1,0 +1,212 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: natural numbers in weak logics
+Date: Tue, 4 Nov 2003 19:54:30 GMT
+Lines: 181
+Approved: news@gmane.org
+Message-ID: <200311041954.hA4JsUc16697@primrose.cs.man.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018703 4420 80.91.229.2 (29 Apr 2009 15:25:03 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:25:03 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Nov  4 18:06:59 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 04 Nov 2003 18:06:59 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 1AH9Iq-0003TX-00
+	for categories-list@mta.ca; Tue, 04 Nov 2003 18:05:32 -0400
+X-Spam-Score: -4.9 (----)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: O
+Content-Length: 7401
+Original-Lines: 180
+Xref: news.gmane.org gmane.science.mathematics.categories:2493
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2493>
+
+I wonder whether anyone has done an investigation (in either a journal
+paper or web-accessible lecture notes) of the way in which
+
+        the natural numbers object has to be re-defined
+                in categories with weak logic.
+
+
+It is well known, for example, that in a category that (has finite
+products but) is not cartesian closed, parameters have to be added
+explicitly to the definition, yielding a diagram of the form
+
+                zero                 succ
+        Gamma --------> N x Gamma <-------- N x Gamma
+          ||                .                   .
+          ||                .                   .
+          ||                . rec               . <left, rec>
+          ||                .                   .
+          ||    base        V        step       V
+        Gamma ----------->  X  <------------- N x X
+
+(where, as in proof & type theory, I use Gamma for an arbitrary
+object, or context of parameters).
+
+If the category is cartesian closed then this diagram may be
+rewritten with  the exponential  X^Gamma  in place of  X,  the
+object Gamma itself being removed from the top line.
+
+The corresponding recursion scheme is written symbolically as
+
+    Gamma  |-  base : X        Gamma, n:N, x:X  |-  step (n,x) : X
+    --------------------------------------------------------------
+               Gamma, n:N  |-  rec (n, base, step) : X
+
+with beta-rules
+    Gamma       |-  rec (zero,    base, step) = base : X
+    Gamma, n:N  |-  rec (succ(n), base, step) = step (n, rec (n, base, step))
+
+By the way, we call this "recursion at type X", the point being that
+as the class of types at which the recursion scheme is asserted grows,
+so considerably does the power of the logic.
+
+A similar generalisation is needed when we want to argue about equations:
+
+ - I have terms     Gamma, n:N, x:X  |-  a_n,  b_n : X,
+
+ - I prove a base case        Gamma  |-  a_0 = b_0 : X
+
+ - and an induction step that
+        Gamma, n:N, x:X,   a_n = b_n : X  |-    a_n+1 = b_n+1 : X
+
+ - From these I want to deduce that   Gamma, n:N, x:X  |-  a_n = b_n : X
+   without assumption.
+
+Notice that I said nothing about how  a_n  and  b_n  themselves were
+defined.  Indeed, if they had been defined by the same base and step
+maps on X, they would be equal by the uniqueness hypothesis of the
+universal property - otherwise known as the eta rule for recursion.
+
+
+To give a simple example to show that we need more than this uniqueness,
+let b_n=b be constant and
+        a_0 = f u,  a_1 = f(s u),  a_2 = f(s(s(u)), etc
+where
+        f: X---> Y   and    s : Y ---> Y
+so that the sequence  a_n  itself is not defined by an endofunction.
+
+We can apply the ordinary recursion scheme to this example by considering
+the subtype or equaliser
+                                                  f
+                                                ------>
+        Z  =  { y:Y | f y = b }  >------>   Y          X
+                                                ------>
+                                                  b
+
+since the endofunction  s : Y --> Y  restricts to  Z.
+
+In fact, the general equational recursion scheme can be derived from
+a different equaliser:
+                                                          a_n
+                                                        ------>
+        E = { n:N | a_n = b_n : X}  >------> Gamma x N          X
+                                                        ------>
+                                                          b_n
+
+The base case says that  zero : Gamma x N -> N  factors through E,
+whilst the induction step says that  succ  restricts to  a map  E -> E.
+Then the above parametric recursion scheme provides an inverse
+        rec_E : Gamma x N ---> E
+to the inclusion, one equation being given by uniqueness of
+        rec_N : Gamma x N ---> Gamma x N
+and the other by the fact that  E >--->  Gamma x N  is mono.
+
+
+As you may have guessed, I became concerned by this issue because
+I am interested in a certain category that does not have general
+equalisers, so I will need to assert a more complicated recursion
+scheme in my case.
+
+
+These two generalisations of the beautifully simple Dedekind -- Peano
+-- Lawvere definition of the natural numbers are beginning to feel
+like the thin end of a wedge.  Presumably be have to make a further
+alteration to the definition for every propositional and type
+connective in our logic.
+
+Alternatively,  we can consider the situation in set theory or an
+elementary topos.  The equational recursion scheme is valid there
+because we have equalisers, and we may consider in particular the case
+where X = Omega is the subobject classifier and b_n=true.  This gives
+Peano induction straight away.
+
+We get from a given category to the topos situation by means of a
+Yoneda embedding, though unfortunately not simply into a presheaf
+topos or functor category. There has to be a Grothendieck topology to
+make the representable object N from our category coincide with the
+constant sheaf whose value is N from Set.
+
+Actually, we can unwind this situation and re-express it in terms of
+elementary category theory or type theory.  Let
+        Gamma,  n:N  |-  phi(n)
+be the predicate that we want to prove generally true by induction.
+
+This predicate, like any term, may be shifted from one context Gamma
+to another one Delta by a multiple substitution of a term using
+variables from Gamma for each typed variable in Delta. Categorically,
+this just means the composite
+
+                    u x id              phi
+        Delta x N  --------> Gamma x N -----> Omega
+
+Now  phi  may actually be true in some particular context  Gamma,
+but not in another one  Delta.    Those contexts in which it is true
+form a category, or alternatively a sheaf or sieve on the original
+category.  This sieve is the truth-value of phi in the sheaf topos.
+
+
+I think symbolic logic has language for this situation, possibly
+involving the word "realises", but I'm not sure at the moment what
+this is.
+
+Let S be this sieve.
+
+Like E above, it has a map (natural transformation)  E ---> N.
+
+If the sieve S is representable by an actual subobject of N in the
+original category, the same argument as above provides an inverse
+N ---> S, whence S is the whole of N.   (A sieve S is representable
+by an object U if S consists of all of the maps into U).
+
+We can see parametric and equational recursion in terms of this sieve.
+
+In the equational case,   S  consists of all maps to Gamma x N that
+have equal composites with  a_n  and  b_n.  The sieve is representable
+iff it has a terminal object, which is called the equaliser.
+
+In the parametric case,  the terminal object of the sieve is the
+exponential   X^Gamma.
+
+
+The general form of the recursion scheme in a category with weak logic
+that we do not want to embed in a topos therefore appears to be this:
+
+        N admits recursion at the sieve (cf type) S
+
+for whatever generality of sieves we care to choose.
+
+Since a sieve is the external manifestation of a subset in the topos,
+what we have said is that any sieve (of the chosen generality) that
+contains zero and is closed under successor is the whole of N.
+In other words, N admits induction or is well founded with respect
+to such sieves as predicates.
+
+Maybe I've just answered my own question, but if someone else has
+worked on this and written it up more fully then I would like to know.
+
+Paul Taylor
+www.cs.man.ac.uk/~pt
+
+
+
+

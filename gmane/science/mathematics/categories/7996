@@ -1,0 +1,128 @@
+Path: news.gmane.org!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Martin-Lof type theory gentle introduction please
+Date: Tue, 04 Feb 2014 06:46:58 +0200
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <4eca2e8be821b8858306fab50b823a4c@cs.umu.se>
+References: <E1WATBX-0000hk-9i@mlist.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1391611939 8131 80.91.229.3 (5 Feb 2014 14:52:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 5 Feb 2014 14:52:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Wed Feb 05 15:52:29 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WB3pw-0001QG-Sb
+	for gsmc-categories@m.gmane.org; Wed, 05 Feb 2014 15:52:25 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36441)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WB3pD-0005YN-Hu; Wed, 05 Feb 2014 10:51:39 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WB3pC-0002Zh-1E
+	for categories-list@mlist.mta.ca; Wed, 05 Feb 2014 10:51:38 -0400
+In-Reply-To: <E1WATBX-0000hk-9i@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7996
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7996>
+
+Hi Vasili,
+
+This is not an easy one, since that "theory" has changed form every now
+and then.
+
+I cannot but see it as related to the unsolved issue of the distinction
+between terms and sentences in logic. When we mix the two, or when we
+are unclear of the "types" of the two, we will not be able to proceed.
+
+Church in 1940 spoke about the 'iota' and 'o' "types of types", where
+'iota' is potentially the type of possible sorts in a "conventional
+signatures". Then 'o' is the "type of propositions", but Church was
+humble to say that the formal situation about this is not clear. In my
+view this has not been properly solved since then. See our "Modern eyes
+on lambda-calculus" under GLIOC (www.glioc.com) for a notion of a
+three-level signature that may be a solution to some of the problems in
+this context.
+
+Martin-L??f started off with a universes V of types, and added an "axiom"
+saying "V is also a type", i.e. is part of that V, so "V \in V" was seen
+to be ok. It turned out not to, so later it was changed by others to
+"Prop \in Type", where Type is like Church's iota and Prop like Church's
+o. This still doesn't distinguish between terms and sentences in a
+proper way, and type constructors kind of come to rescue "from the
+outside" and are indeed not "internalized" within any signature.
+Dependent data typing is full of that "externalization".
+
+Howards 1969 note (circulated among a few, eventually published upon
+request by 1980) on the subject is also fine, continuing e.g. what Curry
+and Fey wrote a decade before, but these notes and writings also do not
+conclude anything about Church's dilemma about iota and o. Needless to
+say, Heyting's book is "set-theoretic" so it doesn't help at all. I
+don't know the "type theory" history and atmosphere from the time of
+around 1965 (I was seven years old at that time), but I can imagine that
+there was a bit of "fictive mathematics" and ambitions to establish "new
+foundations" around tables here and there at that time and during the
+next decade or even two. Whether this has been useful or harmful for
+computer science as a whole is difficult to say, but obviously, lots of
+functional languages have been created upon different views of those
+"axioms". Many definitely say it has all been very useful, but I have
+started to have "foundational and constructive doubts", at the age of
+55. "Imperative" and "algorithm" is still allowed to be "outside
+everything", and this privilege is quite "interesting?", but also
+doubtful. You may want to recall e.g. what Kleene said in his
+Metamathematics about the "metamathematical proposition" R(x,Y): "There
+must be a decision procedure or algorithm for the question whether
+R(x,Y) holds". Indeed there must be. Otherwise G??del's "theorems" are
+doubtful. Maybe G??del's "theorems" are basically paradoxes, showing how
+obscure the foundations really are. Freely making propositions related
+to truth and provability, and feeling privileged not to keep concepts
+clearly apart from each other, i.e. "mixing bags", leads to many things,
+but also leads to trouble.
+
+Even concerning the distinction between term and sentence, I strongly
+believe we need to be formal firstly about the term monad (see "Fuzzy
+terms" under GLIOC), in order to be "constructive" about terms.
+Thereafter we quickly realize that terms actually reside in sentences.
+Substitution and compositions with it is for terms, not for sentences.
+There is a certain "lativity" in all this, and "lativity of choice" if
+you want to be foundational about it. I don't think there is a "unique"
+or "canonic" foundations.
+
+Basically I am not sure you will find that gentle "tutorial", but if you
+do, I would also be interested to read it. However, a potpourri tutorial
+or paper is no good, because the light will just keep staying out,
+leaving me in the dark, and even worse, in the "foundational gutter".
+
+Cheers,
+
+Patrik
+
+-- 
+Prof. Patrik Eklund
+Ume?? University
+Department of Computing Science
+SE-90187 Ume??
+Sweden
+
+-------------------------
+
+mobile: +46 70 586 4414
+website: www8.cs.umu.se/~peklund
+Skype: patrikeklund
+Adobe Connect: https://connect.sunet.se/patrikeklund/
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

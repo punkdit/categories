@@ -1,0 +1,113 @@
+Path: news.gmane.org!not-for-mail
+From: Luigi Santocanale <luigis@brics.dk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction: definable equationally?
+Date: Thu, 02 Nov 2000 18:09:10 +0100
+Lines: 79
+Approved: news@gmane.org
+Message-ID: <3A019FB6.2454C847@brics.dk>
+References: <200010280923.CAA10190@coraki.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+X-Trace: ger.gmane.org 1241018019 32423 80.91.229.2 (29 Apr 2009 15:13:39 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:39 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Nov  2 14:28:23 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eA2Hjx004470
+	for categories-list; Thu, 2 Nov 2000 13:45:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.76 [en] (X11; U; SunOS 5.7 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: RO
+Content-Length: 2603
+Original-Lines: 78
+Xref: news.gmane.org gmane.science.mathematics.categories:1684
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1684>
+
+Vaughan Pratt wrote:
+
+> We may now reword the original question in the light of the foregoing.
+> To what variety can one similarly associate suitable operations fully
+> defined equationally so as to include an equationally expressed principal
+> of coinduction?
+
+In the same way an induction principle is expressible by means of a
+least fixed point, one could expect coinductive principles to be
+expressible by means of greatest fixed points.
+
+The following example will clarify what I have in mind.
+Let G,H two graphs, then we can construct the graph G*H, where 
+
+(G*H)_0 = G_0 x H_0 
+
+and 
+
+(G*H)_1 = (G_1 x H_0) + (G_0 x H_1) . 
+
+Every transition of  G*H is labeled: it is either a left transition or a
+right transition. We obtain in this way two modal operators on the
+subsets of G_0 x H_0, call them <l> and <r>. A bisimulation is a subset
+B of G_0 x H_0 such that
+
+B <= [r]<l>B and B <= [l]<r> , 
+
+where the [] are the duals of <>. If G = H, then saying that G has no
+proper quotient amounts to saying that the greatest bisimulation is
+equal to the diagonal D. Therefore a principle of coinduction can be
+expressed as follows:
+
+\nu_z.([r]<l>z \wedge [l]<r>z) = D 
+
+where \nu_z.f(z) is the greatest fixed point of f(z). The example can be
+generalized. 
+
+The following question arises: is the greatest postfixed point definable
+equationally? The answer is yes, at least in several cases, as it is the
+least prefixed point.
+
+Consider a theory which contains the signature <0,+,.,\>. <0,+> satisfy
+the semilattice axioms and, with respect to induced order, a.x is left
+adjoint to a\x, for a fixed a. Let f(z) be any term of the theory, then
+the following holds:
+
+g(x) is the parameterized least prefixed point of f(z).x if and only if
+the equations
+
+f(g(x)).x = g(x)
+g(x) <= g(x+y)
+g(f(x)\x) <= x
+
+hold. 
+
+It is an easy exercise to check this is true, using the fact that
+f(x).(f(x)\x) <= x . If . has a right unit 1, then g(1) is the least
+prefixed point of f(z). Similar results hold for the greatest postfixed
+point if we can find an operation . with a parameterized right adjoint. 
+
+Algebraic models of the propositional $\mu$-calculus form a variety, as
+the models of PDL do, and hopefully coinductive principles can be
+expressed. One could also define something like a $\mu$-linear logic,
+its models would form a variety. 
+
+Best regards,
+
+	Luigi
+
+-- 
+Luigi Santocanale,
+
+BRICS				
+Department of Computer Science	Telephone:   +45 8942 3288
+University of Aarhus		Telefax:     +45 8942 3255
+Ny Munkegade, building 540	http://www.brics.dk/~luigis/
+DK - 8000 Århus C, Denmark.	mailto:luigis@brics.dk
+
+

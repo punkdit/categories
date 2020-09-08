@@ -1,0 +1,85 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@CS.Stanford.EDU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Questions on dinatural transformations.
+Date: Thu, 01 Jul 2004 10:01:28 -0700
+Lines: 52
+Approved: news@gmane.org
+Message-ID: <200407011701.i61H1SRH005609@coraki.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241018865 5570 80.91.229.2 (29 Apr 2009 15:27:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:27:45 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Jul  2 07:48:09 2004 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Jul 2004 07:48:09 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1BgLaL-0005ma-00
+    for categories-list@mta.ca; Fri, 02 Jul 2004 07:48:01 -0300
+X-Mailer: exmh version 2.6.3 04/04/2003 with nmh-1.0.4
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 3
+Status: O
+Content-Length: 2527
+Original-Lines: 51
+Xref: news.gmane.org gmane.science.mathematics.categories:2740
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2740>
+
+
+>From: noson@sci.brooklyn.cuny.edu
+>I was hoping that the category of small categories, functors and
+>dinat transformations...
+
+There's a category problem already at this point.  Dinats don't go between
+functors F,G:C->D, they go between sesquifunctors F:C^op x C->D and differ
+from n.t.'s of that type by only being defined on the diagonal of C^op x C.
+The off-diagonal and non-identity-morphism entries in F,G only participate
+in the dinaturality condition, not in the transformation itself.
+
+>a) It is well known that there is no vertical
+>composition of dinatural transformations.
+>How about horizontal composition?
+
+Before you can compose dinats horizontally you have to be able to compose
+the sesquifunctors they bridge.  I don't know how others do this, but if I
+had to compose G:D^op x D -> E with F:C^op x C -> D, my inclination would
+be to restrict the evident composite G(F(a,b),F(c,d)) to a=d, b=c (i.e.
+where the variances match up).  That is, GoF:C^op x C -> E is defined by
+G(F(c,c'),F(c',c)) on object pairs (c',c) of C^op x C, with the expected
+extension to morphism pairs (f',f) where f':c'->d' in C^op (i.e.
+f':d'->c' in C) and f:c->d in C, namely
+
+  G(F(f,f'),F(f',f)): G(F(c,c'),F(c',c)) -> G(F(d,d'),F(d',d)).
+
+With that (or some) choice of sesquifunctor composition one can then ask
+about horizontal composition tos where s:F->F', t:G->G'.  How would you
+whisker a dinatural on the left, i.e. apply the whisker G:D^op x D->E
+on the left to the dinat s:F->F' on the right where F,F':C^op x C->D?
+For natural transformations, G is just a functor G:D->E, so this is just a
+matter of applying G pointwise to each s_c.  For dinaturals however, G is
+a sesquifunctor.  What do you want a sesquifunctor to do to a morphism s_c?
+Maybe there's some span-like thing one can do here but I don't see it.
+
+For dinaturals, vertical composition may turn out to be easier than
+horizontal, in that it at least makes sense provided one solves the
+shape-matching problem somehow.  In doing so one also solves another
+problem, that dinaturality is too weak a condition, typically admitting
+transformations on the internal hom that aren't Church numerals (Pare & Roman,
+JPAA 128 33-92 for Set, Pratt, TCS 294:3, bottom of p461, for Chu(Set,K) and
+chu(Set,K) which awkwardly seem to need different treatments).  Mike Barr
+has a notion of strong dinatural (unpublished?), and the notion of binary
+(more generally n-ary) logical transformation also works well here when
+definable on the category of interest.
+
+Vaughan Pratt
+
+
+
+
+

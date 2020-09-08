@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: Tom LEINSTER <leinster@ihes.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Function composition of natural transformations?
+Date: Wed, 4 Jun 2003 22:07:51 +0200 (CEST)
+Lines: 92
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0306042131490.14691-100000@ssh.ihes.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset="US-ASCII"
+X-Trace: ger.gmane.org 1241018586 3644 80.91.229.2 (29 Apr 2009 15:23:06 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:23:06 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Jun  5 16:50:31 2003 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 05 Jun 2003 16:50:31 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 19O0hs-0004Sy-00
+	for categories-list@mta.ca; Thu, 05 Jun 2003 16:47:28 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 24
+Status: O
+Content-Length: 3963
+Original-Lines: 91
+Xref: news.gmane.org gmane.science.mathematics.categories:2333
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2333>
+
+
+This may be `mere' pedagogy for ordinary categories, but if you try the
+same thing for 2-categories then it becomes a `genuine' issue.  To put it
+another way, the two different but equivalent presentations of a concept
+(natural transformation) become, on categorification, significantly
+different.
+
+First the 1-dimensional situation.  As I understand it, Pat Donaly's
+original point was that given functors
+
+    F, G: C ---> D
+
+between categories, you can either define a natural transformation in the
+standard way (assigning an arrow of D to each object of C) or in an
+alternative way (assigning an arrow of D to each arrow of C).  With the
+standard method, vertical composition of transformations is "easy" to
+define, and horizontal composition is "hard".  With the alternative
+method, horizontal composition is now easy to define (as Pat noted), but
+vertical composition is "hard".  So the situation is reversed.
+
+Of course, neither of these "hard"s is really hard, but in both cases you
+have two evident ways of defining a composite - one left-handed, one
+right-handed - and if you're going to do anything whatsoever with the
+definition then you need to show that these two ways give exactly the same
+result.
+
+Now suppose that C and D are 2-categories and F and G are 2-functors.  It
+doesn't matter whether C, D, F and G are strict or weak for the purposes
+of this discussion.  Suppose we're interested in defining weak (=pseudo)
+transformations F ---> G.  The usual way is to say that such a
+transformation consists of a 1-cell
+
+   alpha_c : Fc ---> Gc
+
+for each c in C, together with an invertible 2-cell inside each naturality
+square, satisfying axioms.  With this definition, vertical composition of
+transformations is easy to define (and there's only one evident way of
+doing it), but horizontal composition can be defined in two different
+ways, which are not equal but canonically isomorphic.  An alternative
+approach is to say that a transformation consists of a 1-cell
+
+   alpha_f: Fc ---> Gc'
+
+for each 1-cell
+
+   f: c ---> c'
+
+in C, together with certain further 2-cells, satisfying axioms.  You can
+guess the rest of this paragraph: with this definition, horizontal
+composition is now easily (and canonically) defined, but vertical
+composition can be defined in two different ways, which are not equal but
+canonically isomorphic.
+
+You might think that this isn't a genuine difference or "problem" so far,
+because everything is the same up to isomorphism.  But now suppose that
+you're interested in *lax* transformations F ---> G (where F and G are
+still 2-functors, as above).  The usual definition is that such a lax
+transformation alpha consists of a 1-cell alpha_c as above for each object
+c of C, and then a not-necessarily-invertible 2-cell inside each
+naturality square (pointing in a direction fixed by convention),
+satisfying axioms.  These lax transformations can still be composed
+vertically perfectly easily, but horizontal composition is now
+*impossible* to define.  (More accurately, you can define two different
+horizontal compositions, but they're not isomorphic, only connected by a
+non-invertible cell; you could of course choose one over the other, but it
+won't have good properties.)  And if you define "lax transformation"
+according to the alternative method, then horizontal composition is now
+easy and vertical composition impossible.
+
+In summary, if you define transformation of 1- or 2-category in the
+standard style then vertical composition is always easy, and regarding
+horizontal composition:
+
+- for transformations of categories, it's canonically defined
+- for weak transformations of 2-categories, it's not canonically defined
+  (you have to choose "left" or "right"), but is canonically defined up to
+  isomorphism
+- for lax transformations of 2-categories, it's not defined at all.
+
+If you use the alternative style then the situation is similar but with
+"vertical" and "horizontal" reversed.
+
+Puzzling.
+
+Tom
+
+
+
+
+
+
+

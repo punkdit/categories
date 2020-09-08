@@ -1,0 +1,242 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: pratt cat
+Date: Thu, 30 Oct 1997 22:32:49 -0400 (AST)
+Lines: 219
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971030223238.32511A-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017004 26037 80.91.229.2 (29 Apr 2009 14:56:44 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:44 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Thu Oct 30 22:33:46 1997
+Original-Received: by mailserv.mta.ca; id AA16867; Thu, 30 Oct 1997 22:32:49 -0400
+Status: RO
+Content-Length: 6983
+Original-Lines: 218
+Xref: news.gmane.org gmane.science.mathematics.categories:504
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/504>
+
+Date: Thu, 30 Oct 1997 16:39:48 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Vaughan wrote:
+
+  To the extent that both toposes and abelian categories share much
+  pleasant structure, the models of the intersection of their
+  theories, for a suitable choice of language, would seem to be a nice
+  class in its own right.
+
+There are several variations on the topic. I'll look first at the
+theory obtained by starting with 
+
+  finite completeness,
+  coterminator,
+  pushouts for pairs of maps one of which is monic,
+  pushouts for kernel pairs
+
+then adjoining all universal Horn sentences in these predicates that
+hold for both the category of abelian groups and the category of sets
+(or, if prefered, hold for all abelian categories and all pre-topoi).
+We will see that this theory can be finitely axiomatized and that the
+representations of its models into the categories of abelian groups
+and sets are collectively faithful. This will be the "first task.
+The representation will be done by finding a single faithful
+representation into the product of an abelian category and a topos and
+using known theorems thereon. By a representation I here mean a
+functor that preserves finite limits, coterminators, pushouts of pairs
+of maps one of which is monic and pushouts of kernel pairs. (It
+follows that a representation preserves epimorphisms, finite
+coproducts and images.)
+
+If we expand the theory to include all positive AE sentences it
+remains finitely axiomatizable, and the only models are those
+categories that are a product of an abelian category and a pre-topos.
+This will be the "second task".
+
+After that, I'll add some more essentially algebraic structure so that
+we can talk about power-objects using universal Horn sentences and
+obtain again the finite axiomatizability and the fact that the the
+only models are those categories that are a product of an abelian
+category and a pre-topos. This will be the "third task".
+
+Note that each of axioms below is true for both abelian categories and
+topoi. Until we reach axiom VAE, all can be turned into universal
+Horn sentences if the completeness conditions listed above are turned
+into an essentially algebraic theory.
+
+V1) Effective regular category. (Yes this can be stated as universal
+Horn conditions on pullbacks and the special pushouts mentioned
+above.)
+
+V2)  0 -> 1  is monic.
+
+Note that it follows that all maps from  0  are monic.
+
+In the diagrams below all non-horizontal lines should have arrows
+added in downwards direction.
+
+V3) If  A -> C  is monic and 
+                              A
+                            /   \
+                           B     C
+                            \   /
+                              D
+
+is a pushout then it's a pullback, 
+
+V4)  and so is
+                             0xA
+                            /   \
+                         0xB     0xC
+                            \   /
+                             0xD.
+
+
+Note that binary coproducts therefore exist and are disjoint.
+
+V5) If  B -> 0xC  is epic and
+                               A
+                             /   \
+                            0     B
+                             \   /
+                              0xC
+
+is a pullback then it's a pushout.
+
+Two definitions: let
+                        0 x X
+                       /     \
+                      0       X
+ 
+be a product diagram. If the map to  0  is an iso, I'll say 
+that  X  is type-T; if the map to X is an iso, I'll say that
+it's type-A. 
+
+Note that (using V2) an object is type-A iff it has a map to  0. The
+type-A objects are closed under binary products and coproducts,
+subobjects and quotient objects. The full subcategory of A objects is
+coreflective, with  AX = 0xX  as coreflector. Most important, it is an 
+abelian category.
+
+V5) If the rhombi in
+                     A     B
+                     |\   /|
+                     D  C  E
+                      \ | /
+                        F
+are pullbacks and if 
+                     D     E
+                      \   /
+                        F
+
+is a coproduct diagram, and if all the objects are type-T
+then 
+
+                     A     B
+                      \   /
+                        C
+
+is also a coproduct diagram.
+
+Note that an object is type-T iff every type-A object has a unique map
+thereto. Type-T objects are closed under binary products and
+coproducts, subobjects and quotient objects. (For coproducts use V3.)
+The full subcategory of type-T objects forms a reflective subcategory:
+the reflector, T, is defined via the pushout diagram:
+
+                    0xX
+                   /   \
+                  0     X
+                   \   /
+                     TX
+
+One now has what's needed to show that the full subcategory of type-T
+objects is a pre-topos.
+
+Note that the functor  A  preserves pullbacks and pushouts
+of pairs of maps one of which is monic (V4). Add 
+
+V6) T preserves pullbacks.
+
+(It clearly preserves pushouts.)
+
+Only one more axiom is needed for the first task:
+
+V7)  If  f  is a map such that  Af  and  Tf  are both isos then
+f  is an iso.
+
+For the second task add:
+
+VAE) For every  X  there's a map  TX -> X  such that 
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+Note that  TX -> X  is a coreflector (making V6 redundant). One can
+force the map to be unique by further requiring that  TX -> X -> TX
+is the identity map. And note that the type-A objects can not be 
+reflective: if  1  has a map to any type-A object the entire category
+collapses.
+
+For the third task, I'll add the following structure: functions
+on objects P,E,l, r such that  lX:EX -> PX  and  rX:EX -> X  and 
+
+V8)  <lX,rX>:EX -> PXxX  is monic and  PX, EX  are type-T.
+
+I need one more operation, denoted with an upcase lambda, here 
+written as  /\.  Given a pair of maps  f:R -> Y, g:R -> X
+where  R  is of type-T, then  /\(f,g): Y -> PX  is defined and 
+
+V9> The composition of relations
+
+       /\(f,g)        (lX)'         rX
+   Y  ----------> PX -------> EX ---------> X
+
+is equal to 
+         f'         g
+   Y  -------> R --------> X
+
+(where  '  is being used to denote the reciprocation operator on
+relations).
+
+V10) If
+             R
+         f /   \ g
+          Y     EX
+         h \   /lX
+            TX
+
+is a pullback and R of type-T, then  /\(f,(rX)g)  = h.
+
+Note that in the full category of type-T objects, P  yields
+power-objects with  E, l, r  naming the universal relations. (V10 
+provides the uniqueness condition.)
+
+In any abelian category the only type-T object is the zero
+object, which forces  P=E=0  for abelian categories.
+
+It's routine that both  A  and  T  preserve the new structure. We can
+now remove the existential from VAE. Define  TX -> X  as the image of
+rX. The third task is finished with:
+
+V11) For every  X  
+
+                    AX     TX
+                      \   /
+                        X
+
+is a coproduct diagram.
+
+
+
+These axioms will, no doubt, be much simplified.
+
+

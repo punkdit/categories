@@ -1,0 +1,96 @@
+Path: news.gmane.org!not-for-mail
+From: Philippe Gaucher <gaucher@irmast1.u-strasbg.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: about dimension of morphisms
+Date: Mon, 23 Nov 1998 16:45:58 +0100
+Lines: 66
+Approved: news@gmane.org
+Message-ID: <199811231545.AA14182@irmast1.u-strasbg.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017372 28477 80.91.229.2 (29 Apr 2009 15:02:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:02:52 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Mon Nov 23 14:19:22 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA17932
+	for categories-list; Mon, 23 Nov 1998 12:01:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Content-Md5: Ew+TX2rFg2ed4CvwDWs2Ig==
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1810
+Original-Lines: 65
+Xref: news.gmane.org gmane.science.mathematics.categories:950
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/950>
+
+Bonjour, 
+
+I think that I have found a small pathological behaviour with 
+dimension of morphisms in omega-categories. This is the following
+one.
+
+Let us first  recall that 
+       min{m/s_m(x)=x} = min{n/t_n(x)=x} =: dim(x). 
+Because x = s_m(x) = t_m s_m(x) (because m=<m) = t_m(x).
+
+Lemma 1 : Let u and v be two composable morphisms of dimension
+1 (i.e. t_0(u)=s_0(v)). Suppose that t_0(v)<>s_0(u) (<> means
+different). Then u o_0 v is of dimension 1.
+
+Proof : Suppose that u o_0 v of dimension 0. Then 
+s_0(u) = s_0(u o_0 v) = u o_0 v and
+t_0(v) = t_0(u o_0 v) = u o_0 v
+So s_0(u) = t_0(v) : false.
+
+Here is now the pathological behaviour : 
+
+If s_0(u) = t_0(v), here is an example of category with u and
+v of dimension 1 and u o_0 v of dimension 0 : 
+
+We take A={alpha,beta,u,v} (four elements)
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------
+s_0	alpha	beta	alpha	beta
+-------------------------------------
+t_0	alpha	beta	beta	alpha
+-------------------------------------
+
+and for o_0 : 
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------	
+alpha	alpha	xxxx	u	xxxx
+-------------------------------------
+beta	xxxx	beta	xxxx	v
+-------------------------------------
+u	xxxx	u	xxxx	alpha
+-------------------------------------
+v	v	xxxx	beta	xxxx
+-------------------------------------
+
+(at the intersection of row x and column y, read x o_0 y)
+
+All axioms of categories seem to be verified (?). The only composition
+is a "word" of finite length "... u (beta) v (alpha) u (beta) v..."
+
+In (A,s_0,t_0,o_0), u and v are of dimension 1 and u o_0 v
+of dimension 0 because u o_0 v = alpha. 
+
+Where am I wrong ? (observe that this behaviour cannot appear with 
+for example a category coming from a composable pasting scheme).
+
+
+pg.
+
+
+
+
+

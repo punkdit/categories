@@ -1,0 +1,288 @@
+Date: Fri, 29 Mar 1996 16:00:52 -0400 (AST)
+Subject: toposes vs. sets - some simple minded questions and remarks 
+
+Date: Fri, 29 Mar 1996 16:23:38 MEZ
+From: Thomas Streicher <streicher@mathematik.th-darmstadt.de>
+
+Dear all,
+
+I have been following the discussion on toposes vs. set theory on the network.
+The discussion has reminded me of a more ``pragmatic problem'' that a student 
+of mine (B. Reus) had to face when formalising some variant of Synthetic Domain
+Theory in a very strong impredicative type theory : Calculus of Constructions
+with Inductive Types, Extensionality for Functions and Axiom of Unique Choice.
+This is almost topos logic : what is missing is the principle that equivalent
+propositions are equal but one has the further assumption of a small internal
+complete universe.
+
+Anyway, the ``pragmatic'' problem he had to face when actually working inside
+the formal system was HOW TO DEAL WITH SUBTYPES.
+Notice that the notion of subtype is not the object-oriented one from Computer
+Science but the good old-fashoned one from Logic. I will now explain more
+explicitely what I mean.
+
+If A is a type and P is a predicate on A then in everyday mathematics 
+one does not hesitate to form the type
+
+   { x : A | P(x) }  .
+
+This, of course, is no problem in set theory BUT it definitely is a problem in
+higher order logic (HOL) because in the latter one does not have the 
+possibility of ``subtype formation'' 
+which allows one to turn a predicate into a type.
+
+Now it seems to me that topos logic is more expressive than type theory in
+the sense that it allows subtype formation. When one extends HOL by subtype 
+formation then any subtype
+
+  { x : A | P(x) } 
+
+has to be accompanied by an inclusion map
+
+    iota_A,P : { x : A | P(x) } >--->  A
+    
+(together with some axioms governing its use; actually, the only place 
+where I could find them spelled out in detail 
+is in some lecture notes by Wesley Phoa).
+
+The ``pragmatic'' problem now is that when  a \in A and  P(a) then 
+one is not allowed to state
+
+  a \in { x : A | P(x) }   BUT ONLY  iota_A,P(a) \in { x : A | P(x) } .
+  
+Now when it comes to formalise arguments in HOL augmented by logical
+subtypes then notation gets really clumsy as one has to mention the
+subtype inclusions all the time.
+
+(Notice that in dependent type theory one can express
+
+  { x : A | P(x) }  as  (\Sigma x : A) P(x)
+  
+and  iota_A,P is projection on the first argument (saliently assuming
+that propositions are ``proof-irrelevant'', i.e. any proposition considered
+as a type contains at most one element)).
+
+Now -- to my opinion the ``pragmatic'' superiority of (naive) set theory
+over HOL with subtypes is that one may omit all the ``iotas'' and what one
+writes down is much more concise. So it is precisely this notational
+convenience which makes naive set theory a better linguistic tool for
+communicating mathematical constructions and arguments.
+
+But notice that this sloppiness of omitting subtype inclusions renders the
+``type-checking'' undecidable -- when one would insist on staying in a typed
+framework because in order to check whether
+
+    7653 \in  { x : N |  P(x) }
+    
+one has to PROVE
+
+    P(7653)
+    
+which actually is a problem when P is not semidecidable, e.g. when
+P(x) is a  Pi-0-1-formula (which e.g. states the consistency of the
+formal system in use).
+
+!! It is precisely this undecidability of type-checking which forces us to
+stick to an untyped universe despite the fact that in ordinary mathematical
+arguments one almost never exploits the strong comprehension principles
+of ZF(C)
+!!
+
+I am always puzzled by the following two slogans
+
+(1)   Topos Logic    corresponds to      Set Theory
+  
+(2)   Topos Logic    corresponds to      Higher Order Logic
+
+which can be found in the topos-theoretic literature.  
+It cannot be the case that both slogans are literally true 
+as one can prove the consistency of Higher Order Logic inside Set Theory 
+and therefore Set Theory must be more expressive than Higher Order Logic 
+(unless one renders G"odel's Second Incompleteness Theorem to be wrong).
+
+The slogan I would have in mind would be
+
+  Topos Logic     corresponds to      Higher Order Logic with Subtypes .
+  
+Of course, from the point of view of proof-theoretic strength nothing is
+gained by adding Subtypes to Higher Order Logic 
+(as this way one surely cannot prove more algorithms to terminate).
+
+So I can understand the slogan   
+
+    Topos Logic    corresponds to      Higher Order Logic
+    
+in the sense that the logics are equiconsistent.
+
+I definitely would like to know from the experts in topos theory 
+which of the correspondences (1) or (2) above is the intended one.
+Please, note that this question is not meant as a provocation 
+but it simply is curiosity about what the acting person thought 
+when slogans (1) and (2) were promoted (beginning of the 70s I presume).
+
+Finally, I would like to ask whether the following impression of mine
+is absolutely misleading : 
+the correspondence between BZF and topos theory given in the book of
+Mac Lane and Moerdijk is a mere equiconsistency result saying that there
+is a nontrivial elementary topos iff there is a consistent model of BZF.
+If I remember correctly there are given 2 constructions : one turning a
+model of BZF into an elementary topos (easy) and a second more complicated
+one constructing a model of BZF from an elementary topos.
+But that does NOT give an EQUIVALENCE bewteen toposes and models of BZF
+as far as I can see.
+When I start with a topos E then I get a model M of BZF which in turn gives
+rise to a topos E_new but, in general, E and E_new will not be equivalent 
+anymore.
+Right ??
+
+Sorry for that lengthy and maybe shallow remarks but it is really this
+``what I always wanted to know but never dared to ask'' sort of question(s) 
+which I now dare to ask as the arena seems to have been opened already
+for ``fluffy'' questions. 
+
+Thomas Streicher
+
+
+Date: Wed, 3 Apr 1996 16:34:12 -0400 (AST)
+Subject: Subtypes
+
+Date: Wed, 3 Apr 1996 12:22:45 EST5EDT
+>From Prof. Lambek:
+
+Thomas Streicher raises the question how to deal with subtypes. As
+was shown in the book ``Introduction to higher order categorical
+logic'', every type theory $L$ has a conservative extension, namely
+the internal language of the topos generated by $L$, in which the
+sets of $L$ become types, hence subsets become subtypes.
+
+Jim Lambek
+lambek@triples.math.mcgill.ca
+
+
+Date: Thu, 4 Apr 1996 14:15:18 -0400 (AST)
+Subject: Re: Subtypes
+
+Date: Thu, 04 Apr 1996 20:08:28 MESZ
+From: Thomas Streicher <streicher@mathematik.th-darmstadt.de>
+
+I definitely appreciate the following answer to my mail by Jim Lambek
+though I am afraid I wanted to make emphasise another aspect
+
+> Thomas Streicher raises the question how to deal with subtypes. As
+> was shown in the book ``Introduction to higher order categorical
+> logic'', every type theory $L$ has a conservative extension, namely
+> the internal language of the topos generated by $L$, in which the
+> sets of $L$ become types, hence subsets become subtypes.
+
+I have been aware of this (standard) construction that can be found in most
+textbooks on topos theory.
+One does not only have to extend the language by the subset types but ALSO
+by constants for a lot of new morphism (where the domain or the codomain is
+a new type).
+The problem is not a mathematical one but a question of notational economy :
+if I know that  a \in {a : A | P(a)}  and P(a) for a predicate P on A then I am
+not allowed to conclude a \in A but only iota_{A,P}(a)
+provided I use the extension of the language formally.
+
+For a precise formulation of the syntax of a language with subtypes see e.g.
+top of page 134
+
+W. Phoa  An Introduction to Fibrations, Topos Theory, the Effective ToposW. Phoa
+  An Introduction to Fibrations, Topos Theory, the Effective Topos
+         and Modest Sets
+         (Univ. Edinburgh LFCS Report, obtainable by ftp from the
+          Imperial College server)
+
+As I have said in my mail it is possible to give a syntax for subtypes BUT
+when really working in the formal system it gets horribly clumsy to carry
+around all the inclusions all the time.
+Formalised set theory avoids this (but surely has other defects I know).
+
+As long as one does not really work inside a formal system but only reasons
+about a a formal system one never will notice these defects I guess.
+
+Thomas Streicher
+
+
+Date: Tue, 9 Apr 1996 08:56:06 -0300 (ADT)
+Subject: Re:subtypes etc.
+
+Date: Mon, 08 Apr 1996 22:50:05 -0500 (EST)
+From: F. W. Lawvere <mthfwl@ubvms.cc.buffalo.edu>
+
+
+
+        A contrast has been pointed out :
+                        working in a formal system
+                                "vs"
+                      reasoning about a formal system.
+  Using both should lead in spiral fashion to both better formal systems
+  and more knowledge about that which they describe. In this spirit we
+  should surely expose the defects of a formal system rather than conceal
+  them. The formal system may need to be changed. It would be one-
+  sided to only "work in " a system, accepting it as a divine condemnation
+  that we have to endure.
+        The objective necessity that every map has both a domain and a
+  codomain  is one of the great principles of category theory. Already in the
+  30s it was known to be required  by even the simplest functors such as
+  pi-zero. Hence the answer to both of the questions
+                Does topos logic correspond to type theory ?
+                                "or"
+                Does topos logic correspond to set theory ?
+  is NO.  Both were earlier, partially successful attempts to make explicit
+  some "necessary laws of the development of thinking  in all the
+  areas of mathematics". All areas of mathematics  lead to qualitative leaps
+  like the functors of algebraic topology. For mathematics, freedom came
+  from the recognition of that necessity : the foundational role was thus
+  abandoned in practice by st which promoted the "freedom" allegedly
+  deriving  from ignoring codomains, while tt, though recognizing some
+  codomains
+  (as types ) , gets entangled in the "flexibility" of refusing to declare
+  variables,i.e. to specify domains.
+        A set in a topos is neither a type nor not a type : there are
+  sets of
+  exactly the right size to be susceptible of being wired up as memory banks
+  which serve  as power types or function types (or more specific
+  mathematically-oriented objects ) relative to some given sets, the wiring
+  being suitable maps which serve as evaluations, inclusions, etc.
+        A set in a topos is not a von Neumann "set" either; it has a
+  cohesiveness due to the incidence relations between its elements (right
+  actions, pullbacks) so is a "Menge" not due to an excessive and
+  irrelevant structure but to a structure adapted to the mathematical
+  category of cohesiveness at hand.
+        We carry the inclusions around only as long as we need them. Already
+  Gauss pointed out that  when a subset (i.e. an inclusion map) arises, it may
+  be very significant to study the domain in its own intrinsic self, but
+  this is
+  difficult to make precise in st or tt.  Of course "subset" is not a
+  binary relation between sets but a given map, a mathematical necessity
+  that needs to be recognized by any truly flexible formalization in a way
+  coherent enough to work in. Given two inclusion maps b, c with the same
+  codomain A, it is
+  clear what is a proof that "b is included in c" as subsets of A, and
+  given any
+  element x of A (i.e. any map with codomain A), a proof that "x belongs to b"
+  is formally the same kind of thing. Hence by composing proofs we can
+  always conclude that x belongs to c,  independently of whether these
+  subsets arose by equalizing some maps P with domain A.
+        Of course some improved version of tt is needed to handle the
+  presentation of  cccs, but the basic issue of how to deal formally with
+  inclusions and memberships  between subsets arising as equalizers arises
+  already with Lex. In general given any left adjoint, such as the one from
+  Cat to Lex or from Cat to CCC or the one from sets to monoids,etc, there
+  is an objective notion of presentation that arises. Formal systems are
+  subjective instruments for describing and clarifying such presentations.
+        It would seem that the idea of Burroni (described in Lambek &Scott)
+  would lead to an effective formal system for presenting Lex over Cat.
+  Naturally such formal systems would involve specifying both domains and
+  codomains. I believe that some of the implementations mentioned by
+  Rydeheard have these features, while others follow the less
+  efficient route
+  of describing categories in some previously -programmed system of logic.
+        In the end it will surely be simpler, leading to greater freedom and
+  fewer complications, to explicitly take the objectively necessary into
+  account, rather than to  succumb to a naive belief in the "freedom" to
+  neglect some essential ingredient. There need not be an inevitable mismatch
+  between useable formal systems and the mathematical structures they
+  strive to present.
+

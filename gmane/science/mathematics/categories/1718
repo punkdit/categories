@@ -1,0 +1,60 @@
+Path: news.gmane.org!not-for-mail
+From: Jason C Reed <jcreed@andrew.cmu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Monads without unit?
+Date: Wed, 29 Nov 2000 17:10:21 -0500 (EST)
+Lines: 28
+Approved: news@gmane.org
+Message-ID: <Pine.SOL.3.96L.1001129170645.19498C-100000@unix13.andrew.cmu.edu>
+Reply-To: godel@cmu.edu
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018042 32576 80.91.229.2 (29 Apr 2009 15:14:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:14:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Nov 30 09:42:06 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eAUCvD108719
+	for categories-list; Thu, 30 Nov 2000 08:57:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 49
+Status: RO
+Content-Length: 1115
+Original-Lines: 27
+Xref: news.gmane.org gmane.science.mathematics.categories:1718
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1718>
+
+I had been looking at the standard way the topological closure A |-> CA
+can be recovered from the derived set operation A |-> A' (which takes A to
+the set of the accumulation points of A) by setting CA := A' u A, and
+observed that it can be generalized to categorical language. If you take
+thing made up of a coproduct-preserving functor D and a natural
+transformation t : D^2 -> D, such that t is `associative' in the usual
+sense of asserting that t o t_D = t o Dt, and also 
+
+ p_{X,Y} o t_{X + Y} = (t_X + t_Y) o p_{DX,DY} o Dp_{X,Y}
+
+where p is the canonical natural transformation D(X + Y) -> DX + DY , then
+if one defines
+
+TX := DX + X
+eta_X := inr_{DX + X}
+mu_X := ([1_{DX},1_{DX}] + X) a_{DX,DX,X} (([t_X,1_{DX}] o p_{DX,X}) + TX)
+
+(where [ , ] is copairing and a_{X,Y,Z} is the associativity isomorphism X
++ (Y + Z) -> (X + Y) + Z) then turns out that (T, eta, mu) is a monad.
+
+Has anyone already studied these? I'd be particularly interested in a
+type-theoretic or logical (along the lines of the correspondence between 
+monads and modal operators) interpretation of such a structure, if any. 
+
+---Jason
+
+
+

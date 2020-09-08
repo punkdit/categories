@@ -1,0 +1,142 @@
+Path: news.gmane.io!.POSTED.ciao.gmane.io!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: On the Foundation of Computer Science
+Date: Wed, 22 Jan 2020 08:50:59 +0200
+Approved: news@gmane.org
+Message-ID: <E1iuHJ7-0007Dw-F3@rr.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"; format=flowed
+Content-Transfer-Encoding: 8bit
+Injection-Info: ciao.gmane.io; posting-host="ciao.gmane.io:159.69.161.202";
+	logging-data="80412"; mail-complaints-to="usenet@ciao.gmane.io"
+To: Categories <categories@mta.ca>
+Original-X-From: majordomo@rr.mta.ca Wed Jan 22 15:50:05 2020
+Return-path: <majordomo@rr.mta.ca>
+Envelope-to: gsmc-categories@m.gmane-mx.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by ciao.gmane.io with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iuHKX-000Kst-Lb
+	for gsmc-categories@m.gmane-mx.org; Wed, 22 Jan 2020 15:50:05 +0100
+Original-Received: from rr.mta.ca ([198.164.44.159]:41672)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iuHIu-0003CQ-Fo; Wed, 22 Jan 2020 10:48:24 -0400
+Original-Received: from majordomo by rr.mta.ca with local (Exim 4.92.1)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1iuHJ7-0007Dw-F3
+	for categories-list@rr.mta.ca; Wed, 22 Jan 2020 10:48:37 -0400
+Precedence: bulk
+Xref: news.gmane.io gmane.science.mathematics.categories:10109
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/10109>
+
+Dear All,
+
+For quite a while I've been puzzled by some Turing constructions, and I
+don't know if I am puzzled rightfully so, and therefore I would
+appreciate comments, so that, if I am indeed wrongfully so, I could
+happily sit down corrected.
+
+---
+
+In his "Computability and ??-Definability", The Journal of Symbolic
+Logic, Vol. 2, No. 4 (Dec., 1937), pp. 153-163,
+https://www.jstor.org/stable/2268280?seq=1, Turing defines f using ??
+(xi) on p. 161, and then says "it can easily be brought into ..."
+involving
+
+    ??y in ??y[i(x,y)=0]
+
+My problem is understanding how Turing possibly uses a 'powertype' which
+is, as far as I can see, not explicitly introduced in his machinery.
+
+We clearly have
+
+    e : nat -> nat
+
+and
+
+    i : nat x nat -> nat
+
+as defined in footnote 8 on p. 161.
+
+As far as I can see, ??y[i(x,y)=0], can be denoted as g(x) where
+
+    g : nat -> nat
+
+so
+
+    g(_) = ??y[i(_,y)=0]
+
+Whereas nat, as a type, is used within the system, the use of the
+powertype Pnat is not similarly recognized. Indeed, the powertype
+constructor P is not defined, and, as far as I can see, not even
+considered to be defined.
+
+Anyway, let me proceed by using that powertype, thereby, in this
+posting, using the powertype constructor informally.
+
+If
+
+    h(x) = {y | i(x,y) = 0}
+
+we have
+
+    h : nat -> Pnat
+
+Infimum, inf, of a set (of natural numbers) A, written inf A, means we
+could write
+
+    inf : Pnat -> nat
+
+This would mean that
+
+    g = inf o h
+
+I'm not saying that Turing says he has
+
+    ?? : Pnat -> nat
+
+but ?? in his paper is used as kind of a "partial operator" from Pnat to
+nat, whereas, in comparison, inf is a "total operator".
+
+Turing's construction indeed does not explicitly recognize the use of
+the powertype Pnat, and, in particular, does not explicitly recognize
+that the informal symbol ?? is used like a "partial operator over a
+non-recognized and undefined powertype".
+
+---
+
+My general question is:
+
+    Is this a problem?
+
+In Turing's paper it is taken to be OK to use g as an operator from nat
+to nat, even if it is composed using bits and pieces that are "brought
+in from the outside", like the powertype constructor P.
+
+---
+
+My confusion may indeed come from my desire to understand the underlying
+signatures, to understand syntax before semantics. The natural number
+signature is in there, with the constant operator 0 : -> nat, and the
+successor S : nat -> nat. And indeed, additionally, Turing seems to use
+the powertype Pnat, and operators working over this powertype, but my
+primitive question is then:
+
+    Where does P come from? Is there a signature where it resides?
+
+---
+
+My question relates perhaps also more generally to foundations.
+
+Best,
+
+Patrik
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

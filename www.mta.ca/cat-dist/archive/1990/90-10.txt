@@ -1,0 +1,860 @@
+Subject:     Fixed Points in Synthetic Domain Theory
+Date: Mon, 1 Oct 90 19:12:57 BST
+From: Paul Taylor <pt@doc.imperial.ac.uk>
+
+                Fixed Points in Synthetic Domain Theory
+
+Carl Gunter's comments about the relationship between PERs and traditional
+semantics of programming languages has prompted me to make the announcement
+I meant to make a fortnight ago.  I strongly differ from the Pennsylvanian
+point of view, though, in not considering PERs but an axiomatic approach,
+of which there are many different models.
+
+% TeX definitions
+\def\E{{\cal E}}\def\imp{\Rightarrow}
+\input mssymb % for the next two symbols only:
+\def\natno{{\Bbb N}}\def\sigleq{\sqsubseteq}
+
+My axiomatisation is as follows: $\E$ denotes an elementary topos with a
+natural numbers object $\natno$; by a "set" I mean an object of $\E$.
+If you don't like the word ``topos'', you can understand this as intuitionistic
+set theory.  $\Sigma$ is a class of predicates (ie a subobject of $\Omega$)
+including true and false and closed under binary conjunction and countable
+(ie $\natno$-indexed) existential quantification (disjunction). This is
+required to satisfy the following two axioms:
+$$      \forall\sigma\in\Sigma.\lnot\lnot\Sigma\imp\Sigma        $$
+(Markov's principle) and
+$$      \forall\Phi:\Sigma^\natno\to\Sigma.\Phi(\lambda n.\top)\imp
+ \exists n\in\natno.\Phi(\lambda m.m\leq n)  $$
+(finitary principle). The first will be assumed throughout, the second only
+when stated.
+
+Definitions:
+(i) the ($\Sigma$-pre-)order $x\sigleq y$ is defined by
+ $\forall\phi\in\Sigma^X.\phi(x)\imp\Phi(y)$.
+(ii) an object $X$ for which this is antisymmetric is called a
+ $\Sigma$-space; this is a ``pointwise Leibnitz principle''.
+(iii) A map $p:X\to Y$ which induces an isomorphism $\Sigma^Y\to\Sigma^X$
+ is called ($\Sigma$-)equable.
+(iv) An object $X$ such that any equable map $p:X\to Y$ with $Y$ a
+ $\Sigma$-space is already an isomorphism is called ($\Sigma$-)replete;
+ this is an ``objectwise Leibnitz principle''.
+(v) An object $X$ with a point $\bot$ such that
+ $\forall\phi\in\Sigma^X.\phi(\bot)\imp\forall x\in X.\phi(x)$
+ is called focal.
+Then a predomain is a replete object and a domain is a focal replete object.
+
+Theorem 1
+(i) The full subcategory of predomains is reflective and cartesian closed.
+(ii) The full subcategory of domains is cartesian closed.
+
+Theorem 2
+The following are equivalent:
+(FPP) Every endofunction of a domain has a least fixed point.
+(DC) Every predomain is chain-complete and every map between predomains
+ preserves suprema of chains.
+(LCC) For every chain of adjoint (or embedding-projection) pairs between
+ predomains, the limit of the right adjoints (projections) is the
+ colimit of the left adjoints (embeddings)
+(AX) the finitarity axiom holds.
+
+Powerdomains and dependent-type polymorphism can also be interpreted in this
+setting, but not impredicative (Girard-Reynolds second order) polymorphism.
+
+The Effective (Hyland) Topos, in which PERs are embedded, is a model.
+
+There are sheaf (Scott) models based on classical categories of domains. Indeed
+any small full subcategory of spaces (not necessarily T-zero) or locales
+may be used as a base category, so long as it includes Scott's $P\omega$
+and if any space/locale $X$ is in it then so is $X\times P\omega$. There
+are even presheaf models, although the disjunctions in the axiomatisation
+have to be prefixed with $\lnot\lnot$ and the empty space must not be in
+the base category, but the two theorems still hold.
+
+The Recursive (Mulry) Topos is not a model of the axioms as they stand:
+the true natural numbers object has to be replaced with a recursive version.
+
+This is "work in progress" which was reported last week at the Categorical
+Logic in Computer Science workshop in Paris.
+
+Paul Taylor, Dept of Computing, Imperial College, London SW7 2BZ, UK
+pt@doc.ic.ac.uk   +44 71 589 5111 x 5057
+
+Subject:     EECS '91
+
+
+                Preliminary Announcement
+
+                EAST EUROPEAN CATEGORY SEMINAR
+
+                March 12-18, 1991 (Tues. through Mon.)
+                Predela, Bulgaria
+
+For details contact:
+
+Prof. V. Topencharov,
+Institute of Applied Mathematics and Computer Science
+Technical University of Sofia
+P.O. Box 384
+Sofia 1000, Bulgaria
+
+Chartered bus from Sofia to Predala and back available free of charge.
+Accommodation included. The conference is held at a resort among
+beautiful mountains. This will be the sixth annual seminar.
+Extended abstracts (2 pages) are printed each year as proceedings of
+the seminar.
+
+For more information by e-mail, contact Fred Linton:
+FLINTON@EAGLE.WESLEYAN.EDU
+mentioning EECS '91.
+
+
+Subject:     TTT-CTCS Corrections
+Date:        Thu, 18 Oct 90 11:42:18 EST
+From:        "Michael Barr, Math Dept, McGill University"
+             <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+After your last note, I decided to do the following.  I have changed all
+left square brackets to `\lb ' (note the space), all right square
+brackets to `\rb ', all carets to `\sp ' and all underlines to `\sb '.
+There were no tildes, but I would have changed them to `\spc '.  I
+suggest you send it out just as you get it, since there are some people
+who don't get it properly.  For the time being, it would appear that you
+might solicit all TeX things in that form.  The \sp and \sb are actually
+TeX macros.  The other two have to be changed back before TeXxing
+because they are used to delimit macro arguments and no subbing is
+allowed in that context.
+
+I have also removed the \input ct and replaced it by the definitions
+needed, so that this will compile for anyone who has catmac.sty.
+
+Regards, Mike
+
+\documentstyle\lb catmac\rb {article}
+\textheight8in \headsep 0in \headheight0in \topmargin0in
+\textwidth 6.5in \oddsidemargin0in
+\long\def\ig#1{\relax}
+\def\pf{\par\addvspace{\medskipamount}\noindent Proof.\enskip}
+\mathchardef\Bsc="0242
+\let\imp=\Rightarrow
+\let\meet=\wedge
+\mathchardef\T="0454
+\def\lnm#1{Lecture Notes in Mathematics {\bf#1}}
+\def\o{\circ}
+\def\op{\sp {\rm op}}
+\def\mathrm#1{\expandafter\def\csname#1\endcsname{\mathop{\rm#1}\nolimits}}
+\def\mathbf#1{\expandafter\def\csname#1\endcsname{\mathop{\rm\bf#1}\nolimits}}
+\mathrm{id}
+\mathrm{Hom}
+\mathbf{Cat}
+\begin{document}
+\resetparms
+\begin{center} Corrections to {\it Toposes, Triples and Theories}\\
+Michael Barr and Charles Wells\end{center}
+
+The corrections are listed by page number.  The name in parentheses
+after the page number shows who told us of the error.  \begin{trivlist}
+\item\lb GENERAL COMMENT\rb  Our text is intended primarily as an exposition
+of the mathematics, not a historical treatment of it.  In particular, if
+we state a theorem without attribution we do not in any way intend to
+claim that it is original with this book.  We note specifically that
+most of the material in Chapters 4 and 8 is an extensive reformulation
+of ideas and theorems due to C. Ehresmann, J. B\'enabou, C. Lair and
+their students, to Y. Diers, and to A. Grothendieck and his students.
+We learned most of this material second hand or recreated it, and so
+generally do not know who did it first.  We will happily correct
+mistaken attributions when they come to our attention.
+
+\item\lb p. 9\rb  (Peter Johnstone).  Exercise (SGRPOID) is incorrect as it
+stands;
+a semilattice without identity satisfies (i) through (iii) but is not a
+category.  Condition (iii) must be strengthened to read:
+Say an element $e$ has the {\bf identity property} if $e\o f= f$
+whenever $e\o f$ is defined and $g\o e= g$ whenever $g\o e$ is
+defined.  Then we require that for any
+element $f$, there is an element $e$ with the identity property
+for which $e\o f$ is defined and an element $e'$ with the identity
+property for which $f\o e'$ is defined.
+
+\item\lb p.27\rb  (Dwight Spencer), second line from bottom:  $T:S\to T$
+should be $t:S\to T$.
+
+\item\lb pp. 39-40\rb  (Peter Johnstone).  It should be noted that the product
+of an empty collection of objects in a category must be a terminal
+object.  Then the phrase after the comma on line 4 of p. 40 should read,
+``which by an obvious inductive argument is equivalent to requiring that
+the category have a terminal object and that any two objects have a
+product.''
+
+\item\lb p. 43\rb  (Peter Johnstone).  Exercise (PROD)(b) should read:  ``Show
+that if a category has a terminal object and all products of pairs of
+objects, then it has all finite products.''
+
+\item\lb p. 49\rb  (Peter Johnstone).  Exercise (FCR) uses the concept of
+small category without defining it.  It is used in the main body of the
+text on page 66 and later, and ``small sketch''{} occurs on p. 146.  A
+graph or a category is {\bf small} if its arrows constitute a set.  A
+sketch is small if its graph is small and its cones and cocones
+constitute a set.  In connection with the discussion of foundations on
+page ix of the Preface, no matter what set theory is used, one is going
+to have to deal with categories and graphs whose arrows do not
+constitute sets.
+
+\item\lb p. 49\rb   Closing parenthesis missing at end of Exercise (EAPL)(a).
+
+\item\lb p. 53\rb  (Dwight Spencer) The display in the middle of the page
+should be:  $i(T,LA)(L(f\o h)) = \eta A\o f\o h = RLf\o \eta D\o h =
+RLf\o i(T,LD)(Lh) = i(T,LA)(Lf\o Lh)$
+
+In diagram (7), just below, the vertical arrows should be pointing
+upward.
+
+\item\lb p. 54\rb  lines 5 from the bottom:  (Dwight Spencer) change ``arrow
+for'' to ``element of the functor''.  Add to the last sentence ``(A
+universal element of $\Hom(A,R(-))$ is called a {\bf universal arrow}
+for $R$ and $A$.)''
+
+\item\lb p. 55\rb  line 4:  (Dwight Spencer) change $RLA$ to $RWA$.
+
+\item\lb p. 55\rb  line 14:  (Dwight Spencer) Change $Ry$ to $y$.
+
+\item \lb p. 64\rb  (Dwight Spencer) The diagram at the bottom should be
+labeled (1).  (I don't think it is actually referred to, but the diagram
+numbering in this section begins with (2).)
+
+\item\lb p. 75\rb  Geometric morphisms are discussed in Chapter 6, not
+Chapter 5.
+
+\item \lb p. 125\rb  Third line from bottom.  The word ``morphism'' is
+repeated.
+
+\item\lb p. 126\rb  (Felipe Gago-Couso).  Proposition 1 has an omitted
+hypothesis.
+We include here a complete restatement of the proposition and its
+proof:
+
+\item\lb \rb The following proposition gives one method of constructing
+morphisms of triples.  We are indebted to Felipe Gago-Couso for finding
+the gap in the statement and proof in the first edition and for finding
+the correct statement.
+
+\noindent{\bf Proposition 1.}  {\em In the notation of the preceding
+paragraphs, let
+$\sigma:TT'\to T'$ be a natural transformation for which
+\begin{center}
+\qtriangle\lb T'`TT'`T';\eta T'`\id`\sigma\rb
+\end{center}
+\ig{\bfig
+                      \eta%T'
+                  T'----------\>TT'
+                   \             |
+                    \            |
+                     \           |
+                      \          |
+                       \         |
+ (3)                    \        |
+                     \id \       |\sigma\l
+                          \      |
+                           \     |
+                            \    |
+                             \   |
+                              \  |
+                               \ |
+                               \vvb
+                                T'
+\efig}
+and
+\begin{center}
+\xext=1500 \yext=700
+\adjust\lb `\mu T';`T\sigma;`\sigma;`\mu'\rb
+\bfig
+\putsquare(0,200)\lb TTT'`TT'`TT'`T';\mu
+T'`T\sigma`\sigma`\sigma\rb
+\putsquare(1000,200)\lb TT'T'`TT'`T'T'`T';T'\mu%
+`\sigma T'`\sigma`\mu'\rb
+\put(250,0){\makebox(0,0){{\rm(a)}}}
+\put(1250,0){\makebox(0,0){{\rm(b)}}}
+\efig
+\end{center}
+\ig{\bfig
+                 \mu%T'                        T\mu'
+            TTT'------\>TT'             TT'T'------\>TT'
+             |           |                |           |
+             |           |                |           |
+             |           |                |           |
+ (4)    T\sigma|     \sigma|        \sigma%T'|     \sigma|
+             |           |                |           |
+             |           |                |           |
+            \v          \v               \v          \v
+             TT'-------\>T'              T'T'-------\>T'
+                \sigma                         \mu'
+
+                $(a)$                          $(b)$
+\efig
+}
+commute.  Let $\alpha = \sigma\o T\eta':T\to T'$.  Then
+$\alpha$ is a morphism of triples.}
+
+\pf That (1) commutes follows from the commutativity of
+\begin{center}
+\xext=500 \yext=1000
+\adjust\lb `\eta;`\eta';`T\eta';T'`\rb
+\bfig
+\resetparms
+\putsquare(0,500)\lb \id`T`T'`TT';\eta`T'`T\eta'`\eta'\rb
+\settriparms\lb 0`1`1;500\rb
+\putqtriangle(0,0)\lb ``T';`\id`\sigma\rb
+\efig
+\end{center}
+\ig{\bfig
+                              \eta
+                 \id------------\>T
+                   |              |
+                   |              |
+                   |              |
+                   |              |
+\r            \eta'|  \r    T\eta'|
+                   |              |
+                   |              |
+                  \v    \eta'    \v
+                   T'----------\>TT'
+  (5)               \             |
+                     \            |
+                      \           |
+                       \          |
+                        \         |
+                     \id \        |\l\sigma
+                          \       |
+                           \      |
+                            \     |
+                             \    |
+                              \   |
+                               \  |
+                                \ |
+                                \vvb
+                                  T'
+\efig
+}
+In this diagram, the square commutes because $\eta$ is a natural
+transformation and the triangle commutes by (3).
+
+The following diagram shows that (2) commutes.
+\begin{center}
+\xext=2100 \yext=2100
+\adjust\lb `\mu;`T\eta'T;`\sigma;`T'T\eta'\rb
+\begin{picture}(\xext,\yext)(\xoff,\yoff)
+\putmorphism(0,2100)(0,-1)\lb ``T\eta'T\rb {1400}1l
+\putmorphism(0,2100)(1,0)\lb TT`T`\mu\rb {700}1a
+\putmorphism(0,2100)(1,-1)\lb `TTT'`TT\eta'\rb {700}1l
+\putmorphism(700,2100)(1,-1)\lb `TT'`T\eta\rb {700}1r
+\put(700,1750){\makebox(0,0){1}}
+\putmorphism(700,1420)(1,0)\lb \phantom{TTT'}`\phantom{TT'}`\mu
+  T'\rb {700}1a
+\putmorphism(700,1380)(1,0)\lb \phantom{TTT'}`%
+  \phantom{TT'}`T\sigma\rb {700}1b
+\setsqparms\lb 0`1`1`1;700`700\rb
+\putsquare(700,700)\lb TTT'`TT'`TT'TT'`TT'T';`T\eta'TT'``\rb
+\putmorphism(700,700)(1,0)\lb \phantom{TT'TT'}`%
+  \phantom{TT'T'}`TT'\sigma\rb {700}1a
+\put(300,1400){\makebox(0,0){2}}
+\put(950,1050){\makebox(0,0){3}}
+\settriparms\lb 0`1`0;700\rb
+\putbtriangle(1400,700)\lb ``TT';T\eta'T'`id`\rb
+\putmorphism(1400,700)(1,0)\lb \phantom{TT'T'}`%
+  \phantom{TT'}`T\mu'\rb {700}1a
+\put(1600,1050){\makebox(0,0){6}}
+\setsqparms\lb 1`1`0`1;700`700\rb
+\putsquare(0,0)\lb TT'T`\phantom{TT'TT'}`T'T`T'TT';%
+  TT'T\eta'`\sigma T``T'T\eta'\rb
+\putmorphism(700,0)(1,0)\lb \phantom{T'TT'}`%
+  \phantom{T'T'}`T'\sigma\rb {700}1b
+\setsqparms\lb 0`0`1`1;700`700\rb
+\putsquare(1400,0)\lb ``T'T'`T';``\sigma`\mu'\rb
+\putmorphism(700,700)(0,-1)\lb ``\sigma TT'\rb {700}1m
+\putmorphism(1400,700)(0,-1)\lb ``\sigma T'\rb {700}1m
+\put(300,350){\makebox(0,0){4}}
+\put(1050,350){\makebox(0,0){5}}
+\put(1750,350){\makebox(0,0){7}}
+\end{picture}
+\end{center}
+\ig{\bfig
+                \mu
+         TT-------------\>T
+         |\                \
+         | \                \
+         |  \                \
+         |   \                \
+         |    \                \
+         |     \                \
+         |      \                \
+         |       \        1       \
+         |  TT\eta'\          T\eta'\
+         |         \                \
+         |          \                \
+         |           \                \
+         |            \                \
+         |            \lr    \mu%T'    \lr
+         |             TTT'-----------\>TT'
+   T\eta'T|      2      |  -----------\>| \
+         |              |    T\sigma    |  \
+         |              |               |   \
+         |              |               |    \
+         |      T\eta'TT'|     3 T\eta'T'| 6  \\$id$\l
+(6)      |              |               |      \
+         |              |               |       \
+        \v  TT'T\eta'  \v   TT'\sigma  \v  T\mu' \lr\l
+        TT'T---------\>TT'TT'-------\>TT'T'----\>TT'
+         |              |               |         |
+         |              |               |         |
+         |              |               |         |
+         |              |               |         |
+    \sigma%T|  4 \sigma%TT'|   5  \sigma%T'| 7    |\sigma\l
+         |              |               |         |
+         |              |               |         |
+        \v             \v              \v        \v
+         T'T---------\>T'TT'---------\>T'T'-----\>T'
+             T'T\eta'      T'\sigma         \mu'
+\efig
+}
+In this diagram, square 1 commutes because $\mu$ is a natural
+transformation, squares 2 and 3 because $T\mu'$ is and squares 4 and 5
+because $\sigma$ is.  The commutativity of square 6 is a triple identity
+and square 7 is diagram 4(b).  Finally, diagram 4(a) above says that
+$\sigma\o\mu T'=\sigma\o T\sigma$ which means that although the two
+arrows between $TTT'$ and $TT'$ are not the same, they are when followed
+by $\sigma$, which makes the whole diagram commute.
+
+Squares 1 through 5 of diagram (6) are all examples of part (a) of
+Exercise (GOD), Section 1.3.  For example, to see how square 1 fits,
+is $\eta'\mu$.
+
+\noindent{\bf Corollary 2.}  {\em With $\T$ and $\T'$ as in Proposition 1,
+suppose $\sigma:T' T
+\to T'$ is such that $\sigma\o T'\eta =\id$, $\sigma\o\sigma T' =
+\sigma\o \eta T:T\to T'$ is a morphism of triples.}
+
+\pf This is Proposition 1 stated in $\Cat\op$ (which means: reverse the
+functors but not the natural transformations).
+
+\item\lb p. 134\rb  (Colin McLarty).  In the second through fourth paragraphs
+of the proof of (a), every occurrence of ``$L$'' should be ``$W$''.
+
+\item\lb p. 137\rb  (Jim Otto).  Theorem 5 has too few hypotheses and
+Proposition 4 too many to apply the latter in the proof of the former.
+There are various possibilities of getting it right, including adding
+the finite limits and colimits to the hypotheses of Theorem 5.
+Nevertheless, Theorem 5 is true as it stands.  The problem occurs with
+the last sentence of Theorem 5. Probably the best approach is to point
+out first that only equalizers and coequalizers are needed and then only
+the $U$-contractible ones.  Then, if we suppose only the
+$U$-contractible equalizers exist (any that exist will be preserved by a
+functor that has a left adjoint), that is enough to do Theorem 5
+(Exercise, using the fact that the underlying functor of a tripleable
+functor creates limits) and from that will follow that the
+$U$-contractible equalizers exist.
+
+As for Proposition 4, if we suppose that $\Bsc$ has $U$-contractible
+equalizers, the dual of Theorem 5 would imply that $U$-contractible
+equalizers exist.  Hence sufficient for Proposition 4 is that {\em
+either\/} $U$-contractible equalizers or $U$-contractible coequalizers
+exist.  Does anyone want to find an example to show that any
+completeness hypothesis is necessary?
+
+\item\lb p. 139\rb  (Samuel Eilenberg) The story told at the end of the second
+paragraph is not exact.  In fact the word was chosen as the manuscript
+was in final preparation.  Nonetheless, the main the point of the story,
+the care that went into choosing the name of an important concept,
+remains.
+
+General comment about chapters 4 and 8 (C.  Lair).  In many places we
+state that some extension of a functor is unique, when in fact it is
+only unique up to isomorphism of functors in the functor category.
+These occur on p. 153 (Theorem 4), p. 156 (Theorem 2), and implicitly in
+p. 293, Theorem 2 and p. 294, Theorem 1.
+
+\item\lb p. 146.\rb C. Lair has told us that Ehresmann proved a more
+general form of Kennison's Theorem in Ehresmann \lb 1967a\rb ,
+\lb 1967b\rb .
+
+\item\lb p. 162\rb  (C.  Lair).  The sketch for LE categories constructed here
+has LE categories with specified limits of finite diagrams as models,
+and morphisms of models are functors which preserve the specified
+limits.  A similar remark should be made about the sketch for toposes on
+p. 165.
+
+\item\lb p. 172\rb  Second sentence:  $\P$ having a left adjoint does not
+imply $T$ does.  The sentence and following one should be combined as
+follows:  ``Since $\T$ is the composite of a functor and its right
+adjoint, it is the functor part of a triple $(T,\eta:1\to T,\mu:T\sp 2\to
+T)$.''
+
+\item\lb p. 197\rb  Lemma 3 (Francisco Marmolejo). Dropping the subscript on
+the arrows leaves it too ambiguous.  Part (a) should read,
+``$D\meet(B\imp\sb AC)=D\meet B\imp\sb DD\meet C$.''
+
+\item\lb p. 200\rb , line $-4$ (Francisco Marmolejo).  The sentence should be
+expanded to, ``Observe that any sheaf is $\j$-closed inside any
+separated presheaf.  ({\bf Separated} isn't defined until page 233, but
+it simply means that in the definition of sheaf in the moddle of page
+69, the unique existence is replaced by the assumption that there is at
+most one element $x$ such that $X|U\sb i=x\sb i$.)''
+
+\item\lb p. 205\rb  (Francisco Marmolejo).  In the last line of Exercise TPPB,
+change ``induce'' to ``constitutes''.
+
+\item\lb p. 213\rb , last line  (Francisco Marmolejo). Should read, ``products
+commute with reflexive coequalizers.''  In fact, a product of a fixed
+object with any coequalizer is a coequalizer.  This fact follows from
+Lemma 6 on page 158-159.
+
+\item\lb p. 214\rb   The reference, third line from bottom, to section 6.4
+should be to section 7.3.
+
+\item\lb p. 233\rb   ``Epimorphic family'' should be boldface and indexed.
+
+\item\lb p. 234\rb  second paragraph (J\"urgen Kozlowski): Change Corollary 5
+of Section 5.4 to Corollary 8 of Section 5.3.  Also, Exercise CANON
+doesn't exist; delete the reference.
+
+\item\lb p. 242\rb   ``Cocontinuous'', in Theorem 12, was not defined.  A
+cocontinuous functor is one which preserves all colimits.
+
+\item\lb p. 250\rb   Fourth line is broken.
+
+\item\lb p. 250\rb   Theorem 7 is referred to several times elsewhere as
+Freyd's embedding theorem, and should be named as such here.
+
+\item\lb p. 261\rb  second line from bottom:  Freyd's Theorem is Theorem 7 of
+7.1, not Theorem 5 of 7.2.
+
+\item\lb p. 293\rb  (Peter Johnstone).  In Exercise (TOTO), the maps should be
+strictly increasing rather than nondecreasing.
+
+\item\lb p. 294\rb   We should point out the connections between Theorem 1
+here and Theorem 12, p. 242 and Theorem 2, p. 263.
+
+\item\lb p. 295\rb  second line before exercises.  ``Function'' misspelled.
+
+\item\lb p. 295\rb  (Peter Johnstone).  The description of the realizability
+topos
+is completely incorrect; in particular, the realizability topos is not
+a classifying topos, so the reference does not belong here at all.
+The reference which {\it does} belong here is to Mulry,
+
+\item\lb p. 296\rb   Same change for Exercise (DLO) as for Exercise (TOTO)
+above.
+
+\item\lb p. 297\rb  (Peter Johnstone and many others).  Theorem 1 omits the
+very
+important fact that models of geometric theories have filtered colimits.
+
+\item\lb p. 300\rb   The statement on line 6 that filtered colimits of regular
+functors are regular deserves some discussion, or at least should be
+made an exercise!
+
+\item\lb p. 301\rb   In connection with the first sentence beginning on this
+page, we now know that the category of orthodox semigroups and their
+morphisms is the category of models of an LE-sketch and is regular, but
+is not the category of models of an FP-sketch.  (An orthodox semigroup
+is one in which the product of idempotents is an idempotent.)  Details
+in a forthcoming paper by Wells.
+
+\item\lb p. 302\rb  (Peter Johnstone).  Because models of geometric theories
+preserve
+filtered colimits (see correction to p. 297), the answer to Exercise
+(CYCGRP)(c) is easily seen to be:  No.
+
+\item\lb p. 307\rb  diagram (5).  The two rightmost arrows lack labels.  The
+one from $UB$ to $C$ is $c$ and the one from $C$ to $UB$ is $s$.
+
+\item\lb p. 318\rb  (Colin McLarty).  Exercise (DL) should say that all
+composites
+{\it of length three} are the identity.
+
+\item\lb p. 325\rb  (Peter Johnstone).  In line 15, $(R:C)$ is not a full
+subcategory of the comma category $(R,C)$.\end{trivlist}
+
+INDEX, pp. 342ff\rb   Some omissions:
+
+{\obeylines
+Beck's Tripleability Theorem, 112.
+Butler's Theorem, 135.
+epimorphic family, 233.
+Freyd's Representation Theorem, 246ff.
+Freyd's characterization of natural number objects, 273.}\vskip1ex
+
+\section*{SUPPLEMENTAL BIBLIOGRAPHY}
+
+\noindent C. Ehresmann, Probl\`emes universels relatifs aux cat\'egories
+n-aires. C.R.A.S. 264 (273-276), 1967a.\vskip1ex
+
+\vskip1ex\noindent C. Ehresmann, Sur les structures alg\'ebriques.
+C.R.A.S. 264 (840-843), 1967b.
+
+\vskip1ex\noindent
+(Two missing references noted by J\"urgen Kozlowski):
+
+\vskip1ex\noindent G. Osius, Categorial set theory: a characterization
+of the category of sets.  J. Pure Applied Algebra, {\bf 4} (1974),
+79--119.
+
+\vskip1ex\noindent G. Osius, Logical and set theoretical tools in
+elementary topoi.  Model Theory and Topoi, \lnm{445} (1975), 297--346.
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentstyle\lb 12pt,catmac\rb {article}
+
+\newcommand{\afour}{\oddsidemargin 18pt\evensidemargin 18pt
+\textwidth 420pt\textheight 39\baselineskip\advance\textheight by \topskip}
+%% Kludge to make article.sty width correct for A4
+%% This only works for article.sty using the standard margin given
+
+\textheight8in \headsep 0in \headheight0in \topmargin0in
+\textwidth 6.5in \oddsidemargin0in
+\mathchardef\Csc="0243
+\def\lncs#1{Lecture Notes in Computer Science {\bf#1}}
+\def\springer{Sprin\-ger-Ver\-lag}
+\def\mathrm#1{\expandafter\def\csname#1\endcsname{\mathop{\rm#1}\nolimits}}
+\def\mathbf#1{\expandafter\def\csname#1\endcsname{\mathop{\rm\bf#1}\nolimits}}
+\mathbf{Set}
+\mathbf{Rel}
+\mathrm{Hom}
+\def\op{{}\sp {\rm op}}
+\let\x=\times
+
+\begin{document}
+
+%\afour
+
+\title{Category Theory for Computing Science: \\ Update}
+
+
+\author{Michael Barr and Charles Wells}
+
+\maketitle
+
+Our text, {\bf Category Theory for Computing Science}, Prentice Hall,
+1990 (ISBN 0-13-120486-6) has just been published.  We intend to
+maintain the text in the sense that programmers maintain their programs,
+by keeping a list of known errors and also of additions to the text that
+we think might be useful.  (The latter will probably come in spurts as
+we go to meetings and find out about wonderful new applications of
+category theory to computing science.)
+
+We will periodically
+announce new errata and addenda on the category theory bulletin board.
+The latest TeX version of the complete list is available by e-mail or
+p-mail from either author.
+
+The update consists of three parts: \ref{errors}: A list of errors discovered
+so far.  \ref{newtext}: Additional examples, problems and pointers to the
+literature. \ref{refs}: Additions to the list of references, pp. 417ff. of
+the text.  Page references refer to the text.
+
+Any further corrections or suggestions for additional text will be welcome.
+
+{\footnotesize
+\begin{center}\begin{tabular}{ll}
+Michael Barr & Charles Wells \\
+Department of Mathematics & Department of Mathematics \\
+Burnside Hall & Case Western Reserve University \\
+McGill University & University Circle \\
+805 Sherbrooke St. West &  Cleveland, OH 44106-1712, USA \\
+Montr\'eal, P. Q., Canada H3A 2K6 & WELLS@CWRU.BITNET \\
+INHB@MUSICB.MCGILL.CA & \end{tabular}\end{center}
+}
+\newpage
+
+
+\section{Errors}\label{errors}
+
+\begin{description}
+
+\item\lb p. xv\rb  In the Chapter Dependency Chart, there should be a diagonal
+line from Chapter 5 to Chapter 7.
+
+\item\lb p. 92\rb  In Proposition 4.3.12 and its proof, the letter $C$ (not
+the script $\Csc$) is
+used with two different meanings.  This can be corrected by changing $C$
+to $S$ in the first line of the proposition, third line (first occurrence
+only), fourth line (last occurrence only) and in the first line of the
+proof (second occurrence only).
+
+\item\lb p. 96\rb  The reference to Seely should be \lb 1987\rb
+(the entry in the
+list of references, p. 425, was incomplete and is updated in the
+list of references below.)
+
+\item\lb p. 102\rb  ``The'' not ``the'' in line 7.
+
+\item\lb p. 302\rb  Line $-4ff$ should say, `` In particular, ${\rm\bf Cat}$
+is enriched over ${\rm\bf Cat}$ itself, since its hom sets are
+themselves categories (with the arrows as objects and the natural
+transformations as arrows) and the hom functors preserve the extra
+structure.''
+
+\item\lb p.335\rb  In the fourth paragraph of the discussion of the
+internal category of modest sets, the sentence, ``We want to describe
+this subset as consisting of those relations that are symmetric and
+transitive'', should have the following phrase added:
+``and double negation closed''.
+
+\item\lb p. 345\rb  Line 2 of the answer to exercise 12.a: the last letter
+should be ``B'', not ``b''.
+
+\item\lb p. 365\rb  In the answer to problem 8, $\beta C:\Hom(C,C)\to F(C)$.
+
+
+\item\lb p. 431\rb  The word ``relation'' should also be indexed on p. 21.
+
+\end{description}
+
+\section{Additional text}\label{newtext}
+
+\begin{description}
+
+\item\lb p. xiii\rb  (Second paragraph) Another collection of papers is
+\lb Pitt, Rydeheard, Dybjer, Pitts and Poign\'e, 1989\rb .
+
+\item\lb p. 17\rb  \lb Additional example of category.\rb
+Let $\alpha$ be a relation from a set $A$ to a set $B$
+and $\beta$ a relation\index{relation}
+from $B$ to $C$ (see 1.3.4).  The {\bf
+composite} $\beta\o\alpha$ is the relation from $A$ to $C$ defined
+as follows: If $x\in A$ and $z\in C$, $(x,z)\in\beta\o\alpha$ if and
+only if there is an element $y\in B$ for which $(x,y)\in\alpha$ and
+$(y,z)\in\beta$.  With this definition of composition, the {\bf
+category of sets and relations} has sets as objects and relations
+as arrows.
+
+\item\lb p. 71\rb  \lb New exercise\rb  Show that the category of
+sets and relations
+is equivalent, in fact isomorphic, to its own dual (see 2.6.7).
+Answer: Let $\Rel$ denote the category of sets and relations.
+For a relation $\alpha$ from $A$ to $B$, that is, a subset of
+$A\x B$, let $\alpha\op$ denote the subset $\{(b,a)\mid (a,b)\in A\x B\}$
+of $B\x A$.
+Let $F:\Rel\to\Rel\op$ be the identity on objects and
+for a relation $\alpha:A\to B$,
+let $F(\alpha)=\alpha\op$.  $F(\alpha)$ is a relation from $B$ to
+$A$ in $\Rel$, hence a relation from $F(A)=A$ to $F(B)=B$ in $\Rel\op$.
+It is easy to check that if $\beta:B\to C$, then $F(\beta\o\alpha)=
+\alpha\op\o\beta\op$ in $\Rel$, so $(\beta\o\alpha)\op=\beta\op\o\alpha\op$
+in $\Rel\op$.  This says $F(\beta\o\alpha)=F(\beta)\o F(\alpha)$, so
+$F$ preserves composition.  The identity relation on $A$ is $\Delta\sb A=
+\{(a,a)\mid a\in A\}$, so $\Delta=\Delta\op$ and $F$ preserves
+identities.  Since for any relation $\alpha$, $(\alpha\op)\op=\alpha$,
+we have $F\o F$ is the identity functor on $\Rel$, so is its own inverse.
+Hence  $F$ is an isomorphism.  By Exercise 1, it is therefore an
+equivalence of categories.
+
+\item\lb p. 96\rb  The applications of $2$-categories have mushroomed and
+include \lb Hoare, Ji Feng and Martin, 1990\rb , \lb Moggi, 1989\rb , and
+\lb Power, 1989\rb  in addition to the papers already listed.
+%% Goguen has told me about some other papers which I will look up.
+
+\item\lb p. 97\rb  Second paragraph of Section 4.5:  In addition
+to generalizing
+the Cayley Theorem, the Yoneda Lemma also has as a special case the
+embedding of a poset into its down-closed subsets.
+Also: set-valued functors are studied further in Sections 11.2 and 14.4.
+
+
+\item\lb p. 257\rb  Besides \lb Coquand, 1988\rb , Moggi \lb 1989\rb  also uses
+the Grothendieck construction in modeling polymorphism.
+
+\item\lb p. 287\rb  Just before the exercise: See also \lb Ehrhard, 1989\rb .
+
+\item\lb p. 318\rb  Add comment: We considered presheaves as actions
+in Section
+3.2.  They occur in other guises in the categorical and computer science
+literature, too.  For example,
+a functor $F:A\to\Set$, where $A$ is a set treated as a
+discrete category, is
+a ``bag'' of elements of $A$.  If $a\in A$, the set $F(a)$ denotes the
+multiplicity to which $a$ occurs in $A$.  See \lb Taylor, 1989\rb  for
+an application in computing science.
+
+\item\lb p. 325\rb  Goguen \lb 1990\rb  has developed a sheaf
+semantics for object
+oriented programs.
+
+\end{description}
+
+\section{Additional references}\label{refs}
+\fontdimen2\twlrm=4.3pt% space instead of 3.91663
+\fontdimen3\twlrm=4.2pt%stretch instead of 1.95831
+\fontdimen4\twlrm=1.7pt%shrink instead of 1.30554
+\begin{list}{}{\leftmargin 8mm \itemindent -8mm
+\parsep 0pt \itemsep 0pt plus 1pt}
+\def\itm{\item\lb \rb }
+
+\itm \mbox{T. Ehrhard}, {\it Dictoses}.
+In {\bf Category theory and computer science},
+D. H. Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts and A.
+Poign\'e, editors. \lncs{389}, \springer, 1989.
+
+\itm \mbox{J.\ Goguen}, {\it Semantics of concurrent interacting objects}.
+Preprint, Programming Research Group, Computing
+Laboratory, Oxford University, Oxford OX1 3QD, England.
+
+\itm \mbox{C.\ A.\ R.\ Hoare}, He Jifeng and C. Martin,
+{\it Pre-adjunctions in order-enriched categories}.
+Preprint, Programming Research Group, Computing
+Laboratory, Oxford University, Oxford OX1 3QD, England.
+
+\itm \mbox{E. Moggi}, {\it A category-theoretic account of program modules}.
+In {\bf Category theory and computer science},
+D. H. Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts and A.
+Poign\'e, editors. \lncs{389}, \springer, 1989.
+
+\itm \mbox{D.\  Pitt}, D.  Rydeheard, P. Dybjer, A. Pitts and A.
+Poign\'e, eds.
+{\bf Category theory and computer science}.
+\lncs{389}, \springer, 1989.
+
+\itm \mbox{A.\ J.\ Power}, {\it An abstract formulation for
+rewrite systems}.
+In {\bf Category theory and computer science},
+D. H. Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts and A.
+Poign\'e, editors. \lncs{389}, \springer, 1989.
+
+\itm \mbox{R.\ Seely}, {\it Modelling computations: a $2$-categorical
+framework.}
+In {\bf Proceedings of the Conference on Logic in Computer Science}, IEEE,
+1987. \lb Corrected reference\rb .
+
+\itm \mbox{P.\ Taylor}, {\it Quantitative domains, groupoids and
+linear logic}.
+In {\bf Category theory and computer science},
+D. H. Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts and A.
+Poign\'e, editors. \lncs{389}, \springer, 1989.
+
+
+\end{list}
+\end{document}
+
+Subject:     TTT Corrections
+Date:        Fri, 26 Oct 90 22:17:27 EST
+From:        "Michael Barr, Math Dept, McGill University"
+             <INHB@MUSICB.MCGILL.CA>
+
+Second order corrections to TTT.  (The first three are from Vaughan
+Pratt, the last from J\"urgen Koslowski):
+
+In the corrections to page 139, change ``the main the point'' to
+``the main point''.
+
+In the correction to page 200, change ``moddle'' to `middle''.
+
+Add the following reference:
+P. Mulry, Generalized Banach-Mazur functionals in the topos of recursive
+sets.  J. Pure Applied Algebra, 26 (1982), 71-83.
+
+In the correction to p. 234 as well for two extra references, change the
+acknowledgment from ``Kozlowski'' to ``Koslowski'' (sorry about that).
+

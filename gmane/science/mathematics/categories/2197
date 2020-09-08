@@ -1,0 +1,95 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: problem with "thunking"
+Date: Thu, 20 Feb 2003 19:40:17 +0100 (CET)
+Lines: 61
+Approved: news@gmane.org
+Message-ID: <200302201840.TAA29712@fb04305.mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018482 2960 80.91.229.2 (29 Apr 2009 15:21:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:22 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Feb 22 15:41:32 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 22 Feb 2003 15:41:32 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18mfMC-0006k2-00
+	for categories-list@mta.ca; Sat, 22 Feb 2003 15:30:44 -0400
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 53
+Status: O
+Content-Length: 2281
+Original-Lines: 60
+Xref: news.gmane.org gmane.science.mathematics.categories:2197
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2197>
+
+I also for some time believed in John Longley's arguments that for any cpca
+A one may define an equivalent one where application is redefined as
+
+                ab = akb
+
+but then I came across the following problem.
+
+Evidently, all his arguments are based on "thunking", i.e. an operator T
+such that
+                Tt defined    and    Ttk  \simeq t            (1)
+
+for all polynomials  t  and elements  a in the cpca. John suggest to take
+for T  the combinator
+
+               Txz  \simeq  zxk
+
+which certainly is definable. HOWEVER, this T doesn't satisfy (1) in general
+for closed terms t that aren't defined.
+To see this failure look at the paradigmatic cpca of normal forms. The problem
+there is that when applying the normal form  T = \x.\z.zx(\u.\v.u)  to
+t = (\x.xx)(\x.xx) then  Tt  does NOT normalize as  t  does not normalize.
+
+Actually, I even don't see how one can define composition in the cpca of
+normal forms: consider the normal forms  a = \x.xx  and  b = \y.\x.xx  for
+which we have that
+
+                a(bu)  is undefined  for all u
+
+BUT I don't know of any normal form t such that  tu  is undefined for all  u
+(as such a t would have to be lambda abstraction \x.t'  with  x  not free in
+t' and then  t'  cannot be a normal form!). Thus there cannot be a normal
+form  c  with
+
+                cu  \simeq  a(bu)  for all u
+
+Admittedly, that looks a bit alarming because it might also affect the work
+of Hyland and Ong. But on the other hand I don't see where I am wrong.
+Moreover, in a sense the phenomenon is well known. When making normal forms
+into a category one has to prove a cut-elimination theorem that certainly
+fails for untyped terms.
+
+Thomas
+
+PS My impression is that people haven't really addressed Peter's question.
+The reason for the definedness axioms of a pca are derived from the intuition
+of "weak head normal forms" where \x.t is always defined (as like in
+functional programming one isn't allowed to reduce under a lambda abstraction).
+That is the "reason" why people have introduced the definedness axioms. There
+is no reason why pca's should be the most general structure for which the
+``realizability construction'' works.  As it seems to me normal forms are not
+an instance of such a generalization (however it might look).
+
+
+
+
+
+
+
+
+
+

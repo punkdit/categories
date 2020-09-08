@@ -1,0 +1,203 @@
+Date: Thu, 2 Feb 1995 04:01:28 -0400 (AST)
+Subject: Algebraic structures for Eilenberg-Moore algebras
+
+Date: Wed, 01 Feb 1995 11:51:57 +0000
+From: Andrea Schalk <Andrea.Schalk@cl.cam.ac.uk>
+
+
+I'm looking for some pointer to literature where I can find the
+following (or a similar) Theorem:
+
+Let $(T,\eta,\mu)$ be a monad. Assume we have an algebraic structure
+such that every free algebra for that monad carries one of those
+algebraic structures and such that all morphisms of the form $Tf$
+and all $\mu_C$ preserve it. Then all Eilenberg-Moore algebras carry
+such a structure and all morphisms between them preserve it.
+
+Thanks
+
+Andrea Schalk
+University of Cambridge
+Computer Lab
+
+Andrea.Schalk@cl.cam.ac.uk
+
+Date: Thu, 2 Feb 1995 23:02:17 -0400 (AST)
+Subject: Re: Algebraic structures for Eilenberg-Moore algebras
+
+Date: Thu, 2 Feb 95 08:39:39 EST
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+-
+- Date: Wed, 01 Feb 1995 11:51:57 +0000
+- From: Andrea Schalk <Andrea.Schalk@cl.cam.ac.uk>
+-
+-
+- I'm looking for some pointer to literature where I can find the
+- following (or a similar) Theorem:
+-
+- Let $(T,\eta,\mu)$ be a monad. Assume we have an algebraic structure
+- such that every free algebra for that monad carries one of those
+- algebraic structures and such that all morphisms of the form $Tf$
+- and all $\mu_C$ preserve it. Then all Eilenberg-Moore algebras carry
+- such a structure and all morphisms between them preserve it.
+-
+- Thanks
+-
+- Andrea Schalk
+- University of Cambridge
+- Computer Lab
+-
+- Andrea.Schalk@cl.cam.ac.uk
+-
+-
+I don't know of an explicit reference, but things of this sort are
+certainly familiar.  Look, for example, at the proof in TTT that
+toposes are cartesian closed.  For that matter, the proof that a
+slice of a topos is a topos uses the same idea.
+
+Michael Barr
+
+
+Date: Thu, 2 Feb 1995 23:04:41 -0400 (AST)
+Subject: re Algebraic structures for Eilenberg-Moore algebras
+
+Date: Thu, 02 Feb 1995 11:27:38 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+  ''From: Andrea Schalk <Andrea.Schalk@cl.cam.ac.uk>
+
+
+I'm looking for some pointer to literature where I can find the
+following (or a similar) Theorem:
+
+Let $(T,\eta,\mu)$ be a monad. Assume we have an algebraic structure
+such that every free algebra for that monad carries one of those
+algebraic structures and such that all morphisms of the form $Tf$
+and all $\mu_C$ preserve it. Then all Eilenberg-Moore algebras carry
+such a structure and all morphisms between them preserve it.
+
+Thanks''
+
+   I don't know where to look for such a theorem but would be more optimistic
+if I knew what 'carries' means. Harvey Friedman published something of this
+tendency about 1977, I think with semantic hypothesis and syntactic
+conclusion.  John Isbell
+
+Date: Sun, 5 Feb 1995 20:39:50 -0400 (AST)
+Subject: Re: Algebraic structures for Eilenberg-Moore algebras
+
+Date: Fri, 3 Feb 1995 15:52:31 +0000 (GMT)
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+
+According to categories:
+ >
+ > Date: Wed, 01 Feb 1995 11:51:57 +0000
+ > From: Andrea Schalk <Andrea.Schalk@cl.cam.ac.uk>
+ >
+ >
+ > I'm looking for some pointer to literature where I can find the
+ > following (or a similar) Theorem:
+ >
+ > Let $(T,\eta,\mu)$ be a monad. Assume we have an algebraic structure
+ > such that every free algebra for that monad carries one of those
+ > algebraic structures and such that all morphisms of the form $Tf$
+ > and all $\mu_C$ preserve it. Then all Eilenberg-Moore algebras carry
+ > such a structure and all morphisms between them preserve it.
+ >
+
+Manes' book "Algebraic Theories" contains many propositions and
+exercises of this kind, relating monadic and equational presentations
+of algebraic theories. I think something of this kind should be there.
+
+Regards,
+-- Dusko Pavlovic
+
+Date: Sun, 5 Feb 1995 20:41:36 -0400 (AST)
+Subject: Re: Algebraic structures for Eilenberg-Moore algebras
+
+Date: Fri, 3 Feb 1995 16:44:33 +0000 (GMT)
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+
+ >
+ > Let $(T,\eta,\mu)$ be a monad. Assume we have an algebraic structure
+ > such that every free algebra for that monad carries one of those
+ > algebraic structures and such that all morphisms of the form $Tf$
+ > and all $\mu_C$ preserve it. Then all Eilenberg-Moore algebras carry
+ > such a structure and all morphisms between them preserve it.
+ >
+
+PS On a second thought, the matter of monadic vs. equational
+presentation just complicates things here. If we begin by presenting
+this algebraic structure, carried by all free T-algebras, as another
+monad, say (S,\eta,\mu), the proof boils down to two diagrams.
+
+The assumption that each free T-algebra is an S-algebra means that
+there is a natural transformation s:ST->T: its components are the
+given S-algebras on TX; the assumption that each Tf preserves the
+structure is just the naturality of s.
+
+On the other hand, the assumption that \mu of T preserves it means
+that \mu s = s S\mu. Using this and the naturalities, one directly
+checks that if a:TX->X is a T-algebra, then
+        SX --S\eta--> STX --s--> TX --a--> X
+must be an S-algebra --- clearly preserved by T-morphisms.
+
+All the best,
+-- Dusko
+
+
+Date: Sun, 5 Feb 1995 20:37:12 -0400 (AST)
+Subject: query of A. Schalk
+
+Date: Sat, 4 Feb 95 09:26:05 EST
+From: Ernie Manes <manes@math.umass.edu>
+
+February 3, 1995
+  To:  Andrea Schalk, Andrea.Schalk@cl.cam.ac.uk
+From:  Ernie Manes, manes@math.umass.edu
+  Re:  Your query yesterday on cat-dist
+
+The question you asked was solved in my 1967 thesis and appears as
+Exercise 9 on page 217 of my book on Algebraic Theories, Springer-Verlag
+GTM 28, 1976 where the reference to the thesis is also given.
+
+In effect, if T is your monad and C is the category of algebraic
+structures, you give yourself a functor  J : F ---> C  where F is the
+full subcategory of free T-algebras.  This is because a typical
+homomorphism between free T-algebras has the form of a composition Tf
+followed by a mu.  Your question then amounts to asking for a canonical
+extension of J to the category of all T-algebras.  This construction,
+based on contractible coequalizers, is given in the references cited in
+the first paragraph.
+
+     All the best,
+     egm
+
+Date: Fri, 10 Feb 1995 22:57:36 -0400 (AST)
+From: categories <cat-dist@mta.ca>
+To: categories <categories@mta.ca>
+Subject: The recent question of Andrea Schalk, and replies to it.
+
+Date: Fri, 10 Feb 95 18:21:27 +1100
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+
+The best answer was that of Ernie Manes. What is at stake is one very
+simple observation: if A is the category of algebras for a monad (perhaps
+in the context of enriched category theory) and F is the full subcategory
+given by the free algebras, then F is dense in A, and moreover this density
+may be "presented" by coequalizers. For the meaning of "density presentation",
+a notion due to Brian Day, see p.172 of my book "Basic Concepts of Enriched
+Category Theory", CUP 1982. Here it means that every algebra is a coequalizer
+of a pair of maps between free algebras, IN SUCH A WAY THAT this colimit is
+preserved by the representables A(f,-) where f is a free algebra; and this is
+very easy to see. Now Thm 5.30 of my book gives a very simple proof that the
+left Kan extension along J: F --> A of any functor T: F --> B exists, provided
+only that B has coequalizers. The observation of Dusko Pavlovic, that an
+elegant argument is to hand when B too is monadic, gives too SPECIAL a result.
+The others that have answered don't seem to have pointed out that the
+"canonical" extension of T they refer to IS indeed the left Kan extension.
+
+Max Kelly.
+

@@ -1,0 +1,72 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Products redone
+Date: Wed, 17 May 2000 16:09:34 -0400 (EDT)
+Lines: 46
+Approved: news@gmane.org
+Message-ID: <200005172009.QAA20086@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017896 31636 80.91.229.2 (29 Apr 2009 15:11:36 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:11:36 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed May 17 22:41:35 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA31889
+	for categories-list; Wed, 17 May 2000 22:40:28 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1838
+Original-Lines: 45
+Xref: news.gmane.org gmane.science.mathematics.categories:1521
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1521>
+
+Kai Bruennler asked:
+
+  Is there a binary product in the category of sets and functions 
+  that is "strictly associative", i.e.
+
+  A x (B x C) = (A x B) x C   and
+  the associativity isomorphisms are equal to the identity?
+
+I gave a construction using the axiom of choice. Well, we can do
+better. Fix on an ordered-pair construction, say Weiner's, and denote 
+its values as  <x,y>. Let  l  be the left-coordinate function, r the
+right-coordinate function. 
+
+Fix on a sequence of finite ordinals, say von Neumann's. Define,
+inductively, an n-TUPLE as something of the form  <x,y>  where  y  is
+a (n-1)-tuple if  n>1  else any old set if  n=1. (There are no 
+0-tuples.) Note that the same set can be an n-tuple for any number of
+values for  n. But if  x  is an  n-tuple and we are given  n  then
+each of it's  n  coordinates is well-defined:
+
+        x_1 = lx
+        x_2 = l(rx)
+...
+    x_{n-1} = l(r(r(...r(rx)...)))
+        x_n = r(r(r(...r(rx)...)))
+
+where there are  i-1  applications of  r  used for  x_i, one 
+application of  l  used for  x_i  if  i<n  and no application of  l
+used for  x_n.
+
+A trick of this construction of binary products is that we define 
+products twice. Given  n  sets  a_1, a_2,...,a_n  define their n-fold
+PRE-PRODUCT as the set of pairs of the form  <x,n>  where  x  is an  
+n-tuple such that  x_i \in  a_i  each relevant  i.
+
+If two sets  x  and  y  arise as pre-products, that is, if there are
+positive ordinals  m  and  n  and  sets  a_1, a_2,..., a_m, b_1, b_2,
+...,b_n  such that  x  is the pre-product of the  a's  and  y  is the
+product of the  b's, then we define their PRODUCT as the (m+n)-fold 
+pre-product of  a_1, a_2,..., a_m, b_1, b_2,...,b_n.
+
+Define  F(x) =  x  if  x  is a pre-product else { <y,1> | y \in x}.
+Define the product of arbitrary  x  and  y  as the product of  F(x)
+and  F(y).
+
+

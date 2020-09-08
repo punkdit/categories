@@ -1,0 +1,72 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: connectedness fibrationally
+Date: Tue, 16 Oct 2007 12:59:36 +0200 (CEST)
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E1Ihwgu-0004U6-Ip@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019669 11360 80.91.229.2 (29 Apr 2009 15:41:09 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:41:09 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Oct 16 21:30:43 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 16 Oct 2007 21:30:43 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Ihwgu-0004U6-Ip
+	for categories-list@mta.ca; Tue, 16 Oct 2007 21:23:16 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 77
+Status: O
+Content-Length: 1483
+Original-Lines: 37
+Xref: news.gmane.org gmane.science.mathematics.categories:4020
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4020>
+
+Recently it has been discussed what is the appropriate notion of connecteness
+for a category \X relative to a category \B. The following appears as natural
+to me.
+
+Let \B be a category and P : \X -> \B be a fibration of categories with
+a terminal object and with internal sums.
+Then for every object I in \B there is an obvious functor
+\Delta_I : \B/I -> \X_I sending u : J -> I to \coprod_u 1_J.
+An object X \in \X_I is an I_indexed family of connected objects iff
+the functor \X_I(X,\Delta_I(-)) : (\B/I)^\op -> Set is represented by \id_I,
+i.e there exists eta_X : X \to 1_I such that for every cocartesian arrow
+\phi : 1_J -> \Delta_I(u) over u : J -> I and vertical arrow
+\alpha : X -> \Delta_I(u) there exists a unique arrow s : I -> J
+making the diagram
+
+     X --------------------> 1_I
+     |                        |
+     | \alpha                 | 1_s
+     |                        |
+     V          cocart.       V
+ \Delta_I(u) <---------------1_J
+
+commute (where the top arrow is vertical).
+
+In case I = 1 (where we write \Delta for \Delta_I) this means that for
+every f : X -> Delta(I) there is a unique i : 1 -> I with
+f = \Delta(i) \circ eta_X.
+
+Notice that in case \B has finite limits, P is a fibration of categories
+with finite limits and stable and disjoint sums the fibration P is equivalent
+to \Delta^* P_{\X_1}. This is an old result of Moens (1982) (see section 15
+of www.mathematik.tu-darmstadt.de/~streicher/FIBR/FibLec.pdf.gz for an
+exposition).
+
+Thomas
+
+
+

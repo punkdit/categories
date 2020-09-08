@@ -1,0 +1,110 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Ingo Blechschmidt <ingo.blechschmidt@math.uni-augsburg.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equivalence of categories
+Date: Mon, 26 Feb 2018 13:47:08 +0100
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <E1er92u-0006It-DO@mlist.mta.ca>
+Reply-To: Ingo Blechschmidt <ingo.blechschmidt@math.uni-augsburg.de>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1519852406 17879 195.159.176.226 (28 Feb 2018 21:13:26 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Wed, 28 Feb 2018 21:13:26 +0000 (UTC)
+Cc: "Vasili I. Galchin" <vigalchin@gmail.com>
+To: Categories mailing list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Wed Feb 28 22:13:21 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1er92P-00040y-2p
+	for gsmc-categories@m.gmane.org; Wed, 28 Feb 2018 22:13:21 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:47978)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1er93t-0002eP-MO; Wed, 28 Feb 2018 17:14:53 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1er92u-0006It-DO
+	for categories-list@mlist.mta.ca; Wed, 28 Feb 2018 17:13:52 -0400
+Content-Disposition: inline
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9569
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9569>
+
+Dear Vasily,
+
+On Sun, Feb 25, 2018 at 06:59:29PM +0000, Vasili I. Galchin wrote:
+> What are some examples of invariants that are necessary for two
+> categories to be equivalent?  E.g. If A and B are equivalent and A is a
+> elementary topic, does this imply that B is an elementary topos?
+
+yes, this is the case.
+
+More generally, any property which can be formulated in the
+first-order dependently-typed language of a category (consisting of a
+type Ob of objects, a dependent type Hom(X,Y) for X, Y : Ob, an equality
+predicate for values of Hom(X,Y), a fully-defined composition operation,
+and the usual axioms) is invariant under equivalence of categories. Note
+that, crucially, one cannot express equality of objects in this language.
+
+For instance, the following properties are invariant under equivalence:
+
+* There is an initial object.
+* Any two parallel morphisms are equal.
+* Any two endomorphisms of an object commute.
+* There is an initial object, and any morphism into it is an isomorphism.
+   (This property distinguishes the category of sets from its opposite
+   category.)
+* Any finite diagram has a limit.
+* The category is abelian.
+* The category is an elementary topos.
+
+The following properties can not be formulated in the sketched language
+and are indeed not invariant under equivalence:
+
+* There is exactly one object.
+* Isomorphic objects are equal.
+
+Note that categories can fail to be equivalent even though they satisfy
+the same statements. For instance, it's known that the theory of dense
+linear orders without endpoints is complete. Therefore the thin
+categories induced by rationals and by the reals satisfy the same
+statements. But they are not equivalent (any equivalence is in fact an
+isomorphism, and there is no bijection from Q to R).
+
+Also note there are properties which are invariant under equivalence but
+can't be expressed in the restricted language sketched above. For
+instance:
+
+* Any small diagram has a limit.
+* The category is equivalent to the category of sheaves on a small site.
+
+One would need an infinitary extension of the language to express these
+properties.
+
+Cheers,
+Ingo
+
+PS: The meta-claim "can be formulated in the language ==> invariant
+under equivalence" holds constructively, without any appeal to the axiom
+of choice. This is even so if you non-standardly define an equivalence
+of categories to be an essentially surjective fully faithful functor. In
+the absense of the axiom of choice, this definition is weaker than the
+standard one (a pair of functors which are pseudo-inverse to each
+other).
+
+-- 
+Ingo Blechschmidt
+Lehrstuhl f??r Algebra und Zahlentheorie
+Universit??t Augsburg
+Tel.: 0821/598-5601
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

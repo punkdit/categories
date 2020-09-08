@@ -1,0 +1,122 @@
+Path: news.gmane.org!not-for-mail
+From: Reinhold Heckmann <heckmann@cs.uni-sb.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Uday's question
+Date: Wed, 4 Mar 1998 17:43:42 +0100 (CET)
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <199803041643.RAA09221@sol.cs.uni-sb.de>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017110 26810 80.91.229.2 (29 Apr 2009 14:58:30 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:30 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Wed Mar  4 17:31:45 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA17842
+	for categories-list; Wed, 4 Mar 1998 14:23:00 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3704
+Original-Lines: 95
+Xref: news.gmane.org gmane.science.mathematics.categories:668
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/668>
+
+When reading the last message of Uday Reddy,
+I got three ideas.
+
+1) Several people have pointed out that naturality is impossible.
+Yet a weaker form of naturality may be appropriate.
+Consider existential quantification on sets.
+If f: A -> B is a function and p: B -> M (= Bool) a predicate,
+then  exists x in A: p(fx)  iff  exists x in f(A): p x
+This suggests to require naturality  E_A (p o f) = E_B p
+for *epis*  f: A -> B  only.
+
+2)  Uday Reddy asked about the significance of the third equation:
+    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+This equation looks a bit like the Foubini theorem
+in integration theory.
+The difference is that in Foubini's theorem,
+there is a third mediating term, whose analogue would be
+    E_(A x B) (\(x,y). hxy) .
+[Distinguish the product symbol x in A x B from the variable x.]
+
+3) The analogy with integration also shows that
+something may be missing from the present setting:
+The integral depends on the function to be integrated
+and also on a measure.  It is in fact an operator
+    I_A: [A->M] x M(A) -> M
+where M are the (non-negative?) reals
+with the multiplicative monoid structure,
+and M(A) is the set of measures on A.
+[Distinguish the operator M from the monoid M.
+ Yet there is some connection: M(1) = M
+ if M is taken to consist of the non-negative reals.]
+
+Now, we get
+         I_A(\x. a * gx, m)  =  a * I_A(g, m)
+         I_A(\x. gx * a, m)  =  I_A(g, m) * a
+by linearity of integration, and
+         I_A(\x.1, m) = m(A)
+(= 1, if only normalised measures are considered, but then M = M(1) is lost)
+Of course, integration has many more properties, e.g.
+additivity in the function, and linearity in m.
+
+The last equation becomes
+  I_A (\x. I_B (\y. hxy, mb), ma) = I_B (\y. I_A (\x. hxy, ma), mb)
+  =  I_(A x B) (\(x,y). hxy, ma x mb)   with the product measure ma x mb.
+
+There is also kind of naturality, namely the law of substitution:
+For  f: A -> B,  I_A (p o f, ma) = I_B (p, ma o f^-1)
+	(for  p: B -> M  and  ma in M(A) ).
+This becomes a bit more categorical
+by noting that  M(-)  is a functor  with  M(f) (ma) = ma o f^-1
+and so   I_A ( [f->] p, ma) = I_B (p, M(f) ma) .
+
+Much of this can be formulated abstractly with a functor M.
+For the mediating term of the Foubini theorem,
+a natural transformation  x_AB: M(A) x M(B) -> M(AxB)  is needed
+to form the product measure.
+
+It may be useful to introduce a natural transformation
+eta_A: A -> M(A), giving point measures.
+    I_A (p, eta_A(x)) = p(x)  holds for p: A -> M  and  x in A.
+
+The transformation x_AB induces a binary operation on  M(1) = M(1 x 1),
+and for  1 = {()},  eta_1 ()  is an element of  M(1).
+This gives a monoid structure on M(1),
+giving back the original monoid M.
+
+Back to existential quantification:
+===================================
+Take  M(A) = P(A), the powerset of A,  and M = P(1) = Bool
+and define  E_A (p, S) = exists x in S: p(x)
+for  p: A -> M  and  S in P(A).
+Then all the equations for integration hold
+(with  x_AB : P(A) x P(B) -> P(A x B)  being cartesian product
+ and  eta_A(x) = {x} )
+
+Instead of considering  E_A: [A->M] x P(A) -> M,
+one may, using CC, also consider  E'_A: P(A) -> [[A->M]->M] .
+This is even a monad homomorphism from the power set monad
+to the monad  [[- -> M] -> M]  (known as continuation monad
+with "final answers" M).
+
+A similar thing is possible in the category of domains,
+with P being some power domain construction
+(see my paper  "Power Domains and Second Order Predicates",
+ TCS 111, 59 - 88 (1993) ).
+
+Maybe, this is the essence of Uday's work:
+defining a monad homomorphism from some monad used
+in the semantic description of a language to the continuation monad.
+
+Regards,
+Reinhold Heckmann
+Universitaet des Saarlandes
+
+
+

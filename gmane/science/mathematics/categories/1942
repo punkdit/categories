@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <m.escardo@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: re: Limits
+Date: Thu,  3 May 2001 13:59:08 +0100 (BST)
+Lines: 79
+Approved: news@gmane.org
+Message-ID: <15089.14134.867261.350412@henry.cs.bham.ac.uk>
+References: <Pine.LNX.4.21.0105021457200.419-100000@pc12394>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018221 1310 80.91.229.2 (29 Apr 2009 15:17:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:17:01 +0000 (UTC)
+To: Category Mailing List <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu May  3 15:31:32 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f43I4pF03260
+	for categories-list; Thu, 3 May 2001 15:04:51 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <Pine.LNX.4.21.0105021457200.419-100000@pc12394>
+X-Mailer: VM 6.43 under 20.4 "Emerald" XEmacs  Lucid
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: O
+Content-Length: 3670
+Original-Lines: 78
+Xref: news.gmane.org gmane.science.mathematics.categories:1942
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1942>
+
+Tobias Schroeder writes:
+ > - Can the limit of a sequence of real numbers be expressed
+ >   as a categorical limit (of course it can if the sequence is
+ >   monotone, but what if it is not)?
+
+I think I have an answer to this question (without cheating). It may
+be well known or wrong (I haven't carefully checked the details, but I
+believe that they are correct).
+
+Given a metric space X with distance function d, construct a category,
+also called X, as follows. The objects of the category X are the
+points of the space X. An element of the hom-set X(x,y) is a triple
+(r,x,y) with r a real number such that d(x,y)<=r. The composite of the
+arrows r:x->y and s:y->z is the arrow s+r:x->z. This is well defined
+by virtue of the triangle inequality d(x,z)<=d(x,y)+d(y,z). By virtue
+of the condition d(x,x)=0, we have identities. Notice that all arrows
+are mono.
+
+Of course, because the category X is small and it is not a preordered
+set, it doesn't have all limits. But some limits do exist.
+
+CLAIM: Let x_n be a sequence of points of X, and, for each n, let the
+arrow r_n:x_{n+1}->x_n be d(x_n,x_{n+1}). If the sum of r_k over k>=0
+exists, then this omega^op-diagram has a categorical limit. The source
+of the limiting cone is the metric limit l of the sequence. The
+projection p_n:l->x_n is the sum of r_k over k>=n. If q_n:m->x_n is
+another cone, then the mediating map u:l->m exists (and will be
+automatically unique), because, by definition of cone and of our
+category, q_n will have to be bigger than r_n, and then u=q_n-r_n does
+the job.
+
+Remarks. (1) For any given Cauchy sequence, one can construct an
+equivalent Cauchy sequence for which the assumption in the second
+sentence of the claim fails. Using classical logic, for any given
+Cauchy sequence, one can construct an equivalent Cauchy sequence for
+which the assumption holds.  
+
+(2) In (some flavours of) constructive mathematics, the notion of a
+Cauchy sequence "with fixed rate of convergence" is taken as
+basic. This often is taken to mean that d(x_n,x_n+1)<=c^n for a fixed
+c with 0<c<1. For such sequences, the assumption is satisfied. Recall
+that a map f:X->Y is called non-expansive if d(fx,fx')<=d(x,x'). If
+the natural numbers are metrized by d(m,n)=c^min(m,n) for m/=n, to get
+a space N, then such a Cauchy sequence is just a non-expansive map
+N->X. It converges if and only if the non-expansive map has a
+non-expansive extension to N_{infty}, the metric completion of N
+(which, topologically, is the one-point compactification of N). And
+non-expansive maps are functors---see (3) below.
+
+(3) Recall that a map f:X->Y is called lipschitz if there is a
+constant c for which d(fx,fx')<=c.d(x,x').  A lipschitz map f:X->Y
+gives rise to a functor f:X->Y defined by
+f(r:x->x')=c.r:f(r)->f(x'). That is, the object part is given by the
+map itself, and the arrow part is given by multiplication with the
+lipschitz coefficient.
+
+(4) We have taken the arrows r_n to be d(x_n,x_{n+1}). But actually
+any choice of arrows does the job, provided the sum of r_k over k>=0
+is finite.
+
+(5) Other two conditions for the distance function of a metric space,
+which were not used in the definition of the category X, are (i)
+d(x,y)=0 implies x=y, and (ii) d(x,y)=d(y,x). By the first, our
+category is skeletal. By the second, it is selfdual. Of course, people
+have considered generalized metric spaces in which these are not
+assumed to hold. See, for example, Lawvere's paper "Metric spaces,
+generalized logic, and closed categories", in which he regards a
+generalized metric space X as an enriched category with X(x,y)=d(x,y)
+(so he has hom-numbers instead of hom-sets). Here we have hom-sets (of
+numbers).
+
+MHE
+
+
+
+
+
+
+

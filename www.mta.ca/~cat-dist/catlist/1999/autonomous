@@ -1,0 +1,74 @@
+Date: Tue, 14 May 1996 16:17:56 -0300 (ADT)
+Subject: *-Autonomous categories ?
+
+Date: Mon, 13 May 1996 12:50:28 +0100
+From: Justin Pearson <justin@dcs.rhbnc.ac.uk>
+
+
+Dear All,
+Given a *-autonomous categories C, we have an isomorphism of Hom sets:
+        Hom(A,B) iso HOM(B^\perp , A^\perp)
+
+where B^\perp is the dual of B etc.
+
+The question is, if you there is another isomorphism of Hom sets
+        Hom(A,B) iso HOM(B,A)
+
+Does this force the duality to become trivial, i.e. A^\perp iso A for
+all A?
+
+I suspect the answer is no, but something tells me it might be yes. But
+my intuition and attempts to resolve the matter have, so far, failed me.
+
+Regards
+Justin Pearson
+Computer Science
+Royal Holloway
+University of London
+Egham
+Surrey
+TW20 0EX
+U.K.
+Tel: +44(0)1784 443912
+Email: justin@dcs.rhbnc.ac.uk
+
+
+Date: Wed, 15 May 1996 08:54:51 -0300 (ADT)
+Subject: Re: *-Autonomous categories ?
+
+Date: Wed, 15 May 96 09:55 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+The answer is no. Take a closed symmetric monoidal category C which
+happens to be self-dual (e.g. finite-dimensional vector spaces), and
+perform (the trivial case of) the Chu construction on it -- i.e.
+take C^op x C with the duality (A,B)^\perp = (B,A).
+
+Peter Johnstone
+
+
+Date: Wed, 15 May 1996 14:22:28 -0300 (ADT)
+Subject: Re: *-Autonomous categories ?
+
+Date: Wed, 15 May 1996 09:46:34 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+There answer is no.  One point to remember is that the category
+could even be discrete, that is the only arrows are identities.
+An easy example is this.  Let G be a group (and assume not every element
+is of order dividing 2).  If you want a symmetric example, assume G is
+commutative.  Now make a category whose objects are the elements of G
+and arrows are only identities, so there is an arrow a --> b iff a = b
+and then there is only one.  So Hom(a,b) = Hom(b,a).  The monoidal
+structure is the group multiplication, a --o b = a\inv b (and
+b o-- a = b a\inv) and a* = a\inv.
+
+Here is a less trivial example.  Take a CMC with finite products
+in which Hom(a,b) \iso Hom(b,a) (finite dimensional vector spaces,
+say) and form Chu(C,1) (1 is terminal).  An object is a pair (a,a')
+where a and a' are arbitrary objects of C and Hom((a,a'),(b,b'))=
+Hom(a,b) x Hom(b',a') \iso Hom(b,a) x Hom(a',b') = Hom((b,b'),(a,a')),
+while (a,a')* = (a',a).
+
+Michael Barr
+

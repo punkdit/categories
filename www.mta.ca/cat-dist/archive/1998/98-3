@@ -1,0 +1,2773 @@
+From cat-dist Sun Mar  1 11:53:22 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA02389
+	for categories-list; Sun, 1 Mar 1998 10:55:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Sat, 28 Feb 1998 23:24:32 -0600 (CST)
+Message-Id: <199803010524.XAA25141@reddy.cs.uiuc.edu>
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+To: categories@mta.ca
+Subject: categories: Quantifiers for monoids
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+In studying Algol-like languages, I repeatedly run into operators that
+have an interesting structure.  I am wondering if such operators are
+studied somewhere.
+
+Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+natural transformations E_A : [A => M] -> M that satisfy the following
+equations (in the internal language of the CCC):
+
+    E_A(\lambda x. 1)  =  1
+    E_A(\lambda x. a * g`x) = a * E_A(g)
+    E_A(\lambda x. g`x * a) = E_A(g) * a
+    E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+These operators "feel" like existential quantifiers.  In fact, if M is
+a subobject classifier with the monoid structure ofh conjunction, then
+the existential quantifier E satisfies all of these equations (though
+it is not a natural transformation).
+
+In the applications I am interested in, M is a type of commands, with
+* as sequential composition and 1 as the null action.  An example of
+E is a local variable declaration.  
+
+Is there some algebra or theory related to these kinds of operators?
+
+Cheers,
+Uday Reddy
+
+
+From cat-dist Mon Mar  2 13:27:01 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA24399
+	for categories-list; Mon, 2 Mar 1998 09:50:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+Message-Id: <199803021116.LAA05245@beauty.doc>
+Subject: categories: Re: Quantifiers for monoids
+To: u-reddy@cs.uiuc.edu (Uday S. Reddy)
+Date: Mon, 2 Mar 1998 11:16:12 +0000 (GMT)
+Cc: categories@mta.ca
+In-Reply-To: <199803010524.XAA25141@reddy.cs.uiuc.edu> from "Uday S. Reddy" at Feb 28, 98 11:24:32 pm
+X-Mailer: ELM [version 2.4 PL24]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+[Note from moderator: apologies to Dusko for prepending nonsense to his
+post, regards, Bob]
+
+Uday S. Reddy:
+
+ > Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+ > natural transformations E_A : [A => M] -> M that satisfy the following
+ > equations (in the internal language of the CCC):
+ > 
+ >1)     E_A(\lambda x. 1)  =  1
+ >2)     E_A(\lambda x. a * g`x) = a * E_A(g)
+ >3)     E_A(\lambda x. g`x * a) = E_A(g) * a
+ >4)     E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+ > 			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+The naturality of E_A in A seems to be a very strong requirement
+(provided that am not misuncerstanding anything, ofcourse).
+
+Let T the terminal object (since 1 already denotes the unit of
+M). Equations (1) and (2) imply
+
+	E_T(\lambda x. a) = a, 
+
+so E_T is iso. The naturality, on the other hand, implies that for
+every a,b : T --> A holds
+
+	a=>M ; E_T   =   E_A   =   b=>M ; E_T
+
+Such E_A, I think, shouldn't be thought of as a quantifier: modulo
+E_T, it actually boils down to the *evaluation* at (ie substitution
+of) an arbitrary global point of A:
+
+	E_A(g)  = g`a = g`b
+
+Instanciating A = M and g = \lambda x. x yields a = 1, ie 1: T --> M
+is the only global point of M. If T generates, M is T.
+
+On the other hand, if there is an initial object 0 in the CCC, the
+naturality in A implies that all E_A are constantly 1...
+
+Without the naturality, conditions (1--4) seem to be rather easy to
+satisfy. For a fixed A, conditions (2) and (3) are a kind of
+naturality on E_A itself. To make this precise, define on A=>M the
+pointwise monoid structure
+
+	g * h   =  \lambda x. g`x * h`x
+	
+Thinking of M and A=>M as categories, each with one object *, we have
+the Hom-functors from M^op x M and from A=>M^op x A=>M to the CCC
+where they live.
+
+On the other hand, there is the monoid morphism
+
+	I : M ---> A=>M
+	      m |--> \lambda x. m
+
+which can be construed as a functor. Precomposing Hom_{A=>M} with I^op
+and I, we get a functor from M^op x M. Conditions (2) and (3) are now
+exactly the naturality of
+
+	E_A : Hom_{A=>M} (I*, I*) ---> Hom_M (*,*)
+
+in each of the arguments. Hom_M thus appears as a retract of the
+functor Hom_{A=>M} o (I^op x I)... All together, E_A thus appear as a
+weak kind of *abstraction operators* (like in
+www.cogs.susx.ac.uk/users/duskop/papers/CLNA.ps.gz).
+
+All this may not be enlightening at all, but it does seem to help pin
+down the models: eg, evaluations/substitutions of the arbitrary points
+will work again, as well as, when M is a complete lattice, the infima
+and the suprema, corresponding to the quantifiers... (No naturality in
+A, ofcourse.)
+
+Apologies if I got carried away a bit. It's a nice question. I hope
+others will tell more.
+
+Regards,
+-- Dusko Pavlovic
+
+
+
+
+
+
+
+
+From cat-dist Tue Mar  3 13:03:14 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA10309
+	for categories-list; Tue, 3 Mar 1998 09:45:41 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 3 Mar 1998 07:46:20 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <199803031246.HAA05973@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Memorial article
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The AMS Notices will publish a memorial article for Sammy. These
+projects are put together in a hurry and who gets asked to submit
+remarks is something of a random process. In this case it's Hyman
+Bass, Henri Cartan, Alex Heller, Saunders Mac Lane and I. Hy will
+also provide a narrative vita.
+
+Please send me material you'd like included. If I get too many
+suggestions, I will, with your permission, not include any of them in
+the Notices but will publish -- after the Notices -- memorial pages in
+the JPAA.
+
+
+From cat-dist Tue Mar  3 13:09:26 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA10032
+	for categories-list; Tue, 3 Mar 1998 09:44:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 3 Mar 1998 07:32:55 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <199803031232.HAA05517@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Reddy's question
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Uday Reddy poses the following (with a few changes in notation]:
+
+>Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+>are natural transformations  E:[-,M] -> M  that satisfy the
+>following equations (in the internal language of the CCC):
+>
+>               E_A(\x.e)  =  e
+>         E_A(\x. a * gx)  =  a * E_A(g)
+>         E_A(\x. gx * a)  =  E_A(g) * a
+>    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+
+I wonder if naturality is really desired: it would seem to force  M  to
+be trivial. By the familiar Yoneda-lemma argument, E  must be constant
+as far as the "points" of  [A,M]  are concerned. (Actually one doesn't
+need the argument, just the lemma itself; consider the transformation
+that  E  induces between set-valued functors  (-,M) -> (1,M); Yoneda
+says it must be constant.) The condition
+
+    E_A(\x.e)  =  e
+
+forces just which constant it is. That is, for any  f:A -> M  it will
+be the case that  E_A  will send  f  to  e.
+
+But then either condition
+
+    E_A(\x. a * gx) = a * E_A(g)
+
+or
+
+    E_A(\x. gx * a) = E_A(g) * a
+
+will force  M  to be trivial. (It's clear in the \-calculus notation.
+But that argument would be implicitly using the fact that  E_A  is
+constant and we officially know only that it's constant on points.
+So take, say, the second condition. It says in diagrammatic language:
+
+
+              1 x K                 P            [A,*]
+   [A,M] x M  -----> [A,M] x [A,M] ---> [A,MxM]  -----> [A,M]
+
+         |                                                |
+         |  E_A x 1_M                                     |  E_A
+         |                                                |
+                                    *
+       M x M   ---------------------------------------->  M
+
+
+where  K  is the standard "constant-map" operator that's adjoint to
+the projection  AxM -> M  and  P  is the standard operator that
+defines  MxM  (given products in Set). Specialize to  A = M  and
+precompose with  <f,1>: M -> [M,M] x M  where  f  doesn't matter. If
+the commutative rectangle above is chased clockwise one obtains the
+map constantly valued  e. Chased counterclockwise one obtains the
+identity map. And, of course, it didn't matter what  f  is.)
+
+
+
+From cat-dist Wed Mar  4 13:55:25 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA06511
+	for categories-list; Wed, 4 Mar 1998 09:57:57 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 4 Mar 1998 13:28:53 +0100 (MET)
+From: Jaap van Oosten <jvoosten@math.ruu.nl>
+Message-ID: <199803041228.NAA00350@kodder.math.ruu.nl>
+To: types@cs.indiana.edu, categories@mta.ca
+Subject: categories: Master Class in Logic - Reminder
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+MASTER CLASS IN MATHEMATICAL LOGIC - REMINDER
+
+Dear colleagues,
+
+This is to remind you of the Master Class in Logic
+which will be held in Utrecht, the Netherlands, and
+for which we posted an ad some time ago.
+
+The deadline for applications of students who wish to participate but do not
+need funding is June 1st; students who wish to
+apply for a funding may still do so IF THEIR
+APPLICATION REACHES US (that is: Marian Brands, at the
+Department of Maths., Utrecht University) BEFORE THE
+END OF NEXT WEEK.
+
+We let the text of the original message follow:
+
+In the academic year 1998-1999 the Universities
+of Utrecht and Nijmegen organize, as part of
+the MRI Master Class, a year-long education program
+in Mathematical Logic. The program is aimed at 
+students who intend to enter a Ph.D.-program in the 
+subsequent year.
+
+The courses are in English and foreign students are
+specifically invited to apply. A limited number
+of stipends are available.
+
+The contents of the program are detailed
+in a brochure which exists both as
+hard copy and electronically. The text 
+can be seen on the homepage of the
+Mathematical Research Institute. URL:
+
+http://www.math.ruu.nl/mri
+
+If you're interested in receiving a hard copy 
+of the brochure, please send a message to
+Marian Brands, at 
+
+brands@math.ruu.nl
+
+Thank you,
+
+Jaap van Oosten
+Ieke Moerdijk
+Harold Schellinx
+
+
+----- End Included Message -----
+
+
+
+----- End Included Message -----
+
+
+
+From cat-dist Wed Mar  4 14:05:56 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA03123
+	for categories-list; Wed, 4 Mar 1998 09:56:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 3 Mar 1998 22:59:35 -0600 (CST)
+Message-Id: <199803040459.WAA21808@reddy.cs.uiuc.edu>
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+To: categories@mta.ca
+Cc: reddy@reddy.cs.uiuc.edu
+Subject: Re: categories: Reddy's question
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Response by Peter Freyd to a question of mine:
+
+> >Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+> >are natural transformations  E:[-,M] -> M  that satisfy the
+> >following equations (in the internal language of the CCC):
+> >
+> >               E_A(\x.e)  =  e
+> >         E_A(\x. a * gx)  =  a * E_A(g)
+> >         E_A(\x. gx * a)  =  E_A(g) * a
+> >    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+> 
+> I wonder if naturality is really desired: it would seem to force  M  to
+> be trivial. 
+
+Indeed!  (Peter Johnstone and Dusko Pavlovic also pointed out that I
+went wrong in asking for naturality.)  Something got lost in
+abstracting from my application domain.  My examples had additional
+parameters which made naturality possible.  But, discarding those
+parameters in the interest of abstration seems to have produced a
+statement that is quite impossible to satisfy.  My apologies.
+
+Dusko Pavlovic pointed out some of what we could do once we discard
+the naturality condition.  The second and third equations can be
+regarded as naturality properties by thinking of M and [A,M] as
+categories and E_A as a functor.  (That is good, because it singles
+out the first equation as a "pretender."  So, I shouldn't be worried
+when it breaks.)
+
+On the other hand, I don't know what to make of the fourth equation.
+It says that for E_A to be an abstraction operator (tentatively using
+Pavlovic's terminoloty), it has to commute with every other
+abstraction operator E_B.  For one, that prevents me from giving a
+local definition of what an abstraction operator is.  One needs to
+define the whole collection of abstraction operators at one go.  (Now
+that naturality is gone out the window, there is no reason to require
+even that the family of operators be indexed by objects.  There could
+be any number of maps for an object A.)  Secondly, looking at it from
+the application point of view, there is something "intrinsic" about
+these operators that makes them commute with each other.  It is not
+really a property of the whole collection of operators.  The presence
+or absence of another operator in the collection shouldn't matter.  I
+really have no idea how to capture this kind of "uniformity" in the
+commutativity property.  Some hyperdoctrine-like idea, perhaps?
+
+Despite the fact the first equation doesn't hold in all toposes, I
+think the example of the existential quantifier is an illuminating
+one.  Evaluation at a particular point is a "degenerate" example in
+that it also satisfies
+
+      E_A(\x. fx * gx) = E_A(f) * E_A(g)
+
+The existential quantifier gives a better intuition for the idea of
+these operators.
+
+Hope this explains the question better.
+
+Uday Reddy
+
+
+From cat-dist Wed Mar  4 17:31:45 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA17842
+	for categories-list; Wed, 4 Mar 1998 14:23:00 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 4 Mar 1998 17:43:42 +0100 (CET)
+From: Reinhold Heckmann <heckmann@cs.uni-sb.de>
+Message-Id: <199803041643.RAA09221@sol.cs.uni-sb.de>
+To: categories@mta.ca
+Subject: categories: Uday's question
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+When reading the last message of Uday Reddy,
+I got three ideas.
+
+1) Several people have pointed out that naturality is impossible.
+Yet a weaker form of naturality may be appropriate.
+Consider existential quantification on sets.
+If f: A -> B is a function and p: B -> M (= Bool) a predicate,
+then  exists x in A: p(fx)  iff  exists x in f(A): p x
+This suggests to require naturality  E_A (p o f) = E_B p
+for *epis*  f: A -> B  only.
+
+2)  Uday Reddy asked about the significance of the third equation:
+    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+This equation looks a bit like the Foubini theorem
+in integration theory.
+The difference is that in Foubini's theorem,
+there is a third mediating term, whose analogue would be
+    E_(A x B) (\(x,y). hxy) .
+[Distinguish the product symbol x in A x B from the variable x.]
+
+3) The analogy with integration also shows that
+something may be missing from the present setting:
+The integral depends on the function to be integrated
+and also on a measure.  It is in fact an operator
+    I_A: [A->M] x M(A) -> M
+where M are the (non-negative?) reals
+with the multiplicative monoid structure,
+and M(A) is the set of measures on A.
+[Distinguish the operator M from the monoid M.
+ Yet there is some connection: M(1) = M
+ if M is taken to consist of the non-negative reals.]
+
+Now, we get
+         I_A(\x. a * gx, m)  =  a * I_A(g, m)
+         I_A(\x. gx * a, m)  =  I_A(g, m) * a
+by linearity of integration, and
+         I_A(\x.1, m) = m(A)
+(= 1, if only normalised measures are considered, but then M = M(1) is lost)
+Of course, integration has many more properties, e.g.
+additivity in the function, and linearity in m.
+
+The last equation becomes
+  I_A (\x. I_B (\y. hxy, mb), ma) = I_B (\y. I_A (\x. hxy, ma), mb)
+  =  I_(A x B) (\(x,y). hxy, ma x mb)   with the product measure ma x mb.
+
+There is also kind of naturality, namely the law of substitution:
+For  f: A -> B,  I_A (p o f, ma) = I_B (p, ma o f^-1)
+	(for  p: B -> M  and  ma in M(A) ).
+This becomes a bit more categorical
+by noting that  M(-)  is a functor  with  M(f) (ma) = ma o f^-1
+and so   I_A ( [f->] p, ma) = I_B (p, M(f) ma) .
+
+Much of this can be formulated abstractly with a functor M.
+For the mediating term of the Foubini theorem,
+a natural transformation  x_AB: M(A) x M(B) -> M(AxB)  is needed
+to form the product measure.
+
+It may be useful to introduce a natural transformation
+eta_A: A -> M(A), giving point measures.
+    I_A (p, eta_A(x)) = p(x)  holds for p: A -> M  and  x in A.
+
+The transformation x_AB induces a binary operation on  M(1) = M(1 x 1),
+and for  1 = {()},  eta_1 ()  is an element of  M(1).
+This gives a monoid structure on M(1),
+giving back the original monoid M.
+
+Back to existential quantification:
+===================================
+Take  M(A) = P(A), the powerset of A,  and M = P(1) = Bool
+and define  E_A (p, S) = exists x in S: p(x)
+for  p: A -> M  and  S in P(A).
+Then all the equations for integration hold
+(with  x_AB : P(A) x P(B) -> P(A x B)  being cartesian product
+ and  eta_A(x) = {x} )
+
+Instead of considering  E_A: [A->M] x P(A) -> M,
+one may, using CC, also consider  E'_A: P(A) -> [[A->M]->M] .
+This is even a monad homomorphism from the power set monad
+to the monad  [[- -> M] -> M]  (known as continuation monad
+with "final answers" M).
+
+A similar thing is possible in the category of domains,
+with P being some power domain construction
+(see my paper  "Power Domains and Second Order Predicates",
+ TCS 111, 59 - 88 (1993) ).
+
+Maybe, this is the essence of Uday's work:
+defining a monad homomorphism from some monad used
+in the semantic description of a language to the continuation monad.
+
+Regards,
+Reinhold Heckmann
+Universitaet des Saarlandes
+
+
+
+From cat-dist Fri Mar  6 14:08:43 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA17539
+	for categories-list; Fri, 6 Mar 1998 09:46:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m0yApHU-000ksxC@sauternes.ens-lyon.fr>
+Date: Fri, 6 Mar 1998 06:02:48 +0100 (CET)
+From: krisrose@sauternes.ens-lyon.fr (Kristoffer Rose)
+To: CATEGORIES@mta.ca
+Subject: categories: ANNOUNCING: Xy-pic version 3.6 released!
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Dear Category Theorists,
+
+Please find enclosed a copy of the TRAILER for a new version of Xy-pic!
+
+Sincerely,
+           Kristoffer H. Rose
+
+=======================================================================
+    ANNOUNCING the Xy-pic version 3.6 DIAGRAM TYPESETTING PACKAGE
+=======================================================================
+
+This is to announce a release of my diagram typesetting package Xy-pic.
+
+Version 3.6 contains new and improved PostScript fonts donated by Y&Y
+Inc. (as well as several minor bug fixes).
+
+-----------------------------------------------------------------------
+				GENERAL
+-----------------------------------------------------------------------
+
+Xy-pic is a package for typesetting a variety of graphs and diagrams
+with TeX.  Xy-pic works with most formats (including LaTeX, AMS-LaTeX,
+AMS-TeX, and plain TeX), in particular Xy-pic is provided as a LaTeX2e
+`supported package' (following the `CTAN LaTeX2e bundle' standard).
+
+Further specifics of the package are in the distribution README file.
+
+-----------------------------------------------------------------------
+				 NEWS
+-----------------------------------------------------------------------
+
+The primary purpose of release 3.6 is the inclusion of much improved
+PostSript fonts courtesy of Y&Y TeX and several Internetwide
+volunteers: these make it possible to use Xy-pic output with Windows
+(in addition to Macintosh and Un*x), Adobe's ATM software, and to
+produce Adobe PDF ("Acrobat") files.
+
+NOTE: This change means that you must REMOVE SOME OLD FONT FILES (the
+details of which and how are in the INSTALL file).
+
+Release 3.6 furthermore fixes a few problems of release 3.5:
+
+* frames more robust against disappearing on bogus PostScript printers
+* thickness of curves now adjustable
+* TDS compliance improved
+* bogus `graph escape redefined' message eliminated
+
+Thanks to David Carlisle, John Landamore, Ralph Loader, Thorsten
+Schwander, and Timco Visser, for your bug reports, and to Adam
+Worrall, Thierry Bouche, Tanmoy Bhattacharya and especially to
+Berthold Horn and Louis Vosloo of Y&Y Inc. for their work on the
+PostScript fonts.
+
+Finally profound thanks to BRICS and DAIMI for hosting Xy-pic (and
+Kristoffer :) for a most productive and enjoyable year!
+
+-----------------------------------------------------------------------
+			      AVAILABILITY
+-----------------------------------------------------------------------
+
+Xy-pic can be retrieved through the World Wide Web Xy-pic `home pages':
+
+  URL:			http://www.ens-lyon.fr/~krisrose/Xy-pic.html
+  URL:			http://www.mpce.mq.edu.au/~ross/Xy-pic.html
+
+as well as by anonymous ftp from
+
+  CTAN:			macros/generic/diagrams/xypic
+
+and from the private TeX archives of the authors:
+
+  ftp.ens-lyon.fr : 	/pub/users/LIP/krisrose/TeX/
+  ftp.mpce.mq.edu.au :	/pub/maths/TeX/
+
+Check the README file in each location for specifics, in particular
+check that you have reached a version 3.6 copy (some archives take a
+while to mirror the latest files)!
+
+-----------------------------------------------------------------------
+			   HISTORY & CREDITS
+-----------------------------------------------------------------------
+
+The first public release (version 1.40) of Xy-pic was created by
+Kristoffer H. Rose, DIKU, U of Copenhagen (now ENS-Lyon, France) and
+distributed via Usenet on December 19, 1991.  This quickly became
+version 2 of which version 2.6 was the most stable.
+
+The thorough rewrite that became version 3 is a continued
+collaboration with Ross Moore, Macquarie U, Sydney, initiated through
+a visit to Macquarie (Jan-May 1994 supported by the Australian
+Research Council, Macquarie University, and using donated DEC
+equipment).  However, full backwards compatibility is maintained
+(except for the unavoidable but fully documented obscure cases).
+
+Xy-pic is Copyright (c) 1991-1998 by Kristoffer H. Rose and 1994-1998
+by Ross Moore under GNU COPYLEFT which means that you can use the
+package for any purpose but if you provide the macros or any code
+derived from them to a third party then you are obliged to include the
+entire Xy-pic package (full details in the file COPYING).  The
+PostScript fonts are additionally Copyright (c) 1997 Y&Y Inc.
+
+----------------------------------------------------
+
+	 This is the end of the announcement.  Enjoy Xy-pic!
+
+-----------------------------------------------------------------------
+
+Kristoffer Høgsbro Rose, Ph.D., prof.associé  <Kristoffer.Rose@ENS-Lyon.FR>
+Laboratoire de l'Informatique du Parallélisme  équipe PLUME, bureau LR5-026
+Ecole Normale Supérieure de Lyon; 46, Allée d'Italie; F-69364 Lyon 07 cedex
+phone: +33(0)4 7272 8642; fax:...8080    <http://www.ens-lyon.fr/~krisrose>
+
+
+From cat-dist Fri Mar  6 17:07:41 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id NAA28776
+	for categories-list; Fri, 6 Mar 1998 13:46:34 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 6 Mar 1998 11:23:50 -0500 (EST)
+From: James Stasheff <jds@math.upenn.edu>
+To: Peter Freyd <pjf@saul.cis.upenn.edu>
+cc: categories@mta.ca
+Subject: Re: categories: Memorial article
+In-Reply-To: <199803031246.HAA05973@saul.cis.upenn.edu>
+Message-ID: <Pine.GSO.3.95.980306112326.237f-100000@hans.math.upenn.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Hopefully one of the writers will include
+Sammy's work
+with John Moore cf. the EMSS
+
+************************************************************
+	Until August 10, 1998, I am on leave from UNC 
+		and am at the University of Pennsylvania
+
+	 Jim Stasheff		jds@math.upenn.edu
+
+	146 Woodland Dr
+        Lansdale PA 19446       (215)822-6707	
+
+
+
+	Jim Stasheff		jds@math.unc.edu
+	Math-UNC		(919)-962-9607
+	Chapel Hill NC		FAX:(919)-962-2568
+	27599-3250
+
+
+On Tue, 3 Mar 1998, Peter Freyd wrote:
+
+> The AMS Notices will publish a memorial article for Sammy. These
+> projects are put together in a hurry and who gets asked to submit
+> remarks is something of a random process. In this case it's Hyman
+> Bass, Henri Cartan, Alex Heller, Saunders Mac Lane and I. Hy will
+> also provide a narrative vita.
+> 
+> Please send me material you'd like included. If I get too many
+> suggestions, I will, with your permission, not include any of them in
+> the Notices but will publish -- after the Notices -- memorial pages in
+> the JPAA.
+> 
+
+
+
+From cat-dist Tue Mar 10 18:20:19 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA29433
+	for categories-list; Tue, 10 Mar 1998 14:30:03 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 10 Mar 1998 18:08:08 +0000 (GMT)
+From: Neil Ghani <N.Ghani@cs.bham.ac.uk>
+X-Sender: nxg@wallace
+To: categories@mta.ca
+Subject: categories: PSSL'66 
+Message-ID: <Pine.sol.3.96.980310180734.27493L-100000@wallace>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+If you intend to attend, please make the organisation of this meeting
+easier by registering now. A detailed program will be circulated soon.
+
+
+       **** Final Announcement and Registration ****
+
+
+      The 66th Peripatetic Seminar on Sheaves and Logic 
+                    March 28-29, 1998
+                    
+                 University of Birmingham
+                         England 
+
+
+
+The 66th meeting of the PSSL will be held at the University of
+Birmingham, England, over the weekend of 28-29 March 1998. Since its
+inception, the focus of the PSSL has broadened and now includes talks
+related to category theory, logic and theoretical computer
+science. The meetings are informal in nature and talks on work in
+progress is welcome. 
+
+We have arranged bed and breakfast in the University House which will
+cost 23 pounds per night. In addition, a buffet lunch and tea/coffee
+will be provided on Saturday and Sunday at a cost of 8 pounds per
+day. Student participation is particularly encouraged at this meeting
+and hence we have been granted a small fund to help with the costs of
+attendence for students. Those interested in this offer should contact
+the organisers as soon as possible. All payments should be by cash or
+cheque (travellers cheques are acceptable). There are several ATM
+machines on campus. 
+
+Participants may wish to plan their arrival so that they may attend
+our 3pm Friday afternoon theory seminar at which Paul Taylor will be
+our guest speaker. 
+
+
+This document, campus maps and travel information can be found at the
+following URLs.
+
+http://www.bham.ac.uk/general/intro/vguide.htm 
+http://www.cs.bham.ac.uk/~nxg/pssl66.html 
+
+                ** REGISTER NOW !!! **
+
+Please send the following registration information via email to
+nxg@cs.bham.ac.uk by Monday 16 March and include the phrase PSSL in
+the title. THIS DEADLINE IS IMPORTANT AS AFTERWARDS WE CANNOT
+GUARANTEE ACCOMODATION ETC. Please make cheques payable to the
+"University of Birmingham" in sterling. Once we have received your
+registration we shall send further details concerning the programme
+etc
+
+Name:
+Job title:
+Affiliation:
+Address:
+email:
+phone:
+fax:
+
+presentation? (yes/no):
+title:
+
+Bed and Breakfast:
+Friday Night @ 23.00:
+Saturday Night @ 23.00:
+
+
+Lunch, Tea, Coffee :
+Saturday @ 8.00:
+Sunday   @ 8.00:
+
+Total Cost: 
+
+
+
+
+
+From cat-dist Wed Mar 11 15:49:19 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA11395
+	for categories-list; Wed, 11 Mar 1998 10:14:01 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 11 Mar 1998 11:06:14 -0300 (EST)
+From: Ruy de Queiroz <ruy@di.ufpe.br>
+X-Sender: ruy@caruaru
+To: categories <categories@mta.ca>
+Subject: categories: 5th WoLLIC'98 - 3rd Call
+Message-ID: <Pine.GSO.3.95.980311110540.13500B-100000@caruaru>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+
+                        Third Call for Contributions
+
+        5th Workshop on Logic, Language, Information and Computation
+       	                      (WoLLIC'98)
+                           July 28-31, 1998
+ !  TUTORIALS   >>     (Tutorial Day: July 28th)       <<   TUTORIALS !
+                       IME-USP, Sao Paulo, Brazil
+
+The "5th Workshop on Logic, Language, Information and Computation" (WoLLIC'98),
+the fifth version of a series of workshops which started in 1994 with the aim
+of fostering interdisciplinary research in pure and applied logic, will be held
+in Sao Paulo, Brazil, from July 28th to 31st 1998.  Contributions are invited
+in the form of short papers (6 10pt pages or 1800 words) in all areas related
+to logic, language, information and computation, including: pure logical
+systems, proof theory, model theory, algebraic logic, type theory,
+category theory, constructive mathematics, lambda and combinatorial calculi,
+program logic and program semantics, logics and models of concurrency,
+logic and complexity theory, nonclassical logics, nonmonotonic logic,
+logic and language, discourse representation, logic and artificial
+intelligence, automated deduction, foundations of logic programming,
+logic and computation, and logic engineering.
+
+The 5th WoLLIC'98 has the scientific sponsorship of the Interest Group in
+Pure and Applied Logics (IGPL), the European Association for Logic, Language
+and Information (FoLLI), the Association for Symbolic Logic (ASL),
+the Sociedade Brasileira de Computacao (SBC), and the Sociedade Brasileira de
+Logica (SBL).
+
+There will be a number of guest speakers, including:
+Sergei Artemov (Moscow State Univ, Russia) (CONFIRMED),
+Sam Buss (Univ Calif San Diego, US) (CONFIRMED),
+Edmund Clarke (Carnegie-Mellon Univ, US) (CONFIRMED),
+Heinz Dieter Ebbinghaus (Universitaet Freiburg, Germany) (CONFIRMED),
+Michael Fourman (Edinburgh Univ, UK) (CONFIRMED),
+Dov Gabbay (Imperial Coll, UK) (*),
+Ehud Hrushovski (Hebrew Univ Jerusalem, Israel) (*),
+Hans Kamp (Stuttgart Univ, Germany) (CONFIRMED),
+Phokion Kolaitis (Univ Calif Santa Cruz, US) (*),
+Valeria de Paiva (Birmingham Univ, UK) (CONFIRMED),
+Maarten de Rijke (Amsterdam Univ, The Netherlands) (CONFIRMED),
+Giovanni Sambin (Padoa Univ, Italy) (CONFIRMED).
+
+(*) TO BE CONFIRMED
+
+Submission:
+Papers (sent preferably in LaTeX format by e-mail to ** wollic@ime.usp.br **,
+or in 5(five) copies to postal address) must be RECEIVED by APRIL 3rd, 1998 by
+one of the Co-Chairs of the Organising Committee. Papers must be written in
+English and give enough detail to allow the programme committee to assess the
+merits of the work.  Papers should start with a brief statement of the issues,
+a summary of the main results, and a statement of their significance and
+relevance to the workshop. References and comparisons with related work is also
+expected. Technical development directed to the specialist should follow.
+Results must be unpublished and not submitted for publication elsewhere,
+including the proceedings of other symposia or workshops. One author of each
+accepted paper will be expected to attend the conference in order to present
+it. Authors will be notified of acceptance by MAY 15th, 1998. The abstracts of
+the papers will be published in a "Conference Report" section of the Logic
+Journal of the IGPL (ISSN 1367-0751) (Oxford Univ Press) as part of the meeting
+report.  Papers presented at the meeting will be invited for submission (in
+full version) to the Logic Journal of the IGPL
+(http://www.oup.co.uk/jnls/igpl/).
+
+The WoLLIC'98 is hosted by Universidade de Sao Paulo (USP), and will take place
+at the Mathematics and Statistics Institute (IME).
+
+Programme Committee:
+Andreas Blass (Michigan Univ, USA), Itala D'Ottaviano (Univ Campinas, BR),
+J. Michael Dunn (Indiana Univ, USA), Wilfrid Hodges (Queen Mary Coll, UK),
+Francisco Miraglia (Univ Sao Paulo, BR), Luiz Carlos Pereira (Cathol Univ Rio,
+BR), Andrew Pitts (Cambridge Univ, UK), Amir Pnueli (Weizmann Inst, Israel).
+
+Organising Committee:
+L. S. C. Baptista (UFPE/UFPB), M. Finger (USP), E. Hermann Haeusler (PUC-Rio),
+A. C. V. de Melo (USP), A. G. de Oliveira (UFBA/UFPE), R. de Queiroz (UFPE),
+F. C. da Silva (USP).
+
+For further information, contact the Co-Chairs of the Organising Committee:
+Ruy de Queiroz, Departamento de Informatica, Univ. Federal de Pernambuco,
+CP 7851, 50732-970 Recife, PE, Brazil, e-mail: ruy@di.ufpe.br,
+tel.: (+55 81) 271 8430, fax: (+55 81) 271 8438.
+Marcelo Finger, Departamento de Ciencia da Computacao, Instituto de
+Matematica e Estatistica, Universidade de Sao Paulo, Rua do Matao 1010,
+05508-900 Sao Paulo, SP, Brazil, e-mail: mfinger@ime.usp.br,
+tel.: (+55 11) 818 6287, fax: (+55 11) 818 6134.
+
+Web page: http://www.ime.usp.br/~wollic 
+
+
+
+
+
+From cat-dist Thu Mar 12 14:00:12 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA05525
+	for categories-list; Thu, 12 Mar 1998 10:01:32 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 11 Mar 1998 23:05:55 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: Re: Bill Fest (fwd)
+Message-ID: <Pine.LNX.3.95.980311230435.7703A-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+I remind everyone of the Billfestschrift.
+
+> > 
+> > Date: Wed, 1 Oct 1997 10:30:58 GMT
+> > From: Michael Barr <barr@triples.math.mcgill.ca>
+> > 
+> > A special issue of JPAA will be devoted to papers for the Billfest.  The
+> > deadline for submission is March 31, 1998 and may be sent to one of 
+> > the three editors, Myles Tierney, Ieke Moerdijk or me.
+> > 
+> > Michael
+> > 
+> > 
+> 
+> 
+
+
+
+From cat-dist Thu Mar 12 15:39:50 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA32124
+	for categories-list; Thu, 12 Mar 1998 10:02:45 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: johanj@relay.cs.ruu.nl
+Date: Thu, 12 Mar 1998 14:24:37 +0100
+Message-Id: <199803121324.OAA04326@pubhp.cs.ruu.nl>
+To: categories@mta.ca
+Subject: categories: Call for participation: MPC'98
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+                   Call for participation:
+
+
+
+                            MPC '98
+
+               Fourth International Conference on
+
+               MATHEMATICS OF PROGRAM CONSTRUCTION
+               -----------------------------------
+
+             http://www.md.chalmers.se/Conf/MPC98/
+
+                      June 15 - 17, 1998
+
+                       Marstrand, Sweden
+
+
+
+                    Post-conference workshops:
+
+        * Workshop on Generic Programming, WGP'98
+          http://www.cse.ogi.edu/PacSoft/conf/wgp/
+
+        * International Workshop on Constructive Methods for
+          Parallel Programming, CMPP'98
+          http://brahms.fmi.uni-passau.de/cl/cmpp98/index.html
+
+        * Formal Techniques for Hardware and Hardware-like
+          Systems, FTH'98
+          http://www.cs.chalmers.se/~ms/FTH98/
+
+
+The general theme of this series of conferences is the use of crisp,
+clear mathematics in the discovery and design of algorithms and in the
+development of corresponding software or hardware. The conference
+theme reflects the growing interest in formal, mathematically based
+methods for the construction of software and hardware. The goal of the
+MPC conferences is to report on and significantly advance the state of
+the art in this area. Previous conferences were held in 1989 at
+Twente, The Netherlands, organised by the Rijksuniversiteit Groningen, in
+1992 at Oxford, United Kingdom, and in 1995 at Kloster Irsee, Germany,
+organised by Augsburg University.
+
+Invited speakers:
+  
+  Burghard von Karger (Kiel University)
+  John Hughes (Chalmers Technical University)
+  David Harel (Weizmann Institute)
+
+
+                      CONFERENCE PROGRAMME
+
+Monday June 15 1998 
+
+     8.50 - 9.00 
+          Welcome 
+           
+     9.00 - 10.00 
+          Invited talk: A proof rule for control loops
+          Burghard von Karger (Kiel University)
+             
+
+     10.00 - 10.30 
+          Break
+
+     Session 1. Chair: Roland Backhouse (Eindhoven University of Technology) 
+
+     10.30 - 11.15 
+          Polytypic Downwards Accumulations 
+          Jeremy Gibbons (Oxford Brookes University)
+     11.15 - 12.00 
+          Nested Datatypes 
+          Richard Bird (Oxford University) and Lambert Meertens (CWI Amsterdam and Utrecht University)
+
+     12.00 - 1400 
+          Lunch
+
+     Session 2. Chair: Richard Bird (Oxford University) 
+
+     14.00 - 14.45 
+          Layered Graph Traversals and Hamiltonian Path Problems - An Algebraic Approach 
+          Thomas Brunn, Bernhard Möller, and Martin Russling (Augsburg University) 
+     14.45 - 15.30 
+          Computing Spanning Trees 
+          Rudolf Berghammer, Burghard von Karger and Andreas Wolf (Kiel University)
+     15.30 - 16.00 
+          Break
+
+     Session 3. Chair: Bernhard Möller (Augsburg University) 
+
+     16.00 - 16.45 
+          Computation Calculus - Bridging a Formalization Gap 
+          Rutger M. Dijkstra (Groningen University)
+     16.45 - 17.30 
+          A Unifying Framework for Correct Program Construction 
+          Henning Dierks and Michael Schenke (University of Oldenburg) 
+
+
+
+Tuesday June 16 1998 
+
+     9.00 - 10.00 
+          Invited talk: Generalising Monads
+          John Hughes (Chalmers Technical University)
+
+     10.00 - 10.30 
+          Break
+
+     Session 4. Chair: Eerke Boiten (University of Kent at Canterbury) 
+
+     10.30 - 11.15 
+          Calculating a Round-Robin Scheduler 
+          Matteo Vaccari (University of Milano) and Roland Backhouse (Eindhoven University of Technology)
+     11.15 - 12.00 
+          Formal derivaton of a loadable asynchronous counter 
+          Mark B. Josephs (South Bank University London) 
+
+     12.00 - 1400 
+          Lunch
+
+     Session 5. Chair: Jose Oliveira (University of Minho at Braga) 
+
+     14.00 - 14.45 
+          An application of program derivation techniques to 18th century mathematics 
+          A. Bijlsma (Eindhoven University of Technology)
+     14.45 - 15.30 
+          An Approach to Object-Orientation in Action Systems 
+          Kaisa Sere, (Åbo Akademi University) Joost Kok and Marcello Bonsangue (Leiden University) 
+           
+     15.30 - 16.00 
+          Break
+
+     Session 6. Chair: Robin Cockett (University of Calgary) 
+
+     16.00 - 16.45 
+          Beyond Fun: order and membership in polytypic imperative programming 
+          David A. Naumann (Stevens Institute of Technology) 
+     16.45 - 17.30 
+          Realizability for Monotone Coinductive Definitions and Its application to Program Synthesis 
+          Makoto Tatsuta (Kyoto University) 
+
+
+
+Wednesday June 17 1998 
+
+     9.00 - 10.00 
+          Invited talk: On the Aesthetics of Diagrams
+          David Harel (Weizmann Institute)
+
+     10.00 - 10.30 
+          Break
+
+     Session 7. Chair: Sigurd Meldal (CalPoly) 
+
+     10.30 - 11.15 
+          Convergence of Program Transformers in the Metric Space of Trees 
+          Morten Heine Sorensen (University of Copenhagen, DIKU)
+     11.15 - 12.00 
+          A set-theoretic model for real-time specification and reasoning 
+          C.J. Fidge, I.J. Hayes, A.P. Martin and A.K. Wabenhorst (University of Queensland) 
+           
+     12.00 - 1400 
+          Lunch
+
+     Session 8. Chair: Christian Lengauer (University of Passau) 
+
+     14.00 - 14.45 
+          An elementary derivation of the Alternating Bit Protocol 
+          W.H.J. Feyen, A.J.M. van Gasteren (Eindhoven University of Technology) and Birgit Schieder
+          (München Technical University)
+     14.45 - 15.30 
+          Slack elasticity in concurrent computing 
+          Rajit Manohar and Alain J. Martin (Caltech) 
+
+     15.30 - 16.00 
+          Break
+
+     Session 9. Chair: Mary Sheeran (Chalmers Technical University) 
+
+     16.00 - 16.45 
+          A Semantic Approach to Secure Information Flow 
+          K. Rustan M. Leino (DEC SRC) and Rajeev Joshi (University of Texas, Austin) 
+     16.45 
+          End of Mathematics of Program Construction 1998
+
+
+                             VENUE
+
+Marstrand is a small island on the beautiful westcoast of Sweden, 40
+km from Göteborg. The charming old houses, the fortress, the walking
+paths, and the absence of cars make this island a very pleasant
+resort. There are direct flights to Göteborg Landvetter from most
+European main cities, and busses from Göteborg to Marstrand.
+
+
+                      PROGRAMME COMMITTEE
+
+   Ralph-Johan  Back               Finland     
+        Roland  Backhouse          The Netherlands 
+       Richard  Bird               UK 
+         Eerke  Boiten             UK 
+          Dave  Carrington         Australia    
+         Robin  Cockett            Canada       
+         David  Gries              USA         
+       Lindsay  Groves             New Zealand
+           Wim  Hesselink          The Netherlands
+     Zhenjiang  Hu                 Japan
+         Barry  Jay                Australia
+         Johan  Jeuring            Sweden (Chair)
+          Dick  Kieburtz           USA    
+     Christian  Lengauer           Germany 
+       Lambert  Meertens           The Netherlands 
+        Sigurd  Meldal             Norway        
+      Bernhard  Möller             Germany
+         Chris  Okasaki            USA
+          Jose  Oliveira           Portugal
+          Ross  Paterson           UK          
+          Mary  Sheeran            Sweden      
+          Doug  Smith              USA         
+
+
+                LOCAL ORGANISATION
+
+MPC '98 is organised by the Computing Science department of Chalmers
+University of Technology and University of Göteborg. The organisation
+committee consists of the following people:
+
+                 Patrik Jansson
+                  Johan Jeuring
+                  Marie Larsson
+                   Mary Sheeran
+
+
+
+
+
+
+
+
+
+
+From cat-dist Thu Mar 12 17:26:20 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id NAA13625
+	for categories-list; Thu, 12 Mar 1998 13:10:06 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 12 Mar 1998 10:27:45 -0600 (CST)
+From: Christopher Colby <colby@math.luc.edu>
+Message-Id: <199803121627.KAA05160@cantor.math.luc.edu>
+To: categories@mta.ca
+Subject: categories: ICCL'98 Call For Participation
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+                        CALL FOR PARTICIPATION
+
+                        IEEE Computer Society
+         1998 International Conference on Computer Languages
+
+                          Loyola University
+                    Chicago, USA, 14--16 May, 1998
+
+                            Sponsored by
+    the IEEE Computer Society Technical Committee on Computer Languages,
+ in cooperation with the ACM Special Interest Group on Programming Languages.
+
+                   http://www.math.luc.edu/iccl98/
+
+This is the sixth in a series of conferences devoted to all aspects of
+computer languages, serving to bring together people broadly
+interested in machine processable descriptions.  The hallmarks of ICCL
+are diversity, openness to a wide range of linguistic research, and
+international representation.  The focus is on new ideas in languages
+and language technology which are innovative or experimental in
+nature.
+
+On May 13, a pre-conference Workshop on Internet Programming Languages
+will be conducted at Loyola University.  Details are given at the end
+of this announcement.
+
+                         IMPORTANT DEADLINES 
+
+     Hotel discount reservation deadline: April 12, 1998 
+     Early conference registration deadline: April 22, 1998 
+
+Information about hotels and conference registration appears below
+and at the ICCL web page cited above.
+
+
+                         CONFERENCE PROGRAM
+
+The conference runs Thursday, May 14, 8:30am-6:00pm;
+Friday, May 15, 8:45am-5:30pm; and Saturday, May 16, 8:45am-12:45pm 
+
+The invited speakers are
+  Luca Cardelli, Microsoft Cambridge Labs (UK)
+  Paul Hudak, Yale University (US)
+  James Larus, University of Wisconsin (US)
+
+The technical sessions consist of the following talks:
+
+                         THURSDAY, MAY 14th
+Invited Lecture: Luca Cardelli, Microsoft Cambridge Labs (UK)
+
+Security and Dynamic Class Loading in Java: A Formalisation 
+  T. Jensen D. Le M'etayer T. Thorn, IRISA/CNRS/INRIA (FR)
+
+TJava: A Transactional Java
+  Alex Garthwaite and Scott Nettles, University of Pennsylvania (US)
+
+Breaking Abstractions and Unstructuring Data Structures 
+  Christian Collberg, Clark Thomborson and Douglas Low, The University
+  of Auckland (NZ)
+
+Using Reflexivity to Interface with CORBA 
+  Roberto Ierusalimschy, Renato Cerqueira, Noemi Rodriguez, Rio de
+  Janeiro-Brazil (BR)
+
+Reactive Programming in Standard ML 
+  Riccardo R. Pucella, Bell Laboratories, Lucent Technologies (US)
+
+Design and Implementation of Triveni: A Process-algebraic API for
+Threads + Events
+  Christopher Colby, Lalita Jategaonkar Jagadeesan, Radha Jagadeesan,
+  Konstantin L"aufer and Carlos Puchol, Loyola University Chicago (US)
+  and Bell Laboratories, Lucent Technologies (US)
+
+Distributed Computations Driven by Resource Consumption 
+  Luc Moreau and Christian Queinnecy, University of Southampton (UK),
+  LIP 6 & INRIA-Rocquencourt (FR)
+
+Automatic Generation of Microarchitecture Simulators 
+  Soner Vnder and Rajiv Gupta, University of Pittsburgh (US)
+
+Microprocessor Specification in Hawk 
+  J. Matthews, J. Launchbury, B. Cook, Oregon Graduate Institute (US)
+
+The Template and Multiple Inheritance Approach into Attribute Grammars 
+  Marjan Mernik, Mitja Lenic, Enis Avdicausevic, Viljem Zumer University
+  of Maribor (Slovenia)
+
+Combining Functional and OOprogramming Methodologies in a Large Commercial
+Application 
+  Ian Poole, Craig Ewington, Arthur Jones and Steve Wille, Vysys, Inc
+  and Lawrence Berkeley National Lab (US)
+
+                            FRIDAY, MAY 15th
+Invited Lecture: Paul Hudak, Yale University (US)
+
+Modular Compilers Based on Monad Transformers 
+  William L. Harrison and Samuel N. Kamin, University of Illinois,
+  Urbana-Champaign (US)
+
+Automatic, Template-Based Run-Time Specialization: Implementation and
+Experimental Study 
+  Francois Noel, Luke Hornof, Charles Consel, Julia L. Lawall,
+  University of Rennes and IRISA (FR)
+
+Controlled Self-applicable On-line Partial Evaluation, Using Strategies 
+  Mattox Beckman and Sam Kamin, University of Illinois at
+  Urbana-Champaign (US)
+
+Parallelization via Context Preservation 
+  Wei-Ngan Chin, A. Takano and Zhenjiang Hu, NUS (SG), Hitachi (JP),
+  University of Tokyo (JP)
+
+Type Reconstruction for Syntactic Control of Interference, Part 2 
+  Hongseok Yang and Howard Huang, University of Illinois at
+  Urbana-Champaign (US)
+
+An Operational Semantics for Probabilistic Concurrent Constraint Programming 
+  Alessandra Di Pierro and Herbert Wiklicky, City University London (UK)
+
+Set Constraints for Destructive Array Update Optimization 
+  Mitchell Wand and William D. Clinger, Northeastern University (US)
+
+A Conservative Technique to Improve Deterministic Evaluation of Logic Programs 
+  Abhik Roychoudhury, C.R. Ramakrishnan, I.V. Ramakrishnan and R.C. Sekar,
+  SUNY Stony Brook and Iowa State (US)
+
+Dependence Analysis for Recursive Data 
+  Yanhong A. Liu, Indiana University (US)
+
+Optimal Code Motion in the Presence of Large Expressions 
+  Oliver R"uthing, Dortmund University (DE)
+
+                         SATURDAY, MAY 16
+Invited Lecture: James Larus, University of Wisconsin (US)
+
+Path Profile Guided Partial Redundancy Elimination Using Speculation 
+  Rajiv Gupta, David A. Berson, and Jesse Z. Fang, University of
+  Pittsburgh (US), Intel Corporation Microcomputer Research Lab (US)
+
+An Infrastructure for Profile-Driven Dynamic Recompilation 
+  Robert G. Burger and R. Kent Dybvig, SAGIAN (US), Indiana University (US)
+
+Formal Callability and its Relevance and Application to Interprocedural Data
+Flow Analysis 
+  Jens Knoop, Universitat Passau (DE)
+
+Loop Optimization for Aggregate Array Computations 
+  Yanhong A. Liu and Scott D. Stoller, Indiana University (US)
+
+Data Flow Analysis Across Tuplespace Process Boundaries 
+  James B. Fenwick Jr. and Lori L. Pollock, University of Delaware (US)
+
+    
+                          REGISTRATION
+
+Secure online registration is available at
+https://secure.computer.org/conf/iccl/register.htm
+This registration application accepts MasterCard, Visa, American Express,
+and Diners Club cards. If you do not have one of these credit cards,
+or if you prefer not to register online, please print out the form and
+fax or mail it with payment to the address given on the form.
+
+Conference registration includes admission to the technical sessions,
+morning and afternoon refreshment breaks, the Wednesday evening reception,
+and one copy of the proceedings. 
+
+Advance Registration Fees: IEEE Member $220, Nonmember $275,
+  Full-time Student $120 
+Late/On-Site Registration Fees: IEEE Member $265, Nonmember $330,
+  Full-time Student $120
+
+                             HOTELS
+
+We have negotiated special rates for ICCL attendees at the Talbott Hotel
+(+1-312-944-4970, 20 East Delaware Place) and at the Days Inn Lake Shore
+Drive (+1-312-943-9200, 644 North Lake Shore Drive).
+Please mention ICCL/Loyola University to get the special group rate.
+The hotels require a room deposit guaranteed with a major credit card. 
+
+Rooms for Saturday night (May 16) are very limited because of the annual
+Chicago Restaurant Convention.  Therefore, attendees SHOULD BOOK THEIR
+HOTEL ROOM FIRST and only then purchase a plane ticket second.
+
+The Talbott is only a two-minute walk away from the conference site but has
+fewer rooms available. The Days Inn is a fifteen-minute walk away from the
+conference site.  Please see the ICCL web page
+http://www.math.luc.edu/iccl98/  for details.
+
+
+                          TRANSPORTATION
+
+United Airlines is offering a 10% discount off the unrestricted mid-week
+coach fare or 5% discount off the lowest applicable fares, including First
+Class, to all attendees of ICCL '98. This special offer applies to travel on
+domestic segments of all United Airlines, United Express and Shuttle-by-United
+flights.  See the ICCL web page for details.  Information about
+transportation from the Chicago airports to the hotels and conference site 
+is also available from the ICCL web page.
+
+
+                          CONTACT PERSONS
+
+Local Arrangements Chair:           Publications Chair:
+Konstantin La"ufer                  Christopher Colby
+Loyola University Chicago           Loyola University Chicago
+laufer@cs.luc.edu                   colby@cs.luc.edu
+
+Program Committee Co-Chairs:
+Purush Iyer                         Young-il Choo
+North Carolina State University     Gifford-Fong Associates
+purush@csc.ncsu.edu                 yic@gfa-genesis.com
+
+Conference Chair:
+David Schmidt
+Kansas State University
+schmidt@cis.ksu.edu
+
+
+==============================================================================
+
+
+               WORKSHOP ON INTERNET PROGRAMMING LANGUAGES
+
+On May 13, a pre-conference Workshop on Internet Programming Languages will
+be conducted at Loyola University.  
+
+Interested parties should contact one of the organizers:
+  Henri Bal, Vrije Universiteit, The Netherlands, bal@cs.vu.nl
+  Boumediene Belkhouche, Tulane University, USA, bb@eecs.tulane.edu
+  Luca Cardelli, Microsoft Research, Cambridge, UK, luca@luca.demon.co.uk
+
+The workshop program is located at 
+http://www.math.luc.edu/iccl98/ipl-program.html
+
+Information about attendance and registration will be available soon
+from the above URL and through a separate Call For Participation.
+
+
+From cat-dist Wed Mar 18 17:07:37 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA30824
+	for categories-list; Wed, 18 Mar 1998 11:55:03 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 17 Mar 1998 15:19:00 +0100 (MET)
+Message-Id: <199803171419.PAA23404@brics.dk>
+From: Uffe Henrik Engberg <engberg@brics.dk>
+To: categories@mta.ca
+Subject: categories: ICALP '98: List of Accepted Papers
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The papers listed below were accepted for ICALP '98, which will be held
+on July 13-17 in Aalborg, Denmark.
+
+Further information on ICALP '98 is available on the Web at
+http://www.cs.auc.dk/icalp98/
+
+-------------------------------------------------------------------------------
+A duality between Kruskal and Dershowitz theorems
+  by Paul-Andre Mellies
+-------------------------------------------------------------------------------
+A genuinely polynomial-time algorithms for sampling two-rowed
+contingency tables
+  by Martin Dyer, Catherine Greenhill
+-------------------------------------------------------------------------------
+Efficient Simulations by Queue Machines
+  by Holger Petersen, John Michael Robson
+-------------------------------------------------------------------------------
+On the Complexity of Deriving Score Functions from Examples for
+Problems in Molecular Biology
+  by Tatsuya Akutsu, Mutsunori Yagiura
+-------------------------------------------------------------------------------
+Distributed Matroid Basis Completion via Elimination Upcast and
+Distributed Correction of Minimum-Weight Spanning Trees
+  by David Peleg
+-------------------------------------------------------------------------------
+Deterministic Polylog Approximation for Minimum Communication Spanning Trees
+  by David Peleg, Eilon Reshef
+-------------------------------------------------------------------------------
+A Good Class of Tree Automata and Application to Inductive Theorem Proving
+  by Denis Lugiez
+-------------------------------------------------------------------------------
+On Computing the Entropy of Cellular Automata
+  by Michele D'amico, Giovanni Manzini, Luciano Margara
+-------------------------------------------------------------------------------
+On Branching Programs With Bounded Uncertainty
+  by Stasys Jukna, Stanislav Zak
+-------------------------------------------------------------------------------
+CONS-Free Programs with Tree Input
+  by Amir Ben-Amram, Holger Petersen
+-------------------------------------------------------------------------------
+Global/Local Subtyping and Capability Inference for a Distributed pi-calculus
+  by Peter Sewell
+-------------------------------------------------------------------------------
+Computing Mimicking Networks
+  by Shiva Chaudhuri, K.V. Subrahmanyam, Frank Wagner, Christos Zaroliagis
+-------------------------------------------------------------------------------
+Robust asynchronous protocols are finite-state
+  by Madhavan Mukund, K Narayan Kumar, Jaikumar Radhakrishnan, Milind Sohoni
+-------------------------------------------------------------------------------
+Optimal Sampling Strategies in Quicksort
+  by Conrado Martinez, Salvador Roura
+-------------------------------------------------------------------------------
+The relevance of proof-irrelevance
+  by Gilles Barthe
+-------------------------------------------------------------------------------
+Deciding global partial-order properties
+  by Rajeev Alur, Ken McMillan, Doron Peled
+-------------------------------------------------------------------------------
+Efficient Minimization of Numerical Summation Errors
+  by Ming-Yang Kao, Jie Wang
+-------------------------------------------------------------------------------
+Simpler and Faster Static AC^0 Dictionaries
+  by Torben Hagerup
+-------------------------------------------------------------------------------
+Structural Recursive Definitions in Type Theory
+  by Eduardo Gimenez
+-------------------------------------------------------------------------------
+On the Determinization of Weighted Finite Automata
+  by Adam L. Buchsbaum, Raffaele Giancarlo, Jeffery R. Westbrook
+-------------------------------------------------------------------------------
+A Degree-Decreasing Lemma for (MOD q -- MOD p) Circuits
+  by Vince Grolmusz
+-------------------------------------------------------------------------------
+Improved Pseudorandom Generators for Combinatorial Rectangles
+  by Chi-Jen Lu
+-------------------------------------------------------------------------------
+Checking Strong/Weak Bisimulation Equivalences and Observation
+  by Zhoujun Li, Huowang Chen
+-------------------------------------------------------------------------------
+On Existentially First-Order Definable Languages and their Relation to NP
+  by Bernd Borchert, Dietrich Kuske, Frank Stephan
+-------------------------------------------------------------------------------
+Morphing simple polygons optimally - a proof for an improved conjecture
+  by T. Graf, V. Kamakoti
+-------------------------------------------------------------------------------
+Metric Semantics for True Concurrent Real Time
+  by Christel Baier, Joost-Pieter Katoen, Diego Latella
+-------------------------------------------------------------------------------
+Static and Dynamic Low-Congested Interval Routing Schemes
+  by Serafino Cicerone, Gabriele Di Stefano, Michele Flammini
+-------------------------------------------------------------------------------
+Independent sets with domination constraint
+  by Magnus M. Halldorsson, Jan Kratochvil, Jan Arne Telle
+-------------------------------------------------------------------------------
+Sequential Iteration of Interactive Arguments and an Efficient
+Zero-Knowledge Argument for NP
+  by Ivan Damgaard, Birgit Pfitzmann
+-------------------------------------------------------------------------------
+A modular approach to denotational semantics
+  by John Power, Giuseppe Rosolini
+-------------------------------------------------------------------------------
+Generalised Flowcharts and Games
+  by Pasquale Malacaria, Chris Hankin
+-------------------------------------------------------------------------------
+Efficient approximation algorithms for the {sc Subset-Sums Equality} problem
+  by Cristina Bazgan, Miklos Santha, Zsolt Tuza
+-------------------------------------------------------------------------------
+A complex eample of a simplifying rewrite system
+  by H. Touzet
+-------------------------------------------------------------------------------
+Low-Bandwidth Routing and Electrical Power Networks
+  by Doug Cook, Vance Faber, Madhav Marathe, Aravind Srinivasan, Yoram
+  J. Sussmann
+-------------------------------------------------------------------------------
+Deciding Bisimulation-Like Equivalences with Finite-State Processes
+  by Petr Jancar, Antonin Kucera, Richard Mayr
+-------------------------------------------------------------------------------
+The equivalence problem for propositional programs is decidable in
+polynomial time.
+  by Vladimir A. Zakharov
+-------------------------------------------------------------------------------
+A Total AC-Compatible Reduction Ordering on Higher-Order Terms
+  by Daria Walukiewicz
+-------------------------------------------------------------------------------
+Partial-Congruence Factorization of Bisimilarity Induced by Open Maps
+  by Slawomir Lasota
+-------------------------------------------------------------------------------
+The Regular Real-Time Languages
+  by Henzinger Tom, Raskin Jean-Francois, Schobbens Pierre-Yves
+-------------------------------------------------------------------------------
+Multi-Stage Programming: Axiomatization and Type Safety
+  by Walid Taha, Zine-El-Abidine Benaissa, Tim Sheard
+-------------------------------------------------------------------------------
+Limited Wavelength Conversion in All-Optical Tree Networks
+  by Luisa Gargano
+-------------------------------------------------------------------------------
+Difficult configurations - on the complexity of LTrL
+  by Igor Walukiewicz
+-------------------------------------------------------------------------------
+Inversion of Circulant Matrices over Z_m
+  by dario bini, gianna del corso, giovanni manzini, luciano margara
+-------------------------------------------------------------------------------
+A Hierarchy of Equivalences for Asynchronous Calculi
+  by Cedric Fournet, Georges Gonthier
+-------------------------------------------------------------------------------
+Explicit Substitutions for Constructive Necessity
+  by Neil Ghani, Valeria de Paiva, Eike Ritter
+-------------------------------------------------------------------------------
+Locally Periodic Infinite Words and a Chaotic Behaviour
+  by Juhani Karhumäki, Arto Lepistö, Wojciech Plandowski
+-------------------------------------------------------------------------------
+BRIDGES FOR CONCATENATION HIERARCHIES
+  by Jean-Eric Pin
+-------------------------------------------------------------------------------
+Application of lempel-ziv encodings to the solution of words equations
+  by Wojciech Plandowski, Wojciech Rytter
+-------------------------------------------------------------------------------
+Constraint Automata and the Complexity of Recursive Subtype Entailment
+  by Fritz Henglein, Jakob Rehof
+-------------------------------------------------------------------------------
+Randomness Spaces
+  by Peter Hertling, Klaus Weihrauch
+-------------------------------------------------------------------------------
+Power of cooperation and multihead finite systems.
+  by Pavol Duri\v{s}, Tomasz Jurdzinski, Miroslaw Kutylowski, Krzysztof Lorys
+-------------------------------------------------------------------------------
+A Polynomial Time Approximation Scheme for Euclidean Minimum Cost
+k-Connectivity
+  by Artur Czumaj, Andrzej Lingas
+-------------------------------------------------------------------------------
+Bulk-synchronous parallel multiplication of Boolean matrices
+  by Alexandre Tiskin
+-------------------------------------------------------------------------------
+Reasoning about The Past with Two-Way Automata
+  by Moshe Y. Vardi
+-------------------------------------------------------------------------------
+Translation Validation for Synchronous Languages
+  by A. Pnueli, O. Shtrichman, M. Siegel
+-------------------------------------------------------------------------------
+Quantum Counting
+  by Gilles Brassard, Peter Hoyer, Alain Tapp
+-------------------------------------------------------------------------------
+Complete Proof Systems for Observation Congruences in Finite-Control
+pi-Calculus
+  by Huimin Lin
+-------------------------------------------------------------------------------
+On asynchrony in name-passing calculi
+  by Massimo Merro, Davide Sangiorgi
+-------------------------------------------------------------------------------
+A Simple Solution to Type Specialization
+  by Olivier Danvy
+-------------------------------------------------------------------------------
+Concatenable Graph Processes: Relating Processes and Derivation Traces
+  by Paolo Baldan, Andrea Corradini, Ugo Montanari
+-------------------------------------------------------------------------------
+On the Expressiveness of Real and Integer Arithmetic Automata
+  by Bernard Boigelot, Stephane Rassart, Pierre Wolper
+-------------------------------------------------------------------------------
+Hardness Results for Dynamic Problems by Extensions of Fredman and
+Saks' Chronogram Method
+  by Thore Husfeldt, Theis Rauhe
+-------------------------------------------------------------------------------
+Reset nets between decidability and undecidability
+  by C. Dufourd, A. Finkel, Ph. Schnoebelen
+-------------------------------------------------------------------------------
+Totality, definability and boolean ciruits
+  by Antonio Bucciarelli, Ivano Salvo
+-------------------------------------------------------------------------------
+Concurrent Constraints in the Fusion Calculus
+  by Björn Victor, Joachim Parrow
+-------------------------------------------------------------------------------
+Simple Linear-Time Algorithms for Minimal Fixed Points
+  by Xinxin Liu, Scott A. Smolka
+-------------------------------------------------------------------------------
+Axioms for Contextual Net Processes
+  by Fabio Gadducci, Ugo Montanari
+-------------------------------------------------------------------------------
+An algebraic approach to communication complexity
+  by Jean-Francois Raymond, Pascal Tesson, Denis Therien
+-------------------------------------------------------------------------------
+Compact Encodings of Planar Graphs via Canonical Orderings and
+Multiple Parentheses
+  by R. C-N. Chuang, A. Garg, X. He, M-Y. Kao, H-I. Lu
+-------------------------------------------------------------------------------
+Non-Interactive Statistical Zero-Knowledge: a Complete Problem and
+Closure Properties
+  by Alfredo De Santis, Giovanni Di Crescenzo, Giuseppe Persiano, Moti Yung
+-------------------------------------------------------------------------------
+
+
+
+From cat-dist Sat Mar 21 11:50:19 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA17676
+	for categories-list; Sat, 21 Mar 1998 10:40:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <9803211415.AA19535@tucano.inf.ufrgs.br>
+From: "Rodrigo Quites Reis" <quites@inf.ufrgs.br>
+To: "categories@mta.ca" <categories@mta.ca>
+Date: Fri, 20 Mar 98 20:49:40 -0300
+Reply-To: "Rodrigo Quites Reis" <quites@inf.ufrgs.br>
+X-Mailer: PMMail 1.95a For OS/2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Subject: categories: Teaching Category Theory on-line resources
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+At our institute (Informatica-UFRGS, Brazil) there is a group starting to develop
+a collection of on-line resources to help  teaching the Category Theory.
+
+Now I am looking for similar work around the world. We are specially
+interested in exercices and other similar resources available in the net.
+
+Could someone give me some links?
+
+Thanks in advance,
+
+Rodrigo
+----
+Rodrigo Quites Reis
+Associate professor at Federal University of Para' (http://www.ufpa.br)
+D.Sc. C.S. student at UFRGS - Brazil (http://www.inf.ufrgs.br)
+E-mail: quites@inf.ufrgs.br / quites@ibm.net
+
+
+
+From cat-dist Mon Mar 23 13:17:38 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA21768
+	for categories-list; Mon, 23 Mar 1998 09:35:25 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 23 Mar 1998 08:28:00 -0400 (AST)
+From: Bob Rosebrugh <rrosebru@mta.ca>
+To: categories <categories@mta.ca>
+Subject: categories: SECOND ANNOUNCEMENT: WORKSHOP
+Message-ID: <Pine.OSF.3.96.980323082630.12380B-100000@mailserv.mta.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+SECOND ANNOUNCEMENT
+
+WORKSHOP
+
+In conjunction with the Category Theory Session at the Canadian
+Mathematical Society's Summer 1998 Meeting, there will be a workshop 
+on the Applications of Category Theory to Computer Science, directed 
+towards graduate students and young researchers.
+
+June 8-12, 1998 (arrival day Sunday, June 7, 1998)
+
+Mount Allison University 
+Sackville, New Brunswick, Canada
+
+The invited instructors are M. Barr (McGill) and R.F.C. Walters (Sydney).
+
+Residence accommodation will be available at Mount Allison University
+at a cost of 
+$27.60/person/night for a single room
+$24.30/person/night for a shared double room
+$23.00/person/night for either of the above for students upon
+                    presentation of a student card.
+(All prices are in Canadian dollars and include taxes.)
+Bookings can be made at
+		        http://www.mta.ca/conference/overnigh.htm	
+
+There will be a registration fee of $50 for the workshop. To preregister
+send  e-mail to
+		ct95@mscs.dal.ca (sic)
+with subject heading `workshop'.
+
+On the evening of Friday June 12 the Workshhop participants will receive
+free transportation to Saint John, New Brunswick, site of the aforementioned
+Category Theory Symposium.
+
+FINANCIAL SUPPORT
+
+The Canadian Mathematical Society can provide, particularly to Canadians,
+some assistance with expenses for participation in the Graduate Session of
+the CMS Summer Meeting. Please apply to the Meeting Director of the Saint
+John CMS Meeting, Bob Rosebrugh
+rrosebrugh@mta.ca
+by March 31, 1998; successful applicants will be notified by May 1.
+
+Sponsored by 
+The Fields Institute for Research in Mathematical Sciences
+The Canadian Mathematical Society
+and
+AARMS, The Atlantic Association for Research in the Mathematical Sciences
+
+
+
+
+From cat-dist Tue Mar 24 10:51:15 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id IAA19782
+	for categories-list; Tue, 24 Mar 1998 08:26:42 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199803240215.LAA10126@etlclu.etl.go.jp>
+To: categories@mta.ca
+Reply-To: nxg@cs.bham.ac.uk
+Subject: categories: Naturality Squares and Pullbacks
+Date: Tue, 24 Mar 1998 11:15:42 +0900
+From: Neil Ghani(1998-03) <nxg@etl.go.jp>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+A natural transformation is an indexed family of arrows such that a
+certain diagram commutes. One could require a stronger condition,
+namely that the said diagram is a pullback. What would such a
+transformation be called? I'm sure I've seen this in the literature
+before but I cant remember where. Pointers?
+
+This problem arose in the context of finitary monads where 
+T(X) is the derived operations over a set X for some signature. 
+The naturality square for the unit turns out to be a pullback. 
+This then implies that the unit of the monad is a monic - 
+presumably this is a result in the literature somewhere. 
+Again, pointers?
+
+Neil Ghani
+
+
+From cat-dist Tue Mar 24 11:07:01 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id IAA12930
+	for categories-list; Tue, 24 Mar 1998 08:25:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 23 Mar 1998 16:57:43 -0600 (CST)
+From: Christopher Colby <colby@math.luc.edu>
+Message-Id: <199803232257.QAA11956@cantor.math.luc.edu>
+To: categories@mta.ca
+Subject: categories: IPL Call For Participation
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+                         CALL FOR PARTICIPATION
+
+                 Workshop on Internet Programming Languages
+
+               in conjunction with the IEEE Computer Society 
+            International Conference on Computer Languages 1998
+                       Loyola University Chicago
+                             Chicago, USA
+                    http://www.math.luc.edu/iccl98
+
+                            May 13, 1998
+
+The Internet has long provided a global computing infrastructure but, for most 
+of its history, there has not been much interest in programming languages 
+tailored specifically to that infrastructure. More recently, the Web has 
+produced a widespread interest in global resources and, as a consequence, in 
+global programmability. It is now commonplace to discuss how programs can be 
+made to run effectively and securely over the Internet.
+
+This workshop will provide a forum for the discussions of all aspects of 
+computer languages for wide-area systems, including specification languages, 
+programming languages, semantics, implementation technologies, and application 
+experience.
+
+Organizing Committee
+    Henri Bal, Vrije Universiteit, The Netherlands, bal@cs.vu.nl
+    Boumediene Belkhouche, Tulane University, USA, bb@eecs.tulane.edu
+    Luca Cardelli, Microsoft Research, Cambridge, UK, luca@luca.demon.co.uk
+ 
+Program
+    Opening: 8:50.
+
+    Session 1: 9:00-10:30.
+        Location Independence for Mobile Agents
+            Peter Sewell, Pawel T. Wojciechowski and Benjamin C. Pierce
+        Three Moves are not as Bad as a Fire
+            Peter Van Roy and Seif Haridi
+        Towards a Calculus of Mobile Computations
+            Jan Vitek and Giuseppe Castagna
+
+    Session 2: 11:00-12:30.
+        Paradigms for Global Computation - an Overview of the Hippo Project
+            Richard Connor and Keith Sibson
+        HCL - a Language for Internet Data Acquisition
+            Richard Connor and Keith Sibson
+        A Run-Time System for the Web Co-ordination Language
+            Antony Rowstron and Stuart Wray
+
+    Session 3: 14:00-16:00.
+        PML: A Language Interface to Networked Voice Response Units
+            J. Christopher Ramming
+        Implementing Spatio-Temporal Relations for Hypermedia Presentations 
+        using an HTML-like Language
+            C. Bouras, V. Kapoulas, D. Moiras, V. Ouzounis, P. Spirakis 
+            and A. Tatakis
+        Derivatives: A Construct for Internet Programming
+            Dominic Duggan
+        Network Programming Using PLAN
+            Michael Hicks, Pankaj Kakkar, Jonathan T. Moore, Carl A. Gunter 
+            and Scott Nettles
+
+    Session 4: 16:30-17:30.
+        Discussion
+
+
+From cat-dist Wed Mar 25 11:51:00 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA25840
+	for categories-list; Wed, 25 Mar 1998 09:58:18 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 25 Mar 1998 18:23:46 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Message-Id: <199803250723.SAA29896@milan.maths.usyd.edu.au>
+To: categories@mta.ca, nxg@cs.bham.ac.uk
+Subject: categories: Re: Naturality Squares and Pullbacks
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+In response to the question of Neil Ghani, namely
+	
+	
+	A natural transformation is an indexed family of arrows such that a
+	certain diagram commutes. One could require a stronger condition,
+	namely that the said diagram is a pullback. What would such a
+	transformation be called? I'm sure I've seen this in the literature
+	before but I cant remember where. Pointers?
+	
+	This problem arose in the context of finitary monads where 
+	T(X) is the derived operations over a set X for some signature. 
+	The naturality square for the unit turns out to be a pullback. 
+	This then implies that the unit of the monad is a monic - 
+	presumably this is a result in the literature somewhere. 
+	Again, pointers?
+	
+	Neil Ghani
+	
+	
+
+this phenomenon is now quite well recognised. some call such natural
+transformations "cartesian", while others use Robin Cockett's term "shapely".
+For my own contribution to the subject, see [G.M. Kelly, On clubs and 
+data-type constructors, in applications of Categories to Computer Science
+(Proc. LMS Symposium, Durham 1991), Cambridge Univ. Press 1992, 163-190].
+
+Max Kelly.
+
+
+From cat-dist Wed Mar 25 11:52:07 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA26259
+	for categories-list; Wed, 25 Mar 1998 09:58:53 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Re: Naturality Squares and Pullbacks
+To: nxg@cs.bham.ac.uk
+Date: Wed, 25 Mar 1998 10:04:10 +0000 (GMT)
+Cc: categories@mta.ca
+In-Reply-To: <199803240215.LAA10126@etlclu.etl.go.jp> from "Neil Ghani" at Mar 24, 98 11:15:42 am
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E0yHn2Y-00077y-00@owl.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Natural transformations for which the naturality square is a pullback
+are commonly called cartesian: it's not an ideal name for them, but
+it's quite well established. For the question of when the unit and
+multiplication of a monad on Sets are cartesian, see section 3 of
+"Connected limits, familial representability and Artin glueing"
+by A. Carboni and P.T. Johnstone (Math. Struct. Comp. Sci. 5 (1995),
+441--459).
+
+Peter Johnstone
+
+
+From cat-dist Wed Mar 25 11:56:33 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA23403
+	for categories-list; Wed, 25 Mar 1998 09:48:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199803242025.MAA00319@charity.ucr.edu>
+Subject: categories: tensor product of categories
+To: categories@mta.ca (categories)
+Date: Tue, 24 Mar 1998 12:25:34 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Where can I read about the "tensor product" of cocomplete categories?
+(Hopefully this is a sensible and self-explanatory concept.)
+Or variations on this theme involving categories with coproducts,
+or finite colimits, or finite coproducts?  
+
+
+
+From cat-dist Wed Mar 25 12:14:34 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA25419
+	for categories-list; Wed, 25 Mar 1998 09:48:51 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 24 Mar 1998 13:40:34 -0800 (PST)
+From: Jeff Lewis <jlewis@cse.ogi.edu>
+Message-Id: <199803242140.NAA28650@straw.cse.ogi.edu>
+To: categories@mta.ca
+Subject: categories: FMCS '98: Call for Participation
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+         **** Final Call For Participation ****
+
+	Foundational Methods in Computer Science:
+	A workshop on applications of categories
+                  in computer science
+
+                    May 29--31, 1998
+
+                      Reed College, 
+                    Portland, Oregon
+
+     Sponsored by the Computer Science and Engineering 
+Department at Oregon Graduate Institute of Science & Technology,
+       the Department of Mathematics at Reed College
+            and the National Science Foundation
+
+The workshop is an informal meeting to bring together researchers in
+mathematics and computer science with a focus on the application of
+category theory in computer science.  It is a three day meeting that
+starts off with a day of tutorials aimed at students, educators, and
+newcomers to category theory, followed by a day and a half of research
+talks.  All sessions will be held on the Reed campus which is quiet,
+beautifully landscaped, and adjacent to a park and a public golf course.
+
+Guest speakers at this year's workshop include:
+    David Espinosa (Kestrel Institute)
+    Richard Jullig (Arrow Logics)
+    Eugenio Moggi (University of Genova)
+    Philip Wadler (Lucent)
+
+The remaining research talks are solicited from the participants.
+At this point, however, only a few slots remain available, so if
+you are interested in giving a talk, please register soon.
+
+Student participation is particularly encouraged at FMCS.  We are
+expecting a grant from the NSF, which will provide some support for
+students to attend the workshop.  Support is offered on a first-come,
+first-served basis.  Please inquire if you are interested.
+
+The meeting registration fee is $105, the student rate is $70.  This fee
+includes Reception on Thursday, 3 meals on Friday, 3 meals on Saturday
+(which includes a banquet dinner), 2 meals on Sunday, and proceedings
+of the meeting.  The lodging fee is $80, which covers 3 nights lodging
+($25/night) and Linen Fee ($5.00) at Reed College.  Payment will be
+accepted prior to the meeting by check, and payments must be received
+by April 14, 1998.
+
+Please visit the FMCS98 web site for further details.
+
+    http://www.cse.ogi.edu/PacSoft/conf/fmcs
+
+		** Registration **
+
+Please send registration information via email to Kelly@cse.ogi.edu.
+
+You can also register on-line at 
+http://www.cse.ogi.edu/PacSoft/conf/fmcs/registration.html
+
+Advance payment is preferred.  Checks should be payable to Oregon
+Graduate Institute and should reference FMCS98.  They should be mailed
+to:
+	Oregon Graduate Institute
+	Attn: Kelly Atkinson
+	CSE Department
+	P.O. Box 91000 Portland, OR 97291-1000
+
+Name:
+Job title:
+Affiliation:
+Address:
+email:
+phone:
+fax:
+registration fee (regular = $105, student = $70): _______
+Vegetarian banquet meal? (yes/no)
+
+presentation? (yes/no)
+title:
+
+Accommodation:
+dorm rooms:  (list nights needed)
+cost = $5.00 + ____ nights * $25 = $__.00
+
+If you want to stay off campus, please make those arrangements on your
+own.  
+
+Please mark the days you plan to attend:
+Reception, Thursday, May 28, 1998 ____
+             Friday, May 29, 1998 ____
+           Saturday, May 30, 1998 ____
+             Sunday, May 31, 1998 ____
+
+Extra Banquet tickets ($25/person):
+
+** Questions? **
+
+If you have any questions or comments, please contact Jeff Lewis,
+Jim Hook or Kelly Atkinson at OGI.
+
+Jeff Lewis
+ jlewis@cse.ogi.edu
+ Phone: (503) 690-4035
+ Fax:   (503) 690-1548  
+
+James Hook             
+ hook@cse.ogi.edu       
+ Phone: (503) 690-1169  
+ Fax:   (503) 690-1548  
+
+Kelly Atkinson
+ kelly@cse.ogi.edu
+ Phone: (503) 690-1336
+ Fax:   (503) 690-1548  
+
+Department of Computer Science and Engineering
+Oregon Graduate Institute of Science & Technology
+P.O. Box 91000
+Portland, OR 97291-1000
+
+
+
+From cat-dist Wed Mar 25 16:19:07 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA09384
+	for categories-list; Wed, 25 Mar 1998 15:02:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Nick Rossiter <B.N.Rossiter@newcastle.ac.uk>
+Message-Id: <AA18234.199803251830.ttypc@newton.ncl.ac.uk>
+Subject: categories: CFP: Applied Category Theory - Belgium 1998
+To: categories@mta.ca
+Date: Wed, 25 Mar 1998 18:30:51 +0000 (GMT)
+Cc: b.n.rossiter@ncl.ac.uk
+X-Mailer: ELM [version 2.4 PL25]
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+I would be very grateful if this could be posted on the Categories
+newgroup .. thanks ... Nick
+
+Call For Papers: Applied Category Theory - Belgium 1998
+
+The 15th International Congress on Cybernetics, to be held 
+from August 24 to 28, 1998,at the Institute for Computer 
+Sciences of the University of Namur, Belgium, is including
+a symposium on applied category theory.  
+
+The symposium seeks to bring together researchers with common
+interests in formalization and analysis of information and other
+complex systems with category theory. Areas of interest include
+software engineering, knowledge and data bases, distributed networks,
+artificial cognition, neural nets, fuzzy logic, consciousness and
+quantum computation.
+
+Authors wishing to submit a paper should send an abstract as soon as
+possible to:
+
+International Association for Cybernetics
+Palais des Expositions, avenue Sergent Vrithoff, 2
+B-5000 NAMUR, Belgique - Belgium
+Tel. + 32-81-71.71.71 - Fax + 32-81-71.71.00
+E. Mail address : Cyb@info.fundp.ac.be
+
+English and French are the official languages for this symposium.
+
+The conference fee for authors (before 30th April)  is 11,000 Belgian
+Francs. Students and participants from developing countries may apply
+to the Secretariat of the International Association for Cybernetics
+for special rates.
+
+Any queries on the subject matter of the symposium should be addressed
+to me.
+
+Nick Rossiter, Computing Science,
+Newcastle University, England NE1 7RU
+
+
+From cat-dist Thu Mar 26 14:32:36 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA01300
+	for categories-list; Thu, 26 Mar 1998 11:02:18 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 26 Mar 1998 15:27:09 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Message-Id: <199803260427.PAA30662@milan.maths.usyd.edu.au>
+To: baez@math.ucr.edu, categories@mta.ca
+Subject: categories: Re: tensor product of categories
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+This is in response to John Baez' query:
+
+Where can I read about the "tensor product" of cocomplete categories?
+(Hopefully this is a sensible and self-explanatory concept.)
+Or variations on this theme involving categories with coproducts,
+or finite colimits, or finite coproducts? 
+
+I can think of three things of mine in print which are relevant:
+
+\item"{[35]}" (with F. Foltz and C. Lair) Algebraic categories with few
+monoidal biclosed structures or none, {\it Jour. Pure and Applied Alg.} 17
+(1980), 171-177.
+
+(the last section or so of)
+\item"{[41]}" Structures defined by finite limits in the enriched context I,
+ {\it Cahiers de Top. et G\'eom. Diff.} 23 (1982), 3-42.
+
+
+\item"{[52]}" (with G.B. Im) A universal property of the convolution monoidal
+structure, {\it J. Pure Appl. Algebra} 43 (1986), 75-88. 
+
+Much of this kind of thing is folklore; when one uses "left adjoint" rather
+than "cocontinuous", some speak of considering "objects in two categories" -
+see the first paper above.
+
+Max Kelly.
+
+
+From cat-dist Fri Mar 27 15:45:35 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id NAA21495
+	for categories-list; Fri, 27 Mar 1998 13:52:51 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: mfrias@139.82.16.3
+Message-Id: <v03102800b1418146666c@[139.82.71.20]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Fri, 27 Mar 1998 13:19:24 -0300
+To: categories@mta.ca
+From: Marcelo Frias <mfrias@inf.puc-rio.br>
+Subject: categories: AMAST'98 first CFP
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+We apologize if you received more than one copy of this call for papers.
+
+
+		Call for Papers
+
+            Seventh International AMAST Conference
+     AMAST '98,  January 5 to 9 , 1999,  Amazonia, Brazil.
+
+---------------------------------------------------------------------
+
+Goals
+
+The major goal of the  AMAST  Conferences  is  to  put  software
+development  technology  on  a  firm,  mathematical foundation.
+Particular emphasis is given to algebraic and logical foundations
+of software technology.  An eventual goal is to establish algebraic
+and logical methodologies as viable and attractive approaches to
+software engineering.
+
+The first three editions of AMAST were held at the University of Iowa
+(1989 and 1991) and at the University of Twente (1993). The fourth
+conference was held at  Concordia University of Montreal (1995), the
+fifth at Ludwig-Maximilians University, Munich (1996), and the sixth
+will be held in Sidney, Australia, (December 13-17, 1997).
+During these meetings, AMAST has attracted an international following
+among researchers and practitioners interested in software technology,
+programming methodology and their algebraic and logical foundations.
+In addition, the first day of each conference has been dedicated to
+Mathematics Education for Software Engineers.
+
+Following this successful trend, the seventh AMAST International
+Conference will be held in Amazonia, Brazil, from January 5 to
+January 9, 1999.
+
+-------------------------------------------------------------------
+
+Submissions
+
+As in the previous years we invite papers reporting original research
+in algebra, logic and other formalisms suitable as a foundation for
+software technology, as well as software technologies developed by means
+of logic and algebraic methodologies. Submissions should not have been
+published and should not be under consideration for publication elsewhere.
+
+The topics of interest include, but are not limited to, the following:
+
+
+SOFTWARE TECHNOLOGY
+        systems software technology,
+        application software technology,
+        concurrent and reactive systems,
+        formal methods in industrial software development,
+        formal techniques for software requirements, design.
+
+PROGRAMMING METHODOLOGY
+        logic programming, functional programming, object paradigms,
+        constraint programming and concurrency,
+        program verification and transformation,
+        programming calculi,
+        specification languages and tools,
+        formal specification and development case studies.
+
+ALGEBRAIC AND LOGICAL FOUNDATIONS
+        logic, category theory, relation algebra, computational algebra,
+        algebraic foundations for languages and systems,
+        theorem proving and logical frameworks for reasoning,
+        logics of programs.
+
+SYSTEMS AND TOOLS (for system demonstrations or ordinary papers)
+        software development environments,
+        support for correct software development,
+        system support for reuse,
+        tools for prototyping,
+        validation and verification,
+        computer algebra systems,
+        theorem proving systems.
+
+We invite prospective authors to submit electronically previously
+unpublished papers of high quality.  Papers should be between five
+and fifteen pages in LNCS style.  Ten page papers are ideal, and
+papers longer than fifteen pages may be rejected without detailed
+refereeing.  Please see details at
+
+                                http://www.lmf-di.puc-rio.br/~amast98
+
+under "submission" which explain how to obtain a paper number, and
+then how to send a fully self-contained postscript file (preferably
+derived from LaTeX with the LNCS style) to
+amast98@lmf-di.puc-rio.br.  If for any reason it is impossible
+to submit a paper electronically, authors should send six paper copies of their
+submission to the programme chair at the address below.
+
+All papers will be refereed by the programme committee, and will be
+judged based on their significance, technical merit, and relevance
+to the conference. As in the past, we expect the proceedings to
+be published by Springer-Verlag in their Lecture Notes in Computer
+Science Series.  Papers should be received by June 15, 1998.
+
+-------------------------------------------------------------------
+
+Address for non-electronic submissions and enquiries
+
+Prof. Dr. Armando M. Haeberer (Program Chair of AMAST'98)
+Diretor do Laboratorio de Metodos Formais
+Departamento de Informatica
+Pontificia Universidade Catolica do Rio de Janeiro
+Rua Marques de Sao Vicente, 225
+Rio de Janeiro, RJ 22453-900
+Brazil
+
+Phone: +55 21 512-8325
+              512-6837
+FAX:   +55 21 512-8045
+Email: amast98@lmf-di.puc-rio.br
+
+-------------------------------------------------------------------
+
+AMAST General Chair:  Maurice Nivat (France)
+Programme  Chair:  Armando Haeberer (Brazil)
+
+-------------------------------------------------------------------
+
+Programme Committee
+
+Vangalur Alagar (Canada)
+Egidio Astesiano (Italy)
+Gabriel Baum (Argentina)
+Chris Brink     (South Africa)
+Walter Carnielli (Brazil)
+Rocco De Nicola (Italy)
+Jose Fiadeiro (Portugal)
+Marcelo Frias (Brazil)
+Kokichi Futatsugi (Japan)
+Dov Gabbay (United Kingdom)
+E. Hermann Haeusler (Brazil)
+Paola Inverardi (Italy)
+Michael Johnson (Australia)
+Richard Jullig (United States)
+Rafael Lins     (Brazil)
+Michael Lowry (United States)
+Carlos Jose Pereira de Lucena (Brazil)
+Roger Maddux (United States)
+Thomas Maibaum (United Kingdom)
+Michael Mislove (United States)
+Ugo Montanari (Italy)
+Peter Mosses (Denmark)
+Istvan Nemeti (Hungary)
+Anton Nijholt   (Netherlands)
+Daltro Nunes (Brazil)
+Fernando Orejas (Spain)
+Don Pigozzi (United States)
+Ruy de Queiroz (Brazil)
+Charles Rattray (United Kingdom)
+Teodor Rus (United States)
+Giuseppe Scollo (Netherlands)
+Michel Sintzoff (Belgium)
+Douglas Smith (United States)
+Andrzej Tarlecki (Poland)
+Paulo Veloso (Brazil)
+Martin Wirsing (Germany)
+
+-------------------------------------------------------------------
+
+Organizing Committee
+
+Chair and Finances: Armando Haeberer
+                              Marcia Ferreira
+                              Daniela Cardoso
+
+Tools and Demos: Claudio Terra
+
+Local arrangements:  Alvanir Becerra de Carvalho
+
+-------------------------------------------------------------------
+
+Important Dates
+
+
+Submission of Papers: June 15, 1998
+Submission of System Demo Proposals: July 1, 1998
+Author notification of ouctome: September 15, 1998
+Camera ready copy received by: November 1, 1998
+Education Day: January 5, 1999
+Intended Conference Dates: January 5 to 9 , 1999
+
+-------------------------------------------------------------------
+
+Further information
+
+For regularly updated details of the conference
+organisation see http://www.lmf-di.puc-rio.br/~amast98
+or send email to amast98@lmf-di.puc-rio.br.
+
+
+
+
+
+
+
+From cat-dist Tue Mar 31 15:21:18 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id NAA04489
+	for categories-list; Tue, 31 Mar 1998 13:51:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Jean-Yves GIRARD <girard@iml.univ-mrs.fr>
+Message-Id: <199803311024.MAA17931@iml.univ-mrs.fr>
+Date: Tue, 31 Mar 98 12:20:33 +0200
+To: categories@mta.ca
+Subject: categories: TLCA99
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+\documentstyle{article}
+
+\parindent 0cm
+\pagestyle{empty}
+\textwidth 18cm
+\textheight 28cm
+\topmargin -2.5cm
+\oddsidemargin -1.2cm
+\evensidemargin 0cm
+
+\begin{document}
+
+ 
+
+
+\begin{center}
+ {\Large Fourth International Conference on}
+\end{center}
+\smallskip
+
+\begin{center}
+{\Huge Typed Lambda Calculi and Applications}
+\end{center}
+\begin{center}
+{\Huge (TLCA'99)} \\
+\end{center}
+\bigskip
+\begin{center}
+{\Large l'Aquila (Italia), 7 to 9 April 1999}
+\end{center}
+\smallskip
+\begin{center}
+{\LARGE \bf Call For Papers}
+\end{center}
+\bigskip
+The TLCA series of
+conferences aims at providing a forum for
+the presentation and discussion of recent
+research in an area which was originally a rather restricted field  
+but has now considerably expanded. The following list of topics is  
+non-limitative:\\ 
+
+\vspace{-0.4cm}
+{\large
+\begin{center}
+\begin{tabular}{@{}ll}
+{\bf Proof-theory} & {Cut-elimination and normalization, Linear  
+logic, \ldots}\\
+\\
+{\bf Semantics} & {Denotational semantics, Game semantics, \ldots}\\
+\\
+{\bf Operationality} & {Abstract machines, Parallel execution,  
+\ldots}\\
+\\
+{\bf Typing} & {Subtypes, Type assignment systems, \ldots}\\
+\\
+{\bf Programming} & {Proof search, Type checking, \ldots}\\
+\end{tabular}
+\end{center}
+}
+\bigskip
+
+\begin{minipage}[t]{8.5cm}
+
+The programme of TLCA'99 will consist of about
+30 selected presentations in plenary sessions. 
+
+The Programme Committee consists of:\\
+
+{\bf S.~Abramsky}~(University of Edinburgh) \\
+{\bf T.~Coquand}~(G\"oteborgs Universitet) \\
+{\bf J.-Y.~Girard}~(IML/Marseille) ({\bf Chair}) \\
+{\bf R.~Hindley}~(University of Wales Swansea) \\
+{\bf J.-L. Krivine}~(Universit\'e Paris VII) \\
+{\bf J.~Reynolds}~(Carnegie-Mellon University/Pittsburgh) \\
+{\bf S.~Ronchi}~(Universit\`a di Torino) \\
+{\bf A.~Scedrov}~(University of Pennsylvania/Philadelphia) \\
+{\bf T.~Streicher}~(Technische Universit\"at Darmstadt) \\
+{\bf M.~Takahashi}~(T\^oky\^o K\^ogy\^o Daigaku) \\
+{\bf P.~Urzyczyn}~(Uniwersytet Warszawski) \\
+
+{\bf Original contributions} should be sent by E-mail (Postscript  
+files only) to
+\begin{quote}
+tlca99@iml.univ-mrs.fr
+\end{quote}
+and a short abstract should be sent as a separate E-mail; it should  
+use only standard ASCII characters. Hard copy (6 copies) is
+also acceptable, to the address
+\begin{quote}
+    Jean-Yves Girard, \\
+    Institut de Math\'ematiques de Luminy, \\
+    163 Avenue de Luminy, case 907, \\
+    13288 Marseille cedex 9, France \\
+    {\bf fax:}    (+)-33-491269655
+\end{quote}
+All submissions must be {\bf received} by Sept. 4, 1998.
+\end{minipage} \hspace{1cm} \begin{minipage}
+                                   [t]{8.5cm}
+
+Papers should not exceed 15 standard A4 or U.S.
+quarto pages and should allow the Programme Committee to assess
+the merits of the work: in particular references and
+comparisons with related work should be included. Submission of  
+material already published or submitted to other Conferences with  
+Proceedings is not allowed.\\
+
+{\bf Relevant dates:}
+\begin{quote}
+Submissions: {\em September 4, 1998}\\
+Acceptance/rejection: {\em November 16, 1998} \\
+Definitive versions due: {\em January 4, 1999} 
+
+\end{quote}
+The accepted papers will be published as a volume
+of Springer Lecture Notes in Computer Science. Information about LNCS  
+can be found at the home page
+\vspace{-0.3cm}
+\begin{quote}
+http://www.springer.de/comp/lncs/index.html
+\end{quote} 
+
+More details about the Conference will become available later from  
+the
+Organizing Committee Chairman:
+\begin{quote}
+Benedetto Intrigila\\
+Dipartimento di Matematica\\
+Universit\`a di l'Aquila\\
+Via Vetoio, Loc. Coppito\\
+67100 l'Aquila, Italia\\
+{\bf E-mail:} tlca99.aquila@univaq.it\\
+{\bf fax:}    (+)-39-862-433180
+\end{quote}
+or at the home page:
+\begin{quote}
+http://w3.dm.univaq.it/tlca99
+\end{quote}
+
+\end{minipage}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From cat-dist Tue Mar 31 20:14:09 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA21035
+	for categories-list; Tue, 31 Mar 1998 19:17:33 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 31 Mar 1998 18:36:23 -0300 (EST)
+From: Ruy de Queiroz <ruy@di.ufpe.br>
+X-Sender: ruy@caruaru
+To: categories@mta.ca
+Subject: categories: WoLLIC'98 - Deadline Extended
+Message-ID: <Pine.GSO.3.95.980331183538.19047F-100000@caruaru>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+[Please post]
+
+The DEADLINE for SUBMISSIONS has been EXTENDED to APRIL 15th.
+
+
+---
+Important Dates:
+   Deadline for Submissions: April 15th
+   Notification of Acceptance/Rejection: May 15th
+   Delivering Final Version: May 30th.
+---
+
+                        Final Call for Contributions
+
+        5th Workshop on Logic, Language, Information and Computation
+       	                      (WoLLIC'98)
+                           July 28-31, 1998
+ !  TUTORIALS   >>     (Tutorial Day: July 28th)       <<   TUTORIALS !
+                       IME-USP, Sao Paulo, Brazil
+
+The "5th Workshop on Logic, Language, Information and Computation" (WoLLIC'98),
+the fifth version of a series of workshops which started in 1994 with the aim
+of fostering interdisciplinary research in pure and applied logic, will be held
+in Sao Paulo, Brazil, from July 28th to 31st 1998.  Contributions are invited
+in the form of short papers (6 10pt pages or 1800 words) in all areas related
+to logic, language, information and computation, including: pure logical
+systems, proof theory, model theory, algebraic logic, type theory,
+category theory, constructive mathematics, lambda and combinatorial calculi,
+program logic and program semantics, logics and models of concurrency,
+logic and complexity theory, nonclassical logics, nonmonotonic logic,
+logic and language, discourse representation, logic and artificial
+intelligence, automated deduction, foundations of logic programming,
+logic and computation, and logic engineering.
+
+The 5th WoLLIC'98 has the scientific sponsorship of the Interest Group in
+Pure and Applied Logics (IGPL), the European Association for Logic, Language
+and Information (FoLLI), the Association for Symbolic Logic (ASL),
+the Sociedade Brasileira de Computacao (SBC), and the Sociedade Brasileira de
+Logica (SBL).
+
+There will be a number of guest speakers, including:
+Sergei Artemov (Moscow State Univ, Russia) (CONFIRMED),
+Sam Buss (Univ Calif San Diego, US) (CONFIRMED),
+Edmund Clarke (Carnegie-Mellon Univ, US) (CONFIRMED),
+Heinz Dieter Ebbinghaus (Universitaet Freiburg, Germany) (CONFIRMED),
+Michael Fourman (Edinburgh Univ, UK) (CONFIRMED),
+Dov Gabbay (Imperial Coll, UK) (*),
+Hans Kamp (Stuttgart Univ, Germany) (CONFIRMED),
+Phokion Kolaitis (Univ Calif Santa Cruz, US) (*),
+Valeria de Paiva (Birmingham Univ, UK) (CONFIRMED),
+Maarten de Rijke (Amsterdam Univ, The Netherlands) (CONFIRMED),
+Giovanni Sambin (Padoa Univ, Italy) (CONFIRMED).
+
+(*) TO BE CONFIRMED
+
+Submission:
+Papers (sent preferably in LaTeX format by e-mail to ** wollic@ime.usp.br **,
+or in 5(five) copies to postal address) must be RECEIVED by APRIL 15TH, 1998 by
+one of the Co-Chairs of the Organising Committee. Papers must be written in
+English and give enough detail to allow the programme committee to assess the
+merits of the work.  Papers should start with a brief statement of the issues,
+a summary of the main results, and a statement of their significance and
+relevance to the workshop. References and comparisons with related work is also
+expected. Technical development directed to the specialist should follow.
+Results must be unpublished and not submitted for publication elsewhere,
+including the proceedings of other symposia or workshops. One author of each
+accepted paper will be expected to attend the conference in order to present
+it. Authors will be notified of acceptance by MAY 15th, 1998. The abstracts of
+the papers will be published in a "Conference Report" section of the Logic
+Journal of the IGPL (ISSN 1367-0751) (Oxford Univ Press) as part of the meeting
+report.  Papers presented at the meeting will be invited for submission (in
+full version) to the Logic Journal of the IGPL
+(http://www.oup.co.uk/jnls/igpl/).
+
+The WoLLIC'98 is hosted by Universidade de Sao Paulo (USP), and will take place
+at the Mathematics and Statistics Institute (IME).
+
+Programme Committee:
+Andreas Blass (Michigan Univ, USA), Itala D'Ottaviano (Univ Campinas, BR),
+J. Michael Dunn (Indiana Univ, USA), Wilfrid Hodges (Queen Mary Coll, UK),
+Francisco Miraglia (Univ Sao Paulo, BR), Luiz Carlos Pereira (Cathol Univ Rio,
+BR), Andrew Pitts (Cambridge Univ, UK), Amir Pnueli (Weizmann Inst, Israel).
+
+Organising Committee:
+L. S. C. Baptista (UFPE/UFPB), M. Finger (USP), E. Hermann Haeusler (PUC-Rio),
+A. C. V. de Melo (USP), A. G. de Oliveira (UFBA/UFPE), R. de Queiroz (UFPE),
+F. C. da Silva (USP).
+
+For further information, contact the Co-Chairs of the Organising Committee:
+Ruy de Queiroz, Departamento de Informatica, Univ. Federal de Pernambuco,
+CP 7851, 50732-970 Recife, PE, Brazil, e-mail: ruy@di.ufpe.br,
+tel.: (+55 81) 271 8430, fax: (+55 81) 271 8438.
+Marcelo Finger, Departamento de Ciencia da Computacao, Instituto de
+Matematica e Estatistica, Universidade de Sao Paulo, Rua do Matao 1010,
+05508-900 Sao Paulo, SP, Brazil, e-mail: mfinger@ime.usp.br,
+tel.: (+55 11) 818 6287, fax: (+55 11) 818 6134.
+
+Web page: http://www.ime.usp.br/~wollic 
+
+
+
+
+

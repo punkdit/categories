@@ -1,0 +1,110 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is equality evil?
+Date: Fri, 17 Sep 2010 01:28:29 -0700
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <E1OwmE5-00011l-T6@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca> <E1OwQEy-0002cd-TZ@mlist.mta.ca>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1284773380 26699 80.91.229.12 (18 Sep 2010 01:29:40 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 18 Sep 2010 01:29:40 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sat Sep 18 03:29:39 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmFH-0000oj-31
+	for gsmc-categories@m.gmane.org; Sat, 18 Sep 2010 03:29:39 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:46502)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmEA-0003DY-Oi; Fri, 17 Sep 2010 22:28:30 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwmE5-00011l-T6
+	for categories-list@mlist.mta.ca; Fri, 17 Sep 2010 22:28:26 -0300
+Content-Disposition: inline
+In-Reply-To: <E1OwQEy-0002cd-TZ@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6187
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6187>
+
+Thomas Streicher wrote in small part (in a post about fibrations):
+
+>Even in intensional type theory there is a notion of equality.
+
+Elsewhere in the same thread, Vaughan Pratt wrote:
+
+>Theorem.  Equality if and only if the diagonal.
+
+and concluded that equality is no more or less evil than contraction.
+
+
+This depends on what kind of type theory you are using!
+
+In the intentional type theory of Martin-Loef, for example,
+there is a notion of equality (or identity) at each type.
+Heck, there's even a notion of identity of types!
+However, one can certainly consider type theory without identity types.
+I would suggest the internal language of a Heyting 2-pretopos
+(although that depends on what one takes this language to be).
+
+Logic should be the servant of intuition, not the master.
+If some category theorists have the intuition (and we do)
+that it is meaningless to speak of equality of objects,
+then it's the job of the logician to find a formal language
+which expresses only what these category theorists find meaningful.
+If they haven't done so, then this is something to work on,
+not an argument that the motivating intuitions are invalid.
+
+There is something else that logic can do, however:
+it can show that identity follows from something else.
+Vaughn's theorem (cited above) purports to do this,
+but it is based on the assumption that every operation between types
+(in this case, the diagonal Delta_X: X -> X x X)
+has (as "image" or "range") a predicate on the target type
+(in this case, the identity predicate on X x X).
+So if our intuition suggests that operations have ranges,
+then we must accept that we have identity predicates too
+(assuming that we can construct the diagonal operation using contraction).
+
+But my intution suggests no such thing for arbitrary types
+(such as might be suitable as the type of objects of a category);
+naively, given an operation f: X -> Y, the range predicate (ran f) on Y
+would hold at those objects of Y with the form f(a) for some object a of X.
+But given an object b of Y, how do you determine if it has this form?
+If we already had an identity predicate =_Y on Y, then we could do this:
+(ran f)(b) if and only if (for some x: A) (b =_Y f(a)).
+But in general, I don't see any meaning for the range of an operation.
+
+In fact, since I'm happy to use contraction in general mathematics,
+I would phrase Vaughn's theorem as follows:
+
+>Theorem.  Equality if and only if ranges.
+
+and conclude that equality is no more or less evil than ranges.
+But I don't believe in either of these, in general;
+that is, I believe in the usefulness of types that lack these.
+
+(Quiz:  Given two arbitrary sets, say the set of natural numbers
+and the set of positive integers, how do you decide if they are equal?
+Similarly, given a set and an arbitrary operation on sets,
+say the set of rational numbers and the operation of cartesian square,
+how do you decide if the set belongs to the range of the operation?
+Or more relevantly, given the diagonal operation on sets,
+how do you decide if a pair of sets belongs to its range?)
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

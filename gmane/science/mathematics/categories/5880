@@ -1,0 +1,109 @@
+Path: news.gmane.org!not-for-mail
+From: John Baez <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: filtered monads?
+Date: Sun, 30 May 2010 12:37:27 +0100
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <E1OIjWM-0006Py-1M@mailserv.mta.ca>
+References: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Reply-To: John Baez <baez@math.ucr.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Trace: dough.gmane.org 1275231541 3581 80.91.229.12 (30 May 2010 14:59:01 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 30 May 2010 14:59:01 +0000 (UTC)
+Cc: categories@mta.ca
+To: James Borger <james.borger@anu.edu.au>
+Original-X-From: categories@mta.ca Sun May 30 16:58:55 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjyZ-0006a5-2H
+	for gsmc-categories@m.gmane.org; Sun, 30 May 2010 16:58:55 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjWM-0006Py-1M
+	for categories-list@mta.ca; Sun, 30 May 2010 11:29:46 -0300
+In-Reply-To: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5880
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5880>
+
+James Borger wrote:
+
+Does the concept of "filtered monad" exist in the literature?
+
+
+I don't know, but your concept does indeed seem to come up a lot...
+
+I'm tempted to formalize it a bit.  Let's look at an example:
+
+
+> 1. Let C be the category of sets, let F:C->C be the set underlying the free
+> monoid on S, and let F_n(S) be the subset of F(S) consisting of words of
+> length at most n. Then the monad structure map F o F-->F restricts to maps
+> F_m o F_n-->F_{mn}, and F_1 is the identity functor.
+>
+
+It seems that *one* aspect of what you've got here is a lax monoidal functor
+from the multiplicative monoid of natural numbers to End(C).   Such a thing
+consists of a functor
+
+F_n: C -> C
+
+for each natural number n, together with natural transformations
+
+F_m o F_n => F_{mn}
+
+and
+
+1_C => F_1
+
+satisfying appropriate coherence laws.
+
+(For example, you can build two natural transformations from F_m o F_n o F_k
+to F_{mnk}, but they're equal.)
+
+But there's more: you also have natural transformations
+
+F_m => F_n
+
+whenever m is less than or equal to n.  And this seems to be an important
+aspect of the intuition that's making you use the word "filtered".   So,
+instead of treating the natural numbers as a mere monoid, I think you are
+treating them as a monoidal poset.
+
+In other words: there's a monoidal category M with natural numbers as
+objects, a single morphism m -> n whenever m is less than or equal to n, and
+multiplication as tensor product.  And, I think you've got a lax monoidal
+functor
+
+F: M -> End(C)
+
+It's possible that whenever C has colimits, you can take a pointwise colimit
+of the functors F_n in this situation and get an actual monad.
+
+But it seems your lax monoidal functor is a bit better than average: you
+have F_1 = 1_C, not just a natural transformation from 1_C to F_1.
+
+2. Let C be the category of R-modules (R a given ring), F(M) is the tensor
+> product R[x] \otimes_R M, and F_n(M) is the sub-R-module M + xM + ... + x^n
+> M of F(M). Then the monad structure map F o F --> F restricts to a map F_m o
+> F_n --> F_{m+n}, and F_0 is the identity functor.
+>
+
+Here it seems you're using a different monoidal poset, coming from the
+additive monoid of natural numbers with its usual ordering.
+
+Best,
+jb
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

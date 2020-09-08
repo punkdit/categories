@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@math.uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  are fibrations evil?
+Date: Wed, 15 Sep 2010 17:28:13 -0700
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1OwQCD-0002Yx-De@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca>
+Reply-To: Michael Shulman <shulman@math.uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1284688714 16030 80.91.229.12 (17 Sep 2010 01:58:34 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 17 Sep 2010 01:58:34 +0000 (UTC)
+Cc: categories@mta.ca
+To: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 17 03:58:33 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQDg-00014J-KP
+	for gsmc-categories@m.gmane.org; Fri, 17 Sep 2010 03:58:32 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:39768)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQCH-0001r4-2A; Thu, 16 Sep 2010 22:57:05 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OwQCD-0002Yx-De
+	for categories-list@mlist.mta.ca; Thu, 16 Sep 2010 22:57:01 -0300
+In-Reply-To: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6175
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6175>
+
+The usual notion of (Grothendieck) fibration is indeed non-kosher, but
+there is a variant due to Ross Street which is not.  This variant is
+reproduced at
+
+http://ncatlab.org/nlab/show/Grothendieck+fibration#StreetFibration
+
+As remarked there, almost any fibration which arises in practice
+indeed satisfies the stronger non-kosher condition, and a functor is a
+Street fibration iff it factors as an equivalence of categories
+followed by a Grothendieck fibration.  However, when working
+internally to a bicategory where the non-kosher version doesn't even
+make sense, Street's version is essential.
+
+Regarding groupoids, it's easy to see that every functor between
+groupoids is a Street fibration.  Grothendieck fibrations between
+groupoids can be identified with "isofibrations," which are the
+fibrations in the canonical model structure on Gpd.  It seems to me
+that the use of groupoid fibrations in the groupoid model of type
+theory is really an artifact of the desire to describe that model
+treating Gpd as a 1-category, rather than a 2-category.  If one
+defined the identity types and pullbacks using limits in Gpd in the
+kosher 2-categorical sense, then it seems to me that one should be
+able to define an equivalent model using arbitrary functors between
+groupoids to represent the dependent types, rather than merely the
+fibrations.
+
+Similarly, in homotopical models of type theory where the dependent
+types are represented by the fibrations in some model structure, it
+seems that one should equivalently be able to work with the
+oo-category presented by that model structure and use arbitrary maps,
+but with all the structure defined using kosher oo-categorical limits.
+  The non-kosher version using a model structure on a 1-category and
+fibrations may certainly be *easier* to describe and work with, and
+there is no reason not to do so in practice -- but just as is usually
+the case in homotopy theory, it seems to me that one should regard
+this as merely a convenient way to "present" the "real" underlying
+structure, which is higher-categorical and kosher.
+
+Mike
+
+On Wed, Sep 15, 2010 at 4:43 AM, Thomas Streicher
+<streicher@mathematik.tu-darmstadt.de> wrote:
+> On the occasion of the discussion about "evil" I want to point out an exa=
+mple
+> where speaking about equality of objects seems to be indispensible.
+> If P : XX -> BB is a functor and one wants to say that it is a fibration
+> then one is inclined to formulate this as follows
+>
+> =A0 =A0 if u : J -> I is a map in BB and PX =3D I then there exists a mor=
+phism
+> =A0 =A0 \phi : Y -> X with P\phi =3D u and \phi cartesian, i.e. ...
+>
+> I don't see how to avoid reference to equality of objects in this formula=
+tion.
+>
+> This already happens if XX and BB are groupoids where P : XX -> BB is a
+> fibration iff for all u : J -> I in BB and PX =3D I there is a map \phi :=
+  Y -> X
+> with P\phi =3D u.
+>
+> Ironically the category of groupoids and fibrations of groupoids as famil=
+ies
+> of types was the first example of a model of type theory where equality m=
+ay
+> be interpreted as being isomorphic.
+>
+> So my conclusion is that equality of objects is sometimes absolutely
+> necessary. Avoiding reference to equality is also not a question of using
+> dependent types as some people implicitly seem to say. Even in intensiona=
+l
+> type theory there is a notion of equality. But it is sometimes inconvenie=
+nt
+> to use. As pointed out by Ahrens one can and should use extensional type =
+theory
+> whenever convenient.
+> Intensional type theory allows one to interpret equality as being isomorp=
+hic,
+> a kind of reward for the inconvenience of using intensional identity type=
+s.
+>
+> Thomas
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

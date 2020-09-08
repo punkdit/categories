@@ -1,0 +1,401 @@
+Path: news.gmane.org!not-for-mail
+From: John Baez <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: A double bicategory of cobordisms with boundary
+Date: Mon, 18 Dec 2006 00:23:52 -0800
+Lines: 367
+Approved: news@gmane.org
+Message-ID: <E1GwJAp-0005JM-14@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241019362 9156 80.91.229.2 (29 Apr 2009 15:36:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:36:02 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Dec 18 10:19:48 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 18 Dec 2006 10:19:48 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GwJAp-0005JM-14
+	for categories-list@mta.ca; Mon, 18 Dec 2006 10:08:59 -0400
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 32
+Status: RO
+Content-Length: 13380
+Original-Lines: 366
+Xref: news.gmane.org gmane.science.mathematics.categories:3531
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3531>
+
+
+Dear Categorists -
+
+Here's an excerpt from "week242".
+
+.....................................................................
+
+Also available as http://math.ucr.edu/home/baez/week242.html
+
+December 2, 2006
+This Week's Finds in Mathematical Physics (Week 242)
+John Baez
+
+This week I'd like to talk about a paper by Jeffrey Morton.  Jeff
+is a grad student now working with me on topological quantum field
+theory and higher categories.  I've already mentioned his work on
+categorified algebra and quantum mechanics in "week236".  He'll be
+be finishing his Ph.D. thesis in the spring of 2007 - and as usual,
+that means he's already busy applying for jobs.
+
+[stuff deleted]
+
+10) Jeffrey Morton, A double bicategory of cobordisms with corners,
+available as math.CT/0611930.
+
+People have been talking a long time about topological quantum field
+theory and higher categories.  The idea is that categories, 2-categories,
+3-categories and the like can describe how manifolds can be chopped into
+little pieces - or more precisely, how these little pieces can be glued
+together to form manifolds.  Then the problem of doing quantum field
+theory on some manifold can be reduced to the problem of doing it on
+these pieces and gluing the results together.  This works easiest if
+the theory is "topological", not requiring a background metric.
+
+There's a lot of evidence that this is a good idea, but getting the details
+straight has proved tough, even at the 2-category level.  This is what
+Morton does, in a rather clever way.  Very roughly, his idea is to use
+something I'll call a "weak double category", and prove that these:
+
+ (n-2)-dimensional manifolds
+
+ (n-1)-dimensional manifolds with boundary
+
+  n-dimensional manifolds with corners
+
+give a weak double category called nCob_2.  The proof is a cool mix of
+topology and higher category theory.  He then shows that this particular
+weak double category can be reinterpreted as something a bit more
+familiar - a "weak 2-category".
+
+In the rest of his thesis, Jeff will use this formalism to construct
+some examples "extended TQFTs", which are roughly maps of weak 2-categories
+
+Z: nCob_2 -> 2Vect
+
+where 2Vect is the weak double category of "2-vector spaces".  He's
+focusing on some extended TQFTs called the Dijkgraaf-Witten models,
+coming from finite groups.
+
+But, he's also thought about the case where the finite group is
+replaced by the Lie group SU(2).  In this case we get something a
+lot like an extended TQFT, but not quite, called the Ponzano-Regge
+model.  In this case of 3d spacetime, this is a nice theory of
+quantum gravity.  And, as I hinted back in "week232", we can let 2d
+space in this model be a manifold with *boundary* by poking little
+holes in space - and these holes wind up acting like particles!
+
+So, we get a relation like this:
+
+ (n-2)-dimensional manifolds                     MATTER
+
+ (n-1)-dimensional manifolds with boundary       SPACE
+
+  n-dimensional manifolds with corners           SPACETIME
+
+which is really quite cool.
+
+It would be fun to talk about this.  However, to understand Morton's
+work more deeply, you need to understand a bit about "weak double
+categories".  He explains them quite nicely, but I think I'll spend
+the rest of this Week's Finds giving a less detailed introduction,
+just to get you warmed up.
+
+This chart should help:
+
+                                   BIGONS                SQUARES
+
+   LAWS HOLDING                    strict                strict
+   AS EQUATIONS                 2-categories        double categories
+
+   LAWS HOLDING                    weak                  weak
+ UP TO ISOMORPHISM              2-categories        double categories
+
+2-categories are good for describing how to glue together 2-dimensional
+things that, at least in some abstract sense, are shaped like *bigons*.
+A "bigon" is a disc with its boundary divided into two halves.  Here's
+my feeble ASCCI rendition of a bigon:
+
+                      f
+                   --->---
+                  /       \
+                 /   ||    \
+              X o    ||B    o Y
+                 \   \/    /
+                  \       /
+                   --->---
+                      g
+
+The big arrow indicates that we think of the bigon B as "going from"
+the top semicircle, f, to the bottom semicircle, g.  Similarly, we
+think of the arcs f and g as going from the point X to the point Y.
+
+Similarly, double categories are good for describing how to glue together
+2-dimensional gadgets that are shaped like *squares*:
+
+                      f
+               X o---->----o X'
+                 |         |
+               g v    S    v g'
+                 |         |
+               Y o---->----o Y'
+                      f'
+
+Both 2-categories and double categories come in "strict" and "weak"
+versions.  The strict versions have operations satisfying a bunch of
+laws "on the nose", as equations.  In the weak versions, these laws
+hold up to isomorphism whenever possible.
+
+A few more details might help....
+
+A 2-category has a set of objects, a set of morphisms f: X -> Y going
+from any object X to to any object Y, and a set of 2-morphisms T: f => g
+going from any morphism f: X -> Y to any morphism g: X -> Y.  We can
+visualize the objects as dots:
+
+                      o
+                      X
+
+the morphisms as arrows:
+
+                      f
+               X o---->----o Y
+
+and the 2-morphisms as bigons:
+
+                   f
+                --->---
+               /       \
+              /   ||    \
+           X o    ||B   o Y
+              \   \/    /
+               \       /
+                --->---
+                   g
+
+We can compose morphisms like this:
+
+               f         g                                    fg
+          o---->----o---->----o             gives         o--->---o
+          X         Y         Z                           X       Y
+
+We can also compose 2-morphisms vertically:
+
+                    f                                          f
+                ---->----                                   --->---
+               /  S      \                                 /       \
+              /     g     \                               /         \
+           X o ----->----- o Y              gives      X o     ST    o Y
+              \   T       /                               \         /
+               \         /                                 \       /
+                ---->----                                   --->---
+                    h                                          h
+
+and horizontally:
+
+                f           f'                              ff'
+             --->---     --->---                          --->---
+            /       \   /       \                        /       \
+           /         \ /         \                      /         \
+        X o     S     o     T     o Z       gives    X o    S.T    o Y
+           \         / \         /                      \         /
+            \       /   \       /                        \       /
+             --->---     --->---                          --->---
+                g           g'                              gg'
+
+
+There are also a bunch of laws that need to hold.  I don't want to
+list them; you can find them in Jeff's paper (also see "week80").
+I just want to emphasize how a strict 2-category is different from
+a weak one.
+
+In a strict 2-category, the composition of morphisms is associative
+on the nose:
+
+(fg)h = f(gh)
+
+and there are identity morphisms that satisfy these laws on the nose:
+
+1f = f = f1
+
+In a weak 2-category, these equations are replaced by 2-isomorphisms - that
+is, invertible 2-morphisms.  And, these 2-isomorphisms need to satisfy new
+equations of their own!
+
+What about double categories?
+
+Double categories are like 2-categories, but instead of bigons, we have
+squares.
+
+More precisely, a double category has a set of objects:
+
+                   o
+                   X
+
+a set of horizontal arrows:
+
+                   f
+            X o---->----o X'
+
+a set of vertical arrows:
+
+            X o
+              |
+            g v
+              |
+            Y o
+
+and a set of squares:
+
+                   f
+            X o---->----o X'
+              |         |
+            g v    S    v g'
+              |         |
+            Y o---->----o Y'
+                   f'
+
+We can compose the horizontal arrows like this:
+
+               f         f'                                  f.f'
+          o---->----o---->----o             gives         o--->---o
+          X         Y         Z                           X       Y
+
+We can compose the vertical arrows like this:
+
+         X o
+           |
+         g v                                                  o
+           |                                                  |
+         Y o                                gives         gg' v
+           |                                                  |
+        g' v                                                  o
+           |
+         Y o
+
+And, we can compose the squares both vertically:
+
+                f
+         X o---->----o X'
+           |         |                                        f
+         g v    S    v g'                              X o---->----o X'
+           |         |                                   |         |
+         Y o---->----o Y'                  gives     gh  v   SS'   v g'h'
+           |         |                                   |         |
+         h v    S'   v h'                              Z o---->----o Z'
+           |         |                                        f'
+         Z o---->----o Z'
+                f'
+
+and horizontally:
+
+                f    Y    g                                 f.g
+         X o---->----o---->----o Z                    X o---->----o Z
+           |         |         |                        |         |
+         h v    S    v    S'   v h'                   h v   S.S'  v h'
+           |         |         |                        |         |
+        X' o---->----o---->----o Z'                  X' o---->----o Z'
+                f'   Y'   g'                               f'.g'
+
+
+In a strict double category, both vertical and horizontal composition
+of morphisms is associative on the nose:
+
+(fg)h = f(gh)             (f.g).h = f.(g.h)
+
+and there are identity morphisms for both vertical and horizontal
+composition, which satisfy the usual identity laws on the nose.
+
+In a weak double category, we want these laws to hold only up to
+isomorphism.  But, it turns out that this requires us to introduce
+bigons as well!  The reason is fascinating but too subtle to explain
+here.  I didn't understand it until Jeff pointed it out.  But, it
+turns out that Dominic Verity had already introduced the right concept
+of weak double category - a gadget with both squares and bigons - in
+*his* Ph.D. thesis a while back:
+
+11) Dominic Verity, Enriched categories, internal categories, and
+change of base, Ph.D. dissertation, University of Cambridge, 1992.
+
+Interestingly, if you weaken *only* the laws for vertical composition,
+you don't need to introduce bigons.  The resulting concept of
+"horizontally weak double category" has been studied by Grandis and Pare:
+
+12) Marco Grandis and Bob Pare, Limits in double categories, Cah.
+Top. Geom. Diff. Cat. 40 (1999), 162-220.
+
+Marco Grandis and Bob Pare, Adjoints for double categories, Cah.
+Top. Geom. Diff. Cat. 45 (2004), 193-240.  Also available at
+http://www.dima.unige.it/~grandis/rec.public_grandis.html
+
+and more recently by Martin Hyland's student Richard Garner:
+
+13) Richard Garner, Double clubs, available as math.CT/0606733
+
+and Tom Fiore:
+
+14) Thomas M. Fiore, Pseudo algebras and pseudo double categories,
+available as math.CT./0608760.
+
+At this point I should admit that the terminology in this whole
+field is a bit of a mess.  I've made up simplified terminology
+for the purposes of this article, but now I should explain how it
+maps to the terminology most people use:
+
+   ME                                  THEM
+
+strict 2-category                   2-category
+weak 2-category                     bicategory
+strict double category              double category
+weak double category                double bicategory
+horizontally weak double category   pseudo double category
+
+Verity used the term "double bicategory" to hint that his gadgets
+have both squares and bigons, so they're like a blend of double
+categories and bicategories.  It's a slightly unfortunate term, since
+experts know that a double category is a category object in Cat, but
+Verity's double bicategories are not bicategory objects in BiCat.
+Morton mainly uses Verity's double bicategories - but in the proof of
+his big theorem, he also uses bicategory objects in BiCat.
+
+There's a lot more to say, but I'll stop here and let you read the
+rest in Jeff's paper!
+
+----------------------------------------------------------------------
+
+Previous issues of "This Week's Finds" and other expository articles on
+mathematics and physics, as well as some of my research papers, can be
+obtained at
+
+http://math.ucr.edu/home/baez/
+
+For a table of contents of all the issues of This Week's Finds, try
+
+http://math.ucr.edu/home/baez/twfcontents.html
+
+A simple jumping-off point to the old issues is available at
+
+http://math.ucr.edu/home/baez/twfshort.html
+
+If you just want the latest issue, go to
+
+http://math.ucr.edu/home/baez/this.week.html
+
+
+
+
+

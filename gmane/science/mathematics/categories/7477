@@ -1,0 +1,113 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <m.escardo@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Algorithms arising from category theory
+Date: Wed, 17 Oct 2012 00:25:10 +0100
+Lines: 73
+Approved: news@gmane.org
+Message-ID: <E1TOp3r-0000AZ-Mw@mlist.mta.ca>
+References: <E1TNoV0-00006L-5t@mlist.mta.ca>
+Reply-To: Martin Escardo <m.escardo@cs.bham.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1350562774 20028 80.91.229.3 (18 Oct 2012 12:19:34 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 18 Oct 2012 12:19:34 +0000 (UTC)
+Cc: Paulo Oliva <pbo@dcs.qmul.ac.uk>
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Oct 18 14:19:42 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.134])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOp4g-0007G5-9K
+	for gsmc-categories@m.gmane.org; Thu, 18 Oct 2012 14:19:42 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:56545)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOp2x-0001No-0A; Thu, 18 Oct 2012 09:17:55 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOp3r-0000AZ-Mw
+	for categories-list@mlist.mta.ca; Thu, 18 Oct 2012 09:18:51 -0300
+In-Reply-To: <E1TNoV0-00006L-5t@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7477
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7477>
+
+On 15/10/12 17:42, Mike Stay wrote:
+> I'd like to get more computer programmers interested in category
+> theory.
+
+Playing sequential games (such as chess) in an optimal way can be
+explained/derived categorically in a natural way:
+
+     M.H. Escardo and Paulo Oliva. Selection functions, bar recursion,
+     and backward induction. In Mathematical Structures in Computer
+     Science, Volume 20, Issue 2, April 2010, Cambridge U.P.
+     http://www.cs.bham.ac.uk/~mhe/papers/selection-escardo-oliva.pdf
+
+There is a tutorial with these and related ideas for mathematically
+minded functional programmers:
+
+     M.H. Escardo and Paulo Oliva. What Sequential Games, the Tychonoff
+     Theorem and the Double-Negation Shift have in Common. In MSFP 2010
+     (ACM SIGPLAN Mathematically Structured Functional Programming, ACM
+     Press). http://www.cs.bham.ac.uk/~mhe/papers/msfp2010/
+
+
+The gist of the idea is this.
+
+Consider a cartesian closed category.  For a functional programmer,
+this may be his programming language, where the objects are the types
+and the morphisms are the programs (probably keeping his fingers
+crossed and hiding his hands behind his back).
+
+Choose an object R of game "outcomes" (e.g. the reals if they are in
+your category, or 1+1+1 if your game is of the kind lose-draw-win).
+
+Define a strong monad J X = ((X->R)->X) where we write the exponential
+of R to the power X as (X->R). (Figure out the missing data.)
+
+An "element" of J X tells you how to (optimally) play a game that has
+just one move, where a move is an "element" of X.
+
+But now suppose you have a two-move game, with the first move in X and
+the second in Y. How do you (optimally) play this game?
+
+Simple: from the strength you get two maps J X x J Y -> J(X x Y). The
+monad is not commutative: you want the "left-to-right" map
+J X x J Y -> J(X x Y) for a sequential game (but the situation is
+symmetric, of course).
+
+What this map tells you is this: if you know how to play optimally the
+two one-move games on X and Y, then you know how to play optimally the
+sequential game on X x Y.
+
+If you have n moves, iterate this n times. If you have an unbounded
+number of moves, read the above papers.
+
+This is the rough idea.
+
+The second publication has computer programs coming from this idea,
+and some games completely worked out and implemented using this.
+
+There are applications to logic too, and to program extraction from
+classical proofs: Notice that J X -> X amounts to Peirce's Law.
+
+      M.H. Escardo and Paulo Oliva. The Peirce translation. In APAL.
+      http://www.cs.bham.ac.uk/~mhe/papers/peirce-revised.pdf
+
+Martin
+
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

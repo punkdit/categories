@@ -1,0 +1,514 @@
+Date: Sun, 13 Oct 1996 10:43:39 -0300 (ADT)
+Subject: 2-categories without the interchange law
+
+Date: Sun, 13 Oct 1996 14:32:23 +0900
+From: miyoshi@ccb.shukutoku.ac.jp
+
+
+Dear colleagues:
+
+I am looking for any information or reference about
+2-categories *without* the well-known interchange law:
+
+        when a,b,c,d are 2-cells and compositions are defined,
+        (d | c) o (b | a) = (d o b) | (c o a).
+
+In paticular, I am interested in the treatment of (weighted) limits.
+
+And 3-dimensional structures in which
+3-cells represent the only one direction of this law:
+
+        (d | c) o (b | a) => (d o b) | (c o a).
+
+are also interesting for me.
+
+Any advice is welcome. Thank you in advance.
+
+----
+Hiroyuki Miyoshi
+The College of Cross-Cultural Communication and Business, Shukutoku Univ.
+miyoshi@ccb.shukutoku.ac.jp
+
+
+Date: Mon, 14 Oct 1996 10:01:51 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Mon, 14 Oct 1996 17:27:11 +1000
+From: Ross Street <street@mpce.mq.edu.au>
+
+A response to the questions of Hiroyuki Miyoshi
+>The College of Cross-Cultural Communication and Business, Shukutoku Univ.
+>miyoshi@ccb.shukutoku.ac.jp
+
+These "2-categories without the interchange law" are categories
+enriched in Cat with a "funny" closed structure: the internal
+hom [A,B] of two categories A, B is the category whose objects
+are functors f: A --> B and whose arrows s : f --> g  are families
+of arrows s_a : fa --> ga  in  B (no naturality requirement!).
+Strangely J.G. Stell and I seem to have independently come up with
+the same name for them: sesquicategories. (In earlier work Sammy
+Eilenberg and I were doing on rewriting systems, Sammy was calling them
+one-and-a-half-categories or 3/2-categories.)  See my paper
+
+Categorical structures, Handbook of Algebra, Volume 1  (editor M.
+Hazewinkel; Elsevier Science, Amsterdam 1996) 529-577
+
+and
+
+J.G. Stell, Modelling term rewriting systems by sesqui-categories,
+Technical Report TR94-02 Dept Computer Science, Keele University.
+
+
+Carolyn Brown and Doug Gurr also used them in studying Petri nets
+(see Lecture Notes in Comp Sci 616 &/or 623 1992).
+
+Also relevant are:
+
+A.J. Power & E. Robinson, Premonoidal categories & notions of computation,
+Math Struct in Comp Sci 11 (1993).
+
+John Power, Premonoidal categories as categories with algebraic structure,
+(preprint, but ask <ajp@dcs.ed.ac.uk>).
+
+
+Also the category 2-Cat of 2-categories and 2-functors has various tensor
+products. The one originally described by John W. Gray in SLNM 391 is
+what you need for your 3-cell  (d | c) o (b | a) => (d o b) | (c o a).
+That is, again your notion is an enriched category. If you are happy
+with this 3-cell to be invertible (which you probably are not), this
+gives what we call Gray-categories which feature in
+
+R. Gordon, A.J. Power and R. Street, Coherence for tricategories,
+Memoirs of the American Math Society  117 (1995) Number 558  (ISSN 0065-9266)
+
+where you will find other references.
+
+
+So this indeed means that the theory of weighted limits applies to all
+these structures. But I don't know of anyone who has developed the
+specific properties of weighted limits in these cases along the lines
+of my old paper
+
+Limits indexed by category-valued 2-functors, J. Pure Appl. Algebra 8
+(1976) 149-181; MR53#5695
+
+in the case of 2-categories.
+
+Best wishes,
+Ross
+
+
+Date: Mon, 14 Oct 1996 15:19:22 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Mon, 14 Oct 1996 15:15:27 +0100
+From: Rudger Kieboom <rkieboom@tena2.vub.ac.be>
+
+
+A response to the questions of Hiroyuki Miyoshi
+>The College of Cross-Cultural Communication and Business, Shukutoku Univ.
+>miyoshi@ccb.shukutoku.ac.jp
+
+In addition to Ross Street's response, it might be useful to mention that
+sesquicategories (and other kinds of relaxed 2-categories) are also used in
+categorical homotopy theory, for instance in
+
+Marco Grandis, Homotopical Algebra in Homotopical Categories, Appl.Categ.Struct.
+2 (1994),pp.351-406.
+
+Best wishes,
+Rudger Kieboom.
+
+
+Date: Tue, 15 Oct 1996 21:08:38 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Tue, 15 Oct 1996 14:18:41 +0100
+From: Marco Grandis <grandis@dima.unige.it>
+
+Rudger Kieboom quoted my paper
+
+Marco Grandis, Homotopical Algebra in Homotopical Categories,
+Appl.Categ.Struct. 2 (1994), pp.351-406
+
+in connection with Hiroyuki Miyoshi's question on "2-categories without the
+interchange law", and 3-dimensional structures in which the interchange
+equality is replaced by a 3-cell.
+
+In my paper, some relaxed versions of 2-categories are studied, abstracting
+the 2-dimensional properties of  <Spaces, Continuous maps, Homotopies> and
+other situations where homotopy arises.
+Loosely speaking, the main notion can be described as a "2-category relaxed
+up to an equivalence relation between 2-cells (homotopies)"; this
+truncation allows one to avoid 3-cells (homotopies of homotopies) and their
+operations. The interchange law, as well as the associativity of the
+vertical composition of 2-cells, are only assumed up to this equivalence
+relation.
+Some weighted (co)limits are studied, namely *homotopy pullbacks* (comma
+squares, with a strict 1-dimensional universal property and a relaxed
+2-dimensional one).
+
+The category of chain complexes (over any additive category) is a simple,
+algebraic example of such a structure, which is also a sesquicategory in
+the sense of Ross Street (here, the vertical composition of homotopies is
+strictly associative) and actually a "sesquigroupoid", since 2-cells have
+strict inverses re vertical composition. But the interchange law only holds
+up to second order homotopy.
+
+Finally, I would like to add that, if one does want to treat higher order
+cells (homotopies), it may be useful to introduce the *cylinder*
+endofunctor and its powers (or, dually, the *path* endofunctor), to reduce
+cells of any order to ordinary maps, and their operations of any order to
+the basic, low order ones; some preprints on such a setting -which goes
+back to a classical Kan's paper- have been announced here.
+
+With best regards,
+Marco Grandis
+
+
+Date: Tue, 15 Oct 1996 21:07:46 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Tue, 15 Oct 1996 07:43:03 +0200
+From: Giulio Balestreri <gippo@inf.uniroma3.it>
+
+Good Morning,
+I'm a Phd student in Rome.
+I'd likeonly to say that in the paper
+of Grandis an h-categorical approach
+is used to homotopical algebra.
+
+I've used it to represent
+a kindof reduction between terms
+
+LNCS 1128
+
+Thank a lot. Nice to hear You.
+giulio balestreri
+
+
+Date: Wed, 16 Oct 1996 11:57:10 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Wed, 16 Oct 1996 15:00:11 +0900
+From: Hiroyuki Miyoshi <miyoshi@cl.ccb.shukutoku.ac.jp>
+
+Dear colleagues:
+
+I am glad to receive many response.
+Most people refered to sesqui-categories or Gray-categories.
+Therefore I would like to reply by this (long) message.
+These categories are interesting and important, I think.
+Indeed, I've already used them in my work on
+categorical model of rewriting logic
+(a brief description will appear in ENTCS Vol.4).
+
+And I had some interesting information on them, especially concerning
+with homotopy theory, and hope the thread on them to be continued in
+this mailing list.
+
+But what now I want is slightly different and rather simple-minded.
+The important point is that a sesquicategory (and a Gray-category)
+don't have the horizontal composition of 2-cells.
+So we cannot describe both sides of the interchange law.
+
+                               --- o ---
+
+I would mention my simple motivation. In the paper:
+
+  C. Brown and D. Gurr,
+  Timing Petri Nets Categorically,
+  in Proc. of 19th ICALP, LNCS.
+
+authors say about a 2-category with the "lax" interchange law
+  (d o c) * (b o a) =< (d * b) o (c * a)
+for the time structure of Petri nets.
+But they did not give precise definition,
+and I did not know this categorical structure.
+
+When we generalaize the categorical model of Petri nets to the
+2-categorical model of rewriting in the Meseguer-Montanari style,
+for example, we can think of horizontally composable 2-cells as to be
+executed in parallel.
+
+Here we will consider durations of rewriting.  we assign a nonnegative
+real number to each rewriting.  Roughly thinking, if we compose
+2-cells vertically, the duration of the composed 2-cell is the sum of
+two duration, and when composing 2-cells horizontally, the duration is
+the maximum of two durations.
+
+According to the time-as-monoid view, we can think a 2-graph structure
+for time:
+  - 0 and 1-cell is respectively only one.
+  - the homcategory is monoid.
+
+Unfortunately, this structure should not be a 2-category in the
+meaning of duration.  When a, b, c, d are 2-cells, and the
+sequential composition is o and  parallel one is *, then
+(d o c) * (b o a) and (d * b) o (c * a) should not be equal in general.
+But anyway some horizontal composition corresponding to parallel
+computation is needed.
+
+                               --- o ---
+
+Thus, to consider this time-structure,
+we take an equational presentation of 2-categories in e.g.:
+
+  A. J. Power adn C. Wells
+  A Formalism for the Specification of Essentially-Algebraic Structures
+  in 2-Categories, MSCS Vol.2, 1-28, 1992.
+
+which is :
+
+A0,A1,A2: Sets corresponding to 0,1,2-cells.
+
+  Ax1: A category structure consisting of A0 as objects and A1 as arrows
+  (called the horizontal category. domh, codh and idh are
+  domain, codomain and identity-cell functions. Its composition is o).
+
+  Ax2.:A category structure consisting of A0 as objects and A2 as arrows
+  (called the vertical category.  domv, codv and idv are
+  domain, codomain and identity-cell functions. Its composition is *).
+
+  Ax3: When alpha in A2,
+    domh alpha = domh (idv (domv alpha)) = domh (idv (codv alpha)), and
+    codh alpha = codh (idv (domv alpha)) = codh (idv (codv alpha))
+
+  Ax4: When A in A0,
+    idh A = idv (domv (idh A))
+   (idh A = idv (codv (idh A)) is also ture.)
+
+  Ax5: When alpha and beta in A2, if codh alpha = domh beta, then
+    idv ( domv (beta o alpha)) = idv (domv beta) o idv (domv alpha)
+    idv ( codv (beta o alpha)) = idv (codv beta) o idv (codv alpha)
+
+  Ax6 (interchange law): When alpha, beta, gamma, delta in A2,
+    (delta o gamma) * (beta o alpha) = (delta * beta) o (gamma * alpha)
+  if all compositions are defined.
+
+
+Here, if we omit Ax6, then we have a weakened structure of 2-cateogry.
+I think that this reflexive 2-graph is *the* structure which is a
+2-category without interchange law.  This structure cannot be a
+category enriched in Cat which has only exactly two symmetric monoidal
+closed structures; but it satisfies requirements of the time-structure
+for concurrent rewriting.
+
+I don't know whether this structure has been known to the category
+theory community.  And I would like to use some limit construction
+like inserters in this structure.  So I sent my previous message.
+
+Again, any comment is welcome. Thank you.
+
+Yours scincerely
+
+P.S.
+To Dr. J. Power: Shukutoku University is near to Tokyo.
+I will visit you and Kinoshita-san at ETL.  Thank you.
+
+----
+Hiroyuki Miyoshi
+The College of Cross-Cultural Communication and Business, Shukutoku Univ.
+1150-1 Fujikubo, Miyoshi-machi, Iruma-gun, Saitama 354, Japan
+Mail: miyoshi@ccb.shukutoku.ac.jp
+Tel: +81 492 74 1511
+Fax: +81 492 74 1525
+
+
+Date: Wed, 16 Oct 1996 13:24:37 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Wed, 16 Oct 1996 17:22:45 +0200
+From: Pierre Ageron <ageron@matin.math.unicaen.fr>
+
+
+The "funny" monoidal closed structure on Cat mentionned by Ross Street is known
+in France as "maigre". Besides the cartesian closed structure, it is the only
+monoidal closed structure on Cat (this was proved by Lair and Foltz in the seventies
+as an application of sketch theory). The same thing is true for the category Gmul of
+multiplicative graphs in the sense of Ehresmann (also known as elementary sketches),
+but this last category has also has a lot of (non necessarily monoidal) closed
+structures : 42, if I remember Coppey's work correctly.
+Enriched multiplicative graphs were studied extensively by Florence Cury in several
+papers, culminating in her work about "suffisante completude connexe", a very
+long paper she wrote in the last years of her life and that recently appeared in
+Diagrammes. Multiplicative graphs (resp. categories) enriched in  Gmul (resp. Cat)
+with the "maigre" closed structure are called "amphi-graphes"
+(resp. "amphi-categories") in that paper (instead of "sesqui-"...).
+For the purpose of rewriting theory in the essentially algebraic context,
+she also introduced "amphi-syntaxes" generalizing Coppey's "syntaxes".
+The connections of her work with Stell's paper are very interesting.
+
+Pierre Ageron
+
+
+Date: Mon, 21 Oct 1996 11:52:25 -0300 (ADT)
+Subject: 2- and sequi-categories for computer science
+
+Date: Mon, 21 Oct 1996 15:26:54 +0200
+From: gadducci@DI.Unipi.IT
+
+Dear colleagues,
+
+let me add my two cents on the applications of 2- and sesqui-categories to
+computer science. Maybe I got carried away, and I expressed my point of
+view on the topic with too much details: I apologize in advance for the
+lenghty mail.
+
+
+Please note also that my papers can be found at
+
+http://www.di.unipi.it/~gadducci/papers
+
+
+Best regards,
+
+Fabio
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+It is well known since the work of Rydeheard and Stell [RS87] and Power
+[P89] that cartesian 2-categories are a suitable model for term rewriting
+systems.
+
+The underlying 1-category is just the standard algebraic theory over a
+signature \Sigma, while for each basic rule r: s --> t of the rewriting
+system we introduce a cell r_a: s_a --> t_a on the associated elements of
+the algebraic theory, then freely generating the cells starting from these
+basic cells.
+The resulting 2-category is an adequate model for term rewriting, in the
+sense that there exists a (finite) derivation s --> t in the rewriting
+system iff there exists a cell with source s_a and target t_a.
+
+An an example, if we have the rules r_1: a --> b and r_2: f(x) --> g(x),
+then we have the derivations
+
+(\lambda, r_1): f(a) --> g(a)
+(1,r_2): g(a) --> g(b)
+
+where the first components indicates the position in the term at which the
+rule is applied; and the corresponding cells
+
+id_a o r_1 : a o f --> a o g
+
+r_2 o id_g : a o g --> b o g
+
+Of course, 2-categories offer a somewhat more abstract characterization
+than the set-theoretical derivation relation, since the coherence axioms
+equate derivations which can be considered different for the order in which
+they execute "independent" rewrites.
+If we consider instead a sesqui-category built from a rewriting system, the
+resulting sesqui-category is still an adequate model for the rewriting
+system relation, even if less derivations are equated, since the
+interchange axiom is dropped.
+
+In recent years there has been in Pisa some interest for these models, due
+to their link with rewriting logic [M92], and some algebraic properties of
+these equivalences have been studied.
+In [LM96] it is shown that the equivalence associated to 2-categories
+corresponds to the well-known "permutation equivalence" introduced by Le'vy
+for \lambda-calculus, while in [CGM95] we axiomatize an equivalence over
+derivations, that we called "disjoint", which corresponds to the
+equivalence induced by sesqui-categories.
+Moreover, in [CGM95] we show that, if we consider, for any term t, the
+class of cells starting from the associated element t_a, this class fails
+to form a prime algebraic domain (that is, a finitary distributive complete
+partial order). This is disappointing from a concurrent point of view,
+since this requirement is considered a fundamental one in order for a model
+to describe reasonably the behaviour of a distributed machine implementing
+the reduction process. Instead, this class is indeed a pad in the
+sesqui-categorical case.
+We argued also that neither this case was satysfying, since dropping the
+interchange axiom limits too much the parallelism of the underlying
+machine, and we suggested a 2-categorical structure with a kind of weak
+cartesianity. Some preliminary result can be found in [G96], while in
+[CGM96] we show that a kind of "weak" algebraic theories we called
+s-monoidal theories are in fact able to describe term graphs: terms are not
+considered trees anymore, but instead graph structures, able to distinguish
+between sharing of subterms. We first introduced an alternative description
+of cartesian categories (along the line of [J93]) as symmetric monoidal
+categories with two natural transformations
+
+! : 1 --> 0
+D : 1 --> 2
+
+and then we dropped their naturality, resulting e.g. in
+
+(s \times s) o D  \=  D o s       for s: 1 --> 1
+
+The s-monoidal 2-categories then are able to describe a more refined notion
+of derivation, i.e. term graph rewriting. And the resulting classes of
+cells starting from a generic element t_a always form a pad.
+
+Finally, a last argument if favour of 2-categories is also given by the use
+of more general structures, namely double-categories (both 2-categories and
+double-categories can be considered as internal categories in Cat), as
+suitable models of concurrent systems. As shown in [G96] and expecially in
+[GM96], these structures are used to decribe the (truly concurrent)
+semantics of process algebras.
+
+Let me end this little detour simply stressing that, in my opinion,
+2-categories are more suited than sesqui-categories as a model for term
+rewriting and that, in general terms, their application (and the
+application of internal categories as a whole) to computer science is a
+field that should be further explored.
+
+
+
+
+
+[CGM95] Corradini - Gadducci - Montanari, Relating Two Categorical Models
+of Rewriting, RTA'95, LNCS 914
+[CGM96] Corradini - Gadducci - Montanari, An Algebraic Description of Term
+Graphs, draft
+[G96] Gadducci, On the Algebraic Approach to Concurrent Term rewriting,
+Ph.D. thesis, report TD 2-96, University of Pisa
+[GM96] Gadducci - Montanari, The Tile Model, report TR 96-27, University of
+Pisa, submitted for publication
+[J93] Jacobs, Semantics of Weakening and Contraction, Annals of Pure and
+Applied Logic, 69
+[M92] Meseguer, Conditional Rewriting Logic as a Unified Model of
+Concurrency, Journal of Theoretical Computer Science 96
+[P89] Power, An Abstract Formulation for Rewrite Systems, CTCS'89, LNCS 389
+[RS87] Rydeheard - Stell, Foundations of Equational Deduction, CTCS'87, LNCS 283
+
++ "No man is poor who can do what he likes to do once in a while" Carl Barks +
+
+Fabio Gadducci               gadducci@di.unipi.it  +--------------------------+
+Dipartimento di Informatica  Home  : +39 50 541725 | "The weight of the world |
+Corso Italia, 40             Office: +39 50 887268 |         is love."        |
+I - 56125 Pisa - ITALY       Fax   : +39 50 887226 |      Allen Ginsberg      |
+http:\\www.di.unipi.it\~gadducci\gadducci.html     +--------------------------+
+
++ "I keep my feeling buried inside a sea urchin" Ezra Pound +
+
+
+Date: Mon, 21 Oct 1996 14:16:47 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Mon, 21 Oct 1996 17:30:24 +0100
+From: John G. Stell <john@cs.keele.ac.uk>
+
+On the question of what to call `2-categories without interchange':
+
+Shouldn't we agree to call `2-categories without interchange'
+`one and a half categories' and use `sesqui-categories' for
+the analogously weakened notion of bicategory?
+I think it was John Power who first suggested this to me.
+
+John Stell
+
+
+Date: Tue, 22 Oct 1996 20:40:23 -0300 (ADT)
+Subject: Re: 2-categories without the interchange law
+
+Date: Mon, 21 Oct 96 20:40:00 -0700
+From: Art Stone <stone@math.ubc.ca>
+
+Locally, here, we've been using "one-and-a-half-categories" for 2-categories
+that in their 2-cell structure are pre-ordered sets -- for the last decade
+and more.  (But this has never been formal, or in print.)
+
+Art Stone.
+
+

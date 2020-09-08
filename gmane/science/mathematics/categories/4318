@@ -1,0 +1,161 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt08@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: replacement and the gluing construction
+Date: Sun, 16 Mar 2008 15:46:42 +0000
+Lines: 127
+Approved: news@gmane.org
+Message-ID: <E1Jb3ZG-0005p9-R6@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019869 12739 80.91.229.2 (29 Apr 2009 15:44:29 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:29 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Mar 16 21:56:30 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 16 Mar 2008 21:56:30 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Jb3ZG-0005p9-R6
+	for categories-list@mta.ca; Sun, 16 Mar 2008 21:51:10 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 82
+Status: O
+Content-Length: 6764
+Original-Lines: 126
+Xref: news.gmane.org gmane.science.mathematics.categories:4318
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4318>
+
+The words "internal", "external" and "definable" has been used in this
+discussion of the axiom scheme of replacement, but I believe that we
+have to be very careful in using them.
+
+So far as I can gather, Thomas Streicher is still discussing the
+"sets and classes" view of replacement.  At any rate, I cannot see
+what he might mean categorically by saying that
+ > an external family of objects is a function I -> Ob(EE) where I is a
+set
+unless his Ob(EE) is a "class" in either the sense of algebraic set
+theory (ie an object in another category besides EE) or some similar
+approach.
+
+AST is an intellectually valid point of view on which much good
+category theory has been done in the past few years.  However,
+Mike Shulman and I would both like to know how one might formulate
+replacement WITHOUT classes.   If I have misunderstood you, Thomas,
+then I apologise, but this is an important and difficult topic, so
+more and clearer explanation is always valuable.  If I, who have
+thought about this myself, do not follow you, then nor do many of
+the other readers of this forum.
+
+Before explaining why I think the word "definable" is also dangerous,
+let me repeat something about the difference between set theory and
+category theory.  In a word, they say that they are describing
+mathematical objects up to equality, whilst we say that this can only
+be done up to isomorphism.  However, in the context of replacement in
+particular, this means that we may end up talking completely at cross
+purposes.  As I said before, they claim that replacement is necessary
+to construct the ordinal omega+omega, whilst this order structure can
+be constructed up to isomorphism very easily without it.
+
+But consider the example of the N-indexed sequence of iterated powersets
+of N.  The structure that Replacement yields is, up to isomorphism,
+just N itself, but the force of the axiom-scheme in set theory is that
+the elements of this set are the iterated powersets.
+
+I am not inclined to believe that Cantor understood the strength of
+replacement when he stated in 1899 that "two equivalent [ie bijective]
+multiplicities are either both sets or both equalivalent",  because
+his mathematical beliefs were an extreme form of Platonism, and the
+appreciation of the strength of logic theories simply did not exist
+at the time.   Also, Fraenkel made a mistake in his first attempt
+to formulate Replacement, saying something that was already derivable
+from Zermelo's set theory.
+
+I believe that, in order to grasp the meaning of Replacement and then
+formulate it in categorical language, we first have to have a clear
+understanding of the ways in which we make "definitions" and then
+implement them.  The distinction between planning and execution is
+very clear if you're building a house, but often very difficult to
+make in mathematical research.
+
+Instead of logic, let's consider algebra.  You can define the notion
+of group using (1) just the symbols for identity and binary
+multiplication.  Or, you can have (2) multiplications symbols of all
+arities, but still with a single result; this is called the "clone".
+Next, you can form (3) families of products; this is the "Lawvere
+theory".  There are also (4) the category of all groups and (5) the
+classifying topos.  Of these, (1) is finite, (2,3) require the natural
+numbers or an axiom of infinity, and (4,5) require a set theory.
+In some sense, they all capture the same algebraic notion, but
+foundationally, something more is needed to prove their equivalence.
+
+Thomas Streicher uses indexed/fibred category theory to link internal
+and external notions.  I don't see, however, how he manages to give
+the SPECIFICATION that a display map X-->N is the sequence of iterates
+of the powerset on N.  The formulation that I gave at the end of my
+previous posting and in Remark 9.6.16 in my book does do this.
+
+Earlier in this thread, Paul Levy said,
+
+ > I'd also like to suggest that "foundations" is being used in
+ > two very different senses.  In FoM, it's about quantifying the
+ > philosophical risks involved in particular formal systems and
+ > proofs, i.e. issues such as relative consistency, omega-consistency,
+ > etc.  For this purpose the primacy of membership vs composition is
+ > quite immaterial. One could, I suppose, make a formal theory based
+ > on composition equal in strength (in whatever sense) to ZF.
+
+There are two important ideas in category theory that have something
+to say about consistency:
+(1) Andre' Joyal's categorical formulation of Godel's INCOMPLETENESS
+     theorem;  this compares
+     - PROVABILITY, in the form of the internal term or free model of
+       the system (an arithmetic universe, but it could equally be an
+       elementary topos) with
+     - TRUTH in the world within which this is constructed; and
+(2) the Artin gluing / Freyd cover / scone (Sierpinski cone) / logical
+     relations construction,  which can be used to prove CONSISTENCY
+     of various theories, once again by comparing the term model with
+     the ambient universe.
+
+Whilst writing a book is career suicide, it does have the intellectual
+value of forcing one to reconcile apparently conflicting results like
+these.  (See sections 7.7 and 9.6 of my book.)
+
+The gluing construction works because it uses the axiom-scheme of
+replacement.  Thomas Streicher and Thorsten Altenkirch, who have
+contributed to the present thread, have written papers about this
+construction and its applications.  Did they or anybody else draw
+attention to the need for Replacement in their work on this
+construction?
+
+Categorically, the gluing construction is a comma category that, in
+the applications to consistency, combines the "semantic" category (eg
+Set, with Replacement) with the "syntactic" one (the free one,
+constructed from the types, terms and proofs of the theory under
+consideration).  Roughly speaking, the comma category inherits any
+structure that both of the original categories had, and the projection
+to the syntactic category preserves it.  Since the syntactic category
+is the free one, it therefoe has a unique (up to unique iso)
+structure-preserving functor to the comma category. Combined with the
+projection to the semantic category, this yields an internal model in
+which the type constructors (powerset, for example) of the theory are
+interpreted as the actual semantic powersets or whatever.
+
+Steve Awodey, Bill Lawvere, Colin McLarty and Thomas Streicher have
+presented various views on Replacement.  In order that the rest of us
+might get a better understanding of what each of them means, and how
+their points of view are related, I invite them each to give an
+explanation of this foundational aspect of the gluing construction, as
+they would formulate it according to their respective points of view.
+
+
+
+

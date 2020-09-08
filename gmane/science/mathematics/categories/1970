@@ -1,0 +1,105 @@
+Path: news.gmane.org!not-for-mail
+From: Barry Jay <cbj@it.uts.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Structure Preserving: Definition?
+Date: Mon, 21 May 2001 12:21:02 +1000
+Lines: 65
+Approved: news@gmane.org
+Message-ID: <20010521122102D.cbj@socs.uts.edu.au>
+References: <006501c0df13$fe6fb400$87657bc8@athlon>
+Reply-To: cbj@it.uts.edu.au
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: Text/Plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018239 1455 80.91.229.2 (29 Apr 2009 15:17:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:17:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon May 21 05:21:39 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f4L7dZv29345
+	for categories-list; Mon, 21 May 2001 04:39:35 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: Your message of "Thu, 17 May 2001 15:57:33 -0500"
+	<006501c0df13$fe6fb400$87657bc8@athlon>
+X-Mailer: Mew version 1.93b38 on XEmacs 21.1 (Acadia)
+X-Dispatcher: imput version 980905(IM100)
+Original-Content-Transfer-Encoding: 7bit
+Original-Content-Transfer-Encoding: 7bit
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 38
+Status: O
+Content-Length: 2215
+Original-Lines: 63
+Xref: news.gmane.org gmane.science.mathematics.categories:1970
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1970>
+
+
+Dear Derek,
+
+since "Matrices, Monads and the Fast Fourier Transform" in
+the early 90's I've written a couple of other papers on
+semantics of datatypes. "A semantics for shape" considers
+more general datatypes than just vectors. "Data categories"
+is an attempt to embrace co-datatypes as well as
+datatypes. These, and other papers about the implications
+for computing, including the array programming language FISh
+are available from my web-site
+
+http://www-staff.it.uts.edu.au/~cbj
+
+May I add that we are stabilising a prototype of FISh2 which
+is altogether more expressive and simpler than FISh. We hope
+to release it shortly. 
+
+Now let me address your particular question.
+
+you are concerned that the morphism #: VA -> N mapping a
+vector of A's to its length does not appear to preserve any
+structure, and so perhaps should not be a morphism at all.
+There are two aspects to the answer. First, the existence of
+this morphism is part of the definition of the object of
+vectors. Given an arrow A -->I we define the corresponding
+vectors by the pullback
+
+VA ---> LA
+|       | 
+|       | 
+NxI --> LI
+
+where L is the list functor, and then # is defined by
+composing VA -->NxI with the projection from NxI to N. If
+the ambient category is Set then such pullbacks exist and
+the function # is a well-defined function. The second point
+is that # can be thought of as the upper part of an arrow
+between arrows which maps a vector of A's to the
+corresponding vector of 1's
+
+VA ---> V1  isom   N
+|       |          |
+|       |          |
+NxI --> Nx1 isom   N
+
+
+I'd be happy to address any other questions you have
+privately.
+
+Yours,
+Barry Jay
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay,      Phone: (61 2) 9514 1814		|
+| Associate Dean                        Fax:   (61 2) 9514 1807	        |
+|   (Research, Policy and Planning)                                     | 
+| University of Technology, Sydney,     e-mail: cbj@it.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,                                          |
+| Australia.                     http://www-staff.it.uts.edu.au/~cbj	|
+*************************************************************************
+
+
+

@@ -1,0 +1,139 @@
+Path: news.gmane.org!not-for-mail
+From: "Stephen Lack" <S.Lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: classifying functor and colimits
+Date: Tue, 29 Aug 2006 07:45:46 +1000
+Lines: 108
+Approved: news@gmane.org
+Message-ID: <E1GHrqf-0001ov-64@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241019286 8600 80.91.229.2 (29 Apr 2009 15:34:46 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:34:46 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Aug 28 21:56:35 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 28 Aug 2006 21:56:35 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GHrqf-0001ov-64
+	for categories-list@mta.ca; Mon, 28 Aug 2006 21:53:01 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 40
+Status: O
+Content-Length: 3323
+Original-Lines: 107
+Xref: news.gmane.org gmane.science.mathematics.categories:3407
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3407>
+
+Dear David,
+
+The classifying space functor is the composite of the nerve
+functor N:Cat-->SSet and the geometric realization functor
+SSet-->Top, and it makes sense to consider them separately.
+
+The nerve functor preserves all limits (since it is a right
+adjoint) but not all colimits. It does preserve=20
+sequential colimits, since it is given by homming out of
+the finite ordinals, which are finitely presentable.=20
+
+More explicitly, the nerve NC of a category C is the simplicial
+set whose set (NC)_n of n-simplices is the set of all functors
+from [n] to C, where [n] is the category {0<1<...<n}. Now each
+of these [n] is finitely presentable, meaning that homming out
+of it preserves filtered colimits, so N itself preserves filtered
+colimits.
+
+Similarly, N does preserve coproducts, since the [n] are all connected.
+(To preserve coproducts and filtered colimits is to preserve what=20
+Mac Lane calls pseudofiltered colimits.)
+
+The geometric realization functor is a left adjoint (it is the left
+Kan extension along Yoneda of the standard map Delta-->Top) and=20
+so preserves all colimits, but relatively few limits. It does,
+as Tom Leinster observes, preserve finite products.
+
+Putting these facts together, one sees that the classifying=20
+space functor preserves coproducts, filtered colimits, and finite =
+products.
+
+Steve Lack.
+
+-----Original Message-----
+From: cat-dist@mta.ca on behalf of Tom Leinster
+Sent: Mon 8/28/2006 10:45 PM
+To: categories@mta.ca
+Subject: categories: Re: classifying functor and colimits
+=20
+Dear David,
+
+> I have been plagued by the following question: does the classifying
+> space functor commute with (co)limits?
+
+The classifying space functor (from Cat to Top) does preserve finite
+products.  It doesn't preserve all infinite products, e.g. let A be the
+discrete category with two objects and consider the product of
+infinitely many copies of A.  Nor does it preserve all colimits, as the
+following example shows.
+
+Let 1 be the terminal category, 2 the category consisting of a single
+arrow, and 3 the category consisting of a commutative triangle:
+
+1 =3D .
+2 =3D . --> .
+3 =3D . --> . --> .
+
+Take the two different functors from 1 to 2.  The pushout of the diagram
+in Cat formed by these functors is 3, and B3 is Delta^2, the standard
+topological 2-simplex.  However, B1 is the one-point space and B2 is the
+unit interval, so the pushout of B1 and B2 is an interval of length 2,
+which is not homeomorphic to Delta^2.
+
+This doesn't answer your question about sequential colimits, but maybe
+it gives some helpful context.
+
+Best wishes,
+Tom
+
+>
+> In particular, I have a system of compact topological groups G_i
+> indexed by the natural numbers, and a whole lot of inclusions.
+>
+> Is B colim G_i homotopic to colim BG_i ?
+>
+> I have a hint that this should be so in my particular situation (in a
+> letter of Serre to Grothendieck), but I'd like to know how the
+> general case goes.
+>
+> Cheers,
+>
+> =
+------------------------------------------------------------------------
+> --
+> David Roberts
+> School of Mathematical Sciences
+> University of Adelaide SA 5005
+> =
+------------------------------------------------------------------------
+> --
+> droberts@maths.adelaide.edu.au
+> www.maths.adelaide.edu.au/~droberts
+> www.trf.org.au
+>
+>
+>
+>
+>
+>
+--=20
+Tom Leinster <tl@maths.gla.ac.uk>
+
+
+
+
+
+
+

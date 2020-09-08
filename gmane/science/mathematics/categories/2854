@@ -1,0 +1,167 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: abelian stuff
+Date: Sun, 30 Oct 2005 08:59:26 -0500 (EST)
+Lines: 138
+Approved: news@gmane.org
+Message-ID: <200510301359.j9UDxQFc018751@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018944 6094 80.91.229.2 (29 Apr 2009 15:29:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:29:04 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sun Oct 30 12:02:53 2005 -0400
+X-Keywords: 
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 30 Oct 2005 12:02:53 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EWFXg-0005WY-So
+	for categories-list@mta.ca; Sun, 30 Oct 2005 11:56:21 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 4531
+Original-Lines: 137
+Xref: news.gmane.org gmane.science.mathematics.categories:2854
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2854>
+
+At the recent Ottawa conference I repeated, in passing, something I've
+been saying for over 30 years: given a subcategory of an abelian
+category the finite bi-closure is, of course, obtainable by
+alternately adjoining limits and colimits countably often; remarkably
+enough, one need only do two cycles (assuming direct sums that's
+kernels, cokernels, kernels, cokernels). The proof is a consequence of
+of the construction of free abelian categories. Susan asked me later
+if I had ever actually worked out a direct proof. Nope.
+
+But it became apparent to me, thinking about what I had had to say
+about free abelian categories that I didn't know 30 years ago, that it
+shouldn't take two cycles, just one:
+
+
+           In the abelian setting, adjoining finite limits
+               commutes with adjoining finite colimits.
+
+
+(No -- for those old enough to remember -- this is not still 1969 and
+Ottawa is not Seattle.)
+
+There are some finicky points one must deal with when talking about
+images of functors (in the case at hand, functors such as those that
+assign kernels to maps), so let me just cut here to a critical little
+lemma that says, in effect, "a kernel of a map between cokernels is a
+cokernel of a map between kernels:"
+
+LEMMA: In an abelian category an exact diagram of the form (all
+       vertical arrows are downwards):
+
+         c
+      B --> A --> F --> O
+
+    b |   a |     |
+
+      B'--> A'--> F'--> O
+         c'
+
+     may be enlarged to an exact diagram of the form:
+
+
+            O --> K'--> A + B'+ B --> A + A'
+
+                  |         |           |
+
+            O --> K ----> A + B'------> A'
+
+                  |
+         c
+      B --> A --> F --> O
+
+    b |   a |     |
+
+      B'--> A'--> F'--> O
+         c'
+
+The exactness of  K'--> K --> F --> F' says, precisely, that the
+kernel of  F --> F' is the cokernel of  K'--> K.
+
+The middle vertical  K --> F  is  K --> A + B'--> A  --> F  where
+A + B'--> A  is the projection map. (For present purposes a projection
+map is one given by a matrix in which each entry is  1  if such fits
+else  0.)
+
+The two top-right vertical maps are also projection maps.
+
+The two top-right horizontal maps are given (as luck would have it) by
+matrices in which each entry is  1  or a single letter (a,b,c,c') if
+such fits, else  0.
+
+It's not hard to verify this lemma in the category of abelian groups,
+which -- given the exact representation theorem -- suffices for all
+abelian categories. As if often the case, the proof of the dual of the
+lemma harder in the concrete case:
+
+CO-LEMMA: In an abelian category an exact diagram of the form (all
+          vertical arrows are downwards):
+
+                                         c'
+                          O --> K'--> A'--> B'
+
+                                |     | a   | b
+
+                          O --> K --> A --> B
+                                         c
+
+          may be enlarged to an exact diagram of the form:
+
+                                         c'
+                          O --> K'--> A'--> B'
+
+                                |     | a   | b
+
+                          O --> K --> A --> B
+                                         c
+                                |
+
+          A'------> A + B'----> F --> O
+
+          |           |         |
+
+        A'+ A --> A + B'+ B --> F'--> O
+
+
+For the record, note that "a kernel of a map between kernels is a
+kernel," that is, the same initial exact diagram may be enlarged to a
+diagram:with exact rows and exact left column:
+
+                            O
+
+                            |
+
+                     O ---> K''--> A'--> A + B;
+
+                            |      |       |
+                                       c'
+                     O ---> K'---> A'----> B'
+
+                            |      | a     | b
+
+                     O ---> K ---> A ----> B
+                                       c
+
+The two upper-right verticals are projection maps and the upper right
+horizontal map is given by a matrix in which each entry is a single
+letter (a,c').
+
+Also for the record: the finite bi-completion of an additive
+category is not abelian. Start with the additive closure of a single
+map  f:A --> B. In the finite bi-completion the canonical map from
+Cok(Ker(f))  to  Ker(Cok(f))  will not be an isomorphism. In the
+finite _abelian_ finite bi-completion, of course, it must be. (It is
+precisely this isomorphism, invoked at the end of the Lemma in the
+case  f  =  K --> F, that delivers the commutativity of finite left
+and right completions.)
+
+
+

@@ -1,0 +1,164 @@
+Path: news.gmane.org!not-for-mail
+From: Luca Paolini <paolini@di.unito.it>
+Newsgroups: gmane.comp.lang.lambda-prolog,gmane.comp.lang.agda,gmane.comp.lang.caml.inria,gmane.science.mathematics.categories,gmane.comp.science.concurrency,gmane.science.mathematics.discrete,gmane.comp.mathematics.hol
+Subject: Intersection Types and Related Systems (ITRS 2012) -- 2nd
+	CFP
+Date: Fri, 09 Mar 2012 09:00:54 +0100
+Lines: 64
+Approved: news@gmane.org
+Message-ID: <4F59B8B6.70300@di.unito.it>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"; Format="flowed"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1331281587 26334 80.91.229.3 (9 Mar 2012 08:26:27 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 9 Mar 2012 08:26:27 +0000 (UTC)
+To: agda@lists.chalmers.se, agents@cs.umbc.edu, aiia@dis.uniroma1.it,
+	aila@unicam.it, apng-all@apng.org,
+	appsem@tcs.informatik.uni-muenchen.de, asl@vassar.edu, cade@itu.dk,
+	caml-list@inria.fr, categories@mta.ca, ccl@ps.uni-sb.de,
+	clean-list@science.ru.nl, clp@comp.nus.edu.sg, comlab@comlab.ox.ac.uk, 
+	complog@cs.nmsu.edu, comprox@doc.ic.ac.uk,
+	compulognet-parimp@dia.fi.upm.es, concurrency@cwi.nl,
+	cphc-conf@jiscmail.ac.uk, csd@lists.ut.ee,
+	curry-owner@lists.RWTH-Aachen.DE, dmanet@zpr.uni-koeln.de,
+	elsnet-list@let.uu.nl, excs@lists.ioc.ee, fg214@informatik.uni-kiel.de, 
+	finite-model-theory@lists.RWTH-Aachen.DE, fmics@inrialpes.fr,
+	gdr-im@gdr-im.fr, haskell-owner@haskell.org,
+	hol-info@lists.sourceforge.net, kgs-list@logic.at,
+	ki-inf@uni-koblenz.de, kr@kr.org, lfcs-interest@dcs.ed.ac.uk,
+	lfcs-interest@inf.ed.ac.uk, lics@informatik.hu-berlin.de,
+	linear@cs.stanford.edu, loco@csc.
+Original-X-From: lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu Fri Mar 09 09:26:17 2012
+Return-path: <lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu>
+Envelope-to: gcll-lprolog@gmane.org
+Original-Received: from mail.cs.umn.edu ([128.101.32.201])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu>)
+	id 1S5v9P-00039u-3x
+	for gcll-lprolog@gmane.org; Fri, 09 Mar 2012 09:26:11 +0100
+Original-Received: from claudius.cs.umn.edu (localhost [127.0.0.1])
+	by mail.cs.umn.edu (Postfix) with ESMTP id C9734CFE2C
+	for <gcll-lprolog@gmane.org>; Fri,  9 Mar 2012 02:25:37 -0600 (CST)
+X-Original-To: lprolog@cs.umn.edu
+Delivered-To: lprolog@cs.umn.edu
+Original-Received: from pianeta.di.unito.it (pianeta.di.unito.it [130.192.156.1])
+	by mail.cs.umn.edu (Postfix) with ESMTPS id BF842CFAE6
+	for <lprolog@cs.umn.edu>; Fri,  9 Mar 2012 02:02:14 -0600 (CST)
+X-MailScanner-From: paolini@di.unito.it
+X-SpamCheck: not spam, SpamAssassin (not cached, score=-103.062, required 3,
+	autolearn=not spam, AUTHENTICATEDUSER -100.00, AWL 0.44,
+	BAYES_00 -2.60, RCVD_IN_DNSWL_LOW -1.00, RDNS_NONE 0.10,
+	SPF_PASS -0.00)
+X-AntiVirus: Email Clean
+X-dipinfo-MailScanner-ID: q2980sSm029684
+X-dipinfo-MailScanner-Information: Please contact Department of Computer
+	Science technical staff for more information
+Original-Received: from pianeta.di.unito.it ([130.192.156.1])
+	by pianeta.di.unito.it (INFO-DIP) with ESMTP id q2980sSm029684
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO
+	AuthenticatedUser=paolini ); Fri, 9 Mar 2012 09:00:54 +0100 (CET)
+X-DKIM: OpenDKIM Filter v2.4.1 pianeta.di.unito.it q2980sSm029684
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=di.unito.it;
+	s=dipinfo2011; t=1331280065;
+	bh=tyMfTnGcNjKGuJTU0r7GjmZKC/Cz0qhqy+Zdy6VlSZM=;
+	h=Message-ID:Date:From:MIME-Version:To:Subject:Content-Type:
+	Content-Transfer-Encoding;
+	b=i2yIkExJ8pscrdJJacyyo281BB+5lEVg5FH7U0MK0UN4eBnjArQzdQq2X3oIrktlX
+	xOV5vacBiEYfQf/5uytn5/bao2r4eQPAFUbgBuuBJpfXIEVHhn40tJLNh2DvOtAixL
+	xq4hubaCeXCqRx1N3dbYw8hIv6gWF69nQ2+lTNWU=
+User-Agent: Mozilla/5.0 (X11; Linux x86_64;
+	rv:10.0.2) Gecko/20120216 Thunderbird/10.0.2
+X-Mailman-Approved-At: Fri, 09 Mar 2012 02:25:24 -0600
+X-BeenThere: lprolog@cs.umn.edu
+X-Mailman-Version: 2.1.14
+Precedence: list
+List-Id: "List for discussions about Lambda Prolog, metalanguages,
+	logical frameworks and computational logic aspects"
+	<lprolog.cs.umn.edu>
+List-Unsubscribe: <https://wwws.cs.umn.edu/mm-cs/options/lprolog>,
+	<mailto:lprolog-request@cs.umn.edu?subject=unsubscribe>
+List-Archive: <https://wwws.cs.umn.edu/mm-cs/private/lprolog>
+List-Post: <mailto:lprolog@cs.umn.edu>
+List-Help: <mailto:lprolog-request@cs.umn.edu?subject=help>
+List-Subscribe: <https://wwws.cs.umn.edu/mm-cs/listinfo/lprolog>,
+	<mailto:lprolog-request@cs.umn.edu?subject=subscribe>
+Errors-To: lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu
+Original-Sender: lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu
+X-UMN-CS-MailScanner-Information: Please contact operator@cs.umn.edu for more information
+X-UMN-CS-MailScanner-ID: C9734CFE2C.AF1D6
+X-UMN-CS-MailScanner: Found to be clean
+X-UMN-CS-MailScanner-SpamCheck: not spam, SpamAssassin (cached, score=-4.589,
+	required 6, autolearn=not spam, BAYES_00 -4.00, DKIM_SIGNED 0.10,
+	DOS_RCVD_IP_TWICE_B 0.00, RCVD_IN_DNSWL_LOW -0.70,
+	T_DKIM_INVALID 0.01)
+X-UMN-CS-MailScanner-From: lprolog-bounces+gcll-lprolog=gmane.org@cs.umn.edu
+X-Spam-Status: No
+Xref: news.gmane.org gmane.comp.lang.lambda-prolog:2765 gmane.comp.lang.agda:3686 gmane.comp.lang.caml.inria:54333 gmane.science.mathematics.categories:7230 gmane.comp.science.concurrency:2818 gmane.science.mathematics.discrete:6450 gmane.comp.mathematics.hol:1460
+Archived-At: <http://permalink.gmane.org/gmane.comp.lang.lambda-prolog/2765>
+
+**********************************************************************
+                   Second CALL FOR PAPER
+   Sixth Workshop on Intersection Types and Related Systems (ITRS 2012)
+            June 29th, Dubrovnik (Croatia).
+
+             http://itrs2012.di.unito.it/
+
+         Workshop held in conjunction with LICS 2012
+
+**********************************************************************
+
+         Abstract submission: April 13th,  2012
+	Author notification: April 30th
+	Final version due: June 10th
+	--------------------------------------
+
+ITRS 2010 workshop aims to bring together researchers working on both =
+
+the theory and practical applications of systems based on intersection =
+
+types and related approaches.
+( More details at http://itrs2012.di.unito.it/ ).
+
+SUBMISSION
+
+The submission is in two stages.
+(1) Before the workshop, authors are invited to submit an extended =
+
+abstract (max. 10 pages) in PDF format.
+(2) After the workshop, authors of accepted papers will be invited to =
+
+submit full versions, for inclusion in EPTCS.
+
+
+TOPICS
+
+Possible topics for submitted papers include, but are not limited to:
+- Formal properties of systems with intersection types.
+- Results for related systems, such as union types, refinement types, or =
+
+singleton types.
+- Applications to lambda calculus and similar systems.
+- Applications to pi-calculus and similar systems.
+- Applications for programming languages.
+- Applications for other areas, such as database query languages and =
+
+program extraction from proofs.
+- Related approaches using behavioural/intesional types to characterize =
+
+computational properties.
+
+PROGRAM COMMITTEE
+
+     St=E9phane Lengrand (=C9cole Polytechnique)
+     Koji Nakazawa (Kyoto Univ.)
+     Luke Ong (Oxford Univ.)
+     Luca Paolini (Univ. Torino), chair
+     Frank Pfenning (Carniege Mellon Univ.)
+     Betti Venneri (Univ. di Firenze)
+
+INFORMATION
+
+For further information, please contact Luca Paolini
+Email: paolini AT di DOT unito DOT it

@@ -1,0 +1,85 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Paul Blain Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: An elementary question
+Date: Mon, 14 Aug 2017 09:00:36 +0100
+Lines: 45
+Approved: news@gmane.org
+Message-ID: <E1dhK2m-00059i-HU@mlist.mta.ca>
+References: <E1dh2U9-0000c9-3y@mlist.mta.ca>
+Reply-To: Paul Blain Levy <P.B.Levy@cs.bham.ac.uk>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Trace: blaine.gmane.org 1502735132 1611 195.159.176.226 (14 Aug 2017 18:25:32 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Mon, 14 Aug 2017 18:25:32 +0000 (UTC)
+To: Dana Scott <scott@cs.cmu.edu>, categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Mon Aug 14 20:25:18 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dhK3A-00086Z-Bv
+	for gsmc-categories@m.gmane.org; Mon, 14 Aug 2017 20:25:16 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43804)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dhK37-00056L-1t; Mon, 14 Aug 2017 15:25:13 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dhK2m-00059i-HU
+	for categories-list@mlist.mta.ca; Mon, 14 Aug 2017 15:24:52 -0300
+In-Reply-To: <E1dh2U9-0000c9-3y@mlist.mta.ca>
+Content-Language: en-US
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9293
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9293>
+
+Dear Dana,
+
+Let (P_i | i in I) be a family of posets and < a well-ordering of I.
+
+The <-lexicographic sum of (P_i | i in I) is given by Sum_{i in I} P_i
+with (i,x) <= (j,y) if i=j and x<=y or i<j.
+
+It may be viewed as a representing object as follows.
+
+A cocone (f_i | i in I) in Poset from (P_i | i in I) to a poset V is
+"<-lexicographic" when
+
+for all i < j and  x in P_i and y in P_j we have f_i(x) <= f_i(y).    (*)
+
+So we obtain a right Poset-module, i.e. functor Poset --> Set
+
+sending V to the set of <-lexicographic cocones from (P_i | i in I) to V.
+
+The <-lexicographic sum is a representing object for this functor.
+
+Therefore, for fixed (I,<), it extends uniquely to a functor Poset^I -->
+Poset making the representation natural.
+
+However, property (*) is not "categorical" in the sense of making sense
+in an arbitrary category.  So this probably doesn't answer your question.
+
+Paul
+
+
+
+
+On 13/08/17 20:55, Dana Scott wrote:
+> The category of posets (= partially ordered sets) and monotone
+> maps is often used as an easy example -- different from the category
+> of sets -- that has products, coproducts, and is cartesian closed
+> but not a topos.
+>
+> Let P and Q be two posets.  Define (P (<) Q) as the modified
+> coproduct where all the elements of P are made less than all the
+> elements of Q.  QUESTION. Does (P (<) Q) have a nice categorical
+> definition as a functor in the category of posets?
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

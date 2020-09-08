@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: John Kennison <JKennison@clarku.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on choosing subobjects consistently
+Date: Sat, 28 Aug 2010 10:35:18 -0400
+Lines: 69
+Approved: news@gmane.org
+Message-ID: <E1OpWch-0006dV-U3@mlist.mta.ca>
+References: <201008281224.o7SCO9rh022252@minus.seas.upenn.edu>
+Reply-To: John Kennison <JKennison@clarku.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1283045124 13878 80.91.229.12 (29 Aug 2010 01:25:24 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 29 Aug 2010 01:25:24 +0000 (UTC)
+To: Peter Freyd <pjf@seas.upenn.edu>, "categories@mta.ca" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sun Aug 29 03:25:23 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWe9-0008JY-5N
+	for gsmc-categories@m.gmane.org; Sun, 29 Aug 2010 03:25:21 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:39546)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWcl-0006za-DY; Sat, 28 Aug 2010 22:23:55 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWch-0006dV-U3
+	for categories-list@mlist.mta.ca; Sat, 28 Aug 2010 22:23:52 -0300
+Thread-Topic: categories: Re: Question on choosing subobjects consistently
+Thread-Index: ActGsupsdpcswzEgRxOyp+8Iz1HUEQAC1KQF
+In-Reply-To: <201008281224.o7SCO9rh022252@minus.seas.upenn.edu>
+Accept-Language: en-US
+Content-Language: en-US
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6068
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6068>
+
+Peter just said it better, but to clarify what I said: First, it is possibl=
+e that Grothendieck intended the following: as usual, say that two monos ar=
+e equivalent if they have the same codomain with an isomorphism between the=
+ir domains which commutes with the two monos.  Choose exactly one mono from=
+  each equivalence class and call it a canonical mono. Then define a subobje=
+ct as a canonical mono and a subobject of a subobject as the canonical mono=
+  equivalent to the composition.
+
+Secondly, it is not always possible to define a class of canonical monos (a=
+s above) which is closed under composition. Consider the category with 3 ob=
+jects, A,B,C, in which every hom set. Hom(X,Y) is a subset of the group Z_2=
+  with two elements. Let Hom(A,A) =3DHom(A,B)=3DHom(A,C)=3DHom(B,C)=3DZ_2. L=
+et Hom(B,A) and Hom(C,B) be empty and let Hom(B,B) and Hom(C,C) each consis=
+t of just the identity of Z_2. All compositions will be given by the group =
+operation. Then there are two non-equivalent monos from B to C, so they mus=
+t both be canonical. The two monos from A to B are equivalent, so only one =
+of them can be canonical. But the compositions of this canonical mono with =
+each of the two canonical monos from B to C give us two canonical monos fro=
+m A to C but they are equivalent.=20
+
+________________________________________
+From: Peter Freyd [pjf@seas.upenn.edu]
+Sent: Saturday, August 28, 2010 8:24 AM
+To: categories@mta.ca
+Subject: categories: Re: Question on choosing subobjects consistently
+
+Mike asks how to pick what I'll call "inclusion maps" that is a choice
+of monics so that each subobject is named by a unique inclusion map
+and such that the inclusion maps are closed under composition. I don't
+know what Grothendieck had in mind, but it's an easy application of
+the stuff about tau-categories in Cats & Alligators copied from my
+1975 "pamphlet." The setting there is cats with finite limits but of
+course you could always work in the full subcategory of representable
+functors in the category of set-valued contraviariant functors.
+
+A tau-structure gives you not only (transitive) canonical subobjects
+but associative canonical products and all sorts of goodies. But alas
+it delivers an equivalent category, not necessarily the category you
+started with. I don't know how to do it in an arbitrary category.
+
+But neither does anyone else, not even Grothendieck:
+
+Consider the subcategory of the category of sets with three objects,
+A,B,C  each of which is a two-element set. There well be a total of
+ten maps, three of which, of course, are identity maps. The other
+seven maps will be one-to-one and onto but only one of them an
+isomorphism (as defined, of course, in the subcategory). The one
+non-trivial isomorphism will be on  A  (necessarily, the twist map).
+The hom-sets  (B,B)  and  (C,C)  each have a single element
+(necessarily their identity maps).  The hom-sets  (B,A), (C,A,)  and
+(C,B)  are empty. The hom-sets  (A,A), (A,B), (A,C)  and  (B,C)  each
+have two maps, to wit, the two possible one-to-one onto maps. Note
+that all maps are monic.  A has no proper subobjects. B  has only one
+(the two monics from  A  to  B  name the same subject of  B). C  has
+three proper subobjects one of which is named by each of the two maps
+from  A  to  C. Each of the other two subobjects of C are named by one
+of the two maps from  B  to  C  (since  B  has no non-trivial
+automorphisms they necessarily name different subobjects). Hence, of
+the four proper subobjects in this category, two of them have just one
+name, the other two each have two names. No matter how one chooses a
+choice of "inclusion map" in the latter cases, that is no matter how
+one chooses a map  A -> B  and a map  A -> C, when you compose the
+chosen  A -> B  with each of the two maps from  B  to  C  you will get
+both names for the single proper subobject named by each of the two
+maps from  A  to  C.  They can't both be the chosen map in  (A,C).
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

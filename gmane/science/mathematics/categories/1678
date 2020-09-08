@@ -1,0 +1,118 @@
+Path: news.gmane.org!not-for-mail
+From: <puite@math.uu.nl>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Category Theory from RFC Walters' book
+Date: Wed, 1 Nov 2000 12:05:43 +0100 (MET)
+Lines: 88
+Approved: news@gmane.org
+Message-ID: <200011011105.MAA22504@schartriller.math.uu.nl>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018015 32389 80.91.229.2 (29 Apr 2009 15:13:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:35 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Nov  1 08:48:15 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eA1CGF902490
+	for categories-list; Wed, 1 Nov 2000 08:16:15 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sun-Charset: US-ASCII
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 2
+Status: O
+Content-Length: 3973
+Original-Lines: 87
+Xref: news.gmane.org gmane.science.mathematics.categories:1678
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1678>
+
+> Hello Category Theory community,
+> 
+> I am rereading RFC Walters' "Categories and Computer Science".
+> In chapter 1 Section 3 (starting on pg . 10), Walters discusses the
+> the notion of generators and relations to generate categories. He
+> gives several examples of this concept. 
+
+On "generators":
+Given a graph (set of objects and set of (formal) arrows between objects),
+the original objects together with the finite *paths* (f,g,h,...,k) in 
+this graph (as morphisms) constitute a category (called 
+the "free category on this graph"):
+    - identities are the empty paths;
+    - composition is concatenation of paths.
+
+On "relations":
+Given a category and a relation R on its arrows (i.e. a subset of A x A)
+relating only arrows with the same domain and codomain, let R' be the
+smallest congruence relation containing R.
+  [A congruence relation S is an equivalence relation (i.e. S is 
+   reflexive, symmetric and transitive) that moreover 
+   is closed under composition: aSb and cSd imply (a.c)S(b.d).]
+  [Check that the " *smallest* congruence relation containing R " 
+   is a well-defined notion, as the class of congruence relations containing R
+   is closed under arbitrary intersections. So the intersection of those
+   congruence relations containing R is also a congruence relation 
+   containing R, indeed the smallest one.]
+Now the original objects together with the congruence classes [f] of R' 
+(as morphisms) constitute a category (called the quotient category):
+    - identities are the classes of the identities [1];
+    - the composite [f].[g] is by definition [f.g], which is well-defined.
+
+There is a more explicit/constructive description of R' in terms of R.
+Consider the following relation:
+aR"b  iff  there exist n \geq 0 and an n-chain: 
+           (n+1) morphisms  a_0, a_1, ..., a_n such that
+              a = a_0;  
+              a_n = b;  
+              for all 0 \leq i < n there are morphisms u,v,c,d such that
+                 a_i = u.c.v and a_{i+1} = u.d.v  and  either cRd  or  dRc
+This clearly is a congruence relation containing R, whence R' \subseteq R".
+The other way around, you show by induction on n that every n-chain is
+between R'-congruent formulas. Hence R' = R".
+
+There is much more to say about presentations in general, but I hope the
+above details for categories answer your questions. 
+Let me briefly return to your specific example:
+
+> E.g. "Example 15. Consider
+> the category presented by one object A, one arrow e:A->A, and the
+> one relation e.e.e.e = 1subA. From this, he deduces by hand the
+> category has additional arrows e .e, e.e.e. I have two questions:
+
+Observe that the free category on this graph (one object, one arrow)
+has infinitely many arrows:  (); (e); (e,e); (e,e,e); (e,e,e,e); ...
+Let us denote them by e^0, e^1, e^2, e^3, e^4, ... 
+Recall that these arrows are actually the paths in the graph, and 
+that they are all different!
+According to your example R = { (e^4,e^0) }.
+Check that R' = R" = { (e^n,e^m) | n-m is a 4-fold }.
+Check that there are only four congruence classes in the quotient
+category: [e^0], [e^1], [e^2], [e^3].
+An example of a composite: [e^2].[e^3] = [e^2.e^3] = [e^5] = [e^1].
+ 
+> 1) Walters shows that e.e.e = e is not "deducible". What kind of
+>      formal system/inference rule system is "at  work" here that
+>      allows us to deduce
+>      formally any additional arrows and allows us to deduce
+>      arrow relations from the "axiom" relation, i.e. e.e.e.e = 1subA??
+>     Is this some kind of equational logic? Please specify in detail.
+
+You do not deduce additional arrows; the arrows are the original paths.
+R' can be described by the following deductive system:
+  axioms: the instances of R and reflexivity;
+  rules:  symmetry, transitivity, closure.
+
+> 2) Given generators and relations are we guaranteed to get a category?
+
+Yes, since we agreed upon considering the smallest congruence relation 
+containing your relations.
+
+Regards, 
+
+Quintijn Puite
+
+
+
+

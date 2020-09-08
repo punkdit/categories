@@ -1,0 +1,159 @@
+Path: news.gmane.org!not-for-mail
+From: Dana Scott <dana.scott@cs.cmu.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: countable Heyting algebras
+Date: Sun, 25 Nov 2007 22:03:49 -0800
+Lines: 125
+Approved: news@gmane.org
+Message-ID: <E1IweBS-0005Al-7R@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v915)
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019720 11706 80.91.229.2 (29 Apr 2009 15:42:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:42:00 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Nov 26 09:53:10 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Nov 2007 09:53:10 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IweBS-0005Al-7R
+	for categories-list@mta.ca; Mon, 26 Nov 2007 09:39:34 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 56
+Status: O
+Content-Length: 4823
+Original-Lines: 124
+Xref: news.gmane.org gmane.science.mathematics.categories:4101
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4101>
+
+
+Thomas Streicher recently noted:
+
+> omega + 1 is an infinite countable Ha which nevertheless
+> is complete
+
+True.  And the dual algebra {0} + omega* with the descending copy
+integers is also a complete Ha (cHa).
+
+But this second example, which is non-atomic, is not fully non-atomic;
+that is, there are minimal gaps in the ordering.
+
+Take Q = rationals in [0,1].  This is a countable, non-complete Ha,
+where between any two distinct elements there is a third.
+
+Note that all these Ha's are subalgebras of the unit interval [0,1]
+of all reals -- which is uncountable, of course.  In linearly ordered
+Ha's, the implication b --> c == c if b > c, and is 1 otherwise.  It
+follows that the not-not stable elements are just 0 and 1.
+
+As I remarked once before, it is an old theorem that all countable,
+non-atomic Boolean algebras are isomorphic.  Call this Boolean algebra
+F for free, for short.  This isomorphism theorem is far from true for
+Ha's, however.
+
+Take the algebra Q x Q.  This is a fully non-atomic, but it has FOUR
+not-not stable elements = {0,1} x {0,1}.  So this is not the algebra
+Q.  Take any other finite power, Q x Q x ... x Q.  They are all
+different
+by reference to the not-not stable elements.
+
+The Ba I called F has a recursive structure (as one sees from what
+we know about propositional calculus) in that all the operations
+are recursive in terms of a simple enumeration of the elements of
+F.  The question I want to consider is what countable Ha extend F
+in such a way F equals the not-not stable elements.
+
+Now, F can also be considered as the clopens of the Cantor space
+2^N.  The cHa of all opens is fully non-atomic, but it is uncountable.
+Call it C for Cantor.  The not-not stable elements of C are the so-
+called
+regular open sets.  They form an uncountable cBa which is the completion
+of F.  But we want to ask if there are there interesting countable
+subalgebras of C?  We note that elements of C are determined by the
+elements of F they contain.  (In fact, the cHa C is isomorphic to the
+lattice of ideals of F.)
+
+Here is one construction.  Let A be the arithmetically definable
+elements of C.  That is, take the elements of x of C where the
+set {a in F | a =< x } is (first-order) arithmetically definable
+(in terms of the enumeration of F).  I claim that A is a Ha.
+Of course it contains F; and, if it is a subalgebra of C, then the
+not-not stable elements give us an extension of F.  But it is
+countable and the extension of F, call it G, is non-atomic; hence,
+the stable elements of A form a Ba G isomorphic to F.
+
+To check the subalgebra part we note for x,y in C and a in F:
+
+	a =< x /\ y  <==>  a =< x & a =< y;
+
+	a =< x \/ y  <==>  (for some b,c in F)[ a = b \/ c &
+                             b =< x & c =< y ].
+
+Hence, if x,y are in A, then so are x /\ y and x \/ y.
+
+At first I had thought the recursively enumerable opens would
+be enough, but there is trouble with negation.  We have for x in C
+and a in F, and with -x notating negation in C:
+
+	a =< -x  <==> (for all b in F)[ b =< x ==> a /\ b = 0 ].
+
+The universal quantifier seems needed, and so {a in F | a =< -x }
+does not seem to be r.e. in general.  But, if x is in A, then so
+is -x.
+
+We need to generalize this remark to implication in C, so for a in F
+and x,y in C:
+
+	a =< x --> y  <==> (for all b in F)[ b =< x ==> a /\ b =< y ].
+
+Hence, if x,y are in A, then so is x --> y. And A is a sub-Ha of C.
+
+Note that in A, if an element x is not 0, than the interval [0,x] in A
+is in itself a non-Boolean cHa (a homomorphic image of A).
+
+Consider next the algebra A x F.  This algebra is a countable, fully
+non-atomic Ha.  The not-not stable elements of A come out to be
+G x F, which is isomorphic to F (and G).  But, the element x = (0,1)
+has the interval [0,x] in A x F isomorphic to F.  And that is
+Boolean.  So, A and A x F are NOT isomorphic.
+
+Note, however, that A x F and (A x F) x F ARE isomorphic.  Also, as
+I forgot to mention, A and A x A are isomorphic.  Anyway, we have
+at least two non-isomorphic, non-Boolean Ha's with an isomorph of F
+as the not-not stables.  And they are fully non-atomic.
+
+Are there other, non-isomorphic extensions of F?  At this moment
+I do not see a knock-down argument.  One idea, is to call the above
+algebra A_1 (for first-order definable opens) and consider the algebras
+A_n of n-th order definable opens.  I think we get the same conclusions
+about A_n and A_n x F not being isomorphic, BUT is every A_n somehow
+isomorphic to A_1 (with a highly non-recursive automorphism of F)?
+Is that possible, or have I missed an obvious point?
+
+If the A_n are all not isomorphic, then we can probably get an
+uncountable collection of mutually non-isomorphic extensions of F.
+
+And, how would these relate to Sub(1) Ha's of countable topoi?
+Or are these considerations a red herring?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

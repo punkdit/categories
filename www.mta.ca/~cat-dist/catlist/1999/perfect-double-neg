@@ -1,0 +1,118 @@
+Date: Thu, 22 Jan 1998 16:41:26 -0400 (AST)
+Subject: Perfect double negation 
+
+Date: Thu, 22 Jan 1998 17:22:17 GMT
+From: Martin Escardo <mhe@dcs.ed.ac.uk>
+
+Dear toposophers,
+
+Every sober space has a smallest dense perfect subspace.  In many
+cases this is precisely the subspace of maximal points in the
+specialization order. In general it is larger than that.
+
+This is approached via locales. Every locale A has a smallest dense
+perfect sublocale, which is spatial if A is. It is obtained by the
+perfect coreflection of the double negation nucleus. 
+
+The construction seems to generalize from locales to toposes. But what
+does it produce (instead of subspaces of maximal points)? And what is
+its logical content? Could toposes of sheaves help one to understand
+this?
+
+Thanks in advance for any clue. Details follow.
+
+Martin Escardo
+---------------------------------------------------------------------
+http://www.dcs.ed.ac.uk/home/mhe
+---------------------------------------------------------------------
+Every finite T_0 space has a smallest dense subspace, namely its
+subspace of maximal points in the specialization order. And every
+locale has a smallest dense sublocale, induced by the double negation
+nucleus, as it is well known. But it is also well known that this is
+hardly ever spatial, even if the given locale is. I have considered a
+modification of this construction.
+
+Let's say that a nucleus on a locale is perfect if it preserves
+directed joins. If we say that a perfect map is a continuous map
+f:A->B such that the right adjoint f_*:O(A)->O(B) of the frame map
+f^*:O(B)->O(A) preserves directed joins, then a nucleus is perfect iff
+it is induced by a perfect map. Let's also say that a sublocale is
+perfect if the inclusion is perfect.
+
+It turns out that every locale has a smallest dense perfect sublocale.
+Classically, one can show that spatial locales are closed under
+perfect sublocales.  Hence every sober space has a smallest dense
+perfect sober subspace. This goes as follows.
+
+One knows that the set NA of nuclei on a locale A, with the pointwise
+ordering, is a frame. Denote by FA the set of perfect nuclei. Then one
+can show that FA is a subframe of NA. (The join of a set of perfect
+nuclei is computed by taking the pointwise (directed) join of the
+finite compositions of the given nuclei.)  [[Digression: F is
+functorial on the category of compact and stably locally compact
+locales with perfect maps. For such a locale A, the locale FA is
+compact regular, and if A is compact regular then FA=A. For example,
+if A is the topology of lower semicontinuity (=Scott topology) on the
+unit interval, then FA is the Euclidean topology on the unit
+interval. But this is another story.]]
+
+Thus, there is a coreflective adjunction between FA and NA, which in
+one way includes FA into NA and in the other assigns to each nucleus
+in NA the join of the perfect nuclei below it. (If A is compact and
+stably locally compact then there is a simple formula for the perfect
+coreflection of nuclei on A.)
+
+Thus the smallest dense perfect sublocale is induced by the perfect
+coreflection of the double negation nucleus. But what is it?  Let's
+call it the support of A and denote it by Supp A. The support always
+contains the subspace of maximal points (oh, I should say Max Pt A is
+included in Pt Supp A---but I'll refer to a locale as space for
+terminological simplicity).
+
+In many cases it consists exactly of the maximal points. For instance,
+if A is compact and stably locally compact then this is the case iff
+the subspace of maximal points is compact, and in this case Supp A is
+a compact regular locale. (I observe at this point that compact stably
+locally compact locales are closed under perfect sublocales). Some
+examples and counterexamples can be useful: (i) Let A be the Scott
+topology induced by the prefix order on finite and infinite sequences
+over {0,1}. Then Supp A is the topology of Cantor space. (ii) Same but
+sequences over natural numbers. Then Supp A = A, and not Baire space
+as one could expect from the previous example, because Baire space
+fails badly to be locally compact. (iii) Let A be the Scott topology
+on compact real intervals ordered by reverse inclusion. Then Supp A is
+the topology of the Euclidean real line. (iv) The previous example
+doesn't fit in the above characterization as it is not compact. If we
+add an artificial bottom interval, then we get a compact stably
+locally compact locale. But Supp A is then the topology of the
+Euclidean real line with a bottom element in the specialization
+order---bottom doesn't get removed in this case. (v) Let UA be the
+upper power locale of a compact regular locale A. Then Supp UA = A.
+This again fits in the above characterization. 
+
+(The above claims [[except the ones in double brackets]] are proved in
+the paper "Properly injective spaces and functions spaces", which
+should have been called "Perfectly injective spaces and function
+spaces". It is going to appear soon. Meanwhile it is available at
+http://www.dcs.ed.ac.uk/home/mhe/pub/papers/injective.ps.gz)
+
+--------------------------
+Some questions to finish:
+--------------------------
+
+Perfect double negation on the topology of a space removes the partial
+points of the space in many cases. What does it do to toposes?  Any
+clue is very much appreciated.
+
+In another direction, double negation takes us from intuitionistic
+logic to classical logic. Is that behind any correlation
+intuitionistic logic<->partiality, classical logic<->totality? Can we
+make this precise by taking toposes of sheaves?
+
+The inclusion s:A->Supp A, being a continuous map, induces a geometric
+morphism S=Shv(s):Shv(A)->Shv(Supp A). Since s_* preserves directed
+joins, one could guess that S_* preserves directed colimits. Would
+that be the case? Have these "perfect" geometric morphisms been
+studied? 
+
+

@@ -1,0 +1,94 @@
+Path: news.gmane.org!not-for-mail
+From: Andrzej Filinski <andrzej@daimi.aau.dk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: co-exponential question
+Date: Thu, 22 Jul 1999 22:28:12 +0200 (MET DST)
+Lines: 64
+Approved: news@gmane.org
+Message-ID: <14231.32476.50008.946207@harald.daimi.au.dk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017619 29832 80.91.229.2 (29 Apr 2009 15:06:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:59 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Jul 23 11:42:54 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA06209
+	for categories-list; Fri, 23 Jul 1999 10:24:21 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: VM 6.50 under 21.0 "Corsican" XEmacs Lucid
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 2615
+Original-Lines: 63
+Xref: news.gmane.org gmane.science.mathematics.categories:1179
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1179>
+
+
+Paul Levy writes:
+
+> I don't know if this is relevant to your question, but there is an
+> example in programming semantics where the dual of a cartesian closed
+> category has independent significance, due to Lafont, Streicher, Reus
+> and Hofmann.  (Some further work was done by Selinger.)  It is found
+> in the following paper:  [Streicher & Reus 1998]
+
+Indeed, co-exponentials are closely tied the semantics of call/cc-like
+control operators. This connection is perhaps expressed more directly in
+the following (regrettably somewhat unpolished) work:
+
+@MastersThesis{Filinski:89a,
+  author =      "Andrzej Filinski",
+  title =       "Declarative Continuations and Categorical Duality",
+  school =      "Computer Science Department, University of Copenhagen",
+  year =        1989,
+  month =       Aug, 
+  note =        "DIKU Report 89/11",
+  URL =         "http://www.brics.dk/~andrzej/papers/DCaCD.ps.gz"
+}
+
+@InProceedings{Filinski:89b,
+  author =      "Andrzej Filinski",
+  title =       "Declarative Continuations: An Investigation of
+                 Duality in Programming Language Semantics",
+  booktitle =   "Category Theory and Computer Science",
+  series =      LNCS,
+  number =      389,
+  address =     "Manchester, UK",
+  month =       Sep,
+  pages =       "224-249"
+}
+
+Specifically, in the category induced by the types and terms of a
+call-by-value language with first-class continuations, the coproduct
+functor - + A actually has a left adjoint - x (A -> 0), where 0 is the
+empty type.  The operational intuition behind this construction is that
+a function f : X -> Y + A returning either a "normal" (Y) or an
+"exceptional" (A) result corresponds to a function f' : X x (A -> 0) ->
+Y, returning only the normal result, but passing any exceptional results
+to an additional, non-returning-function parameter.
+
+(In a purely functional language, the type A -> 0 would of course
+contain at most one value; but in the presence of control effects, such
+as exceptions, there can be many distinct "functions" of this type. And
+with a sufficiently powerful control operator, it actually becomes
+possible to define co-application and co-currying with equational
+properties exactly mirroring those of CCC exponentials.)
+
+Still, as Paul notes,
+
+> K is certainly an important category, but I wouldn't say that the fact
+> that it has coexponentials is significant.  
+
+constructing a categorical semantics of a language with control operators
+_directly_ in terms of coexponentials is somewhat awkward, and the
+formulation used by Streicher and Reus is almost certainly nicer to work
+with in practice.
+
+-- Andrzej
+
+

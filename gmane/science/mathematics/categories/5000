@@ -1,0 +1,110 @@
+Path: news.gmane.org!not-for-mail
+From: Mark.Weber@pps.jussieu.fr
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: monad: (k-Set \downarrow -): Set -->Set
+Date: Mon, 22 Jun 2009 13:56:11 +0200 (CEST)
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <E1MIjMW-0000f2-U4@mailserv.mta.ca>
+Reply-To: Mark.Weber@pps.jussieu.fr
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1245678823 11338 80.91.229.12 (22 Jun 2009 13:53:43 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 22 Jun 2009 13:53:43 +0000 (UTC)
+To: "David Spivak" <dspivak@uoregon.edu>, categories@mta.ca
+Original-X-From: categories@mta.ca Mon Jun 22 15:53:41 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MIjxs-000549-3W
+	for gsmc-categories@m.gmane.org; Mon, 22 Jun 2009 15:53:40 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MIjMW-0000f2-U4
+	for categories-list@mta.ca; Mon, 22 Jun 2009 10:15:05 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5000
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5000>
+
+Dear David
+
+I'm not sure whether your specific construction has been looked at or
+named, but it is a "submonad" of something very well known.
+
+Let's work with 2 universes of sets, your "Set" being the topos of small
+sets, and SET being a topos of sets large enough to include {arrows of
+Set} as an object. For those not so comfortable doing this, fix two
+regular cardinals far enough part, read "Set" as "the category of sets of
+cardinality less than the smaller cardinal", and "SET" as "the category o=
+f
+sets of cardinality less than the bigger one", and far enough apart means
+Set is a category internal to SET.
+
+Now the 2-category CAT (of category objects in SET) contains Set as an
+object so one may form the slice 2-category
+
+CAT/Set
+
+in the strictest sense (1-cells being triangles commuting on the nose).
+The big brother of your monad is a 2-monad on this 2-category. The
+endofunctor part does the following:
+
+S:A-->Set   |-->  Set \downarrow S --> Set
+
+This is the underlying monad of what could be called the "fibration"
+2-monad. That is applying to a functor produces the free split fibration
+on what you started with. This construction works at the following
+generality: replace CAT by any 2-category with comma objects and Set by
+any object therein, and the first paper to see fibrations as algebras of =
+a
+monad in this way was
+
+R. Street "Fibrations and yoneda's lemma in a 2-category" SLNM 420 1974
+
+The relation between your monad and this one is that there's a canonical
+inclusion
+
+Set --> CAT/Set
+
+which regards any Set S as a functor S:1-->Set, and this functor is the
+1-cell data for a monad morphism (in the sense of Street: "Formal theory
+of monads") from your monad to the monad I described.
+
+With best regards
+
+Mark Weber
+
+> Dear Categorists,
+>
+> Does anyone know a name for the monad described below and/or whether
+> it has been studied?
+>
+> Let k-Set denote the category of k-small sets (for some small regular
+> cardinal k).  For a set S, we denote by
+>
+> T(S)=3D(k-Set \downarrow {S})
+>
+> the set whose elements are pairs (K,f), where K is a k-small set and
+> f:K-->S is a function.  This construction is functorial in S.  I
+> claim that the endo-functor T: Set -->Set is a monad.  The identity
+> transformation S-->T(S) is given by "singleton set" and the
+> multiplication transformation TT(S)-->T(S) is given by Grothendieck
+> construction.
+>
+> (There is a similar monad on Cat, where we replace k-Set with k-Cat.)
+>
+> Does this monad T have a name?  Has it been studied?
+>
+> Thank you,
+> David
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

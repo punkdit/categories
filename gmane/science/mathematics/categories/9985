@@ -1,0 +1,151 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: only_marketing_?
+Date: Fri, 16 Aug 2019 11:40:11 +0100
+Approved: news@gmane.org
+Message-ID: <E1hyc86-0007aR-Fj@mlist.mta.ca>
+References: <E1hvSbs-0004i2-RR@mlist.mta.ca> <E1hwogr-0005GM-KG@mlist.mta.ca>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Mime-Version: 1.0 (1.0)
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="89587"; mail-complaints-to="usenet@blaine.gmane.org"
+Cc: Vaughan Pratt <pratt@cs.stanford.edu>
+To: <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri Aug 16 15:20:39 2019
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by blaine.gmane.org with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.89)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hyc9n-000NAj-02
+	for gsmc-categories@m.gmane.org; Fri, 16 Aug 2019 15:20:39 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:38898)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hyc8o-0001bq-6a; Fri, 16 Aug 2019 10:19:38 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1hyc86-0007aR-Fj
+	for categories-list@mlist.mta.ca; Fri, 16 Aug 2019 10:18:54 -0300
+In-Reply-To: <E1hxEUo-00054p-Jc@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9985
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9985>
+
+Vaughan has hit the nail on the head as far as computer science goes. The ob=
+ject-morphism analysis is such a good match for types and functions in progr=
+amming languages, especially functional programming, that there is now a lot=
+  of applied category theory going on in computer science departments. The un=
+iversal characterizations of category theory are a perfectly natural way to t=
+hink of type constructors.
+
+What I missed in John's interview was any sense of a similar match between c=
+ategorical structure and structure in the world's many problems.
+
+In physics there are certainly some applications with a similar direct corre=
+spondence.
+The Abramsky-Coecke group at Oxford, clearly influenced by the computer scie=
+nce, took categorical ideas of quantum computation which then spilled over i=
+nto more general foundational ideas.
+
+But we can see another principle in play that's more profound that simply sa=
+ying "types are objects, functions are morphisms".
+
+Category theory abstracts away from the internal structure of objects. This i=
+s in stark contrast with set-theoretical foundations, which tend to say "eve=
+rything is a set, so just say which set you are using". Category theory inst=
+ead stresses how objects interact with each other, using universal character=
+izations. Computer science takes this as a practical necessity. We don't wan=
+t to know the "implementation dependent" internal structure of a type or fun=
+ction. That's both impractical and useless, as well as institutionalizing bu=
+gs so they become difficult to correct. What we need is the "Application Pro=
+grammer Interface" (API) of how we can use them. As long as the API is stabl=
+e, we don't mind if the implementation is changed to fix bugs or make it mor=
+e efficient. The idea of API matches universal properties in category theory=
+.
+
+For the Oxford group, the programmers' "types are objects, functions are mor=
+phisms" mutates into the questions like "How do we really use finite dimensi=
+onal Hilbert spaces?", with the answer expressed categorically.
+
+This engineering approach applies to mathematics too. Grothendieck's discove=
+ry of toposes came out of a categorical analysis of sheaves. Instead of aski=
+ng what a sheaf is, you ask how they interact with each other, how we use th=
+em. In particular, how do we get sheaf cohomology and other topological inva=
+riants out of them? Then it doesn't matter what sheaves are, as long as the c=
+ategory of them has the right properties.
+
+I think some of this is part of - to take as an example someone I know - Chr=
+is Isham's interest in categories. The scandal of physics is the incompatibi=
+lity of general relativity and quantum physics, but in both cases it is hard=
+  to modify the mathematical structures used without breaking them. It theref=
+ore becomes important to ask how we actually use the structures, what is the=
+ir API, and the hope is that category theory can help.
+
+So, to return to John Baez's interview, how might we look for category theor=
+y helping to understand the world's problems? We must first look for objects=
+  and morphisms, with identities and associative composition, so what are the=
+  real-world prototypes of what we are trying to do there? What is the first s=
+tep beyond the vague aspirations?
+
+Steve Vickers
+
+> On 12 Aug 2019, at 01:03, Vaughan Pratt <pratt@cs.stanford.edu> wrote:
+>=20
+> Formulating the *future *with category theory?  My understanding is that
+> the *present *is already formulated less with set theory than with categor=
+y
+> theory, at least its morphisms under composition, and has been for a long
+> time.
+>=20
+> In 1969 Jack Schwartz introduced the programming language SETL based on se=
+t
+> theory.  However programmers found it much easier to write programs as
+> functions composed from simpler functions than to implement them with sets=
+
+> based on membership, and SETL never caught on.
+>=20
+> There have also been sporadic attempts to introduce set theory into K-12
+> mathematics, under such rubrics as "New maths", starting with the
+> operations of union and intersection, but these have not caught on either.=
+
+>=20
+> Category theory is an abstract formulation of functions taking composition=
+
+> as the primitive operation.  Functions are in wide use in both mathematics=
+
+> and software.  Whenever a function calls another function from within it,
+> that's composition.
+>=20
+> In recent years I've been promoting a viewpoint of algebra that emphasizes=
+
+> the associativity of composition as the root of not just algebra but
+> bialgebra in the sense of typed Chu spaces.  The defining properties of
+> both homomorphisms and Chu transforms follow from associativity.  My most
+> recent talk on this was at FMCS in June, the "ten" slides are here
+> <http://boole.stanford.edu/pub/fmcs.pdf>.  (They're less cryptic when the
+> speaker is there to explain them, especially with an audience of only one
+> or two and with no time pressure.)
+>=20
+> One might call this "category light" by virtue of working in the *class*
+> CAT, i.e. just categories, no functors etc.  By Yoneda (unintended pun
+> there, it's actually "biYoneda")  the functors are there, they're just
+> "under the hood".  Just as you only need to know what sort of engine is in=
+
+> the car you're driving if you have to service it, you only need to know
+> about functors, natural transformations, etc. when you become a "category
+> mechanic" so to speak.
+>=20
+> Sets are automatic because they arise wherever morphisms gather together i=
+n
+> those spaces we call homsets.
+>=20
+> Vaughan
+>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

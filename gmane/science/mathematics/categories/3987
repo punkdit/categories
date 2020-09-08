@@ -1,0 +1,80 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: What is the right abstract definition of "connected"?
+Date: Tue, 09 Oct 2007 10:31:42 +0100
+Lines: 46
+Approved: news@gmane.org
+Message-ID: <E1IfPo9-00018P-G4@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019645 11197 80.91.229.2 (29 Apr 2009 15:40:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:45 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Tue Oct  9 22:00:10 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 09 Oct 2007 22:00:10 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IfPo9-00018P-G4
+	for categories-list@mta.ca; Tue, 09 Oct 2007 21:52:17 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 44
+Status: O
+Content-Length: 1836
+Original-Lines: 45
+Xref: news.gmane.org gmane.science.mathematics.categories:3987
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3987>
+
+Vaughan Pratt wrote:
+> I'd like to say that "connected" is defined on objects of any category C
+> having an object 1+1 (coproduct of two final objects).  X is connected
+> just when C(X,1+1) <= 2.
+
+Dear Vaughan,
+
+There's a big reason (there are also some little reasons, but I'll
+mention them later) why this doesn't match some accepted categorical
+definitions, and it's to do with the elements of C(1, 1+1).
+
+The topological condition is often stated differently: that every map X
+-> 1+1 factors via 1. Thus C(X,1+1) <= C(1,1+1). I think in most
+contexts you would want to say that, if anything is connected, 1 is, but
+you can easily find C(1,1+1) > 2.
+
+A simple example is with C = Set^2, where C(1,1+1) = 4 (two coproduct
+injections, and two more mixed morphisms).
+
+Then with this C, the alternative definition gives a useful notion of
+"fibrewise connectedness" for spaces over 2 and it's really just
+connectedness in the internal mathematics of (the topos) Set^2. Your
+definition is external.
+
+I would say don't persevere with your definition unless you really don't
+mind if 1 is disconnected. The different definition of "every map to 1+1
+factors via 1" has been quite successful.
+
+That was the big reason. The little reasons I alluded to are that it is
+often useful to require every map to 0 also to factor via 1. That
+excludes 0 itself from connectedness. This is similar to saying 1 is not
+prime. Once you have the 0 and 2 cases for X, then for every finite n (=
+1 + ... + 1) you have all maps X -> n factor via 1 - at least, if
+coproduct is well enough behaved w.r.t. limits.
+
+In constructive locale theory the standard definition is stronger and
+requires that for every discrete I, every map X -> I must factor via 1.
+This allows "infinite n". (Classically this can be deduced from the 0
+and 2 cases.)
+
+All the best,
+
+Steve.
+
+
+

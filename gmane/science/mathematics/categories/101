@@ -1,0 +1,131 @@
+Path: news.gmane.org!not-for-mail
+From: "Toby Kenney" <tkenney@mathstat.dal.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fixing the constructive continued-fraction definition of the reals: proofs and refutations
+Date: Sat, 21 Feb 2009 12:29:48 -0400 (AST)
+Lines: 99
+Approved: news@gmane.org
+Message-ID: <E1Lb7hq-0005zo-Mq@mailserv.mta.ca>
+Reply-To: "Toby Kenney" <tkenney@mathstat.dal.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-1
+X-Trace: ger.gmane.org 1235285573 6134 80.91.229.12 (22 Feb 2009 06:52:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 22 Feb 2009 06:52:53 +0000 (UTC)
+To: "Vaughan Pratt" <pratt@cs.stanford.edu>, categories@mta.ca
+Original-X-From: categories@mta.ca Sun Feb 22 07:54:09 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Lb8Dx-0003d6-ED
+	for gsmc-categories@m.gmane.org; Sun, 22 Feb 2009 07:54:01 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Lb7hq-0005zo-Mq
+	for categories-list@mta.ca; Sun, 22 Feb 2009 02:20:50 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:101
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/101>
+
+Vaughan Pratt wrote in part:
+...
+>
+> One notion of underlying object that makes sense for me in the context
+> so far is the set E(1,X) of elements of an object X in a topos E.  With
+> this notion I have a prayer of making sense of your claim in the contex=
+t
+> of the following four objects of a topos E with NNO N (and whatever els=
+e
+> if anything is needed to ensure that objects 2-4 exist in E).
+>
+> 1.  N^2.
+>
+> 2.  The initial object among all objects X with an element 0: 1 --> X
+> and maps s,t: X --> X satisfying st =3D ts.
+>
+> 3.  As for 2 with ts =3D t in place of st =3D ts.
+>
+> 4.  As for 3 with st =3D s in place of ts =3D t.
+>
+...
+>
+> I could well imagine 1 and 2 turning out to be isomorphic, but I feel I
+> would get a lot from seeing the proof of whichever way that goes.
+>
+> I presume that 3 and 4 are isomorphic on the ground that s and t can be
+> mapped to any two endomorphisms whence there must exist an isomorphism
+> exchanging s and t.  I imagine I would get less out of a rigorous proof
+> of that unless there's a bug in the previous sentence.  If there's no
+> bug then this would seem to constitute a subtle difference from algebra=
+,
+> where the signature labels the operations in a way that prevents such a=
+n
+> interchange and puts 3 and 4 in distinct albeit equivalent varieties.
+>
+> Whether or not 1 and 2 are isomorphic, they are in some sense both
+> representations of the ordinary product of N with itself.
+>
+> Where I have greater difficulty is imagining an isomorphism between 2
+> and 3 merely on the ground that they have the same underlying object.
+> I'm really not following your logic here.  2 implements product
+> concurrently whereas 3 and 4 implement it sequentially.  How could they
+> be isomorphic in every topos?  (I can see that they'd have to be
+> isomorphic in Set, and presumably certain other toposes which however I
+> have no idea how to characterize.)  I regard 3 and 4 as equivalent
+> definitions of the ordinal w^2 (w =3D \omega) in a topos.
+>
+
+I=B4m pretty sure the objects (1)-(4) are isomorphic. Here=B4s a sketch o=
+f the
+proof:
+
+Let X be the object (3), i.e. the initial object with a morphism 0:1---->=
+X
+and morphisms s:X---->X, t:X---->X with st=3Ds. Let Y be the object (2),
+i.e. the initial object with a morphism 0:1---->Y and morphisms u:Y---->Y=
+,
+v:Y---->Y.
+
+(1)&(2):
+We clearly have maps 0 x 0: 1----> N^2, succ x 1_N and 1_N x succ :
+N^2---->N^2, inducing the map Y---->N^2. For an element a of Y, we can
+form maps f_{t,a}: N---->Y by 0 ]----> a, succ ]----> t, and f_{s,a} by
+0 ]---->a, succ ]----> s. We can now form a map N x N ----> Y by
+f(a,b)=3Df_{t,{f_{s,0}(a)}}(b). We can check that these maps form an
+isomorphism.
+
+(2)&(3):
+
+Lemma: X is a monoid
+
+We construct the addition X x X---->X by its exponential transpose
+X---->X^X. This is the map induced by 1_X:1---->X^X, s^X:X^X---->X^X, and
+t^X:X^X---->X^X.
+
+We think of this monoid structure as ordinary ordinal addition.
+We now construct morphisms s=B4 and t=B4 X---->X, given by s=B4(x)=3Dx + =
+1 and
+t=B4(x)=3D\omega + x. It is clear that s=B4 and t=B4 commute. This induce=
+s a
+morphism Y---->X.
+
+On Y, we can create the projection map p:Y---->N as Y is isomorphic to N =
+x
+N. We also have the inclusion i : N ----> N x N given by a ]----> (a,0).
+Now ipu and v satisfy ipuv=3Dipu (ipu is the map \_ + \omega. This induce=
+s a
+map X ----> Y, which will be the inverse of the map Y ----> X.
+
+I will check the details later to make sure. But I would be very surprise=
+d
+if there were any problems.
+
+Toby
+
+
+
+
+

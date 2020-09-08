@@ -1,0 +1,544 @@
+Date: Wed, 17 Mar 1999 16:24:26 +0100
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Subject: categories: Monoidal structure on graphs
+
+Greetings, fellow categorists.
+
+I'm wondering, if anybody has ever described the following monoidal
+structure on the category of oriented multigraphs, what MacLane calls
+graphs, the most common kind of graph in category theory (but not
+everywhere) :
+
+Given mgs X, Y, the set |X-oY| of vertices on  X-oY  is the set of mg
+morphisms
+X --> Y.
+
+Given f,g : X --> Y the set of arrows f-->g is the set of pairs
+(p_0,p_1) of functions such that
+
+forall  x in |X|, p_0(x) : f-->g
+
+forall  k: x-->y in X, p_1(k) : f(x)-->g(y)
+
+This co-contra bifunctor has a tensor left adjoint, which is symmetric
+and monoidal. 
+
+I would be quite surprised if this structure had never been seen before.
+Enriched universal algebra in there has applications in computer
+science.
+
+Thanks,
+
+Francois Lamarche
+
+
+Subject: categories: Re: Monoidal structure on graphs
+From: "John G. Stell" <j.g.stell@cs.keele.ac.uk>
+Date: Thu, 18 Mar 1999 10:55:08 +0000
+
+A structure closely related to the one which Francois Lamarche
+asked about appeared in my thesis (1992) [see below] as a simple example of
+a sesqui-category which is not a 2-category. I too would expect
+it's appeared elsewhere, but I don't know where.
+
+John Stell
+
+\subsubsection{An Example of a Sesqui-Category}
+We include an example to show that there are naturally occurring
+sesqui-categories other than in connection with modelling
+term rewriting. The underlying 
+category is {\bf Graph}. Suppose there are graphs $G$ and $H$, and
+graph morphisms $g,h : G \rightarrow H$. In this situation, the 2-cells
+$\alpha : g \rightarrow h$ are assignments to each node $n$ of $G$ of a
+path of edges from $ng$ to $nh$ in $H$. 
+
+The compositions $\circ_R$ and 
+$\circ_L$ are readily defined. If $f : F \rightarrow G$ then 
+$f \circ_R \alpha$ assigns to a node $m$ of $F$ the path $(mf)\alpha$ in $H$.
+For the left composition, suppose we have $k : H \rightarrow K$.
+Since $n\alpha$ is a path in $H$, we obtain a path $(n\alpha)k$ by applying
+$k$ to each of the edges in the path $n \alpha$. Thus we define 
+$\alpha \circ_L k$ to be the assignment to $n$ of the path $(n \alpha)k$.
+
+The vertical composition is the usual concatenation of paths. The identity
+2-cells are assignments of zero length paths. 
+
+
+Date: Thu, 18 Mar 1999 12:43:41 +0100
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Subject: categories: Monoidal structure, take II
+
+Given the private replies I got to yesterday's queries, it is obvious I
+was not clear enough, and indeed there was an unhelpful typo.
+
+> 
+> I'm wondering, if anybody has ever described the following monoidal
+> structure on the category of oriented multigraphs, what MacLane calls
+> graphs, the most common kind of graph in category theory (but not
+
+OK Saunders, from now on they're graphs. This what happens when you hang
+out with combinatorists AND category theorists.
+
+> 
+> Given graphs X, Y, the set |X-oY| of vertices on  X-oY  is the set of graph
+> morphisms
+> X --> Y.
+
+So right from the start this is not the usual presheaf CC structure,
+where the set of vertices is the set of all functions |X| --> |Y| .
+
+So in what follows I use categorical notation for vertices, arrows, etc.
+ 
+> Given f,g : X --> Y the set of arrows f-->g is the set of pairs
+> (p_0,p_1) of functions such that
+> 
+> forall  x in |X|, p_0(x) : f(x)-->g(x)
+> 
+> forall  k: x-->y in X, p_1(k) : f(x)-->g(y)
+
+Now the typo has been corrected. So an arrow f --> g is like a natural
+transformation, with p_0 the usual familly of arrows indexed by the
+vertices/objects of X, but since things don't compose, you add the
+diagonal p_1 as part of the information. There is some kinship to
+homotopies, as M. Barr has remarked.
+
+> This co-contra bifunctor has a tensor left adjoint, which is symmetric
+> and monoidal.
+> 
+
+Is this more understandable?
+
+Thanks again
+
+Francois
+
+
+Date: Thu, 18 Mar 1999 12:46:52 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+Subject: categories: Re: Monoidal structure, take II
+
+I did not quite understand Francois' construction.  However, my first
+reaction to a question like that is that it ought to be a homotopy.  So
+I will say what a homotopy reduces to in this case and leave it to
+Francois to decide if this is what he has.
+
+I suspect that rather few people know what a simplicial homotopy is and,
+of those, rather few have ever actually verified one.  I am in that
+minority^2, so perhaps I tend to see them where they are not the most
+natural, but I think it quite remarkable that they can arise where no
+real topology (but some combinatorics) is present.
+
+I have to begin by saying how a graph becomes a simplicial set.
+Actually, that is a lie, since unless you are dealing with reflexive
+graphs--that are equipped with a selected loop at each vertex--you will
+only get a face complex.  But homotopies are still definable.  A
+category is a simplicial set by taking for n-simplexes composable
+n-tuples of arrows.  This doesn't work for graphs, since the "interior
+faces" (all except the lowest and highest numbered) all depend on
+composition.  But there is a face complex in which an n-simplex is
+simply an n-simplex in the graph.  So a 2-simplex is a
+triangle--obviously non-commutative and a 3-simplex is a tetrahedron and
+so on.  You can describe a composable n-tuple in a category as
+commutative n-simplex, so this isn't so different.  Now given this, if
+f,g:  X --> Y are graph morphisms, what is a homotopy?  Well, write X as
+d^0,d^1:  X_1 --> X_0 and similarly for Y. Then f consists of f_0:  X_0
+--> Y_0 and f_1:  X_1 --> Y_1 giving a serially commutative square.
+Just a homomtopy between functors turns out to be simply a natural
+transformation, a homotopy in this case turns out to consist of a
+function p_0:  X_0 --> Y_1 and a function p_1:  X_1 --> Y_1 such that
+there
+is a diagram (not, of course commutative; what a diagram does is specify
+source and target) as follows.  In this diagram I assume x:  x^0 --> x^1
+in X, and f(x):  y^0 --> y^1 and g(x):  z^0 --> z^1 in Y.
+                            f(x)
+                    y^0 -----------> y^1
+                     | \              |
+                     |  \             |
+                     |   \            |
+                     |    \           |
+                     |     \          |
+                     |      \         |
+                     |       \        |
+             p_0(x^0)|  p_1(x)\       |p_0(x^1)
+                     |         \      |
+                     |          \     |
+                     |           \    |
+                     |            \   |
+                     |             \  |
+                     |              \ |
+                     v      g(x)     vv
+                    z^0 -----------> z^1
+
+So if this is what Francois was saying, then the answer is it a homotopy
+of face complexes.  Of course, if you replaced X_1 by X_1 + X_0, you
+would have a reflexive graph and I assume (I have not checked this) you
+would then get a simplicial homotopy.
+
+BTW, homotopies do not generally compose--and the ones described here do
+not appear to either.  Categories are special because of their internal
+composition.  It makes me wonder if the well-known failure of dinats to
+compose could be related to this in some way.
+
+Having seen Francois' clarification, I think this is exactly what he
+had.
+
+Michael
+
+
+
+-------------------------------------------------------------------
+History shows that the human mind, fed by constant accessions of
+knowledge, periodically grows too large for its theoretical coverings, and
+bursts them asunder to appear in new habiliments, as the feeding and
+growing grub, at intervals, casts its too narrow skin and assumes
+another... Truly the imago state of Man seems to be terribly distant, but
+every moult is a step gained. 
+
+- Charles Darwin, from "The Origin of Species"
+
+
+
+Date: Thu, 18 Mar 1999 18:27:30 +0100
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Re: Monoidal structure, take II
+
+On Francois Lamarche's question.
+
+If I understand correctly, the tensor product  X tensor Y  has the obvious
+objects  (x, y)  and arrows of three types
+
+(a, y): (x, y) -->  (x', y),  for  a: x -> x'  in  X,  y  in  Y,
+
+(x, b): (x, y) -->  (x, y'),  for  x  in  X,  b: y -> y'  in  Y,
+
+(a, b): (x, y) -->  (x', y'),  for  a  and  b  as above.
+
+***
+
+Remark 1.
+We are thus simulating "identities" of  X  and  Y  (which are not given).
+In other words, we are considering the cartesian product  X'xY'  of the
+free reflexive graphs over  X  and  Y,  and taking out its identities.
+
+Would it not be simpler to work with  REFLEXIVE GRAPHS  and their cartesian
+closed structure?
+In my opinion, reflexive graphs are more natural than graphs:
+
+reflexive graph = 1-truncated simplicial set = 1-truncated cubical set
+
+It is the topos of presheaves over a FULL subcategory of non-empty ordinals
+(or cardinals as well), actually the initial segment  1,  2.
+
+Remark 2.
+Roughly speaking, a category enriched over reflexive graphs (wrt the cc
+structure) is a "2-category without vertical composition". It has cells  a:
+f -> g: X -> Y,  with a categorical horizontal composition; it also has
+trivial cells  f -> f: X -> Y  ("vertical identities").
+
+All this is clearly related to homotopy and its abstract settings in
+"2-dimensional categories" (in some sense).
+And indeed topological spaces, with continuous maps and homotopies, form a
+rather obvious example.
+The horizontal composition of homotopies
+
+   a: f -> g: X -> Y,    b: h -> k: Y -> Z
+
+is     b(a(x, t), t)               t  in  [0, 1],
+
+which is indeed categorical.
+
+Remark 3.
+[The sequel is relevant for homotopy; I do not know if it may be relevant
+in CS, but I always had the impression that abstract homotopy should be of
+use there, eg with respect to deformations of processes, in some sense.]
+
+I do not think that the latter is the "right" 2-dimensional categorical
+setting for abstract homotopy (even as a starting point).
+The previous horizontal composition of homotopies is rather artificial; it
+is what you get from the "double homotopy"
+
+b(a(x, t), t')       (t, t')  in  [0, 1]^2
+
+through the diagonal  t = t'  of the square.
+(The "double homotopy" itself is quite natural, as produced by the cubical
+enrichment due to the cylinder functor; it is also important in homotopy.)
+
+When the diagonal of the "standard interval" is missing (eg for chain
+complexes of abelian groups), there is no canonical horizontal composition
+of homotopies (working with the vertical composition, you get two of them;
+the middle four interchange does not hold). But there still are canonical
+horizontal compositions of "maps with homotopies" and "homotopies with
+maps".
+
+This is why I think that the basic 2-dimensional categorical setting for
+abstract homotopy should only treat such "reduced horizontal composition":
+arrows with cells, cells with arrows, but NOT cells with cells.
+Formally, it is again a category enriched over reflexive graphs, BUT wrt
+the following monoidal closed structure:
+
+X tensor Y:
+ -  the subgraph of  XxY  whose arrows are pairs  (a, b),  where  a  or  b
+is an identity;
+
+[X, Y]:
+-   vertices: the graph morhisms;
+-   arrows: their transformations (without "diagonals").
+
+References:
+
+a) The last enrichment (with further developments) has been used for
+abstract homotopy in:
+
+M. Grandis, On the categorical foundations of homological and homotopical
+algebra, Cahiers Top. Geom. Diff. Categ. 33 (1992), 135-175.   [sketch]
+
+ - , Homotopical algebra in homotopical categories, Appl. Categ. Structures
+2 (1994), 351-406.
+
+b) A notion equivalent to a category enriched in the same sense had already
+been studied in:
+
+K.H. Kamps, Ueber einige formale Eigenschaften von Faserungen und
+h-Faserungen, Manuscripta Math. 3 (1970), 237-255.
+
+c) For homotopy in groupoid-enriched categories, see Gabriel-Zisman's text
+(1967).
+
+***
+
+With best regards
+
+Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+
+e-mail: grandis@dima.unige.it
+tel: +39.010.353 6805   fax: +39.010.353 6752
+
+http://www.dima.unige.it/STAFF/GRANDIS/
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+
+
+Date: Thu, 18 Mar 1999 19:40:57 +0100
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Subject: categories: and there is a topological connection too
+
+Various replies to my query during the day (my thanks to Ronnie Brown
+and Lutz Schroeder) made me realize that my SMC structure was actually
+the lifting of the CC structure on reflexive graphs (those with a choice
+of loop) to ordinary non-reflexive graphs. Here is a bit more detail:
+
+We all know these two categories are categories of presheaves. So let G
+and R be the categories such that Set^G is graphs and  Set^R is
+reflexive graphs. There is an embedding  G --> R, which generates the
+usual triple of functors between the presheaf categories. So it seems
+this functorial machinery allows to transform the CC structure in Set^R
+into an SMC structure in Set^G, preserving the forgetful functor. There
+must be general conditions that allow this.
+
+I'm not pursuing this any more right now, because it has to have been
+done before, and in a much more general setting.
+
+Now Michael's comment is also (among other things) about the tension
+between graphs and reflexive graphs, and naturally there is Lawvere's
+"Qualitative distinctions between some toposes of generalized graphs"
+that says a lot about that tension.
+
+there may be more in there than we suspect
+
+Francois
+
+
+Date: Fri, 19 Mar 1999 09:27:02 +0100
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Errata corrige to my previous message
+
+In my previous reply to F. Lamarche's question, please take off from the
+last line of Remark 1:
+
+"   (or cardinals as well)   ".
+
+The site of cardinals  1, 2  also has the non-trivial involution  2 -> 2;
+its topos of presheaves is
+"INVOLUTIVE reflexive graphs" (which is also of interest in homotopy, of
+course).
+
+M. Grandis
+
+
+
+Date: Fri, 19 Mar 1999 14:27:58 +0100
+From: Francois Lamarche <Francois.Lamarche@loria.fr>
+Subject: categories: more on monoidal structure of graphs
+
+Since Michael's posting leapfrogged Marco's in the aether (at least from
+the viewpoint of our server) what I'll be saying may not appear in the
+right order threadwise to some.
+
+Marco Grandis wrote:
+
+
+> 
+> Would it not be simpler to work with  REFLEXIVE GRAPHS  and their cartesian
+> closed structure?
+> In my opinion, reflexive graphs are more natural than graphs:
+
+The answer is no, because of the application in mind. We want to
+consider a graph as a constructive binary relation X(x,y), where an edge
+x-->y is a proof that (x,y) are related. We also want to build such
+things by induction, using universal properties. Reflexivity is often a
+desirable feature of the free structures you want to build, but you
+don't want it to come for free, since it creates redundancies and can
+mess up the induction principle associated with the structure. In
+certain situations you want reflexivity to be a consequence of the
+induction principle. 
+
+> Remark 3.
+> [The sequel is relevant for homotopy; I do not know if it may be relevant
+> in CS, but I always had the impression that abstract homotopy should be of
+> use there, eg with respect to deformations of processes, in some sense.]
+> 
+
+There are two connections I know about between homotopy and computer
+science. The first has to do with process algebras, and originates in
+Eric Goubault's thesis, I think. Philippe Gaucher just sent a paper
+annoucement on this server about this line of research.
+
+The second connection is something Thomas Streicher, Martin Hoffmann and
+I discuss whenever we meet, which is not often enough. In constructive
+type theory there is a gadget called the Martin-L"of intensional
+equality predicate, J(x,y). So this is a version of equality, where you
+have to name the proofs that x=y. It has very simple (but rather
+mysterious) introduction and elimination rules, which can be translated
+as a universal property in a kind of higher-order universal algebra,
+where arities can not only be seen as finite sets, but also as families
+of sets, and families of families of sets and so on. In particular,
+since everything is a type, you have a type/predicate of equality proofs
+between equality proofs, and so on. For example given proofs that x=y
+and y=z, you can construct a proof that x=z, and you can do this
+uniformly, getting a term/algorithm  J(x,y)*J(y,z) --> J(x,z) (here the
+* means a fibered product over y). But you cannot show that this
+operation is itself associative, it is only associative at a higher
+order. Ah! some kind of multiple category is involved! But so far all
+attempts to use higher-order categories to describe those weird algebras
+have failed. It only works at level one: when you collapse all proofs of
+equality between proofs of equality you get that the predicate J(x,y) is
+a groupoid structure. But when you try to go to level 2 the ordinary 2-
+or bi- or lax- or whatever- categorical machinery fails. You realize
+that simplicial sets are a better paradigm/starting point, but we need
+simplicial sets with operations.
+
+BTW is anybody from G"oteborg reading this? 
+
+> This is why I think that the basic 2-dimensional categorical setting for
+> abstract homotopy should only treat such "reduced horizontal composition":
+> arrows with cells, cells with arrows, but NOT cells with cells.
+> Formally, it is again a category enriched over reflexive graphs, BUT wrt
+> the following monoidal closed structure:
+> 
+> X tensor Y:
+>  -  the subgraph of  XxY  whose arrows are pairs  (a, b),  where  a  or  b
+> is an identity;
+> 
+> [X, Y]:
+> -   vertices: the graph morphisms;
+> -   arrows: their transformations (without "diagonals").
+> 
+
+Hm... the geometrical motivations for not having full composition(s)
+here might well be related to the logical ones I mentioned briefly
+above.
+
+Francois
+
+
+Date: Fri, 19 Mar 1999 16:03:40 +0100
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Re: more on monoidal structure of graphs
+
+Francois Lamarche wrote
+
+>...But you cannot show that this
+>operation is itself associative, it is only associative at a higher
+>order. Ah! some kind of multiple category is involved! But so far all
+>attempts to use higher-order categories to describe those weird algebras
+>have failed. It only works at level one: when you collapse all proofs of
+>equality between proofs of equality you get that the predicate J(x,y) is
+>a groupoid structure. But when you try to go to level 2 the ordinary 2-
+>or bi- or lax- or whatever- categorical machinery fails.
+
+
+I wonder whether the notion of "h4-category" which I introduced for
+abstract homotopy theory (see the references in my first reply) might be of
+use for this.
+
+It is a sort of "2-category vertically relaxed up to a 'shadow' of 3-cells"
+(whereas bi-categories are horizontally relaxed up to invertible 2-cells).
+
+To begin with, it is a category enriched over reflexive graphs in the sense
+previously described: there is a reduced horizontal composition, of maps
+with cells and cells with maps, which is strictly associative as far as
+this makes sense.
+There also are vertical identities, vertical involution and vertical
+composition, which only satisfy the usual axioms up to an assigned
+equivalence relation ("2-homotopy").
+This approach is truncated at the level of usual (first-order) homotopies;
+3-cells (homotopies of homotopies) only leave their 'shadow', as an
+equivalence relation.
+
+If you want to proceed further, my impression is that the relaxed
+categorical machinery becomes too heavy (at least for my taste). However,
+if your 2-cells (homotopies) can be represented
+
+- by a cylinder functor  I,  as arrows  IX -> Y,
+- or dually by a path functor  P,  as arrows  X -> PY,
+     (or by both, forming an adjoint pair  I -| P)
+
+as it happens for most "concrete" homotopy theories, then the powers of
+such endofunctor and the clone of operations (natural transformations)
+linking them, derived from the basic ones (faces, degeneracy,
+concatenation, etc.), seem to give all what we need in any dimension.
+This machinery of derived operations can be seen in a paper of mine
+
+Categorically algebraic foundations for homotopical algebra, Appl. Categ.
+Structures 5 (1997), 363-413,
+
+but of course "abstract cylinder functors" go back, at least, to Kan; other
+references can be found in the paper above.
+
+
+Regards
+
+Marco Grandis
+
+
+Date: Sat, 20 Mar 1999 03:15:15 +0100 (MET)
+From: Tom KRANTZ <tkrantz@iml.univ-mrs.fr>
+Subject: On reflexivity
+
+A 'philosophical' interpretation of oriented graphs might be out of
+the scope of the categories mailing list, it seems elucidating to me
+though.(It could have been for Heraclit and Parmenides.)
+
+I suggest to consider vertices as states and edges as transitions.
+
+A reflexive edge corresponds to a transition from a state to itself. 
+
+Two notions of morphism of oriented graphs come seem natural:
+- A rigid embedding which preserves difference of states
+- A notion of morphism which may equalize different states.
+The meaning of equality of states needs precision then.
+
+Coherence semantics deals with a different notion of graph.
+This is clear to me and can also be deduced from a discussion between
+Thomas Ehrhard and his student Pierre to which I assisted.
+
+This bears an answer to the question of reflexivity I think.
+
+	Sincerely, Tom
+
+

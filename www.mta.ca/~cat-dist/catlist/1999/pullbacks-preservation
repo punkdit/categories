@@ -1,0 +1,98 @@
+Date: Thu, 28 Jan 1999 23:13:03 -0600 (CST)
+From: Hongseok Yang <hyang@cs.uiuc.edu>
+Subject: categories: Pullback perserving functor
+
+Would someone let me know the answer and the proof or counter example of
+the following question? 
+
+Suppose the category C has a pullback for every pair of morphism 
+(f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+category Func(C,Set) whose objects are pullback perserving functors.
+Is K ccc? (If so, how I can show this?)
+
+Thanks,
+Hongseok
+
+
+Subject: categories: Re: Pullback preserving functor
+Date: Fri, 29 Jan 1999 15:35:47 +0000 (GMT)
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+
+> Would someone let me know the answer and the proof or counter example of
+> the following question?
+>
+> Suppose the category C has a pullback for every pair of morphism
+> (f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+> category Func(C,Set) whose objects are pullback perserving functors.
+> Is K ccc? (If so, how I can show this?)
+
+
+The answer is no. First note that K is closed under products in the
+functor category. Also, it contains all the representable functors; 
+so, if it were cartesian closed, the exponential G^F would have to be 
+given by 
+
+G^F(c) \cong nat((c,-),G^F) \cong nat((c,-)\times F,G)
+
+i.e. K would have to be closed under exponentials in [C,Set]. However,
+it isn't in general. For a simple counterexample, let C be the category
+with five objects a,b,c,d,e and six non-identity morphisms
+
+a --> b, a --> c, b --> d, c --> d, a --> d, a --> e ;
+
+note that C has just one nontrivial pullback square
+
+            a -----> b
+            |        |
+            |        |
+            v        v
+            c -----> d
+
+Let F be the functor given by F(a) = F(b) = F(c) = F(d) = \emptyset,
+F(e) = {*}, and let G be F + F. Then (taking the above definition of G^F)
+G^F(a) has two elements, but G^F(b), G^F(c) and G^F(d) are singletons.
+
+Peter Johnstone
+
+
+Date: Fri, 29 Jan 1999 09:51:13 -0500 (EST)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Subject: Re: categories: Pullback perserving functor
+
+    Whether or not these functors form a cartesian-closed category
+depends strongly on the nature of the domain category.  For example,
+if the domain category is an abelian category as opposed to it
+being a pretopos.  Related matters are discussed in the recent
+paper by  Borceux and Pedicchio and the papers there cited:
+Left-exact presheaves on a small pretopos, Journal of Pure and
+Applied Algebra, vol. 135, no. 1, 4 Febr. 1999, pp 9 - 22.
+
+					
+
+*******************************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*******************************************************************************
+                       
+
+
+On Thu, 28 Jan 1999, Hongseok Yang wrote:
+
+> 
+> Would someone let me know the answer and the proof or counter example of
+> the following question? 
+> 
+> Suppose the category C has a pullback for every pair of morphism 
+> (f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+> category Func(C,Set) whose objects are pullback perserving functors.
+> Is K ccc? (If so, how I can show this?)
+> 
+> Thanks,
+> Hongseok
+> 
+> 
+> 
+
+

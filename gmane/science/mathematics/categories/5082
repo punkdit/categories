@@ -1,0 +1,107 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: making a cone universal in a faithful way
+Date: Wed, 05 Aug 2009 10:07:34 +1000
+Lines: 74
+Approved: news@gmane.org
+Message-ID: <E1MYfva-0007kh-AB@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1249479003 32067 80.91.229.12 (5 Aug 2009 13:30:03 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 5 Aug 2009 13:30:03 +0000 (UTC)
+To: Dimitri Ara <dimitri.ara@gmail.com>,categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Aug 05 15:29:56 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MYgZ1-0000tI-J4
+	for gsmc-categories@m.gmane.org; Wed, 05 Aug 2009 15:29:55 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MYfva-0007kh-AB
+	for categories-list@mta.ca; Wed, 05 Aug 2009 09:49:10 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5082
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5082>
+
+Dear Dimitri,
+
+I think that finding useful necessary and sufficient conditions in general
+is a very hard problem. But here is something that might be useful in
+specific cases.
+
+There will exist some faithful functor G:C-->D sending alpha to a colimit
+cocone if and only if the universal functor G:C-->D sending alpha to
+a colimit cocone is faithful. This universal functor can be constructed
+as follows (this forms part of the general theory of sketches).
+
+Let M be the full subcategory of [C^op,Set] consisting of those functors
+F which send alpha to a limit cone. Then M is reflective in [C^op,Set],
+via a left adjoint L, and the composite LY:C-->M does indeed send alpha
+to a colimit cocone. The universal G is obtained by factorizing LY as
+a bijective on objects functor G:C-->D followed by a fully faithful
+J:D-->M.
+
+Clearly G will be faithful if and only if LY is, and this can be determined
+once one has calculated L on representables. Calculating L explicitly
+is in general still a hard problem, but in specific cases you may be able to
+do it sufficiently explicitly to solve your problem.
+
+The connection with sketches is that you can think of your cocone as giving
+a limit sketch on C^op, then the category M defined above is the category of
+models of the sketch.
+
+Regards,
+
+Steve Lack.
+
+
+On 4/08/09 2:37 AM, "Dimitri Ara" <dimitri.ara@gmail.com> wrote:
+
+> Dear List,
+>
+> Has the following elementary problem been already studied?
+>
+> Let C be a category, I a small category, F : I -> C a functor and
+> alpha : F => c a cocone (c is an object of C). When does there exist a
+> category D and a faithful functor G : C -> D taking alpha to a universal
+> cocone?
+>
+> For example, if I is the empty category, the question becomes "when can
+> you make c an initial object in a faithful way?". If I is the final
+> category, then the cocone alpha amounts to a morphism f : F(*) -> c and the
+> question becomes "when can you make f an isomorphism in a faithful way?".
+>
+> There are two obvious necessary conditions.
+> 1) Let f,g : c -> d be two morphisms of C. If f alpha_i = g alpha_i for
+> every i in I, then we should have f = g.
+> 2) Let f : a -> F(i) and g : a -> F(j) be two morphisms of C such that
+> alpha_i f = alpha_j g. Then for every cocone beta : F => d, we should
+> have beta_i f = beta_j g.
+>
+> In the case of the empty category, the first condition means that for
+> every object d there is at most one arrow c -> d and the second condition
+> is void. In the case of the final category, the first condition means
+> that f is an epi and the second that f is a mono. It is not hard to prove
+> that in both cases, theses conditions are sufficient.
+>
+> Question: are they sufficient in the general case?
+>
+> Regards,
+> --
+> Dimitri
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

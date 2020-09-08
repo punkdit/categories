@@ -1,0 +1,237 @@
+Date: Mon, 4 Jan 1999 21:41:14 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: An Abstract Stone Duality
+
+On 29 June 1997, I announced on "categories" my "Euclidean principle"
+	f(a) & a = f(true) & a
+which holds for any support classifier or dominance Sigma (ie subobject
+classifier as in an elementary topos, but for any class of monos, eg open
+or RE subsets), where a:X->Sigma and f:X x Sigma -> Sigma.  I gave a 
+talk about this at the Category Theory meeting in Vancouver that year.
+
+At the Category Theory meeting in Tours in 1994 I talked about taking
+Par\'e's theorem (that the contravariant powerset functor in a topos,
+which is self-adjoint, is monadic) as an axiom.  Another category with
+this property is the category of locally compact locales, where Sigma is
+the Sierpinski space and "powerset" means "lattice of open sets", equipped
+with the Scott topology.
+
+This is a way of re-axiomatising general topology without the arbitrary
+unions in the traditional definition and in locale theory: the category
+of "frames" is to be both dual to the category of "spaces" and algebraic
+over it.
+
+I have now written up these ideas as a draft paper entitled
+    "An Abstract Stone Duality, I: Geometric and Higher Order Logic"
+that you can get via my page in the Hypatia Electronic Library, which is
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+(I sent copies of an earlier draft to a number of people in November 1998,
+but otherwise this is new text: it is not the same as any "notes on SDT"
+that you may have got from me over the web in the past.)
+
+After some discussion relating the monadic property to sobriety of spaces
+and spatiality of locales, I prove the converse of the basic observation
+about the Euclidean principle: if Sigma satisfies it and the adjunction
+is monadic then Sigma is the classifier for some class of monos.
+
+It is neither an axiom nor a theorem that the category has all finite limits.
+Indeed, the point is that equalisers etc depend on a notion of equality,
+which, from a computational point of view, is not as straightforward as
+pure mathematicians have traditionally considered it to be.  Some spaces
+(datatypes) admit equality in a "positive" way: for example in a group
+given by generators and relations, or in a lambda calculus with reduction
+rules, we may hope to prove equality of two terms, but not inequality.
+On the other hand, we may hope to prove inequality of real numbers but
+not equality.  These ideas are formalised by notions of "discrete" and
+"Hausdorff" spaces respectively, along with definitions of "open" and
+"compact".
+
+We show that the full subcategory of open discrete spaces is a pretopos,
+the same being true of the compact Hausdorff spaces, by showing that the
+coequaliser is Sigma-split.
+
+The point of Sigma-split co/equalisers is that, being equationally defined,
+we might hope to be able to compute with them, possibly using something
+like the "continuation-passing style" used in some compilers.
+
+The Euclidean principle and monadicity property are related, respectively,
+to the Phoa principle and repleteness in sythetic domain theory.  In that
+subject we also need an infinitary axiom that makes all functions Scott
+continuous and provides fixed points; this axiom is *not* discussed in
+the present paper, largely because this seemed an appropriate criterion
+to use to divide up a rambling collection of notes into papers.  The
+infinitary axiom and the construction of the "lift" will be considered 
+in Part II.
+
+Under the infinitary axiom, open discrete spaces form an arithmetic universe,
+ie they admit N-indexed colimits and free algebras, whilst compact Hausdorff
+space admit limits and cofree coalgebras.
+
+You might like to consider this paper alongside the recent work of Alex
+Simpson and Jaap van Oosten on Synthetic Domain Theory,
+	http://www.math.uu.nl/publications/preprints/1080.ps.gz
+which is very much concerned with the infinitary axiom.  In particular
+Alex is keen to emphasise the additional completeness of the ambient
+category that is needed to construct infinitary co/limits and solutions
+of domain equations, by comparison with directed joins and fixed points
+of functions.  He considers that some attention to the axiom of replacement
+is needed here, and I agree with him, though our treatments are different.
+
+My paper is written for a general mathematical audience, and argues its
+point of view from a position of extreme Cartesisn doubt.  I feel that
+Alex and Jaap's work is very arcane by comparison, as it depends heavily
+on Hyland's effective topos.
+
+For my own views on replacement, see the final section of my book,
+	Practical Foundations of Mathematics.
+I hope to be able to make an announcement about the availability of 
+this very soon.
+
+
+Date: Wed, 6 Jan 1999 12:35:26 +0100 (MET)
+From: Jaap van Oosten <jvoosten@math.uu.nl>
+Subject: categories: re: An Abstract Stone Duality
+
+This is a reaction to Paul Taylor's advertisement for his paper
+on Abstract Stone Duality.
+
+Paul has considered appropriate to mention the paper "Axioms and
+(Counter)examples in Synthetic Domain Theory" by Alex Simpson and
+myself, and to polemicize against it in the following way:
+  
+> You might like to consider this paper alongside the recent work of Alex
+> Simpson and Jaap van Oosten on Synthetic Domain Theory,
+> 	http://www.math.uu.nl/publications/preprints/1080.ps.gz
+> which is very much concerned with the infinitary axiom.  In particular
+> Alex is keen to emphasise the additional completeness of the ambient
+> category that is needed to construct infinitary co/limits and solutions
+> of domain equations, by comparison with directed joins and fixed points
+> of functions.  He considers that some attention to the axiom of replacement
+> is needed here, and I agree with him, though our treatments are different.
+> 
+> My paper is written for a general mathematical audience, and argues its
+> point of view from a position of extreme Cartesisn doubt.  I feel that
+> Alex and Jaap's work is very arcane by comparison, as it depends heavily
+> on Hyland's effective topos.
+
+Thanks, Paul, for mentioning our paper, but since the above text is a
+blatant misrepresentation of its content, a correction is in order.
+Our paper develops the theory on the basis of 4 axioms, of which one
+(the \neg\neg-separatedness of \Sigma) is rather special, as we explicitly
+acknowledge. Otherwise the treatment is completely general, and "completeness
+of the ambient category" nowhere enters the picture (we do have, however,
+some treatment of whether the lift functor preserves internal colimits of
+chains). The remark about Replacement refers to other work by Alex. 
+
+The axiomatic treatment raises independence questions, some of which we solve
+by considering models. One of these models is the effective topos. Nowhere
+do we hint that the effective topos should have a privileged place among
+models.
+
+Anyway, it is funny that our work, which builds on the tradition of turning
+SDT into an axiomatic theory (a process which I think is still unfinished),
+tradition which was started by Pino Rosolini, Wesley Phoa, Martin Hyland and
+Paul himself, is now found to be "arcane" (mind you, the whole subject is
+less than twenty years old) by Paul.
+
+Jaap van Oosten
+
+
+Date: Wed, 6 Jan 1999 17:52:25 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: Synthetic Domain Theory
+
+As Jaap van Oosten says, I considered appropriate to mention the paper
+"Axioms and (Counter)examples in Synthetic Domain Theory" by Alex Simpson
+and himself when I announced my own draft paper "An Absract Stone Duality".
+
+There are two reasons why I did consider this appropriate:
+(1) they and I both use the heading "synthetic domain theory" for our
+    work, and I feel that their work is important and should be considered
+    alongside mine;
+(2) people outside a particular discipline tend to go by the labels -
+    "guilt by association" - so I was keen that those who had already
+    looked at Jaap & Alex's paper (after they advertised it on "categories"
+    before the holiday) should not assume that mine would be of the same kind.
+
+I did not "polemicize" against it.  I said that I felt it was "arcane",
+but wanted to say something positive about it first. Unfortunately, as
+Alex has pointed out to me, I got the paper confused with our discussions
+when I visited Edinburgh shortly before Jaap's announcement.
+
+Jaap says that
+> it is funny that our work, which builds on the tradition of turning
+> SDT into an axiomatic theory (a process which I think is still unfinished),
+> tradition which was started by Pino Rosolini, Wesley Phoa, Martin Hyland and
+> Paul himself, is now found to be "arcane" (mind you, the whole subject is
+> less than twenty years old) by Paul.
+
+As a generality, and without wishing to take this argument any further,
+surely a *founder* of a theory is qualified to describe a subsequent 
+development of it as "arcane", ie accessible only to particular specialists,
+and not what that founder had in mind?  SDT is a minority research topic,
+still the plaything of a group of friends - that's what I like about it.
+It's not Tony Blair's New Labour Party - we *are* allowed to disagree!
+
+Anyway, since this particular beast has now been awoken from its slumbers,
+I want to try to explain the mathematical content of this disagreement
+briefly for a general audience.
+
+Probably most "categories" readers have now heard the slogan,
+	"Domains are sets - all functions are computable"
+cf	"Manifolds are sets - all functions are smooth".
+Synthetic domain theory and synthetic differential geometry are then about
+(1) postulating conditions on the ambient topos (category of "sets")
+(2) selecting from those "sets" those that are to be called "domains" or
+    "manifolds" and
+(3) using these ideas to prove interesting theorems or compute programs.
+
+Much of the progress and disagreement in SDT has been about part (2).
+
+Wesley Phoa, in his 1990 Cambridge thesis under Martin Hyland's supervision,
+was the first to describe objects in a certain topos that looked like the
+"domains" in theoretical computer science, rather than like lattices in
+pure mathematics. (I *don't* mean to polemicize against Pino Rosolini there.)
+Wes defined a certain preorder on each object of the topos, and restricted
+to those objects for which this is a poset (antisymmetric), and further
+to those for which it has directed joins, a least element and therefore
+fixed points.
+
+In particular, Wes selected his domains by testing each one for the relevant
+infinitary condition.
+
+My idea, in my 1991 LiCS paper, was that the infinitary condition could be
+imposed on a *single* object, and the domains selected be means of a more
+finitary categorical notion called "repleteness" that Martin Hyland had
+introduced in his paper in the 1990 Como Category Theory proceedings.
+
+Alex Simpson, John Longley and Jaap van Oosten later came up with another
+infinitary condition, "well-completeness", and they, like Wes, select their
+domains by testing this for each domain.  Under suitable conditions, this
+gives a larger full subcategory than mine.
+
+I do not dare even to give you the definition of well-completeness, let
+alone attempt to defend or attack it.  You should read Alex and Jaap's
+paper for that.
+
+One of the objections to repleteness is that it is very difficult to 
+characterise in familiar models.  Pino Rosolini has (with others)
+investigated this, and you can find some of his results in the papers 
+listed on his Hypatia page,
+	http://hypatia.dcs.qmw.ac.uk/author/RosoliniG
+
+(By the way, Hypatia now has a new server and some new code.  The machine
+on which it was living from May to December 1998 was forever crashing,
+partly because the mirrored papers were stored on a large collection of 
+very old disks with a SCSI chain that made visitors to our machine room 
+gasp in horror.)
+
+My paper is, in this context, a defence of the notion of repleteness.
+Since "attack is the best form of defence" it does this by replacing it
+with a stronger notion, namely that a certain adjunction be monadic.
+This has the effect of replacing the "domains" defined by ordered structures
+that have been in use in theoretical computer science since the early 1970s
+by locally compact locales.
+
+Paul
+

@@ -1,0 +1,366 @@
+From: "Bill Halchin" <bhalchin@hotmail.com>
+Subject: categories: co-exponential question
+Date: Fri, 16 Jul 1999 12:55:48 PDT
+
+This is actually a "dual" question.
+Basically I want to do the dual of the construction
+gives the notion of an exponential or map object.
+
+Suppose we have a category C with sums. Then we build the
+following category from C.
+
+object:  T+X<-----Y
+
+map: from T+X<-----Y  to T+X'<-------Y is a C map "alpha"  such
+that we have the following diagram:
+
+                   I-sub-T+alpha
+         T+X---------------------------->T+X'
+           ^                              ^
+            \                            /
+             \                          /
+              \                        /
+               \                      /
+                \                    /
+                 \                  /
+                  \                /
+                   \              /
+                    \            /
+                     \          /
+                      \        /
+                       \      /
+                        \    /
+                         \  /
+                          \/
+                          Y
+
+
+   Then suppose there exists a C-object called Y**T such
+that  T+Y**T<-------Y is the initial object of the category
+just built above. What significance does Y**T have opposed
+to the concept of an exponential???? If I did everything
+correctly it (Y**T) should be the dual of T**Y.
+
+
+Regards,
+
+Bill Halchin
+
+
+
+Date: Tue, 20 Jul 1999 13:57:18 -0700
+From: William James <w.james@latrobe.edu.au>
+Subject: categories: Re: co-exponential question
+
+Bill Halchin wrote:
+> 
+> This is actually a "dual" question.
+> Basically I want to do the dual of the construction
+> gives the notion of an exponential or map object.
+> 
+> Suppose we have a category C with sums. Then we build the
+> following category from C.
+> 
+> object:  T+X<-----Y
+> 
+> map: from T+X<-----Y  to T+X'<-------Y is a C map "alpha"  such
+> that we have the following diagram:
+> 
+>                    I-sub-T+alpha
+>          T+X---------------------------->T+X'
+>            ^                              ^
+>             \                            /
+>              \                          /
+>               \                        /
+>                \                      /
+>                 \                    /
+>                  \                  /
+>                   \                /
+>                    \              /
+>                     \            /
+>                      \          /
+>                       \        /
+>                        \      /
+>                         \    /
+>                          \  /
+>                           \/
+>                           Y
+> 
+>    Then suppose there exists a C-object called Y**T such
+> that  T+Y**T<-------Y is the initial object of the category
+> just built above. What significance does Y**T have opposed
+> to the concept of an exponential???? If I did everything
+> correctly it (Y**T) should be the dual of T**Y.
+
+Forgive my ignorance: is T+Y**T<----Y to be initial because
+the usual construction for the exponential has the relevant
+arrow as terminal? Can you suggest to me a reference for that
+construction of exponentials?
+
+As for significance: my own research into co-exponentials is
+in terms of them as characteristic of lattices dual to
+Heyting algebras. These dual-Heyting algebras work well
+as algebras for a brand of paraconsistent logic (they have
+a complement operator which has in general that an element
+and its complement overlap). Alternatively, you can
+think of co-exponentials as productive of the interesting
+topological notions associated with closed sets, like boundary.
+
+My feeling is that co-exponentials count as useful in more
+interesting kinds of maths than turn up simply in those
+categories dual to toposes.
+
+William James
+
+
+Date: Tue, 20 Jul 1999 18:41:59 +0100 (BST)
+From: Paul Levy <pbl@dcs.qmw.ac.uk>
+Subject: categories: Re: co-exponential question
+
+I don't know if this is relevant to your question, but there is an example in
+programming semantics where the dual of a cartesian closed
+category has independent significance, due to Lafont, Streicher, Reus
+and Hofmann.  (Some further work was done by Selinger.)  It is found in the following paper:
+		  
+@Article{StreicherReus:continuations,
+  title =        "Classical logic, continutation semantics and abstract
+                 machines",
+  author =       "Th. Streicher and B. Reus",
+  pages =        "543--572",
+  journal =      "Journal of Functional Programming",
+  month =        nov,
+  year =         "1998",
+  volume =       "8",
+  number =       "6",
+}
+
+The construction is as follows.
+
+Let C be a distributive
+category, and let Ans (the "answer type") be an object in C, such that the exponential X -> Ans exists for
+each object X.  Define two categories K and
+N as follows. Both have the same objects as C.  In K, a morphism from
+X to Y is a C-morphism from X x (Y -> Ans) to Ans.  In N, a morphism
+from X to Y is a C-morphism from (X -> Ans) x Y to Ans. 
+
+ Clearly these two
+categories are dual.  Streicher and Reus' paper makes it clear that just as K can be
+used to interpret a typed call-by-value language with control effects (which
+was well-known), N can be used to interpret a typed call-by-name language
+with control effects.  Like any call-by-name model, N is cartesian closed:
+
+the product of X and Y in N is given by X+Y
+
+the exponential from X to Y in N is given by (X -> Ans) x Y
+
+K is certainly an important category, but I wouldn't say that the fact
+that it has coexponentials is significant.  
+
+Paul
+
+===========================================================================
+Paul Blain Levy, Department of Computer Science,
+Queen Mary and Westfield College, LONDON E1 4NS
+http://www.dcs.qmw.ac.uk/~pbl/
+===========================================================================
+
+
+From: Andrzej Filinski <andrzej@daimi.aau.dk>
+Date: Thu, 22 Jul 1999 22:28:12 +0200 (MET DST)
+Subject: categories: Re: co-exponential question
+
+Paul Levy writes:
+
+> I don't know if this is relevant to your question, but there is an
+> example in programming semantics where the dual of a cartesian closed
+> category has independent significance, due to Lafont, Streicher, Reus
+> and Hofmann.  (Some further work was done by Selinger.)  It is found
+> in the following paper:  [Streicher & Reus 1998]
+
+Indeed, co-exponentials are closely tied the semantics of call/cc-like
+control operators. This connection is perhaps expressed more directly in
+the following (regrettably somewhat unpolished) work:
+
+@MastersThesis{Filinski:89a,
+  author =      "Andrzej Filinski",
+  title =       "Declarative Continuations and Categorical Duality",
+  school =      "Computer Science Department, University of Copenhagen",
+  year =        1989,
+  month =       Aug, 
+  note =        "DIKU Report 89/11",
+  URL =         "http://www.brics.dk/~andrzej/papers/DCaCD.ps.gz"
+}
+
+@InProceedings{Filinski:89b,
+  author =      "Andrzej Filinski",
+  title =       "Declarative Continuations: An Investigation of
+                 Duality in Programming Language Semantics",
+  booktitle =   "Category Theory and Computer Science",
+  series =      LNCS,
+  number =      389,
+  address =     "Manchester, UK",
+  month =       Sep,
+  pages =       "224-249"
+}
+
+Specifically, in the category induced by the types and terms of a
+call-by-value language with first-class continuations, the coproduct
+functor - + A actually has a left adjoint - x (A -> 0), where 0 is the
+empty type.  The operational intuition behind this construction is that
+a function f : X -> Y + A returning either a "normal" (Y) or an
+"exceptional" (A) result corresponds to a function f' : X x (A -> 0) ->
+Y, returning only the normal result, but passing any exceptional results
+to an additional, non-returning-function parameter.
+
+(In a purely functional language, the type A -> 0 would of course
+contain at most one value; but in the presence of control effects, such
+as exceptions, there can be many distinct "functions" of this type. And
+with a sufficiently powerful control operator, it actually becomes
+possible to define co-application and co-currying with equational
+properties exactly mirroring those of CCC exponentials.)
+
+Still, as Paul notes,
+
+> K is certainly an important category, but I wouldn't say that the fact
+> that it has coexponentials is significant.  
+
+constructing a categorical semantics of a language with control operators
+_directly_ in terms of coexponentials is somewhat awkward, and the
+formulation used by Streicher and Reus is almost certainly nicer to work
+with in practice.
+
+-- Andrzej
+
+
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Subject: categories: Re: co-exponential question
+Date: Fri, 23 Jul 1999 15:40:52 -0400 (EDT)
+
+I agree completely with Paul and Andrzej, except possibly for this:
+
+> Still, as Paul notes,
+> 
+> > K is certainly an important category, but I wouldn't say that the fact
+> > that it has coexponentials is significant.  
+> 
+> constructing a categorical semantics of a language with control operators
+> _directly_ in terms of coexponentials is somewhat awkward, and the
+> formulation used by Streicher and Reus is almost certainly nicer to work
+> with in practice.
+
+The _direct_ categorical semantics of languages with control operators
+is actually not too unnatural and leads to some interesting category
+theory. Let me first clarify the difference between direct and
+indirect semantics. To give a direct semantics, one starts with a
+class of categories with algebraic structure (for our purposes:
+structure that is given by object constructors, morphism constructors,
+and equations on morphisms). In the direct interpretation of a
+language, types are interpreted as objects, type constructors as
+object constructors, and typing judgments as morphisms, in such a way
+that the language forms an _internal language_ for the class of
+categories at hand. This means, among other things, that one can
+construct a syntactic category from a theory of the language. Thus,
+all structure of the category (on objects and morhpisms) is denotable
+in the language. The usual interpretation of the simply-typed lambda
+calculus in a cartesian-closed category is perhaps the best-known
+example of a direct semantics. (Direct semantics of higher order can
+be given in fibered categories, but this is not necessary for our
+purposes here).
+
+In an indirect semantics, one does not interpret the language directly
+in a category with algebraic structure, but in a derived auxiliary
+category. Moggi's monadic semantics is an example of an indirect
+semantics.  Given a category C with a monad T, one interprets the
+language (for instance, a call-by-value lambda calculus) in the
+Kleisli category of the monad. Notice that the structure of the
+Kleisli category, per se, is not necessarily algebraic in the above
+sense. The Reus-Streicher-Lafont-Hofmann semantics is indirect; in
+fact it is the monadic semantics for the continuations monad
+R^(R^(-)).
+
+Indirect semantics are very successful in practise. Among other
+things, they have proven excellent tools for reasoning about and
+implementing control effects. This point is made convincingly in
+Andrzej Filinski's PhD thesis [1]. However, the correspondence between
+syntax and semantics is not as close as in the direct case: one cannot
+usually speak of internal languages in the context of indirect
+semantics.  The reason is that, from a syntactic theory of the
+language, one can reconstruct only the Kleisli category of T, but not
+the underlying category C or the monad T itself. Thus, direct
+semantics might be more satisfying to the theorist, because they
+capture the essence of the language precisely, and without resorting
+to a translation to a meta-language.
+
+The difference between direct and indirect semantics is explained very
+nicely in a recent paper by Carsten Fuhrmann [2], where he also gives
+a general method of constructing direct semantics from indirect ones.
+It seems that direct semantics are often characterized by the presence
+of certain _non-natural_ transformations, and that indirect semantics
+are a way of hiding this non-naturality.
+
+The first direct semantics for a call-by-value language with control
+effects are the tensor-not categories of Hayo Thielecke [3]. His work
+was later extended by me to a language with finite coproducts (this is
+where co-exponentials enter the picture) and to the call-by-name case
+[4]. I called the resulting class of categories "control
+categories". The connection between the direct and indirect semantics
+can be established via categorical representation theorems, and such
+theorems were shown by Fuhrmann for tensor-not categories [5], and
+independently by myself for control categories [4].
+
+It is interesting that a call-by-name language is an internal language
+for control categories, and the corresponding call-by-value language
+is an internal language for the dual co-control categories. As a
+consequence, one obtains a syntactic duality between call-by-name and
+call-by-value [4]. Such a duality was conjectured by Streicher and
+Reus [6], and certainly anticipated by Filinski's work on the
+symmetric lambda calculus [7].
+
+Best wishes, -- Peter
+
+[1] A. Filinski. Controlling effects. PhD Thesis in Computer Science,
+Carnegie Mellon University, 1996.
+
+[2] C. F\"uhrmann. Direct models for the computational
+lambda-calculus. Technical Report ECS-LFCS-98-400, Edinburgh, 1998.
+
+[3] H. Thielecke. Categorical structure of continuation passing
+style. PhD Thesis in Computer Science, Edinburgh, 1997.
+
+[4] P. Selinger. Control categories and duality: on the categorical
+semantics of the lambda-mu calculus. Submitted 1999. Available from
+Hypatia or http://www.math.lsa.umich.edu/~selinger/papers.html
+
+[5] C. F\"uhrmann. Exponential categories and semantics of
+continuations. Presented at MFPS, 1998.
+
+[6] T. Streicher, B. Reus. Classical Logic, continuation semantics and
+abstract machines. Journal of Functional Programming 8(6)543-572, 1998.
+
+[7] A. Filinski. Declarative continuations and categorical duality.
+Masters Thesis in Computer Science, DIKU, University of Copenhagen,
+1989. DIKU Report 89/11.
+
+
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Subject: categories: on the coexponential question
+Date: Thu, 5 Aug 1999 14:52:46 +0200 (MESZ)
+
+Recently there was brought up the question whether duals of ccc's may have
+significance and it has been pointed out by P. Levy and P. Selinger that a 
+good example is that of the Kleisli category for the continuation monad.
+
+In a sense the dual of the Kleisli category is much neater as it is cc.
+There is some ``odd'' structure there corresponding to some sort of
+``classical disjunction''. It is precisely this ``odd'' structure which is
+used for constructing ``function spaces'' in the Kleisli category which, 
+however, aren't exponentials.
+Actually, there can't exist proper function spaces for the following reason. 
+If C and its dual are both cartesian closed then C is a bi-Heyting algebra
+as if C^op is cc then 1+(_) is a right adjoint and accordingly 1+1 ~= 1
+form which it follows that C is posetal. This strengthens ``Joyal's Lemma''
+saying that any c.c. with an involution is actually a Boolean algebra.
+
+Thomas S.
+
+

@@ -1,0 +1,162 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt09@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Equideductive categories and their logic
+Date: Fri, 26 Jun 2009 09:54:10 +0100
+Lines: 129
+Approved: news@gmane.org
+Message-ID: <E1MKSA4-0001vx-3r@mailserv.mta.ca>
+Reply-To: Paul Taylor <pt09@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1246089056 13306 80.91.229.12 (27 Jun 2009 07:50:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sat, 27 Jun 2009 07:50:56 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Sat Jun 27 09:50:49 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MKSgS-0003wB-In
+	for gsmc-categories@m.gmane.org; Sat, 27 Jun 2009 09:50:48 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MKSA4-0001vx-3r
+	for categories-list@mta.ca; Sat, 27 Jun 2009 04:17:20 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5027
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5027>
+
+               "Equideductive categories and their logic"
+                    www.PaulTaylor.EU/ASD/extension
+
+Under the heading "Locally cartesian closed categories",
+on 8 October 2007,  I asked whether anybody had investigated
+to what extent the true statement but an incorrect definition
+> Any topos is a CCC with an internal Heyting algebra,
+actually gives rise to interesting structure.  However,
+I didn't get much response.
+
+I went on
+> Suppose that the category has all FINITE LIMITS (terminal object,
+> finite products and equalisers) and POWERS  Sigma^X of an internal
+> DISTRIBUTIVE LATTICE (Sigma, top, bot, meet, join).   Maybe there
+> is also a natural numbers object N and joins Sigma^N->Sigma with
+> the Frobenius law.  (I would also like this to obey the monadic
+> and Phoa principles of ASD, but I'm not going to spell them out here.)
+>
+> Maps X->Sigma give rise to a "geometric logic" of "open" subspaces.
+>
+> Then the order relation between maps X->Sigma^Y leads to a richer
+> logic of "general" subspaces,  with  =>  and  forall_Y.
+>
+> A logical formula of the more general form consists of geometric
+> sub-formulae joined together with  =>  and forall,  to which we might
+> add  the other first order connectives as "syntactic sugar", defined
+> in the usual classical way.   If a geometric sub-formula is immediately
+> enclosed in forall_K or exists_N, where K happens to be compact or
+> N overt, then this a priori more general quantifier may be considered
+> to be part of the geometric sub-formula.
+
+The draft paper advertised above investigates these ideas.
+
+This work was part of a re-formulation of Dana Scott's equilogical
+space construction about which you can find three sets of slides
+at www.PaulTaylor.EU/slides/ and the details will follow shortly.
+
+My lengthy posting on "Applications of the Yoneda embedding"
+on 20 June 2009 also provides background material for this.
+
+However, it has turned out to be very fruitful to leave the CCC
+aside and first consider the properties of a category that "lies
+nicely" within its cartesian closed extensions.  The categories
+of sets, of sober topological spaces (in the textbook sense) and of
+affine varieties have the appropriate properties.  However, because
+of the counterexample that I gave in "Aspects of locale theory"
+on 9 June 2009, the category of locales does not (products do not
+preserve epis).
+
+As I suggested in 2007, the key idea is to study equalisers
+targeted at exponentials.   In terms of the Yoneda embedding,
+if we have a pair of maps from a representable presheaf to
+the exponential (Sigma^-) of another representable, is the
+equaliser representable too?  We can reformulate this in the
+original category, without using presheaves, as a (kind of)
+PARTIAL PRODUCT.   The categories of sets, topological spaces
+and affine varieties have these partial products.
+
+(I would like to thank Andrea Schalk, Mike Barr and possibly
+Robin Cockett for joining me in banging our heads against the
+brick wall of trying to find out whether locales have them too.
+Probably they don't, but I'm not sure whether it is this or
+something else that goes wrong.)
+
+An EQUIDEDUCTIVE CATEGORY is one that has finite limits,
+(my) partial products, an object Sigma that is injective wrt
+the monos that arise from partial products, and enough injectives.
+It turns out that those objects A that have exponentials Sigma^A
+are SOBER in my abstract sense, and the adjunction Sigma^- -| Sigma^-
+on this subcategory is monadic.
+
+In other words we have the characteristic properties of the
+subcategory of locally compact spaces within the category of
+sober topological spaces, without assuming any structure on Sigma
+such as being a lattice.
+
+EQUIDEDUCTIVE LOGIC captures this categorical structure in symbolic
+form.  It is a predicate calculus whose object language is the
+sober lambda calculus.  The chief feature is a quantified implication
+that justifies the (recursive) notation
+      E = { x:A | All y:B. q(y) => fxy=gxy }
+for the equaliser   E >--> A ====> Sigma^Y    where  Y = {b:B | q(y)}.
+
+Note that the predicates that are defined by this logic are general
+subobjects, not terms of type Sigma^A.
+
+Using quantification over terms of type Sigma^A, one can define an
+"existential quantifier".  This is the most striking aspect of
+equideductive logic:  although this is an old idea (maybe due to
+Russell) from higher order logic, it turns out to characterise
+the EPIs in the category, which have to be preserved by products.
+
+Of course, epis need not be surjective.   For example  N-->>X is
+epi amongst sober spaces, where X is the domain of ascending
+natural numbers, with T=oo.   This means that one has to be
+EXTREMELY careful in using this quantifier -- it only has a
+restricted Frobenius law and doesn't allow substitution -- but
+I think that it will turn out to be very useful.  For example,
+Scott continuity can be expressed in the form that, for phi:Sigma^N,
+"there exists" a finite set S such that  phi n <=> n in S.
+What this means is that it is sufficient to test this case when
+proving equality of terms of type Sigma.
+
+We recover topology (in the style of ASD) by requiring SOME of
+these quantifiers to agree with structure on Sigma.  That is,
+a space {x:A|p(x)}  is compact or overt if the PREDICATE given
+by quantification of a term of type Sigma^A agreed with another
+term of type Sigma.
+
+On the other hand, and coming back to the question at the top
+of this posting, we recover set theory (ie an elementary topos)
+by requiring ALL quantifiers to agree with operators on Sigma.
+
+I trust that I will not hear any further repetition of the claim
+that ASD is restricted to locally compact spaces.  This paper
+essentially replaces "Subspaces in ASD" and the monadic lambda
+calculus.  It also fills in several gaps in other papers, such
+as allowing equational hypotheses and constructing the compact
+and overt subspaces that are described by modal operators.
+
+Paul Taylor
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

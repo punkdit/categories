@@ -1,0 +1,137 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Midpoint Algebras
+Date: Wed, 19 Jan 2000 16:16:41 -0500 (EST)
+Lines: 111
+Approved: news@gmane.org
+Message-ID: <200001192116.QAA27262@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017776 30891 80.91.229.2 (29 Apr 2009 15:09:36 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:36 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Jan 19 20:33:00 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA12463
+	for categories-list; Wed, 19 Jan 2000 19:19:25 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 5014
+Original-Lines: 110
+Xref: news.gmane.org gmane.science.mathematics.categories:1363
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1363>
+
+I've defined the theory of midpoint algebras to be given by a single
+binary operator satisfying the three equations;
+
+            x|x = x                 Idempotence;
+            x|y = y|x               Commutativity;
+    (u|v)|(x|y) = (u|x)|(v|y)       Middle-two interchange;
+
+and the Horn sentence:
+
+          x|y = x|z  =>  y = z      Cancelation.
+
+For a non-Euclidean example choose a subset of the circle consisting
+of an oddly finite number of evenly placed points ("evenly placed"
+meaning that the distances between any point and its two immediate
+neighbors are the same). For any two points we take their midpoint to
+be the unique point that's equally distant from the two of them. I'll
+call this a cyclic midpoint algebra. There's one isomorphism type for
+each odd natural number. And there aren't too many other finite
+midpoint algebras:
+
+1.
+    Any non-empty finite midpoint algebra is isomorphic to a 
+    product of cyclic midpoint algebras each of prime-power order.
+
+(In particular, there are no finite midpoint algebras of even order.)
+
+A little theorem that I find quite annoying:
+
+2.
+    The finite midpoint algebras are semantically complete with 
+    respect to the Horn theory. That is, the universally quantified
+    first-order Horn sentences on the predicate  x|y = z   that 
+    hold for all cyclic midpoint algebras hold for all midpoint 
+    algebras.
+
+It's annoying because the finite examples are so unlike the motivating
+example of Euclidean space. (Note the perversity: the midpoint of a
+pair of adjacent points on a cyclic midpoint algebra is maximally far
+from each of them.)
+
+An algebra (for any theory) is said to be torsion-free if the only
+finite subalgebras are those with just one element. Torsion freeness
+is always given by a Horn theory. For midpoint algebras, torsion 
+freeness can be specified with the sequence of Horn sentences of the
+form:
+          x = y|(y|(y|(...(y|(y|x))...)))   =>   x = y
+
+I little theorem that I don't find at all annoying:
+
+3.
+    The real line is semantically complete with respect to the 
+    universal quantified first-order theory of torsion-free 
+    midpoint algebras.
+
+
+Because:
+
+1:
+Given a non-empty finite midpoint algebra choose an element and label
+it  0.  Define the halving function  h  by  hx = 0|x.  The cancelation
+condition says that  h  is injective, therefore a permutation. Define
+x+y  by  h(x+y) = x|y  and verify the abelian group axioms. The
+decomposition theorem for finite abelian groups finishes the proof.
+
+2:
+Given an arbitrary non-empty midpoint algebra we may, as observed in
+my first post on this subject, choose a  0  and obtain a larger 
+algebra in which the halving map becomes an automorphism. (It may be 
+explicitly constructed as the set whose elements are named by pairs
+<x,n>  where  x  is an element in the given algebra and  n  is a 
+natural number; <y,m>  names the same element iff  h^m(x) = h^n(y);
+midpoints are defined by  <x,n>|<z,p>  = <h^p(x)|h^n(y),n+p>.) 
+
+Define  x+y  as above to obtain a commutative monoid with the
+cancelation property and apply the classical construction to obtain a
+larger commutative monoid that is an abelian group. Note that this
+group has unique division by two, hence we may view it as a module
+over the ring, D, of dyadic rationals.
+
+Given a Horn sentence with a counterexample in some midpoint algebra
+we seek a counterexample in a cyclic midpoint algebra. The given
+counterexample consists of a finite number of elements. If we embed
+their ambient midpoint algebra into a  D-module, we may cut down
+to the submodule generated therein by the image of those elements to 
+obtain a finitely generated  D-module. One may easily verify that  D
+is a principal ideal domain, hence this last  D-module decomposes as a
+direct sum of cyclic  D-modules. The indecomposable cyclic modules
+correspond to the prime-powers in  D, that is, there are finite cyclic
+groups of odd (ordinary) prime power order (each automatically a  
+D-module) and one infinite case,  D  itself, viewed as a  D-module.
+
+For the finite set of elements to constitute a counterexample we
+need to maintain one given non-equation, hence we can land in a cyclic
+D-module. If it happens to be the infinite cyclic  D-module, 
+factor out by a principal ideal generated by a sufficiently large
+prime integer to maintain the non-equation.
+
+3. 
+Given a counterexample to a universally quantified first-order
+sentence in a torsion-free midpoint algebra repeat the above
+construction to obtain a counterexample in a finite direct sum of
+cyclic  D-modules. Verify that it remains a counterexample when we 
+factor out the torsion submodule -- that is, verify that the map from
+the original torsion-free midpoint algebra remains an embedding. 
+
+We now have a counterexample in a finite direct sum of copies of  D.
+Enlarge to a finite direct sum of copies of the rational numbers. One
+does not even need the axiom of choice to embed finite-dimensional
+rational vector spaces into the one-dimensional real space. 
+
+

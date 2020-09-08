@@ -1,0 +1,141 @@
+Path: news.gmane.io!.POSTED.ciao.gmane.io!not-for-mail
+From: David Roberts <droberts.65537@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Monoidal product functor is strong monoidal, when?
+Date: Mon, 20 Jan 2020 14:32:57 +1030
+Approved: news@gmane.org
+Message-ID: <E1itd3S-0008DJ-UH@rr.mta.ca>
+References: <E1igx3a-0002bJ-VE@rr.mta.ca>
+  <CAOK96nJhAcT-dRMKVwBCKW0g11wbUiz9M4WSgM8MDQfzujW_yA@mail.gmail.com>
+Reply-To: David Roberts <droberts.65537@gmail.com>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Injection-Info: ciao.gmane.io; posting-host="ciao.gmane.io:159.69.161.202";
+	logging-data="112569"; mail-complaints-to="usenet@ciao.gmane.io"
+Cc: "categories@mta.ca list" <categories@mta.ca>
+To: Matsuoka Takuo <motogeomtop@gmail.com>
+Original-X-From: majordomo@rr.mta.ca Mon Jan 20 20:51:21 2020
+Return-path: <majordomo@rr.mta.ca>
+Envelope-to: gsmc-categories@m.gmane-mx.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by ciao.gmane.io with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.92)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1itd4z-000T5Y-Ir
+	for gsmc-categories@m.gmane-mx.org; Mon, 20 Jan 2020 20:51:21 +0100
+Original-Received: from rr.mta.ca ([198.164.44.159]:41434)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1itd3b-0005d4-Dh; Mon, 20 Jan 2020 15:49:55 -0400
+Original-Received: from majordomo by rr.mta.ca with local (Exim 4.92.1)
+	(envelope-from <majordomo@rr.mta.ca>)
+	id 1itd3S-0008DJ-UH
+	for categories-list@rr.mta.ca; Mon, 20 Jan 2020 15:49:46 -0400
+In-Reply-To: <CAOK96nJhAcT-dRMKVwBCKW0g11wbUiz9M4WSgM8MDQfzujW_yA@mail.gmail.com>
+Precedence: bulk
+Xref: news.gmane.io gmane.science.mathematics.categories:10107
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/10107>
+
+Hi Takuo,
+
+thanks for that observation, it's rather nice way to put it.
+
+Aaron Mazel-Gee had another way to show it, which he shared with me
+privately, and gave me permission to pass on to the list, copied
+below.
+
+It turns out that there are two diagrams that prove the result about
+symmetric monoidal functors (if one takes an elementary approach, and
+not using strictification, as Joyal=E2=80=93Street do in the published
+'Braided tensor categories'), which are two halves of the generalised
+resultoassociahedron on the middle of page 39 of
+http://web.science.mq.edu.au/~street/BatanAustMSMq.pdf, originally
+appearing in work of Bar-Natan in 1993 (or so, it's a little hard to
+recognise). If one categorified this result, then one could have a
+3-arrow that filled this polyhedral diagram of 2-arrows.
+
+=3D=3D=3D=3D=3D
+On Tue, 17 Dec 2019 at 08:46, Aaron Mazel-Gee wrote:
+>Hi David,
+
+>It sounds like this is (once again) the opposite what you're looking for, =
+but I would say that this is a special instance of a more general fact.
+
+>Let (V,=E2=8A=A0) be a symmetric monoidal =E2=88=9E-category, and write CA=
+lg(V) for its =E2=88=9E-category of commutative algebras (a.k.a. E_=E2=88=
+=9E-algebras).
+
+>(1) CAlg(V) admits finite coproducts, and the forgetful functor CAlg(V) --=
+> V canonically enhances to a symmetric monoidal functor (CAlg(V),=E2=88=90=
+) --> (V,=E2=8A=A0).
+
+>(1') In particular, for any pair of objects A,B=E2=88=88CAlg(V), one might=
+  write A=E2=8A=A0B=E2=88=88CAlg(V) for their coproduct.
+
+>(2) Using the notation (1'), for any A,B=E2=88=88CAlg(V), there is a canon=
+ical enhancement of the multiplication map A=E2=8A=A0A --> A from a morphis=
+m in V to a morphism in CAlg(V).
+
+>(3) For any =E2=88=9E-operad O, note the existence of a forgetful functor =
+CAlg(V) --> Alg_O(V).
+
+
+
+>Now, take V to be the (2,1)-category Cat, equipped with the cartesian symm=
+etric monoidal structure.  Then, an E_=E2=88=9E-algebra in V is nothing mor=
+e or less than a symmetric monoidal category C.  By (2), the symmetric mono=
+idal product C x C --> C admits a canonical enhancement to a symmetric mono=
+idal functor.  And if you like, you can apply (3) with O=3DE_2.
+
+=3D=3D=3D=3D=3D=3D
+
+Thanks,
+David
+
+David Roberts
+Webpage: https://ncatlab.org/nlab/show/David+Roberts
+Blog: https://thehighergeometer.wordpress.com
+
+On Sun, 12 Jan 2020 at 01:15, Matsuoka Takuo <motogeomtop@gmail.com> wrote:
+>
+> Hi David,
+>
+> Your message caught my attention on my spam tray by Gmail's fault.
+>
+> I'm not sure what proof would be nice to you, but as far as I could see,
+> the construction of a symmetric monoidality of the multiplication of a
+>> _symmetric_ monoidal category is largely trivial. Let Fin denote the
+> category of finite sets. Then, a symmetric monoidal category (C,@) gives
+> you a symmetric monoidal functor Fin ---> Cat which associates to a finit=
+e
+> set S the category C^S. The symmetric monoidal structure of C x C gives
+> you a symmetric monoidal structure on the functor Fin ---> Cat
+> associating C^S x C^S to S. Inspecting this symmetric monoidal functor,
+> you further obtain a map of these symmetric monoidal functors which
+> associates to S the multiplication functor
+> C^S x C^S ---> C^S induced from the codiagonal map S + S ---> S, where
+> "+" in the source denotes the coproduct operation in
+> Fin. This is the desired structure.
+>
+> As you see, we have used the symmetric monoidality of the product
+> functor Cat x Cat ---> Cat, which you have because the Cartesian product
+> is a limit so preserves products. Thus, a reference you are looking for
+> may be
+>
+> Graeme Segal, Categories and cohomology theories, Topology 13 (1974),
+>
+> which essentially contains a sufficient argument for this (and is indeed
+> earlier than Joyal=E2=80=93Street).
+>
+> To conclude, "commutation with the braiding" comes immediately from
+> the naturality of the codiagonal map, to commute with any
+> automorphism of a finite set.
+>
+> Best regards,
+> Takuo Matsuoka
+>
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

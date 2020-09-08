@@ -1,0 +1,81 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Evil in bicategories
+Date: Sun, 12 Sep 2010 10:13:13 -0700
+Lines: 42
+Approved: news@gmane.org
+Message-ID: <E1Ousbk-00026e-O0@mlist.mta.ca>
+References: <E1OuQsT-0003hL-P6@mlist.mta.ca> <20100911232358.GA32145@ugcs.caltech.edu> <AANLkTimbfG0tkjSNZgjL2yADBHnKAXQiHYsAkioEnxJY@mail.gmail.com> <20100912073136.GA9115@ugcs.caltech.edu> <AANLkTi=ZLdVcbvaHPaCfaZhzyDYCdwLNUQTj-5fNZ4p4@mail.gmail.com>
+Reply-To: Toby Bartels <toby@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1284321262 5617 80.91.229.12 (12 Sep 2010 19:54:22 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 12 Sep 2010 19:54:22 +0000 (UTC)
+Cc: David Leduc <david.leduc6@googlemail.com>,	droberts@maths.adelaide.edu.au
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sun Sep 12 21:54:21 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ousd2-0007Lz-Qn
+	for gsmc-categories@m.gmane.org; Sun, 12 Sep 2010 21:54:21 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:58030)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ousbn-0008IN-7Z; Sun, 12 Sep 2010 16:53:03 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ousbk-00026e-O0
+	for categories-list@mlist.mta.ca; Sun, 12 Sep 2010 16:53:00 -0300
+Content-Disposition: inline
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6146
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6146>
+
+>Ah, it's only for bicategories. I was expecting a definition in
+>dependent type theory of omega-categories. That would have helped me
+>understanding it.
+
+Well, omega-categories are harder, but the Trimble--May approach
+(chapter 8 in the guidebook) makes sense in dependent type theory,
+because it also begins (paraphrasing page 138 in Cheng--Lauda):
+*  a collection of objects;
+*  for each pair x,y of objects, an (n-1)-category Hom(x,y);
+*  for each tuple x_1,...,x_k of objects, ... etc.
+Although Cheng--Lauda says that the objects form a set
+(so that, by default, it makes sense to compare them for equality),
+we never actually compare them for equality in the definition.
+So it is explicitly non-evil.
+
+(This is not to say that other definitions of higher category are evil;
+if they are equivalent to Trimble's definition, then they are not.
+But they are not usually *explicitly* non-evil;
+if they make reference to equality of objects anywhere,
+then they must be written in a language in which evil can be expressed.)
+
+In an almost completely different direction,
+Makkai's "multitopic" approach to omega-categories
+is also explicitly non-evil (and explicitly dependently typed too).
+Makkai's approach is non-algebraic (in the Cheng--Lauda sense),
+since it is based on composition predicates, not operations.
+In fact, Makkai's language does not allow one to speak of operations!
+
+(If X and Y are sets, that is types with equality predicates,
+then a function from X to Y can be defined as a relation on X and Y
+satisfying an axiom that makes reference to equality on Y.
+But if X and Y are types WITHOUT equality predicates,
+then an operation from X to Y can't be defined as a predicate on X and Y.
+Trimble's definition of n-category uses types and operations,
+while Makkai's definition of omega-category uses types and predicates.)
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

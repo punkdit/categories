@@ -1,0 +1,97 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: pullback categories
+Date: Tue, 20 Jan 1998 15:02:18 -0400 (AST)
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.980120150141.2316P-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017064 26453 80.91.229.2 (29 Apr 2009 14:57:44 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:57:44 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Tue Jan 20 15:02:19 1998
+Original-Received: (from cat-dist@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA03437;
+	Tue, 20 Jan 1998 15:02:18 -0400 (AST)
+Status: RO
+Content-Length: 3842
+Original-Lines: 71
+Xref: news.gmane.org gmane.science.mathematics.categories:601
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/601>
+
+Date: Tue, 20 Jan 1998 14:20:35 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+ Triples is back, at least for the time being, after having been down,
+ either from its problems or the lack of power at McGill for most of the
+ last month.
+ 
+ I have just seen the question about pullback of tripleable functors and
+ I have not seen a really satisfactory reply.  A lot--maybe all--of what
+ I say below is probably in Ernie Manes' thesis (A Triple Miscellany,
+ Wesleyan U., 1967).  The answer is definitely no, but the problem is the
+ lack of adjoint.  Consider, for the example, the complete semilattice
+ triple on Set.  It is also the covariant powerset triple, with singleton
+ for eta and union (or intersection) for mu (one will give you sup
+ semilattices, the other the inf semilattices).  That is one triple and
+ the other is N x -, whose algebras are sets with a single unary
+ operation.  The pullback is the category whose objects are complete
+ semilattices with a single unary function that is not assumed to cohere
+ in any way with the semilattice structure.  A complete boolean algebra
+ is model of such a theory, taking complement as the unary operation.  If
+ there were free algebras of this type, then a quotient of them would be
+ a free complete boolean algebra, but we know these don't exist.
+ 
+ Of course, one can raise the question under the assumption that the
+ adjoint exists.  For example, if the category is locally presentable
+ (complete and accessible) and the functors are accessible.  Then if the
+ functors are T_1 and T_2, simply apply them alternately, taking colimits
+ at limit ordinals, until they stabilize and that will give you free
+ algebras.  Of course, it is obvious that the pullback is the category
+ whose objects consist of T_1A ---> A <--- T_2A which are algebras for
+ each triple, but no assumption of coherence between the two structures
+ is made.  It seems pretty obvious, although I have no really checked the
+ details carefully, that this will satisfy Beck's condition.  Or rather
+ the forgetful functor to each of the individual category of algebras as
+ well as the composite.  For example, if we had the situation
+            T_1A -----------> A <------------- T_2A
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             vv               vv                vv
+            T_1B -----------> B <------------- T_2B
+ of such a nature that A ======> B -----> C is a split coequalizer, then
+ the outer columns of
+            T_1A -----------> A <------------- T_2A
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             ||               ||                ||
+             vv               vv                vv
+            T_1B -----------> B <------------- T_2B
+             |                |                 |
+             |                |                 |
+             |                |                 |
+             |                |                 |
+             |                |                 |
+             |                |                 |
+             v                v                 v
+            T_1C - - - - - -> C <- - - - - - - T_2C
+ are split coequalizers too, whence the dotted arrows exist.  That the
+ whole diagram is a coequalizer in the pullback category is also easy.
+ Thus the answer is yes, provided the adjoint exists, but that is not
+ guaranteed even over Set.
+ 
+ Michael 
+
+
+

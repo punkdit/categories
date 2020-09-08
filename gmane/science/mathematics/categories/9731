@@ -1,0 +1,137 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Christopher Townsend <info@christophertownsend.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Re: sheaves on localic groupoids
+Date: Sat, 20 Oct 2018 18:21:44 +0100
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <E1gEHQD-0003Pr-LS@mlist.mta.ca>
+References: <E1gDZD5-00073H-D9@mlist.mta.ca> <E1gDtj2-0004cK-GH@mlist.mta.ca>
+Reply-To: Christopher Townsend <info@christophertownsend.org>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0 (1.0)
+Content-Type: text/plain;	charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: blaine.gmane.org 1540142507 27480 195.159.176.226 (21 Oct 2018 17:21:47 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Sun, 21 Oct 2018 17:21:47 +0000 (UTC)
+Cc: John Baez <baez@math.ucr.edu>, categories <categories@mta.ca>
+To: "Eduardo J. Dubuc" <edubuc@dm.uba.ar>
+Original-X-From: majordomo@mlist.mta.ca Sun Oct 21 19:21:42 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from [198.164.44.40] (helo=smtp2.mta.ca)
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gEHQ2-0006xS-Ks
+	for gsmc-categories@m.gmane.org; Sun, 21 Oct 2018 19:21:38 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:56512)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gEHRH-0000FH-Rh; Sun, 21 Oct 2018 14:22:55 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gEHQD-0003Pr-LS
+	for categories-list@mlist.mta.ca; Sun, 21 Oct 2018 14:21:49 -0300
+In-Reply-To: <E1gDtj2-0004cK-GH@mlist.mta.ca>
+Precedence: bulk
+X-Broken-Reverse-DNS: no host name found for IP address 198.164.44.40
+Xref: news.gmane.org gmane.science.mathematics.categories:9731
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9731>
+
+Hi Eduardo & all
+
+If F is a Grothendieck topos then there is a bounded geometric morphism p:F-=
+>Set. Let B be a bound for p, then there is a locale of surjections [N->>B],=
+  where N is the natural numbers. This is a locale over F that can be mapped t=
+o a locale over Set (apply the direct image of p to the frame of opens of [N=
+->>B]). You get the object locale of the localic groupoid that =E2=80=98repr=
+esents=E2=80=99 F via Joyal and Tierney. The morphism locale is the image of=
+  [N->>B]x[N->>B].=20
+
+Not sure if that sheds much light on what the localic groupoid really is, bu=
+t it is one way of constructing it.=20
+
+I=E2=80=99d like to add that any geometric morphism p:F->E, we know, gives r=
+ise to a =E2=80=98localic=E2=80=99  adjunction between locales over F and lo=
+cales over E; the right adjoint being effectively pullback in the category o=
+f toposes. If you can find a locale W over F such that W->1 is an effective d=
+escent morphism and the slice of this localic adjunction at W is an equivale=
+nce then in fact the adjunction is a connected components adjunction of a lo=
+calic groupoid in E; this can be shown by application of Janelidze=E2=80=99s=
+  categorical Galois Theorem (the result holds at the generality of cartesian=
+  categories - it=E2=80=99s quite straightforward). If you know that the loca=
+lic adjunction is a connected components adjunction it is easy to get the Jo=
+yal and Tierney result by restricting to local homeomorphisms.
+
+But of course you should complain that it must be hard to show that any loca=
+lic adjunction, sliced at W, is an equivalence. In fact even at the general l=
+evel of cartesian categories it is not that hard once we recall that the loc=
+alic adjunction is stably Frobenius (something that is in the original Joyal=
+  and Tierney paper but not dwelt on). For a Frobenius adjunction to be an eq=
+uivalence it only needs to have its left adjoint preserve 1 and its unit to b=
+e a regular monomorphism. At the slice, 1 is automatically preserved, so we a=
+re just left checking that the (sliced) unit is a regular monomorphism. It t=
+urns out that this is so for W=3D[N->>B] precisely when B is a bound, effect=
+ively completing a proof of the Joyal and Tierney representation theorem.
+
+I hope it is OK that I=E2=80=99ve used this thread to effectively advertise s=
+ome work(*) that I did a few years ago.
+
+Kind regards, Christopher
+
+(*) A localic proof of the localic groupoid representation of Grothendieck t=
+oposes Proc. Amer. Math. Soc. 142 (2014), 859-866
+
+> 19 Oct 2018, at 19:57, Eduardo J. Dubuc <edubuc@dm.uba.ar> wrote:
+>=20
+>=20
+> A time ago when I was working on the subject I was also very curious
+> about the same (or related) questions of Johon Baez.
+> More concretely, if you take a pointless connected atomic topos (we know
+> they are):
+>=20
+> How or which is the localic point that Joyal-Tierney using change of
+> base take out of the hat ?
+>=20
+> How or which is the localic groupoid of Joyal-Tierney ?
+>=20
+>> On 17/10/18 23:12, John Baez wrote:
+>> Dear Categorists -
+>>=20
+>> Joyal and Tierney proved that any Grothendieck topos is equivalent to the=
+
+>> category of sheaves on a localic groupoid.   I gather that we can take th=
+is
+>> localic groupoid to have a single object iff the Grothendieck topos is
+>> connected, atomic, and has a point.     In this case the topos can also b=
+e
+>> seen as the category of continuous actions of a localic group on (discret=
+e)
+>> sets.
+>>=20
+>> I'm curious about how these three conditions combine to get the job done.=
+
+>> So suppose G is a localic groupoid.
+>>=20
+>> Under which conditions is the category of sheaves on G a connected
+>> Grothendieck topos?
+>>=20
+>> Under which conditions is the category of  sheaves on G an atomic
+>> Grothendieck topos?
+>>=20
+>> Under which conditions is the category of sheaves on G a Grothendieck top=
+os
+>> with a point?
+>>=20
+>> (Maybe we should interpret "with a point" as an extra structure on G rath=
+er
+>> than a mere extra property; I don't know how much this matters.)
+>>=20
+>> Best,
+>> jb
+>>=20
+>>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

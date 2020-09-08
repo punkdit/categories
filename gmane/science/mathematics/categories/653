@@ -1,0 +1,77 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Categorical model for Floyd-Hoare logic?
+Date: Sun, 15 Feb 1998 14:48:43 GMT
+Lines: 51
+Approved: news@gmane.org
+Message-ID: <199802151448.OAA16265@wax.dcs.qmw.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017100 26732 80.91.229.2 (29 Apr 2009 14:58:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:20 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Mon Feb 16 13:28:02 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA26660
+	for categories-list; Mon, 16 Feb 1998 10:05:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2419
+Original-Lines: 50
+Xref: news.gmane.org gmane.science.mathematics.categories:653
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/653>
+
+
+I see Roy Crole has already answered this question on my behalf.
+The paper to which he refers is called "An Exact Interpretation of While"
+and is "while-1993.dvi.gz" on my page at Hypatia
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+
+Manes' appraoach, as I recall, looks a bit like matrix algebra,
+with finite addition replaced by infinite union.  From a programming
+point of view this seems to me like replacing a WHILE program (which
+doesn't know a priori how many times it is going to go round) with
+an infinite SWITCH/CASE statement indexed by the number of iterations.
+
+My motication (in 1987 this was) was that it only takes finitely many
+characters to write the program, so its semantics should be given
+in a finitary form.  The bit of the (categorical) diagram which does
+the work is a coequaliser, and Barry Jay observed independently that
+this says in categorical language that the WHILE program is the
+"universal loop invariant".
+
+The coequaliser is not the whole story.  It does not say when to exit
+the loop: some modifications to the diagram using pullbacks are needed.
+Nor will coequalisers in any old category do (cd the need for at least
+distributive and preferably extensive categories for if-then-else).
+I spent a long time trying to formulate the need for "stable" coequalisers
+correctly, but this never worked.  It was necessary to fall back on
+stability of the formation of transitive or equivalence closures.
+
+There is a completely rewritten account of my work on WHILE programs
+in Section 6.4 of my book (not yet, I'm afraid, finished).
+
+The category theory does not match up quite as nicely as one would like
+("full abstraction") for WHILE or even IF-THEN-ELSE.  (The interpretation
+is sound, but what I know about it falls short of the equivalence
+which exists, for example, between lambda calculus and CCCs).
+
+My treatment of Floyd-Hoare logic is done in the greatest detail for
+what I call the direct declarative language (with assignments but no
+conditionals or loops).  This is integrated with the categorical 
+account of algebraic or finite-product theories.  I now think I can
+motivate the definition of category and product EASIER on the basis
+of programming than from traditional mathematics.
+
+Floyd-Hoare logic & algebraic theories are in Chapter IV, conditionals
+in Section 5.5.
+
+Paul
+
+PS Yes, I know I've got to get this book finished. There are just not
+enough hours in the day!
+
+

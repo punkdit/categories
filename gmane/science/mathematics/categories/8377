@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Claudio Hermida <claudio.hermida@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: NNOs in different toposes "the same"?
+Date: Tue, 11 Nov 2014 10:01:21 -0300
+Lines: 54
+Approved: news@gmane.org
+Message-ID: <E1XoHuk-0002tp-Tt@mlist.mta.ca>
+References: <E1XnyDU-0002hm-Ai@mlist.mta.ca>
+Reply-To: Claudio Hermida <claudio.hermida@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1415737222 31816 80.91.229.3 (11 Nov 2014 20:20:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 11 Nov 2014 20:20:22 +0000 (UTC)
+To: David Roberts <david.roberts@adelaide.edu.au>, "categories@mta.ca list" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Nov 11 21:20:16 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XoHvD-0007Xe-Ml
+	for gsmc-categories@m.gmane.org; Tue, 11 Nov 2014 21:20:15 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:56693)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XoHuk-0004Ml-JA; Tue, 11 Nov 2014 16:19:46 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XoHuk-0002tp-Tt
+	for categories-list@mlist.mta.ca; Tue, 11 Nov 2014 16:19:46 -0400
+In-Reply-To: <E1XnyDU-0002hm-Ai@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8377
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8377>
+
+
+On 2014-11-09, 10:42 PM, David Roberts wrote:
+> Hi all,
+>
+> If have a geometric morphism f: E -> F, what's the/a sensible way to
+> say that the natural number objects of E and F are 'the same'? If f is
+> local, then f_* preserves colimits, and so both f^* and f_* respect
+> natural numbers objects up to iso. But this is a little too strong,
+> perhaps, since we only need f_* to respect finite limits to use the
+> characterisation of |N by Freyd to show preservation. What other
+> conditions could I impose, other than simply that f_* preserves the
+> NNO?
+>
+> Secondly, what if E is the externalisation of an internal topos in F?
+> For instance, F = Set and E the externalisation of a small topos, not
+> necessarily an internal universe (in fact I don't want this to be the
+> case!). Then if I can say what it means for the NNO in E to be 'the
+> same as' that in F, I can say that the internal topos has the same NNO
+> as the ambient category.
+>
+> Regards,
+>
+> David
+>
+>
+Dear David,
+
+The short answer is: the inverse image functor f*:F -> E preserves NNO.
+
+The argument goes as follows: an NNO is an initial (1+)-algebra, that
+is, initial for the endofunctor [X] -> [1+X]. Since f* preserves 1 and
++, it induces an isomorphism f*(1+) = (1+_)f*, which in turn induces a
+functor
+
+(f*)-alg: (1 +)- alg -> (1+)-alg
+
+Fact (++): The right adjoint f_* induces a right adjoint to f*-alg
+
+Hence (f*)-alg preserves initial objects, aka, NNO.
+
+The Fact (++) can be easily calculated, but a more formal argument is
+given as Thm A.5 in
+
+Hermida, Claudio, and Bart Jacobs. "Structural induction and coinduction
+in a fibrational setting." Information and Computation 145.2 (1998):
+107-152.
+
+Regards,
+
+Claudio
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

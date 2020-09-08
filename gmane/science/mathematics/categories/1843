@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: "zdiskin" <zdiskin@email.msn.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Why binary products are ordered
+Date: Sun, 11 Feb 2001 11:40:37 -0800
+Lines: 90
+Approved: news@gmane.org
+Message-ID: <001001c09462$a3363b00$1349393f@cpu>
+References: <Your message of "Mon, 29 Jan 2001 10:18:52 PST."             <4.1.20010129101330.00ad8560@mail.oberlin.net> <3.0.6.16.20010208101428.44872230@pop.cwru.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018144 762 80.91.229.2 (29 Apr 2009 15:15:44 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:44 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Feb 11 17:48:55 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f1BKrcJ12595
+	for categories-list; Sun, 11 Feb 2001 16:53:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 25
+Status: O
+Content-Length: 4297
+Original-Lines: 89
+Xref: news.gmane.org gmane.science.mathematics.categories:1843
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1843>
+
+OOPS! In my previous posting i've made some mixed-up and talked mainly about
+notation for diagrams while the actual question is whether product  is
+commutative (symmetric) operation in Sets. Below is a sketch of possible
+solution.
+
+First of all, product is a diagram operation and explicit presentation of
+their syntax would be useful; so, let me present a bit of technicalities.
+
+Let G be some base category (think of the category of graphs). The arity of
+a diagram operation F (think of  products, push-outs...) is a G-morphism s:
+S^in --> S with S the shape of the operation and S^in the input shape.
+
+For example, for binary products, S is the graph    [x] <--p-- [u] --q-->
+[y]
+where [ ]'s denote nodes and arrows'  names are  written right on the
+arrows,
+S^in is the two-node discrete graph  [x]  [y],  and morphism s is its
+embedding  into S.
+
+A G-object C (think of a category)  is an F-algebra if for any diagram d:
+S^in --> C there is a unique diagram  F^C(d): S-->C such that s;F^C(d) = d
+(input data are preserved); below i'll write just F for F^C.
+
+Well, categorically we normally have many isomorphic F(d)'s,  let's skip
+this  for a while. And as for products of sets (ie, F is Prod, C is Sets),
+by using names p and q that are already given in the shape, we really have a
+canonical choice. Namely, for any d: [x]  [y] --> Sets with x.d=A, y.d=B, we
+define
+u.Prod(d) = { t: {p,q} -->  A \cup B |  p.t \in A, q.t \in B } with evident
+p.Prod(d) and q.Prod(d).
+
+F is called commutative on algebra C if  any isomorphism i: S^in --> S^in
+has an isomorphic extension i+: S --> S with s;i+ = i;s  s.t. for any d:
+S^in --> C,   F(i;d)  =  i+ ; F(d)
+
+Now it is seen that Prod is commutative in Sets because any isomorphism i:
+S^in --> S^in  has an evident required extension i+, i+(u) = u and i+ acts
+on the arrows p,q, . exactly like i acts on their targets x,y,.. The
+illusion of non-commutativity of products in Sets arises because of
+disregarding the diagrammatic nature of the operation: isomorphism i on the
+nodes in the shape acts on d but the corresponding i+ acting on the arrows
+is not taken into consideration.
+
+ A peculiarity of what was described above is that  names of items in the
+shape are used in the definition of the operation. So, for example, the
+following two shapes
+[x] <-- weight -- [u] -- height --> [y]   and  [x] <-- red -- [u] -
+blue -->[y]
+though isomorphic yet different and determine the two different product
+operations producing isomorphic yet different results from the same input.
+Thus, what we usually call the product operation is  something like
+operation schema parameterized by pairs of names. Then expressions like
+Prod[weight:A, height:B] denote a concrete instance of the shape schema and,
+simultaneously, a diagram d in Sets with
+weight.codom.d = A and height.codom.d = B.
+
+Now back to AxB vs. BxA. The writing AxB is normally unambiguous, it means
+[1st:A] x [2nd:B] and  encodes
+(i) the standard shape instance [x] <-- 1st -- [u] -- 2nd --> [y] and
+(ii) the diagram d: [x]  [y] --> Sets,  x.d = A, y.d=B.
+
+In contrast, the writing  BxA is really ambiguous: it may mean either
+(a) [1st:B] x [2nd:A] that encodes the same standard shape instance
+     [x] <-- 1st -- [u] -- 2nd --> [y] but now the diagram is x.d = B,
+y.d=A;
+or it may mean
+(b) [2nd:A] x [1st:B] that encodes the non-standard shape instance
+[x] <-- 2nd-- [u] -- 1st  --> [y] and again the diagram x.d = B, y.d=A.
+
+It seems that  thinking naïvely-set-theoretically people tend to see in
+writing BxA the case (a) and then, of course, BxA is not equal to AxB. And
+thinking categorically, people tend to see in writing BxA the case (b) and
+then BxA is the same as AxB. So, the problem 'ordered vs. unordered products
+' is a  problem of poor notation for product operation like BxA  while the
+operation itself is a *commutative*  diagram operation as defined above.
+Actually it was already said in early postings but now it became more
+transparent.
+
+Finally, some speculation. It seems that parameterization of (shapes of )
+operations by names, and use of these names in operation's definitions,  is
+applicable to other standard categorical operations and can be considered in
+a general setting. Probably,  it could be made precise by some kind of
+internalization ...?
+
+Zinovy Diskin
+
+
+
+
+

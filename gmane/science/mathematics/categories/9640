@@ -1,0 +1,141 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Point-free affine real line?
+Date: Thu, 31 May 2018 18:45:47 -0700
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <E1fPUEH-0003Lm-9H@mlist.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Trace: blaine.gmane.org 1528036997 29331 195.159.176.226 (3 Jun 2018 14:43:17 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Sun, 3 Jun 2018 14:43:17 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sun Jun 03 16:43:12 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUDw-0007W3-KW
+	for gsmc-categories@m.gmane.org; Sun, 03 Jun 2018 16:43:12 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52821)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUEw-0007WP-Bk; Sun, 03 Jun 2018 11:44:14 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUEH-0003Lm-9H
+	for categories-list@mlist.mta.ca; Sun, 03 Jun 2018 11:43:33 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9640
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9640>
+
+(FMCS and BLAST attendees will have seen this before.)
+
+Apropos of affine spaces over a field (the affine real line being a
+one-dimensional example), here are some axioms for a language with one
+binary operation ab, with (ab)c abbreviated to abc (left-associative
+convention as for combinatory algebra etc.), satisfying
+
+A1.  aa = a
+A2.  abb = a
+A3.  abc = ac(bc)
+A4.  abcd = adcb
+
+(Side remark: Axiom Ai requires i variables.)
+
+The intended model of ab is 2b - a over an arbitrary abelian group, e.g.
+the integers.  (A4 forces abelian.
+
+Obviously the free algebra on n generators for n < 2 has n elements.
+
+Identify the free algebra F2 on {a,b} with the integers ..., -3, -2, -1, 0,
+1, 2, 3, 4, ... as follows.
+... baba, aba, ba, a, b, ab, bab, abab, ...
+
+(Exercise: This are the only elements of F2.)
+
+As usual the elements of F2 can be understood as binary operations on F2.
+Abbreviate the binary operation identified with n as a[n]b; thus a[0]b = a,
+a[1]b = b, a[2]b = ab, a[-1]b = ba, etc.  Interpreting ab as 2b - a over
+the integers, a[n]b = a + n(b - a), and 0[n]1 = n, making F2 yet another
+binary notation for the integers, albeit exponentially longer.
+
+Now expand this one-operation language with a family c1, c2, c3, c4, ... of
+operations of respective finite arities 1, 2, 3, 4, ... satisfying
+
+c1(a) = a
+cm(a1, ..., am)[n]cn(a1, ..., an) = an  for all n > 1 where m = n-1
+cn(a1, ..., am, cm(a1, ..., am))[n]b = b      ditto
+
+The intended model of cn(a1, ..., an) is the centroid or mean of a1, ...,
+an over an arbitrary field, i.e. (a1 + ... + an)/n.
+
+Claim.  The variety defined by this equational theory, including its
+homomorphisms as standardly defined, is equivalent to the category of
+affine spaces over the rationals.  (Affine transformations over the
+rationals are linear combinations whose coefficients sum to 1, e.g.
+centroid.  The idea is that other models such as the real line can be
+pulled apart by homomorphisms into uncountably many copies of the rational
+line because the operations of the theory can only make rational
+connections between points of the line.)
+
+I mention this in case it has any bearing on Steve's question about a
+point-free version of the real affine line.  Not that I see one myself.
+
+Vaughan Pratt
+
+
+On Thu, May 31, 2018 at 2:40 AM, Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+wrote:
+
+> Algebraic geometry defines the affine line over a field k as an affine
+> scheme, the spectrum of k[X]. It includes a copy of k, each element a being
+> present as the irreducible polynomial X-a, with local ring the ring of
+> fractions got by inverting polynomials f(X) such that f(a) is non-zero.
+>
+> You can carry this out for the real line R, but it is very much R as a
+> set, and the copy of R in the underlying space of the spectrum has the
+> discrete topology.
+>
+> Does algebraic geometry provide an analogous construction that could lead
+> to  the point-free R? Can the locally ringed space be topologized
+> (point-free) so that the copy of R has its usual topology?
+>
+> I've run into various problems.
+>
+> 1. It is not obvious to me that R[X] exists point-free. By that I mean
+> that,  without presupposing a set R[X], or using non-geometric
+> constructions, I can't see how to define a geometric theory whose models
+> are the polynomials. The problem comes with trying to pin down the
+> requirement that all but finitely many of the coefficients of a polynomial
+> must be zero. You cannot continuously define the degree of a polynomial,
+> because the function R -> N, a |-> degree(aX + 1), is not continuous.
+>
+> That suggests the construction as Spec(R[X]) might have to be adjusted. Is
+> there still some locally ringed space that does the trick?
+>
+> 2. The "structure sheaf" cannot be a sheaf. We hope its fibres are
+> point-free local rings, but, whatever they are, they must be R-algebras and
+> so cannot  have the discrete topology. The space is locally ringed by some
+> bundle other than a sheaf (local homeomorphism).
+>
+> 3. The usual local rings, got as rings of fractions as described above,
+> may be problematic point-free in the same way as R[X] is. I don't know what
+> would  do instead. The power series ring R[[X]]? (At least as fibre over
+> 0.) It does have the property of inverting those polynomials f for which
+> f(0) is non-zero. And it can be defined point-free, as R^N. (However, the
+> finitely presented approximations R[X|X^n = 0] happily exist point-free.)
+>
+> Thanks for any references you can provide,
+>
+> Steve.
+>
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

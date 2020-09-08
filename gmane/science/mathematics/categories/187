@@ -1,0 +1,153 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Thu, 19 Mar 2009 12:37:58 -0300 (ADT)
+Lines: 120
+Approved: news@gmane.org
+Message-ID: <E1LkT86-0002Ir-Kv@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237513426 24780 80.91.229.12 (20 Mar 2009 01:43:46 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 20 Mar 2009 01:43:46 +0000 (UTC)
+To: robin@ucalgary.ca, wlawvere@buffalo.edu, categories@mta.ca
+Original-X-From: categories@mta.ca Fri Mar 20 02:45:03 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LkTnA-0007ZN-V4
+	for gsmc-categories@m.gmane.org; Fri, 20 Mar 2009 02:45:01 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LkT86-0002Ir-Kv
+	for categories-list@mta.ca; Thu, 19 Mar 2009 22:02:34 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:187
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/187>
+
+Robin Cockett wrote:
+>
+> SO (you are right) the first problem is that usually maps (as a category
+> theorist is thinking of such) are not what is implemented.  Functional
+> programming languages, for example, originate from combinatory algebra
+> and the \lambda-calculus  ... typing is only really introduced
+> retrospectively as useful sugar on this underlying structure ... what is
+> implemented is application -- or at least a particular
+> rewriting/reduction process of application.  A function A -> B is then a
+> just a  term  which can be typed to be of type A -> B which can be
+> applied to a term of type A to reduce (maybe) to something of type B
+> ... application (as rewriting) is definitely the primitive and typing is
+> retrospective  (although very nice and useful).
+>
+> However, at this stage it does /look/ deceptively categorical as one
+> does define f :: A -> B!  And, of course that has led people to look at
+> how one might interpret this as actually categorical ... and, of course,
+> thereby hangs a lot of excellent work!
+>
+> However, what emerges is something whose relation to standard
+> mathematical settings is surprisingly remote.  Lazy evaluation (mixed
+> with non-termination/partiality) is definitely partly to blame for this ...
+
+Hi all,
+
+sorry for writing twice in one day. If I didn't know Robin better, I
+would think he suggested that something is not categorical just
+because the functions in question are not morphisms in Set, but in
+some other category. And that the only "standard mathematical setting"
+is the category of sets and functions! Of course he didn't say any of
+these things. It only sounded like he did!
+
+Robin's examples:
+
+(1) The untyped lambda calculus. It is wrong to say that, in untyped
+languages, functions have no domain or codomain. What is correct is
+that there is just a single domain, which serves as the domain and
+codomain of all functions. So a model of an untyped language is a
+category with only one object U (but typically lots of morphisms).
+Now, a non-trivial such category can evidently not be
+cartesian-closed, because it cannot have an initial object.  However,
+it *can* have binary products, internal function spaces, and even
+binary coproducts. In other words, it is possible to find one-object
+categories in which U = U x U, and U = U -> U, and possibly even
+U = U + U (and a few additional properties). Such categories are
+models of the untyped lambda calculus. The search for concrete
+examples of such categories has led to lots of interesting
+mathematical work, most of which is not category theory per se.
+However, clearly category theory is the most appropriate language for
+stating what properties a model has to satisfy.
+
+Moreover, the constructions that Robin mentioned, by which one passes
+from an untyped language to a typed language, are categorical in
+nature.  One such construction is simply to split all idempotents.
+Even starting from a one-object category such as the above, one ends
+up with a cartesian-closed category with lots of objects, i.e., a
+"typed" setting.
+
+(2) Lazy languages. Here, an appropriate model is a category of
+pointed DCPO's (for simplicity, take finite posets with a least
+element, and monotone functions as the morphisms).  Note that we do
+*not* require the morphisms to preserve the least element. The least
+element of each poset represents a non-terminating computation in that
+codomain. Functions that preserve the least element are called
+"strict", and they correspond to "eager" computations (i.e., they are
+forced to diverge if one of the inputs diverge). Functions that do not
+necessarily preserve the least element are "lazy" computations. For
+example, the "lazy booleans" are the three-element poset Bool={T,F,bot},
+where T and F are incomparable, and bot is the bottom element. There
+are exactly 11 lazy functions from Bool to Bool. 9 of them are eager, and
+they correspond to every possible function f(bot)=bot, f(T)=a, f(F)=b,
+where a,b in {T,F,bot}. 2 functions are not eager, and they are the
+constant T and the constant F function (i.e., f(bot)=f(T)=f(F)=T, and
+f(bot)=f(T)=f(F)=F).
+
+Now clearly this category has a terminal object, namely the
+one-element poset 1={bot}. It is equally obvious that 1 is not
+initial, because there are for example 3 different monotone functions
+from 1 to Bool. And of course, the two non-strict functions from 1 to
+Bool are exactly the functions that Miles Gould so elegantly expressed
+in Haskell. It is equally obvious that this category has no initial
+object (and of course, for the same reason, neither does Haskell have
+an initial type).
+
+None of this is the least bit mysterious, neither mathematically, nor
+from a programming perspective.
+
+Robin mentioned the limit-colimit coincidence, but he forgot that this
+only applies to directed limits. It is of course false that initial
+objects and terminal objects always coincide, even in models where the
+limit-colimit coincidence holds.
+
+One may further object that the description of the particular category
+of DCPO's is not really category theory, that it is ad hoc and not
+particularly canonical (for example, it is not the free category of
+any particular kind). And indeed, the devil is in the details and
+there are many open problems regarding the existence of categories of
+DCPO's that are suitable for particular purposes. However, there is
+no question that category theory gives the correct tools for
+specifying what kind of category one must construct, for discussing
+alternatives between the different approaches, etc.
+
+
+
+I hope that these examples help to dispell the view that untyped
+languages, or lazy languages, are some kind of "practical hack"
+invented by programmers and implementors that don't really fit any
+mathematical model. Or, as Robin put it, "whose relation to standard
+mathematical settings is surprisingly remote". Actually, the contrary
+is very much true, and category theory is a large part of the reason.
+[The same cannot, of course, be said for such languages as C, Fortran,
+Perl, or Visual Basic, which actually *are* practical hacks with no
+mathematical model. That is precisely why theoreticians study Haskell
+or ML or Scheme or the lambda calculus or Agda or Charity and so
+forth.]
+
+-- Peter
+
+
+

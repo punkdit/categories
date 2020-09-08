@@ -1,0 +1,96 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Opposite of objects in a bicategory?
+Date: Mon, 08 Mar 2010 15:50:02 -0600
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <E1Np09C-0005TF-9s@mailserv.mta.ca>
+References: <E1NoR2n-00012b-3I@mailserv.mta.ca>
+Reply-To: Michael Shulman <shulman@uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1268146444 23289 80.91.229.12 (9 Mar 2010 14:54:04 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 9 Mar 2010 14:54:04 +0000 (UTC)
+Cc: categories@mta.ca
+To: David Leduc <david.leduc6@googlemail.com>
+Original-X-From: categories@mta.ca Tue Mar 09 15:53:57 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1Np0oO-0002Eb-Px
+	for gsmc-categories@m.gmane.org; Tue, 09 Mar 2010 15:53:32 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Np09C-0005TF-9s
+	for categories-list@mta.ca; Tue, 09 Mar 2010 10:10:58 -0400
+In-Reply-To: <E1NoR2n-00012b-3I@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5622
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5622>
+
+Hi David,
+
+The characterization Steve describes is nice and applies more generally
+to enriched categories.  You can eliminate the dependence on Prof by
+first constructing Prof from Cat: profunctors can be identified with
+two-sided discrete fibrations, or two-sided discrete cofibrations, in
+the bicategory Cat.  Mark Weber's paper "Yoneda structures in 2-toposes"
+studies duality involutions characterized using discrete fibrations.
+However, this property in Prof only characterizes the opposite up to
+Morita equivalence (i.e. up to Cauchy completion, aka
+idempotent-splitting), since Morita-equivalent categories are equivalent
+objects of the bicategory Prof.
+
+There is, in fact, also a way to describe opposites purely in terms of
+Cat.  First we note that Cat is an "exact 2-category" -- this means that
+among other things, every "2-congruence" has a quotient, where a
+2-congruence is an internal category for which (source,target) is a
+two-sided discrete fibration.  Now for any category A, let core(A) be
+its core, i.e. its maximal subgroupoid.  The core can be characterized
+in 2-categorical terms as a right adjoint to the inclusion of Gpd into
+Cat_g, where Gpd is the 2-category of groupoids (= the category of
+groupoidal objects in Cat) and Cat_g is the 2-category of categories,
+functors, and natural isomorphisms.  However, of more importance for
+this discussion is that core(A) is groupoidal and the map p:core(A) -->
+A is "strong epic" in the sense that it is left orthogonal (in the
+2-categorical sense) to all (representably) fully-faithful morphisms.
+(In Cat, this condition is equivalent to p being essentially surjective
+on objects.)  Since Cat is exact, this implies that A is equivalent to
+the quotient of the "kernel" of p, which is the 2-congruence given by
+the comma object (p/p) with its two projections to core(A).  However,
+since core(A) is groupoidal, we can switch these two projections and
+still have a 2-congruence.  The quotient of this "opposite"
+2-congruence, which exists since Cat is exact, is (up to equivalence)
+the opposite category of A.  This construction generalizes to any exact
+2-category which "has cores," in the sense that every object admits a
+strong epic from a groupoidal one.
+
+The notion of exact 2-category is due to Ross Street in "A
+characterization of bicategories of stacks."  I have not seen the above
+construction of opposites written down anywhere, so I wrote it down
+myself here:
+http://ncatlab.org/michaelshulman/show/duality+involution#GpdFixUniq
+but if anyone has seen it before, I would love to hear some references.
+
+Best,
+Mike
+
+David Leduc wrote:
+> Dear all,
+>
+> The same way monads on categories can be generalized to monads on
+> objects of a bicategory, is there a way to generalize opposites of
+> categories to opposites of objects in a bicategory?
+>
+> David
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

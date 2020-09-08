@@ -1,0 +1,156 @@
+Path: news.gmane.org!not-for-mail
+From: Robin Houston <r.houston@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: A dagger compact closed category with biproducts, but without dagger biproducts (was: categories: Re: Equalisers and coequalisers in categories with a \dag-involution)
+Date: Thu, 22 Feb 2007 12:56:43 +0000
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <E1HKRh1-0003rb-3W@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241019426 9588 80.91.229.2 (29 Apr 2009 15:37:06 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:06 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb 23 00:17:03 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 23 Feb 2007 00:17:03 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HKRh1-0003rb-3W
+	for categories-list@mta.ca; Fri, 23 Feb 2007 00:05:59 -0400
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 31
+Status: RO
+Content-Length: 4153
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:3638
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3638>
+
+On Fri, Feb 16, 2007 at 05:08:06PM -0400, Peter Selinger wrote:
+> I do not know whether Robin Houston's construction, when applied to a
+> dagger compact closed category, yields dagger-biproducts.
+
+The answer is no (unless I have overlooked something below, which is all
+too easy to do when cooking up pathological counterexamples).
+
+We're looking for a category that:
+ - has a dagger compact-closed structure,
+ - has biproducts
+ - does *not* have dagger-biproducts.
+
+I've tried to keep the description quite concrete, perhaps too
+much so for the taste of some readers of this list.
+
+1. Let A be the category with:
+   - the set of objects is the set of integers;
+
+   - an arrow is a rational number:
+     A(n,n) = Q, and
+     A(m,n) = {0}, for m != n;
+
+   - composition is multiplication;
+
+   - the following compact closed structure:
+     [ The symbol @ denotes tensor below]
+
+     m @ n := m + n  for objects m, n
+     q @ r := q x r  for arrows q, r,
+     The tensor unit is the object 0,
+     n* := -n;
+
+   - the obvious preadditive structure: addition within a
+     hom set is just addition of rational numbers;
+
+   - the trivial dagger: q^\dagger := q for each arrow q.
+
+   Note that A is a (preadditive) dagger compact closed category.
+
+2. Let B be the category of matrices over A, i.e. the result of
+   freely adding finite biproducts to A. Concretely, an
+   object of B is a finite tuple of integers (n_i | i<k) for
+   some natural number k. An arrow
+
+     f: (m_i | i<k)  -->  (n_j | j<k')
+
+   is a k x k' matrix of rational numbers, with the property that
+   the (i, j)th entry is 0 unless m_i = n_j.
+
+   Composition is matrix multiplication. The biproduct of two
+   objects is their concatenation as tuples. The dagger compact
+   closed structure distributes over the formal biproducts,
+   in the standard way.
+
+3. Let C be the full subcategory of B determined by those
+   objects (n_i | i<k) with the property that:
+
+     for all i<k there exists j<k s.t. n_j = -n_i.
+
+   Note that C is closed under tensor, * and biproduct.
+
+Of course there is a 'standard dagger' (transposition), and
+a standard compact closed structure that's compatible with it.
+I'll define a new dagger on C, and exhibit a compact closed
+structure that's compatible with this new dagger. The purpose
+of the restriction in (3) is to make it possible -- or at any
+rate easier -- to define this compact closed structure. Finally
+I'll show that C does not have dagger-biproducts, with respect
+to this new dagger.
+
+Given a matrix
+
+   f: (m_i | i<k)  -->  (n_j | j<k')
+
+let f^\dagger be the transpose of f, multiplied by the scalar
+
+   2 ^ (max {n_j | j<k'} - max {m_i | i<k})
+
+If either k or k' is zero, this expression is ill-defined, but
+the matrix is also empty so that doesn't matter.
+
+Below I shall write max(n_i) as an abbreviation for max {n_i | j<k};
+the intended k will be clear from the context.
+
+This dagger is clearly involutive. Also
+
+    max( (m_i | i<k) @ (n_j | j<k') ) = max {m_i + n_j | i<k, j<k'}
+                                      = max(m_i) + max(n_j),
+
+from which it follows that this dagger is compatible with tensor.
+It's thus easy to check that C is dagger symmetric monoidal w.r.t
+this dagger.
+
+For the compact closed structure, consider an object A and denote
+the standard unit eta_A: (0) --> A* @ A. Define eta'_A to be the
+product of eta_A with the scalar 2 ^ -max(A). By the restriction
+of (3), we know that max (A* @ A) = 2 max(A), hence
+
+  (eta'_A)^\dagger  =  (2 ^ max(A)) x epsilon_A
+
+where epsilon_A is the standard counit. Thus the additional
+scalar factor in (eta'_A)^\dagger is the reciprocal of that
+in eta'_A, so they cancel out as required.
+
+
+Finally, to see that C does not have dagger biproducts, consider
+the objects (0) and (-1,1). The injection i: (0) --> (0,-1,1) is
+a matrix [ q ] for some rational q. Then i^\dagger = [ 2q 0 0 ],
+         [ 0 ]
+         [ 0 ]
+so i^\dagger . i : (0) -> (0) is the 1x1 matrix [ 2q^2 ]. For this
+to be the identity, we would need to have 2q^2 = 1, but that
+equation famously has no solution in the rationals!
+
+
+Can anyone see any errors in the above, or think of a simpler example?
+
+Robin
+
+
+
+

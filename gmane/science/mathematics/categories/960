@@ -1,0 +1,71 @@
+Path: news.gmane.org!not-for-mail
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: one-object closed categories
+Date: Thu, 10 Dec 1998 19:20:03 +0000 (GMT)
+Lines: 41
+Approved: news@gmane.org
+Message-ID: <E0zoBd6-0001sC-00@carp.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017388 28565 80.91.229.2 (29 Apr 2009 15:03:08 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:03:08 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Dec 11 01:06:22 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA26514
+	for categories-list; Thu, 10 Dec 1998 22:45:04 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.4 PL25]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1468
+Original-Lines: 40
+Xref: news.gmane.org gmane.science.mathematics.categories:960
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/960>
+
+
+> From: maxk@maths.usyd.edu.au (Max Kelly)
+> 
+> Tom observed that an abelian monoid is a symmetric monoidal closed
+> category with one object, and asked whether anyone had studied categories
+> enriched in such a closed category.
+> 
+ [...]
+> 
+> Anyway, I had a brief look at V-categories for such a V tonight, but with
+> too few details so far to say much about them before bedtime. Queer little
+> creatures, aren't they? A V-category A has objects a, b. c. and so on, but
+> each A(a,b) is the unique object * of V. All the action takes place at the
+> level of j: I --> A(a,a) and M: A(b,c) o A(a,b) --> A(a,c).
+ [...]
+
+Since I asked the question I've found a few examples; they've all got
+the same flavour about them, so I'll just do my favourite.
+
+If V is the commutative monoid, then a V-enriched category is a set A plus
+two functions
+	[-,-,-]: A x A x A ---> V
+	    [-]:         A ---> V
+satisfying
+	[a,c,d] + [a,b,c] = [a,b,d] + [b,c,d]
+	  [a,a,b] + [a] = 0 = [a,b,b] + [b]
+for all a, b, c, d. 
+
+The example: let A be a subset of the plane. Choose a smooth path P(a,b) from
+a to b for each (a,b) in A x A, and define [a,b,c] to be the signed area
+bounded by the loop
+	P(a,b) then P(b,c) then (P(a,c) run backwards);
+also define [a] to be 
+	-(area bounded by P(a,a)). 
+(There's meant to be an orientation on the plane, so that areas can be
+negative.)  Then the equations say obvious things about area - don't think
+I'm up to that kind of ASCII art, though.
+
+Tom
+
+

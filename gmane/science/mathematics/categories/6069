@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@seas.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: more on inclusion maps
+Date: Sat, 28 Aug 2010 11:31:01 -0400
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <E1OpWfR-0006fr-CS@mlist.mta.ca>
+Reply-To: Peter Freyd <pjf@seas.upenn.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1283045270 14321 80.91.229.12 (29 Aug 2010 01:27:50 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 29 Aug 2010 01:27:50 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sun Aug 29 03:27:48 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWgW-0000e4-Dv
+	for gsmc-categories@m.gmane.org; Sun, 29 Aug 2010 03:27:48 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:33111)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWfV-0003T3-8i; Sat, 28 Aug 2010 22:26:45 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OpWfR-0006fr-CS
+	for categories-list@mlist.mta.ca; Sat, 28 Aug 2010 22:26:41 -0300
+User-Agent: Heirloom mailx 12.2 01/07/07
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6069
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6069>
+
+One doesn't need all the tau-category stuff just for finding an
+equivalent category with inclusion maps. There's a first-order
+construction but first an easier way to see how to do it. Given a
+category  *A*  define  *B*  to be the full subcategory of
+representable contravariant set-valued functors and all subfunctors
+thereof that are isomorphic to representable functors. The Yoneda
+embedding of  *A*  into  *B*  is clearly an equivalence functor. By
+saying that  T  is a subfunctor of  (-,A)  I mean that  TX  is a
+subset of  (X,A)  for each  X  and that the inclusions form a natural
+transformation, which transformations are to be, of course, the
+chosen notion of inclusion map in  *B*. Done..
+
+If one objects that this works only for small  *A*  use this first-
+order construction: take the objects of  *B*  to be the monics of  *A*.
+The forgetful functor from  *B*  to  *A*  carries  [A >-> B]  in  *B*
+to  A  in  *A*.  Take *B*  to be the "inflation" that results from
+this onto forgetful functor, that is, the maps from  [A'>-> B']  to
+[A >-> B]  are named by maps from  A'  to  A. Such a map is said to be
+an inclusion map iff  A' >-> B' = A' -> A >-> B  (in particular,
+A' -> A  is monic and  B' = B).
+
+Given  [A'>-> B'], [A>-> B]  and an arbitrary monic  A' >-> A  note
+that the identity map on  A'  names an isomorphism from  [A' >-> B']
+to  [A'>-> A >-> B]  such that the given monic
+[A' >-> B'] -> [A >-> B]  is equal to
+[A' >-> B'] -> [A' >-> A >-> B] -> [A >-> B].
+
+Define  *A* => *B*  to be the functor that sends each object in  *A*
+to the object in  *B*  named by its identity map and define
+*B* => *A*  to be the obvious forgetful functor. Then
+*A* => *B* => *A*  is the identity functor on  *A*  and there's a
+natural equivalence from  *B* => *A* => *B*  to the identity functor
+on  *B*. We don't need the axiom of choice to construct that natural
+equivalence; take each of its component isomorphisms as the one map
+that fits and that's named by an identity map. (The first would
+require the axiom of choice. The second construction is isomorphic to
+the category whose objects are ordered pairs, where the first
+coordinate is a subfunctor of a representable and the second is a
+specified isomorphism to a representable.)
+
+
+
+
+
+
+
+
+
+
+Mike asks how to pick what I'll call "inclusion maps" that is a choice
+of monics so that each subobject is named by a unique inclusion map
+and such that the inclusion maps are closed under composition. I don't
+know what Grothendieck had in mind, but it's an easy application of
+the stuff about tau-categories in Cats & Alligators copied from my
+1975 "pamphlet." The setting there is cats with finite limits but of
+course you could always work in the full subcategory of representable
+functors in the category of set-valued contraviariant functors.
+
+A tau-structure gives you not only (transitive) canonical subobjects
+but associative canonical products and all sorts of goodies. But alas
+it delivers an equivalent category, not necessarily the category you
+started with. I don't know how to do it in an arbitrary category.
+
+But neither does anyone else, not even Grothendieck: Consider the
+subcategory of the category of sets with three objects, A,B,C  each of
+which is a two-element set. There well be a total of ten maps, three
+of which, of course, are identity maps. The other seven maps will be
+one-to-one and onto but only one of them an isomorphism (as defined,
+of course, in the subcategory). The one non-trivial isomorphism will
+be on  A  (necessarily, the twist map).  The hom-sets  (B,B)  and
+(C,C)  each have a single element (necessarily their identity maps).
+The hom-sets  (B,A), (C,A,)  and  (C,B) are empty. The hom-sets (A,B),
+(A,C)  and  (B,C)  each have two maps, to wit, the two possible
+one-to-one onto maps. Note that all maps are monic. A has no proper
+subobjects. B  has only one (the two monics from  A  to  B  name the
+same subject of B). C  has three proper subobjects one of which is
+named by each of the two maps from  A  to  C. Each of the other two
+subobjects of  C  are named by one of the two maps from  B  to  C
+(since  B  has no non-trivial automorphism they necessarily name
+different subobjects). Hence, of the four proper subobjects in this
+category, two of them have just one name, the other two each have two
+names. No matter how one chooses a choice of "inclusion map" in those
+two equivalence classes, that is no matter how one chooses a map
+A -> B  and a map  A -> C, when you compose the chosen  A -> B  with
+each of the two maps from  B  to  C  you will get both names for the
+single proper subobject named by each of the two maps from  A  to  C.
+They can't both be the chosen map in  (A,C).
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

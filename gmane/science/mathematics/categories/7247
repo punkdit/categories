@@ -1,0 +1,213 @@
+Path: news.gmane.org!not-for-mail
+From: =?iso-8859-1?Q?Peter_H=F6fner?= <Peter.Hoefner@nicta.com.au>
+Newsgroups: gmane.comp.lang.caml.inria,gmane.comp.lang.agda,gmane.science.mathematics.categories,gmane.comp.science.concurrency,gmane.science.mathematics.logic.coq.club,gmane.science.mathematics.logic.coq.club,gmane.science.mathematics.discrete,gmane.science.mathematics.discrete
+Subject: Call for Papera - Automated Theory Exploration (ATx)
+Date: Sat, 7 Apr 2012 23:32:28 +1000
+Lines: 123
+Approved: news@gmane.org
+Message-ID: <05B84A54-21A3-432C-8FDD-9534C0F19041@nicta.com.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0 (Apple Message framework v1257)
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-Trace: dough.gmane.org 1333806335 13417 80.91.229.3 (7 Apr 2012 13:45:35 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 7 Apr 2012 13:45:35 +0000 (UTC)
+To: agda@lists.chalmers.se, action-semantics@brics.dk, AG-list@uni-mb.si,
+        agents@cs.umbc.edu, aiia@dis.uniroma1.it, aila@unicam.it,
+        alg.announce@catalyse.net, apng-all@apng.org,
+        appsem@tcs.informatik.uni-muenchen.de, asci@twi.tudelft.nl,
+        asl@vassar.edu, cade@itu.dk, caml-list@inria.fr, categories@mta.ca,
+        ccl@ps.uni-sb.de, cipher-cfp@ieee-security.or,
+        clean-list@science.ru.nl, clp@comp.nus.edu.sg,
+        coalgebras@iti.cs.tu-bs.de, comlab@comlab.ox.ac.uk,
+        complog@cs.nmsu.edu, comprox@doc.ic.ac.uk,
+        compulognet-parimp@dia.fi.upm.es, concurrency@cwi.nl,
+        coq-club@inria.fr, coq-club@pauillac.inria.fr,
+        cphc-conf@jiscmail.ac.uk, csd@lists.ut.ee, csl@dbai.tuwien.ac,
+        curry@lists.RWTH-Aachen.DE, DMANET@zpr.uni-koeln.de,
+        dmanet@zpr.uni-koeln.de, eacsl@dimi.uniud.it, eapls@jiscmail.ac.uk,
+        elsnet-l
+Original-X-From: caml-list-owner@inria.fr Sat Apr 07 15:45:26 2012
+Return-path: <caml-list-owner@inria.fr>
+Envelope-to: gclci-caml-list@gmane.org
+Original-Received: from mail1-relais-roc.national.inria.fr ([192.134.164.82])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <caml-list-owner@inria.fr>)
+	id 1SGVxG-0005zX-Ay
+	for gclci-caml-list@gmane.org; Sat, 07 Apr 2012 15:45:26 +0200
+X-IronPort-AV: E=Sophos;i="4.75,385,1330902000"; 
+   d="scan'208";a="153121206"
+Original-Received: from walapai.inria.fr ([128.93.30.24])
+  by mail1-relais-roc.national.inria.fr with ESMTP/TLS/DHE-RSA-AES256-SHA; 07 Apr 2012 15:45:25 +0200
+Original-Received: from walapai.inria.fr (localhost [127.0.0.1])
+	by walapai.inria.fr (8.13.6/8.13.6) with ESMTP id q37DjP2D005611;
+	Sat, 7 Apr 2012 15:45:25 +0200
+Original-Received: (from sympa@localhost)
+	by walapai.inria.fr (8.13.6/8.12.10/Submit) id q37DjOwt005598;
+	Sat, 7 Apr 2012 15:45:24 +0200
+X-Authentication-Warning: walapai.inria.fr: sympa set sender to caml-list-owner@inria.fr using -f
+X-Sympa-To: caml-list@inria.fr
+Original-Received: from mail1-relais-roc.national.inria.fr (mail1-relais-roc.national.inria.fr [192.134.164.82])
+	by walapai.inria.fr (8.13.6/8.13.6) with ESMTP id q37DiQak005571;
+	Sat, 7 Apr 2012 15:44:30 +0200
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AgUFAEREgE/dx9kLiWdsb2JhbABFDoFqgSS2ASIBAQEVEhQFIoILAQUBARo3FHJcAhuIBAy5VIsnBYRLYwSIJ41FgRGEYYVBhzNJgUII
+X-IronPort-AV: E=Sophos;i="4.75,385,1330902000"; 
+   d="scan'208";a="153121150"
+Original-Received: from ajax.nicta.com.au ([221.199.217.11])
+  by mail1-smtp-roc.national.inria.fr with ESMTP/TLS/AES256-SHA; 07 Apr 2012 15:44:28 +0200
+Original-Received: from atp-mbx1.it.nicta.com.au ([221.199.216.123] helo=atp-mbx1.in.nicta.com.au)
+	by ajax.nicta.com.au with esmtp (Exim 4.72)
+	(envelope-from <Peter.Hoefner@nicta.com.au>)
+	id 1SGVw4-0001U0-8R; Sat, 07 Apr 2012 23:44:12 +1000
+Original-Received: from [192.168.0.2] (221.199.216.124) by atp-mbx1.in.nicta.com.au
+ (221.199.216.123) with Microsoft SMTP Server (TLS) id 8.3.192.1; Sat, 7 Apr
+ 2012 23:32:31 +1000
+X-Mailer: Apple Mail (2.1257)
+X-TM-AS-Product-Ver: SMEX-8.0.0.4125-6.500.1024-18822.006
+X-TM-AS-Result: No--13.786900-0.000000-31
+X-TM-AS-User-Approved-Sender: Yes
+X-TM-AS-User-Blocked-Sender: No
+X-SA-Exim-Connect-IP: 221.199.216.123
+X-SA-Exim-Mail-From: Peter.Hoefner@nicta.com.au
+X-SA-Exim-Scanned: No (on ajax.nicta.com.au); SAEximRunCond expanded to false
+X-MIME-Autoconverted: from quoted-printable to 8bit by walapai.inria.fr id q37DiQak005571
+X-Validation-by: peter.hoefner@nicta.com.au
+X-Loop: caml-list@inria.fr
+X-Sequence: 3851
+Errors-to: caml-list-owner@inria.fr
+Precedence: list
+List-Id: <caml-list.inria.fr>
+List-Archive: <https://sympa-roc.inria.fr/wws/arc/caml-list>
+List-Help: <mailto:sympa@inria.fr?subject=help>
+List-Owner: <mailto:caml-list-request@inria.fr>
+List-Post: <mailto:caml-list@inria.fr>
+List-Subscribe: <mailto:sympa@inria.fr?subject=subscribe%20caml-list>
+List-Unsubscribe: <mailto:sympa@inria.fr?subject=unsubscribe%20caml-list>
+Xref: news.gmane.org gmane.comp.lang.caml.inria:54630 gmane.comp.lang.agda:3735 gmane.science.mathematics.categories:7247 gmane.comp.science.concurrency:2874 gmane.science.mathematics.logic.coq.club:8089 gmane.science.mathematics.discrete:6509
+Archived-At: <http://permalink.gmane.org/gmane.comp.lang.caml.inria/54630>
+
+                [Apologies if you receive multiple copies of this announcement]
+                            *** Deadline extended to 17th April 2012 ***
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+                                CALL FOR PAPERS:
+
+                                    ATX-2012
+                  IJCAR Workshop on Automated Theory Exploration
+                                (June 30-July 1)
+                   http://dream.inf.ed.ac.uk/events/atx2012
+
+
+GENERAL INFORMATION
+
+This Workshop on Automated Theory Exploration will be held in June/July in Manchester, UK.
+It is associated with the 6th International Conference on Automated Reasoning (IJCAR) and
+follows on from two series of workshops: Automated Theory Engineering and Automatheo.
+
+SCOPE
+
+Theory exploration means the development of mathematical axioms, definitions, conjectures,
+theorems, examples and inference procedures as needed to cover the essential concepts
+and analysis tasks of mathematical and other application domains. The automation and
+mechanisation of these capabilities are much sought after in areas such as software
+verification, the analysis of computer systems, formalised mathematics and indeed
+mathematical research.
+
+The aim of the workshop is to bring together researchers with interests in any aspects
+of this area, including domain-specific formalisations, tool and theory development,
+and general-purpose frameworks for the structuring of theories and their maintenance.
+
+TOPICS
+
+Theory exploration is relevant to the design of systems, programs, APIs, protocols,
+algorithms, design patterns, specification languages, programming languages and
+beyond. It involves technology such as ITP systems, ATP systems, SAT/SMT solvers,
+model checkers and decision procedures.
+
+Specific topics of the workshop include, but are not limited to:
+
+o mechanised reasoning for modelling and analysis
+o automation applied to formal specification and verification
+o domain specific models, languages and solvers
+o theorem proving technology for theory exploration
+o integration of theories and tools
+o the formalisation and automation of mathematics
+o case studies/experiences
+o automated identification of key concepts and results
+o supporting collaborative theory exploration
+
+
+INVITED SPEAKERS
+
+o Robert L. Constable, Cornell University.
+o TBA
+
+SUBMISSIONS
+
+We invite submissions in 3 forms:
+
+o Research papers, up to 10 pages;
+o System/tool descriptions, up to 5 pages;
+o Extended abstracts, up to 3 pages.
+
+Research and tool papers must be unpublished and not submitted for publication
+elsewhere. Extended abstracts are intended to discuss ideas and work in progress.
+All papers will be reviewed by the programme committee.
+
+Submissions must be in PDF using the LaTeX EasyChair-format
+http://www.easychair.org/easychair.zip . One author of each accepted submission
+is expected to present the paper at the workshop. Associated systems demos are
+encouraged, where appropriate.
+
+Please upload your submission at: https://www.easychair.org/conferences/?conf=atx2012
+
+Accepted research and tool papers will be published as CEUR Workshop Proceedings.
+
+If quality and quantity of the submissions warrants this, we plan to publish a special issue
+of a recognized journal on the topic of the workshop.
+
+
+IMPORTANT DATES:
+
+Submission: 17 April 2012 (*Extended Deadline*)
+Notification: 8 May, 2012
+Final version: 5 June, 2012
+Workshop: 30 June & 1 July, 2012
+
+PROGRAM COMMITTEE
+
+ o Jacques Fleuriot (University of Edinburgh, UK)
+ o Timothy Griffin (University of Cambridge, UK)
+ o Peter Höfner (NICTA, Australia)
+ o Joe Hurd (Galois, USA)
+ o Temur Kutsia (RISC, Austria)
+ o Roy McCasland (University of Edinburgh, UK)
+ o Annabelle McIver (Macquarie University, Australia)
+ o Stephan Merz (INRIA, France)
+ o Petros Papapanagiotou (University of Edinburgh, UK)
+ o Alan Smaill (University of Edinburgh, UK)
+ o David Stanovsky (Charles University, Czech Republic)
+ o Georg Struth (University of Sheffield, UK)
+ o Josef Urban (Radboud University, Netherlands)
+
+WORKSHOP ORGANISERS
+
+ o Alan Smaill
+ o Annabelle McIver
+ o Peter Höfner
+ o Jacques Fleuriot
+
+
+
+
+The information in this e-mail may be confidential and subject to legal professional privilege and/or copyright. National ICT Australia Limited accepts no liability for any damage caused by this email or its attachments.
+
+
+-- 
+Caml-list mailing list.  Subscription management and archives:
+https://sympa-roc.inria.fr/wws/info/caml-list
+Beginner's list: http://groups.yahoo.com/group/ocaml_beginners
+Bug reports: http://caml.inria.fr/bin/caml-bugs
+
+

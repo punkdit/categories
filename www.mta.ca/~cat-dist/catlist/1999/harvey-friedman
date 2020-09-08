@@ -1,0 +1,712 @@
+Date: Fri, 23 Jan 1998 16:27:33 -0400 (AST)
+Subject: Challenge from Harvey Friedman 
+
+Date: Fri, 23 Jan 1998 11:11:28 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+I'm taking the liberty of forwarding to the categories mailing list
+the following challenge posted by Harvey Friedman to Steve Simpson's
+Foundations of Mathematics mailing list.
+
+This is the latest in a long-running engagement about sets vs.
+categories on the latter list, recent postings to which can be read at
+
+	http://www.math.psu.edu/simpson/fom/postings/9801.html
+
+Postings with "categor{y,ical}" in their subject lines are the relevant
+ones.
+
+Information about the fom list (how to subscribe etc.) can be found at
+
+	http://www.math.psu.edu/simpson/fom/fom-info
+
+As we were fond of saying quarter of a century ago,
+
+Peace
+Vaughan Pratt
+
+------- Forwarded Message
+
+Date: Fri, 23 Jan 1998 00:54:20 +0100
+To: fom@math.psu.edu
+From: Harvey Friedman <friedman@math.ohio-state.edu>
+Subject: FOM: Set Theory Axioms
+
+The point of this posting is to give some entirely conventional axioms for
+set theory that are a bit simpler than many that are normally given. They
+are fully formal. By comparison, look at the axioms of elementary topoi
+that are given in MacLane/Moerdijk, Sheaves in Geometry and Logic, A first
+Introduction to Topos Theory, Springer-Verlag, 1994, on p. 163. The
+difference in complexity is strikingly grotesque.
+
+I challenge anyone to write down their favorite fully formal axioms for
+topoi that are sufficient to do real analysis, so we can compare them side
+by side with the fully formal axioms I write down here.
+
+Topos theory with natural number object is insufficient to develop
+undergraduate real analysis - although many fom postings conceal this fact.
+One has to add to topoi: natural number object, well pointedness, and
+choice. The latter two are nothing more than slavish translations of set
+theory into the topos framework. The "idea" is to take a fatally flawed
+foundational idea and force it to "work" by transporting important ideas
+from set theoretic foundations.
+
+But the axioms of elementary topoi are already incomparably more
+complicated than the axioms for set theory presented here.
+
+Let me start with the dramatically simple axioms of finite set theory.
+These amazingly simple axioms are tremendously powerful. We work in the
+usual classical predicate calculus with equality and one binary relation
+symbol epsilon - which we abbreviate here by "in." It is also useful to use
+the constant symbol 0 (for the empty set), the unary function symbol { }
+(for singletons), and the binary function symbol U (for pairwise union).
+Note that axioms 2-4 amount to the most trivial of definitions.
+
+1. (forall x)(x in a iff x in b) implies a = b.
+2. (forall x)(not(x in 0)).
+3. x in {a} iff x = a.
+4. x in a U b if and only if (x in a or x in b).
+5. [phi(0) & (forall x,y)((phi(x) & phi(y)) implies phi(x U {y}))] implies
+phi(x).
+
+Here phi(x) is any formula in the language in which y is not free.
+
+That's all! One ***derives*** pairing, union, power set, foundation,
+replacement, and choice, from these axioms alone!!! Also, when
+appropriately formalized, "every set is finite" and things like "every set
+has a transitive closure." These axioms are "practically" complete - an
+informal concept that I have alluded to before on the fom.
+
+Now for ZFC. We take a different tack and only use epsilon.
+
+1. (forall x)(x in a iff x in b) implies a = b.
+2. (therexists x)(a in x & b in x).
+3. (therexists x)(forall y in a)(forall z in y)(z in x).
+4. (therexists x)(forall y)((forall z in a)(z in y) implies y in x).
+5. (forall x,y)(x in y implies (therexists z in y)(forall w in z)(w notin y)).
+6. (therexists x,y)(x in y & (forall z in y)(therexists w in y)(z in w)).
+7. (therexists x)(forall y)(y in x iff (y in a & phi)), where phi is any
+formula in the language in which x is not free.
+8. (forall x in a)(therexists y)(phi) & (forall x,y,z)((phi(x,z) &
+phi(y,z)) implies x = y) implies (therexists w)(forall x in a)(therexists
+unique y in w)(phi),
+
+A novelty is the axiom of infinity, 6, is simpler than usual; and also
+choice and replacement are combined nicely by 8. This allows such a simple
+axiomatization in purely primitive notation. Try to right down the axioms
+of a topos with natural number object, well pointed, and choice, in simple
+primitive notation!! Good luck.
+
+As is well known, ZFC is "practically" complete.
+
+The version in the book on p.163 - which does not even include natural
+number object, well pointedness, or choice - requires a very substantial
+amount of preliminary abbreviations in order to formalize.
+
+
+
+------- End of Forwarded Message
+
+
+Date: Fri, 23 Jan 1998 19:38:46 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Fri, 23 Jan 1998 16:32:35 -0600 (CST)
+From: David Yetter <dyetter@math.ksu.edu>
+
+Dear Fellow Categorists:
+
+	I am personally not likely to take up Harvey Friedman's challenge, 
+having long been doing "category theory as algebra" rather than "category
+theory as foundations".
+
+	I would like to point out, though that Friedman has deliberately chosen
+as a test case real analysis, a subject which exists only to simulate the
+existence of fluxions on the basis of foundations tied to two-valued logic.
+How about asking Friedman to give an elegant, elementary foundation for
+rings satisfying the Kock-Lawvere axioms?
+
+	The use of an axiom schema in which arbitrarily complex formulae 
+may be subsituted also seems a bit of a dodge.  At first glance, elementary
+topoi plus  NNO, well-pointed and choice still doesn't need such things
+(but I could be wrong, not having thought much about it for years).
+
+Best Thoughts,
+David Yetter
+   
+
+Date: Sat, 24 Jan 1998 13:34:28 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Fri, 23 Jan 1998 21:22:39 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I guess simplicity is in the eye of the beholder.  For example, I do not
+consider the categorical version of either choice (epis split) or
+well-pointed (1 is a generator) to be translations of set theory, but
+perfectly natural categorical axioms.  The point is that Harvey is a
+set-theorist, so he thinks comprehension and all that stuff (which at
+least 95% of all mathematicians could not state properly if their lives
+depended on it) is perfectly natural and I don't.  
+
+But my actual criticism of ZF(C) is much simpler.  I have taught these
+courses in set theory and we spend a lot of time developing these epsilon
+trees and then totally ignore the structure.  In other words, the epsilon
+tree structure of sets is totally irrelevant to what you do with them.
+There are a number of definitions of pairs, but they are irrelevant.  The
+only thing we need to know about pairs (and the only thing a categoriest
+does know) is when two pairs are equal.  All the defintions of pairs have
+that property of course, but they also have irrelevant properties.
+
+Mike
+
+
+Date: Sat, 24 Jan 1998 13:35:31 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Sat, 24 Jan 1998 15:59:46 +0000 (GMT)
+From: Dr. P.T. Johnstone <P.T.Johnstone@dpmms.cam.ac.uk>
+
+> But the axioms of elementary topoi are already incomparably more
+> complicated than the axioms for set theory presented here.
+
+What on earth does Friedman mean by complicated? As Peter Freyd
+pointed out a long time ago, the axioms for an elementary topos are
+essentially algebraic -- that is, they live at a very low level
+of logical complexity. The very first axiom in anyone's (including
+Friedman's) axiomatization of set theory is the axiom of
+extensionality, which is not expressible even in coherent logic
+(at least, not unless you take not-membership as a primitive
+predicate, on the same level as membership).
+
+Unless Friedman can put forward an objective measure of complexity
+(as opposed to "unfamiliarity to H. Friedman") which justifies the
+above quote, then his challenge is not worth considering.
+
+Peter Johnstone
+
+
+Date: Mon, 26 Jan 1998 15:01:46 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Mon, 26 Jan 1998 14:21:40 +0000 (GMT)
+From: Ronnie Brown <r.brown@bangor.ac.uk>
+
+
+How does Harvey Friedman know that the formulation of real analysis as 
+carried out in set theory will do all that real analysis *should* do? 
+
+My favourite example is that of partial functions. Most teachers of real 
+analysis (calculus) rightly impress on students the importance of the domain 
+of a function, 
+and the domain of f+g, etc. So a student might think that the algebra and 
+analysis of partial functions would occupy a good part of the literature. 
+Solutions of ODEs (such as dy/dx=exp(-y) ) are often given by partial 
+functions 
+with domain involving a parameter, and the solution (including its 
+domain) seems to vary smoothly with this parameter. In fact there is very 
+little in the literature on such matters. I had a small go with 
+29. (with A.M. ABD-ALLAH), ``A compact-open topology on partial maps with 
+open domain'', {\em J. London Math Soc.} (2) 21 (1980) 480-486. 
+
+It is not clear that the most general case of 
+the functional analysis of partial functions with domain neither open nor 
+closed can be successfully handled within classical set theory. There is 
+a chance it can be handled within topos theory. (Try functions defined on 
+the leaves of foliations. Any answers?) 
+
+Another point of topos theory is to handle categories such as that of 
+directed graphs in a similar manner to the category of sets, and to make 
+comparisons between such categories. (Bill Lawvere has of course written 
+a lot on this.) 
+
+Ronnie Brown
+
+
+Date: Mon, 26 Jan 1998 15:00:55 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Mon, 26 Jan 1998 12:10:01 +0000
+From: Steven Vickers <s.vickers@doc.ic.ac.uk>
+
+>Topos theory with natural number object is insufficient to develop
+>undergraduate real analysis - although many fom postings conceal this fact.
+>One has to add to topoi: natural number object, well pointedness, and
+>choice. The latter two are nothing more than slavish translations of set
+>theory into the topos framework. The "idea" is to take a fatally flawed
+>foundational idea and force it to "work" by transporting important ideas
+>from set theoretic foundations.
+
+The slavish translation of well pointedness and choice actually arises from
+a more subtle slavish translation of point-set topology.
+
+Point-set topology postulates that the points of a topological space can be
+comprehended as a set, but this apparently innocuous idea is questionable
+(perhaps we should be more sceptical about what sets can comprehend
+following our experience with proper classes).
+
+When we formulate our foundations based on the ideas of topos theory, and
+interpret "set" as object in an elementary topos, then - given a natural
+numbers object - we can ideed construct "sets of reals" but we find that
+they misbehave. Normal theorems of analysis, such as Heine-Borel, fail
+unless we also impose the additional ideas from set-theoretic foundations.
+
+However, there is a different way of formulating topology, using locales or
+"formal spaces", that works in any elementary topos (still need an NNO to
+get the reals, of course) and preserves the validity of theorems such as
+Heine-Borel. It works by addressing the topology directly, without regard
+to what the opens in it might be sets of. It still has a concept of point,
+but generalized point with respect to a varying set-theory (stage of
+definition) instead in a fixed one. We can't take a single comprehension in
+our favourite set-theory as encompassing all the points.
+
+The moral is that a topological space is more than just a set of points
+together with a topology of open subsets. If, for any reasons at all, we
+are interested in doing mathematics constructively, then we should discard
+point-set topology and use locales.
+
+My picture of what is going on is this: when we try to make a set out of a
+space by stripping off the topology, we damage the points, and we put the
+well-pointedness and choice in as crutches and plasters to try to rectify
+the damage we should never have done in the first place.
+
+Steve Vickers.
+
+
+Date: Mon, 26 Jan 1998 14:59:09 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Sun, 25 Jan 1998 10:13 +0530
+From: CAYLEY@tifrvax.tifr.res.in
+
+
+	I remember to have seen a paper on frameworks for
+	measuring complexity of mathematical concepts by
+	two autors earlier. (I don't exactly recall where)
+	but I also remeber that one of the authors was
+	H.Friedman!
+
+					P.S.Subramanian
+					Tata Institute.
+
+
+Date: Mon, 26 Jan 1998 15:00:00 -0400 (AST)
+Subject: Immodest proposal 
+
+Date: Sun, 25 Jan 1998 10:48:12 -0500 (EST)
+From: John R Isbell <ji2@acsu.buffalo.edu>
+
+   Contemplating Harvey Friedman's Challenge, I asked
+myself 'Aren't there more important problems around?'
+And of course there are. Moreover, I believe I have
+solved one of them.
+   P. What should we call the ancient substitute for
+     e-mail?
+   S. Why not m-mail? Snappy; memorable; unmistakable;
+     and m=e\over {c^2} gives the value.
+             John Isbell
+
+
+Date: Mon, 26 Jan 1998 19:34:55 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Mon, 26 Jan 1998 17:36:31 -0500 (EST)
+From: John R Isbell <ji2@acsu.buffalo.edu>
+
+   P. S. Subramanian's 'A framework for measuring ...
+complexity' is by H. Friedman and R. C. Flagg, Adv.
+in Appl. Math. 11 (1990), 1-34 [MR91f:03111].
+       John Isbell
+
+
+Date: Wed, 28 Jan 1998 10:10:21 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Tue, 27 Jan 1998 11:26:45 +0000 (GMT)
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+
+According to Harvey Friedman:
+
+> I challenge anyone to write down their favorite fully formal axioms for
+> topoi that are sufficient to do real analysis, so we can compare them side
+> by side with the fully formal axioms I write down here.
+
+The papers I announced here the other day do not offer any such
+"dramatically simple" or "tremendously powerful" axioms, comparable
+with Friedman's, nor indeed anything as politically engaged --- but I
+think they may have to do with the issue.
+
+Given a field in any category with enough limits, we implement
+analytic functions, solve differential equations --- do quite a bit of
+real analysis. It turns out that most of it can be captured as guarded
+induction on final coalgebras.
+
+We did not try to use this to embed real analysis in any fully formal
+foundational theory, but to provide a uniform way of implementing it
+on a computer, together with infinitary constructions and all. The
+result may not be as "amazingly simple" as Friedman's axioms, but it
+is fairly simple, and conceptually clear. Check it out (the last two
+papers at http://www.cogs.susx.ac.uk/users/duskop/).
+
+Sorry for the plug, but I actually want to make a point. I don't think
+category theory should spend time trying to beat set theory on its own
+territory of fully formal systems. Sets were invented in the time of
+doubt about the consistency of mathematics, when foundations were
+really sought for. Nowadays people go and prove Fermat Theorem.
+
+Set theory wants to be something like a formal grammar of
+mathematics. That is fine, can be very interesting in itself, but
+great stories are usually told without thinking of grammar.
+
+Category theory might perhaps do better to try to be some kind of a
+programming language or mathematics, a set of object-(or better:
+method-)oriented tools, conceptualizing large "software" projects of
+the day.
+
+How about that?
+
+-- Dusko Pavlovic
+
+
+PS On the other hand, us toposophers competing against them
+setologists who can do analysis --- aren't we a bit like
+
+        A Frenchman and an Englishman making the bet who can faster
+        translate a sentence from German. Little Gretschen comes
+        by and says: (fg)' = f'g + fg'...
+
+I mean, didn't analysts tell *everyone* by now: THEY DO NOT CARE FOR
+FOUNDATIONS. They do not think of their manifolds neither as sets of
+little elements, nor hanging on a bunch of morphisms among other
+manifolds. Most of the time, they are quite happy with their manifolds
+as manifolds. Next time they need foundations, they'll invent them
+again, like they invented sets and sheaves.
+
+
+Date: Wed, 28 Jan 1998 10:09:26 -0400 (AST)
+Subject: The Friedman/Flagg paper 
+
+Date: Mon, 26 Jan 1998 19:16:12 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+91f:03111 03E99 03B30 03F99 68Q25
+Friedman, H.(1-OHS); Flagg, R. C.(1-SME)
+A framework for measuring the complexity of mathematical concepts.
+(English)
+Adv. in Appl. Math. 11 (1990), no. 1, 1--34.
+  _________________________________________________________________
+
+This paper presents a system $\scr F\sb 0(\scr B)$ that is intended to
+allow practical computation of the complexity of mathematical
+concepts. $\scr F\sb 0(\scr B)$ is an untyped theory of sets and
+partial functions in a first-order free logic with equality and a
+description operator. Its language $\scr L\sb 0(\scr B)$ contains many
+primitive operations, such as $n$-tuples, lambda abstraction,
+comprehension terms, finite set and Cartesian product formation, and
+definition by cases. $\scr B$ denotes a set of "descriptive forms"
+that are patterns according to which new constants, functions, and
+predicates can be defined. After a rigorous presentation of the syntax
+of $\scr L\sb 0(\scr B)$, standard programming language procedures
+yield parsing and recognition algorithms. A precise semantics for
+$\scr L\sb 0(\scr B)$ is given, followed by a deductive system $\scr
+F\sb 0(\scr B)$ that is shown to be complete by means of a
+Henkin-style proof. Finally, the authors introduce the notions of
+definition sequence, definition dag (directed acyclic graph), and
+definition tree. On the basis of these notions, they promise that, in
+a future paper, they will develop measures of complexity of
+definitions that will make possible practical calculation of the
+complexity of concepts in a large part of current mathematical
+practice.
+          Reviewed by E. Mendelson
+
+
+Date: Thu, 29 Jan 1998 16:15:31 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Wed, 28 Jan 1998 22:15:27 +0000
+From: Carlos Simpson <carlos@picard.ups-tlse.fr>
+
+Being a newcomer to the category list, I have a really naive and stupid question
+(concerning H. Friedman's challenge). Namely, I was always under the impression
+that you had to know what a set was before you could talk about what a
+category was (in particular a topos). Is it possible to talk about toposes
+without knowing what a set is?
+
+This seems somewhat related to a question that has been bugging me for some
+time, namely how to talk about a ``category''
+which is enhanced over itself, but not necessarily having any functor to or
+from Sets. The very first part of the structure would be a class of objects
+O
+together with a function (x,y)\mapsto H(x,y) from O\times O to O, but I
+can't get beyond that.
+
+---Carlos Simpson
+
+
+Date: Fri, 30 Jan 1998 15:56:00 -0400 (AST)
+Subject: Re: Challenge from Harvey Friedman 
+
+Date: Fri, 30 Jan 1998 10:40:55 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+
+
+Well the first question has an easy answer.  It is just as possible to
+talk about a category without knowing what a set is as it is to talk about
+a set without knowing what a set is.  Of course, you cannot talk about
+homsets.  It is interesting to read the very first Eilenberg-Mac Lane
+paper, which did not talk about homsets.  A set is an undefined notion and
+there is a relation, epsilon that may hold between one set and another,
+subject to certain axioms, one version of which Friedman listed.  A
+category consists of undefined things called arrows and three relations,
+two functional and the third partially functional (actually better than
+that, but leave that aside).  Friedman's axioms are not coherent, as has
+been pointed out, while the categorical axioms are.  On the other hand,
+one can state Friedman's axioms, in all their glorious incomprehensibility
+(I think I could stare at the 8th one from now until the middle of next
+year without understanding what it says, and the 6th, asserted to be the
+axiom of infinity is not much clearer) in a couple hundred words, while it
+is pretty much necessary to interrupt the topos axioms for some
+definitions (at least monic and subobject) to do the topos axioms.  Thus
+each one looks simpler to its devotees and there is really no point in
+arguing about it.
+
+Michael
+
+On Thu, 29 Jan 1998, categories wrote:
+
+> Date: Wed, 28 Jan 1998 22:15:27 +0000
+> From: Carlos Simpson <carlos@picard.ups-tlse.fr>
+> 
+> Being a newcomer to the category list, I have a really naive and stupid question
+> (concerning H. Friedman's challenge). Namely, I was always under the impression
+> that you had to know what a set was before you could talk about what a
+> category was (in particular a topos). Is it possible to talk about toposes
+> without knowing what a set is?
+> 
+> This seems somewhat related to a question that has been bugging me for some
+> time, namely how to talk about a ``category''
+> which is enhanced over itself, but not necessarily having any functor to or
+> from Sets. The very first part of the structure would be a class of objects
+> O
+> together with a function (x,y)\mapsto H(x,y) from O\times O to O, but I
+> can't get beyond that.
+> 
+> ---Carlos Simpson
+> 
+> 
+> 
+
+
+Date: Fri, 30 Jan 1998 15:57:30 -0400 (AST)
+Subject: Friedman's challenge, and the ordinals 
+
+Date: Fri, 30 Jan 1998 19:11:18 GMT
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+
+Date:    Mon Jan 26 21:40:18 1998
+Subject: Friedman's challenge
+
+The reason why 1970s topos theorists did a "slavish translation"
+of well-pointedness, choice, etc is quite simple: it is known
+in computer science and engineering as "reverse compatibility".
+We (ie Lawvere, Tierney and others) needed to show that whatever
+you could allegedly do with set theory, you could do with elementary
+toposes too.
+
+Now that reverse compatibility has been achieved, the old methods
+are obsolete, and we should be able to move on from there. We 
+show that the new methods (by which I mean category theory in general,
+not necessarily elementary toposes) are more idiomatic for the
+old purposes and more powerful for new ones.
+
+For example we would never have got anywhere with domain models of
+polymorphism, or with synthetic domain theory, without category
+theory as our guide. I'm sure that most of the readers of "categories"
+can add examples from their own interests.
+
+I have a personal reason for bitterly resenting ever being taught
+set theory.  (I don't want anybody to interpret that as resentment
+towards the particular people in Cambridge who did the teaching -
+the problem is with the mathematical community as a whole which has
+perpetuated this pernicious theory.)
+
+For several years I was trying to prove (in an elementary topos,
+in particular without excluded middle, or the axiom of collection,
+which seems to me to be set-theoretic hocus pocus):
+	Let (X, <=) be a poset with least element and directed
+	joins, and s:X->X a monotone (not necessarily Scott
+	continuous) function.  Then s has a least fixed point.
+I talked about my attempts at this at at least two international
+category meetings and several other project meetings and conferences.
+
+Because of my set-theoretic indoctrination, much as I rebelled
+against it, I set about defining ordinal iterates of the function s
+and its values at the least element.  The intuitionistic theory of
+ordinals is complicated, and there are several flavours of them,
+but there is no doubt that ordinals as big as you please exist in
+any elementary topos. See JSL 61 (1996) 703-742.
+
+Always with traditional applications of ordinals, the problem is
+knowning when to stop.  The textbook solution is due to Friedrich
+Hartogs, 1917.  Basically, you take a pair of scissors ... .
+Andre Joyal and Ieke Moerdijk have a pair of scissors which make
+a cleaner cut (by our standards in category theory), but they too
+still chop off the standard sequence.  (Maybe someone would like to
+write a PhD thesis which uses their methods to eliminate the set theory
+from the "alpha-presentable" versions of Gabriel-Ulmer duality.)
+
+In fact this result has now been proved, by a Georgian called
+Dimitri Pataraia.  (I haven't met him, or been able to find out
+much about him, despite now sharing an office with another
+Georgian).
+
+Pataraia's solution is pure order theory.  You could teach it to
+a third year undergraduate class in a course on lattices or domain
+theory.  There is not an ordinal in sight.
+
+In fact, looking more closely at his solution, there *are* ordinals
+in it.  [My version of] his proof looks remarkably like Zermelo's
+second proof of Choice => well ordering.  It may seem strange that
+such an infamously classical result should contain a the essence
+of an intuitionistic argument, but in fact [Zermelo's version of]
+Choice occurs in the first line of the argument and never again.
+
+Zermelo manufactures the required ordinal structure out of the given 
+object, whereas the subsequent orthodox approach, due to Hartogs
+9 years later, is based on a single monolithic system, which has
+to be chopped off in a rather unceremonious fashion.  Ordinals
+similar to Zermelo's, though only satisfying the induction scheme
+for a restricted class of predicates, and not satisfying any recursion
+scheme I can find, are also to be found in Pataraia's proof.
+
+Throughout my (personally unsuccessful) study of this problem,
+whenever I sought intuition from set theory it took me in the
+WRONG direction.  I cannot think of any other branch of mathematics,
+with the exception of infinitessimal calculus before it was reformed,
+which I would condemn so utterly.  In fact, 18th century calculus
+did give a lot of right answers, and at least its wrong ones were
+interesting and provoked good research. 
+
+In answer to Harvey Friedman, I *don't* advocate topos theory
+as foundations.  It still reeks of set theory (sorry, Bill).
+
+Paul Taylor
+
+===================================
+Part II (it seems that I originally sent the above to the wrong email alias)
+
+I didn't properly spell out my philosophical conclusions about ordinals.
+What I mean is that
+	a [not "the"] system of ordinals *ought* to have a top element
+	(a fixed point for successor).
+In other words, I am contradicting the usual interpretation of the
+Burali-Forti paradox, and discarding the tradition of chopping the
+monolithic system of ordinals off, as Hartogs, Joyal/Moerdijk and 
+many others have done (including me).  The notion of cardinality is
+clearly stupid from a categorical point of view (we know better than
+to classify objects up to isomorphism, without even any regard to their
+automorphism groups) and, as an atheist, I find Cantor's theologically
+motivated notion of "size" utterly incomprehensible.  
+
+While I'm at it, I don't accept the argument in either Russell's paradox
+(re the set {x:x not in x}) or Cantor's theorem that P(X) =/= X.
+
+It's not that I am particularly keen to have a set of all sets (though
+such a thing is probably to be expected from the right logical principles
+in much the same way as a universal Turing machine is in recursion theory),
+but that I do not consider that these classic arguments ought to be valid.
+
+Andy Pitts and I traced Russell's paradox to a particular quantifier
+(in fact in a locally cartesian closed category) - see our paper in
+Studia Logica 1989 p 387. It is this quantifier which I reject. In fact
+he and I independently had models which had a type of types, and achieved
+this by restricting the quantifiers which could be interpreted.
+
+The Burali-Forti paradox goes away too if the class of predicates for
+which the induction scheme is valid (in the definition of an ordinal)
+is retricted. For example, the domain of increasing natural numbers
+plus a fixed point is such an ordinal for Scott-continuous predicates
+(the Crole-Pitts FIX object).
+
+I think I may be able to adjust the notion of elementary topos (I prefer
+to think in these terms than in symbolic logic) to a useful fragment
+in which Cantor's theorem fails.  (Sorry to be so vague, but I haven't
+got very far with this, and currently have a head full of perl programming.)
+
+Paul
+
+
+Date: Mon, 2 Feb 1998 10:10:45 -0400 (AST)
+Subject: Re: Friedman's challenge, and the ordinals 
+
+Date: Sat, 31 Jan 1998 16:21:53 +0000 (GMT)
+From: Dr. P.T. Johnstone <P.T.Johnstone@dpmms.cam.ac.uk>
+
+Some comments on Paul Taylor's diatribe:
+
+> I have a personal reason for bitterly resenting ever being taught
+> set theory.  (I don't want anybody to interpret that as resentment
+> towards the particular people in Cambridge who did the teaching -
+
+Thanks, Paul!
+
+> For several years I was trying to prove (in an elementary topos,
+> in particular without excluded middle, or the axiom of collection,
+> which seems to me to be set-theoretic hocus pocus):
+>        Let (X, <=) be a poset with least element and directed
+>        joins, and s:X->X a monotone (not necessarily Scott
+>        continuous) function.  Then s has a least fixed point.
+> I talked about my attempts at this at at least two international
+> category meetings and several other project meetings and conferences.
+>
+> Because of my set-theoretic indoctrination, much as I rebelled
+> against it, I set about defining ordinal iterates of the function s
+> and its values at the least element.
+
+Well, perhaps you should have been blaming me after all. I clearly never
+got around to teaching you Ernst Witt's amazing proof (Beweisstudien zum
+Satz von M. Zorn, Math. Nachr. 4 (1951), 434--438) of the existence of
+fixed points for an s:X->X which is merely assumed to be inflationary
+(i.e. x \leq s(x) for all x \in X), and not necessarily monotone. (Of 
+course, you can recover the result for monotone s by restricting to the
+subset \{x\in X | x \leq s(x)\}.)
+
+[I may say that I didn't discover this paper for myself; it was brought to
+my notice by Bernhard Banaschewski (who had obvious reasons for knowing
+about it). It appears that Brian Davey and Hilary Priestley also knew
+about it, since they included it as Theorem 4.14 in their "Introduction 
+to Lattices and Order" (C.U.P., 1990), though they don't attribute it to
+Witt (or to anyone else).]
+
+Witt's proof, like Pataraia's, is entirely order-theoretic and uses only
+naive set theory; it is clearly inspired by Zermelo's second proof of the
+well-ordering theorem, to which Paul referred. What it does use, however, is
+the Law of Excluded Middle, in a way which seems absolutely inextricable from
+the proof. Nevertheless, I suspect that an extremely clever person, trying
+to constructivize Witt's proof, could have discovered the idea of Pataraia's.
+(I didn't, although I spent some ten years thinking about the problem on and
+off; Pataraia didn't either -- he told me in November that he wasn't aware
+of Witt's proof.)
+
+> Pataraia's solution is pure order theory.  You could teach it to
+> a third year undergraduate class in a course on lattices or domain
+> theory.
+
+Indeed you could. The same is true of Witt's proof: I did teach it, last
+term, in my third-year logic course here in Cambridge. (The students
+found it quite tough going, but they managed to swallow it -- I think.)
+A couple of weeks later I learned of Pataraia's proof at the Aarhus PSSL
+meeting; so the students got that too, immediately after I returned to
+Cambridge. (They must think I'm obsessed with this particular theorem;
+perhaps they're right.)
+
+There remains an open problem, however. Pataraia's proof is constructive
+(that is, it works in any topos -- though it is impredicative, so the
+Martin-L\"of people won't accept it), but it does require the function s
+to be monotone as well as inflationary. So: can anyone find a constructive
+proof of Witt's original result (without the monotonicity assuption)?
+
+Peter Johnstone
+

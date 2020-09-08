@@ -1,0 +1,62 @@
+Path: news.gmane.org!not-for-mail
+From: John Baez <john.c.baez@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: laziness in functional programming
+Date: Thu, 19 Mar 2009 07:24:55 -0700
+Lines: 29
+Approved: news@gmane.org
+Message-ID: <E1LkT4z-00023A-EJ@mailserv.mta.ca>
+Reply-To: John Baez <john.c.baez@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237513418 24770 80.91.229.12 (20 Mar 2009 01:43:38 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 20 Mar 2009 01:43:38 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Fri Mar 20 02:44:55 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LkTn3-0007Xm-S6
+	for gsmc-categories@m.gmane.org; Fri, 20 Mar 2009 02:44:54 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LkT4z-00023A-EJ
+	for categories-list@mta.ca; Thu, 19 Mar 2009 21:59:21 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:186
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/186>
+
+Bill Lawvere wrote:
+
+
+I don't know the technical meaning of "lazy"; was it an attempt to avoid the
+> processing speed and ram needed to take account of the composition with
+> inclusion maps, etcetera?
+>
+
+No, "lazy evaluation" is a strategy of putting off computations until their
+results are known to be necessary.  The opposite is called "eager
+evaluation".  Laziness is often wiser.
+
+For example, a programming statement
+
+x:=y
+
+calls for the value of x to be set equal to y.  A strategy of eager
+evaluation will do this right away, while lazy evaluation will put off doing
+it until the variable x is used in some other task.  If x is never used,
+this saves work.
+
+I think most functional programming languages either delay evaluation in
+this way, or give the user the option to do this.
+
+Best,
+jb
+
+
+

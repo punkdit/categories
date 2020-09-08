@@ -1,0 +1,175 @@
+Path: news.gmane.org!not-for-mail
+From: "Fred E.J. Linton" <fejlinton@usa.net>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Two questions
+Date: Fri, 22 Jun 2012 23:09:21 -0400
+Lines: 138
+Approved: news@gmane.org
+Message-ID: <E1SiQAh-0000MH-C7@mlist.mta.ca>
+Reply-To: "Fred E.J. Linton" <fejlinton@usa.net>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1340457316 2227 80.91.229.3 (23 Jun 2012 13:15:16 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 23 Jun 2012 13:15:16 +0000 (UTC)
+To: "categories" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Jun 23 15:15:16 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.80])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1SiQBF-0002q7-IQ
+	for gsmc-categories@m.gmane.org; Sat, 23 Jun 2012 15:15:13 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:50559)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1SiQAh-0004gT-Bb; Sat, 23 Jun 2012 10:14:39 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1SiQAh-0000MH-C7
+	for categories-list@mlist.mta.ca; Sat, 23 Jun 2012 10:14:39 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7347
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7347>
+
+
+On Fri, 22 Jun 2012 01:32:10 +0200, George Janelidze wrote, inter alia:
+
+> 6. Concerning your second question: What you saw (with a special argume=
+nt
+> for 2) is on the same Page 21 of the above-mentioned Eilenberg--Moore
+paper.
+> The argument was used to prove that every epimorphism of groups is
+> surjective with no mention of regular monomorphisms, but in fact they p=
+rove
+> that, for every homomorphism
+> =
+
+> j : H --> G, there exist two homomorphisms
+> =
+
+> k, l : G --> P with k(g) =3D L(g) only when g is in j(H).
+> =
+
+> This also appears as Exercise 5 of Section 5 of Chapter I in Mac Lane's=
+
+> "Categories for the Working Mathematician", with very precise hints.
+
+What the origins of the argument Mac Lane outlines here are, I don't know=
+=2E =
+
+I do seem to recall that I first saw more or less such an argument in a =
+
+graduate course Sammy gave at Columbia during the "golden era" 1958-1963,=
+  =
+
+and that Sammy himself, probably at a Bowdoin NSF summer semester on =
+
+categories, revealed his deft trick by which to convert the argument for =
+
+the "index greater than 2" case to a uniform argument ignoring the =
+
+subgroup's index.
+
+Let me record that argument here.
+
+Given are a group G, a subgroup H of G, and an element a in G \ H.
+
+P is to be the group of permutations of the underlying set of the left =
+
+G-set got by forming the coproduct =
+
+
+G/H + 1
+
+of the principal left G-set G/H of left cosets xH of H in G (x =E2=88=88 =
+G) =
+
+with a (trivial) terminal left G-set 1 =3D {*} (assume * =E2=88=89 G/H):
+
+P =3D perm(|G/H| =E2=88=AA {*}) =3D (|G/H| =E2=88=AA {*})! .
+
+One permutation in particular is to be singled out for attention: the =
+
+transposition t =E2=88=88 P interchanging * with the coset H itself.
+
+Let me use r: G --> P for the result of composing the regular =
+
+representation of G by left action (g, xH) |-> (gx)H on the cosets of H =
+
+with the obvious injection of (|G/H|)! into (|G/H| =E2=88=AA {*})! -- thu=
+s:
+
+[r(g)](xH) =3D (gx)H  ,
+[r(g)](*) =3D * .
+
+And let me write s: G --> P for the result of conjugating by t the variou=
+s =
+
+assorted values of r -- thus:
+
+[s(g)](xH) =3D t([r(g)](t(xH))) ,
+[s(g)](*) =3D t([r(g)](t(*))) =3D t([r(g)](H)) =3D t(gH) .
+
+The end-game strategy is now this:
+
+(i) for h =E2=88=88 H: r(h) =3D s(h) ; yet
+(ii) for g =3D a, [r(a)](*) =3D * but [s(a)](*) =3D aH (whence r =E2=89=A0=
+  s).
+
+Details: Bear in mind that if, for x in G and h in H, we have (hx)H =3D H=
+, =
+
+we must have hx in H, whence also x in H so that xH =3D H. Then for (i):
+
+(a) if xH =E2=89=A0 H -- [s(h)](xH) =3D t([r(h)](xH)) =3D t((hx)H) =3D (h=
+x)H =3D [r(h)](xH)
+;
+(b) if xH =3D H -- [s(h)](H) =3D t([r(h)](*)) =3D t(*) =3D H =3D [r(h)](H=
+) ;
+(c) and at * -- [s(h)](*) =3D t([r(h)](H)) =3D t(H) =3D * =3D [r(h)](*) .=
+
+
+And bear in mind also that aH =E2=89=A0 H because a =E2=88=89 H; thus:
+
+for (ii) -- [s(a)](*) =3D t([r(a)](H)) =3D t(aH) =3D aH =E2=89=A0 * =3D [=
+r(a)](*) .
+
+By the way, if the subgroup H had index 3 or more in G, one need not =
+
+require recourse to any external element * as above -- one could let any =
+
+coset other than H and aH (when there are such) play the role of *, and, =
+
+with but a few additional wrinkles (unless I am mistaken (which is always=
+  =
+
+possible :-) )), I believe that is essentially how the proof George cites=
+  =
+
+from Mac Lane's exercise works.
+
+Cheers, -- Fred
+
+[NB: I'm writing =E2=88=88 for an element symbol, =E2=88=89 for a crossed=
+-out =
+
+element symbol, =E2=88=AA for a union symbol, and =E2=89=A0 for a crossed=
+-out equal =
+
+sign. With luck these HTML glyph constructs will simply display as the =
+
+glyphs they're meant to represent; and if not, they're no more painful to=
+  =
+
+decipher than their TeX counterparts, which HTML can't display as glyphs.=
+]
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

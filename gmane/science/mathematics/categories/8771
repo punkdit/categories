@@ -1,0 +1,106 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Johnstone <ptj@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Indiscrete objects in a functor category
+Date: Sun, 20 Dec 2015 15:25:38 +0000 (GMT)
+Lines: 67
+Approved: news@gmane.org
+Message-ID: <E1aAkvy-0005N8-HC@mlist.mta.ca>
+References: <E1aARRG-00021K-F2@mlist.mta.ca>
+Reply-To: Peter Johnstone <ptj@dpmms.cam.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1450644667 32629 80.91.229.3 (20 Dec 2015 20:51:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 20 Dec 2015 20:51:07 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: Aleks Kissinger <aleks0@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Sun Dec 20 21:51:00 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkwU-0003wI-Ot
+	for gsmc-categories@m.gmane.org; Sun, 20 Dec 2015 21:50:58 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34127)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkw0-0001Cj-BT; Sun, 20 Dec 2015 16:50:28 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkvy-0005N8-HC
+	for categories-list@mlist.mta.ca; Sun, 20 Dec 2015 16:50:26 -0400
+In-Reply-To: <E1aARRG-00021K-F2@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8771
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8771>
+
+The forgetful functor [C,Set] --> Set/ob C always has a right adjoint,
+given by right Kan extension along the inclusion C_0 --> C, where C_0
+is the discrete category with the same objects as C. For the same
+construction in a more general context, see B2.3.16 in `Sketches of
+an Elephant'.
+
+Peter Johnstone
+
+On Sat, 19 Dec 2015, Aleks Kissinger wrote:
+
+> It's common to describe the category of (directed, multi-) graphs as a
+> functor category Graph := [2, Set], where 2 here is the category with
+> 2 objects and 2 parallel arrows (s & t).
+>
+> For a pair of sets (V,E), one can construct the indiscrete graph
+> I(V,E) as a graph with vertices V and edges E x V x V, where the
+> source and target maps are just the 2nd and 3rd projection
+> respectively. This gives a right adjoint to the forgetful functor from
+> Graph to pairs of sets. This enables one to construct a category of
+> graphs with a fixed set of vetex/edge labels as a slice over Graph:
+>
+> Graph / I(Lv, Le)
+>
+> since a graph hm G --> I(Lv,Le) is the same as a map U(G) --> (Lv,Le),
+> which is just a pair of functions assigning labels to the vertices and
+> edges of G.
+>
+>
+> This seems to me like a pretty standard trick, which extends to any
+> functor category from a C which is in some sense "suitably acyclic".
+> For instance, consider a category of "partitioned graphs" [3, Set],
+> where 3 has objects (P,V,E) and arrows:
+>
+> E --s--> V, E --t--> V, and V --p--> P
+>
+> where, p assigns each of the vertices a partition. For a triple
+> (P,V,E) we can form the indiscrete partitioned graph with:
+>
+> - partitions P
+> - vertices V x P
+> - edges E x (V x P) x (V x P)
+> - p = pi2, s = pi2, t = pi3
+>
+> which gives a right-adjoint to the forgetful functor from partitioned
+> graphs to triples of sets. This is clearly an instance of a general
+> recipe, whereby you start with the objects with no arrows out, and
+> work your way backwards, always adding copies of the codomain of every
+> out-arrow. Again one can attach labels to partitioned graphs by
+> slicing:
+>
+> [3,Set] / I(Lp,Lv,Le)
+>
+>
+> So, my question: Is the general case a known/studied construction? If
+> so, could someone provide a reference?
+>
+>
+>
+> Best,
+>
+> Aleks
+>
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

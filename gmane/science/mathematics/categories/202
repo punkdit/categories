@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Meredith Gregory <lgreg.meredith@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: naive questions about sets
+Date: Fri, 27 Mar 2009 15:55:05 -0700
+Lines: 75
+Approved: news@gmane.org
+Message-ID: <E1LnL2f-0000M6-27@mailserv.mta.ca>
+Reply-To: Meredith Gregory <lgreg.meredith@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1238196947 28148 80.91.229.12 (27 Mar 2009 23:35:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 27 Mar 2009 23:35:47 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Sat Mar 28 00:37:05 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LnLbe-00026F-2n
+	for gsmc-categories@m.gmane.org; Sat, 28 Mar 2009 00:36:58 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LnL2f-0000M6-27
+	for categories-list@mta.ca; Fri, 27 Mar 2009 20:00:49 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:202
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/202>
+
+Categorical,
+
+From the deafening silence i take it that there is no treatment of these
+sorts of structures in the topos-theoretic or other categorical literature.
+
+The whole area is a very rich vein. On the one hand there is great practical
+interest in providing a modular semantics for fresh variables and
+alpha-equivalence and a whole cottage industry has grown up around it. (Jamie
+Gabbay's homepage <http://www.gabbay.org.uk/> is a good place for links.) On
+the other, 'atoms' of the type in Fraenkel-Mostowski set theory do not occur
+in an effective nature. An infinite supply of entities with no internal
+structure, but which support an equality test, takes up way too much room to
+fit inside a computational device. So, finding a consistent way to keep all
+the benefits of the FM substitution
+methods<http://www.gabbay.org.uk/papers/stusun.pdf>as they apply to
+alpha equivalence while staying in an effective theory is
+of both practical and theoretical interest.
+
+Further, the generalization provide lots of structure to explore. One avenue
+of investigation has to do with what can be contained. i found the
+construction when teaching my 12 year old daughter set theory. We were using
+the pedagogical device of set as physical container. Unfortunately, the
+axiom of extensionality introduces a decidedly non-physical twist to things
+(not counting quantum mechanical intuitions about what is physical). The
+example we hit first was the von Neumann encoding for 2
+
+[| 2 |] = { [| 0 |], [| 1 |] } = { [| 0 |], { [| 0 |] } }
+
+which puts the same set in two clearly different physical locations. My
+daughter and i decided that what went into the physical containers were
+little promisory notes that could be redeemed for actual things. In this
+version of the construction you only get flat structures, a set never
+contains a set. That left the problem of the language in which the promisory
+notes were written. Why not use the language of containers?
+
+   - Container ::= {c| Note* |c}             // BlackSet ::= {b| RedSet* |b}
+   - Note ::= {n| Container* |n}             // RedSet ::= {r| BlackSet* |r}
+
+This has lots and lots of fun questions regarding how to redeem notes for
+containers. It turns out that by carefully controlling the computational
+power of how things are redeemed you never get the Russell paradox. This
+appears to be related to stratified set theories such as the NF (thanks for
+the link Paul!), but the circular set up does not show up in the wikipedia
+article.
+
+Another avenue of investigation is the number and kinds of color as there is
+nothing that requires only two colors. In the spirit of the notation below,
+we can think of a whole collection of different colored set theories
+arranged by
+
+Set(i) ::= {i| ( \Sigma_{ j != i } Set(j) )* |i}
+
+This has interest for generic programming community. Find
+here<http://paste.pocoo.org/show/109929/>Haskell code that resulted in
+a conversation i had with Bruno Oliveira
+regarding using generic programming techniques to take advantage of cyclic
+symmetry in the different set theories.
+
+Best wishes,
+
+--greg
+
+-- 
+L.G. Meredith
+Managing Partner
+Biosimilarity LLC
+806 55th St NE
+Seattle, WA 98105
+
++1 206.650.3740
+
+http://biosimilarity.blogspot.com
+
+
+

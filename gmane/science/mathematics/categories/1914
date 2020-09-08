@@ -1,0 +1,490 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@barrs.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Beta version of new diagram package
+Date: Fri, 13 Apr 2001 14:17:10 -0300 (ADT)
+Lines: 459
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.4.10.10104131415040.21540-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018201 1184 80.91.229.2 (29 Apr 2009 15:16:41 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:41 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Apr 13 15:08:20 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f3DHL7330961
+	for categories-list; Fri, 13 Apr 2001 14:21:07 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 12
+Status: RO
+Content-Length: 16401
+Original-Lines: 458
+Xref: news.gmane.org gmane.science.mathematics.categories:1914
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1914>
+
+I have decided to build a new diagram package as a front end to XY-pic. It
+is in many ways like my old one, but has much of the power of XY, with a
+syntax that is more familiar to people who have used the old one.  This
+doubtless contains a number of errors and I would appreciate hearing about
+them.  Here is the macro file, diagxy and a document package diaxydoc
+follows - it will compile under latex 2e.  I have not tested this package
+in plain tex, but I believe it will work.  As for AMS tex, well good luck.  
+It has been tried with both the old and new latex.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input xy
+\xyoption{arrow}
+\xyoption{curve}
+
+\newdir{ >}{{ }*!/-9pt/@{>}}
+\newdir{< }{!/9pt/@{<}*{ }}
+
+\newbox\label
+\newdimen\high
+\newdimen\deep
+\newdimen\ul
+\newcount\deltax
+\newcount\deltay
+\newcount\xend
+\newcount\yend
+\newcount\xpos
+\newcount\ypos
+\newcount\default \default=500
+\newif\ifat
+\newcount\atcode \atcode=\catcode`\@
+
+\catcode`\@=11
+\ul=.01em
+\X@xbase=\ul
+\Y@ybase=\ul
+\let\ifnextchar\@ifnextchar
+\catcode`\@=12
+
+\let\bfig\xy
+\let\efig\endxy
+
+\def\car#1#2\nil{#1}
+
+\def\morphism(#1,#2)|#3|/#4/<#5,#6>[#7`#8`#9]{%
+\xend#1\advance \xend by #5%
+\yend#2\advance \yend by #6%
+\def\next{#4}%
+\ifx\next\empty \atfalse%
+\else \def\next{\car#4\nil}%
+   \if\next@\attrue \else \atfalse \fi%
+\fi%
+\ifat
+ \def\next{#4}%
+ \ifx\next\empty%
+  \POS(#1,#2)*+{#7}\ar#4 (\xend,\yend)*+{#8}%
+ \else \if#3l%
+  \ifnum #6>0%
+   \POS(#1,#2)*+{#7}\ar#4^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar#4_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3m%
+   \setbox\label=\hbox{\kern .5pt $\labelstyle #9$\kern .5pt}%
+   \high=\ht\label \advance\high by 1pt \ht\label=\high%
+   \deep=\dp\label \advance\deep by 1pt \dp\label=\deep%
+   \POS(#1,#2)*+{#7}\ar#4|-{\box\label} (\xend,\yend)*+{#8}%
+ \else \if#3r%
+  \ifnum #6<0%
+   \POS(#1,#2)*+{#7}\ar#4^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar#4_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3a%
+  \ifnum #5>0%
+   \POS(#1,#2)*+{#7}\ar#4^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar#4_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3b%
+  \ifnum #5<0%
+   \POS(#1,#2)*+{#7}\ar#4^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar#4_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \fi\fi\fi\fi\fi\fi%
+\else%
+\def\next{#4}%
+ \ifx\next\empty%
+  \POS(#1,#2)*+{#7}; (\xend,\yend)*+{#8}%
+ \else \def\next{#4}%
+  \ifx\next\empty%
+   \POS(#1,#2)*+{#7}\ar (\xend,\yend)*+{#8}%
+ \else \if#3l%
+  \ifnum #6>0%
+   \POS(#1,#2)*+{#7}\ar@{#4}^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar@{#4}_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3m%
+   \setbox\label=\hbox{\kern .5pt $\labelstyle #9$\kern .5pt}%
+   \high=\ht\label \advance\high by 1pt \ht\label=\high%
+   \deep=\dp\label \advance\deep by 1pt \dp\label=\deep%
+   \POS(#1,#2)*+{#7}\ar@{#4}|-{\box\label} (\xend,\yend)*+{#8}%
+ \else \if#3r%
+  \ifnum #6<0%
+   \POS(#1,#2)*+{#7}\ar@{#4}^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar@{#4}_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3a%
+  \ifnum #5>0%
+   \POS(#1,#2)*+{#7}\ar@{#4}^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar@{#4}_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \else \if#3b%
+  \ifnum #5<0%
+   \POS(#1,#2)*+{#7}\ar@{#4}^-{#9} (\xend,\yend)*+{#8}%
+  \else%
+   \POS(#1,#2)*+{#7}\ar@{#4}_-{#9} (\xend,\yend)*+{#8}%
+  \fi%
+ \fi\fi\fi\fi\fi\fi\fi%
+\fi\ignorespaces}%
+
+
+
+
+
+\def\location(#1,#2){\xpos=#1\ypos=#2\ignorespaces}
+\def\squareplacements|#1`#2`#3`#4|{%
+    \def\xa{#1}\def\xb{#2}\def\xc{#3}\def\xd{#4}\ignorespaces}
+\def\sizes<#1,#2>{\deltax=#1\deltay=#2\ignorespaces}
+\def\squaredata[#1`#2`#3`#4;#5`#6`#7`#8]{%
+    \def\nodea{#1}\def\nodeb{#2}\def\nodec{#3}\def\noded{#4}%
+    \def\labela{#5}\def\labelb{#6}\def\labelc{#7}\def\labeld{#8}\ignorespaces}
+
+\def\squarepppp(#1)|#2|/#3`#4`#5`#6/<#7>[#8]{%
+\location(#1)%
+\squareplacements|#2|%
+\sizes<#7>%
+\squaredata[#8]%
+\morphism(\xpos,\ypos)|\xd|/#6/<\deltax,0>[\nodec`\noded`\labeld]
+\advance \ypos by \deltay
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]
+\morphism(\xpos,\ypos)|\xa|/#3/<\deltax,0>[\nodea`\nodeb`\labela]
+ \advance \xpos by \deltax
+\morphism(\xpos,\ypos)|\xc|/#5/<0,-\deltay>[\nodeb`\noded`\labelc]
+\ignorespaces}
+
+\def\square{\ifnextchar({\squarep}{\squarep(0,0)}}
+\def\squarep(#1){\ifnextchar|{\squarepp(#1)}{\squarepp(#1)|a`l`r`b|}}
+\def\squarepp(#1)|#2|{\ifnextchar/{\squareppp(#1)|#2|}%
+    {\squareppp(#1)|#2|/>`>`>`>/}}
+\def\squareppp(#1)|#2|/#3`#4`#5`#6/{%
+    \ifnextchar<{\squarepppp(#1)|#2|/#3`#4`#5`#6/}%
+    {\squarepppp(#1)|#2|/#3`#4`#5`#6/<\default,\default>}}
+
+\def\triplacements|#1`#2`#3|{\def\xa{#1}\def\xb{#2}\def\xc{#3}}
+\def\tridata[#1`#2`#3;#4`#5`#6]{%
+    \def\nodea{#1}\def\nodeb{#2}\def\nodec{#3}%
+    \def\labela{#4}\def\labelb{#5}\def\labelc{#6}}
+
+\def\ptrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<\deltax,0>[\nodea`\nodeb`\labela]
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xc|/#5/<-\deltax,-\deltay>[\nodeb`\nodec`\labelc]
+\ignorespaces}
+
+\def\ptriangle{\ifnextchar({\ptrianglep}{\ptrianglep(0,0)}}
+\def\ptrianglep(#1){\ifnextchar|{\ptrianglepp(#1)}{\ptrianglepp(#1)|a`l`r|}}
+\def\ptrianglepp(#1)|#2|{\ifnextchar/{\ptriangleppp(#1)|#2|}%
+    {\ptriangleppp(#1)|#2|/>`>`>/}}
+\def\ptriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\ptrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\ptrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\qtrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<\deltax,0>[\nodea`\nodeb`\labela]
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodec`\labelb]
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xc|/#5/<0,-\deltay>[\nodeb`\nodec`\labelc]
+\ignorespaces}
+
+\def\qtriangle{\ifnextchar({\qtrianglep}{\qtrianglep(0,0)}}
+\def\qtrianglep(#1){\ifnextchar|{\qtrianglepp(#1)}{\qtrianglepp(#1)|a`l`r|}}
+\def\qtrianglepp(#1)|#2|{\ifnextchar/{\qtriangleppp(#1)|#2|}%
+    {\qtriangleppp(#1)|#2|/>`>`>/}}
+\def\qtriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\qtrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\qtrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\dtrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,0>[\nodeb`\nodec`\labelc]
+\advance\ypos by \deltay\advance \xpos by \deltax
+\morphism(\xpos,\ypos)|\xa|/#3/<-\deltax,-\deltay>[\nodea`\nodeb`\labela]
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]
+\ignorespaces}
+
+\def\dtriangle{\ifnextchar({\dtrianglep}{\dtrianglep(0,0)}}
+\def\dtrianglep(#1){\ifnextchar|{\dtrianglepp(#1)}{\dtrianglepp(#1)|l`r`b|}}
+\def\dtrianglepp(#1)|#2|{\ifnextchar/{\dtriangleppp(#1)|#2|}%
+    {\dtriangleppp(#1)|#2|/>`>`>/}}
+\def\dtriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\dtrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\dtrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\btrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,0>[\nodeb`\nodec`\labelc]
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<0,-\deltay>[\nodea`\nodeb`\labela]
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodec`\labelb]
+\ignorespaces}
+
+\def\btriangle{\ifnextchar({\btrianglep}{\btrianglep(0,0)}}
+\def\btrianglep(#1){\ifnextchar|{\btrianglepp(#1)}{\btrianglepp(#1)|l`r`b|}}
+\def\btrianglepp(#1)|#2|{\ifnextchar/{\btriangleppp(#1)|#2|}%
+    {\btriangleppp(#1)|#2|/>`>`>/}}
+\def\btriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\btrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\btrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\Atrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+{\multiply\deltax by 2%
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,0>[\nodeb`\nodec`\labelc]}%
+\advance\ypos by \deltay\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xa|/#3/<-\deltax,-\deltay>[\nodea`\nodeb`\labela]
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodec`\labelb]
+\ignorespaces}
+
+\def\Atriangle{\ifnextchar({\Atrianglep}{\Atrianglep(0,0)}}
+\def\Atrianglep(#1){\ifnextchar|{\Atrianglepp(#1)}{\Atrianglepp(#1)|l`r`b|}}
+\def\Atrianglepp(#1)|#2|{\ifnextchar/{\Atriangleppp(#1)|#2|}%
+    {\Atriangleppp(#1)|#2|/>`>`>/}}
+\def\Atriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\Atrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\Atrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\Vtrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodec`\labelb]
+{\multiply\deltax by 2%
+\morphism(\xpos,\ypos)|\xa|/#3/<\deltax,0>[\nodea`\nodeb`\labela]%
+\global\advance\xpos by \deltax}%
+\morphism(\xpos,\ypos)|\xc|/#5/<-\deltax,-\deltay>[\nodeb`\nodec`\labelc]
+\ignorespaces}
+
+\def\Vtriangle{\ifnextchar({\Vtrianglep}{\Vtrianglep(0,0)}}
+\def\Vtrianglep(#1){\ifnextchar|{\Vtrianglepp(#1)}{\Vtrianglepp(#1)|a`l`b|}}
+\def\Vtrianglepp(#1)|#2|{\ifnextchar/{\Vtriangleppp(#1)|#2|}%
+    {\Vtriangleppp(#1)|#2|/>`>`>/}}
+\def\Vtriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\Vtrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\Vtrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\Ctrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\advance \ypos by \deltay
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,-\deltay>[\nodeb`\nodec`\labelc]
+\advance\ypos by \deltay \advance \xpos by \deltax
+\morphism(\xpos,\ypos)|\xa|/#3/<-\deltax,-\deltay>[\nodea`\nodeb`\labela]
+\multiply\deltay by 2%
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]%
+\ignorespaces}
+
+\def\Ctriangle{\ifnextchar({\Ctrianglep}{\Ctrianglep(0,0)}}
+\def\Ctrianglep(#1){\ifnextchar|{\Ctrianglepp(#1)}{\Ctrianglepp(#1)|a`r`b|}}
+\def\Ctrianglepp(#1)|#2|{\ifnextchar/{\Ctriangleppp(#1)|#2|}%
+    {\Ctriangleppp(#1)|#2|/>`>`>/}}
+\def\Ctriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\Ctrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\Ctrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\Dtrianglepppp(#1)|#2|/#3`#4`#5/<#6>[#7]{%
+\location(#1)%
+\triplacements|#2|%
+\sizes<#6>%
+\tridata[#7]%
+\advance\xpos by \deltax \advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xc|/#5/<-\deltax,-\deltay>[\nodeb`\nodec`\labelc]
+\advance\xpos by -\deltax \advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodeb`\labelb]%
+\multiply \deltay by 2
+\morphism(\xpos,\ypos)|\xa|/#3/<0,-\deltay>[\nodea`\nodec`\labela]%
+\ignorespaces}
+
+\def\Dtriangle{\ifnextchar({\Dtrianglep}{\Dtrianglep(0,0)}}
+\def\Dtrianglep(#1){\ifnextchar|{\Dtrianglepp(#1)}{\Dtrianglepp(#1)|a`l`b|}}
+\def\Dtrianglepp(#1)|#2|{\ifnextchar/{\Dtriangleppp(#1)|#2|}%
+    {\Dtriangleppp(#1)|#2|/>`>`>/}}
+\def\Dtriangleppp(#1)|#2|/#3`#4`#5/{%
+    \ifnextchar<{\Dtrianglepppp(#1)|#2|/#3`#4`#5/}%
+    {\Dtrianglepppp(#1)|#2|/#3`#4`#5/<\default,\default>}}
+
+\def\tripairplacements|#1`#2`#3`#4`#5|{\def\xa{#1}\def\xb{#2}\def\xc{#3}%
+\def\xd{#4}\def\xe{#5}}
+\def\tripairdata[#1`#2`#3`#4;#5`#6`#7`#8`#9]{%
+ \def\nodea{#1}\def\nodeb{#2}\def\nodec{#3}\def\noded{#4}%
+ \def\labela{#5}\def\labelb{#6}\def\labelc{#7}\def\labeld{#8}\def\labele{#9}}
+
+
+\def\Atrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<#8>[#9]{%
+\location(#1)%
+\tripairplacements|#2|%
+\sizes<#8>%
+\tripairdata[#9]%
+\morphism(\xpos,\ypos)|\xd|/#6/<\deltax,0>[\nodeb`\nodec`\labeld]%
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xe|/#7/<\deltax,0>[\nodec`\noded`\labele]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<-\deltax,-\deltay>[\nodea`\nodeb`\labela]%
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]%
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,-\deltay>[\nodea`\noded`\labelc]%
+\ignorespaces}
+
+\def\Atrianglepair{\ifnextchar({\Atrianglepairp}{\Atrianglepairp(0,0)}}%
+\def\Atrianglepairp(#1){\ifnextchar|{\Atrianglepairpp(#1)}%
+{\Atrianglepairpp(#1)|l`m`r`b`b|}}%
+\def\Atrianglepairpp(#1)|#2|{\ifnextchar/{\Atrianglepairppp(#1)|#2|}%
+    {\Atrianglepairppp(#1)|#2|/>`>`>`>`>/}}%
+\def\Atrianglepairppp(#1)|#2|/#3`#4`#5`#6`#7/{%
+    \ifnextchar<{\Atrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/}%
+    {\Atrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<\default,\default>}}%
+
+\def\Vtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<#8>[#9]{%
+\location(#1)%
+\tripairplacements|#2|%
+\sizes<#8>%
+\tripairdata[#9]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<\deltax,0>[\nodea`\nodeb`\labela]%
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,-\deltay>[\nodea`\noded`\labelc]%
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,0>[\nodeb`\nodec`\labelb]%
+\morphism(\xpos,\ypos)|\xd|/#6/<0,-\deltay>[\nodeb`\noded`\labeld]%
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xe|/#7/<-\deltax,-\deltay>[\nodec`\noded`\labele]%
+\ignorespaces}
+
+\def\Vtrianglepair{\ifnextchar({\Vtrianglepairp}{\Vtrianglepairp(0,0)}}%
+\def\Vtrianglepairp(#1){\ifnextchar|{\Vtrianglepairpp(#1)}%
+{\Vtrianglepairpp(#1)|a`a`l`m`r|}}%
+\def\Vtrianglepairpp(#1)|#2|{\ifnextchar/{\Vtrianglepairppp(#1)|#2|}%
+    {\Vtrianglepairppp(#1)|#2|/>`>`>`>`>/}}%
+\def\Vtrianglepairppp(#1)|#2|/#3`#4`#5`#6`#7/{%
+    \ifnextchar<{\Vtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/}%
+    {\Vtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<\default,\default>}}%
+
+\def\Ctrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<#8>[#9]{%
+\location(#1)%
+\tripairplacements|#2|%
+\sizes<#8>%
+\tripairdata[#9]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xe|/#7/<0,-\deltay>[\nodec`\noded`\labele]%
+\advance\xpos by -\deltax
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,0>[\nodeb`\nodec`\labelc]%
+\morphism(\xpos,\ypos)|\xd|/#6/<\deltax,-\deltay>[\nodeb`\noded`\labeld]%
+\advance\ypos by \deltay
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xa|/#3/<-\deltax,-\deltay>[\nodea`\nodeb`\labela]%
+\morphism(\xpos,\ypos)|\xb|/#4/<0,-\deltay>[\nodea`\nodec`\labelb]%
+\ignorespaces}
+
+\def\Ctrianglepair{\ifnextchar({\Ctrianglepairp}{\Ctrianglepairp(0,0)}}%
+\def\Ctrianglepairp(#1){\ifnextchar|{\Ctrianglepairpp(#1)}%
+{\Ctrianglepairpp(#1)|l`r`m`l`r|}}%
+\def\Ctrianglepairpp(#1)|#2|{\ifnextchar/{\Ctrianglepairppp(#1)|#2|}%
+    {\Ctrianglepairppp(#1)|#2|/>`>`>`>`>/}}%
+\def\Ctrianglepairppp(#1)|#2|/#3`#4`#5`#6`#7/{%
+    \ifnextchar<{\Ctrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/}%
+    {\Ctrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<\default,\default>}}%
+
+\def\Dtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<#8>[#9]{%
+\location(#1)%
+\tripairplacements|#2|%
+\sizes<#8>%
+\tripairdata[#9]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xc|/#5/<\deltax,0>[\nodeb`\nodec`\labelc]%
+\morphism(\xpos,\ypos)|\xd|/#6/<0,-\deltay>[\nodeb`\noded`\labeld]%
+\advance\ypos by \deltay
+\morphism(\xpos,\ypos)|\xa|/#3/<0,-\deltay>[\nodea`\nodeb`\labela]%
+\morphism(\xpos,\ypos)|\xb|/#4/<\deltax,-\deltay>[\nodea`\nodec`\labelb]%
+\advance\ypos by -\deltay
+\advance\xpos by \deltax
+\morphism(\xpos,\ypos)|\xe|/#7/<-\deltax,-\deltay>[\nodec`\noded`\labele]%
+\ignorespaces}
+
+\def\Dtrianglepair{\ifnextchar({\Dtrianglepairp}{\Dtrianglepairp(0,0)}}%
+\def\Dtrianglepairp(#1){\ifnextchar|{\Dtrianglepairpp(#1)}%
+{\Dtrianglepairpp(#1)|l`r`m`l`r|}}%
+\def\Dtrianglepairpp(#1)|#2|{\ifnextchar/{\Dtrianglepairppp(#1)|#2|}%
+    {\Dtrianglepairppp(#1)|#2|/>`>`>`>`>/}}%
+\def\Dtrianglepairppp(#1)|#2|/#3`#4`#5`#6`#7/{%
+    \ifnextchar<{\Dtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/}%
+    {\Dtrianglepairpppp(#1)|#2|/#3`#4`#5`#6`#7/<\default,\default>}}%
+\catcode`\@=\atcode
+
+\def\place(#1,#2)[#3]{\POS(#1,#2)*+{#3}}
+
+\def\pullback#1]#2]{\square#1]\trident#2]}
+\def\tridentdata[#1;#2`#3`#4]{\def\nodee{#1}\def\labele{#2}%
+   \def\labelf{#3}\def\labelg{#4}}
+\def\trident{\ifnextchar|{\tridentp}{\tridentp|a`m`b|}}
+
+\def\tridentp|#1|{\ifnextchar/{\tridentpp|#1|}{\tridentpp|#1|/{>}`{>}`{>}/}}
+
+\def\tridentpp|#1|/#2/{\ifnextchar<{\tridentppp|#1|/#2/}%
+  {\tridentppp|#1|/#2/<500,500>}}
+
+\def\tridentppp|#1`#2`#3|/#4`#5`#6/<#7,#8>[#9]{%
+\tridentdata[#9]%
+\advance \xpos by -\deltax
+\advance \xpos by -#7\advance \ypos by #8%
+{\advance\deltax by #7%
+\morphism(\xpos,\ypos)|#1|/#4/<\deltax,-#8>[\nodee`\nodeb`\labele]}%
+\morphism(\xpos,\ypos)|#2|/#5/<#7,-#8>[\nodee`\nodea`\labelf]%
+\advance\deltay by #8%
+\morphism(\xpos,\ypos)|#3|/#6/<#7,-\deltay>[\nodee`\nodec`\labelg]}
+
+
+
+
+
+
+

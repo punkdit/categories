@@ -1,0 +1,94 @@
+Path: news.gmane.org!not-for-mail
+From: Hasegawa Masahito <hassei@kurims.kyoto-u.ac.jp>
+Newsgroups: gmane.science.mathematics.categories
+Subject: On "Traced Monoidal Categories"
+Date: Wed, 17 Dec 2008 16:16:55 +0900
+Lines: 62
+Approved: news@gmane.org
+Message-ID: <E1LCvj7-0005CF-AP@mailserv.mta.ca>
+Reply-To: Hasegawa Masahito <hassei@kurims.kyoto-u.ac.jp>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241020159 14748 80.91.229.2 (29 Apr 2009 15:49:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:49:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Dec 17 08:47:39 2008 -0400
+Return-path: <categories@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 17 Dec 2008 08:47:39 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LCvj7-0005CF-AP
+	for categories-list@mta.ca; Wed, 17 Dec 2008 08:42:09 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 72
+Status: RO
+Content-Length: 2707
+Original-Lines: 61
+Xref: news.gmane.org gmane.science.mathematics.categories:4765
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4765>
+
+Dear all,
+
+Recently we have noticed that there is an error in the paper "Traced
+Monoidal Categories" by Joyal, Street and Verity, published in 1996.
+It is about the bidjointness of the Int-construction and, to our best
+knowledge, never pointed out before. We think that it is of some
+interest for quite a few people, as this biadjointness is widely known
+and frequently quoted in the literature, especially in various work in
+theoretical computer science.
+
+In the paper by JSV, it is claimed that (in Proposition 5.2) the
+Int-construction gives a left biadjoint of the inclusion of the
+2-category TortMon (of tortile monoidal categories, balanced monoidal
+functors and monoidal natural transformations) in the 2-category
+TraMon (of traced monoidal categories, traced strong monoidal functors
+and monoidal natural transformations). However, we found that the
+statement is not quite correct. There is a simple counterexample:
+
+---------------------------------------------------------------------
+Counterexample:
+Let N=(N,0,+,\leq) be the traced partially ordered set of natural
+numbers. Then Int(N) is equivalent to the compact closed partially
+ordered set Z=(Z,0,+,-,\leq) of integers. The biadjointness would say
+that TraMon(N,Z) is equivalent to TortMon(Int(N),Z), which in turn is
+equivalent to TortMon(Z,Z).
+However, some calculation shows that TraMon(N,Z) is isomorphic to the
+partially ordered set of natural numbers, while TortMon(Z,Z) is
+isomorphic to a discrete category with countably many objects.
+---------------------------------------------------------------------
+
+JSV's proof was almost perfect, except the very last three lines where
+some details on 2-cells were missing/wrong.
+
+We think that the easiest (and possibly the only) way to recover the
+biadjointness is to modify the definition of TraMon as the 2-category
+of traced monoidal categories, traced strong monoidal functors and
+*invertible* monoidal natural transformations - this is a natural
+choice, as the 2-cells of TortMon are invertible because of the
+presence of duals - then all seem to work well (and Ross agreed in his
+reply to our message).
+
+In practice, as far as we can see, this seems to be a relatively
+harmless error, as most uses of the Int-construction in the literature
+do not depend on the details on 2-cells (they often do not mention
+2-cells at all). However, there are some papers explicitly mentioning
+2-cells and thus inheriting the incorrect statement from the JSV
+paper. (Unfortunately, it is the case for a paper by one [Hasegawa] of
+us ...)
+
+
+Best,
+
+Masahito Hasegawa
+Shin-ya Katsumata
+
+
+--
+Masahito Hasegawa <hassei@kurims.kyoto-u.ac.jp>
+Research Institute for Mathematical Sciences, Kyoto University
+
+
+

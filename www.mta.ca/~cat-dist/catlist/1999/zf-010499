@@ -1,0 +1,502 @@
+Date: Thu, 1 Apr 1999 13:10:47 +0100 (BST)
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: Is Zermelo-Fraenkel set theory inconsistent?
+
+
+		IS ZERMELO-FRAENKEL SET THEORY INCONSISTENT?
+
+At the end of this message is a sketch of an argument that leads to
+the conclusion that Zermelo-Fraenkel set theory is inconsistent.
+
+The impact on mathematics is not as devastating as the incautious
+observer might suppose.   Recall that ZERMELO set theory (1908), which
+is essentially equivalent to the categorists' notion of ELEMENTARY TOPOS
+with natural numbers and the axiom of choice,  is adequate for
+most of the purposes of mathematics, though not, as I shall try to
+explain, logic (and theoretical computer science).
+
+ZERMELO-FRAENKEL set theory is the extension of this system by the
+axiom-scheme of REPLACEMENT, which was first formulated by Adolf
+(later Abraham) Fraenkel, Nels Lennes and Thoralf Skolem in 1922,
+although Dimitry Mirimanoff already had something of the idea in 1917.
+Notice that this is some two decades after the appearance of the famous
+"antinomies" of set theory, so presumably the set theorists' guard had
+dropped by that time, and they had begun again to assert megalomaniac
+axioms.   On the other hand, it is a decade before the second generation
+of paradoxical results, Godel's incompleteness theorem and Turing's
+unsolvability of the Halting Problem.
+
+Whenever I see set theory books in a library or bookshop, I turn to
+the index to find out what they have to say about Replacement.  Usually
+there is some trivial result, such as the existence of what categorists
+call image factorisation, that could have been proved from Zermelo's
+axioms with a little more facility in set-theoretic constructions.
+
+The basic use of Replacement, that you will find in the better set theory
+books, is the recursive construction of sets (in substance -- types or
+objects to type-theorists and categorists -- rather than their names).
+
+For example, Mostowski's theorem states that every well founded extensional
+binary relation < is isomorphic to the membership relation for a unique
+transitive set.  This is found, recursively, by means of the formula
+	f(x)  =   { f(y) |  y < x },
+which also provides the extensional reflection (quotient) of any well
+founded relation. In fact the latter result (where the quotient relation
+is merely another relation, rather than a membership relation) can be
+proved using the topos or Zermelo axioms alone, and not Replacement [1],
+although there are categorical generalisations of this that certainly do
+need Replacement.
+
+Richard Montague [2] proved a result that should have been taken as a
+warning of the perilous nature of Replacement, though I suspect that
+Montague's personal eccentricities may have been the reason why he was
+ignored. ZF can prove the consistency, not only of Zermelo set theory (Z)
+itself, but also of Z extended by any single theorem of ZF.
+
+Adrian Mathias has claimed [3] that Bourbaki was "ignorant" of Replacement,
+ie that it did not occur in "Theorie des Ensembles" [4].   Although
+Bourbaki is hardly very clear on this matter, it does include a
+version of Replacement in its axioms, indeed one that is in widespread
+use in category theory and other parts of mathematics, namely that one
+can form the UNION of any SET-INDEXED FAMILY of SETS.
+
+One application of N-indexed unions in theoretical computer science is
+Scott's "D-infinity" construction of models of the untyped lambda calculus.
+Starting from any domain D0=D, one may form its function-space D1=(D0->D0),
+and similarly D2=(D1->D1), etc., linking these together with embedding-
+projection pairs.  If D was one of the examples of L-domains, having a
+pair of elements with infinitely many minimal upper bounds, then one can
+show (classically) that D-infinity has the cardinality of a model of
+Zermelo set theory, so need not exist within such a model unless it also
+satisfies Replacement.
+
+These two ways of seeing Replacement have a common theme: we use N-indexed
+or transfinite unions to unfold a free(ish) model of one logic within
+a model of another.
+
+Having seen this in the context of a messy domain-theoretic construction,
+we may think in a more disciplined way about free models of the lambda
+calculus, the topos axioms, etc.  In fact, there is no difficulty in
+constructing these models, as they are merely TERM ALGEBRAS.  The problem
+lies in proving that the term algebra has the universal (initiality)
+property that qualifies it as "free":
+
+	Let S be the universe (the category of ZF-sets, for example)
+	and F the term algebra (internal to S) for the logic L.
+	Suppose that S itself is a model of L.
+
+	Then there is a unique interpretation functor []:F->S
+	that takes each syntactic operation of F (eg prod(a,b))
+	to the semantics ([a] x [b]) in S.
+
+It is merely unique up to unique isomorphism if the L-structure in S is
+defined by universal properties rather than being chosen.
+
+This initiality property may also be expressed type-theoretically.
+Per Martin-Lof [5] introduced objects with such a property, called UNIVERSES,
+observing the analogy with Replacement.  This point of view stresses that
+the above property is a RECURSION SCHEME.
+
+Let me explain how I came to realise that the existence of []:F->S depends,
+in general, on Replacement.
+
+There is an amazingly simple but incredibly powerful argument, due to
+Peter Freyd and known variously as (Artin-Wraith) glu(e)ing, sconing,
+the Freyd cover, logical relations and other names.  It is based on some
+very elementary categorical investigations of a certain comma category 
+involving F and S.   This argument has been developed rather a long way
+(the most recent paper that I know of is [6]), and we are pretty close
+to having a purely categorical proof of the strong normalisation theorem
+for lambda calculi that, unlike the syntactic proofs, is completely
+generic with regard to the calculus in question.
+
+Freyd originally showed that the terminal object (1) of the free topos (F)
+is projective, and more generally the "global sections functor" 
+F(1,-) : F -> S preserves colimits.   In particular, it preserves the
+initial object (0), which is categorical jargon for saying that S proves
+the consistency of F, because the S-set of F-morphisms 1->0 is the
+initial (empty) S-set.
+
+I found this suspicious, because the punch-line of Andre Joyal's 1973
+(but as yet unpublished and unavailable) categorical proof of Godel's
+incompleteness theorem is that such a functor F(1,-) : F -> S does *not*
+preserve the initial object.
+
+The more careful amongst categorists ought also to be suspicious when
+I speak of "a functor F(1,-) or [] : F -> S" where F is an INTERNAL 
+category in S.   The meaning that we must give to this phrase is that
+it is "syntactic sugar" for a certain FIBRATION  p: V -> F, where V is
+also an internal category and p and internal functor in S.
+
+This brings us back to the relationship between Replacement as a recursive
+construction of objects and Replacement as infinitary colimits:
+"p: V -> F"  is the colimit (in a 2-category whose objects are fibrations)
+of a recursively defined diagram vaguely similar to that which gives Scott's
+D-infinity.
+
+I have come to the conclusion that attempts to define "colimits" such as
+this are inherently circular: what, after all, does it mean to have a
+"cocone" to test such an alleged colimit?
+
+My categorical formulation of Replacement speaks about fibrations
+and smaller colimits defined internally in the style of Benabou.
+This is to be found in the final section (9.5) of my book [7],
+Section 7.7 of which also gives an account of Freyd's gluing construction.
+
+This book is officially due to be published in mid-May,  but it is
+already in stock (and I have my own copy in front of me), and is
+available direct from the publishers at 50 pounds (inclusive of overland
+postage and packing).   Please contact
+	Richard Knott,
+	email:  rknott@cup.cam.ac.uk
+	fax:    +44 1223 315 052
+	tel:    +44 1223 325 916 (but other methods are preferable)
+	snail:  Cambridge University Press, The Edinburgh Building,
+                Shaftesbury Road, Cambridge, CB2 2RU, UK
+with your address and credit card number.  (2.50 pounds extra for airmail.)
+
+Having seen that Replacement provides a UNIFORM way of proving
+consistency of any fragment of logic, we come at last to the
+inconsistency argument:
+
+	Let L(0) be Zermelo set theory
+	(or the axioms for an elementary topos).
+
+	For each n,  let L(n+1)  be   L(n)  plus
+	as much of the axiom-scheme of replacement as is needed
+	to justify the gluing construction that shows that
+
+		L(n+1) |-  ``L(n) is consistent.''
+
+	Now let   L(infinity)   be   the union of  L(n) over n:N.
+
+	If    L(infinity) |- false   then   L(n) |- false   for some n.
+
+	But   L(infinity) |-  ``L(n) is consistent,''
+
+	so    L(infinity)   proves its OWN consistency,
+	contradicting Godel's theorem.
+
+	However,  L(infinity)   has a standard non-trivial interpretation
+	in Zermelo--Fraenkel set theory, which is therefore inconsistent.
+
+[1] Paul Taylor, Intuitionistic Sets and Ordinals, JSL 61 (1996) 705-44
+
+[2] Richard Montague, Fraenkel's Addition to the Axioms of Zermelo,
+    pp 91--114 of Bar-Hillel, et al., eds., Essays on the Foundations of 
+    Mathematics, Magnes Press, Hebrew University, 1966 (distributed
+    by Oxford University Press).
+
+[3] Adrian Mathias, The Ignorance of Bourbaki, Mathematical Intelligencer,
+    14 (1992) 4-13.
+
+[4] Nicolas Bourbaki, Elements de Mathematique XXII: Theories des Ensembles,
+    Livre I, Structures, Hermann, 1957 (English translation 1968).
+
+[5] Per Martin-Lof, An Intuitionistic Theory of Types: Predicative part,
+    pp 73--118 in Rose and Sheperdson, eds., Logic Colloquium '73,
+    North-Holland, Studies in Logic and the Foundations of Mathematics #80,
+    1975
+
+[6] Djordje Cubric, Peter Dybjer and Philip Scott, Normalisation and the 
+    Yoneda Embedding, MSCS 8 (1998) 153--192.
+
+[7] Paul Taylor, Practical Foundations of Mathematics, Cambridge University
+    Press, Cambridge Studies in Advanced Mathematics #59, xii+572pp, 1999.
+
+    http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/
+
+Paul Taylor  <pt@dcs.qmw.ac.uk>  19990401
+
+This message may be copied elsewhere,
+ON CONDITION that it is quoted in its ENTIRETY.
+
+
+Date: Thu, 01 Apr 1999 12:23:09 -0800
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Subject: categories: Re: Is Zermelo-Fraenkel set theory inconsistent?
+
+>      Let L(0) be Zermelo set theory (or the axioms for an elementary topos).
+>
+>         For each n,  let L(n+1)  be   L(n)  plus
+>         as much of the axiom-scheme of replacement as is needed
+>         to justify the gluing construction that shows that
+>
+>                 L(n+1) |-  ``L(n) is consistent.''
+>
+>         Now let   L(infinity)   be   the union of  L(n) over n:N.
+>
+>         If    L(infinity) |- false   then   L(n) |- false   for some n.
+>
+>         But   L(infinity) |-  ``L(n) is consistent,''
+>
+>         so    L(infinity)   proves its OWN consistency,
+>         contradicting Godel's theorem.
+>
+>         However,  L(infinity)   has a standard non-trivial interpretation
+>         in Zermelo--Fraenkel set theory, which is therefore inconsistent.
+
+i think there is a gap is in the step
+
+        L(infinity) |- "L(n) is consistent"
+        so L(infinity) proves its OWN consistency
+
+formalized in a suitable category of theories and interpretations, paul's
+construction, if i understand it correctly, refers to the colimit of the tower
+
+        L(0) --> FL(0)  --> FFL(0)  -->...
+
+where FX = X + replacement_X, so that FX |- "X is consistent".
+
+IF the colimit of this tower, paul's L(infinity), were a fixpoint of F, THEN it
+would indeed prove its own consistency. but it doesn't seem to be a fixpoint:
+the restrictions of the replacement to L(0), FL(0) etc. do not imply the
+replacement for L(infinity).
+
+btw, i bought paul's book and warmly recommend it.
+
+-- dusko
+
+
+
+
+Date: Thu, 01 Apr 1999 07:52:01 -0800
+From: Mike Oliver <oliver@math.ucla.edu>
+Subject: categories: Re: Is Zermelo-Fraenkel set theory inconsistent?
+
+Paul Taylor wrote:
+>         Now let   L(infinity)   be   the union of  L(n) over n:N.
+> 
+>         If    L(infinity) |- false   then   L(n) |- false   for some n.
+> 
+>         But   L(infinity) |-  ``L(n) is consistent,''
+> 
+>         so    L(infinity)   proves its OWN consistency,
+>         contradicting Godel's theorem.
+
+How do you conclude, from the fact that L(infinity) |- "L(n) is consistent", that
+L(n) is in fact consistent?
+
+Generally, if T1 |- "T2 is consistent", then to conclude "T2 is consistent",
+we use the following argument:  Suppose T2 is inconsistent.  Then
+there is some proof by which T2 |- false.  Assuming T1 is strong enough
+to formalize the deductive system being used, then it follows
+that T1 |- "T2 is inconsistent".   But by hypothesis, T1 |- "T2 is consistent",
+therefore T1 is inconsistent.
+
+But this is not a contradiction unless we were already *assuming* the
+consistency of T1 !  I.e. it follows from T1+Con(T1) that
+if T1 |- Con(T2), then Con(T2), but it does *not* in general
+follow from T1 alone.
+
+So the step from
+	L(infinity) |- "L(n) is consistent"
+to
+	L(n) is consistent
+
+cannot be formalized in any obvious way in L(infinity), and therefore
+you cannot (again in any obvious way) conclude
+L(infinity) |- "L(infinity) is consistent."
+
+-- 
+Disclaimer:  I could be wrong -- but I'm not.  (Eagles, "Victim of Love")
+
+Finger for PGP public key, or visit http://www.math.ucla.edu/~oliver.
+1500 bits, fingerprint AE AE 4F F8 EA EA A6 FB  E9 36 5F 9E EA D0 F8 B9
+
+
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Subject: categories: Re: incompleteness of ZF
+Date: Sat, 3 Apr 1999 17:12:29 +0200 (MESZ) 
+
+Dear Paul,
+  
+a short reply to your mail about inconsistency of replacement.
+
+As Paul has already remarked in his mail the type-theoretic counterpart of
+replacement is that of universe `a la Martin-Loef. As in case of replacement
+the use of universes is that they allow for construction of families of types
+(as e.g. needed for inverse limit constructions in Domain Theory which cannot
+be performed in pure topos logic precisely for this reason).
+  
+But as already observed in a survey article by Thierry Coquand
+(ftp://ftp.cs.chalmers.se/users/cs/coquand/meta.ps.Z) and, surely,
+known to Martin-Loef himself it holds that in type theory with n+1 universes
+one may prove the consistency of type theory with n universes simply by
+constructing a model using the n+1st universe. But, of course, this extra
+universe is needed for the consistency proof. Accordingly, one cannot prove
+the consistency of type theory with $\omega$ universes without postulating an
+$\omega$th universe. 
+  
+Quite the same phenomenon is going on in set theory as already pointed out by
+some previous replies. However, in set theory due to the presence of
+``impredicative'' axioms the proof theoretic strength is incredibly stronger
+than set of Martin-Laoef type theory with $\omega4 universes.
+  
+Best, Thomas 
+
+
+Date: Tue, 6 Apr 1999 17:41:04 -0400 (EDT)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Subject: Re: categories: Re: incompleteness of ZF
+  
+Using an old logician's trick (see eg Feferman on paths thru O, or even
+Goedel's original papers) as an 
+                        April Fool joke
+may be amusing to some within the closed gates of a British University, 
+but is irresponsible on the world network. Think of the hundreds of
+lurkers (who hesitate to speak up so that misconceptions can
+be discussed and clarified openly, but) who are now furthering the rumor
+that mathematics has somehow been proved inconsistent.The waves of such
+disinformation can last for years or even decades.
+  
+*******************************************************************************
+F. William Lawvere                      Mathematics Dept. SUNY
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117                  Buffalo, N.Y. 14214, USA
+  
+******************************************************************************* 
+  
+
+Date: Wed, 7 Apr 1999 19:45:26 -0400 (EDT)
+From: "R.A.G. Seely" <rags@math.mcgill.ca>
+Subject: categories: Re: incompleteness of ZF
+  
+On Tue, 6 Apr 1999, F W Lawvere wrote: 
+  
+> Using an old logician's trick (see eg Feferman on paths thru O, or even  
+> Goedel's original papers) as an  
+>                       April Fool joke
+> may be amusing to some within the closed gates of a British University,
+> but is irresponsible on the world network. Think of the hundreds of
+> lurkers (who hesitate to speak up so that misconceptions can
+> be discussed and clarified openly, but) who are now furthering the rumor
+> that mathematics has somehow been proved inconsistent.The waves of such
+> disinformation can last for years or even decades.
+  
+Curiously, my reaction to this has been rather different.  We were
+discussing Paul's note after the seminar here the other day, and apart
+from one reply, I rather had the idea that most replies were aware
+that this was a joke, but that it was a subtle one (not all that
+subtle, perhaps, but a lot more subtle that what often passes as
+humour on the net, for sure).  And that finding the error was a
+respectable response.
+  
+As for spreading disinformation, there has been no shortage of people
+who look serious, (I avoid the harder question as to whether they are,
+and what exactly that ought to mean) and who have been spreading tales
+of the inconsistency of maths for decades.  As a graduate student, I
+often attended logic meetings where Edward Wette proved ever more
+basic fragments of our subject inconsistent (I recall he got as far as
+propositional logic, Peano arithmetic, and several branches of
+physics.  I am not sure he made any serious distinction between the
+last case and the others.)  Perhaps one point here is that anyone who
+believes all he reads is a fool, and anyone who believes all he reads
+on the net is a fool who cannot even learn from experience.  (It takes
+about 5 minutes to uncover patently silly things on the net! - not 
+even counting this one...)
+  
+So - I agree Bill raises a serious matter, but I think in this case it 
+may be an overreaction.  Paul's note was certainly "fishy" (French
+reference for those not in a French environment), but it was
+essentially harmless.  This group is comparitively closed (even your
+average academic journal is probably more open).  And if anyone missed
+the joke up to now, surely that has been remedied.  (If only in that
+refutations appeared quickly.)
+
+However, if I see a report on this on "60 minutes" I will eat my
+hat...
+   
+ - all the best, Robert
+
+= rags =
+
+=================================
+<rags@math.mcgill.ca> 
+<http://www.math.mcgill.ca/~rags>
+
+
+From: Michael Abbott <Michael@rcp.co.uk>
+Subject: categories: RE: incompleteness of ZF
+Date: Thu, 8 Apr 1999 08:49:35 +0100
+
+As a lurker who failed to either notice the date or understand any
+detail of Paul's demonstration, I appreciate Lawvere's comments.  
+
+I do feel, though, that he is overstating the impact of Paul's little
+jest.  There were several immediate replies (to the effect, I think,
+that F(lim X) is not lim F X), and no riposte from Paul.  My own
+reaction was: hmm, it'll be interesting if anything else comes out of
+this.
+  
+I sympathise very much with Paul's "anti-ZF" stance;  after all, hasn't
+Lawvere set the basis for a non-set foundation of practical mathematics?
+
+
+-----Original Message-----
+From: cat-dist@mta.ca [mailto:cat-dist@mta.ca]On Behalf Of F W Lawvere
+Sent: 06 April 1999 22:41
+To: CATEGORIES@mta.ca
+Subject: Re: categories: Re: incompleteness of ZF
+
+
+
+Using an old logician's trick (see eg Feferman on paths thru O, or even
+Goedel's original papers) as an
+                        April Fool joke
+may be amusing to some within the closed gates of a British University,
+but is irresponsible on the world network. Think of the hundreds of
+lurkers (who hesitate to speak up so that misconceptions can
+be discussed and clarified openly, but) who are now furthering the rumor
+that mathematics has somehow been proved inconsistent.The waves of such
+disinformation can last for years or even decades.
+
+************************************************************************
+*******
+F. William Lawvere                      Mathematics Dept. SUNY
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117                  Buffalo, N.Y. 14214, USA
+
+************************************************************************
+*******
+
+
+Date: Thu, 08 Apr 1999 10:08:52 -0300
+From: Robert Dawson <Robert.Dawson@stmarys.ca>  
+Subject: categories: April 1st & related matters
+  
+[Note from Moderator: With the posts just sent, this discussion should
+come to a close. Readers of the list, and those posting to it, should be
+aware that it contains about 500 addresses.]  
+  
+    *Had* Paul posted his clever hoax on, say, sci.math (which, AFAIK, he 
+did not) where it would be widely available to J. Random Lurker, I would
+share Bill Lawvere's concerns.  Had he placed it permanently on his web
+server, with a big flashing link from his home page, advertised it by  
+spamming 100,000 random netizens, and issued a trilingual press release, I
+would share those concerns to a much greater extent.  However, CATEGORIES is
+a mailing list; probably everybody who received Paul's posting also received
+the two debunkings, Bill's comment, and is reading this even as, er, they
+read this. I don't imagine that we *have* hundreds of lurkers. (Lurkers!
+Please identify yourselves... I'm curious.)
+
+    While Bill is undoubtedly correct that not all readers of CATEGORIES
+share his ability to look at Paul's joke and instantly recognize not only
+the fallacy but its antecedents [I offer myself as a proof of the
+nonemptiness of the complement], surely we all have been around the block
+enough times to distinguish between a full formal proof and what Paul
+presented?  Even had it been in earnest, such an announcement would justify
+only the reaction "Somebody thinks he's shown ... but I don't think he has
+circulated a complete proof yet."
+  
+    I suppose that it is possible that somebody, browsing at random, *might*
+find it in the CATEGORIES archives, in years to come, and not read ahead to
+find out what the world had had to say about this discovery back in the mad,
+exciting days of the late C20.  But anybody who could do this and not   
+realize that there was something odd going on would probably either (a) not
+understand why anybody should care if ZF is consistent or not, or (b) have a
+vague feeling that Goedel, or Escher, or somebody, already proved that, or
+something, didn't he?
+
+        -Robert Dawson
+

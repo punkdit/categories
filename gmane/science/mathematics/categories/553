@@ -1,0 +1,102 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Algebraic Theories/Operads
+Date: Sat, 6 Dec 1997 16:12:08 -0400 (AST)
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971206161201.29984D-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017032 26243 80.91.229.2 (29 Apr 2009 14:57:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:57:12 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Sat Dec  6 16:12:56 1997
+Original-Received: (from cat-dist@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id QAA08161;
+	Sat, 6 Dec 1997 16:12:09 -0400 (AST)
+Status: RO
+Content-Length: 2812
+Original-Lines: 76
+Xref: news.gmane.org gmane.science.mathematics.categories:553
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/553>
+
+Date: Fri, 5 Dec 1997 18:54:36 +0000 (GMT)
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+
+>
+> I'm looking for a good reference on the relation between
+> algebraic theories (a la Lawvere) and operads.
+>
+> David Metzler
+
+I think the relationship between algebraic theories and (non-symmetric,
+non-topological) operads is quite simply described. Loosely, algebras for
+operads are just the same as algebras for strongly regular theories. To be
+more precise: any operad gives rise to a monad on Set, the algebras for which
+are the algebras for the operad; a monad on Set arises from an operad iff it
+arises from a strongly regular theory. So -
+
+	operadic monads are strongly regular theories.
+
+
+Carboni & Johnstone (1995) call an equation _strongly regular_ if on each
+side the same variables appear in the same order, without repetition (e.g.
+(x.y).z=x.(y.z) and x-(y-z)=(x-y)+z, but not x.y=x, x.y=y.x or
+(x.x).y=x.(x.y)). A theory is called strongly regular if it can be presented
+by operators and strongly regular equations - for instance, the theory of
+monoids. They show that a monad (T, eta, mu) on Set is from a s.r. theory
+("is s.r.") iff
+	(i)   T is finitary
+	(ii)  T preserves wide pullbacks
+      & (iii) eta and mu are cartesian.
+(A wide pullback is a limit over a diagram (X_i --> X) where i ranges over
+some set I, e.g. if I=2 it's an ordinary pullback.)
+
+1. Operadic => strongly regular
+
+If A is an operad, with the function A --> N={natural numbers}, then the
+functor part of the induced monad T on Set is defined by the pullback square
+
+	T(X) ----> W(X)
+	 |          |
+	 |          | W(!)
+	 |          |
+	 V          V
+	 A ------> W(1)=N
+
+ where X is a set and W (for Words) is the free-monoid monad. One can show
+(e.g. my (1997, sec 4.6)) that the unit and multiplication of T are
+cartesian. Moreover, one can also show that
+	(a) if W preserves colimits of a given shape then so does T
+      & (b) if W preserves I-ary pullbacks then so does T.
+Since the theory of monoids is s.r., W preserves all filtered colimits (i.e.
+is finitary) and all wide pullbacks. So T satisfies (i)-(iii) and is
+therefore s.r.. 
+
+2. Strongly regular => operadic
+
+Conversely, take a s.r. theory T. Any s.r. presentation of T gives rise to a
+natural transformation T --> W which is cartesian and preserves the monad
+structure. It follows by my (1997, sec 4.6) that the monad T comes from some
+operad A.
+
+
+References:
+
+A Carboni, P T Johnstone (1995), Connected limits, familial representability 
+        and Artin glueing. Math Struct in Comp Science, vol 5, 
+        pp 441-459.
+T Leinster (1997, updated 3 Dec), General operads and multicategories.
+        http://www.dpmms.cam.ac.uk/~leinster.
+
+
+I've heard tell that these ideas were explored by Kelly in his work on
+clubs - can anyone enlighten me?
+
+
+Tom Leinster
+
+

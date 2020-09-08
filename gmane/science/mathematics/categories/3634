@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equalisers and coequalisers in categories with a \dag-involution
+Date: Fri, 16 Feb 2007 17:08:06 -0400 (AST)
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1HIQ26-00026M-AN@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019424 9570 80.91.229.2 (29 Apr 2009 15:37:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:04 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Feb 17 09:56:37 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 17 Feb 2007 09:56:37 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HIQ26-00026M-AN
+	for categories-list@mta.ca; Sat, 17 Feb 2007 09:55:22 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 27
+Status: O
+Content-Length: 4007
+Original-Lines: 84
+Xref: news.gmane.org gmane.science.mathematics.categories:3634
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3634>
+
+Jamie Vicary wrote:
+>
+>     Of course, in the light of
+>               http://www.arxiv.org/abs/math.CT/0604542   ,
+> perhaps we only need require that our dagger-category has products and
+> equalizers in order for it to have 'finite bilimits'! In remark 2.6 of
+> [2] cited in your email below, you write that if a dagger-category has
+> products then it must of course have coproducts, but it need not have
+> biproducts. Presumably, math.CT/0604542 proves you wrong here?
+
+You are referring to the paper "Finite Products are Biproducts in a
+Compact Closed Category" by Robin Houston.
+
+It does not prove me wrong. Robin's construction only applies to
+compact closed categories. In general, a dagger category doesn't need
+to be compact closed.
+
+Actually, there is a counterexample to support my remark 2.6. It is
+due to Robin Houston and myself (any typos or mistakes are mine).
+
+(1) There exists a category C with finite products and coproducts,
+    with a zero object, and such that for all A,B, A+B is isomorphic
+    to AxB (not naturally), but for some A,B, the canonical map f:A+B
+    -> AxB is not an isomorphism.
+
+    Proof: Let C be the category of sets of cardinality 0 or aleph_0,
+    with partial functions as the morphisms. Then the empty set is
+    initial and terminal. We have AxB = A \union (A*B) \union B, where
+    "x" denotes categorical product, and "*" denotes cartesian product
+    of sets. Further A+B = A \union B. By inspecting cardinalities, we
+    find that AxB and A+B have equal cardinality, for all A, B, and
+    hence they are (not naturally) isomorphic. However, the canonical
+    map f:A+B -> AxB satisfying p_i.f.q_j = \delta_{ij} maps
+    everything to the first and third components of AxB = A \union
+    (A*B) \union B, hence is not onto when A,B are non-empty.
+
+(2) Corollary: C does not have biproducts.
+
+(3) Corollary: There exists a category C with finite products and
+    coproducts, and such that A+B = AxB for all A,B, but which does
+    not have biproducts.
+
+    Proof: choose a skeleton of the category in (1).
+
+(4) There exists a dagger category with finite products, but which
+    does not have biproducts.
+
+    Proof: Take C as in (3), and consider D = C x C^op. Then D has
+    products and coproducts as inherited componentwise from C and
+    C^op. Also, it satisfies X+Y = XxY. Further, D has no biproducts,
+    or else the forgetful functor to C would preserve them.
+
+    Now consider D', the full subcategory of D consisting of objects
+    of the form (A,A). This has products and coproducts, and they are
+    not biproducts. Further, D' is a dagger category with (f,g)^{\dag}
+    = (g,f).
+
+Another related remark is that even *if* a dagger category has
+biproducts, then they need not be dagger-biproducts. Here is a
+counterexample. Consider the category of matrices with rational
+entries. Objects are arities, and composition is standard matrix
+multiplication, but define the following non-standard dagger: if A is
+an mxn-matrix, then let A^\dag = A^{transpose} * 3^(n-m). This is
+indeed an involutive, identity-on-objects functor.  As a category, it
+is equivalent to finite-dimensional Q-vector spaces, so it has
+biproducts, and it is also compact closed. However, there are no
+isometries e : Q -> Q^2 (and hence, no dagger-biproducts). If such an
+isometry existed, say with matrix (a, b)^{transpose}, then we would
+have e^\dag.e = (a^2 + b^2)/3 = 1. However, the equation a^2 + b^2 = 3
+has no solution in the rational numbers. (In Z/9Z, any sum of two
+squares that is divisible by 3 is also divisible by 9; therefore the
+same holds in the integers. The claim about the rational numbers
+follows by taking a sufficiently large square common denominator).
+
+I do not know whether Robin Houston's construction, when applied to a
+dagger compact closed category, yields dagger-biproducts.  Note that
+the previous counterexample is not dagger-compact closed (dagger does
+not preserve tensor). It therefore doesn't answer this last question.
+
+Best, -- Peter
+
+
+
+
+

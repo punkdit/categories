@@ -1,0 +1,74 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <andrej.bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Decidability of the theory of a monad
+Date: Thu, 4 Jun 2009 00:08:28 +0200
+Lines: 41
+Approved: news@gmane.org
+Message-ID: <E1MCMzl-0006Up-7L@mailserv.mta.ca>
+Reply-To: Andrej Bauer <andrej.bauer@andrej.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1244162846 6913 80.91.229.12 (5 Jun 2009 00:47:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 5 Jun 2009 00:47:26 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Fri Jun 05 02:47:24 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MCNae-0007CJ-GN
+	for gsmc-categories@m.gmane.org; Fri, 05 Jun 2009 02:47:24 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MCMzl-0006Up-7L
+	for categories-list@mta.ca; Thu, 04 Jun 2009 21:09:17 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4923
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4923>
+
+I thank eveyone who answered my question so quickly. For reference I
+post a summary of the answers.
+
+Bill Lawvere answered that "the theory of a monad is just that of
+ordinal addition of 1 on the augmented simplicial category Delta
+considered as a (non-commutative) monoidal category wrt ordinal
+addition." A relevant reference in this regard is his "Ordinal Sums
+and Equational Doctrines" which was part of the Zurich Triples Book,
+available online as TAC Reprints 18.
+
+Similarly, Jaap van Oosten pointed out that the free "monad on a
+category" on one generator is the simplicial category \Delta (nonempty
+finite ordinals and monotone functions).
+
+It follows from these observations that the theory of a monad is decidable.
+
+Todd Wilson kindly pointed me to a thesis by Wolfgang Gehrke, see
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.47.7087 ,
+which contains a complete set of rewrite rules (page 40, Proposition
+20) for the theory of a monad:
+
+id f ==> f
+f id ==> f
+(f g) h ==> f (g h)
+eta* ==> id
+f* eta ==> f
+f* g* ==> (f* g)*
+f* (eta g) ==> f g
+f* (g* h) ==> (f* g)* h
+
+The last two rules are extra, compared to the original equations. So
+the next time you wonder whether an equation holds of a general monad,
+just use the above rewrite rules on both sides of the equation.
+
+With kind regards,
+
+Andrej
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

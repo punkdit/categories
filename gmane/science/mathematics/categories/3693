@@ -1,0 +1,105 @@
+Path: news.gmane.org!not-for-mail
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Garner's question
+Date: Sat, 10 Mar 2007 11:49:41 +0000 (GMT)
+Lines: 72
+Approved: news@gmane.org
+Message-ID: <E1HQ6JJ-0004s6-7A@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241019465 9854 80.91.229.2 (29 Apr 2009 15:37:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:45 +0000 (UTC)
+To: Categories mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sat Mar 10 14:34:44 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 10 Mar 2007 14:34:44 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HQ6JJ-0004s6-7A
+	for categories-list@mta.ca; Sat, 10 Mar 2007 14:28:53 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 47
+Status: O
+Content-Length: 2564
+Original-Lines: 71
+Xref: news.gmane.org gmane.science.mathematics.categories:3693
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3693>
+
+Here's at least a partial conceptual explanation of
+Richard Garner's "curiosity". There are really three
+categories involved, all of them toposes: they are
+the functor categories [2,Set] where 2 denotes the
+discrete two-object category, [I,Set] where I denotes the
+category (* --> *) and [G,Set] where G has two objects and
+two parallel arrows between them. The inclusions
+f: 2 --> I and g: 2 --> G of course induce essential
+geometric morphisms (strings of three adjoint functors)
+
+          f           g
+[I,Set] <--- [2,Set] ---> [G,Set]
+
+and Richard's functors are simply the composites
+g_*f^* and f_!g^*. So it's no surprise that they
+should be adjoint: also, the adjunction (g^* -| g_*)
+is comonadic, because g is surjective on objects.
+The only oddity is that (f_! -| f^*) is also
+comonadic (it's obviously monadic, again because f
+is surjective on objects). As far as I can see, this is
+just an isolated fact: it isn't a particular case of any
+general result that I know.
+
+Peter Johnstone
+
+On Fri, 9 Mar 2007, Richard Garner wrote:
+
+>
+> While we're on the topic of directed graphs, can
+> anyone provide a satisfactory conceptual
+> explanation for the following curiosity?
+>
+> Let Ar(Set) be the arrow category of Set, and let
+> DGph be directed multigraphs, i.e., presheaves over
+> the parallel pair category as per Thomas' message.
+>
+> Prop: DGph is comonadic over Ar(Set)
+>
+> Proof: We have an adjunction U -| C as follows.
+>
+> U: DGph -> Ar(Set) sends a directed graph
+> s, t : A -> V to the coproduct injection V -> V + A.
+>
+> C: Ar(Set) -> DGph sends an arrow f : X -> Y to the
+> directed graph \pi_1, \pi_2 : X*X*Y -> X.
+>
+> It's easy to check that this is an adjunction, and
+> so we induce a comonad T = UC on Ar(Set), the
+> functor part of which sends f: X --> Y to the
+> coproduct injection X --> X + X*X*Y. Thus a
+> coalgebra structure f --> Tf consists of specifying
+> a map p: Y --> X + X*X*Y satisfying three axioms.
+>
+> These axioms force f: X --> Y to be an injection,
+> and the map p to be defined by cases: those y in Y
+> which lie in the image of f are sent to f^-1(y) in
+> the left-hand copy of X, whilst those y in Y that
+> are not in X are sent to some element (s(y), t(y),
+> y) of X*X*Y. Thus giving a T-coalgebra structure on
+> f:X --> Y is equivalent to giving a directed graph
+> structure s, t : Y \setminus f(X) --> X: and this
+> assignation extends to a functor T-Coalg --> DGph
+> which together with the canonical comparison
+> functor DGph --> T-Coalg gives us an equivalence of
+> categories, Q.E.D.
+>
+> --
+>
+> Richard Garner
+
+
+

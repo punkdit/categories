@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <mshulman@ucsd.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fibrations in a 2-category
+Date: Thu, 13 Jan 2011 15:02:52 -0800
+Lines: 100
+Approved: news@gmane.org
+Message-ID: <E1PdozN-0007Xd-Ms@mlist.mta.ca>
+References: <E1PcdVr-0004A6-7N@mlist.mta.ca>
+Reply-To: Michael Shulman <mshulman@ucsd.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1295032070 6512 80.91.229.12 (14 Jan 2011 19:07:50 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 14 Jan 2011 19:07:50 +0000 (UTC)
+To: Categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri Jan 14 20:07:45 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Pdozx-0008JS-0M
+	for gsmc-categories@m.gmane.org; Fri, 14 Jan 2011 20:07:45 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:57758)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PdozX-0000Rs-Rq; Fri, 14 Jan 2011 15:07:19 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PdozN-0007Xd-Ms
+	for categories-list@mlist.mta.ca; Fri, 14 Jan 2011 15:07:10 -0400
+In-Reply-To: <E1PcdVr-0004A6-7N@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6468
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6468>
+
+Dear Jean,
+
+One way to deal with the difficulty you mention is by using
+"anafunctors," which were introduced by Makkai precisely in order to
+avoid the use of AC in category theory.
+
+An anafunctor is really a simple thing: a morphism in the bicategory
+of fractions obtained from Cat by inverting the functors which are
+fully faithful and essentially surjective.  It can be represented by a
+span  A <-- F --> B  whose left leg is fully faithful and surjective
+on objects.  One intuition is that the objects of F over a\in A are
+different "ways to compute a value" of the anafunctor at a.  Different
+"ways to compute a value" may give different values, but they will be
+canonically isomorphic.
+
+For example, let P --> 2 be a fibration, with fibers B and A.  Then
+there is (without AC) an anafunctor A --> B, where the objects of F
+are the cartesian arrows of P over the nonidentity arrow of 2, and the
+projections assign to such an arrow its domain and codomain.
+
+More generally, if Cat_ana denotes the bicategory of categories and
+anafunctors, then from any fibration P --> C we can construct (without
+AC) a pseudofunctor C^{op} --> Cat_ana.  Moreover, if we allow
+morphisms between fibrations to be anafunctors as well, then the
+bicategory of fibrations over C is biequivalent to the bicategory of
+pseudofunctors C^{op} --> Cat_ana.  (This should not be read as saying
+anything more than it says; in particular I would not claim that
+fibrations are always "the same as" indexed categories even from this
+viewpoint.  For fixed C, they form equivalent bicategories, which
+makes them sufficiently "the same" for some purposes, but, as you have
+pointed out, not for other purposes.)
+
+
+Similarly, regarding "internalization," any ordinary (non-cloven)
+fibration does give rise to an internal fibration in the bicategory
+Cat_ana.  The same is true for internal fibrations and anafunctors in
+a topos (the relevant "non-cartesian" parts of the internal logic of
+the topos E having been incorporated into the definition of
+Cat_ana(E)).  Unfortunately, since Cat_ana is only a bicategory, not a
+strict 2-category, we do not get the strict notion of internal
+fibration, but the weaker version as defined by Street, in which
+cartesian liftings exist only up to isomorphism.  I think this is a
+nice example of when one may be "forced" to use Street fibrations
+rather than Grothendieck ones (never claiming, of course, that there
+is anything necessarily "wrong" with Grothendieck fibrations when they
+suffice).
+
+For example, if p: P --> C is a (Grothendieck) fibration, f: A --> C
+and g: A --> P are functors and m: f --> pg is a natural
+transformation, then we can define an anafunctor A <-- H --> P in
+which the objects of H are pairs (a,n), where a is an object of A and
+n: x --> g(a) is a cartesian arrow in P with p(n) = m_a.  The functor
+H --> A is surjective on objects because p is a fibration.  Then the
+composite anafunctor ph: A --> C is naturally isomorphic to f, and
+there is a natural transformation from h to g which lies over m
+(modulo this isomorphism) and which is cartesian in Cat_ana(A,P) over
+Cat_ana(A,C).  One can generalize to the case when f, g, and p are
+also anafunctors and p is a Street fibration (suitably interpreted for
+an anafunctor).
+
+In general, it seems to me that there are two overall approaches to
+doing category theory without AC (including with internal categories
+in a topos):
+
+1) Embrace anafunctors as "the right kind of morphism between
+categories" in the absence of AC.  As I mentioned above, many familiar
+facts about category theory which normally use AC remain true without
+it, if all notions are replaced by their corresponding "ana-"
+versions.  Of course, this approach has the disadvantage that
+anafunctors are more complicated than ordinary functors, and form a
+bicategory rather than a strict 2-category; thus one may be forced
+into using other weaker notions like Street fibrations, bilimits, etc.
+
+2) Insist on using only ordinary functors, so that we can work with
+the strict 2-category Cat, which is simpler and stricter than Cat_ana.
+  However, many theorems which are true under AC now become false.  In
+addition to the properties of fibrations as above, one also has to
+distinguish between "having limits" in the sense of "every diagram has
+a limit" versus the sense of "there is a function assigning a limit to
+every diagram."
+
+Personally, while there is nothing intrinsically wrong with (2), I
+think (1) gives a more satisfactory theory.  It also has connections
+to applications outside of category theory.  For instance, anafunctors
+between internal categories in a topos are more or less equivalent to
+morphisms between their stack completions, and in various parts of
+mathematics internal categories, and notions equivalent to
+anafunctors, are frequently used as representatives of stacks (Lie
+groupoids, Hopf algebroids, moduli stacks, etc.).  So it is not just a
+philosophical reason to prefer (1).  However, I respect that others
+may disagree, and I'd be interested in hearing about mathematical
+reasons to prefer (2).
+
+Regards,
+Mike
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

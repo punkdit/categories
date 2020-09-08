@@ -1,0 +1,102 @@
+Path: news.gmane.org!not-for-mail
+From: Sam Staton <ss368@cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: question about monoidal categories
+Date: Fri, 8 Feb 2008 09:51:09 +0000
+Lines: 68
+Approved: news@gmane.org
+Message-ID: <E1JNYPB-0004d5-BI@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019787 12175 80.91.229.2 (29 Apr 2009 15:43:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:43:07 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb  8 15:00:05 2008 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 08 Feb 2008 15:00:05 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JNYPB-0004d5-BI
+	for categories-list@mta.ca; Fri, 08 Feb 2008 14:56:57 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 19
+Status: RO
+Content-Length: 1867
+Original-Lines: 67
+Xref: news.gmane.org gmane.science.mathematics.categories:4197
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4197>
+
+Hello, here is an answer to Paul's question: The data (F,beta)
+defines a (lax?) functor between "monoidal categories with right
+units but not left units" [henceforth MR-categories].
+
+Every pointed category can be considered as an MR-category, in fact a
+strict one. The tensor product is left projection. The right unit is
+the point of the category (although every object of the category
+behaves like a right unit for this category.)
+
+In particular, the category S in Paul's email, with point F(1), can
+be seen as an MR-category. Of course, every monoidal category,
+including M, is an MR-category too.
+
+The data for a lax MR-functor M->S consists of a functor F:M->S, a
+morphism F(i)->F(i), which we can take as identity, and a natural
+transformation
+    F(p)*F(a) --> F(p*a)
+which in this case amounts to a map
+    beta:F(p) --> F(p*a)
+
+A monoidal functor must satisfy three coherence conditions,
+for associativity, left identity and right identity.
+For an MR-functor, there are only axioms for associativity and right
+identity, and these are exactly the axioms that Paul gave.
+
+Hope that makes sense! All the best, Sam.
+
+
+On 7 Feb 2008, at 20:05, Paul B Levy wrote:
+
+>
+>
+>
+> Let F be a functor from a monoidal category M to a category S.
+>
+> We are given
+>
+>         beta(p,a) : F(p) --> F(p*a)
+>
+> natural in p,a in M.
+>
+> If I tell you that, in addition to naturality, beta is "monoidal", I'm
+> sure you will immediately guess what I mean by this, viz.
+>
+> (a) for any p,a,b in M
+>
+>    beta(p,a) ; beta(p*a,b) = beta(p,a*b) ; F(alpha(p,a,b))
+>
+> (b) for any p in M
+>
+>    beta(p,1) = F(rho(p))
+>
+> Yet I cannot see any reason for giving the name "monoidality" to
+> (a)-(b).
+>
+> It doesn't appear to be a monoidal natural transformation in the
+> official
+> sense.  There are no monoidal functors in sight.
+>
+> Can somebody please justify my usage?
+>
+> Paul
+>
+>
+
+
+
+

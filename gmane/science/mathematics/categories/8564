@@ -1,0 +1,270 @@
+Path: news.gmane.org!not-for-mail
+From: Robin Cockett <robin@ucalgary.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Partial functors ..
+Date: Tue, 17 Mar 2015 14:31:50 -0600
+Lines: 231
+Approved: news@gmane.org
+Message-ID: <E1YYD1a-0006KM-K7@mlist.mta.ca>
+References: <E1YXpYI-0003sU-Sx@mlist.mta.ca>	<E1YXue5-0006Gx-3h@mlist.mta.ca>
+Reply-To: Robin Cockett <robin@ucalgary.ca>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Trace: ger.gmane.org 1426681547 18942 80.91.229.3 (18 Mar 2015 12:25:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Mar 2015 12:25:47 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: David Yetter <dyetter@ksu.edu>
+Original-X-From: majordomo@mlist.mta.ca Wed Mar 18 13:25:34 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD2T-0006O4-KT
+	for gsmc-categories@m.gmane.org; Wed, 18 Mar 2015 13:25:33 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43996)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD1c-0003Bb-K4; Wed, 18 Mar 2015 09:24:40 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YYD1a-0006KM-K7
+	for categories-list@mlist.mta.ca; Wed, 18 Mar 2015 09:24:38 -0300
+In-Reply-To: <E1YXue5-0006Gx-3h@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8564
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8564>
+
+Ah I did say that this is certainly not the only alternative!!!!
+
+David's suggestion also works and is interesting in its own right.
+
+Adding a zero to categories is a monad on the category of (small)
+categories which is (as far as I can see) is a perfectly good example of a
+partial map classifier.  However it does not classify ALL subcategories:
+once f is taken to the zero map then all composites gfh must be taken to
+the zero map.   This means that the subcategory of 4 (i.e. the linear order
+0 -> 1 -> 2 -> 3 ) which consists of the identity maps and the map 0 -> 3
+cannot be classified (as the middle map is taken to zero).  The
+subcategories which CAN be classified are exactly those which are factor
+closed (i.e. fg in \X' \subseteq \X => f,g \in \X').
+
+BTW: The original suggestion seen in this light also works: adding a
+disconnected object, \X +1, is also a partial map classifier.  However, the
+subcategories classified must be connection closed  (i.e. a disjoint sum
+component of the category).  This may not have been quite the original
+objective ....
+
+Of course, Cat does not have a partial map classifier for ALL subcategories
+... however, this does not stop one from building partial functor
+categories using all partial functors which have perfectly happy natural
+transformations :-) ... but there are still some choices to make along the
+natural transformation road.  All choices lead to interesting alternatives
+... some more interesting than others!
+
+-robin
+
+On Tue, Mar 17, 2015 at 9:04 AM, David Yetter <dyetter@ksu.edu> wrote:
+
+> The previous suggestion of considering functors to D + 1 was a false start
+> for reasons Fred and Uwe pointed out, but it suggests a better approach:
+> consider functors to the category D~ formed from D by freely adjoining a
+> zero object.  Arrows not in S now have somewhere to go (the zero arrow with
+> the appropriate source and target).
+>
+> I think at the one-categorical level, taking Hom(C,D) to be the
+> zero-preserving functors from C~ to D~, and letting C and D range over all
+> small categories gives  a category isomorphic to that of small categories
+> with partial  functors as arrows.
+>
+> Natural transformations between (zero-preserving) functors from C~ to D~
+> would
+> then give a reasonable notion of partial natural transformations.  It
+> certainly captures some, at least, of the natural transformations "more
+> partial"  than their source functor, since there will be a zero natural
+> transformation between any two partial functors, corresponding to a
+> "defined nowhere" partial natural transformation when zero-ness is
+> interpreted as undefined as  it was in the correspondence between
+> zero-preserving functors from C~ to D~ and partial functors from C to D.
+>
+> I'm not sure how this fits with the restrictions Robin points out.  It
+> seems to allow more partial natural transformations than Robin's
+> observation, since zero arrows can fill in whenever the image object under
+> either the source or target functor is undefined, a partial natural
+> transformation to be a natural transformation between the restrictions of
+> the two partial functors to the intersections of their domain of definition
+> (or a subcategory thereof).
+>
+> Best Thoughts,
+> David Yetter
+> ________________________________________
+> From: Robin Cockett <robin@ucalgary.ca>
+> Sent: Monday, March 16, 2015 6:12 PM
+> To: Categories list
+> Subject: categories: Partial functors ..
+>
+> David Leduc <david.leduc6 <at> googlemail.com> writes:
+>
+>> A partial functor from C to D is given by a subcategory S of C and a
+>> functor from S to D. What is the appropriate notion of natural
+>> transformation between partial functors that would allow to turn small
+>> categories, partial functors and those "natural transformations" into
+>> a bicategory? The difficulty is that two partial functors from C to D
+>> might not have the same definition domain.
+>
+>
+> Here is a basic and quite natural interpretation (if someone has not
+> already pointed this out):
+>
+> One can have a n.t  F => G iff F is less defined than G and on their common
+> domain (which is just the domain of F) there is a natural transformation
+> from F => \rst{F} G.   Partial functors, of course, form a restriction
+> category so they are naturally partial order enriched (by restriction).
+> This 2-cell structure must simply respect this partial order ...
+>
+> This is certainly not the only possibility, unfortunately ... for example
+> why not also allow partial natural transformations ... which are less
+> defined than the functor.   Here one does have to be a bit careful: a
+> natural transformation must "know" the subcategory it is working with ...
+> thus defining the natural transformation as a function on arrows (rather
+> than just objects) is worthwhile adjustment (see MacLane page 19, Excercise
+> 5).  This then works too ....
+>
+> I hope this helps.
+>
+> -robin
+>
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+>
+
+--001a11c133443cbef6051181db4e
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Ah I did say that this is certainly not the only alternati=
+ve!!!!<div><br></div><div>David&#39;s suggestion also works and is interest=
+ing in its own right. =C2=A0</div><div><br></div><div>Adding a zero to cate=
+gories is a monad on the category of (small) categories which is (as far as=
+  I can see) is a perfectly good example of a partial map classifier.=C2=A0 =
+However it does not classify ALL subcategories: once f is taken to the zero=
+  map then all composites gfh must be taken to the zero map. =C2=A0 This mea=
+ns that the subcategory of 4 (i.e. the linear order 0 -&gt; 1 -&gt; 2 -&gt;=
+  3 ) which consists of the identity maps and the map 0 -&gt; 3 cannot be cl=
+assified (as the middle map is taken to zero).=C2=A0 The subcategories whic=
+h CAN be classified are exactly those which are factor closed (i.e. fg in \=
+X&#39; \subseteq \X =3D&gt; f,g \in \X&#39;). =C2=A0=C2=A0</div><div><br></=
+div><div>BTW: The original suggestion seen in this light also works: adding=
+  a disconnected object, \X +1, is also a partial map classifier.=C2=A0 Howe=
+ver, the subcategories classified must be connection closed =C2=A0(i.e. a d=
+isjoint sum component of the category).=C2=A0 This may not have been quite =
+the original objective ....</div><div><br></div><div>Of course, Cat does no=
+t have a partial map classifier for ALL subcategories ... however, this doe=
+s not stop one from building partial functor categories using all partial f=
+unctors which have perfectly happy natural transformations :-) ... but ther=
+e are still some choices to make along the natural transformation road.=C2=
+=A0 All choices lead to interesting alternatives ... some more interesting =
+than others!</div><div><br></div><div>-robin</div></div><div class=3D"gmail=
+_extra"><br><div class=3D"gmail_quote">On Tue, Mar 17, 2015 at 9:04 AM, Dav=
+id Yetter <span dir=3D"ltr">&lt;<a href=3D"mailto:dyetter@ksu.edu" target=
+=3D"_blank">dyetter@ksu.edu</a>&gt;</span> wrote:<br><blockquote class=3D"g=
+mail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid;padding-l=
+eft:1ex">The previous suggestion of considering functors to D + 1 was a fal=
+se start for reasons Fred and Uwe pointed out, but it suggests a better app=
+roach:=C2=A0 consider functors to the category D~ formed from D by freely a=
+djoining a zero object.=C2=A0 Arrows not in S now have somewhere to go (the=
+  zero arrow with the appropriate source and target).<br>
+<br>
+I think at the one-categorical level, taking Hom(C,D) to be the zero-preser=
+ving functors from C~ to D~, and letting C and D range over all small categ=
+ories gives=C2=A0 a category isomorphic to that of small categories with pa=
+rtial=C2=A0 functors as arrows.<br>
+<br>
+Natural transformations between (zero-preserving) functors from C~ to D~ wo=
+uld<br>
+then give a reasonable notion of partial natural transformations.=C2=A0 It =
+certainly captures some, at least, of the natural transformations &quot;mor=
+e partial&quot;=C2=A0 than their source functor, since there will be a zero=
+  natural transformation between any two partial functors, corresponding to =
+a &quot;defined nowhere&quot; partial natural transformation when zero-ness=
+  is interpreted as undefined as=C2=A0 it was in the correspondence between =
+zero-preserving functors from C~ to D~ and partial functors from C to D.<br=
+>
+<br>
+I&#39;m not sure how this fits with the restrictions Robin points out.=C2=
+=A0 It seems to allow more partial natural transformations than Robin&#39;s=
+  observation, since zero arrows can fill in whenever the image object under=
+  either the source or target functor is undefined, a partial natural transf=
+ormation to be a natural transformation between the restrictions of the two=
+  partial functors to the intersections of their domain of definition (or a =
+subcategory thereof).<br>
+<br>
+Best Thoughts,<br>
+David Yetter<br>
+________________________________________<br>
+From: Robin Cockett &lt;<a href=3D"mailto:robin@ucalgary.ca">robin@ucalgary=
+.ca</a>&gt;<br>
+Sent: Monday, March 16, 2015 6:12 PM<br>
+To: Categories list<br>
+Subject: categories: Partial functors ..<br>
+<br>
+David Leduc &lt;david.leduc6 &lt;at&gt; <a href=3D"http://googlemail.com" t=
+arget=3D"_blank">googlemail.com</a>&gt; writes:<br>
+<br>
+&gt; A partial functor from C to D is given by a subcategory S of C and a<b=
+r>
+&gt; functor from S to D. What is the appropriate notion of natural<br>
+&gt; transformation between partial functors that would allow to turn small=
+<br>
+&gt; categories, partial functors and those &quot;natural transformations&q=
+uot; into<br>
+&gt; a bicategory? The difficulty is that two partial functors from C to D<=
+br>
+&gt; might not have the same definition domain.<br>
+<br>
+<br>
+Here is a basic and quite natural interpretation (if someone has not<br>
+already pointed this out):<br>
+<br>
+One can have a n.t=C2=A0 F =3D&gt; G iff F is less defined than G and on th=
+eir common<br>
+domain (which is just the domain of F) there is a natural transformation<br=
+>
+from F =3D&gt; \rst{F} G.=C2=A0 =C2=A0Partial functors, of course, form a r=
+estriction<br>
+category so they are naturally partial order enriched (by restriction).<br>
+This 2-cell structure must simply respect this partial order ...<br>
+<br>
+This is certainly not the only possibility, unfortunately ... for example<b=
+r>
+why not also allow partial natural transformations ... which are less<br>
+defined than the functor.=C2=A0 =C2=A0Here one does have to be a bit carefu=
+l: a<br>
+natural transformation must &quot;know&quot; the subcategory it is working =
+with ...<br>
+thus defining the natural transformation as a function on arrows (rather<br=
+>
+than just objects) is worthwhile adjustment (see MacLane page 19, Excercise=
+<br>
+5).=C2=A0 This then works too ....<br>
+<br>
+I hope this helps.<br>
+<br>
+-robin<br>
+<br>
+<br>
+<br>
+[For admin and other information see: <a href=3D"http://www.mta.ca/~cat-dis=
+t/" target=3D"_blank">http://www.mta.ca/~cat-dist/</a> ]<br>
+<br>
+</blockquote></div><br></div>
+
+--001a11c133443cbef6051181db4e--
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

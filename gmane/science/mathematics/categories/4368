@@ -1,0 +1,69 @@
+Path: news.gmane.org!not-for-mail
+From: Robin Houston <r.houston@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equational correspondence and equational embedding
+Date: Tue, 15 Apr 2008 16:16:10 +0100
+Lines: 34
+Approved: news@gmane.org
+Message-ID: <E1Jm6i6-00053t-KL@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1241019901 12948 80.91.229.2 (29 Apr 2009 15:45:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:45:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Apr 16 09:36:53 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 16 Apr 2008 09:36:53 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Jm6i6-00053t-KL
+	for categories-list@mta.ca; Wed, 16 Apr 2008 09:25:58 -0300
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 1214
+Original-Lines: 33
+Xref: news.gmane.org gmane.science.mathematics.categories:4368
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4368>
+
+To my category-infected mind, it seems that what you really need
+is a little category theory. :-)
+
+I take it that your equations should define an equivalence relation?
+(It seems strange to call them 'equations' if not.) If that's right,
+then an "equational theory" is the same thing as an essentially-discrete
+category, i.e. a category that is equivalent to a discrete one, and
+an "equational correspondence" is an equivalence of categories.
+
+With the definition of "equational embedding" you give, your
+conjecture is false. For example, let the equational theories
+S and T each have two terms x and y, with equations
+
+ x =3D_S x     y =3D_S y    x =3D_S y
+ x =3D_T x     y =3D_T y
+
+We can define an equational embedding S -> T by mapping both
+terms to x, and we can define an equational embedding T -> S
+by mapping x to x and y to y, but there can be no equational
+correspondence between S and T (since 1 !=3D 2).
+
+It would seem more natural, at least from a categorical point
+of view, to define an equational embedding to be a full functor,
+i.e. a function f: S -> T such that
+
+   s =3D_S s'  iff  f(s) =3D_T f(s').
+
+With that definition, your conjecture is true by the
+Schr=C3=B6der-Bernstein theorem.
+
+Robin
+
+
+

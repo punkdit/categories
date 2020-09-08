@@ -1,0 +1,102 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@math.uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Generalizing Comma Categories
+Date: Sun, 22 Aug 2010 14:24:55 -0700
+Lines: 63
+Approved: news@gmane.org
+Message-ID: <E1OnXdM-0006Sx-CP@mlist.mta.ca>
+References: <E1OnBV5-0000A1-Sf@mlist.mta.ca>
+Reply-To: Michael Shulman <shulman@math.uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1282572377 16307 80.91.229.12 (23 Aug 2010 14:06:17 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 23 Aug 2010 14:06:17 +0000 (UTC)
+Cc: categories@mta.ca
+To: David Leduc <david.leduc6@googlemail.com>
+Original-X-From: majordomo@mlist.mta.ca Mon Aug 23 16:06:15 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OnXfC-0004GJ-Kt
+	for gsmc-categories@m.gmane.org; Mon, 23 Aug 2010 16:06:14 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34346)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OnXdS-0000I3-4b; Mon, 23 Aug 2010 11:04:26 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OnXdM-0006Sx-CP
+	for categories-list@mlist.mta.ca; Mon, 23 Aug 2010 11:04:20 -0300
+In-Reply-To: <E1OnBV5-0000A1-Sf@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6064
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6064>
+
+This is an interesting and slightly tricky question.  There is a
+notion of "comma 2-category" which has this property; I believe it was
+first written down by Gray.  Given (strict or weak) 2-functors F:A-->C
+and G:B-->C betwen 2-categories (or bicategories), their comma
+2-category (F/G) is defined as follows:
+
+* its objects are triples (a, b, s:F(a)-->G(b)) of an object in A, an
+object in B, and a morphism in C.
+* its morphisms from (a,b,s) to (a',b',s') are triples (u:a-->a',
+v:b-->b', z: s;G(v) --> F(u);s') of a morphism in A, a morphism in B,
+and a 2-cell in C.
+* its 2-cells from (u,v,z) to (u',v',z') are pairs (x:u-->u',
+y:v-->v') of a 2-cell in A and a 2-cell in B, such that (F(x);s').z =
+z'.(s;G(y)).
+
+You can check that if A and B are terminal so that F and G pick out
+objects c, c' of C, then (F/G) is the hom-category C(c,c') regarded as
+a locally discrete 2-category.  There is a "dual" comma 2-category
+which would give you C(c,c')^op instead (assuming I didn't screw up
+and write down the dual version above).
+
+The tricky part is that while an ordinary comma category is
+expressible as a certain kind of weighted limit in the 2-category Cat,
+and can therefore be generalized to comma objects in other
+2-categories, the comma 2-category as defined above is *not*, as far
+as I know, a weighted limit in the (strict or weak) 3-category 2-Cat.
+It does have a universal property, though: just as an ordinary comma
+category is equipped with a natural transformation filling a square in
+a universal way, the comma 2-category is equipped with a *lax* natural
+transformation.  But there is no 3-category whose 2-cells are lax
+natural transformations.
+
+I believe that this universal property can be expressed as a weighted
+limit in Gray_lax enriched categories, where Gray_lax denotes 2-Cat
+with the lax version of the Gray tensor product, but I don't know any
+references for such a point of view.  I'd be very interested to hear
+of other work on this question; it seems potentially important in
+developing a notion of exactness for 3-categories.
+
+Mike
+
+On Fri, Aug 20, 2010 at 6:46 PM, David Leduc
+<david.leduc6@googlemail.com> wrote:
+> Hi,
+>
+> Thank you for all the replies to my previous questions.
+> It is very helpful.
+> Now, I have another (trivial) question.
+>
+> If I have two constant functors Delta_X and Delta_Y that respectively
+> returns X and Y in C, then their comma category is the discrete category
+> C(X,Y).
+>
+> How do comma categories generalize to bicategories?
+>
+> When C is a 2-category, I would like the "comma category" of the
+> "functors"(?) Delta_X and Delta_Y be the (not necessarily discrete) category
+> C(X,Y).
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,113 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: squares and cubes
+Date: Sat, 15 Jan 2000 21:35:47 -0800
+Lines: 82
+Approved: news@gmane.org
+Message-ID: <388158B3.60AF9957@kestrel.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017765 30811 80.91.229.2 (29 Apr 2009 15:09:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:25 +0000 (UTC)
+To: CATEGORIES mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Jan 16 12:22:36 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA29488
+	for categories-list; Sun, 16 Jan 2000 11:29:14 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.5 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3309
+Original-Lines: 81
+Xref: news.gmane.org gmane.science.mathematics.categories:1346
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1346>
+
+hi.
+
+i somehow managed to unsubscribe from this list at some point, and almost
+missed the thread about coalgebra of reals. i am not sure that i have seen
+all the relevant postings, but here are my 2p of thoughts.
+
+if i am not misunderstanding anything, peter freyd's closed interval
+coalgebra achieves something that vaughan pratt's and mine do not. we work
+with lists and streams and get *irredundant* representations of reals.
+however, without redundancy, the algebraic operations on reals are
+undecidable. peter's bipointed approach, however, induces a *redundant*
+representation. this allows him to extract the algebraic operations
+coinductively.
+
+in the talk at the 1998 lisbon workshop on coalgebra (and later in some
+seminar talks), i described a redundant coalgebra of conway reals, where
+conway's definitions of the field operations were derivable as coalgebra
+homomoprhisms. however, the setting seemed too complicated, probably due
+to me. peter's definition of the midpoint algebra is considerably simpler,
+although the resulting operations are probably still computationally quite
+inefficient.
+
+the coalgebra of alternating dyadics, described in the paper with vaughan,
+was derived from this 'conway' coalgebra. as explained in sec 3.4, it
+provides the best dyadic approximation, while the continued fraction
+coalgebra, provides the best rational approximation. presumably, it can be
+derived from the 'norton' coalgebra (contorted fractions), mentioned by
+peter johnstone. there are as many redundant coalgebras of reals, as there
+are corresponding irredundant ones (one for every interval partition), for
+fast outputs.
+
+i think that some of the mentioned *mysteries* about the maps between
+these various representations boil down to the fact that they are
+coalgebra isomorphisms, that do not preserve the derived structure, but
+rather *transform* it. eg, the laplace transform is a coalgebra
+isomorphism between the coalgebra of analytic functions and a dual
+coalgebra of meromorphic functions --- whereby the convolution ring gets
+transformed into a multiplicative domain, etcetc.
+
+in any case, when you are done with reals, you may be interested to have a
+look int my paper with martin escardo "calculus in coinductive form",
+LICS98, or
+ftp://ftp.kestrel.edu/pub/papers/pavlovic/LAPL.ps.gz
+
+all the best,
+-- dusko
+
+PS along the lines of peter's bipointed construction (and also to check
+whether i understood it):
+
+* bipointed sets are the algebras for the functor 2+(-) :
+Set -> Set.
+
+* bipointed sets with two _distinct_ points are the free such algebras. so
+lets work in the kleisli category *K* for 2+(-). write 2 = {0,1}
+
+* the bifunctor (-) v (-) : *K* --> *K* maps
+
+    * the objects X, Y to X + {m} + Y
+    * the arrows X --f-->2+U and Y--g-->2+V to
+
+        h : X+{m}+Y ---> 2 + U+{m}+V
+
+        h(x) = f(x) if f(x) = 0  or f(x) in U
+        h(x) = m if f(x) = 1
+        h(M) = m
+        h(y) = g(y) if g(y) = 1 or g(y) in V
+        h(y) = m if g(y) = 0
+
+* now (0,1) is the final coalgebra for the functor X v X on *K*. the
+coalgebra structure
+
+        (0,1) ---> 2+(0,1) +{m}+(0,1)
+
+maps 1/2 to m, x<1/2 to 2x and x>1/2 to 2x-1.
+
+* the finality is now easy to prove directly, by displaying the
+anamorphism for any given coalgebra X -r-> 2+X+{m}+X. ditto for the
+algebraic structure.
+
+
+

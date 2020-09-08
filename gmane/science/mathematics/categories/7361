@@ -1,0 +1,121 @@
+Path: news.gmane.org!not-for-mail
+From: "Eduardo J. Dubuc" <edubuc@dm.uba.ar>
+Newsgroups: gmane.science.mathematics.categories
+Subject: internal functional relations versus arrows
+Date: Thu, 28 Jun 2012 16:59:43 -0300
+Lines: 84
+Approved: news@gmane.org
+Message-ID: <E1Skass-0001EH-6j@mlist.mta.ca>
+Reply-To: "Eduardo J. Dubuc" <edubuc@dm.uba.ar>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1340975161 4117 80.91.229.3 (29 Jun 2012 13:06:01 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 29 Jun 2012 13:06:01 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri Jun 29 15:06:01 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.80])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Skatc-0002e5-Il
+	for gsmc-categories@m.gmane.org; Fri, 29 Jun 2012 15:06:00 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52319)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Skass-00067F-9x; Fri, 29 Jun 2012 10:05:14 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Skass-0001EH-6j
+	for categories-list@mlist.mta.ca; Fri, 29 Jun 2012 10:05:14 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7361
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7361>
+
+
+I am not an expert on elementary topos (meaning by this to work with the
+internal language in a Grothendiek topos) and I rather be told than
+struggle with the following:
+
+Consider an elementary topos EE, a locale G in EE, the unique locale
+morphism i^*: Omega --> G, and any arrow b: X x Y --> G:
+
+Consider the following formulae on "b":
+
+ed): Supremun_y  b(x, y) = 1
+
+uv): b(x, y) inf b(x, y') <_=  i^*[[y = y']].
+
+Let u: X x Y --> Map(X, Y) be the universal locale furnished with such
+an arrow
+(that is, forall b exists! t^* : Map(X, Y) --> G   t^* u = b.
+
+Gavin Wraith (in "Localic Groups", Cahiers de
+Top. et Geom. Diff. Vol XXII-1 1981) defines an object
+
+Points(G) = LocalMorphisms(G, Omega) C Omega^G  and says that it is
+clear that:
+
+a) Points(Map(X, Y)) = Y^X.
+
+  From this taking global sections it follows that:
+
+b) There is a bijection between
+              arrows X x Y --> Omega  and arrows  X --> Y
+(where the arrow on the right satisfy ed) and uv))
+
+QUESTION 1] I ask for a convincing proof of a), or better, of the weaker
+? b).
+
+Concerning b), consider the following conditions
+                                       on a relation  R C X x Y:
+
+exed) pi_1: R --> X is an epimorphism.
+
+exuv) The family y = pi_2 (x, y): Z --> R --> Y is a compatible family
+with respect to the family x = \pi_1 (x, y): Z --> R --> X (indexed by
+all (x, y): Z --> R)
+
+Then, using that epis are strict it follows using standard category theory:
+
+R satisfy exed) and exuv)  iff
+        exists!  f: X --> Y such that R = Gamma_f (the Graph of f)
+
+Thus, b) will follow if we can prove :
+
+R satisfy exed) and exuv)  iff  cf_R satisfy ed) and uv)
+(cf_R = characteristic function).
+
+This is more related with the formula
+
+uv'): b(x, y)  inf  b(x', y') inf i^*[[x = x']]  <_=  i^*[[y = y']].
+
+Also, by standard category theory it follows that "exed) + exuv)" are
+equivalent to "pi_1 is mono and epi".  This may help ?
+
+NOTE: All the above is very clear in the topos of Sets, but my problem
+is that I am very uncomfortable when the experts write "we do as if the
+base topos is the topos of Sets". Does this slogan apply to the above ?.
+
+SUBQUESTION] Are uv) and uv') equivalent ?
+
+Now a more substantial question:
+
+QUESTION 2]
+
+Consider now a geometric morphism  g: FF  --> EE. We have a bijection
+between arrows
+
+X x Y --> g_* Omega_FF   and arrows   g^*X x g^*Y  --> Omega__EE.
+
+I want to know if the arrows satisfying ed) and uv) correspond under
+this bijection.
+
+e.d.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

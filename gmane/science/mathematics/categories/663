@@ -1,0 +1,120 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Quantifiers for monoids
+Date: Mon, 2 Mar 1998 11:16:12 +0000 (GMT)
+Lines: 87
+Approved: news@gmane.org
+Message-ID: <199803021116.LAA05245@beauty.doc>
+References: <199803010524.XAA25141@reddy.cs.uiuc.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017107 26784 80.91.229.2 (29 Apr 2009 14:58:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:27 +0000 (UTC)
+Cc: categories@mta.ca
+To: u-reddy@cs.uiuc.edu (Uday S. Reddy)
+Original-X-From: cat-dist Mon Mar  2 13:27:01 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA24399
+	for categories-list; Mon, 2 Mar 1998 09:50:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <199803010524.XAA25141@reddy.cs.uiuc.edu> from "Uday S. Reddy" at Feb 28, 98 11:24:32 pm
+X-Mailer: ELM [version 2.4 PL24]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2735
+Original-Lines: 86
+Xref: news.gmane.org gmane.science.mathematics.categories:663
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/663>
+
+
+[Note from moderator: apologies to Dusko for prepending nonsense to his
+post, regards, Bob]
+
+Uday S. Reddy:
+
+ > Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+ > natural transformations E_A : [A => M] -> M that satisfy the following
+ > equations (in the internal language of the CCC):
+ > 
+ >1)     E_A(\lambda x. 1)  =  1
+ >2)     E_A(\lambda x. a * g`x) = a * E_A(g)
+ >3)     E_A(\lambda x. g`x * a) = E_A(g) * a
+ >4)     E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+ > 			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+The naturality of E_A in A seems to be a very strong requirement
+(provided that am not misuncerstanding anything, ofcourse).
+
+Let T the terminal object (since 1 already denotes the unit of
+M). Equations (1) and (2) imply
+
+	E_T(\lambda x. a) = a, 
+
+so E_T is iso. The naturality, on the other hand, implies that for
+every a,b : T --> A holds
+
+	a=>M ; E_T   =   E_A   =   b=>M ; E_T
+
+Such E_A, I think, shouldn't be thought of as a quantifier: modulo
+E_T, it actually boils down to the *evaluation* at (ie substitution
+of) an arbitrary global point of A:
+
+	E_A(g)  = g`a = g`b
+
+Instanciating A = M and g = \lambda x. x yields a = 1, ie 1: T --> M
+is the only global point of M. If T generates, M is T.
+
+On the other hand, if there is an initial object 0 in the CCC, the
+naturality in A implies that all E_A are constantly 1...
+
+Without the naturality, conditions (1--4) seem to be rather easy to
+satisfy. For a fixed A, conditions (2) and (3) are a kind of
+naturality on E_A itself. To make this precise, define on A=>M the
+pointwise monoid structure
+
+	g * h   =  \lambda x. g`x * h`x
+	
+Thinking of M and A=>M as categories, each with one object *, we have
+the Hom-functors from M^op x M and from A=>M^op x A=>M to the CCC
+where they live.
+
+On the other hand, there is the monoid morphism
+
+	I : M ---> A=>M
+	      m |--> \lambda x. m
+
+which can be construed as a functor. Precomposing Hom_{A=>M} with I^op
+and I, we get a functor from M^op x M. Conditions (2) and (3) are now
+exactly the naturality of
+
+	E_A : Hom_{A=>M} (I*, I*) ---> Hom_M (*,*)
+
+in each of the arguments. Hom_M thus appears as a retract of the
+functor Hom_{A=>M} o (I^op x I)... All together, E_A thus appear as a
+weak kind of *abstraction operators* (like in
+www.cogs.susx.ac.uk/users/duskop/papers/CLNA.ps.gz).
+
+All this may not be enlightening at all, but it does seem to help pin
+down the models: eg, evaluations/substitutions of the arbitrary points
+will work again, as well as, when M is a complete lattice, the infima
+and the suprema, corresponding to the quantifiers... (No naturality in
+A, ofcourse.)
+
+Apologies if I got carried away a bit. It's a nice question. I hope
+others will tell more.
+
+Regards,
+-- Dusko Pavlovic
+
+
+
+
+
+
+
+

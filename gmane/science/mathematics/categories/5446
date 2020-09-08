@@ -1,0 +1,123 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: in defense of strictness
+Date: Wed, 30 Dec 2009 21:54:44 -0400 (AST)
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <E1NQUlD-0007Xd-MA@mailserv.mta.ca>
+References: <E1NPyr4-0001Zh-70@mailserv.mta.ca>
+Reply-To: selinger@mathstat.dal.ca (Peter Selinger)
+NNTP-Posting-Host: lo.gmane.org
+X-Trace: ger.gmane.org 1262305213 14553 80.91.229.12 (1 Jan 2010 00:20:13 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 1 Jan 2010 00:20:13 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: categories@mta.ca Fri Jan 01 01:20:05 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NQVFN-0000W5-8n
+	for gsmc-categories@m.gmane.org; Fri, 01 Jan 2010 01:20:05 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NQUlD-0007Xd-MA
+	for categories-list@mta.ca; Thu, 31 Dec 2009 19:48:55 -0400
+In-Reply-To: <E1NPyr4-0001Zh-70@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5446
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5446>
+
+Here is a bit of hyperbole. Hopefully entertaining.
+
+Suppose, hypothetically, that category theorist X had a close look at
+the definition of "inverse": morphisms f : A -> B and g : B -> A are
+inverses if fg = id_B and gf = id_A. Suppose that she makes the
+following argument:
+
+"The definition of inverse is really too strict. It requires an
+equation between objects, namely, the domain of f must equal the
+codomain of g, and vice versa. A natural thing to do would be to
+weaken the definition to replace this equality by an isomorphism."
+
+So what definition would she come up with?
+
+Definition. Let f : A -> B be a morphism. A *weak inverse* of f is
+given by the following data:
+
+(1) Objects A', B', and a morphism g : B' -> A'
+(2) an isomorphism a : A' -> A
+(3) an isomorphism b : B' -> B
+(4) such that the following diagram commutes:
+          g
+    A' <------- B'
+  a |           | b
+    v     f     v
+    A --------> B
+
+Everybody can see that this is nonsense. First, one must have a prior
+definition of isomorphism before one can define inverse in this
+way. But the definition of isomorphism depends on inverses, so this is
+circular. Second, each "weak inverse" in the above sense already gives
+rise to an ordinary inverse, namely a o g o (b^{-1}).  Perhaps
+category theorist X would like to formulate this as a Coherence Lemma
+("each weak inverse is canonically equivalent to a strict
+inverse"). But it is clearly nonsense nevertheless.
+
+
+Naive attempts to define a weak version of dagger structure fall into
+the same category. Recall the definition of a dagger structure on a
+category, namely a contravariant, involutive, identity-on-objects
+functor. Or in elementary terms: to each f : A -> B, associate
+some f+ : B -> A, such that f++ = f, (fg)+ = (g+)(f+), and id+ = id.
+
+Each category theorist (including myself) who sees this definition
+immediately dislikes the identity-on-objects part. The first instinct
+is to try to weaken it. But what would one come up with? After one or
+two failed attempts, it seems that the "correct" definition is the
+following: a contravariant functor (-)+, and for each object A a
+chosen unitary isomorphism a_A : A+ -> A, such that one has the
+following diagram (but note that it doesn't have to commute):
+
+          f+
+    A+ <------- B+
+a_A |           | a_B       [not assumed to commute]
+    v     f     v
+    A --------> B
+
+Plus, there should be some further requirement to replace the
+"involutive" condition (i.e., the obvious diagram involving f and f++
+should commute), and perhaps a coherence condition or two.
+
+Note that a_A and a_B must be assumed to be unitary. The analogous
+definition where they are just isomorphisms does not work for a
+variety of reasons. For example, this is supposed to be a weakening of
+the strict situation, and identities are always unitary.
+
+The problem with any such definition is the same as for the "weak
+inverses" hyperbole above. First, to define dagger in this way, one
+must have a prior definition of "unitary", but the definition of
+"unitary" depends on "dagger", so this is circular. Second, given any
+weak dagger structure in this sense, it already induces a strict
+dagger structure, namely by using a_A o f+ o (a_B^{-1}) : B -> A as
+the strict dagger. One could again regard this as a coherence lemma,
+but it's clearly a pointless one.
+
+
+Actually, my leading example of "weak inverses", while ludicrous, is
+not entirely besides the point. One of the main reasons for
+considering dagger structure is so that we can define a morphism
+u : A -> B to be unitary if u+ is the inverse of u. Trying to say this
+with the "weak" dagger structure inevitably leads to weak inverses.
+
+In light of all this, I completely agree with Mark Weber that dagger
+structure should be strict and that is what we should live with.
+
+-- Peter
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

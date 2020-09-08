@@ -1,0 +1,84 @@
+Path: news.gmane.org!not-for-mail
+From: Uwe Egbert Wolter <Uwe.Wolter@uib.no>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Re: Partial functor
+Date: Mon, 16 Mar 2015 14:42:35 +0100
+Lines: 45
+Approved: news@gmane.org
+Message-ID: <E1YXW3v-0006xX-RQ@mlist.mta.ca>
+References: <E1RNo2E-00089S-S1@mlist.mta.ca> <E1YXUYO-00056F-3V@mlist.mta.ca>
+Reply-To: Uwe Egbert Wolter <Uwe.Wolter@uib.no>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1426516402 9987 80.91.229.3 (16 Mar 2015 14:33:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 16 Mar 2015 14:33:22 +0000 (UTC)
+To: Christopher King <G.nius.ck@gmail.com>, categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Mon Mar 16 15:33:12 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YXW4W-0007gf-HU
+	for gsmc-categories@m.gmane.org; Mon, 16 Mar 2015 15:32:48 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:40983)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YXW3x-0004KB-5O; Mon, 16 Mar 2015 11:32:13 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1YXW3v-0006xX-RQ
+	for categories-list@mlist.mta.ca; Mon, 16 Mar 2015 11:32:11 -0300
+In-Reply-To: <E1YXUYO-00056F-3V@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8554
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8554>
+
+On 2015-03-15 18:01, Christopher King wrote:
+> David Leduc <david.leduc6 <at> googlemail.com> writes:
+>
+>> Hi,
+>>
+>> A partial functor from C to D is given by a subcategory S of C and a
+>> functor from S to D. What is the appropriate notion of natural
+>> transformation between partial functors that would allow to turn small
+>> categories, partial functors and those "natural transformations" into
+>> a bicategory? The difficulty is that two partial functors from C to D
+>> might not have the same definition domain.
+>>
+>> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>>
+>>
+> I know this is late, but I find a quite obvious notion for it. Why not turn
+> your partial functor into a regular functor from C->D+1 (1 and + are the
+> terminal object and coproduct in the category of categories.) Now you can just
+> use regular natural transformations.
+>
+
+I think this construction will not work since the set-theoretic
+difference C\S is not a subcategory of C while 1 is a subcategory of D+1.
+
+The collection of all partial functors from C to D is a partial ordering
+due to the inclusion of definition domains. For each subcategory S of C
+you have the functor category [S->C] and each inclusion functor
+In_S,S':S->S' gives you a functor from [S'->D] into [S->D]. Combining
+both structures (via an appropriate variant of the Grothendieck
+construction] you should get a category with objects all partial
+functors (S,F:S->D) and morphisms (In_S,S', \alpha:F =>
+In_S,S';F'):(S,F)->(S',F'). Composition of partial functors is given by
+pullback (inverse image) construction.
+
+I don't know if this gives a bicategory put maybe it helps to have a
+look in the paper of Barry Jay "Partial Functions, Ordered Categories,
+Limits and Cartesian Closure (1993) "
+
+http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.48.6433
+
+Uwe
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,62 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: On defining *-autonomous categories
+Date: Sun, 16 Dec 2007 21:45:53 -0500 (EST)
+Lines: 29
+Approved: news@gmane.org
+Message-ID: <E1J4IS7-00041o-21@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1241019732 11808 80.91.229.2 (29 Apr 2009 15:42:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:42:12 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Dec 17 12:16:15 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 17 Dec 2007 12:16:15 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1J4IS7-00041o-21
+	for categories-list@mta.ca; Mon, 17 Dec 2007 12:04:23 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 1329
+Original-Lines: 28
+Xref: news.gmane.org gmane.science.mathematics.categories:4123
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4123>
+
+I got a note from a student named Benjamin Jackson saying that someone had
+told him that to define a *-autonomous category, you need only a symmetric
+monoidal category and a contravariant involution * such that Hom(A @ B,C*)
+= Hom(A,(B @ C)*).  Here "=" means natural equivalence and @ is the tensor
+product.  Not only is this apparently true but that equivalence is needed
+only for A = I, the tensor unit.  Of course, what is going on is that all
+the coherence is built-in to the structure of a symmetric monoidal
+category.
+
+First define A --o B = (A @ B*)*.  Then the isomorphism above implies that
+    Hom(A,B) = Hom(I @ A,B) = Hom(I,(A @ B*)*) = Hom(I,A --o B)
+Next we see that
+    (A @ B) --o C = (A @ B @ C*)* = A --o (B @ C*)* = A --o (B --o C)
+and, applying Hom(I,-), that
+       Hom(A @ B,C) = Hom(A,B --o C)
+Also we have that
+  A --o I* = (A @ I)* = A* and A --o B = (A @ B*)* = (B* @ A)* = B* --o A*
+which gives the structure of a *-autonomous category with dualizing
+object I*.
+
+The trouble with this is that generally speaking it is the --o which is
+obvious and the tensor is derived from it.  The coherences involving
+internal hom alone are much less well-known, although they are included
+in the original Eilenberg-Kelly paper in the La Jolla Proceedings.
+Still I am surprised that I never noticed this before.
+
+
+
+

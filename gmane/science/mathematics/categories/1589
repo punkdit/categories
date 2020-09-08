@@ -1,0 +1,141 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <mhe@dcs.st-and.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Reality check
+Date: Tue, 1 Aug 2000 12:56:37 +0100 (BST)
+Lines: 107
+Approved: news@gmane.org
+Message-ID: <14726.47861.392236.332274@mosstowie.dcs.st-and.ac.uk>
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017951 31972 80.91.229.2 (29 Apr 2009 15:12:31 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:31 +0000 (UTC)
+To: Peter Freyd <pjf@saul.cis.upenn.edu>
+Original-X-From: rrosebru@mta.ca Tue Aug  1 09:00:29 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA21742
+	for categories-list; Tue, 1 Aug 2000 08:59:01 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+X-Mailer: VM 6.71 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: O
+Content-Length: 3443
+Original-Lines: 106
+Xref: news.gmane.org gmane.science.mathematics.categories:1589
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1589>
+
+Here are a comment and a question regarding the interesting reality
+check.
+
+Peter Freyd wrote, among other things:
+ > Take the elements of  [-1,1]  to be named by infinite
+ > sequences of _signed_ binary digits, that is -1, 0, +1.
+ > 
+ > [...]
+ > 
+ > The signed binary
+ > expansions  .+1 -1  and  .0 +1  describe the same number, to wit, 1/4.
+
+In a way, the finitary identities
+
+      +1 -1  ==  0 +1  
+
+together with their symmetric versions
+
+      -1 +1  ==  0 -1  
+
+capture *all* identifications made by the quotient map
+
+     3^N  -->>  [-1, 1]
+
+      s  |-->    [[s]] = s1 / 2  +  s2 / 4  + ... +  sn / 2^n + ... 
+
+that takes a signed-digit binary expansion s to the number [[s]] that
+it denotes. Here 3 = {-1,0,+1}, and I am supposing initially that
+[-1,1] is already given.
+
+Let === be the kernel of the quotient map:
+
+     s === t  iff [[s]] = [[t]].
+
+Let == be the least equivalence relation on 3^N such that
+
+     s +1 -1 t == s 0 +1 t
+and
+     s -1 +1 t == s 0 -1 t,
+
+where s ranges over 3^* and t over 3^N. 
+
+It is easy to see that == is coarser than ===.  It is *strictly*
+coarser as, for example, we have that
+
+	-1 1 1 1 1 1 1 1 1 ... === 1 -1 -1 -1 -1 -1 -1 ..., 
+
+because both sequences denote the number zero, but === cannot be
+replaced by ==, because these two sequences cannot be made equal by
+finitely many applications of the identities.
+
+HOWEVER, if one endows 3^N with the Cantor topology (the product of
+the discrete topology of 3), then the relation === is the topological
+closure of the relation == in the product space 3^N x 3^N. 
+That is, all we need to do in order to get === from == is to add
+limits. 
+
+Thus, === can be defined in a topologico-combinatorial way *without*
+reference to a previously existing interval [-1,1]. Therefore we have
+a simple direct (classical) construction of the Euclidean interval
+[-1,1] as a topological quotient of 3^N by an easily defined
+equivalence relation of finite character.
+
+(NB. Of course, === has to be closed, because [-1,1] is Hausdorff and
+the semantic map is continuous (and hence a topological quotient map,
+as it is a surjection of compact Hausdorff spaces). Thus, another way
+of putting the above is to say that == fails to be === only by failing
+to be closed.)
+
+Moreover, there is a *computable* idempotent function 
+
+	  f : 3^N x 3^N --> 3^N x 3^N 
+
+with the property that if f(s,t)=(s',t') then 
+
+     (1) s===s', t===t' and
+
+     (2) if s===t then s' = t' 
+
+            (Yes, I mean this; s' and t' are the *same* sequence.)
+
+As this may sound puzzling at first sight, let me observe that it
+doesn't help in effectively deciding equality, nor does it show that
+numbers would have canonical representatives, because norm(s,s)=(s,s)
+is consistent with the above specification.
+
+Such a function f(s,t) is computed by a finite automaton that tries to
+apply the two identities to make s and t equal, by scanning longer and
+longer finite prefixes of s and t, where this attempt fails at some
+finite stage if and only if s and t denote distinct numbers.  At most
+n+2 digits of input have to be scanned in order to produce n digits of
+output.
+
+(Reference: "Effective and sequential definition by cases on the reals
+via infinite signed-digit numerals", Volume 13 of Electronic Notes in
+Theoretical Computer Science, 1998.)
+
+---------
+Question: 
+---------
+
+Can we replace topology by coinduction in the formulations (and
+proofs) of the above properties?
+
+Martin Escardo 
+
+

@@ -1,0 +1,150 @@
+Path: news.gmane.org!not-for-mail
+From: grandis@dima.unige.it (Marco Grandis)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Monoidal structure, take II
+Date: Thu, 18 Mar 1999 18:27:30 +0100
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <v02140b03b316c6352c84@[130.251.60.169]>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241017553 29417 80.91.229.2 (29 Apr 2009 15:05:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:05:53 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Mar 18 16:40:12 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id OAA25117
+	for categories-list; Thu, 18 Mar 1999 14:07:04 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 4172
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:1079
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1079>
+
+On Francois Lamarche's question.
+
+If I understand correctly, the tensor product  X tensor Y  has the obvious
+objects  (x, y)  and arrows of three types
+
+(a, y): (x, y) -->  (x', y),  for  a: x -> x'  in  X,  y  in  Y,
+
+(x, b): (x, y) -->  (x, y'),  for  x  in  X,  b: y -> y'  in  Y,
+
+(a, b): (x, y) -->  (x', y'),  for  a  and  b  as above.
+
+***
+
+Remark 1.
+We are thus simulating "identities" of  X  and  Y  (which are not given).
+In other words, we are considering the cartesian product  X'xY'  of the
+free reflexive graphs over  X  and  Y,  and taking out its identities.
+
+Would it not be simpler to work with  REFLEXIVE GRAPHS  and their cartesian
+closed structure?
+In my opinion, reflexive graphs are more natural than graphs:
+
+reflexive graph = 1-truncated simplicial set = 1-truncated cubical set
+
+It is the topos of presheaves over a FULL subcategory of non-empty ordinals
+(or cardinals as well), actually the initial segment  1,  2.
+
+Remark 2.
+Roughly speaking, a category enriched over reflexive graphs (wrt the cc
+structure) is a "2-category without vertical composition". It has cells  a:
+f -> g: X -> Y,  with a categorical horizontal composition; it also has
+trivial cells  f -> f: X -> Y  ("vertical identities").
+
+All this is clearly related to homotopy and its abstract settings in
+"2-dimensional categories" (in some sense).
+And indeed topological spaces, with continuous maps and homotopies, form a
+rather obvious example.
+The horizontal composition of homotopies
+
+   a: f -> g: X -> Y,    b: h -> k: Y -> Z
+
+is     b(a(x, t), t)               t  in  [0, 1],
+
+which is indeed categorical.
+
+Remark 3.
+[The sequel is relevant for homotopy; I do not know if it may be relevant
+in CS, but I always had the impression that abstract homotopy should be of
+use there, eg with respect to deformations of processes, in some sense.]
+
+I do not think that the latter is the "right" 2-dimensional categorical
+setting for abstract homotopy (even as a starting point).
+The previous horizontal composition of homotopies is rather artificial; it
+is what you get from the "double homotopy"
+
+b(a(x, t), t')       (t, t')  in  [0, 1]^2
+
+through the diagonal  t = t'  of the square.
+(The "double homotopy" itself is quite natural, as produced by the cubical
+enrichment due to the cylinder functor; it is also important in homotopy.)
+
+When the diagonal of the "standard interval" is missing (eg for chain
+complexes of abelian groups), there is no canonical horizontal composition
+of homotopies (working with the vertical composition, you get two of them;
+the middle four interchange does not hold). But there still are canonical
+horizontal compositions of "maps with homotopies" and "homotopies with
+maps".
+
+This is why I think that the basic 2-dimensional categorical setting for
+abstract homotopy should only treat such "reduced horizontal composition":
+arrows with cells, cells with arrows, but NOT cells with cells.
+Formally, it is again a category enriched over reflexive graphs, BUT wrt
+the following monoidal closed structure:
+
+X tensor Y:
+ -  the subgraph of  XxY  whose arrows are pairs  (a, b),  where  a  or  b
+is an identity;
+
+[X, Y]:
+-   vertices: the graph morhisms;
+-   arrows: their transformations (without "diagonals").
+
+References:
+
+a) The last enrichment (with further developments) has been used for
+abstract homotopy in:
+
+M. Grandis, On the categorical foundations of homological and homotopical
+algebra, Cahiers Top. Geom. Diff. Categ. 33 (1992), 135-175.   [sketch]
+
+ - , Homotopical algebra in homotopical categories, Appl. Categ. Structures
+2 (1994), 351-406.
+
+b) A notion equivalent to a category enriched in the same sense had already
+been studied in:
+
+K.H. Kamps, Ueber einige formale Eigenschaften von Faserungen und
+h-Faserungen, Manuscripta Math. 3 (1970), 237-255.
+
+c) For homotopy in groupoid-enriched categories, see Gabriel-Zisman's text
+(1967).
+
+***
+
+With best regards
+
+Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+
+e-mail: grandis@dima.unige.it
+tel: +39.010.353 6805   fax: +39.010.353 6752
+
+http://www.dima.unige.it/STAFF/GRANDIS/
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+
+
+

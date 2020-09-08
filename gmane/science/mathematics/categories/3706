@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: functions not polynomials
+Date: Wed, 21 Mar 2007 22:56:28 -0700
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1HURLQ-0003Dh-VR@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019473 9900 80.91.229.2 (29 Apr 2009 15:37:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:53 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Mar 22 14:54:04 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 22 Mar 2007 14:54:04 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HURLQ-0003Dh-VR
+	for categories-list@mta.ca; Thu, 22 Mar 2007 14:45:00 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 60
+Status: O
+Content-Length: 3597
+Original-Lines: 84
+Xref: news.gmane.org gmane.science.mathematics.categories:3706
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3706>
+
+The counterexample Paul cites of a function f(x,y) that is a univariate
+polynomial in x and y separately but not a bivariate polynomial in x and
+y jointly has the following "degree growth" property:
+
+(*)  For each d in N, f(-,d) and f(d,-) are polynomials of degree <= d.
+
+As anyone who's played around with bicubic patches for computer graphics
+knows, the degree has to grow for such a counterexample since any global
+bound on the degree of f(x,-) and f(-,y) separately suffices for f(x,y)
+to be a polynomial in x and y jointly with the same degree bound (taking
+the degree of x^3 y^2 to be 3 rather than 5).
+
+The class of all functions of the above degree-growing form has the
+following nice characterization if we take real-valued rather than
+integer-valued functions (or any other algebraically closed field),
+still defined on N and NxN however.  Let U be that subset of NxN --> R
+whose functions enjoy the above degree growth property (*).  Define W:
+(NxN --> R) --> (N --> R) by Wf(x) = f(x,x) for all x in N.
+
+Theorem.  The restriction of W to U is a bijection.
+
+(So if W is in some sense natural we have a natural bijection, about as
+close as I'm going to get to anything sounding at all categorical here.)
+
+Proof.  Let g: N --> R be an arbitrary sequence of reals.  We show by
+induction on the d in (*) that there exists a unique f in U for which Wf
+= g.  Take the induction hypothesis to be that f(-,i) and f(i,-) are
+uniquely determined polynomials of degree at most d for all natural
+numbers i <= d.  If the induction hypothesis holds for all d in N we
+have completely determined f.
+
+Base case.  f(-,0) and f(0,-) are constant functions, whence for all
+natural numbers x,y, necessarily f(x,0) = f(0,y) = f(0,0) = g(0).
+
+Inductive step.  Assuming the induction hypothesis for d, take
+f(d+1,d+1) = g(d+1).  This determines f(i,d+1) and f(d+1,i) for all i
+from 0 to d+1, which in turn uniquely determines f(-,d+1) and f(d+1,-)
+as polynomials of degree d+1 (exactly one polynomial of degree d+1
+passes through d+2 points).  The induction hypothesis therefore holds
+for d+1.  QED
+
+Corollary.  The members of U are symmetric: f(x,y) = f(y,x).
+
+So the symmetry in Paul's example was not just an isolated artifact but
+an inevitable consequence of his rate of degree growth.
+
+QUESTION: For which g does W^{-1}(g) (of type NxN --> R) extend "nicely"
+to RxR --> R, for any given notion of niceness?  For example if g is a
+polynomial of degree d then so is W^{-1}(g), giving the obvious
+extension to RxR as the same polynomial.  What if g is periodic,
+ultimately constant, ultimately periodic, etc.?
+
+Vaughan
+
+Paul Taylor wrote:
+> Let  f: Z x Z -> Z  be a binary FUNCTION (in the sense of sets)
+> on the integers, with the property that
+>
+>  - for each x:Z,  f(x,-) : Z -> Z is a (agrees with a unique)
+>    POLYNOMIAL, whose coefficients are functions of x; and similarly
+>
+>  - for each y:Z,  f(-,y) : Z -> Z is also a polynomial.
+>
+> Then  f(x,y)  was itself a polynomial in two variables.
+>
+> "You just use Newton's difference method to find the co..."
+>
+> .... unterexample.
+>
+> Taking N for simplicity first, consider the binomial coefficient
+> (x,n) as an nth degree polynomial in x, ie
+> (x,0) = 1
+> (x,1) = x
+> (x,2) = x(x-1)/2
+> (x,3) = x(x-1)(x-2)/3!
+> and so on.  Newton's finite difference method provides the coefficients
+> of these generating polynomials by taking successive differences (the
+> finite analogue of successive derivatives).
+>
+> But then    sum_n (x,n)(y,n)
+> is a function NxN->N that is a polynomial in x for each y and vice versa
+> but isn't itself a polynomial.
+
+
+

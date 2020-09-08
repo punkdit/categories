@@ -1,0 +1,135 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: filtered monads? [resent]
+Date: Sat, 29 May 2010 21:55:54 +0100 (BST)
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <E1OIjR3-0006IN-TK@mailserv.mta.ca>
+References: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Reply-To: Richard Garner <rhgg2@hermes.cam.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; CHARSET=ISO-8859-1; FORMAT=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+X-Trace: dough.gmane.org 1275231574 3682 80.91.229.12 (30 May 2010 14:59:34 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 30 May 2010 14:59:34 +0000 (UTC)
+Cc: categories@mta.ca
+To: James Borger <james.borger@anu.edu.au>
+Original-X-From: categories@mta.ca Sun May 30 16:59:33 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjzA-0006ka-6j
+	for gsmc-categories@m.gmane.org; Sun, 30 May 2010 16:59:32 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OIjR3-0006IN-TK
+	for categories-list@mta.ca; Sun, 30 May 2010 11:24:17 -0300
+In-Reply-To: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca>
+Content-ID: <Pine.LNX.4.64.1005292137151.8233@hermes-2.csi.cam.ac.uk>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5882
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5882>
+
+
+Dear Jim,
+
+A suitable reference would be:
+
+Ross Street, "Two constructions on lax functors", Cahiers de=20
+topologie et g=E9om=E9trie diff=E9rentielle cat=E9goriques, tome 13,=20
+no 3 (1972) p. 217--264.
+
+The relevance of this paper to your notion is as follows. We=20
+learnt from B=E9nabou that a monad on a category may be=20
+expressed as a lax functor of 2-categories 1 --> Cat, with=20
+the unique object of 1 being sent to the category C on which=20
+the monad subsists; the unique morphism of 1 being sent to=20
+the underlying functor F of the monad; and the lax=20
+preservation of identities and composition yielding the=20
+natural transformations eta : 1 -> F and mu : FF -> F,=20
+together with the monad laws they are required to satisfy.
+
+Now given a monoid M, your notion of filtered monad with=20
+respect to M may similarly be expressed as a lax functor into=20
+Cat; but one whose domain is no longer the terminal category,=20
+but rather the monoid M, viewed as a one-object category.=20
+Indeed, such a lax functor picks out, firstly, a category C,=20
+this being the image of the unique object; then, for every=20
+element m of the monoid, an endofunctor F_m of C; and=20
+finally, by virtue of the lax functoriality, coherent natural=20
+transformations F_n o F_m -> F_{nm} and id =3D> F_1. (Note that=20
+this last condition slightly generalises your situation, in=20
+in which you required that F_1 should actually be the=20
+identity functor.)
+
+The paper of Ross's which I reference above is concerned=20
+precisely with lax functors A -> Cat for some ordinary=20
+category A; and states one of its reasons for studying such=20
+as being "to provide a generalization of the theory of=20
+triples". It therefore seems an eminently suitable reference=20
+for your purposes.
+
+Best wishes,
+
+Richard
+
+
+
+
+--On 27 May 2010 13:06 James Borger wrote:
+
+>
+> Dear category theorists,
+>
+> Does the concept of "filtered monad" exist in the=20
+> literature? Here are two basic models of what I have in=20
+> mind.
+>
+> 1. Let C be the category of sets, let F:C->C be the set=20
+> underlying the free monoid on S, and let F_n(S) be the=20
+> subset of F(S) consisting of words of length at most n.=20
+> Then the monad structure map F o F-->F restricts to maps=20
+> F_m o F_n-->F_{mn}, and F_1 is the identity functor.
+>
+> 2. Let C be the category of R-modules (R a given ring),=20
+> F(M) is the tensor product R[x] \otimes_R M, and F_n(M) is=20
+> the sub-R-module M + xM + ... + x^n M of F(M). Then the=20
+> monad structure map F o F --> F restricts to a map F_m o=20
+> F_n --> F_{m+n}, and F_0 is the identity functor.
+>
+> So, in the first example, I'd say that the monad F is=20
+> filtered by the ordered monoid of non-negiative integers=20
+> under multiplication, and in the second example, it's=20
+> filtered by that under addition.
+>
+> There seems to be a pretty obvious way of formalizing this,=20
+> and since many monads in practice come with such a=20
+> structure, I'd guess that this concept is in the=20
+> literature, but I didn't find anything on the internet or=20
+> in the textbooks on my shelf. But perhaps that's because=20
+> it's not called a "filtered monad" or because it's a=20
+> special case of a general concept with a completely=20
+> different name. So, does this concept exist in the=20
+> literature? I'm writing something about a particular monad=20
+> with a a filtered structure, and after I define it, I'd=20
+> like to have the sentence "In the language of [5], the=20
+> functors F_n endow F with a filtered monad structure."
+>
+> Yours,
+>
+> James Borger
+>
+> ps I'm not at the moment a subscriber to the mailing list,=20
+> so please cc to me any responses to the list.
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

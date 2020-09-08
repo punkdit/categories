@@ -1,0 +1,77 @@
+Path: news.gmane.org!not-for-mail
+From: John Longley <jrl@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Realizability and Partial Combinatory Algebras
+Date: Mon, 17 Feb 2003 15:27:21 +0000 (GMT)
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <1045495641.3e50ff5947158@mail.inf.ed.ac.uk>
+References: <Pine.LNX.4.44.0302131603490.9158-100000@fb04182.mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018474 2919 80.91.229.2 (29 Apr 2009 15:21:14 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:14 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: Peter Lietz <lietz@mathematik.tu-darmstadt.de>
+Original-X-From: rrosebru@mta.ca Mon Feb 17 22:35:12 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 17 Feb 2003 22:35:12 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18kxav-0002Mk-00
+	for categories-list@mta.ca; Mon, 17 Feb 2003 22:34:53 -0400
+X-Authentication-Warning: topper.inf.ed.ac.uk: apache set sender to jrl@localhost using -f
+In-Reply-To: <Pine.LNX.4.44.0302131603490.9158-100000@fb04182.mathematik.tu-darmstadt.de>
+User-Agent: IMP/PHP IMAP webmail program 2.2.8
+X-Originating-IP: 129.215.32.128
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 41
+Status: O
+Content-Length: 1572
+Original-Lines: 37
+Xref: news.gmane.org gmane.science.mathematics.categories:2185
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2185>
+
+Quoting Peter Lietz <lietz@mathematik.tu-darmstadt.de>:
+
+> 1.) Let A be a c-pca. If I understand correctly, you say that the
+> indexed poset that maps a set I to the set of maps from I to P(A),
+> endowed with the usual entailment relation
+
+Not quite - you have to define the entailment relation to match the
+definition of implication (put a k in there!). The cheating way to
+see that all this must work out is of course via the equivalence to a
+PCA for which the standard construction works!
+
+> 2.) Given a c-pca A, you say that A equipped with the application
+> function a.b := akb is a (proper) pca. What exactly would be a
+> good S combinator for the new algebra ?
+
+Note that we can find elements if,true,false \in A satisfying
+	if true x y = x, 	if false x y = y,
+and furthermore we can arrange that true = k.
+(I'll use "if then else" syntax below).
+We want to construct S such that (in A),
+     Skxkykz ~ (xkz)k(ykz), and Skxky is always defined.
+Take S to be
+	\lambda txuyvz. if v then (xkz)k(ykz) else false
+using the usual Curry translation of lambda terms. To see that
+Skxky is always defined, note that, provably, Skxky(false)z = false.
+
+Clearly there are two versions of this result, one with the axiom
+sxyz ~ (xz)(yz) and one with sxyz >~ (xz)(yz). Thomas asks whether every
+PCA with >~ is equivalent to one with ~ (Gordon Plotkin has also asked me
+this natural question). At the moment, the best I can do is: for any
+PCA A with >~, there's a PCA B with ~ and an applicative inclusion A -> B
+(giving rise to a geometric inclusion of toposes).
+
+Cheers, John
+
+
+
+

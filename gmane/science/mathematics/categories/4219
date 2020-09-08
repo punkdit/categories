@@ -1,0 +1,193 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <m.escardo@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: a monad
+Date: Mon, 18 Feb 2008 00:17:02 +0000
+Lines: 159
+Approved: news@gmane.org
+Message-ID: <E1JR7az-0005H5-EB@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019800 12260 80.91.229.2 (29 Apr 2009 15:43:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:43:20 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Feb 18 11:16:19 2008 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 18 Feb 2008 11:16:19 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JR7az-0005H5-EB
+	for categories-list@mta.ca; Mon, 18 Feb 2008 11:07:53 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 41
+Status: O
+Content-Length: 5849
+Original-Lines: 158
+Xref: news.gmane.org gmane.science.mathematics.categories:4219
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4219>
+
+Have you come across the following strong monad?
+
+Until I learn that it already has a name, I'll temporarily call it the
+selection monad, and denote it by S = (S,mu,eta).
+
+It is defined on an arbitrary cartesian closed category C after
+choosing an object V of C.  Probably a monoidal closed category will
+do, but I haven't paused to consider this.
+
+On objects, define SX = X^(V^X) = ((X -> V) -> X). (One can
+contravariantly change the value object V, but I won't consider this
+in this message.)
+
+Think of elements of V^X as V-valued predicates, ranged over by p, and
+of elements of SX as selection functionals, ranged over by epsilon
+(like Hilbert's epsilon operator). Intuition: epsilon(p) picks an
+element x of X (perhaps among elements of a subset A of X) such that
+p(x) holds, if such an element exists.
+
+On morphisms f : X -> Y, define Sf: SX -> SY, using the
+lambda-calculus, with "\" as the notation for "lambda", and "o" for
+composition:
+
+       Sf : SX       ->  SY
+            epsilon |->  \p.f(epsilon(p o f))
+
+This is easily seen to be functorial. Intuition: if epsilon selects
+elements among a subset A of X, then Sf(epsilon) selects elements
+among the set f(A). To do that, we first find an element x in A such
+that p(f(x)) holds, and then apply f to it.
+
+For the unit, take
+
+       eta :: X   ->  SX
+              x  |->  \p.x
+
+Intuition: epsilon = eta(x) selects elements in the singleton set {x},
+no matter which predicate p is given.
+
+For multiplication, take
+
+       mu : S(S X)  -> S X
+            E      |-> \p. E(\epsilon. p(epsilon p)) p
+
+Intuition: Given a selection operator E of selection operators, and
+given a predicate p, we select a selection operator epsilon, among the
+ones that E can select, such that epsilon selects an element x =
+epsilon(p) with p(x), and then apply such a selection operator to p to
+finally get such an element x.
+
+The unit and associativity laws are easily (but a bit laboriously)
+verified.
+
+This monad is strong, with strength t = t_{X,Y} defined by
+
+       t : X x SY        ->  S(X x Y)
+          (x,  epsilon) |->  \p.(x, epsilon(\y.p(x,y)))
+
+Intuition: if epsilon selects elements among a subset B of Y,
+then t(x,epsilon) selects elements among the set {x} x B.
+
+This of course, using the monad structure and cartesian closedness,
+extends to a map
+
+    times :  SX x SY -> S(X x Y)
+
+Intuition: if epsilon_X and epsilon_Y select elements among sets A and
+B, then times(epsilon_X,epsilon_Y) selects among elements of A x B.
+
+(I don't think the strength is commutative.)
+
+Of course, one is familiar with the "continuation" monad QX=V^(V^X).
+There is a monad morphism
+
+     SX        ->  QX
+     epsilon  |->  \p. p(epsilon p)
+
+My question is: have you come across the strong monad S (and its
+relationship to the monad Q)? Of course, S has many interesting
+submonads for particular choices of V, which correspond to submonads
+of Q that have been considered.
+
+I carry on a bit further.
+
+Suppose our category C has a nno N=(N,s,0), and write x+1=sx.
+
+Then we can define a natural isomorphism cons = cons_X
+
+    cons : X x X^N  <--->  X^N : (head,tail)
+
+with head(alpha)=alpha(0) and tail(alpha)(n)=alpha(n+1). Then, as is
+well known, the map (head,tail) is a final coalgebra for the functor
+(-) -> X x (-).
+
+I want to consider the composite mul = (S cons) o times,
+
+   mul : SX x S(X^N) -> S(X^N)
+
+For a sequence alpha = epsilon_0, epsilon_1, epsilon_2 ... of epsilon
+operators in SX, we may attempt to define the infinitely iterated
+product
+
+   mul(epsilon_0, mul(epsilon_1, mul(epsilon_2, ...) ... ))
+
+It turns out that, in particular categories of interest, with a
+suitable choice of V, this exists. Moreover, there is a unique
+functional that picks the product selection operator, given the
+selection operators for the components:
+
+   prod : (SX)^N -> S(X^N)
+
+   prod(cons(epsilon,alpha)) = mul(epsilon, prod alpha)
+
+or, equivalently,
+
+   prod o cons = mul o (id x prod)
+
+and so this is a kind of algebra homomorphism. The odd thing is that
+cons is the inverse of the final coalgebra, and, for this particular
+situation, it is instead playing the role of an initial algebra with
+respect to mul.  (Of course, we are all familiar with odd situations
+of this kind.)
+
+There is no reason why such a unique morphism prod should exist in an
+arbitrary ccc with a chosen V, and counter-examples are readily
+obtained.
+
+My original example of prod was constructed before I realized there
+was a monad behind it, and was given by a construction that now can be
+considered to be rather ad hoc, but that is readily seen to be
+equivalent to the above formulation. So this message is a sort of
+apology for overlooking obvious considerations.
+
+The example was given in a ccc of computable higher-type functionals
+(defined on continuous functionals), with V the booleans, and, the
+point, was indeed, that prod is well defined and computable.  I had
+considered another (more efficient) product functional, based on
+(seeing sequences as) binary trees. This also is explained, in very
+much the same (and obvious) way, by the above considerations, but I
+won't spell it down in this message, which is already long.
+
+To compare it with the ad hoc algorithms, I have coded the above
+categorical definitions in the higher-type programming language
+Haskell, including the definition of prod derived from them, for both
+sequences and trees.  The performance in particular examples is the
+same as that of the ad hoc previously given algorithms, apart from a
+constant factor of approximately 1/2.
+
+I could, in principle, have started from the categorical ideas of this
+message and then derived the algorithms. I wish I had done that.  In
+any case, here are the algorithms as they are derived in this message
+(including the tree-like product functional):
+
+  http://www.cs.bham.ac.uk/~mhe/papers/selection-monad.hs
+
+MHE.
+
+
+

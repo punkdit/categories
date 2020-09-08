@@ -1,0 +1,119 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: What is the right abstract definition of "connected"?
+Date: Wed, 10 Oct 2007 13:43:38 -0700
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1Ifzu3-00023k-9t@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019653 11249 80.91.229.2 (29 Apr 2009 15:40:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:53 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Oct 11 12:38:23 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 11 Oct 2007 12:38:23 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Ifzu3-00023k-9t
+	for categories-list@mta.ca; Thu, 11 Oct 2007 12:24:47 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 57
+Status: O
+Content-Length: 3947
+Original-Lines: 84
+Xref: news.gmane.org gmane.science.mathematics.categories:4000
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4000>
+
+Steve Vickers wrote:
+> The topological condition is often stated differently: that every map
+>  X -> 1+1 factors via 1. Thus C(X,1+1) <= C(1,1+1). I think in most
+> contexts you would want to say that, if anything is connected, 1 is,
+> but you can easily find C(1,1+1) > 2.
+
+Thanks, Steve, this is great.  I didn't want to go out on a limb with
+C(X,1+1) <= 2 (or = 2) if it was buggy, good to know about the C(1,1+1)
+ > 2 problem.
+
+This also takes care of my concern about situations where 1+1 = 1, since
+your definition as stated makes Boolean algebras etc. connected.
+
+Presumably my taking the anarchist side (no unity) in the definition of
+locally cartesian closed obligates me to ask for the right formulation
+of "connected" in the absence of 1.  How about the following?
+
+=================================================================
+An object of a category is *connected* when its every morphism to a
+nonempty coproduct factors through an inclusion thereof.
+=================================================================
+
+This eliminates all assumptions about the category -- if there are no
+nontrivial coproducts every object is connected by default (any morphism
+to a trivial coproduct factors through its one inclusion), reasonable
+when there is no recognizable (by the coproduct test) example of
+disconnectedness in the category to compare with.
+
+It also accomodates:
+
+> In constructive locale theory the standard definition is stronger and
+>  requires that for every discrete I, every map X -> I must factor via
+>  1. This allows "infinite n".
+
+with the same benefits - constructive I suppose (how is that judged
+exactly?), and allows infinite comparisons.
+
+If necessary one could qualify "coproduct" with "small" but
+methodologically it would seem preferable to let such size limits be set
+by a larger context.
+
+The effect of
+
+> The little reasons I alluded to are that it is often useful to
+> require every map to 0 also to factor via 1. That excludes 0 itself
+> from connectedness.
+
+can be had by omitting "nonempty" from the definition.  While this might
+seem a very natural omission, my concern with it is not so much 0 itself
+as the objects with morphisms to 0, e.g. all Boolean algebras except 1,
+which this definition would therefore make not connected.  Stone spaces
+being totally disconnected, it just seems plain wrong to have their
+duals not connected either when they are so obviously connected, like
+totally (except 1, which is, like, connected but not totally, being dual
+to the empty Stone space, which is, like, disconnected but not totally).
+
+In the geometric duality of points and lines in the plane, two points
+are disconnected unless they coincide, while two lines are connected
+unless they are parallel.  And an undirected graph and its complement
+either both contain an N or neither do, and in the latter case you can
+ask Google the following.
+
+   Is an N-free graph connected if and only if its complement is
+disconnected?
+
+Google will confirm that it is, no need to click on any of the links it
+returns.  (You may have to read several of Google's "answers" though
+since Google isn't yet smart enough to just say yes, or even to give the
+most direct "answer" first.)  Graphs with an N are the undirected graph
+counterpart of the empty Stone space and the one-element Boolean
+algebra, being neither totally connected nor totally disconnected.
+
+Incidentally it's amazing just how many questions Google "knows" the
+answer to.  Like all oracles though it tends to be a little erratic on
+questions involving future events.  Google's staggering R&D budget
+notwithstanding, asking it whether Hillary will win the election is
+about as useful as asking the 8-ball: you're way better off asking the
+people who place sub-Google-sized ($100) bets on such questions.  And
+asking NSF for funding for your research into questions you propose to
+answer by asking Google has even lower odds than asking Google.
+
+Vaughan
+
+
+

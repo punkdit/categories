@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: dagger?
+Date: Thu, 8 Mar 2007 23:31:45 -0400 (AST)
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <E1HPesJ-0007Dg-Tc@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019454 9769 80.91.229.2 (29 Apr 2009 15:37:34 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:34 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Mar  9 09:17:46 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Mar 2007 09:17:46 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HPesJ-0007Dg-Tc
+	for categories-list@mta.ca; Fri, 09 Mar 2007 09:11:12 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 38
+Status: O
+Content-Length: 2287
+Original-Lines: 58
+Xref: news.gmane.org gmane.science.mathematics.categories:3684
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3684>
+
+Lawrence Stout wrote:
+>
+> Could someone please post a definition of a dagger category and a
+> reference for typical useful examples?
+
+For reference: an involutive category (or dagger category) is a
+category C equipped with a contravariant, involutive,
+identity-on-objects functor "+" (my ASCII rendition of the TeX symbol
+$\dagger$).
+
+The main reason to consider dagger structure is that it allows the
+following definitions (and other similar ones):
+
+* a morphism f:A->B is _unitary_ if f is invertible and f^{-1} = f^+
+
+* a morphism f:A->A is _hermitian_ if f = f^+.
+
+* a morphism f:A->A is _hermitian positive_ if there exists some
+  object B and g:A->B such that f = g^+ o g.
+
+* a morphism f:A->B is called an _isometry_ if f^+ o f = id.
+  ("Isometry" is to "unitary" like "mono" to "iso").
+
+The main example is the category of finite-dimensional Hilbert
+spaces. In it, for a map f : A -> B, the map f^+ : B -> A is given as
+the adjoint of f (in the linear-algebra sense). Note that the
+definition of the adjoint requires inner products, hence *Hilbert* and
+not just vector spaces.
+
+The category of finite-dimensional Hilbert spaces is additionally
+compact closed, so that for a morphism f : A -> B, we also have
+f^* : B^* -> A^*.  While the functor (-)^* is also contravariant and
+involutive, it is not to be confused with the dagger structure. A^* is
+the dual space, which is not naturally isomorphic to A. Also, relative
+to chosen bases, the matrix of f^* is the transpose of that of f,
+whereas the matrix of f^+ is the adjoint (complex conjugate transpose).
+
+Dagger compact closed categories were axiomatized by Abramsky and
+Coecke [LICS 2004], and also by Baez and Dolan [ArXiV:q-alg/9503002,
+1995].  One requires the following compatibilities between the two
+structures:
+
+* (f tensor g)^+ = f^+ tensor g^+,
+* the structural natural isomorphisms (associativity, symmetry, etc)
+  are unitary,
+* the maps I -> (A^* tensor A) and (A^* tensor A) -> I are each
+  other's adjoints.
+
+As Abramsky and Coecke have shown, many interesting constructions from
+Hilbert spaces can be done in a dagger compact closed category.
+
+Another example of a dagger compact closed category is the category of
+sets and relations, but it is degenerate, in the sense that A^* = A
+and f^* = f^+.
+
+-- Peter
+
+
+

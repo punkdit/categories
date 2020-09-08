@@ -1,0 +1,512 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@barrs.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: documentation for new diagram package
+Date: Fri, 13 Apr 2001 14:24:09 -0300 (ADT)
+Lines: 481
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.4.10.10104131421540.21540-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018202 1186 80.91.229.2 (29 Apr 2009 15:16:42 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:42 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Apr 13 15:34:00 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f3DHleX22459
+	for categories-list; Fri, 13 Apr 2001 14:47:40 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 13
+Status: RO
+Content-Length: 20602
+Original-Lines: 480
+Xref: news.gmane.org gmane.science.mathematics.categories:1915
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1915>
+
+%%
+%%  documentation for diagxy
+
+\documentclass{article}
+ \input diagxy
+ \xyoption{curve}
+\begin{document}
+\def\xypic{\hbox{\rm\Xy-pic}}
+
+\title{A new diagram package}
+\author{Michael Barr}
+ \maketitle
+
+\section*{Why a new diagram package?}
+
+This started when a user of my old package, diagram, wrote to ask me if
+dashed lines were possible.  The old package had dashed lines for
+horizontal and vertical arrows, but not any other direction.  The reason
+for this was that \LaTeX\ used rules for horizontal and vertical arrows,
+but had its own fonts for other directions.  While rules could be made
+any size, the smallest lines in other directions were too long for
+decent looking dashes.  Presumably, Lamport was worried about compile
+time and file size if the lines were too short, considerations that have
+diminished over the years since.  Also arrows could be drawn in only 48
+different directions, which is limiting.  My macros were not very well
+implemented for slopes like 4 and 1/4, since I never used such lines.
+
+There was certainly an alternative, \xypic, for those who wanted
+something better.  But it was hard to learn and I was not entirely happy
+with the results.  The basic interface used an \verb+\halign+.  This
+meant that no extra space was allotted to an arrow that had a large
+label.  In addition, the different slots could have different horizontal
+size, which could result in a misshapen diagram.  I used it in a paper
+that had a `W' shaped diagram whose nodes had different widths and the
+result was quite obviously misshapen.  On the other hand, the graphics
+engine underlying \xypic\ is really quite remarkable and it occurred to
+me that I could try to redraft diagram as a front end.  The result is
+the current package.  It has been tested only with version 3.7, so there
+is no guarantee it would work with any earlier version (or, for that
+matter, later).
+
+The syntax described below is not compatible with the original diagram
+package.  Every front end of this sort represents a trade-off between
+simplicity and utility.  A package that simply upgraded the syntax to
+allow more dashed (and dotted) lines would have been just as easy to
+implement, but would have made poor use of the wonderful possibilities
+of the underlying \xypic\ package.  Also there would have been too many
+different arrow specifications (they would have had to go at least in
+the range $[-9,9]$) for easy memory) and still would not have included
+things like inclusion arrows.  To those who would have liked a simpler
+syntax, I apologize.  To those who would want more flexibility, I remind
+that the entire \xypic\ package is there for use.
+
+There is one point that cannot be made too strongly.  {\em Watch for
+errant spaces.}  Unlike the diagram package, which was carried out in
+math mode so that spaces were ignored.  \xypic\ is not in math mode and
+spaces will mess up your diagrams.  Unlike diagram, it should not be
+necessary to put any objects inside \verb+\phantom+.  In diagram, for
+reasons that I now understand, objects did not always register properly.
+This was a flaw built in to the very heart of the package and is not
+worth correcting, although it could have been done better in the first
+place.  If you see an object in double vision, then the virtually
+certain cause is that a space has gotten in there somewhere.  I have
+attempted to prevent this by liberal use of \verb+\ignorespaces+ in the
+definitions, but one cannot always be sure and while testing, I found a
+number seemingly innocuous spaces that messed up diagrams.
+
+\section*{The basic syntax}
+
+The basic syntax is built around an operation \verb+\morphism+ that is
+used as
+ \begin{verbatim}
+ \morphism(x,y)|label pos|/{shape}/<dx,dy>[N`N`A]
+ \end{verbatim}
+ The parameters \verb+x+ and \verb+y+ give the location of the source
+node within a fixed local coordinate system and \verb-x+dx- and
+\verb-y+dy- and locate the target.  To be precise, the first coordinate
+is the horizontal center of the node and the second is that of the base
+line.  These distances are given in terms of \verb+\ul+'s, (for
+unitlength), which is user assignable.  I have, for the time being, set
+it to .01em, which is probably too small.  In the original version of
+diagram, it was .1em.  This was reasonable for diagrams, but since the
+multipliers had to be integers, it turned out to inconveniently large
+for certain internal computations.  (Strictly speaking, the multipliers
+could be any decimal number, but \TeX\ does not permit arithmetic with
+any but whole numbers.)  Since all the internal computations are carried
+out by \xypic, this is no longer a consideration and in the production
+version, I may go back to the original .1em.  Note that by basing
+distances on ems, I make things automatically scale when changing point
+size.  The parameter \verb+label pos+ is one of \verb+a,b,l,r,m+ that
+stand for above, below, left, right, or mid and describe the positioning
+of the arrow label on the arrow.  The label \verb+m+ stands for a label
+positioned in the middle of a split arrow.  Although \verb+a+ and
+\verb+b+ can be used in any direction, they give uncertain results when
+used on vertical arrows and similarly \verb+l+ and \verb+r+ should not
+be used on horizontal arrows.
+
+
+
+
+The \verb+shape+ describes the shape of the arrow.  An arrow is thought
+of as consisting of three parts, the tail, the shaft and the head.  You
+may specify just the head, in which case the shaft will be an ordinary
+line, or all three.  However, since the tail can be (and usually is)
+empty, in practice you can also describe the shaft and tail.  In
+addition, it is possible to modify the arrow in various ways.  Although
+the parameter is shown withing braces, the braces can be omitted unless
+one of the modifier characters is \verb+/+, in which case, {\em the
+entire paramater} must be put in braces.                     It is important to
+note that it will not work just to put the \verb+/+ inside the braces,
+since this will interfere with the internal parsing of \xypic.  The head
+and tail shapes are basically one of \verb+>+, \verb+>>+, \verb+(+,
+\verb+)+, \verb*+ >+, and \verb*+< +.  Each of these may also be
+preceded by \verb+^+ or \verb+_+ and others are user definable.  For
+details, see the \xypic\ reference manual.  The first of these is an
+ordinary head, while the second is for an epic arrow.  The third is not
+much used, but the superscripted version makes and inclusion tail, as
+will be illustrated below.  The reverse ones give reversed arrowheads.
+The sign \verb*+ + stands for an obligatory space and it leaves extra
+space for a tailed (monic) arrow, which otherwise runs into the source
+node.  Although there are many possibilities for shafts, including
+alphanumeric characters, there are basically three that interest us:
+\verb+-+, which is an ordinary shaft, \verb+--+, which produces a dashed
+arrow, \verb+=+, which gives a double arrow (although with only one
+arrowhead), and
+\verb+.+, which makes a dotted arrow. Thus
+\verb+>+ or
+\verb+->+ will produce an ordinary arrow, \verb+->>+ an epic arrow,
+\verb*+ >->+ makes a monic arrow, and \verb+-->>+ would make a dashed
+epic arrow.  The descriptions \verb+<-, <<-,+ \verb*+<-< +, and
+\verb+<<--+ give the reversed versions.  Note that \verb+<+ does not
+give a reversed arrow, since \xypic\ interprets that as a reversed head,
+not a tail.
+
+If the shape parameter begins with an \verb+@+, it is interpeted
+differently.  In that case, it has the form \verb+@{shape}@+ modifier,
+where the modifier is as described in the \xypic\ reference guide.  I
+just mention a couple of them.  The paramater \verb+@{->}@<3pt>+, for
+example, would give an ordinary arrow moved three points in the
+direction perpendicular to that of the arrow.  If you give
+\verb+{@{-->}@/^5pt/}+, you will get an epic arrow that is curved in the
+direction perpenducular to the direction of the arrow by five points.
+(As far as I can tell, there is no difference between
+\verb+^-5pt+ and
+\verb+_5pt+ so the syntax could be simplified and made consistent with
+that of \verb+<dist>+ described above.)
+    It is imperative that a specification such as \verb+@{>}@/5pt/+ be
+enclosed in braces because of the \verb+/+s.
+
+Finally, the \verb+N+s are the source and
+target of the arrow and \verb+L+ is the label.  Currently, the \verb+L+
+is set in \verb+\scriptstyle+ size, but this can easily be changed by
+putting \verb+\let\labelstyle=\textstyle+ in your file.
+
+\subsection*{A word about parameters}
+ I have already mentioned the necessity of enclosing certain arrow shape
+specifications in braces.  Owing to certain built-in limitations of
+\TeX, I have used a number of different delimiters:
+ \verb+(, ), |,  /, [, ], `, ;+.  Any of these that appear inside an
+argument could conceivably cause problems.  They were chosen as the
+least likely to appear
+inside mathematics (except for \verb+(, )+ which appear in positions
+that are unlikely to cause problems).  However, be warned that this is a
+possible cause of mysterious error messages.  If it is indeed then
+enclosing the offending parameter in braces should cure the problem.  In
+most, but not all, cases, enclosing the offending character will solve
+the problem.  The exceptions come when the braces interfere with
+\xypic's somewhat arcane parsing mechanism.  There will be no problem if
+it is just part of a mathematical expression.
+
+
+\section*{Shapes}
+
+Using the basic \verb+\morphism+ macro, I have a defined a number of
+shapes, squares (really rectangles) and variously oriented triangles.  I
+will probably do a few other shapes as I had done for the old package,
+such as \verb+\cube+ and a $3 \times 3$ diagram.  The basic shapes are
+exactly the same, but the options are done entirely differently.  Here
+is the syntax of the \verb+\square+ macro:
+ \begin{verbatim}
+ \square(x,y)|lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}/<dx,dy>[N`N`N`N;L`L`L`L]
+ \end{verbatim}
+ Each of the first four sets of parameters is optional and any subset of
+them can be omitted.  (Note that only the sets can be omitted, once you
+give \verb+dx+, you also have to give \verb+dy+ and so on.)  The first
+two describe the horizontal and vertical size of the square, the next
+four give the label placements using the same five characters as above,
+the next four give the shapes of the arrows using the same syntax as
+discussed above.  The last group is the location.  The meaning of this
+varies a bit with the shape.  For a square, it is the midpoint of the
+baseline of the lower left corner node.  For a triangle that has a lower
+left corner, it is the same.  Otherwise, \verb+x+ is the midpoint of the
+leftmost node and \verb+y+ is the baseline of the lowest node.  As with
+the old macros, different shapes should fit together accurately, in fact
+more accurately than with the old ones.
+
+Here is a listing of the shapes, together with the groups of parameters.
+In all cases, the first four groups are optional and any subset of them
+will work.  However, they must come in order.  Note that the names of
+the triangles are related to the shape as the shape that best
+approximates the shape of the letter.  For example, a \verb+\ptriangle+
+is a right triangle that has its hypotenuse going from upper right to
+lower left.  Triangles with lower case names have their legs horizontal
+and vertical, while those with capitalized names have their hypotenuse
+horizontal or vertical.  In those cases, one of \verb+dx+ or \verb+dy+
+is the length of a leg and the other is {\em half} the length of the
+hypotenuse.  In all cases, the order of the nodes and of the arrows is
+linguistic, first moving from left to right and then down.  The defaults
+are reasonable, but with triangles, there is not always a natural
+direction for arrows.  I always made mistakes in the order with my
+macros and this is certainly a defect.  But the order is the same.  In
+every case the braces around the shape specification can be removed
+unless it includes the following delimiter (that is, \verb+`+ or
+\verb+/+, as the case may be.)
+ \begin{verbatim}
+\square(x,y)|lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}/<dx,dy>%
+ [N`N`N`N;L`L`L`L]
+\ptriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\qtriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\dtriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\btriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\Atriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\Vtriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\Ctriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\Dtriangle(x,y)|lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N`N`N;L`L`L]
+\Atrianglepair(x,y)|lp`lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}`{sh}/%
+<dx,dy>[N`N`N`N;L`L`L`L`L]
+\Vtrianglepair(x,y)|lp`lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}`{sh}/%
+<dx,dy>[N`N`N`N;L`L`L`L`L]
+\Ctrianglepair(x,y)|lp`lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}`{sh}/%
+<dx,dy>[N`N`N`N;L`L`L`L`L]
+\Dtrianglepair(x,y)|lp`lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}`{sh}/%
+<dx,dy>[N`N`N`N;L`L`L`L`L]
+\end{verbatim}
+(Of course, the \verb+%+ signs are required if you break the
+macro at such points.)
+
+To make a diagram, you have to enclose it inside \verb+\xy ... \endxy+.
+You will almost always want it displayed, for which the simplest is to
+enclose it in \verb+$$\xy ... \endxy$$+.  For old times sake, I have
+also let \verb+\bfig+ and \verb+\efig+ be synonyms for \verb+\xy+ and
+\verb+\endxy+, resp.  (In case you wonder, these go all the back to a
+main frame formatter running at McGill when Charles Wells and I were
+first writing TTT, where \verb+.BFIG+ and \verb+.EFIG+ were used to make
+displays, at least as far as that primitive formatter was capable of.)
+You could instead make definitions as follows:
+\begin{verbatim}
+ \def\bfig{$$\xy}
+ \def\efig{\endxy$$}
+\end{verbatim}
+ in which case you will automatically get a display.  I do not do this
+because my spelling checker is programmed to ignore stuff in math or
+display mode and the \verb+$$+ marks the display mode.  Besides which, I
+have defined the \verb+Ctl-F+ key on my editor so that pressing it gives
+\begin{verbatim}
+ $$\bfig
+ _
+ \efig$$
+\end{verbatim}
+ with the cursor at the position marked by the underline.
+
+
+
+\section{Examples}
+
+Many people---including me--- learn mainly by example and
+I will give a number of examples here.  The formal
+syntax can be learned in the \xypic\ reference manual.  We begin with
+\begin{verbatim}
+ $$\bfig
+\square[A`B`C`D;e`f`g`m]
+ \efig$$
+\end{verbatim}
+ produces
+ $$\bfig
+\square[A`B`C`D;e`f`g`m]
+ \efig$$
+ This can be modified, for example
+\begin{verbatim}
+ $$\bfig
+\square/>>`>`>` >->/[A`B`C`D;e`f`g`m]
+ \efig$$
+\end{verbatim}
+ produces
+ $$\bfig
+\square/>>`>`>` >->/[A`B`C`D;e`f`g`m]
+ \efig$$
+ This can be put together with a morphism as follows:
+\begin{verbatim}
+ $$\bfig
+\square/>>`>`>` >->/[A`B`C`D;e`f`g`m]
+ \morphism(500,500)|m|/.>/<-500,-500>[B`C`h]
+ \efig$$
+\end{verbatim}
+ which makes a familiar diagram:
+ $$\bfig
+\square/>>`>`>` >->/[A`B`C`D;e`f`g`m]
+ \morphism(500,500)|m|/.>/<-500,-500>[B`C`h]
+ \efig$$
+ The same diagram could have been made by
+\begin{verbatim}
+ $$\bfig
+ \ptriangle|a`l`m|/>>`>`.>/[A`B`C;e`f`h]
+ \dtriangle/`>` >->/[B`C`D;`g`m]
+ \efig$$
+\end{verbatim}
+ You can fit two squares together, horizontally:
+\begin{verbatim}
+ $$\bfig
+\square|a`l`m`b|[A`B`C`D;f`g`h`k]
+\square(500,0)/>``>`>/[B`E`D`F;l``m`n]
+ \efig$$
+\end{verbatim}
+ $$\bfig
+\square|a`l`m`b|[A`B`C`D;f`g`h`k]
+\square(500,0)/>``>`>/[B`E`D`F;l``m`n]
+ \efig$$
+ or vertically
+\begin{verbatim}
+ $$\bfig
+\square(0,500)|a`l`r`m|[A`B`C`D;f`g`h`k]
+\square/`>`>`>/[C`D`E`F;`l`m`n]
+ \efig$$
+\end{verbatim}
+ $$\bfig
+\square(0,500)|a`l`r`m|[A`B`C`D;f`g`h`k]
+\square/`>`>`>/[C`D`E`F;`l`m`n]
+ \efig$$
+or a square and a triangle
+\begin{verbatim}
+ $$\bfig
+\Ctriangle/<-`>`>/<400,400>[\hbox{\rm rec}(A,B)`B`X;r_0(A,B)`f`t_0]
+ \square(400,0)/<-``>`<-/<1000,800>[\hbox{\rm rec}(A,B)`A\times\hbox{\rm
+   rec}(A,B)`X`A\times X;r(A,B)``\hbox{\rm id}_A\times f`t]
+ \efig$$
+\end{verbatim}
+ gives the diagram
+ $$\bfig
+\Ctriangle/<-`>`>/<400,400>[\hbox{\rm rec}(A,B)`B`X;r_0(A,B)`f`t_0]
+ \square(400,0)/<-``>`<-/<1000,800>[\hbox{\rm rec}(A,B)`A\times\hbox{\rm
+   rec}(A,B)`X`A\times X;r(A,B)``\hbox{\rm id}_A\times f`t]
+ \efig$$
+ This diagram is on page 361 of the third edition of Category Theory for
+Computing Science to describe recursion.
+ Here is an example using the procedure for sliding an arrow sideways.
+This one could even be used in a text,
+\xy \morphism(0,0)|a|/@{>}@<3pt>/<400,0>[A`B`d]
+\morphism(0,0)|b|/@{>}@<-3pt>/<400,0>[A`B`e]\endxy
+ which was made using
+\begin{verbatim}
+\xy \morphism(0,0)|a|/@{>}@<3pt>/<400,0>[A`B`d]
+\morphism(0,0)|b|/@{>}@<-3pt>/<400,0>[A`B`e]\endxy
+\end{verbatim}
+Something a bit different that illustrates the use of another shaft
+\verb+=+ that gives a 2-arrow, as well as curved arrows:
+\begin{verbatim}
+ $$\bfig
+\morphism(0,0)|a|/{@{>}@/^1em/}/<500,0>[A`B`f]
+\morphism(0,0)|b|/{@{>}@/_1em/}/<500,0>[A`B`g]
+\morphism(250,50)|a|/=>/<0,-100>[``]
+ \efig$$
+\end{verbatim}
+ $$\bfig
+\morphism(0,0)|a|/{@{>}@/^1em/}/<500,0>[A`B`f]
+\morphism(0,0)|b|/{@{>}@/_1em/}/<500,0>[A`B`g]
+\morphism(250,50)|a|/=>/<0,-100>[``]
+ \efig$$
+ In order to use curved arrows, you must insert \verb+\xyoption{curve}+
+into your file.  There is a macro \verb+\place(x,y)[N]+ where \verb+N+
+is any object that places that object anywhere.  I have changed the name
+in order to avoid clashing with the \LaTeX\ picture mode's \verb+\put+.
+Here is an example that uses a construction that is undocmented here,
+but uses an \Xy\ construction:
+\begin{verbatim}
+\newbox\anglebox
+\setbox\anglebox=\hbox{\xy \POS(75,0)\ar@{-} (0,0) \ar@{-} (75,75)\endxy}
+
+ \def\angle{\copy\anglebox}
+ $$\bfig
+ \square[A`B`C`D;f`g`h`k]
+ \place(100,400)[\angle]
+ \efig$$
+\end{verbatim}
+\newbox\anglebox
+\setbox\anglebox=\hbox{\xy \POS(75,0)\ar@{-} (0,0) \ar@{-} (75,75)\endxy}
+
+ \def\angle{\copy\anglebox}
+ $$\bfig
+ \square[A`B`C`D;f`g`h`k]
+ \place(100,400)[\angle]
+ \efig$$
+ Notice that you get a headless arrow by using \verb+\ar@{-}+.
+
+Here is a special code installed at the request of Jonathon Funk:
+\begin{verbatim}
+ $$\bfig
+\pullback|b`r`r`b|<800,800>[P`X`Y`Z;t`u`v`w]%
+|a`m`b|/>`-->`>/<500,500>[A;f`g`h]
+ \efig$$
+\end{verbatim}
+ $$\bfig
+\pullback|b`r`r`b|<800,800>[P`X`Y`Z;t`u`v`w]%
+|a`m`b|/>`-->`>/<500,500>[A;f`g`h]
+ \efig$$
+The full syntax for this is
+\begin{verbatim}
+\pullback(x,y)|lp`lp`lp`lp|/{sh}`{sh}`{sh}`{sh}/<dx`dy>[N`N`N`N;L`L`L]%
+    |lp`lp`lp|/{sh}`{sh}`{sh}/<dx,dy>[N;L`L`L]
+\end{verbatim}
+ Of these only the nodes placed inside brackets are obligatory.  The
+first sets of parameters are exactly as for \verb+\square+ and the
+remaining parameters are for the nodes and labels of the outer arrows.
+There is no positioning paramters for them; rather you set the
+horizontal and vertical separations of the outer node from the square.
+The last example, is a complicated diagram from TTT:
+\begin{verbatim}
+ $$\bfig
+\morphism(0,2100)|l|/>/<0,-1400>[TT`TT'T`T\eta'T]
+\morphism(0,2100)|a|/>/<700,0>[TT`T`\mu]
+\morphism(0,2100)|l|/>/<700,-700>[TT`TTT'`TT\eta']
+\morphism(700,2100)|r|/>/<700,-700>[`TT'`T\eta]
+\place(700,1750)[1]
+\morphism(700,1400)|b|/@<-20\ul>/<700,0>[TTT'`TT'`T\sigma]
+\square(700,700)|a`m`m`a|/@<20\ul>`>``>/<700,700>[TTT'`TT'`TT'TT'`TT'T';\mu
+T' `T\eta'TT'``]
+\morphism(700,700)|a|/>/<700,0>[TT'TT'`TT'T'`TT'\sigma]
+\place(300,1400)[2]
+\place(1050,1050)[3]
+\btriangle(1400,700)|m`r`a|/>`>`>/<700,700>[TT'`TT'T'`TT';T\eta'T'`\hbox{\rm
+id}`]
+\place(1600,1050)[6]
+\square|a`l`m`b|<700,700>[TT'T`TT'TT'`T'T`T'TT';TT'T\eta'`\sigma
+T`\sigma TT'`T'T\eta']
+\square(1400,0)|a`m`r`b|<700,700>[TT'T'`TT'`T'T'`T';T\mu'`\sigma T'
+`\sigma`\mu']
+\morphism(700,0)|b|/>/<700,0>[T'TT'`T'T'`T'\sigma T']
+\place(300,350)[4]
+\place(1050,350)[5]
+\place(1750,350)[7]
+ \efig$$
+\end{verbatim}
+ $$\bfig
+\morphism(0,2100)|l|/>/<0,-1400>[TT`TT'T`T\eta'T]
+\morphism(0,2100)|a|/>/<700,0>[TT`T`\mu]
+\morphism(0,2100)|l|/>/<700,-700>[TT`TTT'`TT\eta']
+\morphism(700,2100)|r|/>/<700,-700>[`TT'`T\eta]
+\place(700,1750)[1]
+\morphism(700,1400)|b|/@<-20\ul>/<700,0>[TTT'`TT'`T\sigma]
+\square(700,700)|a`m`m`a|/@<20\ul>`>``>/<700,700>[TTT'`TT'`TT'TT'`TT'T';\mu
+T' `T\eta'TT'``]
+\morphism(700,700)|a|/>/<700,0>[TT'TT'`TT'T'`TT'\sigma]
+\place(300,1400)[2]
+\place(1050,1050)[3]
+\btriangle(1400,700)|m`r`a|/>`>`>/<700,700>[TT'`TT'T'`TT';T\eta'T'`\hbox{\rm
+id}`]
+\place(1600,1050)[6]
+\square|a`l`m`b|<700,700>[TT'T`TT'TT'`T'T`T'TT';TT'T\eta'`\sigma
+T`\sigma TT'`T'T\eta']
+\square(1400,0)|a`m`r`b|<700,700>[TT'T'`TT'`T'T'`T';T\mu'`\sigma T'
+`\sigma`\mu']
+\morphism(700,0)|b|/>/<700,0>[T'TT'`T'T'`T'\sigma T']
+\place(300,350)[4]
+\place(1050,350)[5]
+\place(1750,350)[7]
+ \efig$$
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+

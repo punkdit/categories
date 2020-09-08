@@ -1,0 +1,140 @@
+Path: news.gmane.org!not-for-mail
+From: "Wojtowicz, Ralph" <wojtowicz@metsci.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: logics for model checking
+Date: Tue, 2 Sep 2008 10:24:13 -0400
+Lines: 107
+Approved: news@gmane.org
+Message-ID: <E1KaYuZ-00062n-6E@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Content-Type: text/plain;	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1241020012 13751 80.91.229.2 (29 Apr 2009 15:46:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:46:52 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Tue Sep  2 13:43:22 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 02 Sep 2008 13:43:22 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1KaYuZ-00062n-6E
+	for categories-list@mta.ca; Tue, 02 Sep 2008 13:39:23 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 3
+Status: O
+Content-Length: 3148
+Original-Lines: 106
+Xref: news.gmane.org gmane.science.mathematics.categories:4536
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4536>
+
+I am trying to understand model-checking logics such as=20
+linear temporal logic (LTL), computation tree logic (CTL),
+and probabilistic extensions such as probabilistic computation
+tree logic (PCTL).  These logics seem to be useful in model-
+checking because of correspondences between recursive=20
+definitions of formulas and recursive algorithms for
+computing them.  Syntactic inference and any semantics
+other than the few (transition systems, DTMCs, MDPs, etc.) for=20
+which the logics were developed seem not to be of interest,=20
+however.  Translation theorems such as D1.4.7, D1.4.12, and
+D4.3.13 of Johnstone's "Elephant" are not applied, as far as=20
+I have found.
+
+Here are some initial thoughts based on my very limited=20
+knowledge of categorical logic.  The temporal logic operators=20
+"next", "eventually", and "always" may, for example,=20
+be formulated using a propositional signature. Let A be a set=20
+whose elements are thought of as state labels.  The set of=20
+atomic propositions is {a_n | a in A, n in N}.  The following=20
+are Horn formulas:
+
+Next^n[a]       =3D a_n
+
+Always^k[a]     =3D a_0 \wedge ... \wedge a_k
+
+T^k[a, b]       =3D a_0 \wedge ... \wedge a_{k-1} \wedge b_k
+
+The following are coherent formulas:
+
+Until^k[a, b]   =3D T^0[a, b] \vee ... \vee T^k[a, b]
+
+Eventually^k[a] =3D a_0 \vee ... \vee a_k
+
+The following are geometric formulas:
+
+Until[a, b]     =3D \vee_i T^i[a, b]
+
+Eventually[a]   =3D \vee_i a_i
+
+The following is infinitary:
+
+Always[a]       =3D \wedge_i a_i.
+
+Alternatively, these notions can be formulated as a=20
+first-order theory with basic sorts "States" and "Paths". =20
+It has function symbols
+
+start : Paths -> States
+
+shift : Paths -> Paths
+
+and a set A of of relation symbols=20
+
+a |-> States.
+
+PCTL can be formulated as a \tau-theory.  It has basic sorts=20
+States and Paths as above as well as the function symbols=20
+start and shift.  It also has function symbols=20
+
+Prob_{<p}:P(Paths) -> P(States)=20
+
+(similarly for \leq, >, and \geq) for 0 \leq p\leq 1 and
+
+Cost_{<c}:P(S) -> P(S)=20
+
+(similarly for \leq, >, and \geq) for 0 \leq c.
+
+There are certainly other presentations of these theories. =20
+Finally, here are a few questions.
+
+Has anyone studied the model-checking logics using the tools
+of categorical logic?
+
+What interactions exist between bisimulation/probabilistic=20
+bisimulation and the logics?
+
+What role could categorical logic have in developing model-
+checking algorithms?
+
+How can the usual semantics of these theories (e.g., DTMC=20
+semantics for PCTL) be viewed categorically (e.g., in the=20
+topos Set by interpreting the sorts simply as sets of states
+and paths)?
+
+Any other thoughts, suggestions, or references would be=20
+appreciated.
+
+
+References:
+
+Arnold.  "Finite Transition Systems".  Prentice-Hall.  1994.
+
+Johnstone.  "Sketches of an Elephant: A Topos Theory Compendium". =20
+Oxford University Press.  2002.
+
+Rutten, Kwiatkowska, Norman, and Parker.  "Mathematical Techniques
+for Analyzing Concurrent and Probabilistic Systems".  AMS.  2004.
+
+Thanks,
+Ralph Wojtowicz
+Metron, Inc.
+11911 Freedom Drive, Suite 800
+Reston, VA  USA
+wojtowicz@metsci.com
+
+
+

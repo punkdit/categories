@@ -1,0 +1,87 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Evil in bicategories
+Date: Sun, 12 Sep 2010 00:31:36 -0700
+Lines: 48
+Approved: news@gmane.org
+Message-ID: <E1OusSL-0001rq-KK@mlist.mta.ca>
+References: <E1OuQsT-0003hL-P6@mlist.mta.ca> <20100911232358.GA32145@ugcs.caltech.edu> <AANLkTimbfG0tkjSNZgjL2yADBHnKAXQiHYsAkioEnxJY@mail.gmail.com>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1284320683 3310 80.91.229.12 (12 Sep 2010 19:44:43 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 12 Sep 2010 19:44:43 +0000 (UTC)
+Cc: David Leduc <david.leduc6@googlemail.com>,	droberts@maths.adelaide.edu.au
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sun Sep 12 21:44:41 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OusTf-0003go-La
+	for gsmc-categories@m.gmane.org; Sun, 12 Sep 2010 21:44:39 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55366)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OusSO-0005Gh-OV; Sun, 12 Sep 2010 16:43:20 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OusSL-0001rq-KK
+	for categories-list@mlist.mta.ca; Sun, 12 Sep 2010 16:43:17 -0300
+Content-Disposition: inline
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6141
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6141>
+
+David Leduc wrote:
+
+>You both mention a definition of higher categories based on dependent
+>type theory.
+>Where does it appear?
+>I cannot find such definition in the guide book by Cheng and Lauda.
+>Can/has it be implemented in a proof assistant like Coq?
+
+Most authors (including Cheng and Lauda) don't get into
+the logical details of what is and is not evil,
+so they don't discuss how it works in dependent type theory.
+Nevertheless, any definition of bicategory that runs like this:
+*  a collection of objects;
+*  for each pair of objects, a collection of morphisms;
+*  etc
+is written the language of dependent type theory.
+
+You can see examples at http://ncatlab.org/nlab/show/bicategory
+(the brief definition is perfectly explicit in this way,
+although it does not include all of the details;
+the detailed definition leaves the declarations of some variables implicit,
+although you could always stick their definitions up front,
+making it a complete and perfectly explict dependent-type definition).
+
+Actually, talking about bicategories is a red herring;
+all of the issues come up already for categories.
+You might as well have asked, in your original post,
+why we know that the source and target of (h o g) o f and h o (g o f)
+are equal when stating the associativity law in the definition of a category.
+The answer is the same: when stating the associativity law,
+you begin with objects W,X,Y,Z and go on from there.
+
+I haven't seen a definition of bicategories in Coq,
+but certainly the explicit definition on the nLab could be done in Coq.
+But as I said, the issues already arise for ordinary categories.
+For a definition of these in Coq, see http://coq.inria.fr/contribs/ConCaT.html
+with http://coq.inria.fr/contribs/ConCaT.CATEGORY_THEORY.CATEGORY.Category.html
+as the file that contains the definition of category itself.
+(Although Coq has equality at all types, and so can express evil,
+this equality is never used except within a given hom-set,
+as you can see in that file and also in the other files there.)
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

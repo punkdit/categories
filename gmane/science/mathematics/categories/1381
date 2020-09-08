@@ -1,0 +1,296 @@
+Path: news.gmane.org!not-for-mail
+From: TAC <tac@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: TAC: Author information
+Date: Tue, 25 Jan 2000 15:48:19 -0400 (AST)
+Lines: 268
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.4.10.10001251538110.6856-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017788 30958 80.91.229.2 (29 Apr 2009 15:09:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:48 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Jan 25 18:09:35 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA05188
+	for categories-list; Tue, 25 Jan 2000 15:55:53 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 10306
+Original-Lines: 267
+Xref: news.gmane.org gmane.science.mathematics.categories:1381
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1381>
+
+For reference, the Information for Authors page of Theory and Applications
+of categories follows. It has been updated with assistance from Michael
+Barr. The TAC style (tac.sty) and class (tac.cls) files have also been
+updated, so please replace any copies you may have.
+
+AUTHOR INFORMATION 
+
+Theory and Applications of Categories (TAC) is an all-electronic journal
+which uses the TeX typesetting system to define its contents and the
+Internet to disseminate them. Authors are invited to submit articles to
+any member of the Editorial Board. While any standard flavour of TeX (i.e.
+plain, LaTeX, AMS-(La)Tex) may be submitted, the most important request to
+an author of a TAC paper is to use one or another version of LaTeX. This
+encourages the logical formatting that is described below. Before
+submitting an article please read about the Format for submission .
+
+All papers are refereed and acceptance of an article by an Editor
+indicates that the high standards of the journal have been met. Articles
+may be submitted to only one member of the Board.
+
+The final accepted version of a paper is the form that will be in the
+archive; the author will not be able to make any changes, except: errata
+and additions can be attached to the end and, where appropriate,
+footnote(s) may be added to the main text calling attention to these
+addendums; references which mention pre-publication versions may be
+updated to final bibliographic form.
+
+Accepted papers will be archived electronically in .dvi and Postscript
+format by the journal. In addition, there are several complete mirrors of
+the journal's contents on the Internet. A printed paper copy of each
+article in the journal is archived in the Mount Allison University
+Library.
+
+Authors retain ownership of copyright to their work, subject to
+appropriate use of the work by the journal. For details consult the
+Copyright Agreement, to which authors must agree before an accepted paper
+is published.
+
+
+FORMAT FOR SUBMISSION: 
+
+SOURCE FILES
+
+TeX source files of articles may be submitted by email to any member of
+the Editorial Board. Editors may also provide facilities for receiving
+articles by file transfer. Editors will not correct errors in TeX source.
+It is the author's responsibility to provide a compilable source file.
+
+The source file for an article must begin with a comment which includes
+the following information: the flavour of TeX used, the number of pages,
+any diagram macro package used, any non-standard fonts, the implementation
+of TeX used in preparation of the article. An example might be
+
+
+% LaTeX 2.09 document, 12 pp, XY-pic ver 3.1, emTeX version 3.1
+
+An article is normally submitted as a single source file. All macros must
+be included with the source file and are the responsibility of the author.
+Macros should be placed at the beginning of the file. It is also helpful
+if any macro that is not actually used is deleted from the source file.
+
+The only exception to inclusion of macros is diagram macro packages. The
+currently acceptable diagram macro packages are those authored by Barr,
+Borceux, Rose (XY-Pic) and Taylor. The author is responsible to ensure
+that the current version of a macro package has been used.
+
+Articles must include an Abstract, in English of not more than 200 words.
+AMS 2000 Subject Classification must also be also be included.
+
+SOURCE FILE STYLE
+
+As indicated above LaTeX is the preferred format. Using LaTeX will
+facilitate consideration of an article, but papers in other standard TeX
+flavors will be considered.
+
+A style file is available from the journal. Using the style file during
+preparation of articles will greatly reduce the acceptance to publication
+delay.
+
+Whether or not the journal's style is used, the most important advice for
+an author of TAC (or any electronic journal or even any journal that
+accepts TeXscripts) is to use logical, rather than physical formatting.
+That is, instead of beginning a section by saying
+
+
+\medskip
+
+\noindent{\bf 4.3 The main theorem.}
+
+
+just say 
+
+
+\section{The main theorem}\label{mainth}
+
+(The \label will be explained below.) Instead of saying 
+
+
+\smallskip
+ \noindent{\sc Theorem A}{\it ...}
+
+say 
+
+
+\begin{theorem}\label{thmA} ... \end{theorem}
+
+(shorter forms as will be explained later). 
+
+You should probably NEVER put explicit skips and kerns into your paper.
+Suppose, for example, you want to go on to a new topic and want to leave a
+little space. The preferable way is to say
+
+
+\subsubsection*{}
+
+which will have exactly that effect. But in fact, it is probably always
+appropriate to start a new subsection in such a case. Except in very long
+papers, we discourage the use of three indexing levels. The point is to
+use symbolic formatting and let the journals put in their own style.
+
+All versions of LaTeX provide definitions for \section, \subsection, and
+\subsubsection. It even goes further, but these should be enough for
+nearly all papers. They do not provide definitions for \begin{theorem} and
+the like. But the TAC style files provide a \newtheorem macro that is used
+as follows. Place at the beginning of your paper, the following:
+
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+ ... (whatever is needed)
+
+The first parameter is what you will call it in your TeXscript and the
+second what it will be called in your paper. So you can just as well say
+
+
+\newtheorem{thm}{Theorem}
+...
+
+and then you can enclose your theorems in \begin{thm}...\end{thm} or even
+\thm...\endthm. Beware that you lose certain error checking with the
+latter form.
+
+AVOIDABLE ERRORS
+
+There are two mistakes made by many users of TeX that appear in print over
+and over and are easy to avoid. 
+
+The first is to have multicharacter identifiers slanted (like math
+symbols), rather than in upright type. This refers to names like sin,
+cos,... but also Hom, Tor, Id, ker, Im, .... The TAC style files provide
+macros that can automate this. If you put in your file
+
+
+\mathrmdef{Hom}
+
+this will create a macro \Hom that will put upright Hom into your text. If
+you use that instead of just Hom, the results will look much better. Using
+just Hom in math mode will result in an italic font and ugly spacing that
+is more appropriate to a ternary product. TAC also supplies \mathbfdef
+(for bold), and \mathopdef (for upright characters that have a bit of
+extra space to the right, so that, say, \sin x will produce the sin, a
+small space and then an italic x, just as in the trig books).
+
+The second error is to use <...> for angle brackets. You have no idea how
+bad this will look. The < and > produce the wrong shape for angle
+brackets, but mainly they produce the wrong spacing and the results can be
+ludicrous, especially if an = follows > or precedes <. The official way to
+do this is to say \langle and \rangle. Many papers in TAC use these angle
+brackets extensively and make little or no use of the inequality signs. If
+this is your case, we recommend the following. At the top of your paper,
+put:
+
+
+\mathcode`\<="4268 %left delimiter
+\mathcode`\>="5269 %right delimiter
+\mathchardef\gt="313E %relation
+\mathchardef\lt="313C %relation
+
+The effect of the first two lines is to make < and > into \langle and
+\rangle, respectively, so that you can use them freely. The third and
+fourth lines allow you to use \lt and \gt for the inequality signs. This
+is not done in the TAC styles because an author has the right to use < and
+> for the inequalites if desired.
+
+Fonts 
+
+Authors should note that the base font size is 12 point. Avoid use of
+elements which depend on another base font size. This is another reason to
+avoid absolute moves such as `\vskip 10 pt'. Remember that the journal's
+pagination will differ from yours. As a general rule less, but more
+logical, formatting is better.
+
+Authors are STRONGLY encouraged to use only fonts from the standard TeX
+distribution (cmr etc.), AMS symbol fonts (msym...) or the XY-pic fonts.
+They should be aware that use of non-standard fonts can interfere with
+successful dissemination of their work. Fonts not mentioned above must be
+provided by the author to the Editor concerned and to the journal.
+
+Embedded graphics or Postscript are not currently accepted. 
+
+REFERENCES AND BIBLIOGRAPHY STYLES
+
+When you want to refer to Theorem A (which will not be called that in the
+TAC style) of Section 4.3, refer to it as Theorem~\ref{thmA} of
+Section~\ref{mainth}. The labels you use are totally arbitrary, of course,
+so long as they are not reused in the same paper. Use of symbolic labels
+allows you to insert or delete material without having to renumber
+everything or to wind up with sections or theorems bis. The ~, by the way,
+is an unbreakable space so that the theorem or section number does not get
+separated from the word Theorem or Section. This is considered poor style,
+although it is not terribly important. It is also an element of good style
+to capitalize the words Section and Theorem when followed by an explicit
+reference. However, they are not capitalized in such phrases as "next
+section" and "the main theorem".
+
+If BiBTeX is used with LaTeX, bibliographies must be BiBTeXed and .bbl
+files appended to the source file. No .bib files will be accepted.
+
+References may use the standard BiBTeX styles or the two bibliography
+styles that TAC supports. We recommend the first TAC style. It is much
+more useful for the reader since it puts citations like [Grothendieck,
+1957] in your text (you can probably already guess the reference) and the
+reference in the form
+
+
+\item A. Grothendieck (1957), Quelques points d'algebre homologiques,
+T\^ohoku
+Math. J. \em{3}, 120-221.
+
+You get the first style by preceding your references with 
+
+
+\begin{references}
+
+and ending the list of \items with 
+
+
+\end{references}
+
+The second style is traditional and puts [4] into your paper with the
+reference in the traditional form 
+
+
+\item A. Grothendieck, Quelques points d'algebre homologiques, T\^ohoku
+Math. J. \em{3} (1957), 120-221.
+
+To obtain it use 
+
+
+\begin{references*}
+
+ \item ...
+
+\end{references*}
+
+except you will almost surely want to use \bibitem, allowing you to put in
+a symbolic label. 
+
+A FINAL POINT
+
+Although these instructions are specific to TAC, they should go a long way
+towards making your papers usable by any journal that is serious about
+using author-supplied TeX.
+
+
+
+
+

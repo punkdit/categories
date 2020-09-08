@@ -1,0 +1,156 @@
+Path: news.gmane.org!not-for-mail
+From: "David Ellerman" <david@ellerman.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Linear--structure or property?
+Date: Sun, 3 Sep 2006 11:32:20 -0700
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <E1GK1s1-0007NW-43@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019291 8642 80.91.229.2 (29 Apr 2009 15:34:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:34:51 +0000 (UTC)
+To: <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Sep  3 20:59:37 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 03 Sep 2006 20:59:37 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GK1s1-0007NW-43
+	for categories-list@mta.ca; Sun, 03 Sep 2006 20:59:21 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 6
+Status: O
+Content-Length: 5907
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:3416
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3416>
+
+When a Boolean algebra B is treated as a Boolean ring in the usual manner,
+the meet is the multiplication. In his little-known thesis, Herbrand noted
+that a BA could also be construed as a ring with the join as the
+multiplication (see Church's tome on logic). Gian-Carlo Rota noted that both
+these Boolean rings were "opposite" quotients of what he called a "valuation
+ring" V(B,Z_2) which carries *both* multiplications and one addition. What
+is usually called "Boolean duality" (e.g., DeMorgan's law) is an
+anti-isomorphism of the valuation ring that swaps the two multiplications
+and leaves addition the same. The "trick" in constructing such rings was to
+see that the bottom element z (representing the null set) should be a
+separate element than the 0 of the ring. The usual Boolean ring constructed
+from a BA is really the quotient of the valuation ring that identifies z and
+0, i.e., V(B,Z_2)/(z). The Boolean ring noted by Herbrand is the quotient of
+the valuation ring that identifies the element representing the top u with
+0, i.e., V(B,Z_2)/(u). Remarkably, the valuation ring construction V(L,A)
+works for any distributive lattice L and any commutative ring A, not just a
+BA B and Z_2 and the anti-isomorphism works just as well. Thus we have
+"Boolean duality" over arbitrary commutative rings A; it has nothing to do
+with 0-1 nature of Z_2. This general theory of Boolean duality was developed
+in a series of papers by Geissinger in Arch. Math. 1973. See Rota's book
+"Finite Operator Calculus" for material on valuation rings.
+
+For the opposite question of two additions and one multiplication in a
+semi-ring, the natural setting is the algebraic treatment of series addition
+a+b and parallel addition a:b = 1/((1/a)+(1/b)) (e.g., from electrical
+circuit theory) in what might be called a "series-parallel algebra." Every
+commutative group G (written multiplicatively) generates a series-parallel
+division algebra SP(G) (think of all series-parallel circuits of resistors
+that could be generated with the elements of G as the resistors). It is a
+"division algebra" in the sense that the SP algebra is also a multiplicative
+group where the inverse of any SP circuit is obtained by taking the
+series-parallel conjugate circuit (see any circuit theory book) with the
+atomic resistances from G replaced by their inverses in G. Then "taking
+reciprocals" is the anti-isomorphism of the SP algebra that swaps the two
+additions leaving multiplication the same, and it algebraically captures
+series-parallel duality just as the anti-isomorphisms of the valuation rings
+captured Boolean duality. The SP algebra SP({1}) of the trivial group is
+just the positive rationals Q^+ (i.e., any rational resistance can be
+obtained as a series-parallel circuit with unit resistances) and the
+anti-isomorphism that swaps the two additions is just "taking the
+reciprocal" r-->1/r. There is an 1892 paper by the great combinatorist Percy
+MacMahon published in "The Electrician" that explains the notion of a
+conjugate of a series-parallel circuit and shows that if each resistence is
+1 (i.e., G = {1}) and the compound resistance of an SP circuit is R, then
+the resistance of the conjugate SP circuit is 1/R (in case your library does
+not carry "The Electrician" from 1892, see the Collected Papers of
+MacMahon). Paying attention to the duality of series and parallel addition
+on the positive rationals or reals gives some cute dualities. For instance,
+instead of saying that the geometric series 1+x+x^2+... converges to 1/(1-x)
+for any positive x<1, it is easier to say that 1+(1:x)+(1:x)^2+... converges
+to 1+x for any positive x. And dually, the parallel sum infinte series
+1:(1+x):(1+x)^2:... converges to 1:x for any positive x.
+
+Both Rota's valuation rings and the series-parallel algebras are explained
+in two chapters of my book: "Intellectual Trespassing as a Way of Life:
+Essays in Philosophy, Economics, and Mathematics" (Rowman-Littlefield,
+1995).
+
+Cheers, David
+__________________
+David Ellerman
+
+Visiting Scholar
+University of California at Riverside
+
+Email: david@ellerman.org
+Webpage: www.ellerman.org
+
+View my research on my SSRN Author page:
+http://ssrn.com/author=294049
+
+
+Now out in paperback: Helping People Help Themselves: From the World Bank to
+an Alternative Philosophy of Development Assistance. University of Michigan
+Press. 2006. For more information, see my website: www.ellerman.org . Book
+available at better booksellers online.
+
+-----Original Message-----
+From: cat-dist@mta.ca [mailto:cat-dist@mta.ca] On Behalf Of Fred E.J. Linton
+Sent: Sunday, September 03, 2006 2:27 AM
+To: Categories list
+Subject: categories: Re: Linear--structure or property?
+
+George Janelidze and others answer affirmatively the question
+
+> Could you have two (semi)ring structures on the same set with the same
+> associative multiplication?
+
+(attributed to Mike Barr) without ever noticing that the related question,
+of having two (semi)ring structures on the same set, with the same addition,
+also has answer YES.
+
+For instance, take the additive group of 2x2 matrices with integer entries
+(or entries from any semiring) and notice that, apart from the usual matrix
+multiplication, there is also the sophomoric, or pointwise, multiplication
+(so called since it is generally only sophomores in the first week of their
+first linear algebra course who, following the analogous pointwise
+definition of matrix addition, would wish to multiply two matrices by
+multiplying their corresponding entries).
+
+Not quite sure though how this impacts the situation with more than one
+object.
+
+-- Fred
+
+------ Original Message ------
+Received: Fri, 11 Aug 2006 01:06:56 PM EDT
+From: "George Janelidze" <janelg@telkomsa.net>
+To: "Categories list" <categories@mta.ca>
+Subject: categories: Re: Linear--structure or property?
+
+> Dear Steve,
+>
+> It is true that constructing such examples with more than one object is
+...
+
+
+
+
+
+
+

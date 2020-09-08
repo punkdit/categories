@@ -1,0 +1,709 @@
+Date: Mon, 16 Nov 1998 17:08:09 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+Subject: categories: query
+
+The language of higher category theory in more than analogous
+to homotopy theory, especially in the cellular version.  What
+is the appropriate reference for a non-categorical reader?
+Have the A_\infty categories of Smirnov or Fukaya been treated
+in the categorical literature??
+thanks
+
+.oooO   Jim Stasheff		jds@math.unc.edu
+(UNC)   Math-UNC		(919)-962-9607
+ \ (    Chapel Hill NC		FAX:(919)-962-2568
+  \*)   27599-3250
+
+        http://www.math.unc.edu/Faculty/jds
+
+
+From: john baez <baez@math.ucr.edu>
+Subject: categories: Re: query
+Date: Tue, 17 Nov 1998 20:12:45 -0800 (PST)
+
+Jim Stasheff writes:
+
+> The language of higher category theory in more than analogous
+> to homotopy theory, especially in the cellular version.  What
+> is the appropriate reference for a non-categorical reader?
+> Have the A_\infty categories of Smirnov or Fukaya been treated
+> in the categorical literature??
+
+Unfortunately the truly appropriate reference has not yet been
+written, because the equivalence between weak infinity-groupoids
+and homotopy types has not yet worked out in full detail, at least
+not in the cellular version.   The *dream* of translating all of 
+homotopy theory into higher category theory is outlined in:
+
+John Baez and James Dolan, Categorification, to appear in Proceedings
+Workshop on Higher Category Theory and Mathematical Physics at 
+Northwestern University, Evanston, Illinois, March 1997, eds. Ezra
+Getzler and Mikhail Kapranov, preprint available as math.QA/9802029.
+
+This also has lots of references to different places where various
+bits of the dream have been realized.  
+
+Basically the dream consists of working out the following correspondence:
+
+HIGHER CATEGORY THEORY             HOMOTOPY THEORY
+
+omega-groupoids                    homotopy types
+n-groupoids                        homotopy n-types
+k-tuply groupal omega-groupoids    homotopy types of k-fold loop spaces
+k-tuply groupal n-groupoids        homotopy n-types of k-fold loop spaces
+k-tuply monoidal omega-groupoids   homotopy types of E_k spaces
+k-tuply monoidal n-groupoids       homotopy n-types of E_k spaces
+stable omega-groupoids             homotopy types of infinite loop spaces
+stable n-groupoids                 homotopy n-types of infinite loop spaces
+Z-groupoids                        homotopy types of spectra
+ 
+How do A_infinity categories fit in?  As far as I can tell they should
+correspond to omega-categories where all j-morphisms are invertible for
+j > 1.  
+
+
+Date: Thu, 19 Nov 1998 11:15:46 +1000
+From: street@mpce.mq.edu.au (Ross Street)
+Subject: categories: Re: query
+
+>The language of higher category theory in more than analogous
+>to homotopy theory, especially in the cellular version.  What
+>is the appropriate reference for a non-categorical reader?
+>Have the A_\infty categories of Smirnov or Fukaya been treated
+>in the categorical literature??
+
+Fortunately, since the A_\infty categories (described sketchily in the
+preprint I have of Fukaya) use chain complexes rather than topological
+spaces (so that I believe a 1-object A_\infty category is an algebra for
+the A_\infty non-permutative operad on chain complexes - an A_\infty
+DG-algebra), we do not need to realise the whole homotopy types dream (as
+described by John Baez) to give a categorical description of A_\infty
+categories. Several years ago I remember discussing this by email with Jim
+Stasheff.  Dominic Verity was here at the time.  I cannot remember all the
+details but the two basic ingredients were some free strict n-categories
+made from the set (whose elements are to be the objects of the A_\infty
+category) in much the way the orientals are constructed, and the
+construction (below) mentioned in my Oberwolfach Descent Theory notes of
+September 1995.
+
+        There is a connection between the Gray tensor product and ordinary
+chain complexes.  Each chain complex R gives rise to a (strict)
+omega-category J(R) whose 0-cells are 0-cycles  a  in  R, whose 1-cells  b
+: a --> a'  are elements  b  in  R_1  with  d(b) = a'- a,  whose 2-cells  c
+: b --> b'  are elements  c  in  R_2  with  d(c) = b'- b,  and so on.  All
+compositions are addition.  This gives a functor  J :  DG --> omega-Cat
+from the category  DG  of chain complexes and chain maps.  In fact,  J :
+DG --> omega-Cat  is a monoidal functor where  DG  has the usual tensor
+product of chain complexes and  omega-Cat  has the Gray tensor product.  By
+applying  J  on homs, we obtain a (2-) functor  J_* :  DG-Cat --> V_2-Cat,
+where  V_2  is  omega-Cat  with the Gray-like tensor product (extending the
+natural tensor product of oriented cubes as described in Sjoerd Crans
+thesis).  In particular, since  DG  is closed, it is a DG-category and we
+can apply  J_*  to it.  The V_2-category  J*(DG)  has chain complexes as
+0-cells and chain maps as 1-cells; the 2-cells are chain homotopies and the
+higher cells are higher analogues of chain homotopies.
+
+Best regards,
+Ross
+
+
+Date: Thu, 19 Nov 1998 10:31:09 +0100
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Re: query
+
+I have not seen Fukaya's paper.
+
+If the problem is to formalise higher homotopies for, say, topological
+spaces or chain complexes,  together with their operations, there is a
+simple solution based on the path endofunctor (or, dually, the cylinder
+endofunctor; or their adjunction) and its powers.
+
+The path endofunctor  P  is constructed so that a homotopy  a: f -> g: X ->
+Y  amounts to a map  a: X -> PY;  the maps  f, g  are recovered by means of
+the two faces  d-, d+: PY -> Y.
+(For  Top,  PY  is obviously the space  Y^[0, 1]  of paths in  Y,  with the
+compact-open topology; for chain complexes  (PY)_n  =  Y_n + Y_(n+1) + Y_n,
+with suitable differential.)
+
+P  comes equipped with various natural transformations (faces, degeneracy,
+connections, symmetries, concatenation...), satisfying "algebraic"
+coherence axioms (a sort of "cubical comonad" with additional structure).
+These transformations represent the basic structure of lower order
+homotopies.
+
+But now you have, practically for free:
+
+- n-tuple homotopies, represented by the power endofunctor  P^n,
+- n-homotopies, represented by a subfunctor  P_n  of  P^n,
+- their operations, via the usual algebra of natural transformations,
+- the deduced coherence relations of the latter.
+
+Eg, a double homotopy, represented by a map  X -> P^2(Y),  has four faces
+given by the four natural transformations  d-P, d+P, Pd-, Pd+: P^2 -> P;
+if  k  is the concatenation of homotopies,  kP  and  Pk  are the vertical
+and horizontal concatenation of double homotopies, and so on; if  k  is
+associative, as is the case for chain complexes but not for spaces, so are
+all higher concatenations. A double homotopy is said to be a 2-homotopy
+when its "vertical" faces (say) are trivial, i.e. factor through the
+degeneracy  1 -> P.
+(For  Top,  P^2(Y)  is the space of maps from the standard square  [0, 1]^2
+to Y;  P_2(Y)  is the subspace of those maps which are constant on the
+vertical faces of the square.)
+
+This way of deducing higher homotopies and their operations from the lower
+ones can be found in:
+
+M. Grandis, Categorically algebraic foundations for homotopical algebra,
+Appl. Categ. Structures 5 (1997), 363-413.
+
+M. Grandis, On the homotopy structure of strongly homotopy associative
+algebras, J. Pure Appl. Algebra, 134 / 1 (1999 ?), 15-81.
+
+Regards,   Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+e-mail: grandis@dima.unige.it
+
+http://pitagora.dima.unige.it/webdima/STAFF/GRANDIS/
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+
+From: Andre Joyal <joyal@zeus.mpce.mq.edu.au>
+Subject: categories: category-homotopy
+Date: Thu, 19 Nov 1998 21:34:42 +1100 (EST)
+
+This is in reply to a message of James Stasheff
+and of other participants.
+
+I agree that the language of category is more than analogous to
+homotopy theory, and think that the connection is deep.
+The work on A-infinity spaces is a striking early illustration of the 
+connection between homotopy coherence and categorical coherence.
+Homotopy theory is the main guideline for the emergence 
+of higher category theory.
+For example, the first correct concept of 3-category was discovered
+as a direct outcome of modelling homotopy 3-types with Gray groupoids.
+Before this example, all existing 3-categories were equivalent to strict ones.
+
+In my opinion, after a first stage of developpement, higher category theory
+should induce new progress in homotopy theory. This is the real test.  
+In particular, the new theory should help understanding
+homotopy groups of spheres.
+
+I am including an abstract of my talk on a related subject.
+Regards, Andre Joyal
+ 
+> University of Sydney Algebra Seminar
+> Friday 20th November, 12-1pm, Carslaw 273
+>
+> Title:   The homology of symmetric and braided monoidal categories
+> Abstract:
+>     We wish to comment on some aspects of the connection between
+>     category theory, topology and homological algebra.  The
+>     connection is at the root of higher K-theory and it is guiding
+>     much of the actual research on higher dimensional categories.
+>     We shall concentrate on the relation between monoidal categories
+>     and iterated loop spaces.  To each category C we can associate a
+>     space BC called the (Milgram)  classfying space of C.  The
+>     homology of C is defined to be the homology of BC.  The space BC
+>     is a monoid when C has a tensor product, and it has the
+>     structure of an E-infinity space (resp. of an E-2 space) if the
+>     tensor product is symmetric (resp. braided).  We shall briefly
+>     discuss  the work of P. May and F. Cohen on the homology of E-n
+>     spaces. It shows that the homology of a symmetric (resp. of a
+>     braided) monoidal category is a graded-commutative algebra
+>     admitting Dyer-Lashof operations (resp. is a poisson algebra).
+>     These structures play a crucial role in determining the homology
+>     of the symmetric groups and of the braid groups.  The poisson
+>     algebra structure also appears in the recent work of Lehrer and
+>     Segal on the rational homology of classical regular semisimple
+>     varieties.
+> 
+>                   ------------------------------
+> 
+> Best wishes,
+>      Andrew Mathas
+> 
+
+
+
+Date: Fri, 20 Nov 1998 14:44:43 +0000
+From: "T.Porter" <t.porter@bangor.ac.uk>
+Subject: categories: Jim's query
+
+This is not really an adequate reply to Jim's query. The reason is that as
+I understand it, he is asking for a source that will explore the homotopy
+theory of the `globular' models of weak infty categories. My approach to
+the area is in some sense the dual. Starting with the various models for
+homotopy types or bits of them, try to see what is mirrored in the weak
+infty category theory by the homotopy structure.  This is in some sense the
+converse to his query but may none-the-less be relevant.
+
+My intuition was, and still is, that the Kan condition on simplicial sets
+gives a composition/pasting up to coherent homotopy. Moreover the `filler'
+gives the justification for the composite. (Compare the filler structure of
+the nerve of a category with that in an arbitrary Kan complex.) Accepting
+that as a starting point, and the idea that the `category' of weak infinity
+categories should be a weak infinity category, Jean-Marc Cordier and I
+looked at `locally Kan' simplicially enriched categories (e.g. Trans AMS
+349(1997)1-54). With that viewpoint, it becomes clear that the structure of
+an A_\infty category is needed to make things really `coherent', but that
+many of the constructions of `ordinary' category theory have A_\infty or
+homotopy coherent analogues in this setting, which thus serves as a
+test-bed' for the development of the more general theory.  In part this
+relates to Michael Batanin's paper in the Cahiers where explicit
+consideration of A_\infty structure is given.
+
+That theory looks at the `global' structure to some extent, but
+simplicially enriched groupoids model all homotopy types, so a corollary of
+the simplicial to globular type of transition should be that one should be
+able to construct weak \infty categroies DIRECTLY from the algebra of a
+simplicially enriched groupoid.  The obvious place to look for this is in
+the Moore complex which carries a hypercrossed complex structure in the
+sense of Pilar Carrasco and Antonio Cegarra.  (This is related to the
+n-hypergroupoid structures of Jack Duskin.) Exploring the \infty category
+structure, potentially in their definition, is the  aim of another line of
+research and in low dimensions, this has been attacked by Ali Mutlu and
+myself,  (see very recent articles in TAC or Bangor's preprint list on the
+web). 
+
+Getting nearer to Jim's query, any bridge between homotopy theory and
+higher dimensional category theory should I feel aim to be approachable by
+algebraic topologists and therefore should start with a recognisable model
+for homotopy types.
+
+Another approach that must be mentioned is that of Tamsamani and Simpson
+using multisimplicial objects. Presumably this also links in with the
+cat^n-groupoid approach pioneered some 14 years ago by Loday.  This only
+handles n-types but can be extended to a model that has higher information
+but in those dimensions above n, the Whitehead products are trivial. (Has
+anyone looked at the Whitehead and Samelson products from a globular or
+weak \infty category viewpoint?)
+
+The question of simplicial rather than cubical theory is a difficult one.
+Marco Grandis made a good case for the cubical formulation the other day,
+and the use of Kan filler conditions in a cubical setting has been for a
+long time a speciality of Heiner Kamps (see the recent book by him and
+me!). That theory does not directly address the question of A_\infty
+category structures, but it does raise a question that deserves some
+attention. Suppose you want an analogue of a given theorem from homotopy
+theory but in another non-topological context and you can get a weak
+composition structure in your setting (typically given by fillers for boxes
+in a cubical `enrichment'). What fillers/composites do you need for your
+particular theorem (e.g.Dold's theorem on homotopy equivalence between
+cofibrations, or long Dold-Puppe type sequences)?  
+
+This last question also raises that of the motivation for the
+generalisations.  I am convinced these are useful, even important, but
+perhaps some debate on directions to explore and goals to seek out might
+help in providing a fuller answer to Jim's question.
+
+
+Tim.
+
+ ************************************************************
+Timothy Porter                   |tel direct:        +44 1248 382492
+School of Mathematics            |mathematics office:         382475   
+University of Wales, Bangor      | fax:                       383663
+Dean St.                         |World Wide Web
+Bangor                           |homepage
+http://www.bangor.ac.uk/~mas013/	  
+Gwynedd LL57 1UT                 |Mathematics and Knots : exhibition
+United Kingdom                   |http://www.bangor.ac.uk/ma/CPM/
+
+
+Date: Thu, 19 Nov 1998 19:06:47 +0000 (GMT)
+From: Ronnie Brown <r.brown@bangor.ac.uk>
+Subject: categories: higher order category theory and homotopy theory
+
+There is a more down to earth and historically rooted approach. 
+
+A concern of the early topologists (Dehn, Hopf, Alexandroff,...) 
+was to find a higher dimensional version of the fundamental group, since 
+the were irritated by the facts that 
+(i) \pi_1 gave good geometric information (e.g. for complex variable 
+theory) which often involved the non commutativity, 
+(ii) H_1 was \pi_1 made abelian, for connected spaces, 
+(iii) H_n existed for all n \ge 0 (and was abelian). 
+
+There was also the intuition of big things made out of composing little 
+bits (simplices in the Poincare formulation). The `solution' was to use 
+formal sums (homology), and this gave abelian results. 
+
+Cech's 1932 submission on Higher homotopy groups to the Zurich ICM 
+was withdrawn at the request of Alexandroff and Hopf once they had proved 
+these groups abelian for n \ge 2. 
+
+The whole aim was to get immediate geometric results and computations. 
+
+My suggestion in 1967 was to use `higher homotopy groupoids' since these 
+did not have to be abelian. It was only in 1974 that Philip Higgins and I 
+found a definition of a homotopy double groupoid of a pair; 
+ with this and the work with Chris Spencer we could prove a 2-D Van 
+Kampen theorem. This is still giving actual computations of homotopy 
+2-types and invariants not previously known. For an exposition see my 
+notes
+Groupoids and crossed objects in algebraic topology
+from the 1997 School in Algebraic Topology at Grenoble 
+http://www.bangor.ac.uk/~mas010/brownpr.html
+which also go on briefly to the higher dimensional case (for strict higher 
+groupoids) parts of which were announced in 1977 (with Philip Higgins, 
+Compte 
+Rendue Acad. Sci. Paris S\'er. A. 285 (1977) 997-999, 286 (1978) 91-93. 
+
+Also, with the use of n-fold groupoids one can recover all n-types 
+(Loday) a result Grothendieck described to me in 1986 (in Montpellier) as  
+`absolutely 
+beautiful'. Again, the intricate structure of these can give new 
+computations of homotopy invariants and homotopy types, while studying 
+pushouts of these (strict again!) one can find new algebraic 
+constructions, such as a non abelian tensor product of groups (which act 
+on each other).  
+
+We have to develop new methods to compute even with 
+these strict objects, so there is still a lot to be done in getting 
+explicit information on specific examples using the non strict ones. 
+
+One overall setting is to have functors
+
+                             \Pi
+                          ---------->
+       (topological data) <--------- (Algebraic data)
+                              IB
+               |                       |
+             U |                       | B 
+               |                       |
+               V                       V
+               ======== (spaces)======                            
+
+where IB (\mathhbb{B}) and B are classifying data or space functors, U  
+is forget, and \Pi is a functor which should satisfy Van Kampen Theorem 
+(preserve certain colimits), and also \Pi  IB is equivalent to 1. 
+
+At the level of 3-types we have such a set up with topological data = 
+squares of (pointed) spaces, algebraic data = crossed squares (a kind of 
+triple groupoid). We do not (so far) have such a setup when (algebraic 
+data) is say the candidate proposed by Andre (which are equivalent to 
+2-crossed modules). Graham Ellis has shown how to compute 3-types and 
+homotopy classes of maps using the above set up (Math. Z., 461 (1993) 
+93-110. ). The existence of the functor \Pi (satisfying VKT, so one 
+can apply free algebraic objects) helps a lot. 
+
+So I find it interesting that even strict 3-fold groupoids have an 
+intricate structure (they model 3-types!). The relations and uses of all 
+these models needs lots of work. 
+
+The tensor product of crossed complexes (corresponding to a Gray tensor 
+product of strict \infinity groupoids) yields interesting models for 
+loop spaces, by considering monoids for this tensor:
+(see for example Baues and Tonks
+On the twisted cobar construction. Mathematical Proceedings of the 
+Cambridge Philosophical Society 121 (1997) pp.229-245 ). 
+
+But the nice thing about crossed complexes is one can write down explicitly 
+the Eilenberg-Zilber theorem (Tonks' thesis), which I have not seen for 
+infinity groupoids! 
+
+Ronnie Brown
+
+
+Date: Fri, 20 Nov 1998 18:58:35 GMT
+From: carlos@picard.ups-tlse.fr (Carlos Simpson)
+Subject: categories: Joyal's message + query
+
+A. Joyal writes:
+
+>In particular, the new theory should help understanding
+>homotopy groups of spheres.
+
+I think it is safe to say that the ``n-category crowd'' (myself included)
+would love to make some progress on this.
+The main thing I am wondering about is: what exactly does one want to know
+about the homotopy groups of spheres? for example, is there a concrete
+question
+which needs answering?
+
+Up until not too long ago, I was under the impression that the question was
+how to calculate them; but it turns out that E. Brown in 1956 gave a
+perfectly good algorithm for calculating homotopy groups;
+another was subsequently given by Kan and refined by Curtis: one just has
+to calculate the ``nonabelian  homology groups'' of a simplicial complex of
+free groups, and by Curtis one can divide out by a higher commutator
+subgroup so this actually only concerns a simplicial complex of  nilpotent
+groups.
+
+
+(I give another algorithm in q-alg/9710011 using n-categorical type ideas,
+but this doesn't necessarily seem particularly useful and in any case I
+have more recently learned that it is basically the same thing as the
+``Milgram model'' see the Handbook, see also an article by Baues for the
+double loop space etc.etc....)
+
+One might complain that these are ``algorithms'' rather than ``formulae''
+but I have never quite understood the distinction. One generally needs a
+computer algorithm to evaluate one of Zagier's formulas! Maybe there is a
+subtle type of distinction about the type of machine the algorithm is
+supposed to run on?
+Or a quantitative question about the asymptotics of the computing time?
+
+
+Another possible version of the question (related to the computing time
+question in the previous sentence) might be: does one know how to bound the
+size of the $\pi _i (S^k)$? I can imagine applying n-categorical ideas to
+give a bound here, but it seems to be that there must be known bounds using
+spectral sequences or other. If there are known bounds, does someone know
+what the best one is?
+
+Other than that, does Prof. Joyal or anyone else have an idea of the type
+of question about the $\pi _i(S^k)$ which could/should be attacked by
+n-categories?
+
+--------------------
+
+On an introduction to $n$-categories: it would be great if J. Baez could
+bundle together his ``This week's finds in math. phys.'' which concern
+$n$-categories. This would make a really nice introduction specially for
+friends and family.
+
+For the more mathematically minded, a recommended ``bapteme de feu'' would
+be Grothendieck's ``Pursuing stacks''.
+
+Another good place to look is Benabou's LNM 47.
+
+----
+
+On A_{\infty}-categories and \infty-categories: the response of R. Street
+looks quite adequate to the question (and in fact is a nice illustration of
+what the ``Gray tensor product'' really  means, a point I  had never
+clearly understood up to now...). Here are a few more remarks, specially
+related to J. Baez's comment.
+
+The notion of Segal category
+(which, again I recently found out, first appeared in the paper of
+Dwyer-Kan-Smith...) corresponds to the notion (that J. Baez mentionned) of
+\infty-category in which the $i$-morphisms are invertible for $i>1$ (I call
+this condition ``$1$-groupic'').
+
+A first remark is that Segal categories are equivalent to strict
+simplicially enriched categories, as was already shown by Dwyer-Kan-Smith.
+(in particular, you can read ``simplicially enriched category'' wherever I
+write ``1-groupic $\infty$-category'' below...). This suggests that
+A_{\infty}-categories are also probably equivalent to strict i.e. DG
+categories, but it isn't a proof (see below for why not) and it would be
+interesting to know if someone has an answer to that question.
+
+Segal categories or $1$-groupic $\infty$-categories, are not actually
+totally equivalent to A_{\infty} categories, because they don't encode the
+``spectrum'' structure on Hom sets. In fact the notion of
+$A_{\infty}$-category in the DG
+world probably has a topological analogue where the Hom's are indeed spectra
+(cf Vogt et al on E_{\infty} ring spaces and the like???).
+
+Here is a proposition for an $\infty$-categorical notion which should
+correspond to this placing of a spectra structure on the Hom spaces.
+Suppose $C$ is a 1-groupic $\infty$-category.  We say that $C$ is {\em
+spectric}
+if it satisfies the following conditions:
+---C has an initial and final  object and these coincide (call them *);
+---if $X\in C$ then the fiber product $\Omega X := * \times _{X} *$
+exists (as a homotopy-limit) in $C$; (also that $\Omega$ becomes a functor...?)
+---the functor  $\Omega$ is an equivalence of categories.
+
+These conditions are inspired by M. Hovey's definition of ``stable model
+category''
+in ``Model categories''. (In particular, if M is a stable model category then
+the simplicial category, Dwyer-Kan localization of M inverting wk equivs
+L(M), will be a spectric $\infty$-category.)
+
+It follows from this definition that the $Hom$ spaces in C (i.e. the
+$\infty$-groupoids which are the Hom's of the $\infty$-category C) have
+structures of spectra:
+Hom(x,y)=\Omega Hom(x, \Omega ^{-1}y) = \Omega Hom(\Omega x, y) etc.
+Thus, C will correspond to the version of A_{\infty} category mentionned
+above where the Homs are spectra.
+
+On the other hand, given an A_{\infty}-category B, formally adjoin the
+shifts of objects, by setting for example Hom(X, Y[n]):= \Omega^nHom(X,Y)
+(for integers n) etc. It looks likely that this will give a spectric
+$\infty$-category C, and that these two constructions will be (as much as
+possible) a correspondence between A_{\infty}-categories and spectric
+$\infty$-categories.
+
+....
+
+Sorry to clog up the e-waves so...
+Carlos Simpson
+
+
+Date: Fri, 20 Nov 1998 17:40:38 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+Subject: categories: Re: Jim's query
+
+Amazing what deep interpretations have been given to my shallow question
+though i appreciate the answers.  Al I was after was
+some place for a novice reader to see how category theory
+and homtopy theory interacted in the concept of A_\infty-category
+cf. Smirnov or Fukaya
+
+.oooO   Jim Stasheff		jds@math.unc.edu
+(UNC)   Math-UNC		(919)-962-9607
+ \ (    Chapel Hill NC		FAX:(919)-962-2568
+  \*)   27599-3250
+
+        http://www.math.unc.edu/Faculty/jds
+
+
+Date: Sat, 21 Nov 1998 10:06:29 +1100
+From: Michael Batanin <mbatanin@mpce.mq.edu.au>
+Subject: categories: Re: query
+
+This is a summary of my correspondence with J.Stasheff.
+
+
+James Stasheff wrote:
+
+> As monoids can be described as categories with one object,
+> one can consider \Aoo structures on categories with a notion of
+> homotopy, e.g. topological categories or differential graded categories.
+> To be more precise, the set of objects and the set of morphisms
+> carry a notion of homotopy. As usual, one deals with composable
+> morphisms and then weakens the axiom of associativity up to homotopy
+> in the strong sense in order to
+> define \Aoo - categories.  This was first done by Smirnov by 1987
+> \cite{smirnov:baku} to handle functorial homology operations and
+> their dependence on choices (cf. indeterminacy). More recently, Fukaya
+> \cite{fukaya:1} reinvented \Aoo -categories with remarkable applications to
+> Morse theory and Floer homology.
+> Inspired by this work, Nest and Tsygan have proposed an \Aoo -category
+> with automorphisms of an associative algebra as objects and for
+> the space of morphisms, a twisted version of the Hochschild complex
+> of the corresponding endomorphism algebras.
+
+Michael Batanin:
+
+One can generalize "ordinary" category theory in the different ways. One
+can consider internal category theory, enriched category theory. We can
+also consider a category as a special sort of simplicial set. All this 
+points of view have their own A_{\infty}-analogues.
+
+I realize, that the approach of Smirnov, Fukaya and others is a
+generalization of "internal" category theory. In my paper "Monoidal
+globular categories as a natural environment ..."(Adv.Math. 136, 39-103
+(1998)) I also consider a Cat-internal version of
+A_{\infty}-\omega-category (so it involves a weak form of interchange
+law)that I call monoidal globular category. A surprising coherence
+theorem sais that a general monoidal globular category is equivalent to
+a strict one (the internal category structure on objects aloows to
+strictify interchange low). 
+
+In another my paper "Homotopy coherent category theory and
+A_{\infty}-structures in monoidal categories" (JPAA 123(1998),67-103) I
+defined an enriched version of A_{\infty}-category. So 
+we have a honnest set of objects but morphisms are objects of a monoidal
+simplicial categories with a Quillen model structure. I also can define
+what A_{\infty} functor is and prove an appropriate coherence and
+homotopy invariance theorems. 
+Another nice theorem sais that A_{\infty}-categories and their
+A_{-infty}-functors form an A_{infty}-category in a natural way. 
+  
+The simpliocial point of view on A_{\infty}-categories goes back to 
+Boardman and Vogt book. The corresponding notion is a simplicial set
+satisfying some weak Kan conditions. This approach was extensively used
+by T.Porter and J.-M.Cordier (see T.Porter's answer on Jim's query). 
+ 
+
+
+James Stasheff:
+> Since in a category we are concerned with $n$-tuples of morphisms
+> only when they are composable, it is appropriate to similarly relax
+> the composition operations for in defining an operad.  the result is
+> known as a partial operad and appears in two different contexts:
+> in the mathematical physics of vertex operator algebras (VOAs)
+> \cite{yizhi} and
+
+Mivhael Batanin:
+ In my work "Globular monoidal
+categories ..." I introduced the n-dimensional operads over trees. A
+1-dimensional operad in this sense is not exatly the same as usual
+non-symmetric operad as every operation may have source and target and
+we can multiply just composable chains of operations. A one object
+version of this may be identify with a usual nonsymmetric operad. (In my
+paper I use \omega-operads). I wonder if a partial operad is the same as
+my 1-operad?  
+
+Michael.
+
+
+From: john baez <baez@math.ucr.edu>
+Subject: categories: n-categorical miscellany
+Date: Tue, 24 Nov 1998 15:28:09 -0800 (PST)
+
+1) Carlos Simpson writes:
+
+>A. Joyal writes:
+
+>>In particular, the new theory should help understanding
+>>homotopy groups of spheres.
+
+>I think it is safe to say that the ``n-category crowd'' (myself included)
+>would love to make some progress on this.  The main thing I am wondering 
+>about is: what exactly does one want to know about the homotopy groups of 
+>spheres? for example, is there a concrete question which needs answering?
+
+There are a lot of complicated and interesting patterns in the stable 
+homotopy groups of spheres.   A lot of these patterns are currently 
+studied using a generalized cohomology theory called complex cobordism 
+theory, together with an intricate mess of spectral sequences:
+
+Complex cobordism and stable homotopy groups of spheres / Douglas C.
+Ravenel.  Orlando: Academic Press, 1986.
+
+Nilpotence and periodicity in stable homotopy theory / by Douglas C.
+Ravenel.  Princeton, N.J. : Princeton University Press, 1992.
+
+It's all far too technical for me to understand, so I don't have much
+hope of suddenly answering some question that homotopy theorists are 
+stuck on!  However, I think that the n-category crowd can give more
+conceptual explanations of some facts that appear as miracles in the 
+current approach.  For example, there's an important relation between 
+complex cobordism theory and formal group laws: the complex cobordism 
+of a point is "the universal formal group law".  There should be an 
+elegant conceptual proof of this, but as far as I know, there are just 
+elegant *heuristics* for why it should be true, followed by a grungy 
+computation.  
+
+2) Carlos Simpson writes:
+
+>On an introduction to n-categories: it would be great if J. Baez could
+>bundle together his ``This week's finds in math. phys.'' which concern
+>n-categories. This would make a really nice introduction specially for
+>friends and family.
+
+Especially during the holiday season!  I should try to bundle them together
+more nicely at some point, but right now you can start at:
+
+http://math.ucr.edu/home/baez/week73.html ,
+
+skip the bit about left-right asymmetry in amino acids, read the stuff
+on n-categories, and then keep clicking on the thing that says:
+
+"To continue reading the `Tale of n-Categories', click here."
+
+It fizzles out around week100, though I plan to resume it with an
+issue discussing Carlos Simpson's paper on the stabilization hypothesis 
+and Mark Hovey's book on model categories.   
+
+3) Some people have noted that
+
+http://xxx.lanl.gov/abs/math.QA/9811139
+
+doesn't give them the paper "HDA4 - 2-Tangles".  Sorry! - the delay before 
+the preprint server makes papers publicly available is longer than it
+used to be.  It should be working by tomorrow.   If you still have trouble 
+after that (it's a big file and may bust your printer), feel free to 
+email me and ask me to send you a copy.
+
+

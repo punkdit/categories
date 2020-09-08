@@ -1,0 +1,131 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Levy <pbl@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Tensor of monads
+Date: Mon, 2 Aug 2010 20:55:01 +0100
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <E1Og3Zs-0002cB-Mo@mlist.mta.ca>
+References: <E1OeHE4-0004hy-TA@mlist.mta.ca> <E1Ofu7F-0006gv-8o@mlist.mta.ca>
+Reply-To: Paul Levy <pbl@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v936)
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed; delsp=yes
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1280788505 24234 80.91.229.12 (2 Aug 2010 22:35:05 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 2 Aug 2010 22:35:05 +0000 (UTC)
+Cc: Categories mailing list <categories@mta.ca>
+To: Richard Garner <r.h.g.garner@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Tue Aug 03 00:35:03 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Og3b0-0002Mb-Kr
+	for gsmc-categories@m.gmane.org; Tue, 03 Aug 2010 00:34:58 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:56372)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Og3Zx-0007pd-GS; Mon, 02 Aug 2010 19:33:53 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Og3Zs-0002cB-Mo
+	for categories-list@mlist.mta.ca; Mon, 02 Aug 2010 19:33:48 -0300
+In-Reply-To: <E1Ofu7F-0006gv-8o@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6026
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6026>
+
+
+On 1 Aug 2010, at 01:31, Richard Garner wrote:
+
+> I must admit to feeling slightly confused by both Peter's and Andr=E9's
+> examples. In both cases, the monads considered arise on a category =20
+> other
+> than the category of sets; and it is not clear to me what is meant by
+> forming the tensor product of two such monads.
+
+Here is a suggestion; I don't know how it relates to yours.
+
+Let S and T be monads on a category C.
+
+An "S,T-algebra" is a C-object X together with an S-algebra structure =20=
+
+theta and T-algebra structure phi.  An S,T-algebra morphism is a C-=20
+morphism that is homomorphic in both components.  Let D be the =20
+category of S,T-algebras and homomorphisms, and U : D --> C the =20
+forgetful functor.  Then U creates U-split coequalizers.  If it has a =20=
+
+left adjoint, we call the monad the "sum" of S and T.
+
+I think the sum of S and T, if it exists, has to be a coproduct in the =20=
+
+category of monads, but haven't checked the details.
+
+Next suppose that C is cartesian, and S and T are strong.  Now D will =20=
+
+be a locally C-indexed (by this I mean [C^op,Set]-enriched) category.  =20=
+
+A morphism from (X,theta,phi) to (X',theta',phi') over Z is a C-=20
+morphism from Z x X to X' that's homomorphic in its second argument, =20
+with respect to both structures.  If U has a (locally C-indexed) left =20=
+
+adjoint, we get the  "sum" of strong monads.  Again, I think it's a =20
+coproduct in the category of strong monads.
+
+Next suppose C is cartesian closed and S and T are strong.
+
+For an S,T-algebra (X,theta,phi), the following are equivalent:
+
+(1) for all C-objects Y and Z, the two C-morphisms from SY x TZ x =20
+X^(YxZ) to X are equal
+
+(2) for every C-object Y, the two C-morphisms from SY x T(X^Y) to X =20
+are equal
+
+(2') for every C-object Z, the two C-morphisms from TZ x S(X^Z) to X =20
+are equal.
+
+When these hold, we say that (X,theta,phi) "commutes". (I'd like to =20
+express this without quantification over objects, but I can't see how.)
+
+We thus obtain a full (locally C-indexed) subcategory D' of D =20
+consisting of the commuting S,T-algebras and homomorphisms, and U' : =20
+D' --> C the restriction of U.  Then U' creates U'-split =20
+coequalizers.  If it has a left adjoint, we call the induced monad the =20=
+
+"tensor" of S and T.
+
+Now a cocone of strong monads
+
+      S -----> M <----- T
+
+is said to "commute" when for all C-objects X and Y the two C-=20
+morphisms from SX x TY to M(X x Y) are equal.
+
+I think a tensor of S and T will always give an initial commuting =20
+cocone, but haven't checked the details.
+
+Paul
+
+
+--
+Paul Blain Levy
+School of Computer Science, University of Birmingham
++44 (0)121 414 4792
+http://www.cs.bham.ac.uk/~pbl
+
+
+
+
+
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

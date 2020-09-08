@@ -1,0 +1,127 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: equality is beautiful
+Date: Mon, 11 Jan 2010 02:26:17 +0000 (GMT)
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <E1NUgfF-00019l-9a@mailserv.mta.ca>
+References: <E1NRRk6-0000Cr-SG@mailserv.mta.ca> <E1NSKnt-0007hY-PW@mailserv.mta.ca>
+Reply-To: Richard Garner <rhgg2@hermes.cam.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+X-Trace: ger.gmane.org 1263304526 11625 80.91.229.12 (12 Jan 2010 13:55:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 12 Jan 2010 13:55:26 +0000 (UTC)
+Cc: categories@mta.ca
+To: =?iso-8859-1?Q?Joyal=2C_Andr=E9?= <joyal.andre@uqam.ca>
+Original-X-From: categories@mta.ca Tue Jan 12 14:55:18 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NUhDG-00069J-FJ
+	for gsmc-categories@m.gmane.org; Tue, 12 Jan 2010 14:55:14 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NUgfF-00019l-9a
+	for categories-list@mta.ca; Tue, 12 Jan 2010 09:20:05 -0400
+In-Reply-To: <E1NTcBM-0003xK-Go@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5509
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5509>
+
+
+Dear Andr=E9
+
+> Many people seem to distrust the equality
+> relation between the objects of a (large) category.
+> Is this a philosophical conundrum or a mathematical problem?
+>
+> Can we define a notion of (large) category without supposing
+> that its (large) set of objects has a diagonal?
+
+Yes, this is precisely what one does in formalising category=20
+theory in an (intensional) dependent type theory. (Mike=20
+Shulman has alluded to this in a previous message to this=20
+list.)
+
+Since in such a type theory one does not have quotients of=20
+equivalence relations, one typically works not with raw types=20
+but with setoids (=3Dtypes equipped with an equivalence=20
+relation in the internal logic).
+
+The category of such setoids is well behaved---at least an=20
+LCC pretopos---but the notion of internal category in this=20
+pretopos is generally not what one is interested in.
+
+Instead one takes a category internal to the type theory to=20
+be given by a type of objects O, together with an OxO indexed=20
+family of hom-setoids O(x,y), composition and identities=20
+which are maps of setoids, and associativity and unitality=20
+witnessed by elements of the hom-setoid equality. In this=20
+setting, we may not talk of equality of objects (since O is=20
+not a setoid but only a type) but may talk of the equality of=20
+any pair of parallel arrows.
+
+This notion is due to Peter Aczel and there is a fairly=20
+extensive development of it in the proof assistant Coq by=20
+G=E9rard Huet and Amokrane Sa=EFbi. Some consequences of the=20
+definition are, e.g., that the collection of all small=20
+categories does no longer forms a category, but only a=20
+bicategory (since one cannot speak of equality of functors,=20
+since this would require equality of objects in the=20
+codomain). Some work on this has been done by Olov Wilander.
+
+Since the category of sets is a model of extensional, and so=20
+also intensional, type theory, one may interpret what the=20
+above means in this context to obtain, within a classical (or=20
+at least impredicative) metatheory, a notion of category=20
+meeting your requirements. In fact such non-standard=20
+categories may be seen as special kinds of tricategory (in=20
+the usual sense).
+
+Indeed, in the set-based model of type theory, a setoid is=20
+given by a set X; for each pair of elements x,y in X, a=20
+further set X(x,y); and arrows of composition X(y,z) x=20
+X(x,y)-->X(x,z), inverse X(x,y)-->X(y,x) and identity=20
+1-->X(x,x) subject to no axioms. But this is precisely to=20
+give a bigroupoid which is locally chaotic, in the sense that=20
+between any two parallel 1-cells, there is a unique 2-cell.=20
+[From a constructive perspective, not every such bigroupoid=20
+would be "OK". The constructively valid ones would be the=20
+cofibrant ones, since these may be inductively generated.]
+
+From=20this it follows without difficulty that a category in=20
+the constructive sense is precisely a tricategory (in the=20
+sense of Gordon-Power-Street) whose every hom-bicategory is a=20
+locally chaotic bigroupoid.
+
+The use of these non-standard categories is pertinent with=20
+regard to Bill Lawvere's comments on the distinction between=20
+presentations and the things (theories) that they present.=20
+There is a model structure on the category FPCat of small=20
+categories with chosen finite products and strict=20
+product-preserving maps whose cofibrant objects are, up to=20
+retracts, the (many-sorted) Lawvere theories. One may define,=20
+in a similar way, a category FPCat' whose objects are=20
+non-standard categories with finite products, and whose=20
+morphisms are strict structure-preserving maps: and on this=20
+there is a model structure (or at least the=20
+cofibration-trivial fibration half of a model structure)=20
+whose cofibrant objects are "equational presentations of=20
+Lawvere theories": one has not only the sorts, and the=20
+generating operations, but also the generating equalities=20
+between composite operations. There is an adjunction between=20
+FPCat and FPCat' which is the left-hand of the two=20
+adjunctions described by Bill.
+
+Richard
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

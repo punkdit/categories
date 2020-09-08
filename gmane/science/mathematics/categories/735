@@ -1,0 +1,111 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Regular embedding
+Date: Thu, 21 May 1998 08:44:12 -0400 (EDT)
+Lines: 83
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.3.95.980521084234.5725A-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017150 27154 80.91.229.2 (29 Apr 2009 14:59:10 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:59:10 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: cat-dist Thu May 21 13:00:00 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA05391
+	for categories-list; Thu, 21 May 1998 10:10:50 -0300 (ADT)
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 4061
+Original-Lines: 82
+Xref: news.gmane.org gmane.science.mathematics.categories:735
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/735>
+
+A month or so ago, I got a note from Ross Street asking about my 1986
+JPAA paper on representations of categories.  The main point of that
+paper was to give a new, relatively simple proof of the full embedding
+theorem for regular categories.  Unfortunately, I tried to get too
+general and got tangled in the variance, so that the argument could not
+be followed.  Follows is my final note to Ross.  The argument is really
+quite simple and can be described as follows:
+
+1. Show that when @C (read script C) is regular, so is Lex(@C,Set)\op.
+ (Lex=FL is the finite limit preserving functors.  This result is really
+the only new thing in the paper.)
+
+2. Adapt Grothendieck's transfinite induction proof of the existence of
+injectives in an AB5 abelian category to show that Lex(@C,Set)\op has
+enough @C-projectives = regular functors.
+
+3. Adapt Mitchell's proof of the abelian category full embedding theorem
+to show that by taking a sufficiently large full subcategory @P in
+Lex(@C,Set) consisting of regular functors, then the evaluation functor
+@C --> Func(@P\op,Set) is full and faithful.
+
+That's all there is to it.  I plan to post on triples in the next few
+days a revised version of the paper (it was, fortunately, one of the
+very first that was typed on a computer, so this is not too onerous).  I
+will call it embedding.rev.
+
+Ross further raised the question as to whether a transfinite induction
+was too sophisticated for the classroom.  I don't know exactly what
+level his course was, but I will say that if we never do a hard theorem,
+then the students will come away with the idea that there is no depth to
+category theory, an impression his colleagues will be only too happy to
+affirm.  This argument of Grothendieck's is, after all, the first
+example that there could be deep results in categories.
+
+Michael
+
+=====================================================================
+
+Dear Ross:
+
+I did not really try to understand my paper.  I suspect it is a matter
+of trying to be too abstract and getting tangled in my own feet.  At any
+rate, here is how I would do it for a class.  First, since you didn't
+ask, I assume that you are happy with the fact that given a small
+category @C (think of that as script C; BTW, I never noticed how
+dreadful JPAA's scripts were), the category @L = Lex(@C,Set)\op has the
+property that given any functor F, there is a regular epi P -->> F such
+that P is projective with respect to regular epis in @C.  Now consider a
+small full subcategory @P built out of choosing @C projective covers for
+each representable and a @C-projective cover for the kernel pair of each
+of the @C-projective covers of representables.  Thus, for each object C,
+there is a parallel pair Q ===> P in @P, whose coequalizer in @L is C.
+Notice that Hom_{@L}(P,C) = PC, using Yoneda and taking the variance
+into account.
+
+There is an obvious functor F: @C --> Fun(@P\op,Set) that takes C to
+the functor P |--> Hom(P,C) = PC.  This functor is clearly
+faithful, preserves finite limits and regular epis.  The only question
+is the fullness.  So suppose a: FC --> FB is a natural transformation.
+What naturality means is that for any d: Q --> P in @P, the square
+                         Hom(d,C)
+               Hom(P,C) ----------> Hom(Q,C)
+                  |                    |
+                  |                    |
+               aP |                    | aQ
+                  |                    |
+                  |                    |
+                  v                    v
+               Hom(P,B) ----------> Hom(Q,B)
+                         Hom(d,B)
+ commutes.  Applied to an f: P --> C, this means that aQ(d.f) = d.aP(f).
+Apply this in the case that f is a coequalizer in @L to a parallel pair
+d,e : Q ===> P in @P.  It says that
+     aP(f).d = aQ(f.d) = aQ(f.e) = aQ(f).e
+ and that means that there is a unique b: C --> B such that aP(f) = b.f.
+You finish the argument by observing that for any object R of @P and any
+c: R --> C, there is a lifting to an arrow g: R --> P and then aR(c) =
+aR(f.g) = aP(f).g = b.f.g = b.c.
+
+
+
+
+

@@ -1,0 +1,125 @@
+Path: news.gmane.org!not-for-mail
+From: Alex Simpson <als@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Weak choice principles
+Date: Mon, 10 Feb 2003 02:45:17 +0000 (GMT)
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <1044845117.3e47123d29d65@mail.inf.ed.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018454 2770 80.91.229.2 (29 Apr 2009 15:20:54 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:54 +0000 (UTC)
+To: CATEGORIES mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Feb 10 10:46:13 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 10 Feb 2003 10:46:13 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18iF7q-0000VG-00
+	for categories-list@mta.ca; Mon, 10 Feb 2003 10:41:38 -0400
+X-Authentication-Warning: topper.inf.ed.ac.uk: apache set sender to als@localhost using -f
+User-Agent: IMP/PHP IMAP webmail program 2.2.8
+X-Originating-IP: 130.54.16.90
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 13
+Status: RO
+Content-Length: 2596
+Original-Lines: 88
+Xref: news.gmane.org gmane.science.mathematics.categories:2158
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2158>
+
+
+The recent discussion about real numbers in toposes has reminded
+me of some questions I've previously wondered about concerning
+choice principles in toposes.
+
+
+As is well known, all that is needed to get the Cauchy reals
+and Dedekind reals to coincide (and hence the Cauchy completeness
+of the Cauchy reals) is N-N-choice (N being the natural numbers):
+
+  (AC-NN)   (\forall n:N. \exists m:N. A(n,m)) \implies
+                  \exists f:N->N. \forall n:N. A(n,f(n))
+
+This is a very weak choice principle. Under classical logic
+it is simply true (by the least number principle). Although
+not provable intuitionistically, it is accepted
+by the Bishop school of constructivism (in fact they accept
+full dependent choice).
+
+
+What I want to remark upon is that the coincidence of the Cauchy
+and Dedekind reals also follows from the, apparently weaker,
+principle of bounded choice:
+
+  (AC-Nb)   (\forall n:N. \exists m \leq n. A(n,m)) \implies
+                \exists f:N->N. \forall n:N. (f(n) \leq n) \and A(n,f(n))
+
+from which one can derive, for any g:N->N
+
+  (\forall n:N. \exists m \leq g(n). A(n,m)) \implies
+           \exists f:N->N. \forall n:N. (f(n) \leq g(n)) \and A(n,f(n)).
+
+
+Alongside this it is natural to consider a principle of boolean
+choice:
+
+  (AC-N2)   (\forall n:N. \exists m \leq 1. A(n,m)) \implies
+                \exists f:N->N. \forall n:N. (f(n) \leq 1) \and A(n,f(n)).
+
+(I am assuming 0 is a natural number). From (AC-N2) one can derive
+for any k:N,
+
+  (\forall n:N. \exists m \leq k. A(n,m)) \implies
+           \exists f:N->N. \forall n:N. (f(n) \leq k) \and A(n,f(n)).
+
+
+One obviously has implications
+
+   (AC-NN)  ==>  (AC-Nb)  ==>  (AC-N2)
+
+QUESTION 1  Can either of the above implications be reversed?
+
+My conjecture is that they can't.
+
+
+Regarding the relationship to the real numbers, as remarked above
+we have:
+
+   (AC-Nb)  ==>  R_C = R_D
+
+where R_C and R_D are the Cauchy and Dedekind reals respectively.
+In fact this implication cannot be reversed. More strongly:
+
+   R_C = R_D  =/=>  (AC-N2)
+
+QUESTION 2  Does (AC-N2) imply R_C = R_D?
+
+Again, my conjecture is that it doesn't. Any counterexample here
+would of course simultaneously show that (AC-N2) does not imply
+(AC-Nb).
+
+
+I'd be interested to hear if anyone has ideas on these questions, or
+knows of references in which the above choice principles (other than
+AC-NN) are discussed.
+
+Thanks,
+
+Alex Simpson
+
+
+Alex Simpson, LFCS, Division of Informatics, Univ. of Edinburgh
+Email: Alex.Simpson@ed.ac.uk           Tel: +44 (0)131 650 5113
+Web: http://www.dcs.ed.ac.uk/home/als  Fax: +44 (0)131 667 7209
+
+
+
+
+

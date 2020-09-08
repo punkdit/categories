@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: "Eduardo J. Dubuc" <edubuc@dm.uba.ar>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Validity_of_equations_in_topos
+Date: Sun, 27 Apr 2014 19:26:00 -0300
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <E1WeYaG-0004b5-TA@mlist.mta.ca>
+Reply-To: "Eduardo J. Dubuc" <edubuc@dm.uba.ar>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1398641683 8696 80.91.229.3 (27 Apr 2014 23:34:43 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 27 Apr 2014 23:34:43 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon Apr 28 01:34:37 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WeYai-0007ot-7K
+	for gsmc-categories@m.gmane.org; Mon, 28 Apr 2014 01:34:36 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:42594)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WeYaI-0002mY-EQ; Sun, 27 Apr 2014 20:34:10 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WeYaG-0004b5-TA
+	for categories-list@mlist.mta.ca; Sun, 27 Apr 2014 20:34:08 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8088
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8088>
+
+
+
+I clarify my previous question with a simple example. It is also a
+simpler (and more general) question whose resolution resolves the
+previous question on interpreting a theory in another.
+
+QUESTION: If an equation (in an algebraic theory) can be proved to hold
+by any means (choice, excluded middle, etc) in any Set-Model, then it
+holds in any model in any topos. No need to do an intuitionistic
+proof ?
+
+For example if we use the excluded middle in any totally ordered poset,
+(this includes the real interval [0, 1])
+
+Example:
+
+The reference is the book [CDM] ``Algebraic foundations of Many-valued
+Reasoning??  Kluver Academic Publishers (2000)
+
+Consider the theory of MV-algebras. By a standard choice argument we have:
+
+1) Every MV-algebra is a subalgebra of a product of
+MV-chains with the pointwise structure.
+
+Corollary. Given any two terms p(x, y, ... z) and   q(x, y, ... z), the
+equation
+
+p(x, y, \ldots z) = q(x, y, \ldots z)
+
+holds in every MV-algebra if and only if it holds in every MV-chain.
+
+(denote "@" for $\oplus$,  and "*" for $\odot$
+
+2) x @ y < 1  ==>  x * y = 0 holds in any MV-chain.
+
+(very easy, [CDM] 1.6.1 page 27).
+
+3)  $x @ 0 = x$  (axiom, [CDM] page 7),
+      $1 @ x = 1$  (very easy, [CDM] page 9).
+
+
+4) The equation (a): (x @ y) @ (x * y) = (x @ y)
+holds in any MV-algebra.
+
+proof: By 1) it is enough to prove it for MV-chains:
+
+case (x @ y) = 1: we have 1 @ (x * y) = 1
+
+case (x @ y) < 1: we have  (x @ y) @ 0 = (x @ y) (by 2)
+
+both cases hold by 3).
+
+5) By the completeness theorem the equation (a) follows
+from the axioms of the theory,
+
+   (intuitionistically or classically ?)
+
+thus the equation should hold in (the internal language) for any
+MV-algebra object in any Grothendieck topos ?
+
+5) Also we can argue via the presheaf classifying topos of the theory of
+MV-algebras and come to the same conclusion ?
+
+Is 5) valid ?
+
+Notice that, besides the use of choice in 1), if we have already a
+chain, we do not need 1), but we are using an exclude middle in 4) to
+prove the equation (invalid for example in the MV-chain [0, 1], the real
+interval in the object of reals of the topos). Never the less, the
+equation holds in [0, 1] but the proof does not ?
+
+e.d.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

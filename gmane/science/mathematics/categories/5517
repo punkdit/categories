@@ -1,0 +1,285 @@
+Path: news.gmane.org!not-for-mail
+From: lamarche <lamarche@loria.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: equality is beautiful
+Date: Wed, 13 Jan 2010 12:53:20 +0100
+Lines: 250
+Approved: news@gmane.org
+Message-ID: <E1NV5Es-000324-Oj@mailserv.mta.ca>
+References: <E1NRRk6-0000Cr-SG@mailserv.mta.ca> <E1NSKnt-0007hY-PW@mailserv.mta.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F5672@CAHIER.gst.uqam.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F5673@CAHIER.gst.uqam.ca> <E1NTcBM-0003xK-Go@mailserv.mta.ca>
+Reply-To: lamarche <lamarche@loria.fr>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v936)
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed; delsp=yes
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1263398021 18851 80.91.229.12 (13 Jan 2010 15:53:41 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 13 Jan 2010 15:53:41 +0000 (UTC)
+To: =?ISO-8859-1?Q?Andr=E9?= <joyal.andre@uqam.ca>,  <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Jan 13 16:53:34 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NV5XJ-0006Vu-J3
+	for gsmc-categories@m.gmane.org; Wed, 13 Jan 2010 16:53:33 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NV5Es-000324-Oj
+	for categories-list@mta.ca; Wed, 13 Jan 2010 11:34:30 -0400
+In-Reply-To: <E1NTcBM-0003xK-Go@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5517
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5517>
+
+I have been thinking on how to get this post right for a few days, =20
+taking my time, but Andr=E9's recent post
+
+> Can we define a notion of (large) category without supposing
+> that its (large) set of objects has a diagonal?
+
+
+prompted me to send this... perhaps prematurely.
+
+One can do a lot of mathematics without using the equality predicate. =20=
+
+The necessary technology  (dependent types) has been around for a long =20=
+
+time, and the foundations of category theory is a natural domain of =20
+application for it. Richard Gardner has already said something to that =20=
+
+effect, but I want to stress that point and try to sell it to the less =20=
+
+syntactically inclined among us.
+
+In dependent types you still need a very limited form of equality, to =20=
+
+be able to compare syntactic objects. After all, if you make a complex =20=
+
+syntactic construction A, you have to be able to make copies of it and =20=
+
+reuse it elsewhere at several places, and you want your theory to take =20=
+
+account of this. And, more importantly, if you start with A and =20
+elaborate on it twice, getting two syntactic objects  S(A), T(A), it =20
+is natural to be able to assert that the two results are equal, =20
+because some times they will. The standard example of this is beta-=20
+reduction in the lambda calculus.
+
+But as I said this is a very limited form of equality, since a true =20
+equality predicate would allow you to assert if two *arbitrary* =20
+objects are equal.
+
+The syntax of dependent types is rather heavy, but once you know how =20
+to interpret it in a category C it is very intuitive. To get started =20
+all you need is a class of maps in C which is stable under pullbacks. =20=
+
+and then you interpret such a special map
+
+A:  \bar A ---->  X
+
+as a dependent type   x: X  |-  A(x)
+
+I.e., if types in say, simple lamda calculus can be interpreted as =20
+sets (or spaces), then dependent types can be interpreted as an =20
+indexed family of sets, depending on another set. The operation of =20
+pullback is substitution of a term in a type.
+
+That is, if an aribtrary map    B  ---->  A  in C  is thought of as a =20=
+
+term, in the usual Lawvere-Lambek sense
+
+b:B  |-  f(b)
+
+then the pullbakck of A by f represents the type
+
+b:B |-  A(f(b))
+
+Most of the people on this list are already very familiar with this =20
+*intuition*, which has been used countless times since the mid-fifties =20=
+
+starting in algebraic topology, then algebraic geometry, then =20
+categorical foundations (I mention in particular the idea of using =20
+such a class of pullback-stable maps in a topos-like category as a =20
+notion of smallness,  introduced (i think) by B=E9nabou and used =20
+extensively by Joyal-Moerdijk in a monograph, and lots of other people =20=
+
+who are reading this list.
+
+But the point of this post is that I think there is still the need to =20=
+
+stress that there is a *formal syntax* which corresponds to this =20
+intuition, although many people on this list are already aware of =20
+this. We have learned to "reason intuititionisticallty" in a topos, =20
+and intuitionistic predicate theory was a real help in doing so... the =20=
+
+same goes here: we can learn to reason in situations where the =20
+equality predicate is limited to special types, the *discrete* ones.  =20=
+
+And this point it is easy to illustrate.
+
+Let us go back to our category C. People have known for a long time =20
+that all you need to do to define internal categories in C is to =20
+require that C have pullbacks. But actually the natural requirements =20
+are even weaker:  all you need is that C have a special class of maps =20=
+
+closed under pullbacks (and that includes all isos). For simplicity =20
+today I will also require a terminal object. As I already said you =20
+think of these maps as indexed families. So suppose X is chosen to be =20=
+
+the object of objects of an internal category.  You want a family of =20
+morphisms. I.e., given the usual span
+
+d_0 :  X <-----  H  ----->  X  d_1
+
+it is now required that  X ---> 1 be one of these special maps (so =20
+that "X is an independent type") and both  H ----> X are required to =20
+be special maps too. It is easy to see then that  <d_0, d_1> :  H -----=20=
+
+ >  X x X   is also a special map. We can now say that these two maps =20=
+
+define an indexed family:
+
+x: X,  y: X  |-  Hom(x,y)
+
+Now look at how composition is presented:
+
+x,y,z : X ,  h:  Hom(x,y), k: Hom(y,z)  |-  k o h  :  Hom(x,z)
+
+This is intepreted in C via very mechanical constructions, which will =20=
+
+give the interpretation of composition as the usual map, with the =20
+usual pullback as source and which obeys the usual commutation =20
+requirements. Notice that the syntax we used *does not need an =20
+equality predicate to assert that dom(k) =3D cod(h)*
+
+The same goes with the identity map
+
+x: X  |-  Id(x) : Hom(x,x)
+
+But now look at associativity:
+
+x,y,z,w: X, h: Hom(x,y), k: Hom(y,z), g: Hom(z,w)  |-   g o (k o h) =3D  =
+=20
+(g o k ) o h
+
+Here you need a real equality predicate. That means that the sets in =20
+the indexed family (Hom(x,y))_x,y   are required to be *discrete =20
+sets*, i.e., that the diagonal is required to be a predicate. There is =20=
+
+some leeway on how to define predicates, but a natural way to do it is =20=
+
+to say that predicates are (represented by) special maps that are monos.
+
+Thus, to be back to the "small is beautiful" track, a first =20
+approximation of Large/Small goes (very roughly)  space/discrete space.
+
+Several years ago i circulated a manuscript where I was trying to =20
+formalize foundations of category theory by specializing the space/=20
+discrete space duality above to groupoid/discrete groupoid. I was =20
+using fibrations of groupoids over a base category (potentially a =20
+topos) as a reference model. In other words, I was trying to find the =20=
+
+kind of elementary toposes you would get if you subsituted fibrations =20=
+
+(and stacks) of groupoids for presheaves (and sheaves). I made some =20
+very interesting observations, but one problem I hit was that these =20
+categories are only bi-cartesian closed, not cartesian closed, and =20
+that really stretched the available syntactic technology. It seems =20
+that you can't avoid going in higher dimension whenever you tackle =20
+such issues. I was using groupoid-enriched categories as the basic =20
+language of my axiomatization. In other words, a class comes =20
+*indissociably equipped* with a notion of isomorphism between its =20
+objects, and only discrete classes have the true equality predicate. =20
+The point is that the classes that you first meet in real life are =20
+classes of sets-with-structure, and that *if you have properly defined =20=
+
+a structure, you should know what the isomorphisms are*. Moreover, =20
+whatever you do to a mathematical object, you should be able to =20
+transport along an isomorphism. Naturally I got the idea from Andr=E9's =20=
+
+theory of combinatorial species. This is perfectly in accordance with =20=
+
+dependent type theory: you don't have to know when two structures are =20=
+
+equal; what really matters is having an iso between them, because then =20=
+
+they are interchangeable. So I was working on the principle that all =20
+the constructions usually done on sets should be lifted to groupoids, =20=
+
+which then always allow you to use transport on whatever you've =20
+constructed. But another problem I hit was that the powerset =20
+construction is very much weakened, because given a groupoid X, the =20
+only natural notion of PX is the (discrete) class of all subgroupoids =20=
+
+that are isomorphism-closed ("replete"). This weakens the logic very =20
+much and you cannot use higher-order logic to do things like =20
+constructing sums, as in elementary toposes. But you sitll can =20
+interpret a form of predicate logic in there. Naturally a predicate in =20=
+
+general is interpreted as a replete subobject, which is quite natural. =20=
+
+A property only makes sense only if it is invariant under iso. The use =20=
+
+of subobjects as predicates show that his approach is more aligned =20
+with Church-style intuitionism than Martin-L=F6f-style constructive =20
+foundations.
+
+One of these interesting observation that I made is that there is a =20
+special version of the axiom of choice in that context, which is =20
+perfectly suited for category theory, but does not clash with =20
+constructivism. And it is valid in fibrations and stacks. Presented in =20=
+
+ordinary categorical language, it goes: given a class/groupoid G and a =20=
+
+family of classes that depend on it (a fibration of groupoids  over G =20=
+
+in the ordinary sense) such that every class/fiber of the family is =20
+inhabited (which is surjective as a fibration) and such that all =20
+theses fibers are *equivalent to discrete sets* (in other words such =20
+that hom-sets are never bigger than singletons, B=E9nabou has a name for =
+=20
+these) then the fibration has a splitting. This is the axiom of choice =20=
+
+that categorists use all the time:  universal constructions give rise =20=
+
+to exactly such fibrations---existence up to uniqueisomorphism---and =20
+they are the cases when the axiom of choice is needed.
+
+Richard mentions some foundational work that I was not aware of, where =20=
+
+the higher-order categories go all the way up to tri. It seems that =20
+this particular case of dimension-climbing is a formal consequence of =20=
+
+the base axiomatics, while mine came from semantics. But I think we =20
+should seize the bull by the horns and base foundations on higher-=20
+dimension groupoids (i know that other people on this list agree, and =20=
+
+I should mention Makkai's opetopes). Because naturally after you've =20
+consider classes of sets-with structure, you cannot avoid getting =20
+(meta?)classes of classes-with-structure, where isomorphism has become =20=
+
+equivalence, und so weiter.
+
+To go back to Andr=E9's original question:  you can build foundational =20=
+
+universes whose inhabitants are groupoids and ordinary not sets/=20
+classes in general. The diagonal in these will exist *but it will not =20=
+
+be a predicate*.
+
+Hope this isn't too ponderous,
+
+Fran=E7ois
+
+
+
+
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

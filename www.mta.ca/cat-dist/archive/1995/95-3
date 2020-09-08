@@ -1,0 +1,1109 @@
+Date: Wed, 1 Mar 1995 04:29:48 -0400 (AST)
+Subject: Composition as a relation? 
+
+Date: Tue, 28 Feb 1995 15:12:04 -0500
+From: David Espinosa <espinosa@cs.columbia.edu>
+
+
+
+Has there been any work on "categories" with composition as a relation
+instead of a function?
+
+We would allow several "composites" of two arrows but would likely
+require unique composition with the identity:
+
+	f o id = {f}
+
+David
+
+
+Date: Wed, 1 Mar 1995 04:31:16 -0400 (AST)
+Subject: Re: APCS questionnaire form 
+
+Date: Wed, 1 Mar 95 12:12:13 +1100
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+OK, Peter - you know from Tours that I too detest their questionnaire, 
+and I am happy that you have stirred me into action. I shall write now.
+
+Regards, Max.
+
+
+Date: Sat, 4 Mar 1995 00:29:34 -0400 (AST)
+Subject: Re: APCS questionnaire form 
+
+Date: Tue, 28 Feb 95 07:56:00 EST
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I am replying to Peter's letter about Kluwer.  I had actually
+intended to reply to him, but of course replies go to the list.
+First off, let me say that the simplest solution to the point he
+raised is to discard the form and write your own report.  Beggars
+can't be choosers and they are begging you.  A similar problem with
+the referee forms used by NSERC, the Canadian granting agency.  The
+forms are pretty useless for mathematics.  Many referees follow them
+anyway and you have to wade through the irrelevancy to get to the
+meat, if any, of the report.  Others ignore the form and simply
+write a report and those are the most useful.
+
+However, I will not referee a report for ACS under any circumstances
+and I guess those forms are indirectly responsible.  I submitted a
+paper to them on fuzzy models of linear logic.  Briefly, it showed
+that there was a *-autonomous category whose objects were sets and
+arrows were fuzzy relations.  Now, I won't go into the other flaws
+in the paper as originally submitted, which might well have justified
+rejection, but the actual reason given for rejecting it was that it
+was not within the scope of the journal.  Since it was squarely an
+application of category theory, I have concluded that I have no idea
+what the scope of the journal is and have therefore refused to
+referee papers for them.
+
+I believe that the real reason for the journal's problems are that
+the publisher deals with the refereeing process instead of having
+editors for that purpose.  It is probably unimportant, since I don't
+really expect most print journals to be around in ten years.
+
+Michael
+
+
+Date: Sat, 4 Mar 1995 00:35:06 -0400 (AST)
+Subject: Re: Composition as a relation? 
+
+Date: Wed, 1 Mar 1995 09:20:42 +0100
+From: mas013@clvax.bangor.ac.uk
+
+Dear All,
+
+re categories with relational composition:
+
+
+
+David Espinosa <espinosa@cs.columbia.edu> asked: 
+"Has there been any work on "categories" with composition as a relation
+instead of a function?
+
+We would allow several "composites" of two arrows but would likely
+require unique composition with the identity:
+
+        f o id = {f}
+
+Such objects naturally occur in some studies of homotopy coherence in 
+abstract homotopy theory.  There is a set of possible composites so 
+a choice of composite is made to make life easy, but in 
+this context, any two choices are related by higher dimensional data. Of 
+course associativity does not work but does up to higher diemnsional 
+data.  This is linked to some ideas in bicategories.  Perhaps the fact 
+that the resulting THING is constructed rather like a Kleisli category 
+but with a choice of "multiplication" on the "monad" is significant.
+
+If anyone is interested I can expand further on this.
+
+Tim
+
+Tim Porter,
+Bangor, 
+e-mail: mas013@clss1.bangor.ac.uk
+
+
+Date: Sat, 4 Mar 1995 00:40:24 -0400 (AST)
+Subject: Re: Composition as a relation? 
+
+Date: Wed, 1 Mar 1995 20:37:52 -0500
+From: David Espinosa <espinosa@cs.columbia.edu>
+
+
+
+   Do you have any examples in mind?  Abstractions with no examples have
+   an unfortunate track record.
+
+Jim,
+
+Thanks for your suggestions, and sorry to omit the examples.
+
+I'm considering a "category" whose objects are type constructors,
+given as endofunctions on a base category, and whose arrows are
+_situated monads_ relating the type constructors.
+
+There's no _function_ for monad composition, but perhaps we can obtain
+a _relation_ by describing conditions for a monad to be a composition
+of two others.  Does that sound reasonable (or like anything else
+you've seen)?
+
+After working out the details, I find that under a relational
+definition of monad composition,
+
+	M = M o id
+but
+	M not= id o M
+
+In other words, there exists a situated monad N (not equal to M) such
+that
+
+	N = id o M
+	
+For "composition as a relation" to be useful, I would guess that both
+identities would have to come out exactly (as well as associativity).
+After all, it's not much fun to compose the identity and get something
+else back!  But, in general, I like the idea of relational composition
+and would be interested to see some applications.  Thanks again for
+your help.
+
+The full development follows, in case you're interested.
+
+David
+
+
+Situated Monads
+---------------
+
+A _situated monad_ PQ is a triple
+
+	PQ     : im(P)          -> im(Q)
+	unitPQ : P(A)           -> Q(A)
+	bindPQ : (P(A) -> Q(B)) -> (Q(A) -> Q(B))
+
+obeying the usual monad laws and also
+
+	PQ(P(A)) = Q(A).
+
+PQ is the object part of a functor between full subcategories im(P)
+and im(Q) whose arrow part is
+
+	mapPQ : (P(A) -> P(B)) -> (Q(A) -> Q(B))
+	mapPQ(f) = bindPQ(unitPQ o f)
+
+UnitPQ is a natural transformation from
+
+	i_P      : im(P) -> C   to
+	i_Q o PQ : im(P) -> C
+
+where i_P and i_Q are the inclusion functors of im(P) and im(Q) into
+the base category C.  BindPQ (as usual) seems to have a categorical
+description solely as a map between hom-sets.  Join (monadic eta)
+seems inappropriate because PQ is not an endofunctor, and thus join is
+ill-typed.
+
+
+Monad composition as a relation
+-------------------------------
+
+If we want to say that (as situated monads)
+
+	PR = PQ o QR
+
+we can postulate
+
+	unitPR             = unitPQ o unitQR
+	bindPR(unitQR o f) = mapQR(bindPQ(f))
+
+for f : P(A) -> Q(B).  The latter obtains by pushing f both ways through
+the composition triangle.  These imply
+
+	mapPR = mapPQ o mapQR
+
+So far, so good.  Now let's see what happens if PQ = id or QR = id.
+Does it follow that "composition" with the identity is the identity?
+With QR = id, we find
+
+	unitPR = unitPQ
+	bindPR = bindPQ
+
+but with PQ = id, we have
+
+	unitPR = unitQR
+	mapPR  = mapQR
+
+which is much weaker.  We could add another law
+
+	bindQR(f) = bindPR(f o unitPQ)
+
+for f : Q(A) -> R(B), but this implies for QR = id that
+
+	f = bindPQ(f o unitPQ)
+
+which is false for monads (take PQ as the list monad and f as
+reverse).
+
+So left composition with the identity doesn't yield exactly the same
+monad back (under the above definition of composition).  We have
+
+	PQ = PQ o id
+but
+	QR not= id o QR
+	
+This asymmetry doesn't surprise me, since Kleisli composition isn't
+symmetric (the arrows to be composed don't have symmetric types if we
+look at its most general typing).  Unfortunately, I would expect that
+both identities (and associativity as well) would need to hold for
+composition to make sense, even as a relation.
+
+David
+
+
+Date: Sat, 4 Mar 1995 00:44:20 -0400 (AST)
+Subject: Re: Composition as a relation? 
+
+Date: Thu, 2 Mar 1995 00:50:16 -0500
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+
+Dear David,
+
+   Thanks for your suggestions, and sorry to omit the examples.
+
+   I'm considering a "category" whose objects are type constructors,
+   given as endofunctions on a base category, and whose arrows are
+   _situated monads_ relating the type constructors.
+
+   There's no _function_ for monad composition, but perhaps we can
+   obtain a _relation_ by describing conditions for a monad to be a
+   composition of two others.  Does that sound reasonable (or like
+   anything else you've seen)?
+
+To me this gives your question an entirely different flavor.  You
+might want to post your question again with the above target example
+added.
+
+There is a lot of work on combinig triples, e.g. Manes.  My impression
+is that it is not obvious what it means to combine 2 triples.  (One
+way is the stacking below.)
+
+There is some mention of combining triples with distribute laws in
+
+	Barr, Wells, toposes, triples, and theories, '85, Springer
+
+Bicategories may be relevant.
+
+	MacLane, Pare, coherence for bicategories and indexed
+	categories, JPAA (Journ. of Pure and Applied Alg.) '85
+
+There is a paper by Palmquist, in I think Springer LNM 195, on the
+double category of adjoint pairs.  Double categories are categories
+internal to the category of small categories.  2-categories are a
+special case of both bicategories and of double categories.  Monoidal
+categories are a special case of bicategories.  
+
+	Borceux, handbook of categorical algebra, '94, Cambridge
+	
+may be helpful on some of this.
+
+Finitary triples are those commuting with filtered colimits.  One can
+stack them by starting with set to a discrete power, taking a finitary
+triple on that, forming the category of algebras, taking a finitary
+triple on that, forming the category of algebras, ...  The net result
+of a finite such stack can also be obtained with just 2 special
+layers.  The 1st has as algebras the sketches in the sense of my
+`tensor and linear time' and the 2nd follows from the reflector
+following from the orthogonality.
+
+   The full development follows, in case you're interested.
+
+Maybe I'll read it sometime.  The sad truth is that it's hard to write
+and even harder to get anyone to read it.  (However I have found one
+reader for my writing.  Myself.  It's amazing what one forgets.)
+
+Regards, Jim
+
+
+Date: Sat, 4 Mar 1995 00:47:22 -0400 (AST)
+Subject: A couple of simplicial questions 
+
+Date: Fri, 3 Mar 1995 18:50:19 -0500
+From: Todd Wilson <twilson@CS.Cornell.EDU>
+
+1.  A question about notation:  In accounts of internal category
+theory, one uses  d_0, d_1 : C_1 -> C_0  as, respectively, domain and
+codomain, in analogy (I suppose) with simplicial objects.  But then I
+would have expected it to be the other way around:  in line with the
+analogy of an arrow  f:A->B  as an oriented one-simplex between
+vertices  A  and  B , domain should rather be the face operator  d_1
+("delete 1") and codomain  d_0  ("delete 0").  Am I backwards? 
+
+2.  The category  Grp  of groups has the property that every
+simplicial object in  Grp  satisfies the extension condition (i.e., is
+a so-called Kan complex).  Is there a characterization of the
+categories with this property?  Are there interesting uses of homotopy
+in these (other) categories?
+
+--Todd Wilson
+
+
+Date: Sun, 5 Mar 1995 23:48:57 -0400 (AST)
+Subject: Re: Composition as a relation? 
+
+Date: Sat, 4 Mar 1995 00:16:18 -0500
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+
+Dear People,
+
+>Dear David,
+>
+>   ...
+>   I'm considering a "category" whose objects are type constructors,
+>   given as endofunctions on a base category, and whose arrows are
+>   _situated monads_ relating the type constructors.
+>   ...
+>
+>To me this gives your question an entirely different flavor.  You
+
+Whoops.  I had meant that to be private.  I guess I may as well add a
+few more references in public mode.
+
+triples:
+E. Manes, Algebraic Theories, 1976, Springer-Verlag
+
+the monoidal case of bicategories:
+A. Joyal and R. Street, The geometry of tensor calculus, I, 1991,
+Advances in Mathematics
+
+some implicit but usually unmentioned coherence trickery:
+G. Kelly, On MacLane's condition of coherence of natural
+associativities, commutativities, etc., 1964, J. Algebra
+
+Oh well, Jim
+
+
+Date: Sun, 5 Mar 1995 23:51:48 -0400 (AST)
+Subject: Re: A couple of simplicial questions 
+
+Date: Sat, 4 Mar 95 14:44:07 EST
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I have no opinion on the notational question.  I suppose the standard
+notation is backward, but I am not going to change now.  I use d^0 and d^1,
+BTW, reserving the lower index for the dimension, which in this case is 1.
+
+If an equational category has a Mal'cev operator (a ternary operation
+t with t(x,x,y) = t(y,x,x) = y), then every simplicial object is Kan.
+This is essentially clear from John Moore's proof of the group case,
+in which forms xy^{-1}z appear repeatedly.  For an equational category,
+the converse is also true, since a special case of every simplicial
+object being Kan is that every reflexive relation is an equivalence
+relation, a well-known characterization of Mal'cev.
+
+Most familiar Mal'cev categories have a group structure, so the Kan
+condition follows from the case for groups.  Just about the only
+familiar Mal'cev category that I can think of that lacks a group op
+is Heyting algebras and I don't know any application of simplicial
+Heyting algebras.
+
+--Michael Barr
+
+
+Date: Sun, 5 Mar 1995 23:58:09 -0400 (AST)
+Subject: APCS questionnaire form 
+
+Date: Sun, 5 Mar 95 15:07 GMT
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+This is a response to Mike Barr's message of 28 February. I agree with
+him that the Kluwer form used by `Applied Categorical Structures' is no
+worse than that used by grant-giving bodies such as NSERC---the British
+EPSRC forms are every bit as bad as those used by NSERC, believe me---
+but there is an important difference: we don't have any `muscle' in
+arguments with the grant-giving bodies because we are all, to a greater
+or lesser extent, beholden to them ourselves, whereas (thanks largely
+to the Internet) referees do now have collective muscle which we can
+deploy against journal editors and publishers (as Mike rightly points
+out, they are dinosaurs under imminent threat of extinction in any
+case), and in my view we should use it if by so doing we can improve
+the conditions under which we operate.
+
+Incidentally, to correct a misunderstanding of my original message
+which some people seem to have made: I wasn't simply saying that in
+future I will ignore the APCS questionnaire (I have been doing that
+since the journal started, in any case), but rather that I will ignore
+any papers which are sent to me accompanied by the questionnaire---I
+will only referee papers which are sent without the questionnaire. If
+we all agree to do that, then Kluwer will very quickly be forced to
+abandon the wretched thing.
+
+Peter Johnstone
+
+
+Date: Tue, 7 Mar 1995 21:07:24 -0400 (AST)
+Subject: Re: APCS questionnaire form 
+
+Date: Mon, 06 Mar 1995 11:27:42 -0500 (EST)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+  I have no speech. It just begins to seem relevant to mention that Peter's
+original message stirred me to send Kluwer the same thing. John Isbell
+
+
+Date: Tue, 7 Mar 1995 21:09:35 -0400 (AST)
+Subject: Questionnaire 
+
+Date: Tue, 7 Mar 1995 00:34:34 -0400 (AST)
+From: Bob Rosebrugh <rrosebru@mta.ca>
+
+While not wishing to cut off discussion, I feel that if someone  wishes 
+to act on Dusko's suggestion that would be fine (and will be glad to 
+circulate a proposed letter for signatures), and that otherwise the 
+subject might be better handled now by direct communication with Ms. 
+Sonneveld.
+
+regards to all,
+Bob Rosebrugh
+
+
+Date: Tue, 7 Mar 1995 21:03:34 -0400 (AST)
+Subject: Re: APCS questionnaire form 
+
+Date: Mon, 6 Mar 1995 10:38:45 +0000 (GMT)
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+
+According to categories:
+ > 
+ > Date: Sun, 5 Mar 95 15:07 GMT
+ > From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+ > or lesser extent, beholden to them ourselves, whereas (thanks largely
+ > to the Internet) referees do now have collective muscle which we can
+ > deploy against journal editors and publishers (as Mike rightly points
+
+The case against the form is fairly clear (although, so far, I thought
+it was easier to complete than to discuss). The only question is which
+muscle should we use:
+
+* leftist: 	flood Mrs. Sonneveld with angry messages, signed
+		something like )8-\
+
+* rightist: 	dispatch a joint letter, signed something like
+		Internetional Academy of Applied Categorical
+		Referees
+
+I doubt that this network will provide for a real flood. For an
+effect, we'll probably have to act rightist...
+
+I mean, seriously, if we all agree, a joint statement will probably do
+it. Otherwise, I can contribute a message to Mrs. Sonneveld, but it
+will probably be one of five or so.
+
+Regards to all,
+-- Dusko Pavlovic
+
+
+Date: Thu, 9 Mar 1995 01:25:52 -0400 (AST)
+Subject: Re: A couple of simplicial questions 
+
+Date: Thu, 9 Mar 95 14:47:51 +1000
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+Todd Wilson asked on 3 Mar:  
+  The category  Grp  of groups has the property that every
+simplicial object in  Grp  satisfies the extension condition (i.e., is
+a so-called Kan complex).  Is there a characterization of the
+categories with this property?  Are there interesting uses of homotopy
+in these (other) categories? 
+
+An answer may be found in  
+
+A. Carboni, G.M. Kelly, and M.C. Pedicchio, Some remarks on Maltsev and 
+Goursat categories,  Applied Categorical Structures 1 (1993), 385-421. 
+
+The slogan is "Kan = Maltsev".     
+
+Max Kelly.
+
+
+Date: Fri, 10 Mar 1995 02:45:00 -0400 (AST)
+Subject: some simplicial questions 
+
+Date: Thu, 09 Mar 1995 12:09:04 +0000
+From: Prof R. Brown <mas010@bangor.ac.uk>
+
+The nerve of a groupoid (not just a group) is also a Kan complex in the strong sense of a simplicial T-complex (Keith Dakin's definition, 1975). A simplicial T-complex (K,T) has sets T_n in K_n of elements called thin with the property that:
+
+1) any horn has a unique thin filler
+2) degenerate implies thin
+3) if all faces but one of a thin element are thin, so is the last face.
+
+This is of rank less than or equal to n if all simplices in dimensions greater than n are thin. Simplicial T-complexes of rank 1 are equivalent to groupoids (Dakin). 
+
+Simplicial T-complexes in general are equivalent to crossed complexes (Ashley, see Diss Math 265 (1988) Simplicial T-complexes and crossed complexes; Nan Tie, JPAA 56 (1989) 195-209), to infinity-groupoids, and to other things. The notion of cubical T-com
+plex is crucial in the proof by Brown-Higgins of an n-dimensional Van Kampen Theorem (JPAA 22 (1981) 11-41), because of the technical point that it easily enables the handling of multiple compositions of homotopy addition lemmas (the boundary of a simplex
+ or cube is the "sum" of its faces) without writing down formulae. For polyhedral versions, see D W Jones, Diss Math 266 (1988) A general theory of polyhedral sets and the corresponding T-complexes.)
+
+Part of the point is that the singular complex SX of a space X is a 
+Kan complex but the fillers come from the models, so ought, morally,
+ to be canonical and to satisfy relations. But these relations are up to 
+homotopy, it seems. So it is difficult to be more precise. 
+
+The T-complex condition is very strong, but is nice in that it is easy
+ to see how to weaken it. These weakenings need lots more 
+investigation. A further point is that a filler of a horn of a triangle 
+determines a product, as if it were a `computation'. 
+
+Analogous notions for categories are studied by Ross Street  and by
+ Dominic Verity.
+
+Ronnie Brown
+
+Prof R. Brown                                   Tel: (direct)  +44 248 382474  
+School of Mathematics                              (office) +44 248 382475
+Dean St                                             Fax: +44 248 355881
+University of Wales                            email: mas010@bangor.ac.uk
+Bangor                                              wwweb for maths: http: //www.bangor.ac.uk/ma
+Gwynedd LL57 1UT                             
+UK
+
+
+Date: Sat, 11 Mar 1995 01:19:35 -0400 (AST)
+Subject: Re: A couple of simplicial questions 
+
+Date: Fri, 10 Mar 1995 17:02:09 -0500 (EST)
+From: MTHDUSKN@ubvms.cc.buffalo.edu
+
+
+
+On Sat, 4 Mar 1995, categories wrote:
+
+> Date: Fri, 3 Mar 1995 18:50:19 -0500
+> From: Todd Wilson <twilson@CS.Cornell.EDU>
+> 
+> 1.  A question about notation:  In accounts of internal category
+> theory, one uses  d_0, d_1 : C_1 -> C_0  as, respectively, domain and
+> codomain, in analogy (I suppose) with simplicial objects.  But then I
+> would have expected it to be the other way around:  in line with the
+> analogy of an arrow  f:A->B  as an oriented one-simplex between
+> vertices  A  and  B , domain should rather be the face operator  d_1
+> ("delete 1") and codomain  d_0  ("delete 0").  Am I backwards? 
+> 
+> 2.  The category  Grp  of groups has the property that every
+> simplicial object in  Grp  satisfies the extension condition (i.e., is
+> a so-called Kan complex).  Is there a characterization of the
+> categories with this property?  Are there interesting uses of homotopy
+> in these (other) categories?
+> 
+> --Todd Wilson
+> 
+> 
+Re 1:No,You are absolutely correct if one wishes to use the usual 
+simplicial conventions of "face opposite" in describing the simplices of t
+the simplicial object associated with the category : its "Nerve".which 
+provides a most convenient numbering of the projections and compositions
+which occur there.However, it seems almost impossible to get people to 
+give up what seems to them an illogical convention for arrows which must
+go from 0 to 1!
+
+Re 2: Barr characterised these categories as those which satisfy Malcev's 
+condition.I have never seen his proof or know whether he ever published 
+it.I have one of my own since it really is not too difficult. The observation
+was the ingenious part!
+Regards, Jack Duskin
+
+
+Date: Tue, 14 Mar 1995 22:26:12 -0400 (AST)
+Subject: Re: A couple of simplicial questions 
+
+Date: Mon, 13 Mar 1995 09:27:43 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+
+category theorists are well known to be of the opposite 
+handedness/orientation
+
+	Jim Stasheff		jds@math.unc.edu
+	Math-UNC		(919)-962-9607
+	Chapel Hill NC		FAX:(919)-962-2568
+	27599-3250
+
+On Sat, 4 Mar 1995, categories wrote:
+
+> Date: Fri, 3 Mar 1995 18:50:19 -0500
+> From: Todd Wilson <twilson@CS.Cornell.EDU>
+> 
+> 1.  A question about notation:  In accounts of internal category
+> theory, one uses  d_0, d_1 : C_1 -> C_0  as, respectively, domain and
+> codomain, in analogy (I suppose) with simplicial objects.  But then I
+> would have expected it to be the other way around:  in line with the
+> analogy of an arrow  f:A->B  as an oriented one-simplex between
+> vertices  A  and  B , domain should rather be the face operator  d_1
+> ("delete 1") and codomain  d_0  ("delete 0").  Am I backwards? 
+> 
+> 2.  The category  Grp  of groups has the property that every
+> simplicial object in  Grp  satisfies the extension condition (i.e., is
+> a so-called Kan complex).  Is there a characterization of the
+> categories with this property?  Are there interesting uses of homotopy
+> in these (other) categories?
+> 
+> --Todd Wilson
+> 
+> 
+
+
+Date: Tue, 14 Mar 1995 22:39:38 -0400 (AST)
+Subject: Kan and Maltsev 
+
+Date: Tue, 14 Mar 95 14:31:15 +1000
+From: Max Kelly <kelly_m@maths.su.oz.au>
+Subject: Kan and Maltsev
+
+
+Recently, Todd Wilson asked for a characterization of those categories
+wherein every simplicial object is Kan; and Michael Barr replied that 
+this is so for a variety if and only if it admits a Maltsev operation,
+whereupon it suffices to imitate John Moore's original proof for the
+category of groups. Jack Duskin also recalls this unpublished observation 
+of Michael's, remarking that he has his own proof. I noted that a complete
+proof has been published in [A.Carboni, G.M.Kelly, and M.C.Pedicchio, Some
+remarks on Maltsev and Goursat categories, Applied Categorical Structures
+1(1993), 385-421]. I mention this again, since I failed to point out that
+our paper shows the equivalence Kan = Maltsev for any REGULAR category,
+where "Maltsev" now means that equivalence relations commute. The proof
+is pretty; it does follow the lines of John Moore's, but replaces his 
+calculations with elements by reasonings about equivalence relations.
+ 
+Max Kelly.
+
+
+
+Date: Wed, 15 Mar 1995 05:00:53 -0400 (AST)
+Subject: reversing the Grothendeick ring construction? 
+
+Date: Tue, 14 Mar 95 12:21:01 CST
+From: David Yetter <dyetter@math.ksu.edu>
+
+Does anyone know of any work on "reversing the Grothendieck ring construction"
+in the sense of constructing (and classifying) k-linear monoidal categories
+with a given Grothendieck ring?
+
+The only results I know in this direction are results of Kazhdan and
+Kerler which show that any C-linear tortile category with the same 
+Grothendieck ring as Rep(U(sl_2)) must be C-linear monoidally equivalent to
+Rep(U_q(sl_2)) for some q, and a result (probably old, though I know
+no source other than my own derivation) that shows that semisimple
+C-linear monoidal categories with Grothendieck ring Z[G] for a finite
+group G are in 1-1 correspondence with pairs (\alpha, \phi) where
+\alpha is a U(1)-valued 3-cocycle, and \phi is a complex number (the
+multiple of Id_1 which give the component at 1 of the right- and left-
+identity transformations).
+
+(This latter shows that "twisted" Dijkgraaf-Witten theory is a TQFT 
+of Turaev-Viro type.)
+
+Surely there is a citation in the literature for "my" result cited above,
+but where?  
+
+Are there any other results along these lines?
+
+--David Yetter
+
+
+Date: Fri, 17 Mar 1995 03:34:15 -0400 (AST)
+Subject: Reference about bimodules seen as generalized machines 
+
+Date: Wed, 15 Mar 1995 17:21:11 +0100 (MET)
+From: Sebastiano Vigna <vigna@colos3.usr.dsi.unimi.it>
+
+The title says it all: I'm searching for references of papers which study
+bimodules as generalized machines with product, composition and feedback. I
+know of a series of papers by Bainbridge in the seventies, and I've been
+(vaguely) told about the existence of something written by Bill Lawvere
+about this. Any help would be appreciated. Thank you!
+
+						seba
+
+
+Date: Fri, 17 Mar 1995 03:35:45 -0400 (AST)
+Subject: Research Studentship 
+
+Date: Wed, 15 Mar 1995 17:27:25 +0000
+From: Prof R. Brown <mas010@bangor.ac.uk>
+
+EPSRC Earmarked Research Studentship
+Mathematics Programme
+Identities among relations for monoids and categories
+Start: October, 1995
+
+I would be grateful if this studentship could be drawn to the 
+attention of any appropriate person. The full funding would be 
+given to students with UK residential qualifications; EC citizens do 
+qualify, and get fees, but no grant, so it seems unlikely to be
+ appropriate more generally. 
+
+The work will apply 2-categories and 2-groupoids in areas 
+as in the title, and in areas related to aspects of computer 
+science. It is expected to involve symbolic computation with 
+AXIOM, GAP, MAGMA. 
+
+The School of Mathematics has a networked Research Laboratory 
+with a DEC Alpha 2100 server, model 4/200, supported by EPSRC and 
+University grants. 
+
+Fuller details, including the case for the proposal, are on wweb 
+http: //www.bangor.ac.uk/ma/epsrc.html
+
+Ronnie Brown
+
+
+Prof R. Brown                                   Tel: (direct)  +44 248 382474  
+School of Mathematics                              (office) +44 248 382475
+Dean St                                             Fax: +44 248 355881
+University of Wales                            email: mas010@bangor.ac.uk
+Bangor                                              wwweb for maths: http: 
+//www.bangor.ac.uk/ma
+Gwynedd LL57 1UT                             
+UK
+
+
+
+Date: Fri, 17 Mar 1995 03:37:42 -0400 (AST)
+Subject: address change 
+
+Date: Thu, 16 Mar 1995 10:46:06 +0200
+From: Dr. Reinhard Boerger (Prof. Dr. Pumpluen) <Reinhard.Boerger@fernuni-hagen.de>
+
+>From now on I am accessile by e-mail again under
+
+                 " reinhard.boerger@fernuni-hagen.de".
+
+I was told that this address will remain valid even if our system will 
+be changed.  Please use this address in the future. Thanks
+
+                                                  Reinhard Boerger
+
+
+Date: Fri, 17 Mar 1995 03:39:14 -0400 (AST)
+Subject: caen 94 proceedings 
+
+Date: Thu, 16 Mar 1995 15:45:01 --100
+From: Pierre Ageron <ageron@matin.math.unicaen.fr>
+
+
+
+All copies of the proceedings of CAEN 94 that have already been ordered,
+as well as the authors' copies, will be sent before April 7 :  I apologize 
+for the delay. 
+You can still order your own copy (it's free !)
+Let me recall that the only way to do that is by postal mail.
+
+Pierre Ageron
+Departement de Mathematiques
+Universite de Caen
+14032 CAEN Cedex  
+
+
+Date: Tue, 21 Mar 1995 04:06:15 -0400 (AST)
+Subject: Linear Lauchli Semantics: paper available 
+
+Date: Mon, 20 Mar 95 23:42:24 EST
+From: SCPSG@acadvm1.uottawa.ca
+
+
+The  paper below is available by anonymous ftp from the
+following sites:
+
+triples.math.mcgill.ca, in the directory:  pub/blute,
+theory.doc.ic.ac.uk, in the directory:   papers/Scott.
+ftp.csi.uottawa.ca  , in the directory:  pub/papers/PhilScott
+
+The file is called:    lauchli.ps.Z.
+
+Any comments would be greatly appreciated.
+
+Cheers,
+Philip Scott
+
+P. S. Of course, you may also contact either of the authors for a
+hard copy:
+
+R. F. Blute  &  P. J. Scott
+Dept. of Mathematics
+University of Ottawa
+585 King Edward
+Ottawa, Ont.  K1N 6N5
+Canada
+----------------------------------------------
+
+                    LINEAR LAUCHLI SEMANTICS
+
+               R. F. Blute             P. J. Scott
+
+
+We introduce a linear analogue of Lauchli's semantics for
+intuitionistic logic. In fact, our result is a strengthening
+of Lauchli's work to the level of proofs, rather than
+provability. This is obtained by considering continuous actions
+of the additive group of integers on a category of topological
+vector spaces. The semantics, based on functorial
+polymorphism, consists of dinatural transformations which are
+equivariant with respect to all such actions. Such dinatural
+transformations are called uniform. To any sequent in
+Multiplicative Linear Logic (MLL), we associate a vector space
+of ``diadditive'' uniform transformations. We then show that this
+space is generated by denotations of cut-free proofs of
+the sequent in the theory MLL+MIX. Thus we obtain a full
+completeness theorem in the sense of Abramsky and Jagadeesan,
+although our result differs from theirs in the use of
+dinatural transformations.
+
+As corollaries, we show that these dinatural transformations compose,
+and obtain a conservativity result: diadditive dinatural transformations
+which are uniform with respect to actions of the additive group of
+integers are also uniform with respect to the actions of arbitrary
+cocommutative Hopf algebras. Finally, we discuss several possible
+extensions of this work to noncommutative logic.
+
+It is well known that the intuitionistic version of
+Lauchli's semantics is a special case of the theory of logical
+relations, due to Plotkin and Statman.
+Thus, our work can also be viewed as a first step towards
+developing a theory of logical relations for linear
+logic and concurrency.
+
+
+Date: Wed, 22 Mar 1995 05:26:00 -0400 (AST)
+Subject: Not too categorical, this. 
+
+Date: Wed, 15 Mar 95 16:11:51 +0100
+From: F. Lamarche <lamarche@athena.dima.unige.it>
+
+Fellow category theorists
+
+This one is not really about category theory, although I have seen discussions on closely related matters on this very list some time ago.  I have just applied for a bunch of jobs in France and one particular tentacle of the French administrative hydra ha
+s asked me for a translation of my McGill PhD vellum.  Thus it goes
+
+UNIVERSITAS McGILL
+ad Montem regium in Canada
+
+Omnibus ad quos hae litterae pervenerint salutem nos universitatis gubernatores rector socii testamur nos
+
+FRANCOIS LAMARCHE
+
+cum curriculum studiorum praescritptum cum industria conferecerit et omnes exercitationes quae ei sint iniunctae rite peregerit, creavisse
+
+DOCTOREM PHILOSOPHIAE
+
+atque ei omnes honores iura beneficia quae ad illum gradum pertineant concessisse.  Quod ad confirmandum has litteras sigillo universitatis consignandas et nomina eorum qui res academicas administrant subscribenda curavimus.
+
+Datae die VI  Mensis Junii  Anni MCMLXXXIX
+
+It is rather obvious what the general meaning is, but I need a close, professional looking translation.  I know there are some good Latinists out there!  It is only now that I regret not having paid any attention during the four years of Latin I had to su
+ffer through, more than 25 years ago "What? Me, learn a dead language?".
+
+Francois Lamarche
+
+As you can see I am now in Genoa (for two months).  My old Imperial College email address still applies, too.
+
+
+Date: Wed, 22 Mar 1995 05:27:34 -0400 (AST)
+Subject: Whitehead 
+
+Date: Tue, 21 Mar 1995 14:25:18 +0500
+From: James Stasheff <jds@math.unc.edu>
+
+What is the maximum generality known for a homology equivalence
+of CW complexes to imply an honest homotopy equivalence?
+?e.g. if the fundamental groups act trivially on the higher homtopy groups??
+
+
+Date: Sat, 25 Mar 1995 21:00:26 -0400 (AST)
+Subject: Readership at Queen Mary & Westfield College, University of Lo(fwd)
+
+Date: Thu, 23 Mar 95 11:59:23 GMT
+From: David.Pym@dcs.qmw.ac.uk
+
+
+
+                 Department of Computer Science
+                 Queen Mary & Westfield College
+                      University of London
+
+        READERSHIP in the Department of Computer Science
+
+The  Department  of Computer Science  has  strong  well-resourced
+research  groups  in  several  mainstream   areas   of   computer
+science  including  artificial intelligence;  computer  graphics;
+virtual   reality;   distributed  and  parallel  systems;   human
+computer    interaction;    programming   and   the  *theory   of
+computation*. The Department was rated  4A in  the  last research
+assessment exercise; and we are  strongly  committed  to  greater
+research excellence.
+
+The Reader will be expected  to  have  a  distinguished  research
+reputation with demonstrable experience of research direction and
+leadership, and to be an enthusiastic teacher.  Applicants in any
+area  of  computer  science  are encouraged to apply, although we
+particularly welcome those with  research relating to the work of
+the Department that combines theory and application.
+
+The Department has a number of modular degree programmes  in  the
+University  of  London degree system. There is an MSc in Advanced
+Methods in Computer Science,  with  four  streams  based  on  the
+research  expertise  within  the  Department. The Department also
+runs a conversion MSc in Information Technology  jointly with the
+Department of Electronic Engineering.
+
+Informal enquiries can be made to Mel Slater (Head of Department)
+on  0171-975  5242 (email mel@dcs.qmw.ac.uk). Further information
+can be obtained on URL: http://www.dcs.qmw.ac.uk/.
+
+For an application form and further details of this post,  please
+telephone   0171-975   5171,   quoting  reference  number  95044.
+Applications should  be  returned  by  28th  April  1995  to  the
+Recruitment Coordinator, Queen Mary and Westfield College, London
+E1 4NS.
+
+
+
+
+Date: Sat, 25 Mar 1995 21:04:36 -0400 (AST)
+Subject: Fukaya 
+
+Date: Fri, 24 Mar 1995 08:04:54 +0500
+From: James Stasheff <jds@math.unc.edu>
+
+Have any category theorists looked at Fukaya's ``Floer homology for 3-manifolds with boundary''?  Might could have overlooked the fact that he deals with
+A_{\infty}-cats with one strong motivating example.
+
+	Jim Stasheff		jds@math.unc.edu
+	Math-UNC		(919)-962-9607
+	Chapel Hill NC		FAX:(919)-962-2568
+	27599-3250
+
+
+Date: Mon, 27 Mar 1995 20:29:36 -0400 (AST)
+Subject: the thesis, Complexity Doctrines, by web or ftp 
+
+Date: Mon, 27 Mar 1995 17:14:24 -0500
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+
+Dear People,
+
+The thesis, <a href="thesis.ps.gz"> Complexity Doctrines</a> (14+121
+pages), contains the chapters
+<ul>
+<li> Tensor and Linear Time
+<li> V-Comprehensions and P Space
+<li> Dependent Products and Church Numerals
+<li> 3-Comprehensions and Kalmar Elementary
+</ul>
+and was submitted 3-28-95.<hr>
+
+It is available by web from either of
+
+	ftp://triples.math.mcgill.ca/ctrc.html
+	ftp://triples.math.mcgill.ca/pub/otto/otto.html
+
+or by ftp from
+
+	triples.math.mcgill.ca
+	/pub/otto/thesis.ps.gz
+
+(E.g. use gunzip and ghostview.)
+
+Bon Soir, Jim Otto
+
+
+Date: Fri, 31 Mar 1995 12:03:38 -0400 (AST)
+Subject: query 
+
+Date: Wed, 29 Mar 1995 08:25:07 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+
+
+
+	Jim Stasheff		jds@math.unc.edu
+	Math-UNC		(919)-962-9607
+	Chapel Hill NC		FAX:(919)-962-2568
+	27599-3250
+
+---------- Forwarded message ----------
+Date: Wed, 29 Mar 1995 12:08:48 +0200
+From: Johannes Huebschmann <huebschm@mpim-bonn.mpg.de>
+To: G.Segal@pmms.cam.ac.uk, dupont@mpim-bonn.mpg.de, jds@math.unc.edu
+Cc: huebschm@mpim-bonn.mpg.de
+Subject: query
+
+
+Dear colleagues
+
+Consider a simplicial group K. Its realization |K| is a topological
+group (at least when K is countable).
+The realization of the W-construction yields a universal
+|K|-bundle over |overline W K|. 
+THere should be a canonical map from the latter to the bar
+construction B|K| on |K|. 
+
+Has this been worked out somewhere in the literature?
+
+Many thanks in advance.
+
+Sincerely yours Johannes
+
+
+
+
+
+Johannes Huebschmann
+Max Planck Institut fuer Mathematik
+Gottfried Claren Str. 26
+D-53 225 BONN
+
+
+
+
+Date: Fri, 31 Mar 1995 12:06:15 -0400 (AST)
+Subject: change of address 
+
+Date: Wed, 29 Mar 95 19:26:18 MET DST
+From: Koslowski <koslowj@iti.cs.tu-bs.de>
+
+Dear Categorists,
+
+After nearly 2.5 years without a real job I'm back! Here is my
+new address:
+
+J"urgen Koslowski
+Institut f"ur theoretische Informatik
+TU Braunschweig
+Postfach 3329
+D-38023 Braunschweig
+Germany
+
+email: koslowj@iti.cs.tu-bs.de
+
+Best regards,
+
+-- J"urgen
+
+
+
+Date: Fri, 31 Mar 1995 12:09:21 -0400 (AST)
+Subject: change of address 
+
+Date: Wed, 29 Mar 95 19:26:18 MET DST
+From: Koslowski <koslowj@iti.cs.tu-bs.de>
+
+Dear Categorists,
+
+After nearly 2.5 years without a real job I'm back! Here is my
+new address:
+
+J"urgen Koslowski
+Institut f"ur theoretische Informatik
+TU Braunschweig
+Postfach 3329
+D-38023 Braunschweig
+Germany
+
+email: koslowj@iti.cs.tu-bs.de
+
+Best regards,
+
+-- J"urgen
+
+
+
+Date: Fri, 31 Mar 1995 12:10:25 -0400 (AST)
+Subject: trivial ext 
+
+Date: Thu, 30 Mar 1995 13:36:54 +0500
+From: James Stasheff <jds@math.unc.edu>
+
+Griffiths et al have a LNM volume on
+Trivial extensions *of* abelian cats
+
+any work be done to extend it to non-trivial extensions??
+
+

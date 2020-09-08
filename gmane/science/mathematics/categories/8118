@@ -1,0 +1,154 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Descent for fibred monads
+Date: Fri, 16 May 2014 18:29:22 +1000
+Lines: 115
+Approved: news@gmane.org
+Message-ID: <E1WlILk-0007nO-1P@mlist.mta.ca>
+References: <E1Wl7d4-0005XM-OI@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1400247587 14848 80.91.229.3 (16 May 2014 13:39:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 16 May 2014 13:39:47 +0000 (UTC)
+To: George Janelidze <janelg@telkomsa.net>, Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri May 16 15:39:42 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WlIMO-0000HL-Ln
+	for gsmc-categories@m.gmane.org; Fri, 16 May 2014 15:39:40 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:58930)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WlILl-00057J-J8; Fri, 16 May 2014 10:39:01 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WlILk-0007nO-1P
+	for categories-list@mlist.mta.ca; Fri, 16 May 2014 10:39:00 -0300
+In-Reply-To: <EECDFD9C67BD4322BE299A6BD31D1918@ACERi3>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8118
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8118>
+
+Dear George,
+
+Thanks for your message. I should say that the locally connected topos
+example was just intended to be a sample application of the modified
+monadic descent theorem quoted at the start of my message. But as you
+point out, one could also apply it in the setting of categorical Galois
+theory that you refer to. In the terminology of [CJKP] this would say
+something like:
+
+Let I -| H : X ----> C be an admissible reflection, and p: E --> B an
+effective descent map in C. Then Spl(E,p) is isomorphic to the category
+of algebras for the monad
+
+C / E --Sum_p--> C / B --H^B.I^B--> C / B --p^*--> C / E
+
+Which decomposes into the two statements:
+
+(1) Let I -| H : X ----> C be an admissible reflection, and p: E --> B
+an effective descent map in C. Then Spl(E,p) is isomorphic to the
+category of M-on-objects discrete fibrations over the kernel-pair \bar B
+of p --- i.e. C^{\bar B} /\ M / {\bar B} in the terminology of [CJKP]
+
+-- which is (part of) the Theorem on p.26 of ibid.; and
+
+(2) Let I -| H : X ----> C be an admissible reflection, and p: E --> B
+_any_ map in C. Then C^{\bar B} /\ M / {\bar B} is isomorphic to the
+category of algebras for the monad
+
+C / E --Sum_p--> C / B --H^B.I^B--> C / B --p^*--> C / E
+
+--- and it is really this (2) which I am interested in. Does this come
+up in the categorical Galois theory literature?
+
+The other example I attempted in my original message, but botched rather
+badly, involving vector bundles, was an attempt to give some application
+of this modified descent theorem to a fibred monad which is not a fibred
+reflection.  The categorical Galois theory example is compelling because
+one has a fibred monad whose algebras do not descend along effective
+descent morphisms (although, of course, the underlying objects do). The
+point is that the algebras for lots of fibred monads DO descend along
+effective descent morphisms, e.g., any fibred monad on a topos E ----> S
+induced by a finitary algebraic theory in S. So I guess a subsidiary
+question is whether there are any compelling examples of non-idempotent
+fibred monads whose algebras do not descend.
+
+Richard
+
+
+
+
+
+
+
+On Fri, May 16, 2014, at 05:22 PM, George Janelidze wrote:
+> Dear Richard,
+>
+> I would like to see your question formulated more precisely, and showing
+> general (admissible) Galois theory example instead of the locally
+> connected
+> topos example. Some days ago you recommended Carboni-Janelidze-Kelly-Pare
+> paper as one of references for factorization systems (thank you for
+> that!),
+> and now please look at Section 5 of that paper. Note that
+> "admissible"="semi-left-exact" can be replaced with "fibration".
+>
+> Best regards,
+> George Janelidze
+>
+> --------------------------------------------------
+> From: "Richard Garner" <richard.garner@mq.edu.au>
+> Sent: Thursday, May 15, 2014 1:15 PM
+> To: "Categories list" <categories@mta.ca>
+> Subject: categories: Descent for fibred monads
+>
+>> Dear categorists,
+>>
+>> Does the following variant of the Benabou-Roubaud/Beck monadic descent
+>> theorem appear anywhere?
+>>
+>> Let p:E--->B be a fibration with sums and let T:E--->E be a fibred monad
+>> over B. Let q: E^T ----> B be the induced fibration of T-algebras. Let
+>> f: x--->y in B. Then to give T-algebra descent data for f---that is, a
+>> diagram over the kernel-pair of f valued in E^T---is equally to give an
+>> algebra for the composite monad
+>>
+>> E_x ----f_!----> E_y ----T_y---> E_y ---f^*----> E_x
+>>
+>> This doesn't seem to be an application of the usual monadic descent
+>> theorem to q: E^T ---> B; that would identify T-algebra descent data for
+>> f with algebras for a monad on (E^T)_x, not on E_x.
+>>
+>> For example, take E ----> S a connected topos with pi_0 -| Delta -|
+>> Gamma. Let T be the monad for constant objects on E induced by the
+>> fibred adjunction pi_0 -| Delta. Given f: U --->> 1 in E, to give
+>> T-algebra descent data for f is to give a locally constant object split
+>> by U. So such objects are equally the algebras for the monad
+>>
+>> E/U -----> E/U
+>> (A--->U) |----> (Delta pi_0 A) x U ----> U
+>>
+>> In the same situation, take T to be the monad for free vector spaces E
+>> ---pi_0---> S ---Fv---> S ---Delta---> E induced by the free vector
+>> space monad Fv on S. Then T-algebra descent data over U --->> 1 is a
+>> vector bundle split by U; so such objects are equally algebras for the
+>> monad (A--->U) |----> (Delta Fv pi_0 A) x U ---> U
+>>
+>> Richard
+>>
+>>
+>> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

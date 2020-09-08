@@ -1,0 +1,332 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt08@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: the axiom scheme of replacement in category theory
+Date: Fri, 14 Mar 2008 15:13:45 +0000
+Lines: 298
+Approved: news@gmane.org
+Message-ID: <E1JaJ7P-0007C0-1e@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019862 12695 80.91.229.2 (29 Apr 2009 15:44:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:22 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Mar 14 20:25:54 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 14 Mar 2008 20:25:54 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JaJ7P-0007C0-1e
+	for categories-list@mta.ca; Fri, 14 Mar 2008 20:15:19 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 71
+Status: RO
+Content-Length: 15018
+Original-Lines: 297
+Xref: news.gmane.org gmane.science.mathematics.categories:4307
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4307>
+
+Michael Shulman is quite right to press the question of how to express
+the axiom scheme of replacement WITHOUT using classes or universes.
+
+There are two traditions on this topic in set theory.  One of them
+states replacement and collection "from the outside" by using classes
+or universes.   The other, found in ZF itself, somehow builds it up
+"from the inside", without pre-supposing classes, although the large
+cardinals that result from this hypothesis can themselves be used
+as universes for weaker set theories.
+
+Steve Awodey and Thomas Streicher have referred to the excellent
+work in Algebraic Set Theory that is collected on Steve's web page at
+      www.phil.cmu.edu/projects/ast/
+ASD is a categorical treatment that follows the "sets and classes"
+tradition.  However, Mike acknowledged that in his original posting,
+and, with all due respect, Steve and Thomas have NOT answered his
+question there:
+
+ > I'm not familiar with that particular result,
+ie "every polynomial functor on Set has a unique initial algebra
+whose structure map is an identity", mentioned by Paul Levy,
+ > but I know other categorical proofs which use set-theoretic ideas
+ > like transfinite induction, and so cannot be detached from ZF in an
+ > obvious way.  On the other hand, there is nothing intrinsically
+ > "membership-based" in transfinite induction.  The problem seems to
+ > be the lack of a categorical analogue of ZF's axiom of replacement,
+ > since the sets in V_{\omega+\omega} already form a well-pointed
+ > elementary topos with a NNO.  I find this especially mysterious
+ > because on the surface, replacement merely replaces a set by an
+ > isomorphic one (or at most a quotient)!
+
+ > One categorical analogue of replacement comes from categories of
+ > classes in algebraic set theory.  That is, we move from a categorical
+ > analogue of ZF to an analogue of Godel--Bernays set theory.  But it
+ > seems natural to wonder whether there could be a categorical analogue
+ > of replacement expressible solely as a property of the category Set,
+ > without reference to how it sits in a category of classes.  Has anyone
+ > studied this question?
+
+Although he had expressed himself quite clearly the first time,
+it seems that he needed to put his question again:
+
+ > "In consequence, the standard arguments using
+ > Replacement that take one outside of V_\lambda(A) for \lambda
+ > non-inaccessible, are not reproducible."  What I would really like to
+ > know is, can one formulate an elementary property of a topos which
+ > *does* allow one to reproduce the standard arguments of Replacement?
+
+I agree that it would be very nice to have a formulation of Replacement
+in category theory that was as simple as, say, the notion of subobject
+classifier.  I proposed such a thing in the final pages of my book,
+"Practical Foundations of Mathematics" (CUP, 1999), and this posting
+leads up to my formulation.
+
+Colin McLarty gave a non-AST answer to Mike's question, citing a paper
+by Gerhard Osius and one of his own.   I confess that I have not seen
+either of these, not currently having access to a university library,
+so please excuse me if they already say what I am about to say.
+
+I would, however, ask the algebraic set theorists to acknowledge that
+there is another point of view on the question,  albeit one that has
+not been worked out so extensively as theirs.
+
+Anybody who has attempted to discuss foundations with either set
+theorists or mainstream mathematicians knows that it is impossible to
+get them to engage.  Colin McLarty has already pointed this out in
+this thread, saying that
+ > various people including Sol Feferman promote the view that
+ > if you use "sets" then you are admitting that you use ZF and
+ > not some categorical foundations.
+
+Of course, set theorists who claim this are simply hijacking the
+English language, and we have to resist them in so doing.  One problem
+on the other side is that most mathematicians couldn't actually quote
+the ZF axioms that they claim to use, without looking them up.
+
+They could, on the other hand, readily give a practical account of
+- cartesian products, subsets, disjoint sums and quotients of
+   equivalence relations, which are axiomatised in category theory
+   as a "pretopos";
+- primitive recursion over N, lists and finite subsets, which,
+   together with the above, make an "arithmetic universe"; and
+- full powersets, which make an "elementary topos";
+because they teach this to first year mathematics and computer science
+undergraduates.
+
+In Section 2.2 of my book I set out what I call "Zermelo type theory",
+because it differs very little from his set theory.  This is what
+ordinary mathematicians use, and it is also the ("Mitchell--Benabou
+internal") language of a topos.  I would be quite willing to explain
+to any set theorist how any statement in my book (apart from the last
+section) can be understood in categorical terms within an elementary
+topos.
+
+(One of the many uses that I would have for a time machine would be
+to go back 100 years, tap Ernst Zermelo on the shoulder while he was
+writing "Untersuchungen uber die Grundlagen der Mengenlehre I", and
+ask him to make those pairs ORDERED, as it would have avoided so much
+trouble since then!  Note that Bourbaki's "Theorie des Ensembles"  DOES
+have ordered pairs.)
+
+Some time ago, Saunders Mac Lane found himself in the middle of a
+dispute with the set theorists because he had claimed that most of
+mathematics could be expressed in an elementary topos with a natural
+numbers object.  Unfortunately, I have never managed to work out
+exactly which of his publications was the centre of the controversy -
+maybe Colin can fill us in here on the bibliographical details.
+
+The bit that's missing, as Mike said, is the axiom scheme of
+replacement.
+
+But we are back to the original problem of communication with set
+theorists in trying to identify what this actually means.  They are
+rather like Proteus in Greek mythology, who could foretell the future,
+but only to someone who could capture him, which he would avoid by
+repeatedly changing form - into a lion, serpent, leopard, pig, water
+or tree (according to Google and Wikipedia).
+
+At first, Replacement appears just to provide the image of a set under
+a function.  I have seen several set theory text books that give this
+impression, but I suspect that their authors have no idea of the logical
+strength of Replacement.  Of course, when you recognise that what
+mathematical objects DO is what matters, and not what they ARE, you
+appreciate that the image is simply a quotient by an equivalence
+relation.  I'm sure that set theorists must have realised a long time
+ago that this could be done within Zermelo set theory.
+
+However, no sooner have you rejected that answer than they come up
+with another, equally fatuous one: Replacement is needed to construct
+the ordinal omega+omega.  Whilst this may actually be true of the kind
+of intuitionistic ordinals that I called "plump", it is nonsense in a
+classical setting: a model of omega+omega is provided by the even
+numbers followed by the odd ones.  It's only the set theorists'
+instistance on representing everything by means of epsilons and nested
+curly brackets that necessitates Replacement.
+
+Giving up on set theorists for a sensible answer, let's return to
+ordinary mathematics.  The usual situation in which Replacement is
+needed is when you want to form the limit or colimit of some iterated
+construction.  Even then it may be possible to carve the result out
+from a sufficiently big object that is definable in Zermelo set theory,
+or in an elementary topos with natural numbers.
+
+But there are clear examples in which this cannot be done.  One is
+N-fold iteration of the powerset, starting from N itself, since such a
+union would itself be a model of Zermelo set theory.  An example of
+this arises in domain theory.  Start with the domain X_0 that consists
+of N+3 points arranged something like this:
+
+      0  1  2  3  ....
+      xxxxxxxxxx
+        a    b
+         \  /
+        bottom
+
+where "xxxxxxxxxx" means that every numeral is above both a and b. Then
+form the exponentials   X_n+1 = X_n ^ X_n.   It can be shown that these
+are algebraic L-domains (in Achim Jung's terminology) whose bases
+increase in cardinality in the same way as the iterated powersets do.
+
+With these examples in mind, we can return to Mike Shulman's original
+question, or at least some simple example of it:
+     Can we express the transfinite iteration of a functor
+     in purely categorical language?
+Whether this expresses the full strength of Replacement, I do not know -
+probably not.  However, as I have said, it is impossible to engage
+set theorists in an intelligent discussion about this, as they seem
+to be incapable of thinking outside their idiosyncratic representation
+of mathematical objects as epsilons and curly brackets.
+
+Before considering the iteration of functors, we need to have some
+categorical notion of "ordinal" and "transfinite".
+
+In anticipation of anyone else who may feel the need to point this out,
+let me say first that Andre' Joyal and Ieke Moerdijk studied ordinals
+as part of the original book on Algebraic Set Theory.  However, AST is
+a "sets and classes" formulation.
+
+I too studied (intuitionistic and categorical) ordinals at the same
+time (the mid 1990s),  but in an intrinsic (no classes) way.
+My first account of this,
+   @article{TaylorP:intso,
+    author  = {Taylor, Paul},
+    title   = {Intuitionistic Sets and Ordinals},
+    journal = {Journal of Symbolic Logic},
+    volume  = 61,
+    year    = 1996,
+    pages   = {705--744}}
+developed set theory as (well founded, extensional) epsilon-structure
+on a carrier, in the same way as we develop group theory as algebraic
+structure on a carrier.   It proved Mostowski's theorem - that any
+well founded structure has an extensional quotient - WITHOUT using
+Replacement.  The set theory textbooks say that this is necessary,
+because of their epsilontic representation.  It then developed set
+theory a la Zermelo, and various kinds of intuitionistic ordinals,
+providing a parallel approach to that in AST, with analogous results.
+(Intuitionistically, there are several different kinds of ordinals.)
+
+Later I studied "well founded coalegebras" and showed that this notion
+of INDUCTION implies RECURSION, in the form of coalgebra-to-algebra
+homomorphisms.  This is in Section 6.3 of my book,  and also in an
+unpublished paper that you can find on my web site at
+     www.PaulTaylor.EU/ordinals
+
+Two years ago, a certain categorist tried to pass this work off as his
+own, at the Nova Scotia category theory meeting and in the proceedings
+of "Computer Science Logic".  In doing so, he also demonstrated his
+ignorance of both set theory and category theory as foundations.
+I hereby warn him that, should he utter a single word on this subject
+in my hearing, I will identify him and publish full details of the
+events.
+
+My work on this topic was based on a different paper by Gerhard Osius
+from the one that Colin cited,
+    @article{OsiusG:catstc,
+     author  = {Osius, Gerhard},
+     title   = {Categorical Set Theory: a Characterisation
+                of the Category of Sets},
+     journal = {Journal of Pure and Applied Algebra},
+     volume  = 4,
+     year    = 1974,
+     pages   = {79--119},
+     review  = {MR 51/643}}
+which is also summarised in Section 9.2 of "Topos Theory" by Peter
+Johnstone.   It has also been taken up by Capretta, Uustalu and Vene,
+but in the context of functional programming, not set theory.
+If there are more recent developments based on the tradition of Osius
+then I would be pleased to hear about them.
+
+Briefly, we express an ordinal number  alpha  as a coalgebra
+      parse: alpha ---> D(alpha)
+in the category of posets,  where  D  is the covariant functor that
+yields the poset of lower subsets.   The reason for the name "parse"
+is given in my book;  in this case, its set-theoretic translation is
+      parse (alpha)  =  { beta | beta epsilon alpha }
+
+Now we are in a position to define transfinite iteration of a functor T.
+This has to be INDEXED (or FIBRED if you prefer),  ie it is applied,
+not to a single object of the category, but to an  alpha-indexed
+family of objects.   The display map    X--->alpha   whose beta'th
+fibre is the beta-fold iteration of T on the empty set  is characterised
+by the fact that it forms a pullback
+
+[beta:alpha, X[beta]]  --->  [U:D(alpha), colim {TX[gamma] | gamma in U]
+        |      |                              |
+        |      |                              |
+        |------+                              |
+        |                                     |
+        |                                     |
+        |                                     |
+        V               parse                 V
+     alpha ------------------------------> D(alpha)
+
+Considered in the category of all discrete fibrations over posets,
+those for which this is a pullback form reflective subcategory.
+More precisely, this subcategory is closed under limits, but it
+only has a reflector if the axiom scheme of replacement holds
+(say, with the covariant powerset for T).
+
+I don't actually think that the ordinals (ie totally ordered sets) as
+such are needed in this approach.  I think one could present it using
+proofs (of well formedness of terms in a type theory) instead.  Then
+each type theory has a version of Replacement that proves that the
+given theory is consistent.
+
+I got a brief and tiny glimpse of the awesome power of the axiom
+scheme of replacement in the later stages of writing my book, but that
+was ten years ago.  It appeared to say something like this: if you
+have some theory that is provably consistent, ie it has a free
+internal model, then it has a model that is a submodel of the universe
+in which you are working.  Or, "any script can be played out in real
+life".  Please forgive me if I cannot now say this very clearly -
+I found the idea rather frightening at the time, and it has long since
+been "swapped out" of my skull.
+
+Replacement was conceived by Dimitri Mirimanoff in 1917, and
+incorporated into Zermelo's axioms by Abraham Fraenkel in 1922.  This
+was well after the fuss over Russell's paradox (1900) had died down,
+but well before Godel and Turing provided a new generation of
+paradoxes in the 1930s.  So it may be that set theorists had let their
+guard down in the intervening decades.
+
+On Good Friday 1998, I (thought that I had) found a proof that ZF is
+inconsistent, but the system was resurrected on the third day.
+I published this "proof" as the final exercise of my book and on
+"categories" on 1 April 1999; this posting has since being doing the
+rounds, and I got a reply a couple of years ago.  I am certainly not
+going to spend my time looking for contradictions in set theory, but
+I find it amazing that anyone should be so confident that Replacement
+is safe to work with.  I also think that it would do Mathematics a great
+deal of good if someone were to find an inconsistency in ZFC.
+
+Paul Taylor
+
+
+
+
+

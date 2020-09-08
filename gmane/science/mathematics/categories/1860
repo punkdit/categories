@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Charles Wells <charles@freude.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Unlabeled graphs
+Date: Thu, 15 Feb 2001 15:31:44 -0500
+Lines: 93
+Approved: news@gmane.org
+Message-ID: <4.1.20010215151228.009f0500@mail.oberlin.net>
+References: <3A88BE0C.C3CA8E04@kestrel.edu> <200102141840.NAA09452@cogito.math.uqam.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241018157 852 80.91.229.2 (29 Apr 2009 15:15:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:57 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Feb 15 22:30:54 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f1G23uZ00736
+	for categories-list; Thu, 15 Feb 2001 22:03:56 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: cwells@mail.oberlin.net
+X-Mailer: QUALCOMM Windows Eudora Pro Version 4.1 
+In-Reply-To: <200102141840.NAA09452@cogito.math.uqam.ca>
+Original-References: <3A88BE0C.C3CA8E04@kestrel.edu>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 42
+Status: O
+Content-Length: 4171
+Original-Lines: 92
+Xref: news.gmane.org gmane.science.mathematics.categories:1860
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1860>
+
+This is in reply to Eduardo Dubuc (quoted after the reply).  I have a major
+point and a minor point.
+
+Minor point: The phrase "labeled graph" usually allows different nodes to have
+the same label.  Eduardo clearly intends, however, that the labeling be
+injective.  (In the usual sense there are n^n labels, not n!).  This is only a
+matter of terminology.  My answer refers to injective labeling as he intended. 
+(Better terminology for his purposes would be to call them NAMED nodes.)
+
+Major point:  Any way you store an unlabeled graph in a computer will involve a
+memory location for each node, and so introduces a labeling, indeed a total
+ordering, on the nodes.  However, a high level language with pointers such as C
+can be used to describe the structure without any names being given
+explicitly.  The structure head will point to a node, which will have a pointer
+to another node, etc, and the program text will not mention all the nodes
+directly.  For the purpose of computing with the graph, you can have the
+program traverse the nodes without naming them.  This is a commonly used
+technique.  (There will have to be pointer structures for the edges with
+pointers to the two nodes each is incident on.)  When the program is compiled,
+the nodes are made to correspond to memory locations but the locations are
+hidden from the user.  It seems to me that this preserves the psychology of a
+drawing with no labels on the nodes.
+
+You can respond that each node has an implicit label, essentially an integer,
+which is the number of pointers you have to dereference to get to the node. 
+But that is just like saying that in the drawing of the graph on a piece of
+paper, each node has an implicit label, namely its location on the paper.  If
+you allow implicit labels like this the drawing has them and so does the graph
+in the computer.  If you don't allow them then neither has labels.
+
+Let me forestall someone bringing up a red herring:  The coordinates of the
+node on the paper depend on an arbitrary choice of coordinate system, unlike
+the number of pointers you need to get to the stored node in the computer. 
+This argument, if someone makes it, is based on a misreading of what I said.  I
+said each node is labeled by its location on the paper.  I didn't say the
+coordinates of the location.  The location itself is the label.  (But how do
+you talk about it?  You POINT to it!)
+
+--Charles Wells
+
+
+>by an unlabeled graph i mean the drawing of a graph, in paper, say, or a
+>graph buildt in space, the skeleton of a building for example. It has
+>vertices and edges, and everybody knows what it is. Mathematically you
+>could say a symetric relation on its (finete) set of vertices. But not
+>quite so ...
+>
+>If you have n vertices, you have n! different labeling. Each labeling
+>gives you a different labeled graph.
+>
+>The minute you have a set (in the mathematical sense) of vertices, you
+>have a labeling. Namely, the elements of that set are the labels!. So,
+>with a symetric relation (in the mathematical sense) what you got is a
+>labeled  graph. Not an unlabeled graph !.
+>
+>And you become well aware of this fact when you want to put a concrete
+>unlabeled graph (say, the skeleton of a  building) inside a computer !!
+>
+>REMEMBER I rise the question on unlabeled graph related to the question
+>that we were discussing:
+>
+>INEVITABILITY OF NAMING (IN MATHEMATICS) 
+> (naming is not the same as labeling ?)  
+>
+>>> well, unlabeled graph has to be a quotient by an equivalent relation 
+>...
+>
+>I said that. It seems possible. I explain now the  ...
+>
+>  Given two graphs R, S (symetric relations) on a finite set X (of 
+>vertices), consider the natural action of the symetric group of X on the
+>power set of X x X. Then, R =~ S iff they are in the same orbit. The
+>elements of the quotient set are the unlabeled graphs.
+>
+>    e.d.
+>
+>
+>
+>
+>
+>
+
+
+
+Charles Wells, 105 South Cedar St., Oberlin, Ohio 44074, USA.
+email: charles@freude.com. 
+home phone: 440 774 1926.  
+professional website: http://www.cwru.edu/artsci/math/wells/home.html
+personal website: http://www.oberlin.net/~cwells/index.html
+NE Ohio Sacred Harp website: http://www.oberlin.net/~cwells/sh.htm
+
+
+

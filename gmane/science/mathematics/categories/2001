@@ -1,0 +1,89 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Selinger <selinger@Theory.Stanford.EDU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: co-iteration?
+Date: Wed, 6 Jun 2001 23:48:08 -0700 (PDT)
+Lines: 54
+Approved: news@gmane.org
+Message-ID: <200106070648.XAA22162@dead.stanford.edu>
+References: <014201c0ee9f$053516f0$060a000a@AVILCIUS>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018273 1666 80.91.229.2 (29 Apr 2009 15:17:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:17:53 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Jun  7 04:27:40 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f576vS318923
+	for categories-list; Thu, 7 Jun 2001 03:57:28 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <014201c0ee9f$053516f0$060a000a@AVILCIUS> from "Al Vilcius" at Jun 06, 2001 11:40:31 AM
+X-Mailer: ELM [version 2.5 PL1]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 11
+Status: O
+Content-Length: 2331
+Original-Lines: 53
+Xref: news.gmane.org gmane.science.mathematics.categories:2001
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2001>
+
+To put it in a nutshell, the dual of iteration is recursion. You start
+with a function f:AxB-->A, and you obtain a function f":B-->A
+satisfying B -f"x1-> AxB -f-> A = B -f"-> A. This is precisely dual to
+the situation you describe. 
+
+In a programming language context, much more can be said. Andrzej
+Filinski observed in his 1989 Master's thesis that call-by-*name*
+recursion is dual to call-by-*value* iteration. In the presence of
+certain control operators, call-by-value iteration is in turns
+inter-definable with call-by-value recursion. The typing of these
+statements is as follows:
+
+1) Call-by-name recursion:   AxB -> A
+                            ----------
+                              B -> A
+
+2) Call-by-value iteration:  A -> A+B
+                            ----------
+                              A -> B
+
+3) Call-by-value recursion:  (A->C)xB -> (A->C)
+                            --------------------
+                                 B -> (A->C)
+
+Here, in 1), AxB stands for a categorical product. In 2), A+B is a
+categorical co-product. However, in 3), the "product" type AxB is not
+a categorical product (not even a tensor product - in fact it is a
+premonoidal structure). And the "function space" A->C is not that of a
+cartesian (or monoidal) closed structure. Thus, there is a bit more to
+call-by-value recursion than meets the eye.
+
+All this is explained very nicely (both categorically and from a
+lambda calculus point of view) in a recent paper by Masahito Hasegawa
+and Yoshihiko Kakutani. The paper appeared in FoSSaCS 2001, and it is
+available from Hasegawa's website
+(http://www.kurims.kyoto-u.ac.jp/~hassei/papers/). In particular, this
+paper discusses precisely which axioms to require of the operations
+1), 2), and 3), and it details the duality between 1) and 2) and the
+equivalence of 2) and 3). 
+
+I may add, although it is not directly in response to the original
+question, that the duality between call-by-name and call-by-value can
+already be observed even in languages that don't have recursion or
+iteration. The duality requires the presence of a certain kind of
+control operator. This duality also appears in Filinski's master's
+thesis, and its category theoretic meaning is explained in my
+paper "Control Categories and Duality"
+(http://theory.stanford.edu/~selinger/papers.html).
+
+-- Peter
+
+
+
+

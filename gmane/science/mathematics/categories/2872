@@ -1,0 +1,64 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <Andrej.Bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Question on rewriting and program specification
+Date: Sun, 13 Nov 2005 19:12:17 +0100
+Lines: 34
+Approved: news@gmane.org
+Message-ID: <43778201.5060703@andrej.com>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018955 6178 80.91.229.2 (29 Apr 2009 15:29:15 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:29:15 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Nov 14 16:39:04 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 14 Nov 2005 16:39:04 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EbkwK-0001yH-8K
+	for categories-list@mta.ca; Mon, 14 Nov 2005 16:28:32 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 1506
+Original-Lines: 33
+Xref: news.gmane.org gmane.science.mathematics.categories:2872
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2872>
+
+Jacques Carette wrote:
+> Of course, if you happen to know exactly
+> which semi-decision procedures are being used, you can fool them and get
+> the system to either go into an infinite loop or give a wrong answer.
+> But that requires a huge amount of knowledge to do so.  The average user
+> would be unable to manufacture such examples.
+
+I have a rather unfortunate experience with "average users" who get
+wrong answers from CAS's, namely our undergraduate math majors. In their
+first-year analysis course they learn how to compute limits. Invariably,
+they are given some limits which Mathematica gets wrong, e.g.:
+
+Limit[((1 + 4 x^2)^(1/4) - (1 + 5 x^2)^(1/5))/(a^(-x^2/2) - Cos[x]),
+      x -> 0]
+
+The answer is 0, _except_ when the parameter a equals e, in which case
+the answer is 6. Yes, this is a nasty limit pulled out of a hat, but it
+is precisely the sort of thing we test our students on. It is rather
+disappointing that Mathematica falls into exactly the same sort of trap
+as the average student.
+
+Another example is the use of l'Hospital rule, which is used by every
+CAS. There is a side condition which is not checked by them, which makes
+them give wrong answers. (The side condition is very nasty to check,
+namely, whether the zero of a derivative is isolated.)
+
+The situation is even worse when engineers and physicsts use CAS. They
+trust them blindly (I suspect). One day they're going to build a nuclear
+power plant based on a faulty limit computed by Mathematica or Maple.
+
+Andrej Bauer
+
+
+

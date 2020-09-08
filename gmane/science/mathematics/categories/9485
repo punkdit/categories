@@ -1,0 +1,136 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Paul Blain Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: V-included categories
+Date: Mon, 1 Jan 2018 22:46:11 +0000
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <E1eWMgJ-00087Q-Hf@mlist.mta.ca>
+References: <E1eW4Dd-0003rd-K8@mlist.mta.ca>
+Reply-To: Paul Blain Levy <P.B.Levy@cs.bham.ac.uk>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1514899874 28702 195.159.176.226 (2 Jan 2018 13:31:14 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Tue, 2 Jan 2018 13:31:14 +0000 (UTC)
+Cc: "Categories list\" <Categories list>" <categories@mta.ca>
+To: edubuc@dm.uba.ar
+Original-X-From: majordomo@mlist.mta.ca Tue Jan 02 14:31:10 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1eWMeo-0006sU-4x
+	for gsmc-categories@m.gmane.org; Tue, 02 Jan 2018 14:31:06 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45886)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1eWMhi-0006wC-9b; Tue, 02 Jan 2018 09:34:06 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1eWMgJ-00087Q-Hf
+	for categories-list@mlist.mta.ca; Tue, 02 Jan 2018 09:32:39 -0400
+In-Reply-To: <e962e844-fa2d-5a56-e3e7-be308a483c12@dm.uba.ar>
+Content-Language: en-US
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9485
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9485>
+
+Dear Eduardo,
+
+On 01/01/18 21:14, edubuc@dm.uba.ar wrote:
+> Have you considered the following at the very begining of SGA4:
+>
+> Remarque 1.1.2. ??? Soit D une cat??gorie poss??dant les propri??t??s
+> suivantes :
+> (C1) L???ensemble ob(D) est contenu dans l???univers U .
+> (C2) Pour tout couple (x, y) d???objets de D, l???ensemble HomD(x, y) est
+> un ??l??ment de U .
+>
+> (Les cat??gories usuelles construites ?? partir d???un univers U poss??dent
+> ces deux propri??t??s: U -Ens, U -Ab,. . .).
+>
+> Soit C une cat??gorie appartenant ?? U . Alors la cat??gorie
+> Fonct(C, D) ne poss??de pas en g??n??ral les propri??t??s (C1) et (C2). Par
+> exemple la cat??gorie Fonct(C,U-Ens) ne poss??de aucune des propri??t??s
+> (C1) et (C2).
+Thanks for your reply but I am mystified by this statement in SGA4.?? It
+appears to me Fonct(C,U-Ens) does satisfy both (C1) and (C2), so I must
+be missing something.?? Here is my proof; please would you point out
+where I'm going wrong?
+
+Firstly: C is in U, so ob C and every object, every homset and every
+morphism of C are in U, by transitivity of U.
+
+For (C1), we must show that any functor F from C to U-Ens is in U.?? Any
+such F is an ordered pair (ob F, mor F).??
+
+- ob F is a set of ordered pairs (c,x) where c is a C-object and x is in
+U. Such an ordered pair is in U.?? So ob F is a subset of U and its
+cardinality is that of ob C so ob F is in U (Proposition 7 in the
+Appendix of SGA4, p98).
+
+- mor F is a set of triples (c,d,p) where c and d are C-objects and p is
+a map from C(c,d) to Fc->Fd hence a subset of C(c,d) * (Fc -> Fd).?? And
+Fc and Fd are in U, so Fc -> Fd is too by the Corollary to Proposition 6
+(on p98).?? So C(c,d) * (Fc -> Fd) is in U, so p is in U, so (c,d,p) is
+in U.?? So mor F is a subset of U, and its cardinality is that of (ob
+C)*(ob C) which is in U.?? By Proposition 7, mor F is in U.
+
+In conclusion F = (ob F, mor F) is in U.
+
+For (C2), let F and G be functors from C to U-Ens.?? The set of natural
+transformations F -> G is a subset of Prod_{c in ob C} (Fc --> Gc).?? For
+any c in C, we know that Fc and Gc are in U, so Fc -> Gc is in U.?? So by
+the Corollary to Proposition 6, Prod_{c in ob C} (Fc -> Gc) is in U, so
+the set of natural transformations F -> G is in U.??
+
+Best regards,
+Paul
+
+
+
+
+>
+> C???est ce qui justifie la d??finition adopt??e de U-cat??gorie, de
+> pr??f??rence ?? la notion plus restrictive par les conditions (C1) et
+> (C2) ci-dessus.
+>
+> best?? e.d.
+>
+> El 1/1/18 a las 10:10, Paul Blain Levy escribi??:
+>>
+>> Hi,
+>>
+>> Let V be a Grothendieck universe.?? A "V-set" is an element of V, and a
+>> "V-class" is a subset of V.
+>>
+>> Say that a category C is "V-included" when it has the following two
+>> properties.
+>>
+>> (1) ob C is a V-class.
+>>
+>> (2) C(x,y) is a V-set for all x,y in ob C.
+>>
+>> The advantage of V-inclusion over local V-smallness (i.e. condition (2)
+>> alone) is that V-included categories are W-small for every universe W
+>> greater than V, whereas locally V-small categories are not, in general.
+>>
+>> Furthermore, all the standard categories constructed from V are
+>> V-included.?? (Except for the ones that are not even locally V-small,
+>> like the category of V-included categories.)
+>>
+>> Is there a standard name for V-inclusion?
+>>
+>> Paul
+>>
+>>
+>>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,164 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt09@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Dedekind versus Cauchy reals
+Date: Mon, 16 Feb 2009 22:09:21 +0000
+Lines: 131
+Approved: news@gmane.org
+Message-ID: <E1LZgmE-0003DQ-Rn@mailserv.mta.ca>
+Reply-To: Paul Taylor <pt09@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1234944101 27651 80.91.229.12 (18 Feb 2009 08:01:41 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Feb 2009 08:01:41 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Feb 18 09:02:52 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LZhON-0002rk-EQ
+	for gsmc-categories@m.gmane.org; Wed, 18 Feb 2009 09:02:51 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LZgmE-0003DQ-Rn
+	for categories-list@mta.ca; Wed, 18 Feb 2009 03:23:26 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:97
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/97>
+
+Thomas Streicher said, in response to Andrej Bauer,
+> In case of Cauchy sequences I need the modulus of convergence to know
+> when I am close enough. In case of Dedekind reals that's not needed
+> PROVIDED the left and the right set are given by enumerations of
+> rationals.
+
+You still need a condition with the same objective.  It is given
+by LOCATEDNESS:
+    for any  d<u, either d is in the lower cut, or u is in the upper cut
+This means that, if you so far know that the number is between d0 and
+u0,
+ie that d0 is in the lower cut and u0 in the upper one, and want another
+three decimal (ten binary) places, you need to bisect [d0,u0] 11 times.
+
+> I "just" have to wait till close enough approximations from left
+> and right have been enumerated.   But is it right that in your
+> implementation the left and right cuts are given by ENUMERATIONS
+> of its elements and now via semidecision procedures? I guess so.
+> Well, but when considering Dedekind cuts this way it essentially
+> boils down to introducing reals as interval nestings (as done in
+> High School sometimes).
+
+No -- you're trying to force Dedekind cuts (and real computation in
+general) into the straitjacket of Cauchy sequences.   This is part
+of the longstanding prejudice in favour of numbers and against logic.
+
+If you GENUINELY take Dedekind cuts on board, you can start thinking
+of computation using GEOMETRY and other disciplines.
+
+The fragment of the ASD calculus for R has a syntax with
+  - types  N, R, Sigma and Sigma^R
+  - arithmetic operations   +  -  *
+  - arithmetic relations    <  >  !=
+  - the usual stuff on N too
+  - logical operations   T   F  /\  \/
+  - existential quantifiers  over  N, R, open intervals, closed intervals
+    (with real endpoints),  ie with types  Sigma^N-->Sigma  etc
+  - universal quantifiers over closed bounded intervals
+  - definition by description for N
+  - Dedekind cuts for R
+  - primitive recursion over N at all types.
+
+The primitive calculation is therefore a LOGICAL question,
+  - existentially or universally quantified over some ranges
+    of the variables
+  - of an arithmetic comparison ( > OR < )
+  - of two polynomials.
+
+This suggests using SEMI-ALGEBRAIC GEOMETRY,  although I do not know
+enough about this subject to see how to use it.
+
+A quick way that answers a universally quantified question
+surprisingly often is just to evaluate the polynomials using
+interval (Moore) arithmetic.
+
+Another technique is to split the range of one of the variables.
+
+A much more powerful technique uses the INTERVAL Newton algorithm.
+The "classical" Newton algorithm DOUBLES THE NUMBER OF BITS OF
+PRECISION at each iteration -- once you have got below the "typical
+length" of the problem.  Above this, it behaves chaotically.
+The interval Newton algorithm "knows" how to behave -- like
+interval halving when the problem is essentially combinatorial,
+and like the classical algorithm when we're below the typical length.
+
+Whereas UNIVERSALLY quantified questions can often be answered
+using "ordinary" (Moore) interval arithmetic,  EXISTENTIAL ones
+are handled in a similar way, but using "back-to-front" intervals,
+whose arithmetic was originally formulaed by Edgar Kaucher.
+
+Andrej's program uses forward and backward intervals to evaluate
+Dedekind cuts, but does not at the moment use the interval Newton
+algorithm,
+
+Vaughan Pratt said, again in response to Andrej,
+> If everything can be related to interval arithmetic in one way or
+> another, why not take interval arithmetic itself as the gold standard
+> for the constructive reals?  The Edalat-Escardo-Potter domain-theoretic
+> analysis of interval arithmetic struck me as sufficiently canonical
+> that
+> I don't understand why all the alternatives aren't being evaluated
+> relative to that one.  Are there alternatives that compensate for some
+> shortcoming of interval arithmetic as understood through the lens of
+> domain theory?
+
+In previous ages, mathematicians of the day "standardised" on unit
+fractions or Roman numerals.   At one conference that I attended,
+a whole afternoon was given over to a team of interval analysts who
+wanted to "standardise" their subject, in the bureaucratic sense of
+getting some document accepted by the ISO.   One of the speakers did
+some dreadful mathematics that depended heavily on decidable choices,
+another presented some "software engineering" that was -- even for
+that subject -- dogmatic and outdated, whilst the third gave a (good)
+political speech.
+
+If you read what most interval analysts write, it is ad hoc and
+wrong-headed.   There is, in particular, a fundamental error in
+regarding the interval [d,u] as the closed set of numbers BETWEEN
+d and u.   Amongst other things, this makes it impossible to understand
+Kaucher arithmetic (back-to-front intervals).   Another widespread
+belief is that interval arithmetic is some wonderful new algebraic
+system in the tradition of the complex numbers and quaternions.
+
+A much simpler way of understanding the interval [d,u],  which is
+both constructive and compatible with Kaucher arithmetic, is as
+a DEDEKIND PSEUDO-CUT.  The two halves consist of the numbers that
+are SO FAR KNOWN to be respectively less and greater than the number
+being calculated.   This representation is much more natural, in
+that advancing calculation and the Scott topology are in the same
+sense as increasing the sets D and U, whereas the closed set [d,u]
+becomes smaller.   Essentially, the two parts D and U then lead
+their own separate lives, each belonging to an "extended line"
+with the Scott topology.  It's actually very simple.
+
+Paul Taylor
+
+PS.   I have flagged Toby Bartels' question,
+> to what extent does ASD have inductive and coinductive objects,
+to answer after the current thread about the reals, Cantor space,
+the Conway numbers, constructivity and toposes has died down.
+
+
+PPS.   My website has now gone live on a new server at www.PaulTaylor.EU
+whilst the old one is still at www.monad.me.uk.   Please tell me
+about missing links and server errors.   The "monad" address will
+become a redirection in a couple of weeks' time, and will be
+discontinued next year.
+
+
+
+

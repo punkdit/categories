@@ -1,0 +1,122 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: terminology
+Date: Sun, 30 May 2010 13:51:56 -0700
+Lines: 85
+Approved: news@gmane.org
+Message-ID: <E1OJEJc-00070z-Qc@mailserv.mta.ca>
+References: <E1OEt8E-00071o-4W@mailserv.mta.ca> <E1OHd72-0005sT-Uz@mailserv.mta.ca> <E1OIjSg-0006Le-O5@mailserv.mta.ca> <A46C7965-B4E7-42E6-AE97-6C1D930AC878@cs.nott.ac.uk>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1275350304 15507 80.91.229.12 (31 May 2010 23:58:24 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 31 May 2010 23:58:24 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Tue Jun 01 01:58:22 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OJEs6-0006bR-Oh
+	for gsmc-categories@m.gmane.org; Tue, 01 Jun 2010 01:58:18 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OJEJc-00070z-Qc
+	for categories-list@mta.ca; Mon, 31 May 2010 20:22:40 -0300
+Content-Disposition: inline
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5892
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5892>
+
+Thorsten Altenkirch wrote:
+
+>Toby Bartels wrote:
+
+[I suggested formalising category theory without equality of objects
+in intensional Martin-L=F6f type theory, Coq, or SEAR without equality]
+
+>I don't know any reasonable formalisation in Intensional Type Theory.
+>People usually assume that hom sets are a setoid but objects aren't.
+>This means that constructions like arrow categories are not available.
+>To avoid this one would have to formalize explicitely what is a family
+>of setoids indexed over a setoid. After this it is hard to see the
+>category theory...
+
+Why do you say that one cannot construct arrow categories?
+We need only dependent sums, which Martin-L=F6f has in his type theory,
+to form the type of all morphisms of a given category C.
+We cannot compare these for equality, nor do we want to.
+What we do need to compare for equality are commutative squares
+(which are the morphisms in the arrow category) with given corners
+(actually, even with two given parallel sides), and this we can do.
+
+To be explicit, let Ob be the type of objects of the category C;
+given x, y: Ob, let x -> y be the type of morphisms from x to y.
+Given further two morphisms f, g: x -> y, we have a proposition f =3D g.
+(Martin-L=F6f identifies propositions with types, but Coq does not,
+so I say "proposition" so you can interpret it in either system.)
+Then of course, there are operations and axioms that I will skip,
+except to introduce ; as notation for composition in diagrammatic order:
+f: x -> y, g: y -> z |- f;g: x -> z.
+
+Then the type of objects of the arrow category of C
+is sum_{x:Ob} sum_{y:Ob} x -> y, a dependent sum of dependent sums;
+a typical element of this type is (x,y,f), where x,y: Ob and f: x -> y.
+Given two objects (x,y,f) and (u,v,g) of the arrow category,
+the type of morphisms from (x,y,f) to (u,v,g) is
+sum_{a:x->u} sig_{b:y->v} f;b =3D a;g. (*)
+(Again, I say "sig" to keep things correct in Coq,
+since then f;b =3D a;g is a proposition rather than a type;
+this is the same as a sum to Martin-L=F6f.)
+A typical element of this type is (a,b,p),
+where p is a proof of the relevant equality.
+
+A set theorist might well write (*) above as
+{ (a,b) | a: x -> u, b: y -> v, f;b =3D a;g };
+they do not refer to p, since set theorists accept proof irrelevance.
+They would then be finished, but as type theorists,
+we still need to define when parallel morphisms are equal.
+We do this by imposing proof irrelevance in the definition;
+that is, the definition of equality makes no reference to p.
+Specifically, given parallel morphisms (a,b,p) and (c,d,q),
+both from (x,y,f) to (u,v,g) in the arrow category,
+we define the proposition that they are equal
+to be the conjunction of a =3D c and b =3D d.
+Notice that this makes sense, since a,c: x -> u and b,d: y -> v.
+So we can define that equality which we need in the arrow category.
+
+To sum up:  An object in the arrow category of C is (x,y,f),
+where x and y are objects of C and f: x -> y is a morphism of C.
+A morphism from (x,y,f) to (u,v,g) in the arrow category of C
+is (a,b,p), where a: x -> u, b: y -> v, and p: a;g =3D f;b.
+Finally, two such morphisms (a,b,p) and (c,d,q) are equal
+if and only if a =3D c and b =3D d.  (I leave it as an exercise
+for the reader to define the operations and prove the axioms
+that define the arrow category of C as a category.)
+
+If you find the summary above a bit too wordy, say
+  A morphism from (x,y,f) to (u,v,g) in the arrow category of C
+  is (a,b), where a: x -> u and b: y -> v such that a;g =3D f;b.
+That we do not give a name to the proof that a;g =3D f;b
+makes it obvious what the definition of equality of morphisms should be,
+so we leave it out as an abuse of language, or a convention of definition=
+.
+If it still seems odd that it is even possible to give a proof a name,
+well, that is a feature of Martin-L=F6f type theory and Coq
+that you can ignore (just as I ignore the feature of ZFC
+that it is possible to ask whether two arbitrary sets are equal),
+but you can also use SEAR without equality to avoid even that.
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

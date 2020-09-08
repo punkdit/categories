@@ -1,0 +1,89 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Where does the term monad come from?
+Date: Sun, 12 Apr 2009 11:30:45 +1000
+Lines: 56
+Approved: news@gmane.org
+Message-ID: <E1Lszo8-0005d0-BZ@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1239546320 28211 80.91.229.12 (12 Apr 2009 14:25:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 12 Apr 2009 14:25:20 +0000 (UTC)
+To: Thorsten Altenkirch <txa@Cs.Nott.AC.UK>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Sun Apr 12 16:26:37 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Lt0do-0003aA-ST
+	for gsmc-categories@m.gmane.org; Sun, 12 Apr 2009 16:26:37 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Lszo8-0005d0-BZ
+	for categories-list@mta.ca; Sun, 12 Apr 2009 10:33:12 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:244
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/244>
+
+Dear Thorsten,
+
+I'm not familiar with the notation that you are using, although I can
+guess what is meant in some cases
+
+
+>
+> I am not sure I completely understand your comments. I guess it may be
+> helpful to be more precise:
+>
+> F : FinSet -> Set
+> F A = Real -> A
+
+I assume you mean A->Real. It's true that the monad for vector spaces sends
+a finite set A to R^A, which can be seen as the set of functions from A to
+R.
+
+For a general set A (not necessarily finite) FA is the set of functions from
+A to R of finite support. Equivalently, FA is the set of formal finite
+linear combinations of elements of A.
+
+> I suspect my eta and >>= give then rise to a monad on Set? However, I
+> don't see how to do this if the vector spaces are not finite.
+
+Yes, this gives a monad on Set whose algebras are vector spaces, not
+necessarily finite dimensional. I'm not sure what it is you claim to be
+doing when you "do this". In any case there is a monad on Set whose
+algebras are vector spaces; there is not a monad on Set whose algebras are
+finite dimensional vector spaces. You can see this last statement by noting
+that the category of algebras for a monad on Set is always cocomplete.
+
+>
+> Btw, I only used this as an example. My question was rather wether
+> people have studied monoids in categories of functors which are not
+> endofunctors. I believe this notion is useful in functional
+> programming and Type Theory as a natural generalisation of the notion
+> of a monad.
+>
+
+Yes, monoids in categories of functors are useful concepts. Of course to
+define a monoid you need a monoidal structure on the ambient category. There
+may be many possibilities, and for some of them the corresponding notion of
+monoid looks more like a monad than for others. For some monoidal structures
+one should really think of the monoids as not generalizations of monads, but
+special cases of monads. Your example of finitary monads is a good example.
+So are operads. There are more examples in the paper "notions of Lawvere
+theory" available from my home page or as arXiv:0810.2578.
+
+Regards,
+
+Steve Lack.
+
+
+
+
+

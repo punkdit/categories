@@ -1,0 +1,84 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Slick proof that f (x) (g+h) = (f (x) g) + (f (x) h) in a monoidal category with 0, biproducts and duals
+Date: Sun, 13 Oct 2013 18:05:27 +1100
+Lines: 45
+Approved: news@gmane.org
+Message-ID: <E1VVhqp-00048L-Hh@mlist.mta.ca>
+References: <E1VUm9A-0000cG-AN@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: ger.gmane.org 1381756100 14244 80.91.229.3 (14 Oct 2013 13:08:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 14 Oct 2013 13:08:20 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: Jamie Vicary <jamievicary@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Mon Oct 14 15:08:25 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VVhsm-000463-9F
+	for gsmc-categories@m.gmane.org; Mon, 14 Oct 2013 15:08:24 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:40745)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VVhqn-0005sN-Ah; Mon, 14 Oct 2013 10:06:21 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VVhqp-00048L-Hh
+	for categories-list@mlist.mta.ca; Mon, 14 Oct 2013 10:06:23 -0300
+In-Reply-To: <E1VUm9A-0000cG-AN@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7886
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7886>
+
+Dear Jamie,
+
+Here is one possible proof. The 2-category of categories with
+biproducts and zero objects and functors preserving them is
+biequivalent to the 2-category of CMon-enriched categories with finite
+coproducts and arbitrary CMon-functors between them (because finite
+coproducts are absolute in the CMon-enriched world).
+
+If C is a category with biproducts, a zero object, and monoidal with
+left and right duals, then it is in particular monoidal biclosed;
+whence the tensor product A (x) (-) : C ----> C preserves colimits, so
+in particular biproducts and the zero object. Via the above
+biequivalence, it follows that A (x) (-) : C ---> C is a CMon-enriched
+functor for each A. Thus given a map f : A --->B and objects X,Y in C,
+we have mappings
+
+C(X,Y) ---> C(A(x)X, A(x)Y) ---> C(A(x)X, B(x)Y)
+
+in CMon, whose underlying mapping in Set sends g : X ---> Y to f (x) g
+: A(x)X --> B(x)Y. That these mappings lift to CMon expresses
+precisely the distributivity you state above.
+
+Best,
+Richard
+
+
+On 11 October 2013 23:24, Jamie Vicary <jamievicary@gmail.com> wrote:
+> Hi,
+>
+> In a category with a zero object and biproducts we obtain a unique
+> enrichment in commutative monoids, which we will write as +. If the
+> category is also monoidal with left and right duals for objects, then
+> the tensor product distributes over +, in the sense that
+>     f (x) (g+h) = (f (x) g) + (f (x) h)
+> for all morphisms f,g,h with g and h in the same hom-set.
+>
+> I have a proof of this but it is a bit clunky, and rather long. Can
+> anyone give a beautiful one?
+>
+> Best wishes,
+> Jamie.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

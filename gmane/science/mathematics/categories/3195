@@ -1,0 +1,171 @@
+Path: news.gmane.org!not-for-mail
+From: "John Baez" <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: re: fundamental theorem of algebra
+Date: Thu, 30 Mar 2006 20:01:48 -0800 (PST)
+Lines: 138
+Approved: news@gmane.org
+Message-ID: <E1FPSsL-0004VM-SJ@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019149 7660 80.91.229.2 (29 Apr 2009 15:32:29 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:32:29 +0000 (UTC)
+To: categories@mta.ca (categories)
+Original-X-From: rrosebru@mta.ca Fri Mar 31 19:24:20 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 31 Mar 2006 19:24:20 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1FPSsL-0004VM-SJ
+	for categories-list@mta.ca; Fri, 31 Mar 2006 19:17:53 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 141
+Status: O
+Content-Length: 5302
+Original-Lines: 137
+Xref: news.gmane.org gmane.science.mathematics.categories:3195
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3195>
+
+Dear Vaughan -
+
+You write:
+
+> As a case in point, just now I checked a relatively recent Brittanica
+> article on algebra (1987 ed.), which states flatly (p.260a) that "No
+> elementary algebraic proof of [the FTAlg] exists, and the result is not
+> proved here."  (Not even "is known" but "exists"; an expository article
+> should not assume that the reader knows the jargon meaning of this term
+> as "exists in the literature".)  The authors taking responsibility for
+> this claim were Garrett Birkhoff, Marshall Hall, Pierre Samuel, Peter
+> Hilton, and Paul Cohn.  They go into detail to show that z^n = a has n
+> roots, starting with the geometry of addition and multiplication in the
+> Argand diagram, so it's not as if their exposition was at too elementary
+> a level to talk in terms of mapping circles, or that "algebraic" ruled
+> out simple geometric arguments.
+>
+> I submit their nonexistence claim as prima facie evidence for my claim
+> that the very few who knew this argument weren't even letting the likes
+> of Birkhoff, Hall, etc. in on it, let alone "the rest of us."
+
+I really doubt those authors were unaware of the topological proof
+of the fundamental theorem of calculus in 1987.  After all, it's
+exercise H.5 in chapter 1 of Spanier's "Algebraic Topology", copyright
+1966.  This book used to be the canonical textbook on algebraic
+topology, and Peter Hilton is a darn good algebraic topologist.
+
+I think I learned this topological proof sometime in grad school,
+around 1986.  So, I don't think it was any sort of secret by then.
+
+I don't know what counts as an "elementary algebraic proof", but
+people often say that there is no "purely algebraic proof" of the
+fundamental theorem of calculus.   After all, this theorem is about
+the complex numbers, which are often defined in terms of the real
+numbers, which are often defined as a topological completion of the
+rational numbers.  I hope this is what the Encyclopedia article
+was trying to say.
+
+There are some so-called "algebraic proofs":
+
+http://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra
+
+that use a bare minimum of topology.  These proofs tend to have
+a purely algebraic core, namely "if odd-degree polynomials
+and the polynomial x^2 + 1 have roots in some field, this
+field is algebraically closed".  But, they use the intermediate
+value theorem for continuous functions f: [0,1] -> R to show
+that C meets these conditions.  So, I wouldn't call them "purely
+algebraic".
+
+It's sort of ironic that the so-called "fundamental theorem of
+algebra" doesn't have a purely algebraic proof.
+
+Gauss is famous for having given a proof of the fundamental
+theorem of algebra in his dissertation back in 1799.  On the
+St. Andrews math history website they write:
+
+  Gauss's proof of 1799 is topological in nature and has some
+  rather serious gaps.  It does not meet our present day
+  standards required for a rigorous proof.
+
+They don't say how the proof went.  So, I decided to find out!
+I was hoping I could irritate you by showing that it was just
+the topological proof you claim is so new.  There's a discussion
+of it here:
+
+Hans Willi Siegberg
+Some Historical Remarks Concerning Degree Theory,
+American Mathematical Monthly, 88 (1981), 125-139.
+(Available on JSTOR, or via Google Scholar.)
+
+As the title hints, Gauss' proof uses ideas closely related
+to the winding number.  Unfortunately, it's slightly different
+than the proof you like.
+
+The idea is to take a polynomial of degree n, say
+
+P: C -> C
+
+break it into real and imaginary parts
+
+P = U + iV,
+
+see where they vanish:
+
+S = {z: U(z) = 0}
+T = {z: V(z) = 0}
+
+and show that the intersection of S and T is nonempty.
+
+Gauss argues that far from the origin, S and T are smooth curves.
+Because the leading term of the polynomial dominates the rest,
+each of these curves intersects any sufficiently large circle
+transversely at n points.
+
+If we go around the circle these intersection points alternate:
+first a point in S, then one in T, then one in S, and so on.
+
+Moreover, the curves I'm talking about can't just disappear as we
+follow them into the disk, since they separate the region where U
+(resp. V) is positive from the region where it's negative.  They
+may become singular, or intersect, but they can't just end!
+
+"So", S and T must intersect somewhere.
+
+This is true, but it takes more topology to prove it rigorously than
+was available to Gauss.
+
+Gauss knew his proof wasn't completely rigorous, so he invented some
+other arguments.  The "winding number" idea you like is lurking in
+Gauss' third proof, which he wrote up in 1816 - but he only gave this
+winding number proof explicitly in 1840.  According to Siegberg,
+
+  Indeed, in a lecture "Theorie der imaginaeren Groessen (1840),
+  Gauss mentioned [see Fraenkel, 1922] that his third proof of
+  the fundamental theorem of the algebra originated from his first
+  one, and he gave the function-theoretic argument that the winding
+  number W(P|S, 0) equals n [the degree of the polynomial], whereas
+  the winding number of any map F: (B,S) -> (R^2, R^2 - {0}) vanishes
+  if there is no zero of F in B [see Fraenkel, 1922].  However,
+  this argument cannot be found explicitly in [Gauss, 1816].
+
+So, I guess that except perhaps for Gauss, nobody knew the proof
+you're talking about until 1840.
+
+Best,
+jb
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: Emily Riehl <eriehl@math.harvard.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: monads on model categories
+Date: Sun, 27 Nov 2011 14:45:03 -0500 (EST)
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <E1RV1AX-0006vM-3J@mlist.mta.ca>
+Reply-To: Emily Riehl <eriehl@math.harvard.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1322486644 16121 80.91.229.12 (28 Nov 2011 13:24:04 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 28 Nov 2011 13:24:04 +0000 (UTC)
+Cc: categories@mta.ca
+To: Andrew Salch <asalch@turing.math.wayne.edu>
+Original-X-From: majordomo@mlist.mta.ca Mon Nov 28 14:23:59 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RV1Bb-0002N2-Nf
+	for gsmc-categories@m.gmane.org; Mon, 28 Nov 2011 14:23:56 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:54291)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RV1AY-0007US-Ly; Mon, 28 Nov 2011 09:22:50 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RV1AX-0006vM-3J
+	for categories-list@mlist.mta.ca; Mon, 28 Nov 2011 09:22:49 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7077
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7077>
+
+Andrew,
+
+I don't know that this question has been answered in the literature. (If I am
+wrong about this, would someone please reply to me as well. I would be very
+interested to hear otherwise.) Here are a few things I do know.
+
+When the original model structure is cofibrantly generated, one could always
+attempt to define a model structure on C^T or C_T by passing the generating
+(trivial) cofibrations along the left adjoint and defining weak equivalences to
+be those created by the right adjoint. Up to the caveat of the next paragraph,
+this procedure yields a model structure and a Quillen adjunction iff the
+so-called "acyclicity condition" (transfinite composites of pushouts of the
+generating trivial cofibrations are weak equivalences) is satisfied. I don't
+know of general results indicating when this might be true, but there has been
+some work done regarding the category of algebras for a particular sort of
+monad, which I'll describe below.
+
+One annoying difficulty with the Kleisli/Eilenberg-Moore constructions is
+that these categories might not be (co)complete. For the Eilenberg-Moore
+category, the only issue is with colimits. If the category of algebras has
+reflexive coequalizers then this is strong enough. I believe this result
+is due to Linton (cf "Coequalizers in categories of algebras"). In
+general, the Kleisli category will be neither complete nor cocomplete.
+Todd Trimble has some nice counterexamples in this mathoverflow answer:
+
+http://mathoverflow.net/questions/37965/completeness-and-cocompleteness-of-the-kleisli-category
+
+Now suppose the model structure on C is cofibrantly generated and C permits the
+small object argument. Then from any set of trivial cofibrations that detect
+fibrant objects, one can construct a fibrant replacement monad on C using
+Richard Garner's small object argument (cf "Understanding the small object
+argument"). Its algebras are so-called "algebraically fibrant objects" (eg,
+infinity-categories with chosen fillers for all inner horns). Any fibrant
+object admits at least one algebra structure and all objects admitting algebra
+structures are fibrant.
+
+Thomas Nikolaus has shown that if the trivial cofibrations are monomorphisms,
+then the category of algebras is cocomplete and admits a model structure
+constructed by the procedure described above in which all objects are fibrant.
+It is easy to see that in this case the monadic adjunction is a Quillen
+equivalence. So one upshot is that any cofibrantly generated model category for
+which the trivial cofibrations are monic is Quillen equivalent to one for which
+all objects are fibrant. See:
+
+http://golem.ph.utexas.edu/category/2010/03/_guest_post_by_thomas_nikolaus.html
+
+Returning to the question for a generic monad T, a more general answer
+should be available when one doesn't require that the categories C^T and
+C_T admit full model structures but rather asks only for homotopical
+categories and left or right deformable functors, in the sense of
+Dwyer-Kan-Hirschhorn-Smith. I have been working on several aspects of this
+question with Andrew Blumberg. We hope to report an answer soon. I believe
+Justin Noel and Niles Johnson have forthcoming work on a related question.
+
+Best,
+Emily
+
+On Sat, 26 Nov 2011, Andrew Salch wrote:
+
+> Suppose C is a category and T is a monad on C. One knows that one can
+> factor T into a composite GF, where F,G are an adjoint pair of functors,
+> and in fact one knows that there are two universal ways to do this, a
+> Kleisli/initial construction and an Eilenberg-Moore/terminal construction.
+>
+> Now suppose C is a model category and T is a monad on C which preserves
+> weak equivalences. One would like to know that T factors as GF, where F,G
+> are a Quillen pair. Is this always possible and does one have Kleisli-like
+> and Eilenberg-Moore-like constructions with appropriate universal
+> properties? I am sure people have worked on these questions before; where
+> can I read about this?
+>
+> Thanks,
+> Andrew S.
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

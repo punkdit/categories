@@ -1,0 +1,367 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt09@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: applications of the Yoneda embedding
+Date: Sat, 20 Jun 2009 16:45:01 +0100
+Lines: 335
+Approved: news@gmane.org
+Message-ID: <E1MIR7p-0006lo-Bo@mailserv.mta.ca>
+Reply-To: Paul Taylor <pt09@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1245608412 8413 80.91.229.12 (21 Jun 2009 18:20:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 21 Jun 2009 18:20:12 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Sun Jun 21 20:20:09 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MIReC-0005Xh-IK
+	for gsmc-categories@m.gmane.org; Sun, 21 Jun 2009 20:20:08 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MIR7p-0006lo-Bo
+	for categories-list@mta.ca; Sun, 21 Jun 2009 14:46:41 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4996
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4996>
+
+Having been cast in the role of Brutus -- saving the Republic of
+Category Theory from the crowning of a Fundamental Theorem --
+I would like to say that it's "Not that I lov'd Caesar less, but
+that I lov'd Rome more".
+
+Takuo Matsuoka, whom I thank for the undeserved compliment,
+gave an excellent list of some of the applications of the Yoneda
+embedding as a way of enriching categories in various mathematical
+disciplines.   The first of these was about schemes in Algebraic
+Geometry, which he has been explaining to me privately, despite
+my long-term mental block on this subject.   Some of the following
+was part of my response to him, but I don't want to put him under
+pressure to be the spokesman for a subject that, as I discovered
+later, is not actually his own.
+
+So, this posting is addressed to algebraic geometers, synthetic
+differential geometers, and others, to give a sketch of some of
+the categorical techniques that have been developed for general
+topology by domain theorists over the past two decades.  Whilst
+their subjects manifestly have a richer history than domain theory
+did, we now have a few new tricks that they seem to have missed.
+However, I shall start with some textbook material.
+
+The Yoneda Lemma is to category theory what Cayley's Theorem
+is to groups.   An object of a category can be REPRESENTED by
+the collection of all INCOMING morphisms (from all of the other
+objects), just as a group can be represented by its permutation
+action on itself.  This representation is faithful for the
+tremendous but trite reason that an object is represented by
+its own identity map.
+
+Here is a syntactic example:  a type X in a lambda calculus is
+represented by all of its terms, possibly involving free variables.
+One such term is the single variable   x:X,  which is the
+identity in the category.   The other objects of the category are
+the other types, or, given that there may be many free variables,
+the CONTEXTS, which are lists of typed variables.   In proof theory
+the letter Gamma is used for a typical context.
+
+This yields a presheaf whose value at Gamma is the set of terms
+Gamma |- a:X  of type X, using only the variables from Gamma,
+subject to the equivalence defined by the theory.   It defines
+a contravariant functor in which the morphisms act by substitution.
+This example is spelt out in detail in my book,  "Practical
+Foundations of Mathematics", in particular in Section 7.7,
+which describes categorical methods for proving normalisation,
+conservativity, consistency, etc.
+
+I use the letter Gamma for a typical object of ANY base category
+(not just for a syntactic context but also for a topological space
+or affine variety) over whose categories we may want to consider
+presheaves.  In so far as there was a previous convention, it was
+to use "U" (Juergen Koslowski suggested to me that this stood for
+"Umgebung" = neighbourhood), "I" (for "index") or "-".
+
+Since a presheaf is a family of SETS subject to some bookkeeping,
+the huge advantage of the Yoneda embedding is that we can bring
+the power of SET THEORY to bear on categorical problems.   (Rest
+assured, you will see that I have not gone over to the Dark Side.)
+
+For example, let f,g:X==>Y be parallel maps in a category C. The
+object X is represented by the SETS   C(Gamma,X) of incoming maps,
+so we can consider the SUBSET
+                                         ---- f ---->
+E(Gamma)={x|f.x=g.x}  >--->  C(Gamma, X)             C(Gamma,Y)
+                                         ---- g ---->
+
+of maps x:Gamma-->X that have equal composites with f and g.
+Notice that these are the data for the universal propery of an
+equaliser.  Indeed, the equaliser E>-->X==>Y exists in C iff
+the presheaf E(-) is REPRESENTABLE, ie it is of the form C(-,E)
+for some object E of C, which is unique up to unique isomorphism.
+
+For this reason I also use the letter Gamma as the test object
+FROM which maps come in any universal property.   I would urge
+students to work through this method for exponentials too,
+first writing down either their universal property or their
+introduction and elimination rules.
+
+In topos theory, another interesting presheaf is given by
+the set  Sub(Gamma)  of "sieves"  on an object Gamma.   This
+presheaf is representable iff the category C is a topos, and
+the representing object is the subobject classifier Omega.
+I this case, I invite you to work backwards from the definition
+of the subobject classifier to find out what a "sieve" is.
+
+In general, the Yoneda embedding preserves universal properties
+such as limits that are given by maps FROM a generic object Gamma.
+
+However, it completely DESTROYS the colimits in C, giving it
+new ones instead.   Indeed, we can think of a presheaf as a
+"formal" colimit diagram.
+
+Now sheaf theory was invented to "PATCH" things together,
+that is, to add COLIMITS such as pushouts.   But usually we
+don't want to scrap the old colimits altogether, because some
+of them were "already correct".  So, we specify which ones we
+want to keep, and such a specification is called a GROTHENDIECK
+TOPOLOGY.   Then, instead of using ALL presheaves, we just
+keep the ones that respect our chosen "correct" colimits,
+and call them SHEAVES.
+
+In particular, we are quite often happy with the existing
+COPRODUCTS in the base category.  In particular, these will be
+stable and disjoint in any topos, but not the same under one
+Grothendieck topology as under another, so if the ones that
+we have in the original category already have this property
+then they are probably correct.   Nowadays, a category with
+nice finite coproducts is called EXTENSIVE;  topological spaces,
+locales and affine varieties all enjoy this property.
+
+Therefore, the colimits that we want to change are usually the
+epis, coequalisers pushouts and filtered (=purely infinite) ones.
+
+Presheaves may be adapted directly to the task of adding colimits
+of a particular kind.   For example, Peter Johnstone describes
+the "IND" construction that adds filtered colimits in Section VI.1
+of "Stone Spaces".  In the dual category, this is how we obtain
+profinite objects, which often come with a compact Hausdorff
+but totally disconnected topology.
+
+A Grothendieck topos is therefore a truly magnificent beast, but
+it is a SET THEORY, whereas sheaves were originally introduced
+to  study algebraic topology and algebraic geometry.  I want to
+consider some ways in which it might be adapted to the construction
+of a category that is actually like whichever subject we wanted
+to study.
+
+For various reasons we consider that the category of affine
+varieties (the formal opposite of the category of commutative
+rings) and the traditional category of topological spaces
+are not rich enough for the requirements of their subjects.
+For example, they are not cartesian closed.
+
+So we introduce SCHEMES and (for example) EQUILOGICAL SPACES
+to do a better job.   (Recall that I don't actually know what
+a scheme is, though I have my guesses, and the reason for
+spelling out all of this general category theory is to
+elicit a definition that I can understand, in return for some
+new techniques that algebraic geometers might find useful.)
+
+It is not altogether surprising that the new categories are
+represented as subcategories of the category of presheaves on
+the old categories.   Since the NEW objects are conceived as
+"patched together" from old ones,  they are, by design,
+faithfully represented by the incoming maps from (all of)
+the OLD objects.
+
+Steve Vickers' posting of 9 June concerned presheaves on the
+category of locales.  (Locales have very strong formal analogies
+with affine varieties, being the formal opposite of a category
+of algebras.)  My posting on the same day about "Aspects of
+locale theory" is also relevant to this
+
+Rather more people have studied subcategories of presheaves on
+the category of topological spaces.  Pino Rosolini gave an
+excellent survey of these categories in his 2000 paper on
+"Equilogical spaces and filter spaces".   You can obtain this
+and several other papers that provide many of the details of
+what I am about to say from his webpage
+       www.disi.unige.it/person/RosoliniG/biblio.html
+
+Analogously to the "ind" construction above, Dana Scott's
+equilogical spaces formally adjoin quotients of equivalence
+relations to topological spaces, whilst Reinhold Heckmann's
+construction of "equilocales" does the same for locales.
+
+A Grothendieck topos is a set theory, but what in the construction
+makes it so?   It is the requirement on the "correct colimits"
+(Grothendieck topology) that they be stable under all PULLBACKS.
+The SHEAFIFICATION functor that reflects presheaves to sheaves
+also preserves all finite limits.
+
+If we just want a CARTESIAN CLOSED category, rather than a topos,
+it is enough that the data and reflection functor be preserved
+by PRODUCTS, rather than general pullbacks.   The categories that
+I shall describe all contain the base category but are contained
+in the smallest category of sheaves, so it becomes irrelevant
+whether we consider sheaves as intermediaries or go straight
+from presheaves to the smaller category.
+
+Along with several other people in the 1990s, Rosolini and
+I studied ways of defining and constructing categories like these,
+under the heading of SYNTHETIC DOMAIN THEORY (SDT).  This was
+inspired by synthetic differential geometry, and I think Dana
+Scott is responsible for the name.  However, most of the other
+people who worked under this banner were interested in realisability
+toposes rather than sheaf toposes, which was part of the reason
+why I changed to a different name.
+
+Key to this is the object SIGMA.  Like Omega, this classifies
+subobjects, but now just OPEN ones in topology, or RECURSIVELY
+ENUMERABLE ones in computation.  Rosolini identified the
+abstract properties of a class of monos (or "dominion") and its
+classifier ("dominance") in his PhD thesis.  My "Euclidean
+principle",   Fx & x = FT & x,  puts it in an algebraic form --
+see "Geometric and Higher Order Logic" on my webpage at
+    www.PaulTaylor.EU/ASD/.
+
+However, if algebraic or differential geometers want to pick this
+idea up, they should not be misled by the idea of classifying
+subobjects of any kind.   It is the algebraic property that
+matters.   As a ring,  Sigma should be the ring of polynomials
+in one variable.   As an affine variety, it is the geometric
+incarnation of the ground field.
+
+This means that, for an affine variety X, the set of maps X->Sigma
+is (the underlying set of) the corresponding ring.  Similarly,
+in topology it is the set of open subsets, ie the corresponding
+frame.   The idea of ASD is that this "set" of maps should itself
+be a space, but I don't know what this is for algebraic varieties.
+
+Sigma is the spider at the centre of the web.  Considered as
+a space, it carries the relevant algebraic structure (a lattice
+or a ring), and maps  X-->Sigma  determine the structure of
+other spaces X.   (Notice that this is the opposite way from
+the maps Gamma-->X that motivated the category of presheaves.)
+
+In synthetic domain theory we devised various properties, involving
+maps X-->Sigma, that would say whether the presheaf X was to be
+regarded as a "domain".   I am going to stick to those that can
+be expressed in pure category theory and generalised to other
+subjects.
+
+The weakest one, a kind of T0 property, was that   X >---> Sigma^Y,
+ie that the presheaf X be a subobject (family of subsets) of some
+exponential.  (Recall that you constructed exponential presheaves
+as an exercise earlier!)
+
+A stronger one is that  X >---> Sigma^Y ====> Sigma^Z  as an
+equaliser of such exponentials.
+
+Usually there is a reflection functor from all presheaves to the
+"domains", and this preserves products.
+
+I forget exactly what was in each of Rosolini's papers, but
+he studied the analogy between this reflection functor and
+sheafification,  and also what happens in presheaf categories
+over various interesting concrete categories.
+
+Even with this modification of the notion of sheaf topos, the
+Yoneda embedding and Grothendieck toposes have at best been
+given the status of a "constitutional monarchy", so it is time
+to introduce some genuinely republican ideas.
+
+My programme "Abstract Stone Duality" moves away from the models
+based on toposes to a direct axiomatisation of the subject that
+we actually want to study.  This axiomatisation consists of two
+parts -- some pure category theory and some specifically topological
+axioms on top of it.   The reason why I believe ASD could be
+adapted to other subjects is that the topological axioms say
+little more than that Sigma is a lattice, so this could be replaced
+by a ring.   MOST of the work is done by the underlying category
+theory, and this will be even more strongly so in the developments
+of the theory that I am currenly studying.
+
+In ASD, I concentrate on powers of Sigma, rather than of general
+objects, and other structure that can be defined in these terms.
+The version of my theory that is reasonably well established
+starts from the hypothesis that the adjunction Sigma^(-) -| Sigma^(-)
+be MONADIC.
+
+The result of this is an account of computably based locally
+compact spaces and computable continuous functions.
+
+I applied this to elementary real analysis, and obtained a computable
+construction of the Dedekind reals in which [0,1] is compact ---
+contrary to the received wisdom of Russian Recursive Analysis that
+this is impossible, and to Bishop's constructive analysis, which
+develops a lot of the subject in a "can do" fashion but without
+using compactness of [0,1].
+
+The problem with this theory is that, rather than enlarging the
+traditional category to a cartesian closed one that is embedded in
+a category of presheaves, it cuts down to locally compact spaces.
+
+However, I am currently writing up a new technique that replaces
+the monadic assumption.  In one manifestation,  it gives an account
+of all sober topological spaces and continuous functions.  However,
+since it says that products preserve epis,  it doesn't work for
+locales, because of the counterexample that I gave in my "aspects
+of locale theory" posting.
+
+On the other hand, this DOES work for affine varieties -- over a
+field, because the same problem with locales arises if you try to
+work over a general commutative ring.   (It comes down to whether
+modules are FLAT,  ie tensor product with them preserves monos.)
+
+I talked about "illegitimate" presheaves in my "categories"
+posting on "aspects of locale theory", and Steve Vickers said
+something on the same topic.   Set-theoretic issues aside,
+presheaves are "heavyweight" gadgets in that you have to give
+data pertaining to every object of the base category, so a
+scheme is defined by its relationship to ALL rings.
+
+I am offering a much more "lightweight" construction.  In this,
+to give an object of the new category (a "scheme", maybe) would
+involve only a handful of objects and morphisms of the original
+one (rings).
+
+This "lightweight" construction will give an account of equilogical
+spaces (with some of their more set-theoretic features removed).
+I would like to know what the relationship is between the analogous
+result that I have for algebraic varieties, and whatever the official
+definition of SCHEME is in algebraic geometry.
+
+My category of "schemes" (if that is what it is) would be embedded
+in the presheaf category and closed therein under finite limits
+and exponentials.   It would contain all affine varieties, along
+with their products, equalisers, pullbacks, coproducts and epis
+but not coequalisers (coproducts, coequalisers, pushouts, products
+and monos but not equalisers of rings).
+
+The (possible) difference from the existing notion of scheme is
+that I would give you the SMALLEST category of presheaves that
+has these properties.
+
+Along with this would come a "synthetic" and computable
+axiomatisation similar to the one that I give for elementary
+real analysis in
+      www.paultaylor.eu/ASD/lamcra/elemcalc
+
+Finally, why is the Yoneda Lemma not a Theorem?   Because Lemmas
+do the work in mathematics, whilst Theorems, like royalty,
+just take the credit.
+
+Thank you for listening.
+
+Paul Taylor
+www.PaulTaylor.EU
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

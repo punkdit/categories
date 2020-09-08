@@ -1,0 +1,136 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Tue, 25 Oct 2011 10:38:35 -0400 (EDT)
+Lines: 97
+Approved: news@gmane.org
+Message-ID: <E1RIqOs-0003GZ-QN@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk>
+Reply-To: Michael Barr <barr@math.mcgill.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1319585341 4325 80.91.229.12 (25 Oct 2011 23:29:01 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 25 Oct 2011 23:29:01 +0000 (UTC)
+Cc: Dusko Pavlovic <dusko@kestrel.edu>, Categories list <categories@mta.ca>
+To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 26 01:28:51 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqQK-00017r-Qd
+	for gsmc-categories@m.gmane.org; Wed, 26 Oct 2011 01:28:49 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:38518)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqOu-0001hJ-Ci; Tue, 25 Oct 2011 20:27:20 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqOs-0003GZ-QN
+	for categories-list@mlist.mta.ca; Tue, 25 Oct 2011 20:27:18 -0300
+In-Reply-To: <E1RIgcZ-0000YV-SW@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6998
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6998>
+
+Maybe I'm naive, but I don't see why meet is always below join.  Certainly
+that's usually the case but the empty meet is top and empty join is bottom
+and I think that is what this is all about.
+
+Michael
+
+On Mon, 24 Oct 2011, Steve Vickers wrote:
+
+> Dear Dusko,
+>
+> First of all, what your "tautology" says is semantically incorrect in
+> the case where A is empty: for then the meet of P is true and the
+> join is false, so we don't have that the meet is lower than the join.
+> Constructively, the product is an empty product and hence 1, while
+> the coproduct is 0 and there is no morphism from the product to the
+> coproduct. The composite morphism
+>
+>   (all) x.P(x) --> P(a) --> (exists) x.P(x)
+>
+> exists only when we have a in A.
+>
+> Second, in your proof with contexts, you use "the equivalence
+> 	true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <->
+> (((all) a. P(a) --> (exists) x. P(x)))"
+>
+> You didn't give a proof of this equivalence, but anyway we have a
+> counterexample. When A is empty, (all) a. P(a) and (exists) x. P(x)
+> are true and false respectively, so (all) a. P(a) --> (exists) x. P
+> (x) is false. But
+>
+>   (all) b. ((all) a. P(a) --> (exists) x. P(x))
+>
+> is true, so the biequivalence is false.
+>
+> Regards,
+>
+> Steve.
+>
+> On 24 Oct 2011, at 13:35, Dusko Pavlovic wrote:
+>
+>> hi steve,
+>>
+>> i am afraid that the "falsehood"
+>>
+>> (all) x.P(x) => (exists) x.P(x)
+>>
+>> is a *tautology* of predicate logic, in any topos, for any
+>> predicate P:A-->Prop, with or without the free variables hanging
+>> around. if it helps, think of P:A-->Prop as an A-indexed set of
+>> elements of the lattice Prop. then
+>>
+>>   (all) x.P(x) is the meet of P, whereas
+>>  (exists) x.P(x) is the join of P,
+>>
+>> and the tautology says the meet is lower than the join. or
+>> constructively,
+>>
+>>  (all) x.P(x) is the product of the A-indexed family P(x)
+>>  (exists)x.P(x) is the coproduct
+>>
+>> so that
+>>
+>>  (all) x.P(x) -->P(a) is a projection, and
+>>  P(a) --> (exists) x.P(x) is an injection.
+>>
+>>> with a sequent calculus that keeps track of the possible free
+>>> variables - see e.g. part C of the Elephant. With this notation
+>>> you distinguish between, on the one hand,
+>>>
+>>> true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+>>> or
+>>>  (all) a. P(a) |-(b) (exists) x. P(x)
+>>>
+>>> (both valid) and, on the other,
+>>>
+>>> true |-() ((all) a. P(a) --> (exists) x. P(x))
+>>> or
+>>>  (all) a. P(a) |-() (exists) x. P(x)
+>>>
+>>> (both not valid).
+>>
+>> to prove these last two formulas, observe that
+>> from
+>> 	true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+>> we can derive
+>> 	true |-() (all) b. ((all) a. P(a) --> (exists) x. P(x))
+>> now use the equivalence
+>> 	true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <->
+>> (((all) a. P(a) --> (exists) x. P(x)))
+>> to conclude that the RHS is true.
+>>
+>> -- dusko
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

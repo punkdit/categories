@@ -1,0 +1,82 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Horizontal line notation.
+Date: Tue, 17 Mar 2009 12:36:12 -0700
+Lines: 49
+Approved: news@gmane.org
+Message-ID: <E1Ljv4K-0004Ho-Ng@mailserv.mta.ca>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1237382659 4929 80.91.229.12 (18 Mar 2009 13:24:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Mar 2009 13:24:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Wed Mar 18 14:25:36 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Ljvlr-00087K-Cy
+	for gsmc-categories@m.gmane.org; Wed, 18 Mar 2009 14:25:23 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Ljv4K-0004Ho-Ng
+	for categories-list@mta.ca; Wed, 18 Mar 2009 09:40:24 -0300
+Content-Disposition: inline
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:177
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/177>
+
+David Ellerman wrote in part:
+
+>The horizontal line notation was introduced by Gerhard Gentzen in his
+>logical sequent calculus. If a set of formulas S  implies a and b, then S
+>implies a/\b and vice-versa which was written as:
+
+ S |- a,b
+ _________
+ S |- a/\b
+
+>Going from top to bottom was conjunction-introduction, and going in the
+>other direction was conjunction-elimination.
+
+But much of sequent calculus is irreversible.
+If nothing else, structural rules such as weakening:
+
+   S |- b
+ --------
+ S:a |- b
+
+where S:a is the list or set S followed by a.
+(Thank all the Haskell recently for making me write it like this.)
+This is valid downwards, but not upwards.
+
+I see sequent-calculus people using a double line if it's good both ways:
+
+   S |- a=>b
+ ===========
+ S:a |- b
+
+(This is a propositional version of the example in the original question.)
+
+Incidentally, your first example I would write as
+
+ S |- a;   S |- b
+ ================
+ S |- a/\b
+
+because if you have a set, such as {a,b}, of propositions on the right,
+then this is interpreted disjunctively (not conjunctively as on the left).
+But I suppose that you can be lax about this if you agree beforehand
+that you'll only be doing "intuitionistic" sequents
+(that is those with only one statement on the right).
+
+
+--Toby
+
+
+

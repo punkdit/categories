@@ -1,0 +1,172 @@
+Path: news.gmane.org!not-for-mail
+From: "Rory Lucyshyn-Wright" <rlucyshynwright@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: A construction for polynomials.
+Date: Tue, 5 Apr 2016 13:58:24 -0300
+Lines: 134
+Approved: news@gmane.org
+Message-ID: <E1ankOp-00044X-4e@mlist.mta.ca>
+Reply-To: "Rory Lucyshyn-Wright" <rlucyshynwright@mta.ca>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1459937440 26755 80.91.229.3 (6 Apr 2016 10:10:40 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 6 Apr 2016 10:10:40 +0000 (UTC)
+Cc: <categories@mta.ca>
+To: "Nikita Danilov" <danilov@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Wed Apr 06 12:10:32 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ankPv-000519-TE
+	for gsmc-categories@m.gmane.org; Wed, 06 Apr 2016 12:10:32 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51996)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ankOy-0002P2-Vw; Wed, 06 Apr 2016 07:09:32 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ankOp-00044X-4e
+	for categories-list@mlist.mta.ca; Wed, 06 Apr 2016 07:09:23 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8868
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8868>
+
+Dear Nikita,
+
+The constructions that you describe can be understood as variations on
+Lawvere's concept of the _algebraic_structure_ of a (Set-valued)
+functor:
+
+   F. W. Lawvere, Functorial semantics of algebraic theories,
+    Dissertation, Columbia University, New York, 1963.
+    Available in: Repr. Theory Appl. Categ. 5 (2004).
+    Chapter III, Section 1.
+
+The first construction that you describe is an instance of Lawvere's
+notion, wherein the algebraic structure of the functor P is the
+algebraic theory T of commutative rings.  The hom-set Nat(P,P) ~= Z[X]
+that you describe is one of the hom-sets of this algebraic theory T,
+namely the set of unary operations, which underlies the free T-algebra
+on one generator.
+
+In the case where we take B = Set, your second construction is an
+instance of Linton's formulation of the _equational_structure_ of a
+Set-valued functor as defined in
+
+   F. E. J. Linton, Some aspects of equational categories,
+     Proc. Conf. Categorical Algebra (La Jolla, Calif., 1965),
+     Springer, 1966, pp. 84-94.
+     Section 2.
+
+This notion of equational structure is an adaptation of Lawvere's
+notion to the setting of Linton's _equational_theories_, which are
+algebraic theories in which the arities are allowed to be arbitrary
+(small) sets rather than just finite cardinals.  Indeed, take U to be
+the relevant functor R/C --> B = Set and consider the equational
+structure T of U in Linton's sense.  Given a set S, the set of natural
+transformations that you describe is one of the hom-sets of the
+resulting equational theory T, namely the (possibly large) set of all
+S-ary operations, which (if it is small) underlies the free T-algebra
+on the set S.
+
+In the general case, where B is an arbitrary cartesian closed
+category, your second construction is closely related to (but not an
+instance of) Dubuc's formulation of the algebraic structure of a
+(tractable) V-valued V-functor, as defined in
+
+   E. J. Dubuc, Enriched semantics-structure (meta) adjointness,
+    Rev. Un. Mat. Argentina 25 (1970), 5-26.
+    Section 4.
+
+This notion of enriched algebraic structure is a generalization of
+Linton's above notion of equational structure (and so in turn is an
+adaptation of Lawvere's notion) to the context of the V-theories of
+Dubuc, which are V-enriched algebraic theories in which the arities
+are arbitrary objects of V (so that in the case V = Set, Linton's
+notion is recovered).  As Dubuc demonstrates, this notion of algebraic
+structure is very closely related to the notion of codensity monad.
+
+The divergence between your second construction and Dubuc's
+formulation lies in the fact that you use an ordinary, non-enriched
+V=B-valued functor rather than a V-functor and, correspondingly, you
+form a set of natural transformations rather than an object of
+V-natural transformations.
+
+Note that above we have made no special use of the coslice category
+R/C, so this aspect can be analyzed separately.
+
+Best wishes,
+Rory
+
+-----Original Message-----
+From: Nikita Danilov
+Sent: Monday, April 04, 2016 10:32 AM
+To: categories@mta.ca
+Subject: categories: A construction for polynomials.
+
+Dear list,
+
+I am looking for a reference to the following construction.
+
+In the simplest case, consider the forgetful functor P:Ring->Set, from
+the
+category of commutative rings with a unit. Then the set of natural
+endomorphisms
+Nat(P, P) can be identified with the set of polynomials of one
+variable with
+integer coefficients Z[X]. This can be easily seen by the chain of
+isomorphisms
+
+      Nat(P, P) = Nat(Ring(Z[X], -), P) = Z[X],
+
+where the first isomorphism is due to Z[X] being a free ring with one
+generator
+and the second is by Yoneda's lemma. Alternatively, just observe that
+polynomial
+functions are precisely ones commuting with every ring homomorphism.
+
+In general, let P:C->B be a functor from an arbitrary C to a cartesian
+closed
+B. Select an object R in C and let R/P:R/C->B be the "obvious"
+forgetful
+functor
+from the co-slice category. For an object S of B define
+
+      R[S] = Nat(R/P * hom(S, -), R/P),
+
+where hom is the internal hom functor of B and * is functor
+composition in
+the
+diagrammatical order. For C = Ring, B = Set this gives the usual ring
+of
+polynomials with coefficients in R and variables from S.
+
+This construction extends to a functor C x B -> Set and has some nice
+properties
+of the usual polynomials: polynomials of "one variable" (i.e., when S
+= 1)
+can
+be composed, to each r:1->R and x:1->S corresponds a polynomial
+(provided P
+maps
+1 to 1).
+
+Has this or dual (where C/R is used instead of R/C) construction been
+studied?
+Maybe in enriched contexts?
+
+Thank you,
+Nikita.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

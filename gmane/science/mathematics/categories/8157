@@ -1,0 +1,118 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richardgarner@fastmail.fm>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Composition of Fibrations and Quantification
+Date: Tue, 10 Jun 2014 15:42:36 +1000
+Lines: 80
+Approved: news@gmane.org
+Message-ID: <E1WuMth-0002tY-EG@mlist.mta.ca>
+References: <E1WtHHy-00055w-O5@mlist.mta.ca> <E1WuA6x-0004vo-DA@mlist.mta.ca>
+Reply-To: Richard Garner <richardgarner@fastmail.fm>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1402410047 14042 80.91.229.3 (10 Jun 2014 14:20:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 10 Jun 2014 14:20:47 +0000 (UTC)
+To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>, Categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Jun 10 16:20:41 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WuMul-0007vV-Ec
+	for gsmc-categories@m.gmane.org; Tue, 10 Jun 2014 16:20:39 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:35282)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WuMtj-0007e2-DE; Tue, 10 Jun 2014 11:19:35 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1WuMth-0002tY-EG
+	for categories-list@mlist.mta.ca; Tue, 10 Jun 2014 11:19:33 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8157
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8157>
+
+Dear Neil, Steve,
+
+Steve: what you say about fibrations and opfibrations is completely
+correct. So if E ---> D is a bifibration, and D ---> C is a bifibration,
+then the composite E ---> C is a bifibration. It is moreover easy to
+check that if the individual parts of this satisfy Beck-Chevalley, then
+so too will the composite. Thus the composite of fibrations with sums is
+again a fibration with sums.
+
+For products, though, I think the situation is a bit more complex. I
+could not see how to derive the result by a simple duality. From
+scribbling on the back of an envelope, it does appear to be true that:
+
+- if E -p--> D and D ---q---> C are fibrations with products, then so
+too is E ---qp---> C
+
+The argument I have is basically the following. Given e in E with pe =3D d
+and qd =3D c, and some f: c ---> c' in C, we wish to describe the Pi of e
+along f; we'll write this as f_*(e). Well first we form f_*(d) in D, its
+pullback g : f^*f_*(d) ----> f_*(d) along f, and the counit k: f^*f_*(d)
+---> d in the fibre over c. Using these data in D,  we now form in E the
+pullback k^*(e) of e along k and then the Pi along g, so yielding e' =3D
+g_*k^*(e). Now pe' =3D f_*(d) and q(f_*(d)) =3D c' and it's now not so hard
+to check that e' is in fact the Pi of e along f, as desired.
+
+For the checking in the last step, I seemed to need a few times the
+Beck-Chevalley condition for products. So I doubt one could get away
+without that. I have not tried to verify whether the Pi's of the
+composite so defined themselves satisfy the Beck-Chevalley condition,
+but I would be amazed if this were not the case.
+
+Finally, one might ask the following question. Suppose that E ----> D
+and D ----> C are fibrations with products and sums, and that in each
+case the sums and products satisfy the distributivity axiom
+("type-theoretic axiom of choice"). Does the composite fibration, which
+by the above again has sums and products, also satisfy the
+distributivity axiom? I do not know the answer to this, but I rather
+suspect so. It would be a largeish diagram chase. It would be nice to
+know if there was a more abstract reason why this is true.
+
+Richard
+
+
+On Sun, Jun 8, 2014, at 11:58 PM, Steve Vickers wrote:
+> Some thoughts:
+>=20
+> * The result about composition of fibrations holds in any 2-category with
+> comma objects and 2-pullbacks, not just Cat. (Think of the Chevalley
+> criterion  for fibrations.)
+>=20
+> * By duality on 2-cells it thus also applies to opfibrations, and hence
+> to bifibrations.
+>=20
+> * It is bifibration structure that gives you the left adjoints you ask
+> for.
+>=20
+> * For the right adjoints, look at the dual 2-category, where your
+> fibrations  become bifibrations.
+>=20
+> Hence it seems to me that your conjectures are all true, and even
+> generalize  widely.
+>=20
+> Steve.
+>=20
+>> On 6 Jun 2014, at 10:47, Neil Ghani <neil.ghani@strath.ac.uk> wrote:
+>>=20
+>> Dear All
+>>=20
+>> We know that if p and q are fibrations, then their composition p.q is a=
+  fibration.
+>>=20
+>> But what about quantification =E2=80=A6 that is if reindexing along eve=
+ry morphism has a right/left adjoint in p and q, then does reindexing along=
+  every morphism in p.q have a right/left adjoint? Under some circumstances?
+>>=20
+>> Thanks for any thoughts
+>> Neil
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

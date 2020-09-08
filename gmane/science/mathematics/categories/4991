@@ -1,0 +1,184 @@
+Path: news.gmane.org!not-for-mail
+From: Matsuoka Takuo <moto@math.northwestern.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fundamental Theorem of Category Theory?
+Date: Wed, 17 Jun 2009 19:27:34 -0500 (CDT)
+Lines: 151
+Approved: news@gmane.org
+Message-ID: <E1MHE7e-000558-BG@mailserv.mta.ca>
+Reply-To: Matsuoka Takuo <moto@math.northwestern.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; format=flowed; charset=US-ASCII
+X-Trace: ger.gmane.org 1245321036 10904 80.91.229.12 (18 Jun 2009 10:30:36 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 18 Jun 2009 10:30:36 +0000 (UTC)
+Cc: categories <categories@mta.ca>, "Ellis D. Cooper" <xtalv1@netropolis.net>
+To: Makoto Hamana <hamana@cs.gunma-u.ac.jp>
+Original-X-From: categories@mta.ca Thu Jun 18 12:30:33 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MHEt5-0003KY-4W
+	for gsmc-categories@m.gmane.org; Thu, 18 Jun 2009 12:30:31 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MHE7e-000558-BG
+	for categories-list@mta.ca; Thu, 18 Jun 2009 06:41:30 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4991
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4991>
+
+Dear categorists,
+
+> I have asked Prof. Yoneda many years ago why Yoneda Lemma is
+> called "Lemma", not "Theorem". He said that perhaps it was a
+> bit about internal of category theory rather than insisting
+> on applications to other mathematics. Doesn't Yoneda Lemma
+> satisfy (c) in Mile Gould's post? I don't know how much
+> Yoneda Lemma is useful in other areas of mathematics, and
+> I have wanted to know it.
+
+> | (c) it admits a huge variety of applications in "ordinary" mathematics.
+
+I find this intersting, but I do not quite agree with Prof. Yoneda!
+
+In order to challenge his claim, I would like to try making a list (which
+I fear will not be "huge in variety") of some instances I know of in
+mathematics where representable functors play central roles, and hope some
+other people could do similar. While I know that I am not a particularly
+well qualified person to write the part I am taking, I view this as a
+great opportunity to share ideas from various different fields! (I hope
+this is not off the topic of the list.)
+
+- Given a category C of some mathematical objects, it is often equipped
+with a "forgetful" functor C -> Set, so objects of C can be thought of as
+sets equipped with some specific sort of structure. Let us call it a
+C-structure. Then a C-structure on an object X of _any_ category can be
+defined as a way to factorize the functor [ ,X], represented by X, through
+the forgetful functor C -> Set. If C is the category of groups, then The
+Lemma implies that giving a group structure on X is the same as giving
+structure maps on X which are in analogy with the group operations for an
+ordinary group. This readily generalizes for any sort of algebraic
+structure, and this is related to Lawvere's notion of algebraic theories.
+One can further replace the category Set with some other closed category
+such as that of Abelian groups, using the language of enriched category
+theory.
+
+- Schemes in algebraic geometry can fruitfully be viewed as sheaves on the
+opposite category Aff of that of commutative rings. Those schemes actually
+represented by rings are called affine schemes. Thus, the category of
+affine schemes is opposite to the category of rings, and is fully embedded
+in the category of all schemes. The Yoneda lemma is a basic tool for the
+study of schemes.
+
+- Some presheaves on the category of (affine) schemes which fail to be
+sheaves can more naturally be thought of as a groupoid-valued (rather than
+set-valued) presheaves which can be represented by geometric objects
+called algebraic stacks (which generalize schemes).
+
+- Let G be a group (in a suitable category of "spaces"). In the theory of
+principal bundles, the functor which assigns to a space X, the set of
+principal G-bundles over X, modulo isomorphism, is represented (in the
+homotopy category of spaces) by the so called classifying space BG of G.
+That is, BG "classifies" principal G-bundles. Then The Lemma implies a
+fundamental theorem that characteristic classes for bundles are the same
+as cohomology classes of the classifying space.
+
+- Similarly, one can consider the classifying stack of a group scheme
+(i.e. scheme with group structure), in particular a finite group, G.
+
+- Every spectrum, in the sense of stable homotopy theory, represents a
+so-called generalized cohomology theory, and vice versa. The Lemma then
+gives a way to compute natural operations between theories. The results of
+computation of the algebra formed by operations on the "ordinary"
+cohomology theory (with coefficients in a prime field), known by the name
+the Steenrod algebra, is the input of the Adams spectral sequence, which
+in turn computes (in principle) the stable homotopy groups of spheres,
+which is of central interest in the field.
+
+- On the category of commutative ring spectra, which are 'by definition'
+spectra with commutative ring structure, the (covariant) functor
+classifying characteristic classes, or "orientations", in the associated
+multiplicative (because of the ring structure) generalized cohomology
+theories is represented by the so-called Thom spectrum. Quillen pointed
+out that the variant MU of Thom spectrum, classifying Chern classes, or
+orientations for complex vector bundles, corresponds to the moduli stack
+of formal groups (i.e. the stack classifying formal groups) thus
+discovering a deep connection between homotopy theory and algebraic
+geometry. MU has since been a key object in stable homotopy theory.
+
+- One of the greatest recent achievements in algebraic topology is the
+construction of a spectrum called tmf, the topological modular forms. It
+is the global section of a certain sheaf of commutative ring spectra over
+the moduli stack of elliptic curves. From this sheaf, one can recover the
+Adams-type spectral sequence associated to tmf. According to Lurie, this
+sheaf is actually the structure sheaf of the moduli stack classifying
+"oriented elliptic curves" over commutative ring spectra, or, to be in the
+correct variance, over derived affine schemes, in the world of derived
+algebraic geometry. This extremely beautiful viewpoint enlightens the
+meaning of Quillen's discovery just mentioned.
+
+The disputed proposition (whether it is a theorem or a lemma) or its
+appropriate generalization applies to any of these situations.
+
+Another family of examples of representable functors would be supplied by
+those represented by "dualizing objects" appearing in various contexts.
+However, at this moment, I only have a vague idea of how the Yoneda lemma
+would imply something useful in this situation. I think experts out there
+are well in order to help me with this!
+
+Concerning the discussion on the "fundamental theorem" of category theory,
+it might worth remarking that preservation of limits by right adjoints
+(and its dual) are a corollary of the more fundamental fact that adjoints
+compose, granted uniqueness of the adjoint functor. The last is notably
+one of the important consequences of The "Lemma".
+
+Also, in addition to the claimed prominent applicability in mathematics,
+the Yoneda lemma has remarkably neat and witty statement:
+"Every presheaf represents itself."
+
+Best wishes,
+Takuo
+
+On Mon, 15 Jun 2009, Makoto Hamana wrote:
+
+> Dear Ellis,
+>
+> On Fri,  5 June 2009 16:36:23 -0400, Ellis D. Cooper wrote:
+> | There are Fundamental Theorems of Arithmetic, Algebra, Calculus, and
+> | indeed, many more.
+> | My question is, What would be candidates for the Fundamental Theorem
+> | of Category Theory?
+> | Yoneda Lemma comes to my mind. What do you think?
+>
+> I have asked Prof. Yoneda many years ago why Yoneda Lemma is
+> called "Lemma", not "Theorem". He said that perhaps it was a
+> bit about internal of category theory rather than insisting
+> on applications to other mathematics. Doesn't Yoneda Lemma
+> satisfy (c) in Mile Gould's post? I don't know how much
+> Yoneda Lemma is useful in other areas of mathematics, and
+> I have wanted to know it.
+>
+> On Sat,  6 June 2009 23:22:52 +0100, Miles Gould wrote:
+> | My suggestion would be the theorem that left adjoints preserve colimits,
+> | and right adjoints preserve limits.
+> | This may not be the deepest theorem in category theory, but
+> | (a) it's pretty darn deep,
+> | (b) it describes a beautiful connection between two fundamental notions
+> | in the subject,
+> | (c) it admits a huge variety of applications in "ordinary" mathematics.
+>
+> Best Regards,
+> Makoto Hamana
+>
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

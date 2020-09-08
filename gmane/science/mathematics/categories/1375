@@ -1,0 +1,201 @@
+Path: news.gmane.org!not-for-mail
+From: "Martin H. Escardo" <Martin.H.Escardo@ens.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Freyd's couniversal characterization of [0,1]
+Date: Mon, 24 Jan 2000 20:14:36 +0100 (MET)
+Lines: 175
+Approved: news@gmane.org
+Message-ID: <200001241914.UAA23504@agaric.ens.fr>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017785 30938 80.91.229.2 (29 Apr 2009 15:09:45 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:45 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jan 24 18:03:33 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA06018
+	for categories-list; Mon, 24 Jan 2000 16:59:03 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 7235
+Original-Lines: 174
+Xref: news.gmane.org gmane.science.mathematics.categories:1375
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1375>
+
+
+It would be interesting to test Freyd's couniversal characterization
+of the unit interval in many other categories.
+
+Here I test it in Top, the category of topological spaces and
+continuous maps, and various full subcategories, where one would hope
+to get the unit interval with the Euclidean topology.
+
+----------------------------------------------------------------------
+Summary of the outcome of some tests:
+
+    (1) In Top, the final coalgebra for Freyd's functor exists. Its
+underlying object, however, is an indiscrete space (unsurprisingly).
+
+    (2) In the category of T0 spaces, it doesn't exist.
+
+    (3) In the category of normal spaces it does exist, and, as one
+would hope, its underlying object is indeed the unit interval with the
+Euclidean topology.
+
+See remark below for weakening normality in (3) as much as possible. 
+----------------------------------------------------------------------
+Arguments follow. 
+
+We work with the category BiTop of bipointed topological spaces, whose
+objects are topological spaces with two distinct distinguished points
+and whose morphisms are continuous maps that preserve the two
+distinguished points.
+
+Given a bipointed topological space x0,x1:1->X, one constructs a
+bipointed topological space FX as in the diagram below, where the
+square is a pushout.
+
+               inr           x1
+        FX <--------- X <---------- 1
+        ^             ^
+        |             |
+    inl |             | x0
+        |             |
+        X <---------- 1
+        ^       x1
+        |
+     x0 |
+        |
+        1.
+
+Thus, FX is the quotient of the coproduct of two copies of X that
+identifies two points (x1 of the first copy with x0 of the second).
+It is clear how F extends to morphisms producing a functor
+BiTop->BiTop.
+
+(1)-----------------------------------------------------------------
+Is there a final coalgebra d:I->FI in BiTop? In BiSet, Freyd argued,
+one can take I=[0,1] with distinguished points 0 and 1 and structure
+map d defined by
+
+       d(x) = inl(2x)    if x<=1/2
+              inr(2x-1)  if x>=1/2
+
+Notice that for x=1/2 one gets inl(1)=inr(0), as one should.
+
+[[Incidentally, see M.H. Escardo and Th. Streicher. "Induction
+and recursion on the partial real line with applications to Real PCF",
+TCS 210(1999) 121-157. There, essentially the same definition gives a
+final coalgebra whose inverse is an initial algebra, but the
+underlying category is that of continuous Scott domains.]]
+
+By general trivial reasons, the same construction works in BiTop if
+one endows X with the indiscrete topology: Uniqueness and existence of
+a set-theoretic map follow by Freyd's argument, and any map with
+values in an indiscrete space is continuous.
+
+(2)------------------------------------------------------------------
+Now consider the category of T0 spaces. For the sake of contradiction,
+assume that there is a final coalgebra d:X->FX where X has
+distinguished points x0 and x1.
+
+Let S be the space with two points 0 and 1 such that {1} is open but
+{0} is not (Sierpinski space). We use the facts that 0<=1 in the
+specialization order (every neighbourhood of 0 is also a neighbourhood
+of 1) and that continuous maps preserve the specialization order.
+
+Let A be S with distinguished points 0 and 1 (in this order). Then FA
+has points 0,1/2,1 with distinguished points 0 and 1. So there is a
+unique morphism A->FA. By the alleged finality of d:X->FX there is a
+unique homomorphism h:A->X. Since h(0)=x_0 and h(1)=x_1, by continuity
+of h we conclude that x0<=x1 in the specialization order. By swapping
+the order of the distinguished points of S, we also conclude that
+x1<=x0. Thus, x0 and x1 have the same neighbourhoods. By the T0
+property, they are equal, which contradicts the definition of a
+bipointed topological space.
+
+(3)------------------------------------------------------------------
+Now consider the category of normal spaces.  We use Urysohn's Lemma
+and Banach's Fixed Point Theorem to show that Freyd's construction
+works here if one endows I=[0,1] with the Euclidean topology.
+
+First, d:I->FI as defined by above is clearly a homeomorphism with
+inverse c:FI->I given by
+
+       c(inl(x))=x/2
+       c(inr(x))=(x+1)/2.
+
+(NB. "d" stands for "destructor" and "c" for "constructor".)
+
+Thus, if D:X->FX is a coalgebra, to say that h:X->I is a coalgebra
+homomorphism is the same as saying that
+
+	h = c o Fh o D
+
+We thus consider the obvious functional H:C(X,I)->C(X,I) where C(X,I)
+is the set of continuous maps from X to I, namely
+
+	H(h) = c o Fh o D.
+
+(I know, the domain and codomain of H should consist of BiTop
+morphisms rather than continuous maps; this (co)restriction will be
+performed very shortly).
+
+We endow C(X,I) with the sup-metric, which is well-defined as I is
+bounded. It is well-known that this is a complete metric space with
+limits of Cauchy sequences computed pointwise. We consider the
+subspace B(X,I) of BiTop morphisms.  First, it is non-empty by
+Urysohn's Lemma. And this is where the assumption of normality is used
+(albeit not in its full strength). Second, it is a complete subspace,
+as limits are computed pointwise. Third, H trivially (co)restricts to
+a functional H:B(X,I)->B(X,I).
+
+Thus, in order to obtain the desired conclusion, all we have to do is
+to show that H:B(X,I)->B(X,I) is contractive.
+
+For every x in X, we have that D(x) is of one of the forms inl(y) or
+inr(z), for which we respectively get that, for any h in B(X,I),
+
+	H(h)(x)= c o Fh o inl(y)=h(y)/2		or
+	H(h)(x)= c o Fh o inr(z)=(h(z)+1)/2.
+
+Hence in each case we respectively get that
+
+       |H(h)(x)-H(g)(x)|=|h(y)/2-g(y)/2|        =|h(y)-g(y)|/2   or
+       |H(h)(x)-H(g)(x)|=|(h(z)+1)/2-(g(z)+1)/2|=|h(z)-g(z)|/2
+
+By definition of the sup-metric, the distance from H(h) to H(g) is the
+sup of |H(h)(x)-H(g)(x)| over all x. By the above argument this is
+smaller than the sup of |h(t)-g(t)|/2 over all t (because the sup of a
+larger set is bigger), which is half the distance from h to
+g. Therefore H is contractive. Q.E.D
+
+Remark ---------------------------------------------------------------
+
+Normality in (3) can be generalized to the requirement that for any
+two distinct points there is a function into the unit interval that
+maps one of the points to 0 and the other to 1 (weak normality). This
+is stronger than Hausdorffness and weaker than normality by Urysohn's
+Lemma.  But this definition uses the very object that we want to
+"construct". Does anyone know a characterization of weak normality
+that doesn't refer to real numbers? 
+
+It is easy to see that the assumption that the unit interval with the
+Freyd's structure is final in BiC for some subcategory C of Top
+implies that all spaces of C are weakly normal.
+
+Thus, the largest full subcategory of Top for which the Euclidean unit
+interval with Freyd's structure map is a final coalgebra consists
+precisely of the weakly normal spaces.
+----------------------------------------------------------------------
+Question: What does one get in full subcategories of locales and of
+equilogical spaces?
+----------------------------------------------------------------------
+mailto:mhe@dcs.st-and.ac.uk 
+http://www.dcs.st-and.ac.uk/~mhe/
+----------------------------------------------------------------------
+
+
+

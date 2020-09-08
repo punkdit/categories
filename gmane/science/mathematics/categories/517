@@ -1,0 +1,319 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: abstract algebraic geometry
+Date: Wed, 5 Nov 1997 17:34:57 -0400 (AST)
+Lines: 296
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971105173450.23856S-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017011 26086 80.91.229.2 (29 Apr 2009 14:56:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:51 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Wed Nov  5 17:34:58 1997
+Original-Received: by mailserv.mta.ca; id AA17010; Wed, 5 Nov 1997 17:34:57 -0400
+Status: O
+Content-Length: 11286
+Original-Lines: 295
+Xref: news.gmane.org gmane.science.mathematics.categories:517
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/517>
+
+Date: Tue, 4 Nov 1997 14:17:40 -0800
+From: Zhaohua Luo <zack@iswest.com>
+
+The following is the first part of "The language of analytic
+categories", which is a report on my paper CATEGORICAL
+GEOMETRY. The entire report (in LaTex) is available upon
+request. Again comments and suggestions are welcome.
+
+Z. Luo
+_________________________________________________
+
+THE LANGUAGE OF ANALYTIC CATEGORIES
+
+By Zhaohua Luo (1997)
+
+Content
+
+1. Analytic Categories
+2. Distributive Properties
+3. Coflat Maps
+4. Analytic Monos
+5. Reduced Objects
+6. Integral Objects
+7. Simple Objects
+8. Local Objects
+9. Analytic Geometries 
+10. Zariski Geometries
+References
+Appendix: Analytic Dictionary
+
+-------------------------------------------------------------
+1. Analytic Categories
+
+Consider a category with an initial object 0. Two maps u: U -
+-> X and v: V --> X are "disjoint" if 0 is the pullback of (u,
+v). Suppose X + Y is the sum of two objects with the
+injections (also called "direct monos") x: X --> X + Y and y:
+Y --> X + Y. Then X + Y is  "disjoint" if the injections x and
+y are disjoint and monic. The sum X + Y is "stable" if for any
+map f: Z --> X + Y, the pullbacks Z_X --> Z and Z_Y --> Z
+of x and y along f exist, and the induced map Z_X + Z_Y -->
+Z is an isomorphism. 
+
+Assume the category has pullbacks. A "strong mono" is a
+map (in fact, a mono) such that any of its pullbacks is not
+proper (i.e. non-isomorphic) epic. The category is "perfect" if
+any intersection of strong monos exist. If a map f is the
+composite m.e of an epi e followed by a strong mono m then
+the pair (e, m) is called an "epi-strong-mono factorization" of
+f; the codomain of e is called the "strong image" of f. In a
+perfect category any map has an epi-strong-mono
+factorization.
+
+An "analytic category" is a category satisfying the following
+axioms:
+(Axiom 1) Finite limits and finite sums exist.
+(Axiom 2) Finite sums are disjoint and stable.
+(Axiom 3) Any map has an epi-strong-mono factorization.
+
+Consider an analytic category. For any object X denote by
+R(X) the set of strong subobjects of X. Since finite limits
+exist, the poset R(X) has meets. Suppose u: U  -->  X and v:
+V  -->  X are two strong subobjects. Suppose T = U + V is
+the sum of U and V and t: T  -->  X is the map induced by u
+and v. Then the strong image t(T) of T in X is the join of U
+and V in R(X). It follows that R(X) has joins. Thus R(X) is a
+lattice, with 0_X: 0  -->  X as zero and 1_X: X  -->  X as
+one. If the category is prefect then R(X) is a complete lattice.
+An object Z has exactly one strong subobject (i.e. 0_Z = 1_Z)
+iff it is initial. 
+
+If u: U --> X is a mono, we denote by f^{-1}(u) the pullback
+of u along f. Then f^{-1}: R(X) --> R(Y) is a mapping
+preserving meets with f^{-1}(0_X) = 0_Y and f^{-1}(1_X) =
+1_Y (i.e. f^{-1} is bounded). Also f^{-1} has a left adjoint
+f^{+1}: R(Y) --> R(X) sending each strong subobject v: V --
+>  Y to the strong image of the composite f. v: V --> X. If V
+= Y then f^{+1}(Y) is simply the strong image of f.
+
+The theories of analytic categories and Zariski geometries
+(including the notions of coflat maps and analytic monos)
+given below are based on the works of Diers (see [D] and
+[D1]). Note that we have only covered the most elementary
+part of the theory of Zariski geometries (up to the first three
+chapters of [D]). 
+
+-----------------------------------------------------------
+2. Distributive Properties
+
+Let C be an analytic category. Recall that a "regular mono" is
+a map which can be written as the equalizer of some pair of
+maps.
+
+(2.1) The class of strong monos is closed under composition
+and stable under pullback; any intersection of strong monos is
+a strong mono.
+
+(2.2) An epi-strong-mono factorization of a map is unique up
+to isomorphism.
+
+(2.3)  Any regular mono is a strong mono; any pullback of a
+regular mono is a regular mono; any direct mono is a regular
+mono; finite sums commute with equalizers.
+
+(2.4) Any proper (i.e. non-isomorphic) strong subobject is
+contained in a proper regular subobject; a map is not epic iff
+it factors through a proper regular (or strong) mono. 
+
+(2.5) The initial object 0 is strict (i.e. any map X --> 0 is an
+isomorphism); any map 0 --> X is regular (thus is not epic
+unless X is initial).
+
+(2.6) If the terminal object 1 is strict (i.e. any map 1 --> X is
+an isomorphism) then the category is equivalent to the
+terminal category 1 (thus the opposite of an analytic category
+is not analytic unless it is a terminal category).
+
+(2.7)  Let f_1: Y_1 --> X_1 and f_2: Y_2 --> X_2 be two
+maps. Then f_1 + f_2 is epic (resp. monic, resp. regular
+monic) iff f_1 and f_2 are so.
+
+---------------------------------------------------------------
+3. Coflat Maps
+
+A map f: Y  -->  X is "coflat" if the pullback functor C/X  --> 
+C/Y along f preserves epis. More generally a map f: Y  -->  X
+is called "precoflat" if the pullback of any epi to X along f is
+epic. A map is coflat iff it is "stable precoflat" (i.e. any of its
+pullback is precoflat). An analytic category is "coflat" if any
+map is coflat (or equivalently, any epi is stable).
+
+(3.1) Coflat maps (or monos) are closed under composition
+and stable under pullback; isomorphisms are coflat; any direct
+mono is coflat.	
+
+(3.2) Finite products of coflat maps are coflat; a finite sum of
+maps is coflat iff each factor is coflat.
+
+(3.4) Suppose f: Y --> X is a mono and g: Z --> Y is a map.
+Then g is coflat if f.g is coflat.
+
+(3.5) For any object X, the codiagonal map X + X --> X is
+coflat.
+
+(3.6) Suppose {f_i: Y_i --> X} is a finite family of coflat
+maps. Then f = \sum (f_i): Y = \sum Y_i --> X is coflat.
+
+(3.7) Suppose f: Y --> X is a coflat bimorphisms. If g: Z -->
+Y is a map such that f.g is an epi, then g is an epi.
+
+(3.8) Suppose f: Y --> X is a coflat mono (bimorphisms) and
+g: Z --> Y is any map. Then g is a coflat mono (bimorphisms)
+iff f.g is a coflat mono (bimorphisms).  
+
+(3.9) If x: X_1 --> X is a map which is disjoint with a coflat
+map f: Y --> X, then the strong image of x is disjoint with f.  
+
+(3.10) If f: Y --> X is a coflat map, then f^{-1}: R(X) -->
+R(Y) is a morphism of lattice.
+
+(3.11) If f: Y --> X is a coflat mono, then f^{-1}f^{+1} is the
+identity R(Y) --> R(Y).
+
+(3.12) (Beck-Chevalley condition) Suppose f: Y --> X is a
+coflat map and g: S --> X is a map. Let (p: T --> Y, n: T -->
+S) be the pullback of (f, g). Then p^{+1}n^{-1} = f^{-
+1}g^{+1}. 
+
+------------------------------------------------------------------
+4. Analytic Monos
+
+A mono u^c: U^c --> X is a "complement" of a mono u: U --
+> X if u and u^c are disjoint, and any map v: T --> X such
+that u and v are disjoint factors through u^c (uniquely). The
+complement u^c of u, if exists, is uniquely determined up to
+isomorphism. A mono is "singular" if it is the complement of
+a strong mono. An "analytic mono" is a coflat singular mono.
+A mono is "disjunctable" if it has a coflat complement. An
+analytic category is "disjunctable" if any strong mono is
+disjunctable; it is "locally disjunctable" if any strong mono is
+an intersection of disjunctable strong monos.
+
+(4.1) Analytic monos are closed under composition and stable
+under pullbacks;  isomorphisms are analytic monos; a mono is
+analytic iff it is a coflat complement of a mono; any direct
+mono is analytic.
+
+(4.2) The pullback of any disjunctable mono is disjunctable.
+
+(4.3) If u: U --> X and v: V --> X are two disjunctable strong
+subobjects of X, then u^c \cap v^c = (u \vee v)^c.
+
+(4.4) Finite intersections and finite sums of analytic monos
+are analytic monos.
+
+(4.5) Suppose any strong map is regular. Then C is
+disjunctable iff any object is disjunctable. It is locally
+disjunctable if there is a set of cogenerators consisting of
+disjunctable objects.
+
+------------------------------------------------------------------
+5. Reduced Objects
+
+A map is "unipotent" if any of its pullback is not proper
+initial. A map (in fact, a mono) is "normal" if any of its
+pullback is not proper unipotent. A "reduced object" is an
+object such that any unipotent map to it is epic. A unipotent
+reduced strong subobject of an object X is called  the
+"radical" of X, denoted by rad(X). A "reduced model" of an
+object X is the largest reduced strong subobject of X,
+denoted by red(X). An analytic category is "reduced" if any
+object is reduced. An analytic category is "reducible" if any
+non-initial object has a non-initial reduced strong subobject. If
+f: Y --> X is an epi we simply say that X is a "quotient" of Y.
+A "locally direct mono" is a mono which is an intersection of
+direct monos. An analytic category  is "decidable" (resp.
+"locally decidable") if any strong mono is a direct (resp.
+locally direct) mono.
+
+(5.1) An object is reduced iff any unipotent strong mono to it
+is an isomorphism (i.e. any object has no proper unipotent
+strong subobject).
+
+(5.2) Any stable epi is unipotent; conversely any unipotent
+map in a reduced analytic category is a stable epi.
+
+(5.3) A unipotent strong subobject contains each reduced
+subobject.
+
+(5.4) A radical is the largest reduced and the smallest
+unipotent strong subobject (therefore is unique).
+
+(5.5) Any quotient of a reduced object is reduced; if f: Y -->
+X is a map and U is a reduced strong subobject of Y then its
+strong image f^{+1}(U) in X is reduced.
+
+(5.6) Any reduced subobject is contained in a reduced strong
+subobject.
+
+(5.7) The join of a set of reduced strong subobjects of an
+object (in the lattice of strong subobjects) is reduced.
+
+(5.8) Any analytic subobject of a reduced object is reduced.
+
+(5.9) An analytic category is reduced iff every strong mono is
+normal. 
+
+(5.10) Any object in a perfect analytic category has a reduced
+model.
+
+(5.11) If X has a reduced model red(X) then any map from a
+reduced object to X factors uniquely through the mono r(X) 
+-->  X.
+
+(5.12) In a perfect analytic category the full subcategory of
+reduced subobjects is a coreflective subcategory. 
+
+(5.13) The radical of an object X is the reduced model of X.
+
+(5.14) In a reducible analytic category the reduced model of
+an object is unipotent (thus is the radical); any object in a
+perfect reducible analytic category has a radical.
+
+(5.15) Any decidable or locally decidable analytic category is
+reduced.
+
+-----------------------------------------------------------------
+6. Integral Objects
+
+A non-initial reduced object is "integral" if any non-initial
+coflat map to it is epic. An integral strong subobject of an
+object X is called a "prime" of X. Denote by Spec(X) the set
+of primes of X. An analytic category is "spatial" if any non-
+initial object has a non-initial prime.
+
+(6.1) Any quotient of an integral object is integral; if f: Y -->
+X is a map and U a prime of Y, then f^{+1}(U) is a prime of
+X.    
+
+(6.2) If U and V are two non-initial coflat (resp. analytic)
+subobjects of an integral object, then the intersection of U
+and V is non-initial.
+
+(6.3) Any non-initial analytic subobject of an integral object is
+integral.
+
+(6.4) In a locally disjunctable analytic category the following
+are equivalent for a non-initial reduced object X: (a) X is
+integral;  (b) Any non-initial analytic mono is epic; (c) X is
+not the join of two proper strong subobjects in R(X).
+
+------------------------------------------------------------------
+THE END OF THE FIRST PART
+
+
+

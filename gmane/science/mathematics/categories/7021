@@ -1,0 +1,167 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Sun, 30 Oct 2011 16:44:11 +0000
+Lines: 127
+Approved: news@gmane.org
+Message-ID: <E1RKrHe-0002N5-QE@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk> <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu> <E1RIgcZ-0000YV-SW@mlist.mta.ca> <E1RIqRm-0003Nt-9e@mlist.mta.ca> <E1RJ3K6-0005wZ-KV@mlist.mta.ca> <E1RJOef-0002NU-8v@mlist.mta.ca>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753.1)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1320065399 27915 80.91.229.12 (31 Oct 2011 12:49:59 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 31 Oct 2011 12:49:59 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: Vaughan Pratt <pratt@cs.stanford.edu>
+Original-X-From: majordomo@mlist.mta.ca Mon Oct 31 13:49:50 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RKrJE-0005eh-Sn
+	for gsmc-categories@m.gmane.org; Mon, 31 Oct 2011 13:49:49 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:35903)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RKrHg-0000Xj-Hz; Mon, 31 Oct 2011 09:48:12 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RKrHe-0002N5-QE
+	for categories-list@mlist.mta.ca; Mon, 31 Oct 2011 09:48:10 -0300
+In-Reply-To: <E1RJOef-0002NU-8v@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7021
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7021>
+
+Dear Vaughan,
+
+There's always a chance I'm wrong about Mostowski. I was going by a
+mention in Lambek and Scott, but I'm not sure I tracked down the
+reference. In any case, the technique is well developed. The details
+in the Elephant are at pp.830-1. It's in sequent form, which allows
+it to be applied to logics without implication as a connective.
+However, with implication you can move everything to the right.
+
+I looked at your article on the web. As I suspected, your treatment
+of all variables, free or bound, as part of the context V loses
+subtlety. An empty carrier is in effect treated as an inconsistent
+object for the purposes of determining the semantics of any formula
+with variables. For them FALSE and TRUE are identified, and so it is
+impossible to discriminate between (exists) x. TRUE(x) (as false) and
+(all) x. FALSE(x) (as vacuously true). To make that discrimination
+you have to be able to work soundly with the empty context.
+
+To put it bluntly, your idea of treating all variables as part of the
+context works by saying FALSE is TRUE in the case of empty carriers.
+I don't believe your proposed semantics is a satisfactory one.
+
+You ask where a came from in something like (all) a. (exists) x. TRUE
+(x). The answer is that it didn't, or not yet. It is symbolic of a
+hypothetical element. In asserting the formula we say that _if_
+someone brings us an a then we promise to deliver an x such that TRUE
+(x) holds. Game theoretically we are safe whatever the carrier, since
+our x can just be a. But in addition for the empty carrier we know we
+will be undisturbed since no one will ever have an a to bring us.
+
+Regards,
+
+Steve.
+
+
+On 27 Oct 2011, at 11:08, Vaughan Pratt wrote:
+
+>
+> On 10/26/2011 3:11 AM, Steve Vickers wrote:
+>> To avoid any misunderstanding, it's not my approach to handling the
+>> empty universe - it has been around for a long time, I believe it
+>> originated with Mostowski, and it is present well in the Elephant D.
+>
+> I guess this would be on p.811 of Volume 2.  But I don't see any
+> mention
+> of Mostowski there.  Where can one find Mostowski's account?  And when
+> did he propose it?
+>
+>> The theorems
+>>
+>>     TRUE(a)
+>>     TRUE(a) -->  (exists) x. TRUE(x)
+>>
+>> can only be in a context that has at least a, and applying modus
+>> ponens
+>> leaves us with
+>>
+>>     (exists) x. TRUE(x)
+>>
+>> as a theorem _in that same context_.
+>
+> Ok, so it would appear that there are two rather different
+> approaches to
+> making FOL "safe" for the empty universe, one syntactic and the other
+> semantic.
+>
+> 1.  Replace the usual notion of first order logic (as treated in a
+> great
+> many textbooks) with one in which formulas carry along contexts
+> governed
+> by rules that are part of inference rules like Modus Ponens.  The
+> variables comprising these contexts could be typed or untyped.
+>
+> 2.  Leave the language, axioms, and rules of first order logic
+> unchanged
+> from how it's been treated for a great many decades, and instead
+> modify
+> just the semantics so that there is only one truth value in the
+> inconsistent situation where the universe is empty yet there are free
+> variables needing values.
+>
+> I gave pretty complete details of how 2 would work at
+> http://boole.stanford.edu/Empty , based on D^V being empty when D is
+> empty and V is not, making 2^D^V = 1.
+>
+> I am willing to believe that 1 can be made to work consistently,
+> though
+> I would be interested to see the details.
+>
+> Since logic courses may not want to be forced to modify their
+> curriculum
+> to introduce contexts, nor to remove them, it would seem beneficial to
+> have both the above options, chosen according to the needs of the
+> course
+> and the preferences of the instructor.
+>
+>> It is wrong to say (exists) x.
+>> TRUE(x) is a theorem without specifying the context. In the empty
+>> context it becomes the theorem
+>>
+>>     (all) a. (exists) x. TRUE(x)
+>
+> This serves as an example of why the rules for option 1 need to be
+> spelled out in detail.  If the context is empty, where did a come
+> from?
+>   And how did it get to be universally quantified?  By making
+> generalization mandatory?  Is all this codified in one place, and
+> if so
+> where?  If the Elephant, then it would be helpful to have an explicit
+> list of axioms in one place.  These may exist in the Elephant, but
+> they
+> seem rather scattered around, making them something of a moving
+> target.
+>   The rules of the pure untyped predicate calculus are well known,
+> they
+> were established in the first half of century, and their completeness
+> was shown by Goedel.
+>
+> Vaughan
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

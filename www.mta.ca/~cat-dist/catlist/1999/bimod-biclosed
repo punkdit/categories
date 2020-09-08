@@ -1,0 +1,224 @@
+Date: Tue, 16 Jan 1996 14:06:43 -0400 (AST)
+Subject: bimodules in a biclosed category
+
+Date: Tue, 16 Jan 1996 08:11:29 -0500
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+Has anyone proved that if you take an "algebra" (actually monoid) object
+in a monoidal biclosed category that has equalizers and coequalizers,
+then the category of two-sided modules for that algebra is again a
+monoidal biclosed category.  Mac Lane did this in 1965 when everything
+is symmetric (the tensor, the algebra and the modules) under the (surely
+irrelevant) assumption that the original category is also abelian.  The
+fact is certainly true, but writing down the proof would be rather
+painful.
+
+Michael Barr
+
+
+Date: Wed, 17 Jan 1996 10:13:43 -0400 (AST)
+Subject: Re: bimodules in a biclosed category
+
+Date: Wed, 17 Jan 1996 10:42:32 +0100 (MET)
+From: koslowj@iti.cs.tu-bs.de
+
+Hello,
+
+Regarding Michael Barr's question: I have this result for bi-closed
+bicategories, and actually talked about it in Halifax last year.
+Als Micheal rightly suspects, some of the proofs get tedious, and
+designing the relevant diagrams is something else, even using xy-pic!
+I hope that the paper will be finished by March.
+
+Best regards,
+
+-- J"urgen Koslowski
+   Institut f"ur theoretische Informatik
+   TU Braunschweig
+   Braunschweig, Germany
+
+
+Date: Wed, 17 Jan 1996 10:14:22 -0400 (AST)
+ubject: Re: bimodules in a biclosed category
+
+Date: Wed, 17 Jan 1996 12:22:32 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>Has anyone proved that if you take an "algebra" (actually monoid) object
+>in a monoidal biclosed category that has equalizers and coequalizers,
+>then the category of two-sided modules for that algebra is again a
+>monoidal biclosed category.  Mac Lane did this in 1965 when everything
+>is symmetric (the tensor, the algebra and the modules) under the (surely
+>irrelevant) assumption that the original category is also abelian.  The
+>fact is certainly true, but writing down the proof would be rather
+>painful.
+
+The question made me think - as perhaps it was meant to - of modules over
+non-commutative rings, and I wondered whether its scope was unnecessarily
+restricted in considering just 2-sided modules over a single algebra. We
+also know that there can be a rich and well-behaved structure for bimodules
+over two algebras:
+
+   (A,B)-bimod tensor (B,C)-bimod is (A,C)-bimod
+                 B
+
+   (A,B)-bimod  hom (A,C)-bimod is (B,C)-bimod
+               A
+
+   (A,B)-bimod hom  (C,B)-bimod is (C,A)-bimod
+                  B
+
+Does anyone know how to state the question to cover this more general
+context? But then what works for algebras ought also to work for
+algebroids, i.e. enriched categories.
+
+Steve Vickers.
+
+
+Date: Wed, 17 Jan 1996 11:14:36 -0400 (AST)
+Subject: Re: bimodules in a biclosed category
+
+Date: Wed, 17 Jan 1996 10:00:03 -0500
+From: Michael Barr <barr@triples.math.mcgill.ca>
+-
+- Date: Wed, 17 Jan 1996 12:22:32 +0000
+- From: Steve Vickers <sjv@doc.ic.ac.uk>
+-
+- >Has anyone proved that if you take an "algebra" (actually monoid) object
+- >in a monoidal biclosed category that has equalizers and coequalizers,
+- >then the category of two-sided modules for that algebra is again a
+- >monoidal biclosed category.  Mac Lane did this in 1965 when everything
+- >is symmetric (the tensor, the algebra and the modules) under the (surely
+- >irrelevant) assumption that the original category is also abelian.  The
+- >fact is certainly true, but writing down the proof would be rather
+- >painful.
+-
+- The question made me think - as perhaps it was meant to - of modules over
+- non-commutative rings, and I wondered whether its scope was unnecessarily
+- restricted in considering just 2-sided modules over a single algebra. We
+- also know that there can be a rich and well-behaved structure for bimodules
+- over two algebras:
+-
+-    (A,B)-bimod tensor (B,C)-bimod is (A,C)-bimod
+-                  B
+-
+-    (A,B)-bimod  hom (A,C)-bimod is (B,C)-bimod
+-                A
+-
+-    (A,B)-bimod hom  (C,B)-bimod is (C,A)-bimod
+-                   B
+-
+- Does anyone know how to state the question to cover this more general
+- context? But then what works for algebras ought also to work for
+- algebroids, i.e. enriched categories.
+-
+- Steve Vickers.
+-
+-
+-
+-
+Actually, if the ground tensor is not symmetric, you cannot even
+define the notion of (A,B) bimodule.  You can define that of left A,
+right B bimodule and that seems to be that.  Perhaps that is what
+Steve means when he says (A,B) bimodule.  In that case, he is, of
+course, correct.  In fact, in writing this up, I find it less
+confusing to do the more general situation exactly as described.
+But I would rather not have to write it up if someone has already
+done it as it is rather unpleasant.
+
+Michael
+
+
+Date: Thu, 18 Jan 1996 12:03:20 -0400 (AST)
+Subject: bimodules in a biclosed category
+
+Date: Thu, 18 Jan 1996 10:38:59 +1100
+From: Ross Street <street@mpce.mq.edu.au>
+
+In response to Michael Barr's question:
+
+Theorem: If  V  is a closed braided monoidal category which is complete
+and cocomplete then the bicategory  V-Mod  of V-categories, V-modules
+(sometimes called V-bimodules, V-distributors or V-profunctors), and
+V-module morphisms is a monoidal bicategory (meaning the hom of a
+tricategory with one object).  However, in order for  V-Mod  to be
+braided,  V  must be symmetric in which case  V-Mod  is also
+symmetric (also called strongly involutory by Baez-Dolan).
+
+If you are only interested in monoids in  V,  just take the subbicategory
+of one-object V-categories. Of course, then, you can do with less
+completeness and cocompleteness on  V.
+
+But yes, the detailed proof of this makes a long, but fairly routine,
+story. Brian Day and I are working on a paper "Monoidal bicategories
+and Hopf algebroids" which will contain a discreet amount of detail
+(along with other things). I have been talking about aspects of the
+paper in our Category Seminars.
+
+Regards,
+Ross
+
+
+Date: Wed, 24 Jan 1996 20:26:55 -0400 (AST)
+Subject: More on Mike Barr's question
+
+Date: Thu, 25 Jan 1996 10:00:04 +1100
+From: Ross Street <street@mpce.mq.edu.au>
+
+There has been some further discussion between Mike Barr and me
+on modules between monoids in a complete, cocomplete, closed monoidal
+category.
+
+Mike responded:
+
+>If I have understood your theorem, it is claimed only for the case that
+>the original category is braided.  I was interested in the genuinely
+>asymmetric case, so this doesn't apply.  Although your arguments
+>are probably valid in that case, at a guess. Have I missed something?
+
+So I said:
+
+It looks as though **I** missed something. I didn't include the older
+fact well known to enriched category theorists: even without any symmetry
+or braiding,  V-Mod is a bicategory in which all right extensions and
+right liftings exist (I don't like the word "biclosed"; I use "left closed",
+"right closed" and "closed" for both when dealing with a monoidal category).
+In particular, for any V-category  A, each hom category  V-Mod(A,A)  is a
+closed monoidal category under composition (= tensor product) of modules
+(as before, I don't say "bimodules" either). Even more particularly you
+can take A to be a monoid in V.
+
+For this there ARE references. I believe Benabou, in his Louvain-la-neuve
+notes
+
+"Les Distributeurs" Rapport No 33 jan 1973,
+
+only looked at the case of V symmetric. Same is true of Bill Lawvere's
+"Metric spaces" paper. But it is not hard to generalise. My paper
+
+Enriched categories and cohomology, Quaestiones Math. 6 (1983)
+265-283; MR85e:18007
+
+does the non-symmetric case. But it does it more generally for  V
+a bicategory (without commutativity you might as well have "several objects").
+Other papers which build on this are:
+
+Cauchy characterization of enriched categories, Rendiconti del Seminario
+Matematico e Fisico di Milano  51 (1981) 217-233; MR85e:18006.
+
+(with R. Betti, A. Carboni, and R. Walters) Variation through enrichment,
+J. Pure Appl. Algebra 29 (1983) 109-127; MR85e:18005.
+
+(with A. Carboni, S. Johnson and D. Verity) Modulated bicategories, J. Pure
+Appl. Algebra 94 (1994) 229-282.
+
+Gordon and Power have also done Gabriel-Ulmer duality for W-Mod where
+W is a decent bicategory (homs locally presentable).  JPAA?
+
+The recent thing with Brian Day looks at when  V-Mod itself is "monoidal",
+a natural step beyond the above references & studied by Carboni, Walters
+et al in the case where V is a poset (or W is locally a poset).
+
+Best wishes,
+Ross
+

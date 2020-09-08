@@ -1,0 +1,108 @@
+Date: Sat, 12 Nov 1994 10:47:42 +0400 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Colimits in categories of diagrams
+
+Date: Fri, 11 Nov 1994 13:57:32 -0800
+From: Y V Srinivas <srinivas@kestrel.edu>
+
+
+Do (finite) colimits exist in categories of diagrams?
+
+Here are the definitions of the terms used above.
+
+A diagram of shape S in a category C is a functor D: S -> C.
+
+A covariant diagram morphism from D1: S1 -> C to D2: S2 -> C is a pair
+<sm, mu> consisting a shape morphism (functor) sm: S1 -> S2 and a
+natural transformation mu: D1 -> D2 o sm.
+
+A contravariant diagram morphism is similar except that the direction
+of the natural transformation is opposite.
+
+We thus get two categories of diagrams in C (of all shapes).
+Mac Lane calls these "super comma categories" (p.111).
+
+Now, the question reads: given that (finite) colimits exist in C, do
+(finite) colimits exist in the two categories of diagrams in C?
+
+I haven't been able to come up with a construction or a proof that
+colimits don't exist. I appreciate any help you can provide on this
+matter. Also, I would like to know if there are related results, e.g.,
+with limits.
+
+                                        - srinivas
+
+========
+Y. V. Srinivas                          E-mail: srinivas@kestrel.edu
+Kestrel Institute                       Phone: (415) 493-6871
+3260 Hillview Avenue                    Fax:   (415) 424-1807
+Palo Alto, CA 94304
+
+Date: Sun, 13 Nov 1994 11:06:53 +0400 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Re: Colimits in categories of diagrams
+
+Date: Sat, 12 Nov 1994 21:13:19 -0400
+From: Richard Wood <rjwood@cs.dal.ca>
+
+> Date: Fri, 11 Nov 1994 13:57:32 -0800
+> From: Y V Srinivas <srinivas@kestrel.edu>
+>
+>
+> Do (finite) colimits exist in categories of diagrams?
+>
+> Here are the definitions of the terms used above.
+>
+> A diagram of shape S in a category C is a functor D: S -> C.
+>
+> A covariant diagram morphism from D1: S1 -> C to D2: S2 -> C is a pair
+> <sm, mu> consisting a shape morphism (functor) sm: S1 -> S2 and a
+> natural transformation mu: D1 -> D2 o sm.
+>
+> A contravariant diagram morphism is similar except that the direction
+> of the natural transformation is opposite.
+>
+> We thus get two categories of diagrams in C (of all shapes).
+> Mac Lane calls these "super comma categories" (p.111).
+>
+> Now, the question reads: given that (finite) colimits exist in C, do
+> (finite) colimits exist in the two categories of diagrams in C?
+>
+> I haven't been able to come up with a construction or a proof that
+> colimits don't exist. I appreciate any help you can provide on this
+> matter. Also, I would like to know if there are related results, e.g.,
+> with limits.
+>
+>                                       - srinivas
+In my thesis, Dalhousie 1976, I used a (2-)category of diagrams of
+the kind that you describe, with C=set. The 2-functor cat--->CAT
+which sends S to set^(S^op) gives rise to a fibration, say P:D_--->cat,
+and the objects of D_ are evidently diagrams in set of variable shape.
+If you regard such an object, D:S^op--->set, as a discrete fibration,
+say D'--->S, then it is straightforward to describe a 2-fully faithful
+2-functor, I:D_--->cat^2 . Now codomain:cat^2--->cat is itself a
+fibration over cat and the inclusion I is a 2-functor over cat.
+I has a left adjoint, L, that preserves finite products, from which it
+follows that D_ is complete, cocomplete and cartesian closed, as a
+2-category. By examining the nature of these constructions for my
+D_ you should be able to find what you need of a general C to answer
+your question.
+
+Well, to continue somewhat, P above clearly preserves limits but it
+also preserves colimits because the adjunction L-|I is an adjunction
+over cat. This should help to get started on the general problem. In
+fact, P preserves exponentiation too.
+
+(Pseudo-)category objects in D_ are interesting. Necessarily, they
+give rise to pseudo-category objects in cat. If, for example, V is a
+monoidal category then P-over the "category object" VxV--->V<---1 in
+cat are precisely the set^(V^op)-categories, where the monoidal
+structure of set^(V^op) is Brian Day's (universal) convolution
+structure. But there are many other "category objects" in cat that
+can be constructed from V and its monoidal data. Assembling these
+and looking at their inverse image in D_ allows one to construct a
+variant of the Pare-Schumacher theory of indexed categories that
+is useful when a given monoidal structure on the base for indexing
+is needed for multiply indexed families.
+
+RJ Wood

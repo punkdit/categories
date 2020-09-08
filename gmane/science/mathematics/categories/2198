@@ -1,0 +1,82 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Lietz <lietz@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Realizability and Partial Combinatory Algebras
+Date: Fri, 21 Feb 2003 16:03:39 +0100 (CET)
+Lines: 47
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0302211153540.6345-100000@fb04182.mathematik.tu-darmstadt.de>
+References: <200302201644.RAA15105@kodder.math.uu.nl>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018483 2964 80.91.229.2 (29 Apr 2009 15:21:23 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:23 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sat Feb 22 15:41:32 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 22 Feb 2003 15:41:32 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18mfQA-0006xU-00
+	for categories-list@mta.ca; Sat, 22 Feb 2003 15:34:50 -0400
+In-Reply-To: <200302201644.RAA15105@kodder.math.uu.nl>
+X-MailScanner: Found to be clean
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 54
+Status: O
+Content-Length: 1466
+Original-Lines: 46
+Xref: news.gmane.org gmane.science.mathematics.categories:2198
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2198>
+
+Dear Jaap, John and Thomas,
+
+I am not yet convinced.
+
+What I do more or less believe is that the operation of `thunking' works
+for a c-pca.
+
+But it does *not* seem to be the case that the combinator S that John
+defined (using thunking) satisfies the equations
+
+    Skxky(false)z = false   and   Skxkykz = (xkz)k(ykz) ,
+
+even in a total combinatory algebra!
+
+As I do not trust my term manipulation skills so much any more in this
+context, I wrote a little Haskell Program to compute the normal forms.
+The left hand side terms are indeed normalizing but their normal forms
+are considerably longer than the respective right hand side terms. Oddly
+enough, the normal form of the former term even contains variables.
+
+Now it is very well possible that my program has a bug, programming is
+hardly my main occupation. If you like to play with it you are invited to
+access it via
+
+	http://www.mathematik.tu-darmstadt.de/~lietz/cpca/cpca.hs
+
+and if you find a bug please do let me know.
+
+I cannot put my finger on exactly what is the gap in the proof. I think it
+has to do with the fact that thunk(e,c) does not commute with substitution
+in the way one might expect. Or put differently, the `thunk' algorithm and
+the Curry algorithm don't play along very well. Something in that
+direction.
+
+
+Finally, I should apologize for taxing the categories mailing list
+readers' patience with a subject that is likely only of marginal
+interest to most.
+
+have a nice weekend,
+
+Peter
+
+
+
+
+

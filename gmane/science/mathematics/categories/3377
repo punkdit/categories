@@ -1,0 +1,149 @@
+Path: news.gmane.org!not-for-mail
+From: "Tom Leinster" <t.leinster@maths.gla.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: More laws
+Date: Wed, 9 Aug 2006 04:56:01 +0100 (BST)
+Lines: 115
+Approved: news@gmane.org
+Message-ID: <12277.81.66.248.65.1155095761.squirrel@mail.maths.gla.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-15
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241019268 8498 80.91.229.2 (29 Apr 2009 15:34:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:34:28 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Aug  9 17:32:36 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 09 Aug 2006 17:32:36 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1GAuee-00027l-CQ
+	for categories-list@mta.ca; Wed, 09 Aug 2006 17:27:52 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: O
+Content-Length: 5224
+Original-Lines: 114
+Xref: news.gmane.org gmane.science.mathematics.categories:3377
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3377>
+
+Thanks very much to the many people who provided helpful, expert replies.
+
+To recap, I asked (among other things): given an algebra A for some
+theory, what can be said about the algebras obeying all the equational
+laws that A obeys?
+
+The question was posed in the context of finitary algebraic theories, and
+in that context, there's a straightforward description of such algebras:
+they are exactly the quotients of subalgebras of (possibly infinite)
+powers of A.  As explained by Peter Selinger and George Janelidze, this
+comes from Birkhoff's Theorem.
+
+I wanted to understand this particular situation - finitary algebraic
+theories and their equational laws - and I do understand it better than I
+did before.  However, what I ultimately want to understand is something
+slightly different and more general, which I'll now describe.
+
+This will take a while, so I'll start with the punchline: we get some very
+simple universal characterizations of some quite sophisticated objects.
+For example, we'll get a characterization of the Stone spaces among all
+topological spaces, and a construction of the space of Borel probability
+measures on a compact space.
+
+Here goes.  Take an algebraic theory and write F for the free algebra
+functor.  Any equational law w = w' in a set X of variables generates a
+congruence ~ on FX (identify w and w'), hence a quotient map
+
+e: FX ---> (FX)/~.
+
+An algebra A obeys this law iff e is orthogonal to A, i.e. every map FX
+---> A factors uniquely through e.
+
+All such maps e encoding laws are regular epi (and more besides).
+However, let's consider *all* maps whose domain is a free object.  I also
+want to consider all adjunctions, not just those arising from an algebraic
+theory - although they will provide important examples.
+
+So the general set-up is this.  Fix an adjunction U: D ---> C, F: C ---> D
+(F left adjoint to U).  A *law* is an arrow e: FX ---> E where X is in C
+and E is in D.  An object A of D *obeys* the law e if e is orthogonal to
+A.  An object B of D is *A-complete* if B obeys every law that A obeys.
+The *A-completion* B[A] of B is the free A-complete object on B, assuming
+it exists.
+
+Note that "law" now means something more general than it did before; we're
+no longer just interested in *equational* laws.  For instance, if the
+adjunction is the usual one between D = Group and C = Set,
+torsion-freeness is defined by laws, whereas it's not defined by
+equational laws (is it?).  Indeed, a group is torsion-free iff it obeys
+the law 1 ---> Z/pZ for every prime p.
+
+Examples (without proofs):
+
+1. Take C = D = Set and the identity adjunction.  Write n for an n-element
+set.  The 0-complete objects are 0 and 1.  The only 1-complete object is
+1.  If |A| > 1 then every set is A-complete, since A obeys "no laws" (i.e.
+only those laws that are isomorphisms).
+
+(If we were just using equational laws then 0 would be 1-complete too.)
+
+2. Take the usual adjunction between D = abelian groups and C = sets.  Let
+k be either the field of rational numbers or the field of p elements for
+some prime p; these fields have the property that an abelian group can be
+a k-vector space in at most one way.  Then an abelian group is k-complete
+iff it is a k-vector space.
+
+3. Take D to be a v-semilattice and C to be the terminal category.  Let a
+be in D.  Then an element b of D is a-complete iff b >= a, so b[a] = a v
+b.
+This might suggest that in general, B[A] should be functorial in A (as
+well as in B), but it's not.  You can use example (1) to show this.
+
+4. Take the discrete-space/point-set adjunction between D = Top and C =
+Set.  Write 2 for the discrete 2-point space.  Then a space is 2-complete
+iff it is a Stone space, i.e. compact Hausdorff totally disconnected.  So
+if B is any space, B[2] is the reflection of B into Stone spaces.
+
+It's striking that the adjunction between Top and Set, together with the
+simple space 2, give rise to the notion of Stone space.  Poetically, "the
+theory of the 2-point space is the theory of Stone spaces".
+
+All of this remains true if 2 is replaced by any other Stone space with >
+1 element.  (But it's most dramatic if you use 2.)
+
+5. This is the most substantial example, and it's what started me off on
+all this.  It's from work of Matthias Schroeder and Alex Simpson: see
+Simpson's talk "Probabilistic Observations and Valuations" at
+
+http://homepages.inf.ed.ac.uk/als/Talks/
+
+Let D be the category of topological spaces equipped with a binary
+operation and C = Top, with the obvious adjunction between them.  Let I =
+[0, 1] with topology generated by all the subintervals (x, 1], and the
+midpoint (mean) operation.  Schroeder and Simpson prove, among other
+things, that if X is a compact Hausdorff space then (FX)[I] is the space
+of regular Borel probability measures on X, equipped with the weak
+topology (and the obvious midpoint operation).  Using the universal
+property of (FX)[I], this also gives the definition of integration on X.
+
+
+I'd be interested to know what other people make of this.  Perhaps, for
+instance, someone knows a good way to describe which properties can be
+defined by "laws" in the sense above, and perhaps someone can shed some
+light on the non-functoriality noted in (3).
+
+Thanks for reading,
+Tom
+
+
+
+
+
+
+
+

@@ -1,0 +1,86 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@math.uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is equality evil?
+Date: Sat, 25 Sep 2010 09:18:39 -0700
+Lines: 46
+Approved: news@gmane.org
+Message-ID: <E1OzcjA-0000We-Vq@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca>
+Reply-To: Michael Shulman <shulman@math.uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1285451828 16246 80.91.229.12 (25 Sep 2010 21:57:08 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 25 Sep 2010 21:57:08 +0000 (UTC)
+Cc: categories@mta.ca, Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Original-X-From: majordomo@mlist.mta.ca Sat Sep 25 23:57:06 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ozcjx-0002mS-Se
+	for gsmc-categories@m.gmane.org; Sat, 25 Sep 2010 23:57:06 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:44074)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OzcjD-0005Kl-Hr; Sat, 25 Sep 2010 18:56:19 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OzcjA-0000We-Vq
+	for categories-list@mlist.mta.ca; Sat, 25 Sep 2010 18:56:17 -0300
+In-Reply-To: <E1Oz7GE-0001gy-TD@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6226
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6226>
+
+On Tue, Sep 21, 2010 at 9:00 PM, Toby Bartels
+<toby+categories@ugcs.caltech.edu> wrote:
+> In sufficiently impredicative mathematics, identity can be defined:
+> =A0Given a type A and elements x and y of A, x is _identical_ to y
+> =A0if, for every predicate p on A, p holds for x iff p holds for y.
+> ...
+> It would be interesting to hear from people who want to keep kosher,
+> but also want to reason impredicatively, how to interpret this definition=
+.
+
+Well, if "for every predicate" is to be interpreted as ranging only
+over kosher predicates, then x and y are Leibniz identical as soon as
+they are isomorphic (or equivalent, or whatever is appropriate).  Note
+that in order for the notion of "keeping kosher" to even be
+meaningful, you need the type A to "come with" some sort of notion of
+equivalence between its elements; assigning it after the fact isn't
+good enough.  But if A does have such a notion, then it seems that
+Leibniz identity is provably equivalent to "there exists an
+equivalence between x and y," by applying the definition of Leibniz
+identity to the property p(z) =3D "there exists an equivalence between x
+and z".
+
+> As to Leibniz equality. If x and y are Leibniz equal, i.e.  \forall
+> P : A -> Prop. P(x) -> P(y), then this doesn't allow one to
+> construct a map B(x) -> B(y) in case B : A -> Set (simply because
+> Set is not Prop).
+
+Of course, this makes sense from the perspective above, since there's
+no reason to expect that simply knowing that there *exists* an
+equivalence between x and y would determine a map B(x) -> B(y); you
+need to first pick a particular such equivalence.  I find this to be a
+good reason for (intensional) identity types, whose elimination rule
+provides a map (indeed, an equivalence) B(x) -> B(y) for any
+inhabitant of Id(x,y).  In fact, the inductive notion of identity
+types, as used in Voevodsky's foundations:
+
+Inductive paths (T:Type)(t:T): T -> Type :=3D idpath: paths T t t.
+
+seems to me to essentially define it by strengthening Leibniz identity
+to allow elimination into Set/Type as well.
+
+Mike
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

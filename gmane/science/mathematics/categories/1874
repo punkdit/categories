@@ -1,0 +1,211 @@
+Path: news.gmane.org!not-for-mail
+From: "zdiskin" <zdiskin@email.msn.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Mike Healy's question about AI and math
+Date: Sun, 25 Feb 2001 17:09:40 -0800
+Lines: 181
+Approved: news@gmane.org
+Message-ID: <004501c09f90$cedeaa60$be35183f@cpu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+X-Trace: ger.gmane.org 1241018167 933 80.91.229.2 (29 Apr 2009 15:16:07 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:07 +0000 (UTC)
+To: "Categories" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Feb 28 12:20:09 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f1SFmMA11068
+	for categories-list; Wed, 28 Feb 2001 11:48:22 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 57
+Status: O
+Content-Length: 8370
+Original-Lines: 180
+Xref: news.gmane.org gmane.science.mathematics.categories:1874
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1874>
+
+The discussion around the question in Re:above is expired but it seems
+not too much was said that might be directly related to problems in the
+applied domains in question and, thus, be really understood and
+appreciated by  the corresponding part of  the audience. Bill Lawvere is
+of course right  in his << strong advice to actually learn some category 
+theory, rather than resting content with slinging back and forth 
+ill-defined epithets like "set theory", "contingency", etc >> but  still 
+there are no King's ways in math,  and learning  CT, as any other rich 
+math discipline, needs efforts and time. Well, efforts and time is not a 
+problem for students but a working specialist will reasonably require a 
+certain motivation and justification for investing his resources into 
+CT-studies.
+
+No doubts, the best justification is a host of examples of real 
+successful
+applications ("success stories"), and in a discussion in this list in 
+1997 
+few were described. However, the NCDoms (Newly Created Domains as
+Lawvere called them) is an enormous territory and a few discrete example
+in particular areas do not set enough motivation/justification for the
+entire region. What is needed is a representative net of examples but
+still
+we have no it. So, for a while, a discrete set of new  examples, and
+substantial conceptual / theoretical considerations too,  would not be
+useless and a few were presented in the discussion. I'm afraid however
+that for a non-CT-part of the audience the arguments may seem far  too
+general and/or too abstract, and we again come to the same issue at the
+beginning of the posting...
+
+There is a general problem of  applying math to engineering domains and, 
+correspondingly, of interaction between  mathematicians and engineers. 
+The former must respect a lot of formal details (in order to exist, the 
+construction has to be formally consistent) and hence must go into the 
+depth of consistent formalization. The latter must respect a lot of 
+obstacles of the real world (to exist, the construction has to work) and 
+hence must go into the width of  functioning in the real world. 
+Amalgamation of math depth with engineering width is a non-trivial task 
+that needs working out a spacious array of details (every mathematician 
+who ever tried to work in an industrial environment knows it) but at the 
+end you have some kind of 3D vision beneficial for the both sides. (This 
+general opposition "depth vs. width" in the case of "Math vs. NSDs" has 
+some quite concrete technical aspects, see below). 
+
+In these terms, an overall picture appeared in the discussion so far is 
+somewhat like a discrete collection of  bore-pits (well, they are 
+connected at a depth, but it's hardly visible from the surface). To get 
+a presentation more relevant for NCDs, I've tried to write a text 
+integrating these pits into something wider ("a foundation pit" :). That 
+is, I've tried (i) to trace some of the lines appeared in the discussion 
+and add a bit of engineering width to them, (ii) to integrate them into 
+an observable picture, (iii) to make some details a bit more 
+understandable for the "foreign" part of the audience (and probably 
+annoying for the "native" part so that my head is on the two platters 
+simultaneously), and finally (iv), to explain something for myself.
+
+The resulting text  turned out very bulky and can be found on 
+http://www.cs.kuleuven.ac.be/~frank/Diskin.ps
+(thanks to Frank Piessens for hospitality).
+
+Below is a brief summary of the text and the table of contents to look
+thru before starting, or not starting, the tour.
+
+Regards,
+--Zinovy Diskin
+
+ BRIEF SUMMARY   
+
+(I)   OBSERVATION.  In many newly created domains (NCDs)  they deal
+with a stuff in much similar to that managed in mathematics. Like a
+mathematician, an NCD-specialist deals with design (definition),
+presentation and reasoning about structures modeling a piece of reality
+(material, informational, "computeral") in an abstract  way, suppressing 
+some details (irrelevant for the model)  and explicating others 
+(important 
+but often residing in intuition / default  assumptions and therefore 
+implicit).
+Hence,  to look for a suitable math framework(s) for NCDs, one should 
+look at *meta*mathematics  -- a part of mathematics  aimed at  modeling
+mathematics by mathematical means. 
+
+(II)   OBSERVATION.  Category theory  (CT) is, in essence,  a consistent 
+*meta*mathematical framework  where relations, manipulations and 
+transformations of / between  math structures are considered in an 
+abstract and precise way.  In a sense, CT is a discipline and framework 
+for 
+mathematical structure engineering.  It is abstract enough to provide an 
+extreme flexibility and simultaneously concrete enough to discover CT-
+structures in applications in a quite immediate way.  In addition, this 
+framework is essentially algebraic (and in some precise sense too), well 
+structured itself  and hence is quite manageable and effective. 
+
+(III)  It follows from (I) and (II) that CT appears to be a  good 
+candidate  for 
+an integral math framework, and effective machinery too,  for 
+applications 
+in NCDs. Of course, in each particular context suitable CT-patterns 
+should 
+be found and adjusted, and their match with NCDs-structures to be
+managed should be checked. An example (rough sketch) of such an 
+activity for the case of software engineering is presented below.
+
+(IV) OBSERVATION: CT vs. SE (software engineering in a wide sense 
+including business modeling and knowledge representation). It appears 
+that some of major mechanisms invented (and implemented!) in SE to 
+manage the complexity of structures involved  -- object orientation, set 
+orientation, graphic notations, multi-level system   architectures -- 
+are 
+based on ideas very close to those developed in CT. To wit: object and 
+set 
+orientations together appear as a kind of SE-realization of the arrow
+thinking underlying CT, and graph-based syntax and multi-level
+organization of  the CT-stuff  are evident and speak for themselves.
+
+(V) SPECULATION. While the theoretical part of the NCDs community is
+discussing whether CT is relevant or not, the (software) engineering 
+part is 
+already using categorical, in essence, ideas in a implicit way. Nothing
+surprising: the same goal of  building a framework where complex
+structures (computational and specificational) could be managed in a 
+systematic and effective way has led engineers and mathematicians to 
+close results. Making this implicit partnership explicit would benefit 
+the
+both sides.
+
+END OF SUMMARY  
+
+
+
+CT as a mathematical framework for software engineering, AI, cognitive 
+science, and other newly created domains (NCDoms).
+http://www.cs.kuleuven.ac.be/~frank/Diskin.ps
+
+Table of contents.
+
+1 About  NCDoms.
+1.1  NCDoms as mathematics.
+1.2. Peculiarities of NCDoms' mathematics: length and width vs. depth.
+1.3   SE's mechanisms to manage complex structures.
+
+2 CT in a SE-View: Object-Oriented, Setwise And Graph-Based Mathematics
+with Multi-Level Architecture.
+2.1 CT as OO-language: Math structures via arrows.
+2.2 CT as a setwise language. Toposes.
+2.3  CT as a graphic language. Sketches.
+2.4  CT as a language for multi-level specifying architectures.
+
+3 CT vs. SE.
+3.1  Graphic notation and sketches.
+3.2  CT as an integral specification framework.
+3.3 Three final remarks.
+
+REFERENCES
+
+Appendix O. MODELING AND MATHEMATICAL MODELING
+O.1   General schema of modeling (something by something)
+O.2   Examples
+O.3  Some peculiarities of applying math to natural sciences
+O.3.1. Semi-formal deduction.
+O.3.2  "Unreasonable effectiveness".
+
+Appendix A. MECHANISMS FOR MANAGING NCDs' STRUCTURES
+A.1 Object  orientation.
+A.2  Set orientation.
+A.3 Graphic syntax of specification languages: Notational Babylon
+A.4 Multi - level specification architectures.
+A.5  The challenge of integration.
+
+Appendix B.   ABOUT METAMATHEMATICS
+B.0   "Business structure"  of meta-mathematics.
+B.1   Metamath I: CatST vs. FrmST.
+B.2  Metamath II: CatLogic vs. Tarskian MetaMath.
+B.3  Metamath III: abstract mathematical structures engineering.
+B.A(ppendix): Bourbakian way of setting math structures and CT.
+
+Appendix C.  CT vs. SE: EXAMPLES
+C.1 Relations: Categorical vs. Element-oriented treatment
+C.2. Semantic database theory:  Toposes and Database design.
+C.3  Whether schema integration is an associative operation?
+
+
+

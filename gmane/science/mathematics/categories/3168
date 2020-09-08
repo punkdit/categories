@@ -1,0 +1,146 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: The Yoneda axiom (was:  One-stop version of my postings)
+Date: Mon, 27 Mar 2006 12:05:28 -0800
+Lines: 112
+Approved: news@gmane.org
+Message-ID: <E1FON7f-00067M-En@mailserv.mta.ca>
+Reply-To: pratt@cs.stanford.edu
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019133 7540 80.91.229.2 (29 Apr 2009 15:32:13 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:32:13 +0000 (UTC)
+To: cat group <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Tue Mar 28 19:01:39 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 28 Mar 2006 19:01:39 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1FON7f-00067M-En
+	for categories-list@mta.ca; Tue, 28 Mar 2006 18:57:11 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 114
+Status: O
+Content-Length: 6294
+Original-Lines: 111
+Xref: news.gmane.org gmane.science.mathematics.categories:3168
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3168>
+
+Robert J. MacG. Dawson wrote:
+> Vaughan Pratt wrote:
+
+>> In axiomatic mathematics, everything that is not forbidden is permitted.
+>
+>
+>     Yes, in a sense... but theorems along the lines of "there exists a
+> model of X such that Y" were a long, long way in the future <grin>
+
+Reuben Hersh, cited in Eugenia Cheng's fascinating paper "Mathematics,
+Morally," put it succinctly in 1991.
+
+"There is an amazingly high consensus in mathematics as to what is
+'correct' or 'accepted'."
+
+It's really too bad we can't go back and show those old-timers what
+their stuff has evolved into.  Most of it would presumably evoke the
+ancient counterpart of "Wow," but that's boringly predictable.  What
+would really be interesting would be the less predictable reactions of
+the form "I knew that but didn't write it down because...".
+
+For example the basic concept of a model must surely have occurred to
+many over the millennia but seemed pointless formulating as a
+mathematical concept in its own right, perhaps for want of the concept
+of any alternative model to that one, perhaps for want of a suitable
+framework, perhaps because everyone else seemed to be taking it for
+granted as part of the ambient logic so why should I rock that boat?
+
+One can see this in the late Robert Floyd's seminal 1967 paper
+"Assigning meanings to programs" on the verification of imperative
+programs, where he clearly has some model of his axioms in mind in his
+completeness proof for his axiomatization of assignment x:=e (the dual
+of Hoare's subsequent axiomatization), yet it does not occur to him to
+say what the model is.  In my 1976 paper "Semantical considerations on
+Floyd-Hoare logic" I made explicit the model Floyd apparently had in
+mind in his proof by defining it to be a Kripke structure (of the kind
+introduced by Kripke in "Semantical considerations on modal logic"),
+showed that Floyd's informal completeness argument worked just fine when
+formalized for that model (so Floyd was morally correct), and extended
+it to a complete Floyd-style axiomatization of array assignment (whose
+completeness is complicated by the possibility of aliasing as in
+a[a[i]]:=a[a[j]]).  (The paper then went on to define modal dynamic
+logic, which I put at the end as merely a syntactic sidebar of marginal
+interest; unexpectedly it caught people's fancy and appears to have
+settled down as a staple of linguistic theory.)  I believe this was the
+first application of model theoretic methods to the verification of
+programs containing assignment statements, the kind of program forming
+the mainstream of programming languages.  (Functional programming in
+contrast was designed from the outset to support semantics, whence its
+popularity with logicians.)  It certainly was the first to use Kripke
+structures for that purpose, which today are the standard model for
+imperative programming.  The paper cites and treats a number of
+references to prior applications of modal logic to programming, none of
+which however offered a semantics, seemingly having such a semantics
+only in the back of their mind as with Floyd.  This neglect of semantics
+continues even today: most programmers, along with their managers,
+remain oblivious to the important backroom role of semantics in the
+verification of their programs, to the extent of being unaware even of
+its existence.
+
+A basic reason for not writing down what one is thinking is lack of
+awareness of one's thought processes.  Another is want of a suitable
+framework for formulating those thoughts in a way other than as what
+later mathematicians would judge as handwaving.  Yet another is the
+difficulty, even today, of separating mathematics from religion, defined
+as matters of faith.  The irrationality of the diagonal of the unit
+square was at one point unthinkable, giving us no way of knowing for how
+many centuries it was a dark secret of certain mathematical cults
+bordering on heresy or worse.  Today's mathematical religions have
+shifted their attention away from existence, where nowadays everything
+goes (though Robinson-style infinitesimals are a tiny pill that some
+find hard to swallow), instead focusing on relevance, utility, and other
+subjective criteria for acceptance.
+
+Foundations reared its head in the 19th C, forcing mathematicians to
+hold up their intuitions to the bright lights and microscopes of logic.
+  This process is somewhat akin to fashion designers being asked to
+appraise the apparel of their emperor.  Once a consensus has built, even
+if artificially as necessary for underdressed emperors, it becomes very
+hard to stick to your guns.  This phenomenon makes it impossible to
+tell, post-Cantor, whether those intuitions were more set theoretical or
+category theoretical in nature.  Answers to that must be sought in
+pre-Cantorian mathematics.
+
+My personal belief is that when the pathways of the human brain are
+finally unravelled and understood, they will be shown to be based on
+Yoneda, not as a lemma however but as an axiom postulating a certain
+dense embedding.  In the millions of years of evolution of primate
+thinking, no productive mathematical mechanism has a higher probability
+of being stumbled on than mathematics founded on the Yoneda axiom.  I
+know of no better explanation of how human thought could have evolved to
+its present form than evolution finding and exploiting the Yoneda
+principle, that (for example) the unique 2-element semigroup whose
+Cayley table has distinct constant columns can generate every graph and
+graph homomorphism in a simple, uniform, and economical way.  The
+likelihood of evolution stumbling on a serviceable fragment of Zermelo's
+axioms other than by our conscious thought seems considerably lower.  If
+evolution discovered both, chances are it found Yoneda first.  Yoneda
+needs so much less neural machinery than any of its competitors.
+
+Yet even today Google has not stumbled on the Yoneda axiom (as a
+phrase).  I put that down to the mechanism being such a fundamental part
+of how we think that we have no more mental access to it than we have
+physical access to quarks.  Proof that our brains incorporate the Yoneda
+axiom will have to await more advanced technology, until then that model
+of the evolution of human thought will remain a conceit of the cracks
+and pots promoting it.
+
+Vaughan Pratt
+
+
+

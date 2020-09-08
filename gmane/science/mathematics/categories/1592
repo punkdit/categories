@@ -1,0 +1,89 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <mhe@dcs.st-and.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Reality check
+Date: Fri, 4 Aug 2000 11:23:36 +0100 (BST)
+Lines: 54
+Approved: news@gmane.org
+Message-ID: <14730.39336.321672.460059@mosstowie.dcs.st-and.ac.uk>
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+	<vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017953 31986 80.91.229.2 (29 Apr 2009 15:12:33 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:33 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Aug  4 12:50:10 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA25001
+	for categories-list; Fri, 4 Aug 2000 12:49:46 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+X-Mailer: VM 6.71 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 4
+Status: RO
+Content-Length: 2063
+Original-Lines: 53
+Xref: news.gmane.org gmane.science.mathematics.categories:1592
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1592>
+
+I can't answer Andrej's questions, but I can make a few
+observations. 
+
+ > It would be interesting to simplify this presentation even further by
+ > using a signed representation with digits -1 and 1 only, in base B
+ > strictly between 1 and 2. For example, the golden ratio base B = (1 +
+ > sqrt(5))/2 seems to be very popular among exact real arithmetic
+ > people. But it's unclear how to make a finite state automaton for
+ > negation of === in this case.
+
+In base Golden Ratio with digits 0 and 1 (proposed by Pietro Di
+Gianantonio), the family of identities that generates === is
+
+   ... 100 ... === ... 011 ... 
+
+It corresponds to the fact that the Golden Ratio is the positive
+solution of the equation x^2 = x + 1.
+
+    (i.e. 1 x^2 + 0 x^1 + 0 x^0 = 0 x^2 + 1 x^1 + 1 x^0)
+          =       =       =       =       =       =
+
+What I have reported about signed-digit binary notation has also been
+developed for Golden-Ratio notation by David McGaw in his Honours
+project ( http://www.dcs.st-and.ac.uk/~mhe/macgaw.ps.gz ).  You may be
+able to get a finite automaton from his algorithm for solving the word
+problem. It should be even simpler than the one for signed binary,
+because there are fewer cases to consider.
+
+ > [Discussion about intuitionistic versions of Freyd's construction
+ > deleted.]
+ > This [discussion] leads to the idea that we should think of
+ > the closed interval I as being glued like this:
+ > 
+ >              I
+ >       |------------|--R--|
+ >                    |--L--|------------|
+ >                             I
+
+This is precisely what the Golden-Ratio notation achieves.
+
+The interval I is now [0,phi], where phi is the Golden Ratio.
+
+Then the "digit maps" are l(x)=(x+0)/phi and r(x)=(x+1)/phi.
+
+The intersection of the images of l and r is a closed interval with
+non-empty interior, as in your picture. 
+
+The above family of identities is equivalent to the single equation
+l o r o r = r o l o l.
+
+One could try to consider algebras with two operations and this
+equation in order to get the interval in a more constructive way.
+
+

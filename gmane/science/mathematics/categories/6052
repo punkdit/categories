@@ -1,0 +1,171 @@
+Path: news.gmane.org!not-for-mail
+From: David Spivak <dspivak@math.mit.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "Databases are Categories"
+Date: Mon, 16 Aug 2010 21:20:02 -0400
+Lines: 131
+Approved: news@gmane.org
+Message-ID: <E1OlX1j-0000Lm-C7@mlist.mta.ca>
+References: <E1OkZis-0001ww-Es@mlist.mta.ca> <E1Ol9J9-0007XW-HT@mlist.mta.ca>
+Reply-To: David Spivak <dspivak@math.mit.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1282093340 10509 80.91.229.12 (18 Aug 2010 01:02:20 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 18 Aug 2010 01:02:20 +0000 (UTC)
+Cc: categories@mta.ca
+To: Zinovy Diskin <zdiskin@gsd.uwaterloo.ca>
+Original-X-From: majordomo@mlist.mta.ca Wed Aug 18 03:02:18 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OlX2m-0000qg-Pb
+	for gsmc-categories@m.gmane.org; Wed, 18 Aug 2010 03:02:17 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:39645)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OlX1l-0000zR-W5; Tue, 17 Aug 2010 22:01:13 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OlX1j-0000Lm-C7
+	for categories-list@mlist.mta.ca; Tue, 17 Aug 2010 22:01:11 -0300
+In-Reply-To: <E1Ol9J9-0007XW-HT@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6052
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6052>
+
+Hi all,
+
+The basic idea of my talk was this: one can think of any category C as a
+"database schema": the objects of C are called "tables" and an arrow f:A-->=
+B
+is called a "column of table A with values in table B".  Now a functor
+C-->Sets is a "state" of that database: it fills every table with a set of
+rows.  Leaf objects of C (objects with no outgoing arrows) correspond to
+"pure data."  One can thus visualize a category as a system of tables;
+commutative diagrams correspond to "rules" such as "the secretary of a
+department must be in that department."
+
+Using sketches instead of categories allows a little more flexibility, but
+the basic idea is as above.  The model is nice for a variety of reasons,
+most of all its simplicity.  In polite contradiction to one of Diskin's
+claims, two database administrators (at two large multi-national
+corporations) that I know think it is a viable model.  They do not balk at
+the idea of data columns being considered as foreign keys.  It puts
+everything on the same playing field.
+
+The database=3Dcategory idea furthermore allows us to "migrate data" from o=
+ne
+schema to another.  Given a morphism of schemas (functor F:C-->D) one pushe=
+s
+and pulls data between the two categories using F^*, F_*, and F_!.  One can
+thus achieve unions, joins, etc.  Use of F^*, F_*, and F_! may have a
+variety of applications including a solution to the "view update problem."
+  The Grothendieck construction applied to a database state C-->Set yields
+its "RDF graph," which is an important component of the semantic web, and o=
+f
+which conversions to and from databases is of high interest.  The point is
+that its all very natural in this model.
+
+Finally, in reference to Diskin's objection below (regarding people owning
+cars, and both having addresses) we can consider the category [1]x[1]:
+(excuse the typography -- V's are the tips of downward arrows)
+
+O----->P
+  |         |
+  |         |
+V        V
+C----->A
+
+A functor from this category to sets is a set of ownerships, each of which
+has an associated person and an associated car, each of which has an
+associated address (and these addresses must agree).  The same idea can be
+used to model situations where an employee could work for any number of
+departments (as in Diskin's other objection).
+
+If anyone wishes to engage me more personally either in support or denial o=
+f
+these ideas, I suggest we talk by phone; email me and I'll send you my
+number.  Of course I also don't mind continuing the conversation by email,
+either privately or publicly.  Also, let me extend my appreciation to Vasil=
+i
+for bringing this whole thing up!
+
+Best regards,
+David
+
+PS. I've informed the people at Galois of your comments on the camera-work;
+they said they'd take it into consideration in the future.
+
+PPS. A simplicial set (or any presheaf) can be regarded as a database state
+(on a schema with countably many tables).  Can anyone imagine a database
+management system like Oracle being of use in answering mathematical
+questions about such things?  In other words, could modern, incredibly fast
+database technology be useful to a mathematician studying the dynamics of a
+presheaf category such as simplicial sets?
+
+
+2010/8/16 Zinovy Diskin <zdiskin@gsd.uwaterloo.ca>
+
+> 2010/8/14 Mattias Wikstr=F6m <mattias.wikstrom@gmail.com>:
+>> I think it makes sense to regard database schemas as theories and
+>> databases as models of such theories. Given a theory T that models
+>
+> yes, this is the basic underlying assumption in a series of papers of
+> Michael  Johnson and the moderator of this list.
+>
+>> some database schema S, a term in the language of T may be thought of
+>> as a "database query" (to obtain the result of the query, simplify the
+>> term),
+>
+> a query is a formula (defining a  derived table) rather than a term
+>
+> while a statement that two terms in the language of T are equal
+>> may be thought of as a "database constraint" that one may want to add
+>> to S.
+>
+> there are many types of non-equational constraints, for example,
+> inclusion P=3D>Q with P,Q formulas
+>
+>>
+>> What sort of theory should a database schema be? This surely depends
+>> on what exactly one is trying to model: A schema in Company A's DBMS
+>> (database management system) is rarely the same thing as a schema in
+>> Company B's DBMS, and in any case one probably wants to work with some
+>> idealised mathematical model.
+>>
+>
+> a good question is what the place of SQL on the scale of logical
+> doctrines is. Since models of SQL-theories include predefined infinite
+> domains with operations (think of Integer and String), and  finite
+> domains for tables, model theory for SQL is not classical. I'm not
+> sure but it seems model-theorists call it "metafinite model theory"
+> (Gradel and Gurevich).
+>
+>> David Spivak seems to offer two different answers. On the one hand, a
+>> database schema may be the same thing as a category. On the other
+>> hand, a database schema may be a labeled simplicial set. Both answers
+>> may be found at http://www.uoregon.edu/~dspivak/cs/ .
+>>
+>
+> I took a look at the slides of  "databases are categories" talk. It
+> seems to be an overly simplified model.  Since an employee may work
+> for several or none departments, data should be modeled by a functor
+> into Rel rather than Set. 2-category structure may be important, and
+> we often have a lax functor F(a;b)<F(a);F(b). For example, a Person
+> _owns_ a Car, which is _parked_ at an Address, where the person
+> _lives_, but a Person may not have a Car but still _live_ at an
+> Address (arrow names are underlined, _lives=3Downs;parked_).
+> Considering all columns as foreign keys, that is, disregarding the
+> difference between value-valued and object-valued attributes, would
+> look very strange for a practitioner.
+>
+> Z.
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

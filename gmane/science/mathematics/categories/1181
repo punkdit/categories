@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: co-exponential question
+Date: Fri, 23 Jul 1999 15:40:52 -0400 (EDT)
+Lines: 106
+Approved: news@gmane.org
+Message-ID: <199907231940.PAA02826@eratosthenes.math.lsa.umich.edu>
+References: <14231.32476.50008.946207@harald.daimi.au.dk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017620 29843 80.91.229.2 (29 Apr 2009 15:07:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:07:00 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Mon Jul 26 12:15:40 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA15513
+	for categories-list; Mon, 26 Jul 1999 10:24:44 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <14231.32476.50008.946207@harald.daimi.au.dk> from "Andrzej Filinski" at Jul 22, 99 10:28:12 pm
+X-Mailer: ELM [version 2.4 PL25]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 5396
+Original-Lines: 105
+Xref: news.gmane.org gmane.science.mathematics.categories:1181
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1181>
+
+I agree completely with Paul and Andrzej, except possibly for this:
+
+> Still, as Paul notes,
+> 
+> > K is certainly an important category, but I wouldn't say that the fact
+> > that it has coexponentials is significant.  
+> 
+> constructing a categorical semantics of a language with control operators
+> _directly_ in terms of coexponentials is somewhat awkward, and the
+> formulation used by Streicher and Reus is almost certainly nicer to work
+> with in practice.
+
+The _direct_ categorical semantics of languages with control operators
+is actually not too unnatural and leads to some interesting category
+theory. Let me first clarify the difference between direct and
+indirect semantics. To give a direct semantics, one starts with a
+class of categories with algebraic structure (for our purposes:
+structure that is given by object constructors, morphism constructors,
+and equations on morphisms). In the direct interpretation of a
+language, types are interpreted as objects, type constructors as
+object constructors, and typing judgments as morphisms, in such a way
+that the language forms an _internal language_ for the class of
+categories at hand. This means, among other things, that one can
+construct a syntactic category from a theory of the language. Thus,
+all structure of the category (on objects and morhpisms) is denotable
+in the language. The usual interpretation of the simply-typed lambda
+calculus in a cartesian-closed category is perhaps the best-known
+example of a direct semantics. (Direct semantics of higher order can
+be given in fibered categories, but this is not necessary for our
+purposes here).
+
+In an indirect semantics, one does not interpret the language directly
+in a category with algebraic structure, but in a derived auxiliary
+category. Moggi's monadic semantics is an example of an indirect
+semantics.  Given a category C with a monad T, one interprets the
+language (for instance, a call-by-value lambda calculus) in the
+Kleisli category of the monad. Notice that the structure of the
+Kleisli category, per se, is not necessarily algebraic in the above
+sense. The Reus-Streicher-Lafont-Hofmann semantics is indirect; in
+fact it is the monadic semantics for the continuations monad
+R^(R^(-)).
+
+Indirect semantics are very successful in practise. Among other
+things, they have proven excellent tools for reasoning about and
+implementing control effects. This point is made convincingly in
+Andrzej Filinski's PhD thesis [1]. However, the correspondence between
+syntax and semantics is not as close as in the direct case: one cannot
+usually speak of internal languages in the context of indirect
+semantics.  The reason is that, from a syntactic theory of the
+language, one can reconstruct only the Kleisli category of T, but not
+the underlying category C or the monad T itself. Thus, direct
+semantics might be more satisfying to the theorist, because they
+capture the essence of the language precisely, and without resorting
+to a translation to a meta-language.
+
+The difference between direct and indirect semantics is explained very
+nicely in a recent paper by Carsten Fuhrmann [2], where he also gives
+a general method of constructing direct semantics from indirect ones.
+It seems that direct semantics are often characterized by the presence
+of certain _non-natural_ transformations, and that indirect semantics
+are a way of hiding this non-naturality.
+
+The first direct semantics for a call-by-value language with control
+effects are the tensor-not categories of Hayo Thielecke [3]. His work
+was later extended by me to a language with finite coproducts (this is
+where co-exponentials enter the picture) and to the call-by-name case
+[4]. I called the resulting class of categories "control
+categories". The connection between the direct and indirect semantics
+can be established via categorical representation theorems, and such
+theorems were shown by Fuhrmann for tensor-not categories [5], and
+independently by myself for control categories [4].
+
+It is interesting that a call-by-name language is an internal language
+for control categories, and the corresponding call-by-value language
+is an internal language for the dual co-control categories. As a
+consequence, one obtains a syntactic duality between call-by-name and
+call-by-value [4]. Such a duality was conjectured by Streicher and
+Reus [6], and certainly anticipated by Filinski's work on the
+symmetric lambda calculus [7].
+
+Best wishes, -- Peter
+
+[1] A. Filinski. Controlling effects. PhD Thesis in Computer Science,
+Carnegie Mellon University, 1996.
+
+[2] C. F\"uhrmann. Direct models for the computational
+lambda-calculus. Technical Report ECS-LFCS-98-400, Edinburgh, 1998.
+
+[3] H. Thielecke. Categorical structure of continuation passing
+style. PhD Thesis in Computer Science, Edinburgh, 1997.
+
+[4] P. Selinger. Control categories and duality: on the categorical
+semantics of the lambda-mu calculus. Submitted 1999. Available from
+Hypatia or http://www.math.lsa.umich.edu/~selinger/papers.html
+
+[5] C. F\"uhrmann. Exponential categories and semantics of
+continuations. Presented at MFPS, 1998.
+
+[6] T. Streicher, B. Reus. Classical Logic, continuation semantics and
+abstract machines. Journal of Functional Programming 8(6)543-572, 1998.
+
+[7] A. Filinski. Declarative continuations and categorical duality.
+Masters Thesis in Computer Science, DIKU, University of Copenhagen,
+1989. DIKU Report 89/11.
+
+

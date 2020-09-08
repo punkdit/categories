@@ -1,0 +1,158 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Induction and functors preserving Cartesian closure
+Date: Mon, 13 Oct 1997 09:16:36 -0300 (ADT)
+Lines: 135
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971013091629.28803E-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017000 26008 80.91.229.2 (29 Apr 2009 14:56:40 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:40 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Mon Oct 13 09:18:33 1997
+Original-Received: by mailserv.mta.ca; id AA20300; Mon, 13 Oct 1997 09:16:36 -0300
+Status: O
+Content-Length: 4165
+Original-Lines: 134
+Xref: news.gmane.org gmane.science.mathematics.categories:496
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/496>
+
+Date: Sat, 11 Oct 97 19:37:31 +1000
+From: burns <burns@clementine.mailserv.mta.ca>
+
+
+In my last mailing, I talked about my attempt to develop vector
+spaces from CCC's with finite sets and real arithmetic. Now it's
+time for some questions.
+
+(1)
+
+Assume a category with domains I, standing for a finite set; and
+R, standing for the reals. If it's a CCC, we can get the biproduct
+structure, by currying the Kronecker delta, i.e. the equality function
+on I.
+
+Even to express very simple statements about vectors, one now needs
+a legitimate way to write _summation over_ I. E.g. if we have a full
+set of injectors
+
+        eta : I -> X   where X = [I->R]
+
+we want to write an arbitrary vector as
+
+        Sigma  x(i) (eta i)
+        i e I
+
+This is shorthand for something like
+
+        compose : R x R x ... x R -> X
+
+where the R's correspond 1-1 with I. It's the domain I itself
+(rather than any element of it) which determines that finite product.
+
+We know what we mean, by summation over I; but it seems to me that
+(1) we are relying on induction over I, and therefore on first, last
+and successor arrows to I, the whole Peano development; and (2) that
+this is not explicit in the CCC definition. Yes, it is stated that
+a CCC has all finite products. But to make this formal, we need a
+formal means of expressing the inductive step; the equivalent, perhaps
+of a FOR loop in algorithms.
+
+Is there a standard way to address this?
+
+
+(2)
+
+To make the issue more pointed, let's step back from our category,
+and name it X(I,R). Now, define a category of finite sets, say Y,
+in which I1, I2, ... are domains, and each one can stand in for I,
+so that we have X(I1,R), etc.
+
+We would like to say, there is a category V(Y,R), of all such
+categories; and define a functor
+
+        V(-,R):
+
+                Y => X(Y,R) : I |=> X(I,R)
+
+
+We should be able to say that VECT(R) is a proper subcategory of
+V(,-R), because each
+
+        f : Y -> Y
+
+maps onto
+
+        V(f,R) : X(Y,R) -> X(Y,R) : X(I,R) |-> X(f(I),R)
+
+But there is more to V(-,R) than that. For one thing, there
+will be a unique arrow in V(-,R), expressing summation (or in
+general what they call "fold", or APL, "reduce"),
+
+        fold : [RxR ->R] x Y -> [[Y -> R] -> R]
+
+such that
+
+        fold <(+),I> : [[I -> R] -> R] :
+                (i |-> a(i)) |-> Sigma(i) a(i)
+
+The fold arrow expresses _reduction by a real binary function, over
+an inductable set_, producing a unique arrow in each X(I,R) that
+does the job.
+
+
+Now if this makes me uneasy, it's possibly just "abstraction vertigo".
+As far as I can make out, fold is justified iff in Y, each domain I
+is equipped with arrows:
+
+        first : 1 -> I
+        last: 1 -> I
+        next : (I-last(I)) -> I
+
+That means that in Y itself, one can define:
+
+        First: Y -> (1->Y) : I |-> (first : 1 -> I)
+etc.
+
+Something is slipping here, and I think its that the notation is
+being overloaded when "I" refers both to a domain in Y, and to the
+actual finite set it denotes.
+
+It seems to me there much be a well-tried way of doing this, but
+my reading into categories in language specification haven't
+disclosed anyone spelling it out.
+
+
+(3)
+
+Now for a major issue. I managed to define my biproduct in X(I,R)
+by defining X(I,R) as a CCC, with real arithmetic, equality on I,
+_and only that_. Which seems to me a notable finding, and one to
+be followed up.
+
+In introducing functors on X(I,R), and further, functors on X(Y,R),
+I want to deduce the consequences of X(I,R) being Cartesian closed.
+Therefore I want to develop just those functors which map one CCC
+to another.
+
+Such functors will only be coherent, so to speak, if they map
+values to values, products to products, and exponentials to
+exponentials. That is, if they preserve Cartesian closure.
+
+What has been said about the properties of such functors?
+
+I'm following one lead, John W. Gray, _A Categorical Treatment
+of Polymorphic Operations_ in _S-V Lecture Notes in Computer
+Science 298, Mathematical Foundations of programming Language
+Semantics_. Let's just say about this, that the development
+of functors between exponential domains is more complex than
+I had expected.
+
+Enough for the present.
+
+
+

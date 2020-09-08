@@ -1,0 +1,131 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Weighted limits
+Date: Tue, 21 Feb 2017 11:00:25 +1100
+Lines: 92
+Approved: news@gmane.org
+Message-ID: <E1cg9sg-0004Dj-MQ@mlist.mta.ca>
+References: <E1cePJc-0002UN-DJ@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 7bit
+X-Trace: blaine.gmane.org 1487681468 18705 195.159.176.226 (21 Feb 2017 12:51:08 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Tue, 21 Feb 2017 12:51:08 +0000 (UTC)
+To: Categories <categories@mta.ca>, Ross Street <ross.street@mq.edu.au>,
+Original-X-From: majordomo@mlist.mta.ca Tue Feb 21 13:50:55 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cg9u9-0003ca-AP
+	for gsmc-categories@m.gmane.org; Tue, 21 Feb 2017 13:50:53 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45980)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cg9tF-00080R-VT; Tue, 21 Feb 2017 08:49:57 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cg9sg-0004Dj-MQ
+	for categories-list@mlist.mta.ca; Tue, 21 Feb 2017 08:49:22 -0400
+In-Reply-To: <E1cePJc-0002UN-DJ@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9125
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9125>
+
+Dear Jean,
+
+Here is a response which combines Ross' elegant approach with David's
+elementary one.
+
+First we construct the object of isomorphisms of any B in Cat(S). Take
+the pullback of the cospan
+(s,t): B_1 --> B_0 x B_0 <-- B_1: (t,s)
+to get a span
+p: B_1 <-- P --> B_2: q
+
+There are induced maps (p,q):P-->B_2 and (q,p):P-->B_2 into the object
+of composable pairs. Let a, b: P--> B_1 be their composites with the
+composition map B_2-->B_1, and let j: Iso(B) >--> P be the pullback of
+(a,b):P-->B_1 x B_1 along (i,i):B_0 x B_0 >--> B_1 x B_1 (where i is the
+identities map). Iso(B) represents isomorphisms in B. There is a monic
+pj : Iso(B) >--> B_1 which "forgets invertibility".
+
+Now given a 2-cell alpha: F==>G: A-->B in Cat(S), we form its inverter
+thusly. The datum for alpha is a morphism A_0-->B_1 in S. Pull back pj:
+Iso(B) >--> B_1 along this to get a monic k_0: I_0 >--> A_0. The
+inverter k: I >--> A of alpha has underlying graph morphism obtained by
+pulling back A_1 --> A_0 x A_0 along (k_0,k_0): I_0 x I_0 >--> A_0 x
+A_0.
+
+Here is an alternative approach (which one could argue is actually the
+same approach). First, for categories internal to Set, the construction
+of inverters is equational and so can be done using only finite limits.
+Next, if C is locally small and finitely complete, then its small
+cocompletion PC also has finite limits, computed pointwise; whence
+inverters for transformations between PC-internal categories  can also
+be computed using only finite limits. Finally, since the Yoneda
+embedding C --> PC preserves and reflects finite limits, the inverter of
+a transformation between C-internal categories can also be computed
+using only finite limits: one embeds into PC-internal categories,
+computes the inverter there, and then notes that the finite limits used
+in the computation are represented by finite limits back down in C.
+
+Richard
+
+
+
+On Thu, Feb 16, 2017, at 01:24 PM, Ross Street wrote:
+> Dear Jean
+>
+> On 15 Feb 2017, at 4:47 PM, Jean Benabou
+> <jean.benabou@wanadoo.fr<mailto:jean.benabou@wanadoo.fr>> wrote:
+>
+> However they both say that if  S is a category with finite limits the
+> 2-category  Cat(S) is what I called strictly finitely 2-complete. I doubt
+> it.
+> Could they, or anybody else, tell me how yo prove Cat(S) has strict
+> inverters?
+>
+> The type of limit of which you speak for 2-categories are those of
+> ordinary  enriched category theory with base Cat.
+>
+> First agree that Cat(S) has terminal object, pullbacks and cotensoring
+> with  the arrow category Arr (usually called blackboard bold 2).
+>
+> Next construct the category Iso with two objects and an isomorphism
+> between  them using finite colimits in Cat:
+> take the pushout of the two functors 2 --> Arr which are bijective on
+> objects to obtain the category with two
+> objects and an arrow each way; then force the arrows to be inverse to
+> each other using two coequalizers.
+>
+> This tells us how to obtain the cotensor {Iso, A} of Iso with any A in
+> Cat(S) by a pullback and two equalizers.
+>
+> Now take a 2-cell t between two morphisms f, g : A --> B in Cat(S). It
+> corresponds to an morphism t' : A --> {Arr, B}
+> in Cat(S). The inverter of the 2-cell t is the pullback of the
+> restriction morphism {Iso, B} --> {Arr, B}
+> along t' : A --> {Arr, B}.
+>
+> These things go back to my paper
+>
+> 10. Limits indexed by category-valued 2-functors, J. Pure Appl. Algebra 8
+> (1976) 149--181; MR53#5695.
+>
+> (Now I prefer the term weighted limit to indexed limit.) For any nice
+> base for enrichment, all weighted limits
+> can be obtained from products, equalizers and cotensoring. In the case of
+> Cat, cotensoring with Arr suffices.
+>
+> Best wishes,
+> Ross
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

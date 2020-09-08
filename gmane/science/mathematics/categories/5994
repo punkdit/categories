@@ -1,0 +1,86 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: MSFT C9 video on a monadic approach to location
+Date: Sun, 18 Jul 2010 01:36:05 -0700
+Lines: 50
+Approved: news@gmane.org
+Message-ID: <E1Oac6X-0006Dr-Ub@mailserv.mta.ca>
+References: <E1Oa53q-0002nE-E6@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1279492413 32154 80.91.229.12 (18 Jul 2010 22:33:33 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 18 Jul 2010 22:33:33 +0000 (UTC)
+To: Categories <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon Jul 19 00:33:31 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OacQM-0005OU-T2
+	for gsmc-categories@m.gmane.org; Mon, 19 Jul 2010 00:33:31 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Oac6X-0006Dr-Ub
+	for categories-list@mta.ca; Sun, 18 Jul 2010 19:13:02 -0300
+In-Reply-To: <E1Oa53q-0002nE-E6@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5994
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5994>
+
+[From moderator: From: field inadvertently omitted from this post; sorry 
+Vaughan]
+
+On 7/8/2010 8:41 AM, Meredith Gregory wrote:
+> Most of the content in this
+> lecture/discussion<http://channel9.msdn.com/shows/Going+Deep/E2E-Whiteboard-Jam-Session-with-Brian-Beckman-Greg-Meredith-Monads-and-Coordinate-Systems/>is
+> probably already known and better presented elsewhere. However, the
+> approach to unifying nominal and positional access to data in computations
+> is novel, to the best of my knowledge. So, it may be of interest here.
+
+It might be helpful if the derivatives+fixpoints view of lambda terms
+described in this talk was connected up somehow to the more naive view
+of monads found in CWM, which might be put as follows.  (I may not get
+everything perfectly typed, in which case I'd be happy to see a cleaner
+version aimed at the same intuition about syntax.)
+
+A monad is a functor T: C --> C in a category whose objects are to be
+understood as term languages (think sets of terms, though C need not be
+Set) such that for any term language X in ob(C), TX is the term language
+over X.  "Over X" means that the terms in X play the role in TX as the
+variables occurring in the terms of TX.  The unit eta_X: X --> TX as a
+morphism of C indicates which terms of TX are to be understood as its
+variables.  The equations making eta_X both a left and right unit assert
+respectively that substituting a term for a variable (in the above sense
+of variable) is that term, and that substituting a variable for itself
+in a term is that term.
+
+The multiplication mu_X: TTX --> TX specifies how terms constructed as
+terms of terms are to be understood simply as terms.  This is where the
+equational theory lives in the monad, namely as the kernel of mu_X; for
+example TTX might contain each of x(y+z) and xy+yz as a term of terms,
+which mu_X would identify as being the same term.  Associativity of mu_X
+asserts that the order in which terms of terms of terms in TTTX are
+assembled is immaterial: when using mu_X twice to reduce TTTX to TX, the
+first step can reduce either the first two T's in TTTX or the last two.
+
+The functor T: C --> C makes this notion of monad an object of type C^C.
+   In the interest of reducing this type complexity Haskell reorganizes
+the notion of monad in terms of Bind and Return operations.  The above
+talk featuring Brian Beckman and Greg seems to be from the latter
+perspective, although neither definition of monad was given during the
+talk, raising the question of whether the derivatives+fixpoints view is
+better supported by one or the other view of monads, or is independent
+of both.
+
+Vaughan Pratt
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,86 @@
+Path: news.gmane.org!not-for-mail
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Reddy's question
+Date: Tue, 3 Mar 1998 22:59:35 -0600 (CST)
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <199803040459.WAA21808@reddy.cs.uiuc.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017109 26804 80.91.229.2 (29 Apr 2009 14:58:29 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:29 +0000 (UTC)
+Cc: reddy@reddy.cs.uiuc.edu
+To: categories@mta.ca
+Original-X-From: cat-dist Wed Mar  4 14:05:56 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA03123
+	for categories-list; Wed, 4 Mar 1998 09:56:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2686
+Original-Lines: 58
+Xref: news.gmane.org gmane.science.mathematics.categories:667
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/667>
+
+Response by Peter Freyd to a question of mine:
+
+> >Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+> >are natural transformations  E:[-,M] -> M  that satisfy the
+> >following equations (in the internal language of the CCC):
+> >
+> >               E_A(\x.e)  =  e
+> >         E_A(\x. a * gx)  =  a * E_A(g)
+> >         E_A(\x. gx * a)  =  E_A(g) * a
+> >    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+> 
+> I wonder if naturality is really desired: it would seem to force  M  to
+> be trivial. 
+
+Indeed!  (Peter Johnstone and Dusko Pavlovic also pointed out that I
+went wrong in asking for naturality.)  Something got lost in
+abstracting from my application domain.  My examples had additional
+parameters which made naturality possible.  But, discarding those
+parameters in the interest of abstration seems to have produced a
+statement that is quite impossible to satisfy.  My apologies.
+
+Dusko Pavlovic pointed out some of what we could do once we discard
+the naturality condition.  The second and third equations can be
+regarded as naturality properties by thinking of M and [A,M] as
+categories and E_A as a functor.  (That is good, because it singles
+out the first equation as a "pretender."  So, I shouldn't be worried
+when it breaks.)
+
+On the other hand, I don't know what to make of the fourth equation.
+It says that for E_A to be an abstraction operator (tentatively using
+Pavlovic's terminoloty), it has to commute with every other
+abstraction operator E_B.  For one, that prevents me from giving a
+local definition of what an abstraction operator is.  One needs to
+define the whole collection of abstraction operators at one go.  (Now
+that naturality is gone out the window, there is no reason to require
+even that the family of operators be indexed by objects.  There could
+be any number of maps for an object A.)  Secondly, looking at it from
+the application point of view, there is something "intrinsic" about
+these operators that makes them commute with each other.  It is not
+really a property of the whole collection of operators.  The presence
+or absence of another operator in the collection shouldn't matter.  I
+really have no idea how to capture this kind of "uniformity" in the
+commutativity property.  Some hyperdoctrine-like idea, perhaps?
+
+Despite the fact the first equation doesn't hold in all toposes, I
+think the example of the existential quantifier is an illuminating
+one.  Evaluation at a particular point is a "degenerate" example in
+that it also satisfies
+
+      E_A(\x. fx * gx) = E_A(f) * E_A(g)
+
+The existential quantifier gives a better intuition for the idea of
+these operators.
+
+Hope this explains the question better.
+
+Uday Reddy
+
+

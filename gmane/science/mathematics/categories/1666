@@ -1,0 +1,157 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction
+Date: Thu, 26 Oct 2000 16:49:12 -0700
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <39F8C2F8.3AF5D614@kestrel.edu>
+References: <003301c03a95$49f73610$448a0dd8@main>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018006 32326 80.91.229.2 (29 Apr 2009 15:13:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:26 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Oct 27 14:47:45 2000 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9RH4NT26134
+	for categories-list; Fri, 27 Oct 2000 14:04:23 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.5 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 24
+Status: O
+Content-Length: 4143
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:1666
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1666>
+
+Al Vilcius asks:
+
+> > can anyone explain coinduction?
+> > in what sense it dual to induction?
+
+and most people reply along the lines of:
+
+> The principle of induction says that initial algebras have no
+> non-trivial subalgebras.
+
+> Coinduction says, dually, that the final coalgebra has no
+non-trivial
+> quotients.
+
+but wouldn't it be nice to keep the standard definition of
+induction, which says that the equations
+
+    f(0) = c
+    f(n+1) = g(f(n))
+
+determine a unique f, given c and g? this is the definition that
+most first year students study, and many programmers use every
+day, usually without the slightest idea about subalgebras, or
+triviality. do we really gain anything by replacing this simple
+scheme by the higher-order statement about all subalgebras? ok,
+we do get the appearance of symmetry between induction and
+coinduction. but is the higher-order statement about quotients
+really the friendliest form of coinduction, suitable to be taken
+as the definition?
+
+i think barwise and moss somewhere describe coinduction as
+*induction without the base case*. the coinduction principle
+says that the equation
+
+    X = a.X + bc.X
+
+determines a unique CCS-process, or a unique {a,b,c}-labelled
+hyperset. it also guarantees that the integral equation
+
+    E(x) = 1 + \int_0^x E dt
+
+has a unique solution. (note that this is equivalent to the
+differential equation
+
+    E(0) = 1
+    E = E'
+
+where the initial condition gives the base case for the power
+series solution. so the no-base-case slogan is just a matter of
+form? but note that  E' = E, and more generally E' = h(E), for
+an analytic h, identifies two *infinite* streams, and is not a
+mere inductive step up the stream.)
+
+in any case, i contend that the practice of coinduction
+primarily consists of solving *guarded equations*, like the two
+above --- surely if you count the areas where people extensively
+use coinduction, without calling it by name, viz math analysis.
+
+((it is true that computer scientists became aware of
+coinduction while working out the bisimulations etc, which is
+why the quotients came in light. but now it seems that the
+bisimulations were just the way to construct final coalgebras;
+whereas the coinduction, in analogy with the induction, should
+be a practically useful logical principle, available over the
+*given* final coalgebras.))
+
+anyway, the heart of the matter probably lies in peter aczel's
+insight that the statement
+
+     * V ---> PV is a final coalgebra for P = (finite) powerset
+functor
+
+equivalently means that
+
+    * every accessible pointed graph has a unique decoration in
+V.
+
+presenting the graph definitions as systems of guarded equations
+(like in barwise and moss' book "vicious circles"), the above
+equivalence generalizes to the statement that
+
+    * V --d--> FV is a final coalgebra for F
+
+iff
+
+    * every system of guarded equations over V has a unique
+solution.
+
+where the notion of guarded is determined by F and d. this is,
+of course, just barwise and moss' solution lemma, lifted to F.
+or more succinctly : **V is a final fixpoint iff each guarded
+operation g:V-->V has a unique fixpoint**
+
+this, of course, supports the view that ***coinduction is
+solving guarded equations***...
+
+i was hoping to say more, but will have to leave it for later,
+and post this hoping to motivate discussion.
+
+unguardedly yours,
+-- dusko pavlovic
+
+PS i have a great appreciation for jan rutten's work on
+coinduction, but it seems to me that the title of *universal
+coalgebra* is a bit exaggerated. universal algebra does not
+dualize. by design, it is meant to be model theory of algebraic
+theories. what would be the "coalgebraic theories", leading to
+coalgebras as their models? what would their functorial
+semantics look like?  (implicitly, these questions are already
+in manes' book.)
+
+and then, moving from coalgebraic theories to comonads, like
+from algebraic theories to monads, should presumably yield an
+HSP-like characterization for the categories of (comonad)
+coalgebras. but coalgebras for a comonad over a topos usually
+form just another topos.
+
+i may be missing something essential here, but then i do stand
+to be corrected.
+
+
+

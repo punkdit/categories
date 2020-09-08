@@ -1,0 +1,526 @@
+Subj:	A name request
+Date:        Tue, 02 Jun 92 21:20:34 ADT
+From: dbenson@yoda.eecs.wsu.edu (David B. Benson)
+
+Given a pair of arrows with common codomain, the pullback consists of
+an object and a pair of pullback projections with the requisite
+universal properties.  Now for the question:
+
+	Regular is to equalizer as X is to pullback projections.
+
+What name for a pair of arrows with a common domain should replace X in
+the above line?
+
+Thanks,
+David
+==========================================================================
+Subj:	Re: A name request
+From: street@macadam.mpce.mq.edu.au (Ross Street)
+Date: Fri, 5 Jun 92 13:00:10 EST
+
+> 
+> Date:        Tue, 02 Jun 92 21:20:34 ADT
+> From: dbenson@yoda.eecs.wsu.edu (David B. Benson)
+> 
+> Given a pair of arrows with common codomain, the pullback consists of
+> an object and a pair of pullback projections with the requisite
+> universal properties.  Now for the question:
+> 
+> 	Regular is to equalizer as X is to pullback projections.
+> 
+> What name for a pair of arrows with a common domain should replace X in
+> the above line?
+> 
+> Thanks,
+> David
+> 
+
+X = "pullback span" (see March 1972 thesis of Jeanne Meisen supervised
+by Jim Lambek at McGill)
+
+or, in the additive case,
+
+X = "relation" (see Peter Hilton's LaJolla paper, 1965).
+
+Regards,
+Ross
+==========================================================================
+Subj:	Re: A name request
+From:	Richard Wood <rjwood@cs.dal.ca>
+Date:	Fri, 5 Jun 1992 13:58:40 -0300
+
+I assume that by "regular" you mean "regular mono". If that is so
+then I think that your X is "difunctional jointly monic pair". Aurelio,
+Christina and company have recently looked at difunctional relations in
+their work on Mal'cev matters but I do not have an explicit reference for 
+you.
+The X above is an ugly mouthfull but it makes sense in that for the most
+"decent" of categories, toposes, every mono is "regular" suggesting a
+usualness or normalness about such monos relative to the paradigm, one
+to one function_but difunctionality is not usual.   
+To be precise, let X<---R--->A be a jointly monic pair in SET then R
+is a pullback of some cospan if and only if, viewed as a relation, R
+is "transitive" in the following sense:
+	      aRx and bRx and bRy   implies   aRy    .
+This interpretation is of course possible in much greater generality
+than SET.
+
+Best regards, Richard
+==========================================================================
+Subj:	A rose by any other name, Mal'cev relations
+Date: Mon, 8 Jun 92 15:19:39 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+ 
+I used the phrase regular--or effective--epimorphic family for the dual
+notion of pair of arrows that were a pushout.  Of course, this is a much
+wider notion, so regular epi pair would do for that.  Since it is almost
+self-defining and also shorter than some of the alternatives, it is the
+term I recommend.
+ 
+Richard points out, in effect, that a subset R in A x B is a
+pullback in this sense iff R o R\op o R is in R. That is true in any
+topos.  It is also true in any abelian category.  Is it true in the
+dual of a topos?  In the dual of sets?  Whatever, it is an exactness
+condition (that any such subset be a pullback) that might turn out
+to be interesting.  Conversely, it could turn out to be equivalent
+(probably with some existence of limits and/or colimits) to
+effective equivalence relations.  Note that it implies that R o R\op
+and R\op o R are transitive (they are obviously symmetric).
+ 
+Michael
+++++++++++++++++++++++++
+Date: Tue, 9 Jun 92 10:57:05 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+This is a follow  up to my post from yesterday.
+Let me say that a subobject R in A x B is a Mal'cev relation if
+R o R\op o R is in R.  Call a Mal'cev relation effective if there is a
+pullback
+                    R ------> A
+                    |         |
+                    |         |
+                    |         |
+                    v         v
+                    B ------> C
+ 
+Yesterday, I pointed out, in effect, that in toposes and abelian
+categories, Mal'cev relations are effective and asked if it was true in
+the dual of sets.  The following additional facts have now come to
+light:
+ 
+1. Mal'cev relations are not effective in the dual of sets.
+(Counter-example at end).
+ 
+2. In a Mal'cev category, every relation is Mal'cev (trivial), but
+not always effective (see 1).
+ 
+3. If every Mal'cev relation is effective, then so is every equivalence
+relation.  Since equivalence relations are effective in the opposite of
+sets, it follows from 1 that the converse is false.  Thus effectiveness
+of Mal'cev relations is strictly stronger than that of ERs.
+ 
+4. A PER (on a single object A) is a Mal'cev relation, but the converse
+is not true (trivial counter-example in groups, in which, from 2, every
+relation is Mal'cev).
+ 
+Thus the condition of effectiveness of Mal'cev relations is an exactness
+condition that is strictly stronger than that of ERs.  Since it is true
+in any topos, it must have something to do with disjoint universal sums.
+It wouldn't surprise me if it had something to do with effective unions.
+ 
+Here is the counter-example.  If there is a pullback as above, then C
+can be taken to be the pushout.  Thus if sets\op satisfy the condition,
+so does the opposite of finite sets, which is equivalent to finite
+boolean algebras.  In that category, the following is a pushout and not
+a pullback (there is no choice in the maps since 2 is initial and 1 is
+final):
+                    2 ------> 4
+                    |         |
+                    |         |
+                    |         |
+                    v         v
+                    1 ------> 1
+ 
+Since Boolean algebras is a Mal'cev category, all relations are Mal'cev
+(it is trivial to see that this one is in any case).
+ 
+It follows that effective Mal'cev pair would be another answer to the
+original question, but not a good one, I think.
+ 
+Michael
+==========================================================================
+Subj:	Re: Mal'cev relations
+Date: Tue, 9 Jun 92 21:37:51 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Please change the line that says that in a Mal'cev category, every relation is
+Mal'cev to one that says that if an equational category has a Mal'cev
+operation, then every relation is Mal'cev.
+
+Thanks, Mike
+==========================================================================
+Subj:	Mal'cev relations and dinaturality
+From: <mxh@dcs.edinburgh.ac.uk>
+Date: 10 Jun 92 13:12 +0100
+
+As a followup to the discussion on Mal'cev relations these days I
+thought it might be a good idea to describe some ideas I had recently
+concerning these. They seem quite close to Peter Freyd's structors, so
+I don't claim originality.
+
+Let BB be a ccc with finite limits. A pullback square
+(a:X->A,b:X->B,p:A->Y,q:B->Y) is called a Mal'cev relation between A
+and B, (by a slight distortion of Michael Barr's definition). Are
+there any good terms for X and Y? One might call them kernel and
+image, perhaps.
+
+The Mal'cev relations in BB form a ccc with finite limits (morphisms
+being given by hexagons.). Now given a class of -+ bifunctors on BB we
+can axiomatise an action on Mal'cev relations as follows: If
+R:=(a:X->A,b:X->B,p:A->Y,q:B->Y) is a M. rel between A and B and
+F:BB\op x BB -> BB is in the class of bifunctors, then we assign to
+this situation a Mal'cev relation F*R between FAA and FBB such that
+the following axioms are satisfied:
+
+1) (F x G)*R =~= F*R x G*R
+2) (F => G)*R =~= F*R => G*R
+3) If F_R is the relation between FAA and FBB defined by the span
+(Fpa:FYX->FAA, Fqb:FYX->FBB) and F^R is the relation defined by the
+cospan (Fap:FAA->FXY, Fqb: FBB->FXY) then F_R \subset F*R \subset F^R.
+
+In 3) the term \subset and "relations are used in an informal way.
+What 3) precisely means is that 
+
+		       FAA               FAA
+		     /\   \            /\   \
+		     /     \           /     \
+		    /      \/         /      \/
+		   W       FXY      FYX       Z
+		    \      /\         \      /\
+		     \     /           \     /
+		     \/   /            \/   /
+		       FBB               FBB
+
+commute for W the kernel and Z the image of F*R. 
+
+=> and x denote twisted exponential and pointwise product for
+bifunctors and exponential and cartesian product for Mal'cev
+relations. The clauses 1)-3) can easily be generalised to
+-^n+^n-functors.  One can show by induction that the class of
+bifunctors definable by constants +(if it exists), x and => admit 
+an action on Mal'cev relations, so the definition is consistent.
+
+Now given such a class of functors and an action on Mal'cev relations
+we can define a notion of dinaturality as follows:
+
+Def: Let F and G be two -+ bifunctors.
+A "very strong dinatural transformation" t is then given by a
+family of maps t_A:FAA to GAA for each object A in C, such
+that for each Mal'cev relation R between A and B the pair 
+(t_A:FAA->GAA, t_B:FBB->GBB) is a morphism from F*R to G*R in the
+category of Mal'cev relations. I.e. the "famous hexagon"
+
+                                    t_A
+			      FAA -------> GAA
+			      /\             \
+			      /               \ 
+			     /                 \
+			    /                  \/
+			   W                    Z
+			    \                  /\
+			     \                 /
+			      \               / 
+			      \/    t_B      /
+			      FBB -------> GBB
+
+
+for W the kernel of F*R and Z the image of G*R.
+(end of definition)
+
+These transformations compose and, in effect, form a ccc (with bifunctors
+as objects). We may call a polymorphic function parametric if it comes
+from such a transformation.
+
+Remark: By letting R := the graph of some morphism it follows
+that every "very strong dinatural transfomation" is dinatural in the
+Yoneda-MacLane-Bainbridge-Freyd-Scedrov-Scott sense.
+
+Now we are ready to define the corresponding notion of an "end" as a
+universal transformation from some constant functor to a bifunctor and
+prove that in the case of FXY == (TY=>X)=>Y (for T covariant) such an end
+gives the initial T-algebra for T. Moreover one can show that the initial
+T-algebra _is_ an end, so that e.g. in the category of sets an end for
+FXY=(Y=>X)=>(X=>Y) exists (namely the NNO). In this sense the category
+provides a "bad model for polymorphism" looked for by E.Robinson in
+that it distinguishes different notions of parametricity. At least as
+far as ML polymorphism is concerned.
+
+As a side effect this provides a characterisation of a strong NNO in a
+ccc with finite limits by pure equations.
+
+Martin Hofmann
+==========================================================================
+Subj:	Mal'cev relations
+Date: Thu, 11 Jun 92 13:34:12 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+The observations by Martin Hoffman are interesting.  In the interests of
+clarity, I do object to his calling the category of pullback squares
+the category of Mal'cev relations.  One is an existential structure,
+while the other builds the thing that exists into the structure.  It makes
+it  into an entirely different category.  Not less interesting, but
+different.  It is (somewhat) like the difference between the categories
+of complete lattices and complete semilattices.  
+
+One interesting (and trivial) observation is that if Mal'cev relations
+are effective, then a quotient of a subobject of a quotient.  This is
+(like everything I've said, but forget to mention) in the presence
+of sufficient limits and colimits.  Now if one could show that the
+amalgamation property held, one would have that a pushout of a mono
+is mono in that case.
+
+Michael
+==========================================================================
+Subj:	Re: Mal'cev relations
+Date: Sun, 14 Jun 92 08:08:20 GMT-0400
+From: jds@rademacher.math.upenn.edu
+
+the difference beteen the two categories triggers memories of 
+discussions with John Moore about the non-category of H-spaces
+the problem is with the morphisms
+either an H-map is one that respects the two multiplications up
+to some unspecified homotopy
+OR
+an H-map is a pair consisting of a map say f:X --> Y AND a specific
+homotopy h_t:X x X --> Y
+
+either way there are problems
+thoughts?
+jim
+==========================================================================
+Subj:	Re: Mal'cev relations
+Date: Mon, 15 Jun 92 10:05 GMT
+From: MAS013@BANGOR.AC.UK
+
+(This is a reply to Jim's thought on H-spaces, not really to Mike's one 
+on Malcev relations.)
+There would seem to be a need for a discussion of homotopy everything 
+models of the theory of categories.  The objects would have a 
+composition that was homotopy associative up to arbitrary degree, would 
+have homotopy identities, etc.  Vogt back in 1974 provided an example of 
+such a thing in the context of homotopy coherent diagams of spaces.  The 
+composition morphism needed to be  chosen, but once chosen was homotopy 
+associative to infinite degree.  (Jean-Marc Cordier and I have examined 
+this in the context of simplicially enriched categories.)  It seems that 
+a possible way out is to consider such an infinitely lax category as a 
+simplicial class satisfying a weak Kan condition, that condition giving the 
+composition. 
+Grothendieck in his pursuit of stacks asked for infinitely lax categories 
+or groupoids to model homotopy types, and recent work by Kapranov, 
+Voevodsky, Steiner etc., as well as a mass of material originating 
+"down-under" from Ross, and friends, suggest that the time is 
+approaching when an attack on these problems can be made.  Jean-Marc and 
+I have a lot of information on doing homotopy coherence in simplicially 
+enriched settings including homotopy coherent forms of the Yoneda lemma, 
+the interchange law in this setting, and so on.  Unfortunately it is not 
+always obvious how to go beyond locally weakly Kan simplicial 
+category, where at least the composition is defined, at least, so as to 
+be able to handle weakly Kan simplicial classes.
+
+I would much appreciate peoples reactions to this view.
+
+Cheers,
+
+Tim.
+
+(Sender:Tim Porter: 
+e-mail: mas013@uk.ac.bangor.vaxc
+School of Maths, 
+University of Wales at Bangor,
+Dean Street,
+Bangor,
+Gwynedd, LL57 1UT.
+U.K.
+
+==========================================================================
+Subj:	H-Spaces
+Date: Tue, 16 Jun 92 12:56:09 EDT
+From: jds@rademacher.math.upenn.edu
+
+Jim Stasheff replying to tim Porter's comments on my H-space query:
+
+Yes, the analog for H-spaces is fine.  If X is not only an H-space
+but a strongly homotopy associative (sha) space, then it has a classifying
+space BX and the category of sha H-spaces can be defined so that B
+is a functor, but at any finite level ...???
+==========================================================================
+Subj:	Horst Reichel
+Date: Fri, 19 Jun 92 12:54:25 -0400
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+
+Does anyone have a current address, email or pmail, for Horst
+Reichel?
+
+Thanks, Charles.
+==========================================================================
+Subj:	Definition of regular categories
+Date: Sun, 21 Jun 92 11:34:13 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+ 
+Many definitions of regular category have been given.  The original one
+required that every arrow have a kernel pair (it will not do to call it
+a kernel since that has another, and related, meaning in abelian
+categories), that the kernel pair of every arrow have a coequalizer and
+that every coterminous pair of arrows of which one is a regular epi (a
+coequalizer of a kernel pair) have a pullback in which the arrow
+opposite the regular epi is regular epi.  This definition can be both
+strengthened and weakened (and has been, including by me), while
+retaining its essential intent.
+ 
+Strengthenings:
+ 
+You can assume the category has more (finite) limits or more
+coequalizers.  All the way up to all finite limits and finite colimits.
+ 
+Weakenings:
+ 
+You can define a regular epi as I did last fall, in terms of pairs of
+arrows.  You can force it to be stable by requiring that it be a cover
+in the finest topology for which the representable functors are sheaves.
+You can then require that every arrow factor as a regular epi followed
+by a mono.
+ 
+I think that if I were starting from scratch, I would use the latter
+definition and then strengthen it as needed.  The full embedding theorem
+is certainly true in that context.
+ 
+As for examples, that's harder.  I haven't worked out the details, but I
+think that finite ordinals and order-preserving maps should be an
+example.  If you stick to non-zero ordinals, then this is the standard
+simplicial category.  All the monics and all the epics are split and
+hence regular in any definition, but I don't think the epis have kernel
+pairs, although coequalizers probably exist.  The point is that there is
+no reason to constrict the notion, since you can add whatever you need
+when you need it.
+ 
+In a regular category, it is certainly equivalent to say that every epi
+is regular and that every monic epi is an isomorphism.  Moreover, it
+works with the weakest definition, since you need only take an epi and
+factor it as a regular epi followed by a mono.  Then the mono is the
+second factor of an epi and hence also epic and so if every monic epi is
+an ismorphism, the original is, up to isomorphism, the regular epi part.
+The converse is even easier.  I thought the definition of pretopos
+implied regular.
+ 
+Michael
+==========================================================================
+Subj:	WANTED: Topos Theory
+Date: Wed, 24 Jun 92 11:30:02
+From: Steve Vickers <sjv@doc.imperial.ac.uk>
+
+Can anyone in Britain sell me a copy of Peter Johnstone's "Topos Theory"? 
+Name your price.
+
+Steve Vickers.
+==========================================================================
+Subj:	Re: WANTED: Topos Theory and WANTED Basic Concepts...
+Date: Fri, 26 Jun 1992 10:57 ADT
+From: RDAWSON@HUSKY1.STMARYS.CA
+
+	This must be the Most Wanted Book In The World... do the publishers
+realize the demand? To whom it may concern: if anybody brings out an edition
+at any reasonable price, I will buy one. Paperback would be nice but not
+essential. I will also recommend that our library purchase a copy,. That's 2.
+I also know several other people who want copies...
+	Note that I am *not* opening bidding against Steve Vickers; this
+is intended for use to get the publishers going. But, seriously, somebody
+must have contacts to pass this on!
+	-Robert Dawson
+++++++++++++++++++++++++++
+From: dpym@dcs.ed.ac.uk
+Date: Fri, 26 Jun 92 15:00:36 BST
+
+In a vein similar to that of Steve Vickers' note: 
+
+Will anyone in the U.K. sell me a copy of `Basic Concepts of 
+Enriched Category Theory', by G.M. Kelly ? 
+
+D.J. Pym
+==========================================================================
+Subj:	Re: WANTED: Topos Theory  ... 
+From: John C. Mitchell <jcm@cs.stanford.edu>
+Date: Fri, 26 Jun 92 10:55:21 -0700
+
+I did buy a copy of Topos Theory a couple of years ago direct from the
+publisher. It turned out to be an "Academic Press Replica Reprint,"
+which means a bound Xerox copy. I think the price was
+somewhat high, but I don't remember exactly. Despite the poor print
+quality, I think it is better to own a copy of this sort than none at
+all. A publisher can certainly do this without any substantial inventory
+costs, etc. On the other hand, without going into details, there
+could be other ways to obtain a copy of similar quality ...
+
+John Mitchell
+==========================================================================
+Subj:	the 2- (n-?) category of chain complexes 
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Mon, 29 Jun 92 17:28:47 CDT
+
+Surely this must be known, but where is there a reference?
+
+	If one considers any abelian category A, one can from a 2-category
+as follows:
+
+	objects: differential graded objects in A (i.e. chain complexes)
+	1-arrows: chain maps
+	2-arrows: equivalence classes of chain homotopies
+
+where two chain homotopies a,b:F--->G are equivalent if there exits
+a map x of degree -2 from the common source of F and G to the common target
+of F and G such that
+
+	a - b = xd - dx.
+
+	The two dimensional composition of chain homotopies is addition,
+the one dimensional is given by
+
+	if a:F--->G, b:H--->K (source(H)=target(G)) then
+
+	a *1 b = aH + Gb (composites in diagrammatic order).
+
+
+Also, can one play the game again, and get a 3-category, etc.?
+
+A related question: does anyone know of a notion of "weak n-category" in
+which associativities are strict, but the middle-four-interchange 
+holds only up to higher dimensional data? (That's what happens here
+if one uses chain homotopies instead of equivalence classes.)
+
+--David Yetter
+==========================================================================
+Subj:	Re: WANTED: Topos Theory
+Date: Tue, 30 Jun 92 14:36:15
+From: Steve Vickers <sjv@doc.imperial.ac.uk>
+
+Having asked for second-hand copies of Johnstone's "Topos Theory" that I 
+could buy, I instead got a couple of commiserational replies saying how 
+terrible it is that the book should have been allowed to go out of print.
+
+I intend to write to the publishers, Academic Press, to encourage them to 
+reprint in paperback.
+
+If enough people would like to add their "signatures", I'll add a section in 
+the following form:
+
+  The following people have told me that they will definitely buy a copy
+  if the book is reprinted at not too high a price:
+
+    name               brief address
+    name               brief address
+    :                  :
+
+Please email me if you'd like to be included.
+  
+Steve Vickers.
+
+sjv@doc.ic.ac.uk

@@ -1,0 +1,71 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: squares and cubes
+Date: Sun, 16 Jan 2000 21:45:50 -0800
+Lines: 42
+Approved: news@gmane.org
+Message-ID: <200001170545.VAA03567@coraki.Stanford.EDU>
+References: <388158B3.60AF9957@kestrel.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017766 30820 80.91.229.2 (29 Apr 2009 15:09:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:26 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jan 17 14:08:32 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA22267
+	for categories-list; Mon, 17 Jan 2000 09:48:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: Your message of "Sat, 15 Jan 2000 21:35:47 PST."
+             <388158B3.60AF9957@kestrel.edu> 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 2218
+Original-Lines: 41
+Xref: news.gmane.org gmane.science.mathematics.categories:1348
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1348>
+
+From: Dusko Pavlovic <dusko@kestrel.edu>
+>if i am not misunderstanding anything, peter freyd's closed interval
+>coalgebra achieves something that vaughan pratt's and mine do not. we work
+>with lists and streams and get *irredundant* representations of reals.
+>however, without redundancy, the algebraic operations on reals are
+>undecidable. peter's bipointed approach, however, induces a *redundant*
+>representation. this allows him to extract the algebraic operations
+>coinductively.
+
+I am deeply embarrassed at not drawing this inference myself.  I noticed
+the felicitous identification of 0111... and 1000... but the importance of
+the resulting redundancy didn't click.  That the whole process happened
+in one step led me to think that the representation was as irredundant
+as all extant one-step constructions.  The fact that addition is easier
+to define with Peter's functor than with ours should have been a big hint.
+
+Redundant representations for fast computer arithmetic have been in wide
+use since the 1960's.  The Wallace tree, long available in chip form,
+leverages the idea to multiply n bit integers with log n circuit delay.
+(Chris Wallace is an Australian computer scientist who came up with
+this idea while working on Illiac 2 at the University of Illinois.)
+The actual multiplication takes half the time, the other half is spent
+performing the identification step at the end, namely by putting the
+result into canonical form.
+
+All redundant representations of the reals that are or could be used
+in computer architecture require a separate step to identify the
+redundant representations.  For example Schanuel's recently discussed
+almost-additive sequences of integers redundantly represent the reals,
+and must be quotiented in order to represent them irredundantly.  By the
+same token the group of bounded sequences that I mentioned does the
+same, and it too must be quotiented in a separate step, in this case by
+a subgroup expressing 2(x/2) = x.
+
+Peter's final coalgebra performs the identification in the same step in
+which the reals are created.  I am fairly confident there is no precedent
+for such a one-step construction of the reals in which the representation
+is redundant.
+
+Vaughan Pratt
+
+

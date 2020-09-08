@@ -1,0 +1,134 @@
+Path: news.gmane.org!not-for-mail
+From: John Baez <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: categories of models of cartesian PROPs
+Date: Fri, 21 Aug 2015 12:23:57 +0800
+Lines: 96
+Approved: news@gmane.org
+Message-ID: <E1ZSuhy-0008Ji-Hc@mlist.mta.ca>
+References: <E1ZS3A0-00051h-Q0@mlist.mta.ca>
+Reply-To: John Baez <baez@math.ucr.edu>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+X-Trace: ger.gmane.org 1440195854 23493 80.91.229.3 (21 Aug 2015 22:24:14 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 21 Aug 2015 22:24:14 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Aug 22 00:24:06 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSujB-0001ai-TW
+	for gsmc-categories@m.gmane.org; Sat, 22 Aug 2015 00:24:02 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43471)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSuhw-0006G8-RV; Fri, 21 Aug 2015 19:22:44 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZSuhy-0008Ji-Hc
+	for categories-list@mlist.mta.ca; Fri, 21 Aug 2015 19:22:46 -0300
+In-Reply-To: <E1ZSUsy-0005Lh-8t@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8683
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8683>
+
+Thanks to everyone for your replies!
+
+I was surprised to hear that StrMon[T,C] becomes cartesian if T is, because
+I usually think of the hom of commutative monoids as inheriting its
+multiplicative properties from the target monoid.  But Richard Garner
+convinced me it's true.   (Brendan will check, though, if he uses this.)
+
+I was reassured by a decategorified analogue: if T and C are commutative
+monoids and we make the set of monoid homomorphism T -> C into a
+commutative monoid by pointwise multiplication, any one-variable identity
+(like x^2 = x) obeyed by* either C or T*  will be inherited by CommMon[T,C].
+It seems identities with more variables only get inherited from C.
+
+Best,
+jb
+
+
+On Thu, Aug 20, 2015 at 8:28 AM, Richard Garner <richard.garner@mq.edu.au>
+wrote:
+
+> Dear John,
+>
+> Caveat lector - this is all rather off the cuff so there may be some
+> mistakes in what follows:
+>
+>> Suppose you have a category with finite products, say T, and a symmetric
+>> monoidal category, say C.   Let [T,C] be the category where
+>>
+>>     objects are symmetric monoidal functors from T to C,
+>>     morphisms are monoidal natural transformations.
+>>
+>> *1.  What structure beyond a mere category does [T,C] automatically get
+>> in
+>> this sort of situation?*
+>>
+>> I haven't thought about this much.  Even if T were just symmetric
+>> monoidal,
+>> I think [T,C] should get a symmetric monoidal structure due to "pointwise
+>> multiplication", just as the set of homomorphisms from one commutative
+>> monoid to another becomes a commutative monoid where
+>>
+>> fg(x) := f(x) g(x)
+>>
+>> Should [T,C] also have some sort of "comultiplication"?  What extra
+>> benefits do we get from T being cartesian?
+>
+> Yes, this pointwise structure exists; it's part of a monoidal bicategory
+> structure on the 2-category of symmetric monoidal closed categories and
+> symmetric strong monoidal functors. More generally if T is any symmetric
+> pseudomonoidal 2-monad on Cat, then the 2-category of T-algebras and
+> strong morphisms is a monoidal bicategory; see:
+>
+> Hyland, Power "Pseudo-commutative monads and pseudo-closed 2-categories"
+> (2002)
+>
+> In the case you describe it seems that this pointwise structure on
+> StrMon[T,C] is actually cartesian. The point is that, since each t in T
+> is a cocommutative comonoid naturally in T, if F: T--->C is strong
+> monoidal, then each Ft is a cocommutative comonoid, naturally in T. But
+> this means that we have maps F ---> F * F for the pointwise tensor
+> product on StrMon[T,C], making it into a cocommutative comonoid therein.
+> Since these maps are actually natural in F, each object of StrMon[T,C]
+> is naturally a cocommutative comonoid, so that the monoidal structure
+> must be cartesian. There's some details I haven't checked here, because
+> various things need to be strong monoidal functors and transformations,
+> but my immediate impression is that all this should work.
+>
+>> *2.  What further structure do we get if C has some particular class of
+>> limits or colimits?*
+>
+> For any symmetric monoidal T, it's easy to see that LaxMon[T,C] will
+> inherit any pointwise limits existing in the mere functor category
+> [T,C]. Likewise OplaxMon[T,C] will inherit any colimits. In order for
+> some class of these pointwise limits or colimits to restrict back to
+> StrMon[T,C], it seems that what you need is for the tensor functor C x C
+> ----> C and the unit functor I:1---->C to preserve limits or colimits in
+> that class.
+>
+> In particular, if C had filtered colimits or reflexive coequalisers (or
+> more generally any kind of sifted colimit) and these were preserved by
+> the tensor product functor in each variable separately (which would
+> happen if, for example, C were symmetric monoidal closed) then you could
+> deduce that, actually, C x C ---> C and 1 ---> C preserved them, and so
+> conclude that StrMon[T,C] had filtered colimits / reflexive coequalisers
+> computed pointwise.
+>
+> Dually, if C had coreflexive equalisers preserved by tensor in each
+> variable (for example, if C = Vect) then StrMon[T,C] would again have
+> pointwise coreflexive equalisers. In particular, if T is cartesian, so
+> that we have finite products given by the pointwise tensor product, then
+> in this case we have all finite limits.
+>
+> Richard
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

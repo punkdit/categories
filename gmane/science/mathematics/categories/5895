@@ -1,0 +1,107 @@
+Path: news.gmane.org!not-for-mail
+From: James Borger <james.borger@anu.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: filtered monads?
+Date: Tue, 1 Jun 2010 11:11:11 +1000
+Lines: 70
+Approved: news@gmane.org
+Message-ID: <E1OJPzJ-0001DW-VR@mailserv.mta.ca>
+References: <E1OIPAn-0007Gc-Fc@mailserv.mta.ca> <AANLkTimKrlok4-5_VtORytawuPBh6v7sBu3dAB9Htj1n@mail.gmail.com>
+Reply-To: James Borger <james.borger@anu.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v1078)
+Content-Type: text/plain;	charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1275395094 22430 80.91.229.12 (1 Jun 2010 12:24:54 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 1 Jun 2010 12:24:54 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Tue Jun 01 14:24:53 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OJQWa-0008G0-Uc
+	for gsmc-categories@m.gmane.org; Tue, 01 Jun 2010 14:24:53 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OJPzJ-0001DW-VR
+	for categories-list@mta.ca; Tue, 01 Jun 2010 08:50:30 -0300
+In-Reply-To: <AANLkTimKrlok4-5_VtORytawuPBh6v7sBu3dAB9Htj1n@mail.gmail.com>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5895
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5895>
+
+Dear category theorists,
+
+Many thanks for the responses to my question. I now have no doubt that =
+the "right" way of defining M-filtered monad, where M is an ordered =
+monoid, is as a lax monoidal functor as described by John Baez below. I =
+admit that it doesn't capture every aspect of the examples I gave, but =
+that's OK -- general definitions never do.
+
+So then the precise form of my original question would then be whether =
+there is a reference, suitable for a non-category-theoretic paper, where =
+this definition is written down purely in the language of functors and =
+natural transformations. Since the monoidal category language is so =
+useful here, such a reference probably wouldn't have been written by a =
+category theorist. But since filtered monads are so common even in =
+contexts where people don't talk much about monoidal categories, it =
+*should* exist. So if anyone happens to know of one, please let me know.
+
+Yours,
+
+James Borger
+
+
+On 2010/05/30, at 9:37 PM, John Baez wrote:
+
+> James Borger wrote:
+>=20
+> Does the concept of "filtered monad" exist in the literature?
+>=20
+> I don't know, but your concept does indeed seem to come up a lot...
+>=20
+> I'm tempted to formalize it a bit.  Let's look at an example:
+> =20
+> 1. Let C be the category of sets, let F:C->C be the set underlying the =
+free monoid on S, and let F_n(S) be the subset of F(S) consisting of =
+words of length at most n. Then the monad structure map F o F-->F =
+restricts to maps F_m o F_n-->F_{mn}, and F_1 is the identity functor.
+>=20
+> It seems that *one* aspect of what you've got here is a lax monoidal =
+functor from the multiplicative monoid of natural numbers to End(C).   =
+Such a thing consists of a functor
+>=20
+> F_n: C -> C
+>=20
+> for each natural number n, together with natural transformations
+>=20
+> F_m o F_n =3D> F_{mn}=20
+>=20
+> and
+>=20
+> 1_C =3D> F_1
+>=20
+> satisfying appropriate coherence laws. =20
+>=20
+> (For example, you can build two natural transformations from F_m o F_n =
+o F_k to F_{mnk}, but they're equal.)
+> =20
+> But there's more: you also have natural transformations=20
+>=20
+> F_m =3D> F_n
+>=20
+> whenever m is less than or equal to n.  And this seems to be an =
+important aspect of the intuition that's making you use the word =
+"filtered".   So, instead of treating the natural numbers as a mere =
+monoid, I think you are treating them as a monoidal poset. =20
+>=20
+
+...
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

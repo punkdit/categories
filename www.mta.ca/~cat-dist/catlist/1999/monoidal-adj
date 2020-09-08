@@ -1,0 +1,117 @@
+Date: Sun, 30 Jun 1996 23:20:29 -0300 (ADT)
+Subject: Monoidal adjunctions
+
+Date: Sun, 30 Jun 1996 17:28:47 +0100 (BST)
+From: A.Jung@cs.bham.ac.uk
+
+Consider the following definition from Eilenberg and Kelly 1966:
+
+(C; x, l, r, a, I) and (C'; x', l', r', a', I') are monoidal
+categories. A functor F from C' to C is called monoidal if there is a
+natural transformation n: FA x FB --> F(Ax'B) and a morphism p: FI' --> I
+commuting in a suitable sense with l, l', r, r', a and a'.
+
+What we have proved is the following:
+
+LEMMA
+
+Let (F,G) be an adjunction between (symmetric) monoidal categories C
+and C'. If F (the left adjoint) is a (symmetric) monoidal functor such
+that n consists of isomorphisms and p is an isomorphism then G is also
+monoidal and unit and counit are monoidal natural transformations.
+
+
+The proof is pretty straightforward. Yet, we could not find such a
+lemma anywhere in the literature. Can anyone help with pointers to
+existing work?
+
+Achim Jung
+Mathias Kegelmann
+Eike Ritter
+
+School of Computer Science
+The University of Birmingham
+Edgbaston
+BIRMINGHAM, B15 2TT
+England
+
+
+Date: Mon, 1 Jul 1996 10:52:28 -0300 (ADT)
+Subject: Re: Monoidal adjunctions
+
+Date: Mon, 1 Jul 1996 15:09:45 +1000
+From: Ross Street <street@mpce.mq.edu.au>
+
+Answer to the question of Achim Jung, Mathias Kegelmann & Eike Ritter:
+
+See a paper of Max Kelly in Springer Lecture Notes in Math 420
+called "Doctrinal adjunction" pages 257-280. The Proposition
+has other clauses: e.g., an adjunction in the 2-category of (symm)
+monoidal categories and monoidal functors is exactly of the kind you
+describe.
+
+-- Ross Street
+
+
+Date: Mon, 1 Jul 1996 10:55:15 -0300 (ADT)
+Subject: Re: Monoidal adjunctions
+
+Date: Mon, 1 Jul 1996 13:36:36 +0200
+From: Max Kelly <kelly_m@maths.su.oz.au>
+
+Dear Jung et al.,
+
+the result you mention, in a more general form, is in my paper
+"Doctrinal adjunction" in Springer Lecture Notes in Math. 420 (1974).
+Regards, Max Kelly.
+
+
+Date: Mon, 1 Jul 1996 20:47:52 -0300 (ADT)
+Subject: Re: Monoidal adjunctions
+
+Date: Mon, 01 Jul 1996 15:11:06 +0100
+From: Nick Benton <Nick.Benton@cl.cam.ac.uk>
+
+Achim wrote:
+
+>LEMMA
+>
+>Let (F,G) be an adjunction between (symmetric) monoidal categories C
+>and C'. If F (the left adjoint) is a (symmetric) monoidal functor such
+>that n consists of isomorphisms and p is an isomorphism then G is also
+>monoidal and unit and counit are monoidal natural transformations.
+>
+>
+>The proof is pretty straightforward. Yet, we could not find such a
+>lemma anywhere in the literature. Can anyone help with pointers to
+>existing work?
+
+As well as the paper cited by Ross Street, this is mentioned, though
+not actually stated as a lemma, on page 15 of the technical report
+version of my paper
+
+ A Mixed Linear and Non-Linear Logic: Proofs, Terms and Models
+ Technical report 352 University of Cambridge Computer Laboratory
+October 1994
+
+I noticed it in connection with a proof-theoretically unpleasant
+`adjoint' presentation of LNL logic (Section 3.1.2) in which the
+rules for the two functors are just
+
+ F\Theta |- A  (in L)
+ ------------
+ \Theta |- GA  (in C)
+
+and
+
+ \Theta |- GA  (in C)
+ ------------
+ F\Theta |- A  (in L)
+
+Since G doesn't appear on the left in either of these rules, it's
+not *immediately* clear why G has to behave well with respect to the
+monoidal structures interpreting the commas in the antecedents. The
+answer is in the lemma above.
+
+Nick Benton
+

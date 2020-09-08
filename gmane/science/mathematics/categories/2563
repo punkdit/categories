@@ -1,0 +1,181 @@
+Path: news.gmane.org!not-for-mail
+From: "Geoffrey A. Washburn" <geoffw@cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: (co)limit in the category of types
+Date: Sun, 22 Feb 2004 15:36:10 -0500 (EST)
+Lines: 148
+Approved: news@gmane.org
+Message-ID: <Pine.GSO.4.58.0402221534350.14952@gradient.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018749 4758 80.91.229.2 (29 Apr 2009 15:25:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:25:49 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Feb 24 18:18:46 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 24 Feb 2004 18:18:46 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 1AvkqL-0000D8-00
+	for categories-list@mta.ca; Tue, 24 Feb 2004 18:15:57 -0400
+X-Authentication-Warning: gradient.cis.upenn.edu: geoffw owned process doing -bs
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 25
+Status: O
+Content-Length: 5945
+Original-Lines: 147
+Xref: news.gmane.org gmane.science.mathematics.categories:2563
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2563>
+
+
+A few weeks ago I posted a query to the TYPES mailing list about the a
+nature of a particular categorical construction.  In particular, I was
+interested in the colimit of an individual morphism in the category
+where objects are types, and arrows terms that are functions between them.
+Specifically consider the diagram
+
+                length
+     int list ----------> nat
+
+Where I abbreviate the type of integers as int and the type of natural
+numbers as nat.  (All diagrams are in ASCII so you will need to use a
+proportional font; maybe someday I will be able to use inline SVG
+diagrams).  I figured that it might be instructive to understand the
+nature of the colimit of this diagram by first considering the limit of
+this diagram (with its associated UMP)
+
+                                X
+              /                 |                    \
+           f /                  | \x:X.<f(x),g(x)>    \ g
+            /                   |                      \
+           /                    |                       \
+          /                     |                        \
+         /      fst             v                   snd   \
+        v     <----- Sigma l:int list.S(length(l)) ----->  v
+     int list                                             nat
+              ------------------------------------------>
+                               length
+
+Where snd o \x:X.<f(x),g(x)> = g and length o f = g.
+
+This limit Sigma l:int list.S(length(l)) is a dependent sum, essentially
+a tuple, that constrains its second component to be the natural number
+that is exactly the length of the list that is its first component.
+I indicate this by using the singleton type constructor S.  S(length(l))
+is the type of those terms that are equivalent to length(l).
+
+However, it was quickly pointed out to me on the TYPES list that there is a
+"simpler" limit that is isomorphic to Sigma l:int list.S(length(l))
+
+                          X
+              /           |         \
+             /            |          \
+          f /             | f         \ g
+           /              |            \
+          /               |             \
+         /       id       v     length   \
+        v     <------ int list --------> v
+     int list                            nat
+              ------------------------->
+                       length
+
+Where it must be the case that, length o f = g.
+
+What is interesting here is that while these two limits are isomorphic,
+operationally they are very different.  We can think of the limit
+an abstract data-type with two operations, one that will give us a list,
+or the length of the list it encapsulates.  In SML syntax
+
+  sig
+    type limit
+    val fst : limit -> int list
+    val snd : limit -> nat
+  end
+
+When we use int list as the limit, the abstract datatype is lazy, in
+the sense that it does not compute the length until it is requested.
+My more "complex" limit on the other-hand is eager, and computes the
+length when constructed.  This actually provides even more intuition
+as to what is going on with the colimit.
+
+First the simpler colimit
+
+                      length
+              ------------------>
+     int list                     nat
+        \     --------> nat <---- /
+         \     length    |    id /
+          \              |      /
+           \             |     /
+          f \            | g  / g
+             \           |   /
+              \          |  /
+               v         v v
+                         X
+
+Where it must be the case that g o length = f.
+
+Returning to our abstract datatype analogy,
+
+  sig
+    type colimit
+    val inl : int list -> colimit
+    val inr : nat -> colimit
+  end
+
+Here, our abstract datatype is encapsulates the length of a list,
+which can either be given directly, or by supplying a list.  This
+simpler colimit can thought of as being eager, because it calculates the
+length of the list immediately when injecting into the "abstract type".
+Therefore, if our intuitions are correct, the a dependent colimit should
+compute the length lazily...
+
+                                length
+              -------------------------------------------->
+     int list                                               nat
+        \     -----> CoSigma l:int list.S(length(l)) <----- /
+         \     inl                |                    inr /
+          \                       |                       /
+           \                      |                      /
+          f \                     | [f,g]               / g
+             \                    |                    /
+              \                   |                   /
+               v                  v                  v
+                                  X
+
+Where [f,g] o inl = f and g o length = f.
+
+And indeed it is.  Instead of calculating the length immediately, it
+requires that the function deconstructing the "abstract type" compute
+length if given a list instead of a length; this is forced by the
+requirement that f must be the same as g o length.
+
+
+My remaining unanswered questions:
+
+Are there any other interesting isomorphic (co)limits than the two
+discussed above?
+
+It is possible to add enough structure to the category so that these
+(co)limits can be distinguished?
+
+Naively we might have expected the dual of a dependent sum type to be a
+dependent product (as existential types are dual to universal types).
+Is there a construction that corresponds to the dual of a dependent
+product?
+
+Is there a relationship between the CoSigma type and other known
+mathematical structures?
+
+What are the typing rules for CoSigma?
+
+Sigma l:int list.S(length(l)) should be isomorphic to the more common
+dependent type Sigma n:nat.int list(n).  How does CoSigma l:int
+list.S(length(l)) relate to the type CoSigma n:nat.int list(n)?
+
+
+

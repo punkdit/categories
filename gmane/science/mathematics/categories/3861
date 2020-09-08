@@ -1,0 +1,458 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt07@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: The Dedekind Reals in Abstract Stone Duality
+Date: Sat, 18 Aug 2007 16:17:31 +0100
+Lines: 424
+Approved: news@gmane.org
+Message-ID: <E1IMdny-0003sB-Mz@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019566 10608 80.91.229.2 (29 Apr 2009 15:39:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:26 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sun Aug 19 03:07:14 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 19 Aug 2007 03:07:14 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IMdny-0003sB-Mz
+	for categories-list@mta.ca; Sun, 19 Aug 2007 02:58:30 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 12
+Status: O
+Content-Length: 19271
+Original-Lines: 423
+Xref: news.gmane.org gmane.science.mathematics.categories:3861
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3861>
+
+
+	The Dedekind Reals in Abstract Stone Duality
+		www.PaulTaylor.EU/ASD
+
+Andrej Bauer is a co-author of this paper, but not of this posting
+about it.
+
+We construct something that was supposed to be impossible: a model of
+(topology containing) the real line that satisfies the Heine--Borel
+theorem (the closed interval is compact in the "finite open sub-cover"
+sense) but in which all terms are computable.
+
+This fails in the "obvious" model of recursive analysis, ie the subset
+of real numbers that are representable by programs, roughly because we
+can enumerate them, and cover them with intervals of length m.2^-k for
+any chosen m (say 1/4). Then recursive [0,1] is covered by total length
+2m (=1/2), but no finite subcover is enough.   The clearest account of
+this counterexample that I have seen is in Bridges & Richman,
+"Varieties of Constructive Mathematics", LMS Lecture Notes 97,
+CUP, 1987, Section 3.4.
+
+The reason why the Heine--Borel theorem holds in ASD is that, like
+locale theory and formal topology, it is an account of topology based
+on open subspaces and not points.   But, unlike them, ASD is presented
+as a lambda calculus that makes it LOOK like a point-based theory, and
+therefore shows up exactly what the difference is.
+
+This paper appeared in the proceedings of "Computability and
+Complexity in Analysis" (Kyoto, August 2005), but since then it has
+been completely rewritten, and almost every lemma has been re-thought
+-- so it's worth re-reading.  It now provides the best available
+introduction to the construction of topology in ASD, and also compares
+the construction and properties of the real line in ASD with those in
+locale theory, formal topology and constructive analysis.
+
+SS 11-13 of the paper also consider real arithmetic and the relationship
+between Dedekind completeness and the Archimedean axiom.
+
+It has just been submitted to a journal, so we would still welcome
+comments.
+
+Below I shall explain the category theoretic idea behind this
+construction.  For further discussion of constructive analysis in ASD,
+you should see SS 1 & 15 of the paper itself, and "A Lambda
+Calculus for Real Analysis", which was also presented at CCA 2005,
+and has been revised a lot, but is not yet ready to go to a journal.
+
+---
+
+Before I describe this work, I feel that the time has come to make a
+disclaimer:
+      ABSTRACT STONE DUALITY IS *NOT* ESCARDO'S SYNTHETIC TOPOLOGY
+
+Martin Escardo's paper "Synthetic topology of data types and classical
+spaces" (ENTCS 87 (2004) 21--156 or www.cs.bham.ac.uk/~mhe) is a very
+interesting collection of material drawn from the literature on the
+boundaries of topology and recursion theory.  If it had been written
+by somebody ten years earlier, as it could and perhaps should have been,
+it would have provided a very useful background to my work on ASD.
+
+However, the main use to which I would have put an earlier version of
+that paper would have been to say WHAT ASD IS NOT.  In particular,
+Martin describes the failure of compactness of Cantor space and of the
+closed real interval in recursive analysis.  The theory that he then
+discusses is a form of "relative computability", which bolts recursion
+theory on to classical topology.  The best developed form of this
+approach is Klaus Weihrauch's "Type Two Effectivity", on which Vasco
+Brattka (www.cca-net.de/vasco) is the most productive researcher.
+
+In ASD, Cantor space and [0,1] are compact, but this is not achieved
+by bolting recursion theory on to classical topology.  ASD is a direct
+axiomatisation of the ideas of general topology, not based on set
+theory or recursion theory.
+
+The features that are common to Martin's work and mine are that
+  - the topology on a space X is seen as the exponential Sigma^X,
+    where Sigma is the Sierpinski space; I would attribute this to
+    Dana Scott's "Continuous Lattices" (LNM 274 (1972) 97-136); and
+
+  - compactness of a space K is captured by a "universal quantifier"
+    all_K : Sigma^K -> Sigma;  I picked up this idea from 1970s locale
+    theory and categorical logic.
+
+I took these ideas for granted a long time ago, they appeared in the
+first ASD paper in 2000, and I have since developed them into a
+complete axiomatisation of computably based locally compact spaces.
+
+If Martin had developed his own calculus for topology based on similar
+ideas, it would have been possible to write (the paper and) this
+posting as an ordinary comparison of scientific theories, just as we
+do with locale theory, etc: "the Heine--Borel theorem holds in ASD but
+not in Escardo's calculus because of such-and-such".
+
+Unfortunately, there is no "Escardo's calculus".  Indeed, I recently
+put it to him that he could eliminate the friction between us either
+by working with me on ASD, or by proposing some other axiom system,
+but he declined.  He doesn't want to take a view on whether
+Heine--Borel is true or false.  Therefore no scientific comparison
+is possible, and I have to make this disclaimer instead.
+
+However, the reason why I consider it necessary to make such a
+statement is not actually because of Martin himself. His research is
+not my business, and this is not an issue of priority or plagiarism.
+My complaint is against those who go around saying that Martin presents
+MY work better than I do myself, whereas in fact the fundamental
+ideas of ASD (see below) get no mention in his account.
+
+I encourage Martin to clarify (on "categories") both which specific
+results he claims as HIS OWN, and more generally what the message of
+"Synthetic Topology" is, as distinct from ASD.  On the other hand,
+I would ask other people to read my papers properly.
+
+----
+
+THE MONADIC PRINCIPLE
+
+As a research programme, ASD is an example of a maxim due to Paul
+Dirac that Ronnie Brown quoted on "categories" on 8 June 2007:
+
+ >>  One should allow oneself to be led in the direction which the
+ >>  mathematics suggests... one must follow up a mathematical idea
+ >>  and see what its consequences are, even though one gets led to
+ >>  a domain which is completely foreign to what one started
+ >>  with.... Mathematics can lead us in a direction we would not
+ >>  take if we only followed up physical ideas by themselves.
+
+The mathematical idea that I followed in this way was a standard
+categorical one, and the following account is intended for
+categorists.  It explains how the application of this idea led
+"directly" to important fundamental principles in real analysis.
+
+The idea (in 1993) was that, not only is the topology on X given by
+the exponential Sigma^X as above, but also
+
+    the self-adjunction   Sigma^(-)  -|   Sigma^(-)  is monadic.
+
+I still don't know where I picked up the idea that adjunctions "ought"
+to be monadic.  Maybe it was just that lots of interesting categories
+turn up that way.  The main inspiration was Bob Pare's "Colimits in
+Topoi" (Bull AMS 80 (1974) 556), where he shows that any elementary
+topos has this property, with Sigma=Omega.
+
+A famous theorem of Jon Beck characterises monadic adjunctions
+F -| U  by two clauses:
+- U reflects invertibility, and
+- U preserves U-split coequalisers.
+
+----
+
+SOBRIETY
+
+In the context of ASD, the first clause is equivalent to saying that
+every object X is SOBER, ie it is the equaliser of the diagram
+
+                            eta_Sigma^2 X         Sigma^ Sigma^X
+         eta_X      Sigma^X ------------>     Sigma
+     X  >-----> Sigma       ------------> Sigma
+                            Sigma^2 eta_X
+
+When we apply this principle to the two most important ground types of
+mathematics (in the context of suitable extra structure), we find that
+
+- sobriety for N is equivalent to definition by description
+   (Sober Spaces and Continuations, SS 9-10)
+
+- sobriety for R is equivalent to Dedekind completeness
+   (Dedekind Reals in ASD, S 14).
+
+Sobriety is slightly stronger than the property of repleteness that
+Martin Hyland introduced in synthetic domain theory in 1991.
+
+Essentially, all of these ideas say HOW LOGIC IMPACTS ON NUMERICAL
+COMPUTATION.  They can be formulated as "introduction rules" in a
+type-theoretic style in which the elimination rules are given by
+equality, arithmetic order or lambda-application.  To put this another
+way, sobriety completes the square of types of operations:
+
+         results:  numerical              logical
+   arguments:
+     numerical:    arithmetic (+ - x /)   relations (= < > !=)
+
+       logical:    sobriety (cut descr)   logic (and or exists all)
+
+There are normalisation theorems that say that any numerical term
+built from these four sets of operations is equivalent to a purely
+logical one, with numerical variables and constants on the inside and
+a single sobriety operator on the outside.  Computation is then by
+logic programming. (See "Interval analysis without intervals".)
+
+-----
+
+MONADICITY
+
+Turning to the more difficult half of Beck's theorem, this yields
+the Heine--Borel theorem, and also compactness of Cantor space, 2^N.
+
+In fact it was already known that (Dedekind completeness and) the
+Heine--Borel theorem are consequences of the view that the algebra
+of open sets is fundamental in topology, and not the set of points.
+Fourman & Hyland showed this for locales (LNM 753 (1979) 280-301)
+and Negri for formal topology (LNCS 1158 (1996)).  Because of the
+monadic principle, ASD is also an "open sets" account of topology.
+
+We say that a subspace   i : X >---> Y  is  SIGMA-SPLIT  if there's
+a map   I : Sigma^X >---> Sigma^Y  such that  Sigma^i . I = id.
+Monadicity provides for the existence of Sigma-split subspaces.
+
+The representation of reals as Dedekind cuts defines a subspace
+     i : R >--->  Sigma^Q x Sigma^Q
+
+The crucial observation (in S 2 of "Dedekind reals in ASD") is that
+this subspace is Sigma-split, classically, using the fact that [0,1]
+is compact.  (This result is already significant in interval analysis:
+it says that interval computations can be made arbitarily accurate by
+making the interval arguments narrow enough.)
+
+The idempotent composite E = I . Sigma^i can be expressed entirely in
+terms of the rationals, not the reals.  This is the key idea of the
+construction of R in ASD (S 8), and the same formula E turns up again
+in the definitions of the quantifiers that make [0,1] compact and R
+overt (SS 9-10):
+     all  x:[d,u].phi x   =   I phi (lambda x.x<d, lambda x.u<x)
+     some x:[d,u].phi x   =   I phi (lambda x.x<u, lambda x.d<x)
+S 14 reproduces the classical argument in ASD to show that R is unique.
+
+Altogether, the Sigma-splitting I and the universal quantifier
+all_[0,1] are inter-definable.  In the models of recursive analysis
+where Heine--Borel fails, the map I also does not exist (or if it
+does, it's not Scott continuous).  If, as Martin Escardo does, you
+believe that compactness is defined by a quantifier Sigma^K -> Sigma,
+ie a term of one higher type, surely you should be willing to accept
+an inter-definable term of another higher type (I:Sigma^X >---> Sigma^Y)
+as the categorical explanation of the Heine--Borel theorem. This term
+also exists in the "relative computability" models: what ASD does is
+to abstract the computable, topological ideas away from proofs that
+rely on non-topological, non-computable set-theoretic hypotheses.
+
+Sigma-split subspaces also provide a simple categorical
+characterisation of local compactness: X is locally compact iff it can
+be expressed as a Sigma-split subspace of Sigma^N.  ("Computably
+based locally compact spaces".)
+
+----
+
+THE MONADIC LAMBDA CALCULUS
+
+What sets ASD apart from locale theory and formal topology is that it
+LOOKS as if it's based on "points", whereas locale theory looks like
+lattice theory, and formal topology works with basic open sets and
+coverage relations.
+
+How does ASD manage this?
+
+We now have 40 years experience of the interpretation of lambda
+calculi (predicate calculus, type theories, etc) in categories.
+We know, in particular, that the introduction, elimination, beta
+and eta rules for a logical connective correspond to various
+features of an adjunction between functors (see S 7.2 of my book).
+
+Now that we have seen this correspondence for numerous logical
+operations, we can turn it around: given an adjunction between
+functors, we might be able to design a formal calculus that
+corresponds to it.
+
+That is what "Subspaces in ASD" does with the monadic property.
+
+It allows one to work in a natural way with the given structure of the
+category (in particular N and the lattice Sigma), but then to introduce
+Sigma-split subspaces given certain "subspace data" called a NUCLEUS.
+This word was appropriated from locale theory because nuclei serve the
+same essential purpose in both cases, but the definitions are slightly
+different.
+
+It is important to understand that the "subspaces" in this calculus
+are not subsets.  Putting this back in categorical language, SS 4--6
+of that paper constructs the monadic category by formally adjoining
+NEW Sigma-split equalisers.
+
+----
+
+THE EUCLIDEAN & PHOA PRINCIPLES
+
+I want to stick to one categorical idea in this posting, but I should
+also point out that the thing that made monadicity look like topology
+rather than just category theory or lambda calculus was the Phoa
+principle.  The "Frobenius laws" for open and proper maps follow from
+this.  (These things are not in "Synthetic Topology" either.)
+
+This says that open and closed subspaces of X are in bijection, not
+because of set-theoretic complementation, but because they each
+correspond bijectively to maps  X --> Sigma.  Whereas locale theory
+has infinite joins but finite meets, and there are double negations
+all over the place in intuitionistic analysis,  ASD has a very
+strong duality between open and closed ideas.   This is applied
+to connectedness and (approximate forms of) the intermediate value
+theorem in "Lambda calculus for real analysis".
+
+The "miracle" that led to my working full time on ASD was the
+relationship between the Euclidean principle and dominances,
+and the fact that overt discrete spaces form a pretopos
+(See "Geometric and higher order logic").
+
+---
+
+DIFFICULTIES WITH THE ASD PROGRAMME
+
+I want to cross-examine the charge that I cannot present my own work.
+
+It has turned out that the nucleus that we use to construct R is the
+simplest non-trivial example, and the one that is best motivated by
+other considerations.  It is a pity that I did not know this ten years
+ago, and that I was so reluctant to do real analysis.  Instead, I
+spent a lot of time developing more general locally compact spaces,
+and also overt discrete ones.  However, the construction of the
+Dedekind reals involves topological and combinatorial arguments
+that we can now present with confidence ONLY BECAUSE I had previously
+done a thorough study of them.
+
+Working with ASD nuclei is extremely difficult.  For each one,
+several sections of a paper are needed simply to show that some
+bizarre formula satisfies another bizarre equation.  The proofs
+are long and intricate because the axioms are very weak and the
+techniques are novel.
+
+The reason for this difficulty is that I am working with monads and
+Beck's theorem.  Let me point out some history.  Although this result
+appears in many textbooks (including mine), Jon Beck never wrote it up
+himself.  He might have taught us about non-Abelian cohomology, and
+what "exactness" means for general algebras, except that his thesis
+advisers told him that homological algebra had to be done with Abelian
+groups.  In that subject, there is a black art of finding contraction
+maps.  Beautiful though monadic adjunctions are, they don't compose.
+Altogether, Beck's theorem was a very awkward beast long before
+I had even heard of category theory.
+
+I feel that, with the monadic lambda calculus, I have begun to tame
+this beast.  (Moggi's calculus did so too, but that worked with the
+Kleisli category, not the Eilenberg--Moore one that is crucial to
+Heine--Borel.)  Whereas locale theory, formal topology, topos theory
+and algebraic geometry stuck to the abstract algebra, ASD turns it
+into topological notation. Constructing new spaces with nuclei may
+still be a black art, for the reasons that I have mentioned, but the
+continuous functions between them are handled very naturally.
+
+----
+
+BEYOND LOCAL COMPACTNESS
+
+The awkwardness of working with (the monad and) nuclei is directly
+related to the difficulty in generalising them beyond locally compact
+spaces.  The point is that we want general equalisers and function
+spaces
+without sacrificing the principle of using the algebra of open
+subspaces.
+
+Actually, I have plenty of proposals for more general AXIOMS, and for
+theorems that we might prove with them.
+
+The problem with Beck's theorem lies in the restricted form of the
+second clause.  There are several interesting cases of monads where
+the forgetful functor   U : A=Algebras --> C=Carriers  PRESERVES
+ALL REFLEXIVE COEQUALISERS.
+  - Pare's theorem, for any topos C;
+  - Richard Wood's A=CCD, C=CCC^op;
+  - A=Frm, C=Dcpo;
+  - C=Set, A= algebras for any single-sorted finitary algebraic theory.
+
+Unfortunately, I have no idea how to construct such a category for
+topology in the ASD formulation.  There are plenty of cartesian closed
+supercategories of topological spaces, but they are point-based.
+Reinhold Heckmann constructed a CCC in which the category of locales
+is reflective (MSCS 16 (2006) 231--253), but this relies on the Axiom
+of Collection, and I don't think that it yields what I want either.
+
+Another possibility is a sheaf topos over the effective topos, which
+provides a model of ASD that has all exponentials and finite limits.
+However, whilst it satisfies the Heine--Borel theorem, there will
+be higher-type analogues of the failure in recursive analysis.
+
+Maybe we should look for models that just satisfy specific instances
+of this property. The underlying principle seems to be this:
+
+    given a parallel pair (u,v) of homomorphisms of algebras
+    and a function f with f.u = f.v,
+
+    under what circumstances does f factor through a homomorphism w
+    with w.u = w.v?
+
+Heine--Borel, monadicity, injectivity of Sigma, and the Beck--Chevalley
+condition for open and proper maps seem to be examples of this
+principle.
+
+Can we find models based on traditional topology, locale theory,
+formal topology or recursion theory that satisfy it in more cases?
+
+----
+
+CONCLUSION
+
+Synthetic Topology interprets ideas of general topology in cartesian
+closed categories and lambda calculus.  Abstract Stone Duality shows
+that, in order to make the topology work PROPERLY (with the
+Heine--Borel theorem etc), we need to postulate additional higher
+type lambda terms associated with subspaces.
+
+I have just stated what I think the challenge is regarding the
+construction of more general models.  Separate from this are other
+challenges in real analysis and computation.
+
+I have taken the intellectual and personal risks and done much of the
+groundwork to demonstrate the viability of ASD as an approach to
+constructive topology and analysis.  It seems to me that these
+challenges are worthy of the attention of the best categorical minds.
+However, it will only be possible to achieve these things if my
+colleagues are willing to make a professional study and assessment of
+what has already been done in ASD.
+
+Paul Taylor
+pt07 @ PaulTaylor.EU
+www.PaulTaylor.EU/ASD
+
+
+
+

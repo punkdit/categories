@@ -1,0 +1,161 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt11@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Subobject Classifier Algorithm
+Date: Fri, 25 Feb 2011 11:20:36 +0000 (GMT)
+Lines: 123
+Approved: news@gmane.org
+Message-ID: <alpine.DEB.1.00.1102251044030.6114@turing>
+References: <E1PscEA-0007uZ-Vq@mlist.mta.ca>
+Reply-To: Paul Taylor <pt11@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1298668699 16346 80.91.229.12 (25 Feb 2011 21:18:19 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 25 Feb 2011 21:18:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Feb 25 22:18:12 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Pt53D-00025l-Pg
+	for gsmc-categories@m.gmane.org; Fri, 25 Feb 2011 22:18:12 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51583)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Pt536-0005RH-96; Fri, 25 Feb 2011 17:18:04 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Pt52z-0005Ya-9G
+	for categories-list@mlist.mta.ca; Fri, 25 Feb 2011 17:17:57 -0400
+In-Reply-To: <E1PscEA-0007uZ-Vq@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6550
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6550>
+
+Ellis Cooper asked,
+
+> What are the general rules for calculating the sub-object classifier
+> of a topos? Or, for what class of toposes is there an algorithm for
+> calculating the sub-object classifier of its members?
+
+Thanks to Bill and Fred for describing the constructions.
+
+I would suggest, however, that it is rather stretching the meaning
+of the word "algorithm" to describe them as such.   What kind of
+machine might be able to perform these operations?
+
+A propos of this question, it is well known both to new students
+of category theory and to those who like to use the subject to
+discuss Life, The Universe And Everything, that:
+
+(1)   a topos is a cartesian closed category with
+(2)   an internal Heyting algebra Omega,
+
+so ehat is the least that we have to add to these correct but
+incomplete statements to give a characterisation of a topos?
+
+Obviously I do not mean just reciting the definition of a subobject
+classifier.
+
+We should begin by strengthening these two statements:
+
+The term "cartesian closed" is ambigious in its usage.  In computer
+science, it has come to require just products (and exponentials), whereas
+it seems to be implicit in older mathematical literature that all finite
+limits are needed, including EQUALISERS in particular.  I therefore
+replace (1) by
+
+(1') a category with all finite limits and exponentials.
+
+Secondly, the Heyting algebra Omega is COMPLETE: there are morphisms
+
+       some_X: PX = Omega^X --> Omega   and   PX = all_X: Omega^X --> X
+
+whose properties are easy to state.   So (2) becomes
+
+(2') an object Omega with  some_X  and  all_X  for every object X.
+
+Let's try to prove some things from this:
+
+In order to avoid towers of exponentials, which are difficult enough
+in LaTeX but quite illegible in ASCII, I will write PX for Omega^X,
+but use the lambda calculus for exponentials.
+
+Since Omega is a Heyting algebra it also has an internal equality:
+
+        equals_Omega : Omega x Omega --> Omega
+
+Using completeness, we can define an equality for all objects:
+
+        equals_X : X x X --> Omega
+
+where   equals_X (x, y)  is
+
+        all_PX (lambda phi:PX.  equals_Omega(phi x, phi y)
+
+so that a morphism   i:X-->Y  is mono iff
+
+        equals_Y (i x, i x')   =   equals_X (x, x').
+
+Given such a mono we can also define    I : PX --> PY  by
+
+        I phi == lambda y. some_X (lambda x. phi x /\  equals_Y (i x, y))
+
+and I would like to show that     I phi (i x) = i x.
+
+However, to do this we need another assumption, the Frobenius law
+for  some_X, specifically
+
+        some x'X.  (phi x /\ x=x')    ==    phi x  /\  some x'.x=x'
+
+where I have replaced the earlier notation with a friendlier one.
+
+Instead of asserting the Frobenius law, I prefer a more general
+property of Omega itself that I call the EUCLIDEAN PRINCIPLE:
+
+(3)     omega  /\  F (omega)  ==  omega /\ F (T)
+
+for all  omega:Omega  and  F:Omega^Omega,  which is to be interpreted
+in either the lambda calculus or using generalised elements, ie
+
+        omega : X --> Omega    and    F : X x Omega --> Omega.
+
+We're not quite there.  None of the operations that we have introduced
+so far yields elements of a general type  X.  So the final hypothesis is
+
+(4)    every object  X   is SOBER
+
+by which I mean that the diagram   X ->> PPX  ==>  PPPP X  involving
+units of the monad  (PP, eta, mu = P eta P)   is an equaliser, or
+
+(4')   every object X  admits definition by description.
+
+Under these hypotheses, any mono i:X-->Y is uniquely classified
+by some psi:Y-->Omega  and the category is a topos.
+
+More detail of these ideas is to be found in my papers
+
+     geohol:  Geometric and Higher Order Logic   (TAC 2000)
+     foufct:  Foundations for Computable Topology
+              (shortly to appear in a collection of papers about
+              foundations of mathematics edited by Giovanni Sommaruga)
+     equitop: Equideductive Topology  (see my previous posting)
+
+all of which are available from my website
+
+     www.PaulTaylor.EU/ASD/
+
+followed by the acronym above.
+
+Paul
+
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

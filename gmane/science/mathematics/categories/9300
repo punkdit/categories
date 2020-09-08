@@ -1,0 +1,95 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: =?UTF-8?Q?Branko_Nikoli=C4=87?= <branik.mg@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: An elementary question
+Date: Thu, 17 Aug 2017 12:02:37 +1000
+Lines: 57
+Approved: news@gmane.org
+Message-ID: <E1diQZs-0005C7-Ao@mlist.mta.ca>
+References: <E1dh2U9-0000c9-3y@mlist.mta.ca> <E1dhyiD-0006HO-Hn@mlist.mta.ca>
+Reply-To: =?UTF-8?Q?Branko_Nikoli=C4=87?= <branik.mg@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Trace: blaine.gmane.org 1502998604 4705 195.159.176.226 (17 Aug 2017 19:36:44 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 17 Aug 2017 19:36:44 +0000 (UTC)
+To: Dana Scott <scott@cs.cmu.edu>, categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Thu Aug 17 21:36:38 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1diQas-0000q7-EF
+	for gsmc-categories@m.gmane.org; Thu, 17 Aug 2017 21:36:38 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:53112)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1diQaF-0006oH-T0; Thu, 17 Aug 2017 16:35:59 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1diQZs-0005C7-Ao
+	for categories-list@mlist.mta.ca; Thu, 17 Aug 2017 16:35:36 -0300
+In-Reply-To: <E1dhyiD-0006HO-Hn@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9300
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9300>
+
+Dear Dana,
+
+I'm not sure if the following construction is the one you are looking
+for, but it's the only categorical (in fact 2-categorical) description
+I could think of, and it is related to Robin Cockett's answer.
+
+If you view posets as categories (ncatlab.org/nlab/show/partial+order)
+then P and Q can be seen as objects of the 2-category Cat of
+categories, functors and natural transformations. Furthermore, instead
+of functors we can look at modules (aka profunctors or distributors,
+ncatlab.org/nlab/show/profunctor) and their morphisms, to get the
+bicategory Mod.
+The situation you described corresponds to the terminal module between
+Q and P (1-cell in Mod which is a terminal object in the hom-category
+Mod(Q,P)). The poset you obtain by taking the "modified coproduct" has
+the universal property of being the lax colimit of that 1-cell...
+A more general construction is explained here
+http://maths.mq.edu.au/~street/Pow.fun.pdf
+
+Best regards,
+Branko
+
+On 16 Aug 2017 11:50 pm, "Joachim Kock" <kock@mat.uab.cat> wrote:
+>
+> Let P and Q be two posets.  Define (P (<) Q) as the modified
+> coproduct where all the elements of P are made less than all the
+> elements of Q.  QUESTION. Does (P (<) Q) have a nice categorical
+> definition as a functor in the category of posets?
+
+
+Hi Dana,
+
+unless I misunderstand the question, (<) is the join operation,
+which makes sense more generally for categories, and more
+generally for simplicial sets, or augmented simplicial sets.
+Here it is simply the cocontinuous extension (in each variable)
+of ordinal sum (i.e. the Day convolution tensor product of
+ordinal sum).
+
+(It plays an crucial role in the development of higher category
+theory, thanks to the discovery by Andr?? Joyal that slice and
+coslice can be defined as right adjoints to join with a fixed
+object.  (These are generalised slices and coslices, with the
+classical notions corresponding to the cases of join with a point.)
+This is the construction that allows for the definition of limits
+and colimits in infinity-categories, and hence the starting point
+for generalising category theory from categories to infinity-
+categories.)
+
+[A. Joyal: Quasi-categories and Kan complexes, JPAA 2002]
+
+Cheers,
+Joachim.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

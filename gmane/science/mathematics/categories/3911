@@ -1,0 +1,103 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "prime" monads?
+Date: Sun, 16 Sep 2007 01:12:37 -0700
+Lines: 69
+Approved: news@gmane.org
+Message-ID: <E1IWvhG-0001dB-IB@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019599 10823 80.91.229.2 (29 Apr 2009 15:39:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:59 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Sep 16 12:14:42 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 16 Sep 2007 12:14:42 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IWvhG-0001dB-IB
+	for categories-list@mta.ca; Sun, 16 Sep 2007 12:06:06 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 35
+Status: O
+Content-Length: 3289
+Original-Lines: 68
+Xref: news.gmane.org gmane.science.mathematics.categories:3911
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3911>
+
+From: Fred Linton
+> I was relying on the Axiom of Choice (AC) to know that every vector space
+> (scalars from an arbitrary field) has a basis. Paraphrasing: every
+> vector space is free. Thinking (loosely) of the Kleisli category as
+> the full subcategory of the EM category consisting of the free algebras,
+> this means the K and the EM categories "coincide" (to within equivalence
+> of categories). The exact nature of the field is irrelevant. But AC (or
+> something else strong enough to guarantee every vector space has a basis)
+> is crucial.
+
+This seems right for ordered fields.  Is it also true for finite fields
+and other non-ordered fields like the complex numbers?
+
+If every Archimedean field k gives rise to a Klem (Kleisli ~ EM) monad
+Vct_k, that's uncountably many Klem monads right there, all in the
+lattice of submonads of Vct_R.  (The submonads of a monad must form a
+complete lattice, more precisely a complete semilattice, if they're
+closed under arbitrary intersection; is it always an algebraic
+semilattice, as for algebras?)
+
+k doesn't even need to be a field or an additive group, any subrig of R
+will do, as Bill was hinting at.  (The coefficients have to form a rig
+for T to be functorial.)  Call this Method A for forming a submonad of
+Vct_R.
+
+Method B is to limit the operations to those whose weight (sum of
+coefficients) is drawn from a submonoid of the monoid R under
+multiplication.  (It has to be a submonoid for the multiplication mu and
+unit eta to remain defined.)  The smallest such monoid is {1}, which
+gave rise to the affine spaces as per my previous post.  R has plenty of
+other multiplicative submonoids, such as the set {c^i} for any real c >
+0 and i ranging over any submonoid of Z under addition, or for any real
+c and i ranging over any submonoid of N under addition.  This can be
+combined with Method A (coefficients from a subrig of R) to get even
+more submonads.
+
+Questions:
+
+1.  Do all submonads of Vct_R arise as above (coefficients limited to a
+subrig of R, weights limited to a multiplicative submonoid of R)?
+
+2.  Among the submonads of Vct_R, are the Klem ones exactly those for
+which the set of coefficients is dense in some open interval of R?
+
+>> But not for 1+1+X: the free bipointed sets are in a natural bijection
+>> with the non-free ones, the latter having the two points
+>> identified
+>
+> I'm not entirely sure what's "natural" here. Certainly the free bipointed
+> sets are in bijective correspondence with the (just plain) sets: that's a
+> "consequence," if you like, of the canonical functor from SETS to any
+> Kleisli category over SETS being a bijection on objects. So the non-free
+> bipointed sets, coinciding as they do with the (singly) pointed sets, are
+> likewise in bijective correspondence with the (just plain) sets. But the
+> same is true for the free algebras over ANY monad on sets. So? "This"?
+>
+>> ... --this must be about the simplest nontrivial instance of
+>> obtaining an algebra as a quotient of a free algebra, not a bad
+>> introductory example when explaining how to get algebras from free
+> algebras.
+
+Point taken.  I was trying to say that identifying the two constants of
+a free bipointed set was the canonical way of producing any nonfree
+bipointed set.  What's a slicker way to say this?
+
+Vaughan
+
+
+

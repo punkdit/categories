@@ -1,0 +1,143 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Open problems
+Date: Sun, 14 Dec 2014 10:12:58 -0800
+Lines: 104
+Approved: news@gmane.org
+Message-ID: <E1Y0F94-0006Xf-LV@mlist.mta.ca>
+References: <E1XzvKz-0004Ff-Vq@mlist.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=windows-1252; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1418586528 1886 80.91.229.3 (14 Dec 2014 19:48:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 14 Dec 2014 19:48:48 +0000 (UTC)
+To: Categories mailing list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sun Dec 14 20:48:43 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Y0F9m-0003Pl-41
+	for gsmc-categories@m.gmane.org; Sun, 14 Dec 2014 20:48:42 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45177)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Y0F94-0003Yl-Am; Sun, 14 Dec 2014 15:47:58 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Y0F94-0006Xf-LV
+	for categories-list@mlist.mta.ca; Sun, 14 Dec 2014 15:47:58 -0400
+In-Reply-To: <E1XzvKz-0004Ff-Vq@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8428
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8428>
+
+On 12/12/2014 1:56 PM, Harley Eades III wrote:
+> Dee Roytenberg?s email pushed me to write an email I have been wanting to write
+> for a bit.
+>
+> One thing I have been trying to do recently is figure out what the major (and minor)
+> open problems are with respect to applications of category theory to CS.   I am very
+> new to this area, and getting an idea of what folks are working on, and what problems
+> people feel are important will help young researchers learns where to concentrate
+> their efforts.
+
+At http://thue.stanford.edu/puzzle.html can be seen a problem about Chu
+spaces that's been open for close to two decades, and that's been
+translated during the past three years into Belorussian, Ukrainian,
+Polish, Slovenian, Czech, French, and Bulgarian by volunteers who
+apparently found the problem sufficiently interesting to be worth the
+effort, perhaps motivated by its connection to crossword puzzles.
+
+The problem is whether every T1 comonoid in Chu(Set,2) is discrete.
+
+This is so for two special cases.
+
+1. Countable comonoids, taking cardinality of a Chu space to be that of
+its points.
+
+2. Representable comonoids (of any cardinality), in the sense of
+representation by directed CPOs as per the hierarchy of full embeddings
+on page 6 of the paper "Comonoids in chu: a large cartesian closed
+sibling of topological spaces" at
+http://boole.stanford.edu/pub/comonoids.pdf .  T1 DCPOs are of course
+discrete simply because T1 posets are discrete and the structure of any
+DCPO is determined by its order via the Scott topology (as distinct from
+the Alexandroff topology, though they coincide in the T1 case).
+
+The problem remains open for uncountable comonoids not representable as
+DCPOs.
+
+The provenance of Chu spaces is arguably category-theoretic, the
+enriched case Chu(V,k) having been invented by Mike Barr and first
+studied in detail in the late 1970s by his masters student Po-Hsiang
+(Peter) Chu.   As a computer scientist my own application for the
+ordinary or set-enriched case Chu(Set,K) has been to concurrency theory,
+starting around 1991 shortly after Lafont and Streicher proposed that
+case (under the rubric of "games") as a very nice model of Girard's
+linear logic.
+
+In the latter application the image of Girard's exponential construct !A
+is naturally modeled as the cartesian closed full subcategory of that of
+Chu spaces consisting of comonoids.  In any symmetric monoidal category
+with tensor product A@B and unit I, a comonoid is a structure with a
+comultiplication
+d: A --> A@A
+and a counit
+e: A --> I.
+A comonoid homomorphism is any morphism preserving that structure.
+
+In Set, taking tensor @ to be cartesian product x and I to be 1 makes
+every set a comonoid by taking d to be the diagonal and e the unique map
+to 1, and those are the only comonoids in Set.  Every function is
+thereby a comonoid homomorphism.
+
+The standard tensor @ of Chu(V,k) is given by
+
+A@B ~ (A --o B')' ~ (B --o A')'           (1)
+
+where A' is the dual or transpose of A and --o is the external hom of
+Chu(V,k) internalized by suitably "chupologizing" it.  The unit is that
+of V likewise chupologized.
+
+For Chu(Set,K), a Chu space A = (A,X) can be understood as a space A
+whose points are positions for letters, and (the points of) its dual A'
+as a set (so these are actually *extensional* Chu spaces) X of words of
+length A over the alphabet K, with each word formed by filling each
+position with a letter from K, i.e. functions A --> K, making X a subset
+of K^A.  Duality then requires that A' also be extensional ("little Chu"
+or chu(Set,K) in Barr's terminology).
+
+  From that perspective (A@B)' can be visualized as the space of all AxB
+crosswords that can be formed by taking the across words from B' (given
+by a map from A to B') and the down words from A' (given by a map from B
+to A'), as per the two isomorphisms in (1) above, the second of which
+amounts to an adjointness condition on the two maps.
+
+The comonoids in Chu(Set,K) are those Chu spaces A for which every
+crossword in (A@A)' has for its main diagonal a word in A', and such
+that A' includes all one-letter (constant) words aaa...aa, bbb...bb, ....
+
+The T1 comonoids can be defined as those comonoids A such that every
+word of length A begun by writing down two of its letters (at any two
+positions) can be completed to a word in A'.  For any alphabet K, the
+unit makes this automatic when the two letters are the same, so for the
+alphabet {0,1} T1 reduces to: at any two given positions both
+...0...1... and ...1...0... can be completed to a word.  With the
+interpretation of words over {0,1} as open sets this is recognizable as
+one definition of a T1 topological space (the other topological
+definition of T1, every singleton closed, does not give the chupological
+definition.)
+
+So, is every T1 comonoid in Chu(Set,2) discrete?
+
+Vaughan Pratt
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

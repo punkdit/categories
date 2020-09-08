@@ -1,0 +1,103 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <andrej.bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Dedekind versus Cauchy reals
+Date: Mon, 16 Feb 2009 08:01:05 +0100
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <E1LZgjJ-00039g-6R@mailserv.mta.ca>
+Reply-To: Andrej Bauer <andrej.bauer@andrej.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1234944048 27540 80.91.229.12 (18 Feb 2009 08:00:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Feb 2009 08:00:48 +0000 (UTC)
+To: Vaughan Pratt <pratt@cs.stanford.edu>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Feb 18 09:02:03 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LZhNY-0002c3-59
+	for gsmc-categories@m.gmane.org; Wed, 18 Feb 2009 09:02:00 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LZgjJ-00039g-6R
+	for categories-list@mta.ca; Wed, 18 Feb 2009 03:20:25 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:96
+
+On Sun, Feb 15, 2009 at 7:50 AM, Vaughan Pratt <pratt@cs.stanford.edu> wrote:
+> If everything can be related to interval arithmetic in one way or
+> another, why not take interval arithmetic itself as the gold standard
+> for the constructive reals?  The Edalat-Escardo-Potter domain-theoretic
+> analysis of interval arithmetic struck me as sufficiently canonical that
+> I don't understand why all the alternatives aren't being evaluated
+> relative to that one.  Are there alternatives that compensate for some
+> shortcoming of interval arithmetic as understood through the lens of
+> domain theory?
+
+I essentially agree with you, namely that interval arithmetic
+(actually, the interval domain) plays a fundamental role in the
+construction of reals, as well as in practical computation (the
+fastest implementations use interval arithmetic on top of
+multiple-precision floating point).
+
+A result of Vasco Brattka says that any two implementations of the
+structure of reals (arithmetic, abs, semidecidable <, limit operator
+for rapid sequences) are computably isomorphic. This can be
+interpreted as saying that the domain-theoretic reals are as good as
+any other version.
+
+One reason why this is not the end of the story is that we do not
+understand what happens at higher types. Vasco tells us that given two
+versions of reals, R1 and R2, they are computably isomorphic. But how
+about functions R1 -> R1, functionals (R1 -> R1) -> R1 and other
+higher types?
+
+For example, if R1 is the domain-theoretic reals (constructed as the
+maximal elements of the interval domain) and R2 is the "Cauchy reals"
+(represented as streams of digits, including negative digits), then we
+know that the hierachies
+
+R1,  R1 -> R1,  (R1 -> R1) -> R1, ...
+
+and
+
+R2,  R2 -> R2,  (R2 -> R2) -> R2, ...
+
+agree in the first three terms, but do not know what happens after
+that. This was established by Alex Simpson, Martin Escardo and myself.
+Dag Normann has also investigated the two hierarchies.
+
+For the familiar case of natural numbers John Longley has shown  that
+"in nature" there are only three versions of the hierachy
+
+N,  N -> N,  (N -> N) -> N, ...
+
+These are the hereditarily effective operators, the Kleene-Kreisel
+continuous functionals, and a "mixed" version (the computable
+Kleene-Kreisel continuous functionals). We would like to have a result
+like that for reals, but we're stuck with the continuous version of
+the hierarchy at rank 3.
+
+In terms of implementation, the question is the following: does it
+matter whether the reals are implemented transparently (the programmer
+has access to their internal representation) or opaquely (reals are
+values of an abstract data type whose internal workings cannot be
+inspected)? We know that up to types of rank 2 it does not matter.
+
+Until such questions are answered, settling with a single construction
+or theory of real number computation is premature.
+
+By the way, can you give a single interesting _total_ functional of
+type ((R -> R) -> R) -> R? (Please don't ask me to define
+"interesting".)
+
+Andrej
+
+
+

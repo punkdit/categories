@@ -1,0 +1,89 @@
+Path: news.gmane.org!not-for-mail
+From: S Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: (pre-)Sheaves
+Date: Sat, 25 Jan 2003 17:59:44 +0000
+Lines: 53
+Approved: news@gmane.org
+Message-ID: <3.0.5.32.20030125175944.0085c8c0@mailhost.cs.bham.ac.uk>
+References: <20030123193855.60042.qmail@web12201.mail.yahoo.com>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241018432 2625 80.91.229.2 (29 Apr 2009 15:20:32 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:32 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Jan 25 16:54:15 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 25 Jan 2003 16:54:15 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18cX23-0000WL-00
+	for categories-list@mta.ca; Sat, 25 Jan 2003 16:36:03 -0400
+X-Sender: sjv@mailhost.cs.bham.ac.uk
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.5 (32)
+In-Reply-To: <20030123193855.60042.qmail@web12201.mail.yahoo.com>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 54
+Status: O
+Content-Length: 2336
+Original-Lines: 52
+Xref: news.gmane.org gmane.science.mathematics.categories:2129
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2129>
+
+At 11:38 23/01/03 -0800, Bill Halchin wrote:
+>     I am trying to get my mind around (pre-)sheaves. I have studied point
+>set topology in the past, but I didn't run into the notion of local
+>homeomorphism. It seems to me that every local homeomorphism is a
+>homeomorphism (because in a topological space (X, T), X is always a
+>neighorhood of any point in X). Am I correct?
+
+Dear Bill,
+
+Absolutely not.
+
+Consider the definition of local homeomorphism for a map f: X -> 1. If f is
+a local homeomorphism then every x in X has an open neighbourhood
+homeomorphic to 1, and you find in fact that f is a local homeomorphism iff
+X has the discrete topology.
+
+One way to think of a local homeomorphism f: X -> Y is that the stalk map
+
+   stalk(y) = f^{-1}({y})
+
+is a "continuous map from Y to the class of sets". Of course, the class of
+sets is not a topological space. (This isn't just a problem of size - there
+really is no suitable topology.) Hence "continuity" here is a new concept
+and that is what the definition of local homeomorphism captures. But
+intuitively it makes some sense. The definition ensures that if y jiggles
+about infinitesimally then the set stalk(y) makes no sudden jumps - no new
+elements suddenly come into existence, nor any equalities between elements.
+
+I hope you can see something of this intuition; if not, don't worry but
+just stick to the definition.
+
+The definition ensures that each stalk, as a subspace of X, has discrete
+topology, so it really is a set, not a more general space. All the
+non-discrete topology in X arises across the stalks, as homeomorphic copies
+of bits of topology on Y. Topology within the stalks is discrete.
+
+Topos theory is able to make some formal sense of the intuition. There is a
+topos E whose class of points (not objects) is the class of sets. It is
+called the "object classifier". If I (naughtily, you might think) write Y
+for the topos of sheaves over Y, then geometric morphisms from Y to E are
+just sheaves over Y. But it is legitimate to think of geometric morphisms
+between toposes as continuous maps between their points - this certainly
+works for toposes of sheaves over spaces, at least if the spaces are nice
+enough (sober). Then geometric morphisms from Y to E should be thought of a
+continuous maps from Y to the class of sets, as I said before.
+
+Steve Vickers.
+
+
+
+
+
+

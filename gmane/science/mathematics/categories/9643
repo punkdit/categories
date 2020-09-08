@@ -1,0 +1,94 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Ingo Blechschmidt <iblech@web.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Point-free affine real line?
+Date: Fri, 1 Jun 2018 14:37:15 +0200
+Lines: 56
+Approved: news@gmane.org
+Message-ID: <E1fPvDE-000096-MH@mlist.mta.ca>
+References: <E1fOXVB-0006KP-5I@mlist.mta.ca>
+Reply-To: Ingo Blechschmidt <iblech@web.de>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+X-Trace: blaine.gmane.org 1528140718 12316 195.159.176.226 (4 Jun 2018 19:31:58 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Mon, 4 Jun 2018 19:31:58 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Mon Jun 04 21:31:53 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPvCr-000346-89
+	for gsmc-categories@m.gmane.org; Mon, 04 Jun 2018 21:31:53 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:53107)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPvDo-0004vh-1Z; Mon, 04 Jun 2018 16:32:52 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPvDE-000096-MH
+	for categories-list@mlist.mta.ca; Mon, 04 Jun 2018 16:32:16 -0300
+Content-Disposition: inline
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9643
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9643>
+
+Dear Steve,
+
+On Thu, May 31, 2018 at 10:40:41AM +0100, Steve Vickers wrote:
+> Does algebraic geometry provide an analogous construction that could
+> lead to  the point-free R? Can the locally ringed space be topologized
+> (point-free) so that the copy of R has its usual topology?
+
+very interesting question. I feel that the following remarks have some
+relevance.
+
+* Algebraic geometers do consider an analogue of the usual spectrum
+   construction for topological rings: the "formal spectrum".
+   Unfortunately, the theory is only developed for actual topological
+   rings, not point-free versions of them.
+
+* One can define a point-free notion of a spectrum for apartness rings
+   (ring objects in the category of sets-equipped-with-apartness-relation).
+   This secretly comes up in algebraic geometry: Let X be a scheme.
+   Inside the topos Sh(X), there is the ring O_X to which we can apply the
+   usual point-free spectrum construction. We might hope that this just
+   yields the one-point space; but unless X was zero-dimensional to begin
+   with, this hope is false. In fact, the externalization of this
+   construction is a locally ringed locale which comes equpped with a morphism
+   of ringed locales to (X,O_X); but this morphism is not a morphism of
+   *locally* ringed locales.
+
+   The solution to this problem is to observe that O_X, being a local
+   ring, has canonically the structure of an apartness ring. The variant
+   of the spectrum construction for apartness rings applied to it yields
+   the one-point space (i.e. (X,O_X) itself from the external point of
+   view), as one would expect.
+
+* Both the problem and the solution can be generalized a bit.
+
+   Let X be a scheme. Let A be an O_X-algebra. Then algebraic geometers
+   consider the "relative spectrum of A", which is always a locally
+   ringed locale over X and will be a scheme if A is quasicoherent.
+   As before, it's not true that one can obtain the relative spectrum
+   simply by carrying out the usual point-free spectrum construction
+   internally in Sh(X). A variant is needed.
+
+A description of these variants of the usual construction can be found in Section 12
+of https://rawgit.com/iblech/internal-methods/master/notes.pdf. However,
+I don't know yet a natural generalization of these constructions which
+could be directly helpful to your project -- they are tailored to
+apartness rings and to algebras over local rings. While it's certainly
+better to view the reals as an apartness ring instead of an ordinary ring,
+information has still been lost from the point-free version of the
+reals.
+
+Cheers,
+Ingo
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

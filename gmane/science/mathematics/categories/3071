@@ -1,0 +1,90 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: intuitionism and disjunction
+Date: Mon, 6 Mar 2006 11:28:31 +0100 (CET)
+Lines: 54
+Approved: news@gmane.org
+Message-ID: <200603061028.k26ASVcH032704@fb04305.mathematik.tu-darmstadt.de>
+References: <Pine.LNX.4.44.0603021559470.31577-100000@acws-0092.cs.bham.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019078 7130 80.91.229.2 (29 Apr 2009 15:31:18 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:31:18 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Mar  6 09:28:46 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 06 Mar 2006 09:28:46 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1FGFkq-0003NO-Uz
+	for categories-list@mta.ca; Mon, 06 Mar 2006 09:28:04 -0400
+In-Reply-To: <Pine.LNX.4.44.0603021559470.31577-100000@acws-0092.cs.bham.ac.uk>
+X-Mailer: ELM [version 2.4ME+ PL100 (25)]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 2579
+Original-Lines: 53
+Xref: news.gmane.org gmane.science.mathematics.categories:3071
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3071>
+
+I just want to remark that the second order encoding of disjunction `a la
+Russell-Prawitz is not bound to work only for provability. E.g. in PER(N)
+it holds that (\forall X) (A->X) -> (B->X) -> X is isomorphic to A + B.
+(A related result for "polymorphic" natural numbers was proved by Peter Freyd
+and extension of this result to polymorphic encodings free algebras was obtained
+a bit later by Hyland, Robinson and Rosolini).
+If your data type A lives in PER(N) then the 2nd order order encoding of
+existential quantification
+
+    (\exists x:A) P(x) \equiv (\forall Q) ((\forall x:A) P(x) -> Q) -> Q
+
+is isomorphic to (\Sigma x:A) P(x) and thus we can project out the witness.
+In the extended calculus of constructions XCC where Prop (i.e. PER(N)) closed
+under small sums one can syntactically prove
+
+      (\exists x:A) P(x)  \equiv  (\Sigma x:A) P(x)
+
+and thus one can extract witnesses from proves of (\exists x:A) P(x).
+Admittedly, this equivalence is not an isomorphism in general but it is in
+PER(N) and a lot of other relizability models. (A tricky counterexample for
+the general case was proided by Ivar Rummelhoff a cople of years ago!)
+
+Thus in an impredicative setting the positive operations turn out as 2nd order
+definable from -> and \forall.
+
+The main defect of Domains (with bottom) as a model for proofs is that every
+type = domain contains an element, namely bottom. But weak coproducts are
+definitely available.
+
+If one integrates dynamics = rewriting = computation into the model by
+considering 2-categories things might turn out as different. However, there
+are no indications (as far as I know) that this 2-categorical setting makes
+sums definable from lambda calculus.
+
+Thomas
+
+PS Peter Freyd has remarked that the early constructivists (implicitly)
+considered as an earmark of constructivity that
+
+   (E)  |= \exists x:A. P(x)  entails that  |= P([a/x]  for some  a : 1 -> A
+
+I am not going to contradict that BUT it definitely fails already for boolean
+toposes: consider the topos Psh(G) for G a nontrivial group and A the
+representable presheaf then it holds in Psh(G) that  \exists x:A. x=x
+although A hasn't any global section.
+Of course, Peter Freyd's glueing argument shows that in the free topos (E)
+holds. This certainly is a most beautiful argument. Nevertheless, I think
+it doesn't tell that (E) is necessarily an earmark of constructivity since
+the free models (i.e. formulas modulo provability) are not necessarily
+the intended models. Moreover, (E) holds in realizability models (as long as
+type A is \neg\neg-separated, i.e. an assembly).
+
+
+

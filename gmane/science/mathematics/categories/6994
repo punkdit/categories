@@ -1,0 +1,96 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Mon, 24 Oct 2011 13:35:56 +0100
+Lines: 56
+Approved: news@gmane.org
+Message-ID: <E1RIgbs-0000XQ-QC@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk>
+Reply-To: Dusko Pavlovic <dusko@kestrel.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v1084)
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1319547773 17777 80.91.229.12 (25 Oct 2011 13:02:53 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 25 Oct 2011 13:02:53 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>, Vaughan Pratt <pratt@cs.stanford.edu>
+To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Tue Oct 25 15:02:49 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgeW-0003wk-Mq
+	for gsmc-categories@m.gmane.org; Tue, 25 Oct 2011 15:02:48 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45848)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgbu-0000iO-HP; Tue, 25 Oct 2011 10:00:06 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgbs-0000XQ-QC
+	for categories-list@mlist.mta.ca; Tue, 25 Oct 2011 10:00:04 -0300
+In-Reply-To: <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6994
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6994>
+
+hi steve,
+
+i am afraid that the "falsehood"
+
+(all) x.P(x) =3D> (exists) x.P(x)=20
+
+is a *tautology* of predicate logic, in any topos, for any predicate =
+P:A-->Prop, with or without the free variables hanging around. if it =
+helps, think of P:A-->Prop as an A-indexed set of elements of the =
+lattice Prop. then=20
+
+  	(all) x.P(x) is the meet of P, whereas
+ 	(exists) x.P(x) is the join of P,
+
+and the tautology says the meet is lower than the join. or =
+constructively,
+
+ 	(all) x.P(x) is the product of the A-indexed family P(x)=20
+ 	(exists)x.P(x) is the coproduct
+
+so that
+
+ 	(all) x.P(x) -->P(a) is a projection, and
+ 	P(a) --> (exists) x.P(x) is an injection.
+
+> with a sequent calculus that keeps track of the possible free =
+variables - see e.g. part C of the Elephant. With this notation you =
+distinguish between, on the one hand,
+>=20
+>  true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+> or
+>  (all) a. P(a) |-(b) (exists) x. P(x)
+>=20
+> (both valid) and, on the other,
+>=20
+>  true |-() ((all) a. P(a) --> (exists) x. P(x))
+> or
+>  (all) a. P(a) |-() (exists) x. P(x)
+>=20
+> (both not valid).
+
+to prove these last two formulas, observe that
+from=20
+ 	true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+we can derive
+ 	true |-() (all) b. ((all) a. P(a) --> (exists) x. P(x))
+now use the equivalence
+ 	true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <-> =
+(((all) a. P(a) --> (exists) x. P(x)))
+to conclude that the RHS is true.=20
+
+-- dusko=
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

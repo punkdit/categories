@@ -1,0 +1,79 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@CS.Stanford.EDU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: graphics
+Date: Tue, 24 Feb 2004 21:26:08 -0800
+Lines: 46
+Approved: news@gmane.org
+Message-ID: <200402250526.i1P5Q8gA007761@coraki.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241018755 4789 80.91.229.2 (29 Apr 2009 15:25:55 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:25:55 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb 27 11:16:20 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 27 Feb 2004 11:16:20 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 1Awjfr-000540-00
+	for categories-list@mta.ca; Fri, 27 Feb 2004 11:13:11 -0400
+X-Mailer: exmh version 2.6.3 04/04/2003 with nmh-1.0.4
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 38
+Status: O
+Content-Length: 2330
+Original-Lines: 45
+Xref: news.gmane.org gmane.science.mathematics.categories:2572
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2572>
+
+
+>My favorite method is to draw figures in xfig, then export the result as
+>LaTeX picture code and edit the text to take advantage of LaTeX's
+>text processing capabilities, fonts and special symbols.
+>It would be quite suitable for flow chart graphics.
+>D. Yetter
+
+Xfig is pretty convenient, but one can get a tad impatient with xfig's
+imprecision after a while.  The time it takes to drag a vertex into position
+with acceptable precision tends in practice to be several times what it
+takes to simply type that position in by hand if you can see right away
+which lattice point it has to be.  If you're a Picasso in such things then
+starting off with xfig isn't so bad, but if you're more of a Mondrian you
+might prefer to work in Latex's picture environment from the get-go.
+
+As with xypic, choosing a scale that makes the coordinates meaningful integers
+helps a lot here, e.g. being able to coordinatize the vertices of a diamond
+as (1,0), (0,1), (-1,0), (0,-1), or putting the inputs to an AND gate at
+(0,1) and (0,3) and the output at (4,2), or putting the vertices of a Hasse
+diagram at small lattice points.
+
+The only other widely supported language I know that's expressive enough to
+write a complete macro library in 20 lines for capabilities like flowcharts,
+digital or analog circuits, and lattice diagrams and that interoperates
+smoothly with Latex is PostScript.  That works too, the main downside
+compared to programming directly in Latex's picture environment (for
+those using pdflatex) is the external file needed in the use of epstopdf
+plus includegraphics.  (I'm using both in the paper I'm currently working
+on, mainly for fear of running out of Tex's memory with the more complex
+figures.  Not that either are great programming languages per se, actually
+they kind of suck in that regard, thank you Don, Leslie, John, and Chuck!)
+The above comment about picking the right scale applies equally to Latex's
+picture environment and PostScript.
+
+When your diagrams are sufficiently like the ones that xypic, diagram.tex,
+and diagrams.tex are designed for, those are pretty good too.  But they're
+not really conceived of as programming languages, making their usefulness
+inversely proportional to the distance between their kind of diagrams
+and yours.
+
+Vaughan Pratt
+
+
+
+
+

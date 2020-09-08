@@ -1,0 +1,139 @@
+Path: news.gmane.org!not-for-mail
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Subobject classifier algorithm
+Date: Wed, 23 Oct 2013 10:52:27 +0100 (BST)
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <E1VYzOk-0007dS-56@mlist.mta.ca>
+References: <E1VYLRl-0002Zb-21@mlist.mta.ca>
+Reply-To: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1382538469 32651 80.91.229.3 (23 Oct 2013 14:27:49 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 23 Oct 2013 14:27:49 +0000 (UTC)
+Cc: Categories mailing list <categories@mta.ca>
+To: Venkata Rayudu Posina <posinavrayudu@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 23 16:27:53 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYzPd-0001vR-50
+	for gsmc-categories@m.gmane.org; Wed, 23 Oct 2013 16:27:53 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55691)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYzOl-000176-T8; Wed, 23 Oct 2013 11:26:59 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYzOk-0007dS-56
+	for categories-list@mlist.mta.ca; Wed, 23 Oct 2013 11:26:58 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7899
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7899>
+
+Dear Posina,
+
+What you're doing is essentially just using the Yoneda lemma.
+If your category is a functor category [C,Set], then Yoneda
+tells you that, for each object c of C, \Omega(c) must
+correspond bijectively to the set of maps C(c,-) --> \Omega,
+and hence to the set of subobjects of C(c,-). So you might as
+well *define* it to be the latter set. [Note that I
+said `set' rather than `number' as you did, since these sets
+may very well be infinite.]
+
+More generally, if your category is a Grothendieck topos E,
+then it has a representation as the topos of sheaves on a
+site (C,J) whose underlying category C can be taken to be
+the full subcategory of E on a generating set of objects.
+Then you can similarly conclude that \Omega is (isomorphic to)
+the sheaf whose value at a member g of the generating set
+is the set of subobjects of g in E. So the answer to your
+question `how many objects do we have to check?' is `all the
+objects in some generating set'.
+
+Regards,
+Peter Johnstone
+
+On Sun, 20 Oct 2013, Venkata Rayudu Posina wrote:
+
+> Dear All,
+>
+> In continuation of the discussion we had sometime ago regarding
+> algorithms for finding truth value objects, I am wondering if the
+> following constitutes an algorithm for calculating subobject
+> classifiers.
+>
+> The basic idea is to use the correspondence between parts of an object
+> and maps to truth value object from the object to find the truth value
+> object.
+>
+> In general we start with an object (of "simplest" shape such as
+> initial and gradually going to less simple ones), enumerate its parts,
+> and then look for objects to which the number of maps from the object
+> is equal to the number of parts of the object.
+>
+> In the case of the category of sets, we start with the initial object,
+> which has one part.  Since there is exactly one function from empty
+> set to every set, this doesn't help in identifying the truth value
+> set.  So we move to [the next] sigleton set, which has two parts.  The
+> set to which there are exactly two maps from the singleton set is a
+> two-element set, which we take as [candidate] truth value set.
+> Finally we verify that the two-element set is indeed the truth value
+> set by way of checking
+>
+> parts of an object = maps to truth value object from the object
+>
+> in the case of [the set after sigleton set] two-element set. (For now
+> I'm ignoring the question of how many more objects do we have to
+> check.)
+>
+> The above method does give the correct truth value object in the
+> categories of maps, graphs, and dynamical systems in addition to the
+> aforementioned case of the category of sets.
+>
+> In the category of [set] maps, we only have to look at two objects
+> before we get to the terminal object, which lets us identify the truth
+> value object
+>
+> w: D --> C
+>
+> where D = {false, u, true} and C = {false, true}
+> with w(false) = false, w(u) = true, w(true) = true (see Sets for
+> Mathematics, pp. 114 - 9).
+>
+> To give one more illustration, in the case of graphs, we have to go
+> little beyond terminal object to the generic arrow, whose five parts
+> correspond to the five graph maps from the generic arrow to the truth
+> value object of graphs (please see bottom-left corner of the cover of
+> Conceptual Mathematics).
+>
+> In all these case we begin with [the simplest] initial object and go
+> to next [less simple] object, and at each stage we use
+>
+> number of parts of an object = number of maps to truth value object
+> from the object
+>
+> to identify (and then verify) the truth value object.  All the more
+> important is that we have to examine the above correspondence at a few
+> simple shapes only (beginning with the initial object) to find the
+> truth value object.
+>
+> Would you be kind enough to let me know if there's something wrong in
+> using the above method to find the truth value object (when there's
+> one) of a category in general.
+>
+> Thanking you,
+> Yours sincerely,
+> posina
+>
+> http://conceptualmathematics.wordpress.com/
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

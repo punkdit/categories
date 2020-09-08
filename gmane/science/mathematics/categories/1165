@@ -1,0 +1,95 @@
+Path: news.gmane.org!not-for-mail
+From: cxm7@po.cwru.edu (Colin McLarty)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Mac Lane's inclusions
+Date: Thu, 15 Jul 1999 13:32:06 -0400 (EDT)
+Lines: 65
+Approved: news@gmane.org
+Message-ID: <199907151732.NAA17230@babar.INS.CWRU.Edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241017610 29777 80.91.229.2 (29 Apr 2009 15:06:50 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:50 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Jul 16 16:14:45 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id OAA13626
+	for categories-list; Fri, 16 Jul 1999 14:25:17 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: Windows Eudora Version 1.4.4
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3269
+Original-Lines: 64
+Xref: news.gmane.org gmane.science.mathematics.categories:1165
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1165>
+
+This note gives an alternative characterization of "inclusions" in Mac
+Lane's sense; and proves every category with selected monics is equivalent
+to one with "inclusions". Some of it may have been known before and if so I
+would appreciate references.
+
+	In a circular letter Saunders Mac Lane has suggested paying attention to
+"inclusions" in categorical set theory.  The main questions about this have
+general categorical answers as follows. A category has "selected monics" if
+for each object C, each equivalence class of monics to C has one selected
+representative. The selected monics are called "inclusions" if whenever
+C'>->C and C">->C' are selected, the composite C">->C is also selected.
+
+	The following alternative characterization motivates the construction in
+the next theorem but is not actually used to prove it. Given monics i and j
+to a single object, with i<j, the monic h such that jh=i will be called the
+"transition monic" from i to j. (For e-mail convenience I write i<j to mean
+i is included in or equal to j.) 
+
+Fact: In any category with selected monics, the selected monics are
+inclusions if and only if: for all selected monics i and j with i<j, the
+transition monic h is also selected.
+
+Proof: First suppose i:I>->C and j:J>->C are selected, and selected monics
+compose. The transition h must have some selected equivalent k:K>->J, and so
+jk is selected and equivalent to i, which implies jk=i and k=h so h is
+selected. Conversely suppose h:I>->J and j:J>->C are selected and transition
+monics between selected monics are selected. Then jh:I>->C has some selected
+equivalent m and for some iso g we have jhg=m. Thus hg is transition monic
+between the selected m and j, and so hg is selected. But hg is also
+equivalent to the selected h so hg=h and g is an identity. Thus jh=m is
+selected. 
+
+ 
+	In any topos with selected pullbacks we have selected monics, since for any
+equivalence class of monics we can take the selected pullback of "true"
+along the characteristic arrow. These need not be inclusions. However, we
+have:  
+
+Theorem: Any category A with selected monics is equivalent to a category AI
+with inclusions.
+Proof: 	Let the objects of AI be the selected monics C>->B of A.  An AI
+arrow from C'>->B' to C>->B is simply an A arrow C'-->C. That is, AI arrows
+ignore the monics and just look at the domains. Obviously AI is equivalent
+to A and an arrow is monic in AI iff it is monic in A. As the selected
+monics to an AI  object C>->B we take those AI monics h
+
+                               h:C'>-------->C
+                                 v           v
+                                 |           |
+                                 |           |
+                                 v           v
+                                 B    =      B
+
+which lie over the same B and make the triangle commute in A. Clearly these
+compose, and each monic to C>->B in AI is equivalent to exactly one of these.
+
+        In particular, given any axiomatic theory of a topos with selected
+pullbacks: if the axioms are preserved by equivalence, then we can
+consistently add the assumption of inclusions. We can assume selected monics
+compose. Of course it remains to actually use this assumption to secure the
+advantages that Saunders sees for it.
+
+
+
+

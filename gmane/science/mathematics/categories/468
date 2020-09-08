@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Applications for Category Theory
+Date: Wed, 27 Aug 1997 16:33:39 -0300 (ADT)
+Lines: 81
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.970827163330.5772B-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016985 25902 80.91.229.2 (29 Apr 2009 14:56:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:25 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Wed Aug 27 16:34:16 1997
+Original-Received: by mailserv.mta.ca; id AA05741; Wed, 27 Aug 1997 16:33:39 -0300
+Status: O
+Content-Length: 3932
+Original-Lines: 80
+Xref: news.gmane.org gmane.science.mathematics.categories:468
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/468>
+
+Date: Wed, 27 Aug 1997 14:25:10 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+Here are a couple of styles of application.
+
+1. The main style is "modularization" - ignoring the internal structure of
+objects in favour of their external relationship with other objects
+(specification instead of implementation).
+
+Category theory shows how to do this starting from morphisms as basic units
+of inter-object relationship: given those, objects can then be
+characterized as products, exponentials etc.
+
+A basic method then is to describe morphisms to make a category out of your
+objects, and use that to give abstract specifications of constructions that
+are implemented in terms of concrete internal structure. The thesis is that
+that is better, because it describes the constrction in terms of what you
+get out of it rather than how it is achieved.
+
+The paradigm is sets: internal structure = collection of elements, morphism
+= function. Look at the early chapters of Goldblatt's book "Topoi" to see
+how set-theoretic constructions get turned into categorical
+characterizations.
+
+Some applications in computer science are -
+
+* types in functional programming (probably in Pierce's book)
+* work here at Imperial, by Tom Maibaum and myself and others, for
+specification languages: in crude Z terms, schema connectives (or
+better-behaved substitutes) can be characterized in a
+presentation-independent way as products, pullbacks etc. once we know what
+schema morphisms are.
+
+It has to be born in mind that the categorical structure has a quite
+specific form that prima facie might be insufficient or inappropriate for
+describing the relationship between objects in particular cases.
+Nonetheless, in practice it is very often good or a good starting point.
+Sometimes extra "2-categorical" structure is needed. Again, sometimes you
+get different kinds of relationship, e.g. terminating computations v.
+possibly non-terminating ones; or computations with or without
+side-effects. The structure of Moggi's "Computational Monads" aims to
+capture this and has been applied by Phil Wadler in functional programming.
+
+A pattern of relationship between objects that is very uncategorical is
+that of "nearness" or "neighbourhoods" as you see in topology. (The two
+patterns, the categorical and the topological, are combined in a remarkable
+way in the idea of "topos as generalized topological space". The objects
+are then the points of a topos instead of the objects of a category.)
+
+2. (Less widespread) Synthetic reasoning for engineer friendliness.
+
+This is a kind of inverse to modularization: having ignored concrete
+internal structure and reduced objects to their categorical relationship
+with the others, they can seem rather austerely abstract. There is often a
+formal trick by which an artificial internal structure can be reinvented,
+and the objects talked about as though they were set-like things,
+collections of elements. This is intended to make the categories more
+"engineer-friendly", at a cost of restricting the logical ways one can
+reason about the collections, and is not unlike the use of infinitessimals
+as though they were real numbers for doing calculus. Categorical logic
+studies the interplay between the category theory and the logic.
+
+The paradigm example is that of objects in a topos, for which the so-called
+"Mitchell-Benabou" language enables one to prove theorems about them in a
+style that ostensibly refers to their elements. (The logical reasoning must
+be intuitionistic - no proofs by contradiction.)
+
+The programme of "synthetic domain theory" has similar ambitions for the
+domains of denotational semantics, which could be applied to the types of
+functional programming.
+
+I'm working on something of the same kind for contexts where the objects
+(technically, the points of locales or toposes) also have topological
+relationships, the corresponding logic being the so-called "geometric
+logic".
+
+Steve Vickers.
+
+
+
+

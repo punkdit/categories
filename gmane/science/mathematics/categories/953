@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: s.vickers@doc.ic.ac.uk (Steven Vickers)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Continuity
+Date: Tue, 24 Nov 1998 17:42:53 +0000
+Lines: 101
+Approved: news@gmane.org
+Message-ID: <v0151010bb2809f006107@[146.169.29.106]>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241017376 28495 80.91.229.2 (29 Apr 2009 15:02:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:02:56 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Tue Nov 24 16:55:12 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA02592
+	for categories-list; Tue, 24 Nov 1998 15:03:02 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: sjv@pop.doc.ic.ac.uk
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 4503
+Original-Lines: 100
+Xref: news.gmane.org gmane.science.mathematics.categories:953
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/953>
+
+>Dear categoricians,
+>
+>I'm wondering about the possibility of speaking of trajectories in a
+>category. That is, given a category C, in what sense - if any - can we
+>consider a continuous function R->C (where R are the real numbers).
+>What extra structure is needed on C to consider it as a topological
+>space? what relation with the category structure?
+>I guess there's a link with topos theory, but I can't make it really
+>clear...
+>Subsidiary question: in what case is there a notion of differentiability
+>for the function f?
+>Thank you for direct answers or pointers to (quite easyly
+>understandable) literature.
+>Regards,
+>----------------------------------
+>Matthieu Amiguet, doctorant
+
+The key is indeed via toposes, specifically Grothendieck toposes. As has
+always been recognized, these are generalized topological spaces and the
+geometric morphisms are generalized continuous maps.
+
+Instead of a category C whose objects are XXX's, you replace it by a topos
+whose points are XXX's (i.e. the classifying topos for the theory of
+XXX's). For instance, the category of set would be replaced by the
+classifying topos for the theory of sets (i.e. what's described in
+Johnstone's book and elsewhere as the "object classifier"). I'll write
+S[set] for this classifying topos.
+
+This works provided the objects and morphisms of C are the models and
+homomorphisms of a geometric theory.
+
+Turning to topological spaces X, if X is sober then its points are also the
+models of a geometric theory (to do proper justice to this you need to take
+the localic approach to topology) and so there is a corresponding
+classifying topos SX which is actually the category of sheaves over X.
+
+The "continuous maps" between toposes are just the geometric morphisms.
+They transform points of the source topos to points of the target.
+
+Specific examples:
+
+1. For two toposes SX and SY obtained from topological spaces, the
+geometric morphisms from SX to SY really do correspond to the continuous
+maps from X to Y.
+
+2. Geometric morphisms from SX to S[set] are the sheaves on X, and these
+can indeed be thought of as continuous maps from X to the category of sets
+(each sheaf maps points of X to their stalks).
+
+By no means can every category C be considered the category of models of a
+geometric theory. One necessary condition (not sufficient) is for C to have
+all filtered colimits. For a small category C, one can make a corresponding
+topos S^C (the functor category from C to sets) that is an analogue of the
+ind completion (which freely adjoins filtered colimits). Its points are the
+flat presheaves over C and include (by the Yoneda embedding) a full and
+faithful image of C.
+
+A particular link with category structure lies in specialization. Any sober
+topological space has the specialization order on its points, and a topos
+has analogous specialization morphisms between points - they are just
+homomorphisms between models of the geometric theory. For a topos SX
+obtained from a space, this "specialization category" structure on the
+points is a poset, the original specialization order. Any geometric
+morphism is, when considered as a points transformer, functorial with
+respect to the specialization morphisms - this generalizes the topological
+fact that a continuous map is monotone with respect to the specialization
+order.
+
+Though the "generalized space" ideas are not at all new, they are often
+hidden expositionally by the idea of topos as generalized universe of sets.
+If you look at my paper "Topical Categories of Domains" (to appear in Maths
+Structures in Computer Science but at present available through my Web home
+page) you will find a careful attempt to discuss toposes directly as
+generalized spaces.
+
+The home page is
+
+   http://theory.doc.ic.ac.uk:80/people/Vickers/
+
+There is also a short paper "Strongly Algebraic = SFP (Topically)" that
+includes a summary in these purely spatial terms of established results
+about points of presheaf toposes.
+
+Regarding differentiability, I too would be interested to hear of answers
+or pointers. I guess it would most conveniently be discussed using
+Caratheodory's approach. If X is a topological ring, or a ring object in
+the category of toposes, then f: X -> X is C^1 iff there is some continuous
+phi: XxX -> X such that
+
+   for all x, y. f(y) - f(x) = (y-x).phi(x,y)
+
+(The use of quantified "elements" of X can easily be translated into the
+equality of two geometric morphisms from XxX to X.)
+
+The derivative of f is f'(x) = phi(x,x).
+
+Steve Vickers.
+
+
+
+

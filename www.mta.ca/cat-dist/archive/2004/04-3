@@ -1,0 +1,4451 @@
+From rrosebru@mta.ca Tue Mar  2 12:13:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 02 Mar 2004 12:13:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AyCU0-00016d-00
+    for categories-list@mta.ca; Tue, 02 Mar 2004 12:11:00 -0400
+X-Authentication-Warning: mercury.comlab: jg owned process doing -bs
+Date: Sun, 29 Feb 2004 11:49:11 +0000 (GMT)
+From: Jeremy Gibbons <Jeremy.Gibbons@comlab.ox.ac.uk>
+To: <categories@mta.ca>
+Subject: categories: Re: graphics
+In-Reply-To: <200402250526.i1P5Q8gA007761@coraki.Stanford.EDU>
+Message-ID: <Pine.GSO.4.33.0402291141440.8294-100000@mercury.comlab>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 1
+
+On Tue, 24 Feb 2004, Vaughan Pratt wrote:
+
+> If you're a Picasso in such things then
+> starting off with xfig isn't so bad, but if you're more of a Mondrian you
+> might prefer to work in Latex's picture environment from the get-go.
+> ...
+> The only other widely supported language I know that's expressive enough to
+> write a complete macro library in 20 lines for capabilities like flowcharts,
+> digital or analog circuits, and lattice diagrams and that interoperates
+> smoothly with Latex is PostScript.
+
+I'm surprised no-one seems to have mentioned John Hobby's METAPOST
+language. This is a mostly declarative language, with the capability of
+solving linear equations. (So you can, for example, express that one item
+appears halfway between two others, and that relationship will be
+maintained as either endpoint moves.) It also integrates beautifully with
+LaTeX. If you're neither a Picasso nor a Mondriaan, but you like writing
+programs, I would have said this was the tool for you. Should come with
+any decent TeX distribution.
+
+Jeremy
+
+
+
+
+
+From rrosebru@mta.ca Tue Mar  2 12:13:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 02 Mar 2004 12:13:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AyCVb-0001Dz-00
+    for categories-list@mta.ca; Tue, 02 Mar 2004 12:12:39 -0400
+Message-Id: <200403010541.i215fXm23694@math-cl-n03.ucr.edu>
+Subject: categories: golden objects
+To: categories@mta.ca (categories)
+Date: Sun, 29 Feb 2004 21:41:33 -0800 (PST)
+From: "John Baez" <baez@math.ucr.edu>
+X-Mailer: ELM [version 2.5 PL6]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 2
+
+Dear Categorists -
+
+I've attempted to improve my web version of "week202" based on
+Steve Schanuel's comments.  Here's the next issue, which contains
+two different constructions by Robin Houston, both of which give a
+"golden object" - i.e. an object G in some rig category, equipped
+with an isomorphism between G and G^2 + 1.
+
+Best,
+jb
+
+.......................................................................
+
+
+Also available at http://math.ucr.edu/home/baez/week203.html
+
+February 24, 2004
+This Week's Finds in Mathematical Physics - Week 203
+John Baez
+
+Last week I posed this puzzle: to find a "Golden Object".
+
+A couple days ago I got a wonderful solution from Robin Houston, a computer
+science grad student at the University of Manchester.  So, I want to say a
+bit more about the golden number, then describe his solution, and then
+describe how he found it.
+
+Supposedly the Greeks thought the most beautiful rectangle was one such
+that when you chop a square off one end, you're left with a rectangle
+of the same shape.  If your original rectangle was 1 unit across and G
+units long, after you chop a 1-by-1 square off the end you're left with
+a rectangle that's G-1 units across and 1 unit long:
+
+                                   G
+                     .........................
+                     .             .         .
+                     .             .         .
+                     .             .         .
+                     .             .         .
+                   1 .             .         . 1
+                     .             .         .
+                     .             .         .
+                     .      1      .  G-1    .
+                     .........................
+
+
+So, to make the proportions of the little rectangle the same as those of
+the big one, you want
+
+"1 is to G as G-1 is to 1"
+
+or in other words:
+
+1/G = G - 1
+
+or after a little algebra,
+
+G^2 = G + 1
+
+so that
+
+G = (1 + sqrt(5))/2 = 1.618033988749894848204586834365...
+
+while
+
+                1/G = 0.618033988749894848204586834365...
+
+and
+
+                G^2 = 2.618033988749894848204586834365...
+
+(At this point I usually tell my undergraduates that the pattern
+continues like this, with G^3 = 3.618... and so on - just to see if
+they'll believe anything I say.)
+
+These days, the number G is called the Golden Number, the Golden Ratio,
+or the Golden Section.  It's often denoted by the Greek letter Phi,
+after the Greek sculptor Phidias.  Phidias helped design the Parthenon -
+and supposedly packed it full of golden rectangles, to make it as
+beautiful as possible.
+
+The golden number is a great favorite among amateur mathematicians, because
+it has a flashy sort of charm.  You can find it all over the place if you
+look hard enough - and if you look too hard, you'll find it even in places
+where it's not.   It's the ratio of the diagonal to the side of a regular
+pentagon!  If you like the number 5, you'll be glad to know that
+
+            5 + sqrt(5)
+  G = sqrt[-------------]
+            5 - sqrt(5)
+
+If you don't, maybe you'd prefer this:
+
+  G = exp(arcsinh(1/2))
+
+My favorite formulas for the golden number are
+
+  G = sqrt(1 + sqrt(1 + sqrt(1 + sqrt(1 + sqrt(1 + sqrt(1 + ...
+
+and the continued fraction:
+
+                   1
+  G =    1  +  ---------
+                1 +    1
+                    --------
+                    1 +  1
+                        -------
+                        1 +  1
+                            ------
+                            1 + 1
+                               ----
+                               1 + 1
+                                  ----
+                                     .
+                                       .
+                                         .
+
+These follow from the equations G^2 = G + 1 and G = 1 + 1/G, respectively.
+If you chop off the continued fraction for G at any point, you'll see that
+G is also the limit of the ratios of successive Fibonacci numbers.   See
+"week190" for a very different proof of this fact.
+
+However, don't be fooled!  The charm of the golden number tends to attract
+kooks and the gullible - hence the term "fool's gold".  You have to be
+careful about anything you read about this number.  In particular, if you
+think ancient Greeks ran around in togas philosophizing about the "golden
+ratio" and calling it "Phi", you're wrong.  This number was named Phi
+after Phidias only in 1914, in a book called _The Curves of Life_ by the
+artist Theodore Cook.  And, it was Cook who first started calling 1.618...
+the golden ratio.  Before him, 0.618... was called the golden ratio!  Cook
+dubbed this number "phi", the lower-case baby brother of Phi.
+
+In fact, the whole "golden" terminology can only be traced back to 1826,
+when it showed up in a footnote to a book by one Martin Ohm, brother of
+Georg Ohm, the guy with the law about resistors.  Before then, a lot of
+people called 1/G the "Divine Proportion".  And the guy who started
+*that* was Luca Pacioli, a pal of Leonardo da Vinci who translated Euclid's
+Elements.  In 1509, Pacioli published a 3-volume text entitled Divina
+Proportione, advertising the virtues of this number.  Some people think
+da Vinci used the divine proportion in the composition of his paintings.
+If so, perhaps he got the idea from Pacioli.
+
+Maybe Pacioli is to blame for the modern fascination with the golden
+ratio; it seems hard to trace it back to Greece.  These days you can buy
+books and magazines about "Elliot Wave Theory", a method for making money
+on the stock market using patterns related to the golden number.  Or, if
+you're more spiritually inclined, you can go to workshops on "Sacred
+Geometry" featuring talks about the healing powers of the golden ratio.
+But Greek texts seem remarkably quiet about this number.
+
+The first recorded hint of it is Proposition 11 in Book II of Euclid's
+"Elements".  It also shows up elsewhere in Euclid, especially Proposition
+30 of Book VI, where the task is "to cut a given finite straight line in
+extreme and mean ratio", meaning a ratio A:B such that
+
+A:B::(A+B):A                (i.e., "A is to B as A+B is to A")
+
+This is later used in Proposition 17 of Book XIII to construct
+the pentagonal face of a regular dodecahedron.
+
+Of course, Euclid wasn't the first to do all these things; he just wrote
+them up in a nice textbook.  By now it's impossible to tell who discovered
+the golden ratio and just what the Greeks thought about it.  For a sane
+and detailed look at the history of the golden ratio, try this:
+
+1) J. J. O'Connor and E. F. Robertson, The Golden Ratio,
+http://www-gap.dcs.st-and.ac.uk/~history/HistTopics/Golden_ratio.html
+
+While I'm at it, I should point out that you that Theodore Cook's
+book introducing the notation "Phi" is still in print:
+
+2) The Curves of Life: Being an Account of Spiral Formations and Their
+Application to Growth in Nature, to Science, and to Art: with Special
+Reference to the Manuscripts of Leonardo da Vinci, Dover Publications,
+New York, 1979.
+
+If you want to see what Euclid said about the golden ratio, you can
+also pick up a cheap copy of the Elements from Dover - but it's probably
+quicker to go online.  There are a number of good places to find Euclid's
+Elements online these days.
+
+Topologists know David Joyce as the inventor of the "quandle" - an
+algebraic structure that captures most of the information in a knot.
+Now he's writing a high-tech edition of Euclid, complete with Java applets:
+
+3) David E. Joyce's edition of Euclid's Elements,
+http://aleph0.clarku.edu/~djoyce/java/elements/toc.html
+
+Joyce is carrying on a noble tradition: back in 1847, Oliver Byrne did
+a wonderful edition of Euclid complete with lots of beautiful color
+pictures and even some pop-up models.  You can see this online at
+the Digital Mathematics Archive:
+
+4) Oliver Byrne's edition of Euclid's Elements, online at the Digital
+Mathematics Archive, http://www.sunsite.ubc.ca/DigitalMathArchive/
+
+The most famous scholarly English translation of Euclid was done by
+Sir Thomas Heath in 1908.  You can find it together with an edition
+in Greek and a nearly infinite supply of other classical texts at
+the Perseus Digital Library:
+
+5) Thomas L. Heath's edition of Euclid's Elements, online at
+The Perseus Digital Library, http://www.perseus.tufts.edu/
+
+But I'm digressing!  My main point was that while G = (1 + sqrt(5))/2
+is a neat number, it's a lot easier to find nuts raving about it on the
+net than to find truly interesting mathematics associated with it - or
+even interesting references to it in Greek mathematics!  The cynic might
+conclude that the charm of this number is purely superficial.  However,
+that would be premature.
+
+First of all, there's a certain sense in which G is "the most irrational
+number".  To get the best rational approximations to a number you use its
+continued fraction expansion.  For G, this converges as slowly as possible,
+since it's made of all 1's:
+
+                   1
+     G =  1  +  ---------
+                1 +    1
+                    --------
+                    1 +  1
+                        -------
+                        1 +  1
+                            ------
+                            1 + 1
+                               ----
+                               1 + 1
+                                  ----
+                                     .
+                                       .
+                                         .
+
+We can make this more precise.  For any number x there's a constant
+c(x) that says how hard it is to approximate x by rational numbers,
+given by
+
+        lim inf      |x - p/q|   = c(x)/q^2
+      q -> infinity
+
+where q ranges over integers, and p is an integer chosen to minimize
+|x - p/q|.   This constant is as big as possible when x is the golden
+ratio!
+
+It'd be ironic if the famously "rational" Greeks, who according to legend
+even drowned the guy who proved sqrt(2) was irrational, chose the most
+irrational number as the proportions of their most beautiful rectangle!
+But, it wouldn't be a coincidence.  Their obsession with ratios and
+proportions led them to ponder the situation where A:B::(A+B):A,
+and this proportion instantly implies that A and B are incommensurable,
+since if you assume A and B are integers and try to find their greatest
+common divisor using Euclid's algorithm, you get stuck in an infinite loop.
+Euclid even mentions this idea in Proposition 2 of Book X:
+
+ If, when the less of two unequal magnitudes is continually subtracted
+ in turn from the greater that which is left never measures the one
+ before it, then the two magnitudes are incommensurable.
+
+He doesn't explicitly come out and apply it to what we now call the golden
+ratio - but how could he not have made the connection?  For more info on
+the Greek use of continued fractions and the Euclidean algorithm, check
+out the chapter on "antihyphairetic ratio theory" in this book:
+
+6) D. H. Fowler, The Mathematics of Plato's Academy: A New Reconstruction,
+Oxford U. Press, Oxford, 1987.
+
+Anyway, it's actually important in physics that the golden number is so
+poorly approximated by rationals.   This fact shows up in the Kolmogorov-
+Arnold-Moser theorem, or "KAM theorem", which deals with small perturbations
+of completely integrable Hamiltonian systems.  Crudely speaking, these are
+classical mechanics problems that have as many conserved quantities as
+possible.  These are the ones that tend to show up in textbooks, like the
+harmonic oscillator and the gravitational 2-body problem.   The reason is
+that you can solve such problems if you can do a bunch of integrals - hence
+the term "completely integrable".
+
+The cool thing about a completely integrable system is that time evolution
+carries states of the system along paths that wrap around tori.  Suppose
+it takes n numbers to describe the position of your system.  Then it also
+takes n numbers to describe its momentum, so the space of states is
+2n-dimensional.  But if the system has n different conserved quantities -
+that's basically the maximum allowed - the space of states will be foliated
+by n-dimensional tori.  Any state that starts on one of these tori will
+stay on it forever!  It will march round and round, tracing out a kind of
+spiral path that may or may not ever get back to where it started.
+
+Things are pretty simple when n = 1, since a 1-dimensional torus is a
+circle, so the state *has* to loop around to where it started.  For example,
+when you have a pendulum swinging back and forth, its position and momentum
+trace out a loop as time passes.
+
+When n is bigger, things get trickier.  For example, when you have n
+pendulums swinging back and forth, their motion is periodic if the
+ratios of their frequencies are rational numbers.
+
+This is how it works for any completely integrable system.  For any torus,
+there's an n-tuple of numbers describing the frequency with which paths on
+this torus wind around in each of the n directions.  If the ratios of these
+frequencies are all rational, paths on this torus trace out periodic orbits.
+Otherwise, they don't!
+
+KAM theory says what happens when you perturb such a system a little.
+It won't usually be completely integrable anymore.   Interestingly, the
+tori with rational frequency ratios tend to fall apart due to resonance
+effects.  Instead of periodic orbits, we get chaotic motions instead.
+But the "irrational" tori are more stable.  And, the "more irrational" the
+frequency ratios for a torus are, the bigger a perturbation it takes to
+disrupt it!  Thus, the most stable tori tend to have frequency ratios
+involving the golden number.  As we increase the perturbation, the last
+torus to die is called a "golden torus".
+
+You can actually *watch* tori breaking into chaotic dust if you check out
+the applet illustrating the "standard map" on this website:
+
+7) Takashi Kanamaru and J. Michael T. Thompson, Introduction to Chaos
+and Nonlinear Dynamics,
+http://www.sekine-lab.ei.tuat.ac.jp/~kanamaru/Chaos/e/Standard/
+
+The "standard map" is a certain dynamical system that's good for
+illustrating this effect.  You won't actually see 2d tori, just
+1d cross-sections of them - but it's pretty fun.  For more details,
+try this:
+
+8) M. Tabor, Chaos and Integrability in Nonlinear Dynamics: An Introduction,
+Wiley, New York, 1989.
+
+In short, the golden number is the best frequency ratio for avoiding
+resonance!
+
+Some audiophiles even say this means the best shaped room for listening
+to music is one with proportions 1:G:G^2.  I leave it to you to find the
+flaw in this claim.   For more dubious claims, check out the ad for expensive
+speaker cables at the end of this article.
+
+KAM theory is definitely cool, but we shouldn't rest content with this
+when skeptics ask if the golden number is all it's cracked up to be.
+I figure it's part of our job as mathematicians to keep on discovering
+mind-blowing facts about the golden number.  A small part, but part:
+we shouldn't give up the field to amateurs!
+
+Penrose has done his share.  His "Penrose tiles" take crucial advantage
+of the self-similarity embodied by the golden number to create nonperiodic
+tilings of the plane.  This helped spawn a nice little industry, the study
+of "quasicrystals" with 5-fold symmetry.  Here's a good introduction for
+mathematicians:
+
+9) Andre Katz, A short introduction to quasicrystallography, in From
+Number Theory to Physics, eds. M. Waldschmit et al, Springer, Berlin,
+1992, pp. 496-537.
+
+By the way, this same book has some nice stuff on the role of the
+golden number in KAM theory and the theory of iterated maps from
+the circle to itself:
+
+10) Predrag Cvitanovic, Circle maps: irrationally winding, in From
+Number Theory to Physics, eds. M. Waldschmit et al, Springer, Berlin,
+1992, pp. 631-658.
+
+11) Jean-Christophe Yoccoz, Introduction to small divisors problems,
+in From Number Theory to Physics, eds. M. Waldschmit et al, Springer,
+Berlin, 1992, pp. 659-679.
+
+Conway and Sloane are also pulling their weight.  Starting from the
+relation between the golden ratio, the isosahedron, and the 4-dimensional
+big brother of the icosahedron (the "600-cell"), they've described how
+to construct the coolest lattices in 8 and 24 dimensions using "icosians" -
+which are certain quaternions built using the golden ratio.   I discussed
+this circle of ideas in "week20", "week59" and "week155".
+
+But if you want some really scary formulas involving the golden ratio,
+Ramanujan is the one to go to.  Check these out:
+
+
+           1
+      --------------
+       1 +  exp(-2pi)
+           -------------
+            1 + exp(-4pi)       =  exp(2pi/5) [sqrt(G sqrt(5)) - G]
+                ------------
+                 1 + exp(-6pi)
+                     -----------
+                      1 + exp(-8pi)
+                          ---------
+                                 .
+                                   .
+                                     .
+
+and
+
+
+   1 +  exp(-2pi sqrt(5))
+       -------------------
+        1 + exp(-4pi sqrt(5))
+            -----------------
+             1 + exp(-6pi sqrt(5))
+                 ------------------
+                  1 + exp(-8pi sqrt(5))
+                      ------------------
+                              .
+                                .
+                                  .
+
+
+
+
+
+                               sqrt(5)
+=  exp(2pi/5) [ ------------------------------------- - G]
+                1 + [5^{3/4} (G - 1)^{5/2} - 1]^{1/5}
+
+
+These are special cases of a monstrosity called the Rogers-Ramanujan
+continued fraction, which is a kind of "q-deformation" of the continued
+fraction for the golden ratio.  For details, start here:
+
+12) Eric W. Weisstein, Rogers-Ramanujan Continued Fraction,
+http://mathworld.wolfram.com/Rogers-RamanujanContinuedFraction.html
+
+The golden number also shows up in the theory of quantum groups.
+I talked about this in "week22" so I won't explain it again here.
+But, I can't resist mentioning that Freedman, Larsen and Wang have
+subsequently shown that a certain topological quantum field theory
+called Chern-Simons theory, built using the quantum group SU_q(2),
+can serve as a universal quantum computer when the parameter q is a
+fifth root of unity.  And, this is exactly the case where the spin-1/2
+representation of SU_q(2) has quantum dimension equal to the golden number!
+
+13) Michael Freedman, Michael Larsen, Zhenghan Wang,
+A modular functor which is universal for quantum computation,
+available at quant-ph/0001108.
+
+But don't get the wrong idea: it's not that some magic feature of the
+golden number is required to build a universal quantum computer!  It's
+just that the 5 seems to be the *smallest* number n such that SU_q(2)
+Chern-Simons theory is computationally universal when q is an nth root of 1.
+
+That's pretty much everything I know about the golden number.  So now,
+what about this "Golden Object" puzzle?
+
+Basically, the problem was to find an object that acts like the golden
+number.  The golden number has G = G^2 + 1, so we want to find
+a object G equipped with a nice isomorphism between G and G^2 + 1.
+
+If G is just a set, this means we want a nice one-to-one correspondence
+between pairs of elements of G, and elements of G together with one other
+It doesn't matter what that other thing is, so let's call it "@".
+
+(You may be wondering about the word "nice".  The point is, the problem
+is too easy if we don't demand that the solution be nice in some way -
+some way that I don't feel like making precise.)
+
+Here's Robin Houston's answer:
+
+Define a "bit" to be either 0 or 1.  Define a "golden tree" to be a
+(planar) binary tree with leaves labelled by 0, 1, or *, where every
+node has at most one bit-child.  For example:
+
+              /\   is a golden tree, but   /\   is not.
+             /\ 1                         /\ *
+            0  *                         0  1
+
+Let G be the set of golden trees.  We define an isomorphism
+
+f: G^2 -> G + {@}
+
+as follows.  First we define f(X, Y) when both X and Y are golden
+trees with just one node, this node being labelled by a bit.  We
+can identify such a tree with a bit, and doing this we set
+
+f(0, 0) = 0
+f(0, 1) = 1
+f(1, 0) = *
+f(1, 1) = @
+
+In the remaining case, where the golden trees X and Y are not just bits,
+we set
+
+f(X, Y) = /\
+         X  Y
+
+There are different ways to show this function f is a one-to-one
+correspondence, but the best way is to see how Houston came up with
+this answer!  He didn't just pull it out of a hat; he tackled the
+problem systematically, and that's why his solution counts as "nice".
+
+It's easy to find a set S equipped with an isomorphism
+
+S = P(S)
+
+where P is some polynomial with natural number coefficients.  You
+just use the fixed-point principle described in "week108".  Namely,
+you start with the empty set, keep hitting it with P forever, and take
+a kind of limit.  This is how I built the set of binary trees last week,
+as a solution of T = T^2 + 1.
+
+The problem is that the isomorphism we seek now:
+
+G^2 = G + 1                               (1)
+
+is not of this form.  So, what Houston does is to make a substitution:
+
+G = H + 2
+
+Given this, we'd get (1) if we had
+
+H^2 + 4H + 4 = H + 3                      (2)
+
+and we'd get (2) if we had
+
+H^2 + 4H + 1 = H                          (3)
+
+which is of the desired form.
+
+We can rewrite (3) as
+
+H = 1 + H^2 + 2H + H2
+
+and in English this says "an element of H is either a *, or
+a pair consisting of two guys that are either bits or elements
+of H - but not both bits".  So, a guy in H is a golden tree!
+But, if it has just one node, that node can only be labelled
+by a *, not a 0 or 1.  This means there are precisely 2 golden trees
+not in H.  So, G = H + 2 is the set of all golden trees, and our
+calculation above gives an isomorphism G^2 = G + 1.
+
+Voila!
+
+Note that to derive (3) from (1) we need to subtract, which in general
+is not allowed in this game.  Here we are subtracting constants, and
+Houston says that's allowed by the "Garsia-Milne involution theorem".
+I don't know this theorem, so I'll make a note to myself to learn it.
+But luckily, we don't really need it here: we only need to derive (1)
+from (3), and that involves addition, so it's fine.
+
+Part of what makes Houston's solution "nice" is that it suggests a
+general method for turning polynomial equations into recursive definitions
+of the form S = P(S).  Another nice thing is that his trick delivers
+a structure type G(X) that reduces to G when X = 1.  To get this, first
+use the fixed-point method to construct a structure type H(X) with an
+isomorphism
+
+H(X) = (H(X) + X)^2 + 2H(X)
+
+Then, define
+
+G(X) = H(X) + X + 1
+
+and note that this gives
+
+G(X)^2 = G(X) + X
+
+which reduces to G^2 = G + 1 when X = 1.
+
+As if this weren't enough, Houston also gave another solution to the
+puzzle.  He showed that James Propp's proposed Golden Object, described
+last week, really is a Golden Object!  Maybe Propp already knew this,
+but I sure didn't.
+
+The idea of the proof is pretty general.  Suppose we've got a category
+that's a "2-rig" in the sense of "week191".  And, suppose we've got an
+object X equipped with an isomorphism
+
+X = 1 + 2X                                (4)
+
+so that X acts like "-1".  For example, following Schanuel and Propp,
+we can take the category of "sigma-polytopes" and let X be the open
+interval: then isomorphism (4) says
+
+(0,1) = (0,1/2) + {1/2} + (1/2,1)
+
+Or, following Houston, we can take the category of sets and let X be
+the set of finite bit-strings.  Then (4) says "a finite bit-string is
+either the empty bit-string, or a bit followed by a finite bit-string".
+The relation between these two examples is puzzling to me - if anyone
+understands it, let me know!  But anyway, either one works.
+
+Now let G be the object of "binary trees with X-labelled leaves":
+
+G = X + X^2 + 2X^3 + 5X^4 + 14X^5 + 42X^6 + ...
+
+where the coefficients are Catalan numbers.  Let's show that G is a
+Golden Object.  To do this, we'll use (4) and this isomorphism:
+
+G = G^2 + X                               (5)
+
+which says "a binary tree with X-labelled leaves is a pair of such
+trees, or a degenerate tree with just one X-labelled node".  The formula
+for G involving Catalan numbers is really just the fixed-point solution
+to this!
+
+Here is Houston's fiendishly clever argument.  Suppose Z is any type
+equipped with an isomorphism
+
+Z = Z' + X
+
+for some Z'.  Then
+
+Z + X + 1 = Z' + 2X + 1
+          = Z' + X
+          = Z
+
+This applies to Z = G^2, since
+
+G^2 = (X + G^2)^2 = (2X + 1 + G^2)^2
+
+has a X term in it when you multiply it out, so it's of the form Z' + X.
+Therefore we have an isomorphism
+
+G^2 = G^2 + X + 1
+
+But we also have an isomorphism G + 1 = G^2 + X + 1 by (5).  Composing
+these, we get our isomorphism
+
+G^2 = G + 1.
+
+Golden!  I'll stop here.
+
+Quote of the week:
+
+"As a high-end cable manufacturer, Cardas Audio strives to address every
+detail of cable and conductor construction, no matter how small.  An
+elegant solution deals with quality, not quantity.  Cable geometry problems
+are resolved in the cable's design, not after the fact with filters.  George
+Cardas received U.S. Patent Number 4,628,151 for creating Golden Section
+Stranding Audio Cable.  It is truly unique.  George introduced the concept
+of Golden Section Stranding to high-end audio, but the Golden Ratio,
+1.6180339887... : 1, is as old as nature itself.  The Golden Ratio is the
+mathematical proportion nature uses to shape leaves and sea shells, insects
+and people, hurricanes and galaxies, and the heart of musical scales and
+chords.  "Discovered" by the Greeks, but used by the Egyptians in the Great
+Pyramid centuries before, man has employed the Golden Ratio to create his
+most beautiful and naturally pleasing works of art and architecture." -
+Cardas Audio speaker cable advertisement
+
+-----------------------------------------------------------------------
+Previous issues of "This Week's Finds" and other expository articles on
+mathematics and physics, as well as some of my research papers, can be
+obtained at
+
+http://math.ucr.edu/home/baez/
+
+For a table of contents of all the issues of This Week's Finds, try
+
+http://math.ucr.edu/home/baez/twf.html
+
+A simple jumping-off point to the old issues is available at
+
+http://math.ucr.edu/home/baez/twfshort.html
+
+If you just want the latest issue, go to
+
+http://math.ucr.edu/home/baez/this.week.html
+
+
+
+
+
+From rrosebru@mta.ca Fri Mar  5 10:20:06 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 05 Mar 2004 10:20:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AzG77-0003rg-00
+    for categories-list@mta.ca; Fri, 05 Mar 2004 10:15:45 -0400
+Message-ID: <4045ED10.4040502@elet.polimi.it>
+Date: Wed, 03 Mar 2004 15:34:56 +0100
+From: Pietro Braione <braione@elet.polimi.it>
+User-Agent: Mozilla Thunderbird 0.5 (Windows/20040207)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Question on universal arrows
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Virus-Scanned: by amavisd-new-20030616-p7 at elet.polimi.it
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 3
+
+Greetings to all the readers. I am studying category theory
+on my own and I did not succeed in finding an answer to
+the following question.
+Colimits can be defined in terms of universal arrows:
+the colimit of a functor F: S -> C is the universal arrow,
+in the category C^S, from F to the diagonal functor
+D: C -> C^S. Can we also define universal arrows in
+terms of colimits? If yes, how?
+
+Thank you very much
+Pietro Braione
+
+
+
+
+
+From rrosebru@mta.ca Fri Mar  5 10:20:06 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 05 Mar 2004 10:20:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AzG7V-0003tg-00
+    for categories-list@mta.ca; Fri, 05 Mar 2004 10:16:09 -0400
+Date: Wed, 3 Mar 2004 17:28:26 -0400 (AST)
+From: TAC <tac@mta.ca>
+To: categories@mta.ca
+Subject: categories: TAC Reprints: announcement
+Message-ID: <Pine.GSO.4.58.0403021539440.4736@mailserv.mta.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 4
+
+The Editors are in the process of preparing a number of TAC Reprints that
+will consist of a number of papers by Peter Freyd that were circulated but
+never published.  The papers will be individually refereed and when ready
+this number will appear. In the meantime, as papers are approved they will
+be posted temporarily at
+
+ftp.math.mcgill.ca/pub/barr/abcat/
+
+The first such paper has now been posted under the name homotopy.pdf.
+It is the one that shows that the homotopy category is not concrete.
+
+best wishes,
+Bob Rosebrugh
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Robert Rosebrugh, Managing Editor                 http://www.tac.mta.ca/tac
+Theory and Applications of Categories                            tac@mta.ca
+Dept of Math, Mt. Allison University
+67 York Street
+Sackville, NB E4L 1E6
+Canada
+
++1-506-364-2530       fax: -364-2583
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+
+From rrosebru@mta.ca Sun Mar  7 10:45:05 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 07 Mar 2004 10:45:05 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AzzUR-00062i-00
+    for categories-list@mta.ca; Sun, 07 Mar 2004 10:42:51 -0400
+From: David Yetter <dyetter@math.ksu.edu>
+To:  <categories@mta.ca>
+Subject: categories: Re: mystification and categorification
+Date: Fri, 5 Mar 2004 10:55:26 -0600
+User-Agent: KMail/1.5.4
+References: <002a01c401ab$cd50b370$1767eb44@grassmann>
+In-Reply-To: <002a01c401ab$cd50b370$1767eb44@grassmann>
+MIME-Version: 1.0
+Content-Type: text/plain;  charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+Message-Id: <200403051055.26794.dyetter@math.ksu.edu>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 5
+
+Categorification is a bit like quantization:  it isn't a construction so much
+as a desideratum for a relationship between one thing and another (in the
+case of categorification an (n+1)-categorical structure and an n-categorical
+structure; in the case of quantization a quantum mechanical system and
+a classical mechanical system).
+
+Categorification wants to find a higher-dimensional categorical structure
+corresponding to a lower-dimensional one by weakening equations to
+natural isomorphisms and imposing new, sensible, coherence conditions.
+In general, for the original purpose for which it was proposed--constructions
+of TQFT's and models of quantum gravity--one wants the highest categorical
+level to have a linear structure (hence Baez wanting tensor product
+and a sum it distributes over, rather than cartesian product and coproduct).
+Specific lower-dimensional categories with structure are 'categorified' by
+finding a higher-dimensional category with the new structure which 'lies over'
+the lower dimensional one in the way an additive monoidal category lies
+over its Grothendieck rig.
+
+For instance any (k-linear) monoidal category with monoid of isomorphism
+classes M is a categorification of M, and more generally (k-linear) monoidal
+categories are a categorification of monoids.
+
+A simple example shows why it is not a construction:  commutative monoids
+(as rather special categories with one object) admit two different
+categorifications:  symmetric monoidal categories and braided monoidal
+categories (each regarded as a kind of bicategory with one object).
+There is a good argument for regarding braided monoidal categories
+as the 'correct' categorification:  the Eckmann-Hilton theorem ('a group
+in GROUPS is an abelian group'  or, really as the proof shows, 'a monoid
+in MONOIDS is a commutative monoid') 'categorifies' to: A monoidal category
+in MONCAT is a braided monoidal category.
+
+
+
+
+
+
+
+
+From rrosebru@mta.ca Sun Mar  7 10:45:05 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 07 Mar 2004 10:45:05 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AzzSU-0005xk-00
+    for categories-list@mta.ca; Sun, 07 Mar 2004 10:40:50 -0400
+Message-ID: <4048AFE9.903@math.tulane.edu>
+Date: Fri, 05 Mar 2004 10:50:49 -0600
+From: Michael Mislove <mwm@math.tulane.edu>
+Reply-To: mwm@linus.math.tulane.edu
+Organization: Tulane University
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.6b) Gecko/20031205 Thunderbird/0.4
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: MFPS 20 Second Announcement and Call for Participation
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 6
+
+               Apologies to those who receive multiple copies of this
+announcement
+
+Dear Colleagues,
+  This is the Second Announcement of the Twentieth Workshop on the
+Mathematical Foundations of Programming Semantics and a Call for
+Participation at the meeting. MFPS 20 will be held on the campus of
+Carnegie Mellon University from May 23 through May 26 of this year. The
+meeting will be co-located with the Annual Meeting of the Association of
+Symbolic Logic, which will take place at CMU from May 19 through midday,
+May 23. MFPS 20 will feature invited lectures by:
+  o Christel Baier (Bonn)
+  o Radha Jagadeesan (DePaul)
+  o Pat Lincoln (SRI)
+  o Luke Ong (Oxford)
+  o Dana Scott (CMU)
+  o Alex Simpson (Edinbrgh)
+Each invited talk will have an accompanying special session focusing on
+the topic of the plenary talk, and featuring talks by a number of
+leading researchers in the area.
+  Noting that this is the 20th anniversary of MFPS, we are planning a
+panel discussion for one evening of the meeting. Details about this will
+be forthcoming later.
+  Slots for contributed talks are available for those who wish to
+contribute a talk These slots will be allocated on a first come, first
+serve basis. If you are interested in giving a talk at the meeting, send
+an email to mfps@math.tulane.edu with the title and abstract. Also
+indicate if the talk would be appropriate for one of the special
+sessions. The deadline for submitting a title and abstract is April 1,
+2004.
+  We anticipate support from the US Office of Naval Research, and a
+portion of that support is reserved to help defray the expenses of
+women, minorities and graduate students to attend the meeting. If you
+need some support to attend the meeting and are a member of one of these
+groups, please send an email to mfps@math.tulane.edu describing your
+needs. Because these funds are limited, we are unable to underwrite the
+full cost of participation at the meeting, so we expect requests that
+address a portion of the costs.
+  To access more details about the meeting, please point your browser at
+http://www.math.tulane.edu/~mfps/mfps20.htm where you also will find a
+link to the Registration Page for the conference. The latter contains
+information about hotel accommodations in addition to a registration
+form that can be submitted online.
+  MFPS 20 is collaborating with ASL to encourage participants to attend
+both meetings. In particular, participants at MFPS 20 will have access
+to the ASL meetings on Saturday, May 22. A link the to the ASL meeting
+information is accessible on the MFPS Home Page.
+  MFPS is organized by Achim Jung (Birmingham), Stephen Brookes (CMU),
+Catherine Meadows (NRL), Michael Mislove (Tulane) and Prakash Panangaden
+(McGill).
+  Best regards,
+  Mike Mislove
+
+===============================================
+Professor Michael Mislove                    Phone: +1 504 862-3441
+Department of Mathematics                  FAX:   +1 504 865-5063
+Tulane University        URL: http://www.math.tulane.edu/~mwm
+New Orleans, LA 70118 USA
+===============================================
+
+
+
+From rrosebru@mta.ca Sun Mar  7 10:47:27 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 07 Mar 2004 10:47:27 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1AzzXX-0006BI-00
+    for categories-list@mta.ca; Sun, 07 Mar 2004 10:46:03 -0400
+Message-Id: <200403060649.i266nuaG014947@coraki.Stanford.EDU>
+X-Mailer: exmh version 2.6.3 04/04/2003 with nmh-1.0.4
+To:  categories@mta.ca
+Subject: categories: Re: mystification and categorification
+In-Reply-To: Message from "Stephen Schanuel" <schanuel@adelphia.net>
+   of "Thu, 04 Mar 2004 00:44:46 EST." <002a01c401ab$cd50b370$1767eb44@grassmann>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 05 Mar 2004 22:49:56 -0800
+From: Vaughan Pratt <pratt@CS.Stanford.EDU>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 7
+
+
+>While I'm airing my confusions, can anyone tell me what
+>'categorification' means? I don't know any such process; the simplest
+>exanple, 'categorifying' natural numbers to get finite sets, seems to me
+>rather 'remembering the finite sets and maps which gave rise to natural
+>numbers by the abstraction of passing to isomorphism classes'.
+
+A fair question.  I attended John's Coimbra lectures on this stuff in 1999
+but a lot of it leaked out afterwards.  If I had to guess I'd say he was
+categorifying the free monoid on one generator to make it a monoidal category,
+but then how did the monoid end up as coproduct and the generator as the
+final object?  One suspects some free association there---John, how *do*
+you make that connection?
+
+With regard to categorification in general, sets seem to play a central
+role in at least one development of category theory.  The homobjects of
+"ordinary" categories are homsets.  (In that sense I guess "ordinary" must
+entail "locally small.")  2-categories are what you get if instead you let
+them be homcats, suitably elaborated.
+
+Going in the other direction, if you take homsets to be vacuous, not
+in the sense that they are empty but rather that they are all the same,
+then you get sets.  One more step in that direction makes everything look
+the same, which may have something to do with the Maharishi Yogi hiring
+category theorists for the math dept. of his university in Fairfield, Iowa.
+(When I spoke last with the MY's "Minister of World Health," an MD who like
+Ross Street was a classmate of mine but eight years earlier starting in 1957,
+the entire conversation seemed to be largely a skirting of the minefield
+of the sameness of everything, which may subconsciously have been behind my
+obscure reply to Peter Freyd's posting a while back about unique existence
+going back to Descartes, where I tried to one-up him by claiming it went
+*much* further back.)
+
+Categorification isn't the only way to get to 2-categories, which can be
+understood instead in terms of the interchange law as a two-dimensional
+associativity principle.  However John has got a lot of mileage out of
+the categorification approach, which one can't begrudge in an era where
+mileage and minutes are as integral to a balanced life as one's checkbook.
+(Q: How many minutes in a month?  A: Depends on your plan.)
+
+>Since in the category of sets, any nasty old infinite set satisfies
+>the golden equation and many others, I have taken the liberty of
+>interpreting  'nice' to mean at least 'satisfying no unexpected
+>equations'.
+
+Quite right.  I would add to this "and satisfying the expected equations."
+The "nasty sets" of which Steve speaks fail to satisy such expected
+equations as 2^2^X ~ X.  (The power set of a set is a Boolean algebra,
+for heaven's sake.  Why on earth forget that structure prior to taking the
+second exponentiation?  Set theorists seem to think that they can simply
+forget structure without paying for it, but in the real world it costs
+kT/2 joules per element of X to forget that structure.  If set theorists
+aren't willing to pay real-world prices in their modeling, why should we
+taxpayers pay them real-world salaries?  Large cardinals are a figment of
+their overactive imaginations, and the solution to consistency concerns is
+not to go there.)
+
+Vaughan Pratt
+
+From rrosebru@mta.ca Fri Mar  5 10:21:43 2004 -0400
+Message-ID: <002a01c401ab$cd50b370$1767eb44@grassmann>
+From: "Stephen Schanuel" <schanuel@adelphia.net>
+To: <categories@mta.ca>
+Subject: mystification and categorification
+Date: Thu, 4 Mar 2004 00:44:46 -0500
+MIME-Version: 1.0
+Content-Type: text/plain;   charset="iso-8859-1"
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 9
+
+    I was unable to understand John Baez' golden object problem, nor his
+description of the solutions. He refuses to tell us what 'nice' means,
+but let me at least propose that to be 'tolerable' a solution must be an
+object in a category, and John doesn't tell us what category is involved
+in either of the solutions; at least I couldn't find a specification of
+the objects, nor the maps, so I found the descriptions 'intolerable', in
+the technical sense defined above. He is very generous, allowing one to
+use a category with both plus and times as extra monoidal structures.
+(Does anyone know an example of interest in which the plus is not
+coproduct?) This freedom is unnecessary; a little algebra plus Robbie
+Gates' theorem provides a solution G to  G^2=G+1 which satisfies no
+additional equations, in an extensive category (with coproduct as plus,
+cartesian product as times).
+    Briefly, here it is. A primitive fifth root of unity z is a root of
+the polynomial 1+X+X^2+X^3+X^4, hence satisfies 1+z+z^2+z^3+z^4+z=z,
+which is of the 'fixed point' form p(z)=z with p in N[X] and p(0) not
+0. Gates' theorem then says that the free distributive category
+containing an object Z and an isomorphism from p(Z) to Z is extensive,
+and its Burnside rig B (of isomorphism classes of objects) is, as one
+would hope, N[X]/(p(X)=X); that is, Z satisfies no unexpected
+equations. Since the degree of p is greater than 1, an easy general
+theorem tells us (from the joint injectivity of the Euler and dimension
+homomorphisms) that two polynomials agree at the object Z if and only if
+either they are the same polynomial or both are non-constant and they
+agree at the number z.Now the 'algebra':  the golden number is 1+z+z^4.
+So G=1+Z+Z^4 satisfies G^2=G+1, as desired. It satisfies no
+unexpected equations, because the relation X^2=X+1 reduces any
+polynomial in N[X] to a linear polynomial, and these reduced forms have
+distinct Euler characteristics, i.e. differ at z. Thus the homomorphism
+from N[X]/(X^2=X+1) to B (sending X to G) is injective, and that's all
+I wanted.
+    Since in the category of sets, any nasty old infinite set satisfies
+the golden equation and many others, I have taken the liberty of
+interpreting  'nice' to mean at least 'satisfying no unexpected
+equations'. One could ask for more; the construction above has produced
+a distributive, but not extensive, category whose Burnside rig is
+N[X]/(X^2=X+1), the full subcategory with objects polynomials in G.
+(If it were extensive, it would be closed under taking summands, but
+every object in the larger category is a summand of G.) I don't know
+whether there is an extensive category with N[X]/(X^2=X+1) as its full
+Burnside rig; perhaps one or both of the examples John mentioned would
+do, if I knew what they were.
+    While I'm airing my confusions, can anyone tell me what
+'categorification' means? I don't know any such process; the simplest
+exanple, 'categorifying' natural numbers to get finite sets, seems to me
+rather 'remembering the finite sets and maps which gave rise to natural
+numbers by the abstraction of passing to isomorphism classes'.
+   Finally, a note to John: While you're trying to give your audience
+some feeling for the virtues of n-categories, couldn't you give them a
+little help with n=1, by being a little more precise about objects and
+maps?
+   Greetings to all, and thanks for your patience while I got this stuff
+off my chest,
+   Steve Schanuel
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0Rcb-0007a8-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:45:09 -0400
+Subject: categories: Re: mystification and categorification
+From: Tom Leinster <tl@maths.gla.ac.uk>
+To: categories@mta.ca
+In-Reply-To: <002a01c401ab$cd50b370$1767eb44@grassmann>
+References: <002a01c401ab$cd50b370$1767eb44@grassmann>
+Content-Type: text/plain
+Organization:
+Message-Id: <1078688585.20775.171.camel@tl-linux.maths.gla.ac.uk>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.2.2 (1.2.2-5)
+Date: 07 Mar 2004 19:43:05 +0000
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 10
+
+Steve Schanuel wrote:
+> a category with both plus and times as extra monoidal structures.
+> (Does anyone know an example of interest in which the plus is not
+> coproduct?)
+
+Here are two examples that I've come across previously of rig categories
+in which the plus is not coproduct:
+
+(i) the category of finite sets and bijections, with + and x inherited
+from the category of sets;
+
+(ii) discrete rig categories, which are of course the same thing as
+rigs.
+
+> This freedom is unnecessary; a little algebra plus Robbie
+> Gates' theorem provides a solution G to  G^2=G+1 which satisfies no
+> additional equations, in an extensive category (with coproduct as plus,
+> cartesian product as times).
+
+If you *do* allow yourself the freedom to use any rig category then an
+even simpler solution exists, also satisfying no additional equations:
+just take the rig freely generated by an element G satisfying G^2 = G +
+1 and regard it as a discrete rig category.
+
+>     Since in the category of sets, any nasty old infinite set satisfies
+> the golden equation and many others, I have taken the liberty of
+> interpreting  'nice' to mean at least 'satisfying no unexpected
+> equations'.
+
+I'd interpret "nice" differently.  (Apart from anything else, the
+trivial example in my previous paragraph would otherwise make the golden
+object problem uninteresting.)  "Nice" as I understand it is not a
+precise term - at least, I don't know how to make it precise.  Maybe I
+can explain my interpretation by analogy with the equation T = 1 + T^2.
+A nice solution T would be the set of finite, binary, planar trees
+together with the usual isomorphism T -~-> 1 + T^2; a nasty solution
+would be a random infinite set T with a random isomorphism to 1 + T^2.
+(Both these solutions are in the rig category Set with its standard +
+and x.)  I regard the first solution as nice because I can see some
+combinatorial content to it (and maybe, at the back of my mind, because
+it has a constructive feel), and the second as nasty because I can't.
+I'm not certain what I think of the solution given by the set of
+not-necessarily-finite binary planar trees (nice?), or by the set of
+binary planar trees of cardinality at most aleph_5 (probably nasty).
+
+Maybe the finding of a "nice" solution is similar in spirit to the
+finding of a "concrete interpretation" of a combinatorial identity.  As
+an extremely simple example, consider the identity saying that each
+entry in Pascal's triangle is the sum of the two above it,
+
+   (n+1 choose r) = (n choose r-1) + (n choose r).
+
+This is a doddle to prove, but all the same you'd be missing something
+if you didn't know the standard "concrete interpretation": choosing r
+objects out of n+1 objects amounts to EITHER choosing the first one and
+then choosing r-1 of the remaining n OR ... .  Even if the challenge of
+finding a "nice solution" or "concrete interpretation" isn't made
+precise, I think there is a shared sense of what would count as an
+answer, and finding an answer is in general not straightforward.
+
+Best wishes,
+Tom
+
+
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0Rbf-0007VD-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:44:11 -0400
+Subject: categories: jobs galore in Glasgow
+From: Tom Leinster <tl@maths.gla.ac.uk>
+To: categories@mta.ca
+Content-Type: text/plain
+Organization:
+Message-Id: <1078680962.20775.76.camel@tl-linux.maths.gla.ac.uk>
+Mime-Version: 1.0
+X-Mailer: Ximian Evolution 1.2.2 (1.2.2-5)
+Date: 07 Mar 2004 17:36:02 +0000
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 11
+
+The University of Glasgow is hiring four Lecturers in Mathematics.  Some
+of these appointments may be at the Senior Lecturer level.  Details are
+at
+
+http://www.jobs.ac.uk/jobfiles/PK506.html
+
+As I only started here myself in October, maybe I can say some things
+that will be useful to people thinking of applying.  I've found the
+department a very pleasant place to be.  As well as Richard Steiner and
+me in category theory, there are a lot of algebraists (one of the
+largest algebra groups in the UK), a good bunch of topologists and
+geometers, and (best of all) a lot of interaction between the different
+groups.  For example, last term there was a study group/"working
+seminar" on model categories run by the algebraic topologists.  There
+are plenty of people around with whom a category theorist can have a
+meaningful mathematical conversation, and I've yet to meet anyone here
+who makes me feel like an alien (as sometimes happens).  So despite
+there not being a large category theory group as such (yet), I've felt
+no sense of intellectual isolation.  And as you can see from the rate
+we're hiring, there's a lot of fresh blood coming in.
+
+Glasgow is the fourth-oldest university in the UK, after St Andrew's and
+two places whose names I forget.  Glasgow was 1990 European city of
+culture, 1999 UK city of architecture and design, and 2003 European
+capital of sport.  I am told that we also have the tallest cinema in
+Europe.
+
+If you want any further information then feel free to get in touch.
+
+Tom
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0RfN-0000Ce-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:48:01 -0400
+Message-Id: <200403072050.i27KoTB12570@math-cl-n03.ucr.edu>
+Subject: categories: golden objects
+To: categories@mta.ca (categories)
+Date: Sun, 7 Mar 2004 12:50:29 -0800 (PST)
+From: "John Baez" <baez@math.ucr.edu>
+X-Mailer: ELM [version 2.5 PL6]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 12
+
+
+Dear Categorists -
+
+Sorry to take a while to respond.  People at UCR have been unable to
+receive posts on the category theory mailing list, due to problems with
+our internet connection.
+
+I'd asked for some nice examples of an object G in a rig category
+equipped with an isomorphism from G to G^2 + 1.  Steve Schanuel replied:
+
+>I was unable to understand John Baez' golden object problem, nor his
+>description of the solutions.  He refuses to tell us what 'nice' means, [...]
+
+The problem was deliberately open-ended, but you seem to have
+understood it perfectly, since you've given a nice solution,
+including a precise specification of what you consider "nice".
+
+Let me repeat the two solutions given by Robin Houston:
+
+1) The first solution works in any rig category having an object H
+equipped with an isomorphism to H^2 + 4H + 1.  The solution is to take
+
+G = H + 2.
+
+I described how Houston uses the isomorphism H -> H^2 + 4H + 1 to
+construct an isomorphism G^2 -> G + 1.
+
+What's nice about this is that it reduces a problem that's not
+obviously of fixed-point form to one that is.
+
+2) Houston's second solution works in any monoidal cocomplete category,
+tensor product distributing over colimits, that contains an object X
+equipped with an isomorphism to 2X + 1.  The solution is to let G be
+the object of "binary planar rooted trees with X-labelled leaves", i.e.
+
+G = X + X^2 + 2X^3 + 5X^4 + 14X^5 + 42X^6 + ...
+
+where the coefficients are Catalan numbers.  He uses the obvious
+isomorphism G -> G^2 + X to construct an isomorphism G^2 -> G + 1.
+
+What's nice about this is that it shows Propp's originally proposed
+golden object really is one: just take the category of sigma-polytopes
+with its cartesian product, and let X be the open interval!  And,
+it makes precise the sense in which the alternating sum of Catalan
+numbers equals the golden ratio.
+
+Steve writes:
+
+>I don't know whether there is an extensive category with N[X]/(X^2=X+1)
+>as its full Burnside rig; perhaps one or both of the examples John
+>mentioned would do, if I knew what they were.
+
+I think example 1) does the job if we take the free distributive
+category on an object H equipped with an isomorphism to H^2 + 4H + 1.
+Right?
+
+Steve also writes:
+
+>He is very generous, allowing one to use a category with both plus
+>and times as extra monoidal structures.  (Does anyone know an example
+>of interest in which the plus is not coproduct?)  This freedom is
+>unnecessary [...]
+
+It's unnecessary, but handy: I think there's also an golden object in
+the rig category of reps of quantum SU(2) at a suitable value of q.
+Here the tensor product is not cartesian.
+
+In the lingo of quantum group theory, this object has "quantum dimension"
+equal to the golden number.  It's interesting how such nonintegral but
+algebraic "dimensions" show up naturally in quantum group theory,
+just as nonintegral but algebraic "cardinalities" show up in the theory
+of distributive categories.
+
+I don't know any golden objects in rig categories where the plus is
+not coproduct, and I agree that such rig categories arise less often
+than those where times is not product.  But, if you use the obvious
+way of making the groupoid of finite sets into a rig category, + isn't
+coproduct, nor is x product.
+
+> While I'm airing my confusions, can anyone tell me what
+> 'categorification' means? I don't know any such process; the simplest
+> exanple, 'categorifying' natural numbers to get finite sets, seems to me
+> rather 'remembering the finite sets and maps which gave rise to natural
+> numbers by the abstraction of passing to isomorphism classes'.
+
+You're right: categorification is not a systematic process!
+I explained this idea back in "week121", and also in my paper
+"Categorification", at http://www.arXiv.org/abs/math.QA/9802029.
+Here's what I said.
+
+ If one studies categorification one soon discovers an amazing fact: many
+ deep-sounding results in mathematics are just categorifications of facts
+ we learned in high school!  There is a good reason for this.  All along,
+ we have been unwittingly `decategorifying' mathematics by pretending
+ that categories are just sets.  We `decategorify' a category by
+ forgetting about the morphisms and pretending that isomorphic objects
+ are equal.  We are left with a mere set: the set of isomorphism classes
+ of objects.
+
+ To understand this, the following parable may be useful.  Long ago, when
+ shepherds wanted to see if two herds of sheep were isomorphic, they
+ would look for an explicit isomorphism.  In other words, they would line
+ up both herds and try to match each sheep in one herd with a sheep in
+ the other.  But one day, along came a shepherd who invented
+ decategorification.  She realized one could take each herd and `count'
+ it, setting up an isomorphism between it and some set of `numbers',
+ which were nonsense words like `one, two, three, ...' specially
+ designed for this purpose.  By comparing the resulting numbers, she
+ could show that two herds were isomorphic without explicitly
+ establishing an isomorphism!  In short, by decategorifying the category
+ of finite sets, the set of natural numbers was invented.
+
+ According to this parable, decategorification started out as a stroke
+ of mathematical genius.  Only later did it become a matter of dumb
+ habit, which we are now struggling to overcome by means of
+ categorification.  While the historical reality is far more
+ complicated, categorification really has led to tremendous progress
+ in mathematics during the 20th century.  For example, Noether
+ revolutionized algebraic topology by emphasizing the importance of
+ homology groups.  Previous work had focused on Betti numbers, which
+ are just the dimensions of the rational homology groups.  As with
+ taking the cardinality of a set, taking the dimension of a vector
+ space is a process of decategorification, since two vector spaces are
+ isomorphic if and only if they have the same dimension.  Noether noted
+ that if we work with homology groups rather than Betti numbers, we can
+ solve more problems, because we obtain invariants not only of spaces,
+ but also of maps.
+
+ In modern language, the nth rational homology is a *functor* defined
+ on the *category* of topological spaces, while the nth Betti number is
+ a mere *function*, defined on the *set* of isomorphism classes of
+ topological spaces.  Of course, this way of stating Noether's insight
+ is anachronistic, since it came before category theory.  Indeed, it
+ was in Eilenberg and Mac Lane's subsequent work on homology that
+ category theory was born!
+
+ Decategorification is a straightforward process which typically
+ destroys information about the situation at hand.  Categorification,
+ being an attempt to recover this lost information, is inevitably
+ fraught with difficulties.
+
+>Finally, a note to John: While you're trying to give your audience
+>some feeling for the virtues of n-categories, couldn't you give them a
+>little help with n=1, by being a little more precise about objects and
+>maps?
+
+I hope it's clearer now.
+
+Best,
+jb
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0Ree-00002p-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:47:16 -0400
+Message-Id: <200403072100.i27L0MH12680@math-cl-n03.ucr.edu>
+Subject: categories: golden objects - typo
+To: categories@mta.ca (categories)
+Date: Sun, 7 Mar 2004 13:00:22 -0800 (PST)
+From: "John Baez" <baez@math.ucr.edu>
+X-Mailer: ELM [version 2.5 PL6]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 13
+
+A typo:
+
+>I'd asked for some nice examples of an object G in a rig category
+>equipped with an isomorphism from G to G^2 + 1.
+                                   ^^^^^^^^^^^^
+
+It should have been "from G^2 to G + 1".
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:21 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:21 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0Re9-0007ir-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:46:45 -0400
+Message-ID: <404B8E44.3030701@unt.edu>
+Date: Sun, 07 Mar 2004 15:04:04 -0600
+From: Mike Oliver <moliver@unt.edu>
+Organization: University of North Texas
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.4) Gecko/20030630
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To:  categories@mta.ca
+Subject: categories: Re: mystification and categorification
+References: <200403060649.i266nuaG014947@coraki.Stanford.EDU>
+In-Reply-To: <200403060649.i266nuaG014947@coraki.Stanford.EDU>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Authentication-Info: Submitted using SMTP AUTH at out005.verizon.net from [4.10.156.194] at Sun, 7 Mar 2004 15:04:03 -0600
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 14
+
+Vaughan Pratt wrote:
+
+> Quite right.  I would add to this "and satisfying the expected equations."
+> The "nasty sets" of which Steve speaks fail to satisy such expected
+> equations as 2^2^X ~ X.  (The power set of a set is a Boolean algebra,
+> for heaven's sake.  Why on earth forget that structure prior to taking the
+> second exponentiation?  Set theorists seem to think that they can simply
+> forget structure without paying for it, but in the real world it costs
+> kT/2 joules per element of X to forget that structure.  If set theorists
+> aren't willing to pay real-world prices in their modeling, why should we
+> taxpayers pay them real-world salaries?  Large cardinals are a figment of
+> their overactive imaginations, and the solution to consistency concerns is
+> not to go there.)
+
+I will answer you in a Popperian key:  Large cardinals are falsifiable,
+and are not yet falsified.  They may in fact be figments of our imaginations,
+but then why do they keep on *working*?  Could be just a coincidence -- but
+so could all other observation; that way lies the nullification of science
+in general.
+
+It's an illusion, by the way, to think that you can be rid of concerns about
+consistency by dumping large cardinals, that you can thus achieve a priori
+justification for apodictic certainty.  That doesn't exist even for the
+natural numbers; Ed Nelson is quite right on this point.
+
+As to the question of taxpayer funding, I will not attempt to justify
+it (I'm a libertarian in politics), but will merely note that many
+taxpayers probably feel that way about *all* pure mathematics.
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:49:52 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:49:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0Rfr-0000HF-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:48:31 -0400
+Message-ID: <404C39CA.60809@mcs.le.ac.uk>
+Date: Mon, 08 Mar 2004 09:15:54 +0000
+From: "V. Schmitt" <vs27@mcs.le.ac.uk>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.2) Gecko/20031007 Debian/1.0.2-3
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories <categories@mta.ca>
+Subject: categories: RA position Leicester Pure math
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 15
+
+Dear All,
+
+    There is currently a research assistantship position being
+advertised in Leicester, in pure mathematics (details given below).
+Interviews are likely to be late April, with the RA starting by
+1st June.
+
+Please can you forward this to anyone who might be interested.
+
+Best wishes,
+Robert
+
+
+--------------
+
+University of Leicester
+
+Research Associate in Pure Mathematics
+Department of Mathematics
+
+R&AIA 18,265 to 27,339 pa (lower end of scale)
+Available for 3 years, to start by 1st June 2004.
+
+Ref: R0646
+
+The main aim of this EPSRC-funded project will be to study the actions of
+braid groups on derived categories by generalising recent examples from
+the representations of associative algebras, of simple Lie algebras
+(category O), and quantum groups. The project will also study the
+representations of the braid group induced by such actions. These
+developments will be used in order to develop a more general theory of
+braid group actions on derived categories.
+
+Possession of a PhD in mathematics, or nearing completion of a relevant
+PhD, is essential.
+
+Informal enquiries can be made to Dr Robert Marsh, Tel +44 (0) 116 252
+5107 or email rjm25@mcs.le.ac.uk, or Professor Steffen Koenig, Tel. +44
+(0) 116 252 5670 or email sck5@mcs.le.ac.uk.
+
+
+Downloadable application forms and further particulars are available by
+following the link below, or in hardcopy from the Personnel Office, tel:
+0116 252 5114, fax: 0116 252 5140, email: personnel@le.ac.uk,
+www.le.ac.uk/personnel/jobs. Please note that CVs will only be accepted in
+support of a fully completed application form.
+
+Closing date:  19 March 2004.
+----------------------------------------------------------------------
+Steffen Koenig
+Department of Mathematics
+University of Leicester
+University Road
+Leicester, LE1 7RH
+UK
+
+Office F24, Phone 0044 (0)116 252 5670
+http://www.mcs.le.ac.uk/~skoenig/
+----------------------------------------------------------------------
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:50:15 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:50:15 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0RgU-0000OL-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:49:11 -0400
+Date: Mon, 08 Mar 2004 10:20:23 +0000
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.3) Gecko/20030312
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To:  categories@mta.ca
+Subject: categories: Re:  mystification and categorification
+References: <200403060649.i266nuaG014947@coraki.Stanford.EDU>
+In-Reply-To: <200403060649.i266nuaG014947@coraki.Stanford.EDU>
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B0RgU-0000OL-00@mailserv.mta.ca>
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 16
+
+Vaughan Pratt wrote:
+
+>(The power set of a set is a Boolean algebra,
+>for heaven's sake.  Why on earth forget that structure prior to taking the
+>second exponentiation?  Set theorists seem to think that they can simply
+>forget structure without paying for it, but in the real world it costs
+>kT/2 joules per element of X to forget that structure.  If set theorists
+>aren't willing to pay real-world prices in their modeling, why should we
+>taxpayers pay them real-world salaries?  Large cardinals are a figment of
+>their overactive imaginations, and the solution to consistency concerns is
+>not to go there.)
+>
+>Vaughan Pratt
+>
+
+Dear Vaughan,
+
+I like it!
+
+But there's still the question of just what structure the power set has.
+Constructively it's not a Boolean algebra in general, though it is a frame.
+
+And is it even a set? You can in fact only say that by removing the
+structure, which is exactly what you told the set-theorists not to do.
+And in this instance it's arguable. Topos theorists say it is a set,
+predicative type theorists say it isn't.
+
+Part of the structure of the power "set" is topological - the Scott
+topology, with the inclusion order as its specialization order. But to
+formalize it as topological space, point-set + topological structure,
+you again have to forget structure in order to get a point-set. Taking
+this seriously generally brings you to point-free topology in some form
+or other.
+
+Steve Vickers.
+
+
+
+
+From rrosebru@mta.ca Mon Mar  8 16:51:20 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Mar 2004 16:51:20 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0RhV-0000WH-00
+    for categories-list@mta.ca; Mon, 08 Mar 2004 16:50:13 -0400
+Message-ID: <404C9AA0.5000509@cs.bham.ac.uk>
+Date: Mon, 08 Mar 2004 16:09:04 +0000
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.3) Gecko/20030312
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Categories <categories@mta.ca>
+Subject: categories: Papers on Lawvere's generalized metric spaces
+References: <4006C74B.15F9C427@bangor.ac.uk>
+In-Reply-To: <4006C74B.15F9C427@bangor.ac.uk>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 17
+
+I have just put on the web two papers that explore constructive localic
+(and also topos) aspects of Lawvere's generalized metric spaces (see TAC
+Reprints 1, "Metric spaces, generalized logic and closed categories").
+My papers are:
+
+   "Localic completion of generalized metric spaces I"
+   "Localic completion of generalized metric spaces II: Powerlocales"
+
+They can both be found through
+
+   http://www.cs.bham.ac.uk/~sjv/README.html
+
+Lawvere describes generalized metric spaces as categories enriched over
+the extended half line [0, infinity]. I replace this enrichment category
+by a locale with the same points, and show how to obtain a completion as
+a locale. Topos aspects include a proof that the generic localic
+completion is an opfibration in the 2-category of grothendieck toposes.
+
+My second paper shows how the powerlocales of the localic completions
+are themselves also localic completions, and uses this to analyse
+questions of compactness.
+
+Steve Vickers.
+
+
+
+
+From rrosebru@mta.ca Tue Mar  9 19:50:55 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 09 Mar 2004 19:50:55 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0qyN-0000IZ-00
+    for categories-list@mta.ca; Tue, 09 Mar 2004 19:49:19 -0400
+Message-Id: <m1B0gGU-00006tC@skiff.cs.vu.nl>
+Date: Tue, 9 Mar 2004 13:23 +0100
+From: femke@few.vu.nl (Femke van Raamsdonk)
+To: categories@mta.ca
+Subject: categories: HOR'04: last call for abstracts
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 18
+
+
+               ********************************
+               *                              *
+               *  HOR'04   CALL FOR ABSTRACTS *
+               *                              *
+               ********************************
+
+      2nd international Workshop on Higher-Order Rewriting
+        http://www-i2.informatik.rwth-aachen.de/HOR04/
+
+
+IMPORTANT DATES:
+  Mar 17 2004 : deadline electronic submission of paper
+  Apr  9 2004 : notification of acceptance of papers
+  Apr 23 2004 : deadline for final version of accepted papers
+
+The aim of HOR is to provide an informal and friendly setting
+to discuss recent work and work in progress concerning
+higher-order rewriting.
+
+INVITED TALKS:
+  Mariangola Dezani   Torino
+  Mark-Oliver Stehr   Hamburg
+
+
+TOPICS of interest include (but are not limited to):
+  APPLICATIONS: proof checking, theorem proving, generic programming,
+  declarative programming, program transformation.
+  FOUNDATIONS: pattern matching, unification, strategies, narrowing,
+  termination, syntactic properties, type theory.
+  FRAMEWORKS: term rewriting, conditional rewriting, graph rewriting,
+  net rewriting, comparisons of different frameworks.
+  IMPLEMENTATION: explicit substitution, rewriting tools,
+  compilation techniques.
+  SEMANTICS: semantics of higher-order rewriting,
+  higher-order abstract syntax
+
+PROGRAM/ORGANIZING COMMITTEE:
+  Delia Kesner         Paris      kesner@pps.jussieu.fr
+  Femke van Raamsdonk  Amsterdam  femke@cs.vu.nl
+  Joe Wells            Edinburgh  jbw@macs.hw.ac.uk
+
+HOR'04 SUBMISSIONS:
+  Abstracts between 2 and 5 pages. As HOR is meant
+  to be a platform to discuss ongoing research we
+  are also interested in abstract describing work
+  in progress, or problems in higher-order rewriting.
+
+PUBLICATION:
+  The proceedings of HOR 2004 will be published as a technical
+  report of the Computer Science Department of RWTH Aachen.
+
+LOCAL ARRANGEMENTS:
+  Juergen Giesl
+  RWTH Aachen, Germany
+  giesl@informatik.rwth-aachen.de
+
+
+
+From rrosebru@mta.ca Tue Mar  9 19:50:55 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 09 Mar 2004 19:50:55 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0qwt-0000CM-00
+    for categories-list@mta.ca; Tue, 09 Mar 2004 19:47:47 -0400
+In-Reply-To: <1078688585.20775.171.camel@tl-linux.maths.gla.ac.uk>
+References: <002a01c401ab$cd50b370$1767eb44@grassmann> <1078688585.20775.171.camel@tl-linux.maths.gla.ac.uk>
+Mime-Version: 1.0 (Apple Message framework v612)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Message-Id: <13EDA32B-71B8-11D8-BE9C-000A95A85E4A@brics.dk>
+Content-Transfer-Encoding: 7bit
+To: categories@mta.ca
+From: Pawel Sobocinski <pawel@brics.dk>
+Subject: categories: Re: mystification and categorification
+Date: Tue, 9 Mar 2004 10:54:02 +0000
+X-Mailer: Apple Mail (2.612)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 19
+
+
+On 7 Mar 2004, at 19:43, Tom Leinster wrote:
+
+> I'd interpret "nice" differently.  (Apart from anything else, the
+> trivial example in my previous paragraph would otherwise make the
+> golden
+> object problem uninteresting.)  "Nice" as I understand it is not a
+> precise term - at least, I don't know how to make it precise.  Maybe I
+> can explain my interpretation by analogy with the equation T = 1 + T^2.
+> A nice solution T would be the set of finite, binary, planar trees
+> together with the usual isomorphism T -~-> 1 + T^2; a nasty solution
+> would be a random infinite set T with a random isomorphism to 1 + T^2.
+> (Both these solutions are in the rig category Set with its standard +
+> and x.)  I regard the first solution as nice because I can see some
+> combinatorial content to it (and maybe, at the back of my mind, because
+> it has a constructive feel), and the second as nasty because I can't.
+> I'm not certain what I think of the solution given by the set of
+> not-necessarily-finite binary planar trees (nice?), or by the set of
+> binary planar trees of cardinality at most aleph_5 (probably nasty).
+
+ From a computer science point of view, both the first "nice" solution
+(finite binary trees) and the second "nice?" solution (possibly
+non-finite
+binary trees) are canonical, in the sense that the first is the carrier
+of the
+initial algebra for the endofunctor 1+X^2 on Set,  while the second is
+the
+carrier of its final coalgebra.
+
+All the best,
+Pawel.
+
+
+
+
+From rrosebru@mta.ca Tue Mar  9 19:50:55 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 09 Mar 2004 19:50:55 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B0qxu-0000Gv-00
+    for categories-list@mta.ca; Tue, 09 Mar 2004 19:48:50 -0400
+Message-ID: <404DAA18.8030403@itu.dk>
+Date: Tue, 09 Mar 2004 12:27:20 +0100
+From: Thomas Hildebrandt <hilde@itu.dk>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.2) Gecko/20030208 Netscape/7.02
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: CTCS 2004 - 3rd Call for Papers - Deadline April 9th
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Virus-Scanned: by amavisd-new at itu.dk
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 20
+
+[Apologies if you receive this more than once]
+
+-----------------------------------------------------------------
+                          (APPSEM-II event)
+
+                        3rd CALL FOR PAPERS
+
+10th conference on Category Theory and Computer Science (CTCS'04)
+
+                        August 12-14, 2004
+
+                 IT University of Copenhagen, Denmark
+                 www.itu.dk/research/theory/ctcs2004/
+
+             Submission Deadline: April 9th, 2004
+
+-----------------------------------------------------------------
+
+                          Invited Speakers:
+
+                      Francois Bergeron   (Quebec)
+                      Martin Hyland    (Cambridge)
+                      Robin Milner     (Cambridge)
+                      Andrew Pitts     (Cambridge)
+                      Thomas Streicher (Darmstadt)
+
+-----------------------------------------------------------------
+
+The purpose of the CTCS conference series is the advancement of the
+foundations of computing using the tools of category theory.  Previous
+meetings have been held in Guildford (Surrey), Edinburgh (twice),
+Manchester, Paris, Amsterdam, Cambridge, S. Margherita Ligure
+(Genova), and Ottawa.
+
+The emphasis is upon applications of category theory, but it is
+recognized that the area is highly interdisciplinary. Typical topics
+of interest include, but are not limited to, category-theoretic
+aspects of the following:
+
+* Coalgebras and computing
+* Concurrent and distributed systems
+* Constructive mathematics
+* Declarative programming and term rewriting
+* Domain theory and topology
+* Foundations of computer security
+* Linear logic
+* Modal and temporal logics
+* Models of computation
+* Program logics, data refinement, and specification
+* Programming language semantics
+* Type theory
+
+The proceedings of the conference will be published as a special issue
+of ENTCS (Electronic Notes in Theoretical Computer Science).
+
+-----------------------------------------------------------------
+
+PROGRAMME COMMITTEE
+
+Lars Birkedal, Chair (IT University of Copenhagen)
+Marcelo Fiore (University of Cambridge)
+Masahito Hasegawa (Kyoto University)
+Bart Jacobs (University of Nijmegen)
+Ugo Montanari (University of Pisa)
+Valeria de Paiva (Palo Alto Research Center)
+Dusko Pavlovic (Kestrel Institute)
+John Power (University of Edinburgh)
+Edmund Robinson (Queen Mary, University of London)
+Peter Selinger (University of Ottawa)
+
+-----------------------------------------------------------------
+
+ORGANIZING COMMITTEE
+
+E. Moggi, Chair, (Genova)
+S. Abramsky (Oxford)
+P. Dybjer (Chalmers)
+B. Jay (Sydney)
+A. Pitts (Cambridge)
+
+Local organizing committee:
+
+C. Butz
+T. Hildebrandt
+A.L. Moerk
+
+-----------------------------------------------------------------
+
+SUBMISSION OF PAPERS
+
+Papers should be submitted, preferably in electronic form, to
+ctcs04@itu.dk.
+
+Papers are limited to 15 pages, and must be submitted in dvi,
+postscript, or pdf format, possibly gzipped and/or uuencoded, or sent
+as a standard email attachment. All submissions must be received by
+April 9th, 2004.  If you cannot submit your paper electronically,
+please contact the program chair at ctcs04@itu.dk.
+
+-----------------------------------------------------------------
+
+IMPORTANT DATES
+
+          April 1st, 2004: Student Grants (see below)
+
+      April 9th, 2004: Submission deadline
+
+      June 1st, 2004:  Notification of authors of accepted papers
+
+      July 1st, 2004:  Registration deadline, and Revised papers due
+
+-----------------------------------------------------------------
+
+                            Associated events:
+
+
+FIRST GRADUATE STUDENT SUMMER SCHOOL, August 9-11.
+
+Inspired by the success of the graduate student preconference of
+CTCS'02 in Ottawa, the CTCS of this year will have a graduate student
+summer school from August 9-11, sponsored by the FIRST graduate school
+(www.first.dk).  The goal is to prepare students (with basic knowledge
+of category theory) for CTCS, through mini-courses in the basic areas
+underlying some of the fields of the conference. The school will offer
+the following mini-courses (5 lectures each):
+
+    * Coalgebras, Modal Logic and Stone Duality (Lecturer: Alexander Kurz)
+    * Game Semantics (Lecturer: Guy McCusker)
+    * Operational Semantics (Lecturer: Pawel Sobocinski)
+    * Categorical Models for Concurrency (Lecturer: Thomas Hildebrandt)
+
+Registration Deadline: July 1st.
+
+
+CMCIM WORKSHOP, August 11.
+
+In between the summer school and the CTCS conference, August 11th,
+there will be a half-day workshop on Categorical Methods in
+Concurrency, Interaction and Mobility. The workshop has previously
+been held in connection with CONCUR 2002 and CONCUR 2003.
+
+We invite submissions of extended abstracts (less than 5 pages),
+presenting recent results, challenges or work in progress. There will
+be no formal proceedings of the workshop, informal proceedings will be
+distributed at the workshop. Thus, accepted material may be published
+elsewhere at a later date.
+
+Workshop participation is *free*, but requires registration.
+
+Registration is done by sending an email to hilde@itu.dk, containing
+`CMCIM2004-registration' in the subject, and your full name and
+institution in the body.
+
+Submissions should be sent as PostScript files to: hilde@itu.dk,
+containing `CMCIM-submission' in the subject, and in the body the full
+names of the author(s), title, and a text-only abstract.
+
+Workshop Organizers:
+
+  Thomas Hildebrandt
+  Alexander Kurz
+
+
+CMCIM Workshop Registration Deadline: July 1st.
+CMCIM Workshop Submission Deadline: June 21th.
+
+-----------------------------------------------------------------
+
+STUDENT GRANTS  (application deadline: April 1st!!)
+
+A limited number of grants is available for funding the stay of
+international students at a nearby youth hostel during the summer
+school and conference.
+
+See http://www.itu.dk/research/theory/ctcs2004/accomodation.html
+
+-----------------------------------------------------------------
+
+CONFERENCE, SUMMER SCHOOL and WORKSHOP HOMEPAGE
+
+Updated information is available from
+http://www.itu.dk/research/theory/ctcs2004/
+
+-----------------------------------------------------------------
+
+SPONSORSHIP
+
+The CTCS conference and summer school are APPSEM-II events,
+sponsored by the FIRST graduate school (www.first.dk) and the
+Theory Department at the IT University of Copenhagen
+(www.itu.dk/English/research/theory/)
+
+-----------------------------------------------------------------
+
+POSTER
+
+http://www.itu.dk/research/theory/ctcs2004/plakata4.pdf
+
+
+
+
+
+From rrosebru@mta.ca Thu Mar 11 17:16:52 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 11 Mar 2004 17:16:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B1XTL-0002QQ-00
+    for categories-list@mta.ca; Thu, 11 Mar 2004 17:12:07 -0400
+To: categories@mta.ca
+Subject: categories: Picture of Kan?
+X-Mailer: mh-e 6.1; nmh 1.0.4+dev; Emacs 21.4
+Date: Thu, 11 Mar 2004 11:21:36 +0000
+From: N Ghani <ng13@mcs.le.ac.uk>
+Message-Id: <20040311112136.56C632F7BA@pc38.mcs.le.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 21
+
+
+I've got to do some publicity for funding agencies on a grant I have
+that uses Kan extensions. I've been told that they like pictures (as
+opposed to diagrams). So, does anyone have a picture of Daniel Kan?
+
+I tried his web page but it is rather minimal and without an email
+address
+
+Neil
+
+
+
+From rrosebru@mta.ca Fri Mar 12 13:18:27 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 12 Mar 2004 13:18:27 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B1qG8-0004yW-00
+    for categories-list@mta.ca; Fri, 12 Mar 2004 13:15:44 -0400
+To:  categories@mta.ca
+Subject: categories: Re: Picture of Kan?
+From: Dan Christensen <jdc@uwo.ca>
+In-Reply-To: <20040311112136.56C632F7BA@pc38.mcs.le.ac.uk> (N. Ghani's
+ message of "Thu, 11 Mar 2004 11:21:36 +0000")
+References: <20040311112136.56C632F7BA@pc38.mcs.le.ac.uk>
+Date: Thu, 11 Mar 2004 18:21:35 -0500
+Message-ID: <87brn37yww.fsf@uwo.ca>
+User-Agent: Gnus/5.110002 (No Gnus v0.2) Emacs/21.3 (gnu/linux)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Spam-Score: 0.496 () MAILTO_TO_SPAM_ADDR
+X-Scanned-By: MIMEDefang 2.39
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 23
+
+N Ghani <ng13@mcs.le.ac.uk> writes:
+
+> I've got to do some publicity for funding agencies on a grant I have
+> that uses Kan extensions. I've been told that they like pictures (as
+> opposed to diagrams). So, does anyone have a picture of Daniel Kan?
+
+The hopf archive has a couple:
+
+This one has (left to right) Bill Singer, George Whitehead, Dan Kan
+and someone else that looks familiar.  It's from 1980 at Cornell.
+
+  http://hopf.math.purdue.edu/pictures/kan.gif
+
+This one has Charles Rezk and Dan Kan.  1995 or 1996, MIT:
+
+  http://hopf.math.purdue.edu/pictures-95-96/mit/resk-kan.jpg
+
+It you write to Clarence Wilkerson (the maintainer of hopf,
+wilker at math purdue edu) or to Phil Hirschhorn (close friend
+of Kan's, sees him daily, psh at math mit edu) you might be
+able to dig up better pictures.
+
+Dan
+
+
+
+From rrosebru@mta.ca Fri Mar 12 13:18:27 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 12 Mar 2004 13:18:27 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B1qHX-000597-00
+    for categories-list@mta.ca; Fri, 12 Mar 2004 13:17:11 -0400
+Message-ID: <005901c40839$0faef9a0$05e5fea9@gateway.2wire.net>
+Reply-To: "Vidhyanath Rao" <rao.3@osu.edu>
+From: "Vidhyanath Rao" <rao.3@osu.edu>
+To: <categories@mta.ca>
+References: <002a01c401ab$cd50b370$1767eb44@grassmann> <1078688585.20775.171.camel@tl-linux.maths.gla.ac.uk>
+Subject: categories: Quillen model structure of category of toposes/locales?
+Date: Fri, 12 Mar 2004 08:50:46 -0500
+MIME-Version: 1.0
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 24
+
+I would like some references to model structures on the category of
+toposes/locales (thinking of them as generalized spaces), perhaps even
+the category of internal toposes of a given (boolean?) topos. What I
+know of is about model structures on the category of simplicial objects
+in a topos.
+
+Along the same lines, does it make sense to ask about ``internally
+simplicial objects'' in a topos with an NNO (i.e., do such toposes have an
+internal category that looks like the category of internally ``finite sets
+with linear order and order preserving maps'')?
+
+Nath Rao
+
+
+
+
+
+From rrosebru@mta.ca Fri Mar 12 13:18:45 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 12 Mar 2004 13:18:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B1qIz-0005Gk-00
+    for categories-list@mta.ca; Fri, 12 Mar 2004 13:18:41 -0400
+Message-ID: <4051D920.7010601@doc.ic.ac.uk>
+Date: Fri, 12 Mar 2004 15:37:04 +0000
+From: Concur 2004 <concur2004@doc.ic.ac.uk>
+MIME-Version: 1.0
+To:  categories@mta.ca
+Subject: categories: Concur 2004: Call for Papers
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 25
+
+Call for Papers for CONCUR 2004
+
+CONCUR 2004, the 15th International Conference on Concurrency Theory,
+takes place at the Royal Society, London, Tuesday 31 August - Friday 3
+September 2004. As well as the main event, we will also hold many
+workshops on Monday 30th August and Saturday 4th February, as detailed
+below.  Further information is available at the conference's web site
+
+                   http://www.doc.ic.ac.uk/concur2004
+
+Important dates
+       Submission: Friday 9 April 2004 (submission is now open)
+       Notification: Monday 31 May 2004
+       Final version: Tuesday 15 June 2004
+
+The purpose of the CONCUR conferences is to bring together
+researchers, developers and students in order to advance the theory of
+concurrency, and promote its applications. Interest in this topic is
+continuously growing, as a consequence of the importance and ubiquity
+of concurrent systems and their applications, and of the scientific
+relevance of their foundations.
+
+Submissions are solicited in all areas of semantics, logics and
+verification techniques for concurrent systems. Principal topics
+include (but are not limited to): - Basic models and logics of
+concurrent and distributed computation (such as process algebras,
+Petri nets, domain theoretic or game theoretic models, modal and
+temporal logics).  - Specialized or enriched models (such as circuits,
+synchronous systems, real time and hybrid systems, stochastic systems,
+data bases, mobile and migrating systems, parametric protocols,
+security protocols).  - Related verification techniques and tools
+(such as state-space exploration, model-checking, synthesis,
+abstraction, automated deduction, testing).  - Related programming
+models (such as distributed, constraints or object oriented, graph
+rewriting, as well as associated type systems, static analyses,
+abstract machines, and environments).
+
+Authors are invited to submit an extended abstract not exceeding 15
+pages electronically via the web submission form at the conference's
+web site.  Submissions will be evaluated by the program committee
+for inclusion in the proceedings, which will be published by
+Springer-Verlag in the Lecture Notes in Computer Science
+series. Papers must contain original contributions, be clearly
+written, and include appropriate reference to and comparison with
+related work.  Simultaneous submissions to other conferences are not
+allowed.
+
+There will be a special issue of the journal Theoretical Computer
+Science associated with Concur 2004.
+
+Invited speakers
+
+*  Sriram K. Rajamani (Microsoft Research): Invited Talk on Zing (a
+    model-checking tool based on ideas from process algebra)
+
+*  Peter O'Hearn (Queen Mary University of London) and Steve Brookes
+    (Carnegie-Mellon): Tutorial on Local Reasoning about Concurrent
+    Imperative Programs
+
+*  Bengt Jonsson (Uppsala): Tutorial on Regular Model Checking
+
+Organisers
+
+     * General chair: Philippa Gardner
+     * Programme Committee co-chairs: Philippa Gardner, Nobuko Yoshida
+     * Workshops organisers: Vladimiro Sassone, Julian Rathke
+     * Local organisers: Iain Phillips, Sergio Maffeis, Alex Ahern
+
+Program committee
+       Philippa Gardner, co-chair, UK
+       Nobuko Yoshida, co-chair, UK
+       Luca Aceto,  Denmark
+       Bruno Blanchet, Germany/France
+       Steve Brookes, USA
+       Luca De Alfaro, USA
+       Paul Gastin, France
+       Petr Jancar, Czech Republic
+       Joost-Pieter Katoen, Netherlands
+       Dietrich Kuske, Germany
+       Cosimo Laneve, Italy
+       Michael Mendler, Germany
+       Ugo Montanari, Italy
+       Catuscia Palamidessi, France
+       Vladimiro Sassone, UK
+       PS Thiagarajan, Singapore
+       Antti Valmari,  Finland
+       Wang Yi, Sweden
+
+Concur 2004 gratefully acknowledges sponsorship from Microsoft Research.
+
+Monday workshops
+
+  - Workshop on Structural Operational Semantics, SOS 2004
+    URL = http://www.cs.auc.dk/~luca/SOS-WORKSHOP
+    Contact = Luca Aceto <luca@cs.auc.dk>
+
+  - 11th International Workshop in Expressiveness in Concurrency,
+      EXPRESS 2004
+    URL = http://www.win.tue.nl/express04
+    Contact = Flavio Corradini <flavio.corradini@unicam.it>
+
+  - II Workshop on Object-Oriented Developments, WOOD 2004
+    URL = http://www.dsi.unive.it/wood2004
+    Contact = Viviana Bono <bono@di.unito.it>
+
+  - 3rd International Workshop on Foundations of Coordination Languages
+      and Software Architectures, FOCLASA 2004
+    URL = http://www.info.fundp.ac.be/~jmj/Foclasa04
+    Contact = Jean-Marie JACQUET <jmj@info.fundp.ac.be>
+
+  - 2nd International Workshop on Security Issues in Coordination
+      Models, Languages and Systems, SECCO 2004
+    URL = http://www.cs.unibo.it/secco04/
+    Contact = Gianluigi Zavattaro <zavattar@cs.unibo.it>
+
+  - BIOCONCUR 2004
+    URL = http://www.imm.dtu.dk/bioconcur04
+    Contact = Anna Ingolfsdottir <annai@decode.is>
+
+Friday afternoon + Saturday
+
+  - Global Ubiquitous Computing
+    URL = http://www.cogs.susx.ac.uk/fgc04
+    Contact = Julian Rathke <julianr@susx.ac.uk>
+
+Saturday workshops
+
+  - 3rd International Workshop on Parallel and Distributed Methods in
+      VerifiCation, PDMC 2004
+    URL = http://www.fi.muni.cz/~brim/PDMC04/
+    Contact = Martin Leucker <Martin.Leucker@it.uu.se>
+
+  - First International Workshop on Practical Applications of Stochastic
+      Modelling, PASM 2004
+    URL = http://www.doc.ic.ac.uk/pasm2004
+    Contact = Jeremy Bradley <jb@doc.ic.ac.uk>
+
+  - Infinity
+    URL = http://www.lfcs.ed.ac.uk/Infinity04
+    Contact = Julian Bradfield <jcb@inf.ed.ac.uk>
+
+  - Fourth International Workshop on Automated Verification of Critical
+      Systems, AVoCS 2004
+    URL = http://www.doc.ic.ac.uk/~mrh/AVoCS04.html
+    Contact = Michael Huth <mrh@doc.ic.ac.uk>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar 15 14:12:37 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 15 Mar 2004 14:12:37 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B2wWZ-0005Y8-00
+    for categories-list@mta.ca; Mon, 15 Mar 2004 14:09:15 -0400
+Message-Id: <5.2.0.9.0.20040315075042.01c306e8@pop.cwru.edu>
+X-Sender: cxm7@pop.cwru.edu (Unverified)
+X-Mailer: QUALCOMM Windows Eudora Version 5.2.0.9
+Date: Mon, 15 Mar 2004 09:23:11 -0500
+To: categories@mta.ca
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Topos cohomology, context and technical questions
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"; format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 26
+
+Thanks to Christopher Townsend and Carsten Butz for help on cohomology in
+an elementary topos.  It seems the general theory is not much advanced
+beyond what it was in Johnstone 1977.
+
+My question came out of a conversation with algebraic geometers several
+years ago, which I have taken up again lately.  Deligne, for example,
+describes toposes as one of Grothendieck's great ideas (one of
+Grothendieck's four "idees maitresses").  But for him and many other
+geometers their value lies in organizing cohomology.  Insofar as
+Grothendieck toposes support a simple general theory of cohomology, and
+elementary toposes do not, these people find only Grothendieck toposes
+interesting.
+
+Certainly there is a lot to say for elementary topos theory even from that
+perspective:  The elementary topos axioms organize the theory of
+Grothendieck toposes.  Elementary toposes have some cohomology theory
+though not so simple and general.  And elementary toposes have other
+roles.
+
+What interests me, now, is how far elementary topos theory helps with
+cohomology per se.
+
+One approach is to notice:  The elementary theory of "a topos whose
+Abelian groups have enough injectives" supports a considerable general
+theory of cohomology via injective resolutions.  But I have not worked out
+how far it really goes.  (People with foundational interests will notice
+the exact result depends on whether and how this theory works with
+infinite complexes.  There are various approaches depending on what you
+mean by "elementary".)
+
+
+This raises my first technical question:
+
+SGA 4 proves inverse image functors preserve flat modules, but the
+transparent proof assumes enough points (Exp. V Prop. 1.7).  Deligne gives
+a far from transparent proof, for all (Grothendieck) toposes, in an
+appendix on "local inductive limits".  He urges the reader "to avoid, as a
+matter of principle, reading this appendix".  Is the result proved more
+simply somewhere?  Do "local inductive limits" survive today in some form?
+In short, can we follow Deligne's advice on not reading this appendix, and
+still prove his result?  I have made no progress on the appendix yet, as
+the opening definition is full of typos.  If there is a cleaner exposition
+I'd rather start with that.
+
+The second question:
+
+The IHES version of SGA 4 gives a faulty proof that, in every
+(Grothendieck) topos, rings admit a standard kind of resolution over any
+cover by tensoring with a resolution of the integers.  This is Prop. 1.4
+of Expose V.  The Springer-Verlag version corrects the mistake by proving
+the result only when the topos has enough points (Prop 1.11 Exp. V).
+Johnstone 1977 recovers the theorem for the case of a presheaf topos
+(Lemma 8.2)  which is the case of interest and easily extends to any topos
+with enough points.
+
+Is that version optimal, in some easy to prove sense?  Is there an easy
+example of a ring in a Grothendieck topos where the resolution
+fails?           Is it known to be optimal in any sense?
+
+best, Colin
+
+
+
+
+From rrosebru@mta.ca Thu Mar 18 14:14:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 18 Mar 2004 14:14:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B41zi-0001Ng-00
+    for categories-list@mta.ca; Thu, 18 Mar 2004 14:11:50 -0400
+Message-ID: <40578302.FFF898F4@math.upenn.edu>
+Date: Tue, 16 Mar 2004 17:43:14 -0500
+From: jim stasheff <jds@math.upenn.edu>
+To: "categories@mta.ca" <categories@mta.ca>
+Subject: categories: [Fwd: 2 questions]
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 27
+
+You might also post your quesiton to the category analog of Don's list:
+
+Date: Tue, 16 Mar 2004 15:58:18 -0500
+From: Don Davis <dmd1@lehigh.edu>
+Subject: 2 questions
+
+Two postings, both questions.  Also, I announce that Martin Bendersky
+and I have organized a special session in homotopy theory at the
+AMS meeting in Lawrenceville, NJ, on April 17-18.  This session,
+and several others, honor Bill Browder on his 70th birthday.  There
+will be a banquet in his honor.  The program of this special session
+can be found at http://www.ams.org/amsmtgs/2102_program_ss3.html#title
+or on the conference page of this discussion group,
+http://www.lehigh.edu/~dmd1/conf.html...........DMD
+____________________________________________________________
+
+Subject: Question for the discussion list.
+Date: Tue, 16 Mar 2004 09:31:11 -0800 (PST)
+From: Keir Lockridge <lockridg@math.washington.edu>
+
+Is the full subcategory of finite objects in the stable category
+equivalent, as a triangulated category, to a full subcategory of the
+derived category of an abelian category?  Can the abelian category be
+chosen to be symmetric monoidal and so that S^0 corresponds to a
+resolution of the unit object?
+
+Keir Lockridge
+University of Washington
+Department of Mathematics
+lockridg@math.washington.edu
+___________________________________________________
+
+Subject: Question
+Date: Tue, 16 Mar 2004 20:47:40 +0100
+From: "boccellari" <boccellari@inwind.it>
+
+I am looking for any kind of result concerning the following question.
+
+Consider a space X and an element x \in H^*(X;Z_2).
+Take M(X,K;x) path component of x in the space of maps
+M(X,K) where K is a suitable generalized
+Eilenberg-MacLane space.
+
+Question:
+Is the evaluation map ev : M(X,K;x) \times X \rightarrow K
+either a fibration or a cofibration?
+What about it when X is a Thom space, x its thom class and K = K(Z_2,n)?
+
+Thank you for your help.
+
+Yours faithfully
+
+Tommaso Boccellari
+
+
+
+From rrosebru@mta.ca Thu Mar 18 14:14:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 18 Mar 2004 14:14:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B421k-0001kL-00
+    for categories-list@mta.ca; Thu, 18 Mar 2004 14:13:56 -0400
+Date: Wed, 17 Mar 2004 16:48:31 -0700 (MST)
+From: robin@cpsc.ucalgary.ca
+Reply-To: robin@cpsc.ucalgary.ca
+Subject: categories: FMCS 2004 (Calgary)
+To: categories@mta.ca
+MIME-Version: 1.0
+Content-Type: TEXT/plain; charset=us-ascii
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B421k-0001kL-00@mailserv.mta.ca>
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 28
+
+A preliminary announcement for FMCS 2004:
+__________________________________________________________
+
+     FFFFFFF  M    M   CCC   SSS
+     F        MM  MM  C     S
+     FFFFF    M MM M  C      SSS
+     F        M    M  C         S
+     F        M    M   CCC   SSS          2004 (CALGARY)
+
+_________________________________________________________
+
+http://pages.cpsc.ucalgary.ca/~robin/FMCS/FMCS_04/index.html
+_________________________________________________________
+
+This year's meeting on Foundational Method in Computer Science
+(FMCS 2004) will be hosted by the Programming Languages
+Group at the University of Calgary, June 4th -- June 6th
+and will be held at the Kananaskis Field Station.
+
+Next years meeting will be in Vancouver at UBC ...
+
+__________________________________________________________
+
+FOUNDATIONAL METHODS IN COMPUTER SCIENCE
+
+The workshop is an informal meeting to bring together researchers
+in mathematics and computer science with a focus on the applications
+of category theory in computer science.  It is a three day meeting,
+which starts with a day of tutorials (Friday 4th June) aimed at
+students and newcomers to category theory, followed by a day and a
+half of research talks (Saturday, 5st June and Sunday, 6th June).
+There will be a series of invited presentations (TBA).  The remaining
+research talks are solicited from the participants.
+
+If you wish to give a talk please let us know by sending an abstract
+and title to Robin Cockett or Craig Pastro (see e-mail address below)
+before the 21st May.
+
+Student participation at FMCS is particularly encouraged.  There
+are limited funds to provide support for students who wish to attend
+the workshop (see below).
+__________________________________________________________
+
+Support for graduate students:
+__________________________________________________________
+
+We particularly encourage graduate students to attend FMCS and to
+present their work.  If you wish to give a presentation at FMCS
+you should send a title and a brief abstract to Robin Cockett
+(robin@cpsc.ucalgary.ca).  We would like to receive these abstracts
+before beginning of May so that we can arrange the schedule before
+the meeting itself.
+
+Some limited funding is available to support graduate students who
+wish to attend FMCS.  To apply for this money, you should contact
+Robin Cockett with the following information:
+
+1) A one-page email letter stating your background as well as why you
+   are interested in attending.
+2) The letter should also state whether you have access to any other
+   funding to attend.
+3) An email letter of reference from your supervisor or an appropriate
+   other person.
+
+Applications should be made as soon as possible but before
+Friday 7th May.
+
+__________________________________________________________
+
+Organizer: Robin Cockett (robin@cpsc.ucalgary.ca)
+Local organizer: Craig Pastro (pastroc@cpsc.ucalgary.ca)
+
+
+
+
+From rrosebru@mta.ca Thu Mar 18 14:14:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 18 Mar 2004 14:14:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B420I-0001Vg-00
+    for categories-list@mta.ca; Thu, 18 Mar 2004 14:12:26 -0400
+Date: Wed, 17 Mar 2004 02:47:18 +0000 (GMT)
+From: Dr Eugenia Cheng <elgc2@hermes.cam.ac.uk>
+To: categories@mta.ca
+Subject: categories: 80th PSSL - third announcement
+Message-ID: <Pine.SOL.4.58.0403170227150.20504@yellow.csi.cam.ac.uk>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 29
+
+
+PSSL 80 - Cambridge, UK
+Third announcement: registration deadline
+
+Dear All,
+
+This is the third announcement for the 80th Peripatetic Seminar on
+Sheaves and Logic, which will be held on the weekend of 3rd and 4th April
+in Cambridge, UK.
+
+If you would like to attend the PSSL please send an e-mail to Eugenia
+Cheng, using the form attached below.  Please register by the end of this
+week (ie by Sunday 21st March) in order to be guaranteed accommodation at
+Newnham College.  Please note that the list of talks is already very
+full and it will be hard to squeeze much more in!
+
+For further information including list of registered participants and
+talks, see:
+
+http://www.dpmms.cam.ac.uk/~elgc2/pssl80
+
+The full text of the main announcement can be found at:
+
+http://www.dpmms.cam.ac.uk/~elgc2/pssl80/announce2.html
+
+
+We look forward to seeing you in April.
+
+With best regards,
+
+Eugenia Cheng
+
+
+
+-----------------------------------------------------------------------
+
+REGISTRATION FORM (please delete as appropriate)
+
+
+I, __________________________________________, would like to attend the
+80th PSSL.
+
+I will not be giving a talk / I would like to give a talk entitled
+________________________________________________________________________
+
+My affiliation is _____________________________________ (University etc)
+
+
+I will not require accommodation in Newnham College / I would like
+accommodation in Newnham College for the nights of _____________ April
+
+I will not be attending the dinner on Saturday / I would like to attend
+the dinner on Saturday for 15 pounds.
+
+I need the following non-standard combination of the above options:
+____________________________________________________________________
+
+I have the following special dietary requirements:
+____________________________________________________________________
+
+
+
+I expect that the amount payable will be:
+
+Residential + dinner        117 pounds
+Residential without dinner  102 pounds
+Non-residential + dinner     41 pounds
+Non-residential without dinner   26 pounds
++ ____ extra nights @ 32 pounds
+
+TOTAL _________________
+
+
+I will pay in cash upon registration / I would like to pay online
+
+
+-------------------------------------------------------------------
+
+
+
+
+From rrosebru@mta.ca Thu Mar 18 14:14:56 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 18 Mar 2004 14:14:56 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B4211-0001cB-00
+    for categories-list@mta.ca; Thu, 18 Mar 2004 14:13:11 -0400
+Date: Wed, 17 Mar 2004 10:29:56 -0500
+To: categories@mta.ca
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Deligne on Govorov-Lazard, proof and history
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B4211-0001cB-00@mailserv.mta.ca>
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 30
+
+Deligne's proof that inverse image functors preserve flat modules is to
+internalize the Govorov-Lazard proof that a module is flat iff it is a
+projective colimit of finite free modules, and to show inverse image
+functors preserve these internalized colimits (SGA 4, Springer-Verlag
+edition, Exp. V appendix).
+
+The classical proof (say, Eisenbud COMMUTATIVE ALGEBRA appendix 6, theorem
+A6.6) looks good for topos logic though I admit I have not worked through
+internalizing it.  Also, I have still not fought through the definitions in
+Deligne's appendix to SGA 4.  I would still appreciate any reference to a
+cleaner treatment if anyone knows one.  It seems likely that Deligne's
+"local inductive limits" are internal colimits in the modern sense but I
+have not read the thing closely enough yet to really say that.
+
+This seems to me a strikingly sophisticated lifting of a theorem, from SET
+to any topos, for 1972.  The current methods for routine lifting were just
+being created over here in elementary topos theory at that time.  I believe
+Deligne did not know of that.  Or am I making too much of this proof?  I'd
+appreciate any historical reflections on relations between such lifting in
+the Grothendieck school, and methods of elementary topos theory.
+
+Colin
+
+
+
+
+From rrosebru@mta.ca Sun Mar 21 11:58:58 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 21 Mar 2004 11:58:58 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B55Hj-0007O3-00
+    for categories-list@mta.ca; Sun, 21 Mar 2004 11:54:47 -0400
+Date: Wed, 17 Mar 2004 12:37:05 +0000 (GMT)
+From: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+To: categories@mta.ca
+Subject: categories: new book: Call-By-Push-Value
+Message-ID: <Pine.LNX.4.44.0403171216280.27869-100000@acws-0092.cs.bham.ac.uk>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 31
+
+Dear category theorists,
+
+My book "Call-By-Push-Value" has been published by Kluwer in the "Semantic
+Structures in Computation" bookseries
+
+http://www.wkap.nl/prod/b/1-4020-1730-8
+
+- and I hope it will be of interest to many people on this list.
+Although it is based on my PhD thesis, subsequent research has led to a
+great deal of simplification.  In particular, the categorical structure of
+the programming language - an adjunction between values and stacks - is
+now completely apparent.
+
+Here's the blurb:
+
+Call-By-Push-Value
+A Functional/Imperative Synthesis
+
+"Call-by-push-value is a programming language paradigm that, surprisingly,
+breaks down the call-by-value and call-by-name paradigms into simple
+primitives. This monograph, written for graduate students and researchers,
+exposes the call-by-push-value structure underlying a remarkable range of
+semantics, including operational semantics, domains, possible worlds,
+continuations and games.
+
+"After introducing basic ideas using domain semantics and a stack machine,
+the book is layered to appeal to readers in a variety of fields. One
+strand treats semantics of store, culminating in a possible world model
+for general storage cells. Another "implements" call-by-push-value by
+translating it into the Jump-With-Argument continuation language, enabling
+an account of pointer game semantics that explains its arenas, pointers
+and question/answer labelling in concrete computational terms. Yet another
+gives a categorical picture of call-by-push-value: an adjunction between
+values and stacks.
+
+"Incorporating recent simplifications, this is a key text for anyone
+interested in lambda-calculus, programming language foundations or
+applications of category theory."
+
+Please feel free to email me, either about the book or about the subject!
+
+Regards
+Paul
+http://www.cs.bham.ac.uk/~pbl
+
+
+
+
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Mar 22 15:07:33 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 22 Mar 2004 15:07:33 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5Uio-0001wb-00
+    for categories-list@mta.ca; Mon, 22 Mar 2004 15:04:26 -0400
+Date: Mon, 22 Mar 2004 09:51:19 +0100
+From: Thomas Hildebrandt <hilde@itu.dk>
+To: categories@mta.ca
+Subject: categories: CTCS 2004 - 3rd Call for Papers - Deadline April 9th
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Virus-Scanned: by amavisd-new at itu.dk
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B5Uio-0001wb-00@mailserv.mta.ca>
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 32
+
+  [Apologies if you receive this more than once]
+
+-----------------------------------------------------------------
+                          (APPSEM-II event)
+
+                        3rd CALL FOR PAPERS
+
+10th conference on Category Theory and Computer Science (CTCS'04)
+
+                        August 12-14, 2004
+
+                 IT University of Copenhagen, Denmark
+                 www.itu.dk/research/theory/ctcs2004/
+
+             Submission Deadline: April 9th, 2004
+
+-----------------------------------------------------------------
+
+                          Invited Speakers:
+
+                      Francois Bergeron   (Quebec)
+                      Martin Hyland    (Cambridge)
+                      Robin Milner     (Cambridge)
+                      Andrew Pitts     (Cambridge)
+                      Thomas Streicher (Darmstadt)
+
+-----------------------------------------------------------------
+
+The purpose of the CTCS conference series is the advancement of the
+foundations of computing using the tools of category theory.  Previous
+meetings have been held in Guildford (Surrey), Edinburgh (twice),
+Manchester, Paris, Amsterdam, Cambridge, S. Margherita Ligure
+(Genova), and Ottawa.
+
+The emphasis is upon applications of category theory, but it is
+recognized that the area is highly interdisciplinary. Typical topics
+of interest include, but are not limited to, category-theoretic
+aspects of the following:
+
+* Coalgebras and computing
+* Concurrent and distributed systems
+* Constructive mathematics
+* Declarative programming and term rewriting
+* Domain theory and topology
+* Foundations of computer security
+* Linear logic
+* Modal and temporal logics
+* Models of computation
+* Program logics, data refinement, and specification
+* Programming language semantics
+* Type theory
+
+The proceedings of the conference will be published as a special issue
+of ENTCS (Electronic Notes in Theoretical Computer Science).
+
+-----------------------------------------------------------------
+
+PROGRAMME COMMITTEE
+
+Lars Birkedal, Chair (IT University of Copenhagen)
+Marcelo Fiore (University of Cambridge)
+Masahito Hasegawa (Kyoto University)
+Bart Jacobs (University of Nijmegen)
+Ugo Montanari (University of Pisa)
+Valeria de Paiva (Palo Alto Research Center)
+Dusko Pavlovic (Kestrel Institute)
+John Power (University of Edinburgh)
+Edmund Robinson (Queen Mary, University of London)
+Peter Selinger (University of Ottawa)
+
+-----------------------------------------------------------------
+
+ORGANIZING COMMITTEE
+
+E. Moggi, Chair, (Genova)
+S. Abramsky (Oxford)
+P. Dybjer (Chalmers)
+B. Jay (Sydney)
+A. Pitts (Cambridge)
+
+Local organizing committee:
+
+C. Butz
+T. Hildebrandt
+A.L. Moerk
+
+-----------------------------------------------------------------
+
+SUBMISSION OF PAPERS
+
+Papers should be submitted, preferably in electronic form, to
+ctcs04@itu.dk.
+
+Papers are limited to 15 pages, and must be submitted in dvi,
+postscript, or pdf format, possibly gzipped and/or uuencoded, or sent
+as a standard email attachment. All submissions must be received by
+April 9th, 2004.  If you cannot submit your paper electronically,
+please contact the program chair at ctcs04@itu.dk.
+
+-----------------------------------------------------------------
+
+IMPORTANT DATES
+
+          April 1st, 2004: Student Grants (see below)
+
+      April 9th, 2004: Submission deadline
+
+      June 1st, 2004:  Notification of authors of accepted papers
+
+      July 1st, 2004:  Registration deadline, and Revised papers due
+
+-----------------------------------------------------------------
+
+                            Associated events:
+
+
+FIRST GRADUATE STUDENT SUMMER SCHOOL, August 9-11.
+
+Inspired by the success of the graduate student preconference of
+CTCS'02 in Ottawa, the CTCS of this year will have a graduate student
+summer school from August 9-11, sponsored by the FIRST graduate school
+(www.first.dk).  The goal is to prepare students (with basic knowledge
+of category theory) for CTCS, through mini-courses in the basic areas
+underlying some of the fields of the conference. The school will offer
+the following mini-courses (5 lectures each):
+
+    * Coalgebras, Modal Logic and Stone Duality (Lecturer: Alexander Kurz)
+    * Game Semantics (Lecturer: Guy McCusker)
+    * Operational Semantics (Lecturer: Pawel Sobocinski)
+    * Categorical Models for Concurrency (Lecturer: Thomas Hildebrandt)
+
+Registration Deadline: July 1st.
+
+
+CMCIM WORKSHOP, August 11.
+
+In between the summer school and the CTCS conference, August 11th,
+there will be a half-day workshop on Categorical Methods in
+Concurrency, Interaction and Mobility. The workshop has previously
+been held in connection with CONCUR 2002 and CONCUR 2003.
+
+We invite submissions of extended abstracts (less than 5 pages),
+presenting recent results, challenges or work in progress. There will
+be no formal proceedings of the workshop, informal proceedings will be
+distributed at the workshop. Thus, accepted material may be published
+elsewhere at a later date.
+
+Workshop participation is *free*, but requires registration.
+
+Registration is done by sending an email to hilde@itu.dk, containing
+`CMCIM2004-registration' in the subject, and your full name and
+institution in the body.
+
+Submissions should be sent as PostScript files to: hilde@itu.dk,
+containing `CMCIM-submission' in the subject, and in the body the full
+names of the author(s), title, and a text-only abstract.
+
+Workshop Organizers:
+
+  Thomas Hildebrandt
+  Alexander Kurz
+
+
+CMCIM Workshop Registration Deadline: July 1st.
+CMCIM Workshop Submission Deadline: June 21th.
+
+-----------------------------------------------------------------
+
+STUDENT GRANTS  (application deadline: April 1st!!)
+
+A limited number of grants is available for funding the stay of
+international students at a nearby youth hostel during the summer
+school and conference.
+
+See http://www.itu.dk/research/theory/ctcs2004/accomodation.html
+
+-----------------------------------------------------------------
+
+CONFERENCE, SUMMER SCHOOL and WORKSHOP HOMEPAGE
+
+Updated information is available from
+http://www.itu.dk/research/theory/ctcs2004/
+
+-----------------------------------------------------------------
+
+SPONSORSHIP
+
+The CTCS conference and summer school are APPSEM-II events,
+sponsored by the FIRST graduate school (www.first.dk) and the
+Theory Department at the IT University of Copenhagen
+(www.itu.dk/English/research/theory/)
+
+-----------------------------------------------------------------
+
+POSTER
+
+http://www.itu.dk/research/theory/ctcs2004/plakata4.pdf
+
+
+
+
+
+
+
+From rrosebru@mta.ca Tue Mar 23 14:39:17 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 23 Mar 2004 14:39:17 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5qku-0001Vi-00
+    for categories-list@mta.ca; Tue, 23 Mar 2004 14:36:04 -0400
+From: Peter Selinger <selinger@mathstat.uottawa.ca>
+Message-Id: <200403221911.i2MJBIB15322@quasar.mathstat.uottawa.ca>
+Subject: categories: Update: Workshop on Quantum Programming Languages
+To: categories@mta.ca (Categories List)
+Date: Mon, 22 Mar 2004 14:11:18 -0500 (EST)
+X-Mailer: ELM [version 2.5 PL3]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 33
+
+Dear colleagues,
+
+relative to what I sent last month, the following announcement has
+been updated in three places, marked "*** NEW ***" below. Best wishes,
+-- Peter
+
+
+            SECOND CALL FOR PAPERS
+
+     2nd International Workshop on Quantum Programming Languages
+                  (QPL2004)
+
+           July 12-13, 2004, Turku, Finland
+              Affiliated with LICS 2004
+
+     http://quasar.mathstat.uottawa.ca/~selinger/qpl2004/
+
+                * * *
+
+  The goal of this workshop is to bring together researchers working
+  on mathematical formalisms and programming languages for quantum
+  computing. In the last few years, there has been a growing interest
+  in logical tools, languages, and semantical methods for analyzing
+  quantum computation. These foundational approaches complement the
+  more mainstream research in quantum computation which emphasizes
+  algorithms and complexity theory.
+
+  Possible topics include the syntax and semantics of quantum
+  programming languages, new paradigms for quantum programming,
+  specification of quantum algorithms, higher-order quantum
+  computation, quantum data types, reversible computation, axiomatic
+  approaches to quantum computation, concurrent and distributed
+  quantum computation, compilation of quantum programs, semantical
+  methods in quantum information theory, and categorical models for
+  quantum computation.
+
+  The first workshop in this series was held June 15-16, 2003, in
+  Ottawa, Canada.
+
+INVITED SPEAKER: *** NEW ***
+
+  Richard Jozsa (Bristol)
+
+PROGRAM COMMITTEE: *** NEW ***
+
+  Samson Abramsky (Oxford)
+  Prakash Panangaden (McGill)
+  Peter Selinger (Ottawa)
+
+SUBMISSION PROCEDURES:
+
+  The workshop will be a 1.5-day workshop. Those who wish to give a
+  talk should submit a one-page abstract (or a full paper up to 12
+  pages, if available) by April 25 to selinger@mathstat.uottawa.ca
+  (please put "workshop submission" in the subject line).  Authors of
+  accepted abstracts or papers will be encouraged to submit a full
+  version (subject to a page limit, details to be announced) for
+  inclusion in the informal workshop proceedings (to be distributed at
+  the workshop) by June 7. There will also be a special issue of the
+  journal MSCS devoted to the workshop, see below.
+
+SPECIAL PROCEEDINGS ISSUE OF MSCS: *** NEW ***
+
+  There will be a special issue of the journal Mathematical Structures
+  in Computer Science (MSCS, Cambridge University Press) devoted to
+  this workshop and areas represented at the workshop. There will be a
+  period of at least 4 months for revising and submitting the papers
+  after the workshop.
+
+REGISTRATION:
+
+  Registration and local arrangements will be handled through the
+  LICS 2004 main conference (http://www.dcs.ed.ac.uk/home/als/lics/lics04/).
+  There will be a small fee for attending the workshop, which will
+  cover lunch, coffee, and the informal proceedings.
+
+IMPORTANT DATES/DEADLINES:
+
+  Submission of abstracts:      April 25, 2004
+  Notification of acceptance:       May 20, 2004
+  Paper for informal proceedings:   June 7, 2004
+  Workshop:             July 12-13, 2004
+  Journal paper due:            November 21, 2004
+
+CONTACT INFORMATION:
+
+  Organizer: Peter Selinger
+  Department of Mathematics and Statistics
+  University of Ottawa, Canada
+  Email: selinger@mathstat.uottawa.ca
+
+(revised March 22, 2004)
+
+
+
+From rrosebru@mta.ca Tue Mar 23 14:39:17 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 23 Mar 2004 14:39:17 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5qmJ-0001d0-00
+    for categories-list@mta.ca; Tue, 23 Mar 2004 14:37:31 -0400
+Date: Tue, 23 Mar 2004 14:17:37 +0000
+From: Peter McBurney <p.j.mcburney@csc.liv.ac.uk>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.0.2) Gecko/20030708
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: <categories@mta.ca>
+Subject: categories: CFP:  Knowledge and Games
+Content-Type: text/plain; charset=iso-8859-1; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-MIME-Autoconverted: from 8bit to quoted-printable by tethys.server.csc.liv.ac.uk id i2NEHbP15385
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B5qmJ-0001d0-00@mailserv.mta.ca>
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 34
+
+
+WITH APOLOGIES FOR MULTIPLE POSTINGS
+
+
+Call for participation
+
+A Workshop on Knowledge and Games
+
+Liverpool, UK
+
+10th  + 11th July 2004
+
+
+Organising committee
+
++ Peter McBurney (University of Liverpool)
++ Wiebe van der Hoek (University of Liverpool)
++ Sieuwert van Otterloo (University of Liverpool)
++ Michael Wooldridge (University of Liverpool)
+
+
+Programme Committee:
+Johan van Benthem (University of Amsterdam)
+Valentin Goranko (Rand Afrikaans University)
+Wilfrid Hodges (Queen Mary University of London)
+Barteld Kooi (University of Groningen)
+Alessio Lomuscio (King's College London)
+Peter McBurney (University of Liverpool)
+John-Jules Meyer (Utrecht University)
+Marc Pauly (IRIT Toulouse)
+Karl Tuyls (Vrije Universiteit Brussel)
+Mike Wooldridge (University of Liverpool)
+Ann Now=E9 (Vrije Universiteit Brussel)
+
+
+The aim of this workshop is to bring together researchers from  the=20
+multi-agent  systems,  logic,  and game theory
+communities in order to discuss work that combines, in some way, formal=20
+theories of knowledge  and games.  The workshop
+will take place immediately after the European Agent Systems Summer=20
+School, which will also be held in Liverpool.
+
+
+This two day workshop is intended as an informal meeting, with plenty of=20
+opportunities for discussion.  We  invite
+participants to send in short papers or abstracts of ongoing research or=20
+previously published results,  which  will be
+informally reviewed. The authors of accepted papers will be invited to=20
+present their work at the workshop. Informal
+proceedings will be distributed during the workshop. In addition, all=20
+authors of previously unpublished papers
+are offered the opportunity to submit a full paper to "Knowledge,=20
+Rationality and Action", which will be reviewed
+by the workshop PC."
+
+
+Important dates (all in 2004)
+
+    Paper deadline: May 1st
+    Acceptance notification May 14th
+    Early registration deadline May 28th
+    Workshop: Saturday 10 and Sunday 11th of July
+            (directly after EASSS summer school)
+
+
+Topics of interest include, but are not restricted to:
++ epistemic logic
++ coalition/cooperation logics
++ game semantics of logic
++ logics for games
++ formal theories of knowledge and action
++ connections between process models and game models
++ knowledge games
++ epistemic model checking
++ epistemic properties of solution concepts
+
+
+For more information, contact:
+
+Sieuwert van Otterloo
+
+sieuwert  _ at _ csc.liv.ac.uk
+
+www.csc.liv.ac.uk/~sieuwert/knowledgegames
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D
+
+
+
+
+
+From rrosebru@mta.ca Tue Mar 23 14:39:17 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 23 Mar 2004 14:39:17 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5qlO-0001Y7-00
+    for categories-list@mta.ca; Tue, 23 Mar 2004 14:36:34 -0400
+From: "M.M. Bonsangue" <marcello@liacs.nl>
+Date: Tue, 23 Mar 2004 10:30:11 +0100
+Message-Id: <200403230930.i2N9UB802412@pc157aa.liacs.nl>
+To: categories@mta.ca
+Subject: categories: Preliminary call for Participation: FMCO 2004
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 35
+
+**************** PRELIMINARY CALL FOR PARTICIPATION ********************
+
+                 Third International Symposium on
+              Formal Methods for Components and Objects
+                             (FMCO 2004)
+
+The objective of  this symposium is to bring  together top researchers
+in the  area of software  engineering to discuss  the state-of-the-art
+and future applications of formal  methods in the development of large
+component-based and object-oriented software systems.
+
+DATES 2 - 5 November 2004
+PLACE Lorentz Center, Leiden University, Leiden, The Netherlands
+URL   http://fmco.liacs.nl/fmco04.html
+
+Participation  is limited  to about  80  people, based  on a  first-in
+first-served  policy.  For  more information  about  participation and
+registration see the  FMCO site at http://fmco.liacs.nl/fmco04.html or
+consult  either   F.S.   de   Boer  (frb@cwi.nl)  or   M.M.  Bonsangue
+(marcello@liacs.nl).
+
+
+PRELIMINARY PROGRAM
+
+TUESDAY 2nd, November 2004
+
+ 8:45 -  9:00 Welcome
+ 9:00 - 10:00 Keynote: Robin Milner (Cambridge University, UK)
+
+10:00 - 10:30 Break
+
+10:30 - 11:15 Rocco de Nicola (University of Firenze, IT)
+11:15 - 12:00 Eugenio Moggi (Genova University, IT)
+
+12:00 - 13:30 Lunch break
+
+13:30 - 14:30 Keynote: Kim Bruce (Williams College, USA)
+
+14:30 - 15:00 Break
+
+15:00 - 15:45 Julian Rathke (Sussex University, UK)
+
+15:45 - 16:00 Break
+
+16:00 - 16:45 Martin Steffen (Kiel University, DE)
+16:45 - 17:30 Marcello Bonsangue (LIACS, NL)
+
+WEDNESDAY 3rd, November 2004
+
+ 9:00 - 10:00 Keynote: Tom Henzinger (University of California, Berkeley, USA)
+
+10:00 - 10:30 Break
+
+10:30 - 11:15 Susanne Graf (Verimag, FR)
+11:15 - 12:00 Wang Yi (Uppsala University, SE)
+
+12:00 - 13:15 Lunch break
+
+13:15 - 14:15 Keynote: Thomas Ball (Microsoft Research at Redmond, USA)
+
+14:15 - 14:30 Break
+
+14:30 - 15:15 Frits Vaandrager (Nijmegen University, NL)
+15:15 - 16:00 Tobias Nipkow (Munchen University, DE)
+
+17:00 - 19:15 Social Event
+19:30 -       Dinner
+
+THURSDAY 4th, November 2004
+
+ 9:00 - 10:00 Keynote: Kim Larsen (Aalborg University, DK)
+
+10:00 - 10:30 Break
+
+10:30 - 11:15 Ed Brinksma (University of Tweente, NL)
+11:15 - 12:00 Andreas Podelski (Max Plank Inst. for Informatics, DE)
+
+12:00 - 13:30 Lunch break
+
+13:30 - 14:30 Keynote: Chris Hankin (Imperial College, UK)
+
+14:30 - 15:00 Break
+
+15:00 - 15:45 David Naumann (Stevens Institute of Technology, USA)
+15:45 - 16:30 Wolfgang Weck (Oberon Microsystems, CH)
+
+16:30 - 16:45 Break
+
+16:45 - 17:30 Liu Zhiming (UNU-IIST, Macao)
+
+FRIDAY 5th, November 2004
+
+ 9:00 - 10:00 Keynote: Samson Abramsky (Oxford University, UK)
+
+10:00 - 10:30 Break
+
+10:30 - 11:15 Luca de Alfaro (UC Santa Cruz, USA)
+11:15 - 12:00 Luis Barbosa (Minho University, PT)
+
+12:00 - 13:30 Lunch break
+
+13:30 - 14:30 Keynote: Reinhard Wilhelm (Saarland University, DE)
+
+14:30 - 15:00 Break
+
+15:00 - 15:45 Olaf Owe (University of Oslo, NO)
+15:45 - 16:30 Pierre Cointe (Ecole des Mines de Nantes, FR)
+
+
+
+ORGANIZING COMMITTEE
+F.S. de Boer (CWI and Utrecht University)
+M.M. Bonsangue (LIACS-Leiden University)
+S. Graf (Verimag)
+W.P. de Roever (CAU)
+
+
+
+From rrosebru@mta.ca Tue Mar 23 14:40:47 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 23 Mar 2004 14:40:47 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5qmw-0001iW-00
+    for categories-list@mta.ca; Tue, 23 Mar 2004 14:38:10 -0400
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Subject: categories: Domains VII (Call for Abstracts)
+To: categories@mta.ca
+Date: Tue, 23 Mar 2004 16:15:42 +0100 (CET)
+X-Mailer: ELM [version 2.4ME+ PL100 (25)]
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B5qmw-0001iW-00@mailserv.mta.ca>
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 36
+
+
+
+
+            Announcement and Call for Abstracts
+
+
+                        DOMAINS VII
+
+             Darmstadt, August 29 - September 1
+
+
+The WORKSHOP DOMAINS series is aimed at computer scientists and
+mathematicians alike who share an interest in the mathematical
+foundations of computation. It focusses on domains, their applications
+and related topics.
+
+The series was conceived and first realised by Klaus Keimel in
+Darmstadt in 1994. This seventh workshop returns to Darmstadt on
+the occasion of his 65th birthday.
+
+
+The following have declared their intention to participate:
+
+P.-L. Curien  Univerity Paris 7
+Yu.L. Ershov  Sib. Branch of the Russian Academy of Science, Novosibirsk
+J.D. Lawson   Louisiana State University
+M. Mislove    Tulane University
+J.-E. Pin     University Paris 7
+D.S. Scott    Carnegie Mellon University
+
+SCOPE
+
+Domain Theory has had applications to programming language semantics
+and logics (lambda calculus, PCF, LCF), recursion theory, general
+topology, topological algebra and analysis.
+
+As such Domain Theory is highly interdisciplinary. Part of the
+workshop will be devoted to the study of Continuous Phenomena in
+Computer Science, one of the themes of the APPLIED SEMANTICS II
+Network. Topics of interaction with Domain Theory for this workshop
+include, but are not limited to
+
+  computation over the reals and other classical spaces
+  probabilistic computation
+  topology / locale theory
+  constructive mathematics and its semantics
+  computability theory
+  program semantics
+  program logics
+  lambda calculus
+  models of sequential computation
+
+
+LOCATION
+
+The Workshop will take place at Technische Universitaet Darmstadt
+located in the center of the city of Darmstadt.
+
+
+WORKSHOP SCHEDULE
+
+August 29 is the arrival day. There will be a barbecue in the
+afternoon or a dinner in the evening. The talks will take place from
+9 a.m on Monday, August 30, until 5 p.m. on Wednesday, September 1.
+
+
+PARTICIPATION
+
+If you would like to participate in this workshop as we hope, please
+let us know:
+
+     email:  domains7@mathematik.tu-darmstadt.de
+
+Please indicate whether you would like to give a talk.
+
+
+SUBMISSION of ABSTRACTS
+
+One page abstracts should be submitted to
+
+         domains7@mathematik.tu-darmstadt.de
+
+Shortly after an abstract is submitted (usually one or two weeks), the authors
+will be notified by the programme committee. Abstracts will be dealt with on
+a first come/first served basis.
+
+Submit as soon as possible, DEADLINE   30 June 2004
+
+
+ACCOMODATION
+
+Participants will have to arrange accomodation by themselves in local
+hotels. There will be a certain number of hotel rooms made available
+through www.proregio-darmstadt.de. Details will be communicated later.
+
+
+FEES
+
+The Workshop is organized without institutional financial
+support. There will be a modest registration fee for covering
+expenses.
+
+
+PROGRAMME AND ORGANIZING COMMITTEE
+
+Achim Jung          University of Birmingham
+Klaus Keimel        Technische Universitaet Darmstadt
+Thomas Streicher    Technische Universitaet Darmstadt
+
+
+
+From rrosebru@mta.ca Tue Mar 23 14:41:12 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 23 Mar 2004 14:41:12 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B5qnn-0001lu-00
+    for categories-list@mta.ca; Tue, 23 Mar 2004 14:39:03 -0400
+Date: Mon, 22 Mar 2004 18:37:07 -0800 (PST)
+From: Galchin Vasili <vngalchin@yahoo.com>
+Subject: categories: Cantor set/cantor dust and constructivism
+To: cat group <categories@mta.ca>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1B5qnn-0001lu-00@mailserv.mta.ca>
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 37
+
+Hello,
+
+    This question is a little bit afield; however, it is still tied in
+with intuitionistic logic. On my Linux machine, I have a screensaver that
+is a three-dimensional of a Cantor set. A Cantor set has prescription or
+algorithm as to how we "calculate" or build it. Question: From a
+constructivist viewpoint though, can we ever realize the actual object
+which is infinite?
+
+Regards, Bill Halchin
+
+
+From rrosebru@mta.ca Thu Mar 25 15:14:52 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 25 Mar 2004 15:14:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B6aIM-0004o0-00
+    for categories-list@mta.ca; Thu, 25 Mar 2004 15:13:38 -0400
+X-Authentication-Warning: client122.comlab: lo owned process doing -bs
+Date: Thu, 25 Mar 2004 16:23:41 +0000 (GMT)
+From: Luke Ong <Luke.Ong@comlab.ox.ac.uk>
+To: categories@mta.ca
+Subject: categories: University Lectureship in Computer Science, Univ of Oxford
+Message-ID: <Pine.GSO.4.51.0403251621420.11783@client122.comlab>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=iso-8859-1
+Content-Transfer-Encoding: QUOTED-PRINTABLE
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 39
+
+=09=09=09UNIVERSITY OF OXFORD
+=09=09Mathematical and Physical Sciences Division
+=09=09=09Computing Laboratory
+=09=09in association with St John's College
+
+=09UNIVERSITY LECTURERSHIP IN COMPUTER SCIENCE
+
+Applications are invited for a University Lecturership in Computer
+Science from outstanding candidates working in any area of Computer
+Science.
+
+The successful candidate will be expected to engage in research of an
+internationally leading quality.  He or she will be expected to
+lecture, supervise graduate students and perform other departmental
+duties under the direction of the Head of Department.
+
+The successful candidate will be appointed to a Tutorial Fellowship at
+St. John's College.  As a Tutorial Fellow, the appointee will be
+expected to take a full part in the selection, academic progress and
+pastoral oversight of undergraduates reading Final Honours Schools
+involving Computer Science.  The college requires a maximum of 6 hours
+teaching per week of full term (averaged over the three terms of the
+academic year) and performance of associated duties such as the
+pastoral care of Computer Science graduates.
+
+The combined University and College salary will be according to age on
+a scale up to =A342,900 (pay award pending).  Further allowances may be
+payable from the college as detailed in its associated Further
+Particulars.
+
+Further Particulars of the post, including Selection Criteria and
+application method, together with more detailed descriptions of the
+Department and College duties are available at
+
+=09   www.comlab.ox.ac.uk/jobs
+
+by telephone request to +44 (0)1865 273831 or by email request to
+lecturership@comlab.ox.ac.uk.  The closing date for receipt of
+applications is 21st April 2004.
+
+
+
+
+From rrosebru@mta.ca Thu Mar 25 15:14:52 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 25 Mar 2004 15:14:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B6aFh-0004V8-00
+    for categories-list@mta.ca; Thu, 25 Mar 2004 15:10:53 -0400
+Date: Tue, 23 Mar 2004 14:50:00 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200403231950.i2NJo0S8023836@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Re: Cantor set/cantor dust and constructivism
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 40
+
+The question is: "From a constructivist viewpoint though, can we ever
+realize the actual object which is infinite?"
+
+Unless you specialize to decidable objects (excluded middle for
+equality) then there is no easy way to _avoid_ infinite objects.
+
+One may get a hint of this from the following example: in the category
+of  N-sets (sets with a distinguished self-map) let  A  be the
+two-element set in which the distinguished self-map has a unique
+fixed point. In Cats and Allegories (1.925) we point out that  A^A,
+the object of self-maps of  A, falls apart as a coproduct (disjoint
+union) of continuously many  N-sets. Hence if one takes the set of
+equivalence classes of  A^A, where the equivalence relation is the
+double-negation of equality, one obtains a discrete set (it has
+trivial N-action) whose cardinality is the continuum.
+
+But that's just a hint.
+
+Consider the following theorem for topoi. Let  T  be the initial
+object in the category of topoi and logical morphisms. _No axiom of
+infinity._ Let  1  be the terminator in  T.  Let  Omega  be its power
+object. Let  P  be  Omega^Omega, the object of self-maps on  Omega.
+There's a subobject, M, of  P  on which we may define the structure of
+a rig (a ring without negation) that mimics the natural numbers. In
+particular the set of global sections, that is, maps from  1  to  M
+with its inherited rig structure, is isomorphic to the standard natural
+numbers.
+
+Because the global sections can be misleading in an arbitrary topos
+it's worth pointing out that  M  mimics the natural numbers even from
+an internal point of view. For instance given any pair of polynomials,
+f(x_1,...,x_n), g(x_1,...,x_n)  with natural-number coefficients the
+the first-order sentence
+
+  \exists_{x_1,...,x_n\in M}   f(x_1,...,x_n) = g(x_1,...,x_n)
+
+is satisfied in  T  iff it is satisfied in the standard natural
+numbers.
+
+An elaboration of this argument allows us to construct a topos-object
+in  T  whose topos of global sections is isomorphic to the free topos
+with natural-numbers-object. And, as for  M, an equation in the theory
+of topoi is internally true for this internal topos iff it is true for
+the free topos with NNO.
+
+Lest one think I'm butting up against the consistency proof, the truth
+value in  T  of  0 = 1  in  M  is not totally false. (That is, M  is
+"somewhat inconsistent" from the internal point of view.) From the
+external point of view, though, the two maps from the terminator to  M
+that name  0  and  1  are not equal (from the internal point of view
+their equalizer is non-trivial). In particular we can find  f,g  so
+that the first-order sentence above has no standard solutions but is
+not totally false in  T.
+
+The slogan: once you've given up excluded middle there's no gain in
+giving up the axiom of infinity.
+
+
+
+
+
+From rrosebru@mta.ca Fri Mar 26 12:54:38 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 26 Mar 2004 12:54:38 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B6uYp-0006NL-00
+    for categories-list@mta.ca; Fri, 26 Mar 2004 12:51:59 -0400
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Message-Id: <200403261407.PAA29318@fb04209.mathematik.tu-darmstadt.de>
+Subject: categories: arithmetical and geometric reals in (models of) SDG
+To: categories@mta.ca
+Date: Fri, 26 Mar 2004 15:07:42 +0100 (CET)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status:
+X-Keywords:
+X-UID: 41
+
+Recently I was asking myself what is the relation between the arithmetical
+(Dedekind) reals in a topos and a ring R satisfying the usual SDG axioms
+(i.e. at least the Kock-Lawvere) axiom.
+
+>From the few things I know about models of SDG it seems to me as if in the
+usual sheaf models (over a site Loc of `loci') the Dedekind reals form a
+subring of R = y(\Re) (where \Re is the locus corresponding to the reals).
+As long as one considers just presheaves that's clear as the Dedekind reals
+are given by \Delta(\Re).
+Probably taking sheaves that situation isn't changed dramatically?
+
+So my impression is that in the usual sheaf models of SDG the real line R
+carries the structure of an algebra over the Dedekind reals. However, I don't
+see how to construct such an embedding of Dedekind reals into R based only
+on the usual axioms of SDG. Of course, when given an order on R and R is
+assumed as a Q-algebra then one has a good candidate for a function from R
+to R_D sending x \in R to {q \in Q | q.1 \leq x}. But how to define purely
+logically an embedding of R_D into R remains mysterious (to me).
+
+I am fully aware of the fact that my question is a bit `against the strain'
+of SDG but we know that both kinds of reals do coexist in topos models.
+But is this coexistence only peaceful or rather more collaborative?
+
+I am certain that people must have thought about this but I couldn't find
+anything at the usual places where to look. So I would be grateful for
+comments (on the correctness of my above speculations) or pointers to
+existing literature or folklore.
+
+Best, Thomas Streicher
+
+
+
+From rrosebru@mta.ca Fri Mar 26 12:54:38 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 26 Mar 2004 12:54:38 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B6uXA-0006Ee-00
+    for categories-list@mta.ca; Fri, 26 Mar 2004 12:50:16 -0400
+Date: Fri, 26 Mar 2004 08:39:01 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200403261339.i2QDd1h2017423@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Addendum
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 42
+
+I wrote:
+
+  [I]n the category  of  N-sets (sets with a distinguished self-map)
+  let  A  be the two-element set in which the distinguished self-map
+  has a unique fixed point....A^A, the object of self-maps of  A,
+  falls apart as a coproduct (disjoint union) of continuously many
+  N-sets. Hence if one takes the set of equivalence classes of  A^A,
+  where the equivalence relation is the double-negation of equality,
+  one obtains a discrete set (it has trivial N-action) whose
+  cardinality is the continuum.
+
+It's more complicated. One obtains a disjoint union of "cycles", that
+is, objects of the form  Z/nZ  where the distinguished self-map is
+addition by  1. For each  n > 0  there are only a finite number of
+copies of  Z/nZ. The number of copies of  Z = Z/0Z  is uncountable.
+
+Postscript:
+
+The sequence of numbers of copies of each finite cycle is, of course,
+guaranteed to be in Neil Sloan's "On-Line Encyclopedia of Integer
+Sequences", but we didn't have that. Instead in 1.925 of Cats &
+Alligators we gave a ridiculous -- but both correct and unimprovable
+-- formula for that finite number. Preceding it was a sentence that
+begins "Bearing in mind that, as far as we know, this is computation
+for its own sake". Anyway, you can find the same formula at
+
+      mathworld.wolfram.com/IrreduciblePolynomial.html
+
+under the name  L_q(n)  (with  q = 2).
+
+With the exception of the zero'th value (in our case it's
+2^{\Aleph_0}, for Lyndon words it's 1) here's what Sloan has to say:
+
+
+ID Number: A001037 (Formerly M0116 and N0046)
+URL:       http://www.research.att.com/projects/OEIS?Anum=A001037
+Sequence:  1,2,1,2,3,6,9,18,30,56,99,186,335,630,1161,2182,4080,7710,
+           14532,27594,52377,99858,190557,364722,698870,1342176,
+           2580795,4971008,9586395,18512790,35790267,69273666,
+           134215680,260300986,505286415,981706806
+Name: Degree n irreducible polynomials over GF(2); n-bead necklaces
+           with beads of 2 colors when turning over is not allowed and
+           with primitive period n; binary Lyndon words of length n.
+Comments:  Also dimensions of free Lie algebras - see A059966, which is
+           essentially the same sequence.
+References E. R. Berlekamp, Algebraic Coding Theory, McGraw-Hill, NY, 1968, p.
+              84.
+           R. Church, Tables of irreducible polynomials for the first
+              four prime moduli, Annals Math., 36 (1935), 198-209.
+           E. N. Gilbert and J. Riordan, Symmetry types of periodic
+              sequences, Illinois J. Math., 5 (1961), 657-665.
+           M. A. Harrison, On the classification of Boolean functions
+              by the general linear and affine groups, J. Soc. Indust.
+              Appl. Math. 12 (1964) 285-299.
+           M. Lothaire, Combinatorics on Words. Addison-Wesley,
+              Reading, MA, 1983, p. 79.
+           G. Melancon, Factorizing infinite words using Maple,
+              MapleTech journal, vol 4, no. 1, 1997, pp. 34-42, esp.
+              p. 36.
+           M. R. Nester, (1999). Mathematical investigations of some
+              plant interaction designs. PhD Thesis. University of
+              Queensland, Brisbane, Australia.
+           G. Viennot, Algebres de Lie Libres et Monoides Libres,
+              Lecture Notes in Mathematics 691, Springer verlag 1978.
+
+
+
+From rrosebru@mta.ca Mon Mar 29 09:37:39 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 29 Mar 2004 09:37:39 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B7wsc-0003O9-00
+    for categories-list@mta.ca; Mon, 29 Mar 2004 09:32:42 -0400
+Date: Sat, 27 Mar 2004 08:09:23 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200403271309.i2RD9NkD027962@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Postscript^2
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 43
+
+  Cats & Alligators has just made it into Neil Sloane's "On-Line
+  Encyclopedia of Integer Sequences"!
+
+  Here's how the top of A001037 now reads:
+
+ID Number: A001037 (Formerly M0116 and N0046)
+URL:       http://www.research.att.com/projects/OEIS?Anum=A001037
+Sequence:  1,2,1,2,3,6,9,18,30,56,99,186,335,630,1161,2182,4080,7710,
+           14532,27594,52377,99858,190557,364722,698870,1342176,
+           2580795,4971008,9586395,18512790,35790267,69273666,
+           134215680,260300986,505286415,981706806
+Name: Degree n irreducible polynomials over GF(2); n-bead necklaces
+           with beads of 2 colors when turning over is not allowed and
+           with primitive period n; binary Lyndon words of length n.
+Comments:  Also dimensions of free Lie algebras - see A059966, which is
+           essentially the same sequence.
+References E. R. Berlekamp, Algebraic Coding Theory, McGraw-Hill, NY,
+              1968, p. 84.
+           R. Church, Tables of irreducible polynomials for the first
+              four prime moduli, Annals Math., 36 (1935), 198-209.
+           P. J. Freyd and A. Scedrov, Categories, Allegories,
+              North-Holland, Amsterdam, 1990. See 1.925.
+           E. N. Gilbert and J. Riordan, Symmetry types of periodic
+              sequences, Illinois J. Math., 5 (1961), 657-665.
+           M. A. Harrison, On the classification of Boolean functions
+              by the general linear and affine groups, J. Soc. Indust.
+              Appl. Math. 12 (1964) 285-299.
+           M. Lothaire, Combinatorics on Words. Addison-Wesley,
+              Reading, MA, 1983, p. 79.
+           G. Melancon, Factorizing infinite words using Maple,
+              MapleTech journal, vol 4, no. 1, 1997, pp. 34-42, esp.
+              p. 36.
+           M. R. Nester, (1999). Mathematical investigations of some
+              plant interaction designs. PhD Thesis. University of
+              Queensland, Brisbane, Australia.
+           G. Viennot, Algebres de Lie Libres et Monoides Libres,
+              Lecture Notes in Mathematics 691, Springer verlag 1978.
+
+
+Postscript^3:
+
+For the record, this is the 8th item in which my name appears. The
+complete list:
+
+    A000602
+    A000628
+    A000670
+    A001037
+    A067608
+    A067609
+    A067610
+    A067765
+
+
+From rrosebru@mta.ca Wed Mar 31 11:53:57 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 31 Mar 2004 11:53:57 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B8hzk-0001TO-00
+    for categories-list@mta.ca; Wed, 31 Mar 2004 11:51:12 -0400
+Message-ID: <40687CC2.5000606@doc.ic.ac.uk>
+Date: Mon, 29 Mar 2004 20:45:06 +0100
+From: Concur 2004 <concur2004@doc.ic.ac.uk>
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.3) Gecko/20030312
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To:   categories@mta.ca
+Subject: categories: CONCUR 2004: Final CFP - deadline approaching
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 44
+
+Final Call for Papers for CONCUR 2004
+
+[Apologies for multiple postings]
+
+The submission deadline for CONCUR 2004 is fast approaching:
+
+            **** Friday 9 April 2004 ****
+
+New information since previous announcements:
+
+*  David Harel (Weizmann Institute) will give an invited talk entitled
+   "A Grand Challenge: Towards Full Reactive Modeling of a Multi-Cellular
+   Animal" (see below for other invited speakers)
+
+*  There will be a special issue of the journal Theoretical Computer
+   Science associated with CONCUR 2004.
+
+*  There will be a volume of Electronic Notes in Theoretical Computer
+   Science associated with the workshops.
+
+-------------------------------------------------
+
+CONCUR 2004, the 15th International Conference on Concurrency Theory,
+takes place at the Royal Society, London, Tuesday 31 August - Friday 3
+September 2004. As well as the main event, we will also hold many
+workshops on Monday 30th August and Saturday 4th February, as detailed
+below.  Further information is available at the conference's web site
+
+                  http://www.doc.ic.ac.uk/concur2004
+
+Important dates
+      Submission: Friday 9 April 2004
+      Notification: Monday 31 May 2004
+      Final version: Tuesday 15 June 2004
+
+The purpose of the CONCUR conferences is to bring together
+researchers, developers and students in order to advance the theory of
+concurrency, and promote its applications. Interest in this topic is
+continuously growing, as a consequence of the importance and ubiquity
+of concurrent systems and their applications, and of the scientific
+relevance of their foundations.
+
+Submissions are solicited in all areas of semantics, logics and
+verification techniques for concurrent systems. Principal topics
+include (but are not limited to): - Basic models and logics of
+concurrent and distributed computation (such as process algebras,
+Petri nets, domain theoretic or game theoretic models, modal and
+temporal logics).  - Specialized or enriched models (such as circuits,
+synchronous systems, real time and hybrid systems, stochastic systems,
+data bases, mobile and migrating systems, parametric protocols,
+security protocols).  - Related verification techniques and tools
+(such as state-space exploration, model-checking, synthesis,
+abstraction, automated deduction, testing).  - Related programming
+models (such as distributed, constraints or object oriented, graph
+rewriting, as well as associated type systems, static analyses,
+abstract machines, and environments).
+
+Authors are invited to submit an extended abstract not exceeding 15
+pages electronically via the web submission form at the conference's
+web site.  Submissions will be evaluated by the program committee
+for inclusion in the proceedings, which will be published by
+Springer-Verlag in the Lecture Notes in Computer Science
+series. Papers must contain original contributions, be clearly
+written, and include appropriate reference to and comparison with
+related work.  Simultaneous submissions to other conferences are not
+allowed.
+
+There will be a special issue of the journal Theoretical Computer
+Science associated with Concur 2004.
+
+Invited speakers
+
+*  David Harel (Weizmann Institute): Invited Talk entitled "A Grand
+   Challenge: Towards Full Reactive Modeling of a Multi-Cellular
+   Animal"
+
+*  Sriram K. Rajamani (Microsoft Research): Invited Talk on Zing (a
+   model-checking tool based on ideas from process algebra)
+
+*  Peter O'Hearn (Queen Mary University of London) and Steve Brookes
+   (Carnegie-Mellon): Tutorial on Local Reasoning about Concurrent
+   Imperative Programs
+
+*  Bengt Jonsson (Uppsala): Tutorial on Regular Model Checking
+
+Organisers
+
+    * General chair: Philippa Gardner
+    * Programme Committee co-chairs: Philippa Gardner, Nobuko Yoshida
+    * Workshops organisers: Vladimiro Sassone, Julian Rathke
+    * Local organisers: Iain Phillips, Sergio Maffeis, Alex Ahern
+
+Program committee
+      Philippa Gardner, co-chair, UK
+      Nobuko Yoshida, co-chair, UK
+      Luca Aceto,  Denmark
+      Bruno Blanchet, Germany/France
+      Steve Brookes, USA
+      Luca De Alfaro, USA
+      Paul Gastin, France
+      Petr Jancar, Czech Republic
+      Joost-Pieter Katoen, Netherlands
+      Dietrich Kuske, Germany
+      Cosimo Laneve, Italy
+      Michael Mendler, Germany
+      Ugo Montanari, Italy
+      Catuscia Palamidessi, France
+      Vladimiro Sassone, UK
+      PS Thiagarajan, Singapore
+      Antti Valmari,  Finland
+      Wang Yi, Sweden
+
+Concur 2004 gratefully acknowledges sponsorship from Microsoft Research.
+
+Monday workshops
+
+- Workshop on Structural Operational Semantics, SOS 2004
+   URL = http://www.cs.auc.dk/~luca/SOS-WORKSHOP
+   Contact = Luca Aceto <luca@cs.auc.dk>
+
+- 11th International Workshop in Expressiveness in Concurrency,
+     EXPRESS 2004
+   URL = http://www.win.tue.nl/express04
+   Contact = Flavio Corradini <flavio.corradini@unicam.it>
+
+- II Workshop on Object-Oriented Developments, WOOD 2004
+   URL = http://www.dsi.unive.it/wood2004
+   Contact = Viviana Bono <bono@di.unito.it>
+
+- 3rd International Workshop on Foundations of Coordination Languages
+     and Software Architectures, FOCLASA 2004
+   URL = http://www.info.fundp.ac.be/~jmj/Foclasa04
+   Contact = Jean-Marie JACQUET <jmj@info.fundp.ac.be>
+
+- 2nd International Workshop on Security Issues in Coordination
+     Models, Languages and Systems, SECCO 2004
+   URL = http://www.cs.unibo.it/secco04/
+   Contact = Gianluigi Zavattaro <zavattar@cs.unibo.it>
+
+- BIOCONCUR 2004
+   URL = http://www.imm.dtu.dk/bioconcur04
+   Contact = Anna Ingolfsdottir <annai@decode.is>
+
+Friday afternoon + Saturday
+
+- Global Ubiquitous Computing
+   URL = http://www.cogs.susx.ac.uk/fgc04
+   Contact = Julian Rathke <julianr@susx.ac.uk>
+
+Saturday workshops
+
+- 3rd International Workshop on Parallel and Distributed Methods in
+     VerifiCation, PDMC 2004
+   URL = http://www.fi.muni.cz/~brim/PDMC04/
+   Contact = Martin Leucker <Martin.Leucker@it.uu.se>
+
+- First International Workshop on Practical Applications of Stochastic
+     Modelling, PASM 2004
+   URL = http://www.doc.ic.ac.uk/pasm2004
+   Contact = Jeremy Bradley <jb@doc.ic.ac.uk>
+
+- Infinity
+   URL = http://www.lfcs.ed.ac.uk/Infinity04
+   Contact = Julian Bradfield <jcb@inf.ed.ac.uk>
+
+- Fourth International Workshop on Automated Verification of Critical
+     Systems, AVoCS 2004
+   URL = http://www.doc.ic.ac.uk/~mrh/AVoCS04.html
+   Contact = Michael Huth <mrh@doc.ic.ac.uk>
+
+*  There will be a volume of Electronic Notes in Theoretical Computer
+   Science associated with the workshops.
+
+
+
+
+
+From rrosebru@mta.ca Wed Mar 31 11:53:57 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 31 Mar 2004 11:53:57 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B8hz5-0001Jk-00
+    for categories-list@mta.ca; Wed, 31 Mar 2004 11:50:31 -0400
+Date: Mon, 29 Mar 2004 11:03:30 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200403291603.i2TG3UX6000400@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: on the axiom of infinity
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 45
+
+Let  *T*  be the topos freely generated by its constants (a few
+postings ago I called it the initial object in the category of topoi
+and logical morphisms), let  Omega  be its subobject classifier and
+let  P  denote  Omega^Omega. I wrote:
+
+  There's a subobject, M, of  P  on which we may define the structure
+  of a rig (a ring without negation) that mimics the natural numbers.
+  In particular the set of global sections, that is, maps from  1  to
+  M  with its inherited rig structure, is isomorphic to the standard
+  natural numbers...
+
+  [Moreover we may] construct a topos-object in  *T*  whose topos of
+  global sections is isomorphic to the free topos with NNO. And, as
+  for  M, an equation in the theory of topoi is internally true for
+  this internal topos iff it is true for the free topos with NNO.
+
+It occurs to me that the proofs I have in mind rest on at least three
+considerations that may not be well known. (I have no idea about other
+proofs.)
+
+The first consideration stems from curiosity about the complete
+algebraic theory of  Omega. In particular, what are its unary
+operators? Some would phrase that: What are the "modalities" implicit
+in higher-order intuitionistic logic?
+
+There's a particular operator that keeps popping up for me.
+
+In an arbitrary heyting algebra define  x << y  to mean that not only
+is  x  less than or equal to  y, but the value of  y -> x  is as small
+as it can be, that is, y -> x = x. In a complete heyting algebra
+define an order-preserving, inflationary unary operation  s  by
+
+                       sx =  inf{ y | x << y }.
+
+E.g.: on a linearly ordered set if { y | x < y } has a least element
+then that's what  sx  is. If there is no smallest element above  x,
+then  sx = x (even without the completeness hypothesis). In
+particular, note, there no assertion that  x << sx.
+
+The subobject classifier in an elementary topos is complete in the
+relevant sense: s  is definable. A quick description of the
+construction to follow is that we're going to turn  s  into the
+successor operation on an NNO.
+
+DIVERSION: The definition I just gave is the first I came across. The
+next incarnation for me was when I wanted a measure of the failure of
+booleaness. In any topos, *A*, there's a largest subterminator  B
+with the property that the slice category  *A*/B  is boolean. But
+given any subterminator, U, we have its "closed sheaves", *A*_(U), the
+full subcat of objects  A  such that  AxU --> U  is an iso. (This is a
+subcategory of sheaves for a Lawvere-Tierney topology. Starting with
+a space  X  then  Sheaves(X)_(U)  may be identified with  Sheaves(U'),
+where  U'  denotes the complement of U.)  Note that the lattice of
+subterminators in  *A*_(U)  is isomorphic to the interval of
+subterminators in  *A*  from  U  up. We can define BU  to be the
+largest subterminator in  *A*_(U)  such that  *A*_(U)/BU  is boolean.
+The interval of subterminators in  *A*  from  U  up to  BU  is boolean
+and in the relevant internal sense, BU  is the largest such
+subterminator. We can, of course, translate this all to a unary
+operation on  Omega.
+
+It's the same operator  s.
+
+When one specializes this to a space  X  it becomes historically
+familiar if we dualize it it to a deflationary operator on closed
+subsets. It's the operation that removes isolated points. The very
+operation that got Cantor started. Hence the word "historically".
+
+END OF DIVERSION
+
+Back to  *T*: in the monoid  Omega^Omega  define  C  to be the
+submonoid generated by  s. We're going to use  0 : 1 --> C  to denote
+the name of the identity element (you might think of it as  s^0) and
+we're going to use  suc : C -> C  to denote the function that sends an
+element  x  to  sx.
+
+It's easy to verify that the necessary and sufficient condition for
+C,0,suc  to be an NNO is that -- in the internal sense -- it has no
+fixed points. The argument works for any one-generator partially-
+ordered monoid whose identity element is below the generator. Let  E
+be the equalizer of  1, suc : C --> C. I'm saying that  C,0,suc  is an
+NNO iff  E  is empty.
+
+Let  V  be the negation of the image of  E --> 1. It is the largest
+subterminator such that  C,0,suc  becomes an NNO in the slice category
+*T*/V.
+
+Now for the nice part. The sconing argument tells us that  V, as is
+the case for any non-trivial negation, is an indecomposable projective
+-- that is, the covariant functor represented by  V  is an exact
+functor. And that means that  1  is an indecomposable projective in
+the slice category  *T*/V. The "global-section" functor from  *T*/V
+to  *Sets*  is exact. Hence (by my first theorem in this subject) it
+preserves the NNO and all the definable structure thereon.
+
+I advertised an object, not in a slice category but in  *T*. So define
+M = C^V. Then it is easily verified that the global sections of  M
+as defined in  *T*  are naturally isomorphic to the global sections
+of  C/V  as defined in  *T*/V.
+
+Since it has an NNO we can construct all sorts of things in  *T*/V.
+We'll settle here for the free-topos-object-with-NNO. That is, there
+is an object  T  in  *T*/V  with a binary partial operation that
+serves as the free topos with NNO in  *T*/V. Since the global-section
+functor is exact we know that it preserves free structures in great
+generality (part of lore of exact functors between topoi). In
+particular it carries  T  to a standard free topos with NNO .And,
+finally, we know that  T^V  has that same last property as an object
+in  *T*.
+
+(Better, actually, is to take  T  to be the free topos on one object.
+Every finitely presented topos is a slice thereof -- including the
+free-topos-with-NNO.)
+
+Surely this is all too easy. Yeah. I skipped over something. My point
+about negations being indecomposable projectives requires them to be
+non-trivial. (The covariant functor represented by  0  is not exact;
+it does not preserve the coterminator.) That is, we need to show that
+V  is not  0. But for that it suffices (given the defining universal
+property for  *T*) to show in at least one topos that the recipe for
+V  yields something nontrivial. Equivalently, we need a topos in which
+V = 1. The most easily named example is the topos of  N-sets, or as I
+described it a few postings ago, the topos of sets with distinguished
+self-maps. This topos is two-valued, that is, Sub(1)  has just two
+elements and that can be an advantage. (We know that we must show that
+suc : C --> C  has no fixed points.) In fact, I find it easier to work
+in the slice category  (*Sets*^N)/N. (There is, anyway, a faithful
+representation of  *Sets*^N  into  (*Sets*^N)/N.) The category
+(*Sets*^N)/N  is equivalent to the category of covariant set-valued
+functors on the poset also denoted  N. The advantage here is just the
+opposite: (*Sets*^N)/N  is generated by its non-zero subterminators
+and they're all indecomposable projectives.
+
+DIVERSION: When I first finished writing this piece I noticed for the
+first time that there's a historically much better example. Take the
+category of sheaves on the reals (or for that matter, any space of
+geometric interest). Then follow in Cantor's footsteps.
+
+FOOTNOTE:
+
+One variation worth mentioning. Instead of taking  C  as the submonoid
+generated by  s  take it to be the smallest up-closed submonoid, that
+is, this new version of  C  will be closed with respect to sups. This
+C  is trying to be a big ordinal number. Indeed, following just the
+path first taken by Cantor we can find Grothendieck topoi where  C
+looks like an arbitrarily large initial section of ordinals.
+
+In the free topos with NNO this  C  seems to be none other than the
+ordinal (in some relevant sense) of all recursively enumerable
+ordinals.
+
+
+
+From rrosebru@mta.ca Wed Mar 31 11:53:57 2004 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 31 Mar 2004 11:53:57 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1B8i0o-0001fE-00
+    for categories-list@mta.ca; Wed, 31 Mar 2004 11:52:18 -0400
+Date: Wed, 31 Mar 2004 07:55:38 +0100
+Message-Id: <HVFHWQ$78A062684CE796761D40677C3F3FB9E7@libero.it>
+Subject: categories: New paper on Profunctors, Open Maps and Bisimulation
+MIME-Version: 1.0
+X-Sensitivity: 3
+Content-Type: text/plain; charset=iso-8859-1
+From: "gianluca\.cattani" <gianluca.cattani@libero.it>
+To: "categories" <categories@mta.ca>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status:
+X-Keywords:
+X-UID: 46
+
+This is to announce the availability of the following paper
+
+Profunctors, Open Maps and Bisimulation by Gian Luca Cattani and Glynn Winskel.
+The paper can be downloaded in postscript version from
+
+http://www.cl.cam.ac.uk/~gw104.
+
+
+Regards,
+Gian Luca Cattani

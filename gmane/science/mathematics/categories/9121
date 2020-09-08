@@ -1,0 +1,257 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: David Roberts <droberts.65537@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Weighted limits
+Date: Thu, 16 Feb 2017 06:09:44 +1030
+Lines: 217
+Approved: news@gmane.org
+Message-ID: <E1cePI6-0002Rt-RO@mlist.mta.ca>
+References: <CAFL+ZM9PuWCCsotvgXwNSKJezaG7p4im1XPoc30DVjgejx53ww@mail.gmail.com>
+Reply-To: David Roberts <droberts.65537@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: blaine.gmane.org 1487264008 20990 195.159.176.226 (16 Feb 2017 16:53:28 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 16 Feb 2017 16:53:28 +0000 (UTC)
+Cc: John Power <A.J.Power@bath.ac.uk>, Categories <categories@mta.ca>
+To: Jean Benabou <jean.benabou@wanadoo.fr>
+Original-X-From: majordomo@mlist.mta.ca Thu Feb 16 17:53:23 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePJ4-0004yL-87
+	for gsmc-categories@m.gmane.org; Thu, 16 Feb 2017 17:53:22 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:44524)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePIe-0005fG-E3; Thu, 16 Feb 2017 12:52:56 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePI6-0002Rt-RO
+	for categories-list@mlist.mta.ca; Thu, 16 Feb 2017 12:52:22 -0400
+In-Reply-To: <CAFL+ZM9PuWCCsotvgXwNSKJezaG7p4im1XPoc30DVjgejx53ww@mail.gmail.com>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9121
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9121>
+
+Dear Jean
+
+[apologies to the moderator for sending the below message from the
+wrong email address]
+
+I must correct myself: in the paragraph
+
+>Consider a diagram f,g: X --> Y in Cat(S). The inserter of this
+>diagram is (the inclusion of) a subcategory Ins(f,g) of X. We can
+>compute the object Ins(f,g)_0 of objects of the inserter as the
+>pullback of
+>
+>Obj(X) -- (f,g) --> Obj(Y) x Obj(Y) <---- (s,t) ---- Arr(Y)
+>
+>in S.
+
+I should not have said '(the inclusion of) a subcategory Ins(f,g)',
+but rather 'a faithful functor Ins(f,g) --> X'.
+With this change everything proceeds as before.
+
+I can even supply a different, and cleaner, direct construction of the
+inverter of the natural transformation a: f =3D> g: X --> Y.
+
+First define the object B of S as the pullback of
+
+Obj(X) -- (g,f) --> Obj(Y) x Obj(Y) <---- (s,t) ---- Arr(Y)  (note
+order of f and g)
+
+as before. This gives us the projection map b': B --> Arr(Y) as noted
+above, which will eventually give the putative inverse of a, and we
+also have the composite map B --> Obj(X) ---a--> Arr(Y), which I will
+call a_B. We can define two maps
+
+(1)    (a_B)b': B ---(a_B,b')--> Arr(Y) x_Obj(Y) Arr(Y) --> Arr(Y)
+(2)    b'(a_B): B ---(b',a_B)--> Arr(Y) x_Obj(Y) Arr(Y) --> Arr(Y)
+(latter arrow is composition in both cases)
+
+(1) gives the component of what will be a natural transformation from
+f to itself, and (2) likewise, except from g to itself
+
+Now take the equaliser of (1) and the map
+
+B ---> Obj(X) --f--> Obj(Y) --> Arr(Y)
+
+to get the subobject B_f --> B, and take the equaliser of (2) and the map
+
+B ---> Obj(X) --g--> Obj(Y) --> Arr(Y)
+
+to get the subobject B_g --> B. Now take the pullback of B_f --> B <--
+B_g to get the subobject Inv(f,g)_0 ---> B. Now consider the composite
+map Inv(f,g)_0 ---> Obj(X): this will be the object component of the
+map from the inverter to X. Form the category J =3D X[ Inv(f,g)_0 ],
+which has as objects Inv(f,g)_0 and as arrows the pullback (Inv(f,g)_0
+x Inv(f,g)_0) x_{Obj(X) x Obj(X)} Arr(X), and comes equipped with a
+fully faithful functor (in the internal sense) J --> X. Let b:
+Inv(f,g)_0 ---> B --b'-> Arr(Y) be the obvious composite.
+
+Now we need to build a wide subcategory Inv(f,g) of J and this will be
+the inverter, via the given map to X. We have the component map b:
+Obj(J) =3D Inv(f,g)_0 --> Arr(Y), but it is not necessarily natural with
+respect to all the arrows of J (considered as eg generalised elements,
+or in the internal language). So we consider the subobject Inv(f,g)_1
+--> Arr(J), defined equationally (hence by a certain equaliser), so
+that naturality squares for b commute, for arrows in Inv(f,g)_1.
+
+Then Inv(f,g) --> J --> X is the equaliser you are looking for, and I
+only used finite limits in S.
+
+Apologies for being so long-winded, but you gave us a nice exercise
+and I wanted to see it through (modulo the very last bit, I hope it is
+obvious)
+
+Best regards,
+David
+
+PS one can build all cotensors (=3Dpowers) in Cat(S) with all finite
+categories using the same pedestrian logic; hence with all conical
+strict 2-limits and cotensors one gets all strict weighted limits.
+
+
+On 15 February 2017 at 21:03, David Roberts <a1078662@adelaide.edu.au> wrot=
+e:
+> Dear Jean, (apologies for this, and any future, slow replies. The
+> necessities of life take up a lot of my time at the moment)
+>
+> My approach below is pedestrian, but I hope clear.
+>
+> Strict inverters are PIE-limits. Thus they can be computed in Cat(S)
+> once we know it has each of products, inserters, equifers -- in fact
+> just the latter two, in a rather straightforward way, using no more
+> than two of each. To quote the nLab, "first we insert a 2-morphism
+> b going in the opposite direction from a, then we equify ba and ab
+> with identities." (this quote may be likewise borrowed from either
+> Kelly or Street)
+>
+> Let as assume S has finite limits throughout.  For what it's worth,
+> products obviously exist in Cat(S).
+>
+> Note that For X a category in S, and a subobject U >--> Obj(X), we can
+> build the full subcategory X[U] of X on U (as an object of Cat(S))
+> using only finite limits in S. To build the equifer of a,b: f =3D> g: X
+> --> Y, we only need the equaliser E in S of the component maps a,b:
+> Obj(X) --> Arr(Y), and then the equifer is the inclusion  X[E] --> X
+> of the full subcategory on the subobject E.
+>
+> Thus we are reduced to building inserters, which is the real meat of
+> the problem, as inserters are not equivalent to any conical 2-limit.
+>
+> Consider a diagram f,g: X --> Y in Cat(S). The inserter of this
+> diagram is (the inclusion of) a subcategory Ins(f,g) of X. We can
+> compute the object Ins(f,g)_0 of objects of the inserter as the
+> pullback of
+>
+> Obj(X) -- (f,g) --> Obj(Y) x Obj(Y) <---- (s,t) ---- Arr(Y)
+>
+> in S.
+>
+> Then the inserter is a wide subcategory of X[ Ins(f,g)_0 ] (itself a
+> full subcategory of X). Note that there is a map a: Ins(f,g)_0 --->
+> Arr(Y) which will be the component map of the universal natural
+> transformation we are inserting.
+>
+> The arrows of Ins(f,g) are the largest subobject Ins(f,g)_1 --> Arr(X)
+> such that a is natural with respect to such arrows. This can be
+> defined by an equaliser in S.
+>
+> Thus we can construct, using solely finite limits in S, (products,)
+> equifiers and inserters, and hence inverters, in Cat(S).
+>
+> One could perhaps examine this proof more closely to see what kind of
+> internal categories in non-finitely-complete S are necessary for it to
+> work (eg those such that (s,t) belong to a class of which all
+> pullbacks exist, and are again in the class etc). This perhaps would
+> fit with your general philosophy on generalising fibration technology.
+>
+> I hope this answers your qualms, and apologies for being slightly
+> telegraphic in my description.
+>
+> Best regards,
+>
+> David
+>
+> PS I regret we did not have the chance to meet at Topos =C3=A0 l'IH=C3=89=
+S in
+> 2015. Perhaps one day...
+>
+>
+>
+>
+>
+>
+> On 15 February 2017 at 20:09, Jean Benabou <jean.benabou@wanadoo.fr> wrot=
+e:
+>> Dear John,
+>>
+>> Thank you for your mail and the precisions you give in it, but I'm not
+>> interested, for the time being, in general questions about 2-categories.
+>> Let me repeat precisely my question:  If  S is a category with finite li=
+mits
+>> and Cat(S) is the 2-category of internal categories of S, under which
+>> condition does Cat(S) have strict inverters?
+>> Can you, or anybody give a precise answer? (Of course I know that Cat(S)=
+  is
+>> cotensored with 2)
+>> .
+>> David Roberts says that finite limits in S suffice. As I I said I don't
+>> believe that. I'm perhaps wrong. In that case, could he, you, or anybody
+>> tell me how to construct strict inverters when all I assume is that S ha=
+s
+>> finite limits?
+>>
+>> It is always a pleasure to hear from you. All the best ,
+>>
+>> Jean
+>>
+>>
+>> Le 15 f=C3=A9vr. 17 =C3=A0 08:41, John Power a =C3=A9crit :
+>>
+>> Dear Jean,
+>>
+>> Max wrote an expository paper which I believe was called "Elementary
+>> Observations on 2-Categorical Limits" and was published in the Bulletin =
+of
+>> the Australian Mathematical Society I think around 1990. He would have h=
+ad a
+>> discussion of inverters there.
+>>
+>> Strict inverters are a kind of strict weighted limit (see, for instance,
+>> https://golem.ph.utexas.edu/category/2014/04/elementary_observations_on_=
+2ca.html)
+>> and a 2-category has all strict weighted limits if it has all strict con=
+ical
+>> limits and all strict cotensors, as a 2-category is a Cat-enriched categ=
+ory.
+>> So if one can prove that Cat(S) has strict conical limits and strict
+>> cotensors, one can construct strict inverters by following the procedure=
+  in
+>> the  link above.
+>>
+>> For strict cotensors, it suffices to prove that a 2-category has strict
+>> cotensors with the arrow category. I believe that is straightforward for
+>> Cat(S) if you follow the case of S =3D Set.
+>>
+>> Once again, it is always lovely to hear from you.
+>>
+>> All the best,
+>>
+>> John.
+>>
+>> ________________________________
+>> From: Jean Benabou <jean.benabou@wanadoo.fr>
+>> Sent: 15 February 2017 5:47 AM
+>> To: David Roberts; John Power; Ross Street; Categories
+>> Subject: Re: categories: Weighted limits
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

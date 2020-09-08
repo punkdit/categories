@@ -1,0 +1,678 @@
+Date:        Tue, 29 May 90 22:07:10 EDT
+From:        Michael Barr <INHB@MUSICB.MCGILL.CA>
+
+(( A glitch in passing mailing list jobs resulted in an apparent failure to
+resend the following with less delay. R.R. ))
+
+The double parentheses are actually square brackets.
+
+Category Theory for Computing Science:  Update
+
+Michael Barr and Charles Wells
+
+Our text, Category Theory for Computing Science, Prentice Hall, 1990
+(ISBN 0-13-120486-6) has just been published.  We intend to maintain the
+text in the sense that programmers maintain their programs, by keeping a
+list of known errors and also of additions to the text that we think
+might be useful.  (The latter will probably come in spurts as we go to
+meetings and find out about wonderful new applications of category
+theory to computing science.)
+
+We will periodically announce new errata and addenda on the category
+theory bulletin board.  The latest TeX version of the complete list is
+available by e-mail or p-mail from either author.
+
+The update consists of three parts:  1. A list of errors discovered so
+far. 2. Additional examples, problems and pointers to the literature. 3.
+Additions to the list of references, pp. 417ff. of the text.  Page
+references refer to the text.
+
+Any further corrections or suggestions for additional text will be welcome.
+
+1. Errors
+
+((p. xv)) In the Chapter Dependency Chart, there should be a diagonal
+line from Chapter 5 to Chapter 7.
+
+((p. 92)) In Proposition 4.3.12 and its proof, the letter C (not the
+script C) is used with two different meanings.  This can be corrected by
+changing C to S in the first line of the proposition, third line (first
+occurrence only), fourth line (last occurrence only) and in the first
+line of the proof (second occurrence only).
+
+((p. 96)) The reference to Seely should be ((1987)) (the entry in the list
+of references, p. 425, was incomplete and is updated in the list of
+references below.)
+
+((p. 102)) ``The'' not ``the'' in line 7.
+
+((p. 345)) Line 2 of the answer to exercise 12.a: the last letter
+should be ``B'', not ``b''.
+
+((p. 365)) In the answer to problem 8, beta C:Hom(C,C) to F(C).
+
+
+((p. 431)) The word ``relation'' should also be indexed on p. 21.
+
+
+2. Additional text
+
+
+((p. xiii)) (Second paragraph) Another collection of papers is ((Pitt,
+Rydeheard, Dybjer, Pitts and Poigne, 1989)).
+
+((p. 17)) ((Additional example of category.)) Let alpha be a relation from a
+set A to a set B and beta a relation from B to C (see 1.3.4).  The
+composite beta o alpha is the relation from A to C defined as follows:
+If x is in A and z is in C, (x,z) is in beta o alpha if and only if
+there is an element y in B for which (x,y) in alpha and (y,z) in beta.
+With this definition of composition, the category of sets and relations}
+has sets as objects and relations as arrows.
+
+((p. 71)) ((New exercise)) Show that the category of sets and relations is
+equivalent, in fact isomorphic, to its own dual (see 2.6.7).
+Answer:  Let Rel denote the category of sets and relations.  For a
+relation alpha from A to B, that is, a subset of A x B, let alpha\op
+denote the subset {(b,a) | (a,b) in A x B} of B x A. Let F:Rel to Rel\op
+be the identity on objects and for a relation alpha:A to B, let
+F(alpha)=alpha\op.  F(alpha) is a relation from B to A in Rel, hence a
+relation from F(A)=A to F(B)=B in Rel\op.  It is easy to check that if
+beta:B\to C, then F(beta o alpha)= alpha op o beta\op in Rel, so (beta o
+alpha)\op=beta\op o alpha\op in Rel\op.  This says F(beta o
+alpha)=F(beta) o F(alpha), so F preserves composition.  The identity
+relation on A is Delta_A= {(a,a) | a in A}, so Delta=Delta\op and F
+preserves identities.  Since for any relation alpha,
+(alpha\op)\op=alpha, we have F o F is the identity functor on Rel, so is
+its own inverse.  Hence F is an isomorphism.  By Exercise 1, it is
+therefore an equivalence of categories.
+
+((p. 96)) The applications of 2-categories have mushroomed and
+include ((Hoare, Ji Feng and Martin, 1990)), ((Moggi, 1989)), and
+((Power, 1989)) in addition to the papers already listed.
+
+((p. 97)) Second paragraph of Section 4.5:  In addition to generalizing
+the Cayley Theorem, the Yoneda Lemma also has as a special case the
+embedding of a poset into its down-closed subsets.  Also:  set-valued
+functors are studied further in Sections 11.2 and 14.4.
+
+((p. 257)) Besides ((Coquand, 1988)), Moggi ((1989)) also uses
+the Grothendieck construction in modeling polymorphism.
+
+((p. 287)) Just before the exercise: See also ((Ehrhard, 1989)).
+
+((p. 318)) Add comment:  We considered presheaves as actions in Section
+3.2.  They occur in other guises in the categorical and computer science
+literature, too.  For example, a functor F:A to Set, where A is a set
+treated as a discrete category, is a ``bag'' of elements of A. If a in
+A, the set F(a) denotes the multiplicity to which a occurs in A. See
+((Taylor, 1989)) for an application in computing science.
+
+((p. 325)) Goguen ((1990)) has developed a sheaf semantics for object
+oriented programs.
+
+
+3. Additional references
+
+T. Ehrhard, Dictoses.  In Category theory and computer science, D. H.
+Pitt, D. E. Rydeheard, P. Dybjer, A. M. Pitts and A. Poigne, editors.
+Lecture Notes in Computer Science 389, Springer Verlag, 1989.
+
+J. Goguen, Semantics of concurrent interacting objects.  Preprint,
+Programming Research Group, Computing Laboratory, Oxford University,
+Oxford OX1 3QD, England.
+
+C. A. R. Hoare, He Jifeng and C. Martin, Pre-adjunctions in
+order-enriched categories.  Preprint, Programming Research Group,
+Computing Laboratory, Oxford University, Oxford OX1 3QD, England.
+
+E. Moggi, A category-theoretic account of program modules.  In Category
+theory and computer science, D. H. Pitt, D. E. Rydeheard, P. Dybjer, A.
+M. Pitts and A. Poigne, editors.  Lecture Notes in Computer Science 389,
+Springer Verlag, 1989.
+
+D. Pitt, D. Rydeheard, P. Dybjer, A. Pitts and A. Poigne, eds.  Category
+theory and computer science.  Lecture Notes in Computer Science 389,
+Springer Verlag, 1989.
+
+A. J. Power, An abstract formulation for rewrite systems.  In Category
+theory and computer science, D. H. Pitt, D. E. Rydeheard, P. Dybjer, A.
+M. Pitts and A. Poigne, editors.  Lecture Notes in Computer Science 389,
+Springer Verlag, 1989.
+
+R. Seely, Modelling computations:  a 2-categorical framework.  In
+Proceedings of the Conference on Logic in Computer Science, IEEE, 1987.
+((Corrected reference)).
+
+P. Taylor, Quantitative domains, groupoids and linear logic.  In
+Category theory and computer science, D. H. Pitt, D. E. Rydeheard, P.
+Dybjer, A. M. Pitts and A. Poigne, editors.  Lecture Notes in Computer
+Science 389, Springer Verlag, 1989.
+
+
+
+Date: Sat, 9 Jun 90 11:34:37 EDT
+From: LICS@B.GP.CS.CMU.EDU
+
+             MAILING LIST FOR LOGIC IN COMPUTER SCIENCE
+
+As of Fall 1990 only people on a new LICS database will receive
+directly announcements about the IEEE Logic in Computer Science
+Conferences.
+If you are interested in receiving such information,
+please fill out the form below and return it by email
+(or physical mail), by July 8 if possible.
+
+If you are NOT INTERESTED, please tell us by return email,
+so as to spare us the cost of approaching you by physical mail
+after that date.
+
+PLEASE FORWARD this message to potentially interested persons
+who you suspect might not be on our present mailing list.
+
+We apologize for multiple copies of this message.
+Our use of several mailing lists makes this inevitable.
+
+Thank you.
+
+lics@cs.cmu.edu
+Logic in Computer Science
+School of Computer Science
+Carnegie Mellon University
+Pittsburgh, PA 15213
+
+===================================
+
+NAME (first, middle initial,  last):
+
+POSTAL ADDRESS:
+
+
+
+EMAIL ADDRESS(ES):
+
+*******
+
+Would you be satisfied with receiving LICS CALLS FOR PAPERS
+(and similar announcements) via EMAIL ONLY?   (yes/no)
+
+Would you be satisfied with receiving FINAL PROGRAMS and
+REGISTRATION FORMS via email only?   (yes/no)
+?Note: you will need to print registration forms and send
+them along with a check by PHYSICAL mail?.
+
+*******
+
+Optional information (might be used in relation to paper submittals):
+--------------------
+
+PHONE:
+
+FAX/TELEX:
+
+Date: Thu, 21 Jun 90 07:33:22 PDT
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Message-Id: <9006211433.AA11328@coraki.stanford.edu>
+To: mcnulty@coraki.stanford.edu, rosebrugh@coraki.stanford.edu
+Subject: hat -> backquote
+
+Oops, I forgot about hat's being tilde'd by bitnet or whoever.  The
+following replaces hat by backquote, in case you haven't sent it off
+yet.  Since quote is only used on 0 and 1, which are their own
+converse, no confusion should result.  There are three tilde's at the
+end of the message that will turn into c's, but since those tilde's
+denote a congruence the c can be read as c for congruence (cuch
+cerendipity!)
+
+
+
+                            ORDERED ALGEBRAS
+
+                              Vaughan Pratt
+                              Stanford Univ.
+                              June 20, 1990
+
+
+I'd like to ask the group what it knows about the following notion,
+which out of ignorance of the standard term if any I will here call an
+ordered algebra.
+
+Which is more fundamental, = or < ?  Frequency of usage gives little
+clue, both are in heavy use.
+
+When x+y (disjunction, sup, max) or xy (conjunction, inf, min) is in
+the language we can take = as basic and view x<y as merely an
+abbreviation for x+y = y, or x = xy.
+
+However what if x+y or xy is in the language solely so that we *can* so
+express x<y as an equation?  This is the situation we find in the
+theory of residuated posets, where x\y and x/y can be defined
+inequationally via
+
+        x;(x\y) < y < x\(x;y)
+        (y/x);x < y < (y;x)/x
+
+without reference to x+y or xy other than that implicit in the
+expansion of x<y to x+y=y.
+
+Having so defined residuation we may, based on the axioms in Judith
+Ng's thesis (UCB Math, 1984), proceed to define reflexive transitive
+closure x* as the monotone operation satisfying
+
+        1' < x*         (x* is reflexive)
+        x*;x* < x*      (x* is transitive)
+        x < x*
+        (x\x)* = x\x    (pure induction, or "iteration preserves invariance")
+
+all in terms of equations that continue to make no other reference to
+x+y or xy beyond that implied by reading x<y as x+y=y.  (Incidentally
+it may be verified, see e.g. the section on star in my article in LNCS
+425, that x* is implicitly defined, i.e. uniquely determined as an
+operation on a residuated poset, by these inequations.)
+
+These considerations indicate a need for a notion along the following
+lines.
+
+An ordered algebra is a poset (A,<) equipped with (m,n)-ary operations
+f: (A,>)?m x (A,<)?n -> (A,<), where (A,>) denotes the order dual of
+A.  We say that such a function f is of arity (m,n), having m
+antimonotone arguments and n monotone arguments.  The application of
+such an f to its m+n arguments is written f(x1,...,xm;y1,...,yn).
+
+For example the signature of a relation algebra
+ (R,    +,    .,    -,    ->,   #,    ;,    `,    0,    1,    0',   1') would
+ be   (0,2),(0,2),(1,0),(1,1),(2,2),(0,2),(0,1),(0,0),(0,0),(0,0),(0,0).
+
+That is, disjunction x+y and conjunction xy are of arity (0,2) and
+hence monotone in both arguments, negation x- of arity (1,0) would be
+antimonotone in its one argument, material (Boolean) implication x->y
+of arity (1,1) would be antimonotone in one argument and monotone in
+the other, exclusive-or x#y would have to be viewed as a quaternary
+(2,2)-ary operation rather than a binary operation, relative product
+x;y of arity (0,2) would be monotone in both arguments, converse x` of
+arity (0,1) would be monotone in its one argument, and the constants
+0,1,0',1' are of course all of arity (0,0).
+
+Specifying the signature takes care of the otherwise awkward question
+of how to axiomatize monotonicity itself without using Horn clauses or
+x+y; it simply becomes part of the syntax.
+
+The notion of equational theory is now replaced by that of an
+inequational theory, defined in the obvious way, which the following
+examples should make more obvious.
+
+Example 1.  Semilattices.  A semilattice (X,+) consists of just one
+operation x+y, of arity (0,2), satisfying the following inequations.
+
+        x < x + y
+        y < x + y
+        x + x < x
+
+The first two inequations say that x+y is an upper bound on x and y,
+and the third says that it is the least such (easy exercise).  The
+signature (0,2) and these three inequations constitute the entire
+definition of "semilattice."
+
+We may further equip it with constants 0 and 1, each of arity (0,0),
+defined via:
+
+        0 < x
+        x < 1
+
+Example 2.  Ordered monoids.  An ordered monoid (X,;,1') consists of an
+operation x;y of arity (0,2) and a constant 1' of arity (0,0)
+satisfying
+
+        x;(y;z) = (x;y);z
+        x;1' = x = 1';x
+
+We read x=y as abbreviating the pair of inequations x<y<x.  (But we
+could shorten the four inequations of x;1' = x = 1';x to three via
+x < x;1' < 1';x < x.)
+
+We may expand an ordered monoid to a residuated poset by adding right
+and/or left residuation, both of arity (1,1).  The official syntax
+calls for \(x;y) and /(x;y) in order to indicate that it is
+antimonotone in x and monotone in y, but we write these standardly as
+x\y and y/x respectively, remembering the relationship to the official
+syntax in order to keep track of the arity.  The defining inequations
+are:
+
+        x;(x\y) < y < x\(x;y)
+        (y/x);x < y < (y;x)/x
+
+Had we thought earlier to introduce converse x`, of arity (0,1),
+satisfying
+
+        x`` = x
+        (x;y)` = y`;x`
+
+we could have dispensed with one of the two equations for 1', and done
+away with y/x altogether by treating it as just an abbreviation for
+(x`\y`)`.  And we could weaken x;(y;z) = (x;y);z to x;(y;z) < (x;y);z.
+
+We may further extend this algebra to include star (ancestral,
+reflexive transitive closure) exactly as defined in the introduction.
+
+Exercise.  Define a residuated unital semilattice with converse and
+star to be the combination of examples 1 and 2.  Show in such:
+
+        x;(y+z) = x;y + x;z
+        (x+y);z = x;z + y;z
+        x;0 = 0 = 0;x
+        (x+y)` = x`+y`
+        x;(y;x)* = (x;y)*;x
+        (x+y)* = (x*;y*)*
+
+Now for my main questions.
+
+1.  Does this notion of ordered algebra occur
+in the equational logic or universal algebra literature?
+
+2.  What does that literature or any other literature (e.g. the
+categorical literature) have to say about the following?
+
+(i)  Semantic completeness.  What is the analog for ordered varieties
+of Birkhoff's HSP theorem for varieties?
+
+(ii)  Syntactic completeness.  If an equational theory Th(V) is exactly
+a substitutive congruence on an algebra of terms over a set V of
+variables, what exactly is an inequational theory on an ordered algebra
+of terms?  (Call a congruence ^ *substitutive* when u^v implies
+s(u)^s(v) for any substitution s, i.e. any endomorphism s:T(V)->T(V).)
+
+(iii),(iv)  Ditto for ordered quasivarieties.
+
+        Vaughan Pratt
+
+Date: 23 Jun 90 13:19:40 PDT (Sat)
+From: pratt@cs.stanford.edu
+
+Guess you didn't get the revision I mailed at 7:50 PDT on Jun 22.  I no
+longer see how to make the coding I had in mind for semigroup word
+problems in conjecture 9 go through.  Oh well, at least it's at the end
+of the list of conjectures for which I had expressed the least confidence.
+
+Please forward.
+-v
+
+Date:     Thu, 28 Jun 90 21:12 EST
+From:     <WELLS@CWRU>
+Subject:  ANnouncement for bulletin board
+
+I have collected into one file 57 diagrams coded in TeX that I am
+willing to transmit to anyone who asks for it.  They require LaTeX and
+Michael Barr's CATMAC.STY.  These diagrams are drawn from various papers
+and from our new book.  --Charles Wells
+
+
+Date:        Sun, 24 Jun 90 20:36:37 EDT
+From:        INHB000 <INHB@MUSICB.MCGILL.CA>
+
+A couple of preliminary thoughts on Vaughn's communication.
+
+First, the whole business about symmetric difference was not well
+considered.  Symmetric difference is a binary operation and calling it a
+quaternary operation doesn't make it one (cf. A. Lincoln).  Of course,
+there is a quaternary, or more properly a (2,2)-ary operation that takes
+(x,y,z,w) to z.x- + w.y- and that can be specialized to give symmetric
+difference, but it isn't symmetric difference.  If you want symmetric
+difference, it can also be defined from the operations of +, ., and -.
+In either case it is a derived operation, not a primitive one.  This is
+not an important point, just to set the record straight.
+
+I have no knowledge on question I. As for II, I have some thoughts, at
+least on II i. First off the answer cannot be that an HSP subcategory is
+described by equations.  This is already clear from the HSP subcategory
+of the theory of one binary (that's (0,2)-ary to be precise) operation
++. Don't suppose it is associative or commutative.  The Horn clause x <
+y => x+y = y defines an HSP subcategory.  I don't think that, lacking
+associativity and commutativity, you can get that subcategory
+equationally.  Even with them, I'm not sure you can, although you could
+get x+y<y from y+y=y.  No, I haven't proved this, it just seems likely
+to me that these claims are true.  Does that mean that HSP corresponds
+to Horn clauses.  Well yes, but only Horn clauses that are stateable in
+the theory of posets.
+
+An equation is a Horn clause in the theory of sets.  Of course the
+theory of sets has only one predicate, that of equality.  (Membership
+doesn't count here because we don't use over subsets.)  So an equation
+like x.x*=1 is the same as the Horn clause y=x* => xy=1.  In a similar
+way, the theory of posets has only the predicates of = and <. (By the
+way, it is clear that Vaughn used < for less than or equal and I follow
+him in that usage.)  I claim (or conjecture, if you prefer, but it is
+pretty clear) that HSP subcategories correspond to the Horn clauses that
+can be stated using only the predicates = and <. The reason is that if
+Pos is the theory of posets and if B is the category of models of one of
+these poset theories, then the underlying functor U:B--->Pos has an
+adjoint F (and in fact is tripleable).  If C is an HSP (full)
+subcategory of B, then it is immediate that if C includes all the free
+algebras (that is F(Pos)), then B=C.  Thus if B isn't C, there is some
+poset X such that F(X) isn't in C. Now C is reflective (trivial) so
+there is a free C algebra generated by X and it is a quotient of F(X).
+I am pretending that all these theories are finitary, although the
+infinitary generalization would probably offer no real difficulty.
+Suppose that X consists of elements x_1,...,x_n and some order relations
+such as x_i < x_j.  Now there will be two terms t(x_1,...,x_n) and
+s(x_1,...,x_n) which are distinct in F(X), but not in its reflection in
+C. Or perhaps they are unrelated in F(X) but s < t in the C-reflection.
+This will give you Horn clauses of the sort
+                    x_i < x_j, ..., => s = t
+or
+                    x_i < x_j, ..., => s < t
+in the predicates available in Pos.  The left hand sides are simply a
+listing of all the order relations in X. Or at least a generating family
+of such.  In order to prove this, you must investigate the nature of
+quotients.  However, unlike in Cat, they are surjective and are of the
+two types alluded to in the argument above.
+
+I don't fully understand II ii, but I think the above bears on that
+question too.  There are obvious generalizations of this to bases other
+than Pos; I guess that is evident.
+
+It is a matter of taste, but I would prefer to leave the predicate of
+equality in rather than derive it from <.
+
+Cheers, Mike
+
+
+From:       Colin B Jay <cbj@lfcs.ed.ac.uk>
+Date:       Mon, 25 Jun 90 10:07:21 BST
+
+
+Ordered algebras are a special case of algebras for a 2-dimensional theory, i.e.
+a 2-category, in which the 2-cells express the ordering of operations. I
+considered the case of such theories with a tensor product (2-props) in
+"Languages for Monoidal Categories" (JPAA 59 (1989) 61-85).
+
+Barry Jay
+
+Date:        Mon, 25 Jun 90 10:13:53 EDT
+From:        INHB000 <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+One thing I didn't say anything about in my message last night is what I
+meant by HSP.  The P is standard.  As for S it is pretty clear from what
+I said that S stands for strict (=extremal) subobjects.  It follows that
+H stands for surjective images.
+
+This probably contradicts expectation, so a few words of explanation are
+necessary.  First place, H and S must determine each other as a
+factorization system.  Also H has to be closed under products.  I'll
+come back to that.  Let us look at S.  If S just stands for subobjects,
+then even such a simple relation as x < x+y isn't inherited by
+subobjects and so doesn't define an HSP class.  This is clearly not what
+is wanted.  Thus only strict subojects are wanted.  This forces H to
+include all surjective images and then it is obvious that H/S give a
+factorization system.  Also H is closed under products.  (In fact, it is
+closed under pullbacks, which implies there is a regular epi/mono
+factorization system, but not every morphism in H is regular.)  H is
+also invariant under the endofunctor * on the category of posets that
+takes each poset to its opposite.
+
+Now let Th be one of Vaughn's theories.  Then there are operations of
+arity (m,n) for which a model is a poset X equipped with a monotone map
+X*^m x X^n ---> X.  Then these will be subject ot some constraints
+(equations and inequalities) and we get a category of models.  Suppose
+that X ---> Y is a morphism of models and we factor that in the category
+of posets as X --->> Z >---> Y where the first map is surjective and the
+second is strong monic in Pos.  We have the following rectangle:
+
+              X*^m x X^n --->> Z*^m x Z^n ---> Y*^m x Y^n
+                   !                !               !
+                   !                                !
+                   !                !               !
+                   !                                !
+                   !                !               !
+                   v                v               v
+                   X -------------> Z >-----------> Y
+
+where the outer vertical arrows are the given sturcture maps and the
+middle one exists by virtue of the factorization system.  This shows
+that in the category of algebras there is a factorization into
+surjections/S-monomorphisms, the latter being strict in the underlying
+category Pos.  They are not necessarily strict in the category of
+models.  For example in the category of po-monoids, the inclusion of N
+into Z (both with usual ordering) is strict in Pos but not in the
+category since it is epic and a strict-monic/epic is an isomorphism.
+
+The fact that Pos is not a regular category makes me think it unlikely
+that anything could be done with a regular-epic/monic factorization,
+even if that were desirable.  I guess that regular epics are closed
+under finite (but probably not infinite) products, so the first part of
+the analysis could be carried out for finitary theories.  But even if it
+were possible, it would mean that only equations, not inequalities
+could be specified and that is certainly not what is wanted.  I haven't
+checked out any of the details in this case.
+
+Regards, Mike
+
+Date:        Wed, 27 Jun 90 17:17:30 EDT
+From:        INHB000 <INHB@MUSICB.MCGILL.CA>
+
+Dear Bob:
+
+After thinking about Vaughn's letter some more, I realized that that is
+not how I would have been tempted to make a Pos theory.  In two
+respects.  First, I would not have used contravariant operations.
+Second, I would not have stuck to discrete exponents.  Let me take up
+the second point first.  Surely you would like to be able to have an
+algebra that had operations whose domain { (x,y) | x < y }, which means
+you want an operation of arity 2 = .-->.  . For example, you want to be
+able to have countably CPO's as axiomatized by an operation of arity
+\omega, which means that the operation is defined on countable
+increasing sequences.  Suitable axioms will guarantee that it is a
+countably CPO.
+
+As for the first point, this bothered me.  The way Vaughn has it, you
+lose the ability to apply the Yoneda lemma, one leg of the categorist's
+holy trinity (the other two being adjoint functors and representable
+functors; they are all essentially equivalent concepts, but one or the
+other looks more fundamental, depending on the context).  In this setup,
+these functors will be representable and the Yoneda lemma is available.
+At first I thought I would have to make a poset-enriched version of
+Yoneda (which would certainly be no problem), but eventually I realized
+that that is not quite the way to go.
+
+In fact, this is the setup.  Let V:Pos --> Set be the underlying functor
+on the category of posets.  A poset enriched theory (or, more properly,
+sketch) consists of n-ary operations for each poset n, along with
+equations and poset-based Horn clauses.  A model is a poset X equipped
+with a function V(n --o X) --> VX for each n-ary operation in the
+sketch.  The point of the V is that I make no hypothesis that these
+functions either preserve or reverse or have any interaction with the
+order.  So no mental gymnastics with the symmetric difference or other
+mixed operations.  The point is that, as Vaughn's examples show, the
+operations do not naturally preserve the order.  Or reverse it.  I am
+reasonably confident that I could dream up a theory in which there was
+no way of decomposing the operations so that they can be made up from
+mixed variance operations in the way that Vaughn did it.
+
+Now let B be the category of models.  We have U:B --> Pos and it has a
+left adjoint F.  There is a downside to all this.  Vaughn asked for an
+HSP theorem and I gave one for his theory.  It crucially depended on the
+fact that powers and the op functor preserved those epimorphisms in Pos
+(surjections).  Well, non-discrete exponentiation doesn't preserve
+exponentiation.  In fact, it is more-or-less obvious that only split
+epis are preserved by arbitrary exponentiation.  So now what?
+
+Over sets, the crucial step in showing that theories and triples are
+(ignoring certain size questions that I will keep under the rug for the
+moment; they have no effect on the kinds of theories that will interest
+computer scientists and I am perfectly to restrict to countably based
+sketches and \aleph_1 accessible triples) equivalent is that the natural
+transformations from U^n to U are in one-one correspondence with UFn.
+
+It is not hard to prove that the set of natural transformations from U^n
+to U is equivalent to VUn and from there to show that if that set of
+natural transformations is given the obvious order: \alpha < \beta if
+for all f:n\to UB, \alpha B(f) < \beta B(f), then that set of natural
+transformations is order isomorphic to UFn.  From this, I think the
+equivalence between theories and triples will follow.
+
+However, there is a downside to all this.  Surjections are not split and
+therefore are not preserved by triples.  This being crucial to the
+argument about HSP subcategories, that would seem to go down the drain
+as well.  There are some possbilities, which I will discuss shortly, but
+I don't believe any simple recovery is possible.
+
+First an example.  Suppose we consider a theory with just one operation
+of arity 3, meaning .-->.-->.  This means a value I will call <x,y,z>
+defined whenever x < y < z.  Put in the following: z < <x,y,z> and
+<x,x,z> = <y,z,z> = z.  Then there is an algebra whose underlying poset
+is 2 + 2, that is the disjoint union of two arrows.  The values of this
+operation are forced.  In fact, this is the free algebra on 2 + 2.  If
+we now identify the head of one arrow with the tail of the other, then
+there are now three distinct x < y < z.  Thus we get elements <x,y,z>
+which is now strictly greater than z, as well as <y,x,<x,y,z>> and
+<z,<x,y,z>,<y,z,<x,y,z>>>,..., not to mention <x,z,<x,y,z>> and many
+others.  Thus the coequalizer of that identification is infinite.  This
+shows that images are not always very simple.
+
+Now here is what you can do.  I feel more comfortable with triples.
+Suppose that B is a category of algebras and C is a full subcategory and
+let us suppose it is reflective.  If we suppose at least that C is
+closed under U contractible quotients, then the composite is tripleable.
+This means that whenever X -->> Y is an arrow, split as posets and X is
+in C, then so is Y.  Call the triple S.  Then we have T --> S a map of
+triples.  There is (of course) a category of triples and in that
+category, there is a factorization T -->> R >--> S where the first is a
+strict epi and the second monic.  The real question is to what extent
+can T -->> R be viewed as the introduction of equations.  I don't know
+at this point, but I don't expect there to be any easy connection.  Of
+course, if T -->> R is actually surjective, then it can be viewed as the
+introduction of equations.  The trouble is that there might be new
+operations forced by the identifications.  In fact, the example above,
+although it takes place at the level of models, not theories, gives an
+example how this happens.  Still, the new operations are a result of an
+identification that was made (or perhaps of a new ordering introduced),
+so this may still give a kind of HSP theorem.  But to illustrate the
+kind of thing that will have to be taken into account, consider that T
+--->> R is an epimorphism in the category of triples.  Unless it is an
+epimorphism in the functor category, one cannot even infer that a T
+algebra that is a subobject of an S algebra is an S algebra.  This is
+the S of the HSP theorem.  I don't see any obvious way around this.
+
+Regards, Mike
+
+Date: Fri, 29 Jun 90 10:08:56 PDT
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+I haven't had a chance yet to follow up on Mike Barr's thoughts, but
+hopefully will when I get back from the Jonsson symposium.  Meanwhile
+here's a message from Pepe Meseguer giving some key references, which
+would appear to be prerequisite reading for anyone formulating ideas
+in this area.
+-v
+
+        All of this has been done for ordered algebras by Steve Bloom,
+        who defined ordered theories and proved a Birkhoff variety
+        theorem in "Varieties of ordered algebras" JCSS 13 (1976)
+        200-212, and for (chain) continuous ordered algebras by me, who
+        used continuous theories, and proved a completeness theorem and
+        two different Birkhoff variety theorems in "Varieties of
+        Chain-Complete Algebras" J. Pure Appl. Algebra, 19 (1980)
+        347-383, and in "A Birkhoff-like theorem for algebraic clases
+        of interpretations of program schemes" in "Formalization of
+        Programming Concepts" J. Diaz and I. Ramos (eds.) Springer LNCS
+        107, (1981) 151-168.

@@ -1,0 +1,133 @@
+Path: news.gmane.org!not-for-mail
+From: "Toby Kenney" <tkenney@mathstat.dal.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fixing the constructive continued-fraction definition of the reals: proofs and refutations
+Date: Sun, 22 Feb 2009 18:19:19 -0400 (AST)
+Lines: 100
+Approved: news@gmane.org
+Message-ID: <E1LbTRb-0002A3-9n@mailserv.mta.ca>
+Reply-To: "Toby Kenney" <tkenney@mathstat.dal.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1235369412 28926 80.91.229.12 (23 Feb 2009 06:10:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 23 Feb 2009 06:10:12 +0000 (UTC)
+To: "Vaughan Pratt" <pratt@cs.stanford.edu>,  categories@mta.ca
+Original-X-From: categories@mta.ca Mon Feb 23 07:11:27 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LbU2D-0003p1-2s
+	for gsmc-categories@m.gmane.org; Mon, 23 Feb 2009 07:11:21 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LbTRb-0002A3-9n
+	for categories-list@mta.ca; Mon, 23 Feb 2009 01:33:31 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:107
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/107>
+
+The proof I gave is not quite ideal - I showed that if the objects 1-4 yo=
+u
+list all exist, then they are isomorphic. In theory, it would still be
+possible for object 3, say, not to exist. I think the following is a
+better proof:
+
+Let X be an object with morphisms 0 : 1 ----> X, s,t : X ----> X such tha=
+t
+ts=3Dt. We want to construct the map N^2 ----> X. We have a map
+f : N ----> X, given by considering X with just 0 and t. For every n in N=
+,
+we can also form a map g_n : N ----> X by g_n(0)=3Dt^n(0), and g_n(succ)=3D=
+s.
+Now we can form the map h : N^2 ----> X by h(a,b)=3Dg_a(b). I think this
+must be the unique map preserving everything necessary.
+
+Your suggestion of relaxing the condition to ts <=3D t seems to require
+changing from ordinary objects to partially-ordered objects. I think the
+initial one should be just the free monoid on two generators, with some
+partial order. You probably want to insist that s and t be inflationary.
+If you=B4re considering partially-ordered objects, then this won=B4t be
+isomorphic to N^2. I=B4m not sure whether there will be any isomorphism i=
+n
+the topos, even without requiring it to preserve order. You could
+alternatively consider a condition like t=3Dsts. I=B4m not really sure wh=
+at
+you mean by your claim that t is the ordinal w - I think the object you
+describe isn=B4t even totally ordered - how can you compare t^2(s(0)) and
+t^2(0)? If you take a condition like t=3Dsts to make it totally ordered, =
+you
+still have a decreasing chain t > ts > ts^2 > ...
+
+It looks like this should be something like the interval in N x Z,
+lexicographically ordered, going from (0,0) (so without the pairs (0,-n))=
+.
+If this is still an attempt to construct the reals, then I don=B4t see an=
+y
+sensible way to describe addition on an infinite lexicographic product of
+copies of Z (the integers).
+
+On the matter of it being disconcerting finding infinite sups, the
+definition doesn=B4t mention any form of partial order, so it shouldn=B4t
+really be any more surprising than finding (Kuratowski) finite sups.
+
+Sorry this email is mostly just intuition, rather than firm fact.
+Hopefully some wiser people than I will be able to put more substance to
+it.
+
+Toby
+
+> Toby Kenney wrote:
+>> Vaughan Pratt wrote in part:
+>>> I could well imagine 1 and 2 turning out to be isomorphic, but I feel=
+ I
+>>> would get a lot from seeing the proof of whichever way that goes.
+>
+> Thanks very much, Toby.  I didn't (and still don't) have any intuition
+> into what objects and morphisms are present in the free topos with NNO,
+> but your proof will help me fill in the gaps in this neighborhood of it=
+.
+>
+> On the one hand there are lots of objects one can talk about in languag=
+e
+> analogous to that characterizing the NNO, on the other there are also
+> lots of morphisms one can talk about that identify those objects (up to
+> isomorphism), and I'm still at the very early stage of learning how to
+> walk along that ridge line without falling off one side or the other.
+>
+> Joyal and Moerdijk, Algebraic Set Theory, show how to construct
+> sup-semilattices with sups up to a specified size S.   Obviously not
+> every topos with NNO supports every S, but presumably S =3D K
+> (Kuratowski-finite) is always present.  Your proof if correct shows tha=
+t
+> ts =3D t is too strong.  What if I relax it to ts <=3D t and proceed as=
+ in
+> J&M to construct the initial such object?  Can you still construct your
+> isomorphism, or do we end up with a weaker relationship?  If the latter
+> then we should have t(0) >=3D t(s(0)) =3D t(1) >=3D t(2) >=3D ... >=3D =
+x for any
+> natural number x.  Obviously t(0) is minimal among all terms having at
+> least one t, which should make t(0) the ordinal w.
+>
+> The one disconcerting thing here is that initiality has made t(0) an
+> infinite sup even though I assumed only finite sups.  I don't know
+> whether this means that the methods of J&M can't construct this initial
+> algebra, or that in every topos with NNO one can construct the requisit=
+e
+> sup-semilattices with countable sups.  I suppose it must be the latter.
+>
+> (I'm a complete novice here, as I've said before, so I hope people will
+> be patient with my appalling ignorance of topos-theoretic techniques.)
+>
+> Vaughan
+>
+>
+
+
+
+
+

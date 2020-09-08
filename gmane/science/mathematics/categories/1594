@@ -1,0 +1,217 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej.Bauer@CS.cmu.edu
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Reality check
+Date: 03 Aug 2000 16:28:59 -0400
+Lines: 183
+Approved: news@gmane.org
+Message-ID: <vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241017954 31991 80.91.229.2 (29 Apr 2009 15:12:34 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:34 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Aug  4 12:50:11 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA07308
+	for categories-list; Fri, 4 Aug 2000 12:47:00 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: Peter Freyd's message of "Mon, 31 Jul 2000 11:44:45 -0400 (EDT)"
+User-Agent: Gnus/5.0803 (Gnus v5.8.3) XEmacs/20.4 (Emerald)
+Source-Info: Sender is really andrej+@gs2.sp.cs.cmu.edu
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 6
+Status: RO
+Content-Length: 7115
+Original-Lines: 181
+Xref: news.gmane.org gmane.science.mathematics.categories:1594
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1594>
+
+
+I just returned from an idyllic island in the Adriatic sea, so I am
+joining the discussion on the reals a bit late.
+
+Jesse Hughes and I have thought about some of the questions that have
+been discussed so far in February, and I would like to report on what
+we had come up with.
+
+
+1.
+
+Martin Escardo asked whether it is possible to define the signed
+binary digit representation of [-1,1] in purely coinductive form. This
+can be done as follows (I am using Martin's notation for === and [[s]]).
+
+Let 3 = 1 + 1 + 1 = {-1, 0, 1}, and let C be the final coalgebra for
+the functor X |--> 3 x X. If the ambient category is nice enough C is
+the Cantor space 3^N, but we stick to purely coinductive language and
+think of elements of C as streams. Since C is the final coalgebra for
+X |--> 3 x X, every stream in C can be written uniquely in the form
+h::t where h is the "head" digit and t is the "tail" of the stream.
+
+The question is how to define the coincidence relation === on C
+without reference to the closed interval. The right person to ask this
+was Michal Konecny <konecny@rect.muni.cz>, a student of Achim Jung's,
+who studied what functions on real numbers can be computed by finite
+state automata (he also knows very well what exactly can be computed
+with finite state automata---there seems to be a close relation to
+f.s.a. and coinductive definitions). He immediately came up with a
+finite state automaton that accepts the negation of ===, from which a
+coinductive definition of === can be obtained easily. Michal produced
+pretty pictures that you can see at http://andrej.com/michal.ps
+
+The trick is to define === together with an auxiliary relation ~==.
+The intended meaning of s ~== t is [[s]] = 1/2 + [[t]]. It goes as
+follows:
+
+ x::a === y::b  <==>    (x=y, a === b) or
+                        (x=1, y=-1, a=-1-1-1..., b=111...) or
+                        (x=-1, y=1, a=111..., b=-1-1-1...) or
+                        (x=0, y=1, a ~== b) or
+                        (x=-1,y=0, a ~== b) or
+                        (x=1, y=0, b ~== a) or
+                        (x=0, y=-1, b ~== a)
+
+ and
+
+ x::a ~== y::b  <==>    (x=1, y=-1, a ~== b) or
+                        (x=0, y=-1, a ~== b) or
+                        (x=1, y=0, a ~== b) or
+
+Now let I be the quotient of C by ===. If the category is rich enough
+we can show that I is the closed interval of Cauchy reals.
+
+It would be interesting to simplify this presentation even further by
+using a signed representation with digits -1 and 1 only, in base B
+strictly between 1 and 2. For example, the golden ratio base B = (1 +
+sqrt(5))/2 seems to be very popular among exact real arithmetic
+people. But it's unclear how to make a finite state automaton for
+negation of === in this case.
+
+
+2.
+
+Alex Simpson suggested that we should look for what he calls
+"pseudo-ordering" instead of the classical "linear ordering". I
+definitely agree with that. I would just like to say that in my view
+it is better to say "(intuitionistic) linear order" than
+"pseudo-order" since the three axioms (by the way, there is no need to
+explicitly quantify over z in the second axiom, is there?)
+
+  1. not (x < y and y < x)
+
+  2. x < y ==> (x < z or z < y)
+
+  3. (not (x < y or y < x)) ==> x = y
+
+are classically equivalent to the usual axioms for linear order, as
+far as I can tell. So there is nothing "pseudo-" about the axioms,
+unless intuitionistic logic is "pseudo-logic"...
+
+I also agree with Alex that gluing along a point is not the right
+thing to do, from a constructive/intuitionistic point of view.
+
+
+3.
+
+Lastly, let me suggest another construction which Jesse and I have
+come up with, but we are unable to verify whether it works. Perhaps
+someone who does not get confused so quickly by too many arrows can
+tell us if it is worth anything.
+
+We were thinking like this. Consider the construction described by
+Peter Freyd, where we take objects with distinguished elements 0 and 1.
+We require that not (0 = 1) and then we define a "gluing functor"
+X |--> X v X which identifies 0 from one copy of X with 1 in the other
+copy of X. Then it turns out that (classically) the final coalgebra
+for the gluing functor is the closed interval I. This construction
+does not work in the intuitionistic case because gluing along a single
+point is a very classical construction. For an intuitionistic
+construction we should glue along an interval so that we have some
+"numerical tolerance". This leads to the idea that we should think of
+the closed interval I as being glued like this:
+
+             I
+      |------------|--R--|
+                   |--L--|------------|
+                            I
+
+That is, we replace the notion of "bottom 0" and "top 1" with "left
+part L" and "right part R". In categorical language, the global points
+0: * ---> I and 1: * ---> I are replaced with regular subspaces
+L: I >--> I and R: I >--> I. So the obvious thing to attempt is to
+consider objects X with distinguished "right part R: X >--> X" and
+"left part L: X >--> X". However, this doesn't work because when we form 
+the pushout
+
+          R
+      X >----> X
+      V        V
+    L |        |
+      |       _|
+      V      | V
+      X -----> Y
+
+we are stuck since we don't know how to obtain the left and right
+parts of Y (they should be regular monos Y >--> Y). But we can fix
+this by removing the condition that the left and the right part be
+isomorphic to the whole, which gives us the following construction:
+
+As objects we take pairs of parallel regular monos
+
+    >--R-->
+  X >--L--> Y
+
+We think of R as the "right part of Y" and L as the "left part of Y".
+There is an obvious notion of morphism between such objects
+R,L: X >--> Y and R',L': X' >--> Y', namely a pair of arrows x: X ---> X'
+and y: Y ---> Y' such that the following two diagrams, folded into a single
+picture, commute:
+
+      >--R-->
+    X >--L--> Y
+    |         |
+  x |         | y
+    |         |
+    V         V
+    X'>--R'-> Y'
+      >--L'->
+
+Define the gluing functor which maps such an object R,L: X ---> Y to the
+object R',L': Y ---> Z where Z, L', and R' appear in the pushout diagram:
+
+          R
+      X >----> Y
+      V        V
+    L |        | L'
+      |       _|
+      V      | V
+      Y -----> Z
+          R'
+
+We probably have to require that R and L are distinct regular monos
+(just like we required that 0 and 1 are distinct, and they were
+regular monos for free). We also have to assume that pushouts of
+regular monos along regular monos are regular monos.
+
+Question: does this functor have a final coalgebra, say in the
+category of sets? How about in a topos with natural numbers object?
+
+Observe that if there is a final coalgebra, then it is necessarily of
+the form R, L: I >--> I, the left and the right parts are isomorphic
+to the whole, because the structure map of a final coalgebra is an
+isomorphism. So this much at least works out fine.
+
+I have a feeling that the construction won't work, which is not bad
+anyway, since the midpoint construction together with the completness
+axiom of Alex's and Martin's works beautifully. I am just curious to
+see what the final coalgebra might be.
+
+Andrej
+
+

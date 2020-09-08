@@ -1,0 +1,154 @@
+Path: news.gmane.org!not-for-mail
+From: Andrej Bauer <Andrej.Bauer@andrej.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fwd: Mathematica and CAS
+Date: Fri, 02 Dec 2005 00:44:46 +0100
+Lines: 116
+Approved: news@gmane.org
+Message-ID: <438F8AEE.9010006@andrej.com>
+References: <546F06B4-60F8-11DA-9B52-000393B90F2C@wanadoo.fr>
+Reply-To: Andrej.Bauer@andrej.com
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-2
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018988 6390 80.91.229.2 (29 Apr 2009 15:29:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:29:48 +0000 (UTC)
+To: Categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Dec  2 07:33:02 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 07:33:02 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ei998-0000O6-J9
+	for categories-list@mta.ca; Fri, 02 Dec 2005 07:32:10 -0400
+User-Agent: Debian Thunderbird 1.0.2 (X11/20050602)
+X-Accept-Language: en-us, en
+In-Reply-To: <546F06B4-60F8-11DA-9B52-000393B90F2C@wanadoo.fr>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 2
+Status: O
+Content-Length: 5070
+Original-Lines: 115
+Xref: news.gmane.org gmane.science.mathematics.categories:2927
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2927>
+
+[note from moderator: the poster is right, this discussion is not relevant
+to this list, and this final post is allowed as a response to the previous
+post only.]
+
+I feel guilty about prolonging a discussion which is not related to
+categories. If the moderator thinks we should take it off line, we can
+do so (see the end of this posting). But since the last message was
+public and it asked for a reaction, I will reply in the same fashion.
+
+Thank you to Jean Benabou for posting the message by Jacqueline Zizi. I
+would like to make a couple of remarks.
+
+First of all, I want it to be clear that Jacqueline and I are on the
+same side. I am a big fan of Computer Algebra Systems (CAS). I promote
+them at our department and I teach my students how to use them to solve
+problems they meet in analysis and algebra. I show them examples from
+their analysis class which their teacher solved incorrectly but
+Mathematica gets them right.
+
+I shall now also teach them how to compute the limit correctly, thanks
+to Jacqueline's suggestion. By the way, there is no need to compute the
+power expansion of numerator and denominator separately. You can just
+compute Series[...] of the whole thing:
+
+In[42] := Series[((1 + 4*x^2)^(1/4) - (1 + 5*x^2)^(1/5))/
+  (a^(-x^2/2) - Cos[x]), {x, 0, 4}] // Simplify
+
+Out[42] = x^2/(1 - Log[a]) + (...) x^4 + O[x^5]
+
+You see immediately that things go wrong when Log[a] = 1 ...
+
+>> But I have the impression that Andrej himself falls in the trap.
+
+I fail to see how I fall in _the_ trap, i.e., that I make the same sort
+of mistakes as students and CAS. I surely hope I do not :-) Perhaps, it
+was meant that I just made a mistake when I stated:
+
+>> And especially when he says that :
+>> " I guess I am trying to point out that current Computer Alegbra
+>> Systems are very tricky to use_correctly"
+
+This is an observation about user experience, namely that one cannot
+trust CAS 100% without having a lot of expert knowledge about it. You
+may have a different experience, but mine is as stated.
+
+I find most of Jacqueline's comments to be explanations about why CAS
+are not 100% mathematically correct all the time: they are complex, they
+grow with time, etc. This is all true and well, and I am NOT saying that
+any CAS which is not 100% correct all the time should be eliminated from
+the face of the Earth.
+
+However, I do take issue with the fact that CAS are presented in a
+dishonest way. A typical CAS demo does not show you that things can go
+wrong. The documentation does NOT state clearly the conditions under
+which builtin functions may be used, contrary to what Jacqueline says:
+
+>> The rules for application of the primitives are
+>> clearly given in Mathematica, in the "Help" menu.
+
+You make it sound as if a user who reads the help menu for "Limit" will
+know that free parameters may sometimes lead to errors. Here is the
+complete text of help:
+
+--------
+Limit
+
+Limit[expr, x->x_0] finds the limiting value of expr when x approaches x_0.
+
+* Example: Limit[Sin[x]/x, x->0] --> 1.
+* Limit[expr, x->x_0, Direction -> 1] computes the limit as x approaches
+x_0 from smaller values.
+* Limit[expr, x->x_0, Direction -> -1] computes the limit as x
+approaches x_0 from larger values.
+* Limit returns Interval objects to represent ranges of possible values,
+for example at essential singularities.
+* Limit returns unevaluated when it encounters functions about which it
+has no specific information. Limit therefore makes no explicit
+assumptions about symbolic functions.
+* See The Mathematica Book: Section 1.5.10 and Section 3.6.8.
+* See also: Series, Residue.
+* Related package: NumericalMath`NLimit`.
+---------
+
+I let the readers judge whether "Limit therefore makes no explicit
+assumptions about symbolic functions" makes it clear that using
+parameters in limits can cause wrong answers. Additionally, there is no
+hint whatsoever that Mathematica will apply l'Hospital rule (or
+something equivalent) without checking the side condition for it.
+
+The reason why conditions of correct usage are not stated clearly is
+simple: nobody knows them. CAS are so complex and so liberal about which
+rule gets applied when that it is next to impossible to write down
+precisely when they will work correctly.
+
+I understand that CAS are complex and that we would get nowhere if we
+worried about correctness all the time. But the makers of CAS should be
+honest about this: CAS do NOT state clearly the conditions under which
+they work correctly, therefore it is difficult to know whether they have
+given a correct answer. Jacqueline herself wonders about correctness of
+the results she gets in her third example at
+http://homepage.mac.com/jacquelinezizi/CategoriesQA/.
+
+It is an open problem, as far I can tell, to create a powerful CAS with
+perfect control of correctness.
+
+I suggest that we take further discussion off the categories list. One
+possible forum is my blog at http://math.andrej.com, where I posted
+further examples of how Mathematica gets things wrong at
+
+  http://math.andrej.com/2005/12/02/design-of-computer-algebra-systems/
+
+Andrej Bauer
+
+
+
+

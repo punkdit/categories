@@ -1,0 +1,19924 @@
+From cat-dist Mon Feb  1 05:52:50 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id EAA17494
+	for categories-list; Mon, 1 Feb 1999 04:33:11 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 1 Feb 1999 17:55:01 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Message-Id: <199902010655.RAA15452@milan.maths.usyd.edu.au>
+To: categories@mta.ca, maxk@maths.usyd.edu.au
+Subject: categories: Artin glueing et cetera; comments of Barr, Jay, Crole, and Johnstone
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+Barry Jay recently sought comments on A^2 is cartesian closed when A is so,
+where 2 is the arrow-category. Roy Crole and Peter Johnstone both pointed
+out that this was a special case of Artin glueing.
+
+Is there not a more general fact? The forgetful 2-functor from cartesian-
+closed categories to categories is fairly easily seen to be monadic - the
+monadicity is well-known for categories with finite products or finite
+limits, and adding the right adjoint to (- x A) is purely equational. But
+for any 2-monad T on K, T-Alg has all lax and pseudo limits - indeed all
+flexible limits - formed as in K; see [Blackwell, Kelly, and Power, Two-
+-dimensional monad theory, J. Pure Appl. Algebra 50 (1989), 1-41]. Artin
+glueing is the case of the lax limit of a map, if I remember correctly its
+meaning. But (-)^X for any category X is also a flexible limit, so that
+Jay's observation is included directly without recourse to Artin glueing.
+
+Then, again, Michael Barr on 30 Jan asserts that A^X is cartesian closed if
+A is so when X is finite and A has finite limits. Surely such conditions are
+not needed - A^X is cartesian closed when A is so.
+
+Am I missing something?
+
+Max Kelly
+
+
+From cat-dist Mon Feb  1 22:37:24 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA31124
+	for categories-list; Mon, 1 Feb 1999 21:26:22 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 2 Feb 1999 00:25:26 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Message-Id: <199902011325.AAA06948@milan.maths.usyd.edu.au>
+To: categories@mta.ca, maxk@maths.usyd.edu.au
+Subject: categories: my earlier comments on certain limits in algebras for a 2-category.
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+After returning home and checking my references, I see that in [Blackwell,
+Kelly, Power] we show that, for a 2-monad T on a complete 2-category K, the
+category T-Alg, whose morphisms are the non-strict ones (the "to within a
+coherent isomorphism" ones), admits products, inserters, and equifiers,
+formed as in K, and hence such limits as follow from these, including the
+cotensor product (-)^X for an X in K. What I said today about admitting all
+FLEXIBLE limits is false; I had misremembered, and there is a counter-
+-example in Example 6.2 of [Bird, Kelly, Power, Street, Flexible limits for
+2-categories, JPAA 61 (1989), 1 - 27]. The flexibles would follow from those
+above if idempotents were to split - but they don't in general.
+
+I am strongly convinced that the above is true. The mere CATEGORY Ccc of
+cartesian closed categories was shown to be monadic over the mere category
+Cato of categories by Burroni, and this was checked and restated by Dubuc
+and Kelly in [J. Algebra 81 (1983), 420 - 433]. Blackwell, Kelly, and Power
+claimed on p.39 of [B,K,P] that Ccc, as a 2-category with only invertible
+2-cells, is monadic (2-monadic, if you want the repeated emphasis) over the
+complete 2-category Catg which is obtained from the 2-category Cat by
+discarding all the non-invertible 2-cells. It is most unlikely that Ccc is
+2-monadic over the usual 2-category Cat; for already symmetric monoidal
+closed categories is known not to be so; see p.34 of [B,K,P].
+
+I had strongly believed that Ccc was indeed 2-monadic over Catg; but we never
+checked every detail of this particular example. Today my belief has been
+shaken by two letters (one from Barry Jay) claiming that the monadicity of 
+Ccc is false, unless the cartesian closed categories are supposed to admit
+pullbacks. I shall try to check this out in the coming days - we were quite
+sure that the structure is equational even without pullbacks, but perhaps we
+were wrong. Certainly Burroni (see [Dubuc-Kelly for the reference) supposed
+pullbacks present, because he was headed for toposes.
+
+I must say that the letters I received today were imprecise about which
+base 2-category was involved; to be fair, they were not really about 
+monadicity but about the existence of A^2. However I formed theimpression
+that the 2-categorical investigations in the references above have not (yet?)
+become part of the common language of our colleagues. Note that the T-Alg
+where these limits are to exist does NOT have the strict maps; so that it is
+certainly not monadic in any classical sense. Clearly one cannot begin even
+to pose such questions precisely without using 2-categorical notions. Let me
+finish by saying that the universal property of A^2 is 2-categorical by its
+very nature (if we are speaking of A^2 in T-alg, not just in Cat).
+
+Oh, that's it! I have just seen what the point is. [B,K,P] is quite right in
+asserting that Ccc has the limit A^2 formed as in Catg; but the limit A^2 in
+Catg is not at all that in Cat; it is the category such that to give
+B --> A^2 is to give two maps B --> A and a 2-cell between them; but the
+2-cells in Catg are just the INVERTIBLE natural transformations, so that
+A^2 in Catg is A^I in Cat, where I is the free isomorphism, not the free a
+arrow 2.
+
+So, all right, I give in. The [B,K,P] results don't give a cartesian closed
+structure on the USUAL A^2 in Cat. Anyway, I've learned (or relearned)
+something from thinking this through, and hope some others may benefit from
+seeing these notions brought up.
+
+And so to bed. Max Kelly.
+
+
+From cat-dist Tue Feb  2 00:22:27 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA20821
+	for categories-list; Mon, 1 Feb 1999 23:34:19 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <36B5647D.3DEB@lri.fr>
+Date: Mon, 01 Feb 1999 09:23:25 +0100
+From: Alexandre Zamulin <zam@lri.fr>
+Organization: LRI, Universite Paris-Sud, Paris
+X-Mailer: Mozilla 3.01Gold (X11; I; SunOS 5.6 sun4u)
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: PSI99 submission deadline extension
+References: <199901280337.LAA09924@ccs1.iis.sinica.edu.tw>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+***********************************************
+            *** EXTENSION of PAPER SUBMISSION DEADLINE ***
+            ***********************************************
+
+Due to several reasons, the deadline for electronic submission of
+extended abstracts to A.P Ershov Third International Conference
+"Perspectives in System Informatics" (PSI'99) is extended for 
+two weeks as follows:
+
+NEW DEADLINE: February 14, 1999   
+   
+Call for papers is attached below for your reference.
+***********************************************
+
+
+                        FINAL CALL FOR PAPERS
+            Andrei Ershov Third International Conference
+                  PERSPECTIVES OF SYSTEM INFORMATICS
+
+        6 - 9 July 1999, Novosibirsk, Akademgorodok, Russia
+
+AIMS AND SCOPE
+
+The conference is held to honour the late Academician Andrei Ershov
+(1931-1988) and his outstanding contributions towards advancing
+informatics. The first two conferences were held in May 1991 and
+June 1996 and proved to be big international events.
+
+Andrei Ershov was one of the early Russian pioneers in the field of
+theoretical and systems programming, a founder of the Siberian School
+
+of Computer Science. In 1974 he was nominated as a Distinguished
+Fellow of the British Computer Society. In 1981 he received the
+Silver Core Award for services rendered to IFIP. Andrei Ershov's
+brilliant speeches were always in the focus of public attention.
+Especially notable was his lecture on "Aesthetic and human factor in
+programming" presented at the AFIPS Spring Joint Computer Conference
+in 1972. Andrei Ershov was not only an extremely gifted scientist,
+teacher and fighter for his ideas, but also a bright and many-sided
+personality. He wrote poetry, translated the works of R.Kipling and
+other English poets, and enjoyed playing guitar and singing.
+Everyone who had the pleasure of knowing Andrei Ershov and working
+with him will always remember his great vision, eminent
+achievements, and generous friendship.
+
+The aim of the Conference is to provide a forum for the presentation
+and in-depth discussion of advanced research directions in Computer
+Science. For a developing science, it is important to work out
+consolidating ideas, concepts and models. Movement in this direction
+is one of the goals the Conference is to meet. Improvement of the
+contacts and exchange of ideas between researchers from the East and
+West are further goals.
+
+CONFERENCE TOPICS
+
+Conference topics include:
+
+              Semantics-Based Program Processing
+- program specification, transformation, and verification,
+- semantics, logic and formal models of programs,
+- partial evaluation, mixed computation, and abstract interpretation,
+- program analysis, understanding and visualization.
+
+              Program Methodology and Information Technologies:
+- object-oriented programming,
+- generic programming,
+- parallel and distributed computing,
+- database and information systems.
+
+              Artificial Intelligence:
+- knowledge engineering,
+- natural language processing,
+- AI tools and applications
+- constraint programming and multi-agent technology.
+
+In addition to papers in the above list of topics, papers both
+bridging the gap between different directions and promoting mutual
+understanding of researchers in different directions are welcome.
+Papers defining the prospects of Computer Science in the whole and
+joint West-East papers are also encouraged.
+
+LOCATION
+
+The conference will be held in Akademgorodok (Academy town), 30 km
+South from Novosibirsk, the largest city of Siberia. Akademgorodok is
+located in a picturesque place near the Ob lake. It is surrounded
+with birch and pine forests and pleasant not only for work but for
+recreation as well. Silence, beautiful landscape, and pure air are
+the factors promoting scientific activity and creativity.
+
+CONFERENCE CHAIR
+
+Alexander Marchuk
+Institute of Informatics Systems
+6, Acad. Lavrentjev pr.
+630090 Novosibirsk, RUSSIA
+tel.: +7-3832-343652
+fax: +7-3832-323494
+e-mail: mag@iis.nsk.su
+
+PROGRAMME COMMITTEE CO-CHAIRS:
+
+Dines Bjorner
+Dept. of IT
+Technical University of Denmark,
+DK-2800 Lyngby, DENMARK
+Phone/Fax: +45-45.88.45.30
+E-mail: db@it.dtu.dk
+
+Manfred Broy
+Institut fuer Informatik
+Technische  Universitaet Muenchen
+D-80290 Munich, GERMANY
+Phone:         +49-89-21058161
+Fax:           +49-89-21058183
+E-mail:        broy@informatik.tu-muenchen.de
+
+Alexandre Zamulin
+Institute of Informatics Systems
+6, Acad. Lavrentjev pr.
+630090 Novosibirsk, RUSSIA
+Phone: +7-3832-396258
+Fax:   +7-3832-323494
+E-mail: zam@iis.nsk.su
+
+PROGRAMME COMMITTEE MEMBERS
+
+Janis Barzdins (Riga, Latvia)
+Frederic Benhamou (Nantes, France)
+Christian Boitet (Grenoble, France)
+Mikhail Bulyonkov (Novosibirsk, Russia)
+Piotr Dembinski (Warsaw, Poland)
+Alexander Dikovsky (Nantes, France)
+Victor Ivannikov (Moscow, Russia)
+Philippe Jorrand (Grenoble, France)
+Leonid Kalinichenko (Moscow, Russia)
+Alexander Kleschev (Vladivostok, Russia)
+Vadim Kotov (Palo Alto, USA)
+Reino Kurki-Suonio (Tampere, Finland)
+Alexander Letichevski (Kiev, Ukraine)
+Eduard Ljubimsky (Moscow, Russia)
+Rudiger Loos (Tuebingen, Germany)
+Bernhard Moeller (Augsburg, Germany)
+Hanspeter Moessenboeck (Linz, Austria)
+Valery Nepomniaschy (Novosibirsk, Russia)
+Gennady Osipov (Pereslavl-Zalesski, Russia)
+Jaan Penjam (Tallinn, Estonia)
+Peter Pepper (Berlin, Germany)
+Igor Pottosin (Novosibirsk, Russia)
+Wolfgang Reisig (Berlin, Germany)
+Dieter Rombach (Kaiserslautern, Germany)
+Dean Rosenzweig (Zagreb, Croatia)
+Viktor Sabelfeld (Karlsruhe, Germany)
+Vladimir Sazonov (Pereslavl-Zalesski, Russia)
+David Schmidt (Manhattan, USA)
+Sibylle Schupp (Troy, USA)
+Valery Sokolov (Yaroslavl, Russia)
+Nicolas Spyratos (Paris, France)
+Alexander Tomilin (Moscow, Russia)
+Enn Tyugu (Stockholm, Sweden)
+Andrei Voronkov (Uppsala, Sweden)
+Tatyana Yakhno (Novosibirsk, Russia)
+Zhou Chaochen (Macau)
+
+
+CONFERENCE SECRETARY
+
+Natalia Cheremnykh
+Institute of Informatics Systems
+6, Acad. Lavrentjev pr.
+630090 Novosibirsk, RUSSIA
+tel.: +7-3832-342352
+fax: +7-3832-323494
+e-mail: {cher, psi99}@iis.nsk.su
+
+To maintain an intensive conference atmosphere and enable in-depth
+discussions, the number of participants is limited to 100. Three
+kinds of presentations - invited talks, regular contributed talks,
+and short contributed talks - are proposed.
+
+INVITED SPEAKERS
+
+1. K. Apt (CWI, The Netherlands)
+   "A language-independent framework for constraint programming".
+2. V. Basili (University of Maryland, USA). "Understanding software
+   for use: a family of empirical studies".
+3. M.-C. Gaudel (Universite Paris-Sud, France), A. Zamulin (IIS,
+   Novosibirsk). "Algebraic imperative specifications".
+4. N. Jones (DIKU, Denmark). "Some perspectives on mixed
+   computation, including on-line abstract interpretation as a basis
+   for performing program transformation".
+5. D. Mery (Universite Henri Poincare & Institut Universitaire
+   de France & LORIA, France). "Formal modelling of services for
+   getting a better understanding of the feature interaction problem"
+6. R. Morrison (University of St. Andrews, Scotland).
+   "Persistent hyperprogramming".
+7. A. Narinyani (RIAI, Moscow). "Information technologies:
+   revolution at the beginning of the 21st century".
+8. D. Sannella (Edinburgh University, Scotland)
+   "The common framework initiative for design specification
+   and development of software".
+
+CONFERENCE PROCEEDINGS
+A book of abstracts of invited and accepted talks will be
+available at the Conference. The full versions of the talks
+presented at the Conference are expected to be published by
+Springer-Verlag in the Lecture Notes in Computer Science
+series (one can find the Proceedings of the previous
+conference in LNCS, Vol. 1181).
+
+
+SUBMISSIONS
+
+All submissions must be in English, clearly written and in
+sufficient detail to allow the Programme Committee to assess the
+merits of the work. Electronic submissions are encouraged.
+They should be received in Novosibirsk by January, 31 (extended to
+February, 14). A PostScript file of an extended abstract (up to 
+8 pages for a regular talk and up to 4 pages for a short talk) 
+should be e-mailed to the following address: PSI99@iis.nsk.su
+Please use LaTeX2e or LaTeX. When preparing your submission please
+follow instructions for authors of papers to be published at
+Springer Lecture Notes in Computer Science series.
+For more information see www.springer.de/comp/lncs/authors.html.
+
+The abstract should indicate complete authors' addresses (including
+e-mail addresses and fax numbers if any), affiliation and a clear
+statement of the kind of the submission (regular or short talk).
+Papers arriving late or exceeding size limits may be rejected
+immediately without refereeing. The receipt of all submitted papers
+will be acknowledged by e-mail within 2 days.
+
+Authors will be notified of acceptance by March 31, 1999.
+Material submitted to the Conference should be unpublished and not
+submitted for publication elsewhere, including journals or other
+conferences.
+
+TRAVELLING
+
+A direct Siberia Airlines flight will bring you from Frankfurt or
+Hannover to Novosibirsk and back. Participants travelling via
+Moscow will be met in Moscow and helped to take a domestic flight
+by Aeroflot or TransAero airlines. All participants will be met
+at the Novosibirsk airport and brought to Akademgorodok by a
+special transport.
+
+WEATHER
+
+The weather in Novosibirsk at the beginning of July is normally quite
+
+warm and sunny with the temperatures in the range of 25-30 C. Night
+swimming in the Ob lake is guaranteed.
+
+IMPORTANT DATES
+
+February 14, 1999: new submission deadline of extended abstracts
+
+March 31, 1999:  notification of acceptance (by e-mail)
+
+July 5, 1999: arrival date
+
+July 6 - 9, 1999: the Conference dates
+
+September 1, 1999:  final papers due (camera-ready, LaTeX, llncs
+style)
+
+For more information see http://www.iis.nsk.su/PSI99
+
+
+From cat-dist Tue Feb  2 00:25:22 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA17730
+	for categories-list; Mon, 1 Feb 1999 23:35:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 1 Feb 1999 18:37:56 +0800 (CST)
+From: eric@iis.sinica.edu.tw (Pao-Ann Hsiung)
+Message-Id: <199902011037.SAA24447@ccs1.iis.sinica.edu.tw>
+To: categories@mta.ca
+Subject: categories: SGM GUI v1.2 Released
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+            --------------------------------------------------
+                    State Graph Manipulators (SGM) 
+               New GUI Version 1.2 Released (Solaris OS)!!!
+            New Interactive Version 1.1 Released (Linux OS)!!!
+            --------------------------------------------------
+                 "http://www.iis.sinica.edu.tw/~eric/sgm/"
+            --------------------------------------------------
+
+  State Graph Manipulators (SGM) is a high-level state-graph manipulation 
+  tool for verification non-experts as well as experts. After the release
+  of SGM v1.1 which was a more stable version, we are now releasing SGM v1.2
+  which has a Graphical User Interface (GUI) that allows more logical
+  and flexible manipulation of state-graphs. SGM v1.2 with GUI 
+  is now ready for downloading. This version provides both three interfaces:
+  batch, interactive, and graphical user interface.
+
+                            "Important NOTE"
+  Those who downloaded SGM v1.1 recently are strongly advised to download
+  SGM v1.2 which provides not only a GUI, but also removes some program bugs.
+
+                     Changes in v1.2 from v1.1
+
+(1) A Graphical User Interface (GUI) provided for a more user-friendly
+    verification environment as well as for demonstrating how state-graphs
+    can be reduced by different manipulators (reduction techniques).
+    The SGM GUI provides not only all the functionalities that were present 
+    in the interactive/batch modes, but also some new facilities like
+    graph viewing, renaming, printing, saving, and input file editing, etc.
+    On-line help is provided in the GUI.
+(2) Memory usage further reduced to 1/10th of that originally 
+    required in SGM v1.0 and 4/5th of that required in SGM v1.1. 
+    Memory leaks removed using Purify, a commercial program debugging 
+    tool from Rational Software.
+(3) All 5 application examples that were included with v1.1 distribution,
+    can now be directly loaded into the GUI by just some clicks of a mouse
+    button.
+    (a) Fischer's Mutual Exclusion Protocol,
+    (b) CSMA/CD Protocol,
+    (c) Token Ring Network,
+    (d) PATHO OS Priority-Based Task Execution, and
+    (e) Bus Arbiter.
+(4) User manual updated to version 1.2.
+(5) Further programming bugs/errors fixed.
+
+Visit URL: "http://www.iis.sinica.edu.tw/~eric/sgm/" to download SGM v1.2.
+SGM web site completely renewed for easier download and access.
+
+        Authors: 
+            Dr. Hsiung, Pao-Ann and Dr. Farn Wang
+              Institute of Information Science
+            Academia Sinica, Taipei, TAIWAN, R.O.C.
+            E-mail: {eric,farn}@iis.sinica.edu.tw
+
+-----------------------------------------------------------------------------
+                     Dr. Pao-Ann (Eric) Hsiung           
+Institute of Information Science | E-MAIL: eric@iis.sinica.edu.tw
+Academia Sinica                  | TEL   : +886-2-27883799 ext. 2453
+Nankang, Taipei 115              | FAX   : +886-2-27824814
+TAIWAN, Republic of China.       | URL   : http://www.iis.sinica.edu.tw/~eric
+-----------------------------------------------------------------------------
+
+
+From cat-dist Tue Feb  2 19:59:56 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id SAA27625
+	for categories-list; Tue, 2 Feb 1999 18:38:34 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <36B6FDF5.FDA0D926@cs.chalmers.se>
+Date: Tue, 02 Feb 1999 14:30:29 +0100
+From: Bengt Nordstr|m <bengt@cs.chalmers.se>
+Organization: Dept. of CS, Chalmers, Sweden
+X-Mailer: Mozilla 4.5 [en] (X11; I; SunOS 5.6 sun4u)
+X-Accept-Language: en
+MIME-Version: 1.0
+Subject: categories: Positions at Chalmers, Gothenburg, Sweden
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Do you think you could send this to people who might be interested, Thanks.
+-- Bengt Nordstrom
+
+(Apologies for multiple copies)
+
+
+
+Associate/Assistant Professor - Lecturer Positions at Chalmers University, Gothenburg
+=====================================================================================
+                Department of Computing Science
+                ==============================
+
+We need to strengthen our teaching and research in, among other subjects,
+
+ * data bases
+ * software engineering
+ * cognition technology
+ * algorithms
+ * AI
+ * language technology
+
+For further information, see http://www.cs.chalmers.se/Cs/
+
+
+From cat-dist Tue Feb  2 20:12:00 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA29354
+	for categories-list; Tue, 2 Feb 1999 19:12:09 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199902021922.OAA24636@sirocco.cc.mcgill.ca>
+From: "Prof. J. Lambek" <lambek@math.mcgill.ca>
+To: categories@mta.ca
+Date: Tue, 2 Feb 1999 14:21:45 EST
+Subject: categories: Reading advice
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Concerning the question by Lindquist:
+
+The tensor product automatically satisfies all functoriality, 
+associativity and coherence conditions, if it is introduced by a 
+universal property as by Bourbaki. This is shown for monoidal 
+categories (bicategories with one object) e.g. in my paper 
+``Multicategories revisited'', Contemporary Mathematics 92(1989). The 
+same argument works for arbitrary bicategories provided, in defining 
+a multicategory, one replaces the free monoid generated by a set by 
+the free category generated by a graph.
+
+Jim Lambek
+
+
+
+
+From cat-dist Wed Feb  3 04:41:38 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id DAA20419
+	for categories-list; Wed, 3 Feb 1999 03:42:47 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199902030733.XAA30719@coraki.Stanford.EDU>
+To: categories@mta.ca
+Subject: categories: Re: Reading advice 
+In-reply-to: Your message of "Tue, 02 Feb 1999 14:21:45 EST."
+             <199902021922.OAA24636@sirocco.cc.mcgill.ca> 
+Date: Tue, 02 Feb 1999 23:33:02 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+>From: "Prof. J. Lambek" <lambek@math.mcgill.ca>
+>Subject: categories: Reading advice
+>
+>Concerning the question by Lindquist:
+>
+>The tensor product automatically satisfies all functoriality, 
+>associativity and coherence conditions, if it is introduced by a 
+>universal property as by Bourbaki.
+
+In view of this would it be fair to say that coherence is not a notion
+intrinsic to category theory, but rather arises from the traditional
+set theoretic presentation (or at least point of view) of category theory?
+
+Much the same can surely be said of naturality, whose abstract essence
+is that of 2-cells but which is standardly presented concretely, where
+the interchange axiom becomes a not entirely trivial theorem.
+
+Vaughan Pratt
+
+
+From cat-dist Thu Feb  4 01:22:01 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id AAA18894
+	for categories-list; Thu, 4 Feb 1999 00:20:09 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199902040211.SAA11290@charity.ucr.edu>
+Subject: categories: coherence
+To: categories@mta.ca (categories)
+Date: Wed, 3 Feb 1999 18:11:46 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+J. Lambek writes:
+
+>The tensor product automatically satisfies all functoriality, 
+>associativity and coherence conditions, if it is introduced by a 
+>universal property as by Bourbaki.
+
+Vaughan Pratt writes:
+
+>In view of this would it be fair to say that coherence is not a notion
+>intrinsic to category theory, but rather arises from the traditional
+>set theoretic presentation (or at least point of view) of category theory?
+
+I think it's fair to say that operations automatically satisfy all
+the right coherence laws if you define them using universal properties.
+This is the idea behind Jim Dolan's and my definition of weak n-categories:
+all the ways of composing cells are defined by means of universal properties,
+so one doesn't need to explicitly list coherence laws - they're automatic.
+
+Indeed, if you ask what are the "right" coherence laws, perhaps the 
+easiest answer is: the coherence laws automatically satisfied by universal 
+constructions!   (There are also some answers coming from homotopy theory
+but probably deep down they are the same answer.)
+
+We pound these points home with great rhetorical flourishes in the 
+following paper:
+
+Categorification, in Higher Category Theory, eds. Ezra Getzler and 
+Mikhail Kapranov, American Mathematical Society, Providence, 1998, 
+pp. 1-36.  
+
+Also available electronically at http://math.ucr.edu/home/baez/cat.ps
+
+
+
+
+
+From cat-dist Sat Feb  6 00:40:30 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA26857
+	for categories-list; Fri, 5 Feb 1999 23:54:45 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199902060126.RAA05639@charity.ucr.edu>
+Subject: categories: higher-dimensional algebra and Planck-scale physics
+To: categories@mta.ca (categories)
+Date: Fri, 5 Feb 1999 17:26:13 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Here is a new paper of mine that may be interesting to fans of
+categories and n-categories:
+
+Higher-Dimensional Algebra and Planck-Scale Physics
+
+to appear in "Physics Meets Philosophy at the Planck Scale", eds. 
+Craig Callender and Nick Huggett, Cambridge U. Press, Cambridge.
+
+This is a nontechnical introduction to recent work on quantum gravity
+that uses ideas from higher-dimensional algebra.  We argue that reconciling
+general relativity with the Standard Model requires a `background-free
+quantum theory with local degrees of freedom propagating causally'.  We
+describe the insights provided by work on topological quantum field theories
+such as quantum gravity in 3-dimensional spacetime.  These are background-free
+quantum theories lacking local degrees of freedom, so they only display some
+of the features we seek.  However, they suggest a deep link between the
+concepts of `space' and `state', and similarly those of `spacetime' and
+`process', which we argue is to be expected in any background-free quantum
+theory.  We sketch how higher-dimensional algebra provides the mathematical
+tools to make this link precise.  Finally, we comment on attempts to formulate
+a theory of quantum gravity in 4-dimensional spacetime using `spin networks'
+and `spin foams'.
+
+Available in LaTeX and Postscript form at
+
+http://xxx.lanl.gov/abs/gr-qc/9902017
+
+and in Postscript form at
+
+http://math.ucr.edu/home/baez/planck.ps
+
+
+
+
+From cat-dist Sat Feb  6 00:40:38 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA18616
+	for categories-list; Fri, 5 Feb 1999 23:50:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 5 Feb 1999 14:03:37 -0500 (EST)
+From: Noson Yanofsky <noson@sci.brooklyn.cuny.edu>
+To: categories@mta.ca
+Subject: categories: no coherence assumptions
+Message-ID: <Pine.GSO.3.94.990205140232.18330B-100000@kiev>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+James Dolan wrote:
+>what does "no coherence assumptions at all" mean in this context?
+>does it mean that yanofsky is studying what i call "coarse
+>n-categories", defined recursively as categories enriched over the
+>cartesian closed category where the objects are the coarse
+>[n-1]-categories and the morphisms are the enriched natural
+>isomorphism classes of enriched functors?
+
+I am not sure whether his "course 2-categories" is my associative 
+categories. Here is the abstract of my paper available at
+
+http://xxx.lanl.gov/abs/math.QA/9804106
+
+Obstructions to Coherence:  Natural Noncoherent Associativity
+
+Abstract
+We study what happens when coherence fails. Categories
+with a tensor product and a natural associativity isomorphism
+that does not necessarily satisfy the pentagon coherence
+requirements (called associative categories) are considered.
+Categorical versions  of associahedra where naturality squares 
+commute and pentagons do not are constructed (called Catalan 
+groupoids, $\An$). These groupoids are used in the construction of the
+free associative category. They are also used in the
+construction of the theory of associative categories (given as a 2-sketch).
+Generators and relations are given for the fundamental group, $\pi(\An)$, 
+of the Catalan groupoids -- thought of as a simplicial complex. These 
+groups are shown to be more than just free groups. Each associative 
+category, $\bf B$, has related fundamental groups $\pi(\bf
+B_n)$ and homomorphisms $\pi(P_n):\pi(\An) \longrightarrow \pi(\bf
+B_n)$. If the images of the $\pi(P_n)$ are trivial, i.e. there is only
+one associativity path between any two objects, then the category is
+coherent. Otherwise the images of $\pi(P_n)$ are obstructions to
+coherence. Some progress is made in classifying noncoherence of 
+associative categories.
+
+
+Prof. J. Lambek wrote:
+>The tensor product automatically satisfies all functoriality, 
+>associativity and coherence conditions, if it is introduced by a 
+>universal property as by Bourbaki. 
+
+Yes, but Bourbaki's universal properties required for the  isomorphism 
+A(BC) ---> (AB)C is that a(bc) |---> (ab)c (see Algebre II.64). 
+Mac Lane's classical counterexample a(bc)|--->(-1)(ab)c 
+surely does not satisfy this coherence condition (page 163 of CWM). 
+By the way, the fundamental group that corresponds to this
+associative category is Z_2 since going around once does not give 
+the identity but going around twice does.
+
+ 
+John Baez wrote:
+>Indeed, if you ask what are the "right" coherence laws, perhaps the 
+>easiest answer is: the coherence laws automatically satisfied by universal 
+>constructions! 
+
+The whole point of my paper is that there are no "right" coherence laws.
+Each structure has interesting theorems that can be proven about it.
+Finding the "right" coherence axioms is like finding the "right" axioms to
+study symmetry. Which one is "right": semi-groups, groups, Abelian groups
+Lie groups etc.? If coherence theory is to be thought of as some type of
+higher-dimensional algebra, then there are many structures that are of
+interest.
+
+Noson Yanofsky
+
+
+
+From cat-dist Sat Feb  6 00:40:51 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA21343
+	for categories-list; Fri, 5 Feb 1999 23:52:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: ct99@mat.uc.pt
+Message-Id: <3.0.5.32.19990205191828.007b0c40@mat.uc.pt>
+X-Sender: ct99@mat.uc.pt
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.5 (32)
+Date: Fri, 05 Feb 1999 19:18:28 +0000
+To: categories@mta.ca
+Subject: categories: CT99 - Second Announcement
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id PAA04104
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Please circulate to all interested colleagues.
+
+===================================================================
+                        SECOND ANNOUNCEMENT
+===================================================================
+
+
+                                CT99
+                International Category Theory Meeting
+
+                      Department of Mathematics
+                        University of Coimbra
+                          Coimbra,  Portugal
+                           July 19-24, 1999
+
+
+
+The Department of Mathematics of the University of Coimbra is organizing an
+International Meeting on Category Theory to be held at the University of
+Coimbra, from 19th to 24th of July, 1999.
+
+The conference arrival day is Sunday July 18. The scientific program will
+begin Monday morning July 19 and will finish before lunch on Saturday July 24.
+The conference will consist of 10 invited lectures and 25mn contributed
+talks. It will open with the lecture "Eilenberg and categories" by Saunders
+Mac Lane.
+
+INVITED SPEAKERS
+================
+Steve Awodey (Carnegie Mellon University, USA) 
+Michael Batanin (Macquarie University, Australia) 
+Carsten Butz (McGill University, Canada) 
+Pilar Carrasco (University of Granada, Spain) 
+Jonathon Funk (University of British Columbia, Canada) 
+Saunders MacLane (University of Chicago, USA) 
+Ieke Moerdijk (Utrecht University, The Netherlands) 
+Jiri Rosicky (Masaryk University, Czech Republic) 
+Stephen Schanuel (SUNY at Buffalo, USA) 
+Enrico Vitale (Catholic University of Louvain, Belgium) 
+
+SCIENTIFIC COMMITTEE
+====================
+Jiri Adamek (Technical University of Braunschweig, Germany) 
+Bernhard Banaschewski (McMaster University, Canada) 
+Peter T. Johnstone (University of Cambridge, UK) 
+Andre Joyal (University of Quebec at Montreal, Canada) 
+F. William Lawvere (SUNY at Buffalo, USA) 
+Dana Scott (Carnegie Mellon University, USA) 
+Ross Street (Macquarie University, Australia) 
+Walter Tholen (York University, Canada) 
+
+ORGANIZING COMMITTEE
+====================
+Manuela Sobral (Universidade de Coimbra) 
+Maria Manuel Clementino (Universidade de Coimbra) 
+Jorge Picado (Universidade de Coimbra) 
+Lurdes Sousa (Instituto Superior Politecnico de Viseu) 
+Goncalo Gutierres (Universidade de Coimbra) 
+
+SATELLITE EVENT
+===============
+SCTA: School on Category Theory and Applications, University of Coimbra,
+July 13-17, 1999.
+e-mail: scta@mat.uc.pt
+Web page: http://www.mat.uc.pt/~scta/
+(A detailed announcement of the school will be sent out next week.)
+
+CALL FOR PAPERS
+===============
+Participants are invited to present a 25mn talk. They are due to prepare an
+Abstract occupying no more than one page, written in English, with the
+following format:
+
+          Title of the talk
+          Author's names
+          Authors' Institutions
+          Abstract
+
+If the talk has several authors, the name of the speaker should be
+underlined. 
+
+Abstracts may be sent either by e-mail (in TeX, LaTeX, AMSTeX) - preferably
+in an attached file -, by fax or postal mail.
+
+REGISTRATION FEE
+================
+The conference registration fee is set at 30000 PTE. Students will
+pay a reduced fee of 20000 PTE. 
+This amount covers conference documentation, welcome reception, coffee
+breaks and lunchs, as well as the conference dinner. 
+
+Payment must be made (before March 31) by bank transfer to
+
+          -------------------------------------------
+         |  Bank: Banco Portugues do Atlantico        |
+         |  Branch: Celas, Coimbra                    |
+         |  Address: Praca Machado de Assis, 7        |
+         |           3000 Coimbra, Portugal           |
+         |  Account number: 0017-0309-00045281906-24  |
+         |  Account name: Category Theory 99          |
+          -------------------------------------------
+
+Please do not forget to indicate the name of sender and keep a copy
+of the transfer; note that you have to pay all the bank charges.
+
+Registrations can be made directly at the Conference Web Page or by
+electronic or postal mail, filling in the Registration Form below. 
+
+ACCOMMODATION
+=============
+Please keep in mind that July is high season here and that to ensure
+accommodation after April 30 can be difficult. Please reserve your 
+accommodation as soon as possible.
+
+You may book your hotel room in the following conference hotels:
+
+HOTEL           CAT.  SINGLE   DOUBLE    
+
+Qta. Lagrimas   ****   15000    17000  
+
+Tivoli          ****   10000    12000  
+
+Astoria          ***    7700     9900   
+ 
+Braganca         ***    6400     8500  
+
+Ibis              **    8600     9500 
+  
+Resid. Botanico  ***    5900     7500  
+
+
+In order to do that you must fill in the Hotel Reservation Form below and 
+send it by postal mail or fax to the following address:
+
+           -------------------------------------------------
+          |  Profissional Tours                             |
+          |  Av. Afonso Henriques, 45                       |
+          |  3000 Coimbra, Portugal                         |
+          |  Phone: 351-39-402011                           |
+          |  Fax: 351-39-704317                             |
+          |  email: profissional.comercial@beta-viagens.pt  |
+           -------------------------------------------------
+
+There will be a few rooms available at Students Residences. The students
+interested on them should send an email to mailto:picado@mat.uc.pt
+
+IMPORTANT DATES
+===============
+Registration: March 31, 1999.
+Abstract submission: April 20, 1999.
+
+CONFERENCE HOMEPAGE
+===================
+The Registration and Hotel Reservation Forms, as well as up-to-date
+information, are available at our web page http://www.mat.uc.pt/~ct99/
+
+CONFERENCE ADDRESSES
+====================
+All correspondence must be sent to one of the following addresses:
+
+E-mail address: ct99@mat.uc.pt
+
+Postal address: CT99
+                Departamento de Matemática
+                Apartado 3008
+                3000 Coimbra, PORTUGAL
+
+Please find below the Registration and Hotel Reservation Forms. They may also 
+be sent to you by fax, upon request.
+
+
+------------------------------------------------------------------------------
+
+                        CATEGORY THEORY 99
+       
+              Coimbra, Portugal, July 19-24, 1999
+
+        REGISTRATION FORM (Please send before March 31, 1999)
+
+
+Family name: _________________________________
+
+First name: __________________________________
+
+Institution (full postal address): _____________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+e-mail address: ________________________________________________
+
+Fax number: ____________________________________________________
+
+
+Registration Fee: Non-student (30000 PTE): ____
+                  Student (20000 PTE): ____
+
+I need a receipt: YES ____  NO _____
+
+addressed to (Name or Institution): _______________________________________
+
+I plan to give a 25 minute talk: YES ____  NO ____
+
+Title: ____________________________________________________________________
+
+I will send the abstract: in TeX (LaTeX, AMSTeX) by e-mail ____
+                          by fax  ____
+                          by mail ____
+
+
+------------------------------------------------------------------------------
+
+                        CATEGORY THEORY 99
+       
+              Coimbra, Portugal, July 19-24, 1999
+
+        HOTEL RESERVATION FORM (Please send before April 30, 1999)
+
+Accommodation prices: All prices indicated are in Portuguese escudos
+(1 EURO=200.482 PTE) and per room per day, including breakfast.
+Deadline for guaranteed room is April 30, 1999.
+
+
+HOTEL           CAT.  SINGLE   DOUBLE  Room Type  Priority Choice
+                       ROOM     ROOM     S / D      1   2   3
+
+Qta. Lagrimas   ****   15000    17000   ______      __  __  __
+
+Tivoli          ****   10000    12000   ______      __  __  __
+
+Astoria          ***    7700     9900   ______      __  __  __
+ 
+Braganca         ***    6400     8500   ______      __  __  __
+
+Ibis              **    8600     9500   ______      __  __  __
+  
+Resid. Botanico  ***    5900     7500   ______      __  __  __
+
+
+
+* The organization will not allocate people to double rooms. So, if you are
+sharing a room, please indicate the name (surname, initials) of the person
+you will be sharing with.
+
+
+Date of arrival: ___/___/___     Date of departure: ___/___/___
+
+Number of nights: _____
+
+METHOD OF PAYMENT:
+
+By cheque # in Portuguese escudos, payable to: PROFISSIONAL TOURS
+
+# personal cheques are not acceptable and bank draft cheques or money orders
+in escudos are accepted only when free of charges to the organization.
+
+By credit card: VISA ____   MASTERCARD ____  EUROCARD ____
+
+Please charge my credit card to the total amount of _______________________PTE
+
+Card Number _________________________________  Expiry date  _____/_____
+
+Signature ___________________________________
+
+PLEASE FILL BELOW, INDEPENDENTLY OF YOUR METHOD OF PAYMENT
+
+Name _________________________________________________ Fax __________________
+
+Full address _________________________________________ Country ______________
+
+
+                            PLEASE SEND TO
+
+   PROFISSIONAL TOURS - Av. Afonso Henriques, 45 - 3000 COIMBRA - PORTUGAL
+
+               Phone (+351 39)402011 - Fax (+351 39)704317
+
+              e-mail: profissional.comercial@beta-viagens.pt
+
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+From cat-dist Sat Feb  6 00:49:49 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA25479
+	for categories-list; Fri, 5 Feb 1999 23:49:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 5 Feb 1999 11:06:20 +0100 (MET)
+From: "tlca99.aquila" <tlca99@univaq.it>
+Message-Id: <199902051006.LAA22902@univaq.it>
+To: bra-types@cs.chalmers.se, categories@mta.ca, concurrency@cwi.nl,
+        linear@cs.stanford.edu, logic@CS.Cornell.EDU, logic@theory.lcs.mit.edu,
+        types@cs.indiana.edu
+Cc: tlca99@univaq.it
+Subject: categories: TLCA'99 Call for Participation (Text & LaTex versions)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+
+    - Our apologies if you receive multiple copies of this message - 
+
+
+           ----------------------------------------------
+           |                                            |      
+           |                TLCA '99                    |  
+           |                                            |  
+           |     Fourth International Conference on     |   
+           |    Typed Lambda Calculi and Applications   |   
+           |                                            | 
+           |      April 7-9, 1999, L'Aquila (Italy)     | 
+           |                                            | 
+           ----------------------------------------------   
+
+
+           PRELIMINARY SCHEDULE and CALL FOR PARTICIPATION 
+
+
+----------------------------------------------------------------------------  
+| Note the early registration and accommodation deadline: MARCH 7th, 1999. |  
+---------------------------------------------------------------------------- 
+
+The Fourth International Conference on Typed Lambda Calculi and Applications 
+(TLCA '99) will be held in L'Aquila (Italy) from 7th to 9th April, 1999. 
+The conference is organized by the L'Aquila Computer Science Group at the 
+Department of Pure and Applied Mathematics of the University of L'Aquila. 
+
+You can find the preliminary schedule and all information about the 
+conference venue, conference registration and hotel accommodation at 
+the TLCA '99 web site: 
+
+                  http://w3.dm.univaq.it/tlca99   
+
+For any further information, please contact the TLCA '99 Organizing 
+Committee at the email address: 
+
+                  tlca99.aquila@univaq.it  
+
+
+----------------------------------------------------------------------- 
+                  
+                    PRELIMINARY SCHEDULE 
+
+
+                   Wednesday, 7 April 1999 
+
+
+  8.30 - 9.00  REGISTRATION 
+
+
+Morning Session (Chairman: Jean-Yves Girard) 
+
+ 9.00 - 10.30  Tutorial: Denotational Semantics (Part I) 
+               Thomas Ehrhard 
+
+10.30 - 11.00  BREAK 
+
+11.00 - 11.30  Industrial Presentation: Application of Linear Logic to  
+               Distributed Object Coordination 
+               Jean-Marc Andreoli 
+
+11.30 - 12.00  Natural Deduction for Intuitionistic Non-Commutative 
+               Linear Logic 
+               Jeff Polakow and Frank Pfenning 
+
+12.00 - 12.30  Modules in non-commutative logic 
+               V. Michele Abrusci 
+
+12.30 - 14.30  LUNCH 
+
+
+Afternoon Session (Chairman: Samson Abramsky)
+
+14.30 - 16.00  Tutorial: Types: an Introduction 
+               Mariangiola Dezani 
+
+16.00 - 16.30  BREAK 
+
+16.30 - 17.00  Logical Predicates for Intuitionistic Linear Type Theories 
+               Masahito Hasegawa 
+
+17.00 - 17.30  Resource Interpretations, Bunched Implications and 
+               the alpha-lambda-calculus 
+               Peter O'Hearn
+
+17.30 - 18.00  Elementary Complexity and Geometry of Interaction
+               (Extended Abstract) 
+               Patrick Baillot and Marco Pedicini 
+
+18.00 - 18.30  A Study of Abramsky's Linear Chemical Abstract Machine 
+               Seikoh Mikami and Yohji Akama 
+
+18.30 - 19.00  Soundness of the Logical Framework for its Typed
+               Operational Semantics 
+               Healfdene Goguen 
+
+
+
+                     Thursday, 8 April 1999 
+
+
+Morning Session (Chairman: Thomas Streicher) 
+
+ 9.00 - 10.30  Tutorial: Denotational Semantics (Part II) </b></td>
+               John Longley 
+
+10.30 - 11.00  BREAK  
+
+11.00 - 11.30  Strong Normalisation of Cut-Elimination in Classical Logic 
+               Christian Urban and Gavin Bierman 
+
+11.30 - 12.00  Explicitly typed lambda-mu-calculus for polymorphism and 
+               call-by-value 
+               Ken-etsu Fujita 
+
+12.00 - 12.30  Polarized Proof-Nets: Proof-Nets for LC (Extended Abstract) 
+               Olivier Laurent 
+
+12.30 - 14.30  LUNCH 
+
+
+Afternoon Session (Chairman: Thierry Coquand) 
+
+14.30 - 15.00  Industrial Presentation: AnnoDomini in Practice: 
+               A Type-Theoretic Approach to the Year 2000 Problem 
+               Morten Heine Soerensen
+
+15.00 - 15.30  Explicit Environments 
+               Masahiko Sato 
+
+15.30 - 16.00  Characterising Explicit Substitutions which Preserve 
+               Termination 
+               Eike Ritter 
+
+16.00 - 16.30  BREAK 
+
+16.30 - 17.00  Lambda Definability with Sums via Grothendieck Logical 
+               Relations 
+               Marcelo Fiore and Alex Simpson 
+
+17.00 - 17.30  Quantitative semantics revisited 
+               Nuno Barreiro and Thomas Ehrhard 
+
+17.30 - 18.00  Game semantics for untyped lambda-beta-eta-calculus 
+               Pietro Di Gianantonio, Gianluca Franco and Furio Honsell
+
+18.00 - 18.30  Total Functionals and Well-founded Strategies 
+               Stefano Berardi and Ugo de' Liguoro 
+
+    20.00      SOCIAL BANQUET with Banquet Speaker: Corrado Boehm. 
+
+
+
+                      Friday, 9 April 1999 
+
+
+Morning Session (Chairman: Pawel Urzyczyn) 
+
+ 9.00 - 10.30  Tutorial: Intersection Types and Properties of Lambda-terms 
+               Mario Coppo 
+
+10.30 - 11.00  BREAK 
+
+11.00 - 11.30  Call-By-Push-Value: A Subsuming Paradigm 
+               Paul Blain Levy 
+
+11.30 - 12.00  Useless-code detection and elimination for PCF with
+               algebraic Datatypes 
+               Ferruccio Damiani 
+
+12.00 - 12.30  A Curry-Howard isomorphism for compilation and program execution
+               Atsushi Ohori  
+
+12.30 - 14.30  LUNCH  
+
+
+Afternoon Session (Chairman: Simonetta Ronchi della Rocca) 
+
+14.30 - 15.00  Marginalia to a theorem of Jacopini   
+               Rick Statman   
+
+15.00 - 15.30  Every unsolvable lambda-term has a decoration  
+               Rene' David 
+
+15.30 - 16.00  Counting a type's principal inhabitants 
+               Sabine Broda and Luis Damas  
+
+16.00 - 16.30  BREAK  
+
+16.30 - 17.00  A Finite Axiomatization of Inductive-Recursive Definitions 
+               Anton Setzer and Peter Dybjer 
+
+17.00 - 17.30  A Logic for Abstract Data Types as Existential Types 
+               Erik Poll and Jan Zwanenburg 
+
+17.30 - 18.00  Pure Type Systems with Subtyping 
+               Jan Zwanenburg 
+
+    18.00      END of TLCA'99 
+
+
+-----------------------------------------------------------
+
+
+               CONFERENCE INFORMATION 
+
+
+Conference Venue 
+----------------
+
+The TLCA '99 Conference will be held at the Centro Congressi of the Hotel  
+Duca degli Abruzzi, Viale Giovanni XXIII, 10, in the centre of L'Aquila.   
+The Centro Congressi is just nearby the Hotel Duca degli Abruzzi and at 
+a walking distance from the other hotels with which special conference 
+rates have been arranged (see below). 
+ 
+
+Registration Fees  
+-----------------
+
+                      Before MARCH 7th        After MARCH 7th 
+
+Regular                ITL 450.000             ITL 550.000  
+
+Full-time student      ITL 350.000             ITL 450.000  
+
+
+The regular registration fee includes one copy of the Proceedings,
+coffee breaks, lunches and the social banquet.
+The student registration fee includes coffee breaks, lunches and 
+the social banquet. 
+Full-time students must certify their status.
+
+In order to pay the cheaper registration fee, you must register for the
+conference by returning the registration form below *via email* to the  
+Organizing Committee at the email address: 
+
+                 tlca99.aquila@univaq.it 
+
+by MARCH 7th, 1999. 
+
+Then, you can pay the registration fee either by cheque or bank transfer 
+(with possible additional bank commissions) or by cash at the registration 
+desk during the conference.
+
+
+Methods of Payment
+------------------ 
+
+Payment of the registration fee must be made in Italian Liras or Euros,  
+net of all bank charges as follows:
+
+* Cheque or Bank Transfer on: 
+
+    account number:  70158/4  
+    bank: CARISPAQ SpA,  ABI code 6040 - CAB code 3601   
+    address: Corso Vittorio Emanuele II, 48 
+             67100 L'Aquila (Italy)   
+
+* Cash at the conference desk 
+
+A receipt of the registration will be issued by the TLCA'99 Organizing
+Committee.
+
+The TLCA'99 organizers cannot accept any liability for personal accidents,
+loss or damage of the private property of participants during the
+conference. The registration fee does not include any form of insurance.
+Conference participants are therefore responsible for making their own
+insurance arrangements.  
+
+Please fill in the following registration form and return it via email 
+to tlca99.aquila@univaq.it. 
+
+
+============================================================================
+
+
+                     TLCA '99 - Registration Form
+                    ------------------------------ 
+
+
+Family name  ________________________________________________________ 
+
+Name  _____________________________ Middle Init. ________  Title  _________ 
+
+Affiliation  __________________________________________________________ 
+
+___________________________________________________________________ 
+
+Address  ____________________________________________________________ 
+
+____________________________________________________________________ 
+
+Postcode  _______________________  City  _________________________________ 
+
+Country  ________________________  State  ________________________________ 
+
+Phone  _______________________________  Fax ____________________________ 
+
+E-mail _______________________________ 
+
+Dietary Restrictions (vegetarian, etc., please specify) 
+
+_____________________________________________________________________ 
+
+Accompanying person(s)  ________________________________________________ 
+
+
+Method of Payment of Registration Fee: 
+
+[ ] Cheque      [ ] Bank transfer       [ ] Cash
+
+ 
+=============================================================================
+ 
+
+Hotel Accommodation 
+------------------- 
+
+We have arranged some conference rates with the hotels listed below.
+Reservations must be made as soon as possible in order to benefit from 
+the conference rates. Such rates are guaranteed until MARCH 7th, 1999. 
+
+Hotel DUCA DEGLI ABRUZZI *** 
+Viale Giovanni XXIII, 10 
+67100 L'Aquila, Italy 
+Phone: +39-0862-28341    Fax: +39-0862-61588   
+
+Hotel DUOMO *** 
+Via Dragonetti, 10 
+67100 L'Aquila, Italy 
+Phone: +39-0862-410893    Fax: +39-0862-413058 
+
+Hotel CASTELLO *** 
+Piazza Battaglione Alpini      (known as "Fontana Luminosa") 
+67100 L'Aquila, Italy 
+Phone: +39-0862-419147    Fax: +39-0862-419140 
+
+All hotels are at a walking distance from the conference venue. 
+
+Hotel Rates
+----------- 
+
+Room rates are given per room and per night, and include services, taxes,
+and continental breakfast.
+All prices are in Italian Liras. The (fixed) exchange rate with Euro is
+1 Euro = 1936,27 ITL.
+
+
+     Hotel          Single room  Double room   Double x single   Triple room 
+
+Duca Degli Abruzzi  ITL 90.000   ITL 126.000     ITL 117.000     ITL 156.000  
+
+Duomo               ITL 95.000   ITL 145.000     ITL 120.000     ITL 160.000  
+
+Castello               ----      ITL 145.000     ITL 120.000        ---- 
+
+
+In order to book a room, you must fill in the following reservation form 
+and *fax* it to the selected hotel by MARCH 7th, 1999. 
+
+============================================================================= 
+ 
+           
+                   TLCA '99 - Hotel Reservation Form 
+                  -----------------------------------
+
+Please tick the selected hotel: 
+
+  [ ] Hotel Duca degli Abruzzi 
+
+  [ ] Hotel Duomo 
+
+  [ ] Hotel Castello 
+
+Please book me: 
+
+ N. ..... single room(s)   N. ..... double room(s)   N. ..... triple room(s) 
+
+Date of arrival ................................
+
+Date of departure .............................. 
+
+N. of nights .......... 
+
+
+Credit Card number ...............................................
+
+Expiry date ............................... 
+
+  [ ] Visa      [ ] Eurocard/Mastercard       [ ] American Express   
+
+Holder's name .......................................................... 
+
+
+(The credit card number is only taken as guarantee without being charged).
+
+
+=============================================================================   
+
+
+How to Reach L'Aquila
+---------------------
+
+L'Aquila is about 100 Km East of Rome. 
+The nearest airport is Rome Fiumicino (FCO). L'Aquila can be easily reached 
+by bus or car. Train service is also available, though less advisable, 
+since it takes a longer time due to intermediate train stops. 
+
+By bus: L'Aquila can be reached by taking the ARPA bus from the train station 
+Roma Tiburtina. The train service from the Fiumicino Airport to Roma Tiburtina 
+is available from 6.55 am to 10 pm every 20 minutes (travelling time: 40 min; 
+a train ticket costs ITL 7.000). If you reach Rome by means of a train that 
+does not stop at Roma Tiburtina, you can get off at Roma Termini or Roma  
+Ostiense, then take the metro (line B, direction Rebibbia) and stop at  
+Tiburtina FS. 
+
+The time schedule of the ARPA bus from Roma Tiburtina to L'Aquila is as follows:
+
+Weekdays 6.15 - 6.45 - 7.30 - 8.10 - 10.00 - 11.00 - 12.25 - 13.20 - 14.15 - 
+14.45 - 15.15 - 16.15 - 17.15 - 17.45 - 18.45 - 19.30 - 21.00 - 22.45
+
+Holidays 8.10 - 11.00 - 13.30 - 15.00 - 18.00 - 19.00 - 19.30 - 21.00 - 22.00 -
+22.15 - 22.45
+
+A bus ticket costs ITL 16.900 and must be bought before boarding the bus, 
+at the ARPA agency. The trip lasts about 1 hour and 40 minutes. 
+The bus terminal in L'Aquila is at Fontana Luminosa near the Castello 
+Cinquecentesco. 
+
+The time schedule of the ARPA bus from L'Aquila (Fontana Luminosa) to Roma 
+Tiburtina is as follows: 
+
+Weekdays 4.40 - 5.40 - 6.45 - 8.00 - 9.00 - 10.10 - 11.00 - 13.00 - 13.30 - 
+14.05 - 15.10 - 15.20 - 17.15 - 18.00 - 19.00 - 20.00
+
+Holidays 6.00 - 8.00 - 10.10 - 12.30 - 15.00 - 15.20 - 18.00 - 19.00 - 20.00 
+
+L'Aquila can also be reached by bus from Pescara. The time schedule is 
+as follows: 
+
+Weekdays 6.00 - 6.35* - 8.00 - 8.30* - 10.30* - 13.10 - 14.05 - 17.50 - 19.30 
+
+Holidays 8.00 - 13.00 - 18.00 - 19.45 
+
+*Via road (the others via motorway) 
+
+The trip lasts 1 hour and 50 minutes via motorway, and 2 hours and 20 minutes 
+via road. The bus terminal in L'Aquila is at Fontana Luminosa near the 
+Castello Cinquecentesco. 
+
+By car: L'Aquila can be reached via motorway or road: 
+
+>From Rome : Motorway A24 Roma-L'Aquila or by Via Salaria Roma-Rieti-L'Aquila 
+
+>From Autostrada Adriatica (Motorway A14): Casello Roseto - Traforo del Gran 
+Sasso - L'Aquila 
+
+>From Pescara: Motorway A25 Pescara-Popoli and then S.S 17 Bussi-L'Aquila 
+
+>From Napoli: Motorway A2 Roma-Napoli - S.S. 82 Ceprano-Sora-Avezzano - Motorway
+Avezzano-L'Aquila A24/A25 
+
+----------------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%% LATEX VERSION OF PRELIMINARY SCHEDULE %%%%%%%%%%%%%% 
+
+\documentclass[11pt]{article}
+
+\topmargin -0.5 cm
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\textwidth 16cm
+\textheight 24cm
+\parindent 0.5cm
+\renewcommand{\thepage}{\mbox{}} 
+
+\newcommand{\Item}[3]{{\bf #1} & {\em #2} \\ & #3 \\ [3mm] }
+\newcommand{\Jtem}[2]{{\bf #1} & #2 \\ [3mm] } 
+\newcommand{\Invtem}[4]{{\bf #1} & #2 \\ & {\em #3} \\ & #4 \\ [3mm] }
+
+\begin{document}
+
+\begin{center}
+\Large \bf{Typed Lambda Calculi and Applications (TLCA '99) \\ [5mm]  
+           April 7-9, 1999 \\ [5mm] 
+           L'Aquila (Italy) \\ [30mm] 
+           Preliminary Schedule} 
+\end{center}
+
+\newpage 
+
+\begin{center}\Large \bf{Wednesday, 7 April 1999} \end{center}  
+
+\vspace{10mm}
+
+\hspace{7mm} {\bf {8.30 - 9.00}} \hspace{3mm} REGISTRATION  
+
+\vspace{3mm}
+  
+\noindent \large{Morning Session (Chairman: Jean-Yves Girard)}  
+
+\vspace{3mm}
+
+\begin{tabular}{rl}
+
+\Invtem{9.00 - 10.30}{Tutorial:}{Denotational Semantics (Part I)}   
+                     {Thomas Ehrhard}      
+
+\Jtem{10.30 - 11.00}{BREAK} 
+
+\Invtem{11.00 - 11.30}{Industrial Presentation:}{Application of Linear Logic 
+                       to Distributed Object Coordination}   
+                      {Jean-Marc Andreoli}  
+
+\Item{11.30 - 12.00}{Natural Deduction for Intuitionistic Non-Commutative 
+                     Linear Logic}  
+                    {Jeff Polakow and Frank Pfenning}   
+
+\Item{12.00 - 12.30}{Modules in non-commutative logic}   
+                    {V. Michele Abrusci} 
+
+\Jtem{12.30 - 14.30}{LUNCH}  
+\end{tabular}  
+
+\vspace{3mm}
+
+\noindent \large{Afternoon Session (Chairman: Samson Abramsky)} 
+
+\vspace{3mm}
+
+\begin{tabular}{rl}
+
+\Invtem{14.30 - 16.00}{Tutorial:}{Types: an Introduction}  
+                      {Mariangiola Dezani}   
+
+\Jtem{16.00 - 16.30}{BREAK} 
+
+\Item{16.30 - 17.00}{Logical Predicates for Intuitionistic Linear Type Theories}
+                    {Masahito Hasegawa} 
+
+\Item{17.00 - 17.30}{Resource Interpretations, Bunched Implications and 
+                     the $\alpha \lambda$-calculus}    
+                    {Peter O'Hearn}
+
+\Item{17.30 - 18.00}{Elementary Complexity and Geometry of Interaction
+                     (Extended Abstract)}   
+                    {Patrick Baillot and Marco Pedicini} 
+
+\Item{18.00 - 18.30}{A Study of Abramsky's Linear Chemical Abstract Machine}   
+                    {Seikoh Mikami and Yohji Akama}   
+
+\Item{18.30 - 19.00}{Soundness of the Logical Framework for its Typed
+                     Operational Semantics}    
+                    {Healfdene Goguen} 
+\end{tabular}  
+
+\newpage
+
+\begin{center}{\Large \bf{Thursday, 8 April 1999}} \end{center}
+
+\vspace{10mm}
+
+\noindent \large{Morning Session (Chairman: Thomas Streicher)}  
+
+\vspace{3mm}
+
+\begin{tabular}{rl}
+
+\Invtem{9.00 - 10.30}{Tutorial}{Denotational Semantics (Part II)}   
+                     {John Longley}   
+
+\Jtem{10.30 - 11.00}{BREAK} 
+
+\Item{11.00 - 11.30}{Strong Normalisation of Cut-Elimination in Classical Logic}
+                    {Christian Urban and Gavin Bierman}
+
+\Item{11.30 - 12.00}{Explicitly typed $\lambda \mu$-calculus for polymorphism 
+                     and call-by-value}   
+                    {Ken-etsu Fujita}  
+
+\Item{12.00 - 12.30}{Polarized Proof-Nets: Proof-Nets for LC (Extended Abstract)}   
+                    {Olivier Laurent}
+
+\Jtem{12.30 - 14.30}{LUNCH} 
+\end{tabular}
+
+\vspace{3mm}
+
+\noindent \large{Afternoon Session (Chairman: Thierry Coquand)} 
+
+\vspace{3mm}
+
+\begin{tabular}{rl} 
+
+\Invtem{14.30 - 15.00}{Industrial Presentation: {\em AnnoDomini in Practice:}} 
+                      {A Type-Theoretic Approach to the Year 2000 Problem}   
+                      {Morten Heine S{\o}rensen}   
+
+\Item{15.00 - 15.30}{Explicit Environments}   
+                    {Masahiko Sato}  
+
+\Item{15.30 - 16.00}{Characterising Explicit Substitutions which Preserve 
+                      Termination}   
+                    {Eike Ritter}   
+
+\Jtem{16.00 - 16.30}{BREAK} 
+
+\Item{16.30 - 17.00}{Lambda Definability with Sums via Grothendieck 
+                     Logical Relations}  
+                    {Marcelo Fiore and Alex Simpson}
+
+\Item{17.00 - 17.30}{Quantitative semantics revisited}   
+                    {Nuno Barreiro and Thomas Ehrhard}   
+
+\Item{17.30 - 18.00}{Game semantics for untyped $\lambda \beta \eta$-calculus} 
+                    {Pietro Di Gianantonio, Gianluca Franco and Furio Honsell}
+
+\Item{18.00 - 18.30}{Total Functionals and Well-founded Strategies}   
+                    {Stefano Berardi and Ugo de' Liguoro}  
+
+\Jtem{20.00}{SOCIAL BANQUET with Banquet Speaker: Corrado B\"{o}hm.}  
+\end{tabular} 
+
+\newpage
+
+\begin{center}{\Large \bf{Friday, 9 April 1999}} \end{center}
+
+\vspace{10mm}
+
+\noindent \large{Morning Session (Chairman: Pawel Urzyczyn)} 
+
+\vspace{3mm}
+
+\begin{tabular}{rl}
+
+\Invtem{9.00 - 10.30}{Tutorial:}{Intersection Types and Properties 
+                      of $\lambda$-terms}   
+                     {Mario Coppo} 
+
+\Jtem{10.30 - 11.00}{BREAK} 
+
+\Item{11.00 - 11.30}{Call-By-Push-Value: A Subsuming Paradigm}  
+                    {Paul Blain Levy}   
+
+\Item{11.30 - 12.00}{Useless-code detection and elimination for PCF with
+                     algebraic Datatypes}   
+                    {Ferruccio Damiani}  
+
+\Item{12.00 - 12.30}{A Curry-Howard isomorphism for compilation and 
+                     program execution}  
+                    {Atsushi Ohori}   
+
+\Jtem{12.30 - 14.30}{LUNCH} 
+\end{tabular}
+
+\vspace{3mm}
+
+\noindent \large{Afternoon Session (Chairman: Simonetta Ronchi della Rocca)} 
+
+\vspace{3mm}
+
+\begin{tabular}{rl}
+
+\Item{14.30 - 15.00}{Marginalia to a theorem of Jacopini}  
+                    {Rick Statman}   
+
+\Item{15.00 - 15.30}{Every unsolvable $\lambda$-term has a decoration}    
+                    {Ren\'e David}   
+
+\Item{15.30 - 16.00}{Counting a type's principal inhabitants}   
+                    {Sabine Broda and Luis Damas}  
+
+\Jtem{16.00 - 16.30}{BREAK} 
+
+\Item{16.30 - 17.00}{A Finite Axiomatization of Inductive-Recursive Definitions}
+                    {Anton Setzer and Peter Dybjer}
+
+\Item{17.00 - 17.30}{A Logic for Abstract Data Types as Existential Types}   
+                    {Erik Poll and Jan Zwanenburg}
+
+\Item{17.30 - 18.00}{Pure Type Systems with Subtyping} 
+                    {Jan Zwanenburg}
+
+\Jtem{18.00}{END of TLCA'99}  
+\end{tabular}
+
+\end{document}
+
+
+-----------------------------------------------------------
+Organizing Committee Chairman:
+
+Benedetto Intrigila
+Dipartimento di Matematica Pura ed Applicata
+Universita' degli Studi di L'Aquila
+via Vetoio, Loc. Coppito
+67100 L'Aquila
+Italy
+
+fax: (+)-39-0862-433180
+e-mail: tlca99.aquila@univaq.it
+home page: http://w3.dm.univaq.it/tlca99
+-----------------------------------------------------------
+
+
+
+
+From cat-dist Sat Feb  6 22:15:54 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA00067
+	for categories-list; Sat, 6 Feb 1999 20:59:43 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <m1096M3-000asmC@osiris.cee.hw.ac.uk>
+Date: Sat, 6 Feb 99 11:56 GMT
+From: fairouz@cee.hw.ac.uk (Fairouz Kamareddine)
+To: categories@mta.ca
+Subject: categories: School on Logic and Computation
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+		School in Logic and Computation	
+		Heriot-Watt University
+		10-13 April 1999
+
+Organized by computer science research centers
+	UKII(UK)
+	 BRICS(Denmark)
+	 TUCS (Finland)
+	 IPA (Holland)
+as part of the European Educational Forum (EEF) series of
+summer schools, supported by the European Union.
+
+Grants covering registration and accommodation are available for
+eligible Ph.D. students, see below.
+
+
+		LECTURERS and TOPICS
+
+Samson Abramsky (Edinburgh, UK):
+	Concurrent Games and Full Completeness for Linear Logic
+Henk Barendregt (Nijmegen, NL):
+	Mission possible: proof-checking
+Robert Constable (Cornell, USA):
+	Applications of Classes and Types to Practical Verifications 
+Dirk van Dalen (Utrecht, NL):
+	The Mathematical Universe according to Brouwer
+Mariangola Dezani-Ciancaglini (Turin, IT):
+	The Lambda Calculus in Different Scenarios
+Assaf Kfoury (Boston, USA):
+	Some New Developments in Unification Related to Type Theory 
+Claude Kirchner (Nancy, FR):
+	On Deduction Modulo and Rewriting Calculus
+Jan-Willem Klop (Amsterdam, NL):  
+	Term Rewriting 
+Andrew Pitts (Cambridge, UK): 
+	A New Approach to Abstract Syntax Involving Binders
+Pawel Urzyczyn (Warsaw, PL): 
+	On the Curry-Howard Isomorphism
+
+For a list of abstracts and a more details on the school, refer to:
+http://www.cee.hw.ac.uk/~fairouz/eefschool.html
+
+Lectures are in the mornings.  In the afternoon, there will be
+workshops which will have invited speakers and for which we are
+soliciting talks of work in progress and of open problems
+from both young and established researchers. These workshops are:
+
+TYPES IN COMPUTATION: 
+Speaker: Herman Geuvers (Eindhoven, NL):
+	Inductive and Co-Inductive Types
+
+PROOF SEARCH IN COMPUTATION:
+Speaker: Roy Dyckhoff (St Andrews, UK):
+	Proof Search issues in constructive logic
+
+REWRITING IN COMPUTATION:
+Speaker: Roberto Di Cosmo (Paris, FR):
+	Rewriting with extensionality
+
+To submit a talk, post a two page abstract in postscipt by email to
+fairouz@cee.hw.ac.uk no later than Friday 5 March.  You will 
+receive notification of acceptance/rejection by Monday 15th March. 
+
+
+GRANTS
+Grants cover registration and accommodation, leaving only
+travel and some local expenses to be paid.  Grants are restricted to
+PhD students aged 35 or younger with nationality in the European Union
+or Norway, Israel, Iceland or Liechtenstein.
+
+To apply for a grant, you must post as soon as possible and no later
+than Friday 5th March the following:
+
+1. Name, affiliation, address, e-mail address, date of birth and nationality
+2. Written evidence that you are a full time student
+3. A CV and brief research statement
+4. A letter of recommendation from your supervisor (this must be sent directly
+   by the supervisor)
+
+You will receive notification of acceptance/rejection by Monday 22nd March.
+
+REGISTRATION
+The registration fee is 150 UK pounds. This covers
+lunches, refreshments, social events and a banquet.  Accommodation in
+university halls of residence for students and in conference accommodation
+for non-students is priced as follows:
+
+1. PhD students pay 10.50 UK pounds per night for a single room (evidence
+   of full time student status is required).
+2.  Non-students pay 20 UK pounds per night for a single en suite room
+    or 25 UK pounds for a single en suite room with breakfast.
+
+To register, send name, affiliation, address, e-mail, dates of
+arrival/departure and a cheque in UK pounds drawn on a UK bank to cover the
+registration fee and the number of nights of accommodation required.
+The cheque should be made payable to Heriot-Watt University and
+labelled "School in Logic and Computation".
+
+Post applications for registration and grants to Professor
+Fairouz Kamareddine, Attention School in Logic and Computation,
+Heriot-Watt University, Computing and Electrical Engineering,
+Riccarton, Edinburgh EH14 4AS, Scotland. Fax: +44 131 451 3327.
+
+
+In order to guarantee accommodation, it is advisable that
+your application is sent as soon as possible.
+
+
+QUESTIONS 
+Questions should be sent to fairouz@cee.hw.ac.uk
+
+
+Fairouz Kamareddine and Don Sannella
+URL: http://www.cee.hw.ac.uk/~fairouz/eefschool.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+and of open problems from both young and established researchers.  These workshops are: <ul> <li> <b> Types in Computation</b> Speaker: <ul> <li> <A HREF = "http://www.win.tue.nl/cs/fm/herman/"> Herman Geuvers </A> <b> (Eindhoven, NL) </b>: <i> Inductive and Co-Inductive Types </i> </ul> <li> <b> Proof Search in Computation</b> Speaker: <ul> <li> <A HREF = "http://www-theory.dcs.st-and.ac.uk:80/~rd/"> Roy Dyckhoff </A> <b> (St Andrews, UK)</b>: <i> Proof Search issues in constructive logic </i> </ul> <li> <b> Rewriting in Computation</b> Speaker: <ul> <li> <A HREF = "http://www.dmi.ens.fr/~dicosmo/.">Roberto Di Cosmo</A> <b>(Paris, FR)</b>: <i> Rewriting with extensionality </i> </ul> </ul> To submit a talk, post a two page abstract in postscipt by email to fairouz@cee.hw.ac.uk no later than Friday 5 March.  You will receive notification of acceptance/rejection by Monday 15th March. 
+
+
+<p><br>
+<h3>Grants</h3>
+Grants cover registration and accommodation, leaving only
+travel and some local expenses to be paid.  Grants are restricted to
+PhD students aged 35 or younger with nationality in the European Union
+or Norway, Israel, Iceland or Liechtenstein.
+<p>
+To apply for a grant, you must post as soon as possible and no later
+than Friday 5th March the following:
+<ul>
+<li>
+Name, affiliation, address, e-mail address,
+date of birth and nationality
+<li>
+Written evidence that you are a full time student
+<li>
+A CV and brief research statement
+<li>
+A letter of recommendation from your supervisor (this must be sent directly
+by the supervisor)
+</ul>
+You will receive notification of acceptance/rejection by Monday 22nd March.
+
+<p><br>
+<h3>Registration</h3>
+The registration fee is UK &#163; 150. This covers
+lunches, refreshments, social events and a banquet.  Accommodation in
+university halls of residence is priced as follows:
+<ul>
+<li> PhD students pay UK &#163; 10.50 per night for a single room (evidence
+of full time student status is required).
+<li> Non-students pay UK &#163;  20 per night for a single en suite room
+or UK &#163; 25 for a single en suite room with breakfast.
+</ul>
+To register, send name, affiliation, address, e-mail, dates of
+arrival/departure and a cheque in UK &#163; drawn on a UK bank to cover the
+registration fee and the number of nights of accommodation required.
+The cheque should be made payable to Heriot-Watt University and
+labelled "School in Logic and Computation".
+
+<p>
+Post applications for registration and grants to Professor
+Fairouz Kamareddine, Attention School in Logic and Computation,
+Heriot-Watt University, Computing and Electrical Engineering,
+Riccarton, Edinburgh EH14 4AS, Scotland. Fax: +44 131 451 3327.
+
+<p>
+In order to guarantee accommodation, it is advisable that
+your application is sent as soon as possible.
+
+<br>
+<h3>Questions</h3>
+Questions should be sent to <a
+href="mailto:fairouz@cee.hw.ac.uk">fairouz@cee.hw.ac.uk</a>
+
+<hr>
+<p><br>
+
+
+<address>
+<a href="http://www.cee.hw.ac.uk/~fairouz">Fairouz Kamareddine</a>
+and <a href="http://www.dcs.ed.ac.uk/home/dts">Don Sannella</a><br>
+<FONT SIZE="-1">
+URL: http://www.cee.hw.ac.uk/~fairouz/eefschool.html
+</FONT>
+</address>
+<!-- hhmts start -->
+Last modified: Thursday 4 February 1999.
+<!-- hhmts end -->
+</body> </html>
+
+
+
+
+
+From cat-dist Sun Feb  7 20:18:58 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA00731
+	for categories-list; Sun, 7 Feb 1999 19:10:56 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199902071149.MAA11086@portofix.ida.liu.se>
+Date: Sun, 7 Feb 1999 12:49:22 +0100 (MET)
+From: Lars Lindqvist <larli@ida.liu.se>
+Reply-To: Lars Lindqvist <larli@ida.liu.se>
+Subject: categories: A short question about lax-natural transformations
+To: categories@mta.ca
+MIME-Version: 1.0
+Content-Type: TEXT/plain; charset=us-ascii
+Content-MD5: DU5ieK3G46GpJ1nj09Zrow==
+X-Mailer: dtmail 1.2.1 CDE Version 1.2.1 SunOS 5.6 sun4m sparc 
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Hi,
+
+In a lax-natural transformation F->G:A->B the 'lax' naturality condition is
+expressed in terms of a natural transformation tau:B(n(a),1);G(a,b)->B(1,n(b));F(a,b)
+for 0-cells a,b:A. Is there some good reason why tau is in this direction and not
+the opposite?
+
+/Lars Lindqvist
+
+
+
+
+From cat-dist Tue Feb  9 00:20:31 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA00270
+	for categories-list; Mon, 8 Feb 1999 23:15:29 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <3.0.6.32.19990208204732.00928100@math.tulane.edu>
+X-Sender: mwm@math.tulane.edu
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6 (32)
+Date: Mon, 08 Feb 1999 20:47:32 -0600
+To: categories@mta.ca
+From: Michael Mislove <mwm@math.tulane.edu>
+Subject: categories: MFPS XV Update
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Dear Colleagues,
+  This message is to announce that the Program for this year's MFPS meeting
+is now available on line. The meeting will take place on the campus of
+Tulane University from April 28 to May 1. 
+  We also want to announce that following MFPS a short course on the NRL
+Protocol Analyzer will be offered at Tulane by Dr. Catherine Meadows (NRL),
+the chief developer of the NRL Protocol Analyzer. The course is free, but
+it is open to a limited enrollment of 20 participants. It will take place
+from Monday, May 3 to Wednesday, May 5, with a continuation to Thursday,
+May 6 if there is sufficient interest.
+  Details about the MFPS program, about registration procedures and about
+the NRL Protocol Analyzer course can be found at the MFPS XV home page,
+http://www.math.tulane.edu/mfps15.html. Because of an overlap with the
+annual New Orleans Jazz and Heritage Festival, we urge potential
+participants to register and make travel arrangements by February 15. 
+  Best regards,
+  Mike Mislove
+
+
+============================================================================
+Professor Michael Mislove		Phone: +1 504 862-3441
+Department of Mathematics		FAX:   +1 504 865-5063
+Tulane University			Email: mwm@math.tulane.edu
+New Orleans, LA 70118		URL:   http://www.math.tulane.edu/mislove.html
+USA 
+============================================================================
+
+
+
+
+From cat-dist Tue Feb  9 23:39:44 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA00230
+	for categories-list; Tue, 9 Feb 1999 20:48:00 -0400 (AST)
+X-Authentication-Warning: muppet48.cs.chalmers.se: prasad owned process doing -bs
+Date: Tue, 9 Feb 1999 15:12:21 +0100 (MET)
+From: "K. V. S. Prasad" <prasad@cs.chalmers.se>
+To: categories@mta.ca
+Subject: categories: New_PhD_positions_at_Chalmers
+Message-ID: <Pine.GSO.4.02A.9902091459380.23225-100000@muppet48.cs.chalmers.se>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=ISO-8859-1
+Content-Transfer-Encoding: 8BIT
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+The School of Mathematical and Computing Sciences at the Chalmers
+University of Technology and Göteborgs University announces new PhD
+positions in several subjects including Computing Science.
+
+The Department of Computing Science, part of the Schol, has about 30
+staff members and about 25 PhD students.  The department receives
+funding from Esprit, and from the Swedish Government agencies TFR and
+NUTEK.  The major topics of research are programming logic and type
+theory, functional programming, formal systems, cognition technology,
+distributed systems, concurrency, and algorithms, but research is not
+restricted to these.
+
+PhD positions are limited to at most five years. Usually, a PhD
+student will spend about 80 percent of his or her time on graduate
+studies, and about 20 percent on teaching. Applicants must have an
+undergraduate degree in Computing Science or in a related subject with
+a strong Computing Science component. You may also apply if your
+undergraduate degree is not complete but is expected to be finished by
+September 1, 1999. The School aims to increase the number of female
+employees, and especially welcomes female applicants. At the moment,
+the salary amounts to 16200 SEK per month in the first year.
+
+More information about the graduate programmes can be found on the WWW
+on page:
+
+  http://www.md.chalmers.se/Jobs/PhD/phd-en.thtml
+
+which also has a pointer to an electronic application form. You are
+encouraged to use this, as it will get your application immediately
+registered with the School. However, you will have to send more
+information to complete your application.
+
+The full application consists of a letter in English, covering
+
+  1 data about yourself;
+  2 a copy of an official paper giving grades from your undergraduate
+    degree(s); 
+  3 a statement about your main interests;
+  4 some letters of recommendation from people that know you as a student
+    or as an employee;
+  5 any scientific papers you have written.
+
+Send your application to 
+
+  Section for Mathematics and Computer Science
+  Chalmers University of Technology
+  412 96 Gothenburg
+  Sweden
+
+The last date for your application to arrive is 1 March 1999.
+Incomplete or late applications risk rejection. We expect to tell you
+the result of your application by 1 June 1999.
+
+It will help if you also send whatever details can be sent by by e-mail to
+
+  prasad@cs.chalmers.se
+
+More information about the Department can be found at
+
+  www.cs.chalmers.se
+
+---------------------------------------------------------------
+K. V. S. Prasad                
+Director of Graduate Studies
+Dept. of Computing Science      Tel: 46-31-772 1021 (work)
+Chalmers University                  
+412 96 Gothenburg, Sweden       Fax: 46-31-16 56 55 (dept)
+
+
+
+From cat-dist Wed Feb 10 03:50:19 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id CAA31220
+	for categories-list; Wed, 10 Feb 1999 02:19:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 9 Feb 1999 19:00:07 -0800
+Message-Id: <199902100300.TAA19710@lannion.eiffel.com>
+From: "Karen Ouellette" <karen@tools.com>
+To: categories@mta.ca
+Subject: categories: TOOLS EUROPE '99 - Last Call for Papers
+Reply-To: karen@tools.com
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+[apologies if you receive multiple copies of this announcement]
+
+**********************************************************************
+TECHNOLOGY OF OBJECT-ORIENTED LANGUAGES & SYSTEMS
+
+            LAST CALL FOR PAPERS
+
+          TOOLS EASTERN EUROPE '99
+   Sofia-Blagoevgrad, Bulgaria, June 1-4, 1999
+
+             TOOLS EUROPE '99
+      Nancy, France, June 7-10, 1999
+
+            http://www.tools.com
+**********************************************************************
+
+TOOLS - Technology of Object-Oriented Languages and Systems - is the major
+series of international conferences and exhibition entirely devoted to the
+applications of object-oriented technology. Its emphasis is on the practice
+of object technology and its applications in industrial environments. TOOLS
+provides a balanced coverage of the wealth of approaches, trends and
+variants in the object-oriented community. For anyone interested in OT, the
+TOOLS Conferences are the best places to learn from the experts and compare
+experiences with other O-O practitioners.
+
+
+PROGRAMME COMMITTEE
+~~~~~~~~~~~~~~~~~~~~~~
+Program Chair: Richard Mitchell, University of Brighton, UK
+
+Mehmet Aksit, University of Twente, Netherlands
+Francois Bancilhon, Ardent Software, USA
+Richard Bielak, CAL FP (US), Inc., USA
+Gilad Bracha, Sun Microsystems, USA
+Eduardo Casais, Nokia, Finland
+Alistair Cockburn, Humans and Technology, USA
+Dominique Colnet, LORIA - INRIA Lorraine, France
+Bernard Coulange, Verilog, France
+Paul Dubois, Lawrence Livermore National Laboratory, USA
+Jean-Marc Geib, University de Lille, France
+Yossi Gil, Technion, Israel & IBM Research, USA
+Petter Graff, InferData, USA
+Ian Graham, Chase Manhattan Bank, UK
+Brian Henderson-Sellers, Swinburne University of Technology, Australia
+Laura Hill, Sun Microsystems, USA
+Rene Jacquart, CERT, France
+Jean-Marc Jezequel, IRISA/CNRS, France
+Rachid Guerraoui, Swiss Federal Institute of Technology, Switzerland
+Sven-Eric Lautemann, University of Frankfurt, Germany
+Michel Lemoine, ONERA-CERT, France
+Ian Maung, Platinum Technology, USA
+Jim McKim, Rensselaer Polytechnic, USA
+Mira Mezini, University of Siegen, Germany
+Christine Mingins, Monash University, Australia
+Frieder Monninger, Object Tools, Germany
+Meilir Page-Jones, Wayland Systems, USA
+Jean-Claude Royer, University of Nantes, France
+Ted Velkoff, Lockheed Martin, USA
+Kim Walden, ENEA, Sweden
+Tony Wasserman, Software Methods and Tools, USA
+Wolf Zimmermann, University of Karlsruhe, Germany
+
+TOOLS EASTERN EUROPE '99 PROGRAM COORDINATORS:
+John Galletly, American University in Bulgaria, Bulgaria
+Avram Eskenazi, Bulgarian Academy of Science, Bulgaria
+
+
+SUBMISSION GUIDELINES
+~~~~~~~~~~~~~~~~~~~~~~
+PLEASE SEE THE COMPLETE SUBMISSION GUIDELINES AT http://www.tools.com
+
+Both TOOLS Europe '99 conferences are now soliciting papers on all aspects
+of object-oriented technology. All submitted papers will be refereed and
+judged by the International Programme Committee, not only according to standards
+of technical quality but also on their usefulness to practitioners and applied
+researchers.
+
+The proceedings of the '99 EUROPEAN TOOLS Conferences will be published by
+IEEE Computer Society Press. Final camera-ready versions of accepted papers
+will therefore be required to adhere to the IEEE publication format.
+
+
+TOOLS EASTERN EUROPE - IMPORTANT DATES:
+Notice of submission: January 15, 1999
+Manuscript submission: February 15, 1999
+Notification of acceptance: March 15, 1999
+
+PROPOSALS -FOR TOOLS EASTERN EUROPE '99- SHOULD BE SUBMITTED TO:
+Professor John Galletly
+TOOLS EASTERN EUROPE '99
+American University in Bulgaria
+2700 Blagoevgrad
+Bulgaria
+TOOLSEE@nws.aubg.bg
+
+
+TOOLS EUROPE - IMPORTANT DATES:
+Notice of submission: February 12, 1999
+Manuscript submission: February 19, 1999
+Notification of acceptance: March 29, 1999
+
+PROPOSALS -FOR TOOLS EUROPE '99- SHOULD BE SUBMITTED TO:
+Richard Mitchell
+TOOLS EUROPE '99 Programme Chair
+Faculty of IT
+University of Brighton
+Brighton BN2 4GJ
+UK
+Phone: +44 1273 642458
+Richard.Mitchell@brighton.ac.uk
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+FOR MORE INFORMATION ON ANY EVENT
+IN THE TOOLS CONFERENCE SERIES
+VISIT OUR WEB SITE AT http://www.tools.com
+OR CONTACT US AT tools@tools.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+From cat-dist Mon Feb 15 00:10:08 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id XAA25089
+	for categories-list; Sun, 14 Feb 1999 23:03:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <19990214144517.9444.qmail@hotmail.com>
+X-Originating-IP: [128.205.233.223]
+From: "F. William Lawvere" <wlawvere@hotmail.com>
+To: categories@mta.ca
+Cc: wlawvere@hotmail.com
+Subject: categories: Buffalo email down
+Date: Sun, 14 Feb 1999 06:45:15 PST
+Mime-Version: 1.0
+Content-type: text/plain
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+Dear Colleagues
+Apologies. Buffalo's email central has been down for several days and
+won't be fixed until Tuesday. That includes storage of all your messages 
+that I was going to answer.
+
+Urgent items of yours can be resent to wlawvere@hotmail.com.
+
+Especially note that those who will be speaking at the Special Session
+of the April 24-25 AMS Meeting here should send an abstract to the
+AMS before MARCH 3 if they wish to be listed in the program.( The 
+instuctions I was going to send concerning this are temporarily 
+unretrievable, but) The ams.org webpage contains instuctions for 
+submission of abstracts : the number of the meeting is #943 and the name 
+of the Special Session I'm organizing is Smooth Categories in Geometry 
+and Mechanics (Code: AMS SS A1)
+
+Bill
+ 
+
+______________________________________________________
+Get Your Private, Free Email at http://www.hotmail.com
+
+
+From cat-dist Mon Feb 15 00:33:50 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id XAA09557
+	for categories-list; Sun, 14 Feb 1999 23:45:11 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199902150240.NAA16965@hera.mpce.mq.edu.au>
+X-Sender: street@hera.mpce.mq.edu.au
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Mon, 15 Feb 1999 13:42:08 +1000
+To: categories@mta.ca
+From: street@mpce.mq.edu.au (Ross Street)
+Subject: categories: email address change
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+As we are told, academics and computers all need Restructuring.
+Consequently, my email address is now
+
+        street@math.mq.edu.au
+
+and my homepage site is now
+
+        http://www.math.mq.edu.au/~street/
+
+Members of the British Empire, can replace "math" by "maths" without a problem.
+
+
+[[[Behind the scenes what is happening is that our old machine "macadam"
+will soon die and I am using a new machine called "hera".  Our old "School
+of Mathematics, Physics, Computing and Electronics" (this is where the
+previous reference to MPCE came from) has restructured to become the
+"Division of Information and Communication Science" but I cannot believe
+that I belong in such a place.  Luckily our computer services friends have
+allowed us to by-pass this Division terminology and have enabled the easily
+remembered
+
+        math.mq.edu.au
+
+given that "mq" stands for "Macquarie" and "au" for "Australia".  Note that
+supporters of the name of the new Division understandably prefer "Division
+of ICS" to the natural shorter acronyms "DICS" and "DOICS". ]]]
+
+Yours progressively,
+Ross Street
+
+
+
+
+From cat-dist Tue Feb 16 22:24:01 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA29877
+	for categories-list; Tue, 16 Feb 1999 21:29:53 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 15 Feb 1999 17:21:16 -0500 (EST)
+From: John R Isbell <ji2@ACSU.Buffalo.EDU>
+To: categories@mta.ca
+Subject: categories: Change of address
+In-Reply-To: <Pine.OSF.3.96.990120145636.5758A-100000@mailserv.mta.ca>
+Message-ID: <Pine.GSO.4.05.9902151717240.29705-100000@callisto.acsu.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+... although I am sending this from
+the old address, I am getting out of it and will be using
+
+     ji2@eng.buffalo.edu
+
+   _____________________________
+   John R. Isbell
+   [ji2@buffalo.edu or ji2@acsu.buffalo.edu]
+   Home: http://www.unipissing.ca/topology/z/a/a/a/05.htm
+       _________________________________________________
+      |                                                  |
+      | Der Mensch ist nur da ganz Mensch, wo er spielt. |
+      |                                                  |
+      |                       -- Friedrich Schiller      |
+      |_________________________________________________ |
+
+
+
+
+From cat-dist Tue Feb 16 22:24:04 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA30584
+	for categories-list; Tue, 16 Feb 1999 21:25:14 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199902161305.OAA21780@pandora.cs.kun.nl>
+X-Mailer: exmh version 1.6.7 5/3/96
+To: categories@mta.ca
+Subject: categories: book announcement: Categorical Logic and Type Theory
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Tue, 16 Feb 1999 14:05:14 +0100
+From: Bart Jacobs <Bart.Jacobs@cs.kun.nl>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+B. Jacobs, Categorical Logic and Type Theory,
+Studies in Logic and the Foundations of Mathematics 141,
+North Holland, Elsevier, 1999. ISBN 0-444-50170-3
+
+This book gives a survey of categorical logic and type theory
+starting from the unifying concept of a fibration. 
+Its intended audience consists of logicians, type theorists, 
+category theorists and (theoretical) computer scientists.
+It contains the following chapters.
+
+Prospectus
+Introduction to fibred category theory
+Simple type theory
+Equational Logic
+First order predicate logic
+Higher order predicate logic
+The effective topos
+Internal category theory
+Polymorphic type theory
+Advanced fibred category theory
+First order dependent type theory
+Higher order dependent type theory
+References
+Notation index
+Subject index
+
+
+More information can be obtained from the authors webpage:
+
+	http://www.cs.kun.nl/~bart/CLT/bookinfo.html
+
+or directly from the publisher:
+
+	http://www.elsevier.nl/inca/publications/store/6/0/1/5/3/9/
+
+The book is also available via Amazon:
+
+	http://www.amazon.com/exec/obidos/ASIN/0444501703/qid%3D918567572/002-7707218-
+2880044
+
+To get an impression, you can preview the Prospectus from
+the authors webpage.
+
+Bart Jacobs,
+Dep. Comp. Sci.,
+Univ. Nijmegen, 
+P.O. Box 9010,
+6500 GL Nijmegen,
+The Netherlands.
+Email: bart@cs.kun.nl
+
+PS. Please pass this information on to your institute's librarian.
+
+[With apologies for multiple copies]
+
+
+From cat-dist Wed Feb 17 22:35:58 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA02288
+	for categories-list; Wed, 17 Feb 1999 21:46:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 17 Feb 1999 15:12:21 GMT
+Message-Id: <199902171512.PAA04924@bandersnatch.dcs.shef.ac.uk>
+From: Federated Logic Conference 1999 <floc99im@dcs.shef.ac.uk>
+To: categories@mta.ca
+Subject: categories: 2nd CFP: Intuitionistic Modal Logic and Applications
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+  [... This message was sent to several mailing lists: apologies to those of 
+       you who receive multiple copies. Please forward it to everyone who 
+       might be interested ... ]
+
+
+-----------------------------------------------------------------------
+
+                      WORKSHOP  ANNOUNCEMENT 
+
+                  *** SECOND CALL FOR PAPERS ***
+
+-----------------------------------------------------------------------
+
+
+  FLoc'99 Workshop         (affiliated to LICS'99)
+
+  IMLA: Intuitionistic Modal Logic and Applications
+
+  July 6, 1999
+  Trento, Italy
+
+
+BACKGROUND
+
+  Intuitionistic and modal logics are of foundational relevance to
+  Computer Science and both have led to successful applications in the
+  formal specification and verification of computer systems. The
+  intuitionistic and the modal frameworks are usually investigated
+  separately.  However, a growing body of published work, stimulated by
+  theoretical considerations and fed by various applications in Computer
+  Science, shows that both paradigms may fruitfully be merged.
+
+  Intuitionistic modal logic (IML) and modal type theory (MTT) can exploit
+  both the proof-theoretic strengths of intuitionistic logic and the
+  model-theoretic features of modal logics. The potential and the
+  challenge of IML and MTT both lie in finding a satisfactory combination
+  of its intensional and its extensional aspects.  We intend this one-day
+  workshop to seed a more concerted organisation of the ongoing research
+  in the area of IML, bringing together the method-oriented and the
+  problem-oriented approaches on the one hand, and the proof-theoretic and
+  model-theoretic ones on the other. This will create fruitful research
+  stimuli through the friction between engineering applications and pure
+  theory, and between intensional and extensional lines of thinking.
+
+
+TOPICS OF INTEREST
+
+  Contributions are invited on all aspects of the theory and application
+  of IML and MTT.  Topics of interest include, but are not limited to:
+
+  * applications of intuitionistic necessity or possibility,
+    strong monads, or evaluation modalities
+
+  * use of IML and MTT to formalize mechanisms of abstraction
+    and refinement
+
+  * applications of IML and MTT to formal verification, abstract
+    interpretation, and program analysis and optimization
+
+  * applications of modal types to integration of inductive and
+    co-inductive types, higher-order abstract syntax, strong 
+    functional programming
+
+  * extraction of constraints or programs, nonstandard information
+    extraction techniques
+
+  * Curry-Howard correspondence between computational lambda
+    calculi and computational logics
+
+  * extensions of this correspondence by other modalities or
+    quantifiers
+
+  * models of IML such as algebraic, categorical, Kripke, topological,
+    realizability interpretations
+
+  * notions of proof for IML and intermediate constructive logics
+
+  * proof search in and implementations of IML
+
+
+FORMAT
+
+  The workshop will be an informal one-day meeting with invited
+  talk, regular paper presentations, and discussion. 
+
+
+INVITED SPEAKER 
+
+  Frank Pfenning (Pittsburgh)
+
+
+PUBLICATION
+
+  The final versions of all workshop papers will be made available on the
+  workshop web page. Authors of accepted papers will be invited to submit
+  full and revised versions for a special journal issue of Mathematical
+  Structures in Computer Science (MSCS) dedicated to the topic of the
+  workshop. There will be a second round of refereeing for MSCS according to
+  high journal standards.
+
+
+SUBMISSIONS
+
+  There is no page limit for workshop contributions, which may
+  be in the form of extended abstracts, or draft full papers. Workshop 
+  contributions to be considered for MSCS must be original work that 
+  has not yet appeared elsewhere. Submissions should be sent to 
+  floc99imla@dcs.shef.ac.uk (preferred route) or directly to
+
+  Matt Fairtlough                 email: m.fairtlough@dcs.shef.ac.uk
+  The University of Sheffield     phone: +44 (0) 114 22 21826
+  Department of Computer Science  fax:   +44 (0) 114 22 21810
+  Regent Court
+  211 Portobello Street
+  Sheffield S14 DP
+  U.K.
+
+  or one of the other workshop organisers by April 2, 1999.  For more 
+  information on submissions and addresses see the IMLA workshop web 
+  page (address below).
+
+IMPORTANT DATES 
+
+  IMLA submission deadline: April 2, 1999
+  IMLA notification       : May 21, 1999
+  IMLA final version      : June 11, 1999
+
+  submission deadline for full and revised MSCS journal versions: 
+  Winter 1999, to be announced (check IMLA web page)
+
+PROGRAMME COMMITTEE
+
+  Matt Fairtlough (Sheffield)
+  Zhaohui Luo (Durham)
+  Michael Mendler (Sheffield)
+  Pierangelo Miglioli (Milan)
+  Eugenio Moggi (Genova)
+  Andy Pitts (Cambridge)
+  Terry Stroup (Passau)
+
+ORGANISERS
+
+  Mauro Ferrari (Milan)
+  Matt Fairtlough (Sheffield)
+  Michael Mendler (Passau)
+
+WORKSHOP WEB PAGE
+
+  http://www.dcs.shef.ac.uk/~matt/mendler/floc-ws.html
+  
+  The FLoC'99 page is at 
+  http://www.cs.bell-labs.com/cm/cs/what/floc99/
+
+-----------------------------------------------------------------------
+
+
+From cat-dist Wed Feb 17 22:36:12 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA03399
+	for categories-list; Wed, 17 Feb 1999 21:48:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 17 Feb 1999 15:38:30 GMT
+Message-Id: <19915.199902171538@oich>
+From: Toby Walsh <tw@dai.ed.ac.uk>
+Subject: categories: Final CFP: special issue of JAR on satisfiability
+To: categories@mta.ca
+Organisation: Division of Informatics, The University of Edinburgh.
+Telephone: +44 31 650 2725
+Address: Dept of AI, 80 South Bridge, Edinburgh EH1 1HN
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+                               Call for Papers
+
+               Special Issue of the Journal of Automated Reasoning
+
+                                  SAT 2000
+  
+               (satisfiability at the start of the year 2000)
+
+                               Guest Editors:   
+              
+                          Ian P. Gent and Toby Walsh
+                          University of Strathclyde
+
+                                Review Panel:
+
+      Endre Boros     Olivier Dubois      John Franco      Allen Van Gelder
+      Henry Kautz     David McAllester    David Plaisted   Paul Purdom
+      Bart Selman     Mark Stickel        Hantao Zhang
+
+In the 1990's, there has been an explosion of research into propositional 
+satisfiability (or SAT). There are many factors behind the increased interest 
+in this area.  One factor is the improvement of search procedures for SAT.   
+New local search procedures like GSAT and WalkSAT are able to solve SAT 
+problems with thousands of variables.  At the same time, implementations of 
+complete search algorithms like Davis-Putnam have been able to solve open 
+mathematical problems.  Another factor is the identification of hard SAT 
+problems at a phase transition in solubility.  A third factor is the 
+demonstration that we can often solve real world problems by encoding them 
+into SAT.  The 1990's have also seen an improved theoretical understanding 
+of SAT, particularly in the analysis of phase transition behaviour.  In light
+of this, there will be a special issue of the Journal of Automated Reasoning, 
+SAT 2000, on the state of the art for research into satisfiability as we move 
+into the year 2000.
+
+Topics
+-------
+
+We will consider empirical, theoretical or application oriented papers about
+SAT. Possible topics include (but are not limited to) the following:
+
+  * Algorithms 
+        Complete algorithms
+        Local search procedures
+        Novel approaches (e.g. combinations of local and complete
+        search, genetic algorithms and quantum computers)
+        Learning 
+        Heuristics
+        Implementation efficiencies
+
+   * Analysis
+        Theoretical results (e.g. average and worst case behaviour)
+        Empirical models (e.g. heavy-tails, run-time distributions)
+        Phase transition behaviour
+        Approximate models of search cost
+
+   * Applications 
+        Hardware verification & design
+        Finite mathematics (e.g. quasigroup existence)
+        Encodings (e.g. planning and scheduling)
+        SAT benchmarks and challenges
+        Comparisons with other areas (e.g Constraints and OR)
+
+   * Extensions
+        Non-clausal formulae
+        Linear 0-1 constraints
+        Quantified Boolean formulae (QSAT)
+        Modal satisfiability
+
+Prospective contributors are warmly invited to contact either, or both, of 
+the guest editors to discuss the suitability of topics and papers. We
+especially welcome papers that discuss practical applications. In addition
+to presenting new research,  all papers should provide a brief summary
+of their area so that outsiders can have an overview of the state of research
+into SAT at the start of the new millennium.
+
+Submission
+-----------
+
+Please send 3 copies of your manuscript or (preferably) a postscript file to:
+
+           Dr. Ian Gent
+           Department of Computer Science
+           University of Strathclyde
+           Glasgow G1 1XH
+           Scotland
+
+           E-mail: ipg@cs.strath.ac.uk
+           Phone: +44 141 548 4527
+           Fax:   +44 141 552 5330
+
+Timetable
+----------
+
+To ensure topicality of the special issue, submissions, reviewing and
+revision of papers will be held to very fixed and tight deadlines. 
+
+        Submission deadline               1st March 1999
+        Initial reviews returned          3rd May 1999
+        Revised papers re-submitted       1st June 1999
+        Final decision                    1st July 1999
+        LaTeX and PS files to Kluwer      1st August 1999
+        Publication of special issue      January 2000
+
+To help us achieve this tight timetable, we have approached eminent researchers
+to form a review panel, although final decisions on papers will rest with
+the guest editors in collaboration with the editor of JAR.  We will also 
+expect authors of submitted papers to help with reviewing to this timetable. 
+
+
+
+From cat-dist Fri Feb 19 00:21:18 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA28095
+	for categories-list; Thu, 18 Feb 1999 22:13:36 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 18 Feb 1999 21:08:22 +0100
+From: Eva Ullan <evah@eucmax.sim.ucm.es>
+Subject: categories: CSL'99 Last CFP (Text & LaTex versions)
+X-Sender: evah@147.96.1.121
+To: csl99org@eucmos.sim.ucm.es
+Message-id: <l03010d02b2f22245fa16@[147.96.25.145]>
+MIME-version: 1.0
+Content-type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id QAA29572
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+____________________________________________________
+
+          My apologies if you receive this more than once!
+____________________________________________________
+
+	********************************************************
+	****   D E A D L I N E   March 19, 1999   ****
+	********************************************************
+
+	===================================
+	             LAST CALL FOR PAPERS -- CSL'99
+
+	 Annual Conference of the European Association
+	             for Computer Science Logic
+
+	      September 20-25, 1999, Madrid, Spain
+	===================================
+
+
+CSL is the annual conference of the European Association for Computer
+Science Logic (EACSL). The conference is intended for computer scientists
+whose research activities involve logic, as well as for logicians working
+on issues significant for computer science. Suggested, but not exclusive,
+topics of interest include:
+
+* abstract datatypes,
+* automated deduction,
+* categorical and topological approaches,
+* concurrency theory,
+* constructive mathematics,
+* database theory,
+* domain theory,
+* finite model theory,
+* lambda and combinatory calculi,
+* logical aspects of computational complexity,
+* logical foundations of programming paradigms,
+* linear logic,
+* modal and temporal logics,
+* model checking,
+* program logics and semantics,
+* program specification, transformation and verification,
+* rewriting,
+* symbolic computation.
+
+
+PROGRAM COMMITEE
+Samson Abramsky (Edinburgh, UK)
+Marc Bezem (Utrecht, The Netherlands)
+Peter Clote (Munich, Germany)
+Hubert Comon (Cachan, France)
+Jorg Flum (Freiburg i.Br., Germany) (co-chair)
+Harald Ganzinger (Saarbrucken, Germany)
+Neil Immerman (Amherst, USA)
+Neil Jones (Copenhagen, Denmark)
+Jan Maluszynski (Linkoping, Sweden)
+Michael Maher (Brisbane, Australia)
+Catuscia Palamidessi (Pennsylvania, USA)
+Mario Rodriguez-Artalejo (Madrid, Spain) (co-chair)
+Wolfgang Thomas (Aachen, Germany)
+Jerzy Tiuryn (Warsaw, Poland)
+Glynn Winskel (Aarhus, Denmark)
+Martin Wirsing (Munich, Germany)
+
+
+SCIENTIFIC PROGRAMME
+In addition to invited lectures and contributed papers, there will be two
+tutorials on theorem proving and rewriting techniques,
+scheduled on September 24 afternoon (Friday) and September 25 morning
+(Saturday), immediately after the main conference.
+
+** September 20--24, 1999: Invited Lectures and Contributed Papers
+   The list of invited speakers will include:
+        Jose Luis Balcazar (Barcelona, Spain)
+        Javier Esparza (Munich, Germany)
+         Martin Grohe (Freiburg, Germany)
+         Peter D. Mosses (Aarhus, Denmark)
+         V. Vianu (San Diego, USA)
+
+** September 24--25, 1999: CSL Tutorials
+         Douglas Howe (Bell Labs, USA)
+         Aart Middeldorp (Tsukuba, Japan)
+
+
+LOCAL ORGANIZING COMMITTEE
+J. Carlos Gonzalez-Moreno
+Teresa Hortala-Gonzalez
+Javier Leach-Albert (chair)
+Paco Lopez-Fraguas
+Fernando Saenz-Perez
+Eva Ullan
+
+
+EACSL BOARD
+Marc Bezem (Utrecht, President)
+Ian Stewart (Leicester, Vice-President)
+Clemens Lautemann (Mainz, Treasurer)
+Peter Hajek (Prague)
+Simone Martini (Udine)
+Christine Paulin (Paris)
+Moshe Vardi (Houston)
+Johann Makowsky (Haifa)
+Alexander Razborov (Moscow)
+
+EACSL homepage:  http://www.dimi.uniud.it/~eacsl
+
+
+IMPORTANT DATES
+Paper submissions		March 19, 1999
+Notifications of acceptance	May 31, 1999
+Final version due: 		July 12, 1999
+CSL'99 main conference		September 20-24, 1999
+CSL'99 Tutorials		September 24-25, 1999
+
+
+PAPER SUBMISSIONS
+Submitted papers must be written in English and describe work not previously
+published. They must not be submitted concurrently to a journal or to another
+conference. Papers authored or coauthored by members of the Program
+Committee are not allowed. Submissions must not exceed 15 pages, including
+title page, figures, and references. The title page must contain: title and
+authors; physical and e-mail addresses; telephone and (if available) fax
+number for each author; identification of corresponding author, if not the
+first author; an abstract of no more than 200 words; a list of keywords.
+
+Submissions must arrive by  March 19, 1999, and notifications of acceptance
+will be sent by May 31, 1999. Authors are invited to send manuscripts by
+electronic mail, as uuencoded gzipped postcript files:
+
+* see the conference home page for instructions
+	http://mozart.sip.ucm.es:1580/csl99
+* or send an empty message with subject "submission information'' to
+	csl99org@eucmos.sim.ucm.es
+
+Those authors without access to the facilities for electronic submission
+can alternatively submit five hardcopies to:
+
+	Prof. Mario Rodriguez Artalejo, CSL'99
+	Departamento de  Sistemas Informaticos y Programacion
+	Facultad de Matematicas, Universidad Complutense de Madrid
+	Av. Complutense s/n
+	E-28040 Madrid
+	Spain
+
+	E-mail: mario@sip.ucm.es
+	Phone: +34 91 3 94 45 12
+	Fax:   +34 91 3 94 46 07
+
+
+PUBLICATION
+Papers accepted by the Program Committee must be presented at the
+conference and will appear in a proceedings volume, to be published by
+Springer Verlag in the "Lecture Notes in Computer Science" series.
+The second refereeing round which was requested in previous CSL editions
+before accepting a paper for publication in the proceedings, has been
+suppressed following the decision taken by the EACSL membership
+meeting held during CSL'98 (Brno, Czech Republic, August 25th 1998).
+
+Final versions of accepted papers will be due by July 12, 1999.
+The format for camera-ready manuscripts will be that of Springer LNCS;
+instructions can be found in the LNCS home page at:
+	http://www.springer.de/comp/lncs/index.html
+
+
+ADDITIONAL INFORMATION
+CSL'99 home page: 		http://mozart.sip.ucm.es:1580/csl99
+CSL'99 local organization: 	csl99org@eucmos.sim.ucm.es
+
+
+ %%%%%%%%%%%%%%%%%%%%%% LATEX VERSION %%%%%%%%%%%%%%
+% 2nd Call for Papers, CSL'99.
+% Last revision: September 24, 1998.
+
+\documentstyle{article}
+
+\oddsidemargin 6pt
+\evensidemargin 6pt
+\marginparwidth 90pt
+\marginparsep 10pt
+\topmargin -30pt
+\headheight 12pt
+\headsep 25pt
+\footheight 12pt
+\footskip 30pt
+\columnsep 10.5pt
+\columnseprule 0pt
+\addtolength{\oddsidemargin}{-2.3cm}
+\setlength{\textwidth}{20cm} %{18.7cm}
+\addtolength{\topmargin}{-1cm}
+\setlength{\textheight}{27cm}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Heading
+
+\begin{center}
+{\large \bf 3rd CALL FOR PAPERS -- CSL'99}
+\end{center}
+
+\begin{center}
+{\Large \bf Annual Conference of the }\\[1.5ex]
+{\Large \bf European Association for Computer Science Logic}
+\end{center}
+
+\begin{center}
+{\large \bf Madrid, Spain, September 20-25, 1999}
+\end{center}
+
+\vspace*{0.15in}
+
+% Left column
+
+\parbox[t]{6.5cm}{%6.3cm
+\footnotesize
+
+\noindent
+{\bf Program Committee:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Samson Abramsky (Edinburgh, UK)\\
+Marc Bezem (Utrecht, The Netherlands)\\
+Peter Clote (Munich, Germany)\\
+Hubert Comon (Cachan, France)\\
+J\"{o}rg Flum (Freiburg i.Br., Germany) \\
+\hspace{1cm} ({\bf co-chair})\\
+Harald Ganzinger (Saarbr\"{u}cken, Germany)\\
+Neil Immerman (Amherst, USA)\\
+Neil Jones (Copenhagen, Denmark)\\
+Jan Maluszynski (Link\"{o}ping, Sweden)\\
+Michael Maher (Brisbane, Australia)\\
+Catuscia Palamidessi (Pennsylvania, USA)\\
+Mario Rodr\'{\i}guez-Artalejo (Madrid, Spain) \\
+\hspace{1cm} ({\bf co-chair})\\
+Wolfgang Thomas (Aachen, Germany)\\
+Jerzy Tiuryn (Warsaw, Poland)\\
+Glynn Winskel (Aarhus, Denmark)\\
+Martin Wirsing (Munich, Germany)\\
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Invited Speakers:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Jos\'{e} Luis Balc\'{a}zar (Barcelona, Spain)\\
+Javier Esparza (Munich, Germany)\\
+Martin Grohe (Freiburg, Germany)\\
+Peter D. Mosses (Aarhus, Denmark)\\
+V. Vianu (San Diego, USA)
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Tutorialists:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Douglas Howe (Bell Labs, USA)\\
+Aart Middeldorp (Tsukuba, Japan)
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf Local Organizing Committee:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+J. Carlos Gonz\'{a}lez-Moreno\\
+Teresa Hortal\'{a}-Gonz\'{a}lez\\
+Javier Leach-Albert ({\bf chair})\\
+Paco L\'{o}pez-Fraguas\\
+Fernando S\'{a}enz-P\'{e}rez\\
+Eva Ull\'{a}n
+\end{tabular}
+
+\vspace*{0.10in}
+
+\noindent
+{\bf EACSL Board:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Marc Bezem (Utrecht, President)\\
+Ian Stewart (Leicester, Vice-President)\\
+Clemens Lautemann (Mainz, Treasurer)\\
+Peter Hajek (Prague)\\
+Simone Martini (Udine)\\
+Christine Paulin (Paris)\\
+Moshe Vardi (Houston)\\
+Johann Makowsky (Haifa)\\
+Alexander Razborov (Moscow)\\
+\end{tabular}
+
+\vspace*{0.15in}
+
+\noindent
+{\bf EACSL homepage:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+http://www.dimi.uniud.it/\~{}eacsl
+\end{tabular}
+
+\vspace*{0.15in}
+
+\noindent
+{\bf Important Dates:}
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+Paper submissions: \\
+~~~~ March 19, 1999 \\
+Notifications of acceptance: \\
+~~~~ May 31, 1999 \\
+Final version due: \\
+~~~~ July 12, 1999 \\
+CSL'99 main conference: \\
+~~~~ September 20-24, 1999 \\
+CSL'99 Tutorials: \\
+~~~~ September 24-25, 1999
+\end{tabular}
+
+} % \end{parbox} % Right column. No blank line here!
+\parbox[t]{5mm}{
+     \rule[-22.0cm]{0.2mm}{22.5cm}
+} %\end{parbox}
+\begin{minipage}[t]{11.0cm}%{11.5cm}
+\small
+{\bf Aims and Scope of the Conference:}
+{\bf CSL} is the annual conference of the {\em European Association for
+Computer Science Logic} (EACSL). The conference is intended for computer
+scientistswhose research activities involve logic, as well as for logicians
+working on issues significant for computer science. Suggested, but not
+exclusive, topics of interest include:
+abstract datatypes,
+automated deduction,
+categorical and topological approaches,
+concurrency theory,
+constructive mathematics,
+database theory,
+domain theory,
+finite model theory,
+lambda and combinatory calculi,
+logical aspects of computational complexity,
+logical foundations of programming paradigms,
+linear logic,
+modal and temporal logics,
+model checking,
+program logics and semantics,
+program specification, transformation and verification,
+rewriting,
+symbolic computation.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Scientific Programme:}
+In addition to invited lectures and contributed papers, there will be two
+tutorials on theorem proving and rewriting techniques,
+scheduled on September 24 afternoon (Friday) and September 25 morning
+(Saturday), immediately after the main conference.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Paper Submissions:}
+Submitted papers must be written in English and describe work not previously
+published. They must not be submitted concurrently to a journal or to another
+conference.
+Papers authored or co-authored by members of the Program Committee are not
+allowed. Submissions must not exceed 15 pages, including
+title page, figures, and references. The title page must contain: title and
+authors; physical and e-mail addresses; telephone and (if available) fax
+number for each author; identification of corresponding author, if not the
+first author; an abstract of no more than 200 words; a list of keywords.
+Submissions must arrive by  {\bf March 19, 1999}, and notifications of
+acceptance will be sent by {\bf May 31, 1999}.
+Authors are invited to send manuscripts by electronic mail, as uuencoded
+gzipped postcript files (see the conference home page for instructions,
+or send an empty message with subject ``submission
+information'' to csl99org@eucmos.sim.ucm.es). Those authors without
+access to the facilities for electronic submission can alternatively
+submit {\em five hardcopies} to:
+
+\vspace*{0.05in}
+
+\begin{tabular}{l}
+	Prof. Mario Rodr\'{\i}guez-Artalejo, CSL'99  \\
+	Departamento de  Sistemas Inform\'{a}ticos y Programaci\'{o}n   \\
+	Facultad de Matem\'{a}ticas, Universidad Complutense de Madrid  \\
+	Av. Complutense s/n ~~~~~~~~~~ Phone: +34 91 3 94 45 12 \\
+	E-28040 Madrid ~~~~~~~~~~~~~~~~~ Fax:   +34 91 3 94 46 07 \\
+	Spain ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ E-mail: mario@sip.ucm.es
+\end{tabular}
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Publication:}
+Papers accepted by the Program Committee must be presented at the conference
+and {\bf will appear in a proceedings volume}, to be published by Springer
+Verlag in the ``Lecture Notes in Computer Science'' series. The second
+refereeing round which was requested in previous CSL editions before
+accepting a paper for publication in the proceedings, has been
+suppressed following the decision taken by the EACSL membership
+meeting held during CSL'98 (Brno, Czech Republic, August 25th 1998).
+Final versions of accepted papers will be due by {\bf July 12, 1999}.
+The format for camera-ready manuscripts will be that of Springer LNCS;
+instructions can be found in the LNCS home page at
+http://www.springer.de/comp/lncs/index.html.
+
+\vspace*{0.12in}
+
+\noindent
+{\bf Important Remark:}
+The proceedings volume will be available at the conference.
+In order to enable this, the deadlines for paper submission and
+notification of acceptance have been slightly modified w.r.t.
+the announcement made in the 1st call for papers.
+
+
+\vspace*{0.15in}
+
+\noindent
+{\bf Additional Information:}
+\vspace*{0.05in}
+
+\begin{tabular}{ll}
+	CSL'99 home page: & http://mozart.sip.ucm.es:1580/csl99 \\
+	CSL'99 local organization: & E-mail: csl99org@eucmos.sim.ucm.es
+\end{tabular}
+
+
+\end{minipage}
+\end{document}
+
+
+
+
+From cat-dist Mon Feb 22 00:45:48 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id WAA09355
+	for categories-list; Sun, 21 Feb 1999 22:37:54 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: rbf@dai.ed.ac.uk
+Date: Mon, 22 Feb 1999 00:13:50 GMT
+Message-Id: <19881.199902220013@lapwing>
+To: categories@mta.ca
+Subject: categories: MSc in Informatics (AI, CS, CogSci) at Edinburgh
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+    Master of Science degrees in the Division of Informatics
+    at the University of Edinburgh
+
+    The Division of Informatics offers three 1 year courses
+    in different topics in Informatics:
+
+
+        1. MSc in Artificial Intelligence, whose primary focus is on
+        development and understanding of intelligent computational processes
+        for the benefit of both creating useful artifacts and helping better
+        understand intelligence (human or otherwise). The course contains
+        five themes: Foundations of AI, Intelligent Robotics, Knowledge-based
+        Systems, Natural Language Processing, and Non-Symbolic AI.
+
+        2. MSc in Cognitive Science and Natural Language. This MSc is
+        concerned with computational, formal and experimental approaches
+        to understanding cognition and natural language. In Cognitive Science,
+        the disciplines of formal linguistics, psychology, neuroscience and
+        philosophy are brought together in different kinds of computational
+        frameworks. This MSc is particularly concerned with how language is
+        represented and processed.
+     
+        3. The MSc in Computer Science contains three themes. The Advanced
+        Computer Systems theme embraces the theory and practice of designing
+        programmable systems. The Systems Level Integration theme teaches
+        the principles underlying the design of integrated software and
+        hardware systems in silicon. The Theoretical Computer Science theme
+        introduces students to core areas of theoretical Computer Science and
+        to the technologies through which theory-based tools are implemented.
+    
+    From October to April students attend taught modules.
+    During the period May - September inclusive, each student
+    undertakes a major practical project under the supervision of a
+    member of academic staff. The projects can involve industrial 
+    collaboration and may be proposed by the student.
+
+    These courses have been approved by the UK Engineering and Physical
+    Science Research Council for the tenure of Advanced Course Studentships
+    (about 40 across the three courses).        
+
+    In general, students should have a good BS/BSc degree (or equivalent)
+    in an appropriate topic, plus other skills approporate to the particular
+    MSc course.
+    
+    More information can be found on the Division's MSc WWW page at:
+
+        http://www.inf.ed.ac.uk/www/public/Courses/
+
+    For further information, write to:
+    
+        MSc Admissions Secretary
+        Division of Informatics
+        University of Edinburgh
+        5 Forrest Hill
+        Edinburgh, EH1 2QL
+        Scotland, UK
+        
+        Fax: +44-(131)-650-6899
+        Telephone: +44-(131)-650-3904
+        Email: msc-admissions@inf.ed.ac.uk
+
+**************** ALSO: PhD Positions Available ****************
+
+    We also have a thriving PhD course. For more information, see:
+
+        http://www.inf.ed.ac.uk/www/public/Courses/
+
+
+From cat-dist Mon Feb 22 22:46:26 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA19195
+	for categories-list; Mon, 22 Feb 1999 21:56:18 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from linc.cis.upenn.edu (LINC.CIS.UPENN.EDU [158.130.12.3])
+	by mailserv.mta.ca (8.9.3/8.9.3) with ESMTP id OAA10816
+	for <rrosebrugh@mta.ca>; Mon, 22 Feb 1999 14:14:07 -0400 (AST)
+Message-Id: <199902221016.FAA13607@cis.upenn.edu>
+Date: Mon, 22 Feb 99 11:20:20 +0100
+From: Gradkolleg LI <gkli@rz.mathematik.uni-muenchen.de>
+To: categories@mta.ca
+Subject: categories: Spring School on Categorical Methods in Logic & Computer Science
+Content-Type: text
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Spring School on 
+
+             CATEGORICAL METHODS in LOGIC and COMPUTER SCIENCE 
+
+                    Ludwig-Maximilians-University Munich 
+
+                               12-16 April 1999
+
+  
+This school is organised by the PhD Programme "Logic in Computer
+Science". It aims at providing a general introduction into categorical
+logic and type theory.  Moreover, two important concepts in this
+context, sheaves and fibered categories, will be considered in more
+detail. Ideally, at the end of the week connections and interrelations
+between these topics will have evolved and the students have ideas of
+the relations of categorical logic to their own research.
+
+
+                            SHEAVES by Giuseppe Rosolini
+
+                      FIBERED CATEGORIES by Thomas Streicher 
+
+               CATEGORICAL LOGIC and TYPE THEORY by Martin Hyland 
+
+
+Schedule: For each of the series there will be 5 lectures of 90
+minutes, scheduled from monday to friday.  
+       
+Location: The lectures will take place in the Institute of Computer Science,
+Oettingenstr.63.
+       
+Prerequisites: Some familiarity with basic category theory
+(e.g. Saunders Mac Lane, Categories for the Working Mathematician,
+chapters I - V), predicate logic, typed lambda calculus. Further
+details may depend on the suggestions of the lecturers.   
+       
+Registration: The number of participants is limited. If you are
+interested, please register by sending an email to
+
+  mailto:gkli@rz.mathematik.uni-muenchen.de
+
+containing the following information: name, email, affiliation,
+research interests. 
+
+Registration fee is 200,- DM (approximately 100 Euro), to be payed in
+cash at the registration. We can offer help in finding accommodation.
+       
+Programme Committee:  
+   Thorsten Altenkirch  
+   Bernhard Reus  
+   Helmut Schwichtenberg  
+   Martin Wirsing  
+       
+Local Organisation:  
+   Alexander Kurz  
+   Dirk Pattinson  
+   Felix Joachimski
+
+Updated information can be obtained under 
+
+   http://helios.pst.informatik.uni-muenchen.de/spring-school99/
+
+
+
+Felix Joachimski
+
+--
+Graduiertenkolleg   Logik in der Informatik
+Department of Mathematical Logic
+University of Munich
+http://www.mathematik.uni-muenchen.de/~gkli
+
+
+
+
+From cat-dist Tue Feb 23 20:38:11 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA19614
+	for categories-list; Tue, 23 Feb 1999 19:25:46 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 23 Feb 1999 10:23:57 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <199902231523.KAA23443@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Vaughan, in the real world
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+   Now who says that people on this net are just too theoretical?
+
+
+   The Chronicle of Higher Education   
+                                From the issue dated February 26, 1999
+
+Stanford Computer-Science Professor Creates a Pocket-Sized Web Server
+
+By KELLY McCOLLUM   
+
+Watch where you step in the computer-science department at Stanford
+University. There may be a Web server hiding under that scrap of
+paper.
+
+Vaughan Pratt, a professor of computer science at Stanford, has
+created what he says is the world's smallest World-Wide Web server, a
+computer that is capable of sending images, sounds, or text to Web
+surfers around the world. But unlike most such computers, Mr. Pratt's
+Web server is not quite as tall and wide as a business card, and only
+a quarter of an inch thick.
+
+Mr. Pratt says he made the device "initially just for the impact."
+But, he says, the computer also makes a point about the shrinking size
+and cost -- and growing power -- of general-purpose computers like his
+Web server.
+
+"Fifty years ago, a computer with less computational power than a
+modern pocket calculator filled a whole room, and ran programs
+consisting of only a few hundred instructions," Mr. Pratt says on his
+Web site. "Today we can fit the extensive software needed to drive a
+World-Wide Web server into a computer the size of a box of matches."
+The Web server was partially an answer to the previous record holder,
+a tiny server designed by a software company in Cambridge, Mass. That
+earlier server was an "embedded system" -- a computer constructed to
+perform a specific task. Embedded systems are useful because they are
+inexpensive and run their programs reliably. General-purpose machines,
+like personal computers, have multiple uses, but are more complex and
+expensive.
+
+However, says Mr. Pratt, the general-purpose computers have dropped so
+far in price that they may be more economical than embedded systems in
+some cases. And in the case of a Web server, a general-purpose machine
+is desirable because its software can be easily replaced or upgraded.
+Mr. Pratt's server uses a 486 processor, like those found in older
+personal computers, and runs the Linux operating system. He adapted
+the Web server from a computer that costs about $400. The challenge
+was paring down the powerful Linux operating system to fit into the
+server's 16 megabytes of storage space and getting it to communicate
+with the Internet.
+
+The tiny computer's only job so far has been self-promotion: It serves
+up a Web pag with photographs of itself, information about its
+hardware, and detailed instructions for creating similar servers
+(http://wearables.stanford.edu/).
+
+According to Mr. Pratt, the server has sent out about 120,000 pages in
+the past month. He says it could handle a hit per second, although it
+hasn't been that busy yet.
+
+The hardware that makes the server possible is what is commonly called
+a "computer on a chip." Unlike most personal computers, which are
+built from many pieces of hardware -- a processor, memory chips, a
+hard drive, and so on -- the tiny server has all its components
+integrated on a single circuit board. That concept has been
+increasingly used in the personal-computer industry, which has begun
+integrating components like sound cards and modems as a way of cutting
+manufacturing costs.
+
+Mr. Pratt adds that wearable computers -- complete with eyeglass
+displays and wrist-mounted keyboards -- are prime uses of tiny
+computers like his Web server.
+
+Mr. Pratt says the tiny server would probably not work for a Web site
+with heavy traffic. But it could be useful where a server was needed
+only temporarily or where a mobile server was necessary -- perhaps for
+scientists hoping to serve up pages from remote places.
+
+  _________________________________________________________________   
+
+http://chronicle.com
+Section: Information Technology
+Page: A25   
+
+
+From cat-dist Tue Feb 23 20:53:14 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA31734
+	for categories-list; Tue, 23 Feb 1999 19:58:06 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: rbf@dai.ed.ac.uk
+Date: Tue, 23 Feb 1999 14:31:11 GMT
+Message-Id: <3745.199902231431@magpie>
+To: categories@mta.ca
+Subject: categories: PhD in Informatics (AI, CS, CogSci) at Edinburgh
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+    PhD degrees in the Division of Informatics
+    at the University of Edinburgh
+
+In 1998, the University of Edinburgh established a Division of
+Informatics, to study the structure, behaviour and
+interactions of both natural and artificial computational systems.
+The Division reflects the University's vision of Informatics
+as a fundamental area of study, critical for the future developments
+in science, engineering, and society. The Division was formed from
+the former Departments of Artificial Intelligence, Cognitive
+Science and Computer Science.
+
+The Division has positions for new research degree students pursing
+either an MSc(Research) (one year), an MPhil (two years) or a PhD
+(three years) through investigation of open problems in Informatics.
+
+The Division now contains over 75 academic staff, 66 contract researchers
+and about 100 research students, grouped primarily into these research
+institutes:
+
+	Artificial Intelligence Applications Institute
+	Institute of Computing Systems Architecture
+	Institute for Adaptive and Neural Computation
+	Institute for Communicating and Collaborative Systems
+	Institute of Perception, Action and Behaviour
+	Institute for Representation and Reasoning
+	Laboratory for Foundations of Computer Science
+
+which reflect the main research themes in the Division:
+
+	adaptive computing
+	artificial intelligence
+	automated and mathematical reasoning
+	cognitive science
+	computational complexity
+	computational learning theory
+	computational linguistics and natural language processing
+	computational musicology
+        computer-assisted formal reasoning
+	computer and network architectures
+	computer communications and networks
+	computer graphics and virtual reality
+	computer science
+	computer vision
+	database systems
+	design and analysis of dependable systems
+	diagramatic understanding
+	formal program specification
+        functional, logic and object-oriented programming
+	human-computer interaction
+	intelligent tutoring systems
+	knowledge representation and reasoning
+	knowledge-based systems
+	medical informatics
+	mobile and assembly robotics
+        modular and component-based systems
+	neural modelling
+	neural networks
+	parallel, distributed and concurrent systems
+	planning and activity management
+        program logics
+	programming languages
+	qualitative and fuzzy reasoning
+        semantics of programming languages
+	software engineering
+	speech understanding and generation
+	system level design and integration
+        theory of computation
+	type theory
+
+
+                                        
+The UK Engineering and Physical Science Research Council
+has awarded the Division about 10 (typically) full studentships
+that can be used by UK and EC students. Overseas students
+may be eligible for ORS awards, that pay approximately
+half of the total costs.
+
+In general, students should have a good BS/BSc degree (or equivalent)
+in an appropriate topic, plus other skills appropriate to the particular
+research area.
+    
+More information can be found on the Division's PhD WWW page at:
+
+        http://www.inf.ed.ac.uk/www/public/Courses/
+
+For application forms and further information, write to:
+    
+        PhD Admissions Secretary
+        Division of Informatics
+        University of Edinburgh
+        James Clerk Maxwell Building
+        King's Buildings
+        Mayfield Road
+        Edinburgh EH9 3JZ
+        
+        Email: phd-admissions@inf.ed.ac.uk
+        Fax:       +44 131 667 7209
+        Telephone: +44 131 650 5156
+
+Please contact us if you'd like to come for a visit.
+        
+**************** ALSO: MSc Positions Available ****************
+
+We also have three thriving taught MSc courses in Artificial Intelligence, Cognitive
+Science and Computer Science. For more information, see:
+
+    http://www.inf.ed.ac.uk/www/public/Courses/
+
+
+From cat-dist Tue Feb 23 21:01:35 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id UAA00484
+	for categories-list; Tue, 23 Feb 1999 20:18:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Message-Id: <199902230509.AAA07550@blackbox.math.lsa.umich.edu>
+Subject: categories: Paper Announcement: Control Categories and Duality
+To: categories@mta.ca (Categories)
+Date: Tue, 23 Feb 1999 00:09:47 -0500 (EST)
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Dear Category Theorists,
+
+The paper "Control Categories and Duality: on the Categorical
+Semantics of the Lambda-Mu Calculus" is now available from
+
+ http://www.math.lsa.umich.edu/~selinger/papers.html
+ http://hypatia.dcs.qmw.ac.uk/author/SelingerP
+
+This is a revised and improved version of a paper I presented at
+MFPS'98.
+
+Let me briefly summarize the part of the paper that I think will be
+the most interesting to category theorists; the actual abstract is
+appended at the end.
+
+Consider a category C with distributive finite products and coproducts
+and a distinguished object R, such that all exponentials of the form
+R^A exist. Let R^C denote the full subcategory of C consisting of
+objects of the form R^A. It is an old observation that R^C is
+cartesian-closed. This observation is at the heart of continuation
+passing style (CPS) interpretations of programming languages with
+control operators, and it has been used recently by Hofmann and
+Streicher to give a sound and complete categorical model of Parigot's
+lambda-mu calculus.  (The lambda-mu calculus generalizes the
+simply-typed lambda calculus; it is a proof term calculus for
+propositional classical logic).
+
+In this paper, I give an independent, algebraic characterization of
+the structure of categories of the form R^C. By "independent", I mean
+that it does not depend on an ambient category C, and by "algebraic",
+that it is given in terms of operations and equations only.  The
+crucial structure that R^C has, besides cartesian closure, is an
+operation called "classical disjunction" that takes R^A and R^B to
+R^(AxB). This operation is functorial in each argument, but not
+bifunctorial; it forms a premonoidal structure in the sense of Power
+and Robinson. Abstracting from R^C, I define the class of "control
+categories", which are cartesian-closed categories with a premonoidal
+structure and suitable axioms. The presence of an operation which is
+not bifunctorial leads to some interesting twists, as one has to be a
+bit careful about how one defines concepts such as weak
+structure-preserving functors and equivalences of categories.
+
+The main theorem is a structure theorem, which shows that every
+control category is equivalent to a category of the form R^C (and, of
+course, vice versa).
+
+An algebraic class of categories calls out for an internal language. I
+prove that the call-by-name lambda-mu calculus (with product and
+disjunction types) forms an internal language for control
+categories. Thus, these categories can be considered as models for (a
+certain kind of) proof theory of classical logic.  Also, the
+call-by-value lambda-mu-calculus forms an internal language for the
+dual class of co-control categories. As a consequence of this
+categorical duality, it follows that there is a syntactic duality
+between the call-by-name and the call-by-value calculus, i.e., there
+are mutually inverse translations between call-by-name and
+call-by-value that preserve the categorical (and also the operational)
+semantics.  Such dualities have been observed in a different setting
+by Filinski. In the case of the lambda-mu calculus, such a syntactic
+duality was conjectured by Streicher and Reus.
+
+Comments are welcome.
+
+Best wishes, -- Peter Selinger
+
+----------------------------------------------------------------------
+
+ABSTRACT: 
+
+We give a categorical semantics to the call-by-name and call-by-value
+versions of Parigot's lambda-mu calculus with disjunction types. We
+introduce the class of control categories, which combine a
+cartesian-closed structure with a premonoidal structure in the sense
+of Power and Robinson.  We prove, via a categorical structure theorem,
+that the categorical semantics is equivalent to a CPS semantics in the
+style of Hofmann and Streicher. We show that the call-by-name
+lambda-mu calculus forms an internal language for control categories,
+and that the call-by-value lambda-mu calculus forms an internal
+language for the dual co-control categories. As a corollary, we obtain
+a syntactic duality result: there exist syntactic translations between
+call-by-name and call-by-value which are mutually inverse and which
+preserve the operational semantics.  This answers a question of
+Streicher and Reus.
+
+
+From cat-dist Wed Feb 24 00:12:29 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id XAA09211
+	for categories-list; Tue, 23 Feb 1999 23:17:11 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 23 Feb 1999 17:57:13 -0800
+From: michael.j.healy@boeing.com (Michael J. Healy 425-865-3123)
+Message-Id: <199902240157.RAA11880@lilith.network-b>
+To: categories@mta.ca
+Subject: categories: Industrial application
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+To all who work in category theory:
+
+Today, my colleague Keith Williamson demonstrated an "industrial-strength" 
+application of category theory.  He applied The Kestrel Institute's 
+Specware(TM) system to generate a fairly large program from formal 
+specifications.  The program optimizes the placement of electrical 
+equipment in an airliner, minimizing wiring subject to constraints 
+on how the equipment can be placed.
+
+This is a demonstration of applied research, not yet in technology transfer.  
+That having been said, the engineers are finding the program Keith generated 
+to be potentially of great use.  Of more significance, though, is their 
+interest in the way the program was developed: It can be either improved or 
+adapted to other applications by modifying specifications and diagrams of 
+specification morphisms, and then replaying the software generation---as 
+opposed to having to work with the code.  Efficiency improvements to the 
+code have already been demonstrated by working in this mode.  Our slogan 
+is  "Re-use specifications, not software".
+
+I don't want to oversell this thing; the devil is in the details, as usual, 
+and much more work needs to be done on this approach.  But I'm obviously 
+proud of the accomplishment.  When I started our project about four years 
+ago, most here thought that applying category theory to anything was a crazy 
+notion; others thought that applications, if any, would be 12 to twenty 
+years out (depending on to whom we were talking).  Last year we had a 
+proof-of-concept demonstration (actual code).  This year, the boss said, 
+"OK, now scale it up."---and we did!
+
+Ross Street has had an item giving an overview of our work linked to his 
+home page for some time now.  We have a paper accepted in the Journal of 
+Intelligent Manufacturing, but I don't know when it will appear.
+
+Mike Healy
+
+Here's the standard disclaimer I must provide:
+
+This document does not represent an official position of The Boeing Company 
+or any of its subsidiaries or suppliers.
+--
+
+===========================================================================
+                                         e	     
+Michael J. Healy                          A
+                                  FA ----------> GA
+(425)865-3123                     |              |
+FAX(425)865-2964                  |              |
+                               Ff |              | Gf
+c/o The Boeing Company            |              |   
+PO Box 3707  MS 7L-66            \|/            \|/
+Seattle, WA 98124-2207            '              '
+USA                               FB ----------> GB
+-or for priority mail-                   e             "I'm a natural man."
+2760 160th Ave SE  MS 7L-66               B
+Bellevue, WA 98008
+USA
+
+michael.j.healy@boeing.com          -or-            mjhealy@u.washington.edu
+
+============================================================================
+
+
+
+From cat-dist Sun Feb 28 22:27:57 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA03667
+	for categories-list; Sun, 28 Feb 1999 21:41:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Philippe Gaucher <gaucher@irma.u-strasbg.fr>
+Reply-To: gaucher@irma.u-strasbg.fr
+Organization: perso
+To: categories@mta.ca
+Subject: categories: Oriented homotopy and Concurrency
+Date: Wed, 24 Feb 1999 23:50:21 +0100
+X-Mailer: KMail [version 1.0.17]
+Content-Type: text/plain
+Cc: gaucher@irma.u-strasbg.fr
+MIME-Version: 1.0
+Message-Id: <99022500272400.08954@belzebuth.enfer>
+Content-Transfer-Encoding: 8bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Dear category theorists, 
+
+Here is an annoucement of preprint.
+
+URL : http://www-irma.u-strasbg.fr/~gaucher/multi_en.ps.gz
+ or http://www-irma.u-strasbg.fr/irma/publications/1999/99010.shtml
+
+
+Title : Homotopy invariants of multiple categories and concurrency in computer
+science
+
+
+
+Abstract :   We associate to any (strict) multiple category $\C$ three
+homology theories : the first one is called the globular homology
+and it contains the oriented loops of $\C$ ; both other ones are called
+corner homology, the
+negative one and the positive one, which contain the corners included
+in $\C$. We show up the link between this homology theories and the
+homotopy of paths in multiple category.  At the end of the paper, we
+explain the reason why this theories are interesting for some
+geometric problems coming from computer science.
+
+
+From cat-dist Sun Feb 28 22:28:59 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA03784
+	for categories-list; Sun, 28 Feb 1999 21:42:15 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 25 Feb 1999 00:01:23 -0500
+From: "Robert A.G. Seely" <rags@triples.math.mcgill.ca>
+Message-Id: <199902250501.AAA29913@triples.math.mcgill.ca>
+To: categories@triples.math.mcgill.ca, types@cis.upenn.edu
+Subject: categories: Paper on linear bicategories (and non-commutative linear logic)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+I would like to announce the following paper, which has been posted on
+my www site <http://www.math.mcgill.ca/~rags>.  (The McGill ftp site is
+currently not functionning, but as soon as it is restored, this paper
+ought to appear on the Hypatia mirror site as well.)
+
+The abstract follows.
+
+===================================
+
+Introduction to linear bicategories
+
+by J.R.B. Cockett, J. Koslowski, R.A.G. Seely
+
+Linear bicategories are a generalization of the notion of a bicategory,
+in which the one horizontal composition is replaced by two (linked)
+horizontal compositions. These compositions provide a semantic model for
+the tensor and par of linear logic: in particular, as composition is
+fundamentally noncommutative, they provides a suggestive source of
+models for noncommutative linear logic.
+
+In a linear bicategory, the logical notion of complementation becomes a
+natural linear notion of adjunction. Just as ordinary adjoints are
+related to (Kan) extensions, these linear adjoints are related to the
+appropriate notion of linear extension.
+
+There is also a stronger notion of complementation, which arises, for
+example, in cyclic linear logic. This sort of complementation is
+modelled by cyclic adjoints. This leads to the notion of a *-linear
+bicategory and the coherence conditions which it must satisfy. Cyclic
+adjoints also give rise to linear monads: these are, essentially, the
+appropriate generalization (to the linear setting) of Frobenius
+algebras.
+
+A number of examples of linear bicategories arising from different
+sources are described, and a number of constructions which result in
+linear bicategories are indicated.
+
+This paper is dedicated to Jim Lambek, as part of the celebration of his
+75th birthday.
+
+
+
+From cat-dist Sun Feb 28 22:30:58 1999
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id VAA30856
+	for categories-list; Sun, 28 Feb 1999 21:08:52 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: scta@mat.uc.pt
+Message-Id: <3.0.5.32.19990225154143.007a62b0@mat.uc.pt>
+X-Sender: scta@mat.uc.pt
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.5 (32)
+Date: Thu, 25 Feb 1999 15:41:43 +0000
+To: categories@mta.ca
+Subject: categories: SCTA - second announcement
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id LAA05612
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+Please circulate to all interested colleagues.
+
+===================================================================
+                         SECOND ANNOUNCEMENT
+===================================================================
+
+                                
+
+             School on Category Theory and Applications
+                      Department of Mathematics
+                        University of Coimbra
+                          Coimbra,  Portugal
+                           July 13-17, 1999
+
+
+The Department of Mathematics of the University of Coimbra is
+organizing a School on Category Theory and Applications from 13th
+to 17th of July, 1999.
+This school will consist of the following 7 hours intensive courses,
+at a postgraduate level:
+
+n-Categories
+  by John Baez (University of California, USA)
+
+Algebraic Theories
+  by M. Cristina Pedicchio (University of Trieste, Italy)
+
+Chu Spaces: duality as a common foundation for computation and mathematics
+  by Vaughan Pratt (Stanford University, USA).
+
+
+
+ORGANIZING COMMITTEE
+====================
+Manuela Sobral (Universidade de Coimbra) 
+Maria Manuel Clementino (Universidade de Coimbra) 
+Jorge Picado (Universidade de Coimbra) 
+Lurdes Sousa (Instituto Superior Politecnico de Viseu) 
+
+
+REGISTRATION FEE
+================
+The school registration fee is set at 6000 PTE payed at arrival.
+This includes the courses notes, coffee breaks and a dinner. 
+
+Registrations can be made directly at the School Web Page or by
+electronic or postal mail, filling in the Registration Form below. 
+
+
+ACCOMMODATION
+=============
+Please keep in mind that July is high season here and that to ensure
+accommodation after April 30 can be difficult. Please reserve your 
+accommodation as soon as possible.
+
+You may book your hotel room in the hotels of the Category Theory
+Conference filling in the Hotel Reservation Form below and sending
+it to Profissional Tours. 
+
+Alternatively, there will be some rooms available at UNIVERSITY
+Residences. There you have to pay the price for two weeks: 8.000 PTE.
+The participants interested on this type of accommodation
+should send an email to mailto:picado@mat.uc.pt
+
+
+IMPORTANT DATES
+===============
+Registration: April 30, 1999.
+
+
+SCHOOL HOMEPAGE
+===================
+The Registration and Hotel Reservation Forms, as well as up-to-date
+information, are available at our web page http://www.mat.uc.pt/~scta/
+There you can also see a city map with the hotels location.
+
+
+SCHOOL ADDRESSES
+====================
+All correspondence must be sent to one of the following addresses:
+
+E-mail address: scta@mat.uc.pt
+
+Postal address: SCTA
+                Departamento de Matemática
+                Apartado 3008
+                3000 Coimbra, PORTUGAL
+
+Please find below the Registration and Hotel Reservation Forms. They may also 
+be sent to you by fax, upon request.
+
+
+------------------------------------------------------------------------------
+
+           SCHOOL ON CATEGORY THEORY AND APPLICATIONS
+       
+              Coimbra, Portugal, July 13-17, 1999
+
+        REGISTRATION FORM (Please send before April 30, 1999)
+
+
+Family name: _________________________________
+
+First name: __________________________________
+
+Institution (full postal address): _____________________________
+
+________________________________________________________________
+
+________________________________________________________________
+
+e-mail address: ________________________________________________
+
+Fax number: ____________________________________________________
+
+
+                  
+------------------------------------------------------------------------------
+
+           SCHOOL ON CATEGORY THEORY AND APPLICATIONS
+       
+              Coimbra, Portugal, July 13-17, 1999
+
+        HOTEL RESERVATION FORM (Please send before April 30, 1999)
+
+Accommodation prices: All prices indicated are in Portuguese escudos
+(1 EURO=200.482 PTE) and per room per day, including breakfast.
+Deadline for guaranteed room is April 30, 1999.
+
+
+HOTEL           CAT.  SINGLE   DOUBLE  Room Type(*)  Priority Choice
+                       ROOM     ROOM     S / D        1   2   3
+
+Qta. Lagrimas   ****   15000    17000   ______        __  __  __
+
+Tivoli          ****   10000    12000   ______        __  __  __
+
+Braganca         ***    6400     8500   ______        __  __  __
+
+Ibis              **    8600     9500   ______        __  __  __
+  
+Resid. Botanico  ***    5900     7500   ______        __  __  __
+
+
+
+(*) The organization will not allocate people to double rooms. So, if you are
+sharing a room, please indicate the name (surname, initials) of the person
+you will be sharing with.
+
+
+Date of arrival: ___/___/___     Date of departure: ___/___/___
+
+Number of nights: _____
+
+METHOD OF PAYMENT:
+
+By cheque # in Portuguese escudos, payable to: PROFISSIONAL TOURS
+
+# personal cheques are not acceptable and bank draft cheques or money orders
+in escudos are accepted only when free of charges to the organization.
+
+By credit card: VISA ____   MASTERCARD ____  EUROCARD ____
+
+Please charge my credit card to the total amount of _______________________PTE
+
+Card Number _________________________________  Expiry date  _____/_____
+
+Signature ___________________________________
+
+PLEASE FILL BELOW, INDEPENDENTLY OF YOUR METHOD OF PAYMENT
+
+Name _________________________________________________ Fax __________________
+
+Full address _________________________________________ Country ______________
+
+
+                            PLEASE SEND TO
+
+   PROFISSIONAL TOURS - Av. Afonso Henriques, 45 - 3000 COIMBRA - PORTUGAL
+
+               Phone (+351 39)402011 - Fax (+351 39)704317
+
+              e-mail: profissional.comercial@beta-viagens.pt
+
+----------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,101 @@
+Path: news.gmane.org!not-for-mail
+From: Dominic Hughes <dominic@theory.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: cartesian closed categories and holodeck games
+Date: Mon, 23 Oct 2006 10:39:12 -0700 (PDT)
+Lines: 68
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0610230952300.10046-100000@thue.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241019322 8877 80.91.229.2 (29 Apr 2009 15:35:22 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:35:22 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct 23 21:00:50 2006 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 23 Oct 2006 21:00:50 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Gc9ec-0001y1-3h
+	for categories-list@mta.ca; Mon, 23 Oct 2006 20:56:26 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 29
+Status: O
+Content-Length: 2627
+Original-Lines: 67
+Xref: news.gmane.org gmane.science.mathematics.categories:3466
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3466>
+
+This "backtracking game" characterisation has been known since around
+'93-'94, in the work of Hyland and Ong:
+
+  M. Hyland and L. Ong. On full abstraction for PCF.  Information and
+  Computation, Volume 163, pp. 285-408, December 2000. [Under review for
+  6 years!]
+  ftp://ftp.comlab.ox.ac.uk/pub/Documents/techpapers/Luke.Ong/pcf.ps.gz
+
+(PCF is an extension of typed lambda calculus.)  My D.Phil. thesis
+extended the lambda calculus (free CCC) characterisation to second-order,
+published in:
+
+  Games and Definability for System F. Logic in Computer Science, 1997
+  http://boole.stanford.edu/~dominic/papers/
+
+To characterise the free CCC on an *arbitrary* set {Z,Y,X,...} of
+generators (rather than a single generator, as you discuss), one simply
+adds the following Copycat Condition:
+
+  (*) Whenever first player plays an occurrence of X, the second player
+      must play an occurrence of X.
+
+[Try it: see how X -> Y -> X has just one winning strategy.] Although the
+LICS'97 paper cited above appears to be the first place the Copycat
+Condition appears in print, I like to think it was already understood at
+the time by people working in the area.  Technically speaking, winning
+strategies correspond to eta-expanded beta-normal forms.  See pages 5-7 of
+my thesis for an informal description of the correspondence.
+
+It sounds like you've reached the point of trying to figure out how
+composition should work.  Proving associativity is fiddly.  Hyland and Ong
+give a very elegant treatment, via a larger CCC of games in which *both*
+players can backtrack.  The free CCC subcategory is carved out as the
+so-called *innocent* strategies.  This composition is almost identical to
+that presented by Coquand in:
+
+  A semantics of evidence for classical arithmetic.  Thierry Coquand.
+  Proceedings of the CLICS workshop, Aarhus, 1992.
+
+Dominic
+
+PS A game-theoretic characterisation with an entirely different flavour
+(winning strategies less "obviously" corresponding to eta-long beta-normal
+forms) is:
+
+  Abramsky, S., Jagadeesan, R. and Malacaria, P., Full Abstraction for
+  PCF.  Info. & Comp. 163 (2000), 409-470.
+  http://web.comlab.ox.ac.uk/oucl/work/samson.abramsky/pcf.pdf
+  [Announced concurrently with Hyland-Ong, around '93-'94.]
+
+
+On Sun, 22 Oct 2006, John Baez wrote:
+
+> Dear Categorists -
+>
+> This contains a popularization of Dolan and Trimble's work on
+> game theory and the free cartesian closed category on one object.
+> It also has links to more detais.
+>
+> Best,
+> jb
+>
+> ....................................................................
+>
+> Also available as http://math.ucr.edu/home/baez/week240.html
+>
+
+

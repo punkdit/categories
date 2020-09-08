@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Francisco Lobo <f.lobo@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: categories with several compositions?
+Date: Fri, 4 Feb 2011 18:47:08 +0000
+Lines: 90
+Approved: news@gmane.org
+Message-ID: <E1PlWgt-0003HD-Bo@mlist.mta.ca>
+References: <E1PkdTT-0005tx-AB@mlist.mta.ca>
+Reply-To: Francisco Lobo <f.lobo@cs.man.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1296868346 32095 80.91.229.12 (5 Feb 2011 01:12:26 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 5 Feb 2011 01:12:26 +0000 (UTC)
+Cc: categories@mta.ca
+To: John Stell <J.G.Stell@leeds.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Sat Feb 05 02:12:22 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlWhI-0000tX-9m
+	for gsmc-categories@m.gmane.org; Sat, 05 Feb 2011 02:12:20 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52694)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlWh0-0000om-10; Fri, 04 Feb 2011 21:12:02 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PlWgt-0003HD-Bo
+	for categories-list@mlist.mta.ca; Fri, 04 Feb 2011 21:11:55 -0400
+In-Reply-To: <E1Pkn8d-0000Wc-Ip@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6521
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6521>
+
+Hi!
+
+
+Your permutability axiom for different compositions is reminiscent of the=
+  interchange law, so I wonder if the structures you mean are the n-fold c=
+ategories introduced by Charles Ehresmann in "Cat=C3=A9gories structur=C3=
+=A9es" cf.
+
+http://www.numdam.org/item?id=3DASENS_1963_3_80_4_349_0
+
+which is possibly the first article on higher-order category theory.
+
+
+An n-fold category C is just a class C equipped with n composition struct=
+ures (giving composition operations *_0, ..., *_{n-1} on C) that for all =
+i,j<n satisfy the interchange law
+
+(f *_i g) *_j (u *_i v) =3D (f *_j u) *_i (g *_j v)
+
+whenever f,g,u,v in C are such that both sides are defined. The notion of=
+  composition structure for a class C coincides with the so-called "arrows=
+  only" definition of a category. It consists of a source operation s:C->C=
+, a target operation t:C->C, and a composition operation
+
+*: (C x_{s,t} C) -> C
+
+where (C x_{s,t} C) is the collection of consecutive arrows with respect =
+to the source and target operations (i.e. the vertex of the pullback of s=
+  and t), such that for all f,u,g in C
+
+1. s( s(f) ) =3D s(f) =3D t( s(f) )  and  s( t(f) ) =3D t(f) =3D t( t(f) =
+)
+2. (f * u) * g =3D f * (u * g)  whenever both sides are defined
+3. s(f) * f =3D f =3D f * t(f)
+
+The 1st condition says that a fixed point of s is also fixed point of t a=
+nd vice-versa, and that the range of these operations contains only their=
+  shared fixed points: the objects of the category. The 2nd condition stat=
+es that * is associative, and the 3rd that the source and target of an ar=
+row f are respectively left and right units for composition with f (so th=
+e objects are used as identity arrows). From these axioms it follows that
+
+s(f * u) =3D s(f)  and t(f * u) =3D t(u)
+
+as usual. (Note that f*u means "first do f then u" as is common in semigr=
+oup theory.) It has already been pointed out that an Eckmann-Hilton argum=
+ent shows that under the interchange axiom two composition structures i a=
+nd j will coincide whenever s_i =3D s_j and t_i =3D t_j.
+
+
+Each entity f in an n-fold category C is an arrow in n different ways. Th=
+is may be written
+
+f :_{n-1}  s_{n-1}(f) -> t_{n-1)(f)
+   ...
+   :_{0}    s_{0}(f)   -> t_{0}(f)
+
+These are distinct from the cells of (strict) n-categories. The latter no=
+tion is often defined inductively using enrichment, but its single-sorted=
+  (or arrows only) counterpart is precisely an n-fold category such that f=
+or all f in C
+
+s_i( s_j(f) ) =3D s_i(f) =3D s_i( t_j(f) )  and  t_i( s_j(f) ) =3D t_i(f)=
+  =3D t_i( t_j(f) )
+
+whenever i<j<n. These conditions ensure that objects of the structure i w=
+ill also be objects of the structure i+1, etc. In this case the source an=
+d target operations make C a globular set.
+
+
+The theory of n-fold categories was further developed by Ehresmann et al.=
+  in a series of articles called "Multiple Functors". These were written i=
+n English and are also available at http://www.numdam.org/
+
+
+Hope this information is useful.
+Francisco
+
+
+On Wed, 2 Feb 2011 16:11:26 +0000
+John Stell <J.G.Stell@leeds.ac.uk> wrote:
+
+> Thanks for pointing that out.
+> I should have been asking for each composition to have its own identity
+>=20
+> John=20
+>=20
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

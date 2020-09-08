@@ -1,0 +1,133 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Applications for Category Theory
+Date: Fri, 29 Aug 1997 13:13:37 -0300 (ADT)
+Lines: 110
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.970829131329.17477C-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016987 25910 80.91.229.2 (29 Apr 2009 14:56:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:27 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Fri Aug 29 13:14:52 1997
+Original-Received: by mailserv.mta.ca; id AA17522; Fri, 29 Aug 1997 13:13:37 -0300
+Status: O
+Content-Length: 3888
+Original-Lines: 109
+Xref: news.gmane.org gmane.science.mathematics.categories:472
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/472>
+
+Date: Thu, 28 Aug 1997 13:29:08 -0700 (PDT)
+From: Joseph Goguen <goguen@cs.ucsd.edu>
+
+Im enjoying the discussion of CT and CS or SWE, although it seems to me to be
+a bit theoretical.  Id like to mention three tools, real implemented software
+systems that have been and are being used in real software engineering:
+SpecWare \cite{specware}, LILEANNA \cite{traczth,tracz93}, and TOOR
+\cite{toor}.  
+
+All are based on a category theoretic module system called parameterized
+programming \cite{ppp}.  The idea is that specs are theoires and that putting
+specs together is just colimit; this goes back to work on general systems
+theory from the late 1960s \cite{gst} and work of Clear from the late 1970s
+\cite{bg77,bg80sh}.
+
+SpecWare actually has colimit as a top level command, but it fails to provide
+all the module operations which make parameterized programming so powerful.
+However, it can generate code from sufficiently detailed specs, and has very
+good documentation, a good user base, and a verification capability.  It is
+produced by Kestrel Inst.
+
+LILEANNA fully implements parameterized programming and can compose Ada
+modules, but it only generates glue code.  It was built at Martin-Marietta,
+and has been used for helicopter navigation software.
+
+TOOR supports requirements evolution and full parameterized programming,
+without verification, but with a good user interface.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@incollection(bg77,
+title = "Putting Theories together to Make Specifications",
+author = "Rod Burstall and Joseph Goguen",
+booktitle = "Proceedings, Fifth International Joint Conference on Artificial
+  Intelligence",
+editor = "Raj Reddy",
+publisher = "Department of Computer Science, Carnegie-Mellon University",
+year = 1977,
+pages = "1045--1058")
+
+@incollection(bg80sh,
+author = "Rod Burstall and Joseph Goguen",
+title = "The Semantics of {C}lear, a Specification Language",
+booktitle = "Proceedings, 1979 Copenhagen Winter School on
+  Abstract Software Specification",
+editor = "Dines Bjorner",
+note = "Lecture Notes in Computer Science, Volume 86",
+publisher = "Springer",
+pages = "292--332",
+year = 1980)
+
+@techreport(specware,
+title = "Spec{W}are Language Manual, Version 2.0",
+author = "Y.V.\ Srinivas and Richard J{\"u}llig",
+institution = "Kestrel",
+year = 1996)
+
+@inproceedings(tracz93,
+author = "Will Tracz",
+title = "{\sc lileanna}: a Parameterized Programming Language",
+booktitle = "Proceedings, Second International Workshop on Software Reuse",
+month = "March", 
+year = 1993,
+note = "Lucca, Italy",
+pages = "66--78")
+		  
+@phdthesis(traczth,
+title = "Formal Specification of Parameterized Programs in {\sc lilleanna}",
+author = "William Joseph Tracz",
+school = "Stanford University",
+year = 1997)
+
+@incollection(gst71,
+title = "Mathematical Representation of Hierarchically Organized Systems",
+author = "Joseph Goguen",
+year = 1971,
+editor = "E. Attinger",
+booktitle = "Global Systems Dynamics",
+publisher = "S. Karger",
+location = "Basel",
+city = "Basil",
+pages = "112--128")
+
+@incollection(gst73,                          
+title = "Categorical Foundations for General Systems Theory",
+author = "Joseph Goguen",
+booktitle = "Advances in Cybernetics and Systems Research",
+editor = "F. Pichler and R. Trappl",
+year = 1973,
+publisher = "Transcripta Books",
+location = "London",
+pages = "121--130")
+
+@article(toor,
+title = "An Object-Oriented Tool for Tracing Requirements",
+author = "Francisco Pinheiro and Joseph Goguen",
+journal = "IEEE Software",
+note = "Special issue of papers from ICRE '96",
+year = "March 1996",
+pages = "52--64")
+
+@incollection(ppp,
+title = "Principles of Parameterized Programming",
+author = "Joseph Goguen",
+booktitle = "Software Reusability, Volume {I}: Concepts and Models",
+editor = "Ted Biggerstaff and Alan Perlis",
+publisher = "Addison Wesley",
+year = 1989,
+pages = "159--225")
+
+

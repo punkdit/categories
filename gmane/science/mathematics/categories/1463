@@ -1,0 +1,128 @@
+Path: news.gmane.org!not-for-mail
+From: mbatanin@ics.mq.edu.au (Michael Batanin)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functorial injective hull.
+Date: Mon, 27 Mar 2000 18:24:57 +1100
+Lines: 99
+Approved: news@gmane.org
+Message-ID: <200003270724.RAA21218@hera.mpce.mq.edu.au>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241017848 31359 80.91.229.2 (29 Apr 2009 15:10:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:48 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Mar 27 08:23:20 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA11227
+	for categories-list; Mon, 27 Mar 2000 08:20:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: mbatanin@hera.mpce.mq.edu.au
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 3880
+Original-Lines: 98
+Xref: news.gmane.org gmane.science.mathematics.categories:1463
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1463>
+
+This is just to give different point of view to the problem.
+
+1. Suppose we have a category C and a full subcategory H (think of H  as a
+subcategory of injective objects). Suppose we have  a functor E:C --> H
+together with natural transformation
+              i: Id --> E(C)
+such that i is monic and ,moreover, E is weak left adjoint to the inclusion
+functor H --> C. Then I claim that under two additional conditions E is
+genuine adjoint and i is unit of the adjunction. The conditions are:
+
+a. the natural transformation i is identity on H.
+b. E preseves monics.
+
+The proof is just a repetition of P.Freyd proof. We have to prove that
+the extension in the diagram
+
+           i:A --> E(A)
+             |     /
+           f |    /
+             |   /
+              I
+
+is unique for any morphism f and "injective" I.
+By applying E to this diagram and using  condition a) we see that it is
+sufficient  to prove that E(i) is identity. Repeating Freyd's proof we see
+that
+E(i) is idempotent. Using  condition b) we conclude  that it is identity.
+
+The conditions a) and b) are obviously satisfied in the case when E is
+"injective hull functor" (of coarse a) is true up to iso, again see P,Freyd
+proof).
+
+As the unit of the adjunction is monic so the functor E reflects
+epimorphisms. If in C we have that mono + epi implies iso we finally have
+that i is iso and ,hence, the result of Adamek, Herrlish, Rosicky and
+Tholen.
+
+2. I would not dare to simply repeat P.Freyd argument if I don't have another
+   proof (in a special but important  case). The proof is much more
+techniqual but I believe reflects another interesting side of the problem
+of functoriality
+of injective resolutions.
+
+Consider the following bicategory.
+  The objects are categories enriched in the closed monoidal category of
+(say bounded ) chain complexes.
+  The 1-arrows are enriched distributors.
+  The 2-arrows are homotopy classes of "coherent" natural transformations (i.e.
+we localize the category of natural transformations with respect to the
+class of morphisms which are level quaziisomorphisms).
+  We have to define the composition of 1-arrows. This requires some techniques
+but in a few words the result is left derived functor of the composition of
+enriched distributors.
+
+The resulting bicategory is closed on the left and right. Now, for a chain
+functor
+ K: A --> B
+we can consider the right Kan extension of it along itself in the above
+bicategory (codensity monad). The Kleisli category of it is called "strong
+shape theory of K" Ssh_K. It is possible to prove, that:
+ c). If K is a full embedding and has an enriched left adjoint then Ssh_K
+is just a Kleisli category of the corresponding monad on B.
+
+ d). If B is the category of chain complexes (say bounded)in an abelian
+category with enough injectives and A is full subcategory of injective
+chain complexes, then homology  of Ssh_K(X,Y) are isomorphic to the right
+derived functor of internal Hom of B. In particular, if X and Y are
+concentrated in the dimension 0 the cohomology are just the correspobding
+Ext's.
+
+ Coming back to the original problem. If H\in C are abelian and satisfy the
+conditions a),b) then, according to our calculations
+the inclusion
+          K:  Ch(H) ---> Ch(C)
+has a right adjoint and , hence,(by point c)
+Ssh_K(X,Y) = Hom(X,E(Y))
+for X,Y concentrated in dimension 0. Hence by d) the injective dimension of
+C is 0 and we have the result again.
+
+ Another words the injective dimension is the obstruction for nonnaturality
+of the injective hull.
+
+The same sort of theory can be developed for simplicial (or Cat) enriched
+situation see
+Batanin.M, Categorical Strong Shape THeory, Cahiers de Topologie et Geom,
+v,XXXVIII-1(1997)p. 3-66.
+
+I think some other results of nonaturality (as , for example, the result of
+Shakhmatov mentioned by AHRT on p.8) are related to these strong shape
+categories.
+
+
+
+Michael Batanin.
+
+
+
+
+

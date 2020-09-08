@@ -1,0 +1,156 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Real coalgebra
+Date: Fri, 24 Dec 1999 04:13:57 -0800
+Lines: 125
+Approved: news@gmane.org
+Message-ID: <199912241213.EAA03788@coraki.Stanford.EDU>
+References: <199912221649.LAA14585@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017741 30648 80.91.229.2 (29 Apr 2009 15:09:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Dec 24 10:05:40 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA17219
+	for categories-list; Fri, 24 Dec 1999 08:30:22 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: Your message of "Wed, 22 Dec 1999 11:49:50 EST."
+             <199912221649.LAA14585@saul.cis.upenn.edu> 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 18
+Status: O
+Content-Length: 5989
+Original-Lines: 124
+Xref: news.gmane.org gmane.science.mathematics.categories:1309
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1309>
+
+
+Apropos of Peter's kind remarks, the journal version of our paper
+should be in TCS soon, entitled The continuum as a final coalgebra.
+Meanwhile it's on the web as
+
+        http://boole.stanford.edu/pub/continuum.ps.gz
+
+Abstract:
+We define the continuum up to order isomorphism, and hence up to
+homeomorphism via the order topology, in terms of the final coalgebra
+of either the functor NxX, product with the set of natural numbers, or
+the functor 1 + NxX.  This makes an attractive analogy with the
+definition of N itself as the initial algebra of the functor 1 + X,
+disjoint union with a singleton.  We similarly specify Baire space and
+Cantor space in terms of these final coalgebras.  We identify two
+variants of this approach, a coinductive definition based on final
+coalgebraic structure in the category of sets, and a direct definition
+as a final coalgebra in the category of posets.  We conclude with some
+paradoxical discrepancies between continuity and constructiveness in
+this setting.
+
+
+PF>So restrict to the category of posets with _distinct_ top and bottom.
+
+...which has no final object, making the following all the nicer:
+
+PF>The functor  X v X  again has a final coalgebra:
+
+The bipointed-set version of this seems like *the* right way to generate
+the topology of the continuum.  Verry nice.
+
+PF>PS
+PF>Just for comparison, consider the category of posets and the functor
+PF>that sends  X  to  X;1;X.  The open interval is an invariant object 
+PF>for this functor but it is not the final coalgebra. For that we need
+PF>-- as we called it in Cats and Alligators -- Wilson space. Actually,
+PF>not the space but the linearly ordered set, most easily defined as the
+PF>lexicographically ordered subset, W, of sequences with values in  
+PF>{-1, 0, 1}  consisting of all those sequences such that for all  n 
+PF>a(n) = 0  =>  a(n+1) = 0  (take a finite word on  {-1,1}  and pad it
+PF>out to an infinite sequence by tacking on  0s).
+
+In other words the continuum plus *two* additional copies of each rational
+(as opposed to Cantor space's one additional copy).
+
+PF>It takes more work, but not an infinite amount, to construct a 
+PF>coalgebra structure on  I x I  so that the induced binary operation 
+PF>I x I --> I  is the midpoint operation, the values of which will be
+PF>denoted here as  x|y.  It is pretty much characterized by the 
+PF>equations: idempotence, x|x = x; commutativity, x|y = y|x; and middle-
+PF>two-interchange, (u|v)|(x|y) = (u|x)|(v|y); together with cancelation:
+PF>a|x = a|y  =>  x = y.  If one chooses a zero, then one may prove that
+PF>there's an ambient abelian group with unique division by  2, such that 
+PF>the given midpoint algebra is a subset closed under the operation
+PF>x|y = (x + y)/2.  (There must be an existent reference for this.) 
+
+Here I should be understood as [-1,1].  Peter's implicit definition
+of this coalgebra structure on I x I has the following equivalent
+five-equation explicit definition (or seven if you count each of (3)
+and (4) as two equations).  My apologies to anyone reading this with a
+variable-width font.
+
+                  x + y        y + x
+(1)               -----    =   -----
+                    2            2
+
+                  0 + 0
+(2)               -----    =   0
+                    2
+                                   
+                xo1            x + t
+                --- + 0        -----o1    where the 2 o's are + and t is -1
+(3)              2         =     2           or the 2 o's are - and t is 1
+                --------       -------    (o = operator, t = terminator)
+                    2             2
+
+               xo1   yo1       x + y
+               --- + ---       -----o1       where the 3 o's are either
+(4)             2     2    =     2             all - or all +
+                -------        -------
+                   2              2
+
+                x-1   y+1      x + y
+                --- + ---      ----- + 0
+(5)              2     2   =     2
+                 -------       ---------
+                    2              2
+
+All these equations clearly hold on I; the question is, what is their
+content?  Well, spacing around + and - is significant: without a space the form
+x-1        x+1
+--- (resp. --- )  denotes a non-middle (nonzero) element of I which when
+ 2          2
+represented as a string over {-1,0,1} has head -1 (resp. 1) and tail x,
+                            x + y
+while with a space the form ----- denotes a pair (x,y) of I x I.
+                              2
+Finally, if -1, 0, or 1 (which includes t) are preceded by a space then
+they denote the respective infinite constant sequences -1,-1,-1,... or
+0,0,0,.. or 1,1,1... (each of which has that constant as its value).
+(Once a sequence hits a zero it stays zero.)
+
+The left hand side always has exactly one spaced +, and at the outermost
+level, since that's what we're trying to define.  On the right hand
+side, each occurrence of a spaced + denotes a corecursive call (so two
+corecursive calls in the last equation --- it might seem like a lot of
+bother to do a corecursive call merely to add 0, but the real point of
+the second call is of course to divide the result of the first call by 2,
+which we can do by taking the mean with 0.)
+
+Equation (1) merely ensures that any pair (x,y) will match the left
+hand side of one of (2)-(5) one way round or the other.  Equations
+(2)-(4) provide instant gratification inasmuch as they allow immediate
+production of the first "trit" (ternary digit) of the mean of x and y
+given only the first trit of each of them, thereby explicitly defining
+the desired coalgebra structure on I x I.  But if you hit equation (5)
+you may be in for a long or even infinite wait (consider taking the mean
+of -1,1,-1,1,...  (= -2/3) with 1,-1,1,-1,... (= 2/3), which to us is
+obviously zero but not so obviously to equation (5)).  So equation (5)
+does not give the coalgebra structure at this part of I x I explicitly,
+one must regrettably deduce it by corecursion.
+
+Vaughan
+
+

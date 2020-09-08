@@ -1,0 +1,177 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt11@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Equideductive Topology
+Date: Sun, 20 Feb 2011 16:36:00 +0000 (GMT)
+Lines: 141
+Approved: news@gmane.org
+Message-ID: <E1PrV56-0001cv-F8@mlist.mta.ca>
+Reply-To: Paul Taylor <pt11@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; format=flowed; charset=US-ASCII
+X-Trace: dough.gmane.org 1298292134 20827 80.91.229.12 (21 Feb 2011 12:42:14 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 21 Feb 2011 12:42:14 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Mon Feb 21 13:42:09 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PrV5c-0004a2-1w
+	for gsmc-categories@m.gmane.org; Mon, 21 Feb 2011 13:42:08 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:57077)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PrV5B-0004Pv-9E; Mon, 21 Feb 2011 08:41:41 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PrV56-0001cv-F8
+	for categories-list@mlist.mta.ca; Mon, 21 Feb 2011 08:41:36 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6538
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6538>
+
+  			Equideductive Topology
+  		www.PaulTaylor.EU/ASD/equideductive
+
+Equideductive Topology seeks a new language for computable general topology.
+
+Whereas ASD gave an account of computably based LOCALLY COMPACT spaces,
+the leading concrete model of the new theory is the category of all SOBER
+topological spaces (in the traditional sense, rather than my abstract one).
+Also, the two theories are based on different fundamental categorical ideas.
+Whilst they have a lot in common, neither strictly speaking generalises
+the other, so it is appropriate to regard this as a NEW research programme.
+
+The word "equideductive" is a double pun on Dana Scott's equilogical spaces
+and on reasoning with equations.  One of its motivations was to find out
+exactly what kind of logic is needed to construct a cartesian closed
+extension of categories of topological spaces.  Indeed, this was the
+first piece of work that I did with equideductive logic, but it is still
+very unclear to me how the additional spaces behave, so I am nowhere near
+ready to release a draft paper about them.
+
+On this occasion, let me concentrate on a way of generalising the INTERNAL
+LOGIC OF A TOPOS, otherwise known as naive SET THEORY, to topology.
+
+There is a distinction to be made between the INTERNAL logic that is
+encoded by means of "algebraic" structure on Omega such as the quantifiers
+
+         all_X  and  some_X : Omega^X --> Omega
+
+and the EXTERNAL logic of subobjects in the category.   (I would appreciate
+help from anyone who has experience of teaching about the internal higher
+order logic of a topos regarding how one can put across this distinction.)
+
+By an EXTERNAL LOGIC OF SUBOBJECTS I mean the way in which they are
+constructed by means of equalisers and similar basic categorical tools.
+(This could perhaps be done in some diagrammatic language based on sketch
+theory --- maybe Pierre Ageron's notion of "canevas" would do it.)
+
+In particular, we would like to be able to write
+
+                                                     alpha
+                                                     ------>       Y
+{ x:X | ALL y:Y. alpha x y = beta x y }  >---->  X         Sigma
+                                                     ------>
+                                                      beta
+
+for an equaliser targeted at an exponential.   In general topology,
+I am thinking of this exponential as being in some cartesian closed
+extension, for which the Yoneda embedding is adequate.
+
+If the object  Y  is itself given by such an equaliser then we would
+like to use the notation above in a recursive way, eg
+
+{ x:X | ALL y:B.  (ALL z:C.  gamma y z = delta y x)
+                     IMPLIES   (alpha x y = beta x y) }.
+
+Such an equaliser targeted at an exponential in an enclosing category
+may be described using products instead of exponentials, the universal
+property being similar to that known as a "partial product".
+
+The relevant categorical ideas are discussed in my first draft paper,
+        "Equideductive Categories and their Logic".
+The associated logic is a kind of predicate calculus that uses a
+lambda calculus as its object language.
+
+Although the natural symbols of this logic are ALL, IMPLIES, AND and
+EQUALS, there is a way of defining a weak existential quantifier (SOME).
+This is the subject of the second draft paper.
+
+So far, no internal structure (even lattice operations) has been
+assumed for the object Sigma.
+
+The third paper, which introduces the finitary part of Equideductive
+Topology itself, begins from the question of when the fundamental
+object of an equideductive category is a "dominance".  This means
+that it classifies some class of monos in the same way that Omega
+does in a topos - in particular uniquely - but not all monos need
+be classified.  Those that are we call "open".
+
+The first consequence of this is that Sigma is a semilattice and
+its internal order represents the external IMPLIES connective.
+
+We call an equideductive predicate p(x), which is formed from
+nested quantified implications between equations as above, "open"
+if there is some term phi:Sigma^X such that
+       p(x)   -||-    phi x = T
+
+The next step is to ask when the diagonal   X >--> XxX  of an object
+(which is an equaliser and therefore defined by an equideductive
+predicate) is open.   We say that  X  is a "discrete space" if
+there is some term   equals: X x X ---> Sigma   such that
+      x = y   -||-    equals x y = T
+
+Next we can ask when the equideductive universal quantifier (ALL)
+is represented by a term,  all_X :  Sigma^X ---> Sigma,
+      ALL x.(phi x=T)   -||-   (all_X phi) = T
+When this happens we say that the object  X  is "compact".
+The operation (all_X) may also be seen as an internal "meet"
+in the lattice Sigma^X.
+
+Similarly, in an "overt" space X, the equideductive existential
+quantifier (SOME) is represented by a term  some_X: Sigma^X --> Sigma
+      SOME x.(phi x=T)   -||-   (some_X phi) = T
+However, since SOME only obeys a weak form of the rules for the
+existential quantifier, it seems better to define (some_X) as
+an internal join instead.
+
+The equideductive category is an elementary topos if and only
+if all objects are discrete, overt and compact.
+
+Turning to computable general topology, equideductive logic
+legitimises and generalises the ad hoc notation that I was
+using for non-open (in particular compact) subspaces in ASD.
+
+There is, as I have said, an important distinction to be made
+between the external logic of subobjects (given by equalisers etc)
+and the internal one on the object Sigma or Omega (given by its
+internal algebraic structure).   However, having learned that
+distinction one could erase it again.
+
+The interpretation of a formula that makes this distinction ambiguous
+is that certain SUB-formulae denote terms in the ASD calculus (with
+types such as Sigma or Sigma^X) but the larger formula becomes an
+equideductive predicate as soon as one of the rules is broken:
+
+-  "equals" stays within the term calculus if it links terms whose
+     type is discrete, but otherwise yields an equideductive predicate;
+
+- likewise "not-equals" for Hausdorff type
+
+- "all" stays within the term calculus if it is applied to a term
+    and its range is a compact type, otherwise it gives a predicate;
+
+- likewise "some" for overt type.
+
+Looking forward to your comments,
+
+Paul Taylor
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

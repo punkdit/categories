@@ -1,0 +1,166 @@
+Path: news.gmane.org!not-for-mail
+From: "John Baez" <baez@math.ucr.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Construction of a real closure
+Date: Fri, 5 May 2006 07:55:57 -0700 (PDT)
+Lines: 141
+Approved: news@gmane.org
+Message-ID: <24564.0270448805$1241019218@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019217 8164 80.91.229.2 (29 Apr 2009 15:33:37 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:33:37 +0000 (UTC)
+To: categories@mta.ca (categories)
+Original-X-From: rrosebru@mta.ca Fri May  5 16:03:23 2006 -0300
+X-Keywords: 
+X-UID: 224
+Status: O
+Content-Length: 6234
+Original-Lines: 140
+Xref: news.gmane.org gmane.science.mathematics.categories:3304
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3304>
+
+Peter Freyd writes:
+
+>John writes:
+
+>>  Briefly, while the existence of an algebraic closure of Q
+>>  can be shown without choice, it uniqueness-up-to-isomorphism
+>>  seems to require choice.  Also, while arithmetic operations
+>>  in Qbar are computable, they seem to present interesting challenges.
+
+>The need for choice could hardly arise when working with a decidable
+>countable structure such as  Q.
+
+Above I was reporting what David Madore wrote.  He indeed claims
+that in ZF without C one cannot prove the uniqueness of the algebraic
+closure of Q.  He also said some other interesting stuff, so I might
+as well quote it verbatim:
+
+ From: david.madore@ens.fr (David Madore)
+ Newsgroups: sci.math.research
+ Subject: Re: The algebraic closure of the rationals
+ Date: Fri, 7 Apr 2006 14:12:15 +0000 (UTC)
+ Organization: Ecole Normale Superieure, Paris
+
+John Baez in litteris <e13l06$sr9$1@glue.ucr.edu> scripsit:
+> 1) Is there a way to enumerate the elements of Qbar such that
+> relative to this enumeration, the field operations are computable?
+> If so, how efficiently can they be computed?  If not, how far
+> up the hierarchy of impossible-to-actually-compute functions do
+> we have to go?
+
+The usual manner is to represent a real element of Qbar by
+
+* its minimal polynomial over Q (or perhaps, some polynomial, not
+necessarily minimal, but probably at least separable, of which it is a
+root),
+
+* an interval which isolates the root from all other roots (or the
+number of the root in the usual order on the reals).
+
+Basically the trick is that sums and products can be computed by
+universal rules (if P1 and P2 are polynomials over Q, there is a
+polynomial, which can be given universally in function of the
+coefficients of P1 and P2, whose roots are the sums of roots of P1 and
+P2, and ditto for the product), and roots can always be isolated using
+Sturm-Liouville (in other words, you can narrow the interval as much
+as you want since Sturm-Liouville lets you count the number of roots
+in any given interval).
+
+This is for real algebraics; for the full Qbar, you just represent a
+complex number by its real and imaginary parts (both of which are
+algebraic if the complex is algebraic).
+
+Actually programming this is *unbelievably* painful.  As for the
+algorithmic complexity, I think it's not that bad, in the sense that
+if x and y have small height (for any reasonable definition of
+"height") then computing x+y can be done in a reasonable time, but
+there's a catch: the height of x+y grows considerably larger than that
+of x or y, so any actual computation can become terribly difficult.
+(The same problem happens for rationals: computing r+s where r and s
+are rationals is polynomial in the height of r and s, but try
+computing something like 1/2+1/3+1/5+1/7+1/11+1/13+1/17...)
+
+For some specific uses it is better to use the p-adics than the reals:
+the advantage is that p-adic approximation is *much* easier than real
+approximation (thanks to the ultrametric properties); the disadvantage
+is that whereas the reals are "almost" algebraically closed, the
+p-adics are quite far from it, and representing elements of the
+algebraic closure of Q_p is again quite a nuisance.
+
+> 2) On the other extreme: can we even prove the existence of Qbar
+> without the axiom of choice, or perhaps countable choice?
+
+Yes, the *existence* of Qbar, or of any countable or even
+well-orderable field (and various others, such as Q_p), can be shown
+without the axiom of choice.  However, the *uniqueness* of Qbar
+requires the axiom of choice: it is consistent in ZF alone that there
+exists an uncountable algebraic closure of Q.  (Basically it's true in
+ZFA because you can create atoms for elements of Qbar and let Galois
+act on them and take the usual permutation model, and then some
+embedding theorem gives the result in ZF.)  I'm not sure about whether
+one needs AC to show that the algebraic closure of Q constructed using
+the reals and the p-adics as explained above actually give the same
+thing.
+
+> 3) I've heard that it's even hard to get an "explicit" description
+> of the algebraic closures of finite fields - are there any
+> theorems to this effect?
+
+I don't think it's hard.  In fact, here's a very elegant and
+intriguing explicit construction of the algebraic closure of F_2,
+which is due to Conway:
+
+Define two binary operations, '#' and '@', on the class of ordinals,
+by transfinite induction, by letting:
+
+  x # y  =  mex ( { x'#y | x'<x } union { x#y' | y'<y } )
+
+  x @ y  =  mex { (x'@y)#(x'@y')#(x@y') | x'<x and y'<y }
+
+(respectively called the "Nim sum" and "Nim product" by Conway).
+
+Then:
+
+* the operation '#' coincides with the "exclusive or" on the binary
+representation of ordinals (= unique representation as decreasing sum
+of distinct powers of 2),
+
+* the operations '#' and '@' make various ordinals (such as omega,
+omega^omega, epsilon_0, omega_1, and in fact a closed unbounded class
+of ordinals, or even "the class of all ordinals") into a field of
+characteristic 2, which for some well-known ordinal (I think it is
+omega^(omega^omega) or omega^omega or epsilon_0 or some such thing -
+you can find the correct version in Conway's "On Numbers and Games")
+is exactly the algebraic closure of F_2.  (As for omega, i.e., the set
+of natural numbers, it is the quadratic closure of F_2, this one I'm
+sure about.  Somewhere far beyond that we get the algebraic closure of
+F_2(t), which is a much nastier beast than that of F_2, but I think
+nobody knows exactly which ordinal that is - possibly the
+Feferman-Schuette ordinal.)
+
+This is as explicit as you might wish: there are no choices to be
+made, everything is well-defined.  It is not too computational,
+however, because in principle to compute x@y for two ordinals x and y
+you need to know x'@y' for every pair (x',y') with x'<=x and y'<=y and
+(at least one not being equal): in fact, it's not that bad, and at
+least up to omega the Nim product ('@') can be computed fairly
+efficiently, I don't know what about higher ordinals but I suspect it
+is reasonalby well-behaved at least as far as defining the algebraic
+closure of F_2 goes.
+
+I hope this answers your question.
+
+-- 
+     David A. Madore
+    (david.madore@ens.fr,
+     http://www.dma.ens.fr/~madore/ )
+
+
+
+
+

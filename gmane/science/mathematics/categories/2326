@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: Jpdonaly@aol.com
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Function composition of natural transformations?
+Date: Wed, 4 Jun 2003 15:44:01 EDT
+Lines: 71
+Approved: news@gmane.org
+Message-ID: <15f.2152bf37.2c0fa601@aol.com>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018577 3568 80.91.229.2 (29 Apr 2009 15:22:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:22:57 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Jun  5 16:12:02 2003 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 05 Jun 2003 16:12:02 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 19O05V-0007Kq-00
+	for categories-list@mta.ca; Thu, 05 Jun 2003 16:07:49 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 3601
+Original-Lines: 70
+Xref: news.gmane.org gmane.science.mathematics.categories:2326
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2326>
+
+For function composition, I just use the standard small circle \circ. So the
+function composite of natural transformations \tau and \sigma (if it exists)
+is \tau\circ\sigma. It is advisable to give up subscripting as a way of
+denoting values of (fully extended) natural transformations: The value of \tau at
+morphism a is just \tau(a). I would not use juxtaposition or any other generic
+means (e.g., a centered dot) of denoting composition in a general category for
+function composition or, for that matter, for any other composition which
+already has a specified composition symbol, but I do denote pointwise ("vertical")
+composition generically. Here is an example of how this goes---a line proof of
+the interchange law for function and pointwise composition:
+
+{\noindent\bf Proposition (Interchange Law):} When $\nu\mu\circ\tau\sigma$ is
+defined for natural transformations $\nu$, $\mu$, $\tau$ and $\sigma$, then
+so is $(\nu\circ\tau)\cdot(\mu\circ\sigma)$, and
+$$\nu\mu\circ\tau\sigma=(\nu\circ\tau)\cdot(\mu\circ\sigma).$$
+\medskip
+
+{\noindent\bf Proof:} The void cases are trivial. Assume that
+$\nu\mu\circ\tau\sigma$ is defined. Then surely $\nu\circ\tau$ and $\mu\circ\sigma$ are
+defined, and
+$$\dom(\nu\circ\tau)=\dom\nu\circ\dom\tau=\cod\mu\circ\cod\sigma=\cod(\mu\circ
+\sigma),$$
+so $\nu\circ\tau$ composes pointwise with $\mu\circ\sigma$. Calculate as
+follows at an $a$ in the common domain category of both sides of the interchange
+formula:
+$$\eqalign{[(\nu\cdot\mu)\circ(\tau\cdot\sigma)](a)=&\nu[\tau(\cod
+a)\cdot\sigma(a)]\cdot\mu(\dom[\tau(\cod a)\cdot\sigma(a)])\cr
+&\cr
+=&\nu(\tau(\cod a))\cdot(\dom\nu)[\sigma(a)]\cdot\mu[\dom\sigma(a)]\cr
+&\cr
+=&(\nu\circ\tau)(\cod a)\cdot(\cod\mu)[\sigma(a)]\cdot\mu[\dom\sigma(a)]\cr
+&\cr
+=&(\nu\circ\tau)(\cod a)\cdot\mu(\sigma(a))\cr
+&\cr
+=&(\nu\circ\tau)(\cod a)\cdot(\mu\circ\sigma)(a)\cr
+&\cr
+=&[(\nu\circ\tau)\cdot(\mu\circ\sigma)](a).\cr}$$
+So the two sides of the interchange equation have the same intertwining
+function.
+Checking domain functors,
+$$\eqalign{\dom(\nu\mu\circ\tau\sigma)&=\dom\nu\mu\circ\dom\tau\sigma\cr
+&=\dom\mu\circ\dom\sigma\cr
+&=\dom(\mu\circ\sigma)\cr
+&=\dom(\nu\circ\tau)(\mu\circ\sigma);\cr}$$
+similarly, $\cod(\nu\mu\circ\tau\sigma)=\cod(\nu\circ\tau)(\mu\circ\sigma)$.
+Thus the two natural transformations are equal.
+
+In this, \dom and \cod are defined by
+\def\dom {\hbox{\rm dom }}
+\def\cod {\hbox{\rm cod }}
+and respectively represent the domain and the codomain function on the
+implicit category. The proof uses the following formulas for pointwise composition
+in terms of fully extended natural transformations (i.e.,  in terms of their
+intertwining functions \pi and \tau):
+(\pi\cdot\tau)(a)=\pi(a)\cdot\tau(\dom a)=\pi(\cod a)\cdot\tau(a)
+which I can't help mentioning as an aside shows that evaluation of fully
+extended natural transformations at a morphism intertwines evaluation at its
+domain object with evaluation at its codomain object. (And, incidentally, codomains
+are on the left in my notations, domains on the right.)
+
+If I haven't explained something necessary here, I hope that you can
+nevertheless see that the above line proof represents a moderately massive amount of
+diagram drawing and chasing and would fit convincingly on the page of a
+textbook. I hope that this addresses your request. The only examples which I know are
+all in my personal set of notes which I set up PCTex32 over the last dozen
+years and which come out at about 200 pages. This is probably a little too much
+to drop on you all at once. I am, however, anxious to answer any further
+questions which you may have.
+
+
+

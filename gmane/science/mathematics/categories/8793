@@ -1,0 +1,82 @@
+Path: news.gmane.org!not-for-mail
+From: Todd Wilson <twilson@csufresno.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Formalizing topos-theoretic arguments in Lean
+Date: Sat, 16 Jan 2016 09:45:58 -0800
+Lines: 46
+Approved: news@gmane.org
+Message-ID: <E1aKq0X-0003Pv-0e@mlist.mta.ca>
+Reply-To: Todd Wilson <twilson@csufresno.edu>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain
+X-Trace: ger.gmane.org 1453047455 32436 80.91.229.3 (17 Jan 2016 16:17:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 17 Jan 2016 16:17:35 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sun Jan 17 17:17:24 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aKq15-0008Sr-3U
+	for gsmc-categories@m.gmane.org; Sun, 17 Jan 2016 17:17:23 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:43517)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aKq0b-0002x8-JR; Sun, 17 Jan 2016 12:16:53 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aKq0X-0003Pv-0e
+	for categories-list@mlist.mta.ca; Sun, 17 Jan 2016 12:16:49 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8793
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8793>
+
+For those interested in formalizing internal topos-theoretic arguments
+in a proof assistant, I'd like to make a plug for a newer entry on the
+usual list of provers, namely the Lean Theorem Prover [1]. In Lean, Prop
+is impredicative and extensional, and so it functions much like a
+subobject classifier, allowing a direct encoding of topos-theoretic
+arguments.
+
+As an example, you can look at my formalization [2] of the results from
+my paper
+
+    J. Todd Wilson, "An Intuitionistic version of Zermelo's proof that
+    every choice set can be well-ordered", J. Symbolic Logic, 66:3
+    (2001), 1121-1126.
+
+    Abstract: We give a proof, valid in any elementary topos, of the
+    theorem of Zermelo that any set possessing a choice function for its
+    set of inhabited subsets can be well-ordered. Our proof is
+    considerably simpler than existing proofs in the literature and
+    moreover can be seen as a direct generalization of Zermelo's own 1908
+    proof of his theorem.
+
+This "elementary" proof, besides being a direct generalization of
+Zermelo's, makes crucial use of both impredicativity and extensionality
+of the subobject classifier, and so is a good illustration of these
+features of Lean when it comes to doing such formalizations. (The
+"existing proofs in the literature" mentioned in the abstract referred
+to proofs of Freyd and Axel.)
+
+Also, if I can be permitted an additional self-plug, this proof does not
+appear to be well-known, since there is no reference to it in Section
+D4.5 of Johnstone's Elephant book or, for example, in the article on the
+well-ordering theorem in the nLab [3].
+
+[1] https://leanprover.github.io/
+[2] https://github.com/lambdacalculator/lean-choice
+[3] https://ncatlab.org/nlab/show/well-ordering+theorem
+
+-- 
+Todd Wilson                               A smile is not an individual
+Computer Science Department               product; it is a co-product.
+California State University, Fresno                 -- Thich Nhat Hanh
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

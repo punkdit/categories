@@ -1,0 +1,59 @@
+Date: Mon, 17 Oct 1994 10:53:46 +0500 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: A query about quantales
+
+Date: Mon, 17 Oct 1994 14:52:11 +0100 (BST)
+From: Francois Lamarche <gfl@doc.ic.ac.uk>
+
+Has anyone every considered the following class of quantales?  If  *  is
+the tensor and I its unit, the additional axiom
+
+u*v = I   implies  u=v=I
+
+holds.  If anybody has used them how are they called? Actually I am
+interested in the ones among them that are also commutative and where I
+is a dualizing element.  In other words they are a specific class of
+Girard quantales.  There is an interesting subclass of them:  look at
+the following list of multiplication tables.
+
+ *| I  1 -1    *| I  1  0 -1    *| I  2  1 -1 -2
+-----------   --------------    ----------------
+ I| I  1 -1    I| I  1  0 -1    I| I  2  1 -1 -2
+ 1| 1  1 -1    1| 1  1  0 -1    2| 2  2  1 -1 -2
+-1|-1 -1 -1    0| 0  0 -1 -1    1| 1  1  1 -2 -2
+              -1|-1 -1 -1 -1   -1|-1 -1 -2 -2 -2
+                               -2|-2 -2 -2 -2 -2
+
+It is easy to see this generalizes for any set of the form
+
+{ I, n,n-1,...,1,0,-1,...,-(n-1),-n }  or
+{ I, n,n-1,...,1,  -1,...,-(n-1),-n }.
+
+The slogan is "take the table for inf in the total ordering given by the
+writing order and overwrite the lower right triangle with -n".  The
+dualizing operator is multiplication by -1 (keeping I fixed, natch). It
+suffices to say what is the set of elements >= 1 to define the order on
+the quantale, and it is always {n,I}.  Thus the Hasse diagrams look like
+
+      1     1          2
+      |    / \        / \
+      I   0   I      1   \
+      |    \ /       |    I     ...
+     -1    -1       -1   /
+                      \ /
+                      -2
+
+This can be generalized even further:  given a complete lattice with
+an involution  (-)~ : A^{op} -> A ,  on the set A+{I} define *
+as follows:
+
+            /  a        if  b = I,   ( b if a = I )
+a*b    =   <   bottom   if  a =< b~
+            \  a inf b  if  a not =< b~
+
+Here as before the set of elements >= I is {top, I}
+Have these ever been considered?  Do they have a name?
+
+Francois Lamarche
+
+

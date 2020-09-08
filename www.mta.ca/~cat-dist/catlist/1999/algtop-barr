@@ -1,0 +1,149 @@
+Date: Fri, 17 Jul 1998 19:16:20 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: duality question: alg. topology
+
+To all experts in algebraic topology:
+
+Is the duality I describe below known?  It does not appear to be
+Poincare duality since there is no separate treatment of the torsion and
+torsion free parts.  Let S be a simplicial complex, that is a set of
+faces of an N simplex closed under face operations.  For what I am about
+to say, it is necessary that the empty face in dimension -1 be included
+so that the (co-)homology will be reduced.  This means, for example,
+that there is a distinction between the empty simplicial complex (which
+has no homology) and the simplicial complex consisting of only the empty
+set (which has one cyclic homology group in degree -1).  In fact, the
+former is dual to the N simplex and the latter to the N sphere.
+
+Let S' be defined as the set of complements of the complement of S.
+That is, for each simplex sigma not in S, the complementary simplex,
+whose vertices are those not in sigma, belongs to S' (and nothing else).
+Then for i = -1,...,N, the ith homology of S is the N-i-1st cohomology
+of S'.
+
+The algebraic topology books I have looked at do not mention Poincare
+duality, except for Lefschetz, written in 1940, and he uses a complex
+different from S'; in fact just opposite poset to S, since he is doing
+things in the generality of an arbitrary poset equipped with "incidence
+numbers" that are used in defining the boundary operator.  In
+particular, his dual has the same number of elements as S, rather than
+2^{N+1} - that number.
+
+One thing I find curious is that although this gives, essentially, the
+cohomology of S, there is no obvious way of making that into a
+contravariant functor.
+
+
+Date: Sat, 18 Jul 1998 15:42:04 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: More algebraic topology
+
+I have a real question now.  Suppose S is a simplicial complex of
+dimension n with the property that every n-1 face of every n simplex is
+a face of at least two n simplexes.  I want to conclude that H_n(S) is
+non-zero.  Assume that the union of the n simplexes is connected (any
+connected component would inherit the hypothesis).  Then it seems clear
+geometrically that the union of the faces would enclose one or more
+holes, but I don't see how to actually prove this.  The space would
+appear to have no boundary, but it also is not a manifold since a point
+in one of the faces could have a branched neighborhood.
+
+
+Date: Sat, 18 Jul 1998 21:32:59 -0400 (EDT)
+From: John R Isbell <ji2@ACSU.Buffalo.EDU>
+Subject: categories: Re: More algebraic topology
+
+Dear Mike,
+   You are asking for every strongly connected (finite)
+n-complex to have nonzero $H_n$, which I think you can
+find -- if your Russian suffices -- in P. S. Alexandrov
+Combinatorial Topology, OGIZ, 1947 (660 pp.) [MR 10,
+55b]. It should be around Chapter 14 or 15. I have 
+never tried to go that far in the book, nor to read the
+Russian at all. I have long owned, and have used as
+texts in classes, the English translations which go to
+Chapter 12 I think; Graylock, Rochester, vol. 1, 1956
+[MR 17, 882a] and vol. 2, 1957 [MR 19, 759a]. With any
+luck you will strike an algebraic topologist who can
+give you an English reference.
+   Yours,  John
+
+
+Date: Mon, 20 Jul 1998 07:44:05 -0400 (EDT)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: 2 Barr questions
+
+I've got well over a thousand e-mails waiting to be looked at. I'm
+working on the pile from both ends. Two recent postings from Mike 
+Barr:
+
+
+1) The duality he describes sounds like Spanier-Whitehead duality.
+It's usually defined geometrically. Embed a finite complex into a
+higher-dimensional sphere, take the complement, contract it to a
+finite complex. Do this in the stable-homotopy category (obtained by
+forcing the suspension functor on the homotopy category to become an
+automorphism) and normalize the dimensions so that the dual of a space
+has the negative of its dimension. Show that the embeddings can be
+chosen in a coherent fashion to obtain a self-duality for stable
+homotopy. (The last step is non-trivial and the only person I know who
+verified it is Frank Adams, and that wasn't published. Does anyone
+have a citation?)
+
+
+2) If every  n-1  cell of an n-dimensional finite complex is the face 
+of _exactly_  2  n-dimensional cells then there's a fairly easy 
+argument that the n-dimensional  Z_2 cohomology is non-trivial. But if 
+the condition is changed to "_at least_  2  n-dimensional cells" then 
+the space can be contractible.
+
+Start with the closed unit disk in the complex plane and glue the 
+boundary onto the closed unit interval (which constitutes half of the
+intersection of the disk and the real line) by identifying  a point  x
+on the interval with  e^(2(pi)xi)  on the boundary. If one 
+triangulates this space, each edge will be a face of either 2 or 3
+triangles. 
+
+One way of seeing that this is contractible is to consider first the 
+space obtained by identifying just the upper half of the boundary with
+the unit interval by identifying  a point  x  on the interval with
+e^((pi)xi)  on the boundary. Recalling that the homotopy type of a 
+space is unchanged when reasonable closed contractible subsets are 
+collapsed to points, note that if the lower half of the boundary is 
+collapsed to a point we obtain the first space. On the other hand, the
+upper half (together with the unit interval) is contractible, and when
+it's collapsed to a point we obtain the unit disk.
+
+By taking the suspension of this example we can get an example in 
+every larger finite dimension.
+
+This example is a mapping cone. Take the map from the circle to the
+circle that wraps the first third of the circle around the circle,
+wraps the second third around in the opposite direction, and the 
+last third in the original direction. This map is, of course, 
+homotopic to the identity map. The mapping-cone construction depends
+only on the homotopy type of the map. The mapping cone of the
+identity map on the circle is, of course, the disk.
+
+
+Date: Mon, 20 Jul 1998 13:20:01 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: Answers
+
+I got the same counter-example from Peter Johnstone and Peter Freyd.  PJ
+called it the dunce cap and described it as a triangle with the three
+edges identified, one in the reverse direction.  PF described it in a more
+complicated way that made it easier to see it actually contractible.  And
+the latter was really what I wanted to refute.  When I saw PJ's example, I
+mistakenly thought it still had a 1-cycle.  
+
+The smallest triangulation I found had 8 vertices, which is still too
+large to compute by hand with.  The dual complex still has over 200
+simplexes and that is just too many.  If anyone knows a smaller
+triangulation, I would like to know it.  
+
+Thanks to all who responded.
+
+Michael
+
+

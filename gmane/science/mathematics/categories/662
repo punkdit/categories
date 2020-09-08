@@ -1,0 +1,55 @@
+Path: news.gmane.org!not-for-mail
+From: "Uday S. Reddy" <u-reddy@cs.uiuc.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Quantifiers for monoids
+Date: Sat, 28 Feb 1998 23:24:32 -0600 (CST)
+Lines: 29
+Approved: news@gmane.org
+Message-ID: <199803010524.XAA25141@reddy.cs.uiuc.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017106 26779 80.91.229.2 (29 Apr 2009 14:58:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:26 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Sun Mar  1 11:53:22 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA02389
+	for categories-list; Sun, 1 Mar 1998 10:55:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 1063
+Original-Lines: 28
+Xref: news.gmane.org gmane.science.mathematics.categories:662
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/662>
+
+In studying Algol-like languages, I repeatedly run into operators that
+have an interesting structure.  I am wondering if such operators are
+studied somewhere.
+
+Consider a monoid <M,*,1> in a CCC.  The operations of interest are
+natural transformations E_A : [A => M] -> M that satisfy the following
+equations (in the internal language of the CCC):
+
+    E_A(\lambda x. 1)  =  1
+    E_A(\lambda x. a * g`x) = a * E_A(g)
+    E_A(\lambda x. g`x * a) = E_A(g) * a
+    E_A(\lambda x. E_B(\lambda y. h`x`y)) = 
+			E_B(\lambda y. E_A(\lambda x. h`x`y))
+
+These operators "feel" like existential quantifiers.  In fact, if M is
+a subobject classifier with the monoid structure ofh conjunction, then
+the existential quantifier E satisfies all of these equations (though
+it is not a natural transformation).
+
+In the applications I am interested in, M is a type of commands, with
+* as sequential composition and 1 as the null action.  An example of
+E is a local variable declaration.  
+
+Is there some algebra or theory related to these kinds of operators?
+
+Cheers,
+Uday Reddy
+
+

@@ -1,0 +1,189 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Models of finite-limit sketches in internal logic of a (pre)topos
+Date: Thu, 13 Jul 2017 11:33:57 +0100
+Lines: 150
+Approved: news@gmane.org
+Message-ID: <E1dVjZx-0002em-4w@mlist.mta.ca>
+References: <E1dV1Oq-00072N-C8@mlist.mta.ca> <5965F8FE.4080402@cs.bham.ac.uk> <CAFL+ZM_PknC+qUa4j8SCqzbQJE8QGr88rROmO-O0tZzhLp+z6A@mail.gmail.com>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1499973352 13611 195.159.176.226 (13 Jul 2017 19:15:52 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 13 Jul 2017 19:15:52 +0000 (UTC)
+Cc: "categories@mta.ca list" <categories@mta.ca>
+To: droberts.65537@gmail.com
+Original-X-From: majordomo@mlist.mta.ca Thu Jul 13 21:15:47 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dVjaU-0003B8-O9
+	for gsmc-categories@m.gmane.org; Thu, 13 Jul 2017 21:15:46 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52534)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dVjbZ-0007wy-Is; Thu, 13 Jul 2017 16:16:53 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dVjZx-0002em-4w
+	for categories-list@mlist.mta.ca; Thu, 13 Jul 2017 16:15:13 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9260
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9260>
+
+Dear David,
+
+MB, with its Kripke-Joyal semantics, is often taken as the "internal
+language for toposes", and is indeed good for the whole of the
+elementary topos structure. However, there is also a geometric fragment
+with an interpretation that does not rely on the subobject classifier.
+Predicates are interpreted directly as subobjects, rather than as
+morphisms to Omega. n-Lab distinguishes between "Mitchell-Benabou"
+
+   https://ncatlab.org/nlab/show/Mitchell-B%C3%A9nabou+language
+
+and "internal logic"
+
+   https://ncatlab.org/nlab/show/internal+logic
+
+An advantage of the second kind is that it can be exploited in a much
+wider range of structured categories. You can see this done
+systematically in Elephant D1.
+
+Since finite limit sketches correspond logically to cartesian theories,
+which are geometric, you may find it easier to make the connection using
+that second notion of internal logic.
+
+I'm still not sure exactly what you would be trying to prove - I rather
+take it for granted that the connection between the category theory and
+the internal logic is secure, and you may well find that Elephant D1
+provides the answers you want. Apart from that, you may also find my
+paper with Palmgren helpful - "Partial Horn logic and cartesian
+categories". It is about cartesian theories (hence finite limit
+sketches) and shows how to express them in a simple way using
+conjunctions and equality in a logic based on Elephant D1 but adapted to
+deal with partial terms.
+
+I don't know enough about filter quotients to say anything sensible
+about your use of them.
+
+Regards,
+
+Steve.
+
+On 12/07/2017 13:00, droberts.65537@gmail.com wrote:
+> Hi Steve,
+>
+> You can ignore the forcing and think of a Grothendieck topos E. Given
+> an algebraic structure describable by a finite limit sketch S in the
+> base topos of sets, one can either interpret said sketch in the
+> internal logic of E using the Mitchell-Benabou language, or think of
+> models of the sketch in the topos in the usual sense (ie as certain
+> functors to E). I guess that the respective categories of models are
+> equivalent.
+>
+> One way to make thus more precise is that if one has a filterquotient
+> E/?? of E so that it is constructively well-pointed, then one has a
+> comparison functor
+>
+> (*)  S-Mod(E) --> S-Mod(E/??)
+>
+> where by S-Mod I mean the category of models of the sketch in the
+> ordinary sense, functors to the argument. The latter category of
+> models should be the same as models internal to E using the MB
+> language (yes, it's confusing when I have "models in E" and "models
+> internal to E" and they are a priori different!) My claim is that (*)
+> should be an equivalence, but I don't know how to prove it.
+>
+> In principle one could consider not a Grothendieck topos but a
+> (locally presentable) pretopos, but then one loses the ability to
+> construct the filterquotient, as far as I know, and there is not such
+> an obvious comparison functor. On the other end, one could generalise
+> from a finite limit sketch to more general theories, and ask if the
+> analogous resuit still holds.
+>
+> For a concrete example, consider the case where one has a ring R in
+> Set, and asks for modules over (the image of) R in E/??. Such a thing
+> does not obviously lift to a module in E over R (by which I mean the
+> data of a morphism R x M --> M in E etc, abusing notation for the
+> constant sheaf of rings).
+>
+> Does that help?
+>
+> David
+>
+> PS I do like your work on arithmetic universes very much, I was
+> reading some slides on it just recently. I don't know if it helps me;
+> at least, I can't see it, but that is why I am asking on the list.
+>
+> On 12 Jul 2017 7:55 pm, "Steve Vickers" <s.j.vickers@cs.bham.ac.uk
+> <mailto:s.j.vickers@cs.bham.ac.uk>> wrote:
+>
+>     Dear David,
+>
+>     I feel I may have something to say here, but I don't fully understand
+>     the question or the language of forcing. Is it about whether the
+>     sketch
+>     should be internal or external? Or is it about whether the internal
+>     logic matches the external category theory?
+>
+>     Can you state your conjecture in more detail?
+>
+>     Whether or not it answers your question, here's a plug for my own
+>     recent
+>     work on sketches and pretoposes:
+>
+>       Sketches for arithmetic universes
+>       Arithmetic universes and classifying toposes
+>
+>     The sketches are more general than finite limit. They include colimits
+>     and list objects, and are intended as an approximation to geometric
+>     theories. The pretoposes (where the models live) are arithmetic
+>     universes, which have parametrized list objects. In the elementary
+>     topos
+>     case this is equivalent to assuming an nno.
+>
+>     Regards,
+>
+>     Steve.
+>
+>     On 11/07/2017 00:14, droberts.65537@gmail.com
+>     <mailto:droberts.65537@gmail.com> wrote:
+>    > Hi all,
+>    >
+>    > I believe that if one has some finite limit sketch S, then
+>     models of S
+>    > in the internal logic of a topos E should be equivalent to external
+>    > models. I'm thinking here about forcing from the sheaf-theoretic
+>    > viewpoint, so that some algebraic gizmo in the forced model(=in
+>    > internal logic of the topos) is none other than that algebraic gizmo
+>    > internal to the category from the external perspective. Or, that a
+>    > model in some filterquotient E/~ of a topos E is equivalent to a
+>     model
+>    > in E.
+>    >
+>    > Is there a reference I could point to? Or is it obvious because a
+>    > finite-limit sketch uses no quantifiers etc? I would guess such
+>    > reasoning to hold in a much more general setting than a topos, for
+>    > instance pretoposes or regular categories.
+>    >
+>    > A second question, that I do not know the answer to: how far can one
+>    > generalise theories (from finite-limit etc) and still get {models in
+>    > internal logic} ~ {models in the category}? Here "the category" has
+>    > sufficient structure to interpret the theory.
+>    >
+>    > Thanks,
+>    > David
+>    >
+>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

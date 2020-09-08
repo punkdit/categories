@@ -1,0 +1,58 @@
+Date: Sat, 10 Jul 1999 15:03:48 -0400 (EDT)
+From: Michael Barr <barr@barrs.org>
+Subject: categories: *-autonomous non-category
+
+Peter Freyd has talked, maybe written, about a cartesian closed
+non-category.  I have a *-autonomous non-category.  I wonder if this
+rings any bells with anyone.  In order to talk about it on this
+unforgiving medium, I will use the following notation:	2^X for the
+powerset of X, \/ and /\ for union and intersection, resp.  ~Y for the
+complement of Y (in X), T for the top and I for the bottom of the
+lattice 2^2^X.
+
+Now, the objects of this non-catgory are the upclosed subsets of 2^X.  I
+will use a, b, c, ... for upclosed subsets of 2^X and Y, Z, W, ... for
+subsets of X. Given a, let a* denote the { Y | ~Y is in ~a }. So Y is in
+a* iff the complement of Y is not in X. These Y can also be
+characterized as meeting every set in a (which is obviously upclosed).
+It is the case that a** = a. Moreover, if we define a --o b = a* \/ b,
+we get something like an internal hom.	What about composition?  Well,
+first, what about identities.  The sets of the form a --o a = a* \/ a
+are characterized by the property that for any Y, either Y or ~Y is in
+it.  That is, a* \/ a has this property and if b has this property, then
+b contains b*, so b = b* \/ b. It is not hard to show that (a \/ b)* =
+a* /\ b* and vice versa, so that the tensor product should be /\.  The
+unit for the tensor product is thus T, so there wants to be a map T -->
+a as soon as for each Y, either Y or ~Y is in a. Let me call such a set
+large.	An interesting observation is that ((a --o b) /\ (b --o c)) --o
+(a --o c) is large, so it looks like we have a category if we define
+there to be an arrow a --> b whenever a --o b is large.  Unfortunately,
+despite the internal composition above, there is no external
+composition.  In fact, call a small if a* is large.  The same reason
+there is a map T --> a when a is large forces there to be a map a --> I
+(the empty set) when a is small.  But the principal ultrafilter at any x
+in X is both large and small (it is self-dual), so there is both T --> a
+and a --> I. Needless T --o I is not large (it is I).  So that is it.
+There is a graph, not closed under composition, but there is an internal
+composition.  I suppose I should check if there is an arrow
+ ((a --o b) /\ (b --o c) /\ (c --o d)) --> (a --o d)
+ and so on but I'll bet there is.  (The binary composition involves 64
+cases and I wrote a simple computer program to check them.  This one
+would requre 256 and while there is no problem extending it to that
+number, there needs to be a new idea to do it for an arbitrary number of
+factors.
+
+Of course, one way of making a category is to make all objects
+isomorphic, with internal structure that separates them.  This seems
+perverse, since the whole idea of categories is that isomorphic objects
+should not be distinguishable.
+
+Michael
+
+-------------------------------------------------------------------
+If a society puts up with bad plumbers because plumbing is such a low
+calling, and if it puts up with bad philosophers because philosophy is
+such a high calling---then neither its pipes nor its theories will hold
+water.  --- Slight paraphrase of former HEW secretary John Gardner
+
+

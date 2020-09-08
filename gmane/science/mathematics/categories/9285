@@ -1,0 +1,236 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: David Roberts <droberts.65537@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Re: Algebraic closures and arithmetic universes
+Date: Thu, 3 Aug 2017 17:55:50 +0930
+Lines: 196
+Approved: news@gmane.org
+Message-ID: <E1ddIke-0002FF-SZ@mlist.mta.ca>
+References: <E1dcL52-0002d9-SL@mlist.mta.ca> <E1dcgIj-00089J-Cq@mlist.mta.ca>
+Reply-To: David Roberts <droberts.65537@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: blaine.gmane.org 1501776861 13431 195.159.176.226 (3 Aug 2017 16:14:21 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 3 Aug 2017 16:14:21 +0000 (UTC)
+Cc: "categories@mta.ca list" <categories@mta.ca>, =?UTF-8?Q?Joyal=2C_Andr=C3=A9?= <joyal.andre@uqam.ca>
+To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Thu Aug 03 18:14:14 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ddIlJ-00032b-O4
+	for gsmc-categories@m.gmane.org; Thu, 03 Aug 2017 18:14:13 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:40774)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ddIko-0002NS-Ld; Thu, 03 Aug 2017 13:13:42 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ddIke-0002FF-SZ
+	for categories-list@mlist.mta.ca; Thu, 03 Aug 2017 13:13:32 -0300
+In-Reply-To: <845EEA81-985B-413B-9C39-1A911583E347@cs.bham.ac.uk>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9285
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9285>
+
+Hi Steve,
+
+Ah, excellent. I do wonder then, if free parameterised list objects
+are finitary (parameterised) W-types and all of the latter exist when
+the former exist (in the presence of the other assumptions on the AU),
+if existence of W-types is a cleaner assumption for an AU. It may be
+like the definition of elementary topos, where terminal object,
+pullbacks and power objects suffice, but people sometimes just package
+(local) cartesian closedness into the definition (not to speak of
+finite colimits) as it is perfectly equivalent.
+
+From a categorical point of view W-types may be ok, though for certain
+parsimonious presentations I guess list objects may be smaller to
+describe and so desirable for that reason.
+
+To advertise slightly some of my own work that I presented at Topos =C3=A0
+l'IH=C3=89S (or at least some approximation of the following), the
+following construction gives an arithmetic pretopos (with finitary
+W-types), plus some.
+
+Take a filtered category R that is (classically) well-founded with
+terminal object, R may be large. Let E:R^op --> Topos/Set be a diagram
+in Grothendieck toposes. Define E*: R --> (Topos/Set)^op --> Set/LEX
+where the latter functor sends a topos to the underlying
+infinitary-lextensive category and a geometric morphism to its left
+exact cocontinuous inverse image functor. I allow for objects of LEX
+to be large categories. Then colim E* is an infinitary Heyting
+pretopos with subobject classifier and parameterised finitary W-types.
+If R is small, this is the limit of the diagram of toposes, but if R
+is large then this colimit arises in set theory as "(Easton) class
+forcing".
+
+If one starts instead with a base other than set, and even not with
+toposes but the underlying pretopos then I imagine one still have a
+reasonable structure at the end, minus perhaps the infinitary colimits
+and the subobject classifier. One of the points I wasn't sure on is
+the classical well-foundedness; I'm not 100% sure I conjecture than
+for any "pretame" class forcing (a partial order with top and with
+some local smallness conditions) then one has a similar result,
+constructing an Easton pretopos. There are conditions one can give
+that ensure one has a topos at the end. The pretameness could be
+generalised to other sites than partial orders with double negation.
+
+David
+
+
+
+
+On 3 August 2017 at 17:15, Steve Vickers <s.j.vickers@cs.bham.ac.uk> wrote:
+> Dear David,
+>
+> Any AU should have finitary W-types, at least if "finite" is in the stron=
+g
+> sense of "isomorphic to an initial segment of N".
+>
+> Consider f: B -> A in an AU AA, such that f is finite in the slice AA/A. =
+It
+> will correspond to a morphism ar: A -> N, which we can think of as an ari=
+ty
+> map.
+>
+> The elements of the W-type are trees, but an alternative representation i=
+s
+> as elements of List(A), using reverse Polish notion. This is the key
+> insight: that trees can be encoded as lists. After that, the rest is just
+> about manipulating lists.
+>
+> Now think of stack evaluation of reverse Polish expressions. We have a
+> function sd: List(A) -> Z, such that sd(as) is the stack depth change aft=
+er
+> evaluating as:
+>
+>   sd empty =3D 0
+>   sd (as ++ [a]) =3D sd(as) - ar(a) + 1  (pop ar(a) arguments, push the
+> result)
+>
+> Then the elements of the W-type are those bs such that sd(as) =3D 1 (just=
+  one
+> value at the end), and sd(as') >=3D 1 for every non-empty prefix as' of a=
+s (no
+> stack underflow).
+>
+> All that can be expressed in AUs.
+>
+> Obviously there's more to be done to show that the object constructed her=
+e
+> has the right properties for a W-type, but our knowledge of reverse Polis=
+h
+> notation gives us good grounds for conjecturing that it does. I haven't
+> addressed "or rather a parametrized version", but hopefully that will wor=
+k
+> out.
+>
+> I'm relating this to your formulation as follows. A_n is the fibre of ar
+> over n. (Note - in my formulation I haven't assumed that A is finite, or
+> that ar is bounded.) Then P(X) is the subobject of A x List(X) comprising
+> pairs (a, xs) such that length of xs =3D ar(a).
+>
+> Regards,
+>
+> Steve.
+>
+>
+> On 2 Aug 2017, at 00:31, droberts.65537@gmail.com wrote:
+>
+> Has anyone considered a version of arithmetic universes admitting all
+> finitary W-types? I'm thinking initial algebras for "explicit polynomial"
+> endofunctors, like
+>
+> P(X) =3D A_0 + A_1 x X + A_2 x X^2 +... +A_n x X^n
+>
+> or rather parameterised versions, for any given family A_0,...A_n.
+>
+> Can these more general parameterised W-types be shown to exist from weake=
+r
+> considerations?
+>
+> David
+>
+>
+> On 2 Aug 2017 8:42 AM, "Steve Vickers" <s.j.vickers@cs.bham.ac.uk> wrote:
+>
+> Dear Andre,
+>
+> Here's my own understanding of the history of AU definitions. Can you
+> comment on its accuracy?
+>
+> 1. You defined the initial AU, with a concrete construction, as sufficien=
+t
+> structure to embody arithmetic. You also showed that the initial AU has a=
+n
+> internal initial AU, and used that to establish the Goedel gap between tr=
+uth
+> (external) and provability (internal).
+>
+> 2. You and others also discussed what the general definition might be. I
+> picked this up from Gavin Wraith in the 1990s. (I had first learned about
+> AUs from Gavin's talk at the 1985 Surrey conference on Categories in
+> Computer Science.) Conceptually, it was "pretopos + free algebra
+> constructions", but the  question was how to get a collection of primitiv=
+e
+> constructions sufficient to get whatever else was needed. Gavin suggested
+> free categories over directed graphs and free category actions over graph
+> actions.
+>
+> 3. Milly Maietti proposed parametrized list objects, and I am persuaded h=
+er
+> axiomatization is good. It is the one we used in our joint paper, and I u=
+sed
+> in "Sketches for AUs". I believe it provides adequate foundations for my
+> proof with Palmgren of the existence of initial algebras for cartesian
+> theories.
+>
+> All the best,
+>
+> Steve.
+>
+>> On 1 Aug 2017, at 01:26, a1078662@adelaide.edu.au wrote:
+>>
+>> Hi,
+>>
+>> There's a question at MathOverflow on the construction of algebraic
+>> closures in constructive mathematics by Joyal. The idea as far as I can
+>> tell is to construct the classifying arithmetic universe for the theory =
+of
+>> the algebraic closure. People might either be interested or have somethi=
+ng
+>> to contribute
+>>
+>> https://mathoverflow.net/q/277551/4177
+>>
+>> I repeat my respectful call for Andr=C3=A9 to release his notes of arith=
+metic
+>> universes for us all to use, or at the least confirm that Maietti et al
+>> found the same definition  :-)
+>>
+>>
+>> Best regards,
+>> David
+>>
+>
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+>
+
+
+
+--=20
+David Roberts
+http://ncatlab.org/nlab/show/David+Roberts
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

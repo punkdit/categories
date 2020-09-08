@@ -1,0 +1,464 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: query
+Date: Wed, 1 Oct 1997 16:50:18 -0300 (ADT)
+Lines: 441
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.971001164904.2947C-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016997 25987 80.91.229.2 (29 Apr 2009 14:56:37 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:37 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Wed Oct  1 16:51:50 1997
+Original-Received: by mailserv.mta.ca; id AA06196; Wed, 1 Oct 1997 16:50:18 -0300
+Status: RO
+Content-Length: 12981
+Original-Lines: 440
+Xref: news.gmane.org gmane.science.mathematics.categories:490
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/490>
+
+Date: Wed, 1 Oct 97 04:53:29 +1000
+From: burns burns@latcs1.lat.oz.au
+
+
+
+I've quite a lot to ask, but for this post I'll explain what I've
+been about. It's PhD research, but I came to category theory only
+in the last year, so let me lay out my background.
+
+
+1. Context.
+
+The goal is to formulate coordinate systems as first-class entities
+in programming languages. But what is a coordinate system, in
+computational terms? Some more or less equivalent answers:
+
+Operationally:
+
+* The initial node, or any derived node, in a directed graph where the
+edges are coordinate transformation functions.
+
+Denotationally:
+
+* A chart mapping from an open set into a vector space. (Manifold  
+theory.)
+
+* A signature or ADT (where it appears as type F):
+
+	Types:
+		X ; coordinate tuples
+		T ; coordinate transformations
+		F ; coordinate systems
+		P ; points
+	Operations:
+		compose: T x T -> T
+		invert: T -> T
+		apply: T x X -> X
+		plot: F x X -> P
+		measure : F x P -> X
+		step: T x F -> F
+	Identities:
+		plot(step(t,f),apply(t,x)) = plot(f,x)
+		measure(f,plot(f,x)) = x
+		plot(f,measure(f,p)) = p
+		+ group identities for T
+
+* A functor on a Cartesian closed category with additive structure,
+preserving biproducts (vector bases); or more ambitiously, preserving
+a set of invariant relations axiomatizing Euclidean geometry.
+
+It's the simple linear case of this last, which I want to develop here.
+
+
+2. Background.
+
+I got this stuff originally from Arbib & Manes, Freyd, Barr & Wells,
+and Pierce; while I bounced off Eilenberg and Asperti & Longo. What
+I found I was stubbornly keeping out of the library was MacLane,
+_Categories for the Working Mathematican_, and the 1985 _Category
+Theory and Computer Programming_, with its nice essays by Rydehard,
+Poigne, Pitt et al.
+
+
+3. Essentials.
+
+The foundations are Cartesian closed categories and abelian categories.
+
+Briefly, CCCs have values, products and powers; while ACs have
+abelian group structure on Hom-sets, a common zero, and biproducts;
+as well as kernels and stuff which I'm not up with yet.
+
+(I'm also still lost with limits and adjunctions. It's frustrating that
+I can work through examples, and still miss the principle. I imagine
+I really understood adjoints, a whole lot would snap into focus.)
+
+
+4. Sketch Synopsis.
+
+(Terminology:
+	domain = type = object
+	arrow = morphism
+	power domain = exponential = Hom-set (in CCCs)
+)
+
+
+4.1. CCC Isomorphisms.
+
+CCC's are held together by domain constructors: 1, x, and [->],
+with corresponding isomorphisms:
+
+	A =~= [1->A]			; domains have values
+	[M->A] x [M->B] =~= [M -> AxB]	; there are finite products
+	[MxA -> B] =~= [M -> [A->B]]	 ; Hom-sets are power domains
+
+[NB! I get the impression that writers use "power domain" in a different
+sense. "Hom domain", "arrow domain", "function domain" might all be
+better.)
+
+Also
+
+	A x B =~= B x A
+
+for products in general. Products are associative, powers aren't.
+
+4.2. The Field Domain.
+
+To put it to work, assume primitive domains:
+
+	I	 stands for a finite index set
+	R	stands for the reals, with the ring structure:
+
+	(+) : R x R -> R
+	(.) : R x R -> R
+	0 : 1 -> R
+	1 : 1 -> R
+	(-) : R -> R
+
+(To turn R into a field, we have to break it up as a coproduct:
+
+	R = {0} + R-{0}
+
+so that we can define
+
+	(^-1) : R-{0} -> R-{0}
+
+but this complication can be left until kernels are opened up.)
+
+
+R is a module, with a one-element basis {1}, and it's also its
+own linear automorphism set,
+
+	R =~= L[R->R]
+	r <-> (lambda(.)) r
+
+The vectorial properties, addition and scalar multiplication,
+carry over to any domain [A->R]. For [A->R] to be a module,
+there must be a finite basis for it. As far as I can tell,
+being "finite" only requires that operations (e.g. sum) over
+all elements are defined.
+
+4.3. Biproduct from CCC.
+
+Now bring in domain I. Equip it with an equality mapping, the
+Kronecker delta:
+
+	(=) : I x I -> R : (i,j) |-> if (i = j) 1, else 0
+
+With the CCC isomorphisms, plus R =~= L[R->R], this can be
+expressed as:
+
+	delta : I x R x I -> R : (i,r,j) |-> if (i = j) r , else 0
+
+and we use the usual exponential curry-eval diagram, and a bit of
+extra currying, to resolve it to:
+
+	eta : I -> [R -> [I->R]] : i |-> (r |-> (j |-> if(i=j) r,else 0))
+	pi :  I -> [[I->R] -> R] : i |-> ((j |-> x[j]) |-> x[i])
+
+This expresses the biproduct (sketch diagram here)
+
+	 eta i     pi i
+	R -> [I->R] -> R
+
+with (eta i) and (pi i) as injection and projection sets. The eta's
+produce vectors, the pi's take components. In effect they are a
+vector basis and a covector basis for [I->R].
+
+We want a name for this category; I don't know what the standard is,
+so I'll refer to the domain [I->R] as X within the category, and
+X(I) for the category itself.
+
+4.4. Duality Functor
+
+The contravariant hom-functor X(I)(-,R) gives the dual category,
+which we could call X*(I) = Xop(I). The hom-functor action is:
+
+	X(I)(-,R):
+
+	A |=> [A->R]
+	f: A ->B |=> f#: [B->R] -> [A->R]
+
+In particular, this gives:
+
+	(pi* i) = (eta i)# : [X->R] -> R : x* |-> x* eta i
+	(eta* i) = (pi i)# : R -> [X->R] : r |-> r pi i
+
+and
+
+	(eta** i) = (eta i)##
+	(pi** i) = (pi i)##
+
+after some fiddling around with [1-> ]'s.
+
+4.5. Chart and Transformation Functors.
+
+Next, suppose we have another category, say P, with its own
+copies of I and R as well as a domain E. And suppose there is
+an isomorphism:
+
+	f : E -> X
+	~f : X -> E
+
+then (as far as I can tell), it defines an invertible functor:
+
+	Chart(f): P -> X(I)
+
+with the action:
+
+	R |=> R
+	I |=> I
+	E |=> X
+	eta i |=> ~f eta i : R -> E
+	pi i  |=>  (pi i) f : E -> R
+
+and Chart(f), at last, is what we mean by a coordinate system!
+
+
+Thirdly, if we have a matrix:
+
+	m : I x I -> R
+
+and require its adjoint to be defined (i.e. it's non-singular),
+then
+
+	t(m) = Sum(i,j) ( t<i,j> (eta i) (pi j) ) : X -> X
+
+defines a functor as above:
+
+	Trans(t(m)) : X(I) -> X(I)
+
+The adjoint matrix has to be defined, to preserve the biproduct.
+If it isn't, the dual functor won't define a surjection.
+
+
+4.6 Category: XTFP(I)?
+
+Now let me put together what I think I've got. (If I'm qualifying
+assertions a lot, that is because the concept is clear enough for
+making assertions, but the hard work is only half done.)
+
+Overall, we have a collection of categories which we can denote
+
+	{Trans(t)(X), I, Trans(t) eta(X), Trans(t) pi(X)}
+
+including the structure
+
+	X(I) = {[I->R], I, eta, pi}
+
+which we first made up (and which remains somewhat special, because
+it's the only one for which the eta's and pi's are the columns and
+rows of the identity matrix, i.e. Kronecker delta for I).
+
+Make a category of this collection. Its domains will be the categories
+in the collection, and its arrows will be the transformation functors
+Trans(t(m)). Call this XT(I); perhaps a nicer name would be
+Bases(I).
+
+But more, we can include XT(I) in a larger category, of images of
+the whole thing. This will be a category of domains P, with associated
+chart functors Chart(f): P -> X.
+
+It would be reasonable to call the the category containing XT(I)
+and the image of it defined by a single P and F, XTF(I,P) or
+Altas(I,P). And the whole gazoo, comprising as many of these as
+we care to make up P's, we can call XTFP(I), or LinearGeometry(I).
+
+
+4.7 Back to ADT's.
+
+One test of whether the construction has gelled, is to match it
+against the ADT signature at the beginning. That signature is
+what I was originally calling "XTFP", before I started using
+categories, and the reason I've gone in for categories was to
+impose on it a discipline of function domains and ranges.
+
+The core of the signature is:
+
+	Operations:
+		compose: T x T -> T
+		invert: T -> T
+		apply: T x X -> X
+		plot: F x X -> P
+		measure : F x P -> X
+		step: T x F -> F
+
+With the categorial development, write this as:
+
+	compose : (t1,t2) |-> t1 t2
+	invert : t |-> ~t
+	apply : (t,x) |-> t x
+	plot: (f, x) |-> ~f x
+	measure: (f,p) |-> f p
+	step: (t,f) |-> t f
+
+But also requiring:
+
+	invert: f -> ~f
+
+The ADT is thus included in XTFP(I); but the latter now has a good
+deal more structure, because it also contains R, with addition and
+scalar multiplication defined on I x I x ... x I -> R, and all arrow
+domains which are isomorphic to it via the CCC and R <-> L[R->R]
+isomorphisms.
+
+What's more, if we extend still further, to a category containing
+XTFP(I) for all indices I, this larger category (XTFP) is exactly
+Vect.
+
+4.8  In Practice
+
+The categorial version of the ADT is nice in some basic ways.
+The identities, such as
+
+	plot(step(t,f),apply(t,x)) = plot(f,x)
+
+come out like
+
+	~(t f) (t x) = ~f ~t t x = ~f x
+
+with the cancellation being obvious, where the original is
+rather ad hoc.
+
+Considering this as an expression syntax, it's pretty readable.
+In fact, this form is what I have, in an implementation of the
+original ADT in Mathematica 2.2. I extend the types to lists
+or arrays in the types, and the expression syntax then works
+for regular hierarchic figures. I build small models in this
+XTFP implementation: 3D stick-figure bicycles, fractals, etc.
+I think of it as a more elaborate version of LOGO.
+
+Part of what I'm wrestling with, is a way to use Mathematica's
+substitution rules to make the t's and f's work _as_ Trans
+and Chart functors. This is application of categories (to the
+definition of functional programming languages) with a vengeance.
+
+I haven't seen it done quite like this in the literature, but
+then I may be missing something in denotational semantics or
+typed-lambda, which states it all but states it obscurely.
+
+
+4.9  Geometric Semantics
+
+A big concern of mine, is that programming languages for graphics
+and geometry lack geometric meaning. Because the conventions of
+numerical representation are settled _during_ the analysis of a
+modelling problem, and _before_ programming begins, the actual
+code does not support any shifting between alternate representations;
+that is, there's no such thing as change of variable, re-solving
+equations for a different variable set, etc.
+
+Bringing coordinate systems into a programming as first-class entities
+is supposed to be a first step towards improving the state of affairs.
+Now we can see coordinate systems and transformations as functors,
+the problem can be seen as, how to keep the language in a form to
+which functors can be applied.
+
+The immediate successes in geometric semantics with XTFP(I), are
+
+1. Points and their coordinates are distinguished.
+2. Covariant and contravariant vectors are distinguished.
+3. Active and passive coordinate transformations are distinguished.
+
+
+4.10  The Further Prospect.
+
+The basic operation in XTFP(I) turns out to be: substitute for the
+eta i and pi i, any equivalent set of basis vectors.
+
+Looking back, it impresses me that we can get all this from:
+
+1. Field structure on R
+2. Equality on I
+
+The next thing to go for, is the remainder of tensor analysis.
+The compounds
+
+	eta i pi j
+	pi i eta j
+
+are arrow-successive; but there is no tensor product defined,
+to make
+
+	eta i eta j
+
+meaningful, for instance.
+
+
+Further, up til now we have made minimal use of structure on I.
+But there are some obvious morphisms between XTFP(I)'s, for
+different I's.
+
+In particular, if we have I, then we have the lattice of subsets
+of I; and these subsets index related spaces, with related vector
+bases. E.g. if
+
+	I = (1,2,3,4)
+
+indexes vectors in R^4 = [I->R], then
+
+	I<I = ((1,2),(1,3),(1,4),(2,3),(2,4),(3,4))
+
+indexes bivectors. The combinatorics of the I's implies the
+form of the cross-product function, that is, how to arrange the
+2x2 minors of a matrix {x1,x2} with x1,x2 in X(I). So to speak.
+
+I'm working on a smooth way to formalize this in general. The
+essential concept is that there must be some _functor_ from the
+category of I's and combinatorial operations, to the category
+of the graded subspaces (scalar, vector, bivector,..,(n-1)-vector,
+determinant) of X(I). It's one of those cases where one is sure
+that someone must have done such a thing already, but one can't
+find it in the literature.
+
+
+4.11 Thanks for Listening.
+
+That's the state of play.
+
+I guess my conclusion on categorial development, is that you can
+spend a lot of effort getting to the elements of the area you want
+to model; but when you've done it, you have a formalism that's
+pretty well purged of ad-hoc assumptions. It's done with the
+absolute minimum.
+
+Now, everyone wants feedback on their ideas, and I'm no exception;
+but I'm not expecting anyone to review this in detail. What would
+help me a lot is any indication that others have gone up the same
+route, of combining CCCs or lambda-calculus with arithmetic, to
+define vector analysis in the same sort of way.
+
+That's all. Now I'll be hoping to gain some enlightenment from
+listening in to your discussions.
+
+-------------------------------------------------------------------
+Jonathan Burns        |
+burns@latcs1.lat.oz.au|   I don't care what the Dark Matter is
+Dept.Computer Science |   as long as it's not spiders.
+LaTrobe University    |                  - The Classic .sigs
+-------------------------------------------------------------------
+
+

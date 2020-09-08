@@ -1,0 +1,126 @@
+Path: news.gmane.org!not-for-mail
+From: Paul B Levy <P.B.Levy@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: existence of initial algebras
+Date: Thu, 20 May 2004 19:13:09 +0100 (BST)
+Lines: 94
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0405201746260.31476-100000@acws-0092.cs.bham.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018835 5365 80.91.229.2 (29 Apr 2009 15:27:15 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:27:15 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu May 20 18:59:27 2004 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 20 May 2004 18:59:27 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1BQvY1-00049k-00
+    for categories-list@mta.ca; Thu, 20 May 2004 18:57:53 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 19
+Status: RO
+Content-Length: 3420
+Original-Lines: 93
+Xref: news.gmane.org gmane.science.mathematics.categories:2697
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2697>
+
+Hi,
+
+I was teaching some students recently that there are 2 kinds of inductive
+definition of a set:
+
+(a) By giving an "ambient" set A, and a family of relations A^{n}-->A.
+This defines the least subset of A closed under all these relations, i.e.
+the least prefixed point of the monotone endofunction on powerset(A)
+mapping each subset B to the set of all elements related to B.
+
+(b) By giving a signature.  This defines the initial algebra for (the
+endofunctor on Set determined by) the signature.
+
+I also wanted to treat the countably infinitary case, so (a) could allow
+relations A^{omega}-->A, and (b) could allow operations of arity omega.
+And I wanted to further generalize both (a) and (b) to the many-sorted
+setting.  (Though in (a), the many-sorted situation can be reduced to the
+single-sorted one by taking the sum of the ambient sets.)
+
+-----------------------
+
+I then proceeded to ask them: how do we know that (a) the least prefixed
+point and (b) the initial algebra exist?
+
+For (a) I gave 3 proofs:
+
+(i) take the intersection of all such subsets of A
+
+(ii) start from the empty set, and iteratively apply the monotone
+endofunction on the powerset of A that maps C to the set of all elements
+related to elements of C, taking unions at countable limit ordinals and
+terminating at the first uncountable limit
+
+(iii) take the set of elements of A for which there exists at least one
+wellfounded prooftree.
+
+For (b) I gave 2 proofs:
+
+(i) start from the empty set, and iteratively apply the signature, taking
+colimits at countable limit ordinals and terminating at the first
+uncountable limit
+
+(ii) take the set of all wellfounded operation-trees.
+
+And all these 5 proofs adapt to the coinductive setting, except that
+(a)(ii) and (b)(i) terminate already at omega.  However, coinduction was
+not covered in the course.
+
+---------------------------------------
+
+I thought that (a)(iii) and (b)(ii) were actually the most important
+constructions to teach the students, since they describe our basic
+intuition.  But they require an appropriate definition of "tree".  In
+(b)(ii), an operation-tree can be thought of a strategy for the following
+game:
+
+- Player picks an operation c_0 from the signature,
+
+- Opponent picks an index i_0 in the arity of c_0
+
+- Player picks an operation c_1 from the signature
+
+etc.  And, as we know, there are several equivalent ways of defining
+strategy.  I just picked one of them: a prefix-closed set sigma of
+Opponent-awaiting plays
+
+          c_0 i_0 c_1 i_1 ... c_n
+
+subject (in this setting) to the constraint that any Player-awaiting play
+
+          c_0 i_0 c_1 i_ 1 ... c_{n-1} i_{n-1}
+
+which is consistent with sigma (i.e. every Opponent-awaiting prefix is in
+sigma) has a unique one-place extension in sigma.  With this definition of
+operation-tree, it was easy to complete proof (b)(ii).  And (a)(iii) is
+similar, except that Player moves by supplying an operation together with
+a tuple of A-elements.
+
+My question is: where do these tree proofs appear in the literature?
+Surely something so basic must appear somewhere?  The best I could find,
+for (b), was to build a set of "terms" as a subset of an ambient set of
+strings (they could be strings of operations, parentheses and commas, or
+just strings of operations).  But it is quite unnecessary to use any
+ambient set for (b), and, besides, that method would not work for the
+infinitary or coinductive cases.
+
+Paul
+
+
+
+
+
+
+

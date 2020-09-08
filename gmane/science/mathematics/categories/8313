@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Clemens.BERGER@unice.fr
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is the category of group actions LCCC?
+Date: Thu, 04 Sep 2014 18:00:21 +0200
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1XPhdt-0006Zb-9T@mlist.mta.ca>
+References: <E1XOyNa-0002FN-DU@mlist.mta.ca>  <E1XPYUE-0003Of-Jl@mlist.mta.ca>
+Reply-To: Clemens.BERGER@unice.fr
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1409877948 13242 80.91.229.3 (5 Sep 2014 00:45:48 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 5 Sep 2014 00:45:48 +0000 (UTC)
+Cc: Timothy Revell <timothy.revell@strath.ac.uk>, categories@mta.ca
+To: Ross Street <ross.street@mq.edu.au>
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 05 02:45:43 2014
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.127])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPhem-0000rk-8w
+	for gsmc-categories@m.gmane.org; Fri, 05 Sep 2014 02:45:40 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:42395)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPhdt-0000JK-92; Thu, 04 Sep 2014 21:44:45 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1XPhdt-0006Zb-9T
+	for categories-list@mlist.mta.ca; Thu, 04 Sep 2014 21:44:45 -0300
+In-Reply-To: <E1XPYUE-0003Of-Jl@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8313
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8313>
+
+Hi Timothy, hi Ross,
+
+    this message to highlight the importance of the construction of the
+category of group actions (Grp,C) over an arbirary base category C
+(while Timothy is just considering the case C=Sets). Indeed, the
+category of group actions (Grp,C) has as objects triples (G,X,\phi)
+consisting of a group G, an object X of C, and a monoid morphism
+G->C(X,X), and as maps (g,f):(G,X)->(H,Y) pairs consisting of a group
+morphism g:G->H and an arrow f:X->Y in C such that an obvious pentagonal
+diagram in Sets commutes. Composition in this category is defined by
+gluing together two pentagons along a commutative square.
+
+    This construction seems to have quite interesting preservation
+properties (alas not inclucing cartesian nor local cartesian
+closedness). These properties may have their use in the theory of
+semi-abelian categories.
+
+    Just a few samples:
+
+The category (Grp,Grp) of group actions in groups is equivalent to
+Bourn's category of split epimorphisms in Grp, also known as the
+category of points in Grp. The latter is known to inherit several
+important properties of the category Grp, such as protomodularity,
+regularity and exactness. In general, if C is regular (exact) then
+(Grp,C) as well.
+
+In the theory of cocommutative Hopf algebras over a field k, a structure
+thm of Gabriel-Cartier may be interpreted as saying that over an
+algebraically closed field of characteristic 0, the category
+CocommHopf_k is equivalent to (Grp,Lie_k), where Lie_k is the category
+of Lie k-algebras. Since the latter is exact, this shows that
+CocommHopf_k is exact as well. An adjunction argument implies then that
+CocommHopf_k is exact for any field of characteristic 0. This is the
+most difficult step in showing that CocommHopf_k is actually
+semi-abelian for any field of characterstic zero.
+
+    All the best,
+                 Clemens.
+
+
+Le 2014-09-04 02:19, Ross Street a ??crit??:
+> On 1 Sep 2014, at 7:12 pm, Timothy Revell <timothy.revell@strath.ac.uk>
+> wrote:
+>
+>> I'm wondering whether the category of ALL group actions is locally
+>> Cartesian closed.
+>
+> This is what I answered Timothy:
+> ======
+> No, it???s not.
+> Since the category has a terminal object (1,1), being a LCCC would
+> imply it
+> was cartesian closed. However, that would imply (G,X) \times ???
+> preserved
+> the initial object (1,0), which is false: (G,X)\times (1,0) = (G,0).
+> ======
+>
+> But it seems there is more to the story.
+> The thing stopping the category of actions from
+> being cartesian closed is that the category Gp of groups is not.
+> However,
+> the category Gpd of groupoids and the category Cat of categories are.
+> The (2-)category Cat//???Set??? of all category actions is defined as
+> follows:
+> objects (A,F) are functors F : A ???> Set and morphisms (f,t) : (A,F) ???>
+> (B,G)
+> are functors f : A ???> B with natural transformation t : F ==> G f.
+> This (2-)category is cartesian closed: the internal hom [(B,G),(C,H)]
+> is
+> ([B,C], K) where [B,C] is the functor category and K(g) = [B,Set](G, H
+> g).
+>
+> However Cat//???Set??? is not locally cartesian closed basically because
+> Cat
+> is not. It is not even locally cartesian closed as a bicategory.
+> The 2-category Gpd is cartesian closed; it is not locally cartesian
+> closed;
+> it is locally cartesian closed as a bicategory.
+>
+> Similarly, Gpd//???Set??? is locally cartesian closed as a bicategory.
+> Often, in dealing with groups, we find groupoids help.
+> This case is a good example and I hope helps in the applications
+> you have in mind, Timothy.
+>
+> Ross
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

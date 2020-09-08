@@ -1,0 +1,115 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Joost Vercruysse <jvercruy@ulb.ac.be>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: partial adjoints
+Date: Tue, 15 Nov 2016 22:44:42 +0100
+Lines: 75
+Approved: news@gmane.org
+Message-ID: <E1c75Ei-0006sI-0r@mlist.mta.ca>
+References: <E1c5ZOU-0004U0-MT@mlist.mta.ca>
+Reply-To: Joost Vercruysse <jvercruy@ulb.ac.be>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0 (Mac OS X Mail 9.3 \(3124\))
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: blaine.gmane.org 1479322087 5543 195.159.176.226 (16 Nov 2016 18:48:07 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Wed, 16 Nov 2016 18:48:07 +0000 (UTC)
+Cc: categories@mta.ca
+To: Peter Bubenik <peter.bubenik@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Wed Nov 16 19:48:02 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.28])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1c75FY-0007YF-8O
+	for gsmc-categories@m.gmane.org; Wed, 16 Nov 2016 19:48:00 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:53075)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1c75Eg-00012C-VP; Wed, 16 Nov 2016 14:47:06 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1c75Ei-0006sI-0r
+	for categories-list@mlist.mta.ca; Wed, 16 Nov 2016 14:47:08 -0400
+In-Reply-To: <E1c5ZOU-0004U0-MT@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9033
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9033>
+
+Dear Peter,
+
+A few years ago, I have been looking to a generalization of adjoint =
+functors, where there is not necessarily a unit or counit.=20
+I am not sure if this is relevant for what you want to do, but maybe the =
+technique can be useful.=20
+
+Here is a short description:
+
+If F:C\to D and G:D\to C are two functors, and suppose that everything =
+is k-linear (where k is a commutative ring, but this linearity is not =
+essential),
+then you can construct a Morita context as follows
+(Nat(F,F), Nat(G,G)^op, Nat(1,FG), Nat(GF,1), f , g)
+Here Nat(F,F) and Nat(G,G)^op are monoids (k-algebras) for the usual =
+composition of natural tranformations, and Nat(1,FG) and Nat(GF,1) are =
+bimodules between these, e.g. for a\in Nat(1,FG), b\in Nat(F,F) and c\in =
+Nat(G,G)^op, we have b.a.c=3D Fc\circ bG\circ a=3DbG\circ Fc\circ a.
+The Morita maps are given by f(a\otimes b) =3D Fb\circ aF\in Nat(F,F) =
+with a\in Nat(1,FG) and b\in Nat(GF,1), and a similar formula for g.
+
+Now you can observe that F and G are adjoint if and only if the above =
+Morita context contains invertible elements that make it a strict =
+context; explictly this means that there exist elements u\in Nat(1,FG) =
+and e\in Nat(GF,1) such that f(u\otimes e)=3D1_F and g(e\otimes u)=3D1_G. =
+Of course, u and e are exactly the unit and counit of the adjunction.
+
+The generalized notions of adjoint functors I mentioned above, were =
+obtained by considering arbitrary surjective Morita maps, which means =
+that you have not a single unit and counit, but finite sets of =
+=E2=80=9Cunits=E2=80=9D and =E2=80=9Ccounits=E2=80=9D which satisfy =
+still an appropriate condition (for this to work you need indeed to work =
+in the k-linear, or at least an enriched, setting). It is temptative to =
+call =E2=80=9Cquasi-adjoint=E2=80=9D functors since it is related to =
+quasi-Frobenius algebras.
+
+Another variation is to consider the case where f(u\otimes e) is not the =
+identity natural transformation on F, but it is a natural transformation =
+that is the identity map on FX for only a (finite) number of objects X =
+in C.
+This is related to =E2=80=9CcoFrobenius coalgebras=E2=80=9D.
+
+For details, you can have a look at=20
+M. Iovanov and J. Vercruysse, Cofrobenius Corings and adjoint Functors, =
+Journal of Pure and Applied Algebra, 212 (9), 2027-2058 (2008).
+
+Best wishes,
+Joost.
+
+
+> On 12 nov. 2016, at 00:26, Peter Bubenik <peter.bubenik@gmail.com> =
+wrote:
+>=20
+> Hello all,
+> Sender: categories@mta.ca
+> Precedence: bulk
+> Reply-To: Peter Bubenik <peter.bubenik@gmail.com>
+>=20
+> Has anyone studied pairs of functors for which there exists a unit,
+> but not a counit? Is there a name for such things?
+>=20
+> In the case of interest, the functors are between Cat and Met, the
+> category of (extended pseudo-) metric spaces and 1-Lipschitz maps. The
+> unit provides a characterization of certain coherent maps of metric
+> spaces. Further details may be found in
+> https://arxiv.org/abs/1603.07406.
+>=20
+> Thanks,
+> Peter
+>=20
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,95 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Lietz <lietz@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Realizability and Partial Combinatory Algebras
+Date: Tue, 18 Feb 2003 19:34:24 +0100 (CET)
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.44.0302181634440.4024-100000@fb04182.mathematik.tu-darmstadt.de>
+References: <200302181148.MAA14451@kodder.math.uu.nl>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018478 2945 80.91.229.2 (29 Apr 2009 15:21:18 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:18 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Feb 20 12:29:23 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 20 Feb 2003 12:29:23 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18ltYP-0007Ez-00
+	for categories-list@mta.ca; Thu, 20 Feb 2003 12:28:09 -0400
+In-Reply-To: <200302181148.MAA14451@kodder.math.uu.nl>
+X-MailScanner: Found to be clean
+X-Scanner: exiscan for exim4 *18lCgI-0007W8-00*RfTA.exZoJY*
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 48
+Status: O
+Content-Length: 1686
+Original-Lines: 58
+Xref: news.gmane.org gmane.science.mathematics.categories:2192
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2192>
+
+
+
+Although in the meantime I was completely convinced by John's argument, I
+now believe that Jaap has indeed raised a serious point.
+
+
+However, I think that the flaw (if it indeed was) in John's argument is
+not in the form of combinatory completeness that he applies, but it is an
+illegal instance of substitution, which one has to be very careful with
+within a logic of partial terms where variables range over existing
+objects (as e.g. in E+ logic, presented in Troelstra & van Dalen, Vol. I).
+
+From
+
+	IF FALSE x y  >~  y
+
+one cannot conclude
+
+	IF FALSE q r  >~  r
+
+for q and r arbitrary terms.
+
+
+
+As to the definitive and correct form of combinatory completess in a c-pca
+I make the following proposition (which I have checked):
+
+  Let A be a c-pca and t be a term built up using application from
+  A-constants and variables. Then there is a term (\lambda x. t) that has
+  the same free variables as t save x such that for all a\in A and all
+  valuations of free variables
+
+	(\lambda x. t) a  >~  t[a/x]
+
+That means, if w.r.t. some valuation the right hand side denotes a value
+then the left hand side denotes the same value. In particular, if for some
+valuation and some a in A the right hand side exists (denotes a value)
+then so does the left hand side and hence (\lambda x. t) (for this
+particular valuation), as application is a strict function.
+
+The same is true for simultaneous abstraction (replace x and a by \vec{x}
+and \vec{a} resp.). One only needs to prove a little substitution lemma.
+
+This proposition is essentially in the Hyland-Ong paper (the small
+difference is that, in the paper all variables get abstracted away,
+but that is inessential).
+
+
+
+Best,
+
+Peter
+
+
+
+
+
+
+

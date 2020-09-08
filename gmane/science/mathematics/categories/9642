@@ -1,0 +1,127 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Graham Manuell <grmanuell@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Point-free affine real line?
+Date: Fri, 1 Jun 2018 11:23:00 +0100
+Lines: 88
+Approved: news@gmane.org
+Message-ID: <E1fPUGM-0003NX-WF@mlist.mta.ca>
+References: <E1fOXVB-0006KP-5I@mlist.mta.ca>
+Reply-To: Graham Manuell <grmanuell@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Trace: blaine.gmane.org 1528037091 3139 195.159.176.226 (3 Jun 2018 14:44:51 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Sun, 3 Jun 2018 14:44:51 +0000 (UTC)
+Cc: categories@mta.ca
+To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Sun Jun 03 16:44:47 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUFR-0000fl-2m
+	for gsmc-categories@m.gmane.org; Sun, 03 Jun 2018 16:44:45 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52854)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUH1-0007ml-Te; Sun, 03 Jun 2018 11:46:23 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUGM-0003NX-WF
+	for categories-list@mlist.mta.ca; Sun, 03 Jun 2018 11:45:43 -0300
+In-Reply-To: <E1fOXVB-0006KP-5I@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9642
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9642>
+
+Dear Steve,
+
+I have been working on very similar ideas for my PhD thesis.
+
+If R is the real line, then R[X] has at least 3 reasonable topologies: the
+compact-open topology, the Whitney topology and the coarsest topology
+making the coefficient maps continuous. None of these gives a localic ring
+since they are not complete. Their completions are, of course, the ring of
+continuous functions on R, the ring of smooth functions on R and the ring
+of formal power series R[[X]], respectively. Perhaps this indicates that
+these are more appropriate than the polynomial ring when R has a
+non-discrete topology.
+
+It seems to me that the classical Zariski spectrum is only correct for
+discrete rings. The most obvious example where it gives pathological
+results is for the ring of continuous functions on a compact Hausdorff
+space. For Gelfand duality we must consider not all the ideals, but only
+the closed ideals. The Zariski spectrum is given by taking the localic
+reflection of the quantale of ideals of a discrete ring. For a localic
+ring, I believe we should instead take the localic reflection of the
+quantale of overt ideals. This should give the expected results for both
+discrete rings and for rings of continuous functions. For the localic rings
+above, I expect R to appear inside the spectrum with its usual topology,
+but I've only checked this in the first two cases.
+
+I don't know if the construction of the quantale of overt ideals from a
+localic ring is geometric. I think it might not be. There is a geometric
+theory that gives the elements of this quantale as its points. This
+tentatively suggests to me that the resulting spectrum will not be a
+locale, but a colocale, but you know much more about these than I do.
+
+I have thought less about the corresponding 'sheaf'. In particular, I do
+not know what the correct notion of localic local ring is. I found some
+work on localisation of topological rings (see here
+<https://www.sciencedirect.com/science/article/pii/0166864194900353>), but
+I haven't thought how this would work in the pointfree setting.
+
+Best regards,
+
+Graham
+
+On Fri, 1 Jun 2018 at 01:02 Steve Vickers <s.j.vickers@cs.bham.ac.uk> wrote:
+
+> Algebraic geometry defines the affine line over a field k as an affine
+> scheme, the spectrum of k[X]. It includes a copy of k, each element a being
+> present as the irreducible polynomial X-a, with local ring the ring of
+> fractions got by inverting polynomials f(X) such that f(a) is non-zero.
+>
+> You can carry this out for the real line R, but it is very much R as a
+> set, and the copy of R in the underlying space of the spectrum has the
+> discrete topology.
+>
+> Does algebraic geometry provide an analogous construction that could lead
+> to  the point-free R? Can the locally ringed space be topologized
+> (point-free) so that the copy of R has its usual topology?
+>
+> I've run into various problems.
+>
+> 1. It is not obvious to me that R[X] exists point-free. By that I mean
+> that,  without presupposing a set R[X], or using non-geometric
+> constructions, I can't see how to define a geometric theory whose models
+> are the polynomials. The problem comes with trying to pin down the
+> requirement that all but finitely many of the coefficients of a polynomial
+> must be zero. You cannot continuously define the degree of a polynomial,
+> because the function R -> N, a |-> degree(aX + 1), is not continuous.
+>
+> That suggests the construction as Spec(R[X]) might have to be adjusted. Is
+> there still some locally ringed space that does the trick?
+>
+> 2. The "structure sheaf" cannot be a sheaf. We hope its fibres are
+> point-free local rings, but, whatever they are, they must be R-algebras and
+> so cannot  have the discrete topology. The space is locally ringed by some
+> bundle other than a sheaf (local homeomorphism).
+>
+> 3. The usual local rings, got as rings of fractions as described above,
+> may be problematic point-free in the same way as R[X] is. I don't know what
+> would  do instead. The power series ring R[[X]]? (At least as fibre over
+> 0.) It does have the property of inverting those polynomials f for which
+> f(0) is non-zero. And it can be defined point-free, as R^N. (However, the
+> finitely presented approximations R[X|X^n = 0] happily exist point-free.)
+>
+> Thanks for any references you can provide,
+>
+> Steve.
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

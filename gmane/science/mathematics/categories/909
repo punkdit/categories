@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: Barry Jay <cbj@socs.uts.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: FISh performance
+Date: Mon, 2 Nov 1998 16:46:48 +1100 (EST)
+Lines: 98
+Approved: news@gmane.org
+Message-ID: <199811020546.QAA25507@algae.socs.uts.EDU.AU>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017320 28252 80.91.229.2 (29 Apr 2009 15:02:00 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:02:00 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Mon Nov  2 14:45:49 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA01190
+	for categories-list; Mon, 2 Nov 1998 12:57:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3211
+Original-Lines: 97
+Xref: news.gmane.org gmane.science.mathematics.categories:909
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/909>
+
+
+
+Dear Ralph,
+
+thank you for taking an interest in the FISh performance results for
+quicksort. You raise two basic questions. Is the FISh program faster?
+If so, why?
+
+
+Is quicksort in FISh faster than qsort (on arrays of doubles)? 
+==============================================================
+
+
+> (1) Your C code compares using two floating point operations 
+>(subtraction, compare), while the fish program uses just one (no 
+>subtraction).
+
+
+This makes a small difference to the overall performance of the
+algorithm.  I re-ran the test for qsort with the following comparison
+function
+
+int comp(const void *i, const void *j) {
+return (*(double*)i > *(double*)j ) ;
+}
+
+that has only one operation. The C results are better by about 10% but
+FISh is still twice as fast.
+
+	C benchmark1 	C benchmark2 	FISh benchmark
+
+	3.59		3.35		1.65
+
+>(3) The C library qsort takes a three-valued comparison function, 
+>while your fish code uses a two-valued comparison.
+
+I'm not sure what point you're making. The designers of qsort had a
+free choice. I suspect that the three-valued comparison is used to
+exploit equality of values, to obtain greater efficiency. In any
+event, it is unlikely to make much difference in the light of (1)
+above. 
+
+Conclusion: The FISh program *is* faster. 
+
+
+Why is quicksort in FISh faster?
+=================================
+
+>(4) As you note, your fish code gets optimised by specialising to the
+>datatype and comparison function used.  
+
+
+Yes. This is a given. The question is to pinpoint the source of the
+speedup.
+
+
+> ... This is the main 
+>performance issue, and has nothing to do with boxing/unboxing issues.
+
+
+Point taken. The data supplied to quicksort is not boxed, but this is
+because (the length of the array and) the size of the array entries
+are given as explicit parameters. In this sense qsort is *not*
+polymorphic in its choice of data type. If it were not provided by
+the C programmer then boxing would add another layer of indirection to
+the program. Such information about the size of entries etc. is
+inferred by the FISh compiler.
+
+>... Whether [FISh is faster] will depend on 
+>things like instruction scheduling in the compiler & CPU, & register 
+>allocation in the caller & in any case the difference will be tiny.
+
+
+Your conclusion does not match the performance figures above.
+
+The FISh program avoids making a function call at all.  That is,
+instead of passing the addresses to a function, a primitive comparison
+is made. The key point is that this can only be done because
+information like the length of the array and the size of the entries
+(in bytes) can be inferred by the FISh compiler, instead of being
+supplied by the user.
+
+
+Yours,
+Barry Jay
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,	  http://www-staff.socs.uts.edu.au/~cbj	|
+| Australia.			        FISh homepage ... ~cbj/FISh     |
+*************************************************************************
+
+
+

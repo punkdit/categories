@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <r.h.g.garner@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Tensor of monads
+Date: Sun, 1 Aug 2010 10:31:47 +1000
+Lines: 69
+Approved: news@gmane.org
+Message-ID: <E1Ofu7F-0006gv-8o@mlist.mta.ca>
+References: <E1OeHE4-0004hy-TA@mlist.mta.ca>
+Reply-To: Richard Garner <r.h.g.garner@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1280752153 5893 80.91.229.12 (2 Aug 2010 12:29:13 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 2 Aug 2010 12:29:13 +0000 (UTC)
+To: Categories mailing list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon Aug 02 14:29:10 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.138])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ofu8k-0007GW-Be
+	for gsmc-categories@m.gmane.org; Mon, 02 Aug 2010 14:29:10 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51634)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ofu7H-0008J7-Uf; Mon, 02 Aug 2010 09:27:39 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Ofu7F-0006gv-8o
+	for categories-list@mlist.mta.ca; Mon, 02 Aug 2010 09:27:37 -0300
+In-Reply-To: <E1Oey01-0000dm-E4@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6017
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6017>
+
+I must admit to feeling slightly confused by both Peter's and Andr=E9's
+examples. In both cases, the monads considered arise on a category other
+than the category of sets; and it is not clear to me what is meant by
+forming the tensor product of two such monads. In the case of finitary
+monads on Set, the meaning is clear, since a finitary monad corresponds to =
+a
+Lawvere theory, a Lawvere theory is a special kind of small category with
+finite products, and we know how to form the tensor product of two
+categories with finite products (essentially because the doctrine of finite
+products is a pseudo-commutative one). This extends without problem to
+monads with rank on Set; and even to monads without rank on Set, so long as
+one recognises that the correlate notion of Lawvere theory will be a large
+one, so that the tensor product may not always exist.  In the case of base
+categories other than Set, one would have to use a generalisation of the
+notion of Lawvere theory: such has been given by Nishizawa-Power (see also
+Lack-Power) but they require that the base category be locally presentable,
+which is not the case in the examples of Andr=E9 and Peter.
+
+My own take on what Peter's example is doing is the following. Given any
+finitary monad L on Sets, there is a corresponding Lawvere theory T, and so
+for any category C, we can consider the category Mod(T,C) of T-models in C:
+it's the category of finite-product preserving functors T -> C. There is a
+forgetful functor Mod(T,C)-->C given by evaluation at 1, and this will be
+monadic so long as it has a left adjoint; in which case we induce a monad L=
+'
+on C. In particular, letting L be the finitary monad on Set whose algebras
+are sup-semilattices-without-a-unit, letting L * L be its tensor with
+itself, and letting C be the category of finite sets of odd cardinality,
+then Peter's example seems to show that:
+
+   -- The induced monad L' on C exists but the induced monad (L * L)' does
+not.
+
+On the other hand, Andr=E9's example raises a question which I find quite
+interesting. Andr=E9 describes two reflective subcategories of the ordered
+class of ordinal numbers, and then says that, their intersection being
+empty, the tensor of the corresponding idempotent monads cannot exist. I
+would be inclined to say that this shows that the coproduct of these monads
+does not exist, but this leads on to my question, which is:
+
+   -- Given idempotent monads S, T on a category C for which we can speak of
+the tensor of S and T, is it always the case that S * T is isomorphic to S =
++
+T?
+
+Here is a test case. Power's 2000 paper "Enriched Lawvere theories" shows
+that, for a symmetric monoidal closed V which is lfp as a closed category,
+finitary V-monads are equivalent to enriched Lawvere theories, which are
+certain small V-categories with finite cotensors. Using the tensor of such
+V-categories, we can define a tensor of such monads. Consider in particular
+when V is [D^op, Set] for some small D, and let S and T be two idempotent
+strong (=3DV-enriched) monads on V. Now it should be possible to calculate =
+S +
+T and S * T in terms of the corresponding Lawvere theories and to see if
+they coincide. I haven't tried this yet but it should be an interesting
+exercise. (The obvious thing to try first is to take S and T corresponding
+to sheaf subtoposes of [D^op, Set]. Then these monads, being
+product-preserving, are commutative, and so it's natural to think that S * =
+T
+should be the monad corresponding to the intersection of these subtoposes. =
+S
++ T, on the other hand, I'm inclined to think may be something bigger, and
+not necessarily cartesian.)
+
+Richard
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

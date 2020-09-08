@@ -1,0 +1,1257 @@
+Date: Fri, 30 Mar 90 18:18:47 PST
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Subject: products of n-categories
+
+An n-category is an ordered list of n categories, any two of which (in
+the given order) form a 2-category.  An n-functor is n functors between
+two n-categories.
+
+The categorical product axb of two m-categories a and b is an
+m-category.  I want a product a@b yielding the "obvious" 2m-category
+(or (m+n)-category when a is an m-category and b an n-category).  I've
+been trying to figure out from papers of Street, Aitchison, Johnson,
+etc., how this might be accomplished, but thus far I haven't got the
+picture, their reassuring hints that it's doable notwithstanding.
+
+What am I missing?  What's the trick?  Where should I look?  I presume
+I should be aiming for a tensor product rather than a categorical
+product.  Is there some routine construction of homological algebra or
+tarot card theory that does the trick?
+
+In more detail: if every story has a beginning, a middle, and an end,
+then the square of a story has 9 parts, the "biggest" of which is a
+pair (m,m) of middles.  For the categorical square axb this is the
+arrow from (b,b) to (e,e), a morphism or 1-cell.  In a@b, (m,m) should
+be a solid square or 2-cell.
+
+I'm assuming a@b will be oriented.  Indeed I'm expecting a@b will be
+1-isomorphic to but "2-antimorphic" to b@a (the two functors from a@b
+to b@a will be covariant and contravariant respectively).
+
+I also don't mind if this square ends up with more than 9 things, in
+fact I'm vaguely expecting 11 (we need the two composites at the start
+and end of the square) but I'll settle for even more if that's what the
+construction takes.  If the answer is 42 I'll go into some other line of
+work.
+
+Writing ab and a*b for the
+respective compositions of a 2-category (namely horizontal and vertical
+composition), it would be nice if a@(bc) = ((a@b)c) * (b(a@c)), as
+suggested by the following picture.
+
+                                             b           c
+                                        -----------> --------->
+        |                               --------->  |          |
+        |        b     c               |     b    | |    __    |
+       a|  @  ------>------>   =       |   __     | |a   //|   |a
+        |                             a|   //|   a| |   //     |
+        |                              |  //      | V    c     V
+        V                              V          V  --------->
+                                        ---------> ----------->
+                                             b           c
+
+Here |a| = 2+1 (i.e. a has 2 0-cells and 1 1-cell), |bc| = 3+3, and
+|a@(bc)| = 6+16+5 (6 0-cells, 16 1-cells, and 5 2-cells).  (Counting
+all composites, but not counting degenerate cells, i.e. n-cells of
+dimension less than n, these having already been counted at the lower
+dimension.  For a@(bc), don't just count cells in the picture on the
+right, which has 10 0-cells, paste first to get down to 6 0-cells.)
+
+And (bc)@a should equal (b(c@a)) * ((b@a)c).
+
+                                             b           c
+                                        -----------> --------->
+                               |        --------->  |          |
+              b     c          |       |     b    | |     //   |
+           ------>------>  @  a|   =   |          | |a  |//    |a
+                               |      a|    //   a| |    --    |
+                               |       |  |//     | V    c     V
+                               V       V   --     V  --------->
+                                        ---------> ----------->
+                                             b           c
+
+-Vaughan Pratt
+
+Subj:	noncommuting diagrams
+Date: 31 Mar 90 13:44:25 PST (Sat)
+From: pratt@cs.stanford.edu
+
+I'm afraid my diagrams didn't commute very well, someone's mailer is
+eating the vertical-bar symbol.  Here they are with ! in place of
+vertical bar.
+
+A category mailing list should be less rough on diagrams.
+
+
+                                             b           c
+                                        -----------> --------->
+        !                               --------->  !          !
+        !        b     c               !     b    ! !    __    !
+       a!  @  ------>------>   =       !   __     ! !a   //!   !a
+        !                             a!   //!   a! !   //     !
+        !                              !  //      ! V    c     V
+        V                              V          V  --------->
+                                        ---------> ----------->
+                                             b           c
+
+                                             b           c
+                                        -----------> --------->
+                               !        --------->  !          !
+              b     c          !       !     b    ! !     //   !
+           ------>------>  @  a!   =   !          ! !a  !//    !a
+                               !      a!    //   a! !    --    !
+                               !       !  !//     ! V    c     V
+                               V       V   --     V  --------->
+                                        ---------> ----------->
+                                             b           c
+
+-Vaughan Pratt
+
+Date: Mon, 2 Apr 90 22:23:25 EDT
+From: LICS@B.GP.CS.CMU.EDU
+Subject: LICS '90
+
+The Latex source of the complete registration/ program flyer
+will be emailed upon request. 
+
+
+
+    Fifth Annual IEEE Symposium on Logic in Computer Science
+
+                June 4-7, 1990
+               Philadelphia, PA
+
+Sponsored by
+    IEEE Technical Committee on Mathematical Foundations of Computing
+in cooperation with
+    Association for Computing Machinery
+    Association for Symbolic Logic
+    European Association for Theoretical Computer Science
+
+
+INQUIRIES:
+---------
+
+Email registration forms followed by regularly posted checks
+will be gratefully received.  Further travel information will be
+sent by email upon request to lics@cs.cmu.edu.
+
+Other queries:
+
+Registration: (215) 898-4405, jean@central.cis.upenn.edu
+Campus Accomodations:   (215) 898-3547
+Announcements:   lics@cs.cmu.edu
+
+
+ON-CAMPUS ACCOMODATIONS
+=======================
+
+Conference accomodations are available both on campus and at a
+commercial hotel.  The conference auditorium is located half way
+between the two, five minutes walk from either one.
+
+Campus accomodations will be in Harnwell House, 3820 Locust
+Walk, a 26 story air-conditioned residence hall, with a
+permanently staffed front desk.  Conference participants will be
+lodged in furnished 2--4 bedroom apartments with a shared
+bathroom, some with a living room and/or kitchenette, no
+television or phone. Pay phones are available in the lobby.  A
+limited number of private apartments are available for married
+couples.
+
+On-campus room and board are available only as a package for
+lodging from Sunday the 3rd (check in time 3 pm) to Thursday the
+7th (check out 1 pm) with meals from breakfast on Monday to
+lunch on Thursday.  A meal-only package for those staying
+elsewhere is available with registration, and will also be
+available on a limited basis at the start of the conference.
+
+For campus accommodations information contact:
+
+    Conference Housing Office,
+    3901 Locust Walk,
+    Philadelphia, PA 19104-6180,
+    (215) 898-3547
+
+
+HOTEL ACCOMMODATIONS
+====================
+
+A limited number of rooms have been reserved at a reduced rate
+at the Penn Tower Hotel.  The rate is $77 for single or double
+occupancy.  One or two children, 12 or younger, may stay with
+parent(s) free of charge.  This rate is available from Sunday
+June 3rd to Thursday the 7th.
+
+Reservations should be addressed directly to:
+
+    Penn Tower Hotel
+    Civic Center Boulevard at 34th Street
+    Philadelphia, PA 19104-4385
+    (800) 356-7366, or (215) 387-8333
+
+The last day for reservation at conference rate is May 3rd.  A
+one night deposit is required by personal check in $US or by a
+major credit card.  In correspondence with the hotel please
+indicate dates of arrival and departure.
+
+
+REGISTRATION AND CAMPUS ACCOMODATION FORM
+=========================================
+
+Registration fees include conference proceedings and all events.
+Subsidies from institutional sponsors allow the LICS organizers
+to offer full participation privileges to student registrants.
+The reduced rate applies to authors, members of a sponsoring
+organization (IEEE Computer Society, ACM, EATCS, ASL), and
+members of the organizing and program committees.  Early
+registration deadline is May 11.  Cancellations after May 11
+will be subject to a $25 charge for campus housing, and to a $25
+charge for LICS registration.  Fees are non-refundable after May
+18.
+
+The LICS Organizers have limited funds available for subsidy of
+attendees unable to obtain travel grants.  Persons desiring such
+subsidy should contact the Conference Chair, indicating their
+circumstances and amount of subsidy desired.
+
+                   By May 11          After May 11
+
+Full                  $260               $330
+Reduced               $210               $270
+Full-time student      $60               $100
+
+PLEASE TYPE OR PRINT:
+
+Last Name:___________________________________________________
+
+First Name:__________________________________________________
+
+Affiliation:_________________________________________________
+
+Street Address:______________________________________________
+
+City ________________________________________________________
+
+State/Zip:___________________________________________________
+
+Country _____________________________________________________
+
+Phone(s):____________________________________________________
+
+E-mail:______________________________________________________
+
+
+PLEASE FILL IN AND CHECK AS APPROPRIATE:
+
+Reason for reduced rate:_____________________________________
+
+Full-time student at: _______________________________________
+
+Reservation request:
+                 Single         Married couples
+
+Campus Housing          $176              $352
+Meal Package only       $56
+
+O   Male
+O   Female
+O   Smoker
+O   Non-smoker
+O   Vegetarian
+
+O   I'll room with____________________________________________
+
+Return this form with a check in $US,
+for the total of your registration and
+optional package, made out to
+"IEEE Fifth LICS Symposium", to
+
+    LICS, c/o J. Gallier
+    Dept. of Computer & Information Science
+    University of Pennsylvania
+    200 South 33rd Street
+    Philadelphia, PA 19104-6389
+
+
+DISCOUNTED FLIGHTS
+==================
+
+USAir has been designated as the official carrier of LICS '90,
+and will offer to LICS '90 participants discounts for travel to
+Philadelphia from the continental US and Canada, during the
+period June 1--10, 1990.  For travel from the continental US,
+(excluding first class and government contract fares), subject
+to applicable fare restrictions, For travel from Canada, with a
+2 night minimum stay requirement.  There may be discounts on
+other USAir international fares.
+
+To obtain a USAir fare discount, you or your travel agent should
+call USAir's Convention Office, at (800) 334-8644 (Monday
+through Friday, 8 am -- 9 pm EST), and refer to Gold File No.
+393570.  From Canada call (800) 428-4322, ext. 7702.
+
+
+CONFERENCE EVENTS
+=================
+
+Registration Desk:
+-----------------
+
+A registration desk will operate in the Penn Tower Hotel on
+Sunday, June 3, 7 -- 9:30 pm. From Monday through Wednesday,
+there will be a registration and information desk outside
+Meyerson Hall Auditorium, from 8:30 am to 5 pm.
+
+Talks:
+-----
+
+All technical talks will be presented in Meyerson Hall
+Auditorium, in the basement of the Fine Arts Building.
+Contributed talks will be 20 minutes long, with 5 additional
+minutes for questions.  Session 6 is a special session of
+invited papers on Automated Deduction, organized by Mark
+Stickel.  These presentations will be 30 minutes long.
+
+Sunday Reception:
+----------------
+
+On June 3 there will be a welcome reception from 7 to 9:30 pm,
+at the Penn Tower Hotel.  Free soft drinks and light snacks will
+be served, and a cash bar will be available.
+
+
+Monday Reception and Business Meeting:
+-------------------------------------
+
+On June 4 there will be a reception at the University Museum (at
+33rd and Spruce Streets), in the Upper Egyptian Gallery and
+Chinese Rotunda, with drinks and light dinner buffet from 6:30
+to 8:30 pm. A business meeting for all attendees will follow
+from 8:30 pm with wine and soft drinks.
+
+Wednesday Banquet:
+-----------------
+
+On June 6 there will be a banquet at the Franklin Institute.
+From 6:30 pm you are invited to visit scientific exhibits at the
+Institute.  The banquet will start around 7:30 pm, and will
+include a historical talk about Alan Turing, by Robin Gandy of
+Oxford University.
+
+
+
+******************
+CONFERENCE PROGRAM
+******************
+
+
+MONDAY, June 4
+--------------
+
+SESSION 1. 9:00--10:40. Chair: John Mitchell.
+---------
+
+Type reconstruction in finite-rank fragments of polymorphic
+lambda-calculus,
+    A.J. Kfoury (Boston U) & J. Tiuryn (Warsaw)
+
+Polymorphism, set theory, and call-by-value,
+    E. Robinson (Sussex) & G. Rosolini (Parma)
+
+Universal domains in the theory of denotational semantics
+of programming languages,
+    M. Droste & R. G"obel (Essen)
+
+The classification of continuous domains,
+    A. Jung (TH Darmstadt & Imperial Coll.)
+
+
+SESSION 2. 11:10--12:25. Chair: Krzysztof Apt.
+---------
+
+A decision procedure for a class of set constraints,
+    N. Heintze (CMU) & J. Jaffar (IBM/Watson)
+
+A constraint sequent calculus,
+    J.-L. Lassez (IBM/Watson) & K. McAloon (CUNY)
+
+Solving inequations in term algebras,
+    H. Comon (Paris XI)
+
+
+SESSION 3. 2:25--3:40. Chair: Jon Barwise.
+---------
+
+The dynamic logic of permission,
+    R. van der Meyden (Rutgers)
+
+A theory of non-monotonic rule systems,
+    W. Marek (Kentucky) & A. Nerode (Cornell)
+
+The semantics of reflected proof,
+    S. Allen, R. Constable, D. Howe & W. Aitken (Cornell)
+
+
+SESSION 4. 4:20--6:00. Chair: Glynn Winskel.
+---------
+
+Equation solving through an operational semantics of context,
+    K. Larsen & L. Xinxin (Aalborg)
+
+Three logics for branching bisimulation,
+    R. De Nicola (IEI-CNR) & F. Vaandrager (CWI)
+
+Reactive, generative, and stratified models of probabilistic
+processes,
+    R. van Glabbeek (CWI), S. Smolka (Stony Brook),
+    B. Steffen (Aarhus) & C. Tofts (Edinburgh)
+
+The nonexistence of finite axiomatisations for CCS congruences,
+    F. Moller (Edinburgh)
+
+
+TUESDAY, June 5
+---------------
+
+SESSION 5. 9:00--10:40. Chair: Steve Cook.
+---------
+
+0-1 Laws for infinitary logics,
+    Ph. Kolaitis (UCSC) & M. Vardi (IBM/Almaden)
+
+Implicit definability on finite structures and unambiguous
+computations,
+    Ph. Kolaitis (UCSC)
+
+Alogtime and a conjecture of S.A. Cook,
+    P. Clote (Boston Coll.)
+
+On the expression of monadic second-order graph next properties
+without quantifications over sets of edges,
+    B. Courcelle (Bordeaux I)
+
+
+SESSION 6. 11:10--12:40. Chair: Mark Stickel.
+special session on automated deduction
+--------------------------------------
+
+Searching for fixed point combinators with the kernel method,
+    W. McCune (Argonne NL)
+
+Theorem proving with ordered equations,
+    N. Dershowitz (Illinois/Urbana)
+
+Automated reasoning in geometry using algebraic methods,
+    S.-Ch. Chou (UT/Austin)
+
+
+SESSION 7. 2:25--3:40. Chair: Ugo Montanari.
+---------
+
+Normal process representatives,
+    V. Gehlot & C. Gunter (U Penn)
+
+A categorical linear framework for Petri nets,
+    C. Brown & D. Gurr (Edinburgh)
+
+A linear semantics for allowed logic programs,
+    S. Cerrito (Paris XI)
+
+
+SESSION 8. 4:20--6:00. Chair: Jean-Pierre Jouannaud.
+---------
+
+Programming in equational logic: beyond strong sequentiality,
+    R.C. Sekar & I.V. Ramakrishnan (Stony Brook)
+
+The theory of ground rewrite systems is decidable,
+    M. Dauchet & S. Tison (Lille-Flandres-Artois)
+
+Well rewrite orderings,
+    P. Lescanne (CRIN)
+
+A constructive proof of Higman's Lemma,
+    C. Murthy  & J. Russell (Cornell)
+
+
+WEDNESDAY, June 6
+-----------------
+
+SESSION 9. 9:00--10:40. Chair: Jean Gallier.
+---------
+
+Syntactic theories and unification,
+    C. Kirchner & F. Klay (INRIA/Lorraine & CRIN)
+
+Proof transformations for equational theories,
+    T. Nipkow (Cambridge)
+
+A new AC unification algorithm with an algorithm for solving
+diophantine equations,
+    A. Boudet, E. Contejean & H. Devie (Paris XI)
+
+On subsumption and semiunification in feature algebras,
+    J. D"orre (Stuttgart) & W. Rounds (U Michigan)
+
+
+SESSION 10. 11:10--12:25. Chair: Susumu Hayashi.
+----------
+
+Completeness for typed lazy inequalities,
+    S. Cosmadakis (IBM/Watson), A.R. Meyer (MIT) & J. Riecke (MIT)
+
+Conditional lambda-theories and the verification of static
+properties of programs,
+    M. Wand & Zh.-Y. Wang (Northeastern)
+
+Single-threaded polymorphic lambda calculus,
+    J. Guzman & P. Hudak (Yale)
+
+
+SESSION 11. 2:25--3:40. Chair: Andre Scedrov.
+----------
+
+Extensional PERs,
+    P. Freyd (U Penn), P. Mulry (Colgate),
+    G. Rosolini (Parma) & D. Scott (CMU)
+
+A PER model of polymorphism and recursive types,
+    M. Abadi (DEC/SRC) & G.D. Plotkin (Edinburgh)
+
+Effective domains and intrinsic structure,
+    W. Phoa (Cambridge)
+
+
+SESSION 12. 4:20--6:00. Chair: Edmund Clarke.
+----------
+
+A logic of concrete time intervals,
+    H. Lewis (Harvard)
+
+Real-time logics: complexity and expressiveness,
+    R. Alur & T. Henzinger (Stanford)
+
+Explicit clock temporal logic,
+    E. Harel, A. Pnueli & O. Lichtenstein (Weizmann)
+
+Model-checking for real-time systems,
+    R. Alur (Stanford), C. Courcoubetis (Bell Labs) & D. Dill (Stanford)
+
+BANQUET
+-------
+
+The life and work of Alan Turing,
+    R. Gandy (Oxford)
+
+
+THURSDAY, June 7
+----------------
+
+SESSION 13. 9:00--10:40. Chair: Paris Kanellakis.
+----------
+
+Symbolic model checking: 10^20 states and beyond,
+    J.R. Burch, E.M. Clarke & K.L. McMillan (CMU);
+    D.L. Dill & L.J. Hwang (Stanford)
+
+When is "partial" adequate? A logic-based proof technique using
+partial specifications,
+    R. Cleaveland  (NC State) & B. Steffen (Aarhus)
+
+Modelling shared state in a shared action model,
+    K. Goldman & N. Lynch (MIT)
+
+On the limits of efficient temporal decidability,
+    A. Emerson (UT/Austin & MCC), M. Evangelist
+    (MCC) & J. Srinivasan (UT/Austin & MCC)
+
+
+SESSION 14. 11:10--12:25. Chair: Daniel Leivant.
+----------
+
+On the power of bounded concurrency: reasoning about programs,
+    D. Harel (Weizmann), R. Rosner (Weizmann) &
+    M. Vardi (IBM/Almaden)
+
+New foundations for fixpoint computations,
+    R. Crole & A. Pitts (Cambridge)
+
+Recursive types reduced to inductive types,
+    P. Freyd  (U Penn)
+
+END OF CONFERENCE
+
+
+INSTITUTIONAL SPONSORS
+----------------------
+
+Academic Press, publisher of Information and Computation
+DEC SRC
+GTE Laboratories
+Hewlett-Packard Laboratories
+IBM Research (Almaden and Yorktown Heights)
+Mitre Corporation
+The University of Pennsylvania
+Xerox PARC
+
+
+CONFERENCE ORGANIZATION
+=======================
+
+LICS General Chair: Albert R. Meyer
+
+1990 Conference Chair: Jean Gallier
+
+1990 Program Chair: John C. Mitchell
+
+Publicity Chair: Daniel Leivant
+
+
+PROGRAM COMMITTEE:
+-----------------
+K.R. Apt, J. Barwise, E. Clarke, S. Cook, S. Hayashi, P. Kanellakis,
+J.-P. Jouannaud, D. Leivant, J.C. Mitchell (Chair), U. Montanari,
+A. Pitts, E. Sandewall, A. Scedrov, M. Stickel, and G. Winskel.
+
+
+ORGANIZING COMMITTEE:
+--------------------
+
+M. Abadi, J. Barwise, A. Chandra, E. Dijkstra, E. Engeler, J. Gallier,
+J. Goguen, D. Gries, Y. Gurevich, D. Johnson, G. Kahn, J.W. Klop,
+D. Kozen, D. Leivant, Z. Manna, A.R. Meyer (General Chair), G. Mints,
+J.C. Mitchell, Y. Moschovakis, C. Papadimitriou, R. Parikh, G. Plotkin,
+G. Rozenberg, D. Scott, and R. de Vrijer.
+
+Date: 3 Apr 90 16:53 -0300
+From: Robert Pare <pare@cs.dal.ca>
+
+On April 14, 1990 all phone numbers at Dalhousie will change.
+The 424 exchange will become 494. So my number will
+be (902)-494-2354.
+
+Also the cdn network is being phased out so my e-mail is now
+pare@cs.dal.ca   although mail sent to the old address will still
+get through (for the time being).
+
+Bob Pare
+
+Date:        Thu, 05 Apr 90 08:56:51 EDT
+From:        Michael Barr <INHB@MUSICB.MCGILL.CA>
+
+I've been waiting for one of the people more expert in the subject than
+I to answer Vaughn's question.  Since no one has, I would like to make
+some comments on it.
+
+The remark that he supposed it couldn't be a cartesian product misses
+the point.  A cartesian product is unique (up to unique isomorphism) and
+if the cartesian product doesn't have the right properties, then a
+product that does certainly isn't the cartesian product.
+
+This product wouldn't be in the category of n-categories, since you want
+the product to be a 2n-category.  You presumably want the category of
+omega-categories or at the most those which are actually n-categories
+for some n.
+
+Third, the analogy with the story breaks down.  To be analogous, you
+should be looking at the tensor product of two stories to have 6 parts,
+not nine.  You would have to identify <begin, end>, <middle, middle> and
+<end, begin> and there would seem to be little reason to expect this to
+make sense.  In the additive case, there is some reason for thinking
+this might make sense, but not in general.
+
+What seems likelier is that the tensor product of two categories is a
+two dimensional category.  This is not at all like a 2-category; rather
+it is as though each entity was at once an i-cell for one omega-category
+structure and a j-cell for another one.  Of course, you would then have
+to allow three dimensional, four dimensional, ... .
+
+My intuition on this comes from simplicial sets, where there is a tensor
+product of two simplicial sets to get a double simplicial set.  Aside
+from the diagonal simplicial set (which is the cartesian product) you
+can also, in the additive case, take the associated chain complex and
+then construct a simplicial set from that, which is a kind of cartesian
+product.  This is homotopic to the diagonal, but I imagine it is still
+different from it.  In the general case, this makes no sense.
+
+Michael Barr
+
+Subject: A reply to Vaughan
+Date:   Fri, 6 Apr 90 15:22:06 EDT
+From:   street@mqcomp.mqcs.mq.oz.au (Ross Street)
+
+Vaughan's question and Mike's reply arrived here today.
+
+The question is a bit vague, but I shall indicate a general technique which
+can be modified as desired.
+
+One useful candidate for a tensor product on the category P of omega categories
+can be obtained as follows. A glob is a free-living n-cell. Regard these as
+very simple examples of parity complexes and consider the collection C of
+finite products of them (here parity complex and product are as per my widely
+circulated Macquarie Report 1987; or was it Jan 88). Make the members of C
+into omega categories using my big script O construction. This gives a dense
+full subcategory G of P on which we have a "product" defined. Extend to P by
+left Kan extension to obtain a tensor product on P.
+
+Greetings,
+Ross Street
+
+Date:       Sat, 7 Apr 90 15:06:16 BST
+From:       Charles.Wells@PRG.OXFORD.AC.UK
+Subject:    new address etc
+
+I will be here at Oxford until 30 May.  
+
+Oege de Moor, in the Computing Laboratory here, would like to know if
+every endofunctor on the category of sets preserves weak pullbacks.  Any
+information on this would be appreciated.  More generally, he is
+interested in lifting functors to the category of relations.  Both he
+and I would like to know of papers written on this subject.
+
+--Charles Wells
+
+Subject Re:  new address etc 
+Date:   Sat, 7 Apr 90 11:47:14 EDT
+From:   pjf@linc.cis.upenn.edu (Peter Freyd)
+
+In reply to Charles Wells:  any functor that preserves weak pullbacks
+preserves all pullbacks.
+
+Subject:Re:  new address etc
+Date:   Sat, 7 Apr 90 12:30:13 EDT
+From:   pjf@linc.cis.upenn.edu (Peter Freyd)
+
+I replied much too quickly to the Charles Wells question.  What is correct
+is that any functor that preserves all finite weak limits preserves
+all finite limits.
+
+For an example of an endofunctor on SETS that fails to preserve weak
+pullbacks consider the functor that takes the empty set to the empty
+set and everything else to a one-element set.
+
+For a counterexample to my hasty response consider the covariant power-
+set functor (using direct images); it preserves weak pullbacks but not
+pullbacks.
+
+  Peter Freyd
+
+Subject: Re: tensor product
+Date: 07 Apr 90 13:53:21 PDT (Sat)
+From: pratt@cs.stanford.edu
+
+I'd written most of the following (including the references to Street's
+and Aitchison's papers) before getting Ross's reply.  However I think
+most of what I have to say below remains relevant.  His reply does
+however prompt me to formulate my question, hopefully more sharply, as
+"give an elementary description of tensor product of n-categories."
+Such a description should be inferrable from Ross's parity complexes
+paper, but thus far I don't have a clear picture of these products, and
+was hoping maybe someone else had a more elementary description.
+
+=====
+
+I think Michael's first two comments can be answered with the remarks
+that I didn't specify a category, and that cartesian product XxY and
+intersection X&Y of sets X and Y are each categorical products, albeit
+not in the same category.
+
+        Third, the analogy with the story breaks down.  To be
+        analogous, you should be looking at the tensor product of two
+        stories to have 6 parts, not nine.  You would have to identify
+        <begin, end>, <middle, middle> and <end, begin>
+
+Let's call these BE, MM, EB, and call the stories a and b.  BE denotes
+the situation where b has ended while a has yet to begin, while EB is
+this situation with a and b interchanged.  MM is the situation in which
+both stories are ongoing.  I don't see where the identification
+BE=MM=EE comes from or what it would be used for.  The picture, with MM
+cast (admittedly oddly, but nevertheless the effect I'm after) as a
+2-cell, is:
+
+                                b
+                              ---->
+
+                                BM
+                          BB-------->BE
+                           !         !
+                    !      !   __    !
+                   a!    MB!   //!MM !ME
+                    !      !  //     !
+                    V      V         V
+                          EB-------->EE
+                                EM
+
+        What seems likelier is that the tensor product of two
+        categories is a two dimensional category.
+
+Ah, good.  This is exactly what happens at this point in the "obvious"
+scenario, in which MM is a square having MB and BM as "orthogonal
+sources" and ME and EM as "orthogonal targets".  Here MM is "just a
+square", whereas the above picture makes MM a 2-cell from MB.EM to
+BM.ME.
+
+And this is the nub of my question.  Two (and higher) dimensional
+categories emerge naturally at this point.  The difficulty I have with
+them, and perhaps I should have spent more time on this point, is that
+n-dimensional categories have "too many" compositions.  Yes, they have
+only n compositions, just like an n-category, but these compositions
+are indexed by axis rather than by dimension.  (Since "dimension" is in
+some contexts used to mean "axis" I should emphasize that I am here
+using it in its basis-independent sense, as in "n-dimensional",
+referring to an attribute of space, as in area vs. volume, rather than
+a direction, as in north-south vs. east-west.)
+
+Thus in the story analogy, if story a is to be read concurrently with
+the consecutive readings of stories b and c, namely a@(b.c), then using
+2-dimensional categories we have a$(b.c) = a$b{a}a$c.  (I'll write a$b
+for this product to distinguish it from the more topological
+(homological) product a@b I'm asking about.)  Here the composition {a}
+denotes composition of squares "orthogonal to" the a-axis.
+
+            b         c
+        --------> --------->
+       !         !          !        these squares are composed
+       !         !          !        via {a} (composition orthogonal
+      a!        a!         a!        to a)
+       !         !          !
+       !    b    !    b     !
+        --------> --------->
+
+But now if we have the consecutive readings of a and b concurrently
+with the reading of c, we have (a.b)$c = a$c{c}b$c.
+
+            c
+        -------->
+       !         !
+       !         !
+      a!        a!                   these squares are composed
+       !         !                   via {c} (composition orthogonal
+       !    c    !                   to c)
+        -------->
+       !         !
+       !         !
+      b!        b!
+       !         !
+       !    c    !
+        -------->
+
+Well, so n-dimensional categories have n compositions.  But what's so
+bad about that?  So do n-categories.  Moreover the intuition behind
+n-dimensional compositions is quite a bit clearer, and their algebra
+more straightforward, than that of n-category composition.  So why
+would anyone want to use these complicated n-category compositions for
+geometrical applications?
+
+(Luckily Bob Rosebrugh sent my message back to me to repair some carets
+and vertical bars that a mailer ate again, giving me a chance to try to
+express my intuition about this important issue a bit more clearly.
+The next paragraph hopefully does the trick.)
+
+What n-categories offer geometry is more versatility for the same
+number of compositions.  Expressions built up with the n compositions
+of an n-dimensional category are translatable (albeit clumsily) into
+those of an n-category but not conversely.  A basic example of the
+latter is that of horizontal composition in a two-category, for which
+two-dimensional categories offer no equivalent.  For a very
+down-to-earth example, read stories a and b concurrently, then c and d
+concurrently.  This is conveniently expressible in a 2-category as
+(a@b).(c@d), but
+
+        ******************************************************
+        it has no equivalent 2-dimensional category expression.
+        ******************************************************
+
+
+A drawback (slight or serious depending on your point of view) is the
+clumsiness of the translation from n-dimensional category expressions
+to n-category expressions.  In actually doing either of the
+above-illustrated pastings of squares, one must first extend the
+squares using horizontal (= 1D) composition so that they match up.
+Thus for a@(b.c) one must first form b.(a@c) and (a@b).c using 1D
+composition . before pasting them with 2D composition :, as in a@(b.c)
+= ((a@b).c):(b.(a@c)).
+
+                         b           c
+                    -----------> --------->
+                    --------->  !          !
+                   !     b    ! !    __    !
+                   !   __     ! !a   //!   !a
+                  a!   //!   a! !   //     !
+                   !  //      ! V    c     V
+                   V          V  --------->
+                    ---------> ----------->
+                         b           c
+
+For (a.b)@c we have the (easily visualized) transpose of this figure,
+(a.b)@c = (a.(b@c)):((a@c).b).
+
+Actually this clumsiness in translation resides in the result of
+distributing @ over ., not in the short and clear expression a@(b.c)
+itself.  Distributivity in logic is the archenemy of efficiency in
+decision methods (the word problem for lattices is decidable but not
+for distributive lattices, etc. etc.).  The present distributivity rule
+looks even worse than that for logic, but it could well turn out that
+from a computational complexity point of view, logical distributivity
+(of conjunction over disjunction) adds about the same to algorithmic
+complexity as the present one.  This is a question for a complexity
+theorist rather than a basis for allegations of clumsiness.
+
+Note that both these pastings use the same composition, namely the
+vertical composition :, as their top-level operation.  This has to be
+the case for the pasting of any two 2-cells sharing a nonzero length
+boundary.  In this sense n-categories have fewer compositions than
+n-dimensional categories: only one operation for pasting n-cells along
+a nondegenerate (n-1)-cell instead of n.  (This was the essence of my
+previous defence of 2-categories in geometry.  Although I still see
+some merit to that defence, the above translatability issue yields what
+seems to me a more knock-down argument.)
+
+============
+
+The relevant background for much of this is contained in an eminently
+readable and very striking paper by Ross Street, entitled "The algebra
+of oriented simplexes", which appeared in the Journal of Pure and
+Applied Algebra for 1987 on pages 283-335.  As the title suggests, the
+paper concentrates on simplexes (triangles, tetrahedra, ..., as opposed
+to cubes and other shapes), which paste together to form simplicial
+sets, namely objects of Delta"=>Set (writing " for op).
+
+A manuscript by Street's former postdoc Iain Aitchison treats "The
+Geometry of Oriented Cubes".  Here simplexes are replaced by cubes, a
+good step towards understanding dimension-increasing product.  This
+transition reflects a small movement in geometry within the last five
+years or so, led by Grothendieck, towards generalizing Delta"=>Set (the
+functor category of graded sets and boundary, coboundary, etc.
+morphisms) to Pos"=>Set, via the obvious embedding of the category
+Delta of finite chains into the category Pos of all posets, see also an
+older paper by Metropolis and Rota, "Combinatorial Structure of the
+Faces of the n-cube" in Siam J. Appl. Math. 35:4, 689-694 (1978).
+
+Just as the simplexes form the category Delta, so do the cubes
+constitute the finite objects of w=>Lambda (w=omega) where Lambda is
+the poset
+
+                                M
+              Lambda    =      / \
+                              /   \
+                             B     E
+
+(with B,M,E denoting Beginning, Middle, End as before).
+
+(For purposes of comparison, writing 2 for that ordinal, the
+two-element chain, Delta can be taken to be the finite objects of w=>2
+= the ordinal w+1, the chain of all order ideals of the chain w, the
+finite objects of which cutely reconstitute themselves as the ordinal
+w.  I have also recently been looking at the closed category w=>3' ,
+where 3' is the unique closed category whose underlying category is a
+chain of 3 objects and whose tensor is strict, idempotent, symmetric,
+but not cartesian, described along with its cartesian closed sibling 3
+in more detail in CTCS-89 (Manchester), LNCS 389, p.33.  Like
+w=>Lambda, w=>3' admits interpretation as a category of cubes, but
+spiced up with a closed monoidal structure that promises to be very
+useful, my apologies for not going into more detail here on this.)
+
+Here Delta shows up not so much as a subcategory of w=>Lambda but
+rather as tetrahedral corners of cubes; indeed an n-cube can be
+described as n!  n-tetrahedra pasted together, one per 1-dimensional
+path from the beginning BB..BB to the end EE..EE of the n-cube.
+
+A significant advantage of Aitchison's paper is the considerable
+intuition it provides for Street's subsequent paper on "parity
+complexes," which is relatively bare of either intuition or examples.
+I'd like to think that parity complexes formed a yet larger fragment of
+Pos"=>Set, but I haven't yet seen how to match it up to that
+description.  Instead it seems to be an ingenious, and quite possibly
+the definitive, combinatorial solution to the problem that Street had
+in 1976 introduced "computads" for, namely to give a graph-theoretic
+account of 2-category pasting given that the source or target of an
+2-cell might be a composite of 1-cells, the forgetting of which renders
+the underlying graph of a 2-category not very useful.  (A 1-category
+diagram in C is just a graph morphism into U(C), but try explaining
+diagrams of 2-cells in those terms.)
+
+Street defines the tensor product a@b of two parity complexes (two sets
+of cells) as their cartesian product.  The key to making this product a
+sensible cell complex is the definition of the faces of this cartesian
+product; Street's definition mimics the usual boundary property of
+tensor products of cell complexes, see e.g. equation (9.2) of MacLane's
+"Homology."
+
+This seems exactly right.  However I don't as yet have the slightest
+intuition as to what this very clean and nice definition of product
+translates into in terms of n-categories viewed as cell complexes, and
+Ross's paper doesn't offer much in the way of hints here.
+
+A hopefully less vague formulation of my question this is as follows.
+Give an elementary description of the product of n-categories.
+
+Here for example is one way one might try to do this for a@b.
+
+For each composite u.v of two m-cells in a and x:y of two n-cells in b
+(where . and : denote m- and n-dimensional composition in a and b
+respectively), form the following square, whose vertices are 0-cells,
+whose edges are (m+n-1)-cells, and whose ==>'s are (m+n)-cells.
+
+            x         y
+        --------> --------->
+       !         !          !
+       !   __    !    __    !
+      u!   //!  u!    //!  u!
+       !  //     !   //     !
+       V    x    V    y     V
+        --------> --------->
+       !         !          !
+       !   __    !    __    !
+      v!   //!  v!    //!  v!
+       !  //     !   //     !
+       V    x    V    y     V
+        --------> --------->
+
+Sum this over all such pairs (u.v,x:y), then make the "appropriate"
+identifications to arrive at a@b.  (For example identify the common u@x
+square for all pairs of pairs (u.v,x:y) and (u.v',x:y').)
+
+But how are the edges of say the square u@x related to u and x?  And
+what should be their composition as (m+n-1)-cells of a@b?  Is there
+some way of completing this definition, or one at the same elementary
+level, that is equivalent to Ross's definition?  The above-mentioned
+boundary equation (MacLane (9.2)) almost surely provides the key here,
+and perhaps I should be figuring this out for myself instead of
+bothering this list with questions arising out of only half-understood
+ideas.
+
+Such an elementary description of this tensor product would help the
+more visually oriented of us to see it.  In particular those like
+myself working on models of concurrent computation might benefit from
+such notions, provided they are made sufficiently accessible.  The
+analogy of stories being read concurrently should hint at this
+application.
+
+        Vaughan Pratt
+
+PS.  As a minor syntactic detail, I just noticed that the (purely
+arbitrary) convention I'm using for direction of n-cells for n>1 in
+these products is the opposite of the one Iain Aitchison uses.  I
+should have checked before jumping to the conclusion that the
+permutation ab->ba was the natural order of things, rather than
+ba->ab.  I haven't yet worked out which way round Ross does it in
+"Parity Complexes" because it is hard to keep reliable track of parity
+during the 15 pages of concepts leading up to his definition of
+product, and the paper doesn't contain an example of a product.
+
+From: Nico Verwer <verwer@ruuinf.cs.ruu.nl>
+Subject: (simple?) question about 2-category-like structure
+Date: Tue, 10 Apr 90 11:09:37 GMT
+
+In a standard 2-category, every homset C(A,B) is a category. In C we
+have structures like:
+
+           f                            A, B in C
+     --------------->                   f, g : A --> B
+           ||
+   A       || s       B                 s : f ==> g
+           \/
+     --------------->
+           g
+
+What I need is a structure which resembles a 2-category, but in which
+the _union_ of all homsets is a category. In such a category we have
+structures like:
+
+           f                            A, B, A', B' in C
+  A  ---------------> B                 f : A --> B
+           ||                           g : A' --> B'
+           || s                         s : f ==> g
+           \/
+  A' ---------------> B'
+           g
+
+and we have horizontal and vertical composition which satisfy the
+interchange law (s . s') o (t . t') = (s o t) . (s' o t'), 2-functors
+etc.
+
+I would like to know if such a structure has been explored, if it has a
+name, and references to papers describing it.
+
+--
+Nico Verwer                                       |  verwer@cs.ruu.nl
+Dept. of Computer Science, University of Utrecht  |  +31 30 533921
+p.o. box 80.089
+3508 TB Utrecht
+The Netherlands
+
+Date:         Wed, 11 Apr 90 08:00:58 WET
+From:         ehresmann <EHRES@FRMAP711>
+Subject:      Re: Reply to Question of Vaughn Pratt
+
+For V. PRATT: Your problem has some relations with the tensor products on the c
+ategory of n-uple categories we defined in old papers (Cahiers de Top. et GD 19
+(3-4) 1978 and 20-1 1979). I am sending reprints by air mail. Sincerely Andree
+C. Ehresmann
+
+Subject: Re: Cahiers de topologie et geom. diff. cat.
+Date:
+                                                    Amiens 23/3/1990
+
+Dear Rosebrugh:
+
+Thank you for your letter....
+
+For some time, I have thought of some electronic version of the ``Cahiers'',
+and it would be good if Categoricians gave their advice on it. The idea is the
+following one (but it needs some more elaboration both on the material and
+conceptual side): articles _could_ be transmitted via e-mail, then sent to a
+referee by e-mail (it would be quicker than the present process); naturally
+authors lacking e-mail could send either paper manuscripts or disks. Then:
+either the paper is accepted, or it is rejected, or (and this should be the
+more usual case) it is asked that the author divides the paper in two parts:
+one with the main results, ideas and methods, to be published in the usual form
+in the ``Cahiers''; another, longer with more technical parts, which would be
+sent to the subscibers by e-mail as soon as the paper is accepted. Moreover,
+after acceptance, the title and abstract of the paper could be included in a
+Bulletin Board so that any interested person could obtain a copy. Anyway,
+preprints already circulate, and a real `papered' article keeps its value
+longer than electronic medias, so that it should not be too bad for the
+``Cahiers'', the subscibers of which are essentially University libraries for
+which they'll retain their documentary value.
+
+What do you (and others) think of it? The problem would be the `standard'
+software.
+                        Sincerely, A.C. Ehresmann
+                        <EHRES@FRMAP711.BITNET>
+
+(The above was received by ordinary mail and transcribed by B. Rosebrugh.)
+
+Date:   Tue, 10 Apr 90 16:54:33 EDT
+From:   street@mqcomp.mqcs.mq.oz.au (Ross Street)
+Subject: More on tensor products of n-categories
+
+
+What is the depressing thought Vaughan?
+
+Thank you for the nice comments about the "oriented simplexes" paper. You have
+clearly read it in depth. When you were in Sydney a couple of years ago, you
+gave a talk on concurrent programming (in a room we attended many times as
+undergraduates together). After it I tried to explain a little about parity comp
+lexes. I had (and still do have) the feeling that they provide a convenient
+notion of rewrite system in the parallel programming situation. The terms
+to be rewritten are not a priori ordered, the possible orders only come out
+when the rewrite is running. When I mentioned the connection with rewrites
+you suspected I was only looking at Turing machines, or the equivalent.
+
+So I am extremely happy that you see some connection now with some higher
+tensor product.
+
+I have sat on the parity complexes paper on the recommendation of Sammy
+Eilenberg. There is room for improvement, some of which I, and Mike Johnson
+, have done. However, there is no doubt that the basic structure is correct,
+the only question involves the axioms.
+
+The basic structure is a graded set C with, for each element x of dimension n,
+two finite subsets x+ and x- of elements of dimension n-1. The axioms I give
+in the Report are strong enough to ensure sufficient loop-freeness to allow
+the basic simple construction of an omega category much as in "oriented
+simplexes" to work. Also the axioms are closed under Product (as defined there).
+This gives the example of cubes for free, and the example needed for higher
+descent obtained as the product of globs with simplexes.
+
+I drew a picture of the product G?2?xGreekD?2? of the free 2-cell and the triang
+le on 20 Jan 1988. I thought I sent you one. Anyone who wants it can ask; I don'
+t think I'll tex it into this message.
+
+The point is that the basic structure is simple, as described above, and the
+product is simple too; if X, A are parity complexes, the product is XxA graded
+by dim(x,a) = dimx + dima, and with (x,a) = xsuperplus cross {a} union {x} cross
+asuperplusorminus(depending on dimx).
+
+There is no need to read 15 pages to get to this!!!
+
+Then you can draw diagrams and examples of your own choosing: ab to ba, or vice
+versa. For some reason, Iain and I built up our cubes from the basic interval
+(+) arrow pointing right (-). I believe this differs from the direction in
+Iain's "oriented cubes" Report.
+
+The tensor product you seem to want is also related to Gray's tensor product of
+2-categories. You see, you can approach that tensor product by the desire that
+the arrow category tensor itself should be a square with a 2-cell in it. The
+trouble with restricting to 2-categories is that to make (2-category) tensor
+(2-category) come out a 2-category, and not a 4-category, we must kill off
+higher order cells. So enter word problems in braid groups etc. Life is
+much simpler if we just allow our dimensions to escalate.
+
+Back to the question of my parity complexes axioms. They are NOT definitive.
+(The structure is, as I said before.) I designed them for the two purposes
+mentioned above: to get the free 2-category by the "obvious" simple requirement
+of well-formedness; and, to get closure under product.
+
+I conceitedly hoped that those two goals might force the definitive concept.
+John Power burst that bubble by showing an example of everyone's idea of a
+pasting diagram which did not satisfy my (fourth, I believe) axiom.
+
+There is every reason to believe however that Mike Johnson's "Pasting schemes"
+are the definitive answer. There seems to be some new word on that seen: a
+(oops misspelt "scene" on last line) simplification of Johnson's axioms by
+the Moscow School (announced at the Cambridge Meeting recently).
+
+But don't worry about all that. Products of globs satisfy everybody.
+
+Best regards,
+Ross.
+
+Subject: Re: (simple?) question about 2-category-like structure
+Date: 11 Apr 90 13:53:02 PDT (Wed)
+From: pratt@cs.stanford.edu
+
+        What I need is a structure which resembles a 2-category, but in which
+        the _union_ of all homsets is a category.
+
+The apparent localization of 1-categories to constant (single) homsets
+comes from looking *only* at the vertical compositions, which have a
+stationary or static character with respect to endpoints.  Use the
+horizontal compositions as well as the vertical when you need to move
+the endpoints of homsets around.
+
+Lax comma categories (if I recall correctly these are in John Gray's
+1974 or so LNM book on 2-categories) give a further generalization of
+this when you need to restrict or otherwise circumscribe the domain of
+variation of the endpoints in order to make your category.  But this is
+just icing on top of the essential machinery provided by 2-categories.
+        Vaughan Pratt
+
+Date:
+
+It is surely evident to everyone that e-mail is not yet a service which is
+capable of reliably transmitting any full character set. This certainly creates
+difficulties in scientific communication by this medium, difficulties made more
+acute for category theorists by the visual nature of our work. In order to give
+subscribers information about the channel from this node to you, this
+transmission includes a character code reference. You will observe some
+anomalies - at minimum, parentheses are where square brackets should be. That
+is the only problem I am aware of which originates locally, and there is hope
+it can be fixed. However, to ease the receipt difficulties of others, the
+avoidance of vertical bar(|), hat (^) and tilde (~), though this is clearly
+difficult, would be helpful.
+
+Character code reference:
+Upper case letters: ABCDEFGHIJKLMNOPQRSTUVWXYZ
+Lower case letters: abcdefghijklmnopqrstuvwxyz
+Digits: 0123456789
+Square, curly, angle braces, parentheses: [] {} <> ()
+Backslash, slash, vertical bar: \ / |
+Punctuation: . ? ! , : ;
+Underscore, hyphen, equals sign: _ - =
+Quotes--right left double: ' ` "
+"at", "number" "dollar", "percent", "and": @ # $ % &
+"hat", "star", "plus", "tilde": ^ * + ~
+
+Date: Sat, 21-Apr-90 19:56:56 PDT
+X-Possible-Reply-Path: sun!portal!cup.portal.com!James_Jim_Otto
+
+Is an errata for M Barr,  C Wells,  '85, Toposes,  Triples, and Theories
+available?
+
+Hopefully :)E Jim Otto
+james_jim_otto@cup.portal.com
+

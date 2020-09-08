@@ -1,0 +1,665 @@
+Date: Wed, 22 Dec 1999 11:49:50 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: Real coalgebra
+
+I've been looking at the Proceedings of the Second Workshop on
+Coalgebraic Methods in Computer Science (CMCS'99), Electronic Notes in
+Theoretical Computer Science, Volume 19, to be found at
+
+  www.elsevier.nl:80/cas/tree/store/tcs/free/noncas/pc/menu.htm
+
+There's a nice paper by Dusko Pavlovic and Vaughan Pratt. It's
+entitled On Coalgebra of Real Numbers and it has turned me on. Their
+abstract begins:
+
+  We define the continuum up to order isomorphism (and hence
+  homeomorphism) as the final coalgebra of the functor  X x omega,
+  ordinal product with omega. This makes an attractive analogy with
+  the definition of the ordinal omega itself as the initial algebra of
+  the functor  1;X, prepend unity, with both definitions made in the
+  category of posets.
+
+I thought of using another functor. And damned if it isn't just what
+I should have had for my CTCS talk last September at Edinburgh.
+
+In the category of posets with top and bottom consider the binary
+functor, X v Y, obtained by starting with the disjoint union  X;Y,
+with everything in  X  ordered below  Y,  and then identifying the 
+top of  X  with the bottom of  Y.  The functor  X v X  preserves the 
+terminator (the one-element poset) hence the terminator is its final
+coalgebra. So restrict to the category of posets with _distinct_ top
+and bottom. The functor  X v X  again has a final coalgebra: this time
+it's the closed interval, I.  (For Dusko and Vaughan's functor it's 
+the half-open interval. For yet another functor, one that ought to
+have the open interval as its final coalgebra, but doesn't, see PS
+below.)
+
+If  X v Y  is described as the subobject of the product  X x Y
+consisting of those pairs  <x,y>  such that either  x  is top or  y 
+is bottom, then a coalgebra structure for  X v X  can be described as 
+a pair of endo-functions  d,u  such that for each  x  either  d(x)
+is top or  u(x)  is bottom. On the interval  [a,b]  the 
+final-coalgebra structure is understood to be given by 
+d(x) = min (b, 2x - a)  and  u(x) = max (a, 2x - b).
+
+In fact, we didn't need to start in the category of posets. It would
+have sufficed to work in the category of sets with distinct top and
+bottom (see PPS below for a proof). The final coalgebra is still the
+closed interval and, yes, the ordering is implicit: it is the most 
+inclusive relation preserved by  d  and  u  that avoids placing top 
+below bottom. (It can also be obtained by constructing either of the 
+two lattice operations on  I  as the unique coalgebra map  I x I --> I
+for an appropriately chosen coalgebra structure on  I x I.  A similar 
+construction works for the Pavlovic-Pratt coalgebra.)
+
+Indeed, all of the structure of the closed interval is definable from
+this coalgebra definition. Go back to the category of posets with 
+distinct top and bottom. It is routine to verify that  X v X  commutes
+with the opposite-poset functor hence -- using the fact that that 
+functor is an equivalence -- its final coalgebra will be invariant
+under that functor. That is, there is an isomorphism from  I  to its
+opposite.
+
+It takes more work, but not an infinite amount, to construct a 
+coalgebra structure on  I x I  so that the induced binary operation 
+I x I --> I  is the midpoint operation, the values of which will be
+denoted here as  x|y.  It is pretty much characterized by the 
+equations: idempotence, x|x = x; commutativity, x|y = y|x; and middle-
+two-interchange, (u|v)|(x|y) = (u|x)|(v|y); together with cancelation:
+a|x = a|y  =>  x = y.  If one chooses a zero, then one may prove that
+there's an ambient abelian group with unique division by  2, such that 
+the given midpoint algebra is a subset closed under the operation
+x|y = (x + y)/2.  (There must be an existent reference for this.) 
+
+Actually we want that ambient abelian group for  I;  it's none other
+than the reals. The order-duality makes its construction easier than 
+in the general case. So let's use  1  to denote the top of the final
+coalgebra, I, -1  for the bottom, and  0  for their midpoint, -1|1.
+Let  h:I -> I  denote the "halving" map that sends  x  to  0|x.  Note
+that  h  is an endomorphism with respect to  0, the ordering, the 
+duality, the midpoint structure (and not, of course, the top and 
+bottom). For a moment enter the category of endomorphisms, and reflect
+the object  <I, h>  into the full subcategory of automorphisms. (The 
+reflection may be explicitly constructed as the colimit of the diagram
+   h     h     h
+I --> I --> I -->...)  The result is a poset-with-0-and-duality-and-
+midpoint-operation we'll denote as  R.  The midpoint operation 
+respects the order and commutes with duality.  0  is self-dual. By
+making  h  an automorphism we know that for all  y  there is a unique
+x  such that  0|x = y.  On  R  define  a + b  by the equation
+0|(a + b) = a|b  and verify  0 + b = b = b + 0  and 
+(a + b) + (c + d) = (a + c) + (b + d).  Use the duality to define  -a
+and verify  (-a) + a = 0.  Use  h  to define  a/2  and verify 
+a/2 + a/2 = a.  All of this makes  R  an abelian group with unique
+division by  2.
+
+Viewing  R  as an ordered abelian group it is easy to verify that any
+endomorphism is determined by where it sends  1  (inherited from 
+I -> R).  That, of course, allows us to define the multiplication.
+
+Those who heard my CTCS talk last September at Edinburgh, "Path 
+Integrals, Bayesian Vision, and Is Gaussian Quadrature Really Good?",
+(there's an abstract at the same website as above) can appreciate why 
+I'm particularly happy. I started by defining ordinary integration of
+continuous functions using -- without knowing it -- this coalgebra
+structure on  I.  Let  C  be the functor that assigns to a space  X
+the set, C(X), of continuous real-valued functions on  X.  The 
+"mean-value" function  M:C(I) -> R  can be characterized -- indeed,
+evaluated -- from its order-preservation together with what it does to
+constant functions and
+                                                MxM
+         C(I v I) -->  C(I + I) --> C(I) x C(I) ---> R x R
+  
+        C(F) |                                         | m
+             v                                         v         
+                                 M
+          C(I)  ------------------------------------>  R
+
+where  F:I -> I v I  is the coalgebra structure and  m  is the
+midpoint operation. If  C(F)  is inverted then this diagram can be 
+read as a fixed-point definition of  M.  (It's the unique fixed-point 
+of an operator acting on the set of all those order-preserving maps 
+from  C(I)  to  R  that do the right thing on constant functions.)
+
+
+PS
+Just for comparison, consider the category of posets and the functor
+that sends  X  to  X;1;X.  The open interval is an invariant object 
+for this functor but it is not the final coalgebra. For that we need
+-- as we called it in Cats and Alligators -- Wilson space. Actually,
+not the space but the linearly ordered set, most easily defined as the
+lexicographically ordered subset, W, of sequences with values in  
+{-1, 0, 1}  consisting of all those sequences such that for all  n 
+a(n) = 0  =>  a(n+1) = 0  (take a finite word on  {-1,1}  and pad it
+out to an infinite sequence by tacking on  0s).
+
+PPS
+Given a coalgebra structure described by endo-functions  d  and  u  on
+X, let  End(X)  be the monoid of endo-functions on  X.  We will need 
+to compose in the diagrammatic order: "ud" means "first  u  then  d".
+Let  {0,1}*  be the free monoid with generators named  0  and  1  and
+Let  M_X:{0,1}* --> End(X)  be the monoid homomorphism such that  
+M_X(0) = d  and  M_X(1) = u.  Given  x  in  X  let  L  be the subset of 
+{0,1}*  consisting of those words  w  such that  M_X(w)  sends  x  to
+top in  X.  The elements of  {0,1}*  may, of course, be  viewed as
+finite words on  0  and  1.  By catenating  "0."  on the left of any
+such word we obtain a description -- in binary -- of a dyadic rational
+in the half-open unit interval  [0,1).  Define  f:X -> I  by sending
+each  x  to the supremum in  [0,1]  of the dyadic rationals, r(L),
+named by the words in its corresponding  L.  The  L  corresponding to
+d(x)  can thus be obtained by taking each word in  L  that starts with
+0  and deleting that  0.  The resulting  r(L)  can be described by
+first throwing away each dyadic rational bounded below by  1/2  and
+then doubling each dyadic rational that remains, that is,doubling each
+dyadic rational bounded above by both  f(x)  and  1/2.  The resulting 
+supremum is thus  min (1, 2f(x)).  That's what  f(d(x))  is. And it's 
+also what d(f(x)) is. Same sort of argument for  u.
+
+A little too easy. The recipe above does work for  f  but the proof 
+that it works requires work. Note that the above argument requires --
+among other things -- that  r(L)  be a downdeal. (And note that it 
+never invoked the facts that  d  and  u  preserve top and bottom nor 
+the fact that  d(x)  is top or  u(x)  is bottom for all  x.)  I think 
+a  return to Dedekind works best. Besides defining the "lower" set, L, 
+define the "upper" set  U  as the subset of  {0,1}*  consisting of 
+those words  w  such that  M_X(w)  sends  x  to bottom. We have the
+facts:
+              w:L  =>  w0:L  and  w1:L            (using 
+              w:U  =>  w0:U  and  w1:U              ":"
+         w:{0,1}*  =>  w0:L  or   w1:U        for membership)
+
+We may infer, just from  w:L => w0:L  and  w:U => w0:U, that if a
+dyadic rational has a name in either  L  or  U  then it does not have
+a name in the other. Thus we obtain a disjoint pair of sets of dyadic
+rationals  r(L)  and  r(U).  For any pair of dyadic rationals 
+x,y:[0,1)  where  x is _not_ in  r(L)  and  x < y,  it is the case 
+that  y  is in  r(U):  it suffices to check, for any word  w, that if
+w0  can be prolonged to a name of  x, then  w0  is not in  L  forcing
+w1  to be in  U  and, hence, any prolongation of  w1  to be in  U.  It 
+follows that  r(U)  is an updeal and if there's a dyadic rational in
+[0,1)  that is in neither  r(U)  nor  r(L)  then there's only one such
+dyadic rational, to wit, the greatest lower bound of  r(U).  It
+follows that  r(L)  is a downdeal. The pair  r(L)  and  r(U)  thus
+forms a Dedekind cut and we can use it to name the value of  f(x). 
+The compatibility with  d  and  u  is a straightforward computation.
+
+For uniqueness, first verify that for every pair  a < b  in  I  
+there's a word  w:{0,1}*  such that  M_I(w)  sends  a  to bottom and
+b  to top. If  f,f':X -> I  were both coalgebra maps, and  x:X  were
+such that  f(x) < f'(x)  let  w  be as described. Note that  M_I(w0) =
+M_I(w) = M_I(w1).  But either M_X(w0)  sends  x  to top or  M_X(w1)  
+sends  x  to bottom. The first case contradicts that  M_I(w0)  sends
+f(x)  to bottom. The second case contradicts that  M_I(w1)  sends
+f'(x)  to top.
+
+
+Subject: categories: Re: Real coalgebra 
+Date: Fri, 24 Dec 1999 04:13:57 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+Apropos of Peter's kind remarks, the journal version of our paper
+should be in TCS soon, entitled The continuum as a final coalgebra.
+Meanwhile it's on the web as
+
+        http://boole.stanford.edu/pub/continuum.ps.gz
+
+Abstract:
+We define the continuum up to order isomorphism, and hence up to
+homeomorphism via the order topology, in terms of the final coalgebra
+of either the functor NxX, product with the set of natural numbers, or
+the functor 1 + NxX.  This makes an attractive analogy with the
+definition of N itself as the initial algebra of the functor 1 + X,
+disjoint union with a singleton.  We similarly specify Baire space and
+Cantor space in terms of these final coalgebras.  We identify two
+variants of this approach, a coinductive definition based on final
+coalgebraic structure in the category of sets, and a direct definition
+as a final coalgebra in the category of posets.  We conclude with some
+paradoxical discrepancies between continuity and constructiveness in
+this setting.
+
+
+PF>So restrict to the category of posets with _distinct_ top and bottom.
+
+...which has no final object, making the following all the nicer:
+
+PF>The functor  X v X  again has a final coalgebra:
+
+The bipointed-set version of this seems like *the* right way to generate
+the topology of the continuum.  Verry nice.
+
+PF>PS
+PF>Just for comparison, consider the category of posets and the functor
+PF>that sends  X  to  X;1;X.  The open interval is an invariant object 
+PF>for this functor but it is not the final coalgebra. For that we need
+PF>-- as we called it in Cats and Alligators -- Wilson space. Actually,
+PF>not the space but the linearly ordered set, most easily defined as the
+PF>lexicographically ordered subset, W, of sequences with values in  
+PF>{-1, 0, 1}  consisting of all those sequences such that for all  n 
+PF>a(n) = 0  =>  a(n+1) = 0  (take a finite word on  {-1,1}  and pad it
+PF>out to an infinite sequence by tacking on  0s).
+
+In other words the continuum plus *two* additional copies of each rational
+(as opposed to Cantor space's one additional copy).
+
+PF>It takes more work, but not an infinite amount, to construct a 
+PF>coalgebra structure on  I x I  so that the induced binary operation 
+PF>I x I --> I  is the midpoint operation, the values of which will be
+PF>denoted here as  x|y.  It is pretty much characterized by the 
+PF>equations: idempotence, x|x = x; commutativity, x|y = y|x; and middle-
+PF>two-interchange, (u|v)|(x|y) = (u|x)|(v|y); together with cancelation:
+PF>a|x = a|y  =>  x = y.  If one chooses a zero, then one may prove that
+PF>there's an ambient abelian group with unique division by  2, such that 
+PF>the given midpoint algebra is a subset closed under the operation
+PF>x|y = (x + y)/2.  (There must be an existent reference for this.) 
+
+Here I should be understood as [-1,1].  Peter's implicit definition
+of this coalgebra structure on I x I has the following equivalent
+five-equation explicit definition (or seven if you count each of (3)
+and (4) as two equations).  My apologies to anyone reading this with a
+variable-width font.
+
+                  x + y        y + x
+(1)               -----    =   -----
+                    2            2
+
+                  0 + 0
+(2)               -----    =   0
+                    2
+                                   
+                xo1            x + t
+                --- + 0        -----o1    where the 2 o's are + and t is -1
+(3)              2         =     2           or the 2 o's are - and t is 1
+                --------       -------    (o = operator, t = terminator)
+                    2             2
+
+               xo1   yo1       x + y
+               --- + ---       -----o1       where the 3 o's are either
+(4)             2     2    =     2             all - or all +
+                -------        -------
+                   2              2
+
+                x-1   y+1      x + y
+                --- + ---      ----- + 0
+(5)              2     2   =     2
+                 -------       ---------
+                    2              2
+
+All these equations clearly hold on I; the question is, what is their
+content?  Well, spacing around + and - is significant: without a space the form
+x-1        x+1
+--- (resp. --- )  denotes a non-middle (nonzero) element of I which when
+ 2          2
+represented as a string over {-1,0,1} has head -1 (resp. 1) and tail x,
+                            x + y
+while with a space the form ----- denotes a pair (x,y) of I x I.
+                              2
+Finally, if -1, 0, or 1 (which includes t) are preceded by a space then
+they denote the respective infinite constant sequences -1,-1,-1,... or
+0,0,0,.. or 1,1,1... (each of which has that constant as its value).
+(Once a sequence hits a zero it stays zero.)
+
+The left hand side always has exactly one spaced +, and at the outermost
+level, since that's what we're trying to define.  On the right hand
+side, each occurrence of a spaced + denotes a corecursive call (so two
+corecursive calls in the last equation --- it might seem like a lot of
+bother to do a corecursive call merely to add 0, but the real point of
+the second call is of course to divide the result of the first call by 2,
+which we can do by taking the mean with 0.)
+
+Equation (1) merely ensures that any pair (x,y) will match the left
+hand side of one of (2)-(5) one way round or the other.  Equations
+(2)-(4) provide instant gratification inasmuch as they allow immediate
+production of the first "trit" (ternary digit) of the mean of x and y
+given only the first trit of each of them, thereby explicitly defining
+the desired coalgebra structure on I x I.  But if you hit equation (5)
+you may be in for a long or even infinite wait (consider taking the mean
+of -1,1,-1,1,...  (= -2/3) with 1,-1,1,-1,... (= 2/3), which to us is
+obviously zero but not so obviously to equation (5)).  So equation (5)
+does not give the coalgebra structure at this part of I x I explicitly,
+one must regrettably deduce it by corecursion.
+
+Vaughan
+
+
+Subject: categories: Re: Real coalgebra -- replacing equations by geometry
+Date: Fri, 24 Dec 1999 13:59:52 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+The continuum is intrinsically geometrical, so it is a shame to specify
+Peter's midpoint coalgebra on IxI with a mess of algebraic-looking
+equations as per my previous message when it has a relatively short and
+transparent geometric specification.  (I must have got this idea from
+the paper on higher dimensional automata that I'm just finishing up.)
+
+Incidentally there were two ambiguities in my equations, arising from
+respectively equations (1) and (5).  I was going to offer fixes for
+these, but one of the degeneracies that made these ambiguities possible
+in the first place (that with (5)) does not even arise in the geometric
+presentation, while the other, arising with (1), is just as readily
+dealt with geometrically as algebraically.
+
+In the following I'll refer to this coalgebra as Fm for Freyd's midpoint
+(unrelated to Scott's bottom).  (For listeners who just tuned in to Fm,
+its role is to promote the final coalgebra I of Peter's fusion functor
+X v X from a linear order, and hence a topological space via the order
+topology, to a metric space understood as the real interval [-1,1].
+It does this by furnishing IxI with a coalgebra, which determines a
+unique coalgebra homomorphism from IxI to I, I being the final coalgebra.
+This homomorphism is then taken to be (x+y)/2, while the endpoints of
+I are taken to be -1 and 1, thereby uniquely determining a continuous
+metric on I qua topological space.)
+
+For both the equational and geometric specifications, here's what the
+domain and codomain of Fm look like.
+
+
+                                                    (1,1)
+                IxI                                   ^
+                                                     / \
+                                                    /   \
+                (1,1)                        (1,-1)<  1  >(-1,1)
+                 /\                                 \   /
+                /  \                Fm               \ /
+         (1,-1)<    >(-1,1)   ------------->          0      IxI v IxI
+                \  /                                 / \
+                 \/                                 /   \
+              (-1,-1)                        (1,-1)< -1  >(-1,1)
+                                                    \   /
+                                                     \ /
+                                                      V
+                                                   (-1,-1)
+
+So Fm maps pairs of the form (x,-x) to 0 (where the two copies of IxI
+are fused) and all other pairs (x,y) to a pair (h,(x',y')) whose head h
+specifies which copy of IxI to land in, 1 for upper and -1 for lower, and
+(x',y') gives the landing point within that copy.  Here -1 <= x,y,x',y' <= 1, 
+-x is defined by changing all the signs on the sequence representing x
+and h is unproblematically determined by whether (x,y) is in the upper
+or lower half of IxI oriented as shown.  The tricky part is to specify x'
+and y' reasonably.
+
+(Although it is convenient to think of x and y as reals in [1,-1], at
+this stage they are merely infinite sequences over {-1,0,1} with the
+properties that once zero alway zero and infinite runs of -1 or 1 are
+only allowed in constant sequences.)
+
+The domain of Fm, namely I x I, can be blown up as
+
+
+			    (1,1)
+			     /\
+			    /  \
+			 (1,0) (0,1)
+			  / \  / \
+			 /   \/   \
+		  (1,-1)<   (0,0)  >(-1,1)
+			 \   /\   /
+			  \ /  \ /
+			(0,-1)  (0,1)
+			    \  /
+			     \/
+			  (-1,-1)
+
+
+In my previous mess-age, my five equations implicitly decomposed this
+domain into nine regions, namely the midpoint (0,0) (equation (2)), the
+four lines leading out of it (equation (3)), the upper and lower diamonds
+(equation (4)), and the left and right diamonds (equation (5)).
+
+For the geometric description of Fm, a simpler decomposition suffices,
+namely three regions: the upper and lower diamonds as one region, call
+it M for Middle, and the interior of each side diamond along with its
+outer sides, call them L and R.  (So M is closed and L + R = IxI - M.)
+
+
+			       (1,1)
+				/\
+			       /  \
+	       .            (1,0) (0,1)          .
+	      / .              \  /             . \
+	     /   .              \/             .   \
+      (1,-1)<  L  .         M  (0,0)          .  R  >(-1,1)
+	     \   .              /\             .   /
+	      \ .              /  \             . /
+	       .           (0,-1)  (0,1)         .
+			       \  /
+				\/
+			     (-1,-1)
+
+
+In addition we need one more region, S for Shrunk, as a subregion of
+IxI v IxI, shown below.  S is simply IxI v IxI shrunk in half (or pushed
+twice as far away).
+
+                                /\
+                               /  \
+                              /    \
+                             /      \
+                             \  /\  /
+                              \/S \/
+                               \  /
+                                \/     IxI v IxI
+                                /\
+                               /  \
+                              /\ S/\
+                             /  \/  \
+                             \      /
+                              \    /
+                               \  /
+                                \/
+
+
+We now describe Fm as follows.  Its restriction to M is the evident
+similarity between M and IxI v IxI.  And its restriction to each of L
+and R lands in S, and in each case is the whole of Fm shrunk in half
+(the corecursion is essential, not even geometry can eliminate it).
+
+Note that these maps are defined on sequences, i.e. we are not assuming
+the metric we set out to construct.
+
+Fm as defined is not commutative, but can be made so by composing its
+restriction to L with commutativity of (x+y)/2, viz. reflection of L about
+its central vertical axis, thereby symmetrizing Fm.  (This commutativity
+ambiguity also arose via equation (1) of my 5-equation approach.)
+This symmetrical Fm would appear to be the canonical choice for Freyd's
+midpoint coalgebra.  (The apparent competitor obtained by reflecting
+R instead of L is slightly more discontinuous, if that's a reasonable
+tie breaker.)
+
+This coalgebra is of course not final, nor is it even injective, though
+it is surjective, witness subdomain M.  It is also not continuous:
+points near (1,0) in L go to points near (1,(0,0)) in IxI v IxI, while
+points near (1,0) in M go to points near (1,(1,-1)) in IxI x IxI.
+On the other hand points near (1/2,0) in both M and L.M (the M of L)
+go to points near (1/2,0) in IxI v IxI, which has no counterpart in the
+above-mentioned competitor.
+
+Question.  Is there a corecursively defined Freyd midpoint coalgebra
+that is continuous?
+
+(x,y) |--> ((x+y)/2,(x+y)/2) (projection onto the center axis) is a
+continuous midpoint coalgebra, but that assumes the metric before we've
+defined it.  What corecursion would define this?
+
+Vaughan
+
+
+Date: Sun, 26 Dec 1999 13:45:08 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: Real midpoints
+
+It could well be that Vaughan and I are defining the midpoint structure
+in the same way. Here's how I described it (using the conventions from
+my last posting).
+
+Let  F:I --> I v I  be a final coalgebra. We will denote the top of  I
+as  T  and the bottom as  B.  Construct the "halving" map,  h:I --> I,
+(on  [-1,1]  it will send  x  to  x/2)  as:  
+
+                   T v F v B             F'v F'        F'
+    I --> 1 v I v 1 ------> I v I v I v I ---> I v I  --> I
+
+where  F' denotes the inverse of  F, and, by a little overloading, T
+and  B  denote the maps constantly equal to  T  and  B.  The leftmost
+map records the fact that the terminator is a unit for the 
+ordered-wedge functor.
+
+Let  g  be the endo-function on  I x I  defined recursively by:
+
+    g<x,y> = if  dx = T  and  dy = T  then      <x,y>    else
+             if  dx = T  and  uy = B  then  h(g(dx,uy>)  else
+             if  ux = B  and  dy = T  then  h(g<ux,dy>)  else
+             if  ux = B  and  uy = B  then      <x,y>.
+
+The values of  g  lie in the first and third quadrants, that is, those
+points such that either  dx = dy = T  or  ux = uy = B.  The two maps
+
+           g       d x d                   g       u x u
+    I x I --> I x I --> I x I  and  I x I --> I x I --> I x I  
+
+give a coalgebra structure on  I x I.  The midpoint operation may be
+defined as the induced map to the final coalgebra.
+
+
+Subject: categories: Re: Real midpoints 
+Date: Wed, 29 Dec 1999 00:03:53 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+
+
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+>It could well be that Vaughan and I are defining the midpoint structure
+>in the same way.
+
+Yes, after changing g(dx,uy) to g(ux,dy) in line 2 of Peter's definition
+of g and similarly for line 3 (otherwise g(dx,uy) simplifies to the
+nonsensical g(T,B)) Peter and I have essentially the same coalgebra on
+IxI, and exactly the same after some inessential permutations within
+that definition.
+
+While I rather like Peter's nonrecursive definition
+
+                   T v F v B             F'v F'        F'
+    I --> 1 v I v 1 ------> I v I v I v I ---> I v I  --> I
+
+of the halving map  h:I --> I sending  x  to  x/2, it should be remarked
+that the effect of this map as an operation on sequences is to preserve
+the empty sequence, and for nonempty sequences simply to prepend a copy
+of the leading digit, e.g. -++-+000... becomes --++-+000....  (This takes
+the 3-symbol alphabet for Peter's number system to be {-,0,+}.)  In other
+words, right shift by one with sign extension, a well-known realization
+of halving.
+
+Along the same lines, Peter's d and u maps shift the sequence left.
+If d (resp. u) shifts a + (resp. -) off the left end, the result is
+replaced by the constantly + (resp. -) sequence, i.e. "clamp overflow
+to +1 (resp. -1)".
+
+Although the interval [-1,1] goes naturally with Peter's final coalgebra,
+it occurrs to me that a fragment of Conway's surreal numbers is perfectly
+matched to it, namely the interval [-\omega,\omega] consisting of the real
+line plus two endpoints.  With respect to the Conway story this can be
+described as what Conway produces by day omega, modulo infinitesimals
+(identify those surreals that are only infinitesimally far apart).
+At no day does exactly the real line appear in Conway's scenario.
+Prior to day omega only the finite binary rationals have appeared.
+Day omega sees the sudden emergence of all the reals along with 1/omega
+added to and subtracted from each rational, as well as -omega and omega.
+Except for -omega and omega, the quotienting eliminates the 1/omega
+perturbations, yielding exactly the real line plus endpoints.
+
+Exactly the same quotienting happens with Peter's final coalgebra, whose
+elements are representable as finite and infinite strings over {-,+}
+(the 0 is eliminated by allowing strings to be finite; if you want all
+strings to be infinite, put 0 back in the alphabet and use it to pad the
+infinite strings to infinity).  For example ---+++++... and --+----...
+are identified by both Conway and Freyd.  Using Peter's choice of [-1,1]
+as the represented interval, these are both -1/4.  Using Conway's number
+system, these are respectively -2 - 1/omega and -2 + 1/omega, which
+with the identification I described above become -2.  
+
+In Conway's setup the finite constant sequences are the integers, with
+the empty sequence being 0 and counting being done in unary.  At the
+first sign reversal the bits jump mysteriously from unary to binary, not
+by fiat but as a surprising consequence of a definition of addition that
+on the face of is so natural that you would not dream it could cause a
+radix jump like that.
+
+So both [-1,1] and [-omega,omega] each admit a natural final coalgebra
+structure for Peter's functor, namely Peter's and Conway's respectively,
+and I would be surprised to see a different final coalgebra in either
+case that was as natural.  In contrast, Dusko and I exhibited a number
+of more or less equally convincing final coalgebra structures on [0,1)
+and [0,omega) for the functor product-with-omega, no one of which I
+would be willing to call *the* right one.
+
+Vaughan
+
+
+Date: Fri, 31 Dec 1999 17:54:56 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: Pre-calculus
+
+Starting with the closed interval, regarded as an ordered midpoint
+algebra with duality, what's the best way to get the reals? My
+previous answer was first to reflect the midpoint algebra in the
+subcategory of abelian groups and then define the multiplication via
+monotonic endomorphisms. I think there's a more natural way.
+
+First, a re-cap of the definitions. A midpoint operation is a binary 
+operation, with values here denoted as  x|y,  satisfying:
+idempotence, x|x = x; commutativity, x|y = y|x; 
+middle-two-interchange, (u|v)|(x|y) = (u|x)|(v|y); and cancelation,
+x|y = x|z  =>  y = z.  The closed interval is a totally ordered
+midpoint algebra with anti-involution, with values here denoted as  
+ -x.  It follows that there's a unique element of the form  (-x)|x.  
+We'll call it the center.
+
+The middle-two-interchange law is just what is needed to see that the
+monoid of midpoint-endomorphisms is itself a midpoint algebra (where
+the midpoint of  f  and  g  is defined pointwise: (f|g)(x) =
+(fx)|(gx)).   If  f  and  g  are both order-preserving or both order-
+reversing then it's easy to see that so is  f|g.  But we'll want all 
+the _monotonic_ endomorphisms (the OED defines "monotonic" as "varying
+in such a way that it either never increases or never decreases") and
+there's no apparent reason to expect that monotonicity is preserved by
+midpointing. The wonderful fact, though, is:
+
+    Midpoint-preserving functions between intervals are monotonic.
+
+(The axiom of choice yields  2^{2^N}  counterexamples if the interval
+is replaced by the reals.)
+
+It follows that a midpoint-preserving function is determined by
+its values on any two points. The monoid of midpoint- and duality-
+preserving endo-functions on a closed interval is naturally 
+isomorphic (via evaluation at Top) to the closed interval. For the
+entire reals use the stalk at the center of the germs of such 
+functions.
+
+
+PS
+For a proof suppose that  f:[-1,1] --> [-K,K]  preserves midpoints and
+duality. For any  x:[-1,1]  and dyadic rational  q  such that  
+qx:[-1,1], we may uniquely identify  qx  using just midpoints and
+duality, hence  f(qx) = qf(x).
+
+Suppose that  f  is not monotonic.  We wish to reach a contradiction.
+Let  u < v  and  x < y  in  [-1,1]  be such that  fu < fv  and  
+fx > fy.  Define  a = (-u)|v  and  b = (-x)|y  to obtain  a,b > 0  
+and  fb < 0 < fa.  Let  q > 0  be a dyadic rational such that
+a/b - (fa)/(bK)  <  q  <  a/b  and define  c = (-qb)|a.  Let  r  be a 
+dyadic rational such that  (2K)/(fa)  <  r  <  1/c.  Then  rc  is in 
+[-1,1]  but  f(rc)  can not be in  [-K,K]  (because  fc > (fa)/2).
+
+The theorem I stated doesn't say anything about preserving duality. So
+let  g  be a midpoint-preserving function between intervals. Let  a  
+be the dual of the value of  g  at the center. Then the function  
+\x.a|(gx)  preserves the center and continues to preserve midpoints.
+Since  -x  may be uniquely identified by  (-x)|x = 0  the preservation
+of the center implies preservation of the duality and  \x.a|(gx)  is
+monotonic. Since  \y.a|y  not only preserves but reflects the order,
+we know that  g  is monotonic.
+
+

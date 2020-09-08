@@ -1,0 +1,138 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: "Kantor dust"
+Date: Tue, 10 Feb 2009 01:54:06 -0800
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <E1LXFH4-0002jJ-B3@mailserv.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1234361724 23682 80.91.229.12 (11 Feb 2009 14:15:24 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 11 Feb 2009 14:15:24 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed Feb 11 15:16:39 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LXFsX-00006K-NC
+	for gsmc-categories@m.gmane.org; Wed, 11 Feb 2009 15:15:53 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LXFH4-0002jJ-B3
+	for categories-list@mta.ca; Wed, 11 Feb 2009 09:37:10 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:60
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/60>
+
+
+
+Prof. Peter Johnstone wrote:
+> On Mon, 9 Feb 2009, Dusko Pavlovic wrote:
+>> QUESTION 2: is there a branch of constructivism that would reject as
+>> non-constructive the map N^N-->[0,1) obtained by interpreting the N^N
+>> as the coefficients of continued fractions?
+>>
+> I don't think there is any doubt that the map exists. The problem is that,
+> for most if not all schools of constructivism, it's wildly non-surjective.
+
+There is more than one notion of continued fraction.  I suspect you're
+thinking of one of the more commonly used ones, but in the light of
+Dusko and my CMCS'99 paper, which talks about a number of notions of
+continued fraction, I imagine Dusko had one in mind for which the map is
+classically a bijection, and surely should continue to be so for at
+least some schools of constructivism.  Let me give a (hopefully) careful
+proof of this here.
+
+As I observed in a previous post, the pathological definitions of
+"continued fraction" giving the behaviour you may be thinking of are
+those whose coinductive step is antimonotone, e.g. via a function from
+[0,oo) to (0,1] such as 1/(1+x).  These appear in the literature not
+from any desire to be pathological but merely because they tend to be
+the first ones that come to mind, and their non-surjectivity is simply
+not noticed by the naive programmer.
+
+In contrast, monotone functions from [0,oo) to [0,1) such as x/(1+x) or
+2*atan(x)/pi, with respective inverses x/(1-x) and tan(pi*x/2), do not
+create this pathology in the continued fractions based on them, and give
+rise to maps from N^N to [0,1) and [0,oo) that are not only surjective
+but bijective, as well as monotone increasing with respect to the
+lexicographic order on N^N.
+
+Let R: N^N --> [0,oo) be the strictly monotone increasing function (with
+respect to the lexicographic order on N^N) defined coinductively as
+
+   R(s) = s(0) + f(R(s o succ))
+
+where s: N --> N is a sequence in N^N (a function on N),
+f: [0,oo) --> [0,1) is a strictly monotone increasing function, for
+example f(x) = x/(1+x), and succ: N --> N is the successor operation of
+the NNO N.
+
+As a (surely constructive!) witness to the surjectivity, indeed
+bijectivity, of R,  define the inverse S: [0,oo) --> N^N  of R as
+follows.  (R converts sequences to Reals, which S turns back into
+Sequences.)
+
+   S(x)(0) = floor(x)
+   S(x)(n+1) = S(g(x mod 1))(n)
+
+where x mod 1 = x - floor(x) and g(x) = x/(1-x) : [0,1) --> [0,oo) is
+the inverse of f(x) = x/(1+x) : [0,oo) --> [0,1) used in the definition
+of R.
+
+As an aside for any visual thinkers reading this, the picture
+
+   [0,oo)  ~  [0,1)[1,2)[2,3)...
+
+may help.  This splits [0,oo) into N unit intervals each identifiable
+with [0,1), each of which is blown back up to [0,oo) (under this
+identification) by g(x) = x/(1-x).  The function S: [0,oo) --> N^N
+converts nonnegative reals x to sequences of natural numbers by taking
+the first element of the sequence to be floor(x), thereby selecting one
+of the unit intervals, leaving x mod 1 to be accounted for within that
+interval, of type [0,1), which is blown back up to type [0,oo) using g
+and then inductively converted to the rest of the sequence by S.  In
+this way we drill down into [0,oo) cranking out natural numbers as we
+drill progressively deeper.
+
+For the typing N^N --> [0,1) that Dusko asked about, the codomain of R
+is easily converted from [0,oo) to [0,1) by composing the monotone
+bijection  f : [0,oo) --> [0,1)  with the monotone bijection R : N^N -->
+[0,oo) to give a monotone bijection from N^N to [0,1).
+
+In the topos of sheaves on either R itself or the subcategory of Top you
+prefer, I am not a topos hacker and have no idea whether there are more
+than two functions from N^N to 2 = 1+1 when N^N is defined coinductively
+as a final coalgebra (as distinct from being defined simply by
+exponentiation, where surely there are more than two such functions).
+Toby Bartels claims it's obvious, in which case there should be a short
+construction of a nonconstant function from N^N (as a final coalgebra)
+to 2 (or to N, the codomain Toby spoke of) in the topos of sheaves on R.
+  Toby, what is it?
+
+Vaughan Pratt
+
+PS.  None of this contradicts the point you (PTJ) and Freyd have been
+making, since around 2002 apparently, concerning the constructive merits
+of apartness as an implementation of the glue used in the Freyd
+coalgebra, which I only very belatedly came to appreciate, namely within
+the past two days.  In view of this I retract my "The choice of poisons
+is therefore manual glue vs. double induction" of last Wednesday.  I am
+willing to believe that the Freyd coalgebra with manual glue implemented
+via apartness produces the "real reals" in these toposes of sheaves, but
+would like eventually to understand why of course.  That said, I would
+still like to know whether our final coalgebra, for FX = N x X where x
+is "lexicographic product" suitably defined for an NNO N in a topos, is
+or is not equally real in these toposes.  If it is then this would be a
+situation where apartness is not needed to produce the reals
+constructively, presumably contradicting Brouwer.
+
+
+

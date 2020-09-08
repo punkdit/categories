@@ -1,0 +1,148 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: internal versus external
+Date: Sat, 15 Mar 2008 17:31:54 +0100 (CET)
+Lines: 114
+Approved: news@gmane.org
+Message-ID: <E1JafFD-0004ZL-UD@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019867 12720 80.91.229.2 (29 Apr 2009 15:44:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:27 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Mar 15 19:57:54 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 15 Mar 2008 19:57:54 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JafFD-0004ZL-UD
+	for categories-list@mta.ca; Sat, 15 Mar 2008 19:52:52 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 79
+Status: O
+Content-Length: 6915
+Original-Lines: 113
+Xref: news.gmane.org gmane.science.mathematics.categories:4315
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4315>
+
+I try to untangle various threads in the recent discussion.
+
+(1) Yes, there is a difference between replacement as a schema and
+    the stronger form of replacement as formulated in Groth. universes.
+    (To my embarrasment I have blurred this distinction against better
+     knowledge!)
+
+(2) One has to carefully distinguish between the following two questions
+    (a) find as good as possible an axiomatization of "the" category of sets
+        which was the aim of ETCS and Cole, Mitchell and Osius;
+        in this situation it is natural to assume wellpointedness
+    (b) to ask what are good notions of model for intuitionistic set theories
+        where the assumption of wellpointedness is, of course,
+        much too restrictive.
+
+(a) and (b) are so different questions that I wouldn't go for comparing them.
+Reading Mike Shulman's original mail I had the impression he was going for (b)
+when asking whether certain arguments involving transfinite recursion could
+be done categorically. There the answer is in general not. Alas, I can't say
+anything about the most interesting question about small objects argument. But
+I know the answer in case of the classical example where replacement is needed,
+namely Borel determinacy. Don Martin gave a proof of Borel determinacy iterating
+the powerset functor \omega_1 times and later H.Friedman showed that axiom of
+replacement is indispensible for proving Borel determinacy. One also knows that
+in the realizability model of IZF (Friedman, McCarty et.al) Borel determinacy
+fails although it validates replacement (which is part of the axioms of IZF).
+
+Now I am coming to the real issue which triggered me to take part in the
+discussion, namely an apparent confusion between internal and external families
+of objects. I thought that on pp.77-79 of my lecture notes on fibrations
+(www.mathematik.tu-darmstadt.de/~streicher/FIBR/FibLec.pdf.gz) I gave a summary
+of the "current view" on these questions. But in the light of the recent
+discussion I think a few more words seem to be in place.
+
+Suppose EE is a topos. The most immediate notion of external family of objects
+is a function I -> Ob(EE) where I is a set. An internal family in EE is simply
+a map A -> X in EE. Obviously, these gadgets are quite different because in
+general sets aren't objects of EE and objects of EE aren't sets. However,
+one can turn an internal family a : A -> X into an external family of objects
+in EE indexed by EE(1,X), namely by associating with  x : 1 -> X the object
+x^*a, i.e. the (source of the) pullback of a along x.
+Now one may ask whether this is a 1-1-correspondence for general toposes EE.
+There is a simple example showing that going from internal to external one
+looses information: let GG be a (finite) nontrivial group and G the
+representable object of Psh(GG) then ALL morphisms to G (and there are plenty)
+represent the external empty family of objects of Psh(GG). This might lead one
+to think that internal families are just "intensional representations" of
+external families. But this view is mistaken since there are external families
+of objects of EE which don't arise by externalising internal families. This is
+obvious since if EE is a small topos (say the free topos with nno) then there
+are I-indexed families of EE where I exceeds the cardinality of any EE(1,X).
+But there is the much more refined example of Peter Johnstone (also described
+in my notes on the web) of a topos EE over Set and an NN-indexed family of
+objects (A_n) in EE which doesn't arise from an internal family in EE. The topos
+EE is the full subcat of actions of the group (ZZ,+) on those objects where
+there is a finite bound on the size of orbits and A_n is ZZ_n acted on by ZZ
+in the obvious way. The reason why this family cannot arise from an internal
+family a : A -> X in EE is that there is a finite bound on the size of all
+orbits in A and thus on all orbits in the A_x (x \in EE(1,X). But of course
+A_n has an orbit of length n and, accordingly, there is not a finite bound
+on the orbits of all the A_n.
+
+Of course, if EE is a wellpointed topos the situation is "better". If EE has
+also small sums then we clearly have a 1-1-correspondence between internal
+families indexed by X and and external families indexed by EE(1,X). But this
+isn'the case anymore if we drop the assumption of small sums. Let EE be the
+wellpointed small topos arising from a countable model of Z (Zermelo's set
+theory, i.e. ZF without replacement schema). Then for reasons of cardinality
+there are EE(1,N)-indexed external families which don't arise from an internal
+one.
+
+>From some of the mails I got the impression that it is claimed that restriction
+to "syntactically definable" (s.d.) families allows one to identify internal
+and external. This is definitely wrong for the non-wellpointed case due to the
+many different representations of the empty family. It might be the case that
+any "syntactically definable" external family indexed by EE(1,X) arises from
+some internal family a : A -> X though I don't see how to prove it. (Does any
+of the advocates of external families have a proof for that?)
+
+Finally, I would like to point out that there are two different meanings of
+the phrase "syntactically definable" family. The one used by Colin in his
+Philosophia article means "syntactically definable in the language of ETCS"
+and the one used by set theorists is "definable in the language of set theory".
+The latter hasn't any meaning in a model for ETCS since such a model doesn't
+allow one to interpret a formula in the language of set theory. But, of course,
+one can interpret set theoretic formulas in the models of bZ constructed from
+a model of ETCS.
+
+The reason why I doubt that models of ETCS and bZ are equivalent is that when
+going from a model of ECTS to a model of bZ is that one has to restrict to the
+well-founded part. At least that's what I recollect from MacLane and Moerdijk's
+exposition in their book. But I am ready to believe that adding wellfoundedness
+axioms to ETCS can remedy this situation.
+
+Of course, I might be all wrong with what I have said above. But then I would
+like to know what is the appropriate notion of "(external) family of objects"
+that one should use in case of non-wellpointed toposes.
+
+Thomas
+
+PS For sake of completeness I can't refrain from mentioning the following
+considerations I was told by Jean B'enabou some years ago. Let EE be some topos
+(J.B. was of course considering more general situations). Then split fibrations
+over EE correspond to categories internal to Psh(EE) = Set^{EE^op} (where Set is
+chosen big enough for EE being small w.r.t. Set). Then one my consider the
+presheaf  set(EE)  where  set(EE)(X)  consists of representable presheaves
+over EE/X. It is natural to define an X-indexed family of objects of EE as
+a morphism  y(X) -> set(EE)  but by Yoneda this is an element of set(EE)(X)
+corresponding to a map to X in EE.
+
+
+
+
+

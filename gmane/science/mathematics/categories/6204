@@ -1,0 +1,108 @@
+Path: news.gmane.org!not-for-mail
+From: Toby Bartels <toby+categories@ugcs.caltech.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Is equality evil?
+Date: Tue, 21 Sep 2010 21:00:41 -0700
+Lines: 68
+Approved: news@gmane.org
+Message-ID: <E1Oz7GE-0001gy-TD@mlist.mta.ca>
+References: <E1Ow1kx-0002Vi-3Z@mlist.mta.ca> <E1OwQEy-0002cd-TZ@mlist.mta.ca> <E1OwmE5-00011l-T6@mlist.mta.ca> <20100918141110.GC9467@mathematik.tu-darmstadt.de>
+Reply-To: Toby Bartels <toby+categories@ugcs.caltech.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: dough.gmane.org 1285330924 723 80.91.229.12 (24 Sep 2010 12:22:04 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 24 Sep 2010 12:22:04 +0000 (UTC)
+Cc: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Fri Sep 24 14:22:01 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oz7Hs-0000Hm-1n
+	for gsmc-categories@m.gmane.org; Fri, 24 Sep 2010 14:22:00 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:55478)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oz7GM-0005Va-Qa; Fri, 24 Sep 2010 09:20:27 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Oz7GE-0001gy-TD
+	for categories-list@mlist.mta.ca; Fri, 24 Sep 2010 09:20:20 -0300
+Content-Disposition: inline
+In-Reply-To: <20100918141110.GC9467@mathematik.tu-darmstadt.de>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6204
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6204>
+
+Thomas Streicher wrote in part:
+
+>Intensional Id-types might be convenient for providing a logic where equality
+>gets identified with isomorphism or even weak equivalence. But that's not
+>avoiding equality it's rather `liberal'ising it.
+
+Right.  I would prefer to use no identity types at all.
+If there is a particular predicate (on some particular type)
+that you would like to think of as equality (on that type),
+then write down its definition and introduce a symbol for it.
+But I would not write any particular predicate into the language,
+even with intensional behaviour, if I don't need it.
+
+However, it is interesting that intentional identity types/predicates
+satisfy weaker axioms than the extensional equality of first-order logic,
+enough so that we are still driven away from using strict concepts.
+
+>identity types are not necessary for doing constructive mathematics.
+
+Nor for nonconstructive mathematics; excluded middle is a red herring.
+Type theory naturally lends itself to constructive interpretation,
+but one can add rules for excluded middle, even the axiom of choice,
+if one wants to do classical mathematics.
+
+However, questions of predicativity ARE important.
+(Some type theories become impredicative when excluded middle is added,
+  as Martin-Loef's do, but not all do; impredicativity is what matters.)
+In sufficiently impredicative mathematics, identity can be defined:
+  Given a type A and elements x and y of A, x is _identical_ to y
+  if, for every predicate p on A, p holds for x iff p holds for y.
+(This definition is usually attributed to Gottfried Leibniz.)
+So you get an identity predicate by quantifying over all predicates,
+in a theory that allows this.
+
+It would be interesting to hear from people who want to keep kosher,
+but also want to reason impredicatively, how to interpret this definition.
+(For my part, I want to be both kosher *and* predicative by default,
+  only abandoning predicativity when this seems to be needed.
+  Very little basic category theory relies on impredicative reasoning.)
+
+>The notion of equality of types you refer to is a different one. Namely
+>judgemental equality which cannot be used as an ingredient for forming
+>propositions.
+
+Quite right; I really should not have mentioned that at all.
+So everyone, delete this line from your memory of my previous post:
+>>Heck, there's even a notion of identity of types!
+
+Identity judgements are less problematic than identity types.
+And some form of identity judgement seems to be necessary
+to fully develop foundational-strength dependent type theory.
+Actually, I don't so much seem to need identity judgements
+as beta-convertibility (although you can define beta-equivalence
+in terms of beta-convertibility, and call that identity).
+I started to write this up once, but I never finished it.
+
+The point is that one can recognise that two syntactic expressions,
+such as x and x, are the same, or even that one reduces to another,
+such as fst(x,y) and x (where fst: A x B -> A is the usual projection),
+but this is different from taking two completely different expressions,
+such as x and y, and considering the hypothesis that they are the same.
+
+
+--Toby
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

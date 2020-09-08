@@ -1,0 +1,69 @@
+Path: news.gmane.org!not-for-mail
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Pullback preserving functor
+Date: Fri, 29 Jan 1999 15:35:47 +0000 (GMT)
+Lines: 37
+Approved: news@gmane.org
+Message-ID: <E106FxU-0004WE-00@owl.dpmms.cam.ac.uk>
+References: <Pine.SOL.4.05.9901282302410.4923-100000@sal.cs.uiuc.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017478 28996 80.91.229.2 (29 Apr 2009 15:04:38 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:04:38 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Jan 29 23:05:04 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id WAA03223
+	for categories-list; Fri, 29 Jan 1999 22:22:07 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <Pine.SOL.4.05.9901282302410.4923-100000@sal.cs.uiuc.edu> from "Hongseok Yang" at Jan 28, 99 11:13:03 pm
+X-Mailer: ELM [version 2.4 PL25]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1293
+Original-Lines: 36
+Xref: news.gmane.org gmane.science.mathematics.categories:1016
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1016>
+
+> Would someone let me know the answer and the proof or counter example of
+> the following question?
+>
+> Suppose the category C has a pullback for every pair of morphism
+> (f : X -> Y, g : W -> Y). Let K be the full subcategory of the functor
+> category Func(C,Set) whose objects are pullback perserving functors.
+> Is K ccc? (If so, how I can show this?)
+
+
+The answer is no. First note that K is closed under products in the
+functor category. Also, it contains all the representable functors; 
+so, if it were cartesian closed, the exponential G^F would have to be 
+given by 
+
+G^F(c) \cong nat((c,-),G^F) \cong nat((c,-)\times F,G)
+
+i.e. K would have to be closed under exponentials in [C,Set]. However,
+it isn't in general. For a simple counterexample, let C be the category
+with five objects a,b,c,d,e and six non-identity morphisms
+
+a --> b, a --> c, b --> d, c --> d, a --> d, a --> e ;
+
+note that C has just one nontrivial pullback square
+
+            a -----> b
+            |        |
+            |        |
+            v        v
+            c -----> d
+
+Let F be the functor given by F(a) = F(b) = F(c) = F(d) = \emptyset,
+F(e) = {*}, and let G be F + F. Then (taking the above definition of G^F)
+G^F(a) has two elements, but G^F(b), G^F(c) and G^F(d) are singletons.
+
+Peter Johnstone
+
+

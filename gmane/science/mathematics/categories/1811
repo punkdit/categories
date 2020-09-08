@@ -1,0 +1,116 @@
+Path: news.gmane.org!not-for-mail
+From: Colin McLarty <cxm7@po.cwru.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Michael Healy's question on math and AI
+Date: Sat, 27 Jan 2001 11:45:28
+Lines: 83
+Approved: news@gmane.org
+Message-ID: <3.0.6.16.20010127114528.1a6f6c7c@pop.cwru.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241018120 597 80.91.229.2 (29 Apr 2009 15:15:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:15:20 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sun Jan 28 21:35:59 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f0T0dDb23617
+	for categories-list; Sun, 28 Jan 2001 20:39:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6 (16)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 42
+Status: RO
+Content-Length: 3852
+Original-Lines: 82
+Xref: news.gmane.org gmane.science.mathematics.categories:1811
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1811>
+
+Todd Wilson <twilson@csufresno.edu> wrote: 
+
+>- Although we constantly speak of "the" product, we really only have
+>  "a" product (at least if we take the category-theoretic perspective
+>  seriously).  What is really involved, formally, in making the move
+>  from "a" to "the"?  A formal language translation scheme?  Coherence
+>  theorems?  How much technical work is really involved here?
+
+	Actually, nothing is involved if we introduce a product operator.
+That is, we take operators _x_, p0_,_ p1_,_ and say:
+
+For any objects (or types) A and B the object AxB has arrows
+
+p0A,B:AxB --> A   and p1A,B:AxB -->B with the properties of a categorical
+product.
+
+	Notice that the categorical property is exactly what you want in a
+product type: From a record of type AxB you can recover the A entry, and
+the B entry, via the projections. And whenever you have a pair of values,
+one in A and one in B, there is a correspondng single value in AxB.
+Notice, the "values" may be parametrized, so we are actually dealing with
+operations f:T-->A and g:T-->B and the resulting (f,g):T-->AxB.
+
+	Then AxB will generally not be the only product of A and B in the
+category, but it will be one, and that is what we need. Coherence theorems
+indeed are important. But they are provable from the above. So there is no
+need to give them as part of specifying the product--the same as a computer
+need not have the Chinese remainder theorem programmed into it, to
+implement arithmetic.  
+
+>
+>- Related to this, what about the fact that if
+>
+>      (pi0: A x B -> A, pi1: A x B -> B)
+>
+>  is a product, then so is (pi1, pi0), indistinguishable categorically
+>  from the other product?  
+
+	Sadly, that is not a fact. The pair (pi0,pi1) gives a product of A
+and B, while (pi1,pi0) gives a product of B and A. This is revealed
+categorically by the fact that the codomain of pi0 is A, while the
+codomain of pi1 is B.
+
+	In programming terms, a data record of <your age in years, your
+height in inches> is different from a record of <your height in inches,
+your age in years>. It is quite important practically, as well as
+theoretically, to distinguish the product of A and B from that of B and A.
+
+	Even in a product BxB we need to keep the projections in order. For
+example, that is how we distinguish between pairs <x,y> of reals with x
+less than y, and pairs <x,y> of reals with y less than x. An important
+distinction. This is why a correct specification of the categorical product
+specifies the projection arrows as p0_,_ p1_,_, or in words:
+
+	"projection to the first of the following two objects"
+
+and	"projection to the second of the following two objects" 
+	 
+>- Is there anything to be made of the fact that the set-theoretic
+>  cartesian product is a local construction, involving only the sets A
+>  and B and certain small sets made up of their elements, whereas
+>  a/the category-theoretic product depends on the whole category
+> (because of the quantification in the universal property)?
+
+	This is one reason why a computer implementation of the categorical
+product, in any reasonably rich environment, will be incomplete. But it
+pales beside other reasons why computer implementations of any reasonably
+strong construction are incomplete. The ZF set-theoretic product will also
+be incomplete in any computer implementation
+
+	Compare the way Goedel's theorem shows that computer implementations of
+arithmetic will all be incomplete. It pales beside the fact that normal
+implementations don't try to implement induction at all. 
+
+>And, finally, shouldn't "better"
+>really be "better for what"?  In other words, aren't the two
+>communities really just arguing past one another, like people arguing
+>over types of automobile?  What really is the issue here?
+
+	There are many different issues, and correspondingly different
+arguments. Which one did you mean to address?
+
+

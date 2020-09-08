@@ -1,0 +1,131 @@
+Date: Fri, 18 Oct 1996 11:02:48 -0300 (ADT)
+Subject: *-autonomous 2-categories
+
+Date: Fri, 18 Oct 1996 15:05:35 +0200
+From: Gian Luca Cattani <luca@brics.dk>
+
+
+I am a PhD student at the Computer Science Department of Aarhus University.
+
+I would like to ask, whether anybody knows of extensions of the notion of
+*-autonomous category to 2-categories, i.e., what does it mean for a
+2-category to be *-autonomous.
+
+
+Regards,
+
+Luca Cattani
+
+--
++-------------------------------------------------------------+
+|  Gian Luca Cattani          (luca@brics.dk)                 |
++-------------------------------------------------------------+
+| =========   BRICS:  Basic Research In Computer Science      |
+| ==== ====   Computer Science Department                     |
+| =========   Aarhus University                               |
+| ==== ====   Ny Munkegade Bldg. 540                          |
+| ==== ====   8000 Aarhus C, Denmark                          |
+| ==== ====   Phone : (+45) 8942 3472   Fax : (+45) 8942 3255 |
++-------------------------------------------------------------+
+
+
+Date: Sun, 20 Oct 1996 19:46:07 -0300 (ADT)
+Subject: Re: *-autonomous 2-categories
+
+Date: Fri, 18 Oct 1996 11:01:43 -0700 (PDT)
+From: john baez <baez@math.ucr.edu>
+
+Luca Cattani writes:
+
+> I am a PhD student at the Computer Science Department of Aarhus University.
+
+> I would like to ask, whether anybody knows of extensions of the notion of
+> *-autonomous category to 2-categories, i.e., what does it mean for a
+> 2-category to be *-autonomous.
+
+I'd like to know this too.  What Laurel Langford and I have are notions of:
+
+2-category with duals,
+monoidal 2-category with duals, and
+braided monoidal 2-category with duals.
+
+Here "with duals" refers to the fact that objects, morphisms,
+and 2-morphisms all have "duals".  This may be stronger than
+what you are thinking of, since one can consider situations
+where only the j-morphisms for certain j have duals.  One may
+be able to remove clauses and get a definition of *-autonomous
+2-category.
+
+If you like, I could send you our definition.  It is probably not
+the ultimate definitive definition but it is good enough for our
+present purposes.  It may help if I explain what our present purposes
+are.  In the paper "Higher-dimensional algebra and topological quantum
+field theory" (Jour. Math. Phys. 36 (1995), 6073-6105), James Dolan
+and I proposed a general conjecture relating the topology of k-tangles
+in n dimensions to n-category theory.  In a special case this says roughly
+the following: isotopy classes of framed 2-dimensional surfaces embedded in
+R^n are in 1-1 correspondence with certain 2-morphisms in a certain special
+2-category.  In the case n = 2 this would be the "free 2-category with duals
+on one object"; for n = 3 this would be the "free monoidal 2-category
+with duals on one object", and for n = 4 this would be the "free
+braided monoidal 2-category with duals on one object."
+
+In "Higher-dimensional algebra I: braided monoidal 2-categories"
+(Adv. Math. 121 (1996), 196-244) Martin Neuchl and I gave a precise
+definition of braided monoidal 2-categories (which corrects the
+definition of Kapranov and Voevodsky, and has subsequently been given
+a more elegant formulation by Day and Street).  In "HDA IV: 2-tangles",
+Laurel Langford and I prove the theorem relating surfaces in 4-dimensional
+space to the free braided monoidal 2-category with duals on one object.
+We are still writing this up.
+
+A nice example of a braided monoidal 2-category with duals is
+the 2-category of (finite-dimensional) 2-Hilbert spaces, discussed
+in "HDA II: 2-Hilbert spaces".  This is available at
+
+http://math.ucr.edu/home/baez/
+
+I think this should be a *-autonomous 2-category by any
+reasonable definition thereof.
+
+Best,
+John Baez
+
+
+Date: Wed, 23 Oct 1996 11:37:37 -0300 (ADT)
+Subject: Re: *-autonomous 2-categories
+
+Date: Wed, 23 Oct 1996 11:15:10 +1000
+From: Ross Street <street@mpce.mq.edu.au>
+
+Response to Gian Luca Cattani <luca@brics.dk>
+
+Perhaps I can add some remarks to John Baez's helpful reply.
+The correct notion of monoidal bicategory seems to be tricategory
+with one object (see Memoirs AMS #558 Sept 1995). There is a
+coherence theorem (loc cit) which says each monoidal bicategory is
+appropriately equivalent to a Gray monoid M (also called semistrict
+monoidal 2-category); and these are easier to work with (although the
+tensor product # : M x M --> M is only a special kind of pseudofunctor, not
+a 2-functor in general). The paper by Brian Day and me that John Baez
+mentions (called "Monoidal bicategories and Hopf algebroids" - submitted)
+also defines closed Gray monoid. There are no surprises here: a right
+hom in M is an object  [a,b]  together with a pseudonatural equivalence
+of categories
+                M(a#c,b) <--> M(c,[a,b]).
+We write  [a,b]'  for a left hom: M(c#a,b) <--> M(c,[a,b]'). We
+call  M  closed when each pair of objects has a left and right hom.
+Of course, if  M  is braided then  [a,b]' = [a,b].
+
+We do not discuss *-autonomous monoidal bicategories (although we
+considered including *-autonomous objects in  M  since we have some
+examples). What I suggest is that a monoidal bicategory is
+*-autonomous when it is closed and has a dualising object  d.
+By this last I mean that the canonical  a --> [[a,d]',d]  should
+be an equivalence.
+
+Hope this is of some use.
+
+--Ross
+
+

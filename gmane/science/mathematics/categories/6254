@@ -1,0 +1,106 @@
+Path: news.gmane.org!not-for-mail
+From: Jiri Velebil <velebil@math.feld.cvut.cz>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: quotients and finitary functors
+Date: Wed, 29 Sep 2010 07:32:19 +0200 (CEST)
+Lines: 68
+Approved: news@gmane.org
+Message-ID: <E1P15vx-0001bV-H1@mlist.mta.ca>
+References: <E1P0kaI-0003yB-JP@mlist.mta.ca>
+Reply-To: Jiri Velebil <velebil@math.feld.cvut.cz>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: dough.gmane.org 1285802444 9040 80.91.229.12 (29 Sep 2010 23:20:44 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Wed, 29 Sep 2010 23:20:44 +0000 (UTC)
+Cc: categories@mta.ca
+To: Ondrej Rypacek <ondrej.rypacek@gmail.com>
+Original-X-From: majordomo@mlist.mta.ca Thu Sep 30 01:20:41 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15x0-00055o-Ai
+	for gsmc-categories@m.gmane.org; Thu, 30 Sep 2010 01:20:38 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:37940)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15w2-0003HO-6P; Wed, 29 Sep 2010 20:19:38 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P15vx-0001bV-H1
+	for categories-list@mlist.mta.ca; Wed, 29 Sep 2010 20:19:33 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6254
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6254>
+
+Dear Ondrej,
+
+The answer is yes, for every category \A for which it makes
+good sense to say a ``finitary endofunctor''.
+
+Hence, take any locally finitely presentable category \A
+and denote by J : \A_\fp --> \A the full inclusion representing
+finitely presentable objects in \A.
+
+Then J exhibits \A as a free cocompletion of \A under filtered
+colimits, hence there is an equivalence
+
+(1)    finitary endofunctors of \A ~ [\A_\fp,\A]
+
+Now, if you consider another functor, namely
+E : |\A_\fp| --> \A (where |\A_\fp| is the underlying discrete
+category of \A_\fp), then restriction-along-E provides you
+with a monadic functor
+
+   U:  [\A_\fp,\A] ---> [|\A_\fp|,\A]
+
+By [KP] (reference below), the category [|\A_\fp|,\A] can be
+seen as the category of finitary signatures on \A. The left
+adjoint F to U assigns a polynomial functor H_\Sigma to
+the signature \Sigma.
+
+Monadicity of U then implies that every finitary functor H
+(using the equivalence of categories (1) above) can be
+expressed as a coequalizer of the form
+
+     F(\Gamma) ---> F(\Sigma) ---> H
+               --->
+
+and this is the ``quotient'' you asked about.
+
+All of the above can be proved slightly more generally
+by replacing ``locally finitely presentable'' by ``locally
+\lambda-presentable''.
+
+[KP] G.M.Kelly and A.J.Power, Adjunctions whose counits
+       are coequalizers, and presentations of finitary enriched
+       monads, Journal of Pure and Applied Algebra
+       Volume 89, Issues 1-2, 8 October 1993, Pages 163-179,
+       doi:10.1016/0022-4049(93)90092-8
+
+
+
+Hope it helped,
+
+      Jirka
+
+
+
+On Tue, 28 Sep 2010, Ondrej Rypacek wrote:
+
+> Dear All,
+> It is well known to me that a set functor is finitary iff it is a
+> quotient of a polynomial functor (for some finitary signature).
+>
+> Are there any similar results for categories other than Set (toposes) ?
+>
+>
+> Thanks,
+> Ondrej
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

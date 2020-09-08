@@ -1,0 +1,173 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Selinger <selinger@math.lsa.umich.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Real midpoints
+Date: Sun, 16 Jan 2000 20:23:36 -0500 (EST)
+Lines: 141
+Approved: news@gmane.org
+Message-ID: <200001170123.UAA13135@liberty.math.lsa.umich.edu>
+References: <199912261845.NAA19441@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017768 30832 80.91.229.2 (29 Apr 2009 15:09:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:28 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: rrosebru@mta.ca Mon Jan 17 14:44:43 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA30054
+	for categories-list; Mon, 17 Jan 2000 09:47:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <199912261845.NAA19441@saul.cis.upenn.edu> from "Peter Freyd" at Dec 26, 1999 01:45:08 PM
+X-Mailer: ELM [version 2.5 PL1]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 6788
+Original-Lines: 140
+Xref: news.gmane.org gmane.science.mathematics.categories:1350
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1350>
+
+Dusko Pavlovic wrote on Jan 15:
+> peter's bipointed approach, however, induces a *redundant*
+> representation. this allows him to extract the algebraic operations
+> coinductively.
+
+Sorry for lagging a few weeks behind in this discussion. Something has
+been bothering me about Peter's definition of the midpoint operation
+(Dec 26). How can it be coinductive, but the resulting function is not
+computable? After mulling it over, I realized that Peter's definition
+is *not* coinductive: He gives an equation which has a unique
+fixpoint, but it is not a coinductive fixpoint. I believe that Peter's
+representation has not enough redundancy to define the algebraic
+operations in a purely coinductive manner. Note however that Peter
+really only wanted to define the algebraic structure from the final
+coalgebra structure on  I = [-1,1];  he did not claim to do it purely
+coinductively.
+
+Recall Peter's definition of the midpoint operation (where  h:I-->I  is
+the "halfing" map  h(x) = x|0).  I have corrected some typos in lines
+4+5:
+
+> Let  g  be the endo-function on  I x I  defined recursively by:
+>
+>     g<x,y> = if  dx = T  and  dy = T  then             <x,y>    else
+>              if  dx = T  and  uy = B  then  (h x h) (g<ux,dy>)  else
+>              if  ux = B  and  dy = T  then  (h x h) (g<dx,uy>)  else
+>              if  ux = B  and  uy = B  then             <x,y>.
+>
+> The values of  g  lie in the first and third quadrants, that is, those
+> points such that either  dx = dy = T  or  ux = uy = B.  The two maps
+>
+>            g       d x d                   g       u x u
+>     I x I --> I x I --> I x I  and  I x I --> I x I --> I x I
+>
+> give a coalgebra structure on  I x I.  The midpoint operation may be
+> defined as the induced map to the final coalgebra.
+
+I think Vaughan has already pointed out that this is not well-defined,
+because the four cases in the definition of g are not mutually
+disjoint and the right-hand sides do not match; thus let us assume we
+write  "dx != T"  instead of  "ux = B",  and similarly for  y.  Note that
+the resulting map is neither continuous nor monotone; thus, we are
+definitely forced to work with bipointed sets, not posets, for this
+construction.
+
+My point is that the definition of  g  is neither recursive nor
+co-recursive. The definition of  g  is merely expressed as a fixpoint
+equation, and Peter has set up things so that there is indeed a unique
+solution to this equation. However, the reason the fixpoint is unique
+is because the  "h"  part is contracting, and not because the equation
+is co-recursive.
+
+If we write  g  as a pair  <g1, g2>: I x I --> I,  we can separate the
+equation for  g  into two equations about  g1  and  g2.  A priori, these two
+equations are mutually dependent, but interestingly, it turns out that
+they are independent, so we need not worry about simultaneous
+fixpoints.  The equation for  g1  can be written as
+
+           s x s                      dist
+    I x I -------> (I + I) x (I + I) ------> IxI + IxI + IxI + IxI
+
+      |                                                |
+(1)   | g1                                             | pi1 + g1 + g1 + pi1
+      |                                                |
+                      [h-,h,h,h+]                       
+      I  <----------------------------------  I  +  I  +  I  +  I
+
+(add downward arrow heads), where  s: I --> I v I --> I + I  is the
+composition of the coalgebra morphism  F  for  I  with one of the two
+obvious maps  I v I --> I + I  (the one that sends the midpoint to the
+second component, say).  "dist" is distributivity, and  h-  and  h+  are
+the maps defined by  h-(x) = x|-1  and  h+(x) = x|1  (these have explicit
+definitions similar to that of the halfing map  h).
+
+The equation for  g2  is similar. One obtains it by replacing  pi1
+with  pi2.
+
+For this diagram to be considered a co-recursive definition of  g1,  it
+would have to be equivalent to a diagram of the form
+
+                    G
+    I x I ---------------> (I x I) v (I x I)
+
+      |                            |
+(2)   | g1                         | g1 v g1
+      |                            |
+                    F
+      I  --------------------->  I v I
+
+for some suitable coalgebra  G  on  I x I.  This, however, is not the
+case, unless (in a suitable sense)  G  is just as complex as  g1  is. For
+instance, the first bit (trit?) of  G(x,y)  is the same as that of
+g(x,y),  which is the same as the first bit of  midpoint(x,y).  But
+the first bit of the midpoint cannot be computed with finite lookahead
+(consider  x = 1/3 = +-+-+-...  and  y = -1/3 = -+-+-+...).  Thus, the
+first bit of  g  or  G  can't be computed either, and no matter through
+how many levels of co-recursion we go, we never arrive at an
+elementary function.  Thus, there is no chance of defining the
+midpoint operation from elementary functions through a finite chain of
+co-recursions.
+
+It ought to be possible to formalize this argument.  Intuitively, note
+that in diagram (2),  g1  appears in something like a "tail recursive"
+position, whereas in diagram (1) it does not. Thus, if  G  is computable
+with finite lookahead (as a function on pairs of streams), and  g1  is
+defined like in (2), then  g1  is also computable with finite lookahead:
+namely,  G  will tell us the first trit, plus a continuation, and the tail
+recursive call will compute the rest. Thus computable functions on
+streams are closed under co-recursion (as they should).
+
+
+Finally, Peter's definition of the midpoint function utilizes the
+function  g  and then lifts it through one level of co-recursion. It
+is, however, possible, to define the midpoint function directly
+without going through this  g:  It is the unique morphism  m: I x I --> I
+that makes the following diagram commute:
+
+           s x s                      dist
+    I x I -------> (I + I) x (I + I) ------> IxI + IxI + IxI + IxI
+
+      |                                                |
+(1)   | m                                              | m + m + m + m
+      |                                                |
+                      [h-,h,h,h+]                       
+      I  <----------------------------------  I  +  I  +  I  +  I.
+
+Or, if you prefer, it is the unique solution of
+
+     m<x,y> = if  dx =  T  and  dy =  T  then  h+ (m<ux,uy>)  else
+              if  dx =  T  and  dy != T  then  h  (m<ux,dy>)  else
+              if  dx != T  and  dy =  T  then  h  (m<dx,uy>)  else
+              if  dx != T  and  dy != T  then  h- (m<dx,dy>)
+
+This definition, of course, is not co-recursive either.  If I am not
+mistaken, it is more or less what Vaughan defined in his mail on 
+Dec 24, except he separated the case for  dx = T  into two cases 
+ux != B  and  (dx=T and ux=B)  (and similarly for  y).
+
+Best wishes, -- Peter Selinger
+
+

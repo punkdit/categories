@@ -1,0 +1,131 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: polymorphic lambda-calculus.
+Date: Thu, 18 Mar 1999 19:31:58 GMT
+Lines: 105
+Approved: news@gmane.org
+Message-ID: <199903181931.TAA02244@wax.dcs.qmw.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017554 29423 80.91.229.2 (29 Apr 2009 15:05:54 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:05:54 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Mar 18 17:24:15 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA13393
+	for categories-list; Thu, 18 Mar 1999 15:44:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 5613
+Original-Lines: 104
+Xref: news.gmane.org gmane.science.mathematics.categories:1081
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1081>
+
+Elaine Gouvea Pimentel would "like to know if there is any categorical model
+for polymorphic lambda-calculus".
+
+Oh dear. I can see that this one is going to haunt me for the rest of
+my life, besides provoking some "discussion" here.  I wrote my thesis
+on this subject.
+
+Perhaps I will be personally rid of this albatross when my book comes out.
+Chapter VIII contains the definitive account of [my] notion of a "category
+with a class of display maps" (or, more briefly, display category).  This
+is how I deal with dependent types at the algebraic level (superseding
+essentially algebraic theories encoded as categories with all finite limits).
+In my view, discussion of quantifiers (whether first order or over types)
+should be based on this, as is in fact done in Chapter IX.
+
+There are several different things that you might mean by "polymorphic
+lambda-calculus", and no doubt Bart Jacobs or Thomas Streicher will
+contribute an overview of the "Barendregt cube".  [Robert Seely also
+did some work in this area before most of the other people.]
+
+One thing is that types are expressions involving type variables, with
+a universal quantifier over types. Girard calls this System F, and there
+is an introductory account in "Proofs and Types" - Girard's book that
+Yves Lafont and I translated.
+
+Numerous domain theoretic models of System F were found in the later 1980s,
+using both "Scott"-like "continuous" domains and "stable" domains which
+were introduced by Berry and popularised by Girard.
+
+ALL of the domain theoretic models, so far as I am aware, had THE SAME
+interpretation of type-dependency and the quantifier.  I have seen this
+interpretation attributed to Girard, but I regarded it as "well known"
+when I was writing my thesis - before Girard's models - and my guess is
+that it is due to Gordon Plotkin, probably in the "Pisa notes".
+
+This interpretation of the dependency of the type T[x] on x:X, where X
+is in the first instance a domain (and in particular a poset, therefore
+a category) is most simply described as a functor T:X->Dom^adj
+where Dom^adj denotes the category whose objects are domains and whose
+morphisms are [left] adjoint pairs of continuous functions. Many authors
+took embeddings (monos with continuous right adjoints) instead, but
+the restriction is irrelevant.  The functor T must also be continuous
+in the sense of taking directed joins to filtered colimits of left adjoints,
+which are also the cofiltered limits of the right adjoints.
+
+For the stable case, replace "continuous" by "stable", where a stable
+functor preserves pullbacks, and the unit and counit of the adjunctions
+have pullbacks for their naturality squares.   This situation is so
+over-constrained that some pretty amazing things (that I discovered but
+never wrote up) happen.
+
+The universal quantifier is most concisely described as the category of
+sections of the fibration (Grothendieck construction) corresponding to
+the functor T above.
+
+That was for first order dependency over a particular domain X.  For
+dependency over all domains (System F), replace X by Dom^adj.  It doesn't
+matter whether this category happens to be one of your (poset) domains,
+so long as you only want System F. (At the time of my thesis I considered
+this to be cheating, and laboriously constructed a poset-domain that
+"covered" Dom^adj in a suitable sense.  Thierry Coquand and his co-authors
+did not consider this to be cheating, and thereby beat me to finding
+a model of System F.)  If Dom^adj really is a domain then you get a
+model of Coquand's Calculus of Constructions.
+
+Such a model of CoC was described by Martin Hyland and Andy Pitts in the
+Boulder proceedings in 1987.    If I still had the inclination to work
+on such matters, I could give a simpler version of their model (replacing
+the lex categories by display categories).  This was on the "to do" list
+throughout the writing of my book - I wanted to include this "simplified"
+version as a sequence of exercises - but it was always just over the 
+horizon of what could be done with the tools available, given that the
+necessary domain-theoretic techniques had been debarred from the book
+from its conception.
+
+Another model, whose types are named by countable groupoids (or by the
+corresponding presheaf toposes of G-sets) is to be found in my paper
+"Quantitative Domains, Groupoids and Linear Logic" in the proceedings
+of the 1989 Manchester CTCS.  When I was writing this paper I tried to
+get Francois Lamarche to read it, but he said he didn't know anything
+about / hated permutation representations.  Nobody else, so far as I can
+gather, has ever read it, and now I can no longer follow the most 
+difficult calculations.  However, it is a very pretty model nevertheless.
+
+All of this was a bit of a Holy Grail.  When you come to calculate the
+interpretations of types like   Pi X. X -> (X->X) -> X,  they turn out
+to be the most horrendous mess.   The "coherence space" model in "Proofs
+and Types" may well be the only one in which you can give an explicit
+desciption of Pi X. X -> X -> X, and even that has four elements, where
+there are only two closed lambda terms.
+
+There are of course other ways of finding models of the polymorphic
+lambda calculus, such as using the "small complete category" in Hyland's
+effective topos, but I'll leave someone else to write about that.
+
+In conclusion, this particular dragon's den has already been explored,
+and the corpses are still there to prove it.
+
+Paul
+
+You can find this stuff on my page at Hypatia,
+	http://hypatia.dcs.qmw.ac.uk/author/TaylorP
+and on the corresponding pages of the other people mentioned above.
+
+

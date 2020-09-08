@@ -1,0 +1,64 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <mbarr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: 2-Chu
+Date: Wed, 3 May 2006 14:45:27 -0400 (EDT)
+Lines: 40
+Approved: news@gmane.org
+Message-ID: <5186.44333719767$1241019208@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241019207 8095 80.91.229.2 (29 Apr 2009 15:33:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:33:27 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed May  3 17:44:16 2006 -0300
+X-Keywords: 
+X-UID: 168
+Status: RO
+Content-Length: 1984
+Original-Lines: 39
+Xref: news.gmane.org gmane.science.mathematics.categories:3291
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3291>
+
+I thought about what John Baez said.  No, I had nothing in mind for a
+2-Chu, but now I do.  First, let me mention that Juergen Koslowski gave
+a talk on 2-Chu at a meeting in Santa Barbara several years ago.
+
+Anyway, what follows isn't a theory, only an example, not worked out in
+detail.  Let us form what I will call Chu(Cat,Set) without getting
+involved in size issues.  (It could, for example, be categories with
+finite homsets and finite sets.)  An object would be (\C,\D,T) where \C
+and \D are categories and T: \C x \D --> Set is a functor.  (I thought
+of making it \C^o x \D, but in the made this choice.  It could be
+changed.)  Anyway, a map in this category is (F,G,\alpha): (\C,\D,T) -->
+(\C',\D',T') where F:\C --> \C', G: \D' --> \D are functors and \alpha:
+T(-,G-) --> T'(F-,-) is a natural equivalence.
+
+Make the class of maps (\C,\D,T) --> (\C',\D',T') into a category
+[(\C,\D,T),(\C',\D',T')] with objects as above.  A morphism (F,G,\alpha)
+--> (F',G',\alpha') is (\beta,\gamma), where \beta: F --> F' and \gamma:
+G --> G' are natural transformations such that
+                      \alpha(C,D')
+            T(C,GD') -------------> T'(FC,D')
+                |                        |
+                |                        |
+ T(C,\gamma D') |                        | T(\beta C,D')
+                |                        |
+                v                        v
+            T(C,G'D') ------------> T'(F'C,D')
+                      \alpha'(C,D')
+ commutes. Now define
+ (\C,\D,T) -o (\C',\D',T') = ([(\C,\D,T),(\C',\D',T')],\C x \D',S)
+ with S either of the isomorphic pairings that takes
+(F,G,\alpha)(C,D') to T(C,GD') or to T'(FC,D').  Of course, they are
+isomorphic by \alpha(C,D'), but you still have to choose one or the
+other.  Of course, there is also a choice involved in the direction of
+\alpha.  The dual of an object interchanges the categories and replaces
+\alpha by its inverse.  But you do need an isomorphism here, in order to
+reverse things.
+
+
+
+

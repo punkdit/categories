@@ -1,0 +1,162 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@math.uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Fri, 13 Mar 2009 22:22:34 -0500
+Lines: 129
+Approved: news@gmane.org
+Message-ID: <E1LiUci-0000uG-OC@mailserv.mta.ca>
+Reply-To: Michael Shulman <shulman@math.uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1237042820 24787 80.91.229.12 (14 Mar 2009 15:00:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sat, 14 Mar 2009 15:00:20 +0000 (UTC)
+To: Andrew Stacey <andrew.stacey@math.ntnu.no>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Sat Mar 14 16:01:36 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LiVMg-0004QU-6P
+	for gsmc-categories@m.gmane.org; Sat, 14 Mar 2009 16:01:30 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LiUci-0000uG-OC
+	for categories-list@mta.ca; Sat, 14 Mar 2009 11:14:00 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:152
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/152>
+
+Hi Andrew,
+
+(Caveat: I'm not an expert in this field, although I find it fascinating,
+so I hope that the experts who are listening will forgive and correct any
+misstatements.)
+
+I think your answer ("a function defined on the empty set corresponds
+to a function that can never be called") is almost right.  A
+programming function having n arguments x_1,...,x_n can be represented
+by a set-theoretic function whose domain is an n-ary cartesian product:
+
+A_1 \times ... \times A_n  -->  B
+
+where A_i is the set of values in the type of the variable x_i, and B
+is the output type of the function.  Thus, for instance, a function
+of two variables with type Int whose output is type Real would be
+represented by
+
+Z \times Z --> R
+
+where Z is the set of integers and R the set of real numbers (or
+maybe the set of floating-point values, depending on what "Real"
+means to your compiler).  Of course, the set-theoretic function is
+"extensional," meaning it only knows what output results from each
+list of inputs rather than how that output is computed; thus many
+different pieces of code will denote the same function.  The fancy
+word for this is "denotational semantics."
+
+Now setting n=3D0, we see that a programming function of no arguments is
+represented by a morphism
+
+1 --> B
+
+where 1, a one-element set, is a zero-ary cartesian product.  In other
+words, it is just a constant (global) element of B.
+
+The way to represent a function with empty domain in programming is as
+a function whose input is of a -type- that admits no values.  Thus,
+this function "can never be called" because there is no argument that
+you can give it.  Normal programming languages do not generally come
+with predefined types that admit no values, since such types are
+evidently not very useful!
+
+You can define a good approximation to such a type in an OO language
+by writing a class whose only constructor throws a fatal error; thus
+there will be no possible "values" having that type.  Of course, there
+will then be many different "functions" in the programming sense that
+you could write whose domain is such a type, but they will all have
+the same denotation, namely the unique function from the empty set to
+the set of values of their output type.
+
+
+By the way, this all assumes that your programming functions are
+"strict" in the "call-by-value" sense that all their arguments must be
+completely computed before the function is allowed to execute.
+However, if you allow "lazy" functions which can ignore some of their
+input, which exist in some programming languages, then there can be
+plenty of different functions defined on an "empty" type.  For
+instance, in a lazily evaluated language the function with one input
+of an empty type and defined by "return 3" can still be evaluated and
+will promptly return 3.  Since it never -uses- its input, the lazy
+language won't even bother trying to figure out what that input is,
+and hence won't encounter the fatal error that the input doesn't exist.
+
+In denotational semantics, this is modeled by working, not in a
+category of sets, but in a category of a special sort of -posets-.
+Among other properties, these posets always have bottom elements,
+which represent the "undefined" value, but the functions between them
+are not required to preserve the bottom elements.  Such a category
+generally has no initial object; the "empty" type corresponds to the
+one-element poset, but there are in general many functions out of this
+object.
+
+Best,
+Mike
+
+On Fri, Mar 13, 2009 at 6:29 AM, Andrew Stacey
+<andrew.stacey@math.ntnu.no> wrote:
+> Here's a question for those who know about translating between category t=
+heory
+> for mathematicians and category theory for computer programmers.
+>
+> In class today I was discussing functions with domain the empty set. =A0T=
+he
+> students don't have much background in formal set theory (and none in cat=
+egory
+> theory though I'm doing my best to sneak it in where I can) so they were
+> trying to get to grips with the idea that the _are_ functions from the em=
+pty
+> set, but just not very many of them.
+>
+> Afterwards, one student asked about how this related to functions as used=
+ in
+> computer programming. =A0It seemed from what he said that he had some
+> understanding of the formal relationship between functions in mathematics=
+ and
+> functions in computer programs - beyond them having the same name. =A0He =
+said
+> that a function that takes no input is known as a "constant function" and=
+ so
+> wasn't sure how to fit the two notions together.
+>
+> I, on the other hand, am at the level of "Ooo, look! =A0Mathematicians an=
+d
+> computer programmers both use the word 'function'. =A0So do biologists an=
+d event
+> organisers. =A0Maybe we should organise a function whose function would b=
+e to
+> investigate all these different uses.' so I didn't know what answer to gi=
+ve.
+>
+> The best that I could think of was that program functions have a 'hidden'
+> input: the fact that they have been called. =A0So a function defined on t=
+he
+> empty set corresponds to a function that can never be called.
+>
+> Can anyone help me straighten this out?
+>
+> Extra kudos for answers that I can just pass on to the student!
+>
+> Thanks,
+>
+> Andrew Stacey
+>
+>
+>
+
+
+

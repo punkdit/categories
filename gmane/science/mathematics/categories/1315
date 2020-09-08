@@ -1,0 +1,97 @@
+Path: news.gmane.org!not-for-mail
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Real interval halving
+Date: Sat, 1 Jan 100 11:37:15 +0000 (GMT)
+Lines: 67
+Approved: news@gmane.org
+Message-ID: <E124MqR-0006i7-00@owl.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017745 30688 80.91.229.2 (29 Apr 2009 15:09:05 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:05 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat Jan  1 14:58:30 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id NAA32749
+	for categories-list; Sat, 1 Jan 2000 13:41:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: ELM [version 2.4 PL25]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3436
+Original-Lines: 66
+Xref: news.gmane.org gmane.science.mathematics.categories:1315
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1315>
+
+Apologies for going off at a tangent, but someone ought to pick up Vaughan's
+throwaway remark that the `Conway' coalgebra structure on [-\infty,\infty]
+is the unique `natural' structure that makes it a final coalgebra. There is
+another one, which was (implicitly) pointed out by Simon Norton around the 
+time (early 1970s) when Conway was developing the theory of surreal numbers.
+
+Conway's definition is based on the idea that the simplest number between
+0 and 1/2 is 1/4, the simplest between 1/4 and 1/2 is 3/8, and so on; thus
+the simplest number in any nontrivial interval is always a dyadic rational
+(i.e. one whose denominator is a power of 2). Suppose you want to regard all
+rationals as simple, and use smallness of denominator as a measure of
+simplicity; then you would say that the simplest number between 0 and 1/2 is
+1/3, the simplest between 1/3 and 1/2 is 2/5, .... Norton observed that this
+notion of simplicity can be encoded by the notion of continued fraction, as 
+follows:
+
+Define a bijection f: [0,1] --> [0,1] as follows: if x has binary expansion
+.00...011...100...011...1..., where there are a (\geq 0) zeros in the first
+block, then a block of b (\geq 1) 1's, then c (\geq 1) zeros, and so on, then 
+f(x) is the continued fraction
+
+            1
+         --------------------
+         (a+1) + 1
+                 ------------
+                 b + 1
+                     ---------
+                     c + ......
+
+Thus, for example, if x = 1/4, its two binary expansions .0100000... and
+.00111111... yield the two expressions
+
+            1                                1
+         --------------      and          ----------
+         2 + 1                            3 + 1
+             ----------                       ------
+             1 + 1                            \infty
+                 ------
+                 \infty
+
+for f(1/4) = 1/3. Extend f to a function R --> R by invariance under integer
+translations, i.e. f(x + n) = f(x) + n if n is an integer (and set 
+f(\infty) = \infty, f(-\infty) = -\infty, if you insist). Then if x is the 
+Conway-simplest number in the interval (a,b), f(x) is the Norton-simplest
+number in (f(a),f(b)). Similarly, one can conjugate the `Conway' coalgebra
+structure on [-\infty,\infty] by the function f, to obtain a different
+(but isomorphic, and hence also final) coalgebra structure which has an 
+explicit definition in terms of operations on continued fractions.
+
+I believe the function f appears in `Winning Ways' (I don't have my copy to
+hand) in the context of a game called `Contorted Fractions' (`contorted' is
+of course a Conwayesque conflation of `continued' and `Norton'). There are
+many mysteries about it. It obviously maps the dyadic rationals bijectively 
+to the set of all rationals (and the non-dyadic rationals to the quadratic
+irrationals); it is strictly increasing, but it's not hard to see that its
+inverse is differentiable at every rational with derivative zero. Whether
+it's differentiable anywhere else is, I believe, an open problem (though
+there are certainly points where it's not differentiable). If you sketch
+its graph, you will see that (as well as fixing all half-integers) it has a
+fixed point in the interval (0,1/2) -- it's somewhere around 0.42, in decimal
+notation -- but we never managed to prove that this fixed point was unique,
+let alone determine whether it is algebraic or transcendental.
+
+Happy New Year,
+Peter Johnstone
+
+

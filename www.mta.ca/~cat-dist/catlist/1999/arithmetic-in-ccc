@@ -1,0 +1,67 @@
+Date: Sat, 06 Nov 1999 02:41:24
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Arithmetic in CC cats, query
+
+	Take cartesian closed categories in the sense: having products, and
+internal homs. If there is a natural number object you can define addition
+NxN-->N with the usual recursion
+
+		0+n = n          sm+n = s(n+m)
+
+But can you prove it is commutative? You can prove 0+n=n+0 because you can
+prove both = n. And you can prove each case of commutativity for "standard
+natural numbers" in the sense of global elements sss..ss0 gotten from 0 by
+(externally) finitely many applications of successor. 
+
+	But even if I also assume equalizers, I do not see how to prove
+commutativity for arbitrary global elements, let alone all generalized
+elements. I suspect there are counterexamples but I cannot give one.
+
+	I wonder if this is in Lambek and Scott, but my copy is at the office and
+I will not be there until Monday so I am writing in to ask.
+
+best, Colin
+
+
+Date: Sun, 07 Nov 1999 00:49:28
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Arithmetic query answer
+
+
+	Todd Wilson answered my query by politely pointing out the obvious--
+that the function g:N-->N^N with g(m) = (lambda n)(sn+m) is defined by the
+same induction on NxN as the function g':N-->NxN with g'(m) = (lambda
+m)(m+sn). Namely, g(0) = successor, and gs = sg. And so the function
+h:N-->N^N with h(m) = (lambda n)(m+n) is defined by the same induction as
+h'(m)=(lambda n)(n+m), namely h(0)= 1_N and hs=sh.
+
+	I'm afraid I manufactured a difficulty by focussing on Cartesian Closed
+categories as "less than toposes" rather than thinking of them in their own
+terms--so the "Peano axiom" kind of proof I was looking for is unavailable,
+but no problem.
+
+Colin 
+
+
+Date: Sun, 7 Nov 1999 07:49:11 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: commutativity of addition
+
+Colin's question is a good one.
+
+Associativity tells us that  \x.1+x  and  \x.x+1  commute and that's
+enough -- using the defining universal property of the NNO -- to make
+them equal: each is a solution to the equations  f(0) = 1  and
+f(s(x)) = s(f(x)).
+
+The most conceptual way I can think of to finish the argument is to
+use that fact that the NNO (in a locos) is the free monoid on a single
+generator. The opposite-monoid functor is an involution on the
+category of monoids, hence the opposite monoid, ONN, of NNO is also
+free. (ONN has the same underlying object as NNO, but with the twisted
+binary operation.) We need only verify that the unique monoid map
+g:NNO -> ONN  is the identity. Whatever it is, it is satisfies the
+equations  g(0) = 0  and  g(x+1) = 1+g(x). And that's enough to
+force it to be identity.
+
+

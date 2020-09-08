@@ -1,0 +1,104 @@
+Date: Mon, 25 Aug 1997 11:09:18 -0300 (ADT)
+Subject: Is cut semantical? 
+
+Date: Sun, 24 Aug 1997 08:10:45 -0700
+From: Vaughan R. Pratt <pratt@cs.stanford.edu>
+
+Cut-free proofs correspond more or less to dinatural transformations,
+suitably strengthened to require invariance under logical relations
+when necessary.  Is there a semantical counterpart in this sense to
+proofs with cut?  Or is the chaotic nature of cut incompatible with
+this sort of syntax-semantics correspondence?
+
+Vaughan Pratt
+
+Date: Mon, 25 Aug 1997 16:47:58 -0300 (ADT)
+Subject: Re: Is cut semantical? 
+
+Date: Mon, 25 Aug 1997 08:46:46 -0700
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+Just to clarify, my question was about proofs with cut, not about cut
+itself, whose semantics is perfectly clear.  (I received a couple of
+replies from people who merely answered the question in the subject
+line, apparently without reading the message.)
+
+The difficulty is that the standard semantics of cut as composition is
+not injective, in that it erases the information as to the location of
+the cut, as a nasty side effect of associativity.  I therefore do not
+see how to attach semantical significance to proofs with cut, as
+opposed to their cut-free counterparts where the situation is much
+clearer.
+
+This issue arises not just for the denotational semantics of proof but
+its operational semantics as well.  In theorem-proving, proofs with cut
+are in principle attractive because they can be quite short in
+comparison to their cut-free counterparts.  In practice the difficulty
+when backchaining of deciding where to put cuts, and what formula to
+cut on, seems to make it much harder to find proofs with cut than
+without.  Good decision methods are much easier to find for cut-free
+logics.
+
+Granted that making algorithmic sense of cut (in the context of a
+proof) is hard enough, can one even make semantic sense of it *in that
+context*?  That is, is there any bijection between proofs with cut and
+some reasonable class of mathematical objects?
+
+Presumably the class will not be closed under composition, at least not
+of the associative kind.
+
+Far from being the answer to my problem, composition is its root.
+
+Vaughan Pratt
+
+
+Date: Tue, 26 Aug 1997 12:17:55 -0300 (ADT)
+Subject: Re: Is cut semantical? 
+
+Date: Tue, 26 Aug 1997 09:19:07 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+Maybe I am being naive, but I always thought that cuts were equivalent
+to composing arrows.  The fact that in getting an arrow A --> B, you
+could take arbitrary paths A --> C --> B corresponds to the unbounded
+nature of proofs with cut.  Of course, if you can calculate Hom(A,B)
+directly, this is all irrelevant.
+
+Mike
+
+
+Date: Tue, 26 Aug 1997 12:18:52 -0300 (ADT)
+Subject: Re: Is cut semantical? 
+
+Date: Tue, 26 Aug 1997 09:41:49 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+I should clarify.  Proofs with cuts correspond to composable paths.
+If you like, to proofs in the graph (or free category) of a category.
+
+Michael
+
+
+Date: Wed, 27 Aug 1997 10:32:09 -0300 (ADT)
+Subject: Re: Is cut semantical? 
+
+Date: Tue, 26 Aug 1997 09:25:31 -0700
+From: Vaughan R. Pratt <pratt@cs.Stanford.EDU>
+
+
+	From: Michael Barr <barr@triples.math.mcgill.ca>
+	I should clarify.  Proofs with cuts correspond to composable paths.
+	If you like, to proofs in the graph (or free category) of a category.
+
+Yes, the free thing on the syntax you're trying to model usually does
+the job, e.g. the Lindenbaum algebra.  But is there any mathematical
+object arising in nature that works like proofs with cut, the way
+natural transformations do for cut-free proofs?  It is somewhat magical
+that natural transformations match proofs in this way when they do, and
+reassuring when they don't: they're letting you know they're alive and
+require maintenance, unlike free things which are dead and therefore
+maintenance-free.
+
+Vaughan
+

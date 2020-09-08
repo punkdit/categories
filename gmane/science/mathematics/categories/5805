@@ -1,0 +1,194 @@
+Path: news.gmane.org!not-for-mail
+From: categories@mta.ca
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: terminology (was: bilax_monoidal_functors)
+Date: Fri, 14 May 2010 11:43:24 -0300 (ADT)
+Lines: 159
+Approved: news@gmane.org
+Message-ID: <E1ODKr3-00068L-WB@mailserv.mta.ca>
+Reply-To: Bob Rosebrugh <rrosebru@mta.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1273945367 12975 80.91.229.12 (15 May 2010 17:42:47 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 15 May 2010 17:42:47 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: categories@mta.ca Sat May 15 19:42:46 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1ODLNu-0006Bc-55
+	for gsmc-categories@m.gmane.org; Sat, 15 May 2010 19:42:46 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1ODKr3-00068L-WB
+	for categories-list@mta.ca; Sat, 15 May 2010 14:08:50 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5805
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5805>
+
+Argh, Michael, you have managed to make a mess of the existing
+terminology. The terminology is confusing, but it is actually
+settled. While many concepts have more than one name, thankfully no
+name refers to more than one concept so far (and I am working hard to
+keep it that way - for example by discouraging redefinitions of
+"autonomous"). Here are, for reference, the four most common notions
+of (1-)categories with duals:
+
+(1) An "autonomous category" is a monoidal category where every object
+   has a left dual and a right dual. Note that it is not assumed to be
+   symmetric. There is also the notion of a "left autonomous category",
+   where only left duals are assumed, and analogously "right autonomous
+   category". Note that duals, where they exist, are unique up to
+   isomorphism, so being autonomous is a property of monoidal
+   categories, not an additional structure.
+
+   "Rigid category" is a synonym of "autonomous category", preferred by
+   certain communities of authors.
+
+(2) A "pivotal category" is an autonomous category equipped with a
+   monoidal natural isomorphism A -> A**. (A right autonomous category
+   with such an isomorphism is automatically left autonomous too, so
+   the right/left distinction does not apply to pivotal categories).
+
+   "Sovereign category" is a synonym of "pivotal category" used by
+   Freyd and Yetter in one paper, but it does not seem to have caught
+   on. It was a word play suggesting something that is even more than
+   autonomous.
+
+(3) A "tortile category" is a braided pivotal (equivalently balanced
+   autonomous) category satisfying theta* = theta (where theta is the
+   twist).
+
+   "Ribbon category" is a synonym of "tortile category", preferred by
+   certain communities of authors.
+
+(4) A "compact closed category" is a tortile category that is symmetric
+   (as a balanced monoidal category), or equivalently, an autonomous
+   symmetric monoidal category.
+
+Of course (4) => (3) => (2) => (1).  There are a number of in-between
+concepts, which are generally less natural and of interest primarily
+for technical reasons. Please see my recent survey "A survey of
+graphical languages for monoidal categories" for a far more detailed
+discussion (http://arxiv.org/abs/0908.3347). Particularly the table on
+p.60 shows the whole taxonomy on one page.
+
+I will briefly mention two of the "less natural" notions:
+
+* A "braided autonomous" category is a monoidal category that is both
+   braided and autonomous (with no axioms relating the two structures).
+   This notion is entirely uninteresting, except to note that a braided
+   left autonomous category is automatically right autonomous, due to
+   the existence of isomorphisms A -> A**, and to note that it is NOT
+   automatically pivotal, because said isomorphism is not monoidal.
+
+* A "braided pivotal category" is a monoidal category that is both
+   braided and autonomous (again with no axioms relating the two
+   structures). This notion is also completely uninteresting, except to
+   note that a braided pivotal category is exactly the same thing as a
+   balanced autonomous category (because on a braided autonomous
+   category, giving a pivotal structure is precisely equivalent to
+   giving a balanced structure). Such categories were studied by Freyd
+   and Yetter, but arguably they were superseded by the better notion
+   of tortile categories. These categories have a graphical language up
+   to "regular isotopy", which means that one of the three Reidemeister
+   moves fails.
+
+I have come to the opinion that it is a very good thing that notions
+(1)-(3) above have distinct names, and are not just distinguished by
+adjectives. It would be tempting to call a pivotal category a
+"[something] autonomous category", and to call a tortile category for
+example "[something else] braided pivotal" or "[something else]
+balanced autonomous". But the most natural adjective for [something]
+would be "pivotal", and the most natural adjective for [something
+else] would be "tortile", which would only make the names longer
+without adding any information.
+
+I do believe that the term (4) "compact closed" is something of an
+oddity, since "symmetric autonomous" would be similarly succinct, more
+systematic, and much more descriptive - in fact, it requires no
+additional definition if "symmetric" and "autonomous" have already
+been defined. Also, as Michael has pointed out, the name "compact"
+here has little to do with its usual meaning in mathematics.
+
+If this concept were invented today, one should certainly call it
+"symmetric autonomous". But in light of the fact that "compact closed"
+was historially the first of notions (1)-(4) defined, and that the
+term "compact closed" is already extremely well-known and wide-spread,
+this is one case where I believe it is better to stick with the
+existing terminology rather than trying to force it into a
+taxonomy. That doesn't mean that slow incremental change is not
+possible. For example, it seems reasonable to write "note that a
+compact closed category is the same as a symmetric autonomous
+category" whenever giving the definition. Perhaps after a few years,
+people will write "note that a symmetric autonomous category is also
+known as a compact closed category", and maybe after many more years,
+the term "symmetric autonomous" will even become standard. But such
+changes should come about through repeated and incremental use by a
+community, and not by unilateral choices. As a general rule, I think
+it is good manners when changing terminology (or inventing new
+unsystematic terminology) to give the old (or systematic) terminology
+in parentheses at least once per paper.
+
+In Oxford, compact closed categories are nowadays called "compact
+categories". I try not to follow this convention because it replaces
+one bad term with a shorter, but equally bad one. It would also clash
+with the standard meaning of "compact" in cases where the category was
+actually a topological space. But it seems like a benign enough change
+and is catching on rapidly.
+
+My last comment is that, unlike what Jeff Egger claimed, "autonomous
+category" is not a special case of "*-autonomous category", because no
+symmetry is assumed in autonomous categories. Unless of course one
+first drops symmetry from the definition of *-autonomous categories,
+as Jeff has also suggested. As it stands, neither of "autonomous" and
+"*-autonomous" implies the other, which is perfectly fine in my
+opinion, since they are two different words.
+
+-- Peter
+
+Michael Shulman wrote:
+>
+> On Mon, May 10, 2010 at 2:28 PM, Jeff Egger <jeffegger@yahoo.ca> wrote:
+>> the fact that "autonomous category" is a special case (and, from one
+>> point of view, a rather uninteresting special case) of
+>> "star-autonomous category", whereas it sounds like "star-autonomous
+>> category" should mean an "autonomous category" with some extra
+>> structure.
+>
+> I agree, it does sound like that, but there is at least a long
+> tradition of such names in mathematics (not that that makes
+> them a good thing).
+> (http://ncatlab.org/nlab/show/red+herring+principle)
+>
+> One reason I like "autonomous" to mean a symmetric monoidal category
+> in which all objects have duals is that the only alternative names I
+> have heard for such a thing convey misleading intuition to me.  They
+> are sometimes called "compact closed" or (I think) "rigid" monoidal
+> categories, but "compact" and "rigid" are words with definite and
+> inapplicable intuitive meanings for me.  Compact means small, finite,
+> bounded, inaccessible by directed joins, etc. and "rigid" means "having few
+> automorphisms," and I don't see that there is anything very compact or
+> rigid about such categories.  The only relationship I can think of is that a
+> compact subset of a Hausdorff space is closed, and a symmetric monoidal
+> category with duals for objects is also automatically closed, but of course
+> these two meanings of "closed" are totally different.  Perhaps someone
+> can enlighten me?
+>
+> Mike
+>
+>
+> [For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

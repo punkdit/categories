@@ -1,0 +1,194 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: functions not polynomials
+Date: Mon, 26 Mar 2007 12:26:07 -0700
+Lines: 160
+Approved: news@gmane.org
+Message-ID: <E1HWA7D-0000Fm-SZ@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019475 9908 80.91.229.2 (29 Apr 2009 15:37:55 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:55 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Mar 27 08:56:36 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 27 Mar 2007 08:56:36 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HWA7D-0000Fm-SZ
+	for categories-list@mta.ca; Tue, 27 Mar 2007 08:45:27 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 63
+Status: O
+Content-Length: 6155
+Original-Lines: 159
+Xref: news.gmane.org gmane.science.mathematics.categories:3709
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3709>
+
+A couple of days ago, in response to a post to this list by Paul Taylor,
+I showed that W: (NxN --> R) --> (N --> R), defined as W(f)(x) = f(x,x),
+is bijective on the subset U of NxN --> R consisting of those f: NxN -->
+R for which f(-,d) and f(d,-) are polynomials of degree d for each d in
+N.  As an afterthought I raised the question, for which g: N --> R can
+W^{-1}(g): NxN --> R be extended to RxR --> R?
+
+To get some idea of what could happen I wrote the following program
+wttmo.c (W To The Minus One).
+
+=====wttmo.c=====
+ > #include <stdlib.h>
+ >
+ > int main(int argc, char *argv[])
+ > {
+ >     int i, j, m, n;
+ >     double a[100], f[100][100];
+ >     n = argc - 1;
+ >     for (i = 0; i < n; i++)        /* Input */
+ >         f[i][i] = atof(argv[i+1]);
+ >     for (m = 0; m < n-1; m++) {    /* Process */
+ >         for (i = 0; i <= m; i++)
+ >             a[i] = f[m][i];
+ >         for (i = 0; i < m; i++)
+ >             for (j = 0; j < m-i; j++)
+ >                 a[j] = a[j+1] - a[j];
+ >         for (i = m+1; i < n; i++) {
+ >             for (j = 0; j < m; j++)
+ >                 a[j+1] += a[j];
+ >             f[i][m] = f[m][i] = a[m];
+ >         }
+ >     }
+ >     for (i = 0; i < n; i++) {     /* Output */
+ >         for (j = 0; j < n; j++)
+ >             printf("%-7.3f ", f[i][j]);
+ >         printf("\n");
+ >     }
+ > }
+=================
+
+(Note that this program gives a well-defined result not just for the
+reals but for any group, even a nonabelian one, since the only
+operations performed are addition and subtraction.  This generality can
+be reconciled with the original problem, and with my proof of
+bijectivity of W on U, by saying that a sequence s obeys a polynomial
+law of degree (at most) d just when the d-th finite difference D^d(s) is
+a constant sequence, where the finite difference operator D(s) replaces
+each s_i by s_{i+1}-s_i in s.)
+
+This program is run from the command line with n real parameters
+constituting the first n elements g(0), g(1), ..., g(n-1) of a sequence
+g.  The output is W^{-1}(g), laid out as an nxn matrix with the entry at
+row i and column j (numbering from 0) giving W^{-1}(g)(i,j) for i and j
+from 0 to n-1.
+
+Applying it to the polynomial 2 + 3x^2 gives the following result,
+
+$ wttmo 2 5 14 29 50 77 110 149 194
+2.000   2.000   2.000   2.000   2.000   2.000   2.000   2.000   2.000
+2.000   5.000   8.000   11.000  14.000  17.000  20.000  23.000  26.000
+2.000   8.000   14.000  20.000  26.000  32.000  38.000  44.000  50.000
+2.000   11.000  20.000  29.000  38.000  47.000  56.000  65.000  74.000
+2.000   14.000  26.000  38.000  50.000  62.000  74.000  86.000  98.000
+2.000   17.000  32.000  47.000  62.000  77.000  92.000  107.000 122.000
+2.000   20.000  38.000  56.000  74.000  92.000  110.000 128.000 146.000
+2.000   23.000  44.000  65.000  86.000  107.000 128.000 149.000 170.000
+2.000   26.000  50.000  74.000  98.000  122.000 146.000 170.000 194.000
+
+consistent with producing f(x,y) = 2 + 3xy.  This of course extends in
+the usual way to RxR --> R.
+
+Nudging the first two elements very slightly
+
+$ wttmo 2.001 5.001 14 29 50 77 110 149 194
+2.001   2.001   2.001   2.001   2.001   2.001   2.001   2.001   2.001
+2.001   5.001   8.001   11.001  14.001  17.001  20.001  23.001  26.001
+2.001   8.001   14.000  19.998  25.995  31.991  37.986  43.980  49.973
+2.001   11.001  19.998  29.000  38.015  47.051  56.116  65.218  74.365
+2.001   14.001  25.995  38.015  50.000  61.796  73.156  83.740  93.115
+2.001   17.001  31.991  47.051  61.796  77.000  96.220  127.420 184.595
+2.001   20.001  37.986  56.116  73.156  96.220  110.000 5.480   -531.865
+2.001   23.001  43.980  65.218  83.740  127.420 5.480   149.000 4915.055
+2.001   26.001  49.973  74.365  93.115  184.595 -531.865 4915.055 194.000
+
+really shakes things up (look at f(i+1)(i), especially the region
+38.015,61.796,96.220,5.480,4915.055 which used to be 38,62,92,128,170).
+  The prospects for extending this evidently chaotic function NxN --> R
+to RxR --> R "nicely" look pretty bad -- at the very least it would seem
+to require a very liberal notion of "nice".
+
+In my previous post I claimed that W^{-1} maps polynomials to
+polynomials, but realized later that the only polynomials for which this
+was the case were those of the form g(x) = a + bx^2 for arbitrary
+constants a and b, for which W^{-1}(g) is f(x,y) = a + bxy.  The
+simplest polynomial not mapped to a polynomial is the identity function,
+g(x) = x:
+
+$ wttmo 0 1 2 3 4 5 6 7
+0.000   0.000   0.000   0.000   0.000   0.000   0.000   0.000
+0.000   1.000   2.000   3.000   4.000   5.000   6.000   7.000
+0.000   2.000   2.000   0.000   -4.000  -10.000 -18.000 -28.000
+0.000   3.000   0.000   3.000   24.000  75.000  168.000 315.000
+0.000   4.000   -4.000  24.000  4.000   -280.000 -1176.000 -3164.000
+0.000   5.000   -10.000 75.000  -280.000 5.000   5910.000 28595.000
+0.000   6.000   -18.000 168.000 -1176.000 5910.000 6.000   -171528.000
+0.000   7.000   -28.000 315.000 -3164.000 28595.000 -171528.000 7.000
+
+Very unfunctorial of wttmo.  :)
+
+In GF(2) (suitably modifying the program, including writing # for 1 and
+space for 0 in the output for better contrast), wttmo maps the identity
+polynomial x = 0,1,0,1,0,1,... to xy, which is as one would expect given
+that x = x^2 in GF(2).
+
+More interestingly it maps the sequence 1,0,0,0,0,... to the Sierpinski
+gasket, shown here for the top left 32x32 elements of f.
+
+################################
+# # # # # # # # # # # # # # # #
+##  ##  ##  ##  ##  ##  ##  ##
+#   #   #   #   #   #   #   #
+####    ####    ####    ####
+# #     # #     # #     # #
+##      ##      ##      ##
+#       #       #       #
+########        ########
+# # # #         # # # #
+##  ##          ##  ##
+#   #           #   #
+####            ####
+# #             # #
+##              ##
+#               #
+################
+# # # # # # # #
+##  ##  ##  ##
+#   #   #   #
+####    ####
+# #     # #
+##      ##
+#       #
+########
+# # # #
+##  ##
+#   #
+####
+# #
+##
+#
+
+
+It is tempting to infer the fractal nature of wttmo from this.  However
+the Sierpinski gasket also arises as Pascal's triangle mod 2, so perhaps
+one shouldn't read too much into this.
+
+
+Vaughan Pratt
+
+
+

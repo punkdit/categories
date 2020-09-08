@@ -1,0 +1,167 @@
+Date: Mon, 29 Aug 1994 17:01:37 +0500 (GMT+4:00)
+Subject: Partial Topos 
+
+Date: Mon, 29 Aug 94 18:37:23 +0200
+From: Thomas Streicher <streiche@informatik.uni-muenchen.de>
+
+Dear All,
+
+I'd like to know whether the following is aloready well known ?
+
+Around 1980 in a lecture course at Louvain-la-Neuve Jean Benabou  
+introduced the notion of partial topos. He defined it as a category  
+IB with pullbacks such that each slice is an elementary topos and the  
+reindexing functors  f*  are logical and have right adjoints  Pi_f .  
+One immediately can see that it is enough to claim that each slice is  
+an elementary topos : 
+
+slices having products means that one has pullbacks 
+
+and for any  f : J -> I  the reindexing functor  f*  is logical and  
+has a right adjoint as it is isomorphic to the functor  
+
+(f : f -> id_I)* : (IB/I) -> (IB/I)/f  
+
+which is the inverse image part of a local homeomorphism.
+
+Nevertheless this definition of partial topos as a category all whose  
+slices are toposes has a certain defect - pointed out by Benabou  
+himself - namely that ANY groupoid is a partial topos as it has  
+pullbacks and any slice is the trivial topos.
+
+Now what is a natural condition ruling out this defect. 
+
+I propose the following condition
+
+(Weakening)  for any  I  the forgetful functor  Sigma_I : IB/I -> IB
+             has a right adjoint  I* : IB -> IB/I
+
+I call this weakening as any category with pullbacks is a model of  
+extensional type theory not allowing empty contexts (which would be  
+interpreted as the (non-existing) terminal object). Nevertheless we  
+would like to have weakening by a type which corresponds to the rule
+
+      Gamma |- B    A  a type
+    ---------------------------
+         A , Gamma  |- B
+
+the categorical semantics of "weakening by A" is applying the right  
+adjoint to  Sigma_A : IB/A -> IB.
+
+LEMMA 1  An ARBITRARY category  IB  has weakening iff  IB  has binary  
+products.
+
+Proof :  If  Sigma_I -| I*  then  I*X : I*X -> I  is the first  
+projection and  the counit eps_X : I*X -> X  is the second  
+projection.
+                end_of_proof
+
+
+Now the condition of weakening rules out nontrivial groupoids. 
+
+
+LEMMA 2  If  IB  is a groupoid satisfying weakening then for any  I   
+in  IB  the functor  Sigma_I : IB/I -> IB  has a right adjoint and  
+therefore preserves colimits. Now  id_I  considered as an object of   
+IB/I  is initial and therefore  I = Sigma_I(id_I)  is initial.
+Thus all objects of the groupoid are initial and the groupoid is  
+trivial.   
+
+           end_of_proof
+
+
+This suggests the following new
+
+DEFINITION   A category  IB  is a PARTIAL TOPOS  iff  
+
+
+             (i)  any slice of  IB  is a topos
+             (ii) IB  has weakening, i.e. all binary products.
+
+
+Immediate consequences of the definition :
+
+LEMMA 3  Let  IB  be a partial topos. The the following hold
+
+(i)  IB  has equalizers
+
+(ii) any finite diagram in  IB  has a colimit  iff  
+
+     it has at least one cocone
+
+(iii)  IB / O  is trivial
+
+(iv)   if  f : A -> B  and  the exponential object  B^A  exists
+       then  IB  has a terminal object .
+
+
+In more elementary terms partial toposes can be characterized as  
+follows.
+
+LEMMA 4 
+
+
+IB  is a partial topos  iff
+
+(i)  IB  has pullbacks and binary products   
+
+
+(ii)  any  f*  has a right adjoint  Pi_f
+
+(iii)  for any  I  the category  IB/I  has a subobject classifier
+
+       (i.e. there exists an epi  Omega_I : Omega_I -> I
+             split by  T_I : I -> Omega_I  such that
+
+             for any  f : A -> I  and  subobject  m : A' >--> A 
+
+             there exists a unique morphism  chi : A -> Omega_I
+             with  chi ; Omega_I  = f  and  m = chi*T_I         )
+
+Proof :  (ii) is equivalent to any slice being cartesian closed.
+       
+
+
+EXAMPLES of Partial Toposes
+
+(i) (Benabou 1980)
+
+Let  IE  be an elementary topos and  F  a nonempty downward closed  
+subset of  Sub_IE(1). Let  IE_F  be the full subcategory of  IE   
+consisting of those subobjects  X  s.t.  support(X)  is in  F .
+Then  IE_F  is a partial topos.
+
+Taking  IE = Set^I  and  for  F  the subsets of  I  containing at  
+most one element (the downward closure of the atoms in  Sub_IE(1))
+then  IE/F  is not closed under finite sums.
+
+(ii)  the category of finite trees is a partial topos  
+
+      (Benabou, private communication)
+
+(iii)  the category of spaces and local homemorphisms 
+
+       is a partial topos
+       (cf. mail of Freyd in April '94 on CATEGORIES)
+
+(iv)  the category of small (finite) categories and 
+
+      discrete fibrations is a partial topos
+
+      (the slice over  C  is equivalent 
+
+       to the topos of (finite) presheaves over C)
+     
+
+       binary products can be constructed by showing that for any  C
+       Sigma_C  has a right adjoint; the construction of the right 
+
+       adjoint is suggested by the Yoneda lemma
+
+
+Are there other useful examples ?? 
+
+Is this the "correct" definition of "partial topos" ?
+
+Thomas Streicher
+

@@ -1,0 +1,181 @@
+Date: Tue, 9 May 1995 22:47:01 -0300 (ADT)
+Subject: cocomplete toposes having no small set of generators
+
+From: Thomas Streicher <streicher@mathematik.th-darmstadt.de>
+Date: Fri, 05 May 1995 16:14:50 MESZ
+
+One possible very concise definition of GROTHENDIECK topos is as an elementary
+topos E  such that
+
+1) E is locally small
+2) E has small sums
+3) E has a small set of generators
+
+One knows that a lex category  B  satisfies  1) and 2) iff the global sections
+functor  Gamma : B -> Set has a lex left adjoint Delta.
+For an elemenatry topos E satisfying 1) and 2) the condition
+3) is equivalent to the requirement that any object X of E is a SUBQUOTIENT of
+a Delta(I).
+
+Now may question is
+
+   WHAT IS THE STATUS of LOCALLY SMALL COCOMPLETE ELEMENTARY TOPOSES
+
+Are there natural examples ??
+
+Locally small cocomplete elementary toposes are sufficient for interpreting
+set theory. Can they - maybe -  characterised via this property ?
+Do there exist models of set theory giving rise to cocomplete topoi which
+don't have a small set of generators ?
+
+The background of my question is that elementary toposes as such don't provide
+models of IZF (how should one simulate the Goedel-Bernays-Neumann hierarchy ?).It would be nice iff cocomplete topoi were the precise analogon of IZF !
+But maybe that's hoping too much ?
+
+Grateful for any hints,
+Thomas Streicher
+
+
+Date: Wed, 10 May 1995 23:02:07 -0300 (ADT)
+Subject: Re: cocomplete toposes having no small set of generators
+
+Date: Tue, 9 May 95 22:43:59 EDT
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+What about small G-sets, where G is a LARGE group.  This was the classic
+example of an equational category that isn't varietal, that is lacks
+free algebras.  A classic example, anyway.
+
+Michael
+
+
+Date: Wed, 10 May 1995 23:05:14 -0300 (ADT)
+Subject: Re: cocomplete toposes having no small set of generators
+
+Date: Wed, 10 May 1995 07:43:07 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Thomas Streicher asks about cocomplete topoi that aren't Grothendieck.
+The standard example is as follows: an object is a "base set,"  B,
+together with an "operator set,"  C, with an action  a:B x C -> B
+such that for every  c:C  it is the case that  \b.abc  is a permutation.
+One uses the convention that  abc = b  for all  c  not in  C. (So one
+may think of this as a set on which the entire universe acts, the
+action "having small support".) Given a second such object  B', C', a',
+a map from the first to the second is a function  f:B -> B' such that
+f(abc)  = a'(fb)c  all  b:B  and  c:(C union C'). This yields a topos
+and the forgetful functor to the cat of sets is logical (which tells
+one how to construct power-sets).
+
+If one drops the "\b.abc  is a permutation" condition the resulting
+cat is not a topos but satisfies the Giraud definition except for
+the generating set.
+
+The Fourman interpretation of IZF arising from a cocomplete topos
+(I can't find Fourman's paper in MathSci -- look at my paper in the
+Mac Lane Festschrift, JPAA Vol 19, 1980) only refers to its
+"well-founded part."  One needs "ur elements," that is, one needs
+IZFA, to get out of the well-founded part.
+
+
+Date: Wed, 10 May 1995 23:06:20 -0300 (ADT)
+Subject: cocomplete toposes having no small set of generators
+
+Date: Wed, 10 May 1995 12:32:33 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+The standard example is to be found in 1.96(10) in Cats and
+Allegators.
+
+As for the connection with IZF take a look at the Mac Lane
+Festschrift, JPAA Vol 19 (1980), for papers by Fourman and me.
+IZF without ur-elements is not enough. One needs IZFA.
+
+
+Date: Thu, 11 May 1995 09:03:40 -0300 (ADT)
+Subject: re: cocomplete toposes having no small set of generators
+
+    Date: Thu, 11 May 1995 12:41:57 +1000
+    From: street@macadam.mpce.mq.edu.au (Ross Street)
+
+    >Date: Tue, 9 May 95 22:43:59 EDT
+    >From: Michael Barr <barr@triples.math.mcgill.ca>
+    >
+    >What about small G-sets, where G is a LARGE group.  This was the classic
+    >example of an equational category that isn't varietal, that is lacks
+    >free algebras.  A classic example, anyway.
+
+    A reference for this classic example in the topos context is my paper
+
+    Notions of topos, Bulletin Australian Math. Soc. 23 (1981) 199-208;
+  MR83a:18014.
+
+    Regards,
+    Ross
+
+
+Date: Sun, 14 May 1995 23:03:22 -0300 (ADT)
+Subject: Fourman's paper
+
+Date: Sun, 14 May 1995 13:17:42 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+For some reason the other day I couldn't find on MathSci Mike's paper
+on the connection between cocomplete topoi and Zermelo-Fraenkel. It's
+in plain sight:
+
+  AU Fourman, Michael P.
+  TI Sheaf models for set theory.
+  SO J. Pure Appl. Algebra (Journal of Pure and Applied Algebra) 19
+(1980), 91--101.
+  DT Journal
+  AB ``Set theory'' means Zermelo-Fraenkel set theory, with atoms,
+formulated in intuitionistic logic. ``Sheaf model'' means an
+interpretation in a locally small, complete topos. If A is an object
+in such a topos {script}E, the cumulative hierarchy V{sub} alpha (A),
+with A as the object of atoms, is defined in the expected way, with
+power objects at successor stages and direct limits at limit stages,
+and with the membership relation on V{sub} alpha (A) and the embedding
+of V{sub} beta (A) in V{sub} alpha (A) for beta < alpha being defined
+by induction simultaneously with V{sub} alpha (A). Formulas of set
+theory in which all quantifiers are bounded by V{sub} alpha (A)'s have
+a well-known interpretation in {script}E, since they are formulas of
+the internal logic of {script}E. The completeness and local smallness
+of E enable the author to interpret unbounded quantifiers as well. The
+truth value of ({all} x) phi (x) is the infimum of the truth values of
+the approximations ({all} x{in}V{sub} alpha (A)) phi (x) and
+existential quantifiers are handled similarly. The main theorem
+asserts that the axioms of set theory, as well as the axioms and rules
+of the underlying intuitionistic logic, are correct for this
+interpretation; if {script}E is Boolean then classical logic is also
+correct. The author gives three sorts of examples; (a) Fraenkel-
+Mostowski models, (b) Boolean-valued extensions, and (c) symmetric
+extensions. The main novelty here is in (a). If A is a set of atoms, G
+a group of permutations of A, {script}F a normal filter of subgroups
+of G, and M the associated Fraenkel-Mostowski model, then ordinary
+truth in M is the same as the author's interpretation in the
+Grothendieck topos {script}E of continuous G- sets, i.e. G-sets each
+of whose points has its stabilizer in {script}F. This is true despite
+the fact that {script}E is only a part of the (non- Grothendieck)
+topos of sets and functions of M. The latter topos, which we also call
+M, contains sets on which not G, but only some subgroup in {script}F,
+acts. These sets are not objects of {script}E, but they are elements
+of such objects (specifically of the V{sub} alpha (A)'s) and so
+contribute to the interpretation of set-theoretic formulas.
+(Reviewer's remark: M is obtainable from {script}E by making supports
+split; it is the direct limit, in the sense of logical morphisms, of
+the slice topoi {script}E/(G/H) where H ranges over {script}F. This
+sort of construction was used by P. J. Freyd [Bull. Austral. Math.
+Soc. 7 (1972) 1 - 76; MR 53#576; corrigenda, ibid. 7 (1972), 467 -
+480; MR 54#7571].) In connection with (b), the author mentions the
+unpublished result of Higgs that the topos of sets and functions of a
+Boolean-valued model V{sup}B is equivalent to the topos of sheaves on
+B for the canonical topology, and he indicates that his
+interpretation, with A={empty}, coincides with the usual
+interpretation in V {sup}B. Finally, he shows that symmetric
+extensions can be obtained as the pure part (i.e. A=0) of Boolean
+extensions of Fraenkel-Mostowski models. (As far as the reviewer
+knows, this approach to symmetric extensions was first used by
+P. Vopenka and P. Hajek [Theory of semisets, Academia, Prague, 1972;
+MR 56#2824].)
+

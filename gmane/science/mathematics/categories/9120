@@ -1,0 +1,168 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: David Roberts <a1078662@adelaide.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re:  Weighted limits
+Date: Wed, 15 Feb 2017 21:03:19 +1030
+Lines: 128
+Approved: news@gmane.org
+Message-ID: <E1cePCv-0002Hp-Vp@mlist.mta.ca>
+References: <88023426-5BA7-4005-ACB0-D073AF38B770@wanadoo.fr>
+Reply-To: David Roberts <a1078662@adelaide.edu.au>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: blaine.gmane.org 1487263685 22582 195.159.176.226 (16 Feb 2017 16:48:05 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 16 Feb 2017 16:48:05 +0000 (UTC)
+Cc: John Power <A.J.Power@bath.ac.uk>, Categories <categories@mta.ca>
+To: Jean Benabou <jean.benabou@wanadoo.fr>
+Original-X-From: majordomo@mlist.mta.ca Thu Feb 16 17:47:59 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePDn-0005CZ-4k
+	for gsmc-categories@m.gmane.org; Thu, 16 Feb 2017 17:47:55 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:44501)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePDT-0004hE-Hl; Thu, 16 Feb 2017 12:47:35 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cePCv-0002Hp-Vp
+	for categories-list@mlist.mta.ca; Thu, 16 Feb 2017 12:47:01 -0400
+In-Reply-To: <88023426-5BA7-4005-ACB0-D073AF38B770@wanadoo.fr>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9120
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9120>
+
+Dear Jean, (apologies for this, and any future, slow replies. The
+necessities of life take up a lot of my time at the moment)
+
+My approach below is pedestrian, but I hope clear.
+
+Strict inverters are PIE-limits. Thus they can be computed in Cat(S)
+once we know it has each of products, inserters, equifers -- in fact
+just the latter two, in a rather straightforward way, using no more
+than two of each. To quote the nLab, "first we insert a 2-morphism
+b going in the opposite direction from a, then we equify ba and ab
+with identities." (this quote may be likewise borrowed from either
+Kelly or Street)
+
+Let as assume S has finite limits throughout.  For what it's worth,
+products obviously exist in Cat(S).
+
+Note that For X a category in S, and a subobject U >--> Obj(X), we can
+build the full subcategory X[U] of X on U (as an object of Cat(S))
+using only finite limits in S. To build the equifer of a,b: f =3D> g: X
+--> Y, we only need the equaliser E in S of the component maps a,b:
+Obj(X) --> Arr(Y), and then the equifer is the inclusion  X[E] --> X
+of the full subcategory on the subobject E.
+
+Thus we are reduced to building inserters, which is the real meat of
+the problem, as inserters are not equivalent to any conical 2-limit.
+
+Consider a diagram f,g: X --> Y in Cat(S). The inserter of this
+diagram is (the inclusion of) a subcategory Ins(f,g) of X. We can
+compute the object Ins(f,g)_0 of objects of the inserter as the
+pullback of
+
+Obj(X) -- (f,g) --> Obj(Y) x Obj(Y) <---- (s,t) ---- Arr(Y)
+
+in S.
+
+Then the inserter is a wide subcategory of X[ Ins(f,g)_0 ] (itself a
+full subcategory of X). Note that there is a map a: Ins(f,g)_0 --->
+Arr(Y) which will be the component map of the universal natural
+transformation we are inserting.
+
+The arrows of Ins(f,g) are the largest subobject Ins(f,g)_1 --> Arr(X)
+such that a is natural with respect to such arrows. This can be
+defined by an equaliser in S.
+
+Thus we can construct, using solely finite limits in S, (products,)
+equifiers and inserters, and hence inverters, in Cat(S).
+
+One could perhaps examine this proof more closely to see what kind of
+internal categories in non-finitely-complete S are necessary for it to
+work (eg those such that (s,t) belong to a class of which all
+pullbacks exist, and are again in the class etc). This perhaps would
+fit with your general philosophy on generalising fibration technology.
+
+I hope this answers your qualms, and apologies for being slightly
+telegraphic in my description.
+
+Best regards,
+
+David
+
+PS I regret we did not have the chance to meet at Topos =C3=A0 l'IH=C3=89S =
+in
+2015. Perhaps one day...
+
+
+
+
+
+
+On 15 February 2017 at 20:09, Jean Benabou <jean.benabou@wanadoo.fr> wrote:
+> Dear John,
+>
+> Thank you for your mail and the precisions you give in it, but I'm not
+> interested, for the time being, in general questions about 2-categories.
+> Let me repeat precisely my question:  If  S is a category with finite lim=
+its
+> and Cat(S) is the 2-category of internal categories of S, under which
+> condition does Cat(S) have strict inverters?
+> Can you, or anybody give a precise answer? (Of course I know that Cat(S) =
+is
+> cotensored with 2)
+> .
+> David Roberts says that finite limits in S suffice. As I I said I don't
+> believe that. I'm perhaps wrong. In that case, could he, you, or anybody
+> tell me how to construct strict inverters when all I assume is that S has
+> finite limits?
+>
+> It is always a pleasure to hear from you. All the best ,
+>
+> Jean
+>
+>
+> Le 15 f=C3=A9vr. 17 =C3=A0 08:41, John Power a =C3=A9crit :
+>
+> Dear Jean,
+>
+> Max wrote an expository paper which I believe was called "Elementary
+> Observations on 2-Categorical Limits" and was published in the Bulletin o=
+f
+> the Australian Mathematical Society I think around 1990. He would have ha=
+d a
+> discussion of inverters there.
+>
+> Strict inverters are a kind of strict weighted limit (see, for instance,
+> https://golem.ph.utexas.edu/category/2014/04/elementary_observations_on_2=
+ca.html)
+> and a 2-category has all strict weighted limits if it has all strict coni=
+cal
+> limits and all strict cotensors, as a 2-category is a Cat-enriched catego=
+ry.
+> So if one can prove that Cat(S) has strict conical limits and strict
+> cotensors, one can construct strict inverters by following the procedure =
+in
+> the  link above.
+>
+> For strict cotensors, it suffices to prove that a 2-category has strict
+> cotensors with the arrow category. I believe that is straightforward for
+> Cat(S) if you follow the case of S =3D Set.
+>
+> Once again, it is always lovely to hear from you.
+>
+> All the best,
+>
+> John.
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

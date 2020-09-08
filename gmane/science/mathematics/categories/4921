@@ -1,0 +1,99 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Lack <s.lack@uws.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Decidability of the theory of a monad
+Date: Thu, 04 Jun 2009 08:29:11 +1000
+Lines: 66
+Approved: news@gmane.org
+Message-ID: <E1MCN0d-0006YW-2I@mailserv.mta.ca>
+Reply-To: Steve Lack <s.lack@uws.edu.au>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="US-ASCII"
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1244162779 6794 80.91.229.12 (5 Jun 2009 00:46:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 5 Jun 2009 00:46:19 +0000 (UTC)
+To: Andrej Bauer <andrej.bauer@andrej.com>,  <categories@mta.ca>
+Original-X-From: categories@mta.ca Fri Jun 05 02:46:15 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MCNZX-0006xG-8P
+	for gsmc-categories@m.gmane.org; Fri, 05 Jun 2009 02:46:15 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MCN0d-0006YW-2I
+	for categories-list@mta.ca; Thu, 04 Jun 2009 21:10:11 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4921
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4921>
+
+Dear Andrej,
+
+The free monad on a category has a well-known simple concrete description.
+Let Ordf be the category of finite ordinals and order-preserving maps.
+        -->
+0 --> 1 <-- 2 ...
+        -->
+(This is sometimes called the algebraicist's simplicial category - it
+contains the topologist's simplicial category as the full subcategory of
+non-empty finite ordinals. Ordf is simply called Delta in Categories for the
+Working Mathematician.) Ordinal sum makes Ordf into a strict monoidal
+category. The object 1 is a monoid in this monoidal category, and in fact
+is the "free monoid in a monoidal category", in the sense that for any
+strict monoidal category C, there is a bijection between monoids in C and
+strict monoidal functors from Ordf to C. (There is also a non-strict version
+of this fact.)
+
+The free "category with a monad" on a category A is the Ordf x A, with monad
+having endofunctor part (n,a) |-> (n+1,a), with the obvious multiplication.
+
+More generally, the monoidal category Ordf can be regarded as a one-object
+2-category mnd, and 2-functors mnd-->K for a 2-category K, are in bijection
+with monads in K. Freely adding a monad to an object of K can be seen as
+left Kan extension along the unique 2-functor 1-->mnd.
+
+Regards,
+
+Steve Lack.
+
+
+On 3/06/09 9:10 PM, "Andrej Bauer" <andrej.bauer@andrej.com> wrote:
+
+> Consider the theory of a monad, i.e., the axioms are those of a
+> category and a monad given as a triple: an operation T on objects, for
+> each object A a morphism eta_A : A -> T A, and an operation lift_{A,B}
+> which maps morphisms f : A -> T B to lift f : T A -> T B. Concretely,
+> the axioms are (where lift f is written f* and composition is
+> juxtaposition):
+>
+> id f = f
+> f id = f
+> (f g) h = f (g h)
+> eta* = id
+> f* eta = f
+> (f* g)* = f* g*
+>
+> Presumably, the equational theory (with partial operations) of such a
+> triple is decidable. Is this known? If we ignore the types and
+> partiality, we can attempt to turn the above equations into a
+> confluent terminating rewrite system using the Knuth-Bendix algorithm,
+> but it gets stuck (on various orderings I tried).
+>
+> A more categorical way of asking the same question is: what is a
+> concrete description of the free "monad on a category" (is this the
+> same as  "free monad" on "free category"?).
+>
+> With kind regards,
+>
+> Andrej
+>
+>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

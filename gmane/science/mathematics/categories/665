@@ -1,0 +1,83 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Reddy's question
+Date: Tue, 3 Mar 1998 07:32:55 -0500 (EST)
+Lines: 57
+Approved: news@gmane.org
+Message-ID: <199803031232.HAA05517@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017108 26791 80.91.229.2 (29 Apr 2009 14:58:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:58:28 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Tue Mar  3 13:09:26 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA10032
+	for categories-list; Tue, 3 Mar 1998 09:44:26 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2194
+Original-Lines: 56
+Xref: news.gmane.org gmane.science.mathematics.categories:665
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/665>
+
+Uday Reddy poses the following (with a few changes in notation]:
+
+>Consider a monoid  <M,*,e>  in a CCC.  The operations of interest
+>are natural transformations  E:[-,M] -> M  that satisfy the
+>following equations (in the internal language of the CCC):
+>
+>               E_A(\x.e)  =  e
+>         E_A(\x. a * gx)  =  a * E_A(g)
+>         E_A(\x. gx * a)  =  E_A(g) * a
+>    E_A(\x. E_B(\y.hxy))  =  E_B(\y. E_A(\x.hxy))
+
+I wonder if naturality is really desired: it would seem to force  M  to
+be trivial. By the familiar Yoneda-lemma argument, E  must be constant
+as far as the "points" of  [A,M]  are concerned. (Actually one doesn't
+need the argument, just the lemma itself; consider the transformation
+that  E  induces between set-valued functors  (-,M) -> (1,M); Yoneda
+says it must be constant.) The condition
+
+    E_A(\x.e)  =  e
+
+forces just which constant it is. That is, for any  f:A -> M  it will
+be the case that  E_A  will send  f  to  e.
+
+But then either condition
+
+    E_A(\x. a * gx) = a * E_A(g)
+
+or
+
+    E_A(\x. gx * a) = E_A(g) * a
+
+will force  M  to be trivial. (It's clear in the \-calculus notation.
+But that argument would be implicitly using the fact that  E_A  is
+constant and we officially know only that it's constant on points.
+So take, say, the second condition. It says in diagrammatic language:
+
+
+              1 x K                 P            [A,*]
+   [A,M] x M  -----> [A,M] x [A,M] ---> [A,MxM]  -----> [A,M]
+
+         |                                                |
+         |  E_A x 1_M                                     |  E_A
+         |                                                |
+                                    *
+       M x M   ---------------------------------------->  M
+
+
+where  K  is the standard "constant-map" operator that's adjoint to
+the projection  AxM -> M  and  P  is the standard operator that
+defines  MxM  (given products in Set). Specialize to  A = M  and
+precompose with  <f,1>: M -> [M,M] x M  where  f  doesn't matter. If
+the commutative rectangle above is chased clockwise one obtains the
+map constantly valued  e. Chased counterclockwise one obtains the
+identity map. And, of course, it didn't matter what  f  is.)
+
+
+

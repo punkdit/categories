@@ -1,0 +1,104 @@
+Path: news.gmane.org!not-for-mail
+From: Robin Houston <r.houston@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: On defining *-autonomous categories
+Date: Tue, 18 Dec 2007 13:08:07 +0000
+Lines: 70
+Approved: news@gmane.org
+Message-ID: <E1J4o0B-0002YI-Rt@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1241019735 11825 80.91.229.2 (29 Apr 2009 15:42:15 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:42:15 +0000 (UTC)
+To: Categories list <categories@mta.ca>,
+Original-X-From: rrosebru@mta.ca Tue Dec 18 21:56:10 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 18 Dec 2007 21:56:10 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1J4o0B-0002YI-Rt
+	for categories-list@mta.ca; Tue, 18 Dec 2007 21:45:39 -0400
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 21
+Status: O
+Content-Length: 2557
+Original-Lines: 69
+Xref: news.gmane.org gmane.science.mathematics.categories:4127
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4127>
+
+On Mon, Dec 17, 2007 at 02:29:17PM -0400, Peter Selinger wrote:
+> On the other hand, none of the above matters in some sense, due to a
+> theorem proved last year by Robin Houston (it was previously unknown
+> at least to me):
+>
+>  Theorem. Let C be a symmetric monoidal category, and let D be an object.
+>  If there *exists* a natural isomorphism f : A -> (A -o D) -o D,
+>  then the *canonical* natural transformation g : A -> (A -o D) -o D
+>  (coming from the symmetric monoidal structure) is an isomorphism
+>  (although it may in general be different from f).
+
+I suspect I may not have been the first to notice this, since it's
+fairly easy, though I'm not aware that it's ever been mentioned
+in print. (If anyone knows otherwise, I'd be interested to hear.)
+
+
+Claim: Let C be a symmetric monoidal closed category, and
+let D be an object of C. Then the following are equivalent:
+
+1. There exists a natural isomorphism A = (A -o D) -o D,
+2. The functor (- -o D) is full and faithful,
+3. The canonical natural transformation A -> (A -o D) -o D is
+   invertible.
+
+
+Lemma 1. Let G: X -> Y and H: Y -> Z be functors. If HG is faithful
+then G is faithful; if HG is full and G is essentially surjective,
+then H is full.
+
+Proof: easy.
+
+Lemma 2. Let C be a category, and F: C -> C an endofunctor. If FF
+is naturally isomorphic to 1_C, then F is an equivalence.
+
+Proof: Certainly F is essentially surjective, since every object
+X in C is naturally isomorphic to FFX. It then follows by Lemma 1
+that F is full and faithful.
+
+
+For the implication 1 => 2, take F = (- -o D) in Lemma 2.
+
+
+For the implication 2 => 3, consider the following sequence of
+isomorphisms natural in A \in C:
+
+    C(A, A)
+ -> C(A -o D,  A -o D)       ;apply the functor (- -o D)
+ =  C((A -o D) @ A, D)       ;closure
+ =  C(A @ (A -o D), D)       ;symmetry of tensor
+ =  C(A,  (A -o D) -o D)     ;closure again
+
+By definition, this natural transformation corresponds under Yoneda
+to the canonical A -> (A -o D) -o D. Since (- -o D) is full and faithful,
+the first step is invertible; the others are necessarily so. Therefore,
+by the Yoneda correspondence, the canonical natural transformation with
+components A -> (A -o D) -o D is invertible.
+
+[ Robin Cockett pointed out to me that this can be decomposed into
+  two steps, one easy and one well-known:
+   a) The functor (- -o D) is self-adjoint on the right.
+   b) For any adjunction, the left adjoint is full and faithful
+      if and only if the unit of the adjunction is invertible. ]
+
+
+Finally, the implication 3 => 1 is immediate.
+
+Robin
+
+
+

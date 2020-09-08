@@ -1,0 +1,143 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: question about monoidal categories
+Date: Fri, 8 Feb 2008 20:03:46 +0000 (GMT)
+Lines: 110
+Approved: news@gmane.org
+Message-ID: <E1JNdjV-0002M2-Ux@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1241019790 12193 80.91.229.2 (29 Apr 2009 15:43:10 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:43:10 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb  8 20:49:31 2008 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 08 Feb 2008 20:49:31 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JNdjV-0002M2-Ux
+	for categories-list@mta.ca; Fri, 08 Feb 2008 20:38:18 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 23
+Status: O
+Content-Length: 2608
+Original-Lines: 109
+Xref: news.gmane.org gmane.science.mathematics.categories:4201
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4201>
+
+
+As an addendum to the interesting answers that have been
+given so far to Paul's question, it is perhaps worth pointing
+out that using an old result of Max Kelly's, the situation
+Paul describes can be expressed purely in terms of a strong
+monoidal functor.
+
+Given a monoidal category M and functor F : M --> S as in
+Paul's message, we define a strict monoidal category {F, F}
+as follows. Its objects are triples (G, H, a) fitting into a
+diagram of functors and natural transformations
+
+        G
+    M -----> M
+    |        |
+    |   a    |
+F  |   =>   | F
+    |        |
+    v        v
+    S -----> S
+        H
+
+Its morphisms (G, H, a) --> (G', H', a') are pairs of natural
+transformations b : G => G', c : H => H' satisfying the
+obvious compatibility condition with a and a'. The tensor
+product is given by pasting squares next to each other
+horizontally.
+
+There are strict monoidal functors p_1 : {F, F} -> [M, M]
+and p_2 : {F, F} -> [S, S] sending (G, H, a) to G and H
+respectively; and as in my previous message we have strong
+monoidal functors
+
+R : M ---> [M, M]
+     m |--> (-) * m
+
+T : M ---> [S, S]
+     m |--> id_S
+
+corresponding to the right regular action of M on itself,
+and to the trivial action of M on S.
+
+Now to give the natural transformation beta of Paul's
+message, satisfying his "monoidality" conditions, is
+precisely to give a strong monoidal functor B: M --> {F, F}
+rendering the diagram
+
+           _  {F, F}
+           .|   |
+         .      |
+     B .        | (p_1, p_2)
+     .          |
+   .            v
+M --------> [M, M] x [S, S]
+    (R, T)
+
+commutative.
+
+I believe this technique originates in the paper
+
+"Coherence theorems for lax algebras and for distributive
+laws", G.M. Kelly, LNM 420.
+
+A good place to learn more about it is in Section 2 of
+
+"On property-like structures", G.M. Kelly and S. Lack, TAC Vol. 3, No. 9
+
+
+
+Richard
+
+
+--On 07 February 2008 20:05 Paul B Levy wrote:
+
+>
+>
+>
+> Let F be a functor from a monoidal category M to a category S.
+>
+> We are given
+>
+>        beta(p,a) : F(p) --> F(p*a)
+>
+> natural in p,a in M.
+>
+> If I tell you that, in addition to naturality, beta is "monoidal", I'm
+> sure you will immediately guess what I mean by this, viz.
+>
+> (a) for any p,a,b in M
+>
+>   beta(p,a) ; beta(p*a,b) = beta(p,a*b) ; F(alpha(p,a,b))
+>
+> (b) for any p in M
+>
+>   beta(p,1) = F(rho(p))
+>
+> Yet I cannot see any reason for giving the name "monoidality" to (a)-(b).
+>
+> It doesn't appear to be a monoidal natural transformation in the official
+> sense.  There are no monoidal functors in sight.
+>
+> Can somebody please justify my usage?
+>
+> Paul
+>
+>
+>
+
+
+

@@ -1,0 +1,72 @@
+Path: news.gmane.org!not-for-mail
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: question on "model functor"
+Date: Fri, 15 Sep 2000 18:08:14 +0100 (BST)
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E13ZyyF-00022q-00@owl.dpmms.cam.ac.uk>
+References: <39C22090.5802016D@informatik.uni-bremen.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017977 32140 80.91.229.2 (29 Apr 2009 15:12:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:57 +0000 (UTC)
+To: categories@mta.ca (Categories)
+Original-X-From: rrosebru@mta.ca Sun Sep 17 12:15:29 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA30488
+	for categories-list; Sun, 17 Sep 2000 11:14:52 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <39C22090.5802016D@informatik.uni-bremen.de> from "Lutz Schroeder" at Sep 15, 2000 03:13:52 PM
+X-Mailer: ELM [version 2.5 PL2]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 13
+Status: O
+Content-Length: 1607
+Original-Lines: 37
+Xref: news.gmane.org gmane.science.mathematics.categories:1627
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1627>
+
+> The following question looks so natural that somebody's
+> bound to have looked into it:
+>
+> Does the functor
+>
+> Cat^op ---> CAT
+>
+> A  |-->   [A,Set]
+>
+> reflect isomorphisms (more generally: limits)?
+
+The question is not very well posed: since Cat and CAT are 2-categories,
+one ought to be asking about whether it reflects equivalences. For this,
+the answer is negative (and well known): a functor A --> B induces an
+equivalence [B,Set] --> [A,Set] iff it induces an equivalence between the
+idempotent-completions of A and B. So the inclusion of any non-idempotent-
+complete category in its idempotent-completion provides a counterexample.
+
+However, if you insist on asking about isomorphisms rather than 
+equivalences, the answer is yes. It's easy to see that if F: A --> B
+fails to be surjective (resp. injective) on objects then the induced
+functor [F,Set] fails to be injective (resp. surjective); so if [F,Set]
+is an isomorphism then F must be bijective on objects, and this combined
+with inducing an equivalence of idempotent-completions is enough to make it
+an isomorphism.
+
+But this is not a very meaningful result. Provided you assume a sufficiently
+powerful form of the axiom of choice, [A,Set] and {B,Set] will be isomorphic
+whenever they are equivalent (since each has a proper class of objects in
+each isomorphism class, except for the initial object which is unique in
+its isomorphism class). The isomorphism will not, of course, be induced by
+a functor from A to B; but it will be naturally isomorphic to a functor that
+is (at least provided B is idempotent-complete).
+
+Peter Johnstone
+
+
+

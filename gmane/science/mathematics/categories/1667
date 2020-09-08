@@ -1,0 +1,146 @@
+Path: news.gmane.org!not-for-mail
+From: jesse@andrew.cmu.edu (Jesse F. Hughes)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction
+Date: 27 Oct 2000 16:40:57 -0400
+Lines: 112
+Approved: news@gmane.org
+Message-ID: <87itqexbja.fsf@phiwumbda.dyndns.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018006 32328 80.91.229.2 (29 Apr 2009 15:13:26 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:26 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Fri Oct 27 21:08:17 2000 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9RNBvC11299
+	for categories-list; Fri, 27 Oct 2000 20:11:57 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: phiwumbda.dyndns.org: jesse set sender to jesse@andrew.cmu.edu using -f
+In-Reply-To: Dusko Pavlovic's message of "Thu, 26 Oct 2000 16:49:12 -0700"
+User-Agent: Gnus/5.0807 (Gnus v5.8.7) XEmacs/21.1 (Carlsbad Caverns)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 25
+Status: RO
+Content-Length: 5062
+Original-Lines: 110
+Xref: news.gmane.org gmane.science.mathematics.categories:1667
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1667>
+
+
+I'm afraid that I've never quite understood the notion of guarded
+equations, so I cannot comment on much of what you wrote below without
+some more time and more thought.  Let me make a few introductory
+comments and perhaps I can say more later.
+
+Dusko Pavlovic <dusko@kestrel.edu> writes:
+
+> Al Vilcius asks:
+> 
+> > > can anyone explain coinduction?
+> > > in what sense it dual to induction?
+> 
+> and most people reply along the lines of:
+> 
+> > The principle of induction says that initial algebras have no
+> > non-trivial subalgebras.
+> 
+> > Coinduction says, dually, that the final coalgebra has no
+> non-trivial
+> > quotients.
+> 
+> but wouldn't it be nice to keep the standard definition of
+> induction, which says that the equations
+> 
+>     f(0) = c
+>     f(n+1) = g(f(n))
+> 
+> determine a unique f, given c and g? this is the definition that
+> most first year students study, and many programmers use every
+> day, usually without the slightest idea about subalgebras, or
+> triviality. do we really gain anything by replacing this simple
+> scheme by the higher-order statement about all subalgebras? ok,
+> we do get the appearance of symmetry between induction and
+> coinduction. but is the higher-order statement about quotients
+> really the friendliest form of coinduction, suitable to be taken
+> as the definition?
+
+I have always considered the statement regarding existence of a unique
+function f to be the principle of recursion.  The principle of
+induction is, in my mind, the weaker principle that says that if a
+property holds of 0 and is closed under successor, then it holds of N.
+I identify "properties" with subobjects here.  In terms of
+homomorphisms, this is equivalent to the "uniqueness part" of
+initiality (assuming that our category has some epi-mono factorization
+property, I suppose).
+
+One may question whether it's appropriate to take the principle of
+induction to apply to all properties or only those properties which
+are definable in some sense -- I guess you've done as much when you
+refer to the "higher-order statement" above.  I'm not sure to what
+extent my use of all subalgebras differs from your quantification over
+all g and c in the statement of recursion above, however.
+
+When we separate the properties of induction and recursion in the way
+I mention above, by the way, then (conceptually) induction is a
+property of those algebras A in which each element is picked out by a
+(not necessarily unique) term of our language.  I.e., those A for
+which there is an epi from the initial algebra to A.  Hence, induction
+in my sense is weaker than recursion (induction in your sense).
+
+Regarding whether a statement about quotients is really the
+"friendliest form" of coinduction, I'll have to agree that it is not,
+if one's aim is to describe coinduction as it is commonly used.  I
+chose to describe it in the terms above because these terms make clear
+the "co" in "coinduction".
+
+I did gloss over details that ensure the equivalence of the "familiar
+principle" of coinduction and the principle regarding quotients.  If
+the base category has kernel pairs of coequalizers and G preserves
+weak pullbacks, then a G-coalgebra A has no non-trivial quotients iff the
+equality relation is the largest coalgebraic relation on A (I hope
+I've got that right).  Inasmuch as the principle I called coinduction
+is not always equivalent to the familiar principle, I was being a bit
+misleading.  However, I think it is the right approach if one's goal
+is to explain the relationship between induction and coinduction.
+
+I'm not sure that the principle regarding the equality relation is
+what you'd call coinduction, however.  I think that the principle you
+have in mind is what I'd call "corecursion".  Analogous to the
+distinction between recursion and induction, I omit the existence part
+of finality in what I call "coinduction" and I use the uniqueness
+part.
+ 
+> 
+> and then, moving from coalgebraic theories to comonads, like
+> from algebraic theories to monads, should presumably yield an
+> HSP-like characterization for the categories of (comonad)
+> coalgebras. but coalgebras for a comonad over a topos usually
+> form just another topos.
+> 
+
+But, there *are* such characterizations of categories of coalgebras,
+if I understand your point.  Namely, a full subcategory of coalgebras
+is closed under coproducts, codomains of epis and domains of regular
+monos iff it is the class of coalgebras satisfying a "coequation" --
+given, here, some boundedness conditions on the functor so that things
+work out well.  For brevity's sake, and because you're likely familiar
+with this result, I'll omit details on what a coequation is and how
+it's satisfied.
+
+By the way, about that last statement regarding coalgebras "usually"
+forming a topos:  Doesn't one need that the endofunctor preserve
+pullbacks, or am I missing something?
+
+-- 
+Jesse Hughes
+"The only "intuitive" interface is the nipple.  After that, it's all
+learned."                             -Bruce Ediger on X interfaces
+"Nipples are intuitive, my ass!"      -Quincy Prescott Hughes
+
+

@@ -1,0 +1,51 @@
+Path: news.gmane.org!not-for-mail
+From: Philip Wadler <wadler@research.bell-labs.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Recursive types in polymorphic lambda calculus
+Date: Fri, 14 May 1999 15:24:32 -0400
+Lines: 25
+Approved: news@gmane.org
+Message-ID: <199905141924.PAA12048__17247.0051482835$1241017585$gmane$org@nslocum.cs.bell-labs.com>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017585 29632 80.91.229.2 (29 Apr 2009 15:06:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:25 +0000 (UTC)
+To: types@cis.upenn.edu, categories@mta.ca
+Original-X-From: cat-dist Sat May 15 14:46:44 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id NAA07869
+	for categories-list; Sat, 15 May 1999 13:44:55 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 836
+Original-Lines: 24
+Xref: news.gmane.org gmane.science.mathematics.categories:1127
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1127>
+
+There is a fairly standard encoding of recursive types
+into polymorphic lambda calculus, given by
+
+	rec X.F[X]  =  all X.(F[X] -> X) -> X
+
+where F[X] is a type in which the type variable X appears only
+covariantly.  Recall that every covariant type corresponds to a
+covariant functor, so for every h:X->Y we have F[h]:F[X]->F[Y].
+If we abbreviate T = rec X.F[X], then the key functions on this
+type are given by the polymorphic lambda terms:
+
+	fold : all X.(F[X] -> X) -> T -> X
+	fold = Lam X.lam k:F[X]->X.lam t:T.t{X}(k)
+
+	in   : F[T] -> T
+	in   = lam u:F[T].Lam X.lam k:F[X]->X.k(F[fold{X}(k)](u))
+
+	out  : T -> F[T]
+	out  = fold{F[T]}(F[in])
+
+Questions: Who first had this insight?  Where is a good place to find
+this spelled out in the literature?  Please send results to me, and I
+will summarize them for the list.  Cheers, -- P
+
+

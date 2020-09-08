@@ -1,0 +1,74 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: topos logic arising nicely
+Date: Mon, 9 Jun 2003 22:03:51 +0200 (CEST)
+Lines: 40
+Approved: news@gmane.org
+Message-ID: <200306092003.WAA31522@fb04305.mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018596 3712 80.91.229.2 (29 Apr 2009 15:23:16 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:23:16 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Jun 10 19:16:36 2003 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 10 Jun 2003 19:16:36 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 19PrMI-0004nN-00
+	for categories-list@mta.ca; Tue, 10 Jun 2003 19:12:50 -0300
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 40
+Status: O
+Content-Length: 1470
+Original-Lines: 39
+Xref: news.gmane.org gmane.science.mathematics.categories:2349
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2349>
+
+Dear Steve,
+>
+> Coincidentally, for quite different reasons I have just been looking at
+> the Fourman/Scott theory as a way to deal with partial functions.
+>
+> Scott's system for existence and identity is given a Hilbert style
+> presentation, and I suppose - I may be wrong - that that is why
+> Fourman's interpretation makes such heavy use of the higher order
+> structure of toposes. Do you know of any sequent presentations?
+
+I think it is straightforward to give a sequent style formulation of the
+Fourman/Scott interpretation. BTW one has to take care of inhabitedness
+of types (in the general case) because variables of type A range over A
+whereas terms of type A receive there interpretation in \tilde{A}, the partial
+map clasifier of A. See e.g. Troelstra and van Dalen 2nd Chapter for a
+traetment of what they call E-logic. Just as example the rules for \forall
+look as follows
+
+     \Gamma |- A(x)  x \not\in FV(\Gamma)
+   ---------------------------------------
+          \Gamma |- \forall x. A(x)
+
+       \Gamma |- \forall x. A(x)  \Gamma |- t\downarrow
+    ------------------------------------------------------
+                    \Gamma |- A[t/x]
+
+
+where  t\downarrow  stand for "t defined".
+
+What I meant with my remark is that if one allows partial terms then one need
+not have subtypes.
+
+Best, Thomas
+
+PS Fourman and Scott exploit higher order aspects already at first order level
+because \tilde{A} is a subobject of P(A) , namely the subsingletons.
+
+
+
+

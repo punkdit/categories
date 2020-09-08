@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: "Bill Halchin" <bhalchin@hotmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RFC Walters' "Categories and Computer Science" : Functional Specification
+Date: Mon, 07 Feb 2000 23:59:25 PST
+Lines: 64
+Approved: news@gmane.org
+Message-ID: <20000208075925.17402.qmail@hotmail.com>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+X-Trace: ger.gmane.org 1241017809 31105 80.91.229.2 (29 Apr 2009 15:10:09 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:09 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Feb  8 10:14:47 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA16744
+	for categories-list; Tue, 8 Feb 2000 08:27:15 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Originating-IP: [63.27.230.49]
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 2773
+Original-Lines: 63
+Xref: news.gmane.org gmane.science.mathematics.categories:1406
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1406>
+
+
+
+     In Chapter 5 "Categories of Functors", there is Section 5 entitled
+"The Specification of Functions". To me this is pretty interesting and
+neat stuff!! I have some thoughts, questions, etc. which I will now
+enumerate:
+
+1) The method of specification defined in this section seems to be
+essentially a rewrite system, i.e. we do a series of rewrites or
+reductions on "data" (actually a certain kind of path in a Data graph)
+until we possibly terminate. Hence the finite set of Equation that
+Walters' describes is basically a set of rewrite rules, i.e.  one-way
+rules in Rewriting Systems parlance.
+
+2)  We have  two sets of Data paths that define the domain and codomain, 
+respectively::
+       - The Domain is respresented by a set of paths starting  at Data 
+graph's "I" node and  ending at "J" node
+      - The Codomain is represented by a set of paths starting at the Data 
+graph's "I" node and ending at the "K" node
+      Question: I guess using "I" for both Domain and Codomain is just a 
+clever way of partitioning some of the possible paths of the Data graph into 
+one set of paths representing Domain and another set of paths representing 
+the Codomain (of course these sets can be the same!)???? I.e. we could
+have chosen a different mechanism that I, J, K, yes???
+
+3) On pg. 118, there is a "Note" about work that Robie Gates did to show
+that we can achieve Turing completeness with this method of function
+specfication.i.e. we can compute all parial recursive functions from N to
+N. Hence the computation may not be terminating!!!! Otherwise, we would
+not have Turing completeness and could solve Halting problem.
+
+     Also mentioned in this Note is that not only are we not guaranteed
+total functions (hence possibly partial functions), but we may also be
+computing a relation.
+
+     - Question: what restrictions must we put on the finite set Equation
+to guarantee confluence???? I.e. computing a function and not computing a
+relation???  Probably the answer to this is in a book on Rewriting Systems
+or maybe Dershowitz paper.
+
+
+4) Also it seems that Walters' approach of functional/relational
+specification, could be looked at in terms of equational reasoning. I.e.
+if we have a "specfied arrow" f: J -> K and lambda, a path from I to J and
+epsilon, a path belonging to I to K, then Equation |- (f.lambda, epsilon).
+Yes???
+
+
+5) Finally and important to me, has work been continued by anyone else in
+this area?? I don't see any papers in Walters' groups archive!! This
+approach to function (and relation) specification is pretty spiffy from a
+theoritcal viewpoint, but it seems it could be used as a basis to do
+functional programming or even logic programming (computing relations) by
+specifying the programs graphically!!
+
+
+
+Regards,
+
+Bill Halchin
+
+
+

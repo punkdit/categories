@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Jeremy Gibbons <Jeremy.Gibbons@comlab.ox.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction
+Date: Mon, 30 Oct 2000 15:55:25 GMT
+Lines: 99
+Approved: news@gmane.org
+Message-ID: <200010301555.PAA02925@loire.comlab>
+References: <003301c03a95$49f73610$448a0dd8@main>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018009 32349 80.91.229.2 (29 Apr 2009 15:13:29 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:29 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Oct 30 14:21:11 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9UHaUD03947
+	for categories-list; Mon, 30 Oct 2000 13:36:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: <003301c03a95$49f73610$448a0dd8@main> (al.r@VILCIUS.com)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 29
+Status: O
+Content-Length: 2833
+Original-Lines: 98
+Xref: news.gmane.org gmane.science.mathematics.categories:1671
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1671>
+
+> can anyone explain coinduction?
+> in what sense it dual to induction?
+
+We've heard some very erudite answers to these questions. I
+don't know the questioner's background, but here is a
+different answer, in case it helps.
+
+In the algebraic approach to functional programming, an
+initial datatype of a functor F is a datatype T and an
+operation in : F T -> T for which the equation in h
+
+  h . in = f . F h
+
+has a unique solution for given f. We write "fold_F f" for
+that unique solution, so
+
+  h = fold_F f  <=>  h . in = f . F h
+
+This is an inductive definition of fold, and the above
+equivalence (the "universal property for fold") encapsulates
+proof by structural induction.
+
+(For example, when F X = 1+X, then T is N, the naturals. The
+injection in : 1+N->N is the coproduct morphism [0,1+].
+Folds on naturals are functions of the form
+
+  fold_{1+} [z,s] 0     = z
+  fold_{1+} [z,s] (1+n) = s (fold_{1+} [z,s] n)
+
+To prove that a predicate p holds for every natural n is
+equivalent to proving that the function p : N -> Bool is
+equal to the function alwaystrue : N -> Bool that always
+returns true. Now alwaystrue is a fold,
+
+  alwaystrue = fold_{1+} [true,step]
+    where step true = true
+
+Therefore, to prove that p holds for every natural, we can
+use the universal property:
+
+      predicate p holds of every natural
+  <=>
+      p = alwaystrue
+  <=>
+      p = fold_{1+} [true,step]
+  <=>
+      p . [0,1+] = [true,step] . id+p
+  <=>
+      p(0) = true  and  p(1+n) = step(p(n))
+  <=>
+      p(0) = true  and  (p(1+n) = true when p(n) = true)
+
+which is the usual principle of mathematical induction.)
+
+Dually, a final datatype of a functor F is a datatype T and
+an operation out : T -> F T for which the equation in h
+
+  out . h = F h . f
+
+has a unique solution for given f. We write "unfold_F f" for
+that unique solution, so
+
+  h = unfold_F f  <=>  out . h = F h . f
+
+This is a coinductive definition of unfold, and the above
+equivalence (the "universal property for unfold")
+encapsulates proof by structural coinduction.
+
+> how is it used to prove theorems?
+
+Exactly the same way. For example, the datatype Stream A of
+streams of A's is the final datatype of the functor taking X
+to A x X. An example of an unfold for this type is the
+function iterate, for which
+
+  iterate f x = [ x, f x, f (f x), f (f (f x)), ... ]
+
+defined by
+
+  iterate f = unfold_{A x} <id,f>
+
+One might expect that
+
+  iterate f . f = Stream f . iterate f
+
+and the proof of this fact is a straightforward application
+of the universal property of unfold (that is, a proof by
+coinduction).
+
+Jeremy
+
+-- 
+Jeremy.Gibbons@comlab.ox.ac.uk
+  Oxford University Computing Laboratory,    TEL: +44 1865 283508
+  Wolfson Building, Parks Road,              FAX: +44 1865 273839
+  Oxford OX1 3QD, UK.  
+  URL: http://www.comlab.ox.ac.uk/oucl/people/jeremy.gibbons.html
+
+

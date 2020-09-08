@@ -1,0 +1,147 @@
+Date: Wed, 27 Oct 1999 16:30:25 +0100
+From: John Stell <j.g.stell@cs.keele.ac.uk>
+Subject: categories: graph classifiers
+
+The classifier, \Omega, for subgraphs has two nodes and five edges.
+The bi-Heyting algebra of subgraphs of a graph has two complement
+like operators, $\neg$ and $\suppl$. These satisfy
+$G \meet \neg G = \bot$ and $G \join \suppl G = \top$.
+One of these ($\neg$) arises from 
+an endomorphism of $\Omega$ but the other does not.
+
+The operations $\neg$ and $\suppl$ are nicely dual in some ways
+but only one can be described in terms of $\Omega$.
+Is there some kind of explanation for this?
+
+It is possible to find a graph $\Delta$ and to describe a given 
+subgraph as a morphism to $\Delta$ and to obtain $\suppl$ as an
+endomorphism of $\Delta$. But although there is a morphism
+from $\Delta$ to $\Omega$, we don't get $\neg$ via any endomorphism
+of $\Delta$. $\Delta$ has four nodes corresponding to a classification
+of nodes as (1) out (2) in and with all incident edges in (3) in and
+with all incident edges out (4) in and with some incident edges in
+and some out. Of course this is analogous to the edges in 
+$\Omega$. There are four kinds of edge identified by $\Omega$
+(working with a version of $\Omega$ for undirected graphs)
+(1) in (2) out and with all incident nodes out (3) out and
+with all incident nodes in (4) out and with some incident nodes out
+and some in. Is there a formal sense in which $\Delta$ and $\Omega$
+are dual to each other? Is there a better way to view $\suppl$ as
+coming from some kind of classifier of graphs?
+
+Does anyone have any comments or suggestions for relevant literature?
+
+John Stell
+
+
+
+--------------------------------------------------------------------
+Dr John Stell
+Department of Computer Science         email     john@cs.keele.ac.uk
+Keele University
+Keele, Staffordshire,                  telephone +44 1782 584083
+ST5 5BG   U. K.                        fax       +44 1782 713082
+http://www.keele.ac.uk/depts/cs/Staff/Homes/John/homepage.html
+--------------------------------------------------------------------
+
+
+Date: Wed, 27 Oct 1999 15:59:41 -0400 (EDT)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Subject: categories: Re: graph classifiers
+
+
+The coHeyting complement (i.e. the "least supplement") is not a natural
+endomorphism of the subobject functor, hence is not implemented by an 
+endomap of the (unique) representing object for that functor.This
+productive contradiction was apparently known already to medieval
+logicians in the sense that certain logical operators are not preserved by
+substitution (here one substitutes along any map in the topos). That
+there is still information to be found about this was hinted at by my 1990
+result presented at Como (see Springer Lecture Notes in Math 1488) where a
+nontrivial class of presheaf toposes was shown to satisfy the Leibniz
+product rule for the coHeyting boundary ("A and not A" where not means the
+least supplement); this rule is equivalent to substitutivity along
+projection maps but not all maps !
+
+Unfortunately I don't fully grasp which is the graph Delta that Dr. Stell
+is working with but it doesn't seem to be the following. Some
+relevant concepts richer than a single subobject may also be
+representable,for example, the concept of a subobject together with
+another subobject whose union with it is the whole. The union map from
+omega cross omega to omega classifies a subobject which does that representing
+job and which has an obvious endomap which switches.This general
+construction gives in the case of graphs a 9-edge graph with 3 nodes, I
+believe. There seems to be no way to make these pseudo-supplements any
+smaller for the general graphs since the top element is isolated in the
+lattice of truth values) 
+
+Bill Lawvere
+
+
+ ***************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*****************************************************************
+                       
+
+
+
+
+Date: Fri, 29 Oct 1999 12:53:34 +0100
+From: John Stell <j.g.stell@cs.keele.ac.uk>
+Subject: categories: Re: graph classifiers
+
+To clarify what I meant by the graph Delta in my earlier message,
+we can proceed via hypergraphs. In what follows all graphs are
+undirected, so Omega has two nodes and four edges. Define a hypergraph
+to be a function h : E -> PN, where E and N are sets of edges and nodes
+and PN is the powerset of N. Each hypergraph has dual h* : N -> PE
+where h* n = {e \in E | n \in h e}. 
+
+A morphism of hypergraphs is a pair of functions phi_N : N_1 -> N_2
+and phi_E : E_1 -> E_2 such that P phi_N h_1 subseteq h_2 phi_E.
+If H and K are graphs a hypergraph morphism from H to K may not
+be a graph morphism since a loop can be mapped to an edge which is not
+a loop. However, given any hypergraph h we can define a graph having
+the same nodes as h but with an edge joining node x to y for every
+edge in h incident with both x and y. If this graph is denoted
+by G(h), hypergraph morphisms from a graph K to a hypergraph h
+correspond to graph morphisms from K to G(h). The graph I called 
+Delta before is G(Omega*) it has four nodes and nine edges.
+
+To explain the interpretation of Omega*, let's denote the nodes of
+Omega by 0 and 1 and the four edges by {1}1, {1}0, {0,1}0, {0}0.
+Given a subgraph gamma : H -> Omega, the nodes and edges have the
+following interpretations.
+  0      nodes not in the subgraph
+  1      nodes in the subgraph
+  {1}1   edges in the subgraph
+  {1}0   edges not in the subgraph but with both end nodes in 
+  {0,1}0 edges not in the subgraph but with one end in and one out
+  {0}0   edges not in the subgraph with both end nodes out.
+
+Now give Omega* the following interpretation
+  0      edges in the subgraph
+  1      edges not in the subgraph
+  {1}1   nodes not in the subgraph
+  {1}0   nodes in the subgraph which are ends of a non-empty set of
+         edges all of which are out of the subgraph.
+  {0,1}0 nodes in the subgraph which are ends of some edges in the 
+         subgraph and ends of some edges which are out of the subgraph.
+  {0}0   nodes in the subgraph having all their incident edges in the 
+         subgraph, or having no incident edges.
+
+Given any subgraph gamma : H -> Omega, we get neg gamma from
+the endomorphism of Omega switching 0 and 1 and taking {0}0
+to {1}1. Using the above interpretation of Omega* we can construct a
+hypergraph morphism gamma! : H -> Omega*. I don't have a neat
+construction for gamma! except via the above interpretation of Omega*.
+Now the endomorphism neg : Omega -> Omega dualizes to
+neg* : Omega* -> Omega* and we compose this with gamma! to
+get a hypergraph morphism from H to Omega* which represents suppl gamma.
+
+
+John Stell
+

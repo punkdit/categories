@@ -1,0 +1,106 @@
+Path: news.gmane.org!not-for-mail
+From: Jeff Egger <jeffegger@yahoo.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Horizontal line notation.
+Date: Tue, 17 Mar 2009 05:28:32 -0700 (PDT)
+Lines: 74
+Approved: news@gmane.org
+Message-ID: <E1Ljv23-000449-RN@mailserv.mta.ca>
+Reply-To: Jeff Egger <jeffegger@yahoo.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+X-Trace: ger.gmane.org 1237382547 4518 80.91.229.12 (18 Mar 2009 13:22:27 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 18 Mar 2009 13:22:27 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Wed Mar 18 14:23:45 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Ljvk0-0007DC-75
+	for gsmc-categories@m.gmane.org; Wed, 18 Mar 2009 14:23:28 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Ljv23-000449-RN
+	for categories-list@mta.ca; Wed, 18 Mar 2009 09:38:03 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:176
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/176>
+
+
+Just to set the record straight...
+
+> The horizontal line notation was introduced by Gerhard Gentzen in his
+> logical sequent calculus. If a set of formulas S  implies a and b, then S
+> implies a/\b and vice-versa which was written as:
+>
+> S |- a,b
+> ______
+> S |- a/\b
+
+That's not quite correct: Gentzen uses
+  a,b,... |- x,y,...
+to mean "(a and b and ...) entails (x or y or ...)".
+So what you have written is (if interpreted strictly
+according to Gentzen's sequent calculus)
+  if "S entails (a or b)" then "S entails (a and b)"
+which is obviously incorrect.
+
+What Gentzen would write is this:
+S |- a       S |- b
+-------------------
+     S |- a/\b
+(if "S entails a" and "S entails b", then "S entails
+(a and b)"); he would also write (separately)
+S |- a/\b
+---------
+ S |- a
+(if "S entails (a and b)", then "S entails a") and
+(again separately)
+S |- a/\b
+---------
+ S |- b
+(if "S entails (a and b)", then "S entails b").
+
+The point here is that Gentzen did not actually intend
+his  horizontal line notation to represent any sort of
+bijection.  In fact, I rather suspect that he borrowed
+the line from elementary-school arithmetic:
+  24
+  73
+  92
+----
+ 189.
+
+[The only reason for writing
+S |- a       S |- b
+-------------------
+     S |- a/\b
+instead of
+ S |- a
+ S |- b
+---------
+S |- a/\b
+is in case you want to append proofs of S |- a and
+S |- b.  In this manner one represents (complete)
+proofs as trees, where the leaves are axioms, and
+the root is the theorem being proven.]
+
+But I don't think the fact that Gentzen did not intend
+this horizontal line notation to represent the bijection
+which is obviously there should stop us from doing it:
+it's a very convenient way of discussing adjunctions,
+and there is as little chance of confusing the older
+use of this symbol with the newer one as confusing
+either with elementary school arithmetic.
+
+Cheers,
+Jeff.
+
+
+
+
+

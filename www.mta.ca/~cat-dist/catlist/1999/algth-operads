@@ -1,0 +1,169 @@
+Date: Wed, 26 Nov 1997 13:44:04 -0400 (AST)
+Subject: Algebraic Theories/Operads 
+
+Date: Wed, 26 Nov 1997 08:57:36 -0600 (CST)
+From: David Metzler <metzler@math.rice.edu>
+
+I'm looking for a good reference on the relation between
+algebraic theories (a la Lawvere) and operads.
+
+David Metzler
+
+
+Date: Thu, 27 Nov 1997 16:04:58 -0400 (AST)
+Subject: RE: Algebraic Theories/Operads 
+
+Date: Thu, 27 Nov 1997 16:10:31 MET
+From: Heinrich.Kleisli@unifr.ch
+
+May, J. P.: Operads, algebras and modules. Contemp. Math. 202, 15-31 (1997).
+
+
+Date: Thu, 27 Nov 1997 16:03:21 -0400 (AST)
+Subject: Re: Algebraic Theories/Operads 
+
+Date: Wed, 26 Nov 1997 16:22:14 -0800 (PST)
+From: john baez <baez@math.ucr.edu>
+
+David Metzler writes:
+ 
+> I'm looking for a good reference on the relation between
+> algebraic theories (a la Lawvere) and operads.
+
+Me too!  The closest thing I know is Boardman and Vogt's
+book on homotopy invariant algebraic structures --- which
+uses the framework of PROPs rather than operads.
+
+
+Date: Thu, 27 Nov 1997 16:04:13 -0400 (AST)
+Subject: Re: Algebraic Theories/Operads 
+
+Date: Thu, 27 Nov 1997 10:40 +0530
+From: CAYLEY@tifrvax.tifr.res.in
+
+
+	The volume 202 of Contemprory mathematics series
+	of the AMS titled
+
+	Operads: Proc. of Renaissance conferences
+
+	ed by J.Loday et al is a possible source.
+
+				P.S.Subramanian,
+				Tata Institute.
+
+
+Date: Sat, 6 Dec 1997 16:12:19 -0400 (AST)
+Subject: Re: Algebraic Theories/Operads 
+
+Date: Fri, 5 Dec 1997 18:54:36 +0000 (GMT)
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+
+>
+> I'm looking for a good reference on the relation between
+> algebraic theories (a la Lawvere) and operads.
+>
+> David Metzler
+
+I think the relationship between algebraic theories and (non-symmetric,
+non-topological) operads is quite simply described. Loosely, algebras for
+operads are just the same as algebras for strongly regular theories. To be
+more precise: any operad gives rise to a monad on Set, the algebras for which
+are the algebras for the operad; a monad on Set arises from an operad iff it
+arises from a strongly regular theory. So -
+
+	operadic monads are strongly regular theories.
+
+
+Carboni & Johnstone (1995) call an equation _strongly regular_ if on each
+side the same variables appear in the same order, without repetition (e.g.
+(x.y).z=x.(y.z) and x-(y-z)=(x-y)+z, but not x.y=x, x.y=y.x or
+(x.x).y=x.(x.y)). A theory is called strongly regular if it can be presented
+by operators and strongly regular equations - for instance, the theory of
+monoids. They show that a monad (T, eta, mu) on Set is from a s.r. theory
+("is s.r.") iff
+	(i)   T is finitary
+	(ii)  T preserves wide pullbacks
+      & (iii) eta and mu are cartesian.
+(A wide pullback is a limit over a diagram (X_i --> X) where i ranges over
+some set I, e.g. if I=2 it's an ordinary pullback.)
+
+1. Operadic => strongly regular
+
+If A is an operad, with the function A --> N={natural numbers}, then the
+functor part of the induced monad T on Set is defined by the pullback square
+
+	T(X) ----> W(X)
+	 |          |
+	 |          | W(!)
+	 |          |
+	 V          V
+	 A ------> W(1)=N
+
+ where X is a set and W (for Words) is the free-monoid monad. One can show
+(e.g. my (1997, sec 4.6)) that the unit and multiplication of T are
+cartesian. Moreover, one can also show that
+	(a) if W preserves colimits of a given shape then so does T
+      & (b) if W preserves I-ary pullbacks then so does T.
+Since the theory of monoids is s.r., W preserves all filtered colimits (i.e.
+is finitary) and all wide pullbacks. So T satisfies (i)-(iii) and is
+therefore s.r.. 
+
+2. Strongly regular => operadic
+
+Conversely, take a s.r. theory T. Any s.r. presentation of T gives rise to a
+natural transformation T --> W which is cartesian and preserves the monad
+structure. It follows by my (1997, sec 4.6) that the monad T comes from some
+operad A.
+
+
+References:
+
+A Carboni, P T Johnstone (1995), Connected limits, familial representability 
+        and Artin glueing. Math Struct in Comp Science, vol 5, 
+        pp 441-459.
+T Leinster (1997, updated 3 Dec), General operads and multicategories.
+        http://www.dpmms.cam.ac.uk/~leinster.
+
+
+I've heard tell that these ideas were explored by Kelly in his work on
+clubs - can anyone enlighten me?
+
+
+Tom Leinster
+
+
+Date: Mon, 8 Dec 1997 13:42:54 -0400 (AST)
+Subject: Re: Algebraic Theories/Operads 
+
+Date: Mon, 8 Dec 1997 20:15:23 +1100 (EST)
+From: Barry Jay <cbj@socs.uts.EDU.AU>
+
+
+Tom,
+
+you may care to look at my paper "Languages for monoidal categories"
+
+@Article(Jay89b,
+	Author={Jay, C.B.},
+	Title={Languages for monoidal categories},
+	Journal=jpaa,
+	Volume=59,
+	Year=1989,
+	Pages={61--85})
+
+and its successors (see my ftp site below).
+
+Barry Jay
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,		www: linus.socs.uts.edu.au/~cbj	|
+| Australia.			     ftp: ftp.socs.uts.edu.au/Users/cbj |
+*************************************************************************
+
+

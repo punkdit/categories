@@ -1,0 +1,102 @@
+Date: Thu, 21 Mar 1996 13:34:51 -0400 (AST)
+Subject: Mechanization of category theory
+
+Date: Thu, 21 Mar 1996 15:00:08 +0100
+From: Clemens Ballarin <Clemens.Ballarin@cl.cam.ac.uk>
+
+Has anybody experience in mechanizing category theory or knows of such work?
+I'm about to implement basic parts of category theory in a tactical theorem
+prover based on higher order logic. I would appreciate to learn from anybodies
+earlier experiences.
+
+Thanks in advance,
+
+Clemens
+
+
+Date: Fri, 22 Mar 1996 11:32:01 -0400 (AST)
+Subject: Re: Mechanization of category theory
+
+Date: Fri, 22 Mar 96 13:52:38 GMT
+From: David Rydeheard <david@cs.man.ac.uk>
+
+> Date: Thu, 21 Mar 1996 16:11:48 +0100
+> From: Clemens Ballarin <Clemens.Ballarin@cl.cam.ac.uk>
+> Sender: owner-qed@mcs.anl.gov
+> Precedence: bulk
+>
+> Has anybody experience in mechanizing category theory or knows of such work?
+> I'm about to implement basic parts of category theory in a tactical theorem
+> prover based on higher order logic. I would appreciate to learn from anybody's
+> earlier experiences.
+>
+> Thanks in advance,
+>
+> Clemens
+
+----------------------------------------------
+
+Clemens, there has been a good deal of work on the mechanisation of
+category theory. I will mention some here and I am sure others will
+contribute to complete the discussion.
+
+The obvious starting point (for me!) is:
+
+        David Rydeheard and Rod Burstall.  Computational Category
+        Theory.  Prentice Hall (1988).
+
+This describes an encoding of constructions of (finite) limits, colimits
+and of adjuctions and internal logics, and also constructions of categories,
+all coded in SML. It makes use of higher orer functions to code the
+universality of constructions and the parametric polymorphism to capture
+something of the level of abstraction of category theory. It does not include
+correctness proofs within the code.
+
+The code + examples are available over the WWW from my archive at Imperial College
+(http://theory.doc.ic.ac.uk:80/tfm/papers/RydeheardD).
+
+At about the same time as this was being developed, Roy Dyckhoff [1985] was
+experimenting with implementing categories in an implementation of a
+Martin-Lof Type theory, Joe Goguen was implementing categories in OBJ
+and Tatsuya Hagino was developing his "categorical data types".
+These are all briefly described in the above book.
+
+-----------------------
+
+Now I come to the more invidious part: Trying to summarise what has happened since
+without missing important contributions. I cannot do this in an email message
+but will attempt to sketch some directions and others can contribute in their
+own messages.
+
+One major direction has been to continue Roy Dyckhoff's work, using implementati
+ons
+of various type theories as a basis for formalising category theory
+(examples that spring to mind are: Gotheberg work in Alf, the INRIA work in
+Coq, and the Edinburgh/Manchester (Aczel) work in LEGO).
+
+There has been other implementations of categorical algorithms and systems
+including that of (1) Robin Cockett and his group, (2) Carmody and Walters, (3)
+including that of (1) Robin Cockett and his group, (2) Carmody and Walters, (3)Michael Fleming and Ryan Gunther ftp://sun1.mta.ca/pub/sources/rosebrugh/{unix,DOS}.
+
+There have been attempts to provide interactive tools for categorical reasoning
+("diagram chasing"). I believe John Gray had a Mac version. Actually an
+early attempt to automate categorical reasoning is that of Watjen and Struckman
+(Inform. Proc. Letters 14, 3 [1982]).
+
+The work on "categorical data types" and "categorical programming languages"
+has continued, eg [Hasegawa, LNCS 953].
+
+There has been work on the normalisation properties of the (essentially
+algebraic) theories of categories (with structure)
+(see eg. the PhD thesis of Wolfgang.Gehrke@risc.uni-linz.ac.at).
+
+I'm sure that I have omitted important contributions. I'll let others
+speak for themselves.
+
+David
+
+[Clemens, it may be worthwhile preparing and posting a comparative
+survey of these and other systems so that those interested can know
+what is available.]
+
+

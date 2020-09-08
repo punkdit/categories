@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: categorical formulations of Replacement
+Date: Fri, 14 Mar 2008 03:34:12 +0100 (CET)
+Lines: 59
+Approved: news@gmane.org
+Message-ID: <E1Ja8L3-00020K-Rk@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019860 12684 80.91.229.2 (29 Apr 2009 15:44:20 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:20 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Mar 14 08:47:16 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 14 Mar 2008 08:47:16 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1Ja8L3-00020K-Rk
+	for categories-list@mta.ca; Fri, 14 Mar 2008 08:44:41 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 68
+Status: O
+Content-Length: 3271
+Original-Lines: 58
+Xref: news.gmane.org gmane.science.mathematics.categories:4304
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4304>
+
+The Replacemnt axiom which Colin formulated in his article in Phil.Math.
+only works for well-pointed categories. But even in this framework it is
+too strong due to its requirement that every external family arises from an
+internal one. So it fails for example for the model of ETCS arising from
+a countable model of ZFC because there are only countably many internal
+families over N whereas there uncountable many external families indexed
+by (the global elements of) N.
+A defect of the work from the 70ies (Cole, Osius at.al.) is that it just proves
+equiconsistency of ETCS and bZ (bounded Zermelo set theory) and not an
+equivalence between models of ETCS and bZ.
+
+I think that the more interesting question is what is a model of intuitionistic
+set theoy which cannot be well-pointed. For this purpose it is INDISPENSIBLE
+to have in our category an object U of all sets.
+This was first recognized and formulated by Christian Maurer in his paper
+"Universes in Topoi" which appeared in the SLNM volume "Model theory and topoi"
+(ed. Lawvere, Maurer, Wraith). Maurer was working in a topos and postulated an
+object U (a "universe") of this topos with ext : U >-> P(U) satisfying a few
+axioms which ensure that U is a model for IZF (without saying so).
+In particular, he has a clear formulation of the axiom of replacement, namely
+
+    (\forall a : U) (\forall f : U^{ext(a)}) (\exists b : U)
+
+        (\forall y : U) (y \in ext(b) <-> (\exists x \in ext(a)) y = f(x))
+
+albeit in a somewhat less readable since he avoids the internal language
+of the topos.
+
+This point of view was taken up later in the Algebraic Set Theory (AST) of
+Joyal and Moerdijk whose work concentrated on CONTRUCTING (initial) universes
+of this kind. A couple of years later Alex Simpson in his LiCS'99 paper took
+up Maurer's early insight (at least he refers to Maurer's paper) but weakened
+the ambient category to be a model for first order logic (as set theorists do).
+The main new ingredient of AST (and Alex's paper) is the assumption of a class
+of small maps giving (cum grano salis) a notion of "size" (like B'enabou's
+calibrations but satisfying much stronger axioms) together with a notion of
+small powerset functor P_s (depending on the class of small maps). A universe
+is then defined as a(n initial) fixpoint U of P_s which, of course, can't be
+small itself.
+
+A point which seems to have been overlooked in this latest discussion is
+that Replacement per set is not very strong. It gets its usual strength only
+in presence of unbounded separation. See the paper by Awodey, Butz, Simpson
+and me which appeared in last year's Bull.Symb.Logic (see also
+http://homepages.inf.ed.ac.uk/als/Research/Sources/set-models-announce.pdf)
+where we discuss this in more detail. The point is that around every topos
+EE one can build a category of classes whose small "set" part is equivalent
+to EE. The corresponding class theory BIST is thus conservative over topos
+logic (with nno).
+
+Later on Awodey and his students have also studied the much weaker "predicative"
+case where replacement still holds. See also Aczel and Rathjen's work on CZF
+in this context which is much older than AST dating back to articles by Aczel
+in the late 70ies (and based on previous work by John Myhill).
+
+Thomas Streicher
+
+
+

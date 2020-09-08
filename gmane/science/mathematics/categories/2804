@@ -1,0 +1,128 @@
+Path: news.gmane.org!not-for-mail
+From: Martin Escardo <m.escardo@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: stable flatness and exponentiation
+Date: Fri, 16 Sep 2005 13:19:10 +0100
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <17194.47166.149464.378158@gargle.gargle.HOWL>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018915 5883 80.91.229.2 (29 Apr 2009 15:28:35 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:28:35 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Sep 16 11:48:29 2005 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 16 Sep 2005 11:48:29 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EGHLT-0004We-Va
+	for categories-list@mta.ca; Fri, 16 Sep 2005 11:37:44 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 13
+Status: RO
+Content-Length: 3125
+Original-Lines: 94
+Xref: news.gmane.org gmane.science.mathematics.categories:2804
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2804>
+
+
+I have three questions:
+
+Question 1: Is there an intrinsic characterization of the stably flat
+maps of locales, i.e., those continuous maps f: X->Y such that
+
+   id_Z x f: Z x X -> Z x Y
+
+is flat for all Z?
+
+(Recall that f: X->Y is flat iff the right adjoint f_*: OX -> OY of
+f^*: OY -> OX preserves finite joins. Preservation of merely the empty
+join amounts to density, and hence flatness is a rather strong form of
+density. For example, the embedding of a completely regular locale
+into its Stone-Cech compactification is strongly dense in this sense.)
+
+I don't think all flat maps are stably flat, but I may be
+mistaken. Specifically, for a locale X let JX denote the spectral
+locale defined by
+
+   OJX = ideals of OX.
+
+Then there is a sublocale embedding eta: X->JX defined by
+
+   eta^*(I) = join I,
+
+which is known to be flat.
+
+Question 2: Is eta: X->JX stably flat for every X?
+
+If so, then compact Hausdorff locales would be exponentiating. Here a
+locale Y is called exponentiating iff the exponential Y^X exists for
+every X. Recall also that X is exponentiable iff the exponential Y^X
+exists for every Y, and that this is the case iff the frame OX is a
+continuous lattice.
+
+Now, JX is exponentiable because OJX is an algebraic lattice. We claim
+that if eta_X were stably flat, then for every compact Hausdorff
+locale Y, the exponential Y^JX would have the universal property of an
+exponential Y^X with respect to a suitably defined evaluation map and
+a suitable construction of exponential transposition.
+
+Define e: Y^JX x X -> Y as the restriction of the original evaluation
+map ev: Y^JX x JX -> Y, that is
+
+             id x eta                ev
+   Y^JX x X ----------> Y^JX -> JX -------> Y.
+            ------------------------------>
+                          e
+
+Now, to show that the pair (Y^JX,e) has the universal property of an
+exponential Y^X, given f: Z x X -> Y, we have to construct a transpose
+f': Z -> Y^JX such that e(f' x id_X) = f.
+
+Consider the diagram
+
+
+              id_Z x eta_X
+       Z x X --------------> Z x JX
+          \                   .
+           \                 .
+            \               .
+             \             .
+              \           .
+            f  \         .  f''
+                \       .
+                 \     .
+                  \   .
+                   v v
+                    Y.
+
+If eta_X were stably flat, then, by "Joyal's Lemma", which says that
+compact Hausdorff locales are orthogonal to flat embeddings, there
+would be a unique f'' making the diagram commute.
+
+Then its Y^JX-transpose f': Z -> Y^JX with respect to the original
+evaluation map would give the unique required Y^X-transpose of our
+given f: Z x X -> Y with respect to our constructed evaluation map, as
+an easy calculation shows, using the universal property of Y^JX with
+respect to the original evaluation map.
+
+This shows that if Question 2 had a positive answer then compact
+Hausdorff locales would be exponentiating.
+
+Question 3. But surely compact Hausdorff locales cannot possibly be
+exponentiating, can they?
+
+(These questions make sense for topological spaces too. )
+
+MHE
+
+
+
+
+

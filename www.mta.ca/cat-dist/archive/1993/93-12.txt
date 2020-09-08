@@ -1,0 +1,534 @@
+Subject: cantor-bernstein
+Date: Wed, 1 Dec 93 11:36:55 +0100
+From: ageron@univ-caen.fr (Pierre Ageron)
+
+The statement and the AC-free proof of Cantor-Schroeder-Bernstein's theorem 
+have obviously some categorical content. Has this been already investigated ?
+Thank you !
+              Pierre AGERON   
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: REMINDER: LICS'94 submission deadline 
+Date: Wed, 1 Dec 93 10:26 EST
+From: felty@research.att.com (Amy Felty)
+
+
+                    Ninth Annual IEEE Symposium on
+                      LOGIC IN COMPUTER SCIENCE
+                    July 4-7, 1994, Paris, France
+
+                SUBMISSION DEADLINE: December 13, 1993
+
+10 hard copies of a detailed abstract (not a full paper) and 20
+additional copies of the cover page should be received by December 13,
+1993 by the program chair.  This is a FIRM DEADLINE: late submissions
+will not be considered.
+
+Program Chair: Samson Abramsky, Attn: LICS, Department of Computing,
+Imperial College of Science, Technology and Medicine, 180 Queen's Gate,
+London SW7 2BZ, United Kingdom, sa@doc.ic.ac.uk,
+Phone: (010-44) 71-589-5111 ext. 5005, Fax: (010-44) 71-581-8024
+
+The full announcement can be obtained by anonymous ftp from
+research.att.com, directory /dist/lics, or by emailing
+lics-request@research.att.com.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Doctoral Scholarship
+Date: Thu, 2 Dec 1993 11:50:58 +1100
+From: Barry Jay <cbj@socs.uts.EDU.AU>
+
+                Doctoral Scholarship 
+
+             School of Computing Sciences
+           University of Technology, Sydney
+
+
+The scholarship is linked to the "Shape" project, whose goal is to
+design and implement an efficient, typed programming language for
+vectors, matrices, and other data structures, based on the separation
+of data from shape. The project combines both the development of
+theory of shapely types with their incorporation in a programming language.
+
+The project is based at UTS, but has participants in Calgary and
+Edinburgh.
+
+Applicants will have completed an undergraduate degree at the Honours
+level. They should also have experience in programming language
+implementation or semantics, or in category theory.
+
+The stipend is $18,679 (tax exempt). Funding is only guaranteed for 12
+months in the first instance. Other possibilities for an immediate
+three years of funding also exist. Applicants who are Australian
+citizens, or permanent residents who have lived continuously in
+Australia for the last twelve months, would not be required to pay
+student fees.
+
+For further information, contact Barry Jay (cbj@socs.uts.edu.au). 
+
+Applications should contain a curriculum vitae and the names,
+addresses, phone numbers and e-mail of two or three referees from whom
+confidential reports can be obtained. They should be sent to:
+
+Dr C. Barry Jay
+School of Computing Sciences
+University of Technology, Sydney
+PO Box 123
+Broadway
+Australia
+2007
+
+Ph: (02) 330-1814
+
+for receipt by 17th December, 1993.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: (A\otimes B)(C\otimes D)=(AC)\otimes (BD)
+From:   Richard Wood <rjwood@cs.dal.ca>
+Date:   Wed, 1 Dec 1993 12:49:02 -0400
+
+> 
+> Date: Mon, 29 Nov 93 09:52:49 EST
+> From: stiller@blaze.cs.jhu.edu
+> 
+> Is there a categorical analogue of the following well-known matrix
+> identity: If A, B, C, D are matrices over a field and juxtaposition
+> denotes matrix multiplication and \otimes denotes Kronecker product,
+> then
+> 
+> (A\otimes B)(C\otimes D)=(AC)\otimes (BD)
+> 
+> whenever the dimensions are consistent?
+> 
+> Note: I am a category theory novice, but the proof of this identity
+> uses so few of the field axioms, and is so useful, (and curiously
+> looks like the interchange of horizontal and vertical compositions of
+> natural transformations which I presume is coincidental) that I was
+> just curious if an analogue of this identity is true in more general
+> categories than matrices over rings.
+> -- 
+> Lewis Stiller. Dept. of Computer Science. The Johns Hopkins University.  
+> stiller@cs.jhu.edu. "Tertan I am, but what is Tertan?  Of this time, of 
+> that place, of some parentage, what does it matter?"
+> 
+There is of course also the pointwise product of matrices of the same size.
+(In the case of complex square matrices I believe this is known as the Schur 
+or Schur-Hadamard product.) This product and the usual product of matrices do 
+not satisfy the middle four interchange law, in the case of matrices over
+a commutative ring. However, there are examples in the study of bicategories
+where they do _ in a sense.
+
+Consider the bicategory of categories, profunctors and transformations, PRO_.
+For categories X,A the hom category PRO_(X,A) is given by SET_^(A^op x X) and
+note that it has sums which, with respect to PRO_, we will call "local" sums.
+PRO_ has sums in the usual sense which are as in CAT_. Call them global sums.
+Global sum injections have right adjoints and the process of taking right 
+adjoints carries global sum diagrams to (global) product diagrams. So an arrow 
+
+in PRO_ from a global sum to a global sum is a matrix of arrows (just as in 
+any category in which sums and products coincide). A composite of such 
+matrices is 
+given by matrix multiplication where the component multiplications are 
+composites in PRO_ and the component additions are provided by local sums.
+
+These considerations apply to transformations in PRO_ too so that horizontal
+composition of transformations is also given by matrix multiplication when
+the objects under consideration are global sums. But vertical composition
+of transformations is just pointwise vertical composition.  So here there is a
+middle four interchange law between pointwise and ordinary matrix 
+multiplication _ but note that the component multiplications are not the 
+same. The component multiplications of ordinary matrix product are provided
+by horizontal composition _ which middle four interchanges with vertical
+composition.
+
+The Kronecker product can also be considered in this example. Global binary
+products for CAT_ extend to a tensor product for PRO_. This tensor distributes
+over global sum and the remarks of Ross on this question apply to this 
+example.
+
+At least this is the story modulo a discussion of the coherent isomorphisms
+which are easily spotted. This example admits a number of generalizations and
+specializations.
+
+RJ
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: weak topos
+Date: Fri, 10 Dec 93 20:43:37 +0100
+From: Thomas Streicher <streiche@informatik.uni-muenchen.de>
+
+A suitable notion of model for type theory without extensionality  
+principle for predicate seems to be the following :
+
+C  is a weak topos iff  C  is locally cartesian closed and there  
+exists a generic mono  g , i.e. any mono of  C  can be obtained as a  
+pullback of  g  (that I would call a weak subobject classifier).
+
+Such a category is automatically regular (as one can define  
+existential quantification in the internal logic).
+
+Now if one takes  TOP(C) = Map(Split(Rel(C)))  one gets a topos.  
+Alternatively one could take the fibration of monos over C thus  
+getting a tripos and perform the construction of the associated  
+topos.
+
+Now my question are the following :
+
+Under which conditions is C the category of separated objects of  
+TOP(C) ?
+
+For which toposes E is Sep(E) a weak topos in the sense of my  
+definition ?
+We know that the effective topos is an example BUT is it possible for  
+non-boolean Grothendieck toposes ?
+
+Thomas Streicher
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject:  Research area of objects and agent behavior
+Date: Wed, 15 Dec 93 00:32:49 GMT
+From: pinj@di.uminho.pt (Jose Pina Miranda)
+
+
+Hi,
+
+I'm beginning to research in the area of objects and agent behavior 
+(observational properties) and I would like to read something about their
+categorical and topological definition. 
+I'm also interested in agent hierarchies, behavior inheritance and 
+parametrization of agent systems.
+
+Some questions:
+  1- Can you send me references of papers that you think I should start 
+                reading ?
+  2- If possible, can you please send me information about Computer Science or
+       Mathematic groups who are working in this area, so that I can learn 
+       something with them.
+  3- Is there any topological mailing list ?
+
+Thank you,
+
+    Jose Miranda
+                   ___      ____  
+                     /     /   /   /\  /\
+                    /     /---    /  \/  \
+                 \-/     /       /        \
+
+
+Jose E. Pina Miranda        | EMail: pinj@di.uminho.pt
+Assistant Lecturer          | X.500: c=PT@o=Universidade do Minho
+Departamento de Informatica |            @ou=Departamento de Informatica
+Universidade do Minho       |            @cn=  /* not available yet */
+Campus de Gualtar           | WWW URL: http://s700.uminho.pt/~pinj
+4700 Braga                  | Voice: +351 (53) 617 021         
+Portugal                    | Fax: +351 (53) 612 954         
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: EUROFOCS Ad
+Date: Thu, 16 Dec 1993 16:22:49 +0000
+From: gdp@dcs.ed.ac.uk
+
+
+                          EUROFOCS
+European Institute in the Logical Foundations of Computer Science
+                     Fellowship Programme
+                     
+         (Closing date for applications - 5th January 1994)
+
+The European Institute in the Logical Foundations of Computer Science 
+invites applications for PostDoctoral Fellowships. These can be held for 
+periods ranging from six months to one year. The goal of the work in the 
+Institute is to achieve a unified and applicable theory of the semantics 
+and logic of languages used to describe, design and program computing 
+systems. The research of the Insititute is characterised by a unified 
+approach to foundational problems that emphasises the combination of ideas 
+arising in design and practice with ideas originating in logic and allied 
+mathematical areas. The applicability of the ideas developed is 
+demonstrated by producing experimental systems for specification, 
+verification and development. 
+
+The research has both national and EC support, with involvement in several 
+ESPRIT Basic Research Actions, including CONFER, CONCUR, COMPASS, 
+Categorical Logic in Computer Science and Types for Proofs and Programs. 
+Research Topics of Interest include: Semantics of Programming Languages; 
+Logic Programming Theory; Object-Oriented Programming; Functional 
+Programming Theory; Lambda-Calculus; Formal Development of Programs and 
+Systems; Concurrency Theory. 
+
+The Institute sites and contact points are: 
+
+CWI, Amsterdam 
+Jaco de Baaker <jaco@cwi.nl> (+31) 20 592 4136
+
+The University of Cambridge;
+Andrew Pitts <ap@cl.cam.ac.uk> (+44) 223 334621
+ 
+The University of Edinburgh
+Rod Burstall <rb@lfcs.ed.ac.uk> (+44) 31 650 5156
+
+Imperial College, London
+Samson Abramsky <sa@doc.ic.ac.uk> (+44) 71 589 5111 x5005
+
+ENS and INRIA, Paris
+Giuseppi Longo <longo@dmi.ens.fr> (+33) 14 432 3328
+
+The University of Pisa.
+Ugo Montanari <ugo@di.unipi.it> (+39) 50 510 221
+
+INRIA, Sophia Antipolis; 
+Gilles Kahn <gilles.kahn@sophia.inria.fr> (+33) 93 65 78 01
+
+APPLICATIONS must be sent to the prospective host site. More general 
+information on the Institute or the fellowship programme may be requested 
+from Gordon Plotkin <gdp@lfcs.ed.ac.uk> (scientific information), or 
+George Cleland <g.cleland@lfcs.ed.ac.uk> (administrative information)
+
+ALL APLICATIONS MUST BE RECEIVED BY THE HOST SITE BY 5TH JANUARY 1994
+The initial application should include:
+
+1. Name, Address, e-mail,telephone & fax nos.
+
+2. Academic Qualifications
+
+3. Post-doctoral positions
+
+4. Names, addresses, e-mail and phone numbers of at least two referees
+
+5. Publications
+
+6. A summary of research achievments to date
+
+7. Proposed research programme (3-400 words, written in third person)
+
+8. Expected outcomes of research (<200 words)
+
+9. Reason for choice of host institution (<200 words)
+
+Selection of candidates will be made on a number of factors, including 
+quality of research proposed, the potential of the candidate, and the 
+contribution of the proposed research to both the host site and the 
+Institute. Salary and payment details vary from site to site and should be 
+discussed with the host site.
+
+Those candidates selected will be required to work with the host site to 
+produce a full fellowship document set which is required by the EC. This 
+a non-trivial task for the candidate and will require the selected 
+candidate to be available and in communication for the last two weeks of 
+January.
+
+Prospective candidates are particularly asked to note the ELIGIBILITY 
+CRITERIA for the fellowships. These conditions, imposed by the European 
+Commission, are: 
+
+i) The applicant must be a national of one of the Member States of the
+European Community or EFTA, or be resident in the European Community.
+
+ii) The applicant must be a national of a country other than that in which
+the host institution is established and must not have carried out their
+normal activity in that country for more than two years prior to the date
+of submission of the application. (EC nationals presently resident in a
+non-EC country are eligible providing the proposed fellowship is in a
+country other than their country of origin.)
+
+iii) Applicants must be young researchers, without other income, having at
+least six years' higher education and who hold a doctoral or equivalent
+degree, or, if not, have had two years' research experience following a
+post-graduate course.
+
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: seeking Michael Wright
+Date: Fri, 24 Dec 1993 15:21:45 +0000
+From: GARY ALEXANDER <G.R.Alexander@open.ac.uk>
+
+At the suggestion of Martin Hyland we are trying to make contact with Michael
+Wr ight, who Hyland thought was living in London. He was in Cleveland, Ohio in
+1990/ 91 where he helped Colin McLarty with his book "Elementary Categories,
+Elementary Toposes". Colin McLarty, we believe, is active on email.
+
+Can anyone tell us how to contact Michael Wright (or are you on this mailing
+list , Michael)? Please reply to Gary Alexander at the Open University, as
+g.r.alexander@open.ac.uk.
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Revised report on sketches
+Date: Fri, 24 Dec 93 15:13:21 -0500
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+
+The final version of the document "Sketches: an outline with
+references" is now available by FTP.  The present version
+corrects errors in the document distributed in July, 1993,
+and contains many new references.
+
+You can use anonymous FTP to get the paper from ftp.cwru.edu. 
+The DVI file of the paper is SKETCH.DVI, and the BiBTeX source
+of the bibliography is SKETCH.BIB.  The latter is an ASCII file
+which requires no knowledge of TeX or BiBTeX to read.  Both are
+in the directory math/wells.  The file README.TXT contains
+information about other documents in the directory.
+
+I will be glad to send a printed copy of "Sketches: an outline
+with references" to anyone who cannot use FTP or DVI files.
+
+I am sending this announcement to two mailing lists; my
+apologies if you get it twice.
+
+--
+Charles Wells, Department of Mathematics, Case Western Reserve University
+10900 Euclid Avenue, Cleveland OH 44106-7058, USA
+Phone 216 368 2880 or 216 774 1926
+FAX 216 368 5163
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Has anybody got a name for this
+Date: Tue, 21 Dec 93 10:10:56 GMT
+From: <loader@maths.ox.ac.uk>
+
+Let C be a category with finite products, and let F : C -> C be a functor,
+along with a natural transformation
+
+F*(X,Y,Z) : hom(X x Y, Z)  -->  hom(X x FY, FZ)
+
+that preserves composition and identities in the appropriate manner. (The
+idea is that this gives a behaviour for F on collections of arrows from Y
+to Z indexed by X.)
+
+Does anyone have a name for a functor with such a natural transformation?
+
+Note that if C is cartesian closed, then this is the same as having a
+natural transformation from Y^Z to (FY)^(FZ) that preserves composition and
+identities.
+
+This sort of functor arises in logic as follows: Let A[X] be a formula with
+a positively occuring propositional variable X.  Then 
+
+   B |- C
+------------
+A[B] |- A[C]
+
+is a derived rule, making A[-] into a functor.  But we can also do this
+with additional side formulae:
+
+   D, B |- C
+---------------
+D, A[B] |- A[C]
+
+giving a natural transformation as described as above.
+
+I'd use the term "internal functor", except that this is already used for a
+functor between two internal categories.
+
+Ralph Loader.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: Has anybody got a name for this(several posts)
+From:   Richard Wood <rjwood@cs.dal.ca>
+Date:   Fri, 24 Dec 1993 10:27:32 -0400
+
+If V_ is a symmetric monoidal category but not closed there is stilll a
+sense in which V_ itself is a V_-category. After all, V_ "acts" on itself
+via tensor:V_xV_--->V_ and it is useful to think of an arrow
+X ten Y --->Z as providing an X-indexed family of arrows from Y to Z.
+
+If A_ and B_ are categories equipped with actions of V_ one can ask for
+the relevant notion of functor from A_ to B_ that respects such actions
+and the condition is the one that you enquire about, your specific case
+involving endofunctors on the base which having binary products can be
+seen as a symmetric monoidal category.
+
+If the idea of A_ having families of arrows indexed by the objects of V_
+is taken as primitive we are led to consider categories A_ equipped
+with a functor A_^op x V_^op x A_ ---> SET that is suitably compatible
+with the ordinary hom functor for A_. The relevant conditions ultimately
+ensure that A_ has the structure of a SET^(V_^op) category. This last is
+considered to have the monoidal ((bi)-closed) structure introduced by 
+Brian Day.
+
+If the data for such is presented as I have it in the last paragraph then
+the idea is that for A and B in A_ and X in V_ the value of the structure
+functor at (A,X,B) provides a SET of X-indexed arrows from A to B. This
+structure admits the possibility of representability in each of the 3
+variables so that SET^(V_^op)-category includes the notions of V_-category,
+"V_-tensored category" and "V_-cotensored category".
+
+If A_ and B_ are SET^(V_^op) categories then the notion of SET^(V_^op)
+functor F between them is clear but there are 3x3=9 special cases that
+bear inspection in case  both A_ and B_ are any of the special cases mentioned
+above. In each case "the effect of F on homs" (I believe that is the term 
+you want) admits a compact description. In my 1976 thesis there is a table
+which displays them.
+
+Best regards
+RJ
++++++++++++++++++++++++++++++++++++++++++
+Date: Fri, 24 Dec 1993 13:26:43 -0500 (EST)
+From: MTHFWL@ubvms.cc.buffalo.edu
+
+
+<< 
+Let C be a category with finite products, and let F : C -> C be a functor,
+along with a natural transformation
+
+F*(X,Y,Z) : hom(X x Y, Z)  -->  hom(X x FY, FZ)
+
+that preserves composition and identities in the appropriate manner. (The
+idea is that this gives a behaviour for F on collections of arrows from Y
+to Z indexed by X.)  >>
+
+It seems that Ralph Loader has rediscovered an important case of what are
+called Enriched Functors, see eg Max Kelly's book.
+He also notes that these are distinct from Internal Functors. Internal
+and Enriched are both included under and interact within the "indexed"
+(I would prefer "parameterized") theory treated in another important book:
+Springer LNM 661
+
+++++++++++++++++++++++++++++++
+Date: Mon, 27 Dec 93 19:35 EST
+From: Fred E J Linton <0004142427@mcimail.com>
+
+Data of the form  F*(X,Y,Z): hom(XxY, Z) --> hom(XxFY, FZ)  appear in the
+notion of a multilinear functor.  See my Multilinear Yoneda Lemmas article
+in an ancient Springer Lecture Notes in Mathematics.    -- Fred
+
++++++++++++++++++++++++++++++
+Date: Tue, 28 Dec 1993 11:21:38 +0100
+From: kock@mi.aau.dk
+
+
+The extra structure on the endofunctor F given by 
+   hom(X x Y,Z) ---> hom(X x FY,FZ)
+is called a tensorial strength, for reasons deriving from 
+enriched category theory, cf Kock: Strong Functors and 
+Monoidal Monads, Archiv der Math. (Basel) 23 (1972), 113-120. 
+In loc.cit., it is given in terms of
+    X x FY ---> F(X x Y),
+but such data is equivalent to data of the above kind, by a 
+Yoneda-like argument (put Z = X x Y, and apply to the identity 
+map of X x Y).
+
+A kind of structure that implies such monoidal strength is the 
+data of F being an indexed endofunctor (assuming the category 
+in question has pull-backs, thus being indexed over itself). 
+This seems to be the case for any endofunctor F on a topos, 
+provided F is described by logical means.
+
+Anders Kock     
+
++++++++++++++++++++++++++++++++
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Tue, 28 Dec 93 9:44:09 CST
+
+I have not seen a name for the structure R. Loader inquires about. It may be
+a lax version of a structure which has been considered in the context of
+"quantum topology" (cf. my paper in Topology '90):
+
+        Let C be a monoidal category (e.g. category with (chosen) products),
+let X be category equipped with an "action" of C, i.e. a functor
+a:C x X ----> X, satisfying the "obvious" coherence conditions. X is then
+a "C-module" and a functor F:X--->X such that for all c in C, x in X
+such that there is a natural isomorphism from F(a(c,x)) to a(x,F(x))
+again satisfying "obvious" coherence conditions is a "C-module functor".
+
+        In the case in question C = X, tensor = a = cartesian product.
+I think, however, that one wants a natural transformation, not a 
+natural isomorphism.
+
+Best Thoughts,
+David Yetter
+

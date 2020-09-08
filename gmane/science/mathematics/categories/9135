@@ -1,0 +1,128 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Patrik Eklund <peklund@cs.umu.se>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Bottom line to: Does equality between sets contradict the philosophy behind structural set theory?
+Date: Tue, 28 Feb 2017 07:56:34 +0200
+Lines: 90
+Approved: news@gmane.org
+Message-ID: <E1cj9bb-0001iz-4G@mlist.mta.ca>
+Reply-To: Patrik Eklund <peklund@cs.umu.se>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1488395497 15209 195.159.176.226 (1 Mar 2017 19:11:37 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Wed, 1 Mar 2017 19:11:37 +0000 (UTC)
+Cc: schlicht.leopold@gmail.com
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Wed Mar 01 20:11:33 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cj9er-0003Ek-Kx
+	for gsmc-categories@m.gmane.org; Wed, 01 Mar 2017 20:11:29 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:49723)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cj9cD-0003UY-2D; Wed, 01 Mar 2017 15:08:45 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1cj9bb-0001iz-4G
+	for categories-list@mlist.mta.ca; Wed, 01 Mar 2017 15:08:07 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9135
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9135>
+
+Dear Leopold,
+
+Now I do want to reply to your posting, since you explicitly suggest
+"one should use the definition from *dependent type theory*", and I
+disagree.
+
+Under this mailing list I have posted a number of times about formal
+term constructions including the formal lambda term construction. We all
+know that if we comply with the classical natural language based
+definition of lambda terms, we will have unwanted terms. There are
+tricks to deal with that, but it's not a very clean way to do it.
+
+In dependent type theory you would have to make '->' as a binary
+operator which provides ->(x,y) as a new type, assuming x and y are
+types. However, this type constructor does not fit into the original
+signature, so you magically bring it in from the outside, so as to say.
+What you would need to do is to split into levels of signatures, so that
+all type constructors are integrated as operators, and for which you
+need semantics. Then you will be able to handle 'lambda' as the informal
+symbol it is (as Church said in 1940). This approach is not yet fully
+developed, but there are ways to proceed.
+
+What I basically say is that creating informal and impredicative
+dependent type theory as a kind of a supervisor for CT, will just add to
+the problems you already mentioned. Fixing one problem by simply (or
+dependently in this case) adding another problem, is typical for
+computer scientists (I'm of them), and doesn't support constructive
+dialogue between math and comp sci. This is my credo.
+
+What I perfectly agree upon is your saying that we need to distinguish
+things by considering types. I fully support that view. Eventually we
+need then to deal with the 'powertype', and in CS type theory we do not
+have a satisfactory solution for it, I would say. Others will say other
+things, I know.
+
+All the best,
+
+Patrik
+
+www.glioc.com
+
+PS CT readers feeling not yet so well worsed in type handling in
+programming languages might want to read something about types e.g. in
+ML and Haskell, and other sibling languages, in order to realize how CS
+struggles with type constructors. In the end, compilation through
+intermediate languages already give hints that problems may arise, and
+once we get to compiling into machine code, it's basically a mess, from
+math and logic point of view.
+
+
+
+On 2017-02-27 22:40, Leopold Schlicht wrote:
+> I'm thankful for all the both private and public emails I got in
+> consequence of my question "Does equality between sets contradict the
+> philosophy behind structural set theory?", especially the emails I got
+> from Ingo Blechschmidt, Fred Linton, Bob Rosebrugh, and Marquis
+> Jean-Pierre were helpful.
+>
+> Let me briefly sum up what I learnt: If one wants to be fussy, and
+> looks to the question from a "formal system" point of view, then I'm
+> right: Once one puts all morphisms in one big bag and talks about dom
+> and codom as "functions" that both specify a *unique* objects, one
+> can't get around using an equality between sets, which doesn't make
+> sense in a setting of structural set theory. Instead, one should use
+> the definition from *dependent type theory*:
+>
+> a category consists of a collection Ob of objects and for each pair
+> (x, y) of objects in Ob a set Hom(x, y) of morphisms x -> y. Writing
+> f: x -> y is then just a type declaration (and not a statement that is
+> either true or false!) that declares f to be in the collection Hom(x,
+> y). We are not supposed to compare morphisms of different type. But
+> however, there should be a local equality on each set Hom(x, y) so
+> that we can discuss when two morphisms f, g: x -> y of the same type
+> are equal.
+>
+> But, as Fred Linton pointed out, natural language is quite flexible
+> and being written in an informal language, as almost all math books
+> are, one shouldn't interpret everything literally. Writing dom(f) = A
+> for example should just abbreviate that we consider A to be the domain
+> of f???the authors didn't intend to seriously discuss whether two sets
+> are equal or not, it's just a piece of notation. Thus, there isn't
+> really a fault in the book by Lawvere and Rosebrugh.
+>
+> Thanks again,
+> Leopold
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

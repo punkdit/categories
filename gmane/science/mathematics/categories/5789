@@ -1,0 +1,237 @@
+Path: news.gmane.org!not-for-mail
+From: Andre Joyal <joyal.andre@uqam.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: calculus, homotopy theory and more
+Date: Wed, 12 May 2010 16:02:30 -0400
+Lines: 201
+Approved: news@gmane.org
+Message-ID: <E1OCXzm-0006vY-UO@mailserv.mta.ca>
+References: <E1OAsS6-0001ay-ER@mailserv.mta.ca> <4BE81F26.4020903@dm.uba.ar> <E1OBzd8-0007RP-D2@mailserv.mta.ca>
+Reply-To: Andre Joyal <joyal.andre@uqam.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;        charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1273757462 17326 80.91.229.12 (13 May 2010 13:31:02 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Thu, 13 May 2010 13:31:02 +0000 (UTC)
+To: "John Baez" <john.c.baez@gmail.com>, <mbatanin@ics.mq.edu.au>,
+Original-X-From: categories@mta.ca Thu May 13 15:31:00 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1OCYVA-0007xR-0n
+	for gsmc-categories@m.gmane.org; Thu, 13 May 2010 15:31:00 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1OCXzm-0006vY-UO
+	for categories-list@mta.ca; Thu, 13 May 2010 09:58:35 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5789
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5789>
+
+Dear All,
+
+The shift n-->n+1 which occurs in the terminologies
+
+"n-braided monoidal category" =3D "(n+1)fold monoidal category"
+
+"n-connected spaces" =3D "(n+1)fold loop spaces"=20
+
+is very natural. A similar shift occurs in calculus.
+The analogy between calculus and homotopy theory is far reaching.
+It is the basis of the theory of analytic functors of Goodwilie.=20
+
+http://www.math.brown.edu/faculty/goodwillie.html
+http://arxiv.org/abs/math/0310481
+http://ncatlab.org/nlab/show/Goodwillie+calculus
+
+I would to describe the very elementary aspects of this theory.
+I will also say a few things about the Breen-Baez-Dolan Stabilisation =
+Hypothesis,
+claiming that it is a theorem.
+
+Let me denote by K[[x]] the ring of formal power series in one
+variable over a field K. The ring K[[x]] bears some ressemblances
+with the category of pointed homotopy types (=3D pointed spaces up=20
+to weak homotopy equivalences). The category of pointed=20
+homotopy types is a ring (the product is the smash product=20
+and the sum is the wedge).
+
+K =3D=3D=3D the category of pointed sets=20
+
+K[[x]]=3D=3D=3D the category of pointed homotopy types
+
+x =3D=3D=3D the pointed circle.
+
+The augmentation K[[x]]-->K=20
+=3D=3D=3D the functor  pi_0: pointed homotopy types ---> pointed sets
+
+The augmentation ideal J=20
+=3D=3D=3D the subcategory of pointed connected spaces.=20
+
+The n+1 power of the augmentation ideal J^{n+1}
+=3D=3D=3D the subcategory of pointed n-connected spaces.
+
+The product of an element in J^{n+1} with an element of J^{m+1}
+is an element of J^{n+m+2}=20
+=3D=3D=3D the smash product of a n-connected space with=20
+a m-connected space is (n+m+1)-connected.
+
+Multiplication by x =3D=3D=3D the suspension functor.
+
+Division by x =3D=3D=3D the loop space functor.
+Notice here the difference: the loop functor is right adjoint to=20
+the suspension functor, not its inverse. Moreover,
+the loop space of a space has a special structure (it is a group).
+The ideal J=3DxK[[x]] is isomorphic to K[[x]] via division by x.
+Similarly, the category of pointed connected spaces is equivalent to
+the category of topological groups via the loop space functor
+(it is actually an equivalence of model categories).=20
+More generally, the ideal J^{n+1} is isomorphic to K[[x]] via division =
+by x^{n+1}.
+Similarly, the category of n-connected space is equivalent to
+the category of (n+1)-fold topological group (it is actually an
+equivalence of model categories) via the (n+1)-fold loop space functor.
+
+
+
+The quotient ring K[[x]]/J^{n+1} =3D=3D=3D the category of n-truncated =
+homotopy types (=3Dn-types)
+
+The sequence of approximations of a formal power series =
+f(x)=3Da_0+a_1x+...
+a_0
+a_0+a_1x
+a_0+a_1x+a_2x^2
+...
+...
+
+=3D=3D=3D the Postnikov tower of a pointed homotopy type X:=20
+[pi0X]
+[pi0X;pi1X]
+[pi0X;pi1X,pi2X]
+...
+...
+Here, pi0X is the set of components of X,
+[pi0X;pi1X] is the fundamental groupoid of X,
+[pi0X;pi1X,pi2X] is the fundamental 2-groupoid of X, etc.
+
+
+The differences between f(x) and its successives approximations
+
+R0 =3D f(x)-a_0               =3D a_1x+a_2x^2+a_3x^3+....
+R1 =3D f(x)-(a_0+a_1x)        =3D      a_2x^2+a_3x^3+a_4x^4+....
+R2 =3D f(x)-(a_0+a_1x+a_2x^2) =3D             a_3x^3+a_4x^4+a_5x^5+....
+
+=3D=3D=3Dthe Whitehead tower of X,
+
+C_0=3D[0;pi1X, pi2X, pi3X,....]
+C_1=3D[0;0,pi2X,pi3X, pi4X,....]
+C_2=3D[0;0,0,pi3X,pi4X,pi4X,....]
+....
+....
+
+Here, C_0 is the connected component of X at the base point,
+C_1 is the universal cover of X constructed by from paths starting at =
+the base point,
+C_2 is the universal 2-cover of X constructed from paths starting the =
+base point, etc.
+
+
+Division by x is shifting down the coefficients of a power series
+If f(x)=3Da_1x+a_2x^2+..., then f(x)/x=3D a_1+a_1x^2+...
+Similarly, the loop space functor is shifting down the homotopy groups
+of a pointed space: if X=3D[a_0,a_1,a_2,...] then =
+Loop(X)=3D[a_1,a_2,....].
+
+Unfortunately, the suspension functor does not shift up the homotopy =
+groups of a space.
+It is however shifting the first 2n homotopy groups of n-connected space =
+X (n geq 1)
+by a theorem of Freudenthal:
+
+http://en.wikipedia.org/wiki/Freudenthal_suspension_theorem
+http://en.wikipedia.org/wiki/Hans_Freudenthal=20
+=20
+For example, if X=3D[0;0,a_2, a_3,...] then =
+Susp(X)=3D[0;0,0,a_2,b_3...],
+and if X=3D[0;0,0, a_3, a_4, a_5,...] then Susp(X)=3D[0;0,0, 0, a_3, =
+a_4, b_5,...].
+In other words, the canonical map=20
+
+X-->LoopSusp(X)
+
+is a 2n-equivalence if X is n-connected (n geq 1).=20
+If X[2n] denotes the 2n-type of X (the 2n-truncation of X),
+then we have a homotopy equivalence
+
+X[2n]-->LoopSusp(X)[2n]=3DLoop(Susp(X)[2n+1]).
+
+It follows that if X is a n-connected 2n homotopy type then
+we have a homotopy equivalence
+
+X--->Loop(X')
+
+where X'=3DSusp(X)[2n+1]. The space X' is said to
+be a *delooping* of X. By iterating this construction=20
+we can construct an infinite sequence of spaces
+
+X=3DX_0, X_1, X_2,....=20
+
+such that X_n=3DLoop(X_{n+1}). In other words,
+
+*a n-connected 2n homotopy type is an infinite loop space (canonically)*
+
+The (n+1)-fold loop space of a n-connected space=20
+is an E(n+1)-space (a E(n)-space is a model of the little n-cubes
+operad of Boardman and Vogt, a E(1)-space is a monoid,
+a E(2)-space is a braided monoid,...).=20
+The (n+1)-fold loop space functor induces an equivalence between the =20
+category of n-connected spaces and the category of group-like =
+E(n+1)-space=20
+(a monoid M is said to be group-like if pi0(M) is a group).
+Observe that the (n+1)-fold loop space of a 2n-type is a (n-1)-type.
+Freudenthal theorem implies that
+
+*If a (n-1) homotopy type has the structure of a group-like E(n+1)-space =
+
+   then it has also the structure of an E(infty)-space (canonically)*
+
+A nicer statement is obtained by shifting the index n by one.
+
+* If a n-type has the structure of a group-like E(n+2)-space then it=20
+has also the structure of an E(infty)-space (canonically)*
+
+The group-like condition can be dropped:=20
+
+*If a n-type has the structure of an E(n+2)-space then it has
+the the structure of an E(infty)-space (canonically)*
+
+This is a special case of the Stabilisation Hypothesis of =
+Breen-Baez-Dolan;
+
+*If a n-category has the structure of an E(n+2)-category then it has the =
+structure of=20
+symmetric monoidal category (canonically)*
+
+(Equivalently, *If a monoidal n-category is (n+1)-braided then it has =
+the structure of=20
+symmetric monoidal category (canonically)*)
+
+It is not difficult to verify that these statements are formally =
+equivalent.=20
+
+The Breen-Baez-Dolan Stabilisation Hypothesis is a theorem.
+
+
+Best,=20
+Andr=E9
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

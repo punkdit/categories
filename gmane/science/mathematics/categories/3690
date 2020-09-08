@@ -1,0 +1,97 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <rhgg2@hermes.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: relations on graphs
+Date: Fri, 9 Mar 2007 22:40:46 +0000 (GMT)
+Lines: 64
+Approved: news@gmane.org
+Message-ID: <E1HPp1c-0000yF-4I@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1241019457 9794 80.91.229.2 (29 Apr 2009 15:37:37 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:37 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Mar  9 20:08:33 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Mar 2007 20:08:33 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HPp1c-0000yF-4I
+	for categories-list@mta.ca; Fri, 09 Mar 2007 20:01:28 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 44
+Status: O
+Content-Length: 2104
+Original-Lines: 63
+Xref: news.gmane.org gmane.science.mathematics.categories:3690
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3690>
+
+
+While we're on the topic of directed graphs, can
+anyone provide a satisfactory conceptual
+explanation for the following curiosity?
+
+Let Ar(Set) be the arrow category of Set, and let
+DGph be directed multigraphs, i.e., presheaves over
+the parallel pair category as per Thomas' message.
+
+Prop: DGph is comonadic over Ar(Set)
+
+Proof: We have an adjunction U -| C as follows.
+
+U: DGph -> Ar(Set) sends a directed graph
+s, t : A -> V to the coproduct injection V -> V + A.
+
+C: Ar(Set) -> DGph sends an arrow f : X -> Y to the
+directed graph \pi_1, \pi_2 : X*X*Y -> X.
+
+It's easy to check that this is an adjunction, and
+so we induce a comonad T = UC on Ar(Set), the
+functor part of which sends f: X --> Y to the
+coproduct injection X --> X + X*X*Y. Thus a
+coalgebra structure f --> Tf consists of specifying
+a map p: Y --> X + X*X*Y satisfying three axioms.
+
+These axioms force f: X --> Y to be an injection,
+and the map p to be defined by cases: those y in Y
+which lie in the image of f are sent to f^-1(y) in
+the left-hand copy of X, whilst those y in Y that
+are not in X are sent to some element (s(y), t(y),
+y) of X*X*Y. Thus giving a T-coalgebra structure on
+f:X --> Y is equivalent to giving a directed graph
+structure s, t : Y \setminus f(X) --> X: and this
+assignation extends to a functor T-Coalg --> DGph
+which together with the canonical comparison
+functor DGph --> T-Coalg gives us an equivalence of
+categories, Q.E.D.
+
+--
+
+Richard Garner
+
+--On 09 March 2007 20:10 Thomas Streicher wrote:
+
+> If one allows multiple edges with the same source and target then
+> they certainly form a topos, namely that of presheaves over the
+> category with 2 objects and 2 parallel nontrivial arrows.
+> The \neg\neg-separated objects in this topos are precisely those
+> graphs where there is at most one edge from one node to another one.
+> The latter category is not a topos but a quasitopos.
+> The non-full monos in this category are typical examples of
+> epic monos which are not isos.
+>
+> All this can be found in Lawvere's "Qualitative distinctions between
+> toposes of graphs".
+>
+> Thomas Streicher
+>
+>
+>
+
+
+

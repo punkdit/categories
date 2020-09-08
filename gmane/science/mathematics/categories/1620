@@ -1,0 +1,125 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: re: Pullback preserving Set-functors
+Date: Mon, 11 Sep 2000 17:48:51 -0400 (EDT)
+Lines: 97
+Approved: news@gmane.org
+Message-ID: <200009112148.e8BLmpT01988@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017972 32099 80.91.229.2 (29 Apr 2009 15:12:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:52 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Sep 12 13:11:54 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA29457
+	for categories-list; Tue, 12 Sep 2000 11:41:18 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 6
+Status: RO
+Content-Length: 2581
+Original-Lines: 96
+Xref: news.gmane.org gmane.science.mathematics.categories:1620
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1620>
+
+
+Tobias Schroeder asks:
+
+
+    Conjecture 1:
+    Any Set-endofunctor that preserves kernel pairs
+    [He called them "kernels"]
+    preserves pullbacks.
+
+Counterexample: the functor that sends the empty set to the empty set
+and everything else to a fixed one-element set. (Note that this is
+also a counterexample for the conjecture-5 modification.)
+
+
+    Conjecture 2:
+    Any Set-endofunctor that preserves n
+    kernel pairs *and inverse images* (i.e. pullbacks
+    where one of the mapping is injective)
+    preserves pullbacks.
+
+Proof: Given such a functor, T:A --> B, where  A  and  B  are 
+sufficiently nice categories, lift it to  T:A --> B/T1  to obtain a
+functor that not only preserves kernel-pairs and inverse images but
+the terminator. It suffices to prove that this lifted  T  preserves
+pullbacks (using the fact that the forgetful functor  B/T1 --> B 
+preserves pullbacks). hence it suffices to consider the conjecture
+assuming that the functor preserves also the terminator. A well-known
+argument then reduces the question to the preservation of binary 
+products. (One may construct equalizers using inverse images and
+products and from there to arbitrary pullbacks is ancient. See 1.43 in
+Cats and Allegators.) What we will use is that the functor preserves 
+inverse images and iterated products. Given sets  X  and  Y  we know 
+that the product diagram:
+
+             (X+Y)x(X+Y)
+
+                /   \         [add your own downwards arrowheads]
+
+             X+Y     X+Y
+
+is carried to a product diagram
+
+           T((X+Y)x(X+Y))
+
+                /   \  
+
+           T(X+Y)   T(X+Y).
+
+Using three inverse-image diagrams obtain:
+
+                XxY
+
+               /   \
+
+           Xx(X+Y) (X+Y)xY
+
+           /   \   /   \
+
+         X  (X+Y)x(X+Y)  Y
+
+           \   /   \   /       
+
+             X+Y     X+Y
+
+Now apply  T:
+
+              T(XxY)
+
+              /     \
+
+       T(Xx(X+Y)) T((X+Y)xY)
+
+         /     \   /     \
+
+       TX  T((X+Y)x(X+Y)) TY
+
+         \     /   \     /       
+
+          T(X+Y)  T(X+Y)
+
+As already observed, the very bottom  / \  is a product diagram. Each
+rombus is an inverse-image pullback, hence preserved. Thus the top
+ / \
+/   \  a product diagram.
+
+
+
+    Conjecture 3:
+    Same as Conj. 2 with *and inverse images*
+    replaced by *and equalizers*.
+
+Inverse images of regular subobjects (that is, those that appear as
+equalizers) are regular: the equalizer of  x,y  under a map  f  is the
+equalizer of  xf,yf.  Hence if every subobject is regular than
+preservation of equalizers implies preservation of inverse images.
+
+

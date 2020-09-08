@@ -1,0 +1,53 @@
+Path: news.gmane.org!not-for-mail
+From: Nathan Bloomfield <nbloomf@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functions in programming
+Date: Tue, 17 Mar 2009 00:17:23 -0500
+Lines: 21
+Approved: news@gmane.org
+Message-ID: <E1LjXVB-00052Q-BP@mailserv.mta.ca>
+Reply-To: Nathan Bloomfield <nbloomf@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237292119 21993 80.91.229.12 (17 Mar 2009 12:15:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 17 Mar 2009 12:15:19 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Tue Mar 17 13:16:36 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LjYDj-0001Pr-G4
+	for gsmc-categories@m.gmane.org; Tue, 17 Mar 2009 13:16:35 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LjXVB-00052Q-BP
+	for categories-list@mta.ca; Tue, 17 Mar 2009 08:30:33 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:170
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/170>
+
+> There is one problem, of course: Haskell does not think this is legal as
+> it thinks all datatypes should have at least one constructor.
+
+This works for me in Hugs:
+
+data Void
+
+foo :: Void -> ()
+foo _ = ()
+
+foo undefined = ()
+
+Although it uses laziness and the fact that undefined is a member of every
+type.
+
+(Apologies Robin; I forgot to reply to the list!)
+
+-Nathan Bloomfield, Arkansas
+
+
+

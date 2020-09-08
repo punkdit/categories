@@ -1,0 +1,261 @@
+Date: Wed, 24 Apr 1996 09:39:27 -0300 (ADT)
+Subject: Symmetric Monoidal Closed Categories
+
+Date: Wed, 24 Apr 1996 09:20:57 +0100
+From: Chris Francis Townsend <cft@doc.ic.ac.uk>
+
+I am just about to finish the writing up of my thesis and have
+one remaining difficulty. I needed to use the following result
+about a symmetric monoidal closed categorie C,
+`If C has coequalizers then so does the category CMon(C) of
+commutative monoids over C'
+I feel sure that this result is well known by anybody who
+has worked with symmetric monoidal closed categories and so
+have been frustrated by the fact that can't  find a
+reference for it. Does anybody know where I can find
+such a reference for this result (or of some generalization
+of it)?
+
+Thanks
+
+Chris Townsend
+
+
+Date: Wed, 24 Apr 1996 15:20:28 -0300 (ADT)
+Subject: Re: Symmetric Monoidal Closed Categories
+
+Date: Wed, 24 Apr 96 17:17 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+In my "Topos Theory" book, you will *very nearly* find a proof
+that, if C is symmetric monoidal closed, then the forgetful
+functor CMon(C) --> C creates coequalizers of reflexive pairs.
+(See Lemma 0.17 and Exercise 0.1; in the latter, the cartesian
+products have to be replaced by tensor products, but that is
+a triviality.) Given that all finite colimits can be constructed
+from coproducts and reflexive coequalizers (and that CMon(C)
+always has finite coproducts, for a different reason), that is
+all you need.
+
+Peter Johnstone
+
+
+Date: Tue, 8 Sep 1998 13:58:02 -0400 (EDT)
+From: Michael Barr <barr@math.mcgill.ca>
+Subject: categories: Chew on this
+
+Has anybody seen the following symmetric closed monoidal category?  Let
+#A# be a category tripleable over Set.  Let #V# be the comma category
+(F,#V#), F being the free functor.  So an object (S,s,A) is an arrow s:FS
+--> A and a map (S,s,A) to (T,t,B) is a pair f: S --> T and g: A --> B
+making the obvious square commute.  The closed structure (S,s,A) --o
+(T,t,B) is a certain arrow of the form (Hom((S,s,A),(T,t,B),?,B^S).  The
+monoidal structure is fairly ugly, but it exists. 
+
+Of course, an object (S,s,A) can also be thought of as an S-tuple of
+elements of A, by adjointness.
+
+Michael
+
+
+Date: Mon, 14 Sep 1998 01:55:11 +0100 (BST)
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Subject: categories: Barr's symmetric monoidal closed comma category
+
+Mike Barr asked whether anyone had been aware that the comma category
+	(F,A)  or equivalently  (S,U)
+is symmetric monoidal closed, where
+	    A
+          ^    |
+         F| -| |U
+          |    V
+            S
+is a monoidal (tripleable) adjunction over S=Set.
+
+As he said,  an object (S,s,A) is an arrow s:FS--> A 
+(or, by adjointness, an S-tuple of elements of A) and
+a map (S,s,A) to (T,t,B) is a pair f: S --> T and g: A --> B
+making the obvious square commute.
+
+He said that the closed structure (S,s,A) --o (T,t,B)
+is a certain arrow of the form (Hom((S,s,A),(T,t,B),?,B^S).
+
+I have certainly seen comma categories like (S,U); they are referred to
+as gluing, sconing or the Freyd cover.  (BTW Peter says that "scone" is
+a corruption of Sierpinski cone, so its correct pronunciation is presumably
+"shco:ne".)  This construction provides an almost magical proof of
+strong normalisation, consistency and similar results for various
+fragments of symbolic or categorical logic. The algebraic theory that
+I have in mind here for Mike's monadic adjunction is that which describes
+the fragment of logic in question (the Australians would prefer us to 
+talk about a 2-monad here).
+
+An early example of such a proof in the unification of these two
+traditions was given by Yves Lafont in an appendix to his thesis.
+He proved that the embedding of a category in the free CCC that it generates
+is full and faithful.  In the course of this he described the exponential
+in (S,U), which is what Mike's formula gives, though I didn't notice
+(and apparently nor did Yves) that the A-object which we have is the
+internal version of Mike's Hom-set.
+
+Yves Lafont's result appears as part of a generic account of the gluing
+construction in Section 7.7 of my forthcoming book.
+
+Paul
+
+
+Subject: categories: Re: Barr's symmetric monoidal closed comma category
+Date: Tue, 15 Sep 1998 13:42:59 +0900
+From: HASEGAWA Masahito <hassei@kurims.kyoto-u.ac.jp>
+
+Related to Mike and Paul's messages to categories, I had the
+following observation in my recent draft paper 
+(http://www.kurims.kyoto-u.ac.jp/~hassei/papers/basic.ps.gz
+ "Logical predicates for intuitionistic linear logic", Lemma A.1): 
+
+	Suppose that C and D are symmetric monoidal closed
+	categories and that G:C->D is a symmetric monoidal
+	functor. Moreover suppose that D has pullbacks.
+	Then the comma category (D,G) can be given a symmetric
+	monoidal closed structure, so that the obvious projection
+	(D,G)->C is strict symmetric monoidal closed.  
+
+I used this (together with the free symmetric monoidal cocompletion) 
+for deriving "logical predicates (logical relations)" for
+intuitionistic linear type theories, thus in a similar way as Lafont's 
+use of glueing for typed lambda calculi and ccc. In this paper I also
+have another lemma for glueing symmetric monoidal adjunctions, for
+interpreting the modality !.
+
+I have been wondering if this is a sort of folklore, but never found a 
+reference. 
+
+Best Regards,
+
+Masahito.
+
+
+Masahito Hasegawa
+Research Institute for Mathematical Sciences
+Kyoto University
+Kyoto 606-8502 Japan
+MAIL: hassei@kurims.kyoto-u.ac.jp
+URL:  http://www.kurims.kyoto-u.ac.jp/~hassei
+
+
+Date: Sat, 19 Sep 1998 11:10:26 -0400 (EDT)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+Subject: categories: Symmetric monoidal closed comma categories
+
+This concerns the discussion by Mike Barr, Paul Taylor, and Masahito
+Hasegawa regarding symmetric monoidal closed comma categories:
+	The construction (later called 'comma') in the category of
+categories was introduced in 1963 primarily for foundational
+simplification (though it was clear that certain particular cases, such as
+slice, were already in direct use).  Besides the 2-categorical equational
+description of adjointness, one needs the description in terms of a
+bijection between arrows, but that does not require the complicated
+assumption that there exists a category of sets in which two given
+categories can be enriched.  Namely, an adjunction between two given
+categories can be described by giving a third 'adjunction category',
+related by appropriate functors to them, which is isomorphic to two
+differently-constructed 'comma' categories.  It seems that there are many
+cases in which this third category is of interest in itself, whether or
+not one of the two given categories is or is not monadic or comonadic over
+the other.
+	Emilio Faro's notes from my Fall 1990 Buffalo course Categories of
+Space and of Quantity, mention essentially the result cited by Masahito
+Hasegawa.  If an adjunction involves monoidal functors, then the
+adjunction category tends to be a monoidal closed category.  This remark
+was essentially intended to supply semantically-based examples of closed
+categories which have one aspect which is linear (in the straightforward
+sense that coproducts equal products) and an opposite aspect which is
+cartesian (in the sense that the tensor is the categorical product).  Of
+course, the most immediate subclass of examples, based on the data of a
+rig in a cartesian closed category, involve monadic adjunctions.  On the
+other hand, several published papers on related matters axiomatically
+assume comonadic adjunctions.
+	However, the simple algebraic stance, as Masahito Hasegawa points
+out, is that both aspects, as well as the relation between them, are all
+regarded as equally given.  As part of the logic (= natural structure) of
+the resulting situation there will be unary (= modal?) operators reflected
+on each aspect  by composing.  A further step is to investigate to what
+extent the data can be approximated via data which is reconstructed on the
+basis of only one aspect or the other using this additional reflected
+structure.  Both that step a la M. Stone, as well as the simple algebraic
+stance in the spirit of Chu and G. Mackey, are of course involved in the
+full study of any related pair of aspects (e.g. algebra and geometry).
+	A problem from topology, where related considerations may help,
+concerns the operation of collapsing a connected subspace to a point (the
+effect of this operation on relative homology is part of the content of
+algebraic topology).  In extending this operation to apply to
+not-necessarily-connected subspaces (and more generally, from inclusion
+maps to arbitrary maps), collapsing all these to a point would be an
+unnecessarily discontinuous functor.  Rather, within the category whose
+objects are continuous maps, consider the subcategory wherein the domains
+of these structural maps are discrete (or zero-dimensional, if that is
+different in the model of continuity being considered).  That subcategory
+is reflective (with the help of pushout) in case the model admits a left
+adjoint connected-components functor.  In the case of a subspace, the
+reflector collapses each of its components to a distinct point in the new
+ambient space, and the lifted unit of the adjunction is epimorphic if the
+original one (to the connected components pi zero) is, even where the
+subspace is empty.  I am wondering:  under what conditions are these
+categories and functors cartesian monoidal closed? 
+	Indeed these things are probably folklore, but listed
+below are some references containing partial indications.
+					Bill
+
+Functorial Semantics of Algebraic Theories   
+	Thesis  Columbia University  (1963)
+The Category of Categories as a Foundation for Mathematics,
+	Proceedings of La Jolla Conference, Springer-Verlag
+	 (1966) 1 - 20
+Categories of Space and of Quantity,  
+	Buffalo Course Notes by Emilio Faro (1990)
+
+
+*******************************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*******************************************************************************
+                       
+
+Date: Fri, 25 Sep 1998 15:55:51 +0300 (EET DST)
+From: Mamuka Jibladze <jib@rmi.acnet.ge>
+Subject: categories: Re: Chew on this
+
+One more comment on that fascinating ugly monoidal structure. Many
+years ago D. Pataraia as a student was asked to realise tensor product of
+vector spaces (V and W over k) as a colimit. He then came up with a
+diagram (sorry for still more ugly notation)
+
+                                 k_{v,w}
+                                 /    \
+                                /      \
+                              |_        _|
+                            V_w          W_v
+
+That is, vertices of the diagram consist of U(W) copies of V, U(V) copies
+of W, and U(V)xU(W) copies of k (U is the forgetful functor to sets). And
+the maps... well, you guess.
+
+The reason this is relevant is that in the Barr's monoidal category, the
+product of (S->U(A)) and (T->U(B)) is (SxT->U(C)) where C is the colimit,
+in the category of algebras, of
+
+                                 F(1)_{s,t}
+                                 /    \
+                                /      \
+                              |_        _|
+                            A_t          B_s
+
+It does not look so ugly after all, does it?
+
+:),
+Mamuka
+
+
+

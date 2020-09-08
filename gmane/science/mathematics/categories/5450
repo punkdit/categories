@@ -1,0 +1,135 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Selinger <selinger@mathstat.dal.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Quantum computation and categories
+Date: Wed, 30 Dec 2009 10:52:47 -0400 (AST)
+Lines: 104
+Approved: news@gmane.org
+Message-ID: <E1NQVPC-0001FS-Jj@mailserv.mta.ca>
+Reply-To: Peter Selinger <selinger@mathstat.dal.ca>
+NNTP-Posting-Host: lo.gmane.org
+X-Trace: ger.gmane.org 1262306668 16829 80.91.229.12 (1 Jan 2010 00:44:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 1 Jan 2010 00:44:28 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: toby+categories@ugcs.caltech.edu
+Original-X-From: categories@mta.ca Fri Jan 01 01:44:19 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NQVco-0005uO-8t
+	for gsmc-categories@m.gmane.org; Fri, 01 Jan 2010 01:44:18 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NQVPC-0001FS-Jj
+	for categories-list@mta.ca; Thu, 31 Dec 2009 20:30:14 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5450
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5450>
+
+Several people attempted to give a "non-evil" definition of a dagger
+category. Not much of this makes sense.
+
+Consider the following two categories:
+
+(a) the category of finite dimensional complex vector spaces and
+linear maps, and (b) the category of finite dimensional Hilbert spaces
+and linear maps.
+
+Clearly, they are equivalent categories. They have the same morphisms!
+Yet everyone knows that Hilbert spaces and complex vector spaces are
+not the same. For example, one can define unitary morphisms
+w.r.t. Hilbert spaces, but not w.r.t. complex vector spaces. The
+concept of "unitary" is itself "evil", because it is not preserved
+under isomorphism of objects in the category (b)!
+
+So whatever extra structure the category (b) has, which allows a
+definition of "unitary", must be evil. Transporting this along
+equivalences does not make any sense whatsoever.
+
+Specifically, take Toby's proposal, and consider two different objects
+A,B of (b) such that both A and B are two-dimensional Hilbert spaces.
+Let u:A->B be some non-unitary isomorphism. Then you can easily find
+an equivalence of categories which identifies both A and B with the
+two-dimensional vector space C^2, and which identifies u with the
+identity morphism on C^2.  At this point, you have not equipped the
+category (a) with anything useful, because it does not induce a notion
+of unitary map on C^2.
+
+It is tempting to say that what is wrong with the category (b) is that
+the morphisms don't accurately reflect the structure of the spaces.
+Perhaps one would prefer to equip the category of finite dimensional
+Hilbert spaces with unitary maps. Or with self-adjoint maps. Or with
+isometries. Or with positive maps. The fact that there are so many
+possible choices, and neither is strong enough to express all the
+others internally, shows that this is not a good solution. One nice
+feature of the dagger structure is that it does allow all of the above
+to be expressed internally. So one gets lots of "evils" for the price
+of one!
+
+A sensible thing to do is to consider the category (b) of finite
+dimensional Hilbert spaces with linear maps, to be also *equipped*, as
+extra structure, with a distinguished lluf subcategory of isomorphisms
+(the "unitary") ones. There is a natural notion of equivalence between
+such categories-with-distinguished-subcategory (in particular, where
+each component of the natural isomorphisms FG -> id and GF -> id is
+required to lie in the subcategory). One can define a version of the
+dagger structure for such categories-with-distinguished-subcategory
+(in addition to the usual dagger axioms, one also must require that
+the notion of "unitary" induced by the dagger structure coincides with
+the distinguished subcategory that is a priori given).
+
+Observe that the dagger structure can be transported along such
+equivalence of categories-with-distinguished-subcategory. So the
+dagger definition is non-evil on categories-with-distinguished-subcategory.
+
+Unfortunately, the concept of a "distinguished subcategory" is itself
+evil, if one does not require the subcategory to contain all
+isomorphisms of the original category.
+
+So it seems that, to define the extra structure of Hilbert spaces (on
+top of vector spaces), one needs at least one "evil" concept, be it
+that of unitary maps or the dagger structure.
+
+-- Peter
+
+Toby Bartels wrote:
+>
+> John Baez wrote in part:
+>
+> >A dagger-category is a category C with a functor
+> >F: C -> C^{op}
+> >which is the identity on objects and has F^2 = 1.
+>
+> >Category theorists will note that the above definition is "evil", in the
+> >technical sense of that term:
+> >http://ncatlab.org/nlab/show/evil
+> >Namely, it imposes equations between objects, so we cannot transport a
+> >dagger-category structure along an equivalence of categories.
+>
+> >Often evil concepts (like the concept of "strict monoidal category") have
+> >non-evil counterparts (like the concept of "monoidal category").  But in
+> >this particular case I know no way to express the idea without equations
+> >between objects.  Both Hilb and nCob are dagger-categories.  This fact is
+> >important.  Try saying it in a non-evil way!
+>
+> By default, there is a non-evil way to say it:
+>
+> Given a category C, a _non-evil dagger-category structure_ on C
+> consists of a dagger-category C' and an equivalence F: C -> C' of categories.
+>
+> So one question is whether there is a less long-winded way to say that.
+> Another question (which logically comes before the first question)
+> is what is the right notion of equivalence of such structures.
+>
+>
+> --Toby
+>
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

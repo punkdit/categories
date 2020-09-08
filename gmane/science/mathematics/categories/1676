@@ -1,0 +1,177 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <dusko@kestrel.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: on algebra of coreals
+Date: Tue, 31 Oct 2000 18:30:48 -0800
+Lines: 143
+Approved: news@gmane.org
+Message-ID: <39FF8058.2F30557@kestrel.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018013 32371 80.91.229.2 (29 Apr 2009 15:13:33 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:33 +0000 (UTC)
+To: CATEGORIES mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Nov  1 09:00:34 2000 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id eA1CF4Y12480
+	for categories-list; Wed, 1 Nov 2000 08:15:04 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.5 [en] (X11; U; SunOS 5.5.1 sun4u)
+X-Accept-Language: en
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 34
+Status: O
+Content-Length: 6573
+Original-Lines: 142
+Xref: news.gmane.org gmane.science.mathematics.categories:1676
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1676>
+
+hi.
+
+almost a year after peter freyd posted his version of the coalgebra of
+real numbers (henceforth coreals), i finally tried to cash in on my
+initial excitement with it, and spec out the coinductive programs for
+addition and multiplication. however, i must report that i am a bit stuck.
+since i am also guilty of not having tried to work this out in time, i'll
+try to refresh things (at least for myself) by reporting in some detail.
+
+the reason why i was excited, as i think i explained at the time, was that
+peter seemed to be able to define the algebraic operations on his coreals
+by a relatively simple *stream* coinduction. for the coreals vaughan pratt
+and i had previously constructed, i only knew how to do this using the
+*conway games*, ie cuts, which appeared to be the most inefficient way
+imaginable.
+
+let me clarify the context a little, and why any of this matters. first of
+all, why another presentation of reals, when there are already so many
+deep and beautiful presentations, left behind the centuries of analysis?
+well, in spite of all that math, the CS students still learn that real
+numbers must be truncated, because they are infinite, whereas the
+computers are finite. as if computers are more finite than our heads, or
+smaller than our calculus textbooks. so the task is to find a presentation
+of the "real reals" suitable for computers. and the hypothesis is that
+coinduction allows such presentations. and indeed, we have several
+different coinductive implementations of the datatype of reals, and it has
+also been shown that a lot of what people do in differential calculus
+yields to coinduction.
+
+but the problem is that coalgebraically implemented reals offer some
+resistance to algebra: adding and multiplying computable reals may not be
+computable. if each real number is represented irredundantly, say by a
+unique stream of digits, then there will be numbers for which the entire
+infinite streams of digits will need to be consumed before the first digit
+of their sum, or product, can be determined. this observation is due to
+brouwer, and has been mentioned in this thread several times, in one form
+or another.
+
+in any case, in order to implement coreal algebra, besides a
+real coalgebra R, we also need a *redundant numeration system*,
+a surjection
+
+    D^N --->> R
+
+mapping to each number the streams of D-digits representing it
+(plus some structure saying this).
+
+the coalgebras vaughan and i had constructed represent each number by a
+unique stream, and didn't seem to have good numeration systems. (now i
+think at least two of them have decent *generalized* numerations --- later
+more.)
+
+in contrast, peter's coalgebra represented reals as equivalence
+classes of streams, and thus came equipped with natural
+numerations! true, they were never mentioned explicitly,
+probably because XvX was viewed as a subobject of XxX, in order
+to allow splitting X--->XvX as a pair <d,u>. but viewing XvX as
+the quotient of X+X = 2xX displays the final coalgebra I of XvX
+as the quotient of the final coalgebra 2^N of 2xX. hence the
+numeration
+
+    2^N --->> I
+
+corresponding to the standard binary expansion. of course, this
+system is not fully redundant (i think andrej bauer pointed this
+
+out), but the transition to the signed binary expansion
+
+    3^N --->> I
+
+where 3 = {-1,0,1}, is almost as well known... (ok, i only
+learned of it from martin escardo's thesis, but the real
+aritmeticists surely know all about it.)
+
+in any case, it seemed reasonable to expect that freyd's elegant
+
+derivations lift to the redundant numerations, viz the streams
+lurking at the intuitive background of all constructions.
+
+and indeed, the midpoint operation lifts to a coinductive
+definition on 3^N. but nothing beyond that point works for me.
+in particular, i don't know how to construct from the closed
+interval *with a numeration system* a *coalgebra* of all reals,
+*with the corresponding numeration*. neither of the reflection
+of midpoint algebras in abelian groups, nor the extension of the
+"yoneda" embedding of the interval in its endomorphism monoid
+extends to the numeration systems. how do you enrich the
+structure of abelian group by a numeration system? what should
+the midpoint algebra homomorphisms lift on the attached
+numerations?
+
+the alternative that i keep pushing are the conway coreals.
+
+the finite and infinite lists of 1 and -1 yield an irredundant
+representation of the real line, extended with the infinity on
+both ends. to get the real number corresponding to a list, sum
+up the initial 1s or -1s, until the sign changes. this is the
+integer part of the number. after that point, sum up the entries
+of the list divided by increasing powers of 2. this is, of
+course, gonshor's version of surreal numbers.
+
+it is a retract of the conway's version. but conway's games can
+be viewed as {L,R}-labelled hypersets. so they form a final
+coalgebra. the addition, and the multiplication arise as
+*eminently* coinductive operations. the addition happens to be
+defined by a coalgebra similar to the one defining the product
+of analytic functions, and the asynchronous product of
+processes. conway's definitions of all algebraic operations are
+very nice examples of coinductive programming.
+
+the idea is now to use gonshor's version as the real coalgebra,
+and conway's version as a generalized numeration system: instead
+of streams of digits, use {L,R}-labelled graphs, viz hypersets.
+gonshor's numbers correspond to the minimal representatives of
+conway's numbers, so they embed canonically; whereas conway's
+*simplicity theorem* yields the retraction.
+
+in practice, given two real numbers, say to add, and the desired
+precision of the result, you replace them by sufficiently small
+binary intervals, ie the simplest binary numbers contained.
+these lift to finite conway games, and easily add. finding the
+simplest form is trivial. i am not sure whether i am missing
+something, but with this approximation part, the algorithm does
+not seem inefficient at all any more.
+
+originally, this story was invented for the coalgebra of
+alternating dyadics, which has appeared in my paper with vaughan
+pratt. but alternating dyadics are easily seen to be just a
+version of gonshor's representation. and just like alternating
+dyadics/gonshor reals embed in conway's games, our coalgebra of
+continued fractions embeds in contorted fractions, mentioned by
+peter johnstone... one would expect that that numeration system
+might be still a bit more efficient, or less inefficient, though
+i didn't look at the details at all...
+
+happy halloween,
+-- dusko
+
+
+
+
+
+

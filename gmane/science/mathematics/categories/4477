@@ -1,0 +1,135 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Set as a monoidal category
+Date: Wed, 13 Aug 2008 23:28:39 -0300 (ADT)
+Lines: 102
+Approved: news@gmane.org
+Message-ID: <E1KTbQA-0006Zd-PT@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019971 13489 80.91.229.2 (29 Apr 2009 15:46:11 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:46:11 +0000 (UTC)
+To: categories@mta.ca (Categories List)
+Original-X-From: rrosebru@mta.ca Thu Aug 14 08:58:42 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 14 Aug 2008 08:58:42 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1KTbQA-0006Zd-PT
+	for categories-list@mta.ca; Thu, 14 Aug 2008 08:55:14 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 12
+Status: O
+Content-Length: 4159
+Original-Lines: 101
+Xref: news.gmane.org gmane.science.mathematics.categories:4477
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4477>
+
+Peter Selinger wrote yesterday:
+>
+> I know three monoidal structures on the category of sets, all of them
+> symmetric. Two are the product and coproduct, and I'll leave it to
+> your imagination to figure out the third one.
+>
+> My question is: are these the only three? Proofs, counterexamples, or
+> references appreciated.
+
+Several people took up the challenge, and provided me with interesting
+monoidal structures on Set. I'll briefly summarize the correct
+responses that I have received.
+
+Let me begin by revealing the "third" monoidal structure that I had in
+mind. It is
+
+ X*Y = XY + X + Y.                                          (1)
+
+It is easy to see that this satisfies the axioms if one rewrites it,
+by an abuse of notation, as
+
+ X*Y = (X+1)(Y+1) - 1.
+
+Steve Lack pointed out that this is part of an infinite family of
+monoidal structures, each defined by
+
+ X*Y = XSY + X + Y,                                         (2)
+
+where S is some fixed set. Of course, for S=0 this is just the
+coproduct, and for S=1, this is the same as (1).
+
+In the case |S| > 1, coherence is not totally obvious; in fact, there
+are two possible natural isomorphisms (X*Y)*Z -> X*(Y*Z), deriving
+from the two natural maps from S^2 to itself. Only one of them is
+coherent. The coherence proof is somewhat simpler if one writes (2)
+in the form I have given, rather than in Steve's original form
+SXY + X + Y.
+
+It is interesting to note that, contrary to appearances, Steve's
+monoidal structure is not symmetric (not even braided) for |S| > 1.
+There is only one candidate braiding map X*Y -> Y*X, and it fails to
+satisfy the hexagon axiom.
+
+Ralph Loader proposed another monoidal structure, not contained in
+Steve's family: let X*Y be the set of non-empty finite sequences in
+X+Y, with no two consecutive elements from the same component of X+Y.
+Using the Kleene star, this can be written as
+
+ X*Y = (XY)^* (X+XY) + (YX)^* (Y+YX).                       (3)
+
+(Here, A^* is the list monad, i.e., the initial solution for
+A^* = 1 + A A^*, also known as the Kleene star).
+
+After Ralph saw Steve's family, he noticed that his construction can
+also be generalized to an infinite family, by alternating list
+elements with elements of S, namely:
+
+ X*Y = (XSYS)^* (X+XSY) + (YSXS)^* (Y+YSX).                 (4)
+
+The case S=0 is again the coproduct, and the case S=1 is of course
+(3). Unlike Steve's family, these tensors appear to be symmetric for
+all S. Also unlike Steve's family, the construction does not restrict
+to the category of finite sets.
+
+Jeff Egger contributed another symmetric monoidal structure, which he
+calls "par", and which is defined by:
+
+ X*Y = X   if Y=0
+ X*Y = Y   if X=0                                           (5)
+ X*Y = 1   if both X and Y are non-empty.
+
+This can be uniquely extended to morphisms such that f*0 = f = 0*f.
+
+It is perhaps interesting to note that an attempt to make Jeff's
+construction into an infinite family, by replacing "1" by some pointed
+set S, *almost* succeeds: the resulting operation is functorial, with
+coherent associativity and unit isomorphism. The only problem is that
+associativity fails to be a natural transformation. I mention it here
+because it might make for a really neat exercise in a course.
+
+
+In summary, we have two infinite families (2) and (4) (both including
+coproduct), plus product and Jeff's "par" (5). I admit that I did not
+expect so many non-trivial monoidal structures to exist on Set, and I
+now expect that there are many more. A complete classification would
+be interesting, but is perhaps too much to expect.
+
+I will close with another challenge: consider only *symmetric*
+monoidal structures on the category of *finite* sets. So far, we have
+seen four such structures, namely product, coproduct, and the tensors
+(1) and (5). Are these the only four?
+
+-- Peter
+
+P.S. monoidal *closed* structures, as mentioned in Steve's message,
+are an entirely different ball game. The requirement that tensor is
+left adjoint implies that it preserves colimits in each components; on
+Set, everything is therefore determined by 1*1. The only possibility
+is 1*1=1, which yields the usual cartesian-closed structure.
+
+
+

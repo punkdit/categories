@@ -1,0 +1,85 @@
+Path: news.gmane.org!not-for-mail
+From: John Stell <j.g.stell@cs.keele.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: graph classifiers
+Date: Fri, 29 Oct 1999 12:53:34 +0100
+Organization: Keele University
+Lines: 53
+Approved: news@gmane.org
+Message-ID: <38198ABE.4CBE434C@cs.keele.ac.uk>
+References: <Pine.GSO.4.05.9910271508520.16771-100000@hercules.acsu.buffalo.edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017681 30218 80.91.229.2 (29 Apr 2009 15:08:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:08:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Fri Oct 29 13:51:46 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA21507
+	for categories-list; Fri, 29 Oct 1999 12:07:49 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.08 [en] (WinNT; I)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 2597
+Original-Lines: 52
+Xref: news.gmane.org gmane.science.mathematics.categories:1257
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1257>
+
+To clarify what I meant by the graph Delta in my earlier message,
+we can proceed via hypergraphs. In what follows all graphs are
+undirected, so Omega has two nodes and four edges. Define a hypergraph
+to be a function h : E -> PN, where E and N are sets of edges and nodes
+and PN is the powerset of N. Each hypergraph has dual h* : N -> PE
+where h* n = {e \in E | n \in h e}. 
+
+A morphism of hypergraphs is a pair of functions phi_N : N_1 -> N_2
+and phi_E : E_1 -> E_2 such that P phi_N h_1 subseteq h_2 phi_E.
+If H and K are graphs a hypergraph morphism from H to K may not
+be a graph morphism since a loop can be mapped to an edge which is not
+a loop. However, given any hypergraph h we can define a graph having
+the same nodes as h but with an edge joining node x to y for every
+edge in h incident with both x and y. If this graph is denoted
+by G(h), hypergraph morphisms from a graph K to a hypergraph h
+correspond to graph morphisms from K to G(h). The graph I called 
+Delta before is G(Omega*) it has four nodes and nine edges.
+
+To explain the interpretation of Omega*, let's denote the nodes of
+Omega by 0 and 1 and the four edges by {1}1, {1}0, {0,1}0, {0}0.
+Given a subgraph gamma : H -> Omega, the nodes and edges have the
+following interpretations.
+  0      nodes not in the subgraph
+  1      nodes in the subgraph
+  {1}1   edges in the subgraph
+  {1}0   edges not in the subgraph but with both end nodes in 
+  {0,1}0 edges not in the subgraph but with one end in and one out
+  {0}0   edges not in the subgraph with both end nodes out.
+
+Now give Omega* the following interpretation
+  0      edges in the subgraph
+  1      edges not in the subgraph
+  {1}1   nodes not in the subgraph
+  {1}0   nodes in the subgraph which are ends of a non-empty set of
+         edges all of which are out of the subgraph.
+  {0,1}0 nodes in the subgraph which are ends of some edges in the 
+         subgraph and ends of some edges which are out of the subgraph.
+  {0}0   nodes in the subgraph having all their incident edges in the 
+         subgraph, or having no incident edges.
+
+Given any subgraph gamma : H -> Omega, we get neg gamma from
+the endomorphism of Omega switching 0 and 1 and taking {0}0
+to {1}1. Using the above interpretation of Omega* we can construct a
+hypergraph morphism gamma! : H -> Omega*. I don't have a neat
+construction for gamma! except via the above interpretation of Omega*.
+Now the endomorphism neg : Omega -> Omega dualizes to
+neg* : Omega* -> Omega* and we compose this with gamma! to
+get a hypergraph morphism from H to Omega* which represents suppl gamma.
+
+
+John Stell
+
+

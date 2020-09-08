@@ -1,0 +1,191 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Real coalgebra -- replacing equations by geometry
+Date: Fri, 24 Dec 1999 13:59:52 -0800
+Lines: 160
+Approved: news@gmane.org
+Message-ID: <199912242159.NAA07485@coraki.Stanford.EDU>
+References: <199912241213.EAA03788@coraki.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017742 30668 80.91.229.2 (29 Apr 2009 15:09:02 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:09:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sun Dec 26 15:03:47 1999 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id NAA06018
+	for categories-list; Sun, 26 Dec 1999 13:54:03 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: Your message of "Fri, 24 Dec 1999 04:13:57 PST."
+             <199912241213.EAA03788@coraki.Stanford.EDU> 
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 19
+Status: O
+Content-Length: 6813
+Original-Lines: 159
+Xref: news.gmane.org gmane.science.mathematics.categories:1310
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1310>
+
+
+The continuum is intrinsically geometrical, so it is a shame to specify
+Peter's midpoint coalgebra on IxI with a mess of algebraic-looking
+equations as per my previous message when it has a relatively short and
+transparent geometric specification.  (I must have got this idea from
+the paper on higher dimensional automata that I'm just finishing up.)
+
+Incidentally there were two ambiguities in my equations, arising from
+respectively equations (1) and (5).  I was going to offer fixes for
+these, but one of the degeneracies that made these ambiguities possible
+in the first place (that with (5)) does not even arise in the geometric
+presentation, while the other, arising with (1), is just as readily
+dealt with geometrically as algebraically.
+
+In the following I'll refer to this coalgebra as Fm for Freyd's midpoint
+(unrelated to Scott's bottom).  (For listeners who just tuned in to Fm,
+its role is to promote the final coalgebra I of Peter's fusion functor
+X v X from a linear order, and hence a topological space via the order
+topology, to a metric space understood as the real interval [-1,1].
+It does this by furnishing IxI with a coalgebra, which determines a
+unique coalgebra homomorphism from IxI to I, I being the final coalgebra.
+This homomorphism is then taken to be (x+y)/2, while the endpoints of
+I are taken to be -1 and 1, thereby uniquely determining a continuous
+metric on I qua topological space.)
+
+For both the equational and geometric specifications, here's what the
+domain and codomain of Fm look like.
+
+
+                                                    (1,1)
+                IxI                                   ^
+                                                     / \
+                                                    /   \
+                (1,1)                        (1,-1)<  1  >(-1,1)
+                 /\                                 \   /
+                /  \                Fm               \ /
+         (1,-1)<    >(-1,1)   ------------->          0      IxI v IxI
+                \  /                                 / \
+                 \/                                 /   \
+              (-1,-1)                        (1,-1)< -1  >(-1,1)
+                                                    \   /
+                                                     \ /
+                                                      V
+                                                   (-1,-1)
+
+So Fm maps pairs of the form (x,-x) to 0 (where the two copies of IxI
+are fused) and all other pairs (x,y) to a pair (h,(x',y')) whose head h
+specifies which copy of IxI to land in, 1 for upper and -1 for lower, and
+(x',y') gives the landing point within that copy.  Here -1 <= x,y,x',y' <= 1, 
+-x is defined by changing all the signs on the sequence representing x
+and h is unproblematically determined by whether (x,y) is in the upper
+or lower half of IxI oriented as shown.  The tricky part is to specify x'
+and y' reasonably.
+
+(Although it is convenient to think of x and y as reals in [1,-1], at
+this stage they are merely infinite sequences over {-1,0,1} with the
+properties that once zero alway zero and infinite runs of -1 or 1 are
+only allowed in constant sequences.)
+
+The domain of Fm, namely I x I, can be blown up as
+
+
+			    (1,1)
+			     /\
+			    /  \
+			 (1,0) (0,1)
+			  / \  / \
+			 /   \/   \
+		  (1,-1)<   (0,0)  >(-1,1)
+			 \   /\   /
+			  \ /  \ /
+			(0,-1)  (0,1)
+			    \  /
+			     \/
+			  (-1,-1)
+
+
+In my previous mess-age, my five equations implicitly decomposed this
+domain into nine regions, namely the midpoint (0,0) (equation (2)), the
+four lines leading out of it (equation (3)), the upper and lower diamonds
+(equation (4)), and the left and right diamonds (equation (5)).
+
+For the geometric description of Fm, a simpler decomposition suffices,
+namely three regions: the upper and lower diamonds as one region, call
+it M for Middle, and the interior of each side diamond along with its
+outer sides, call them L and R.  (So M is closed and L + R = IxI - M.)
+
+
+			       (1,1)
+				/\
+			       /  \
+	       .            (1,0) (0,1)          .
+	      / .              \  /             . \
+	     /   .              \/             .   \
+      (1,-1)<  L  .         M  (0,0)          .  R  >(-1,1)
+	     \   .              /\             .   /
+	      \ .              /  \             . /
+	       .           (0,-1)  (0,1)         .
+			       \  /
+				\/
+			     (-1,-1)
+
+
+In addition we need one more region, S for Shrunk, as a subregion of
+IxI v IxI, shown below.  S is simply IxI v IxI shrunk in half (or pushed
+twice as far away).
+
+                                /\
+                               /  \
+                              /    \
+                             /      \
+                             \  /\  /
+                              \/S \/
+                               \  /
+                                \/     IxI v IxI
+                                /\
+                               /  \
+                              /\ S/\
+                             /  \/  \
+                             \      /
+                              \    /
+                               \  /
+                                \/
+
+
+We now describe Fm as follows.  Its restriction to M is the evident
+similarity between M and IxI v IxI.  And its restriction to each of L
+and R lands in S, and in each case is the whole of Fm shrunk in half
+(the corecursion is essential, not even geometry can eliminate it).
+
+Note that these maps are defined on sequences, i.e. we are not assuming
+the metric we set out to construct.
+
+Fm as defined is not commutative, but can be made so by composing its
+restriction to L with commutativity of (x+y)/2, viz. reflection of L about
+its central vertical axis, thereby symmetrizing Fm.  (This commutativity
+ambiguity also arose via equation (1) of my 5-equation approach.)
+This symmetrical Fm would appear to be the canonical choice for Freyd's
+midpoint coalgebra.  (The apparent competitor obtained by reflecting
+R instead of L is slightly more discontinuous, if that's a reasonable
+tie breaker.)
+
+This coalgebra is of course not final, nor is it even injective, though
+it is surjective, witness subdomain M.  It is also not continuous:
+points near (1,0) in L go to points near (1,(0,0)) in IxI v IxI, while
+points near (1,0) in M go to points near (1,(1,-1)) in IxI x IxI.
+On the other hand points near (1/2,0) in both M and L.M (the M of L)
+go to points near (1/2,0) in IxI v IxI, which has no counterpart in the
+above-mentioned competitor.
+
+Question.  Is there a corecursively defined Freyd midpoint coalgebra
+that is continuous?
+
+(x,y) |--> ((x+y)/2,(x+y)/2) (projection onto the center axis) is a
+continuous midpoint coalgebra, but that assumes the metric before we've
+defined it.  What corecursion would define this?
+
+Vaughan
+
+

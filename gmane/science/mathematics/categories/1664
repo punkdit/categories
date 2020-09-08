@@ -1,0 +1,105 @@
+Path: news.gmane.org!not-for-mail
+From: jesse@andrew.cmu.edu (Jesse F. Hughes)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: coinduction
+Date: 20 Oct 2000 18:01:59 -0400
+Lines: 69
+Approved: news@gmane.org
+Message-ID: <87og0fnpd4.fsf@phiwumbda.dyndns.org>
+References: <003301c03a95$49f73610$448a0dd8@main>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018005 32319 80.91.229.2 (29 Apr 2009 15:13:25 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:13:25 +0000 (UTC)
+To: "Categories@Mta. Ca" <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Sun Oct 22 17:55:27 2000 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id e9MKIKE19544
+	for categories-list; Sun, 22 Oct 2000 17:18:20 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: phiwumbda.dyndns.org: jesse set sender to jesse@andrew.cmu.edu using -f
+Mail-Copies-To: poster
+In-Reply-To: "Al Vilcius"'s message of "Fri, 20 Oct 2000 08:57:20 -0400"
+User-Agent: Gnus/5.0807 (Gnus v5.8.7) XEmacs/21.1 (Carlsbad Caverns)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 22
+Status: RO
+Content-Length: 3018
+Original-Lines: 67
+Xref: news.gmane.org gmane.science.mathematics.categories:1664
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1664>
+
+"Al Vilcius" <al.r@VILCIUS.com> writes:
+
+> can anyone explain coinduction?
+> in what sense it dual to induction?
+> does it relate to the basic picture for a NNO?
+> is there a (meaningful) concept of co-recursion?
+> what would be the appropriate internal language?
+> how is it used to prove theorems?
+
+The principle of induction says that initial algebras have no
+non-trivial subalgebras.  Consider N, the initial successor algebra.
+A subobject S of N is a subalgebra just in case there is a structure
+map
+s: S+1 -> S
+such that the inclusion S -> N is a homomorphism.  This is just the
+usual condition that 0 is in S and if n is in S, then so is its
+successor.  Induction says that any such subalgebra exhausts the set
+N.
+
+Coinduction says, dually, that the final coalgebra has no non-trivial
+quotients.  (To see that this is "really" a dual principle, we would
+interpret "subalgebra" above as a regular subobject in the category of
+algebras.)  However, the principle is usually stated in terms of
+relations on a coalgebra, rather than quotients.  In these terms, the
+principle of coinduction says: Any relation on <F,f> in the category
+of coalgebras is a subrelation of equality.
+
+Note: I stated the principles of induction/coinduction above for the
+initial algebra/final coalgebra, resp.  However, just as induction
+holds for any quotient of the initial algebra, coinduction holds for
+any (regular) subcoalgebra of the final coalgebra.
+
+I'm not sure what you're looking for in relation to NNOs.  An NNO is
+the same as an initial algebra for the successor functor (assuming
+that our category has coproducts).  The structure map N + 1 -> N is
+given by [s,0], where s is the successor.  The final coalgebra for
+successor is easily described (say, in Set):  It is the NNO with a
+point adjoined for "infinity".  The structure map pred:F -> F + 1 fixes
+infinity, takes n+1 to n and takes 0 to * (the element in 1 -- a kind
+of "error condition").
+
+As far as co-recursion goes, yes, there is a meaningful principle.
+Namely, given any coalgebra <A,a>, there is a unique coalgebra
+homomorphism from <A,a> to <F,f>.  Thus, for any set S together with a
+function t:S -> S+1, there is a unique map h:S -> N u {infinity} such
+that 
+(1) if t(s) = *, then h(s) = 0
+(2) else, h(t(s)) = h(s) - 1 (where infinity - 1 = infinity)
+In other words, h here takes an element s to the least n such that
+t^n(s) = *, if defined.  If, for all n, t^n(s) != *, then h(s) =
+infinity.
+
+I'll defer on the question of what the appropriate internal language
+is.
+
+As far as how coinduction is used to prove theorems: To show two
+elements of the final coalgebra are equal, it suffices to find a
+coalgebraic relation relating the elements.
+
+Hendrik's suggestion (that you find Jacobs and Rutten's paper) is a
+good one, but I hope these comments help until then.
+
+-- 
+Jesse Hughes
+"Such behaviour is exclusively confined to functions invented by
+mathematicians for the sake of causing trouble."
+ -Albert Eagle's _A_Practical_Treatise_on_Fourier's_Theorem_
+
+

@@ -1,0 +1,875 @@
+Date: Wed, 1 May 1996 09:27:02 -0300 (ADT)
+Subject: Reorg of half of Boole.Stanford.EDU 
+
+Date: Tue, 30 Apr 1996 23:53:57 -0700
+From: Vaughan Pratt <pratt@cs.Stanford.EDU>
+
+Boole.Stanford.EDU, in whose /pub directory one can find the Structures
+Directory, /pub/structdir, is also where you can find /pub/ABSTRACTS,
+listing the abstracts of some fifty papers written by members of my
+group over the past ten years, in chronological order.
+
+About a third of these are on Chu spaces.  Their chronological order is
+very little help for people hoping to learn more about Chu spaces from
+them.  I've therefore reorganized the abstracts of those papers in the
+form of a web-browsable guide, accessible as
+
+        http://boole.stanford.edu/chuguide.html
+
+The abstracts are grouped into Introductory (2), Applications (10),
+Technical Notes (5), and Prehistory (5).  Each abstract includes a link
+to the postscript file, which you can view and/or print if your web
+browser knows about gzipped files (.gz) and Postscript (.ps).
+
+I've only listed papers from Stanford, for related papers from
+elsewhere see the bibliographies of the introductory papers.  Please
+let me know of any difficulties you encounter with this guide.
+
+Vaughan Pratt
+
+
+Date: Wed, 1 May 1996 09:27:58 -0300 (ADT)
+Subject: Re: question 
+
+Date: Wed, 1 May 96 10:13 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+Fred Linton's comment re Cantor--Bernstein is of course correct,
+provided you assume classical logic. However, Barbosa's question
+makes sense in any topos with a natural number object, and it's
+well known that Cantor--Bernstein can fail in non-Boolean toposes.
+Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+I suspect the answer is yes, but it may take some ingenuity to
+construct it.
+
+Peter Johnstone
+
+
+Date: Wed, 1 May 1996 09:29:11 -0300 (ADT)
+Subject: Re: question 
+
+Date: Wed, 1 May 1996 12:24:09 +0100
+From: Tim Heap <timh@dcs.ed.ac.uk>
+
+categories  writes:
+
+Luis> Date: Tue, 30 Apr 1996 19:07:19 +0000 From: Luis Soares Barbosa
+Luis> <lsb@di.uminho.pt>
+
+Luis> This is probably a trivial question, but I would appreciate any
+Luis> pointer to a solution:
+
+Luis> Let A be a denumerable set and A* be the set of finite sequences
+Luis> of A.  It is easy to show (by defining two injections) that the
+Luis> set (A* x A*) is isomorphic (as a set) to (A x 2)* -- where 2 is
+Luis> a two element set and x the Cartesian product.  The question is
+Luis> how to exhibit the isomorphism (actually the 2 obvious
+Luis> injections are not mutually inverse).
+
+There's almost certainly a constructive proof of the
+Cantor-Schroeder-Bernstein theorem in the circumstances that you
+describe, which would necessarily contain a construction of a
+bijection given two appropriate injections --- it wouldn't be hard to
+makes this as explicit as you like.
+If you really want to exhibit this isomorphism explicitly, this
+suggests to me that your looking for something like an algorithm: If
+this is not the case, then even a non-constructive proof would do if
+you're prepared to a allow primitive corresponding to the law of the
+excluded middle in the recipe for your isomorphism --- it's just not
+always obvious how to interpret this in any computational sense.
+
+Alternatively, you could simply introduce some mutant
+lexicographic-type ordering on each of the two sets (using the
+ubiquitous `diagonal' trick (that's not diagonalisation) if necessary,
+i.e. if A is infinite).
+
+Neither of these suggestions is perceptibly natural or canonical i'm
+afraid, but i rather suspect that there is no particularly
+distinguished candidate with respect to the level of structure that
+you describe.
+
+		t!m
+
+
+Date: Wed, 1 May 1996 09:30:12 -0300 (ADT)
+Subject: (A x 2)* = A* x A* 
+
+Date: Wed, 1 May 1996 07:49:59 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+There's a good category question here. View  (A x 2)*  and  A* x A*
+as functors on the category of non-empty sets and Show that they are
+naturally equivalent.  It's not hard if you switch to the category
+of pointed sets (whereon each is naturally equivalent to  A*).
+
+
+Date: Wed, 1 May 1996 14:00:49 -0300 (ADT)
+Subject: Re: question 
+
+Date: Wed, 1 May 1996 09:07:43 -0400 (EDT)
+From: Andre Joyal <joyal.andre@uqam.ca>
+
+ 
+On Tue, 30 Apr 1996
+Luis Soares Barbosa wrote
+
+> Let A be a denumerable set and A* be the set of finite sequences of A.
+> It is easy to show (by defining two injections) that the set (A* x A*) is 
+> isomorphic (as a set) to (A x 2)* -- where 2 is a two element set and x
+> the Cartesian product.  The question is how to exhibit the isomorphism 
+> (actually the 2 obvious injections are not mutually inverse).
+
+If we put F(A)=(A* x A*) and G(A)= (A x 2)* for any set A
+we obtain two functors F,G:Sets -->Sets.
+Are they naturally isomorphic?
+This is not the original question but a related one. 
+Observe that both functors are analytic, which means that they have
+a power series expansion:
+
+ F(A)= sum_n n A^n  and   G(A)= sum_n 2^n A^n
+
+The two power series are different and it follows 
+that F is not isomorphic to G.
+
+
+Andre Joyal
+
+PS: For the theory of analytic functors one can read my paper
+
+'' Foncteurs Analytiques et Especes de Structures''
+Combinatoire Enumerative Springer Lecture Notes 1234 (1985).
+
+
+Date: Wed, 1 May 1996 19:51:10 -0300 (ADT)
+Subject: Re: (A x 2)* = A* x A* 
+
+Date: Wed, 1 May 1996 16:03:35 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Andre's analytic functors do it all. As he points out, they answer,
+negatively, the question I put (answering it, note, before he could
+have read my question). And they provide a much nicer proof than the
+one I had in mind for the category of strict maps between pointed
+sets. Well, yeah, I didn't notice that my "not hard" proof was only 
+good for what the CS people call "strict maps." What it comes to is 
+that if you first apply the functor  \A. 1+A  and then Andre's 
+functors  F , G  you get isomorphic functors:
+
+   ((1+A) x 2)*    =     (1+A)* x (1+A)*
+
+because in each case you get
+
+    sum_n  Nx(A^n).
+
+
+Date: Thu, 2 May 1996 23:32:52 -0300 (ADT)
+Subject: Barbosa's question 
+
+Date: Thu, 2 May 96 10:42 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+Andre Joyal's neat argument not only shoots down Peter Freyd's conjectured
+extension of Barbosa's question, it also shoots down mine (i.e. does the
+isomorphism (A* x A*) =~ (A x 2)* hold for A an object of a non-Boolean
+topos with NNO?) Take E to be the object classifier (i.e. the functor
+category [Set_f,Set]) and A to be the generic object of this topos (i.e.
+the inclusion functor Set_f --> Set). Then (A* x A*) and (A x 2)* are
+simply the restrictions to Set_f of Andre's functors F and G, and these
+are already non-isomorphic (since both functors are finitary).
+
+Peter Johnstone
+
+
+Date: Thu, 2 May 1996 23:35:27 -0300 (ADT)
+Subject: Re: question 
+
+Date: Thu, 2 May 1996 11:30:14 +0100
+From: Ralph Loader <loader@oban.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+>Date: Wed, 1 May 96 10:13 BST
+>From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+>
+>Fred Linton's comment re Cantor--Bernstein is of course correct,
+>provided you assume classical logic. However, Barbosa's question
+>makes sense in any topos with a natural number object, and it's
+>well known that Cantor--Bernstein can fail in non-Boolean toposes.
+>Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+
+If we have a 1-1 correspondance between A and the set N of natural numbers,
+then this reduces to N* x N* =~ (N x 2)*, and constructive proofs of N* =~
+N and N x N =~ N are easy, so presumably this will work in any topos with a
+NNO.
+
+On the other hand, A* x A* =~ (A x 2)* for all A implies excluded middle.
+An informal argument follows:
+
+Suppose A* x A* =~ (A x 2)* for all A.  Let phi be a proposition.  We show
+phi or not phi.  Take a and b such that a=b iff phi; it suffices to show
+a=b or not a=b.  Let A be the set {a,b}.
+
+Let f : (A x 2)* --> A* x A* and g : (A* x A*) --> (A x 2)* be inverse.
+
+We take 2 = {0,1} for convenience.
+First look at f applied to x in S = {<(x,0),(y,0),(z,0)> | x,y,z in A}
+
+The images of each of these is in the form (<c_1,...,c_m>,<d_1,...,d_n>).
+
+If either m or n depends on x in S, then f is non-constant, S is not a
+singleton, and so not a=b.
+
+Alternatively m, n don't depend on x in S (we're using excluded middle for
+equality on natural numbers).  Let T = {(<x_1,...,x_m>,<y_1,...,y_n>) | x,y
+in A}.  Consider the g(w) for w in T.  If these are not all in the form
+(x,0),(y,0),(z,0), then we have two distinct members of T, so not a=b.
+Otherwise, g and f restrict to a bijection between S and T.  If not m+n =
+3, then we have A^i =~ A^j with not i=j and it follows that a=b.
+
+Otherwise, we are left with m+n=3.
+
+We now repeat with this with S = {<(x,i),(y,j),(z,k)>|x,y,z in A}, for each
+of the other seven possibilities of i,j,k in {0,1}.  There are two
+possibilities: either eventually we obtain (a=b or not a=b), or we find for
+all 8 triples (i,j,k), some m and n such that m+n=3.  But the latter case
+is impossible: as f and g are bijections, different triples (i,j,k) must
+give different pairs (m,n), a contradiction as there are eight triples, but
+only four pairs.
+
+[We've implicitly used the following fact: If n is a natural number, and
+psi(x) is decideable for all x in A^n, then psi(x) for all x in A^n, is
+also decidable]
+
+Ralph.
+
+P.S. The headers on this message probably won't survive the list
+distribution.  My email address is loader@maths.ox.ac.uk, not
+loader@oban.ox.ac.uk.
+
+
+Date: Thu, 2 May 1996 23:36:46 -0300 (ADT)
+Subject: coherent toposes 
+
+Date: Thu, 2 May 1996 15:03:07 +0200 (MET DST)
+From: Paul Johnson <johnson@math.muni.cz>
+
+In all the resources I have available,
+Deligne's Theorem (axiom) is proven to
+be a consequence of axiom of choice.
+(That is, in TTT, Johnstone's Topos Theory, 
+Maclane/Moerdijk).
+Am I wrong to think it is actually a consequence
+of only prime ideal theorem???
+The best possible result I can imagine is that
+***constructively***
+every coherent topos E admits a surjection
+sh(X) ---> E (ie epimorphism in the category of
+geometric morphisms) where X is a coherent locale.
+But I can't prove it. Paul.
+
+
+Date: Thu, 2 May 1996 23:38:08 -0300 (ADT)
+Subject: Re: (A x 2)* = A* x A* 
+
+Date: Thu, 2 May 1996 10:59:58 -0400 (EDT)
+From: Andre Joyal <joyal.andre@uqam.ca>
+
+I would like to correct an error in my power series expansion of
+A* x A*. You might have already noticed it.
+The correct expansion is
+
+   A* x A* = sum_n (n+1) x A^n
+
+Of course, the error does not affect the proof
+that A* x A* is not isomorphic to (2 x A)*
+as a functor from Sets to Sets.
+
+Peter is right about the isomorphism between the functors
+F(X+1) and G(X+1) where F(A)=A* x A* and G(A)=(2 x A)*.
+
+It might be worth to notice that
+if we substitute the category Sets, of sets and all maps, 
+by the category Bi of sets and bijections then
+F and G become isomorphic as functors Bi -->Sets.
+In this case Cantor's argument applies since the
+category of functors Bi-->Sets is a Boolean topos
+(and since there are natural injections F>-->G
+and G>-->F in this category).
+
+However, if we substitute the category Sets by
+the category In of sets and injections then it can be shown
+F and G are not isomorphic as functors In -->Sets.
+
+Andre J.
+
+
+
+
+
+
+Date: Thu, 2 May 1996 23:39:47 -0300 (ADT)
+Subject: re: question
+
+Date: Thu, 2 May 1996 18:33:58 -0400
+From: Todd Wilson <twilson@CS.Cornell.EDU>
+
+----------------------------------------------------------------
+> > Let A be a denumerable set and A* be the set of finite sequences of A.
+> > It is easy to show (by defining two injections) that the set (A* x A*) is 
+> > isomorphic (as a set) to (A x 2)* -- where 2 is a two element set and x
+> > the Cartesian product.  The question is how to exhibit the isomorphism 
+> > (actually the 2 obvious injections are not mutually inverse).
+> > 
+> > Thanks.
+> > L. S. Barbosa
+> 
+> Fred Linton's comment re Cantor--Bernstein is of course correct,
+> provided you assume classical logic. However, Barbosa's question
+> makes sense in any topos with a natural number object, and it's
+> well known that Cantor--Bernstein can fail in non-Boolean toposes.
+> Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+> I suspect the answer is yes, but it may take some ingenuity to
+> construct it.
+> 
+> Peter Johnstone
+
+Given total enumerations of A and B (in other words bijections N -> A
+and N -> B), there are standard ("canonical") constructions that
+produce total enumerations of A*, A x 2, A x B, and so on, using
+primitive recursive functions, which are thus available in any topos
+with natural numbers object.  For example, the Cantor Pairing Function
+
+    <x,y> = ((x+y)^2 + 3x + y)/2
+
+is a bijection N x N -> N.  (In fact, by the Fueter-Polya theorem, it
+is the unique such bijection up to swapping x and y that is given by a
+quadratic polynomial with real coefficients.)  Similarly, the function
+mapping N* to N given by the dyadic coding
+
+    <a0,...,an> |-> 2^a0 + 2^{a0+a1+1} + ... + 2^{a0+...+an + n}
+
+(the empty sequence is coded by 0) is a "primitive recursive"
+bijection in the extended sense where lists are a recursive data
+type.
+
+By appropriately composing these enumerations and their inverses, one
+gets canonical bijections between any two sets built from totally
+enumerated sets using x, *, and so on, by going from one of the sets
+back to N and then from N to the other set.
+
+--Todd Wilson
+
+
+Date: Fri, 10 May 1996 15:10:30 -0300 (ADT)
+Subject: Master Class - Utrecht
+
+Date: Fri, 10 May 1996 11:10:22 +0200
+From: I. Moerdijk <moerdijk@math.ruu.nl>
+
+Dear colleagues,
+
+We have a one year preliminary program at Utrecht for which we accept a number
+of fully funded students. The courses this year relate to sheaves, knots, etc,
+so will interest some category theorists. I would be grateful if you could
+bring this to the attention of your students.
+
+Ieke Moerdijk.
+
+----------------------------------
+
+
+
+
+
+Master Class 1996-1997
+
+Mathematical Research Institute
+The Mathematical Research Institute (MRI) in The Netherlands has been set up
+jointly by the mathematics departments of the universities of Groningen,
+Nijmegen, Twente and Utrecht. Its aim is to promote research, organise graduate
+courses and seminars, and stimulate international contacts and exchange. The
+MRI is one of the main mathematical institutes in The Netherlands.
+ Master Class
+The MRI organises a Master Class (MC). Every year three parallel MC programmes
+are offered, each with its own topic. These are 1-year programmes of lectures,
+seminars and a test problem
+for bright undergraduate students and beginning graduate students of any
+nationality. The MC student follows one of these programmes. The language for
+all MC activities is English.
+
+Students who have successfully completed a Master Class programme can apply for
+admission to the Graduate Studies Programme (GSP) of the MRI. Studies in the
+GSP can take 4 years and aim at a doctoral thesis, based on original
+mathematical research. Admission to the GSP is subject to a severe selection
+procedure.
+
+Topics for the Master Class 1996-97
+# Numerical Analysis and Supercomputing
+# Stochastics and Operations Research
+# Complex Geometry and Topology
+
+ Each programme includes
+# two full days of lectures and seminars per week,
+# a test problem: individual work on a mathematical
+problem under the guidance of a tutor.
+
+The programme runs from September 1st until June 30th. There are two blocks of
+courses of about thirteen weeks each. Participants are
+expected to become actively involved in seminars, workshops, discussions.
+Time will also be reserved for preparing for the examinations and for work on
+the test
+problem.
+
+In 1996-97 the following courses will be offered:
+
+NUMERICAL ANALYSIS AND SUPERCOMPUTING
+# Seminar: Numerical solution of nonlinear problems (O. Axelsson)
+# Finite element and boundary element methods (B. Polman)
+# Splines and wavelets (C. Traas)
+# Numerical treatment of surfacewaves (P. Zandbergen)
+# Subspace methods for linear problems and eigenproblems (H. van der Vorst/G.
+Sleijpen)
+# Seminar: Preconditioning techniques (H. van der Vorst/G. Sleijpen)
+# Elliptic boundary value problems (J. Duistermaat)
+# either: Numerical programming (R. Bisseling)
+or: Supercomputers and numerical linear algebra (O. Axelsson)
+
+STOCHASTICS AND OPERATIONS RESEARCH
+# Algorithmic methods in mathematical operations research (U. Faigle, W. Kern)
+# Seminar: Stochastic models in applied operations research (W. Nawijn)
+# Stochastic processes (M. van Zuijlen, E. van Doorn)
+# Stochastic analysis (F. den Hollander, H. Maassen)
+# Non-parametric statistics (B. Levit)
+# Seminar: Quantum stochastics (R. Gill)
+# Time series analysis (H. Dehling, T. Mikosch)
+# Seminar: Spatial stochastics (H. Dehling, A. van Enter, J. Roerdink)
+
+COMPLEX GEOMETRY AND TOPOLOGY
+# Sheaves and algebraic topology (W. van der Kallen, I. Moerdijk)
+# Complex geometry (E. Looijenga)
+# Riemann-Hilbert correspondence on  P^1 (F. Beukers, G. Heckman)
+# Introduction to singularities (D. Siersma, J. Steenbrink)
+# D-modules (J. Steenbrink, R. van Doorn)
+# Intersection homology (W. van der Kallen, I. Moerdijk)
+# Arrangements of hyperplanes (M. Hazewinkel, D. Siersma) # Seminar on
+hypergeometric functions (G. Heckman, E. Opdam, J.
+Stienstra)
+
+Examination and certificate
+Each participant is required to take examinations on the courses and to present
+a written account of his/her work on the test problem. When the examinations
+and the test problem are successfully passed a
+certificate will be awarded.
+
+Expenses and fellowships
+The fee for admission to the MC, including tuition fees, is Dfl. 5,000.
+Since the MC activities take place in different cities the participants should
+expect expenses up to Dfl. 1,500 per year for travelling in the Netherlands.
+Moreover, there will be expenses for visa and for travelling to and from the
+Netherlands.
+The other normal costs of living (including housing and insurance) can be
+estimated at Dfl. 1,200 per month.
+
+The MRI can only offer a very limited number of fellowships for
+participation in the MC.
+Foreign students are therefore requested to apply for scholarships or funding
+in their
+home country. The MRI also encourages participation by way of student exchange
+programmes. Students are requested to check if their home university
+is involved in exchange programmes with one of the MRI universities (Groningen,
+Nijmegen, Twente, Utrecht).
+The MRI can offer a few full fellowships, intended for students
+with no possibility of funding in their home country and a few partial
+fellowships, intended for students with limited funding. In some
+cases the admission fee will be waived.
+
+Housing
+The MC activities will be spread over the four participating
+universities. The MRI will help candidates to find suitable
+housing accommodation near one of the participating universities. Usually one
+day per week the student will travel to another
+university. Travelling can take up to two and a half hours each way.
+
+Application
+Application is open to all those who are now in the final year of their
+undergraduate studies in Mathematical Sciences or have started their graduate
+studies. Women are especially encouraged to apply.
+To apply one should complete (a copy of) the application form attached
+to this folder and send it together with the following documents to Jean
+Arthur:
+
+# Curriculum vitae.
+# Academic record: list  of
+subjects/classes taken at the home university; subjects for degree examination;
+photocopy of diploma (if available).
+# At least one letter of recommendation from a member of the academic staff of
+the home university.
+# A summary of the applicant's financial circumstances (if a fellowship is
+being applied for).
+N.B.:
+incomplete applications will not be considered;
+clearly indicate the topic of your choice;
+there are no special application forms for fellowships or housing.
+
+If you require further information or have any questions, do not hesitate to
+contact:
+
+Ms. Jean Arthur (secretary MRI)
+University of Utrecht, Mathematical Research Institute
+P.O. Box 80.010
+3508 TA Utrecht
+The Netherlands
+
+(tel: 31-30-2531472, fax: 31-30-2518394, e-mail: mri@math.ruu.nl).
+
+Information on WWW
+We plan to have the contents of the folder and the latest information about the
+Master Class 1996-1997 on World Wide Web at the following address:
+http://www.math.ruu.nl/mri
+
+Deadlines for application
+Applicants seeking admission to the MC in September 1996 are
+requested to contact the secretariat as soon as possible.
+Deadline for applications: March 1st, 1996.
+Candidates will hear at the beginning of May 1996, whether or not their
+application has been successful.
+For students not requiring an MRI-fellowship (or a visa to enter The
+Netherlands) the deadline for application is June 1st, 1996.
+Prof.dr. D. Siersma (director MRI)
+Dr. J. Stienstra (coordinator MC)
+
+Application form
+MASTER CLASS 1996-1997
+Name
+Address
+Postal Code & City
+Country
+Telephone number
+E-Mail / Fax / Telex
+
+I am particularly interested in the class about:
+Numerical Analysis and Supercomputing
+Stochastics and Operations Research
+Complex Geometry and Topology
+
+In order to participate, I would need
+no support
+partial support
+full support
+
+
+
+
+Date: Fri, 10 May 1996 15:32:54 -0300 (ADT)
+Subject: Announcing Hypatia Electronic Library 
+
+Date: Fri, 10 May 1996 18:36:06 +0100 (BST)
+From: Hypatia Electronic Library <hypatia@doc.ic.ac.uk>
+
+Dear Colleagues,
+
+This is to tell you about the new electronic library, Hypatia,
+which has been implemented by my colleagues at QMW.
+(Apologies for duplicate copies of this message.)
+
+     HH   HH                                   ii
+     HH   HH                           tt
+     HHHHHHH  yy  yy  p ppp    aaaa    tttt    ii   aaaa
+     HH   HH  yy  yy  pp  pp  aa  aa   tt      ii  aa  aa
+     HH   HH   yy yy  pp  pp  aa  aa   tt  tt  ii  aa  aa
+     HH   HH     yy   ppppp    aaa aa   tttt   ii   aaa aa
+                yy    pp
+             yyyy     pp      http://hypatia.dcs.qmw.ac.uk
+
+Hypatia is at Queen Mary and Westfield College in London's East End.
+
+Hypatia is a directory of research workers in computer science and
+mathematics, and a library of their papers. It contains material
+which has been published by placing it on a publicly accessible web or
+ftp site, and a certain amount of "public domain" information about
+authors (name, affiliation, email address and phone number, etc).  It
+also assembles bibliographic information.
+
+Hypatia is not a web crawler, but a mirrored archive with a web interface. 
+The archive is indexed by author and by research group, and is equipped 
+with a search engine. 
+
+Hypatia works by having a database of registered authors. Many of the
+readers of this message will already be on the database. You can find
+out if you are on our database simply by searching for yourself in
+Hypatia. If you are not, then you can register and ensure that your
+papers are lodged in Hypatia simply by filling in an electronic form,
+which you can obtain via the Hypatia home page. If you are already registered,
+then you can use the same form to correct any incorrect or out of date
+information we have about you. (Inevitably, and despite our best efforts,
+not all the information on Hypatia's database will be correct.)
+
+You can use the same form on behalf of your colleagues to help expand
+Hypatia's coverage.
+
+Hypatia would also like to encourage you to compile a BibTeX-format
+database of your own papers. We hope that this will help people to
+cite accurately the definitive versions of your work. On-line help for
+this is available.
+
+Hypatia has been implemented by Mark Dawson, who set up and ran
+the popular mirrored archive at theory,doc.ic.ac.uk.
+Mark has benefited from discussions with Paul Taylor. 
+
+Hypatia is still under development and welcomes your comments, suggestions,
+requests for help, and corrections to <hypatia@dcs.qmw.ac.uk>.
+
+Edmund Robinson,
+Department of Computer Science,
+Queen Mary and Westfield College,
+University of London,
+London E1 4NS
+
+
+Date: Tue, 14 May 1996 16:06:35 -0300 (ADT)
+Subject: one day workshop 
+
+Date: Tue, 14 May 1996 16:13:06 +0200
+From: Giuseppe Rosolini <rosolini@athena.disi.unige.it>
+
+
+SEMINARIO DI TEORIA ED APPLICAZIONI DELLE CATEGORIE -- TAC
+
+We organize a one-day workshop on theory and applications of
+categories. It will take place on Wednesday, May 29, starting at
+11.00, at DIMA/DISI in Genoa.
+
+Non local participants include Marcelo Fiore, Michael Makkai, Jiri
+Rosicky, Dana Scott.
+
+We shall circulate a detailed programme for the workshop a few days
+before. It will be distributed to the usual list of the TAC seminar,
+but NOT to the other lists this message is sent to (apologies if
+you are reading a copy of it). Please inform G. Rosolini if you want
+to receive further announcements.
+
+Information about reaching Genoa and accomodation is available on the
+net at the URL below, but please do not hesitate to contact any of the
+organizers if you may not link to it.
+
+The organizers
+Aurelio Carboni
+Marco Grandis
+Eugenio Moggi
+Giuseppe Rosolini
+
+---------------------
+
+For more information, please look at
+
+http://www.disi.unige.it/seminars/tac/
+
+or write to rosolini@disi.unige.it
+
+G.Rosolini, Dip.di Matematica
+            via Dodecaneso 35
+            16146 Genova ITALY
+
+tel +39 (0)10 3536630
+fax +39 (0)10 3536699
+
+
+
+
+
+Date: Tue, 14 May 1996 16:17:30 -0300 (ADT)
+Subject: *-Autonomous categories ? 
+
+Date: Mon, 13 May 1996 12:50:28 +0100
+From: Justin Pearson <justin@dcs.rhbnc.ac.uk>
+
+
+Dear All,
+Given a *-autonomous categories C, we have an isomorphism of Hom sets:
+	Hom(A,B) iso HOM(B^\perp , A^\perp)
+
+where B^\perp is the dual of B etc.
+
+The question is, if you there is another isomorphism of Hom sets
+	Hom(A,B) iso HOM(B,A)
+
+Does this force the duality to become trivial, i.e. A^\perp iso A for
+all A?
+
+I suspect the answer is no, but something tells me it might be yes. But
+my intuition and attempts to resolve the matter have, so far, failed me.
+
+Regards
+Justin Pearson 
+Computer Science
+Royal Holloway
+University of London
+Egham
+Surrey
+TW20 0EX
+U.K.
+Tel: +44(0)1784 443912
+Email: justin@dcs.rhbnc.ac.uk
+
+
+Date: Wed, 15 May 1996 08:54:59 -0300 (ADT)
+Subject: Re: *-Autonomous categories ? 
+
+Date: Wed, 15 May 96 09:55 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+The answer is no. Take a closed symmetric monoidal category C which
+happens to be self-dual (e.g. finite-dimensional vector spaces), and
+perform (the trivial case of) the Chu construction on it -- i.e.
+take C^op x C with the duality (A,B)^\perp = (B,A).
+
+Peter Johnstone
+
+
+Date: Wed, 15 May 1996 14:21:48 -0300 (ADT)
+Subject: Re: *-Autonomous categories ? 
+
+Date: Wed, 15 May 1996 09:46:34 -0400
+From: Michael Barr <barr@triples.math.mcgill.ca>
+
+There answer is no.  One point to remember is that the category
+could even be discrete, that is the only arrows are identities.
+An easy example is this.  Let G be a group (and assume not every element
+is of order dividing 2).  If you want a symmetric example, assume G is
+commutative.  Now make a category whose objects are the elements of G
+and arrows are only identities, so there is an arrow a --> b iff a = b
+and then there is only one.  So Hom(a,b) = Hom(b,a).  The monoidal
+structure is the group multiplication, a --o b = a\inv b (and
+b o-- a = b a\inv) and a* = a\inv.  
+
+Here is a less trivial example.  Take a CMC with finite products
+in which Hom(a,b) \iso Hom(b,a) (finite dimensional vector spaces,
+say) and form Chu(C,1) (1 is terminal).  An object is a pair (a,a')
+where a and a' are arbitrary objects of C and Hom((a,a'),(b,b'))=
+Hom(a,b) x Hom(b',a') \iso Hom(b,a) x Hom(a',b') = Hom((b,b'),(a,a')),
+while (a,a')* = (a',a).
+
+Michael Barr
+
+
+Date: Fri, 17 May 1996 08:51:57 -0300 (ADT)
+Subject: BRICS positions 
+
+Date: Wed, 15 May 1996 14:37:25 +0200
+From: Uffe Henrik Engberg <engberg@brics.dk>
+
+
+
+			Postdoctoral positions at BRICS
+
+
+There are several postdoctoral positions at BRICS for a period of one to two
+years starting next year, 1997.  Applications by researchers are welcome in the
+areas of logic, semantics, algorithms and complexity theory.  Applications for
+positions should preferably be sent by e-mail and include curriculum vitae and
+two or three names of referees for recommendations as well as the referees'
+regular mail addresses and, if possible, e-mail addresses (see below).
+
+
+BRICS, a Centre for Basic Research in Computer Science, is funded by the
+Danish National Research Foundation for the period 1994-1998.  Its aim is
+to establish in Denmark important areas of basic research in the
+mathematical foundations of Computer Science, notably Algorithmics
+(including Complexity Theory) and Mathematical Logic.  The Centre is to
+develop these areas as a joint effort between the theoretical-computer-
+science groups at Aarhus University and Aalborg University.  The research
+plan is based on a committment to develop Algorithms and Complexity Theory,
+and Logic integrated with existing strong activities in Semantics of
+Computation, using a combination of long-term efforts and a number of
+short-term, intensive programmes, within carefully chosen scientific
+themes. Organizationally, BRICS is an autonomous centre with its own
+management, and yet with its activities strongly integrated in the existing
+infrastructure and student environments at the two universities.
+
+The scientific planning is the responsibility of the following committee:
+
+
+  	Glynn Winskel, Professor (Aarhus), Director
+  	Mogens Nielsen, Associate Professor (Aarhus), Codirector
+  	Erik Meineche Schmidt, Associate Professor (Aarhus), Codirector
+  	Uffe Engberg, (Aarhus), Project Manager
+  	Kim Guldstrand Larsen, Professor (Aalborg)
+  	Peter D.Mosses, Associate Professor (Aarhus)
+  	Michael Schwartzbach, Associate Professor (Aarhus)
+  	Arne Skou, Associate Professor (Aalborg)
+  	Sven Skyum, Associate Professor, Reader (Aarhus)
+
+
+
+Further information on BRICS can be accessed through World Wide Web (WWW) and
+anonymous FTP. To connect to the BRICS WWW entry, open the URL:
+
+	http://www.brics.dk/
+
+The BRICS WWW entry contains updated information about activities, courses and
+researchers as well as access to electronic copies of information material and
+reports of the BRICS Series (look under Publications).
+
+To access the information via anonymous FTP do the following:
+
+	ftp ftp.brics.dk
+	cd pub/BRICS
+	get README
+
+
+Addresses:
+
+	BRICS
+	Department of Computer Science
+	University of Aarhus
+	Ny Munkegade, building 540
+	DK - 8000 Aarhus C
+	Denmark.
+
+	Telephone:	+45 8942 3360
+	Telefax:	+45 8942 3255
+	Internet:	BRICS@brics.dk
+
+
+How to apply for a position at BRICS
+------------------------------------
+
+Applications for positions should preferably be sent by e-mail and include
+                                                        ^^^^^^
+- curriculum vitae and
+- two or three names of referees for recommendations with the referees'
+  + regular mail addresses and, if possible,
+  + e-mail addresses, as well as
+- an URL to your WWW home directory if available.
+
+The various parts of the application (application letter, CV, etc.) can be sent
+by e-mail as e.g. uuencoded PostScript, clear ASCII text or if it causes
+troubles, just as an URL in which case we will try to load the files.
+
+
+Date: Tue, 28 May 1996 12:12:08 -0300 (ADT)
+Subject: revised `From Horn clause to Makkai sketch resolution' 
+
+Date: Mon, 27 May 1996 17:14:57 -0400
+From: James Otto <otto@triples.math.mcgill.ca>
+
+Dear people,
+
+The May 27, 1996 revision of `From Horn clause to Makkai sketch
+resolution' is now at (linked to, indirectly linked to)
+
+   ftp://triples.math.mcgill.ca/pub/otto/res
+   ftp://triples.math.mcgill.ca/pub/otto/otto.html
+   ftp://triples.math.mcgill.ca/ctrc.html
+
+1.  Axiom templates are gone.  This simplifies the main result ---
+lifting (for l.f.p. logic programming) --- and eliminates a section.
+
+2.  The examples are greatly improved.  Even and + are added and head
+consolidation is gone.
+
+3.  Some terminology is improved and more motivation is added.
+
+Regards, Jim Otto
+
+
+

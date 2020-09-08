@@ -1,0 +1,286 @@
+Path: news.gmane.org!not-for-mail
+From: Dusko Pavlovic <Dusko.Pavlovic@comlab.ox.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: in defense of evil
+Date: Sat, 2 Jan 2010 22:22:19 +0000 (GMT)
+Lines: 252
+Approved: news@gmane.org
+Message-ID: <E1NRRZR-0007P6-0n@mailserv.mta.ca>
+References: <E1NQUm4-0007Yi-A2@mailserv.mta.ca>
+Reply-To: Dusko Pavlovic <Dusko.Pavlovic@comlab.ox.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1262530598 9894 80.91.229.12 (3 Jan 2010 14:56:38 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 3 Jan 2010 14:56:38 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Sun Jan 03 15:56:31 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NRRsc-0006Sp-DD
+	for gsmc-categories@m.gmane.org; Sun, 03 Jan 2010 15:56:30 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NRRZR-0007P6-0n
+	for categories-list@mta.ca; Sun, 03 Jan 2010 10:36:41 -0400
+In-Reply-To: <E1NQUm4-0007Yi-A2@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5457
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5457>
+
+hi peter,
+
+happy new year! may the daggers over hilbert spaces be the worst evil cast
+upon us :)
+
+but i think that this "defense" view of evil suggests that you may be
+missing the point.
+
+
+1) THE PROBLEM OF EVIL
+
+if someone gives you two big complicated hilbert spaces, or two big
+complicated groups --- how do you decide whether they are the same? what
+does it mean that to be the same group?
+
+well, one thing you could try is to map the elements of one to the
+elements of the other one. this may give you an isomorphism.
+
+OR you may look at the actual presentations, say of the group structures
+that they gave you, and see whether these are completely equal. if you are
+extremely lucky, the two groups may be given by the same equational
+presentation. otherwise, if you live in a set theoretic universe, each of
+the groups would be given to you as a set, and the two sets can be equal,
+or not. in a computer system, each of the groups would be given as a
+software module, and they may, or may not be identical as executable
+binaries.
+
+the main problem with this is that the various implementation conventions
+need to be consistent and interoperable. i think it was peter freyd who
+once asked something like: "How can you tell that the set corresponding to
+the Monster Group is not the same as the set corresponding to an initial
+segment of the number pi?" the same question applies to the binaries, that
+may represent an executable group operation, or a piece of data in another
+encoding.
+
+note that the problem is NOT a mere philosophic disagreement between a
+categorical/structuralist and a set-theoretical/positivist view of math.
+it is an eminently PRACTICAL problem of computation.
+
+every crypto system consists of some groups. all these groups are
+implemented. some attacks depend on the implementations. other attacks
+only depend on the structure of a group, and apply to all implementations.
+the latter attacks are more dangerous, but easier to eliminate --- by
+avoiding all evil definitions. the former attacks cannot be completely
+eradicated: at the end of the day, every new implementation opens some new
+avenues of attack.
+
+((the distinction between the evil and the non-evil definitions is
+becoming a big deal in cryptography, since mixing them led to some awkward
+attacks. eg, one of the most standardized key agreement protocols, ECMQV,
+is all in terms picard groups --- and then at one point it suddenly
+truncates a key from 160 to 80 bits. which is of course evil. this led to
+an attack. and this protocol is "critical for national security" and
+brings about $50M annyally just to one company...))
+
+no one is proposing to eradicate evil. like other things in science, evil
+is neither good mor bad; it's just there. our goal should be to understand
+it.
+
+
+2) EVIL IN HILBERT SPACES
+
+john baez asked if we can define the dagger structure of FHilb and nCob in
+a non-evil way. i think that the structure that i described achieves that
+goal.
+
+[[i am sorry if the rest of this gets longer than desirable, but since
+peter "dissected" my post, the code of flames requires a clarification.
+pls skip or enjoy.]]
+
+> *every* such definition will fail. It is a hard fact that the notion
+> of dagger, however defined, intrinsically does not transport along
+> equivalences. By "hard fact", I mean that it is a consequence of
+> examples, rather than definitions.
+
+the fact that an operation does not transport on the nose does not mean
+that it is impossible to find an isomorphic copy that will be preserved.
+that is what i proposed.
+
+> The fundamental example is the category of finite dimensional complex
+> vector spaces vs. the category of finite dimensional Hilbert spaces.
+> They are equivalent, the latter has a dagger structure, and the former
+> does not. This shows that the notion is evil.
+
+i am sorry if i am being extremely stupid, but how does this example
+differ from saying: "ordered group of integers is equivalent as a poset
+with the ordered ring of integers; the latter has multiplication and the
+former does not"? what do i learn from the fact that an algebraic
+operation (inner product, multiplication...) not specified in a signature,
+turns out to be derivable?
+
+>> DEF. Let CC be a monoidal category. a *dagger* on CC is a functor
+>> P: CC^op ---> CC which is
+>>
+>> * self-adjoint
+>> * equivalence
+>> * given together with the dinaturals
+>> ** e_X : X (x) PX ---> I
+>> ** h_X : I--->PX (x) X
+>> which make PX -| X.
+>
+> Assuming here that the category is symmetric monoidal, this is
+> precisely the definition of a compact closed structure. The first two
+> conditions are redundant.
+
+sorry: the word "dinaturals" should be omitted. i corrected this after the
+original post. i am sorry about the confusion.
+
+if e_X and h_X happen to be dinatural, then P is just the star functor. in
+general, all we know about P is that it is a functor whose object part
+maps each object to some dual. the duals are determined up to isomorphism;
+any will do.
+
+> The point of Abramsky and Coecke's work on dagger categories was to
+> explain, in categorical terms, that the adjoint (i.e., dagger) of a
+> linear function f:A->B is *not* the same as the transpose.
+
+except in the cases when it is, eg in Rel etc.
+
+> The adjoint
+> goes B -> A, whereas the transpose goes B* -> A*. This is something
+> people used to be confused about. Abramsky and Coecke cleared up the
+> confusion; the above definition reintroduces it.
+
+oh this was nice: people were confused, the confusion got cleared up,
+the period of enlightment ensued.
+
+but the story never ends, as we can always refine the picture. the point
+of evil is that your first sentence in the above paragraph does not refer
+to anything that can be stated in categorical terms. if i give you B and
+B*, how do you really know which is which? you look for a star? think
+about it: what do you need to be able to really tell when they are equal
+and when not?
+
+> There are a number of things wrong with this:
+>
+> 1) The main example, which is the category of finite dimensional
+> Hilbert spaces, does not have the structure you require. It isn't
+> equipped with chosen Frobenius structures (equivalently chosen bases),
+> nor with chosen isomorphisms A* -> A.
+
+there is no need for the *chosen* ones. the entire subject of linear
+algebra is based on the assumption that every space has *a*
+basis. that means that every hilbert space has *a* frobenius
+structure. non-canonical, and not preserved by the morphisms of the
+category.
+
+> 2) In the main example, the category of finite dimensional Hilbert
+> spaces, your definition does not coincide with reality. Namely, the
+> *actual* definition of the adjoint of a linear map does not coincide
+> with what one gets as the result of your definition. To see this,
+> assume chosen bases, and note that the matrix of the map
+> B -> B* -> A* -> A is exactly the transpose of the matrix of
+> f : A -> B, in the given bases of A and B. On the other hand, the matrix
+> of f+ : B -> A is the adjoint.
+
+this is not true. maybe you used the dinaturality of the initial
+(overconstrained) definition P in your calculation.
+
+> 3) Moreover, contrary to what you wrote, the structure of "having a
+> chosen Frobenius structure on each object" is itself an evil structure
+> on categories.
+[snip]
+> Frobenius structures on F(U)=F(V). So there is no coherent way to
+> transport. The same argument shows that the structure of "having a
+> chosen isomorphism A* -> A on each object" is also evil.
+
+i don't think that i could have required a *chosen structure* at any
+point, even under torture, or coherent transport, or canonical
+isomorphisms. all of that is in the eye of the beholder. i was talking
+about the actual practice of linear algebra: spaces have bases, the bases
+are not unique, nor preserved under the morphisms. in the finite case, the
+isomoprhisms B~B* are not natural, but the non-canonical ones are
+available when needed. -- my only point was that this can be used to avoid
+evil. (this was already used in our work on dagger monoidal
+structuralism.)
+
+i would be the last person to suggest that a simple evil structure
+should be *replaced* by a less simple non-evil structure. i use evil
+as much as everyone else, and more. but it may be useful (and an
+interesting exercise) to observe that a particular evil structure may
+be isomorphic to something non-evil, and that it can be derived from
+it.
+
+sorry again about clogging everyones holiday mailboxes. i hope that peter
+and i won't seriously annoy each other. lets stop defending things, or
+taking ouresleves too seriously. we do math, and the damage to the
+environment is minimal.
+
+and i think i am going to stop posting for a while.
+
+with the very best wishes to all,
+-- dusko
+
+
+
+
+
+>
+> -- Peter
+>
+>
+> Dusko Pavlovic wrote:
+>>
+>> [yesterday john baez sent his message only to me, and i replied only to
+>> him. he actually meant to send it to the list, and encouraged me to resend
+>> the reply. i apologize for posting so much these days. -- dusko (in bed
+>> with a flu and a computer)]
+>>
+>> hi john,
+>>
+>> thanks for your note. the notion of evil is an interesting challenge in any
+>> context.
+>>
+>>> A dagger-category is a category C with a functor
+>>>
+>>> F: C -> C^{op}
+>>>
+>>> which is the identity on objects and has F^2 = 1.
+>>>
+>>> Category theorists will note that the above definition is "evil", in the
+>>> technical sense of that term:
+>>>
+>>> http://ncatlab.org/nlab/show/evil
+>>>
+>>> Namely, it imposes equations between objects, so we cannot transport a
+>>> dagger-category structure along an equivalence of categories.
+>>>
+>>> Often evil concepts (like the concept of "strict monoidal category") have
+>>> non-evil counterparts (like the concept of "monoidal category").  But in
+>>> this particular case I know no way to express the idea without equations
+>>> between objects.  Both Hilb and nCob are dagger-categories.  This fact is
+>>> important.  Try saying it in a non-evil way!
+>>
+>> let me try.
+>>
+>> DEF. Let CC be a monoidal category. a *dagger* on CC is a functor
+>> P: CC^op ---> CC which is
+>>
+>> * self-adjoint
+>> * equivalence
+>> * given together with the dinaturals
+>> ** e_X : X (x) PX ---> I
+>> ** h_X : I--->PX (x) X
+>> which make PX -| X.
+>>
+
+...
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

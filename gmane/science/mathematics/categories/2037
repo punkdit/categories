@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: the walking adjunction and biadjunction
+Date: Tue, 4 Dec 2001 02:29:56 +0000 (GMT)
+Lines: 58
+Approved: news@gmane.org
+Message-ID: <E16B5LI-0004JK-00@plover.dpmms.cam.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018361 2156 80.91.229.2 (29 Apr 2009 15:19:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:19:21 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Dec  5 15:25:53 2001 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 05 Dec 2001 15:25:53 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 3.33 #2)
+	id 16BheI-0006NV-00
+	for categories-list@mta.ca; Wed, 05 Dec 2001 15:24:07 -0400
+X-Mailer: ELM [version 2.5 PL5]
+X-Scanner: exiscan *16B5LI-0001Sg-00*0QLuVhmB0e2* http://duncanthrax.net/exiscan/
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: O
+Content-Length: 2565
+Original-Lines: 57
+Xref: news.gmane.org gmane.science.mathematics.categories:2037
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2037>
+
+
+Toby Bartels wrote:
+> 
+> For example, one could define the idea of multiplication in a monoid
+> as a binary operation and a nullary operation
+> or alternatively as an operation on finite tuples.
+> The former is more common, but I prefer the latter;
+> who has the right idea?
+
+An interesting question in itself.  I don't think either idea is "right", but
+I (presumably) share with you the feeling that often the latter is more
+appropriate.  However, if you resolve wholeheartedly never to use a binary +
+nullary presentation of a monoid-like structure then you actually find
+yourself in quite an extreme position.  For instance, a monoid would be
+defined as a set M together with an n-fold operation
+
+(m_1, ..., m_n) |---> [m_1 ... m_n]
+
+on M for each natural n, subject to axioms.  This is as expected so far, but
+we've disallowed ourselves from using what would probably be the natural
+choice of axioms,
+
+[[m_1^1 ... m_1^{k_1}] ... [m_n^1 ... m_n^{k_n}]] = [m_1^1 ... m_n^{k_n}],
+m = [m],
+
+since this is a binary + nullary presentation.  So instead we should derive
+from the n-fold multiplications a k-ary operation o_T on M for each (finite,
+planar) k-leafed tree T; and the axioms then become that o_T = o_U for any
+two k-leafed trees T and U.
+
+The situation gets more extreme still if you want a wholeheartedly
+non-binary-and-nullary presentation of the notion of monoidal category.  We
+have an underlying category M, an n-fold tensor functor for each n, and then
+coherence cells obeying coherence axioms.  The obvious choice for the
+coherence cells comes from turning the two equations above into specified
+isomorphisms, but again this is disallowed, so we have to specify a coherence
+cell o_T --~--> o_U for each T and U, where o_T, o_U are now derived tensor
+functors.  Then we need to put axioms on the coherence cells, and once more
+the obvious way of doing this involves something of a binary + nullary
+character.  Specifically, you have to make sure that the coherence cells o_T
+--~--> o_U are compatible with "grafting of trees", which means taking a
+k-leafed tree T and sticking onto its leaves k trees T_1, ..., T_k, to make a
+new tree T(T_1, ..., T_k) - but this expression has *2* (bad number!) levels
+of trees.  So we need to replace these axioms with equivalent
+non-binary-and-nullary ones, and this means considering more complicated
+structures still.
+
+(The considerations in the last paragraph are really to do with writing down
+a non-binary-and-nullary presentation of the theory of operads, which are
+themselves monoids of a sort.)
+
+Tom
+
+
+
+
+
+

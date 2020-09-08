@@ -1,0 +1,157 @@
+Date: Wed, 9 Nov 1994 15:55:52 +0400 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Fibrations<-->Adjunctions????
+
+Date: Wed, 9 Nov 1994 19:10:37 +0100
+From: Maura Cerioli <cerioli@disi.unige.it>
+
+Hi,
+I need to use the following result about the equivalence between the
+existence of a fibration and the existence of a right adjoint to
+an opportune functor between comma categories:
+-----------------
+Let A and B be categories and let U:A-->B be a
+functor.
+Let C denote the comma category A arrow (whose objects are the arrows
+of A)
+and
+let D denote the comma category B over U (whose objects are arrows in B
+from a generic object b into U(a), together with a).
+Then U induces a functor V:C-->D, that basically is U (as both objects
+and arrows in C are arrows in A too)
+and is defined as follows:
+* V(f:a-->a')=(U(f):U(a)-->U(a'),a') for each object
+  f:a-->a' in A;
+* V(g,g')=(U(g),g') for each arrow
+  (g,g'):(f1:a1-->a'1)----->(f2:a2-->a'2) in A.
+
+Then U is a fibration iff V has a right adjoint G:D-->C s.t.
+G;V is the identity on D and the counit of the adjunction is
+the identity natural transformation.
+-----------------
+Now, I know (or at least I believe) that the result holds, as
+I have a proof for it; but a collegue said to me that this is
+a known result and suggested to look at the works by Street
+in the Sydney Category Seminar.
+Unfortunately, being quite ignorant about 2categories, I find very
+hard even to understand in which sense the result I want is there.
+
+Does anybody know an easier reference, possibly not involving
+2categories?
+
+Thanks
+Maura
+
+Maura Cerioli
+DISI - Dipartimento di Informatica e Scienze dell'Informazione
+Viale Benedetto XV, 3
+16132 Genova
+ITALY
+
+
+Date: Thu, 10 Nov 1994 18:53:32 +0400 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Re: Fibrations<-->Adjunctions????
+
+From: Jim Otto <otto@rodent.math.mcgill.ca>
+To: categories@mta.ca
+(the message being replied to is appended.)
+
+dear Maura Cerioli
+
+yes, the Street paper is hard to read.  but he refers to a paper of
+Gray's which has the result you mention.  in fact Gray credits it to a
+manuscript of Chevalley's which was lost in the mail.
+
+while i didn't read your description of the result, the way i think of
+it is as follows.  you have a functor
+
+        p: E --> B
+
+this induces a functor (with comma category B/p relative to id: B -->
+B <-- E :p and with 2 the ordinal)
+
+        p.: E^2 --> B/p
+
+which takes
+
+        `paths in E' to
+        `paths in B with the to end in E remembered'
+
+then (modulo the axiom of choice) p is a fibration iff p. has a right
+adjoint c. with identity couint.  c. is then a cleavage.  this unfolds
+(viewing c. as terminal objects in comma categories) to the usual
+elementary definition in terms of cartesian maps.  Gray says p. is
+rari, i.e. has a right adjoint right inverse.  one can show that this
+isn't weaker.  as i recall, Street's definition is weaker in order to
+be more invariant.  (cod: B^2 --> B is an important example.  then
+c. is pull-back.)
+
+actually i need fibrations in 2-categories of monoidal categories.
+note that, in cat the 2-category of categories, E^2 is the comma
+category E/E (relative to id: E --> E <-- E :id).  further, still in
+cat, E^2 is the cotensor 2 -o E.  but in any 2-category, finite
+weighted limits, including comma objects, can be built up from
+cotensors with 2 and (2-) terminal objects and pull-backs.
+
+to help you read Street, i now define cotensor with 2.  2-categories
+have hom categories rather than hom sets.  2 -o E is defined by
+isomorphisms
+
+        hom(W, 2 -o E) iso 2 -o hom(W, E)
+
+(2-) natural in W.  (sometimes such isomorphisms don't exist, but such
+equivalences do.)
+
+bon jour, Jim Otto
+
+>Date: Wed, 9 Nov 1994 19:10:37 +0100
+>From: Maura Cerioli <cerioli@disi.unige.it>
+>
+>Hi,
+>I need to use the following result about the equivalence between the
+>existence of a fibration and the existence of a right adjoint to
+>an opportune functor between comma categories:
+>-----------------
+>Let A and B be categories and let U:A-->B be a
+>functor.
+>Let C denote the comma category A arrow (whose objects are the arrows
+>of A)
+>and
+>let D denote the comma category B over U (whose objects are arrows in B
+>from a generic object b into U(a), together with a).
+>Then U induces a functor V:C-->D, that basically is U (as both objects
+>and arrows in C are arrows in A too)
+>and is defined as follows:
+>* V(f:a-->a')=(U(f):U(a)-->U(a'),a') for each object
+>  f:a-->a' in A;
+>* V(g,g')=(U(g),g') for each arrow
+>  (g,g'):(f1:a1-->a'1)----->(f2:a2-->a'2) in A.
+>
+>Then U is a fibration iff V has a right adjoint G:D-->C s.t.
+>G;V is the identity on D and the counit of the adjunction is
+>the identity natural transformation.
+>-----------------
+>Now, I know (or at least I believe) that the result holds, as
+>I have a proof for it; but a collegue said to me that this is
+>a known result and suggested to look at the works by Street
+>in the Sydney Category Seminar.
+>Unfortunately, being quite ignorant about 2categories, I find very
+>hard even to understand in which sense the result I want is there.
+>
+>Does anybody know an easier reference, possibly not involving
+>2categories?
+
+Date: Thu, 10 Nov 1994 12:58:07 +0400 (GMT+4:00)
+From: categories <cat-dist@mta.ca>
+Subject: Re: Fibrations<-->Adjunctions????
+
+Date: Wed, 9 Nov 1994 21:22:16 +0000 (GMT)
+From: Dusko Pavlovic <D.Pavlovic@doc.ic.ac.uk>
+
+The result goes back to Claude Chevalley's seminar. (One direction
+does require the Axiom of Choice.) I think a simple formulation is in
+J.Gray's paper on fibrations in the proceedings of La Yolla
+conference, Springer 1965.
+-- Dusko Pavlovic
+

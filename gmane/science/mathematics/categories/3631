@@ -1,0 +1,163 @@
+Path: news.gmane.org!not-for-mail
+From: selinger@mathstat.dal.ca (Peter Selinger)
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Equalisers and coequalisers in categories with a \dag-involution
+Date: Fri, 16 Feb 2007 02:39:44 -0400 (AST)
+Lines: 129
+Approved: news@gmane.org
+Message-ID: <E1HI5nj-00039Q-BM@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019421 9553 80.91.229.2 (29 Apr 2009 15:37:01 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:01 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Feb 16 12:25:31 2007 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 16 Feb 2007 12:25:31 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HI5nj-00039Q-BM
+	for categories-list@mta.ca; Fri, 16 Feb 2007 12:19:11 -0400
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 24
+Status: O
+Content-Length: 6276
+Original-Lines: 128
+Xref: news.gmane.org gmane.science.mathematics.categories:3631
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3631>
+
+Jamie Vicary wrote:
+>
+> Dear all,
+>
+>     Consider the following straightforward coequaliser (e,E) formed by
+> f,g:A-->B and e:B-->E, with e.f=e.g. I am working in a category with
+> biproducts, and with a contravariant involutive endofunctor (--)^\dag
+> on the category which is compatible with the biproducts; i.e.
+>                 (projection)^\dag = injection
+> for all projections and injections making up a part of a biproduct. In
+> such a category, it is natural to consider the coequaliser object E to
+> be the subspace of B on which the morphisms f and g agree. It is
+> therefore natural to require e.(e^\dag) = id_E; this sort of condition
+> is similar to the sorts of conditions that form part of the definition
+> of the biproduct.
+>
+>     I'm asking whether there exists a natural framework generalising
+> the theory of biproducts, which is analagous to the way that
+> (co)limits generalise (co)products, within which I can safely assume
+> that e.(e^\dag) = id_E. Biproducts seem quite different from products
+> and coproducts, though, so I don't know how it would work.
+>
+>                Jamie Vicary.
+
+Dear Jamie,
+
+your equation e.(e^\dag) = id_E only makes sense if your functor
+(--)^\dag is the identity on objects. In this case, you are dealing
+with a dagger category in the sense of [1]. Dagger categories are
+important in quantum physics; an important example is the category
+Hilb of Hilbert spaces and linear operators, with dagger being the
+adjoint of an operator.
+
+I will dualize your question to make it a question about equalizers,
+or more generally, monomorphisms. Monomorphisms with the property
+(e^\dag).e = id_E are investigated in [2], where they are called
+dagger-subobjects. (Both papers also deal with biproducts of the kind
+you asked about).
+
+Your question raises a basic problem, which is that it is not
+well-defined. Specifically, while equalizers are only defined "up to
+isomorphism", the property
+
+ (e^\dag).e = id_E   (*)
+
+is not invariant under isomorphisms of E. As a simple example, the two
+morphisms f,g: C -> C^2 in Hilb, defined by f(x) = (x,0) and g(x) =
+(2x,0), define isomorphic subobjects, yet f satisfies (*), whereas g
+does not. Therefore one cannot ask whether "the" equalizer of two maps
+satisfies (*).
+
+The fundamental issue is that in a dagger-category, there is a
+distinguished subclass of isomorphisms: the unitary ones. An
+isomorphism f: E -> E' is called unitary if f^\dag = f^{-1}. And
+although the property (*) is not invariant under arbitrary
+isomorphisms, it is invariant under unitary isomorphisms.
+
+To many category theorists, it may seem strange that some important
+categorical property is not invariant under isomorphism. But actually,
+this is quite natural. With every notion of structure comes a notion
+of structure-preserving isomorphism, and one expects properties
+related to the structure to be preserved only by the
+structure-preserving isomorphisms, not by arbitrary isomorphisms.
+Dagger is such a structure, whose structure-preserving morphisms are
+exactly the unitary ones.
+
+Now to get back to your question: Consider equalizers (or more
+generally, subobjects) in a dagger category. Of the many maps e: E ->
+A representing a given subobject (or equalizing a given pair of
+arrows), some may not be unitarily isomorphic to some others, so they
+fall into equivalence classes modulo unitary isomophism. One may ask
+whether any of these equivalence classes is distinguished, i.e.,
+whether one of them deserves to be called "the" equalizer or "the"
+subobject, and would be unique up to unitary isomorphism. It turns out
+that, provided it exists at all, there is indeed a distinguished
+choice of such a subobject, and it is the one satisfying (*). So we
+can call a monomorphism satisfying (*) a "dagger-subobject", and an
+equalizer satisfying (*) a "dagger-equalizer", and so forth. (In the
+literature, particularly on Hilbert spaces, a morphism satisfying (*)
+is also called an "isometry").
+
+Fortunately, if any representative of a subobject satisfies (*), then
+that representative is unique up to unitary isomorphism. So it really
+makes sense to speak of "the" dagger-subobject etc.
+
+While uniqueness is easy, existence is a tricky matter. There
+certainly are examples of subobjects that are not isomorphic to any
+dagger-subobject. One such example is in the category of integer
+matrices (objects are arities, composition is matrix multiplication,
+and dagger is transpose). The morphism (2) (as a 1x1-matrix) is monic,
+but not isomorphic (as a subobject) to any isometries. However, it is
+also not an equalizer. To get an example with equalizers, consider the
+two morphisms f = (1,0) and g = (0,1) (as 1x2-matrices). Their
+equalizer is the 2x1-matrix e = (1,1)^\dag. However, this is not
+isomorphic to any isometry, and hence not to any dagger-equalizer.  So
+in general, dagger-equalizers don't exist even if equalizers do.  (For
+this example, it is important that the scalars are integers. If real
+numbers were allowed, then e/sqrt{2} would be the dagger-equalizer.)
+
+On the other hand, it is proved in [2] (Proposition 5.6) that under
+some relatively mild condition, every subobject is isomorphic to a
+dagger-subobject.
+
+I hope this answers part of your question!
+
+Let me close with some speculation: if e : E -> A is a monomorphism
+such that (e^\dag).e is invertible, then it is probably relatively
+easy to add a representative e' : E' -> A freely, and fully
+faithfully, to the category such that e,e' are isomorphic (as
+subobjects) and e' satisfies (*). [Clearly if (e^\dag).e is not
+invertible, then this is never possible]. On the other hand, it is not
+clear whether (e^\dag).e is invertible in general, or whether at least
+this is the case when e is an equalizer.
+
+-- Peter
+
+[1] P. Selinger. Dagger compact closed categories and completely
+positive maps. To appear in Proceedings of the 3rd International
+Workshop on Quantum Programming Languages, Chicago, June 30 - July 1,
+2005. ENTCS, 23 pages.
+http://www.mathstat.dal.ca/~selinger/papers.html#dagger
+
+[2] P. Selinger. Idempotents in dagger categories. To appear in
+Proceedings of the 4th International Workshop on Quantum Programming
+Languages, Oxford, July 17-19, 2006. ENTCS, 15 pages.
+http://www.mathstat.dal.ca/~selinger/papers.html#idem
+
+
+

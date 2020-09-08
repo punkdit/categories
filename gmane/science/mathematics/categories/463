@@ -1,0 +1,102 @@
+Path: news.gmane.org!not-for-mail
+From: categories <cat-dist@mta.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Applications for Category Theory
+Date: Mon, 25 Aug 1997 16:49:01 -0300 (ADT)
+Lines: 79
+Approved: news@gmane.org
+Message-ID: <Pine.OSF.3.90.970825164854.20499V-100000@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241016981 25873 80.91.229.2 (29 Apr 2009 14:56:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 14:56:21 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: cat-dist Mon Aug 25 16:49:02 1997
+Original-Received: by mailserv.mta.ca; id AA23520; Mon, 25 Aug 1997 16:49:01 -0300
+Status: RO
+Content-Length: 4103
+Original-Lines: 78
+Xref: news.gmane.org gmane.science.mathematics.categories:463
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/463>
+
+Date: Mon, 25 Aug 1997 12:13:34 -0700
+From: Michael J. Healy 206-865-3123 <mjhealy@redwood.rt.cs.boeing.com>
+
+
+So the question
+> is: are there any attempts to map category theory
+> (or type theory or set theory -- I am not sure where the boundaries are)
+> 
+> to applications (versus theory per se), roughly analagous to Z or VDM,
+> that might be comprehensible to somewhat without the formal framework?
+> If not, is there a sequence of study you would recommend for proceeding?
+> 
+> I have an undergraduate degree and have done some reading about formal
+> algebra and category theory, but I am not sure of the path from the
+> former to the latter, or if that is, in fact, the appropriate path. Any
+> assistance would be greatly appreciated. Thank you for your
+> consideration.
+> 
+> - Dan (founder of Tazent Software)
+> 
+I started a project here at The Boeing Company three years ago whose approach 
+is a categorical methodology for software synthesis from specifications.  
+We are using The Kestrel Institute's Specware system, which implements category 
+theory, for this purpose.  The Web site for Kestrel is http://www.kestrel.edu/, and click on Projects, then Modular Construction of Very large Knowledge 
+Bases.  Quite a bit is being done to translate category theory into terminology 
+more manageable for the non-mathematician, making Specware accessible to a 
+wider audience.
+
+Please note that the description here is mine only.  
+I just want to share this because we have had quite a bit of 
+success in our project, and it has put category theory on the map in our 
+little corner of industry.  Our most direct application at present is for a 
+separate project that is developing neutral representations for knowledge-
+based engineering (KBE) systems, which are seeing increasing use.  Our 
+specific example at present is the representation of engineering knowledge, 
+and the refinement of it into code, for a program that produces a kind of 
+airplane part design given its overall size and some sizing constraints. 
+The program was synthesized by first developing a colimit of specifications 
+of simple theories about part geometry, materials, manufacturing processes, 
+and a representation of real numbers.  The specifications make visible 
+the design and manufacturing rationale---the knowledge---that constitutes 
+the constraints on the specific design.  Given sizing values, the layout 
+for a specific design can be calculated.  The knowledge is re-usable because 
+of its abstract nature, the use of diagrams and colimits in several 
+categories to build complex specifications from simple components, and 
+a way of implementing functorial program construction from specifications 
+(or better yet, from diagrams).
+
+A colleague and I have an initial attempt at a paper in a poster session 
+at the upcoming Automated Software Engineering conference (ASE`97) this 
+November.  We also have a paper to appear in the Journal of Intelligent 
+Manufacturing and an associated technical report.  A good overall background 
+is a paper by the original developers of the approach:
+
+Jullig, R. and Srinivas, Y. V. (1993). Diagrams for Software Synthesis, 
+in  Proceedings of KBSE `93: The Eighth Knowledge-Based Software Engineering 
+Conference, IEEE Computer Society Press, pp. 10-19.
+
+--
+
+===========================================================================
+                                         e	     
+Michael J. Healy                          A
+                                  FA ----------> GA
+(425)865-3123                     |              |
+FAX(425)865-2964                  |              |
+                               Ff |              | Gf
+c/o The Boeing Company            |              |   
+PO Box 3707  MS 7L-66            \|/            \|/
+Seattle, WA 98124-2207            '              '
+USA                               FB ----------> GB
+                                         e            "I'm a natural man."
+michael.j.healy@boeing.com                B
+-or-  mjhealy@u.washington.edu
+
+============================================================================
+
+
+

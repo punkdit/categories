@@ -1,0 +1,80 @@
+Path: news.gmane.org!not-for-mail
+From: John Longley <jrl@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Realizibility and Partial Combinatory Algebras
+Date: Wed, 05 Feb 2003 18:19:42 +0000 (GMT)
+Lines: 42
+Approved: news@gmane.org
+Message-ID: <1044469182.3e4155bed0abd@mail.inf.ed.ac.uk>
+References: <20030204022954.98645.qmail@web12202.mail.yahoo.com>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018451 2745 80.91.229.2 (29 Apr 2009 15:20:51 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:51 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Feb  6 16:43:49 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 06 Feb 2003 16:43:49 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18gsmy-0002bI-00
+	for categories-list@mta.ca; Thu, 06 Feb 2003 16:38:28 -0400
+X-Authentication-Warning: topper.inf.ed.ac.uk: apache set sender to jrl@localhost using -f
+In-Reply-To: <20030204022954.98645.qmail@web12202.mail.yahoo.com>
+User-Agent: IMP/PHP IMAP webmail program 2.2.8
+X-Originating-IP: 129.215.58.96
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 7
+Status: O
+Content-Length: 1756
+Original-Lines: 41
+Xref: news.gmane.org gmane.science.mathematics.categories:2152
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2152>
+
+Bill Halchin writes:
+
+> I understand (to some degree) full combinatory algebra, but I
+> don't
+> understand the motivation behind the definition of a partial
+> combinatory
+> algebra. E.g. why do we have Sxy converges/is defined? Or Kxy ~ x?
+
+The somewhat mysterious definition of (partial or full)
+combinatory algebras is really motivated by the fact that it
+is equivalent to a "combinatory completeness" property, which is
+a bit less mysterious but more cumbersome to state. Informally,
+combinatory completeness says that all functions definable in the
+language of A are themselves representable by elements of A.
+More precisely:
+
+  A is a PCA iff for every formal expression e (built up from
+  variables x,y_1,...,y_n and constants from A via juxtaposition),
+  there is a formal expression called (\lambda x.e), whose variables
+  are just y_1,...,y_n, such that
+    (\lambda x.e)[b_1/y_1,...,b_n/y_n] is defined for all b_1,...,b_n \in A,
+    (\lambda x.e) a [b_1/y_1,...,b_n/y_n] ~ e[a/x,b_1/y_1,...,b_n/y_n]
+
+(This is easiest to understand in the case n=0.) A similar statement holds
+for full combinatory algebras where everything is always defined.
+
+The term (\lambda x.e) can be constructed via the Curry translation from
+lambda calculus to combinatory logic. The condition "Sxy is defined" is
+needed for this to work. Also, I should say the whole theory of realizability
+models goes through much more smoothly with this condition, otherwise one
+has to keep making tiresome exemptions for the case of the object 0. I imagine
+the condition becomes strictly necessary at some point, e.g. in the proof that
+PER is an internal category.
+
+As for Kxy ~ x, that's the same as saying Kxy=x, because all elements x of A
+are of course defined.
+
+Cheers, John
+
+
+
+

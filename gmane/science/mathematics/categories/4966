@@ -1,0 +1,93 @@
+Path: news.gmane.org!not-for-mail
+From: Greg Meredith <lgreg.meredith@biosimilarity.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: database theory based on Heyting algebra instead of Boolean algebra
+Date: Wed, 10 Jun 2009 23:39:02 -0700
+Lines: 60
+Approved: news@gmane.org
+Message-ID: <E1MEk5F-0000Bp-DM@mailserv.mta.ca>
+Reply-To: Greg Meredith <lgreg.meredith@biosimilarity.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1244728237 23331 80.91.229.12 (11 Jun 2009 13:50:37 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 11 Jun 2009 13:50:37 +0000 (UTC)
+To: "Vasili I. Galchin" <vigalchin@gmail.com>,  <categories@mta.ca>
+Original-X-From: categories@mta.ca Thu Jun 11 15:50:35 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MEkfq-0001Yd-Qp
+	for gsmc-categories@m.gmane.org; Thu, 11 Jun 2009 15:50:34 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MEk5F-0000Bp-DM
+	for categories-list@mta.ca; Thu, 11 Jun 2009 10:12:45 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4966
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4966>
+
+Vasili,
+
+Are you familiar with the use of monads as an approach to modeling storage
+semantics and access? The most high profile of these efforts is LINQ.
+XQuery's FLWOR expressions are also based around this. i've been
+investigating a very rich generalization. You get a logic out of the
+following data:
+
+   - a distributive law, d, between
+   - a monad, T, representing the algebra of your term language (think
+   what's described by the DB schema)
+   - a monad, S, representing some notion of collection (set, list, tree,
+   graph...)
+
+The distributive law, d : ST -> TS is showing how collections of terms ST
+are representable as terms over collections, TS. Then SELECT-FROM-WHERE is
+precisely a comprehension which as Wadler shows maps clearly onto monadic
+semantics. The generalization allows you to consider collections that have
+notions of state. As a toy example, if your notion of collection is a
+quantale, then you get a (not very convincing) notion of update. This is
+closely related to current experiments factoring transactional semantics
+through a monadic presentation. In fact, i've recently been helping folks
+looking at the JTA specification arrived at a comprehension-based
+presentation. (Check out the Scala and Lift mailing lists for that thread.)
+
+i've written up and coded examples of how this works for 3 different term
+languages: the usual notion of tuples (resulting in what one would expect, a
+relational calculus), a graph algebra (resulting in a query language for
+graphs), and a process algebra. You can find a blog entry about it, with
+pointers to working code
+here<http://biosimilarity.blogspot.com/2009/01/3-applications-of-indexed-composition.html>
+.
+
+Another nice thing about this approach is that it factors nicely through
+languages with reduction semantics such as lambda calculi or process
+calculi. So, you can extend the query semantics to include symbolic
+reduction. In some sense, you turn a model-checker into a query engine
+allowing you to add Hennessy-Milner-style modal operators to the query
+language.
+
+Best wishes,
+
+--greg
+
+On Wed, Jun 10, 2009 at 1:42 AM, Vasili I. Galchin <vigalchin@gmail.com>wrote:
+
+> Hello,
+>
+>      I'm sorry that this a bit off topic (but both algebras are
+> categories), but I don't know where to post in order to get an intelligent
+> answer. Is there any research to base data base queries on Heyting algebra,
+> i.e. intuistionistic logic?
+>
+> Thanks,
+>
+> Vasili
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

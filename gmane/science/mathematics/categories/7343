@@ -1,0 +1,216 @@
+Path: news.gmane.org!not-for-mail
+From: "George Janelidze" <janelg@telkomsa.net>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Two questions
+Date: Fri, 22 Jun 2012 01:32:10 +0200
+Lines: 181
+Approved: news@gmane.org
+Message-ID: <E1Si0rm-0004Xj-7s@mlist.mta.ca>
+References: <E1ShkbY-000143-KJ@mlist.mta.ca>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+X-Trace: dough.gmane.org 1340360079 15773 80.91.229.3 (22 Jun 2012 10:14:39 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Fri, 22 Jun 2012 10:14:39 +0000 (UTC)
+To: "Michael Barr" <barr@math.mcgill.ca>,	"Categories list" <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Fri Jun 22 12:14:38 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.80])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Si0st-0000yy-T1
+	for gsmc-categories@m.gmane.org; Fri, 22 Jun 2012 12:14:36 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:50202)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Si0rm-0007UU-HS; Fri, 22 Jun 2012 07:13:26 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Si0rm-0004Xj-7s
+	for categories-list@mlist.mta.ca; Fri, 22 Jun 2012 07:13:26 -0300
+In-Reply-To: <E1ShkbY-000143-KJ@mlist.mta.ca>
+Xref: news.gmane.org gmane.science.mathematics.categories:7343
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7343>
+
+text/plain;format=flowed;charset="iso-8859-1";
+Content-Transfer-Encoding: 7bit
+Sender: categories@mta.ca
+Precedence: bulk
+Reply-To: "George Janelidze" <janelg@telkomsa.net>
+
+Dear Michael,
+
+My answer consists of several parts:
+
+
+1. Indeed, Mac Lane gives no hints, and indeed, many people claim that
+Baer's result is unpublished. But look at Theorem 2 in
+
+[R. Baer, Absolute retracts in group theory, Bulletin AMS 52, 1946, 501-506]
+
+- it says: "The identity is the only group which is a retract of every
+containing group.",
+
+and its proof consists of one page. This fact, to which I refer below as not
+having non-trivial absolute retracts, of course immediately implies that
+there are no non-trivial injective objects.
+
+
+2. Next, let us look at the last complete sentence on Page 21 and its
+explanation on the next page in
+
+[S. Eilenberg and J. C. Moore, Foundation of relative homological algebra,
+Memoirs AMS 55, 1965].
+
+That sentence says "Not only is the category G [of groups] not injectively
+perfect, but we shall show that every injective object in G is trivial."
+There no reference to Bear's 19 year old (then) paper, but there is a
+reference on Baer's 31 year old paper (hence from 1934), where Baer
+constructs large simple groups. And of course knowing that there are
+arbitrary large simple groups with infinite cyclic subgroups makes the
+result trivial.
+
+
+3. Next a surprise: look at Page 78 of
+
+[Maria S. Voloshina, On the holomorph of a discrete group, PhD Thesis,
+University of Rochester, 2003, arXiv:math/0302v2 [math.GR] 14 Jan 2004].
+
+Surely not knowing about Baer's work, Voloshina says in the Abstract there:
+"In chapter 6 we give a short proof of the well-known fact due to S.
+Eilenberg and J. C. Moore that the only injective object in the category of
+groups is the trivial group." Her argument is something I have never seen
+before, and to me it is the best proof - so let me rephrase it here keeping
+the same notation but writing x* for the inverse of x:
+
+Let G be an injective group, x an element in G, F[a,b] and F[c,d] free
+groups on two-element sets {a,b} and {c,d} respectively, and i, f, g
+homomorphisms defined as follows:
+
+i : F[a,b] --> F[c,d] has i(a) = c and i(b) = dcd*
+
+f : F[a,b] --> G has f(a) = 1 and f(b) = x;
+
+g : F[c,d] --> G is any homomorphism with gi = f, which exists since G is
+injective.
+
+We have g(c) = gi(a) = f(a) = 1, and so
+
+x = f(b) = gi(b) = g(dcd*) = g(d)g(c)(g(d))* = g(d)(g(d))* = 1.
+
+Is not it wonderful, and is it possible that nobody have noticed it before
+2003?!
+
+
+4. Actually there is an important additional reason why I like Voloshina's
+argument. Let us look at her F[c,d] as Z+Z, that is, the coproduct of the
+additive group Z of integers with itself.
+
+Let p : Z+Z --> Z be the homomorphism induced by the identity homomorphism
+and the trivial homomorphism, and let
+
+k : ZbZ --> Z+Z be the kernel of p ("b" stands for "bemol").
+
+This ZbZ occurs from a monad (Zb(-),e,m) on the category of groups, whose
+algebras are exactly Z-groups, and this is a special case of a categorical
+story presented in
+
+[D. Bourn and G. J., Protomodularity, descent, and semidirect products, TAC
+4, 2, 1998, 37-46],
+
+with more categorical links in my papers with Francis Borceux and Max Kelly,
+and further developments by various authors. According to that story, k is
+the "the best example of a bad normal monomorphism" in a sense, and so it is
+a natural thing to use it "against injectivity".
+
+Back to Voloshina's notation, ZbZ is BETWEEN F[a,b] and F[c,d]. Indeed it is
+the subgroup in F[c,d] freely generated by the set
+
+S = {xcx* | x is an integer powers of d},
+
+and I say "between" since S contains i(a) = c = 1c1* and i(b) = dcd*; that
+is, there is a homomorphism
+
+j : F[a,b] --> ZbZ with kj = i.
+
+Since ZbZ is free on S, Voloshina's homomorphism f extends to a homomorphism
+
+f' : ZbZ --> G, and so
+
+k : ZbZ --> Z+Z, which belongs to the categorical story, can be used instead
+of i in Voloshina's proof.
+
+
+5. Another interesting thing is that k above is a normal monomorphism, and
+so my simple modification of Voloshina's argument proves that there are no
+non-trivial groups that are injective with respect to normal monomorphisms.
+And it is interesting because here we see the big difference between
+injective objects and absolute retracts in the category of groups. Indeed,
+going back to Baer's paper of 1946, we see
+
+"THEOREM 1. The group G is complete if, and only if, it meets the following
+requirement:
+(*) If G is a normal subgroup of the group E, then G is a retract of E."
+
+and then inside Remark on Page 503:
+
+"...This shows in particular that every group is a subgroup of a complete
+group..."
+
+Well, I must confess I have not checked Baer's proofs, but I hope they are
+correct.
+
+
+6. Concerning your second question: What you saw (with a special argument
+for 2) is on the same Page 21 of the above-mentioned Eilenberg--Moore paper.
+The argument was used to prove that every epimorphism of groups is
+surjective with no mention of regular monomorphisms, but in fact they prove
+that, for every homomorphism
+
+j : H --> G, there exist two homomorphisms
+
+k, l : G --> P with k(g) = L(g) only when g is in j(H).
+
+This also appears as Exercise 5 of Section 5 of Chapter I in Mac Lane's
+"Categories for the Working Mathematician", with very precise hints.
+However, a group theorist would probably prefer to use known facts pushouts
+of group monomorphisms.
+
+Regards, George
+
+P.S. While I was writing this, several other answers came. But instead of
+changing my message, let me only mention that it is good to have more
+references, and that Maria Nogin should be the same person as Maria
+Voloshina (Probably one of the two surnames is her husband's surname).
+
+
+
+
+--------------------------------------------------
+From: "Michael Barr" <barr@math.mcgill.ca>
+Sent: Thursday, June 21, 2012 3:34 PM
+To: "Categories list" <categories@mta.ca>
+Cc: "Bob Raphael" <raphael@alcor.concordia.ca>
+Subject: categories: Two questions
+
+> Googling around, I have come on several claims that there are no
+> non-trivial injectives in the category of groups (e.g., Mac Lane in the
+> 1950 Duality for groups paper credits Baer with an elegant proof, but
+> gives no hint of what it might be and Baer's earlier paper on injectives
+> doesn't mention it).  I have not come on any proof of this, however.
+>
+> Somewhere I have seen a proof that all monics in the category of groups
+> are regular.  I think it was in a paper by Eilenberg and ??? and it needed
+> a special argument if there were elements of order 2.  Can someone help me
+> find this?
+>
+> Michael
+>
+> --
+> The United States has the best congress money can buy.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

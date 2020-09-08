@@ -1,0 +1,157 @@
+Path: news.gmane.org!not-for-mail
+From: Claudio Hermida <claudio.hermida@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: re: the definition of "evil"
+Date: Sun, 3 Jan 2010 12:10:29 -0500
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <E1NRcs4-0002Nw-Uw@mailserv.mta.ca>
+References: <E1NRRk6-0000Cr-SG@mailserv.mta.ca>
+Reply-To: Claudio Hermida <claudio.hermida@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1262574735 23898 80.91.229.12 (4 Jan 2010 03:12:15 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 4 Jan 2010 03:12:15 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Mon Jan 04 04:12:08 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NRdMW-0007Sy-Gy
+	for gsmc-categories@m.gmane.org; Mon, 04 Jan 2010 04:12:08 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NRcs4-0002Nw-Uw
+	for categories-list@mta.ca; Sun, 03 Jan 2010 22:40:41 -0400
+In-Reply-To: <E1NRRk6-0000Cr-SG@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5467
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5467>
+
+Peter Selinger wrote:
+
+ DEFINITION. Let X be some structure on categories. By this, I mean
+ that there is a given 2-category called X-Cat, whose objects are
+ called X-categories, whose morphisms are called X-functors, and whose
+ 2-cells are called X-transformations, and for which there is a given
+ 2-functor U to Cat, called the forgetful functor.
+
+ We say that X is "transported along equivalences of categories" if the
+ following holds. Given an X-category D', with underlying category D =3D
+ U(D'), and a category C, and an equivalence (F,G,e,h) of categories D
+ and C, where F: D -> C, G: C -> D, and e: FG -> id_C, h: GF -> id_D,
+ it is then possible to find:
+
+ (1) an X-category C' whose underlying category U(C') is isomorphic
+     [not equivalent!] to C. Let c : U(C') -> C be the isomorphism
+     (i.e., an invertible functor in Cat) with inverse c': C -> U(C');
+
+ (2) an X-equivalence of X-categories (F',G',e',h'), where
+     F': D' -> C', G': C' -> D', e': F'G' -> id_C', and h': G'F' -> id_D'
+     [the concept of equivalence makes sense in any 2-category];
+
+ such that
+
+ (3) (U(F'), U(G'), U(e'), U(h')) =3D (cF, Gc', cec', h).
+
+ Here, cF and Gc' denotes composition of functors, and cec' denotes
+ whiskering.
+
+ The structure X is called "evil" iff it is not transported along
+ equivalences of categories.
+
+ This finishes the definition.
+
+More informally, "transported along equivalences" therefore means that
+if D and C are equivalent, and D has an X-structure, then there is a
+way to equip C with an X-structure and to lift the original equivalence
+to an X-equivalence.
+
+There was a need for the isomorphism c in the definition, because the
+forgetful functor U : X-Cat -> Cat may not be strictly speaking
+surjective onto 0-cells in some real-life examples (and in any case,
+this forgetful functor may sometimes only be well-defined up to
+isomorphism). It is important that c is an isomorphism, rather than an
+equivalence, because else the definition becomes vacuous (and we are
+precisely interested in notions that are not well-defined up to
+equivalence).
+
+Also note that I didn't require the data (C',F',G',e',h') to be
+unique, not even up to equivalence in X-Cat. Although in practice, it
+will often be unique in this sense. So my definition allows for a
+given structure to be transported "in essentially more than one way"
+along a given equivalence. I am open to strengthening the definition
+to forbid this.
+
+
+
+Dear all,
+
+A quick pointer to a variation on this matter, which has already been aroun=
+d
+(I presented it at CT07).
+The nature of 2-categorical structures that transport along equivalences is
+nicely captured by the notion of Equ-iso-fibration:
+
+DEFINITION
+A 2-functor F:E =E2=86=92 B is an Equ-iso-fibration if:
+
+ - it admits cartesian liftings of (adjoint) equivalences and
+
+ - every hom F(X,Y):E(X,Y) =E2=86=92 B(FX,FY) admits cartesian lifitings of
+isomorphism 2-cells, and such liftings are preserved by precomposition
+(pointwise).
+
+Notice that a cartesian lifting of an adjoint equivalence is another such.
+The notions of cartesian liftings used here are those for 2-fibrations (as
+in the references below); they involve the expected 2-dimensional property
+for 1-cells.
+The liftings are strict.
+
+The most interesting example of such a structure is the forgetful functor o=
+f
+a 2-cateogory of pseudo-algebras
+V: Ps-T-Alg =E2=86=92 K, for a 2-monad T on a 2-category K (or a pseudo-mon=
+ad on a
+bicategory). They include all the known interesting examples of
+pseudo-structures, the classical such being monoidal categories. The
+morphisms in Ps-T-Alg are strong ones, preserving structure up to coherent
+isomorphism. The observation that pseudo-algebras do transport along
+equivalences is credited to Max Kelly in Power=C2=B4s article below.
+
+I used this notion to capture the following universality of coherence:
+coherence for such pseudo-algebras (meaning that we can strictify every
+pseudo-algebra into a equivalent strict T-algebra) is equivalent to the
+statement
+
+THM: The inclusion 2-functor J: T-alg =E2=86=92 Ps-T-alg makes V: Ps-T-alg =
+=E2=86=92 K the
+FREE Equ-iso-fibration over
+U:T-alg =E2=86=92 K
+
+In other words, the passage from strict algebras (with their strict
+morphisms) to pseudo-algebras (and strong morphisms) is the universal way o=
+f
+achieving transportability along equivalences.
+
+Claudio
+
+References
+
+- C.Hermida, Some properties of Fib as a fibred 2-category, JPAA, *134 (1),
+83-109, 1999*
+
+- C.Hermida, Descent on 2-fibrations and 2-regular 2-categories, Applied Ca=
+t
+Str, *12(5-6), 427--459, 2004*
+
+- A.J.Power, A general coherence result,
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

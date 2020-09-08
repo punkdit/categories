@@ -1,0 +1,88 @@
+Path: news.gmane.org!not-for-mail
+From: Tom Hirschowitz <tom.hirschowitz@univ-savoie.fr>
+Newsgroups: gmane.science.mathematics.categories
+Subject: a further bit on functions in programming
+Date: Mon, 16 Mar 2009 15:28:47 +0100
+Lines: 55
+Approved: news@gmane.org
+Message-ID: <E1LjMYA-0001tk-LI@mailserv.mta.ca>
+Reply-To: Tom Hirschowitz <tom.hirschowitz@univ-savoie.fr>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1237249367 12434 80.91.229.12 (17 Mar 2009 00:22:47 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 17 Mar 2009 00:22:47 +0000 (UTC)
+To: Categories Mailing List <categories@mta.ca>
+Original-X-From: categories@mta.ca Tue Mar 17 01:24:04 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1LjN6B-0007X3-0L
+	for gsmc-categories@m.gmane.org; Tue, 17 Mar 2009 01:24:03 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LjMYA-0001tk-LI
+	for categories-list@mta.ca; Mon, 16 Mar 2009 20:48:54 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:162
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/162>
+
+Dear all,
+
+One more remark after my message with Pierre: talking about
+'functions' in programming implicitly refers to functional languages,
+i.e., those where functions are first-class objects.
+
+If I'm not mistaken, in the presence of side effects, function types
+are not exponentials in the corresponding categories of programs (and
+product types are not products either). Indeed:
+
+Consider the following program p:
+
+  print "founky" ; ()
+
+where () is the element of type 1. This program prints "founky" and
+returns ().
+
+Considered as a morphism 1 * 1 -> 1, it has too candidate curryings 1 -
+ > 1^1, namely:
+
+  a) print "founky" ; (x |-> ())
+
+and
+
+  b) x |-> (print "founky" ; ()).
+
+The first program prints "founky" and returns the identity function
+1^1. The second directly the function, which, each time it is called,
+prints "founky" and returns ().
+
+It is the case that     a () ~ p   and    b () ~ p.
+
+However a and b are not observationally equivalent, as soon as effects
+are taken into account. Consider q : 1^1 -> 1 defined by:
+
+   x (); x ().
+
+Then the program q a prints "founky" once, while q b prints it twice.
+
+
+A corresponding categorical structure has been proposed by Levy,
+Power, and Thielecke in their "Modelling environments in call-by-value
+programming languages" (Information and computation 185 (182-210),
+2003. They call it "closed Freyd category". As far as I understand,
+they observe that requiring the currying to be central (i.e., effect-
+free) determines the right notion). Am I correct?
+
+
+   Tom
+
+
+
+
+
+

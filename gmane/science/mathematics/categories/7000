@@ -1,0 +1,146 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Tue, 25 Oct 2011 11:02:45 -0700
+Lines: 107
+Approved: news@gmane.org
+Message-ID: <E1RIqRm-0003Nt-9e@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk> <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu> <E1RIgcZ-0000YV-SW@mlist.mta.ca>
+Reply-To: Vaughan Pratt <pratt@cs.stanford.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1319585489 5139 80.91.229.12 (25 Oct 2011 23:31:29 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 25 Oct 2011 23:31:29 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Wed Oct 26 01:31:25 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqSq-0001sB-Kj
+	for gsmc-categories@m.gmane.org; Wed, 26 Oct 2011 01:31:24 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:38530)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqRn-0001wn-UX; Tue, 25 Oct 2011 20:30:19 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIqRm-0003Nt-9e
+	for categories-list@mlist.mta.ca; Tue, 25 Oct 2011 20:30:18 -0300
+In-Reply-To: <E1RIgcZ-0000YV-SW@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7000
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7000>
+
+On 10/24/2011 6:57 AM, Steve Vickers wrote:
+> while the coproduct is 0
+
+Indeed, as I pointed out on Monday where I wrote:
+
+> Steve says it's false in the empty
+> universe, which is to say (exists) x. TRUE(x) is false there.  We can
+> confirm this by taking the meaning of this formula in the universe {a_1,
+> a_2, ...} to be TRUE(a_1) v TRUE(a_2) v ..., which in the empty universe
+> is the empty disjunction, by convention false.
+
+Steve also makes the following nice point.
+
+> Second, in your proof with contexts, you use "the equivalence
+> true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <->
+> (((all) a. P(a) --> (exists) x. P(x)))"
+>
+> You didn't give a proof of this equivalence, but anyway we have a
+> counterexample. When A is empty, (all) a. P(a) and (exists) x. P(x)
+> are true and false respectively, so (all) a. P(a) --> (exists) x. P
+> (x) is false. But
+>
+> (all) b. ((all) a. P(a) --> (exists) x. P(x))
+>
+> is true, so the biequivalence is false.
+
+This last step follows from Steve's point that the empty meet is top.
+
+Yet another way of analyzing this, also constructive if we view dynamic
+logic as "constructive" in some sense, is as I proposed in my 1976 paper
+"Semantical Considerations on Floyd-Hoare Logic," namely as the box and
+diamond modalities for the nondeterministic assignment x := ?, which is
+the binary relation consisting of all pairs (I, I') where I' is the
+interpretation (world, state) obtained from I by setting x to an
+arbitrary value from the domain.
+
+For the empty domain, x := ? is the empty program 0, having the property
+[0]P = 1 and <0>P = 0 for all formulas P.
+
+That's not to say I agree with Steve's argument, which is the same one
+certain universal algebraists (not Tarski to my knowledge) used to make,
+both in Volume 1 of the McKenzie, McNulty and Taylor book (1987, out of
+print, 2nd hand price $253.99 at Amazon, Volume 2 is currently being
+written according to Ralph Freese) and at the 1993 MSRI conference
+Universal Algebra and Category Theory, namely that the empty universe
+rendered certain standard theorems of predicate calculus false, for
+example the one Dusko cited.
+
+Both Dusko's proof of "(all) x.P(x) => (exists) x.P(x)" and Steve's
+counterexample to its truth have (modulo precise choice of example) been
+standard fare in logic for well over half a century.  (I first heard
+about this so-called "logic of the non-empty universe," LNEU, from a
+curmudgeonly Philosophy I tutor at St. Andrews college in 1961, and was
+duly impressed: how one should reason in the empty universe seemed a
+small point in logic but a giant leap for philosophy from the question
+of how many angels could dance on the head of a pin.)
+
+The rationale I gave on Monday for sticking to the standard
+axiomatization of first order logic, which proves Dusko's formula,
+Steve's objection to it notwithstanding, was as follows.
+
+> But it is just as reasonable to say there are variables even when they
+> don't occur free in the formula, e.g. when they occur bound, and the
+> opposite result then obtains.  The wffs of propositional calculus, L_0,
+> don't even contain bound variables.  Since this convention seems to
+> create fewer problems I'm inclined to prefer it.
+
+"Seems to create fewer problems" being the sort of sentence any
+Wikipedia editor would these days tag as "weasel words", I should be
+more explicit about the sorts of problems it can create.
+
+If I've understood Steve's reasoning, he accepts
+
+TRUE(a) --> (exists) x. TRUE(x)
+
+as a theorem of FOL that holds even in the empty universe, on the ground
+that it is "vacuously true" (where I would have said vacuously valid).
+
+The same reasoning would also appear to justify
+
+TRUE(a)
+
+as a theorem of FOL.  (Note that both formulas are standard FOL
+theorems, with both holding in every nonempty universe.)
+
+But by Modus Ponens, which I can't imagine Steve rejecting, we obtain
+
+(exists) x. TRUE(x)
+
+which Steve has judged as false.
+
+Since falsehood is the criterion by which Steve has been judging
+theoremhood, unless I've misinterpreted Steve it seems to me that his
+approach to handling the empty universe is unsound.
+
+For ease of reference I've put online my proof that cylindric algebra
+semantics handles all this in stride by making the pertinent Boolean
+algebra the one-element inconsistent one whenever Steve and Dusko
+disagree on this point.  Currently it's at
+http://boole.stanford.edu/Empty/ but I'm open to suggestions for a
+suitable more permanent resting place.
+
+Vaughan
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

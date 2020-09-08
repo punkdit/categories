@@ -1,0 +1,48 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@barrs.org>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Warning in diagram
+Date: Thu, 15 Mar 2001 10:53:16 -0500 (EST)
+Lines: 15
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.10.10103151047490.12270-100000@triples.math.mcgill.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241018181 1003 80.91.229.2 (29 Apr 2009 15:16:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:21 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Mar 15 16:09:39 2001 -0400
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f2FJF6w08877
+	for categories-list; Thu, 15 Mar 2001 15:15:06 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+X-Sender: barr@triples.math.mcgill.ca
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 15
+Status: O
+Content-Length: 497
+Original-Lines: 14
+Xref: news.gmane.org gmane.science.mathematics.categories:1889
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1889>
+
+Under certain circumstances, a perfectly legitimate procedure in
+diagram.tex will cause a useless warning to appear on the screen when used
+in latex2e, although not in latex2.09.  The way to prevent this rather
+annoying warning is to add the line
+\let\@picture@warn\relax
+to diagram.tex, AFTER the line near the top that says
+\makeatletter
+
+I had been living with this warning for a couple years and I want to thank
+Richard Wood for having given me the clue necessary to track it down.
+
+Michael
+
+
+

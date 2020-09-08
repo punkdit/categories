@@ -1,0 +1,141 @@
+Path: news.gmane.org!not-for-mail
+From: Aleks Kissinger <aleks0@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Indiscrete objects in a functor category
+Date: Sun, 20 Dec 2015 09:48:12 +0100
+Lines: 102
+Approved: news@gmane.org
+Message-ID: <E1aAkuY-0005M7-7u@mlist.mta.ca>
+References: <E1aARRG-00021K-F2@mlist.mta.ca>	<002432A4-ECC1-42DA-B9B8-9B2F8B42EF52@mq.edu.au>
+Reply-To: Aleks Kissinger <aleks0@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1450644598 31510 80.91.229.3 (20 Dec 2015 20:49:58 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 20 Dec 2015 20:49:58 +0000 (UTC)
+Cc: categories list <categories@mta.ca>
+To: Steve Lack <steve.lack@mq.edu.au>
+Original-X-From: majordomo@mlist.mta.ca Sun Dec 20 21:49:50 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkvO-0001x8-Kb
+	for gsmc-categories@m.gmane.org; Sun, 20 Dec 2015 21:49:50 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:34122)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkua-00015s-1y; Sun, 20 Dec 2015 16:49:00 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1aAkuY-0005M7-7u
+	for categories-list@mlist.mta.ca; Sun, 20 Dec 2015 16:48:58 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8770
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8770>
+
+Yes, indiscrete isn't exactly right. Perhaps something like
+"saturated" is more appropriate.
+
+Right Kan extensions give a nice way to put this, which makes it clear
+that this extends beyond finite base category as well. So, the
+refinement of my question is: have people studied (left or) right Kan
+extensions over the inclusion into C of its associated discrete
+category C0?
+
+It seems to me for instance that taking C =3D the simplicial category
+and C0 =3D natural numbers would have been studied, e.g. in forming
+something like "coloured simplicial sets" as a slice.
+
+On 20 December 2015 at 03:28, Steve Lack <steve.lack@mq.edu.au> wrote:
+> Dear Aleks,
+>
+> I would say that the known construction of which this is a special case i=
+s
+> right Kan extensions. The forgetful functor from graphs to pairs of sets =
+is
+> given by restriction along the inclusion in what you call 2 of the subcat=
+egory
+> with the same object but no non-identity arrows. Thus the right adjoint i=
+s given
+> by right Kan extension along this inclusion. Such right Kan extensions ca=
+n always
+> be constructed using limits; in your case, because the domain of the func=
+tor along
+> which you are extending is discrete, these limits are actually products.
+>
+> By the way, I would not use =E2=80=9Cindiscrete=E2=80=9D in this context.=
+  For me indiscrete would
+> refer to things in the image of the right adjoint to the functor which as=
+sociates to a
+> graph its set of vertices. The set of edges of the indiscrete graph would=
+  then be V x V.
+>
+> Regards,
+>
+> Steve Lack.
+>
+>
+>
+>> On 19 Dec 2015, at 9:48 PM, Aleks Kissinger <aleks0@gmail.com> wrote:
+>>
+>> It's common to describe the category of (directed, multi-) graphs as a
+>> functor category Graph :=3D [2, Set], where 2 here is the category with
+>> 2 objects and 2 parallel arrows (s & t).
+>>
+>> For a pair of sets (V,E), one can construct the indiscrete graph
+>> I(V,E) as a graph with vertices V and edges E x V x V, where the
+>> source and target maps are just the 2nd and 3rd projection
+>> respectively. This gives a right adjoint to the forgetful functor from
+>> Graph to pairs of sets. This enables one to construct a category of
+>> graphs with a fixed set of vetex/edge labels as a slice over Graph:
+>>
+>> Graph / I(Lv, Le)
+>>
+>> since a graph hm G --> I(Lv,Le) is the same as a map U(G) --> (Lv,Le),
+>> which is just a pair of functions assigning labels to the vertices and
+>> edges of G.
+>>
+>>
+>> This seems to me like a pretty standard trick, which extends to any
+>> functor category from a C which is in some sense "suitably acyclic".
+>> For instance, consider a category of "partitioned graphs" [3, Set],
+>> where 3 has objects (P,V,E) and arrows:
+>>
+>> E --s--> V, E --t--> V, and V --p--> P
+>>
+>> where, p assigns each of the vertices a partition. For a triple
+>> (P,V,E) we can form the indiscrete partitioned graph with:
+>>
+>> - partitions P
+>> - vertices V x P
+>> - edges E x (V x P) x (V x P)
+>> - p =3D pi2, s =3D pi2, t =3D pi3
+>>
+>> which gives a right-adjoint to the forgetful functor from partitioned
+>> graphs to triples of sets. This is clearly an instance of a general
+>> recipe, whereby you start with the objects with no arrows out, and
+>> work your way backwards, always adding copies of the codomain of every
+>> out-arrow. Again one can attach labels to partitioned graphs by
+>> slicing:
+>>
+>> [3,Set] / I(Lp,Lv,Le)
+>>
+>>
+>> So, my question: Is the general case a known/studied construction? If
+>> so, could someone provide a reference?
+>>
+>>
+>>
+>> Best,
+>>
+>> Aleks
+>>
+>>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

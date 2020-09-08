@@ -1,0 +1,133 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt09@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: aspects of locale theory
+Date: Tue, 9 Jun 2009 17:44:07 +0100
+Lines: 100
+Approved: news@gmane.org
+Message-ID: <E1MEY8W-0000TF-QA@mailserv.mta.ca>
+Reply-To: Paul Taylor <pt09@PaulTaylor.EU>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1244682413 9146 80.91.229.12 (11 Jun 2009 01:06:53 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 11 Jun 2009 01:06:53 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Thu Jun 11 03:06:51 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MEYkj-0001hq-2D
+	for gsmc-categories@m.gmane.org; Thu, 11 Jun 2009 03:06:49 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MEY8W-0000TF-QA
+	for categories-list@mta.ca; Wed, 10 Jun 2009 21:27:20 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4964
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4964>
+
+Steve Vickers has bounced me into replying to the questions about
+locales that Rafael Borowiecki (aka Hasse Riemann) asked, even
+though I had said that I would do so when I was ready with some
+other comments on that subject.   The following also includes the
+answer to a question that I myself raised last year, which has
+further consequences for the appropriateness of locale theory
+as an account of general topology, but I am not going to say what
+these are until I am actually ready.
+
+In my "autobiography", I had said,
+
+> Another [problem] is how to embed the category of locales in a CCC
+> WITHOUT using illegitimate presheaves (Vickers and Townsend) or
+> the axiom of collection (Heckmann).  When I wrote the original version
+> of this posting a couple of weeks back, I thought I could solve this
+> one.  I am still hopeful, but it turns out to be a powerful question,
+> cf Ronnie's (2) above.
+
+Rafael asked me,
+> Why should presheaves be illegitimate?
+
+I am not saying that presheaves in general are illegitimate in the
+plain English sense of the word.   The work that I was referring
+to uses the category of all functors from the opposite of the
+category of locales to the category of sets.   Since the category
+of locales is "large", this functor-category is super-large or
+"illegitimate", where the quoted words have a technical meaning.
+
+As Steve Vickers has already explained, he goes to some trouble
+to avoid the problems, essentially by exploring only a tiny part
+of the presheaf category.  He really only uses the exponentials
+Sigma^X of locales, which are the functors  Loc(-xX,Sigma).
+
+The rest of the comments concern the paper
+   @article{HeckmannR:carcec,
+   title={A Cartesian Closed Extension of the Category of Locales},
+   author={Heckmann, Reinhold},
+   journal={Mathematical Structures in Computer Science},
+   year={2006}, volume={16},  pages={231--253}}
+which was inspired by Dana Scott's equilogical space construction.
+
+However, Reinhold's "equivalence relations" are what the presheaf
+category provides.  So a relation on a single locale requires data
+from every object in the category.  (The details are rather
+complicated, and I don't recall them exactly at the moment.)
+The collection of morphisms between two equilocales is defined
+as the image of a class in a set.
+
+> Then, i suppose the axiom of collection is valid at least in the CCC.
+
+No.  The axiom of collection says roughly that, given a function
+from a class to a set, its image is a set.   This is quite a
+strong axiom of set theory, and is certainly not valid in something
+as logically weak as a CCC.
+
+> But what is so bad about the axiom of collection in this case?
+
+The vast majority of ordinary mathematics can be done in an elementary
+topos with a natural number object, maybe together with assumptions
+of excluded middle or the axiom of choice.   This is roughly but
+not quite equivalent to Zermelo's set theory -- NOT ZFC, which adds
+the substantially more powerful axiom-scheme of replacement.
+
+Rather than using sledgehammers (adding more and more powerful axioms),
+most categorists would prefer to re-examine the problem to look
+for more delicate ways of doing things.
+
+On a different aspect of locale theory, I asked on 22 July 2008,
+
+> Where can I find a published proof that
+>     if    X --->> Y   is a (not necessarily regular)  epi  of locales
+>     then so is   X x Z --->> Y x Z   for any locale Z?
+> NB  (I know that) this is not true for general pullbacks of locales!
+
+Peter Johnstone told me, essentially, that I was assuming excluded
+middle, in the form that every locale is open (as he would say) or
+overt (using my word).  In fact, the answer is negative even with
+excluded middle, as Till Plewe pointed out to me.   (Till no longer
+studies categories or locales, but is still doing academic research
+in Japan, or at least was last year when I was in touch with him.)
+
+The (basis of the) counterexample that Till pointed out is described
+in Peter's book (Stone Spaces) in section II 2.14.   It is the
+locale QE of rationals with the Euclidean topology, that is, the
+frame of open subsets of the reals, quotiented by their effect on
+the rationals, so for example  (3,pi)v(pi,4) = (3,4) in QE since
+pi is irrational.   I also write QD for the rationals with the
+discrete topology, so QD is homeomorphic to N.
+
+The point is that QE has enough points, indeed  QD-->>QE is epi,
+but QExQE doesn't.
+
+This means that   QDxQE --> QExQE  is not epi.
+
+Paul
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

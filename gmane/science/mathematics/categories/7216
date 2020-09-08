@@ -1,0 +1,107 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: when is Lex[A,V] abelian?
+Date: Sat, 25 Feb 2012 05:09:04 +0000
+Lines: 70
+Approved: news@gmane.org
+Message-ID: <E1S1G9L-0004xV-Ni@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1330170732 31669 80.91.229.3 (25 Feb 2012 11:52:12 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sat, 25 Feb 2012 11:52:12 +0000 (UTC)
+To: Categories mailing list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Feb 25 12:52:11 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1S1GAb-0001r6-6c
+	for gsmc-categories@m.gmane.org; Sat, 25 Feb 2012 12:52:09 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:47940)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1S1G9M-0000X0-Bb; Sat, 25 Feb 2012 07:50:52 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1S1G9L-0004xV-Ni
+	for categories-list@mlist.mta.ca; Sat, 25 Feb 2012 07:50:51 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7216
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7216>
+
+Hi Ignacio,
+
+If C has finite limits (in fact kernels would do) as well as finite
+colimits, then Lex[C^op, V] abelian actually implies C abelian.
+Indeed, the restricted Yoneda embedding C -> Lex[C^op, V] then
+preserves limits and finite colimits, and is fully faithful; whence C
+may be identified with a full subcategory of L closed under finite
+limits and finite colimits. But any such subcategory of an abelian
+category is itself abelian.
+
+This then means that Lex[C^op, V] abelian =3D> C abelian =3D> Lex[C^op, V]
+Grothendieck abelian. When V =3D Ab, this is sufficient to ensure that
+Lex[C^op, V] is lex-reflective in [C^op, V]. Off the top of my head, I
+don't know if the same is true when V =3D k-Mod; I feel like it might be
+necessary to assume that, for every f.p. flat k-module M, the functor
+M * (-) : C -> C preserves monomorphisms. Maybe that's automatic; I
+don't know enough algebra to say for sure.
+
+If C doesn't have kernels, then the situation is more interesting. I
+believe it should still be possible to give elementary conditions on C
+which are equivalent to L's being abelian. The point is that kernels
+do exist in L and so one can work out what it means for L to satisfy
+the kernel-cokernel exactness conditions for maps between
+representables in terms of structure in C. This will give some
+necessary conditions on C for L to be abelian. With any luck they will
+also be sufficient, though it might be necessary to consider a wider
+class of maps in L than merely those between representables.
+
+A relevant article, I think, is
+
+C. Centazzo, R.J. Wood
+An extension of the regular completion
+J. Pure Appl. Algebra, 175 (2002), pp. 93=96108
+
+That deals with the non-additive context but the same ideas should
+apply. I am also wondering if Mike Shulman's work on unary sites is
+relevant; see his CT2011 slides.
+
+Richard
+
+
+On 22 February 2012 11:31, Ignacio Lopez Franco <ill20@cam.ac.uk> wrote:
+> Dear all,
+> may be some of the readers of this list will know the answer to the
+> following question.
+>
+> Let V be the category k-Mod for commutative ring k.
+> For a finitely cocomplete V-category C, when is L =3D Lex[C^{op},V] abeli=
+an?
+>
+> I know some cases:
+> 1. When C is abelian so is L.
+> 2. When C is a free completion under finite colimits of a small
+> =A0 =A0category, L is abelian (because it's equivalent to a presheaf
+> =A0 =A0V-category).
+> 3. L is reflective in the abelian [C^{op},V]. When the reflection is
+> =A0 =A0left exact L is abelian. However I don't any conditions that
+> =A0 =A0guaranty that the reflection is left exact.
+>
+> I would like to know some other conditions that ensure that L is
+> abelian, and perhaps an example where L is not abelian.
+>
+> Thanks
+> Ignacio
+>
+>
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

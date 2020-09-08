@@ -1,0 +1,173 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Does Bind beat Kleisli in Hilbert space?
+Date: Sun, 07 Oct 2007 09:44:52 -0700
+Lines: 139
+Approved: news@gmane.org
+Message-ID: <E1IesF3-0003Kz-J0@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019630 11110 80.91.229.2 (29 Apr 2009 15:40:30 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:40:30 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Oct  8 10:13:57 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 08 Oct 2007 10:13:57 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IesF3-0003Kz-J0
+	for categories-list@mta.ca; Mon, 08 Oct 2007 10:01:49 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 20
+Status: O
+Content-Length: 7532
+Original-Lines: 138
+Xref: news.gmane.org gmane.science.mathematics.categories:3963
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3963>
+
+Project:            Operation QCvac
+Sensitivity level:  Black hole
+Situation report:   Unanticipated overflow exception in a monad
+Reporting analyst:  Vaughan Pratt
+Project status:     On hold pending resolution
+Action item:        Solicit qualified expert opinion
+Date:               October 7, 2007
+
+Situation summary.  We're working on a quantum computer in anticipation
+of a Request for Proposal (RFP) for the next One Laptop Per Child (OLPC)
+computer for a value of "next" that is acceptable to our venture
+capitalists (VCs) yet feasible for our engineers.
+
+To be sure of not being out-competed we've assembled a crack team of
+physicists from Fermilab to get the physics right, category theorists
+from Fairfield, Iowa to design the linear algebra implementation,
+electrical engineers (EEs) from Silicon Valley to build the machine,
+Haskell programmers from Glasgow to implement the ideal third-party
+value-add software environment, and marketers from Boston to understand
+the market's needs and tastes.
+
+Marketing feels we have to be able to offer lots of storage (qubits).
+The physicists said no problem, they work in separable (countably
+dimensioned) Hilbert space all the time.  (You see how physics
+works---physics is scale-invariant, what's good for describing the
+universe is good for describing computers.)  Marketing said great,
+countably infinite storage will make us unbeatable, even Google will
+want one.
+
+Marketing wants to pitch the reliability of our machine.  The category
+theorists said no problem, on their previous consulting job, D-Wave's
+16-qubit quantum computer, they'd represented linear algebra as God's
+own monad, a monoid object (T,mu,eta) of Set^Set implementing matrix
+multiplication via the Kleisli construction.  They took the functor T(X)
+to be the set C^X of X-dimensional almost-everywhere-zero complex
+vectors with T(f:X->Y): C^X --> C^Y sending v: C^X to the vector u: C^Y
+describable as starting with u = 0 and adding v_x to u_{f(x)} for all x
+in X, the multiplication mu_X: C^(C^X) --> C^X to send V: C^(C^X) to u:
+C^X with u_x the sum of V_v * v_x over all v in C^X (dot product), and
+the unit eta_X: X --> C^X as eta_X(x)(y) = (x=y) (the unit vectors).  It
+worked like a charm.  (You see how category theory works in
+computers---everything is an adjunction, or was in the 1970s, nowadays
+it's all done with monads.)
+
+The EEs expressed concern about the ambitious number of qubits.  The
+category theorists reassured them that infinity held no fears for them
+as the infinite set C^(2^16) had worked fine in the D-Wave machine since
+mu only encountered finitely many nonzero values when summing over the
+domain C^(2^16) of T(f): C^(C(2^16)) --> C(2^16).  The physicists
+reassured them that linear algebra lifted reliably to infinite
+dimensions provided the vectors were kept square summable as confirmed
+by a vast body of experimental evidence, so even though the sums would
+now be infinite they would still converge.  (You see how systems
+analysis works---if monads and square-summability each coordinate well
+with the world they must coordinate well with one another.)
+
+Thus reassured, marketing said God's monad it is.  Missionaries and the
+bible belt will buy millions.  (You see how marketing works---logically
+this vision would have missionaries spending more money than Google,
+clearly absurd whence logic is false.)
+
+The EEs designed and built the first prototype in six days.
+
+The EEs were still in the lab on the seventh day because the machine was
+giving trouble.  It was taking overflow exceptions in the course of
+performing output.
+
+By Tuesday the EEs had figured out what was going wrong.  Their
+specification of the output module had it taking a system state v of
+dimension N (the natural numbers) and applying a projection p: C^N -->
+C^E collapsing v to one of a finite set E of eigenvectors whose
+eigenvalues constitute the possible outcomes of the measurement.   They
+used the Kleisli implementation of application, quantumly realizing v
+and p as the respective functions v: 1 --> C^N and p: N --> C^E and
+forming their composite pv: 1 --> C^E as mu_E T(p) v: 1 --> C^N -->
+C^(C^E) --> C^E.  The overflow was occurring in T(p): C^N --> C^(C^E);
+the particular measurement happened to depend only on finitely many of
+the N dimensions of v so naturally the programmer had organized p to map
+all the unused dimensions to 0 as a single element of the set C^E.
+T(p): C^N --> C^(C^E) maps v: C^N to u: C^(C^E) formed by initializing u
+to 0 and then for each i in N adding v_i to u_{p(i)}.  Since p(i) = 0
+for all but finitely many i, whenever v is divergent (not contradicted
+by square summability) coordinate 0 of u will overflow.  So the overflow
+problem was happening even before mu kicked in (otherwise mu would have
+saved it).
+
+When the Haskell programmers came in on Wednesday to get started on
+programming and found only an overflowing machine, they looked askance
+at C^(C^E) and said "That's ridiculous, no wonder it doesn't work."  So
+they jury-rigged the Haskell realization of monad in place of the
+Kleisli definition.  This replaces the multiplication of the monad and
+its deployment in the Kleisli construction by Haskell's Bind operator
+typed as T(X) --> ((X --> T(Y)) --> T(Y)).  In our machine this becomes
+C^N --> ((N --> C^E) --> C^E).
+
+Bind combines the separate actions of T(p) and mu_E into one by setting
+the coefficient v_e of output v: C^E to the sum of v_i*p_{ie} over all i
+in N.  It thereby reverses the previous order of adding and multiplying,
+multiplying the coefficients of v_i by p_{ie} *before* adding them,
+harmlessly zeroing out the unused cofinite portion of v.  In the
+Kleisli implementation the unused coefficients first accumulated at
+location 0 of C^(C^E) and were *then* multiplied by that location (i.e.
+by the complex number zero), but too late because the addition had
+already overflowed.  Both formulations of monad realize matrix
+multiplication, but in the infinite-dimensional case the direct
+application of the monad multiplication via Kleisli would seem more
+problematic than Haskell's Bind.
+
+On Thursday the EEs reported excitedly that Mv was converging just fine
+in the situations that had caused the old definition to take an overflow
+exception.
+
+Friday morning found marketing in bedlam.  "If that's God's monad," they
+asked the category theorists sarcastically, "how does God handle these
+exceptions?"
+
+"But God's monad works, I tell you," said the category theorists.
+"Look, you have an adjunction F -| G with unit eta and counit epsilon,
+you compose as (GF, G epsilon F, eta), and voila, a monoid object in
+Set^Set.  And the Kleisli construction has never given trouble before."
+
+Voila indeed.  At an emergency meeting called (voici) Friday afternoon
+in lieu of the regular TGIF the CEO impressed on us all the uncertainty
+and gravity of the situation (his background was in physics) while
+optimistically interpreting it as giving us the ultimate competitive
+advantage: a computer more reliable than the universe.
+
+Being even more risk averse than the VCs however and ever mindful of the
+truth-in-advertising laws, he has assigned me to escalate the question
+of whether we've really improved on the universe to the categories
+mailing list for their opinion.  Is the Maharishi mathematicians' monad
+God's real McCoy or just misinformed mathematics?  Why does it fail
+where the Haskell Bind operator succeeds?  And does Bind always work?
+We've only tested it on a few cases so far.
+
+Signed/sealed/delivered: Vaughan Pratt
+
+
+

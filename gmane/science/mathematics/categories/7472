@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Altenkirch Thorsten <psztxa@exmail.nottingham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Algorithms arising from category theory
+Date: Tue, 16 Oct 2012 09:46:43 +0100
+Lines: 87
+Approved: news@gmane.org
+Message-ID: <E1TOAsL-0005Bi-6N@mlist.mta.ca>
+References: <E1TNoV0-00006L-5t@mlist.mta.ca>
+Reply-To: Altenkirch Thorsten <psztxa@exmail.nottingham.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1350408304 30253 80.91.229.3 (16 Oct 2012 17:25:04 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 16 Oct 2012 17:25:04 +0000 (UTC)
+To: Mike Stay <metaweta@gmail.com>, categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Oct 16 19:25:07 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.134])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOAt9-0004Rm-HK
+	for gsmc-categories@m.gmane.org; Tue, 16 Oct 2012 19:25:07 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:54578)
+	by smtpx.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOArV-0005Wa-9E; Tue, 16 Oct 2012 14:23:25 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1TOAsL-0005Bi-6N
+	for categories-list@mlist.mta.ca; Tue, 16 Oct 2012 14:24:17 -0300
+Thread-Topic: categories: Algorithms arising from category theory
+Thread-Index: Ac2resb6uKVa3F59QEmkvzdjSQrapw==
+In-Reply-To: <E1TNoV0-00006L-5t@mlist.mta.ca>
+Accept-Language: en-US, en-GB
+Content-Language: en-US
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7472
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7472>
+
+Hmm, an example may be the decision procedure for lambda calculus with
+coproducts using normalisation by evaluation. The known NBE algorithm for
+ordinary lambda calculus could be understood using presheaf semantics
+while you need sheaves to interpret coproducts. So sheaf theory certainly
+inspired this development but there were a number of technical issues
+which go beyond it.
+
+@InProceedings{alti:lics01,
+   author =3D       "Thorsten Altenkirch and Peter Dybjer and Martin Hofmann
+and Phil Scott",
+   title =3D        "Normalization by evaluation for typed lambda calculus
+with
+coproducts",
+   pages =3D        "303-310",
+   booktitle =3D    "16th Annual IEEE Symposium on Logic in Computer
+                   Science",
+   year =3D         "2001",
+www =3D "http://www.cs.nott.ac.uk/~txa/publ/lics01.pdf"
+}
+
+
+Cheers,
+Thorsten
+
+
+On 15/10/2012 17:42, "Mike Stay" <metaweta@gmail.com> wrote:
+
+>I'd like to get more computer programmers interested in category
+>theory.  There's the obvious connection to type theory and categorical
+>semantics, but programmers are usually far more interested in
+>algorithms.  Recently I found the excellent paper "Generalizing
+>Compiler Optimizations from Proofs" by Tate, Stepp, and Lerner.  They
+>write,
+>
+>"Some have asked us why we abstracted our proof generalization
+>technique at all, and why we used category theory as our abstraction.
+>However, we actually designed the abstract algorithm first, using
+>category theory, and then used that to figure out how to solve our
+>concrete problem. We got stuck with the concrete problem, overwhelmed
+>by the details and the variables, and any solution we could think of
+>seemed arbitrary. In order to reflect and simplify, we decided to
+>phrase our question categorically. This lead to a diagram of sources
+>and sinks, so we just used pushouts and pullbacks to glue things
+>together. The biggest challenge was coming up with pushout
+>completions, rather than using some existing standard concept. The
+>categorical formulation was easy to specify and reason about.
+>Afterwards, we instantiated the abstract processes, such as pushouts,
+>with concrete algorithms, such as unification, in order to produce our
+>final implementation with strong generality guarantees.
+>
+>"We have actually found this process of abstracting to category theory
+>whenever we get stuck to be quite fruitful. Not only does it end up
+>solving our concrete problem, but we end up with a better
+>understanding of our own problem as well as an abstract solution which
+>can be easily adapted to other applications. Thus, our experience
+>suggests that category theory may be useful in constructing actual
+>algorithms, in addition to being useful as a framework for
+>formalization. We would be interested to know of other similar
+>experiences, either positive or negative."
+>
+>Can any readers point me to other algorithms that were discovered by
+>turning to category theory or to reports of problems solved by
+>realizing they were instances of an abstraction of another solved
+>problem?
+>--=20
+>Mike Stay - metaweta@gmail.com
+>http://www.cs.auckland.ac.nz/~mike
+>http://reperiendi.wordpress.com
+>
+>[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
+=
+This message and any attachment are intended solely for the addressee a=
+nd may contain confidential information. If you have received this mess=
+age in error, please send it back to me, and immediately delete it.   P=
+lease do not use, copy or disclose the information contained in this me=
+ssage or in any attachment.  Any views or opinions expressed by the aut=
+hor of this email do not necessarily reflect the views of the Universit=
+y of Nottingham.=0D=0A=0D=0AThis message has been checked for viruses b=
+ut the contents of an attachment=0D=0Amay still contain software viruse=
+s which could damage your computer system:=0D=0Ayou are advised to perf=
+orm your own checks. Email communications with the=0D=0AUniversity of N=
+ottingham may be monitored as permitted by UK legislation.=
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

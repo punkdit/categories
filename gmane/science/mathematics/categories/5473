@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <shulman@uchicago.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: re: the definition of "evil"
+Date: Mon, 04 Jan 2010 11:14:32 -0600
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <E1NRz2X-0007kk-23@mailserv.mta.ca>
+References: <E1NRRk6-0000Cr-SG@mailserv.mta.ca> <E1NRcsx-0002QJ-JW@mailserv.mta.ca>
+Reply-To: Michael Shulman <shulman@uchicago.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1262659711 10622 80.91.229.12 (5 Jan 2010 02:48:31 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 5 Jan 2010 02:48:31 +0000 (UTC)
+To: John Baez <john.c.baez@gmail.com>
+Original-X-From: categories@mta.ca Tue Jan 05 03:48:23 2010
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NRzT4-0002PT-Br
+	for gsmc-categories@m.gmane.org; Tue, 05 Jan 2010 03:48:22 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NRz2X-0007kk-23
+	for categories-list@mta.ca; Mon, 04 Jan 2010 22:20:57 -0400
+In-Reply-To: <E1NRcsx-0002QJ-JW@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5473
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5473>
+
+It looks to me like there are (at least) two different ideas of "evil"
+floating around.
+
+
+1. A property or structure (on objects of a 2-category) is "non-evil" if
+it can be transported along equivalences.
+
+This is clearly a property of a forgetful 2-functor, which I agree that
+it makes the most sense to formulated as a lifting property for entire
+(adjoint) equivalences, including both functors and the unit and counit.
+ (I'm surprised that Peter didn't require (F,G,e,h) and (F',G',e',h') to
+be *adjoint* equivalences in his definition; that seems to me likely to
+be the more correct notion.)  Thus, whether a given structure is "evil"
+in this sense depends on what you are forgetting down to.  Dagger
+structure is evil as structure on a category, but it is not evil as
+structure on a "category equipped with a distinguished subgroupoid."
+(Of course, a distinguished subgroupoid is evil as structure on a category.)
+
+I also think that this notion must necessarily be "2-evil" in the way
+that makes John sad, for anything at all is always "transportable along
+an equivalence up to equivalence"!  In other words, if we are serious
+about avoiding evil, even at a higher-categorical level, then we
+shouldn't even be talking about evil in the first place.  (-:
+
+(Of course, that also suggests that we probably can't construct, by
+purely non-2-evil (e.g. bicategorical) means, the 2-category of dagger
+categories from the 2-category of categories.  But we can construct
+something pretty close, e.g. if we weaken "distinguished subgroupoid" to
+"faithful functor with groupoidal domain.")
+
+
+2. A categorical structure is "evil" if it involves talking about
+equality of objects.
+
+For this sense, one has to be careful, because lots of notions in
+category theory involve equality of objects.  In order to compose two
+morphisms f:A-->B and g:B-->C one has to know that the target of f is
+*equal* to the source of g.  Likewise, to say that f:A-->B is an
+isomorphism, one has to say that there is an inverse g:B-->A whose
+source and target are *equal* to the target and source of f,
+respectively.  However, as Toby says, there is a precise way to say that
+something is "not evil" in this sense while still admitting all of these
+"natural" constructions.  Namely, we work in a dependent type theory
+with a type Ob of objects, and for each pair of objects x,y a dependent
+type Hom(x,y) of arrows, and stipulate that our theory contains an
+equality predicate only for the types Hom(x,y) and not for Ob.
+(Makkai's FOLDS, which Toby mentioned, is a generalization of this
+appropriate for higher-categorical structures.)
+
+The point is that specifying the source and target of an arrow should
+not be thought of as "talking about equality of objects," but rather as
+a *typing assertion*.  What is forbidden is rather asking whether two
+already *given* objects are equal, not introducing an arrow whose source
+and target are ("equal to") some pair of already given objects.  The
+notion of "dagger category" can be formulated in this dependently-typed
+language, as Toby has said, so it is *not* evil in this sense.  This is
+related to the observation that dagger-categories are still
+"implementation-independent" relative to membership-based set theory,
+e.g. for the dagger-structure on Hilb it doesn't matter whether you
+define the real numbers as Cauchy sequences or Dedekind cuts.
+
+
+The relationship between these two notions is not immediately obvious to
+me.  Clearly evil (1) does not imply evil (2), because of the example of
+dagger-categories.  Does evil (2) imply evil (1)?
+
+Best,
+Mike
+
+John Baez wrote:
+> Dear Categorists -
+>
+> I'm glad Peter is trying to formulate a definition of structures that can be
+> transported along equivalences, and I like the spirit of his definition,
+> namely in terms of a "lifting property" where one has a 2-functor
+>
+> U: XCat -> Cat
+>
+> and one is trying to lift equivalences from Cat to XCat.
+>
+> But it makes me nervous when he says "isomorphic [not equivalent!]".  Just
+> as evil in category theory typically arises from definitions that impose
+> equations between objects instead of specifying isomorphisms, evil in
+> 2-category theory typically arises when we specify isomorphisms between
+> objects instead of specifying equivalences.
+>
+> It would be sad, or at least intriguing, if the definition of "evil" was
+> itself evil.
+>
+> Best,
+> jb
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

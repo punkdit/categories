@@ -1,0 +1,99 @@
+Path: news.gmane.org!not-for-mail
+From: Thomas Streicher <streicher@mathematik.tu-darmstadt.de>
+Newsgroups: gmane.science.mathematics.categories
+Subject: W-types in toposes
+Date: Tue, 4 Mar 2003 17:44:17 +0100 (CET)
+Lines: 64
+Approved: news@gmane.org
+Message-ID: <200303041644.RAA25697@fb04305.mathematik.tu-darmstadt.de>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018501 3079 80.91.229.2 (29 Apr 2009 15:21:41 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:21:41 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue Mar  4 18:36:54 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 04 Mar 2003 18:36:54 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18qKwF-0005lt-00
+	for categories-list@mta.ca; Tue, 04 Mar 2003 18:31:07 -0400
+X-Mailer: ELM [version 2.4ME+ PL66 (25)]
+X-MailScanner: Found to be clean
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 6
+Status: O
+Content-Length: 2581
+Original-Lines: 63
+Xref: news.gmane.org gmane.science.mathematics.categories:2216
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2216>
+
+Alex S. pointed out quite correctly that toposes with NNO allow one to
+construct W-types Wx:A.B(x) for all  b : B -> A (where B(x) is a shorthand
+for b^{-1}(x)). The idea is as follows: elements of Wx:A.B(x) are thought of
+as well-founded terms over the signature A where B(a) is the arity of
+operation with name a. Thus, possibly infinite terms over this signature can
+be coded up as partial maps  t : List(B) \parr A  satisfying the conditions
+
+  (i)  the domain of t is prefix closed
+
+ (ii)  if t(s) is defined and equal a then t(s^y) is defined iff and only
+       if y \in B(a)
+
+The term t is ``reachable'' iff  dom(t)  is an element of the least subset
+T_B of P(List(B)) satisfying the closure conditions
+
+   -  {<>} in T_B
+
+   -  if a \in A and f : B(a) -> T_B then
+      {<>} \cup { b^s | b \in B(a) & s \in f(b) }
+
+Notice that ``reachable'' is more restrictive than well-founded in a
+constructive setting. Claiming that "well-founded entails reachable" is
+known as "bar induction".
+
+Generally, W-types capture inductive types which are of the type "free term
+algebra" albeit for very general signatures as given by a family of types.
+It certainly contains all and more than what one thinks of in C.S. usually
+when using the word inductive type.
+However, necessarily "inductive type" is an "open" notion and heavily
+syntax-dependent. There is the categorical generalization of inductive type
+as initial fixpoint of a covariant functor F : EE->EE where EE is the ambient
+topos or model of type theory. In a sense this a vacuous notion as you can get
+every type A as initial fixpoint of F(X)=A. On the other hand, even in Set not
+every covariant functor F : Set->Set needs to have a fixpoint (e.g. if F is
+the covariant powerset functor). However, sometimes in categories different
+from Set functor of the form F(X) = S^(S^X) do have fixpoints for particular
+nontrivial S (for Sierpinski space).
+
+The reason why I mentioned axiom of replacement is that in the business of
+solving recursive domain equations the axiom of relacement is needed (see
+Alex Simpson's paper from LICS02). But in any case for constructing free term
+algebras we don't need it.
+
+Nevertheless, there is still a nagging question about the relationship between
+inductive predicates and inductive types. Can one characterise those
+syntactically given covaraint functors F (constructed, say, from parameters
+using sum, cartesian product and exponentiation) for which HAH proves the
+existence of a fixpoint, in other words which inductive types are ensured by
+higher order arithmetic?
+
+Thomas S.
+
+
+
+
+
+
+
+
+
+
+
+
+

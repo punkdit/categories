@@ -1,0 +1,4695 @@
+From rrosebru@mta.ca Fri Dec  2 07:27:40 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 07:27:40 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ei90x-0000BA-6q
+	for categories-list@mta.ca; Fri, 02 Dec 2005 07:23:43 -0400
+Message-Id: <200512012113.jB1LD6u26795@math-cl-n03.ucr.edu>
+Subject: categories: Re: higher gauge theory
+To: categories@mta.ca (categories)
+Date: Thu, 1 Dec 2005 13:13:05 -0800 (PST)
+From: "John Baez" <baez@math.ucr.edu>
+In-Reply-To: <200511290711.jAT7BeT11834@math-cl-n03.ucr.edu> from "John Baez" at Nov 28, 2005 11:11:40 PM
+X-Mailer: ELM [version 2.5 PL6]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on mx1.mta.ca
+X-Spam-Level:
+X-Spam-Status: No, score=0.0 required=5.0 tests=none autolearn=disabled
+	version=3.0.4
+Sender: cat-dist@mta.ca
+Precedence: bulk
+X-IMAPbase: 1144781908 49
+Status: O
+X-Status: 
+X-Keywords:                      
+X-UID: 1
+
+Dear Categorists -
+
+> Here's a new paper:
+>
+>   http://math.ucr.edu/home/baez/higher.pdf
+>   http://math.ucr.edu/home/baez/higher.ps
+>
+>   John Baez and Urs Schreiber
+>   Higher Gauge Theory
+
+... but if that's too long, you can see the results in
+distilled form here:
+
+http://math.ucr.edu/home/baez/union/
+
+This is my talk at this weekend's Union College conference on
+categories, topology and commutative algebra.  Hope to see some
+of you there!
+
+Best,
+jb
+
+
+
+
+
+From rrosebru@mta.ca Fri Dec  2 07:33:02 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 07:33:02 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ei998-0000O6-J9
+	for categories-list@mta.ca; Fri, 02 Dec 2005 07:32:10 -0400
+Message-ID: <438F8AEE.9010006@andrej.com>
+Date: Fri, 02 Dec 2005 00:44:46 +0100
+From: Andrej Bauer <Andrej.Bauer@andrej.com>
+Reply-To:  Andrej.Bauer@andrej.com
+User-Agent: Debian Thunderbird 1.0.2 (X11/20050602)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Categories <categories@mta.ca>
+References: <546F06B4-60F8-11DA-9B52-000393B90F2C@wanadoo.fr>
+In-Reply-To: <546F06B4-60F8-11DA-9B52-000393B90F2C@wanadoo.fr>
+Content-Type: text/plain; charset=ISO-8859-2
+Content-Transfer-Encoding: 7bit
+Subject: categories: Re: Fwd: Mathematica and CAS
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 2
+
+[note from moderator: the poster is right, this discussion is not relevant
+to this list, and this final post is allowed as a response to the previous
+post only.]
+
+I feel guilty about prolonging a discussion which is not related to
+categories. If the moderator thinks we should take it off line, we can
+do so (see the end of this posting). But since the last message was
+public and it asked for a reaction, I will reply in the same fashion.
+
+Thank you to Jean Benabou for posting the message by Jacqueline Zizi. I
+would like to make a couple of remarks.
+
+First of all, I want it to be clear that Jacqueline and I are on the
+same side. I am a big fan of Computer Algebra Systems (CAS). I promote
+them at our department and I teach my students how to use them to solve
+problems they meet in analysis and algebra. I show them examples from
+their analysis class which their teacher solved incorrectly but
+Mathematica gets them right.
+
+I shall now also teach them how to compute the limit correctly, thanks
+to Jacqueline's suggestion. By the way, there is no need to compute the
+power expansion of numerator and denominator separately. You can just
+compute Series[...] of the whole thing:
+
+In[42] := Series[((1 + 4*x^2)^(1/4) - (1 + 5*x^2)^(1/5))/
+  (a^(-x^2/2) - Cos[x]), {x, 0, 4}] // Simplify
+
+Out[42] = x^2/(1 - Log[a]) + (...) x^4 + O[x^5]
+
+You see immediately that things go wrong when Log[a] = 1 ...
+
+>> But I have the impression that Andrej himself falls in the trap.
+
+I fail to see how I fall in _the_ trap, i.e., that I make the same sort
+of mistakes as students and CAS. I surely hope I do not :-) Perhaps, it
+was meant that I just made a mistake when I stated:
+
+>> And especially when he says that :
+>> " I guess I am trying to point out that current Computer Alegbra
+>> Systems are very tricky to use_correctly"
+
+This is an observation about user experience, namely that one cannot
+trust CAS 100% without having a lot of expert knowledge about it. You
+may have a different experience, but mine is as stated.
+
+I find most of Jacqueline's comments to be explanations about why CAS
+are not 100% mathematically correct all the time: they are complex, they
+grow with time, etc. This is all true and well, and I am NOT saying that
+any CAS which is not 100% correct all the time should be eliminated from
+the face of the Earth.
+
+However, I do take issue with the fact that CAS are presented in a
+dishonest way. A typical CAS demo does not show you that things can go
+wrong. The documentation does NOT state clearly the conditions under
+which builtin functions may be used, contrary to what Jacqueline says:
+
+>> The rules for application of the primitives are
+>> clearly given in Mathematica, in the "Help" menu.
+
+You make it sound as if a user who reads the help menu for "Limit" will
+know that free parameters may sometimes lead to errors. Here is the
+complete text of help:
+
+--------
+Limit
+
+Limit[expr, x->x_0] finds the limiting value of expr when x approaches x_0.
+
+* Example: Limit[Sin[x]/x, x->0] --> 1.
+* Limit[expr, x->x_0, Direction -> 1] computes the limit as x approaches
+x_0 from smaller values.
+* Limit[expr, x->x_0, Direction -> -1] computes the limit as x
+approaches x_0 from larger values.
+* Limit returns Interval objects to represent ranges of possible values,
+for example at essential singularities.
+* Limit returns unevaluated when it encounters functions about which it
+has no specific information. Limit therefore makes no explicit
+assumptions about symbolic functions.
+* See The Mathematica Book: Section 1.5.10 and Section 3.6.8.
+* See also: Series, Residue.
+* Related package: NumericalMath`NLimit`.
+---------
+
+I let the readers judge whether "Limit therefore makes no explicit
+assumptions about symbolic functions" makes it clear that using
+parameters in limits can cause wrong answers. Additionally, there is no
+hint whatsoever that Mathematica will apply l'Hospital rule (or
+something equivalent) without checking the side condition for it.
+
+The reason why conditions of correct usage are not stated clearly is
+simple: nobody knows them. CAS are so complex and so liberal about which
+rule gets applied when that it is next to impossible to write down
+precisely when they will work correctly.
+
+I understand that CAS are complex and that we would get nowhere if we
+worried about correctness all the time. But the makers of CAS should be
+honest about this: CAS do NOT state clearly the conditions under which
+they work correctly, therefore it is difficult to know whether they have
+given a correct answer. Jacqueline herself wonders about correctness of
+the results she gets in her third example at
+http://homepage.mac.com/jacquelinezizi/CategoriesQA/.
+
+It is an open problem, as far I can tell, to create a powerful CAS with
+perfect control of correctness.
+
+I suggest that we take further discussion off the categories list. One
+possible forum is my blog at http://math.andrej.com, where I posted
+further examples of how Mathematica gets things wrong at
+
+  http://math.andrej.com/2005/12/02/design-of-computer-algebra-systems/
+
+Andrej Bauer
+
+
+
+
+From rrosebru@mta.ca Fri Dec  2 14:02:54 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 14:02:54 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EiFEB-0006RG-IK
+	for categories-list@mta.ca; Fri, 02 Dec 2005 14:01:47 -0400
+Message-ID: <43906B25.9020802@math.upenn.edu>
+Date: Fri, 02 Dec 2005 10:41:25 -0500
+From: jim stasheff <jds@math.upenn.edu>
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Categories List <categories@mta.ca>
+Subject: categories: nerves
+Content-Type: text/plain; charset=us-ascii; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 3
+
+Does anyone know a reference for
+grothedieck's characterization for when a simplicial set
+is the nerve of a groupoid
+or if anyone observed it earlier?
+
+jim
+
+
+
+
+From rrosebru@mta.ca Fri Dec  2 14:02:54 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 14:02:54 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EiFCS-0006IF-W4
+	for categories-list@mta.ca; Fri, 02 Dec 2005 14:00:01 -0400
+X-ME-UUID: 20051202122454739.B4669280019F@mwinf1008.wanadoo.fr
+From: Philippe Gaucher <gaucher@pps.jussieu.fr>
+Reply-To: gaucher@pps.jussieu.fr
+To: categories@mta.ca
+Subject: categories: Re: semi-categories
+Date: Fri, 2 Dec 2005 13:25:46 +0100
+User-Agent: KMail/1.7.1
+References: <p06020402bfb20185ec95@[130.104.3.128]> <1133389475.438e26a388e62@mail2.buffalo.edu>
+In-Reply-To: <1133389475.438e26a388e62@mail2.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: text/plain;  charset="windows-1252"
+Content-Disposition: inline
+Message-Id: <200512021325.46133.gaucher@pps.jussieu.fr>
+Content-Transfer-Encoding: quoted-printable
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 4
+
+Le mercredi 30 Novembre 2005 23:24, vous avez =E9crit :
+> Perhaps it has not been sufficiently emphasized that semi-categories an=
+d
+> the like are not really "generalizations" of categories (though formall=
+y
+> they may appear so).=20
+
+Indeed, at least in my case, a flow must not be viewed as a generalizatio=
+n of=20
+the notion of small categories. Let me explain a little bit what I am doi=
+ng=20
+with these objects. I was not very explicit in my previous post. And so t=
+he=20
+terminology I use is not in "competition".
+
+I want to model HDA, at least those coming from precubical sets. I use a =
+set=20
+of states X^0 and between each state A and B of the HDA, there is a=20
+topological space P_{A,B}X whose elements represent the non-constant=20
+execution paths from A to B. The topology of this space models the=20
+concurrency of the situation between A and B. And execution paths can be=20
+composed with a strictly asssociative law. There does not necessarily exi=
+st a=20
+loop from a given state A to itself : so P_{A,A}X can be empty. This fact=
+ is=20
+one reason among several other ones why I remove the identity maps.
+
+Inside this model, I am able to define what is a dihomotopy equivalence. =
+The=20
+main problem to define dihomotopy is that some contractible parts of "the=
+=20
+directed spaces of execution paths" must not be contracted. Otherwise in =
+the=20
+categorical localization, the relevant geometric information is lost. In=20
+particular, initial and final states must be unchanged by a dihomotopy=20
+equivalence. A very simple example : take two execution paths going from =
+one=20
+initial state 0 to one final state 1. If contractions in the direction of=
+ time=20
+are allowed, one finds in the same equivalence class a loop. Some example=
+s of=20
+unwanted final states are deadlocks of concurrent systems : a deadlock is=
+=20
+nothing else but a final state from a geometric viewpoint. Flows allow to=
+=20
+propose a solution of this problem : in fact I introduced this notion of=20
+flows on purpose, to make the following solution work.=20
+
+The first kind of dihomotopy equivalence is a morphism f:X->Y such that=20
+f^0:X^0->Y^0 is a bijection and such that Pf:PX->PY is a weak homotopy=20
+equivalence. It turns out that there is a model structure on Flows whose =
+weak=20
+equivalences are exactly the preceding kind of morphisms. By imposing the=
+=20
+condition f^0:X^0->Y^0 bijective, we do not take any risk : nothing is=20
+contracted in the direction of time. So no geometric information is lost.=
+ But=20
+this kind of identification is too rigide ! The second kind of dihomotopy=
+=20
+equivalence is generated by taking a representative set of inclusions of=20
+posets P1\subset P2, where P1 and P2 are finite bounded posets and where =
+the=20
+inclusions preserve the bottom  element and the top element (which are=20
+different by hypothesis in a bounded poset). For example, the inclusion o=
+f=20
+posets {0<1}\subset{0<A<1} represents the directed segment (going from th=
+e=20
+initial state 0 to the final state 1) identified with the composition of =
+two=20
+directed segments. This second kind of dihomotopy equivalence models=20
+"refinement of observation". Of course, initial and final states are stil=
+l=20
+preserved.
+
+The category of flows up to dihomotopy equivalences is between the homoto=
+py=20
+category of the model structure associated to the first kind of dihomotop=
+y=20
+equivalence and the homotopy category of the Bousfield localization of th=
+e=20
+same model structures with respect to the set of Q(P_1\subset P_2) where =
+Q is=20
+the cofibrant replacement functor. I call the weak equivalences of the=20
+Bousfield localization "quasi-dihomotopy". Morally speaking, quasi-dihomo=
+topy=20
+is like dihomotopy except in non-observable areas of the time flow where =
+the=20
+topological configuration can changed.
+
+pg.
+
+
+
+
+
+
+
+From rrosebru@mta.ca Fri Dec  2 14:02:54 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 14:02:54 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EiFDV-0006NY-Qm
+	for categories-list@mta.ca; Fri, 02 Dec 2005 14:01:05 -0400
+In-Reply-To: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca>
+References: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca>
+Mime-Version: 1.0 (Apple Message framework v733)
+Content-Type: multipart/alternative; boundary=Apple-Mail-5-605476314
+Message-Id: <15DD9EBD-B91E-4386-A143-DD3A4348F0DB@dima.unige.it>
+From: Marco Grandis <grandis@dima.unige.it>
+Subject: categories: Re: Name for a concept
+Date: Fri, 2 Dec 2005 14:51:38 +0100
+To: categories@mta.ca
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;charset=ISO-8859-1;delsp=yes;format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 5
+
+I think that such squares should be called "exact" or =20
+"semicartesian" (where cartesian square =3D pb).
+They should be viewed as the natural self-dual generalisation of =20
+pullback and pushout. They appear whenever one studies categories of =20
+relations.
+
+1. In an abelian category, I would prefer "exact", or "Hilton-exact".
+
+Hilton considered such squares (for abelian categories), and proved =20
+that an equivalent condition is that this square (of proper =20
+morphisms) is "bicommutative" in the category of relations (i.e. it =20
+commutes and stays commutative when you reverse two "parallel" arrows =20=
+
+- as relations).
+
+Plainly:   bicartesian square  =3D>  pullback  =3D>  exact;  and dually.
+
+REFERENCE:
+P. Hilton, Correspondences and exact squares, in: Proc. Conf. on =20
+Categorical Algebra, La Jolla 1965, Springer, pp. 254-271.
+
+2. Studying more general categories of relations, I considered =20
+"semicartesian squares"  (f,g, h,k),  defined - in any category - by =20
+the following self-dual property (after being commutative, of course):
+
+  Whenever  (f',g', h,k)  and  (f,g, h',k')  commute, also the =20
+external square  (f',g', h',k')  commutes
+
+                             B
+           f'            f        h          h'
+   A'             A                D             D'
+           g'          g       k           k'
+                            C
+
+(add slanting arrows  f': A' --> B,  f: A --> B,   etc).
+
+- Again: bicartesian square  =3D>  pullback  =3D>  semicartesian,  and =20=
+
+dually.
+
+- If pb's  and/or  po's exist, one can give a lot of equivalent =20
+properties; eg:
+
+--  (f,g)  and the pb of  (h,k) have the same po (or the same =20
+commutative squares out of them).
+
+- In an abelian category, semicartesian amounts to the previous notion.
+- In Set, it characterises again those squares which are =20
+bicommutative in Rel.
+
+REFERENCE:
+M. Grandis, Sym=E9trisations de categories et factorisations =20
+quaternaires, Atti Accad. Naz. Lincei Mem. Cl. Sci. Fis. Mat. Natur. =20
+14 sez. 1 (1977), 133-207.
+
+3. A 2-dimensional version of this property (actually a STRUCTURE on =20
+2-cells), was introduced by Guitart, and called "H-exact", if I =20
+remember well (H for Hilton)
+
+REFERENCES:
+
+- R. Guitart, Carr=E9s exacts et carr=E9s deductifs, Diagrammes 6 =
+(1981), =20
+G1-G17.
+- R. Guitart and L. Van den Bril, Calcul des satellites et =20
+pr=E9sentations des bimodules =E0 l'aide des carr=E9s exacts, Cahiers =20=
+
+Topologie G=E9om. Diff=E9rentielle 24 (1983), no. 3, 299-330.
+(and some other papers by the same authors).
+
+Best regards
+
+Marco Grandis
+
+
+--Apple-Mail-5-605476314
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+	charset=ISO-8859-1
+
+<HTML><BODY style=3D"word-wrap: break-word; -khtml-nbsp-mode: space; =
+-khtml-line-break: after-white-space; "><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">I think that such squares =
+should be called "exact" or "semicartesian" (where cartesian square =3D =
+pb).</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">They should be viewed as the=A0natural self-dual =
+generalisation of pullback and pushout. They appear whenever one studies =
+categories of relations.</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 12px/normal Helvetica; min-height: 14px; "><BR></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" face=3D"Helvetica">1.=
+ In an abelian category, I would prefer "exact", or =
+"Hilton-exact".</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: =
+0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><BR =
+class=3D"khtml-block-placeholder"></FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">Hilton considered such =
+squares (for abelian categories), and proved that an equivalent =
+condition is that this square (of proper morphisms) is "bicommutative" =
+in the category of relations (i.e. it commutes and stays commutative =
+when you reverse two "parallel" arrows - as relations).</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">Plainly</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">: </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">bicartesian square</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=3D&gt;</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">pullback</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=3D&gt;</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">exact;</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">and =
+dually.</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">REFERENCE</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">:</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">P. Hilton, </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><I>Correspondences and =
+exact squares</I></FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">, in: Proc. Conf. on Categorical Algebra, La Jolla =
+1965, Springer, pp. 254-271.</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 12px/normal Helvetica; min-height: 14px; "><BR></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" face=3D"Helvetica">2.=
+ Studying more general categories of relations, I considered =
+"semicartesian squares"=A0 (f,g, h,k),=A0 defined - in any category - by =
+the following self-dual property (after being commutative, of =
+course):</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">Whenever</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">(f',g', h,k)</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">and</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">(f,g, h',k')</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">commute, also the external square</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">(f',g', h',k')</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">commutes</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 12px/normal Helvetica; =
+min-height: 14px; "><BR></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0=A0 =A0=A0 =A0=A0 =A0=A0 =
+=A0=A0 =A0=A0 =A0=A0 =A0=A0 =A0=A0 =A0</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">B </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0=
+=A0 =A0=A0 =A0=A0 =A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">f'</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 =A0=A0 =A0=A0 =A0=A0 =A0</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">f</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 =A0 =A0=A0 =
+=A0</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">h =
+</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0 =A0=A0 =A0=A0=
+ =A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">h'</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">A'</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0=A0 =A0=A0 =A0=A0 =A0=A0 =
+=A0</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">A =
+</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0 =A0=A0 =A0=A0=
+ =A0=A0 =A0=A0 =A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">D </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 =A0=A0 =A0=A0 =A0=A0 =A0</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">D'</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0=
+=A0 =A0=A0 =A0=A0 =A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">g'</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0=A0 =A0=A0 =A0=A0 =A0</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">g</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0=A0 =A0=A0 =
+=A0</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">k =
+</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0=A0 =A0=A0 =
+=A0=A0 =A0</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">k'</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">=A0 =A0=A0 =A0=A0 =A0=A0 =
+=A0=A0 =A0=A0 =A0=A0 =A0=A0 =A0=A0 =A0</FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">C</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">(add slanting arrows=A0 f': A' --&gt; B, =A0f: A =
+--&gt; B,=A0 =A0etc).</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><BR =
+class=3D"khtml-block-placeholder"></FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">- Again: bicartesian =
+square</FONT><FONT class=3D"Apple-style-span" face=3D"Helvetica">=A0 =
+</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=3D&gt;</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">pullback</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=3D&gt;</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">semicartesian,</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">=A0 </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">and dually.</FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><BR =
+class=3D"khtml-block-placeholder"></FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">- If pb's=A0 and/or=A0 =
+po's exist, one can give a lot of equivalent properties; =
+eg:</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">--=A0 (f,g)=A0 and=A0the pb of=A0 (h,k) have the same =
+po (or the same commutative squares out of them).</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><BR class=3D"khtml-block-placeholder"></FONT></DIV><DIV=
+ style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" face=3D"Helvetica">- =
+In an abelian category, semicartesian amounts to the previous =
+notion.</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">- In Set, it characterises again those squares which =
+are bicommutative in Rel.</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 12px/normal Helvetica; min-height: 14px; "><BR></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">REFERENCE</FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">:</FONT></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">M. Grandis, </FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><I>Sym=E9trisations de =
+categories et factorisations quaternaires</I></FONT><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">, Atti Accad. Naz. Lincei =
+Mem. Cl. Sci. Fis. Mat. Natur. </FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"><B>14</B></FONT><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica"> sez. 1 (1977), 133-207.</FONT></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 12px/normal Helvetica; =
+min-height: 14px; "><BR></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">3. A 2-dimensional version =
+of this property (actually a STRUCTURE on 2-cells), was introduced by =
+Guitart, and called "H-exact", if I remember well (H for =
+Hilton)</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+12px/normal Helvetica; min-height: 14px; "><BR></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">REFERENCES:</FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica"><BR =
+class=3D"khtml-block-placeholder"></FONT></DIV><DIV style=3D"margin-top: =
+0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; "><FONT =
+class=3D"Apple-style-span" face=3D"Helvetica">- R. Guitart, Carr=E9s =
+exacts et carr=E9s deductifs, Diagrammes 6 (1981), =
+G1-G17.</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">- R. Guitart and L. Van den Bril, Calcul des =
+satellites et pr=E9sentations des bimodules =E0 l'aide des carr=E9s =
+exacts, Cahiers Topologie G=E9om. Diff=E9rentielle 24 (1983), no. 3, =
+299-330.</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; "><FONT class=3D"Apple-style-span" =
+face=3D"Helvetica">(and some other papers by the same =
+authors).</FONT></DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+12px/normal Helvetica; min-height: 14px; "><BR></DIV><DIV =
+style=3D"margin-top: 0px; margin-right: 0px; margin-bottom: 0px; =
+margin-left: 0px; font: normal normal normal 12px/normal Helvetica; =
+min-height: 14px; ">Best regards</DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 12px/normal Helvetica; min-height: 14px; "><BR =
+class=3D"khtml-block-placeholder"></DIV><DIV style=3D"margin-top: 0px; =
+margin-right: 0px; margin-bottom: 0px; margin-left: 0px; font: normal =
+normal normal 12px/normal Helvetica; min-height: 14px; ">Marco =
+Grandis</DIV><DIV style=3D"margin-top: 0px; margin-right: 0px; =
+margin-bottom: 0px; margin-left: 0px; font: normal normal normal =
+12px/normal Helvetica; min-height: 14px; "><BR =
+class=3D"khtml-block-placeholder"></DIV></BODY></HTML>=
+
+--Apple-Mail-5-605476314--
+
+
+
+From rrosebru@mta.ca Fri Dec  2 14:02:54 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 02 Dec 2005 14:02:54 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EiFBf-0006Ey-Ve
+	for categories-list@mta.ca; Fri, 02 Dec 2005 13:59:12 -0400
+Message-ID: <003801c5f732$57cff880$06fb4c51@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To: "Categories list" <categories@mta.ca>
+References: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca>
+Subject: categories: Re: Name for a concept
+Date: Fri, 2 Dec 2005 11:19:22 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 6
+
+This kind of condition occurs in topology as a fibrant square - but where
+all the maps are fibrations as is the map A ---> B x_D C . This can be
+generalised to cubes. See a paper by R. Steiner on
+
+`Resolutions of spaces by n-cubes of fibrations',  J. London Math. Soc.(2),
+34, 169-176, 1986
+
+used to build a complete (strict) algebraic model of homotopy n-types which
+allows some computations.
+
+This raises the spectre in algebra of
+
+Resolutions of A by free  crossed n-cubes of A.
+
+to give a more `nonabelian' homological algebra. Of course crossed n-cubes
+of A should be equivalent to n-fold groupoids in A. This would presumably
+bring in higher versions of nonabelian tensor products in A; a bibliography
+of such a tensor, mainly for n=2, has 90 items.
+
+This probably does not help to answer Mike's question on the name!
+
+Ronnie
+www.bangor.ac.uk/r.brown/nonabtens.html
+
+
+
+----- Original Message -----
+From: "Michael Barr" <mbarr@math.mcgill.ca>
+To: "Categories list" <categories@mta.ca>
+Sent: Thursday, December 01, 2005 1:48 AM
+Subject: categories: Name for a concept
+
+
+> Is there a standard name for a square
+> A ----> B
+> |       |
+> |       |
+> |       |
+> v       v
+> C ----> D
+> in which the canonical map A ---> B x_D C is epic?  I had always called it
+> a weak pullback, but Peter Freyd claims that that phrase is reserved for
+> the case that it satisfies the existence, but not necessarily the
+> uniqueness of the definition of pullback.  In fact, he claims it means
+> that Hom(E,-) converts it to the kind of square I am talking about.
+> What is interesting is that in an abelian category, it satisfies
+> this condition iff it satisfies the dual condition iff the evident
+> sequence A ---> B x C ---> D is exact.  Putting a zero at the left end
+> characterizes a genuine pullback and at the other end a pushout.
+>
+> Michael
+>
+>
+>
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec  5 16:07:06 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 05 Dec 2005 16:07:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EjMSo-0000Ue-S9
+	for categories-list@mta.ca; Mon, 05 Dec 2005 15:57:30 -0400
+Date: Mon, 5 Dec 2005 14:10:00 +0000 (GMT)
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+To: Categories mailing list <categories@mta.ca>
+Subject: categories: Chalkfinger
+Message-ID: <Pine.LNX.4.44.0512051355450.22545-100000@siskin.dpmms.cam.ac.uk>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 7
+
+Peter Freyd's recent posting of the `Categories Anonymous' skit
+prompted me to dig out and transcribe an even older skit which
+originated with the Chicago Junior Math Club, and which stars
+Saunders Mac Lane as the evil villain Chalkfinger. I don't know its
+exact date: it should be datable by the reference at the end to
+Chalkfinger's visit to Japan, but although Saunders refers to that
+visit in his autobiography (p. 297) he doesn't quote the date. The
+typescript copy which I have (and which I acquired from Murray
+Adelman in 1984) was apparently revised for performance
+at the Bowdoin Summer Advanced Seminar in Homological Algebra (again,
+I don't know the year). If anyone knows more details of the history
+of the skit, I'd be interested to hear them.
+
+Peter Johnstone
+
+++++++++++++++++++++
+
+DRAMATIS PERSONAE:
+
+K.:            Kaplansky
+Chestcough:    Ann Chertkoff (secretary)
+Bailout:       Baily
+Bond:          Herstein
+Chalkfinger:   Mac Lane
+Manishevitz:   Liulevicius
+Filterfish:    Amitsur
+Oddprime:      Applied Math (?)
+Pedro:         Calderon
+Ziggy:         Zygmund
+Browser        (Felix) Browder
+
+
+SCENE 1
+
+Opening: [Goldfinger theme heard. Jacobson writes on blackboard]
+
+Jacobson: Good evening, welcome to the Junior Math Club's
+          presentation of Chalkfinger.
+
+[He is dragged off. A scream is heard offstage,]
+
+[Desk of K, chair for Miss Chestcough]
+
+K:        Miss Chestcough!
+
+Chest:    [cough] Yes?
+
+[Bailout runs in.]
+
+Bailout:  Who coughed?
+
+Chest:    Me, Professor Bailout.
+
+Bailout:  Well, don't let it happen again. [exit]
+
+Chest:    {aside] That was a young right idealist.
+
+K:        Miss Chestcough, see if you can get Agent 00\pi on the red
+          telephone.
+
+Chest:    At 8.30 in the morning? Well, I'll try K., but 00\pi is
+          always so irrational at this hour. [exits to call]
+
+K:        Hmmm. How does she know that?
+
+[Chestcough returns, after a minute Bond enters]
+
+Bond:     [flirting] Hello, pigeon. Why do I chase around the world
+          when there are girls like you at home?
+
+Chest:    [smiles] You'd better go in to see K., but I'll be here
+          when you get back.
+
+[Bond crosses to K.'s desk, sits down. K. stares at him for *long*
+moment.]
+
+K:        Could you give me an epsilon of your time?
+
+Bond:     Make it epsilon over 2. What's up, Boss?
+
+K:        Well, it's Chalkfinger. He's been at our chalk supply
+          again. Why, that man is responsible for most of the world's
+          illicit traffic in colored chalk.
+
+Bond:     But what does he use it for?
+
+K:        You won't believe this. He proves theorems about
+          categories!
+
+Bond:     [laughs] That's ridiculous! [does double-take] What's a
+          category?
+
+K:        Why, don't you know? You're not up with the times, Bond.
+          As I understand it, categories arose from Pavlov's
+          experiments with dogs. Pavlov trained dogs to expect meat at
+          the sound of a bell. Then he took the meat away, but the
+          dogs continued to salivate when the bell was rung. Now
+          Chalkfinger has taken the meat out of mathematics, but
+          mathematicians still salivate at the sound of the bell.
+
+Bond:     Insidious!
+
+K:        You bet. Now I want you to infiltrate their organization.
+
+Bond:     But suppose I don't make the grade?
+
+K:        You'll do it, Yitz. I'm putting my money on Israel Bond.
+
+Bond:     Thank you, sir. I'll try to protect your interest. Say,
+          whatever happened to that last case you were working on?
+
+K:        I couldn't get anywhere on it, so I turned it over to a
+          graduate student. Now, for your equipment: [they stand up]
+          We've prepared for you a white Jaguar complete with left and
+          right annihilators, deformation retract and portable pool
+          table. Here's the key to the locked stall in the third floor
+          john. We'll communicate as usual by leaving messages under
+          the seat. Use all the paper you want, and good luck!
+
+[Exeunt -- Alperin and Thompson make first crossing of stage]
+
+
+SCENE 2
+
+[Students playing chess]
+
+Student 1: Going to the colloquium today? All the big operators from
+           Spectrum are going to be there: Big Ziggy, Big Pedro and
+           even Big Browser, their [gestures] elliptic operator.
+
+Student 2: Nah, I'm too busy playing chess.
+
+Student 1: Oh, Chalkfinger won't like that.
+
+[long pause -- Chalkfinger enters with Oddprime]
+
+Chalk:     By thunder, you know what can happen to students like
+           you? Oddprime! Hat!
+
+[Oddprime throws frisbee, something breaks]
+
+Chalk:     Hah, Oddprime can divide anything. [Bond enters] Welcome
+           to our organization, Mr Bond. We're looking forward to
+           your course in Hopf algebras. Let me show you around.
+           Manishevitz, here, is working on a computer program to
+           determine the first odd square.
+
+Manish:    My name is Manishevitz, but you can call me Manishevitz
+           if you want.
+
+Bond:      That looks like difficult work.
+
+Manish:    Any child in first grade could do it. It's all a matter
+           of gamesmanship.
+
+Chalk:     Good man to talk to, Bond, if you can get through the
+           queue at his door. Over there is Filterfish, still trying
+           to disprove that the Arabs invented algebra.
+
+Filter:    [whispers] What is the password?
+
+Bond:      Ultra-filter.
+
+Filter:    You must be the man from K.
+
+Bond:      Your image is my kernel, Daddy-O.
+
+Filter:    Exactly.
+
+Chalk:     Mr Bond, do you subscribe to the Dieudonne doctrine or
+           the category of vector spaces?
+
+Bond:      Category, shmategory, I don't go for that crap.
+
+Chalk:     Categories crap? The man's a spy! Seize him! [all seize
+           him] What do we do with spies?
+
+Manish:    We could boil him to death in Eckhart 312.
+
+Filter:    Or make him teach Math 101.
+
+Chalk:     I know, we'll put him trough the pull-back.
+
+Oddprime:  Heh, heh, heh, through the push-out and the pull-back!
+
+All:       Through the pull-back! [They drag Bond out]
+
+Bond:      You may torture my body, but you'll never annihilate my
+           ideals.
+
+[Screams heard offstage, they bring back his unconscious body and
+throw it on the floor. Oddprime stands guard. Pussy enters]
+
+Pussy:     Izzy dead?
+
+Oddprime:  No, Izzy just tired.
+
+[Bond rises slowly, shakes himself]
+
+Bond:      Well, hello.
+
+Pussy:     Hi! My name is Pussy Galois.
+
+Bond:      [half-fainting again] Wow, are you ever projective!
+
+Pussy:     Not only that, I'm free.
+
+Bond:      [stands up] I'd like to prove that.
+
+Pussy:     It's been tried before but [sitting down] maybe your
+           techniques are better.
+
+Bond:      [joining her] Say, Pussy, how does Chalkfinger smuggle
+           his chalk out of the building?
+
+Pussy:     Oh, haven't you ever figured that out? He hides it in his
+           baggy pants.
+
+Bond:      Ingenious!
+
+[Alperin and Thompson make second crossing]
+
+Bond:      What in the world?
+
+Pussy:     Oh, they always do that. Come with me: [takes his hand]
+           we'll eavesdrop on Chalkfinger's meeting with Spectrum.
+
+
+SCENE 3
+
+[Ziggy, Pedro and Browser on stage]
+
+Pedro:     What'cha got there, Big Ziggy?
+
+Ziggy:     It's Chalkfinger's latest masterpiece, which I've
+           acquired at considerable expense
+
+Pedro:     Let's see: [reads] 'In the beginning Chalkfinger created
+           the category and the functor, but the category was void
+           and the functor was forgetful. And Chalkfinger said "Let
+           there be maps", and there were maps. And Chalkfinger
+           called the maps morphisms, and the members of the category
+           he called objects, and Chalkfinger thought that was pretty
+           good, and so did his friend Sammy. And there was evening
+           and there was morning in 1945.'
+
+Ziggy:     This beats analysis.
+
+Browser:   Sounds like a very theological subject. [takes the book]
+           'And on the sixth day, Chalkfinger created mathematicians
+           and set them to work in the categories' -- oh, surely
+           that's going too far!
+
+Pedro:     Shh! Here he comes.
+
+[Chalkfinger and Lin Ton enter]
+
+Chalk:     Gentlemen, meet my Chinese assistant Lin Ton. I never
+           understand you analysts, so I've brought along Lin Ton to
+           interpret for me.
+
+Lin Ton:   Have you brought the shipment?
+
+Pedro:     Yes, it's all here. [They deposit chalk in a box] We had
+           some trouble, though. Bailout keeps destroying the red
+           chalk.
+
+Ziggy:     I notice you keep the colored chalk in a separate box.
+
+Lin Ton:   Separate but equal.
+
+Browser:   Maybe we can integrate it while we're here.
+
+Chalk:     You know, I had the strangest dream last night. I dreamed
+           that I was surrounded by seven lean sheaves and seven
+           flabby sheaves, and the seven lean sheaves came and
+           devoured the seven flabby sheaves.
+
+Pedro:     A singular dream!
+
+Ziggy:     I think you need a different kind of analyst.
+
+Browser:   Yeah, now look, Chalkfinger. We've all made our
+           deliveries of colored chalk. You promised us that your
+           categories would yield us theorems. This is Ext-Tor-tion!
+
+Chalk:     Gentlemen, I wouldn't dream of going back on a promise.
+           If you want, I'll give you a theorem apiece; but first I
+           will demonstrate my new secret weapon.
+
+Pedro:     Is he on the level?
+
+Ziggy:     I don't know. It's hard to take the measure of the man.
+
+Chalk:     You are about to witness the power of the Grothendieck
+           ring! [Pulls out ring]
+
+Lin Ton:   That ring is nil, try this one.
+
+Browser:   With that ring, I thee dread.
+
+Chalk:     You'd better ... [pushing him away] because none of you
+           are getting out of here alive! [He runs offstage]
+
+[Hissing noises heard from left and right]
+
+Lin Ton:   Oh no, it's the thermostats!
+
+Ziggy:     Poison gas.
+
+Browser:   [on left] Ahh, I'm being annihilated on the left!
+
+Pedro:     [on right] And I on the right!
+
+[All collapse; Chalkfinger appears in front]
+
+Chalk:     [aside] Hah, a swift death for a Swift Professor.
+
+Bond:      I saw the whole thing, Chalkfinger. Your heinous crimes
+           will not go unpunished.
+
+[Chalkfinger trips Bond, they fall, the ring slides away]
+
+Pussy:     The Grothendieck ring -- it's going to explode!
+
+[Explosion noise, chairs overturned, everybody collapses]
+
+[Alperin and Thompson make final crossing, oblivious to everything]
+
+[Bond gets up, brushes himself off]
+
+Bond:      Good thing I'm immune to radical rings!  And so the
+           tragic tale fo Chalkfinger comes to its untimely end. The
+           explosion of the Grothendieck ring was powerful enough to
+           cast Chalkfinger all the way to Japan. Because of this
+           affair, K. had to hide out in England for a year, and I've
+           earned an extended vacation on the Mediterranean.
+
+
+FINIS
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec  5 16:07:06 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 05 Dec 2005 16:07:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EjMUc-0000cY-8W
+	for categories-list@mta.ca; Mon, 05 Dec 2005 15:59:22 -0400
+Subject: categories: Re: Name for a concept
+From:	Eduardo Dubuc <edubuc@dm.uba.ar>
+To:	categories@mta.ca (Categories list)
+Date:	Mon, 5 Dec 2005 13:16:13 -0300 (ART)
+In-Reply-To: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca> from "Michael Barr" at Nov 30, 2005 08:48:52 PM
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <S436711AbVLEQQN/20051205161613Z+1439@mate.dm.uba.ar>
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on mx1.mta.ca
+X-Spam-Level:
+X-Spam-Status: No, score=0.0 required=5.0 tests=none autolearn=disabled
+	version=3.0.4
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 8
+
+>
+> Is there a standard name for a square
+> A ----> B
+> |       |
+> |       |
+> |       |
+> v       v
+> C ----> D
+> in which the canonical map A ---> B x_D C is epic?
+
+
+These are called "quasi-pullbacks" by Joyal, and they form a class of
+"open maps" in the category of squares. The pullbacks form the
+corresponding class of etal maps. These two classes are essential for the
+development of the theory (etal class and open class in the sense of
+Joyal). There are published articles by Joyal and Moerdijk on the
+subject.
+
+
+
+
+
+From rrosebru@mta.ca Tue Dec  6 19:53:52 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 06 Dec 2005 19:53:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EjmV4-0000KP-UI
+	for categories-list@mta.ca; Tue, 06 Dec 2005 19:45:34 -0400
+Mime-Version: 1.0 (Apple Message framework v733)
+Content-Type: text/plain; charset=ISO-8859-1; delsp=yes; format=flowed
+Message-Id: <41D4B4D6-BBF1-4371-9339-046EA2ADACF2@dima.unige.it>
+Content-Transfer-Encoding: quoted-printable
+From: Marco Grandis <grandis@dima.unige.it>
+Subject: categories: Re: Name for a concept
+Date: Mon, 5 Dec 2005 15:44:26 +0100
+To: categories@mta.ca
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 9
+
+In reply to M. Barr's posting.
+
+Richard Wood tells me that my posting on this subject, dated 2 =20
+December 2005, was unreadable with 'elm' and nearly so with 'pine', =20
+due to rich-text marks.
+I am reposting it in plain text (hopefully), with a few small =20
+additions - and apologies
+
+MG
+_____
+
+I think that such squares should be called "exact" or =20
+"semicartesian" (where cartesian square =3D pb, cocartesian =3D po).
+They should be viewed as the natural self-dual generalisation of =20
+pullback and pushout (and their name should be "self-dual", in some =20
+way). They appear whenever one studies categories of relations.
+
+1. In an abelian category (where they are chracterised by the exact =20
+sequence you have mentioned), I would prefer "exact", or "Hilton-exact".
+Hilton considered such squares (for abelian categories), and proved =20
+that an equivalent condition is that this square (of proper =20
+morphisms) is "bicommutative" in the category of relations (i.e. it =20
+commutes and stays commutative when you reverse two "parallel" arrows =20=
+
+- as relations).
+
+Plainly:   bicartesian square  =3D>  pullback  =3D>  exact;  and dually.
+
+REFERENCE:
+P. Hilton, Correspondences and exact squares, in: Proc. Conf. on =20
+Categorical Algebra, La Jolla 1965, Springer, pp. 254-271.
+
+2. Studying more general categories of relations, I considered =20
+"semicartesian squares"  (f,g, h,k),  defined - in any category - as =20
+the commutative squares satisfying the following self-dual property:
+
+  Whenever  (f',g', h,k)  and  (f,g, h',k')  commute, also the outer =20
+square  (f',g', h',k')  commutes
+
+                          B
+         f'           f        h          h'
+   A'          A                 D          D'
+         g'          g        k          k'
+                         C
+
+(add slanting arrows  f': A' --> B,  g': A --> C,  f: A --> B,  etc).
+
+- Again: bicartesian square  =3D>  pullback  =3D>  semicartesian,  and =20=
+
+dually.
+
+- If pb's  and/or  po's exist, there are a lot of equivalent =20
+properties; eg:
+
+--  (f,g)  and the pb of  (h,k)  have the same po (or the same =20
+commutative squares out of them).
+
+- In an abelian category, semicartesian amounts to the previous notion.
+- In Set, it characterises again those squares which are =20
+bicommutative in Rel.
+
+REFERENCE:
+M. Grandis, Sym=E9trisations de categories et factorisations =20
+quaternaires, Atti Accad. Naz. Lincei Mem. Cl. Sci. Fis. Mat. Natur. =20
+14 sez. 1 (1977), 133-207.
+
+3. A 2-dimensional version of this property (actually a STRUCTURE on =20
+2-cells), was introduced by Guitart, and called "H-exact", if I =20
+remember well (H for Hilton)
+
+REFERENCES:
+- R. Guitart, Carr=E9s exacts et carr=E9s deductifs, Diagrammes 6 =
+(1981), =20
+G1-G17.
+- R. Guitart and L. Van den Bril, Calcul des satellites et =20
+pr=E9sentations des bimodules =E0 l'aide des carr=E9s exacts, Cahiers =20=
+
+Topologie G=E9om. Diff=E9rentielle 24 (1983), no. 3, 299-330.
+(and some other papers by the same authors).
+
+Best regards
+
+Marco Grandis
+
+
+
+
+
+
+
+From rrosebru@mta.ca Tue Dec  6 19:53:52 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 06 Dec 2005 19:53:52 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EjmZR-0000Zp-9K
+	for categories-list@mta.ca; Tue, 06 Dec 2005 19:50:05 -0400
+Date: Tue, 6 Dec 2005 11:12:54 +0100
+Mime-Version: 1.0 (Apple Message framework v543)
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Subject: categories: Re: Name for a concept
+From: jean benabou <jean.benabou@wanadoo.fr>
+To: Categories <categories@mta.ca>
+Content-Transfer-Encoding: quoted-printable
+Message-Id: <DD9C6EB0-6640-11DA-A9B5-000393B90F2C@wanadoo.fr>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 10
+
+Continuation of namings
+
+(1) -  Is there a standard name for the squares where the canonical map=20=
+
+is monic , i.e. the pair of maps A --->B  and  A --->C is jointly =20
+monic. I propose semi-pullback
+
+(2)- In most cases the canonical map being epic is not what one really=20=
+
+wants. Of course Joyal assumes the category where the maps live to be a=20=
+
+pre-topos, then it's enough, otherwise one cannot "compose" such=20
+squares.  Do we have to rename the squares where the canonical map is a=20=
+
+universal epi, or those where its a universal regular epi?
+
+In view of (1), one would like to say that a square is a pullback iff=20
+it is both a quasi and semi pullback
+
+
+D=E9but du message r=E9exp=E9di=E9 :
+
+> De: Eduardo Dubuc <edubuc@dm.uba.ar>
+> Date: Lun 5 d=E9c 2005  17:16:13 Europe/Paris
+> =C0: categories@mta.ca (Categories list)
+> Objet: categories: Re: Name for a concept
+>
+>>
+>> Is there a standard name for a square
+>> A ----> B
+>> |       |
+>> |       |
+>> |       |
+>> v       v
+>> C ----> D
+>> in which the canonical map A ---> B x_D C is epic?
+>
+>
+> These are called "quasi-pullbacks" by Joyal, and they form a class of
+> "open maps" in the category of squares. The pullbacks form the
+> corresponding class of etal maps. These two classes are essential for=20=
+
+> the
+> development of the theory (etal class and open class in the sense of
+> Joyal). There are published articles by Joyal and Moerdijk on the
+> subject.
+>
+>
+>
+>
+>
+
+
+
+
+
+From rrosebru@mta.ca Tue Dec  6 19:53:53 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 06 Dec 2005 19:53:53 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EjmXL-0000T1-4s
+	for categories-list@mta.ca; Tue, 06 Dec 2005 19:47:55 -0400
+Message-ID: <001501c5f9ed$f8ef39c0$6401a8c0@MANESCO>
+From: "Ernie Manes" <manes@mtdata.com>
+To: 	"Categories mailing list" <categories@mta.ca>
+References: <Pine.LNX.4.44.0512051355450.22545-100000@siskin.dpmms.cam.ac.uk>
+Subject: categories: Re: Chalkfinger
+Date: Mon, 5 Dec 2005 17:48:12 -0500
+MIME-Version: 1.0
+Content-Type: text/plain;format=flowed;charset="iso-8859-1";reply-type=original
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 11
+
+I remember the skit well, because it named my thesis advisor-to-be after
+his somewhat oriental looks as Lin Ton.  That puts the skit as the year
+Fred spent many months at Chicago which was the year before the Bowdoin
+conference on homological algebra which was held in the summer of 1965 as
+an NSF summer Advanced Seminar.  It was at the seminar that I first met
+Fred and I did not meet him the previous year precisely because he was at
+Chicago.
+
+    Ernie Manes
+
+
+----- Original Message -----
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+To: "Categories mailing list" <categories@mta.ca>
+Sent: Monday, December 05, 2005 9:10 AM
+Subject: categories: Chalkfinger
+
+
+> Peter Freyd's recent posting of the `Categories Anonymous' skit
+> prompted me to dig out and transcribe an even older skit which
+> originated with the Chicago Junior Math Club, and which stars
+> Saunders Mac Lane as the evil villain Chalkfinger. I don't know its
+> exact date: it should be datable by the reference at the end to
+> Chalkfinger's visit to Japan, but although Saunders refers to that
+> visit in his autobiography (p. 297) he doesn't quote the date. The
+> typescript copy which I have (and which I acquired from Murray
+> Adelman in 1984) was apparently revised for performance
+> at the Bowdoin Summer Advanced Seminar in Homological Algebra (again,
+> I don't know the year). If anyone knows more details of the history
+> of the skit, I'd be interested to hear them.
+>
+> Peter Johnstone
+>
+
+
+From rrosebru@mta.ca Tue Dec  6 19:54:38 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 06 Dec 2005 19:54:38 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ejmd7-0000oS-1S
+	for categories-list@mta.ca; Tue, 06 Dec 2005 19:53:53 -0400
+X-ME-UUID: 20051206181221664.A214D1C00142@mwinf3002.me.freeserve.com
+Message-ID: <006b01c5fa8f$e2502e20$61f94c51@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To: <categories@mta.ca>
+Subject: categories: Terminology question wrt fibrations of categories.
+Date: Tue, 6 Dec 2005 18:06:40 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 12
+
+I am writing about matters to do with computation of colimits of a category
+X in terms of colimits of a category B when there is a bifibration P: X -->
+B.
+
+Terminology already in use is
+
+P is cartesian
+P is cocartesian
+a lifting of u in B to \phi in X may be cartesian, cocartesian
+
+on the other hand Paul Taylor, following Peter Johnstone, I understand, uses
+\phi is prone, supine, instead of cartesian, cocartesian
+
+For the cofibration (?opfibration?) Ob: Groupoids  --> Sets, Philip Higgins
+(1971) and I (1968) have previously used  `universal' for cocartesian. In
+this situation, I would be happier with say 0-final instead of universal.
+But `supine' does not ring a bell with me, and carries  a  pejorative tone.
+
+Maybe for the general situation P: X --> B we could use
+P-initial, P-final morphism in X
+for cartesian, cocartesian  morphism
+which would at least carry some intuition as to the meaning. Comments?
+
+I need to make a decision soon for the revision of my old topology book. Not
+much will be changed, and I might leave the old terminology and refer to
+more modern uses. However for the book on Nonabelian algebraic topology, I
+really do need to use modern terminologym, whatever that is, so it would be
+best to be consistent.
+
+I have been looking at Thomas Streicher's notes on fibrations, and at Paul
+Taylor's Practical Foundations.
+
+For my interest, see slides of a recent seminar at Oxford
+
+www.bangor.ac.uk/r.brown/oxford2811105.pdf
+
+called `Induced constructions and their computation'.
+
+Ronnie Brown
+www.bangor.ac.uk/r.brown
+
+
+
+
+
+
+From rrosebru@mta.ca Tue Dec  6 19:56:09 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 06 Dec 2005 19:56:09 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ejmef-0000vI-4p
+	for categories-list@mta.ca; Tue, 06 Dec 2005 19:55:29 -0400
+To:  categories@mta.ca
+Subject: categories: CMCS 2006
+Date: Tue, 06 Dec 2005 18:47:22 +0000
+From: Neil X Ghani <nxg@Cs.Nott.AC.UK>
+Message-ID:  <200512061847.aa20447@pat.Cs.Nott.AC.UK>
+MIME-Version: 1.0
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 13
+
+
+This is the 2nd Call for Papers for CMCS 2006
+
+
+
+
+                           CMCS 2006
+
+8th International Workshop on Coalgebraic Methods in Computer Science
+          http://conferences.inf.ed.ac.uk/cmcs06/cmcs06.html
+
+                         Vienna, Austria
+                        March 25-27, 2006
+
+The workshop will be held in conjunction with the 9th European Joint
+Conferences on Theory and Practice of Software ETAPS 2006
+                        March 25 - April 2, 2006
+
+Aims and Scope
+
+During the last few years, it has become increasingly clear that a
+great variety of state-based dynamical systems, like transition
+systems, automata, process calculi and class-based systems, can be
+captured uniformly as coalgebras.  Coalgebra is developing into a
+field of its own interest presenting a deep mathematical foundation, a
+growing field of applications and interactions with various other
+fields such as reactive and interactive system theory, object oriented
+and concurrent programming, formal system specification, modal logic,
+dynamical systems, control systems, category theory, algebra,
+analysis, etc. The aim of the workshop is to bring together
+researchers with a common interest in the theory of coalgebras and its
+applications.
+
+The topics of the workshop include, but are not limited to:
+
+      the theory of coalgebras (including set theoretic and
+      categorical approaches);
+      coalgebras as computational and semantical models (for
+      programming languages, dynamical systems, etc.);
+      coalgebras in (functional, object-oriented, concurrent) programming;
+      coalgebras and data types;
+      (coinductive) definition and proof principles for coalgebras
+      (with bisimulations or invariants);
+      coalgebras and algebras;
+      coalgebraic specification and verification;
+      coalgebras and (modal) logic;
+      coalgebra and control theory (notably of discrete event and
+hybrid systems).
+
+The workshop will provide an opportunity to present recent and ongoing
+work, to meet colleagues, and to discuss new ideas and future trends.
+
+Previous workshops of the same series have been organized in Lisbon,
+Amsterdam, Berlin, Genova, Grenoble, Warsaw and Barcelona. The
+proceedings appeared as Electronic Notes in Theoretical Computer
+Science (ENTCS) Volumes 11,19, 33, 41, 65.1, 82.1 and 106. You can get
+an idea of the types of papers presented at the meeting by looking at
+the tables of contents of the ENTCS volumes from those workshops ENTCS
+
+
+Location
+
+CMCS 2006 will be held in Vienna on March 25-27, 2006. It will be a
+satellite workshop of ETAPS 2006, the European Joint Conferences on
+Theory and Practice of Software.
+
+
+Programme Committee
+
+John Power (chair,Edinburgh), Luis Barbosa (Minho), Neil Ghani
+(Nottingham), H. Peter Gumm (Marburg), Marina Lenisa (Udine), Stefan
+Milius (Braunschweig), Larry Moss (Bloomington), Jan Rutten
+(Amsterdam), Hendrik Tews (Dresden), Tarmo Uustalu (Tallinn), Hiroshi
+Watanabe (Osaka).
+
+
+Keynote Speaker:       Peter O'Hearn (Queen Mary, University of London)
+
+Invited Speakers:      Corina Cirstea (University of Southampton)
+                       Alexander Kurz (University of Leicester)
+
+
+
+Submissions
+
+Two sorts of submissions will be possible this year:
+
+Papers to be evaluated by the programme committee for inclusion in the
+ENTCS proceedings:
+
+These papers must be written using ENTCS style files and be of length
+no greater than 20 pages. They must contain original contributions, be
+clearly written, and include appropriate reference to and comparison
+with related work. If a submission describes software, software tools,
+or their use, it should include all source code that is needed to
+reproduce the results but is not publicly available. If the additional
+material exceeds 5 MB, URL's of publicly available sites should be
+provided in the paper.
+
+Short contributions:
+
+These will not be published but will be compiled into a technical
+report of the University of Nottingham. They should be no more than
+two pages and may describe work in progress, summarise work submitted
+to a conference or workshop elsewhere, or in some other way appeal to
+the CMCS audience.
+
+Both sorts of submission should be submitted in postscript or pdf form
+as attachments to an email to cmcs06@cs.nott.ac.uk.  The email should
+include the title, corresponding author, and, for the first kind of
+submission, a text-only one-page abstract.
+
+After the workshop, we expect to produce a journal proceedings of
+extended versions of selected papers to appear in Theoretical Computer
+Science.
+
+
+
+Important Dates
+
+ Deadline for submission of regular papers:     January 8, 2006.
+ Notification of acceptance of regular papers:  February 6, 2006.
+ Final version for the preliminary proceedings: February 13, 2006.
+
+
+ Deadline for submission of short contributions:      February 28, 2006.
+ Notification of acceptance of short contributions:   March 6, 2006.
+
+
+For more information, please write to cmcs06@cs.nott.ac.uk.
+
+_______________________________________________
+cmcs06 mailing list
+cmcs06@cs.nott.ac.uk
+http://www.cs.nott.ac.uk/mailman/listinfo/cmcs06
+
+
+
+This message has been checked for viruses but the contents of an attachment
+may still contain software viruses, which could damage your computer system:
+you are advised to perform your own checks. Email communications with the
+University of Nottingham may be monitored as permitted by UK legislation.
+
+
+
+
+From rrosebru@mta.ca Wed Dec  7 20:20:05 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 07 Dec 2005 20:20:05 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ek9Nn-0001M8-RL
+	for categories-list@mta.ca; Wed, 07 Dec 2005 20:11:35 -0400
+Mime-Version: 1.0 (Apple Message framework v619.2)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Message-Id: <0383b8d97a4e9a4c0fbb6e5d92bf1d5b@pps.jussieu.fr>
+Content-Transfer-Encoding: 7bit
+From: Curien Pierre-Louis <Pierre-Louis.Curien@pps.jussieu.fr>
+Subject: categories: goedel prize 2006 (deadline for nominations  Jan. 31, 2006)
+Date: Wed, 7 Dec 2005 09:40:37 +0100
+To: categories@mta.ca
+X-Mailer: Apple Mail (2.619.2)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-1.7.2 (shiva.jussieu.fr [134.157.0.166]); Wed, 07 Dec 2005 09:35:57 +0100 (CET)
+X-Antivirus: scanned by sophie at shiva.jussieu.fr
+X-Miltered: at shiva.jussieu.fr with ID 43969EEA.000 by Joe's j-chkmail (http://j-chkmail.ensmp.fr)!
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 14
+
+I'd like to draw your attention on the call for nominations for
+
+GOEDEL Prize 2006
+
+(deadline January 31, 2006)
+
+All information on the nomination process  can be found on the
+following url:
+
+http://www.eatcs.org/
+
+or
+
+http://sigact.acm.org/prizes/godel/
+
+ From both sites you can retrieve the pdf file of the 2006 call which
+has all details about how to submit a nomination.
+
+
+Best regards,
+
+On behalf of the Award Committee
+
+Pierre-Louis Curien (chair for 2006)
+
+
+
+
+From rrosebru@mta.ca Wed Dec  7 20:20:05 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 07 Dec 2005 20:20:05 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ek9OV-0001Oj-KK
+	for categories-list@mta.ca; Wed, 07 Dec 2005 20:12:19 -0400
+Date: Wed, 7 Dec 2005 09:05:10 +0000 (GMT)
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+To: categories@mta.ca
+Subject: categories: Re: Terminology question wrt fibrations of categories.
+In-Reply-To: <006b01c5fa8f$e2502e20$61f94c51@brown1>
+Message-ID: <Pine.LNX.4.44.0512070902410.24779-100000@siskin.dpmms.cam.ac.uk>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 15
+
+On Tue, 6 Dec 2005, Ronald  Brown wrote:
+
+> on the other hand Paul Taylor, following Peter Johnstone, I understand, uses
+> \phi is prone, supine, instead of cartesian, cocartesian
+>
+`Prone' and `supine' were invented by Paul Taylor; I copied them from him,
+not the other way round. I'm sorry Ronnie doesn't like them; they seem to
+me a very neat way of finding two words that both mean `lying
+horizontally' but have an opposite handedness about them.
+
+Peter Johnstone
+
+
+
+
+
+From rrosebru@mta.ca Wed Dec  7 20:20:05 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 07 Dec 2005 20:20:05 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ek9RD-0001Xa-3a
+	for categories-list@mta.ca; Wed, 07 Dec 2005 20:15:07 -0400
+Date: Wed, 7 Dec 2005 08:36:12 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200512071336.jB7DaCmS021736@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Re: Name for a concept
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 16
+
+Jean asks:
+
+  Is there a standard name for the squares where the canonical map
+  is monic , i.e. the pair of maps A --->B  and  A --->C is jointly
+  monic.
+
+In the early 60s at the annual AMS meeting held at Denver, Eilenberg,
+Mac Lane and I sat down to "settle" the terminology. ("Denver One" I
+called it.) There were just two things we totally agreed on: "weak" is
+the operator on definitions that removes uniqueness conditions and
+"partial" the operator that removes existence conditions. So the
+answer to Jean's question would be "partial pullback".
+
+As for the other side -- when the pair of maps are jointly epic --
+I've seen them called "near-pullbacks" in the theoretical computer
+science community. Functors between regular categories that preserve
+near-pullbacks are precisely those that preserve "weak tabulations"
+of (n-ary) relations.
+
+
+
+From rrosebru@mta.ca Wed Dec  7 20:20:06 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 07 Dec 2005 20:20:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ek9PD-0001RE-Ph
+	for categories-list@mta.ca; Wed, 07 Dec 2005 20:13:03 -0400
+In-Reply-To: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca>
+References: <Pine.LNX.4.44.0511302040500.6673-100000@triples.math.mcgill.ca>
+Mime-Version: 1.0 (Apple Message framework v733)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Message-Id: <22A03972-1301-46FF-BABC-B1CB6C59710E@dima.unige.it>
+Content-Transfer-Encoding: 7bit
+From: Marco Grandis <grandis@dima.unige.it>
+Subject: categories: Re: Name for a concept
+Date: Wed, 7 Dec 2005 12:04:59 +0100
+To: categories@mta.ca
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 17
+
+I do not know the original problem of M. Barr, may be he is really
+interested in getting an epimorphism onto the pullback.
+
+However - I apologise for insisting - I think that the important
+notion for such squares should be a natural self-dual generalisation
+of pullbacks and pushouts, based on commutative squares and nothing
+else - so that, in particular, it cannot depend on the variation of
+monos or epis one is interested in.
+
+The one I have proposed in that old paper (under the name of
+"semicartesian square") is of this kind:
+
+- the square  (f,g; h,k)  commutes, and for every span  (f',g')
+which commutes with the cospan  (h,k)  and every cospan  (h',k')
+which commutes with the span  (f,g),  the new span and cospan form a
+commutative square.
+
+All this comes from the obvious Galois connection between sets of
+spans and cospans (in an arbitrary category), derived from the
+commutativity relation.
+
+Explicitly, let us start with two fixed objects A, B.  Let  S  be the
+set of spans from A to B:
+
+x = (f: C -> A,  g: C -> B)    (for arbitrary C)
+
+and  C  the set of cospans
+
+y = (h: A -> D, k: B  -> D)   (for arbitrary D).
+
+Take their set of parts,  PS  and  PC,  ordered by inclusion, and the
+following (contravariant) Galois connection between them (X in PS, Y
+in PC):
+
+R(X) = set of cospans which commute with all the spans in X,
+L(Y) = set of spans which commute with all the cospans in Y.
+
+Now, a square  (x, y)  (span/cospan) commutes iff  {x} is contained
+in  L({y})  iff  {y} is contained in R({x}).
+A square  (x, y)  is "semicartesian" (or "exact") iff it satisfies
+the stronger, equivalent conditions:
+
+1.  R{x} = RL({y})
+2.  L{y} = LR({x}).
+
+Marco Grandis
+
+-------------------------
+On 1 Dec 2005, at 02:48, Michael Barr wrote:
+
+> Is there a standard name for a square
+> A ----> B
+> |       |
+> |       |
+> |       |
+> v       v
+> C ----> D
+> in which the canonical map A ---> B x_D C is epic?  I had always
+> called it
+> a weak pullback, but Peter Freyd claims that that phrase is
+> reserved for
+> the case that it satisfies the existence, but not necessarily the
+> uniqueness of the definition of pullback.  In fact, he claims it means
+> that Hom(E,-) converts it to the kind of square I am talking about.
+> What is interesting is that in an abelian category, it satisfies
+> this condition iff it satisfies the dual condition iff the evident
+> sequence A ---> B x C ---> D is exact.  Putting a zero at the left end
+> characterizes a genuine pullback and at the other end a pushout.
+>
+> Michael
+>
+>
+>
+>
+>
+
+
+
+
+From rrosebru@mta.ca Wed Dec  7 20:20:06 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 07 Dec 2005 20:20:06 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ek9Mi-0001El-0W
+	for categories-list@mta.ca; Wed, 07 Dec 2005 20:10:28 -0400
+Date: Tue, 6 Dec 2005 16:58:26 -0800
+From: Toby Bartels <toby+categories@math.ucr.edu>
+To: Categories <categories@mta.ca>
+Subject: categories: Re: Name for a concept
+Message-ID: <20051207005826.GA13898@math-rs-n04.ucr.edu>
+References: <DD9C6EB0-6640-11DA-A9B5-000393B90F2C@wanadoo.fr>
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+In-Reply-To: <DD9C6EB0-6640-11DA-A9B5-000393B90F2C@wanadoo.fr>
+User-Agent: Mutt/1.4i
+X-Junkmail-Status: score=0/65, host=sentoku.ucr.edu
+X-Spam-Checker-Version: SpamAssassin 3.0.4 (2005-06-05) on mx1.mta.ca
+X-Spam-Level:
+X-Spam-Status: No, score=0.0 required=5.0 tests=none autolearn=disabled
+	version=3.0.4
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 18
+
+jean benabou wrote in part:
+
+>(1) -  Is there a standard name for the squares where the canonical map
+>is monic , i.e. the pair of maps A --->B  and  A --->C is jointly
+>monic. I propose semi-pullback
+
+How about "sub-pullback"?
+since it is a sub-object of the pullback (if there is one).
+
+
+-- Toby
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiJ7-0004JL-Ii
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:29:05 -0400
+Message-ID: <43981850.2080902@math.unice.fr>
+Date: Thu, 08 Dec 2005 12:26:08 +0100
+From: "Clemens.BERGER" <cberger@math.unice.fr>
+Reply-To: cberger@math.unice.fr
+Organization: Laboratoire J.-A. =?ISO-8859-1?Q?Dieudonn=E9?=
+User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.6) Gecko/20040116
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: name for a concept
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 19
+
+In my previous message, one should read:
+
+a commutative square with two parallel fibrations in a right proper
+model category is a homotopy pullback if and only if the square is exact
+with respect to the class of weak equivalences. These special squares
+compose because weak equivalences are stable under base change along
+fibrations (this is the definition of right proper).
+
+Clemens Berger.
+
+
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiHG-0003zv-Ha
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:27:10 -0400
+Date: Wed, 07 Dec 2005 23:44:02 -0500
+From: Fred E.J.Linton <fejlinton@usa.net>
+To: "Categories mailing list" <categories@mta.ca>
+Subject: categories: Re: Chalkfinger
+X-Mailer: USANET web-mailer (CM.0402.7.36)
+Mime-Version: 1.0
+Message-ID: <927JLHeSc4080S07.1134017042@uwdvg007.cms.usa.net>
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 20
+
+Here's my take on this skit, as filtered through
+40 years of ever-more-porous memory:
+
+Lin Ton was Chalkfinger's "Chinese assistant."
+I think the Chinese connection came about less because
+I looked Chinese, as because (a) I was a somewhat
+mysterious figure, doing no teaching (being a 1-year
+research associate on one of Saunders' grants), and
+(b) my name lent itself to Sinification.
+
+Others spoofed here, aside from me (Lin Ton) and
+Saunders (Chalkfinger) were Yitz Herstein (Israel Bond)
+and Irving Kaplansky (character forgotten) -- and, I
+think, Zygmund and Liulevicius.
+
+One memorable line was Israel Bond's: furious at a magical
+ring, supposedly conveying some mysterious powers, for
+its uselessness to his purpose at the time, Bond dashes
+it to the ground, huffing "Bah! This ring is nil!"
+
+The skit took place towards the end of the academic year
+'64-'65, all of which I spent at Chicago. Others there at
+that time, surely present at -- perhaps even intimately
+involved in -- the performance include Lance Small,
+Kathy Edwards, Dan Fife, and my officemate Marty Moskowitz,
+all of whom may well recall further details.
+
+I once had a copy of the full script, but have no idea just
+where to look to unearth it. Should it turn up, of course,
+I'll try to make it available.
+
+-- Fred [E.J. Linton]
+
+
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiFk-0003tK-1C
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:25:36 -0400
+X-ME-UUID: 20051207223442445.6CD8A2400088@mwinf3102.me.freeserve.com
+Message-ID: <004f01c5fb7d$ba746080$6764893e@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To:  <categories@mta.ca>
+References: <Pine.LNX.4.44.0512070902410.24779-100000@siskin.dpmms.cam.ac.uk>
+Subject: categories: Re: Terminology question wrt fibrations of categories.
+Date: Wed, 7 Dec 2005 18:21:52 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 6.00.2800.1106
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1106
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 21
+
+Thanks for these comments.
+
+I was mainly investigating the acceptance of these terms by the categorical
+community, to decide if I should change for the new edition of my old book.
+
+I agree with Paul's comments to me personally that it is a good idea to
+avoid overworked terms (like `universal').
+
+The issue is that for a morphism f: G \to H of groupoids, the notion of
+quotient introduced by Philip Higgins, namely if f is full and Ob(f) is
+surjective, is fine. The other important notion is that f comes from an
+identification of objects, which in Paul's terminology would be supine
+(w.r.t. the opfibration Ob: Gpds \to Sets). More vivid would be H is a
+0-identification of G, that is the groupoid H is then obtained from G by an
+identification of objects. It would tie in with other situations to say that
+H is induced from G by Ob(f).
+
+There is a good case for not introducing new words.
+
+Ronnie
+
+----- Original Message -----
+From: "Prof. Peter Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+To: "Ronald Brown" <ronnie@ll319dg.fsnet.co.uk>
+Cc: <categories@mta.ca>
+Sent: Wednesday, December 07, 2005 9:05 AM
+Subject: Re: categories: Terminology question wrt fibrations of categories.
+
+
+> On Tue, 6 Dec 2005, Ronald  Brown wrote:
+>
+> > on the other hand Paul Taylor, following Peter Johnstone, I understand,
+uses
+> > \phi is prone, supine, instead of cartesian, cocartesian
+> >
+> `Prone' and `supine' were invented by Paul Taylor; I copied them from him,
+> not the other way round. I'm sorry Ronnie doesn't like them; they seem to
+> me a very neat way of finding two words that both mean `lying
+> horizontally' but have an opposite handedness about them.
+>
+> Peter Johnstone
+>
+>
+>
+
+
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiJd-0004Po-8B
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:29:37 -0400
+Date: Thu, 8 Dec 2005 09:36:18 -0500 (EST)
+From: Robert Seely <rags@math.mcgill.ca>
+To: Categories List <categories@mta.ca>
+Subject: categories: Organization vs foundations: Kreisel, Lawvere and category theory
+Message-ID: <Pine.LNX.4.44.0512080925350.1232-100000@prism.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 22
+
+On 29 Nov 2005, the Montreal Category seminar hosted a talk by
+Jean-Pierre Marquis on the interaction between Kreisel's and Lawvere's views
+on category theory as a foundations for mathematics.  It has been suggested
+that many on this list who were not able to attend the talk might find its
+contents of interest, and so would be interested to know that the slides for
+the talk are available on the triples seminar webpage, at
+
+    http://www.math.mcgill.ca/rags/seminar/
+
+(scroll down to the talk itself - the direct link is
+
+  http://www.math.mcgill.ca/rags/seminar/Marquis_KreiselLawvere.pdf
+
+if you prefer).  The slides are fairly complete, and give a good idea of the
+content of the talk itself.
+
+Here is an abstract of the talk:
+
+Jean-Pierre Marquis
+Organization vs foundations: Kreisel, Lawvere and category theory
+
+Abstract: it is well-known that in the nineteen-sixties, Bill Lawvere
+proposed that category theory could serve as a foundations for
+mathematics and logic.  Only one logician reacted officially: Georg
+Kreisel.  In a series of notes, appendices and reviews, Kreisel
+developed arguments against categorical foundations. In this talk, I
+will take a close look at his arguments, examine whether they are still
+convincing and propose that Kreisel's position is still underlying most
+of the arguments against categorical foundations heard to this day.
+
+
+
+-- 
+<rags@math.mcgill.ca>
+<www.math.mcgill.ca/rags>
+
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiIY-0004DF-4B
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:28:30 -0400
+Message-ID: <439813A7.9000909@math.unice.fr>
+Date: Thu, 08 Dec 2005 12:06:15 +0100
+From: "Clemens.BERGER" <cberger@math.unice.fr>
+Reply-To: cberger@math.unice.fr
+Organization: Laboratoire J.-A. =?ISO-8859-1?Q?Dieudonn=E9?=
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: name for a concept
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 23
+
+Let me suggest still another terminology:
+
+For this, call a class S of maps in an arbitrary category *(co)stable*
+iff S is closed under composition and under (co)base change. Then call a
+commutative square *S-exact * (resp. *S-coexact*) iff the induced map to
+the pullback (resp. from the pushout) belongs to S. It is then easy to
+check that S-(co)exact squares compose for any (co)stable class S (which
+I believe is the minimal condition to impose on any reasonable
+distinguished class of commutative squares).
+
+In an abelian category, the class M of monos (resp. the class E of epis)
+is not only stable (resp. costable) but also costable (resp. stable).
+With this terminology, Hilton's exact squares can either be identified
+with the E-exact squares or with the M-coexact squares, which explains
+why it is a self-dual concept, cf. the first message of Michael Barr and
+the last message of Marco Grandis.
+
+In homotopy theory, there is the important concept of a *homotopy
+pullback* which is the ``homotopy invariant'' substitute for an
+ordinary pullback. For those who are familiar with Quillen model
+categories, it is very useful in practice that if a Quillen model
+category is *right proper* (i.e. its class of fibrations is stable),
+then a commutative square with two parallel fibrations is a homotopy
+pullback *if and only if* the square is exact with respect to the class
+of trivial fibrations (those fibrations which are also weak
+equivalences). There is of course a dual statement for homotopy pushouts
+in a left proper Quillen model category.
+
+With best regards,
+
+Clemens Berger.
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiGT-0003xE-6s
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:26:21 -0400
+X-ME-UUID: 20051207224010706.AC6D45800089@mwinf3112.me.freeserve.com
+Message-ID: <006801c5fb7e$7dabf680$6764893e@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To: <categories@mta.ca>
+Subject: categories: misprint of url
+Date: Wed, 7 Dec 2005 22:35:13 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 24
+
+Claudio Hermida pointed out I had made an error, and the url should be
+
+http://www.bangor.ac.uk/~mas010/oxford281105.pdf
+
+Ronnie
+
+
+
+
+From rrosebru@mta.ca Fri Dec  9 09:34:45 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Fri, 09 Dec 2005 09:34:45 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EkiEh-0003og-At
+	for categories-list@mta.ca; Fri, 09 Dec 2005 09:24:31 -0400
+Subject: categories: Re: Name for a concept
+From:	Eduardo Dubuc <edubuc@dm.uba.ar>
+To:	categories@mta.ca (Categories)
+Date:	Wed, 7 Dec 2005 16:15:43 -0300 (ART)
+In-Reply-To: <DD9C6EB0-6640-11DA-A9B5-000393B90F2C@wanadoo.fr> from "jean benabou" at Dec 06, 2005 11:12:54 AM
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <S441272AbVLGTPo/20051207191544Z+2054@mate.dm.uba.ar>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 25
+
+Jean Benabou wrote:
+
+>
+> (2)- In most cases the canonical map being epic is not what one really
+> wants. Of course Joyal assumes the category where the maps live to be a
+> pre-topos, then it's enough, otherwise one cannot "compose" such
+> squares.  Do we have to rename the squares where the canonical map is a
+> universal epi, or those where its a universal regular epi?
+>
+
+
+very good point
+
+i suggest, since we can live with epics, strict(=regular) epis,
+universal such, etc etc,
+
+we should have:
+
+quasi-pullback
+
+strict(=regular) quasi pullback
+
+universal quasi-pullback
+
+of course, the useful concept being: "strict universal quasi-pullback"
+
+e.d.
+
+
+
+
+
+From rrosebru@mta.ca Wed Dec 14 16:12:51 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 14 Dec 2005 16:12:51 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Emcpt-0005lq-VF
+	for categories-list@mta.ca; Wed, 14 Dec 2005 16:02:49 -0400
+Date: Tue, 13 Dec 2005 13:33:23 +0100 (CET)
+From: claudio pisani <pisclau@yahoo.it>
+Subject: categories: Preprint: Bipolar spaces
+To: categories@mta.ca
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1Emcpt-0005lq-VF@mailserv.mta.ca>
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 26
+
+Dear categorists,
+some of you might be interested in the following
+paper, now available on arXiv
+(http://arxiv.org/abs/math.CT/0512194)
+"Bipolar spaces"
+Claudio Pisani
+
+Abstract:
+Some basic features of the simultaneous inclusion of
+discrete fibrations and discrete opfibrations on a
+category A in the category of categories over A are
+studied; in particular, the reflections and the
+coreflections of the latter in the former are
+considered, along with a negation-complement operator
+which, applied to a discrete fibration, gives a
+functor with values in discrete opfibrations (and vice
+versa) and which turns out to be classical, in that
+the strong contraposition law holds.
+
+Such an analysis is developed in an appropriate
+conceptual frame that encompasses similar "bipolar"
+situations and in which a key role is played by
+"cofigures", that is components of products;
+e.g. the classicity of the negation-complement operator
+corresponds to the fact that discrete opfibrations (or
+in general "closed parts") are properly analyzed by
+cofigures with shape in discrete fibrations ("open
+parts"), that is, that the latter are "coadequate" for
+the former, and vice versa.
+
+In this context, a very natural definition of "atom"
+is proposed and it is shown that, in the above
+situation, the category of atoms reflections is the
+Cauchy completion of A.
+-----------
+
+Of course, any comment or criticism is welcome. In
+particular, I would like to know which facts, apart
+from the formalism, sound familiar (e.g., concerning
+the coreflection in discrete fibrations).
+
+Best regards
+
+Claudio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___________________________________
+Yahoo! Mail: gratis 1GB per i messaggi e allegati da 10MB
+http://mail.yahoo.it
+
+
+
+From rrosebru@mta.ca Sun Dec 18 12:30:27 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 18 Dec 2005 12:30:27 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Eo1Ee-00044r-Hh
+	for categories-list@mta.ca; Sun, 18 Dec 2005 12:18:08 -0400
+Message-Id: <200512170119.jBH1JlN17902@math-cl-n03.ucr.edu>
+Subject: categories: categories, Frobenius algebras, and string theory
+To: categories@mta.ca (categories)
+Date: Fri, 16 Dec 2005 17:19:47 -0800 (PST)
+From: "John Baez" <baez@math.ucr.edu>
+X-Mailer: ELM [version 2.5 PL6]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 27
+
+Dear Categorists -
+
+Here's the portion of "week224" that deals with category theory.
+
+Happy Holidays to everyone!
+
+Best,
+jb
+
+.......................................................................
+
+Also available as http://math.ucr.edu/home/baez/week224.html
+
+December 14, 2005
+This Week's Finds in Mathematical Physics - Week 224
+John Baez
+
+This week I want to mention a couple of papers lying on the interface of
+physics, topology, and higher-dimensional algebra.  But first, some
+astronomy pictures... and a bit about the mathematical physicist Hamilton!
+
+[...]
+
+Now for some mathematical physics that touches on higher-dimensional
+algebra.  If you still don't get why topological field theory and
+n-categories are so cool, read this thesis:
+
+13) Bruce H. Bartlett, Categorical aspects of topological quantum field
+theories, M.Sc. Thesis, Utrecht University, 2005.  Available as
+math.QA/0512103.
+
+It's a great explanation of the big picture!  I can't wait to see what
+Bartlett does for his Ph.D..
+
+If you're a bit deeper into this stuff, you'll enjoy this:
+
+14) Aaron D. Lauda and Hendryk Pfeiffer, Open-closed strings: two-dimensional
+extended TQFTs and Frobenius algebras, available as math.AT/0510664.
+
+This paper gives a purely algebraic description of the topology of
+open and closed strings, making precise and proving some famous guesses
+due to Moore and Segal, which can be seen here:
+
+15) Greg Moore, Lectures on branes, K-theory and RR charges,
+Clay Math Institute Lecture Notes (2002), available at
+http://www.physics.rutgers.edu/~gmoore/clay1/clay1.html
+
+Lauda and Pfeiffer's paper makes heavy use of Frobenius algebras, developing
+more deeply some of the themes I mentioned in "week174".  In a related
+piece of work, Lauda has figured out how to *categorify* the concept of a
+Frobenius algebra, and has applied this to 3d topology:
+
+16) Aaron Lauda, Frobenius algebras and ambidextrous adjunctions,
+available as math.CT/0502550.
+
+Aaron Lauda, Frobenius algebras and planar open string topological field
+theories, available as math.QA/0508349.
+
+The basic idea behind all this work is a "periodic table" of categorified
+Frobenius algebras, which are related to topology in different dimensions.
+For example, in "week174" I explained how Frobenius algebras formalize the
+idea of paint drips on a sheet of rubber.  As you move your gaze down a
+sheet of rubber covered with drips of paint, you'll notice that drips can
+merge:
+
+
+                      \ \         / /
+                       \ \       / /
+                        \ \     / /
+                         \ \   / /
+                          \ \_/ /
+                           \   /
+                            | |
+                            | |
+                            | |
+                            | |
+                            | |
+
+but also split:
+
+                            | |
+                            | |
+                            | |
+                            | |
+                            | |
+                           / _ \
+                          / / \ \
+                         / /   \ \
+                        / /     \ \
+                       / /       \ \
+                      / /         \ \
+
+In addition, drips can start:
+
+                            _
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+
+but also end:
+
+
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           | |
+                           |_|
+
+In a Frobenius algebra, these four pictures correspond to four operations
+called "multiplication" (merging), "comultiplication" (splitting), the
+"unit" (starting) and the "counit" (ending).  Moreover, these operations
+satisfy precisely the relations that you can prove by warping the piece
+of rubber and seeing how the pictures change.  For example, there's the
+associative law:
+
+            \ \    / /    / /      \ \    \ \    / /
+             \ \  / /    / /        \ \    \ \  / /
+              \ \/ /    / /          \ \    \ \/ /
+               \  /    / /            \ \    \  /
+                \ \   / /              \ \   / /
+                 \ \_/ /                \ \_/ /
+                  \   /                  \   /
+                   | |                    | |
+                   | |                    | |
+                   | |          =         | |
+                   | |                    | |
+                   | |                    | |
+                   | |                    | |
+                   | |                    | |
+                   | |                    | |
+
+The idea here is that if you draw the picture on the left-hand side on
+a sheet of rubber, you can warp the rubber until it looks like the
+right-hand side!  There's also the "coassociative law", which is
+just an upside-down version of the above picture.   But the most
+interesting laws are the "I = N" equation:
+
+               \ \     / /                | |        | |
+                \ \   / /                 | |        | |
+                 \ \_/ /                  | |        | |
+                  \   /                   |  \       | |
+                   | |                    |   \      | |
+                   | |                    | |\ \     | |
+                   | |                    | | \ \    | |
+                   | |                    | |  \ \   | |
+                   | |          =         | |   \ \  | |
+                   | |                    | |    \ \ | |
+                   | |                    | |     \ \| |
+                   | |                    | |      \   |
+                  / _ \                   | |       \  |
+                 / / \ \                  | |        | |
+                / /   \ \                 | |        | |
+               / /     \ \                | |        | |
+
+and its mirror-image version.
+
+So, the concept of Frobenius algebra captures the topology of regions
+in the plane!  Aaron Lauda makes this fact into a precise theorem in
+his paper on planar open string field theories, and then generalizes it
+to consider "categorified" Frobenius algebras where the above equations
+are replaced by isomorphisms, which describe the *process* of warping the
+sheet of rubber until the left side looks like the right.  You should look
+at his paper even if you don't understand the math, because it's full of
+cool pictures.
+
+Lauda and Pfeiffer's paper goes still further, by considering these paint
+stripes as "open strings", not living in the plane anymore, but zipping
+around in some spacetime of high dimension, where they might as well be
+abstract 2-manifolds with corners.  Following Moore and Segal, they also
+bring "closed strings" into the game, which form a Frobenius algebra of
+their own, where the multiplication looks like an upside-down pair of pants:
+
+    O       O
+    \ \   / /
+     \ \ / /
+      \   /
+       | |
+       | |
+       | |
+       | |
+       | |
+        O
+
+These topological closed strings are the subject of Joachim Kock's
+book mentioned in "week202"; they correspond to *commutative*
+Frobenius algebras.  The fun new stuff comes from letting the open
+strings and closed strings interact.
+
+You can read more about Lauda and Pfeiffer's work at Urs Schreiber's
+blog:
+
+17) Urs Schreiber, Lauda and Pfeiffer on open-closed topological strings,
+http://golem.ph.utexas.edu/string/archives/000680.html
+
+In fact, I recommend Schreiber's blog quite generally to anyone interested
+in higher categories and/or the math of string theory!
+
+-----------------------------------------------------------------------
+
+Addendum:
+
+Here's what Urs Schreiber had to say about Frobenius algebras, modular
+tensor categories and string theory:
+
+  John Baez wrote:
+
+  [...] Following Moore and Segal, they also bring "closed strings"
+  into the game, which form a Frobenius algebra of their own, where the
+  multiplication looks like an upside-down pair
+  of pants: [...]
+
+ I would like to make the following general comment on the meaning
+ of Frobenius algebras in 2-dimensional quantum field theory.
+
+ Interestingly, _non_-commutative Frobenius algebras
+ play a role even for closed strings, and even if the
+ worldhseet theory is not purely topological.
+
+ The archetypical example for this is the class of
+ 2D TFTs invented by Fukuma, Hosono and Kawai.  There
+ one has a non-commutative Frobenius algebra which
+ describes not the splitting/joining of the entire
+ worldsheet, but rather the splitting/joining of
+ edges in any one of its dual triangulations.  It is the
+ _center_ of (the Morita class of) the noncommutative
+ Frobenius algebra decorating dual triangulations
+ which is the commutative Frobenius algebra describing
+ the closed 2D TFT.
+
+ One might wonder if it has any value to remember
+ a non-commutative Frobenius algebra when only its center
+ matters (in the closed case).  The point is that the
+ details of the non-commutative Frobenius algebra acting
+ in the "interior" of the world sheet affects the nature
+ of "bulk field insertions" that one can consider
+ and hence affects the (available notions of) n-point
+ correlators of the theory, for n > 0.
+
+ This aspect, however, is pronounced only when one
+ switches from 2D topological field theories to
+ conformal ones.
+
+ The fascinating thing is that even 2D "conformal" field
+ theories are governed by Frobenius algebras.  The
+ difference lies in different categorical internalization.
+ The Frobenius algebras relevant for CFT don't live
+ in Vect, but in some other (modular) tensor category,
+ usually that of representations of some chiral vertex
+ operator algebra.  It is that ambient tensor category
+ which "knows" if the Frobenius algebra describes a
+ topological or a conformal field theory (in 2D) -
+ and which one.
+
+ Of course what I am referring to here is the work
+ by Fjelstad, Froehlich, Fuchs, Runkel, Schweigert and
+ others.  I can recommend their most recent review which
+ will appear in the Streetfest proceedings.  It is
+ available as math.CT/0512076.
+
+ The main result is, roughly, that given any modular tensor
+ category with certain properties, and given any
+ (symmetric and special) Frobenius algebra object internal
+ to that category, one can construct functions on surfaces
+ that satisfy all the properties that one would demand of
+ an n-point function of a 2D (conformal) field theory.
+
+ If we define a field theory to be something not given by
+ an ill-defined path integral, but something given by
+ its set of correlation functions, then this amounts to
+ constructing a (conformal) field theory.
+
+ This result is achieved by first defining a somewhat
+ involved procedure for generating certain classes of
+ functions on marked surfaces, and then proving that
+ the functions generated by this procedure do indeed
+ satisfy all the required properties.
+
+ In broad terms, the prescription is to choose a dual
+ triangulation of the marked worldsheet whose correlation
+ function is to be computed, to decorate its edges with
+ symmetric special Frobenius algebra objects in some
+ modular tensor category, to decorate its vertices by
+ product and coproduct morphisms of this algebra, to
+ embed the whole thing in a certain 3-manifold in a
+ certain way and for every boundary or bulk field
+ insertion to add one or two threads labeled by
+ simple objects of the tensor category which connect
+ edges of the chosen triangulation with the boundary of
+ that 3-manifold.  Then you are to hit the resulting
+ extended 3-manifold with the functor of a 3D TFT and
+ hence obtain a vector in a certain vector space.  This
+ vector, finally, is claimed to encode the correlation
+ function.
+
+ This procedure is deeply rooted in well-known relations
+ between 3-(!)-dimensional topological field theory,
+ modular functors and modular tensor categories and
+ may seem very natural to people who have thought long
+ enough about it.  It is already indicated in Witten's
+ paper on the Jone's polynomial, that 3D TFT (Chern-Simons
+ field theory in that case) computes conformal blocks
+ of conformal field theories on the boundaries of these
+ 3-manifolds.  To others, like me in the beginning,
+ it may seem like a miracle that an involved and
+ superficially ad hoc procedure like this has anything
+ to do with correlations functions of conformal
+ field theory in the end.
+
+ In trying to understand the deeper "meaning" of it all
+ I played around with the idea that this prescription
+ is really, to some extent at least, the "dual"
+ incarnation of the application of a certain 2-functor
+ to the worldsheet.  Namely a good part of the rough
+ structure appearing here automatically drops out
+ when a 2-functor applied to some 2-category of
+ surfaces is "locally trivialized".  I claim that
+ any local trivialization of a 2-functor on
+ some sort of 2-category of surface elements gives
+ rise to a dual triangulation of the surface whose
+ edges are labeled by (possibly a generalization of)
+ a Frobenius algebra object and whose vertices are
+ labeled by (possibly a generalization of) product
+ and coproduct operations.  There is more data
+ in a locally trivialized 2-functor, and it seems to
+ correctly reproduce the main structure of bulk field
+ insertions as appearing above.  But of course there
+ is a limit to what a _2_-functor can know about a
+ structure that is inherently 3-dimensional.
+
+ I have begun outlining some of the details that I
+ have in mind here:
+
+ http://golem.ph.utexas.edu/string/archives/000697.html
+
+ This has grown out of a description of gerbes with
+ connective structure in terms of transport 2-functors.
+ Note that in what is called a _bundle_ gerbe we also
+ do have a certain product operation playing a
+ decisive role.  Bundle gerbes can be understood as
+ "pre-trivializations" of 2-functors to Vect:
+
+ http://golem.ph.utexas.edu/string/archives/000686.html
+
+ and the product appearing is one of the Frobenius
+ products mentioned above.  For a bundle gerbe the
+ coproduct is simply the inverse of the product,
+ since this happens to be an isomorphism. The claim
+ is that 2-functors to Vect more generally give rise
+ to non-trivial Frobenius algebras when locally
+ trivialized.
+
+ This is work in progress and will need to be refined.
+ I thought I'd mention it here as a comment to John's
+ general statements about how Frobenius algebras know
+ about 2-dimensional physics.  I am grateful for all
+ kinds of comments.
+
+ Here's the paper Urs refers to:
+
+21) Ingo Runkel, Jens Fjelstad, Jurgen Fuchs and Christoph Schweigert,
+Topological and conformal field theory as Frobenius algebras, available
+as math.CT/0512076.
+
+-----------------------------------------------------------------------
+
+Quote of the Week:
+
+                    Here's how you do it:
+                    First you're obtuse,
+                    Then you intuit,
+                    Then you deduce!
+                                      - Garrison Keillor
+
+-----------------------------------------------------------------------
+Previous issues of "This Week's Finds" and other expository
+articles on mathematics and physics, as well as some of my research
+papers, can be obtained at
+
+http://math.ucr.edu/home/baez/
+
+For a table of contents of all the issues of This Week's Finds, try
+
+http://math.ucr.edu/home/baez/twfcontents.html
+
+A simple jumping-off point to the old issues is available at
+
+http://math.ucr.edu/home/baez/twfshort.html
+
+If you just want the latest issue, go to
+
+http://math.ucr.edu/home/baez/this.week.html
+
+
+
+
+
+From rrosebru@mta.ca Sun Dec 18 12:30:27 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 18 Dec 2005 12:30:27 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Eo1FU-00046e-Sl
+	for categories-list@mta.ca; Sun, 18 Dec 2005 12:19:00 -0400
+Date: Sun, 18 Dec 2005 00:09:31 +0100
+From: Joachim Kock <kock@mat.uab.es>
+Subject: categories: Re: nerves
+In-reply-to: <43906B25.9020802@math.upenn.edu>
+X-Sender: kock@127.0.0.1:55110
+To: categories@mta.ca
+Message-id: <a06100504bfca498c85b0@[10.0.2.2]>
+MIME-version: 1.0
+Content-type: text/plain; charset=iso-8859-1
+Content-transfer-encoding: QUOTED-PRINTABLE
+References: <43906B25.9020802@math.upenn.edu>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 28
+
+> Does anyone know a reference for
+> grothedieck's characterization for when a simplicial set
+> is the nerve of a groupoid
+> or if anyone observed it earlier?
+>=20
+> jim
+
+The earliest written testemony I know of is in Seminaire Bourbaki, 19=
+61:
+
+  A. Grothendieck, Technique de descente et theoremes d'existence en=
+=20
+  geometrie algebrique, III: Preschemas quotients.  Seminaire Bourbak=
+i=20
+  t.12, 1960/61, exp. 212.
+
+In Section 4, categories are characterised as presheaves on Delta tha=
+t
+take amalgamated sums over [0] to fibre products.  (Delta =3D skeleto=
+n of
+finite non-empty ordinals).  Groupoids are characterised as presheave=
+s on
+Phi taking amalgamated sums to fibre products, where Phi is the symme=
+tric
+version of Delta, i.e. skeleton for non-empty phinite sets and any ma=
+ps.
+(Delta and Phi are not Grothendieck's notation.)
+
+Also the terminology 'nerve of a category' is usually attributed to
+Grothendieck, but it is actually not used in the above Expose'.
+(Of course, 'nerve of a covering' goes much further back -- I think t=
+o=20
+Cech in the 1930s.)
+
+The details probably should have been in SGA1 expose' VII (which was =
+never
+written), and appeared instead in Section 2 of J. Giraud, Methode de =
+la
+descente, Bull. Soc. Math. France Mem., 1964.  (Giraud was supposed t=
+o
+write Expose' VII, but the manuscript got longer and longer, less and=
+=20
+less geometric, and was delayed for these reasons, and finally he dec=
+ided=20
+to publish it separately instead.  (He says something like this in th=
+e=20
+introduction to the long memoir.))
+
+Cheers,
+Joachim.
+
+----------------------------------------------------------------
+Joachim Kock <kock@mat.uab.es>
+Departament de Matem=E0tiques -- Universitat Aut=F2noma de Barcelona
+Edifici C -- 08193 Bellaterra (Barcelona) -- ESPANYA
+Phone: +34 93 581 32 50        Fax: +34 93 581 27 90
+<A HREF=3D"http://mat.uab.es/~kock/">http://mat.uab.es/~kock/</A>
+----------------------------------------------------------------
+
+
+
+
+From rrosebru@mta.ca Sun Dec 18 16:15:25 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sun, 18 Dec 2005 16:15:25 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Eo4sP-0003U5-78
+	for categories-list@mta.ca; Sun, 18 Dec 2005 16:11:25 -0400
+Date: Mon, 19 Dec 2005 04:31:24 +1100 (EST)
+From: Michael Johnson <mike@ics.mq.edu.au>
+Message-Id: <200512181731.jBIHVOou005413@vesuvius.ics.mq.edu.au>
+To: categories@mta.ca
+Subject: categories: AMAST CFP (February deadline)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 29
+
+
+The 2006 edition of AMAST (Algebraic Methodology and Software Technology)
+has been scheduled to follow CT'06 so that travelling category theorists
+with an interest in computer science have time to proceed from Nova Scotia
+to Estonia.
+
+AMAST in the past has had some excelent category theoretic papers, and
+if you're interested in submitting, the call for papers is below.
+
+Best (and festive!) wishes, Mike.
+
+--------------------------
+
+
+
+                          CALL FOR PAPERS
+
+                 11th International Conference on
+      Algebraic Methodology and Software Technology, AMAST '06
+
+                       colocated with MPC '06
+
+                Kuressaare, Estonia,  5-8 July 2006
+
+
+                http://cs.ioc.ee/mpc-amast06/amast/
+
+
+
+Background
+
+The major goal of the AMAST conferences is to promote research that
+may lead to the setting of software technology on a firm, mathematical
+basis. This goal is advanced by a large international cooperation with
+contributions from both academia and industry. The virtues of a
+software technology developed on a mathematical basis have been
+envisioned as being capable of providing software that is (a) correct,
+and the correctness can be proved mathematically, (b) safe, so that it
+can be used in the implementation of critical systems, (c) portable,
+i.e., independent of computing platforms and language generations, and
+(d) evolutionary, i.e., it is self-adaptable and evolves with the
+problem domain.
+
+The previous conferences were held in Iowa City, Iowa, USA (1989, 1991
+and 2000), Twente, The Netherlands (1993), Montreal, Canada (1995),
+Munich, Germany (1996), Sydney, Australia (1997), Manaus, Amazonia,
+Brazil (1998), Reunion Island, France (2002) and Stirling, UK (2004,
+colocated with MPC' 04). The 2006 conference will be held at
+Kuressaare, Estonia, colocated with MPC '06.
+
+The conference series has become widely known for disseminating
+academic and industrial achievements within the broad AMAST areas
+of interest. Through these meetings AMAST has attracted an international
+following among researchers and practitioners interested in software
+technology, programming methodology and their algebraic and logical
+foundations.
+
+
+Important dates
+
+    * Submission of abstracts: 27 January 2006
+    * Submission of full papers: 3 February 2006
+    * Notification of authors: 17 March 2006
+    * Camera-ready version: 14 April 2006
+
+
+Topics
+
+Topics of interest include, but are not limited to, the following:
+
+SOFTWARE TECHNOLOGY:
+
+    * systems software technology
+    * application software technology
+    * concurrent and reactive systems
+    * formal methods in industrial software development
+    * formal techniques for software requirements, design
+    * evolutionary software/adaptive systems
+
+PROGRAMMING METHODOLOGY:
+
+    * logic programming, functional programming, object paradigms
+    * constraint programming and concurrency
+    * program verification and transformation
+    * programming calculi
+    * specification languages and tools
+    * formal specification and development case studies
+
+ALGEBRAIC AND LOGICAL FOUNDATIONS:
+
+    * logic, category theory, relation algebra, computational algebra
+    * algebraic foundations for languages and systems, coinduction
+    * theorem proving and logical frameworks for reasoning
+    * logics of programs
+    * algebra and coalgebra
+
+SYSTEMS AND TOOLS (for system demonstrations or ordinary papers):
+
+    * software development environments
+    * support for correct software development
+    * system support for reuse
+    * tools for prototyping
+    * component based software development tools
+    * validation and verification
+    * computer algebra systems
+    * theorem proving systems
+
+
+Submission
+
+Two kinds of submissions are solicited for this conference: technical
+papers and system demonstrations.  Papers may report academic or
+industrial progress, and papers which deal with both are especially
+well-regarded.
+
+Submission is in two stages. Abstracts (plain text) must be submitted
+by 27 January 2006. Full papers (pdf) adhering to the llncs style and
+not longer than 15 pages (6 pages for system demonstrations) must be
+submitted by 3 February 2006. The web-based submission system will
+open in early January 2006. Papers must report previously unpublished
+work and not be submitted concurrently to another conference with
+refereed proceedings. Accepted papers must be presented at the
+conference by one of the authors.
+
+All papers will be refereed by the programme committee, and will be
+judged based on their significance, technical merit, and relevance
+to the conference.
+
+
+Publication
+
+As in the past the proceedings of AMAST '06 will be published in the
+Lecture Notes in Computer Science series of Springer-Verlag.
+
+In the past the best papers from AMAST have been published in a
+special issue of the journal Theoretical Computer Science and it
+is expected that this practice will be continued for AMAST '06.
+
+
+Programme Committee Chairs
+
+Michael Johnson, Macquarie University (co-chair)
+Varmo Vene, University of Tartu (co-chair)
+
+
+AMAST steering committee
+
+Egidio Astesiano, Universita degli Studi di Genova
+Robert Berwick, MIT
+Zohar Manna, Stanford University
+Michael Mislove, Tulane University
+Anton Nijholt, University of Twente
+Maurice Nivat, Universite Paris 7
+Charles Rattray, University of Stirling
+Teodor Rus, University of Iowa
+Giuseppe Scollo, Universita degli Studi di Verona
+Michael Sintzoff, Universite Catholique de Louvain
+Jeannette Wing, Carnegie Mellon University
+Martin Wirsing, Ludwig-Maximilians-Universitaet Muenchen
+Michael Johnson, Macquarie University (chair)
+
+
+Venue
+
+Kuressaare (pop. 16000) is the main town on Saaremaa, the
+second-largest island of the Baltic Sea. Kuressaare is a charming
+seaside resort on the shores of the Gulf of Riga highly popular with
+Estonians as well as visitors to Estonia.
+
+The scientific sessions of MPC/AMAST 2006 will take place at Saaremaa
+Spa Hotel Meri, one among the several new spa hotels in the town. The
+social events will involve a number of sites, including the
+14th-century episcopal castle. Accommodation will be at Saaremaa Spa
+Hotels Meri and Ruutli.
+
+To get to Kuressaare and away, one must pass through Tallinn
+(pop. 402000), Estonia's capital city. Tallinn is famous for its
+picturesque medieval Old Town, inscribed on UNESCO's World Heritage
+List.
+
+
+Local organizers
+
+MPC/AMAST 2006 is organized by Institute of Cybernetics, a research
+institute of Tallinn Univ. of Technology.
+
+The local organizers are Tarmo Uustalu (chair), Monika Perkmann, Juhan
+Ernits, Ando Saabas, Olha Shkaravska, Kristi Uustalu.
+
+
+Contact email addresses: mike(at)ics.mq.edu.au, varmo(at)cs.ut.ee.
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec 19 09:04:08 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 19 Dec 2005 09:04:08 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EoKby-0006wL-6L
+	for categories-list@mta.ca; Mon, 19 Dec 2005 08:59:30 -0400
+Message-Id: <6.2.1.2.1.20051219124506.0397cbb0@mat.uc.pt>
+X-Mailer: QUALCOMM Windows Eudora Version 6.2.1.2
+Date: Mon, 19 Dec 2005 12:46:10 +0000
+To: categories@mta.ca
+From: Maria Manuel Clementino <mmc@mat.uc.pt>
+Subject: categories: Postdoctoral Research Positions
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"; format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 30
+
+     Postdoctoral Research Positions for 2006/2007
+
+The Centre for Mathematics of the University of Coimbra (CMUC)
+accepts applications for one-year postdoctoral positions in
+all areas of Mathematics. CMUC has been recently classified as
+a research unit of excellence by an international funding panel.
+
+In particular, the Centre welcomes applications in the following
+areas:
+
+   Computational Mathematics & Scientific Computing.
+   Integer Programming & Combinatorial Optimization.
+
+   Group and Algebras Representations. Category Theory.
+   Multilinear Algebra, Matrix Theory & Combinatorics.
+
+   Nonparametric Statistics. Nonlinear Time-Series Modelling.
+
+   Partial Differential Equations.
+   Free Boundary Problems and Nonlinear Applied Problems.
+
+   Quantum Groups. Symplectic and Poisson Geometry.
+
+The positions obey to the portuguese scholarship system
+(http://www.fct.mces.pt). The salary will be determined by the
+candidate's qualifications and experience and can vary between
+17940 and 24720 EUR a year (tax free). The positions include
+benefits and a professional travel allowance. There are no
+teaching duties associated to the positions, which should start
+by September/October 2006.
+
+Applicants must have (or soon have) a Ph. D. in Mathematics,
+preferably obtained after January 1, 2003, and a good command
+of English.
+
+Applications will be accepted until January 31, 2006.
+
+Applicants should send a curriculum vitae (publication list
+included), a statement of research interests (one page maximum),
+and at least two letters of recommendation by regular mail or
+e-mail to:
+
+     Centre for Mathematics - University of Coimbra
+     Apartado 3008, 3001-454 Coimbra, Portugal
+
+     cmuc@mat.uc.pt
+     http://www.mat.uc.pt/~cmuc
+
+
+
+
+From rrosebru@mta.ca Tue Dec 20 21:34:25 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 20 Dec 2005 21:34:25 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EoshE-0000VY-Dc
+	for categories-list@mta.ca; Tue, 20 Dec 2005 21:23:12 -0400
+X-ME-UUID: 20051210033409471.0B7B91C00082@mwinf1207.wanadoo.fr
+Date: Sat, 10 Dec 2005 04:51:20 +0100
+Subject: categories: Terminology
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Mime-Version: 1.0 (Apple Message framework v543)
+To: Categories <categories@mta.ca>
+From: jean benabou <jean.benabou@wanadoo.fr>
+Content-Transfer-Encoding: 7bit
+Message-Id: <398E964C-6930-11DA-B8BE-000393B90F2C@wanadoo.fr>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 31
+
+I have seen in this mail that the suggestion of Taylor and Johnstone to
+replace cartesian and cocartesian maps by prone and supine ones begins to
+be accepted. When I first saw that suggestion, I was so amazed that I
+thought it was a joke, and not such a good one. I still hope it is no more
+than that. But, just in case, and before it is too late, I want to say
+that I am very strongly opposed to such changes for many reasons:
+linguistic, mathematical, and ethical, which I am ready to explain in
+detail if I am asked to do so.
+
+
+
+
+From rrosebru@mta.ca Tue Dec 20 21:34:24 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 20 Dec 2005 21:34:24 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Eoskt-0000e3-96
+	for categories-list@mta.ca; Tue, 20 Dec 2005 21:26:59 -0400
+Date: Mon, 19 Dec 2005 19:29:55 -0400 (AST)
+From: Bob Rosebrugh <rrosebru@mta.ca>
+To: categories <categories@mta.ca>
+Subject: categories: list postings intermittent
+Message-ID: <Pine.GSO.4.58.0512191928340.6962@mailserv.mta.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 32
+
+The categories moderator will be out of regular email contact from
+December 21 to 30, 2005. Postings submitted to Categories during that
+period will be distributed intermittently.
+
+Best wishes,
+Bob Rosebrugh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+From rrosebru@mta.ca Wed Dec 21 10:02:48 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 21 Dec 2005 10:02:48 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Ep4UV-0000mR-47
+	for categories-list@mta.ca; Wed, 21 Dec 2005 09:58:51 -0400
+Date: Tue, 20 Dec 2005 20:16:24 -0600
+From: Peter May <may@math.uchicago.edu>
+Message-Id: <200512210216.jBL2GOcC016863@math.uchicago.edu>
+To: categories@mta.ca
+Subject: categories: Right on, Jean!
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 33
+
+
+It's funny, but exactly that question of terminology
+(prone, supine, etc) came up a few weeks ago in some
+joint work with a student here.  I made the same case
+to him, almost exactly, that Jean Benabou just made.
+And one other objection: I'd like category theory no
+longer to be regarded as nonsense in this country ---
+it still is in many quarters, as I could easily prove ---
+and such terminology is not exactly helpful to the cause!
+
+Peter May
+
+ps: Then again, I don't much like using the overused
+words cartesian and cocartesian.
+
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EquBX-0003B3-Gm
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:22:51 -0400
+To: categories@mta.ca
+Subject: categories: 2006 Programme on Logic and Algorithms - Workshops
+Message-Id: <20051222201406.238544A9C5@cs.rice.edu>
+Date: Thu, 22 Dec 2005 14:14:06 -0600 (CST)
+From: myv@cs.rice.edu (MYV)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 34
+
+During the first half of 2006, the Isaac Newton Institute for
+Mathematical Sciences at Cambridge, UK, will hold a Special Programme
+on Logic and Algorithms. The programme will include six workshops:
+
+9 - 13 January
+Finite and Algorithmic Model Theory (A Satellite Meeting at Durham)
+
+27 February - 3 March
+Logic and Databases
+
+20 - 24 March
+Mathematics of Constraint Satisfaction: Algebra, Logic and Graph Theory
+(A Satellite Meeting at Oxford)
+
+10 - 13 April
+New Directions in Proof Complexity
+
+8 - 12 May
+Constraints and Verification
+
+3 - 7 July
+Games and Verification
+
+The workshops are open to participation. See
+http://www.newton.cam.ac.uk/programmes/LAA/ws.html
+
+To join the mailing list,
+see http://www.newton.cam.ac.uk/programmes/LAA/list.html
+
+For further information, contact vardi at cs dot rice dot edu.
+
+Moshe Vardi
+
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Equ7I-00034H-0R
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:18:28 -0400
+Mime-Version: 1.0 (Apple Message framework v746.2)
+To: categories@mta.ca
+Message-Id: <783D14D6-29BF-43FF-945F-D2F789AAC5FA@mcs.vuw.ac.nz>
+Content-Type: multipart/alternative; boundary=Apple-Mail-7-123886765
+From: Rob Goldblatt <Rob.Goldblatt@mcs.vuw.ac.nz>
+Subject: categories: tenured position available
+Date: Thu, 22 Dec 2005 09:36:32 +1300
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain;charset=US-ASCII;delsp=yes;format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 35
+
+Please circulate in your department, forward to any interested
+parties, and copy to any relevant lists.
+Apologies for multiple postings.
+
+=============================================
+LECTURER IN MATHEMATICS
+SCHOOL OF MATHEMATICS, STATISTICS AND COMPUTER SCIENCE
+VICTORIA UNIVERSITY OF WELLINGTON, NEW ZEALAND
+
+Applications are invited for the tenured position of Lecturer in
+Mathematics which will become available in the School of Mathematics,
+Statistics and Computer Science in July 2006. (The position of
+Lecturer corresponds approximately to that of Assistant Professor in
+North America).
+
+Candidates with research interests in any area of mathematics are
+welcome to apply.
+
+The School's Mathematics Group is strongly committed to excellence in
+research and in teaching mathematics at all levels. It runs a wide
+range of undergraduate and graduate courses, and contains some of New
+Zealand's leading research mathematicians in several areas of pure
+and applied mathematics.
+
+More detailed information is on the School's website at http://
+www.mcs.vuw.ac.nz/info/vacancies/sa0569m .
+
+Academic enquiries about the position may be directed to Professor
+Rod Downey (Rod.Downey@mcs.vuw.ac.nz) or Professor Rob Goldblatt
+(Rob.Goldblatt@mcs.vuw.ac.nz).
+
+Applications close 17 February 2006. Application information is
+available from the HR Adviser, Faculties of Science and Architecture
+& Design, email: science-appoint@vuw.ac.nz ; telephone +64 4 463
+5100. Reference SA0569M.
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Equ8K-00036O-Gp
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:19:32 -0400
+From: SOS 2006 Organisers <sos2006@cs.stanford.edu>
+To: categories@mta.ca
+Date: Thu, 22 Dec 2005 14:57:43 +1100
+Message-Id:  <1051222035743.30542@cse.unsw.edu.au>
+Subject: categories: SOS 2006 - Call for Papers
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 36
+
+First Call for Papers:
+
+         Structural Operational Semantics 2006
+
+         A Satellite Workshop of CONCUR 2006
+
+         August 26, 2006, Bonn, Germany
+
+         http://www.cse.unsw.edu.au/~rvg/SOS2006
+
+Aim: Structural operational semantics (SOS) provides a framework
+for giving operational semantics to programming and specification
+languages. A growing number of programming languages from
+commercial and academic spheres have been given usable semantic
+descriptions by means of structural operational semantics. Because
+of its intuitive appeal and flexibility, structural operational
+semantics has found considerable application in the study of the
+semantics of concurrent processes. Moreover, it is becoming a
+viable alternative to denotational semantics in the static analysis
+of programs, and in proving compiler correctness.
+
+Recently, structural operational semantics has been successfully
+applied as a formal tool to establish results that hold for classes
+of process description languages. This has allowed for the
+generalisation of well-known results in the field of process
+algebra, and for the development of a meta-theory for process
+calculi based on the realization that many of the results in this
+field only depend upon general semantic properties of language
+constructs.
+
+This workshop aims at being a forum for researchers, students and
+practitioners interested in new developments, and directions for
+future investigation, in the field of structural operational semantics.
+One of the specific goals of the workshop is to establish synergies
+between the concurrency and programming language communities working
+on the theory and practice of SOS. Moreover, it aims at widening the
+knowledge of SOS among postgraduate students and young researchers
+worldwide.
+
+Specific topics of interest include (but are not limited to):
+
+  * programming languages
+  * process algebras
+  * higher-order formalisms
+  * rule formats for operational specifications
+  * meaning of operational specifications
+  * comparisons between denotational, axiomatic and SOS
+  * compositionality of modal logics with respect to
+    operational specifications
+  * congruence with respect to behavioural equivalences
+  * conservative extensions
+  * derivation of proof rules from operational specifications
+  * software tools that automate, or are based on, SOS.
+
+Papers reporting on applications of SOS to software engineering and
+other areas of computer science are welcome.
+
+History: The first SOS Workshop took place in August 2004 in London
+as one of the satellite workshops of CONCUR 2004, and was attended
+by over 30 participants [http://www.cs.aau.dk/~luca/SOS-WORKSHOP/].
+The second SOS Workshop occurred in July 2005 in Lisbon as a
+satellite workshop of ICALP 2005, and attracted 19 submissions
+[http://www.cs.le.ac.uk/events/SOS2005/].
+
+
+INVITED SPEAKERS:
+
+  * Robin Milner (Cambridge, UK; joint invited speaker with EXPRESS 2006)
+
+  * Bartek Klin (Sussex, UK)
+
+
+PAPER SUBMISSION:
+
+We solicit unpublished papers reporting on original research on the
+general theme of SOS. Prospective authors should register their
+intention to submit a paper by uploading a title and abstract via
+the workshop web page by:
+
+  *** Friday 26 May 2006. ***
+
+Papers should take the form of a dvi, postscript or pdf file in
+ENTCS format [http://www.entcs.org/], whose length should not exceed
+15 pages (not including an optional "Appendix for referees" containing
+proofs that will not be included in the final paper). We will also
+consider 5-page papers describing tools to be demonstrated at the
+workshop. Submissions from PC members are allowed.
+
+Proceedings: Preliminary proceedings will be available at the meeting.
+The final proceedings of the workshop will appear as a volume in the
+ENTCS series.
+
+If the quality and quantity of the submissions warrant it, the co-chairs
+plan to arrange a special issue of an archival journal devoted to full
+versions of selected papers from the workshop.
+
+
+IMPORTANT DATES:
+
+  * Submission of abstract: Friday 26 May 2006
+
+  * Submission: Sunday 4 June 2006, midnight GMT
+
+  * Notification: Wednesday 28 June 2006
+
+  * Final version: Friday 14 July 2006
+
+  * Workshop: Saturday 26 August 2006
+
+  * Final ENTCS version: Friday 29 September 2006.
+
+
+PROGRAMME COMMITTEE
+
+    Rocco De Nicola (Florence, IT)
+    Wan Fokkink (Amsterdam, NL)
+    Rob van Glabbeek (NICTA, AU, co-chair)
+    Reiko Heckel (Leicester, UK)
+    Matthew Hennessy (Sussex, UK)
+    Ugo Montanari (Pisa, IT)
+    Peter Mosses (Swansea, UK, co-chair)
+    MohammadReza Mousavi (Eindhoven, NL)
+    David Sands (Chalmers, SE)
+    Irek Ulidowski (Leicester, UK)
+    Shoji Yuen (Nagoya, JP)
+
+
+CONTACT:
+
+    sos2006@cs.stanford.edu
+
+
+WORKSHOP ORGANISERS:
+
+    Rob van Glabbeek
+    National ICT Australia
+    Locked Bag 6016
+    University of New South Wales
+    Sydney, NSW 1466
+    Australia
+
+    Peter D. Mosses
+    Department of Computer Science
+    Swansea University
+    Singleton Park
+    Swansea SA2 8PP
+    United Kingdom
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Equ65-00031s-3m
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:17:13 -0400
+Subject: categories: Re:  Terminology
+From:	Eduardo Dubuc <edubuc@dm.uba.ar>
+To:	categories@mta.ca (Categories)
+Date:	Wed, 21 Dec 2005 17:04:11 -0300 (ART)
+In-Reply-To: <398E964C-6930-11DA-B8BE-000393B90F2C@wanadoo.fr> from "jean benabou" at Dec 10, 2005 04:51:20 AM
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <S440388AbVLUUEL/20051221200411Z+3128@mate.dm.uba.ar>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 37
+
+I very strongly agree with J. Benabou's comments about "prone" and
+"supine", and P. May's opinion that "I'd like category theory no longer to
+be regarded as nonsense in this country --- it still is in many quarters,
+as I could easily prove --- and such terminology is not exactly helpful to
+the cause!"
+
+I recall P. Johnstone that he himself named his book  "Elephant Book"
+because every body has different version of what a topos is, reflecting
+only one of the many aspects of the concept.
+
+Names like "Prone" and "Supine" correspond (with luck) to only one of the
+many aspects of the concept of cartesian and its dual (in a sense)
+cocartesian.
+
+Also, there is a clear ethical aspect involved when a stablished
+terminology that has been historically introduced by particular people
+suffers a move to be eliminated and reeplaced by another.
+
+But, coming back to the question above, i am also against the habit to
+name a new mathematical concept with words that have a precise meaning in
+everyday language (as prone, supine, etc).
+
+Presisely, I do not know what does it mean exactly "Cartesian" (has
+something to do with Descartes ...), but I know presisely what it is a
+"Cartesian arrow" (in mathematics).
+
+Colorful terminology taken from everyday language is an strong indication
+to serious mathematicians that the subject should no be taken seriously
+(see for example the claims of  "Catastrofe Theory" as opposed to the
+sober "Classification of singularities of C-\infty mappings", and a lot of
+similar examples).
+
+As P May points out, "  . . .  such terminology is not exactly helpful to
+the cause!".
+
+The meaning of a mathematical concept should be given by the concept
+itself, and not by the connotation that its name has in everyday language.
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Equ4p-0002zi-7H
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:15:55 -0400
+Message-ID: <014801c60659$872bf9e0$e77d893e@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To:  <categories@mta.ca>
+References: <200512210216.jBL2GOcC016863@math.uchicago.edu>
+Subject: categories: Re: Right on, Jean!
+Date: Wed, 21 Dec 2005 18:08:20 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 38
+
+For the revision of my old topology book, I  want to keep the analogies
+which the fibrations of categories concept brings out very well - I am
+coming (very late!) to the view that this is an important part of
+`categories for the working mathematician' (the concept, not necessarily the
+book).
+
+In the general topology part of the book, I have final topologies with
+respect to a function, and also identification maps, as in Bourbaki.
+
+So (unless anyone can quickly come with anything better) I have decided on
+replacing
+
+(a) `universal morphism of groupoids f: G \to H'
+
+as in the current text and Philip Higgins' book, and which uses an overused
+word `universal', by
+
+(a') ` f gives H  the final structure with respect to G and Ob(f)'
+
+(b) `under these circumstances, f is a 0-identification morphism if also
+Ob(f) is surjective'.
+
+I initially (!) wanted to say `f is a 0-final morphism' instead of  (a') but
+Tim pointed out it was initial in an appropriate category!
+
+Another possibility is `H has the induced structure w.r.t Ob(f)', and to use
+the res/ind terminology from representation theory and Mackey functors.
+
+Comments on these issues welcome. But the aim is to use terminology which
+has associations and emphasises analogies.
+
+The new title will be `Topology and groupoids', which seems better to
+reflect the content. It will (all being well) be available as a print and
+ebook, with the ebook in color and hyper-reference.
+
+Ronnie
+www.bangor.ac.uk/r.brown
+
+
+
+
+----- Original Message -----
+From: "Peter May" <may@math.uchicago.edu>
+To: <categories@mta.ca>
+Sent: Wednesday, December 21, 2005 2:16 AM
+Subject: categories: Right on, Jean!
+
+
+>
+> It's funny, but exactly that question of terminology
+> (prone, supine, etc) came up a few weeks ago in some
+> joint work with a student here.  I made the same case
+> to him, almost exactly, that Jean Benabou just made.
+> And one other objection: I'd like category theory no
+> longer to be regarded as nonsense in this country ---
+> it still is in many quarters, as I could easily prove ---
+> and such terminology is not exactly helpful to the cause!
+>
+> Peter May
+>
+> ps: Then again, I don't much like using the overused
+> words cartesian and cocartesian.
+>
+>
+>
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EquA4-00039B-RJ
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:21:20 -0400
+X-ME-UUID: 20051222081357410.641D25800084@mwinf3108.me.freeserve.com
+Message-ID: <001901c606ce$ee6d2dc0$c8cb4c51@brown1>
+From: "Ronald  Brown" <ronnie@ll319dg.fsnet.co.uk>
+To: <categories@mta.ca>
+Subject: categories: Terminology re fibrations and opfibrations of categories
+Date: Thu, 22 Dec 2005 08:07:43 -0000
+MIME-Version: 1.0
+Content-Type: text/plain;charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 39
+
+To add to my previous email, I'd like reactions to the following
+terminology:
+
+Let P: X \to B be a functor. A morphism u: x \to y in X is  cofinal w.r.t.
+P, and y is the P-final object w,r,t u and P , if ... (and here we have the
+usual notion of cocartesian).
+
+Dually,  u is coinitial, and x is the initial object w.r.t   u and P if ...
+(and here we have the usual notion of cartesian).
+
+In situations where P is understood, we can then talk about cofinal and
+coinitial morphisms, and structures or objects or (in my case, groupoids).
+
+An advantage is that the direction of the notion and its dual should be
+clear.
+
+If f=P(u), I would then write \bar{f}: x \to f_*(x) in the first case, and
+\underline{f}: f^*(y) \to y in the second. I would also call f_*(x) the
+object induced by f.  What is a handy name for f^*(y)? The restriction of y
+by f?
+
+All these notions occur for modules, crossed modules, ...... and relate to
+change of base.
+
+Ronnie
+www.bangor.ac.uk/r.brown
+
+
+
+
+
+From rrosebru@mta.ca Mon Dec 26 11:29:11 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 26 Dec 2005 11:29:11 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EquCR-0003Cn-5J
+	for categories-list@mta.ca; Mon, 26 Dec 2005 11:23:47 -0400
+Date: Fri, 23 Dec 2005 10:46:30 +0100 (CET)
+From: Jiri Adamek <adamek@iti.cs.tu-bs.de>
+To: categories net <categories@mta.ca>
+Subject: categories: idempotent completion
+Message-ID: <Pine.LNX.4.61.0512231035520.21729@lxt1.iti.cs.tu-bs.de>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 40
+
+I would be grateful for getting the earliest reference to the fact
+that for two small categories T and S the corresponding
+functor-categories into Set are equivalent iff  T and S have the same
+idempotent (= Cauchy) completion. One can find this in a russian paper:
+
+"Morita equivalent categories" by S. V. Polin, Vestnik Mosk. Univ.,
+1974, no.2, 41-45
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+alternative e-mail address (in case reply key does not work):
+J.Adamek@tu-bs.de
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+From rrosebru@mta.ca Thu Dec 29 13:12:26 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 29 Dec 2005 13:12:26 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Es1Dc-0002rB-Mt
+	for categories-list@mta.ca; Thu, 29 Dec 2005 13:05:36 -0400
+Reply-To: marta.bunge@mcgill.ca
+In-Reply-To: <Pine.LNX.4.61.0512231035520.21729@lxt1.iti.cs.tu-bs.de>
+From: "Marta Bunge" <martabunge@hotmail.com>
+To: categories@mta.ca
+Subject: categories: RE: idempotent completion
+Date: Mon, 26 Dec 2005 15:57:47 -0500
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1Es1Dc-0002rB-Mt@mailserv.mta.ca>
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 41
+
+
+Dear Jirka,
+
+The result appears in my 1966 thesis ("Categories of Set-valued functors",
+U. of Pennsylvania), and in print (with an arbitrary closed category base V
+and categories relative to V) in the following 1969 paper, translated into
+Russian in 1972.
+
+
+Marta Bunge, Relative Functor Categories and Categories of Algebras.
+J.of Algebra 11 (1969) 64-101.
+
+Russian translation in : Mathematics: Periodical collections of Translations
+of
+Foreign Articles, Vol.16, Izdat. "Mir", Moscow(1972) 11-46, MR 50, #12532.
+
+
+Cordially,
+Marta
+
+
+
+************************************************
+Marta Bunge
+Professor Emerita
+Dept of Mathematics and Statistics
+McGill University
+805 Sherbrooke St. West
+Montreal, QC, Canada H3A 2K6
+Office: (514) 398-3810
+Home: (514) 935-3618
+marta.bunge@mcgill.ca
+http://www.math.mcgill.ca/~bunge/
+************************************************
+
+
+
+
+>From: Jiri Adamek <adamek@iti.cs.tu-bs.de>
+>To: categories net <categories@mta.ca>
+>Subject: categories: idempotent completion
+>Date: Fri, 23 Dec 2005 10:46:30 +0100 (CET)
+>
+>I would be grateful for getting the earliest reference to the fact
+>that for two small categories T and S the corresponding
+>functor-categories into Set are equivalent iff  T and S have the same
+>idempotent (= Cauchy) completion. One can find this in a russian paper:
+>
+>"Morita equivalent categories" by S. V. Polin, Vestnik Mosk. Univ.,
+>1974, no.2, 41-45
+>
+>
+>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>alternative e-mail address (in case reply key does not work):
+>J.Adamek@tu-bs.de
+>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>
+>
+
+
+
+
+
+From rrosebru@mta.ca Thu Dec 29 13:12:26 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 29 Dec 2005 13:12:26 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Es1F8-0002uZ-9U
+	for categories-list@mta.ca; Thu, 29 Dec 2005 13:07:10 -0400
+Date: Mon, 26 Dec 2005 15:56:42 -0500 (EST)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200512262056.jBQKugLo026545@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Re: idempotent completion
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 42
+
+Jiri asks:
+
+  I would be grateful for getting the earliest reference to the fact
+  that for two small categories T and S the corresponding functor-
+  categories into Set are equivalent iff T and S have the same
+  idempotent (= Cauchy) completion.
+
+The fact that a category and its idempotent completion have equivalent
+functor categories was certainly known very early. It does not appear
+in the first book on category theory (1964) but the lemma that proves
+it, to wit, that idempotent-complete cats form a full reflective
+subcategory of the relevant category (COSCANECOF) appears on page 61
+(which is 18 pages before any mention of reflective subcats and 48
+pages before the first mention of functor categories -- see
+www.tac.mta.ca/tac/reprints/articles/3/).
+
+That book was devoted to the additive setting. On page 119 one finds
+the additive notion, "amenable", corresponding to the condition of
+idempotents splitting. The full subcat of small projectives in the
+functor category in the additive setting is dual to the amenable
+closure of the domain category -- thus providing an instant proof that
+if two cats have equivalent additive functor categories then their
+amenable closures are equivalent. The non-additive case is easier: the
+full subcat of indecomposable projectives in the category of set-
+valued functos is dual to the idempotent completion of the domain
+category.
+
+
+
+From rrosebru@mta.ca Thu Dec 29 13:12:26 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 29 Dec 2005 13:12:26 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Es1GM-0002wf-7z
+	for categories-list@mta.ca; Thu, 29 Dec 2005 13:08:26 -0400
+Subject: categories: Re: Terminology re fibrations and opfibrations of categories
+From:	Eduardo Dubuc <edubuc@dm.uba.ar>
+To: categories@mta.ca
+Date:	Mon, 26 Dec 2005 18:57:48 -0300 (ART)
+In-Reply-To: <001901c606ce$ee6d2dc0$c8cb4c51@brown1> from "Ronald  Brown" at Dec 22, 2005 08:07:43 AM
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <S435355AbVLZV5s/20051226215748Z+1146@mate.dm.uba.ar>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 43
+
+
+Concerning  Ronnie wanderings about terminology around the word  FINAL,
+the following is pertinent:
+
+I am just writing a paper with Luis Espannol where we need to develop (the
+basic part of the theory of cartesian and cocartesian arrows) for families
+
+we use the following terminology:
+
+consider a functor  U: C ---> S, then:
+
+1)  a family in C              Z _i ---> X
+
+over                           R_i --->  S   is    FINAL   iff:
+
+given   S ---> T = UY  such that there exists   Z_i --->Y   over
+R_i ---> S ---> T (that is,  R_i ---> S ---> T lifts), then there exists a
+unique   X ---> Y over   S ---> T (that is,  S ---> T lifts).
+
+For topological spaces this is the usual Bourbaki notion of final
+topology.
+
+When U is not understood, we call this  "U-FINAL"
+
+Notice that for single arrows, we have (proved in the SGA on fibered
+categories)
+
+            Z ---> X is final     iff            it is cocartesian
+                                          and cocartesian  arrows compose
+
+
+
+2)  a family in C            Z _i ---> X
+
+over                         R_i --->  S  is  SURJECTIVE   iff:
+
+the family  R_i --->  S  is an strict (or regular) epimorphic family in S
+
+
+Our aim is to prove under some natural and minimal assumptions:
+
+  Z _i ---> X   is  strict epimorphic     iff    it is  final  surjective
+
+All this is already done
+
+Here the leading examples are the topological spaces  and  the
+quasitopological spaces in the sense of Spanier  (and the whole theory of
+concrete quasitopoi over S = Sets)
+
+
+From rrosebru@mta.ca Thu Dec 29 13:12:26 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 29 Dec 2005 13:12:26 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1Es1CZ-0002pB-Jy
+	for categories-list@mta.ca; Thu, 29 Dec 2005 13:04:31 -0400
+Message-ID: <43B048D4.8020601@cs.stanford.edu>
+Date: Mon, 26 Dec 2005 11:47:32 -0800
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Reply-To:  pratt@cs.stanford.edu
+MIME-Version: 1.0
+To: Categories <categories@mta.ca>
+Subject: categories: Re:  terminology
+References: <S440388AbVLUUEL/20051221200411Z+3128@mate.dm.uba.ar>
+In-Reply-To: <S440388AbVLUUEL/20051221200411Z+3128@mate.dm.uba.ar>
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 44
+
+Without taking sides on the prone/supine terminology question, I do have
+a strong reaction to the Benabou/May/Dubuc concern that respect for a
+field is undermined by its adoption of frivolous terminology.
+
+This may be a valid concern for a young field like category theory, but
+for a more mature subject such as physics, a more relevant concern is
+the undermining of the ability to poke fun at oneself by the fear of not
+being taken seriously.
+
+Has the adoption of frivolous nomenclature for quarks ("strange,"
+"charm," "beauty" and even "quark" itself) diminished in any way the
+world's respect for quarks and their investigators?
+
+And what of computational topology?  Should we turn a blind eye to
+whether Scott is sober, and substitute a more genteel euphemism for his
+bottom?
+
+Vaughan Pratt
+
+
+
+From rrosebru@mta.ca Sat Dec 31 10:27:33 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 31 Dec 2005 10:27:33 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EshXX-0007gE-UO
+	for categories-list@mta.ca; Sat, 31 Dec 2005 10:17:00 -0400
+From: Nikita Danilov <nikita@clusterfs.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <17332.13426.996827.974494@gargle.gargle.HOWL>
+Date: Thu, 29 Dec 2005 22:09:38 +0300
+To:  Categories <categories@mta.ca>
+Subject: categories: Re:  terminology
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 45
+
+Vaughan Pratt writes:
+ > Without taking sides on the prone/supine terminology question, I do have
+ > a strong reaction to the Benabou/May/Dubuc concern that respect for a
+ > field is undermined by its adoption of frivolous terminology.
+ >
+ > This may be a valid concern for a young field like category theory, but
+ > for a more mature subject such as physics, a more relevant concern is
+ > the undermining of the ability to poke fun at oneself by the fear of not
+ > being taken seriously.
+ >
+ > Has the adoption of frivolous nomenclature for quarks ("strange,"
+ > "charm," "beauty" and even "quark" itself) diminished in any way the
+ > world's respect for quarks and their investigators?
+
+There indeed are drawbacks whenever scientific terms are contrary to the
+centuries old tradition not taken from Greek or Latin languages (that,
+thanks to their very regular and flexible system of word formation are
+so suitable for taxonomies) shared by many cultures. For one thing,
+words of existing languages are not in one to one mapping, and then a
+term from contemporary language may be not culturally neutral (consider
+silly naming wars for transuranium elements).
+
+On the other hand, I stopped using "co-product" after more than one
+person with the background in classical languages read it as
+"copro-duct".
+
+ >
+ > And what of computational topology?  Should we turn a blind eye to
+ > whether Scott is sober, and substitute a more genteel euphemism for his
+ > bottom?
+ >
+ > Vaughan Pratt
+
+Nikita.
+
+
+
+From rrosebru@mta.ca Sat Dec 31 10:27:33 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 31 Dec 2005 10:27:33 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EshdD-00002D-KZ
+	for categories-list@mta.ca; Sat, 31 Dec 2005 10:22:51 -0400
+Date: Fri, 30 Dec 2005 17:29:15 +0100
+Mime-Version: 1.0 (Apple Message framework v543)
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Subject: categories: Terminology again
+From: jean benabou <jean.benabou@wanadoo.fr>
+To: Categories <categories@mta.ca>
+Content-Transfer-Encoding: quoted-printable
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1EshdD-00002D-KZ@mailserv.mta.ca>
+Status: RO
+X-Status: 
+X-Keywords:                 
+X-UID: 46
+
+In a previous mail I said that I was strongly opposed to the=20
+replacement of "cartesian" and "co-cartesian" maps by "prone" and=20
+"supine" ones for linguistic, mathematical and ethical reasons which I=20=
+
+was ready to explain in detail if I was asked to do so.
+I have waited a few days to see what reactions I  would get. So far, my=20=
+
+position has been supported by Peter May and Eduardo Dubuc on ethical=20
+and/or linguistic grounds, and Keith Harbaugh has asked me what=20
+"ethical"  issue is involved, and more generally to clarify my position=20=
+
+on the mailing list.
+
+Although the ethical issues are for me the most important, I shall=20
+postpone them to another mail, if the moderator of this list permits me=20=
+
+to do so, and I shall concentrate to-day on the mathematical an=20
+linguistic reasons of my opposition.
+I am no linguist, but I am a mathematician, so THE MATHEMATICS WILL=20
+COME FIRST, and I would like to make this  text more "palatable" and=20
+less "negative" by introducing some genuinely new ideas, which some of=20=
+
+you might find of interest, and which are relevant in this debate.
+
+=A71- DEFINITIONS
+
+Let  P: C ---> B  be a a functor.
+1.1-  A map v of C is VERTICAL (forP)   if  P(v) is an identity. I=20
+denote by  V(P) or simply V the subcategory of  C which has the same=20
+objects as C and as maps the vertical ones.
+Every identity is vertical, and if in a commutative triangle in C two=20
+of the maps are vertical so is the third.
+
+1.2- Let f be a map f of C. We shall say that f  is :
+(i)  CARTESIAN if for every pair (g,b) with g in C , b in B,  and=20
+P(g)=3DP(f).b there exists a unique map h in C such that:   P(h)=3Db  =
+and =20
+g=3Df.h.
+(ii)  PRECARTESIAN If the previous condition is satisfied only when b=20
+is an identity,
+(iii)  HORIZONTAL if every vertical map is orthogonal to f . (that=20
+would probably be "prone" in the proposed new terminology)
+I shall denote by  K(P), PreK(P) and H(P) the classes of maps of C=20
+which are cartesian, precartesian and horizontal, and abbreviate by K,=20=
+
+PreK,  and H  if  P  is fixed.
+
+
+1.3 - The functor P is a fibration (resp. a PREFIBRATION)  if for every=20=
+
+pair (b,X) where b is a map of B, and X an object of C and=20
+P(X)=3DCodom(b)  there exists a cartesian (resp.precartesian) map f: Y=20=
+
+--->X  such that  P(f)=3Db
+
+
+1.4 - If X is an object of C and  b: J--->P(X)  we denote Pl(b,X) the=20
+category of  P-LIFTINGS of b with codomain X with objects the maps f:=20
+Y--->X  of C such that  P(f)=3Db, a morphism from f to f': Y'--->X  is a=20=
+
+vertical map  v: Y--->Y'  such that  f.v=3Df' .
+I shall say that P is a HOMOTOPY PREFIBRATION if all the categories =20
+Pl(b,X) are connected (which of course imply non empty), the motivation=20=
+
+of the name is that any two liftings are "homotopic".
+
+1.5 - Let  P: C --->  B  and  P': C' ---> B  be two functors and  F; C=20=
+
+---> C'  be a functor over B i.e. such that P'.F=3DP. Such an F =
+obviously=20
+preserves and reflects vertical maps for P and P'. Moreover if f: Y=20
+--->X is in Pl(b,X) , F(f): F(Y) ---> F(X) is in P'l(b,F(X))  hence F=20
+induces functors
+           Fl(b,X): Pl(b,X) --->P'l(b,F(X)) , f  l--->F(f)  , for all=20
+"compatible" pairs (b,X)
+I shall say that F is a CARTESIAN FUNCTOR if all the functors Fl(b,X)=20
+are final. (No assumption is made on  P  or P').
+
+=A72-REMARKS "EN VRAC" ABOUT THESE DEFINITIONS (or, let's do a little =
+bit=20
+of mathematics!)
+
+2.1- Let P: C --->B be a functor  (we assume NOTHING on P) Then:
+(i) Every cartesian map is horizontal i.e. K(P) is contained in H(P).
+The converse need not be true, for example if all vertical maps are=20
+iso's i.e. all the fibers of P are groupo=EFds, then all maps of C are=20=
+
+horizontal, and "co-horizontal" And one can construct a P where C and B=20=
+
+are finite posets where no map, except of course the identities, is=20
+pre-cartesian or pre-cocartesian, let alone cartesian or cocartesian
+(ii) THEOREM. If P is a homotopy- prefibration, then cartesian=20
+coincides with horizontal, i.e.  H(P)=3DK(p).
+(It is not completely trivial)
+
+The definitions 1.4 and 1.5 are genuinely new, and might seem=20
+surprising, the following remarks will give a very small idea of what=20
+can be done with them
+
+2.2- A cartesian functor preserves precartesian maps :
+Because f: Y --->X is in  PreK(P)  iff it is a final object of =20
+Pl(P(f),X) , and final functors preserve final objects
+
+However if P and P' are are arbitrary functors such a preservation is=20
+not enough to insure that F is cartesian because there might not be=20
+"enough" precartesian maps in C. But cartesian functors have so far=20
+NEVER been used except between prefibrations, and in that  case our=20
+definition coincides with the usual one because we have:
+
+2.3- If P and P' are prefibrations,  F  is cartesian iff  it preserves=20=
+
+precartesian maps.(It suffices in fact that P is a prefibration)
+
+I like to make the following "analogy" : if  S and T are topological=20
+spaces a continuous function  f: S --->T preserves convergent=20
+sequences, if X is metrisable, this is enough to insure the continuity=20=
+
+of f
+
+2.4 - Cartesian functors are closed under composition, and every=20
+equivalence over B is cartesian.
+In fact we have much better, namely.
+
+2.5 - If a functor F over B has a left adjoint then F is cartesian
+
+2.6 - Homotopy-prefibrations are stable by composition.
+This seems "harmless" and trivial, but it is neither. It is well known=20=
+
+that fibrations are stable by composition, but it is probably a little=20=
+
+less well known, because I have never seen a statement to that effect,=20=
+
+that prefibrations  ARE NOT .
+
+2.7 - Homotopy-prefibrations  (h-p) are special cases of cartesian=20
+functors, because P. C --->B  is a h-p iiff it is a cartesian functor:=20=
+
+(C,P) --->(B,IdB).
+(This of course is no longer true if h-p is replaced by prefibration or=20=
+
+fibration)
+ =46rom this it follows that if  F:(C,P) --->(C',P') is cartesian and  =
+P'=20
+is a h-p so is  P.
+
+2.8 - An important feature of h-p is that pointwise Kan extensions=20
+along such P's can be computed fiberwise. Moreover this property=20
+characterizes h-p' s.
+In particular such a P is final iff all its fibers are connected, and=20
+it is flat iff  it's fibers are cofiltered.
+The previous results are special cases of properties true for arbitrary=20=
+
+cartesian functors.
+
+
+2.9 - REMARK : Homotopy prefibrations are but ONE example of =20
+MEANINGFUL generalizations of fibrations. I have considered many=20
+others, all with important mathematical examples, here are some: (for a=20=
+
+functor  P: C --->B)
+(i) The categories Pl(b,X) are filtered
+(ii) Each connected component of such a category has a final object
+(iii)  Each connected component is filtered
+In (ii) and (ii)  P is not even a homotopy prefibration, but in all=20
+these cases the general definition of cartesian functor given in 1.5 =20
+is the "correct" one and gives the expected results.
+
+
+=A73 LINGUISTICO-MATHEMATICAL REMARKS
+
+3.1 - OK, let us try "prone" for "cartesian", what about the=20
+precartesian maps, "preprone" ? They have nothing to do with a=20
+weakening of orthogonality to V(P), which we shall examine in 3.3. What=20=
+
+about cartesian functors, "prone functors"? What about maps which are=20
+both cartesian and cocartesian, such that e.g. the iso's, prone and=20
+supine? A very uncomfortable position you'll grant me. I am no acrobat,=20=
+
+I tried it, I hurt my back and stomach, had to stand up, and ended=20
+up...vertical!
+
+3.2 - The proposed terminology is based ON A BIG MATHEMATICAL MISTAKE,=20=
+
+namely: confusing cartesian and horizontal, which in general do NOT=20
+coincide, as shown in 2.1. Unless of course there no other functors but=20=
+
+fibrations, or if there are, the terminology should not be compatible=20
+with them. Well I, and probably other persons, think that there are,=20
+know that there are, and that they deserve to be studied, were it only=20=
+
+to have a better understanding of fibrations. In 2.9 I gave a few=20
+examples of such functors. If there were ONLY fibrations,  how would=20
+one express the fact that a prefibration where all the fibers are=20
+groupoids is a fibration?
+
+3.3 - Even for fibrations there are interesting maps which are neither=20=
+
+vertical nor cartesian and that one might want to study. Let me give an=20=
+
+example. Both cartesianness and horizontality assume the existence and=20=
+
+uniqueness of maps satisfying certain conditions. What about those=20
+where we drop existence and keep uniqueness.
+Following Peter Freyd's suggestion, let me call them=20
+quasi-cartesian(QK), and quasi-horizontal(QH),and see what they are. A=20=
+
+map f: Y --->X  is  QK  (rep. QH) iff  for every  parallel pair =20
+(g,g'): Z=3D=3D=3D>Y  coequalized by f, if P(g)=3DP(g') (resp.if =
+g.v=3Dg'.v for=20
+some vertical map v) then g=3Dg'
+Even in the case of fibrations, where K=3DH, QK is only contained in QH=20=
+
+but not equal.This can be seen in the most trivial case, where B=3D1, =
+and=20
+all maps are vertical. A map f is QK iff it is a mono, it is QH iff =20
+for every pair of maps (g,g')  WHICH CAN BE EQUALIZED,  fg=3Dfg' implies =
+=20
+g=3Dg'.
+Now if cartesian=3Dprone, QK will have to be "quasi-prone", a strange=20
+position again, but never mind. However, how should we call QH ?
+
+3.4- I can speak, read, and write a little bit of English, but I am=20
+French and might someday have the preposterous idea to lecture on=20
+fibered categories in French.  Of course only in France, and to an=20
+audience uniquely composed of french persons. Perhaps MM Taylor and=20
+Johnstone, could suggest adequate french translations for prone and=20
+supine, which I can't  seem to find. And they should be ready to do the=20=
+
+same thing for German, Italian, Spanish, and many other languages.
+
+No such problems with cartesian of course, because cartesian.... is=20
+cartesian  is cartesian is cartesian!
+
+3.5- By now many thousands of pages have been written in various=20
+languages using "cartesian", and many hundreds are being prepared, or=20
+ready to be published, using the same word. What should be done with=20
+all that past or future rubbish, now that we have received THE LIGHT=20
+and the WORD(S)?
+
+
+=A74 TEMPORARY CONCLUSION
+
+I apologize for such a long mail, but I wanted also to show, among=20
+other things , that it is possible to handle new and relevant=20
+mathematical notions by introducing a SINGLE new word, namely;=20
+"homotopy prefibration" , which has a  clear intuitive content, and=20
+moreover is easy to translate in most languages.
+
+I have given many arguments to explain my position, and I have many=20
+more. But for the moment, I'd like to know the arguments of the persons=20=
+
+in favor of these changes, PRINCIPALLY, of course, those of Paul Taylor=20=
+
+and Peter Johnstone. If it is only the "joke" aspect, I  want to add=20
+that I do also like jokes, very much, perhaps not the same as theirs..=20=
+
+I even used to compete with Sammy, who was an expert, about who'd know=20=
+
+some jokes the other didn't.
+
+When this mail was almost completely finished, I found the reaction of=20=
+
+Vaughan Pratt from which I quote:
+
+  "Has the adoption of frivolous nomenclature for quarks ("strange,"
+"charm," "beauty" and even "quark" itself) diminished in any way the
+world's respect for quarks and their investigators?"
+
+I want to be clear on that matter. I have no objection to "frivolous"=20
+naming of NEW concepts by the person or persons who DISCOVERED or=20
+INVENTED them. But I object VERY STRONGLY to "renaming" well=20
+established concepts, used for more than 40 years by the mathematical=20
+community, even if the new names were NOT frivolous, and especially if=20=
+
+such a renaming is made by persons who have made no MAJOR
+contribution to the development of the field of FIBERED CATEGORIES.
+
+As a side remark, I have no problem whatsoever to translate in French :=20=
+
+"strange", "charm", "beauty", "quark", "sober" or "bottom". And to be=20
+"frivolous", even if it's not so easy in a foreign language,=20
+"homotopy's bottom" came ages before Scott's, and "Galois connection"=20
+ages before the "french" one.
+
+Since my english is not too good, in particular I knew only "the other"=20=
+
+meaning of "supine",  I'll borrow, a bit freely, from "a good author" I=20=
+
+admire a lot, and remind that:
+
+                Men gave names to many animals
+                In the beginning, in the beginning
+                Men gave names to many animals
+                In the beginning, long time ago.
+
+
+Best wishes to all, Jean
+
+
+
+
+
+From rrosebru@mta.ca Sat Dec 31 10:27:33 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 31 Dec 2005 10:27:33 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EshYU-0007hu-EX
+	for categories-list@mta.ca; Sat, 31 Dec 2005 10:17:58 -0400
+Subject: categories: Re:  terminology
+From:	Eduardo Dubuc <edubuc@dm.uba.ar>
+To:	categories@mta.ca (Categories)
+Date:	Thu, 29 Dec 2005 20:17:36 -0300 (ART)
+In-Reply-To: <43B048D4.8020601@cs.stanford.edu> from "Vaughan Pratt" at Dec 26, 2005 11:47:32 AM
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1EshYU-0007hu-EX@mailserv.mta.ca>
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 47
+
+
+We should not put everything in the same bag !!
+
+"strange," "charm," "beauty" and even "quark" itself
+
+are beautiful  and poetic names  to refer to objects or concepts which
+precisely we do not want to associate any precise meaning in everyday
+language, and on the other hand, the objects or concepts are  introduced
+whith those names.
+
+"prone/supine"  are all the contrary, they intent to reflect in everyday
+language just one aspect of an existing concept which has many, and more
+important, they are used in place of a well stablished name.
+
+all this has nothing to do with  "young field" as opposed to "mature
+subject"
+
+silly names (if any) in physics would be as bad as in any other subject
+
+do not confuse  things, I found  the  "Scott is sober" an exelent example
+of humor that does not undermine respect for the field. Another exelent
+example that comes to my mind is M. Barr's "The point of the empty set"
+
+edubuc
+
+>
+> Without taking sides on the prone/supine terminology question, I do have
+> a strong reaction to the Benabou/May/Dubuc concern that respect for a
+> field is undermined by its adoption of frivolous terminology.
+>
+> This may be a valid concern for a young field like category theory, but
+> for a more mature subject such as physics, a more relevant concern is
+> the undermining of the ability to poke fun at oneself by the fear of not
+> being taken seriously.
+>
+> Has the adoption of frivolous nomenclature for quarks ("strange,"
+> "charm," "beauty" and even "quark" itself) diminished in any way the
+> world's respect for quarks and their investigators?
+>
+> And what of computational topology?  Should we turn a blind eye to
+> whether Scott is sober, and substitute a more genteel euphemism for his
+> bottom?
+>
+> Vaughan Pratt
+>
+>
+
+
+
+
+From rrosebru@mta.ca Sat Dec 31 10:27:33 2005 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Sat, 31 Dec 2005 10:27:33 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EshZN-0007kk-I7
+	for categories-list@mta.ca; Sat, 31 Dec 2005 10:18:53 -0400
+From: vs27@mcs.le.ac.uk
+To:  Categories <categories@mta.ca>
+Subject: categories: Re:  terminology
+Date: 30 Dec 2005 01:16:46 +0000
+X-Mailer: Prayer v1.0.12
+X-Originating-IP: [125.0.160.177]
+Content-Type: text/plain; format=flowed; charset=ISO-8859-1
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Message-Id: <E1EshZN-0007kk-I7@mailserv.mta.ca>
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 48
+
+On Dec 29 2005, Vaughan Pratt wrote:
+
+> Without taking sides on the prone/supine terminology question, I do have
+> a strong reaction to the Benabou/May/Dubuc concern that respect for a
+> field is undermined by its adoption of frivolous terminology.
+>
+Dear Vaughan, as everybody has a say. Just my views.
+I prefer some nomenclature that sounds mathematical,
+rather than based on the name of a friend or a private joke.
+(may be i don't understand all the jokes ?)
+Also in any case one should avoid  renaming existing
+concepts, that is just not fair.
+
+
+Good opportunity to wish happy new year to everybody.
+
+
+
+
+
+
+
+From rrosebru@mta.ca Mon Jan  2 10:00:26 2006 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 02 Jan 2006 10:00:26 -0400
+Received: from Majordom by mailserv.mta.ca with local (Exim 4.52)
+	id 1EtQ4N-0007PI-9n
+	for categories-list@mta.ca; Mon, 02 Jan 2006 09:49:51 -0400
+In-Reply-To: <E1EshdD-00002D-KZ@mailserv.mta.ca>
+References: <E1EshdD-00002D-KZ@mailserv.mta.ca>
+Mime-Version: 1.0 (Apple Message framework v623)
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Message-Id: <ff75a3b392da47c0704e8818e823bc53@math.ksu.edu>
+Content-Transfer-Encoding: 7bit
+From: David Yetter <dyetter@math.ksu.edu>
+Subject: categories: Re: Terminology again + Note from moderator
+Date: Sat, 31 Dec 2005 22:01:54 -0600
+To: Categories <categories@mta.ca>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:                  
+X-UID: 49
+
+
+[Note from moderator: This is to let you know that I am invoking the
+(not recently used) 48 hour rule for this subject: postings received
+by noon on Wednesday will be sent; after that the discussion may
+obviously continue, but not on the list.
+Best wishes to all for 2006, Bob Rosebrugh]
+
+On 30 Dec 2005, at 10:29, jean benabou wrote:
+
+> I want to be clear on that matter. I have no objection to "frivolous"
+> naming of NEW concepts by the person or persons who DISCOVERED or
+> INVENTED them. But I object VERY STRONGLY to "renaming" well
+> established concepts, used for more than 40 years by the mathematical
+> community, even if the new names were NOT frivolous, and especially if
+> such a renaming is made by persons who have made no MAJOR
+> contribution to the development of the field of FIBERED CATEGORIES.
+>
+
+I will second Jean's remarks excerpted above, with a sole exception:  I
+have no objection to
+the renaming of a well-established concept in honor of the person(s)
+who discovered or invented them (or, if a second name is attached, who
+first made its importance clear).
+
+Best wishes to all for the new year,
+David Yetter
+
+
+
+

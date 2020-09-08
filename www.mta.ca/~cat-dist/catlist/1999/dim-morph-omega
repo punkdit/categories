@@ -1,0 +1,69 @@
+Date: Mon, 23 Nov 1998 16:45:58 +0100
+From: Philippe Gaucher <gaucher@irmast1.u-strasbg.fr>
+Subject: categories: about dimension of morphisms
+
+Bonjour, 
+
+I think that I have found a small pathological behaviour with 
+dimension of morphisms in omega-categories. This is the following
+one.
+
+Let us first  recall that 
+       min{m/s_m(x)=x} = min{n/t_n(x)=x} =: dim(x). 
+Because x = s_m(x) = t_m s_m(x) (because m=<m) = t_m(x).
+
+Lemma 1 : Let u and v be two composable morphisms of dimension
+1 (i.e. t_0(u)=s_0(v)). Suppose that t_0(v)<>s_0(u) (<> means
+different). Then u o_0 v is of dimension 1.
+
+Proof : Suppose that u o_0 v of dimension 0. Then 
+s_0(u) = s_0(u o_0 v) = u o_0 v and
+t_0(v) = t_0(u o_0 v) = u o_0 v
+So s_0(u) = t_0(v) : false.
+
+Here is now the pathological behaviour : 
+
+If s_0(u) = t_0(v), here is an example of category with u and
+v of dimension 1 and u o_0 v of dimension 0 : 
+
+We take A={alpha,beta,u,v} (four elements)
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------
+s_0	alpha	beta	alpha	beta
+-------------------------------------
+t_0	alpha	beta	beta	alpha
+-------------------------------------
+
+and for o_0 : 
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------	
+alpha	alpha	xxxx	u	xxxx
+-------------------------------------
+beta	xxxx	beta	xxxx	v
+-------------------------------------
+u	xxxx	u	xxxx	alpha
+-------------------------------------
+v	v	xxxx	beta	xxxx
+-------------------------------------
+
+(at the intersection of row x and column y, read x o_0 y)
+
+All axioms of categories seem to be verified (?). The only composition
+is a "word" of finite length "... u (beta) v (alpha) u (beta) v..."
+
+In (A,s_0,t_0,o_0), u and v are of dimension 1 and u o_0 v
+of dimension 0 because u o_0 v = alpha. 
+
+Where am I wrong ? (observe that this behaviour cannot appear with 
+for example a category coming from a composable pasting scheme).
+
+
+pg.
+
+
+
+

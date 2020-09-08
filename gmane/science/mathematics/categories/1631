@@ -1,0 +1,114 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: question on "model functor"
+Date: Sun, 17 Sep 2000 12:37:14 -0400 (EDT)
+Lines: 86
+Approved: news@gmane.org
+Message-ID: <200009171637.e8HGbEg17088@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017979 32150 80.91.229.2 (29 Apr 2009 15:12:59 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:12:59 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Sep 18 09:11:07 2000 -0300
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA30105
+	for categories-list; Mon, 18 Sep 2000 08:22:27 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 17
+Status: O
+Content-Length: 4076
+Original-Lines: 85
+Xref: news.gmane.org gmane.science.mathematics.categories:1631
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1631>
+
+Lutz Schroeder asked:
+
+    Does the functor
+
+    Cat^op ---> CAT
+
+    A  |-->   [A,Set]
+
+    reflect isomorphisms (more generally: limits)?
+
+Peter Johnston's answer to the first question is the right one, but 
+one could expand. There's no doubt that his argument works well for
+small categories (which, I take it, is what was intended by the 
+notation), there's a little worry about it working for _locally_ small
+categories, and there's no hope at all that it works for arbitrary 
+categories, even if we restrict to those categories with small numbers
+of objects. (As for the second -- parenthetical -- question: see the
+bottom.)
+
+For the fun of it, consider the one-object category whose maps are 
+named by pairs  <X,f>  where  X  is a finite set and  f  is a 
+permutation thereon. I'll say that  <X,f>  and  <Y,g>  name the same
+map if the supports of  f  and  g  are both contained in the 
+intersection of  X  and  Y, and further, when  f  and  g  are
+restricted to that intersection, they become equal. Given the names of
+any two maps, one can always choose names with the same first 
+coordinates and that's enough to tell you how to compose them.
+
+There's a functor from this big one-object category to the tiny one-
+object category usually called the group, Z_2, to wit, the signature 
+functor. This functor is carried by  [-,Set]  to an isomorphism in 
+CAT.
+
+Also for the fun of it, here's a proof for locally small categories
+that doesn't require considering things like small projectives in 
+super-big categories. It's routine to reduce to the case where  T  may
+be assumed the be the inclusion functor of a lluf subcategory (one 
+that contains all identity maps)  *A*  into a category  *B*. The  next
+step is to show that  *A*  is a retract of  *B*.
+
+For any object  A, let  H^A  denote the covariant set-valved functor
+on  *A*  represented by  A. Assuming that  [T,Set]  is an isomorphism,
+let  G^A  be the unique extension of  H^A  to  *B*. For any  f:A -> X
+in  *A*  and  g:X -> Y  in  *B*  (G^A'g)'(f)  is a map in  *A*  from  
+A  to  Y. Note that this is not defined as a composition of maps 
+(indeed, G^A'g  is not defined as a map in any category other than the
+category of sets) but as the application of a function  G^A'g  on an 
+element  f  in  G^A'X, hence I will avoid using catenation for other
+than composition by inserting prime-marks (for application). The
+functoriality says that for  h:Y -> Z  we have  
+
+1:          (G^A'h)'((G^A'g)'f) = (G^A'(hg))'f  
+
+(and, of course, (G^A'1)'(f) = f).
+
+Now let  j:B -> A  be a map in  *A*. The natural transformation  H^j
+extends uniquely to a transformation  G^j.  But since the two  Gs
+do the same thing to objects as the two  Hs  we know that G^j and  H^j
+do the same thing to those objects. We have, therefore,
+
+2:          ((G^A'g)'(f))(j) = (G^B'g)'(fj).
+
+Construct  U:*B* --> *A*  by defining  U(g) = (G^X'g)'1  for
+g:X -> Y.  For  h:Y -> Z  in  *A*  we have (using 1)  U(hg) =
+(G^X'(hg))'1  =  (G^X'h)'((G^X'g)'1) = (G^X'h)'(Ug)  and  (using 2)
+the later is equal to  (G'X'h)'(1Ug) = (G^Y'h)'1)(Ug) = (Uh)(Ug).
+
+Consider the two endo-functors on  *B*, the identity functor and the
+idempotent  *B* --> *A*  --> *B*.  The hypothesis that  [T,Set]  is an
+isomorphism says that for any set-valued  F  on  *B*  it is the case
+that  F  is equal to  *B* --> *A* --> *B* --> Set. But the set-valued
+functors (indeed, just the representables) are collectively faithful,
+and that forces  *B* --> *A* --> *B*  to be the identity functor,
+which, in turn, forces each of  *B* --> *A*  and  *A*  --> *B*  to be
+identity functors. The later functor is the given  T.
+
+
+Finally, as for the question about reflecting limits: if I may quote
+Cats and Alligators: "It seems to be a general principle that almost
+any property of interest is reflected by [isomorphism-reflecting
+embeddings] that preserve it" (1.33) In particular there's an easy
+argument for the case of limits in a complete category because a cone
+on a diagram fails to be a limit precisely when the induced map from
+the limit fails to be an isomorphism.
+
+

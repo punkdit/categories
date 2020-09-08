@@ -1,0 +1,127 @@
+Path: news.gmane.org!not-for-mail
+From: Mark Weber <mark.weber.math@googlemail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Quantum computation and categories
+Date: Tue, 29 Dec 2009 15:33:51 +0100
+Lines: 93
+Approved: news@gmane.org
+Message-ID: <E1NPyr4-0001Zh-70@mailserv.mta.ca>
+References: <E1NPOHx-0007Cf-H7@mailserv.mta.ca>
+Reply-To: Mark Weber <mark.weber.math@googlemail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: ger.gmane.org 1262182292 11608 80.91.229.12 (30 Dec 2009 14:11:32 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 30 Dec 2009 14:11:32 +0000 (UTC)
+To: John Baez <john.c.baez@gmail.com>, categories@mta.ca
+Original-X-From: categories@mta.ca Wed Dec 30 15:11:25 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1NPzE7-0007Ik-Uc
+	for gsmc-categories@m.gmane.org; Wed, 30 Dec 2009 15:08:40 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1NPyr4-0001Zh-70
+	for categories-list@mta.ca; Wed, 30 Dec 2009 09:44:50 -0400
+In-Reply-To: <E1NPOHx-0007Cf-H7@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5435
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5435>
+
+Greetings all and thanks to John for the friendly provocation ...
+
+I was very interested at Mark Weber's reaction to this problem.  He said,
+> roughly, "So dagger-categories aren't really categories with extra
+> structure.  Okay: they're something else!  And that's fine."  (I'd be happy
+> for him to correct my rough summary and make his point more precisely.)
+>
+
+OK. First of all when thinking about cobordisms, or paths, or homotopies,
+the act of reversing orientation is fundamentally strictly involutive. So at
+first glance, it's not at all clear what would be gained by weakening in
+this case, despite the light that replacing equations by isomorphisms sheds
+on so many other mathematical situations.
+
+Algebraically also, it appears natural to think of the strict involutions as
+more fundamental. Just as categories are algebras of a very nice and easily
+described monad on the presheaf topos of graphs, "dagger categories" (I
+think the terminology "involutive category" would be better) are algebras of
+an analogous monad on the presheaf topos of involutive graphs. An involutive
+graph is a graph together with an involution on the set of edges which
+switches sources and targets. Formally the dagger category monad is obtained
+by a canonical lifting of the category monad through the forgetful functor
+from involutive graphs to graphs, so we have a canonical monad distributive
+law describing this situation.
+
+The observations of the previous paragraph generalise a lot and rather
+easily, and this encourages me to resist any urge to weaken the involutory
+aspects of the notion of dagger category. So the "something else" of John's
+post is that dagger categories are *involutive graphs* with structure, and
+their higher dimensional analogues are *involutive n-globular sets* with
+structure. So all the way up the dimensional ladder, regardless of how weak
+your higher compositions happen to be, if involutions (to model orientation
+reversals) are to be part of the picture, then I think they should be strict
+and strictly compatible with all the compositions and coherence data.
+
+For those still interested, I'll now give a few more details. First some
+background. In
+
+http://arxiv.org/abs/0909.4715
+
+Michael Batanin, Denis-Charles Cisinski and I reformulated much of the
+"Batanin approach" to defining higher categories as the study of monads on
+categories of enriched graphs, particularly those that arise from
+multitensors. Briefly, given a category V, one can associate to any
+"distributive multitensor on V" (which is a lax monoidal structure on V such
+that the n-ary tensor product functor V^n-->V preserves coproducts in each
+variable), a monad on the category GV of graphs enriched in V. So for
+example this process takes the cartesian product for Set to the category
+monad on Graph. The operads used by Batanin to define weak higher
+categories, seen as certain monads on the presheaf topos G^n(Set) of
+n-globular sets, also arise in this way.
+
+One can also consider the category G_i(V) of involutive graphs enriched in
+V, and so begin to consider structures defined by monads on the presheaf
+topos (G_i)^n(Set) of what would be sensible to call "involutive n-globular
+sets". An involutive graph enriched in V is a V-graph X together with, for
+each pair of objects a,b from X, maps
+i_(a,b) : X(a,b) --> X(b,a)
+in V such that for all a,b, i_(b,a)i_(a,b) = identity. It is easy to verify
+that both processes V |-> GV and V |-> G_i(V) preserve presheaf toposes, so
+(G_i)^n(Set) really is a presheaf topos.
+
+To spell out the generalisation alluded to above, let E be a distributive
+multitensor on V, and write (as in the above paper) Gamma(E) for its
+associated monad on GV -- corollary(4.5) of our paper indicates an explicit
+formula. This formula is easily adapted to the involutive case to describe
+the monad Gamma_i(E) on G_i(V) and this is by definition a canonical lifting
+of Gamma(E) though the forgetful G_i(V)-->GV.
+
+In summary, for any higher categorical structure of interest, there is an
+involutive version (eg one can define involutive Gray categories), and from
+the above remarks we understand as much about the monads which describe them
+as we do their non-involutive counterparts, and moreover there's a canonical
+distributive law relating them.
+
+For me the interesting question now is how to adapt this to give an explicit
+description of monads which describe weak higher groupoids (with strictly
+involutive "inverse operations"). Steve Lack and I observed recently that
+ordinary groupoids are algebras for a monad on the category of involutive
+graphs, which arises via a *weak* distributive law in the sense of
+
+http://www.tac.mta.ca/tac/volumes/22/12/22-12abs.html
+
+between the category monad on Graph and the involutive graph monad on Graph,
+but I really don't see yet how this generalises.
+
+Best new years wishes to all,
+
+Mark Weber
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

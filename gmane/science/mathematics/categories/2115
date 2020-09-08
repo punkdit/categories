@@ -1,0 +1,115 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@CS.Stanford.EDU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Cauchy completeness of Cauchy reals
+Date: Wed, 22 Jan 2003 22:29:51 -0800
+Lines: 77
+Approved: news@gmane.org
+Message-ID: <E18bl32-00046g-00@mailserv.mta.ca>
+References: <m.escardo@cs.bham.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1241018421 2554 80.91.229.2 (29 Apr 2009 15:20:21 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:21 +0000 (UTC)
+To: CATEGORIES LIST <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Jan 23 13:27:04 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 23 Jan 2003 13:27:04 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18bl32-00046g-00
+	for categories-list@mta.ca; Thu, 23 Jan 2003 13:21:52 -0400
+X-Mailer: exmh version 2.1.1 10/15/1999
+In-Reply-To: Message from Martin Escardo <m.escardo@cs.bham.ac.uk>
+   of "Wed, 22 Jan 2003 10:13:57 GMT." <15918.28389.594290.761117@acws-0054.cs.bham.ac.uk>
+Original-Mime-Version: 1.0
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 40
+Status: O
+Content-Length: 3049
+Original-Lines: 76
+Xref: news.gmane.org gmane.science.mathematics.categories:2115
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2115>
+
+Dear toposophers,
+
+With constructivity of real arithmetic back on the front burner for the
+moment, let P be the ring of bounded power series a0 + a1.x + a2.x^2 + ..=
+=2E
+with integer coefficients a_i, where the bound is, for each such series,
+an integer c such that |a_i| < c (3/2)^i / i^(3/2).
+
+Let 1-2x generate the ideal I of P.  Then the quotient ring P/I turns out=
+
+to be the field of reals [AMM 105(1998), p.769].
+
+This is more constructive than it might appear, being just an obscure
+(or clear depending on your upbringing) way of representing reals in a
+redundant binary notation.  The ring P permits fast arithmetic essentiall=
+y
+by deferring carries.  Carries are "propagated" when needed by quotientin=
+g
+by I, which works by collapsing every formal power series to one all of
+whose coefficients other than a0 are either 0 or 1 and which has infinite=
+ly
+many 0s (equivalently, no infinite run of 1's).
+
+In this view of things, a real is understoood as an integer (a0) plus a
+binary fraction in [0,1) (the rest of some "binary" formal power series,
+meaning one with a_i =3D 0 or 1 for i > 0 and infinitely many 0s).  A gen=
+eral
+formal power series without this restriction to 0 and 1 then constitutes
+a redundant representation of a real, which can be made irredundant when
+needed (e.g. when comparing with <) by quotienting by I.
+
+An intuitively clear but less constructive view is to evaluate each serie=
+s at
+x =3D 1/2, the root of 1-2x, noting that any series bounded as above conv=
+erges
+absolutely there.  Series identified by I are those that evaluate to the
+same real at x =3D 1/2.
+
+What is nonconstructive about this is that direct evaluation of an infini=
+te
+series at a point requires infinite time, no matter how large and paralle=
+l
+the infinite circuit computing it may be.
+
+In contrast, P and P/I are more constructive in the following sense.
+Addition and subtraction in P require circuit depth O(1) using an infinit=
+e
+circuit whose gates perform integer addition and subtraction (just do it
+coordinatewise).  Reduction mod I takes longer, but there is a variant of=
+
+the above in which it is fast enough.  Instead of the field R we settle
+for just the group R, and instead of |a_i| < c (3/2)^i / i^(3/2) we settl=
+e
+for simply |a_i| < c.  In this case any given series can be reduced (same=
+
+generator 1-2x) to the above normal form in circuit depth log_2(c) (nice
+exercise), a finite quantity despite the series itself being of infinite
+length and fluctuating arbitrarily within =B1c.
+
+Multiplication is problematic for two reasons.  First it obliges the weak=
+er
+bound, complicating reduction.  Secondly it is a convolution, complicatin=
+g
+arithmetic even when carry propagation is deferred.  I don't see obvious
+solutions to either of these problems.  On the other hand I have no a pri=
+ori
+reason to suppose that these circuit-theoretic complications of passing
+from R as a group to R as a ring or field would be reflected in suitably
+constructive topos-theoretic developments of these notions.
+
+Vaughan Pratt
+
+
+
+
+
+

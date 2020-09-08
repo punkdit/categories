@@ -1,0 +1,187 @@
+Date: Wed, 18 Oct 1995 10:36:21 -0300 (ADT)
+Subject: a question
+
+Date: Wed, 18 Oct 1995 09:33:34 +0100
+From: TONOLO@PDMAT1.MATH.UNIPD.IT
+
+Dear Professors,
+
+I wish to know if complete lattices with the following property have
+been considered and named:
+
+         h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary meet)
+for each h and each directed family {a_i | i\in I} of elements of the lattice.
+
+
+Thanking for the attention, with my best regards
+
+Alberto Tonolo
+
+
+Date: Wed, 18 Oct 1995 11:43:43 -0300 (ADT)
+Subject: Re: a question
+
+Date: Wed, 18 Oct 1995 14:22:17 +0000
+From: Steve Vickers <sjv@doc.ic.ac.uk>
+
+>I wish to know if complete lattices with the following property have
+>been considered and named:
+>
+>         h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary
+>meet)
+>for each h and each directed family {a_i | i\in I} of elements of the lattice.
+The condition is equivalent to binary meets distributing over directed
+joins, and it's well known (e.g. Johnstone's "Stone Spaces" Lemma VII.4.1)
+that this holds for all continuous lattices.
+
+Posets that have finite meets and directed joins and this distributivity
+have been called "preframes" by Banaschewski, so if you are genuinely
+interested in complete lattices with preframe distributivity you might
+plausibly call them complete preframes.
+
+Steve Vickers.
+
+
+Date: Wed, 18 Oct 1995 16:03:07 -0300 (ADT)
+Subject: Re: a question
+
+Date: Wed, 18 Oct 1995 14:34:11 -0400 (EDT)
+From: MTHISBEL@ubvms.cc.buffalo.edu
+
+<<I wish to know if complete lattices with the following property have
+been considered and named:
+    h < sup a_i  ==>   h = sup( h : a_i)      (I use : for the binary meet)
+for each h and each directed family {a_i | i\in I} of elements of the lattice.>>
+
+  You have the meet-continuous lattices introduced in 1948 by G. Birkhoff
+and O. Frink. The usual definition is, for each up-directed family {a_i}
+and each h,h : sup a_i = sup h : a_i (in your notation). This is easily
+seen to be equivalent. There is a lot known about them by now.
+         Yours,    John Isbell
+
+
+
+Date: Fri, 20 Oct 1995 10:37:15 -0300 (ADT)
+Subject: Re: "a question"
+
+Date: 19-OCT-1995 19:34:07.42
+From: Fred E.J. Linton <FLINTON@EAGLE.WESLEYAN.EDU>
+
+Alberto Tonolo asks about complete lattices with the following property
+(I replace his meet-symbol ":" with the symbol "^" instead):
+
+>            h < sup a_i  ==>
+>
+>            h = sup( h ^ a_i)                 (*_h)
+>
+> for each h and each directed family {a_i | i in I} of elements of the lattice.
+
+I can point out only that, in any lattice (complete
+or not) in which the family  a_i  (i in I)  has a sup,
+to require  (*_h)  for each  h < sup a_i  is the same as
+to require the distributivity
+
+             h ^ sup a_i = sup (h ^ a_i)       (d_h)
+
+for just all  h .
+
+Indeed, the relations  (d_h)  and  (*_h)  coincide, and are trivial,
+when  h < sup a_i ; and when  h = sup a_i  they not only coincide but
+are tautologous.  In particular,  (d_h)  for all  h  guarantees  (*_h)
+for  h < sup a_i ,  and  (*_h)  for  h < sup a_i  guarantees  (d_h)
+at least for all  h  that are  <  or  =  to  sup a_i .
+
+For general  h' , let  h = h' ^ sup a_i .  Then  either  h < sup a_i
+or  h = sup a_i ; in either case,  (d_h)  holds.  To see that  (d_h')
+holds as well, just calculate:
+
+        since h = h' ^ sup a_i ,  either  h <  or  h = sup a_i  ;
+
+and, by  (*_h) ,
+
+        h' ^ sup a_i = h = sup (h ^ a_i) = sup ((h' ^ sup a_i) ^ a_i) =
+
+                     = sup (h' ^ ((sup a_i) ^ a_i)) = sup (h' ^ a_i) .
+
+In particular, *every*  h ^ (-)  will distribute through whatever joins
+happen to satisfy  (*_h)  for  just all smaller  h  than the join;
+if the lattice is complete and satisfies the (*_h) condition for all
+joins and all  h  smaller than them, it is a frame; and, I guess, if
+I'm not utterly confused by what the term "continuous lattice" means,
+if the lattice has directed joins and the (*_h) condition holds for all
+directed joins and all  h  smaller than them, then it's a continuous lattice
+(or, anyway, *every*  h ^ (-)  distributes through every directed join).
+
+Hope this helps.  And I'm sure someone will correct me if I've misunderstood
+the meaning of "continuous lattice" :-) .
+
+-- FEJ
+
+[PS: Address change: please make a note of it --
+
+  the address  fejlinton @ attmail.com  is officially dead
+
+(AT&T Mail's recent trebling of their monthly fee made me leave their service).
+
+Still valid are  FLinton @ Wesleyan.EDU , the older and more complicated
+ FLinton @ eagle.Wesleyan.EDU , the still older  FLinton @ WESLEYAN.bitnet ,
+and  fejlinton @ mcimail.com .
+
+Thanks for your attention.     - FEJ ]
+
+
+Date: Mon, 23 Oct 1995 11:34:26 -0300 (ADT)
+Subject: Re: "a question"
+
+Date: Mon, 23 Oct 1995 09:36:12 EDT5EST
+From: Philipp Sunderhauf <PSUNDER@payson.usm.maine.edu>
+
+Fred E.J. Linton in an answer to the question of Alberto Tonolo:
+
+> I guess, if
+> I'm not utterly confused by what the term "continuous lattice" means,
+> if the lattice has directed joins and the (*_h) condition holds for all
+> directed joins and all  h  smaller than them, then it's a continuous lattice
+> (or, anyway, *every*  h ^ (-)  distributes through every directed
+> join).
+> Hope this helps.  And I'm sure someone will correct me if I've misunderstood
+> the meaning of "continuous lattice" :-) .
+
+1) "continuous lattice" refers to complete lattices only, so the
+condition of existing directed sups is obsolete.
+
+2) The equational characterisation of continuous lattices is directed
+sups distributing over *arbitrary* infs. As pointed out by John
+Isbell, the lattices referred to by Alberto Tonolo are known as "meet-
+continuous".
+
+3) Detailed answers to this and related questions may be found in
+The Compendium:
+G Gierz, KH Hofmann, K Keimel, JD Lawson, M Mislove, D Scott:
+A Compendium of Continuous Lattices. Springer 1980.
+
+Philipp.
+------
+Philipp S"underhauf
+Department of Mathematics and Statistics
+University of Southern Maine
+Portland, ME 04103
+psunder@usm.maine.edu
+
+
+Date: Mon, 23 Oct 1995 11:33:27 -0300 (ADT)
+Subject: Re: a question
+
+Date: Sun, 22 Oct 1995 11:20:07 -0700
+From: William H. Rowan <rowan@crl.com>
+
+Dear Alberto,
+
+It would seem your property is implied by one form of continuity, I think
+it is upper continuity.  I think algebraic lattices also have your property.
+
+Best,
+
+Bill Rowan
+
+

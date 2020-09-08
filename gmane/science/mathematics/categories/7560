@@ -1,0 +1,100 @@
+Path: news.gmane.org!not-for-mail
+From: Richard Garner <richard.garner@mq.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Splitting epis by wishful thinking
+Date: Fri, 4 Jan 2013 15:04:51 +1100
+Lines: 61
+Approved: news@gmane.org
+Message-ID: <E1Tr87D-00014Y-O3@mlist.mta.ca>
+References: <E1TqwRE-00070o-75@mlist.mta.ca>
+Reply-To: Richard Garner <richard.garner@mq.edu.au>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: ger.gmane.org 1357309252 6226 80.91.229.3 (4 Jan 2013 14:20:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 4 Jan 2013 14:20:52 +0000 (UTC)
+Cc: categories list <categories@mta.ca>
+To: Andrej Bauer <andrej.bauer@andrej.com>
+Original-X-From: majordomo@mlist.mta.ca Fri Jan 04 15:21:05 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.32])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Tr88v-0004bk-8A
+	for gsmc-categories@m.gmane.org; Fri, 04 Jan 2013 15:21:05 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:56836)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Tr816-0000OK-Qd; Fri, 04 Jan 2013 10:13:00 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1Tr87D-00014Y-O3
+	for categories-list@mlist.mta.ca; Fri, 04 Jan 2013 10:19:19 -0400
+In-Reply-To: <E1TqwRE-00070o-75@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7560
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7560>
+
+Hi Andrej,
+
+This isn't exactly what you want, but it's along the right lines. Given a
+small category with cokernel pairs, one can construct another category with
+cokernel pairs in which all epis have been "freely" split. By this, I mean
+that a chosen section has been freely added to every epi in the category,
+even the ones that already had a section; thus the construction is not
+idempotent. Basically one uses the small object argument.
+
+Consider the category K of small categories with cokernel pairs, and
+functors preserving such. Let C be the free category with cokernel pairs
+containing an epi e: it can be obtained by first forming the free category
+with cokernel pairs on an arrow f, and then coinverting the codiagonal of
+f. Let D be the free category with cokernel pairs containing a
+section-retraction pair (i,p). There is an obvious map C --> D in K which
+sends e to p. Now some E in K satisfies the axiom of choice if and only if
+it is projective (has the weak right lifting property) with respect to this
+map C --> D.
+
+K is locally finitely presentable, and so the map C --> D generates via the
+small object argument a weak factorisation system (L,R) on it. By the above
+argument, the fibrant objects for (L,R) are those small categories with
+cokernel pairs satisfying the axiom of choice. If one uses the algebraic
+version of the small object argument, the fibrant replacement for this
+w.f.s. is a monad, S, say. The action of this monad on objects freely
+adjoins sections for all epis; its algebras are precisely the small
+categories with cokernel pairs with a chosen section for each epi.
+
+One can ask what happens if one drops the assumption of cokernel pairs.
+Consider the category Cat_ac, whose objects are small categories in which
+every epi comes equipped with a chosen section. There is an obvious
+forgetful functor Cat_ac ---> Cat, and a more precise formulation of your
+original question would be to ask if this functor has a left adjoint. This
+is unclear to me; at the moment I feel like it probably doesn't. What does
+seem clear is that, if it does have a left adjoint, then it can't possibly
+be monadic, so whatever construction one gives won't be entirely honest or
+straightforward.
+
+Richard
+
+
+On 3 January 2013 23:36, Andrej Bauer <andrej.bauer@andrej.com> wrote:
+
+> On Mathoverflow there is a discussion (see
+>
+> http://mathoverflow.net/questions/117921/relative-consistency-of-etcs-over-the-theory-of-a-well-pointed-topos-with-nno
+> )
+> which got me thinking.
+>
+> Is there a construction which "freely" splits all epis in a category
+> C? Something like: we add sections to every epi and wish we are done?
+>
+> The question is somewhat lose, but I think it is clear nontheless.
+>
+> With kind regards,
+>
+> Andrej
+>
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

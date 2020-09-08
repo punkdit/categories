@@ -1,0 +1,208 @@
+Date: Sun, 29 Jun 1997 11:37:02 -0300 (ADT)
+Subject: Re: pushouts in toposes
+ 
+Date: Sun, 22 Jun 1997 11:54:47 -0300
+From: RJ Wood <rjwood@cs.dal.ca>
+ 
+A belated, somewhat tangential comment, on the distributivity
+condition
+A v /\Bi  =  /\(A v Bi)
+that Peter mentioned in his posts. The subobject classifier,
+Omega, satisfies this condition (internally) if and only if the
+topos is boolean. See the proof of Theorem 10 in Constructive
+Complete Distributivity II, Math Proc Cam Phil Soc, (1991) 110,
+245-249, by Rosebrugh and Wood, which shows that if Omega^op
+is Heyting then Omega is Boolean. This result was discovered
+independently by Richard Squire in his thesis.
+ 
+It has always struck me as somewhat surprising but in the Rosebrugh/
+Wood proof it is an immediate consequence of the corollary of the
+following result which I believe is due to Benabou and which seems
+to be not well known:
+ 
+LEMMA If f <= id:Omega--->Omega then f(u) = u/\f(true).
+ 
+COROLLARY If f <= id:Omega--->Omega and f(true) = true then f = id.
+ 
+(If Omega^op is Heyting, apply the corollary to --, where - is the
+negation for Omega^op.)
+RJ
+
+
+Date: Mon, 30 Jun 1997 23:38:33 -0300 (ADT)
+Subject: functions Omega->Omega 
+ 
+Date: Sun, 29 Jun 1997 19:04:54 +0100 (BST)
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+ 
+Richard Wood mentioned an observation about functions Omega->Omega in a topos.
+ 
+In the more abstract situation of a classifier Sigma for some subclass of monos
+(closed under isomorphisms, composition and pullback along arbitrary maps,
+and such that the characteristic function of a subobject, where it exists,
+is unique), the following formula holds:
+        for any function f:Sigma x X -> X
+        and predicate    a:X -> Sigma
+        f(a) & a  =  f(true) & a
+In fact, along with Sigma being a semilattice, this is necessary and
+sufficient for Sigma and its powers to form a full subcategory of some
+category in which Sigma is a classifier.
+ 
+I wonder whether anyone has noticed this formula before?
+ 
+In my construction, the Frobenius law for an existential quantifier
+is derivable from it.  It is also reminiscent of the Berry order in
+stable domain theory, but I can see no substantial connection.
+ 
+It is easily provable in higher order logic: either way, assume a, so a=true.
+ 
+Curiously, Phoa's Principle (in synthetic domain theory) is the 
+conjunction of
+        the higher order equation above
+        its lattice dual   f(a) \/ a = f(false) \/ a
+and     all functions f:Sigma->Sigma are monotone.
+ 
+For the continuation of this story, go to Vancouver ...
+ 
+Paul
+
+
+Date: Tue, 1 Jul 1997 15:11:37 -0300 (ADT)
+Subject: my formula again. 
+ 
+Date: Tue, 1 Jul 1997 11:05:19 +0100 (BST)
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+ 
+Thanks to Pino Rosolini for pointing out a typo in my formula:
+ 
+        for any function f:Sigma x X -> Sigma    (not -> X)
+        and predicate    a:X -> Sigma
+ 
+        f(a) & a  =  f(true) & a
+ 
+where the parameter x has been suppressed from the equation
+so in full it reads, less clearly
+        f(a(x),x) & a(x) = f(true,x) & a(x)
+Paul
+ 
+
+Date: Wed, 2 Jul 1997 13:35:36 -0300 (ADT)
+Subject: Re: functions Omega->Omega 
+ 
+Date: Tue, 1 Jul 1997 16:22:06 -0400 (EDT)
+From: Todd Wilson <twilson@CS.Cornell.EDU>
+ 
+Paul Taylor asks:
+ 
+>       f(a) & a  =  f(true) & a
+> 
+> I wonder whether anyone has noticed this formula before?
+ 
+There is a section of my thesis devoted to operators on Heyting
+algebras that satisfy this formula.  More generally, I considered
+"extensional operators" l : A -> A (A is a H.A.), which are
+characterized by any of the following equivalent conditions:
+ 
+(a) x C y implies l(x) C l(y)  (x,y in A, C a Heyting-congruence on A)
+(b) a & l(x) <= l(a * x) <= a -> l(x)  (a,x in A, * in {&,->})
+(c) a * l(x) = a * l(a o x)   (a,x in A, *,o in {&,->})
+(d)  a * x = a * y  implies  a o l(x) = a o l(y) (a,x,y in A, *,o in {&,->})
+(e)  x <-> y <= l(x) <-> l(y)  (x,y in A)
+ 
+The name "extensional operator" comes from (e).  If A is complete,
+extensional operators on A are in 1-1 correspondence with morphisms
+Omega -> Omega in the topos Sh(A).  "Logical operators" are what I
+called extensional operators satisfying l(true) = true -- or,
+equivalently, x <= l(x) (x in A).  The quasinuclei of Banaschewski are
+then precisely the monotone logical operators, and nuclei are
+(therefore) precisely the extensional closure operators.
+ 
+Arbitrary extensional operators can be "built" from "below" or from
+"above" by specific extensional operators, generalizing the way nuclei
+can be built from open, closed, and quasiclosed nuclei, and several
+"structure theorems" of this kind exist.  One can also characterize
+the subsets of A that can appear as the fixedpoint sets of logical
+operators (equivalently the prefixedpoint sets of extensional
+operators).
+ 
+My thesis goes on to study "regular operators" -- the regular elements
+in the lattice of logical operators, or, equivalently, those operators
+r satisfying r(a->b) = a->r(b) (a,b in A) -- which have an amazing
+number of properties (e.g., they are idempotent, they preserve
+"regular" joins and "stable" meets, their fixedpoint sets are the same
+as the fixedpoint sets of logical operators, any two regular operators
+commute, and the join of regular operators is function composition, to
+name several).  The set of regular operators on a frame A forms a
+complete Boolean algebra isomorphic to N^2(A)/--, i.e., the
+double-negation quotient of the *second assembly* of A (where N(A) =
+the frame of nuclei on A = the frame of frame congruences on A; see
+Johnstone, Stone Spaces, pp. 51--57, for more information on the
+functor N and its iterates).  This provides a concrete embedding of
+any frame into a complete Boolean algebra.
+ 
+I have used the theory regular operators to derive an explicit formula
+for joins of nuclei, characterize "free meets" in frames, and to
+answer some questions about fibrewise-Boolean locales.  My thesis also
+characterizes universal monos (and obtains some results about limits
+and colimits) in the categories of frames and kappa-frames, and
+generalizes some results of Banaschewki on finitely generated frame
+extensions.  It appeared as CMU tech report CMU-CS-94-186.
+ 
+Todd Wilson
+Computer Science Department
+Cornell University
+ 
+
+Date: Sat, 12 Jul 1997 14:55:41 -0300 (ADT)
+Subject: Re: functions Omega->Omega 
+
+Date: Fri, 11 Jul 1997 16:56:25 -0400 (EDT)
+From: Andre Scedrov <scedrov@saul.cis.upenn.edu>
+
+
+          >     	f(a) & a  =  f(true) & a
+          > 
+          > I wonder whether anyone has noticed this formula before?
+
+Similar formulas and their analogs in intuitionistic second-order 
+propositional calculus are discussed in my paper in the Annals Pure 
+Appl. Logic 27 (1984) 155-164. That paper was motivated by Higgs's 
+observation that every monic  Omega -> Omega  in a topos is an involution, 
+see Peter Johnstone's paper "Automorphisms of Omega" in Alg. Universalis 
+9 (1979) 1-7. 
+
+ Andre Scedrov
+
+
+Date: Mon, 14 Jul 1997 20:25:50 -0300 (ADT)
+Subject: Re: functions Omega->Omega 
+
+Date: Mon, 14 Jul 1997 14:24:43 -0400
+From: Philip J. Scott <scpsg@matrix.cc.uottawa.ca>
+
+>Date: Fri, 11 Jul 1997 16:56:25 -0400 (EDT)
+>From: Andre Scedrov <scedrov@saul.cis.upenn.edu>
+>
+>
+>          >             f(a) & a  =  f(true) & a
+>          >
+>          > I wonder whether anyone has noticed this formula before?
+>
+>Similar formulas and their analogs in intuitionistic second-order
+>propositional calculus are discussed in my paper in the Annals Pure
+>Appl. Logic 27 (1984) 155-164. That paper was motivated by Higgs's
+>observation that every monic  Omega -> Omega  in a topos is an involution,
+>see Peter Johnstone's paper "Automorphisms of Omega" in Alg. Universalis
+>9 (1979) 1-7.
+>
+> Andre Scedrov
+
+For a logical proof of Higgs' theorem, based on the above observations
+of Scedrov, see Lambek-Scott (Introd. to Higher Order Cat. Logic), p.160,
+Exercise 4. A further result along these lines is in Lemma 12.3, p. 190 of
+our book.
+
+                        Phil Scott
+
+
+

@@ -1,0 +1,100 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Mike Stay <metaweta@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Functionally complete/universal basis for graph homomorphisms?
+Date: Wed, 27 Sep 2017 15:26:25 -0600
+Lines: 62
+Approved: news@gmane.org
+Message-ID: <E1dxMfI-0003nw-3U@mlist.mta.ca>
+References: <E1dwrt5-0004cr-IJ@mlist.mta.ca>
+Reply-To: Mike Stay <metaweta@gmail.com>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="UTF-8"
+X-Trace: blaine.gmane.org 1506558462 16116 195.159.176.226 (28 Sep 2017 00:27:42 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Thu, 28 Sep 2017 00:27:42 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Thu Sep 28 02:27:38 2017
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dxMfy-0003qQ-1V
+	for gsmc-categories@m.gmane.org; Thu, 28 Sep 2017 02:27:38 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45957)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dxMh7-0002P2-Sm; Wed, 27 Sep 2017 21:28:49 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1dxMfI-0003nw-3U
+	for categories-list@mlist.mta.ca; Wed, 27 Sep 2017 21:26:56 -0300
+In-Reply-To: <E1dwrt5-0004cr-IJ@mlist.mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9366
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9366>
+
+Thanks for all the responses so far.  It's been pointed out to me that
+my post used some terms in a vague way, so let me try to be a little
+more precise.  Let B = {0,1} and NAND: B^2 -> B be the usual NAND
+function.  Then any function B^n -> B can be expressed as the
+composition of a finite number of uses of the diagonal function
+D:B->B^2, projections, permutations, and NAND.
+
+Let Omega be the subgraph classifier described below.  I'm working
+with the topos of reflexive directed multigraphs, that is, graphs
+whose vertices are equipped with a chosen self-edge and that allow
+multiple parallel directed edges between any pair of vertices.  I
+suspect that any graph homomorphism from Omega^n to Omega (where
+finite powers are given by the categorical product) can be expressed
+as the composition a finite number of uses of the diagonal graph
+homomorphism D:Omega -> Omega^2, projections, permutations, and some
+finite number of operations with signature Omega^2 -> Omega.
+
+My best guess at a such a set of operations is
+     1. Map all vertices of Omega^2 to t and apply NAND to the edges,
+treating "in" as true and all the "outs" as false,
+     2. NAND together the vertices.  Edges between any of (t,f), (f,t),
+and (f,f) map to in and the others map to the appropriate outs, and
+     3. (t,t) maps to t; the rest of the vertices map to f.  (in, in)
+maps to in; the rest of the edges map to the appropriate outs.
+
+I would like to know if
+     a. a single set of operations suffices for all n
+     b. if so, what the smallest size of such a set is and an example
+of such a minimal set
+     c. if not, how the size of the necessary set grows with n.
+
+Thanks!
+
+On Mon, Sep 25, 2017 at 10:17 PM, Mike Stay <metaweta@gmail.com> wrote:
+> The Sheffer stroke / NAND gate suffices to implement any function from
+> 2^n -> 2.  I'm looking for a similar universal basis for graph
+> homomorphisms from Omega^n -> Omega, where Omega is the subgraph
+> classifier with two vertices t, f and five edges
+>
+>    in:t->t, out1:t->t, out2:t->f, out3:f->t, out4:f->f.
+>
+> There's obviously a finite set of operations that covers all graph
+> homomorphisms from Omega^n to Omega, because the set of all operations
+> of that form is finite. But how small can that set be? I'd be
+> satisfied with a formula parametric in n, but surprised if it actually
+> depends on n; I'd expect it to be a finite set of binary operations.
+>
+> --
+> Mike Stay - metaweta@gmail.com
+> http://www.cs.auckland.ac.nz/~mike
+> http://reperiendi.wordpress.com
+>
+
+
+-- 
+Mike Stay - metaweta@gmail.com
+http://www.cs.auckland.ac.nz/~mike
+http://reperiendi.wordpress.com
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,2125 @@
+From rrosebru@mta.ca Tue Aug  1 09:00:29 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA21742
+	for categories-list; Tue, 1 Aug 2000 08:59:01 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Martin Escardo <mhe@dcs.st-and.ac.uk>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14726.47861.392236.332274@mosstowie.dcs.st-and.ac.uk>
+Date: Tue, 1 Aug 2000 12:56:37 +0100 (BST)
+To: Peter Freyd <pjf@saul.cis.upenn.edu>
+Subject: categories: Re: Reality check
+In-Reply-To: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+X-Mailer: VM 6.71 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 1
+
+Here are a comment and a question regarding the interesting reality
+check.
+
+Peter Freyd wrote, among other things:
+ > Take the elements of  [-1,1]  to be named by infinite
+ > sequences of _signed_ binary digits, that is -1, 0, +1.
+ > 
+ > [...]
+ > 
+ > The signed binary
+ > expansions  .+1 -1  and  .0 +1  describe the same number, to wit, 1/4.
+
+In a way, the finitary identities
+
+      +1 -1  ==  0 +1  
+
+together with their symmetric versions
+
+      -1 +1  ==  0 -1  
+
+capture *all* identifications made by the quotient map
+
+     3^N  -->>  [-1, 1]
+
+      s  |-->    [[s]] = s1 / 2  +  s2 / 4  + ... +  sn / 2^n + ... 
+
+that takes a signed-digit binary expansion s to the number [[s]] that
+it denotes. Here 3 = {-1,0,+1}, and I am supposing initially that
+[-1,1] is already given.
+
+Let === be the kernel of the quotient map:
+
+     s === t  iff [[s]] = [[t]].
+
+Let == be the least equivalence relation on 3^N such that
+
+     s +1 -1 t == s 0 +1 t
+and
+     s -1 +1 t == s 0 -1 t,
+
+where s ranges over 3^* and t over 3^N. 
+
+It is easy to see that == is coarser than ===.  It is *strictly*
+coarser as, for example, we have that
+
+	-1 1 1 1 1 1 1 1 1 ... === 1 -1 -1 -1 -1 -1 -1 ..., 
+
+because both sequences denote the number zero, but === cannot be
+replaced by ==, because these two sequences cannot be made equal by
+finitely many applications of the identities.
+
+HOWEVER, if one endows 3^N with the Cantor topology (the product of
+the discrete topology of 3), then the relation === is the topological
+closure of the relation == in the product space 3^N x 3^N. 
+That is, all we need to do in order to get === from == is to add
+limits. 
+
+Thus, === can be defined in a topologico-combinatorial way *without*
+reference to a previously existing interval [-1,1]. Therefore we have
+a simple direct (classical) construction of the Euclidean interval
+[-1,1] as a topological quotient of 3^N by an easily defined
+equivalence relation of finite character.
+
+(NB. Of course, === has to be closed, because [-1,1] is Hausdorff and
+the semantic map is continuous (and hence a topological quotient map,
+as it is a surjection of compact Hausdorff spaces). Thus, another way
+of putting the above is to say that == fails to be === only by failing
+to be closed.)
+
+Moreover, there is a *computable* idempotent function 
+
+	  f : 3^N x 3^N --> 3^N x 3^N 
+
+with the property that if f(s,t)=(s',t') then 
+
+     (1) s===s', t===t' and
+
+     (2) if s===t then s' = t' 
+
+            (Yes, I mean this; s' and t' are the *same* sequence.)
+
+As this may sound puzzling at first sight, let me observe that it
+doesn't help in effectively deciding equality, nor does it show that
+numbers would have canonical representatives, because norm(s,s)=(s,s)
+is consistent with the above specification.
+
+Such a function f(s,t) is computed by a finite automaton that tries to
+apply the two identities to make s and t equal, by scanning longer and
+longer finite prefixes of s and t, where this attempt fails at some
+finite stage if and only if s and t denote distinct numbers.  At most
+n+2 digits of input have to be scanned in order to produce n digits of
+output.
+
+(Reference: "Effective and sequential definition by cases on the reals
+via infinite signed-digit numerals", Volume 13 of Electronic Notes in
+Theoretical Computer Science, 1998.)
+
+---------
+Question: 
+---------
+
+Can we replace topology by coinduction in the formulations (and
+proofs) of the above properties?
+
+Martin Escardo 
+
+
+From rrosebru@mta.ca Tue Aug  1 13:34:57 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id NAA15593
+	for categories-list; Tue, 1 Aug 2000 13:31:45 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Change of address
+To: categories@mta.ca
+Date: Tue, 1 Aug 2000 16:09:54 +0100 (BST)
+X-Mailer: ELM [version 2.5 PL2]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <E13Jdg3-0001Yd-00@owl.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 2
+
+It's happening at last! As you will know from one of Peter Freyd's recent
+postings on this bulletin board, the mathematicians in Cambridge are in the
+process of moving to the new Centre for Mathematical Sciences in
+Clarkson Road, next to the Isaac Newton Institute. From *12 September 2000*,
+our postal address will be
+
+DPMMS,
+Centre for Mathematical Sciences, 
+Wilberforce Road,
+Cambridge CB3 0WB,
+U.K.
+
+(replacing the 16 Mill Lane address with which many of you will be familiar).
+
+Please note that, although the new building is familiarly referred to as
+`Clarkson Road' (and the main pedestrian access is indeed from Clarkson Road),
+the Post Office regard it as being in Wilberforce Road because they will be
+delivering mail from that side. (Also, for those who care about such things,
+the `0' in the postcode is a zero, not a capital `Oh'.)
+
+Telephone numbers and e-mail addresses will remain unchanged, although there
+may be some short-term disruption to both during the actual move.
+
+Peter Johnstone
+
+
+From rrosebru@mta.ca Thu Aug  3 10:11:21 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA30639
+	for categories-list; Thu, 3 Aug 2000 10:03:34 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 3 Aug 2000 10:17:59 +0100
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Message-Id: <200008030917.KAA11671@koi-pc.dcs.qmw.ac.uk>
+To: categories@mta.ca
+Subject: categories: "Practical Foundations" reprint
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 3
+
+I am pleased to report that my book
+
+	Practical Foundations of Mathematics
+	Cambridge Studies in Advanced Mathematics 59
+	Cambridge University Press, 1999
+	ISBM 0 521 63107 6
+
+has sold enough copies (not too sure how many that is) to warrant a reprint.
+
+I have been asked to send any [minor] corrections by 18 August,
+which is really rather short notice.
+
+If you have any notes of spelling mistakes, broken sentences, wrong firstnames,
+wrong fonts or whatever, please send them to me as soon as possible.
+
+Obviously I also want to know if there are mathematical errors, but it will
+probably only be possible to change a small amount of text on this occasion.
+(However, judging by the experience with "Proofs and Types", it is likely
+to be another ten years before I get the opportunity to make substantial
+changes.)
+
+The full text of the narrative of the book (with only the simplest parts of
+the mathematics) is available on the web in HTML at
+	http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations
+
+Some of you got your copies by a special arrangement with Richard Knott at CUP
+in March last year.   I heard some rumours that not all of the orders that
+were made in that way were actually fulfilled.    If you sent an order to
+Richard but didn't get your copy, please tell me.
+
+Paul Taylor
+
+
+From rrosebru@mta.ca Fri Aug  4 12:50:10 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA25001
+	for categories-list; Fri, 4 Aug 2000 12:49:46 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Martin Escardo <mhe@dcs.st-and.ac.uk>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-ID: <14730.39336.321672.460059@mosstowie.dcs.st-and.ac.uk>
+Date: Fri, 4 Aug 2000 11:23:36 +0100 (BST)
+To: categories@mta.ca
+Subject: categories: Re: Reality check
+In-Reply-To: <vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+	<vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+X-Mailer: VM 6.71 under 21.1 (patch 3) "Acadia" XEmacs Lucid
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 4
+
+I can't answer Andrej's questions, but I can make a few
+observations. 
+
+ > It would be interesting to simplify this presentation even further by
+ > using a signed representation with digits -1 and 1 only, in base B
+ > strictly between 1 and 2. For example, the golden ratio base B = (1 +
+ > sqrt(5))/2 seems to be very popular among exact real arithmetic
+ > people. But it's unclear how to make a finite state automaton for
+ > negation of === in this case.
+
+In base Golden Ratio with digits 0 and 1 (proposed by Pietro Di
+Gianantonio), the family of identities that generates === is
+
+   ... 100 ... === ... 011 ... 
+
+It corresponds to the fact that the Golden Ratio is the positive
+solution of the equation x^2 = x + 1.
+
+    (i.e. 1 x^2 + 0 x^1 + 0 x^0 = 0 x^2 + 1 x^1 + 1 x^0)
+          =       =       =       =       =       =
+
+What I have reported about signed-digit binary notation has also been
+developed for Golden-Ratio notation by David McGaw in his Honours
+project ( http://www.dcs.st-and.ac.uk/~mhe/macgaw.ps.gz ).  You may be
+able to get a finite automaton from his algorithm for solving the word
+problem. It should be even simpler than the one for signed binary,
+because there are fewer cases to consider.
+
+ > [Discussion about intuitionistic versions of Freyd's construction
+ > deleted.]
+ > This [discussion] leads to the idea that we should think of
+ > the closed interval I as being glued like this:
+ > 
+ >              I
+ >       |------------|--R--|
+ >                    |--L--|------------|
+ >                             I
+
+This is precisely what the Golden-Ratio notation achieves.
+
+The interval I is now [0,phi], where phi is the Golden Ratio.
+
+Then the "digit maps" are l(x)=(x+0)/phi and r(x)=(x+1)/phi.
+
+The intersection of the images of l and r is a closed interval with
+non-empty interior, as in your picture. 
+
+The above family of identities is equivalent to the single equation
+l o r o r = r o l o l.
+
+One could try to consider algebras with two operations and this
+equation in order to get the interval in a more constructive way.
+
+
+From rrosebru@mta.ca Fri Aug  4 12:50:11 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA26633
+	for categories-list; Fri, 4 Aug 2000 12:47:47 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: cemartin@brookes.ac.uk
+Message-Id: <200008032108.WAA07280@brookes.ac.uk>
+To: categories@mta.ca
+Subject: categories: omega cocontinuity of bifunctors
+Date: Thu, 3 Aug 2000 22:08:17 GB-Eire
+X-Mailer: Brookes WebMail  v2.0
+X-Originating-IP: 195.102.240.153
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 5
+
+Please could somebody tell me where I might find the following 
+result so that I can give a reference to it?
+
+A bifunctor is omega-cocontinuous if it is omega-cocontinuous 
+in each of its arguments separately. 
+
+Thanks very much,
+
+Clare Martin.
+
+
+
+From rrosebru@mta.ca Fri Aug  4 12:50:11 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA07308
+	for categories-list; Fri, 4 Aug 2000 12:47:00 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Andrej.Bauer@CS.cmu.edu
+To: categories@mta.ca
+Subject: categories: Re: Reality check
+References: <200007311544.e6VFijI18118@saul.cis.upenn.edu>
+Date: 03 Aug 2000 16:28:59 -0400
+In-Reply-To: Peter Freyd's message of "Mon, 31 Jul 2000 11:44:45 -0400 (EDT)"
+Message-ID: <vkaaeeuytpw.fsf@gs2.sp.cs.cmu.edu>
+Lines: 181
+User-Agent: Gnus/5.0803 (Gnus v5.8.3) XEmacs/20.4 (Emerald)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Source-Info:  Sender is really andrej+@gs2.sp.cs.cmu.edu
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 6
+
+
+I just returned from an idyllic island in the Adriatic sea, so I am
+joining the discussion on the reals a bit late.
+
+Jesse Hughes and I have thought about some of the questions that have
+been discussed so far in February, and I would like to report on what
+we had come up with.
+
+
+1.
+
+Martin Escardo asked whether it is possible to define the signed
+binary digit representation of [-1,1] in purely coinductive form. This
+can be done as follows (I am using Martin's notation for === and [[s]]).
+
+Let 3 = 1 + 1 + 1 = {-1, 0, 1}, and let C be the final coalgebra for
+the functor X |--> 3 x X. If the ambient category is nice enough C is
+the Cantor space 3^N, but we stick to purely coinductive language and
+think of elements of C as streams. Since C is the final coalgebra for
+X |--> 3 x X, every stream in C can be written uniquely in the form
+h::t where h is the "head" digit and t is the "tail" of the stream.
+
+The question is how to define the coincidence relation === on C
+without reference to the closed interval. The right person to ask this
+was Michal Konecny <konecny@rect.muni.cz>, a student of Achim Jung's,
+who studied what functions on real numbers can be computed by finite
+state automata (he also knows very well what exactly can be computed
+with finite state automata---there seems to be a close relation to
+f.s.a. and coinductive definitions). He immediately came up with a
+finite state automaton that accepts the negation of ===, from which a
+coinductive definition of === can be obtained easily. Michal produced
+pretty pictures that you can see at http://andrej.com/michal.ps
+
+The trick is to define === together with an auxiliary relation ~==.
+The intended meaning of s ~== t is [[s]] = 1/2 + [[t]]. It goes as
+follows:
+
+ x::a === y::b  <==>    (x=y, a === b) or
+                        (x=1, y=-1, a=-1-1-1..., b=111...) or
+                        (x=-1, y=1, a=111..., b=-1-1-1...) or
+                        (x=0, y=1, a ~== b) or
+                        (x=-1,y=0, a ~== b) or
+                        (x=1, y=0, b ~== a) or
+                        (x=0, y=-1, b ~== a)
+
+ and
+
+ x::a ~== y::b  <==>    (x=1, y=-1, a ~== b) or
+                        (x=0, y=-1, a ~== b) or
+                        (x=1, y=0, a ~== b) or
+
+Now let I be the quotient of C by ===. If the category is rich enough
+we can show that I is the closed interval of Cauchy reals.
+
+It would be interesting to simplify this presentation even further by
+using a signed representation with digits -1 and 1 only, in base B
+strictly between 1 and 2. For example, the golden ratio base B = (1 +
+sqrt(5))/2 seems to be very popular among exact real arithmetic
+people. But it's unclear how to make a finite state automaton for
+negation of === in this case.
+
+
+2.
+
+Alex Simpson suggested that we should look for what he calls
+"pseudo-ordering" instead of the classical "linear ordering". I
+definitely agree with that. I would just like to say that in my view
+it is better to say "(intuitionistic) linear order" than
+"pseudo-order" since the three axioms (by the way, there is no need to
+explicitly quantify over z in the second axiom, is there?)
+
+  1. not (x < y and y < x)
+
+  2. x < y ==> (x < z or z < y)
+
+  3. (not (x < y or y < x)) ==> x = y
+
+are classically equivalent to the usual axioms for linear order, as
+far as I can tell. So there is nothing "pseudo-" about the axioms,
+unless intuitionistic logic is "pseudo-logic"...
+
+I also agree with Alex that gluing along a point is not the right
+thing to do, from a constructive/intuitionistic point of view.
+
+
+3.
+
+Lastly, let me suggest another construction which Jesse and I have
+come up with, but we are unable to verify whether it works. Perhaps
+someone who does not get confused so quickly by too many arrows can
+tell us if it is worth anything.
+
+We were thinking like this. Consider the construction described by
+Peter Freyd, where we take objects with distinguished elements 0 and 1.
+We require that not (0 = 1) and then we define a "gluing functor"
+X |--> X v X which identifies 0 from one copy of X with 1 in the other
+copy of X. Then it turns out that (classically) the final coalgebra
+for the gluing functor is the closed interval I. This construction
+does not work in the intuitionistic case because gluing along a single
+point is a very classical construction. For an intuitionistic
+construction we should glue along an interval so that we have some
+"numerical tolerance". This leads to the idea that we should think of
+the closed interval I as being glued like this:
+
+             I
+      |------------|--R--|
+                   |--L--|------------|
+                            I
+
+That is, we replace the notion of "bottom 0" and "top 1" with "left
+part L" and "right part R". In categorical language, the global points
+0: * ---> I and 1: * ---> I are replaced with regular subspaces
+L: I >--> I and R: I >--> I. So the obvious thing to attempt is to
+consider objects X with distinguished "right part R: X >--> X" and
+"left part L: X >--> X". However, this doesn't work because when we form 
+the pushout
+
+          R
+      X >----> X
+      V        V
+    L |        |
+      |       _|
+      V      | V
+      X -----> Y
+
+we are stuck since we don't know how to obtain the left and right
+parts of Y (they should be regular monos Y >--> Y). But we can fix
+this by removing the condition that the left and the right part be
+isomorphic to the whole, which gives us the following construction:
+
+As objects we take pairs of parallel regular monos
+
+    >--R-->
+  X >--L--> Y
+
+We think of R as the "right part of Y" and L as the "left part of Y".
+There is an obvious notion of morphism between such objects
+R,L: X >--> Y and R',L': X' >--> Y', namely a pair of arrows x: X ---> X'
+and y: Y ---> Y' such that the following two diagrams, folded into a single
+picture, commute:
+
+      >--R-->
+    X >--L--> Y
+    |         |
+  x |         | y
+    |         |
+    V         V
+    X'>--R'-> Y'
+      >--L'->
+
+Define the gluing functor which maps such an object R,L: X ---> Y to the
+object R',L': Y ---> Z where Z, L', and R' appear in the pushout diagram:
+
+          R
+      X >----> Y
+      V        V
+    L |        | L'
+      |       _|
+      V      | V
+      Y -----> Z
+          R'
+
+We probably have to require that R and L are distinct regular monos
+(just like we required that 0 and 1 are distinct, and they were
+regular monos for free). We also have to assume that pushouts of
+regular monos along regular monos are regular monos.
+
+Question: does this functor have a final coalgebra, say in the
+category of sets? How about in a topos with natural numbers object?
+
+Observe that if there is a final coalgebra, then it is necessarily of
+the form R, L: I >--> I, the left and the right parts are isomorphic
+to the whole, because the structure map of a final coalgebra is an
+isomorphism. So this much at least works out fine.
+
+I have a feeling that the construction won't work, which is not bad
+anyway, since the midpoint construction together with the completness
+axiom of Alex's and Martin's works beautifully. I am just curious to
+see what the final coalgebra might be.
+
+Andrej
+
+
+From rrosebru@mta.ca Fri Aug  4 12:50:40 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id MAA02692
+	for categories-list; Fri, 4 Aug 2000 12:50:36 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <200008041116.MAA28030@cuillin.dcs.ed.ac.uk>
+X-Mailer: exmh version 2.1.1 CVS 2000/03/22
+To: categories@mta.ca
+Subject: Re: categories: Reality check 
+In-Reply-To: Message from Martin Escardo <mhe@dcs.st-and.ac.uk> 
+   of "Fri, 04 Aug 2000 11:23:36 BST." <14730.39336.321672.460059@mosstowie.dcs.st-and.ac.uk> 
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Date: Fri, 04 Aug 2000 12:16:52 +0100
+From: Alex Simpson <als@dcs.ed.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 7
+
+
+Martin writes:
+
+>  > [Discussion about intuitionistic versions of Freyd's construction
+>  > deleted.]
+
+So, in response to that aspect:
+
+Peter's motivation was to capture the signed binary interval rather 
+than the binary one, a distinction that only exists in an 
+intuitionistic setting. For (at least) this reason, his original 
+definition was already intuitionistic (indeed his axioms were 
+explicitly formulated in an intuitionistically appropriate form). 
+The point I was making was that, given that one is already being 
+sensitive to intuitionistic formulations, one also needs to be
+equally careful about other aspects of the axiomatization (e.g. 
+the definition of a suitable category of ordered sets). I was
+curious to know which of the (apparently many) possible alternative 
+definitions Peter had in mind.
+
+It seems to me eminently plausible that Peter's construction works 
+perfectly for the previously discussed intuitionistic linear orderings 
+(I agree with Andrej about terminology - I took my terminology 
+"pseudo ordering" from Peter Aczel). In fact, I would expect it to give 
+the closed interval of Dedekind reals in any elementary topos with nno.
+(Peter's proof that one obtains the signed-binary = Cauchy interval does 
+indeed appear to use number-number choice.) I think that would be
+a very nice result.
+
+Peter, is this the sort of thing you're aiming at?
+
+Alex
+
+-- 
+Alex Simpson, LFCS, Division of Informatics, University of Edinburgh
+Email: Alex.Simpson@dcs.ed.ac.uk             Tel: +44 (0)131 650 5113
+FTP: ftp.dcs.ed.ac.uk/pub/als                Fax: +44 (0)131 667 7209  
+URL: http://www.dcs.ed.ac.uk/home/als
+
+
+
+
+
+From rrosebru@mta.ca Sat Aug  5 08:06:24 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id IAA09127
+	for categories-list; Sat, 5 Aug 2000 08:04:52 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: Freyd = Dedekind (plus 128 years)
+To: categories@mta.ca
+Date: Sat, 5 Aug 2000 11:32:42 +0100 (BST)
+X-Mailer: ELM [version 2.5 PL3]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <E13L1Fy-0005mO-00@penguin.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 8
+
+Peter Freyd's constructive version of his description of (a closed interval in)
+the reals as a final coalgebra, posted on this network on 31 July, in fact
+constructs (a closed interval in) the Dedekind reals in any topos with NNO.
+Peter's attempt to show using signed binary expansions that his construction
+produces the Cantor (or Cauchy) reals doesn't work, unless you assume countable
+dependent choice (in which case, of course, the Cantor reals coincide with the
+Dedekind reals).
+
+The proof has two parts. First you have to show that a closed interval in the
+Dedekind reals is a coalgebra for Peter's ordered-wedge functor (for which the
+structure map is an isomorphism). This is not completely trivial, because in
+Peter's description of the `thick' ordered wedge
+
+     XvY = { <x,y> | ((x < T) => (B = y)) and ((B < y) => (x = T)) }
+
+the strict order-relation (x < y) that he uses is simply the negation of 
+(y \leq x): thus, in the Dedekind reals, it is the double-negation closure of
+what we usually think of as the strict order-relation. However, it doesn't
+matter, because in the Dedekind reals the assertions (B = y) and (x = T) are
+double-negation stable (equality being the negation of apartness), and thus the
+assertions
+
+     ((x < T) => (B = y))     and    (\neg\neg(x < T) => (B = y))
+
+(where `<' now denotes the `real' strict order relation) have the same
+truth-value for any x and y. Using this, it's easy to see that (for example)
+the ordered wedge [-1,0] v [0,1] is isomorphic to [-1,1], via the maps
+
+     <x,y> |-> x + y      and     z |-> <min(z,0),max(z,0)>  .
+
+Note that this already tells us that the final coalgebra can't be the Cantor
+reals, because if it were, then in a topos (e.g. sheaves on a locally connected
+space) where the Cantor and Dedekind reals are different we would have a
+retraction from Dedekind to Cantor --- which surely doesn't exist.
+
+Now, given a coalgebra
+
+     <d,u>: X --> XvX  ,
+
+we have to produce a mapping from X to (say) the Dedekind interval [-1,1]. 
+We do this in exactly the way that Peter tried to construct a signed binary
+expansion, except that we use the output of Peter's three-state machine to
+produce a pair of sets of (dyadic) rationals rather than a sequence of digits.
+(The reason why it won't do the latter is its non-determinism: for any natural
+number n, it will produce a nonempty set of sequences of length n, and any
+sequence of length n can be extended to a sequence of length n+1, but (without
+dependent choice) that's not enough to ensure that it will produce a nonempty
+set of *infinite* sequences. But non-determinism doesn't matter if you're
+simply trying to construct two sets of rationals: if you get positive answers
+to two questions, telling you to put different rationals into your sets, you
+simply obey both instructions.)
+
+Thus the idea is that, given an element x of our coalgebra, we construct
+the pair of sets <L,U> as follows: we ask the three questions
+
+     "B < ux?"
+     "B < udx and dux < T?"
+     "dx < T?"
+
+knowing that our machine will produce a positive answer to at least one of
+these questions. If the answer to the first is yes, we put 0 (and all rationals
+less than it) into L, if the answer to the second is yes we put -1/2 into L and
++1/2 into U, and if the third is yes we put 0 into U. Keep going in this way,
+and define L and U to be the unions of the sequences of sets you construct. We
+have to show that the result really is a Dedekind real, of which the only
+interesting bit is showing that it satisfies the positive version
+
+     ((q < r) => ((q \in L) or (r \in U)))
+
+of the `zero distance apart' condition. Given q and r, we know an n such that
+2^{-n} < r - q, and we know that running our machine for n+2 steps will pin
+down x to an interval of length 2^{-n}. So we simply run the machine for this
+length of time, and look to see where we've got to.
+
+Of course, we also have to show that the map (f,say) defined by this procedure
+is the unique coalgebra homomorphism from X to [-1,1]. But this is easy, given
+that equality of Dedekind reals is a negative statement: given a (putative)
+other such map g, all we have to do is assume (fx < gx) for some x \in X and
+derive a contradiction. And if fx < gx, we can find a dyadic rational q which
+separates them; then we run our machine until it has assured us that fx < q,
+and derive a contradiction to the assumption that g is order-preserving (and
+commutes with d and u).
+
+Aside: one thing that bothered me (and, I believe, people in Edinburgh) about
+Peter's construction was its use of the `negative' strict order relation: since
+we know that the positive strict order on the reals is the one that really
+matters, why doesn't it appear in the definition? Well, it doesn't; but you can
+define it purely in terms of the coalgebra structure: x < y iff there is some
+finite sequence of d's and u's that takes x to B and y to T. (Proving from
+first principles that this yields a transitive relation on the final coalgebra
+is an interesting exercise.)
+
+Peter Johnstone
+
+
+From rrosebru@mta.ca Thu Aug 10 11:37:17 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA20662
+	for categories-list; Thu, 10 Aug 2000 11:31:02 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+To: categories@mta.ca
+Subject: categories: Basic Concepts ...
+Mime-Version: 1.0 (generated by tm-edit 7.108)
+Content-Type: text/plain; charset=US-ASCII
+Date: Tue, 08 Aug 2000 15:44:22 +0200
+From: N Ghani <ng13@mcs.le.ac.uk>
+Message-Id: <E13MAcB-0003HV-00@pc36.mcs.le.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 9
+
+
+Is there some way in which CUP could be convinced to reprint some
+copies of Kelly's book "Basic Concepts of Enriched Category
+Theory"? I'm sure there would be a huge demand for it.
+
+Neil
+
+
+From rrosebru@mta.ca Thu Aug 10 11:37:17 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA21068
+	for categories-list; Thu, 10 Aug 2000 11:32:53 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from zent.mta.ca (zent.mta.ca [138.73.101.4])
+	by mailserv.mta.ca (8.9.3/8.9.3) with SMTP id EAA11403
+	for <rrosebru@mta.ca>; Tue, 8 Aug 2000 04:52:11 -0300 (ADT)
+X-Received: FROM grus.promo.it BY zent.mta.ca ; Tue Aug 08 04:52:08 2000 -0300
+X-Received: from tmp-sabadini ([212.78.3.20])
+	by grus.promo.it (8.9.3/8.9.3) with SMTP id KAA19179
+	for <rrosebru@mta.ca>; Tue, 8 Aug 2000 10:06:12 +0200 (MET DST)
+Message-ID: <000701c0010d$95c08a40$8bd8fea9@tmp-sabadini.fis.unico.it>
+From: "RFC Walters" <R.Walters@maths.usyd.edu.au>
+To: categories@mta.ca
+Subject: categories: Special TAC volume CT 2000 - call for papers
+Date: Tue, 8 Aug 2000 09:51:15 +0200
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 4.72.3110.5
+X-MimeOLE: Produced By Microsoft MimeOLE V4.72.3110.3
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 10
+
+             CALL FOR PAPERS
+          Special volume for CT200
+
+The journal "Theory and Applications of Categories" has agreed to
+publish a special volume dedicated to work presented at the
+International Conference on Category Theory CT2000, held in Como, in
+July. CT2000 intended to present work in all areas of category
+theory and its applications, but particularly in the following areas:
+
+   * topos theory and synthetic differential geometry,
+   * algebraic topology and homological algebra,
+   * enriched category theory and 2-dimensional universal algebra,
+   * higher dimensional category theory and quantum algebra,
+   * categorical logic,
+   * galois theory and descent,
+   * categories and computer science,
+   * general category theory.
+
+We invite each participant who offered a scientific contribution 
+(a talk or a poster) at the conference to submit a complete version of that
+work. All papers submitted will undergo the usual TAC referee process.
+Papers will appear as soon as they are accepted. All papers accepted will
+appear in the same volume of TAC which we hope will be completed
+ before end of 2001. The TAC home page is at the URL
+
+http://www.tac.mta.ca/tac/ .
+
+The submission deadline for the special issue is November 30, 2000.  
+Please send a compressed_ postscript file to ct2000@disi.unige.it, or
+3 paper copies to 
+
+ R.F.C. Walters
+ (CT 2000)
+ Dipartimento di Scienze CC., FF., MM.
+ Universita` degli Studi dell'Insubria
+ 22100 Como
+ Italy
+
+We remind possible contributors that the journal TAC can only accept
+files prepared with TeX or LaTeX following specific directions as
+indicated at the URL above. Most authors ought to be able to arrange for
+such a file to be prepared from their paper, but if you have problems,
+let us know and we shall try to help.  
+
+We invite interested contributors to inform us of their intention to
+submit and to check the web page for the conference at
+
+http://www.disi.unige.it/conferences/ct2000/
+
+for further future information.
+
+The Editors:    Aurelio Carboni
+                Giuseppe Rosolini
+                Robert F.C. Walters
+
+
+
+
+
+
+
+From rrosebru@mta.ca Thu Aug 10 11:37:41 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA20519
+	for categories-list; Thu, 10 Aug 2000 11:30:16 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 8 Aug 2000 11:27:40 +0200 (MET DST)
+From: gaucher@irma.u-strasbg.fr (Philippe Gaucher)
+Message-Id: <200008080927.LAA09487@irma.u-strasbg.fr>
+To: categories@mta.ca
+Subject: categories: Preprint: From concurrency to algebraic topology
+Mime-Version: 1.0
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: 7bit
+Content-MD5: nZxpq8qcDxXlet9Ygq2Rag==
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 11
+
+
+
+Title : From concurrency to algebraic topology
+
+Author : Philippe Gaucher 
+
+Email : gaucher@math.u-strasbg.fr
+
+Abstract : This paper is a survey of the new notions and results
+scattered in "Homotopy invariants of higher dimensional categories and
+concurrency in computer science", "Combinatorics of branchings in
+higher dimensional automata", " About the globular homology of higher
+dimensional automata".  Starting from a formalization of higher
+dimensional automata (HDA) by strict globular $\omega$-categories, the
+construction of a diagram of simplicial sets over the three-object
+small category $-\leftarrow gl\rightarrow +$ is exposed. Some of the
+properties discovered so far on the corresponding simplicial homology
+theories are explained, in particular their links with geometric
+problems coming from concurrency theory in computer science.
+
+URL : http://www-irma.u-strasbg.fr/~gaucher/expose.(ps|pdf).gz
+
+Comment : to appear in ENTCS
+
+
+From rrosebru@mta.ca Thu Aug 10 11:47:15 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA22974
+	for categories-list; Thu, 10 Aug 2000 11:44:05 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Mime-Version: 1.0
+X-Sender: street@hera.mpce.mq.edu.au
+Message-Id: <v04210102b5b7a0fd1078@[137.111.90.45]>
+Date: Thu, 10 Aug 2000 10:15:14 +1000
+To: categories@mta.ca
+From: Ross Street <street@ics.mq.edu.au>
+Subject: categories: New Scientist
+Content-Type: text/plain; charset="us-ascii" ; format="flowed"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 12
+
+n-categories make "New Scientist", 29 July 2000, page 53
+
+Quote: John Baez is reading . . .
+
+	John Baez of the University of California, Riverside, works 
+on quantum gravity and mathematical tools called n-categories. So 
+it's no surprise to find him engrossed in Hirotaka Tamanoi's Elliptic 
+Genera and Vertex Operator Super-Algebras (Springer-Verlag, 
+UKpounds34, ISBN 3540660062). But Baez's travel reading isn't always 
+that heavyweight. etc etc
+
+
+
+From rrosebru@mta.ca Sun Aug 20 11:11:26 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA00581
+	for categories-list; Sun, 20 Aug 2000 11:06:29 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Sat, 19 Aug 2000 16:04:12 +0100
+From: Paul Taylor <pt@dcs.qmw.ac.uk>
+Message-Id: <200008191504.QAA07496@koi-pc.dcs.qmw.ac.uk>
+To: categories@mta.ca
+Subject: categories: errata to "Practical Foundations"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 13
+
+ERRATA TO    "PRACTICAL FOUNDATIONS OF MATHEMATICS"
+
+I would like to thank   David Benson,  Peter Johnstone,  Thomas Streicher
+and  Krzysztof Worytkiewicz  for their comments in response to my request
+for corrections.  If you know of any other mistakes, please tell me ASAP.
+
+First, I apologise to Heinrich Kleisli, Dito Pataraia, Maria Cristina
+Pedicchio, Dietmar Schumacher and V. Z\"oberlein for my mistakes in
+their names on pages 179, 403, 533, 540, 563, 566 and 572.
+
+Only one actual falsity has come to my attention:  exactly a year after
+I got the first copy of the book, Thomas sent me a simple counterexample
+to the claim that fibrations preserve pullbacks (Exercise 9.4, page 523).
+
+I am very pleased at how few errors have shown up in 17 months, and how
+trivial they are.   This is a tribute to the care that nearly 40 people
+took in reading individual chapters of the book.  Though I am sure that
+this policy of only sending out single chapters irritated the people in
+question, it did prove to be a very successful way of ensuring that the
+entire book got careful and reasonably even attention. In contrast, the
+most assiduous reader of "Proofs and Types"  only got two thirds of the
+way through the book, starting from the beginning.
+
+You may like to read Peter Johnstone's review for the Zentralblatt at
+   http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/Johnstone-review.html
+(it's on my web site because it's unreadable on the Zentralblatt site).
+
+There is an 18 page summary of the contents of the book at
+   http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/summary.dvi
+   http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/html/summary.html
+The DVI version is intended for you to print, the HTML one for linking
+into the full text of the narrative that's also on the web.
+
+The bibliography is available as a BibTeX file at
+   http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/prafm-ref.bib
+
+I understand that 1000 copies were printed in March 1999, of which 825
+had been sold when I asked last week, and 400 new ones are to be printed.
+For over seven years' work, I have had about 3000 pounds in royalties
+and no permanent job.
+
+
+
+SIGNIFICANTLY WRONG SYMBOLS AND WORDS
+
+p. 37, Lemma 1.6.3, proof box, line 6:
+should be \exists y.\gamma\land\phi[y] in the left-hand box.
+
+p. 144, intro to Section 3.5, and p. 176, Exercise 3.19:
+the sum of posets or dcpos (not domains).
+  
+p. 275, final paragraph of Definition 5.5.1: if c then ... (not a).
+  
+p. 285 Corollary 5.6.12: v(y)=x_1, not u_y=x_1.
+
+p. 290, diagram for Lemma 5.7.6(e):
+(German) f;m and z;n instead of f;n and z;m.
+
+p. 362, Exercise 6.23:
+T\Theta instead of T(\Gamma\times\Theta) at the top right of the diagram.
+
+p. 397, introduction to Section 7.5: \mu = U\epsilon F.
+
+p. 415, Notation 7.7.3(b)  Q_X: H_X \to U `X'.
+
+p. 519, Proposition 9.6.13 [c=>a]: The infinitary version of
+Example 2.1.7, rather than of its converse {Exercise 2.14).
+
+The full list of actual changes (including broken sentences and places where
+inserting a couple of extra words could improve understandability) is at
+   http://www.dcs.qmw.ac.uk/~pt/Practical_Foundations/errata.html
+
+
+
+REMARKS ON OTHER POINTS THAT I FEEL I UNDERSTAND BETTER SINCE PUBLICATION
+
+The Substitution Lemma (1.1.5, p. 7) correctly forbids x to be free in a,
+because the substitution  [a/x]^*u  is meant to result in a term that
+doesn't involve x. See Definition 4.3.11(b) for why.  Arguably, contexts
+should be emphasised from the start, especially as, in this book, they turn
+into the objects of the classifying category.  That the proof of the
+Substitution Lemma tolerates  x  being free in  a  entirely misses the
+point,  and merely illustrates the tyranny of notation over concepts
+
+In his review, Peter Johnstone teased me for Exercise 1.1 (Bo Peep's theorem).
+To add fuel to his fire, I now think that the natural proof of this -
+the very earliest theorem in mathematics - is essentially the argument
+needed for the Schr\"oder-Bernstein theorem.  It would be nice to be able
+to get an anthropologist to understand that this *is* a significant theorem,
+and to try to find out at what stage in the development of human cultureS
+it was learned.
+
+p. 358, Remark 6.7.14: It is probably true in the concrete case of
+ordinals in Pos and Set that a sh-coalgebra is well founded in the
+sense of Definition 6.3.2 iff  <  is a well founded relation
+(Definition 2.5.3).  Inability to formulate the abstract result for
+ordinals in categories between which there is an adjunction  F -| U
+is the reason why I have not finished [Tay96b].
+
+p. 502, Example 9.4.11(d): The closed point of the Sierpi\'nski space
+does classify closed subsets intuitionistically.   Any point of this
+space can be expressed as the join of a directed diagram taking only
+\bot and \top as values, whilst (the dual of) the equation in Exercise
+9.57 characterises support classifiers [Tay98].
+
+Section 9.4: Beware that, whilst my approach to the Beck-Chevalley
+condition does ensure that pullbacks of  >---|>-maps  are  >---|>-maps,
+such pullbacks do not always exist in the category of locally compact spaces.
+
+Paul
+
+
+From rrosebru@mta.ca Sun Aug 20 11:11:27 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA26296
+	for categories-list; Sun, 20 Aug 2000 11:03:24 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: PSSL 73
+To: categories@mta.ca
+Date: Tue, 15 Aug 2000 11:11:05 +0100 (BST)
+X-Mailer: ELM [version 2.5 PL3]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Message-Id: <E13OdgX-0003i6-00@penguin.dpmms.cam.ac.uk>
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 14
+
+Since (as far as we are aware) nobody else has plans to organize a
+meeting of the Peripatetic Seminar on Sheaves and Logic this autumn,
+we are proposing to hold the 73rd PSSL in Cambridge on the weekend
+of 4/5 November 2000. (This will also provide an opportunity for
+anyone who hasn't been in Cambridge recently to see our new
+Mathematics building.)
+
+Further details, including a registration form, will be sent out in
+late September/early October.
+
+                                      Martin Hyland
+                                      Peter Johnstone
+
+
+From rrosebru@mta.ca Sun Aug 20 11:11:27 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA23924
+	for categories-list; Sun, 20 Aug 2000 11:03:03 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <000901c00685$257deac0$f17079a5@osherphd>
+From: "Osher Doctorow" <osher@ix.netcom.com>
+To: <categories@mta.ca>
+Subject: categories: An invariance property of 1 - x + y
+Date: Mon, 14 Aug 2000 23:49:54 -0700
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: 7bit
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Mailer: Microsoft Outlook Express 5.50.4133.2400
+X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4133.2400
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 15
+
+From: Osher Doctorow, Ph.D. osher@ix.netcom.com, Mon. Aug. 14, 2000, 11:25PM
+
+Dear Colleagues:
+
+The quantity 1 - x + y which I introduced earlier to categories@mta.ca , and
+which is the non-trivial case of Lukaciewicz implication as well as the
+logic-based probability (LBP) probability of the set/event analogue of the
+logical conditional Pr(A-->B) = 1 - Pr(A) + Pr(AB) for x = Pr(A), y =
+Pr(AB), has an interesting invariance property.  I will use the LBP
+formulation to show this.  Consider two sets A and B, possibly intersecting.
+The universe is then divided into A U B (the union of A, B) and its
+complement which is (A U B)' = A' B'  where intersection is indicated by
+adjacent letters such as A' B' (which is the intersection of A' and B').
+However, A U B is the union of AB and the part of B that does not intersect
+A (which is BA') and the part of A which does not intersect B (which is
+AB').   Thus the universe is the union of the disjoint (mutually exclusive
+and exhaustive) sets AB', AB, A'B, and A'B'.
+
+Lemma.  Pr(A-->B) = 1 - Pr(A) + Pr(AB)  =  Pr(B) + Pr(A' B' )
+
+Proof.  The first equality has been established several weeks ago in my
+contribution.  The second equality is true iff the equality with Pr(A) added
+to both sides and Pr(AB) subtracted from both sides is true, but that
+equation is the same as 1 = Pr(A) + Pr(B) - Pr(AB) + Pr(A' B')  = Pr(A U B)
++ Pr(A U B)' .   The latter is true by the definition of complement.  Q.E.D.
+
+What is the invariance property?   From the lemma, let us write Pr(A' B' )
+as Pr(A U B)'  = 1 - Pr(A U B).  Then Pr(A-->B) = 1 - Pr(A) + Pr(AB) = 1 -
+Pr(A U B) + Pr(B).   Therefore, for x and y as above, the conjugate of 1 - x
++ y, which is 1 - y + x, equals 1 plus the excess of Pr(A) over Pr(AB) which
+equals 1 plus the excess of Pr(A U B) over Pr(B).   Since 1 - x + y and its
+conjugate involve either the excess of x to y or its negative, and since
+Pr(A-->B) is the probable influence of A on B, in words the invariance
+property of 1 - x + y says that the probable influence of A on B involves
+the excess of Pr(A) over Pr(AB) or equivalently the excess of Pr(A U B) over
+Pr(B).  Now, AB does involve an extra symbol B concatenated (technically,
+intersected here) with symbol A.  Also, A U B involves an extra symbol A
+"unioned" or "united" with B. Thus, the "excess of symbols" parallels the
+excess of probabilities for the pairs.  In a sense, the "set excess"
+parallels the probability/measure excess (I could write this symbolically,
+but I will not for now) across union and intersection - that is the
+invariance of 1 - x + y.   In mathematical physics, this would be expressed
+by saying that set union and set intersection can be exchanged or are
+invariant under the symmetry - although the symmetry holds under very
+specific conditions.   This terminology comes from symmetries in which
+particles and antiparticles are exchanged, protons/neutrons/electrons are
+exchanged, bosons and leptons are exchanged, left-handed and right-handed
+particles are exchanged, etc.  These types of symmetries and others are
+quite fundamental in mathematical physics.
+
+Osher Doctorow
+
+
+
+From rrosebru@mta.ca Sun Aug 20 11:41:59 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA03544
+	for categories-list; Sun, 20 Aug 2000 11:38:41 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 14 Aug 2000 06:58:55 -0400 (EDT)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200008141058.e7EAwtG23251@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Categorists in the news
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 16
+
+   The Chronicle of Higher Education
+   
+   From the issue dated August 18, 2000
+   
+ Of Flames, Fan Mail, and Software That Can Tell the Difference
+
+By ELLEN SPERTUS
+
+...
+
+In the offline world, some people enjoy baiting others with
+intentionally offensive behavior, then enjoying their reactions.
+Online, this has become a sport called trolling for flames. Some
+trolls lack subtlety, like the one posted to the cat lovers'
+discussion group that asked for recipes for cooking cats.
+
+But others are deliciously clever. For example, in response to a
+discussion of the mystical and mathematical importance of ratios in
+the Great Pyramid of Cheops, John Baez posted a note that the ancient
+Greeks, too, were very sophisticated: If you take the ratio of the
+circumference to the radius of the columns they built, he wrote, you
+get an excellent approximation of pi. Gullible readers, not realizing
+that Baez was a mathematics professor with a sense of humor, protested
+that this was true of any circle. "That's what makes it so spooky,"
+Baez cryptically replied, adding to the confusion.
+
+..
+
+
+From rrosebru@mta.ca Mon Aug 21 20:19:31 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA25518
+	for categories-list; Mon, 21 Aug 2000 19:50:30 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <399D9AC0.CA424E72@bluewin.ch>
+Date: Fri, 18 Aug 2000 22:21:20 +0200
+From: Michel =?iso-8859-1?Q?Thi=E9baud?= <thiebaud_m@bluewin.ch>
+X-Mailer: Mozilla 4.72 [en] (Win95; I)
+X-Accept-Language: en,fr
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: e-mail address: M. Thiebaud
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 17
+
+My e-mail address in the CT2000 list should read as follows :
+
+thiebaud_m@bluewin.ch
+
+Michel Thiebaud
+
+
+
+From rrosebru@mta.ca Mon Aug 21 20:20:43 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA28237
+	for categories-list; Mon, 21 Aug 2000 19:51:25 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+To: categories@mta.ca
+Subject: categories: CFP Special Issue JSC on Computer Algebra and Mechanized Reasoning
+Date: Sat, 19 Aug 2000 22:18:05 +0100
+From: Manfred Kerber <M.Kerber@cs.bham.ac.uk>
+Message-Id: <E13QFzx-0007Dr-00@emily.cs.bham.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 18
+
+                              Call for Papers
+                      Journal of Symbolic Computation
+                              Special Issue on
+                 Computer Algebra and Mechanized Reasoning
+              Guest Editors: Tomás Recio, Manfred Kerber
+     _________________________________________________________________
+   
+  AIM
+  
+     The special issue is related to topics discussed in the context of
+     the ISSAC-2000 symposium and the CALCULEMUS-2000 symposium in
+     August 2000 in St Andrews, Scotland. We invite any work that
+     substantially extends ideas and topics presented in St Andrews.
+     
+     Typical ISSAC-2000 relevant topics are:
+     * Algorithmic mathematics: Algebraic, symbolic, and symbolic-numeric
+       algorithms including: simplification, polynomial and rational
+       function manipulations, algebraic equations, summation and
+       recurrence equations, integration and differential equations,
+       linear algebra, number theory, group computations, and geometric
+       computing.
+     * Computer science: Theoretical and practical problems in symbolic
+       mathematical manipulation including: computer algebra systems,
+       data structures, computational complexity, problem solving
+       environments, programming languages and libraries for
+       symbolic-numeric-geometric computation, user interfaces,
+       visualization, software architectures, parallel or distributed
+       computing, mapping algorithms to architectures, analysis and
+       benchmarking, automatic differentiation and code generation,
+       automatic theorem proving, mathematical data exchange protocols.
+     * Applications: Problem treatments incorporating algebraic,
+       symbolic, symbolic-numeric and geometric computation in an
+       essential or novel way, including engineering, economics and
+       finance, architecture, physical and biological sciences, computer
+       sciences, logic, mathematics, statistics, and uses in education.
+       
+     CALCULEMUS-2000 relevant topics include all aspects related to the
+     combination of deduction systems and computer algebra systems. We
+     also explicitly encourage submissions of results from applications
+     and case studies where such an integration proves particularly
+     important. Typical topics are:
+     * Integration/combination of computer algebra systems/algorithms and
+       deduction systems (either automated theorem provers, or
+       proof-development systems)
+     * Incorporation of deduction techniques in computer algebra
+     * Incorporation of computer algebra techniques in deduction
+       
+     Prospective contributors are warmly invited to contact the guest
+     editors to discuss the suitability of topics and papers.
+     
+  Submission Guidelines
+     ISSAC-related papers must be submitted to Tomás Recio,
+     CALCULEMUS-related papers to Manfred Kerber.
+     For submissions please follow the instructions provided at
+     http://www.academicpress.com/www/journal/TeX-uk/LaTeXFP.htm.
+     
+     Electronic submissions are strongly encouraged, and may be sent as
+     one e-mail (MIME attachments are allowed). The message should
+     contain (i) the abstract in ASCII and (ii) the whole paper in
+     Postscript. The Postscript form must be interpretable by
+     Ghostscript, and must use standard fonts, or include the necessary
+     fonts. Authors who cannot meet these requirements should submit 5
+     hard copies by post instead.
+     
+     All submitted papers will be refereed according to the usual JSC
+     refereeing process.
+     
+     To aid planning and organization, we would appreciate an email of
+     intent to submit a paper (including author information, a tentative
+     title and abstract, and an estimated number of pages) as early as
+     possible.
+     
+  Important Dates
+  
+   Submission of papers:                  1 November 2000
+   Notification of acceptance/rejection: 15 February 2001
+   Submission of revised versions:       15 March 2001
+   Delivery of camera-ready copies:       1 May 2001
+   Publication of special issue:         planned around July 2001
+   
+  Guest Editors' Addresses:
+  
+   Tomás Recio                           Manfred Kerber
+   Departamento de Matemáticas           School of Computer Science
+   Estadística y Computación             The University of Birmingham
+   Facultad de Ciencias                  Edgbaston
+   Universidad de Cantabria              Birmingham
+   Avenida de los Castros, s/n           B15 2TT
+   39071 Santander, España               England
+   phone: +34 942 20 14 33               phone: +44 121 414 4787
+   fax: +34 942 20 14 02                 fax: +44 121 414 4281
+   recio@matesco.unican.es               M.Kerber@cs.bham.ac.uk
+   
+   This information is available as: 
+                          http://www.cs.bham.ac.uk/~mmk/events/jsc01.html
+   JSC Editor's Web Page: http://www.math.ncsu.edu/~hong/jsc.htm
+
+
+From rrosebru@mta.ca Wed Aug 23 11:42:12 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id LAA23939
+	for categories-list; Wed, 23 Aug 2000 11:36:06 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Message-ID: <14754.48808.89342.325193@nostromo.uni-koblenz.de>
+Date: Tue, 22 Aug 2000 19:55:52 +0200 (CEST)
+Bcc:
+From: IJCAR Publicity Chair <ijcar-publicity@dii.unisi.it>
+Reply-to: IJCAR Publicity Chair <ijcar-publicity@dii.unisi.it>
+Subject: categories: CFP: IJCAR 2001 - International Joint Conference on Automated Reasoning
+X-Mailer: VM 6.75 under 21.1 (patch 12) "Channel Islands" XEmacs Lucid
+X-MIME-Autoconverted: from 8bit to quoted-printable by mailhost.uni-koblenz.de id TAA07787
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id PAA25283
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 19
+
++------------------------------------------------------------------+
+|                                                                  |
+|                              IJCAR 2001                          |
+|                                                                  |
+|    The International Joint Conference on Automated Reasoning     |
+|                                                                  |
+|                   June 18-23, 2001, Siena, Italy                 |
+|                                                                  |
+|                  http://www.dii.uni-si.it/~ijcar/                |
+|                                                                  |
+|               CALL FOR PAPERS / TUTORIALS / WORKSHOPS            |
+|                                                                  |
++------------------------------------------------------------------+
+
+CALL FOR PAPERS
+===============
+
+The International Joint Conference on Automated Reasoning (IJCAR) is
+the fusion of three major conferences in Automated Reasoning: CADE
+(The International Conference on Automated Deduction), TABLEAUX (The
+International Conference on Automated Reasoning with Analytic Tableaux
+and Related Methods) and FTP (The International Workshop on
+First-Order Theorem Proving). These three events will join for the
+first time at the IJCAR conference in Siena in June 2001.
+
+IJCAR 2001 invites submissions related to all aspects of automated
+reasoning, including foundations, implementations, and
+applications. Original research papers and descriptions of working
+automated deduction systems are solicited.
+
+Topics
+------
+LOGICS of interest include propositional, first-order, classical,
+equational, higher-order, non-classical, constructive, modal,
+temporal, many-valued, substructural, description, and meta-logics,
+type theory and set theory.
+
+TECHNIQUES of interest include model-elimination, tableaux, sequent
+calculi, resolution, connection method, inverse method, term
+rewriting, induction, unification, constraint solving, decision
+procedures, model generation, model checking, semantic guidance,
+interactive theorem proving, logical frameworks, and AI-related
+methods for deductive systems such as proof planning and proof
+presentation.
+
+APPLICATIONS of interest include hardware and software development,
+systems analysis and verification, functional and logic programming,
+proof carrying code, deductive databases, knowledge representation,
+computer mathematics, natural language processing, linguistics,
+planning and other AI areas.
+
+
+Submissions - Research papers and system descriptions
+-----------------------------------------------------
+Submitted research papers and system descriptions must be original and
+not submitted for publication elsewhere. Research papers can be up to
+15 proceedings pages long, and system descriptions can be up to 5
+pages long. The proceedings of IJCAR 2001 will be published by
+Springer-Verlag in the LNAI series.
+
+All submissions must be received by January 14, 2001. Submissions that
+are late or too long or require substantial revision will not be
+considered. Authors of accepted papers will be requested to sign a
+form transfering copyright of their contribution to Springer-Verlag.
+
+IN THE RESEARCH PAPER CATEGORY, SUBMISSIONS OF THEORETICAL, PRACTICAL
+AND EXPERIMENTAL NATURE ARE EQUALLY ENCOURAGED.
+
+Submissions - Short papers
+--------------------------
+Short papers are intended for quick dissemination of work in progress
+or results not substantial enough for a full research paper. Their
+length is limited to 10 pages. Submissions under this category will
+not be formally refereed, but their content and relevance will be
+reviewed. Those submissions accepted will be published in a technical
+report, which will be available at the conference. Authors of accepted
+papers are expected to present a brief outline of their work at the
+conference and to prepare a poster for display at the conference
+venue.
+
+The submission deadline is April 2, 2001.
+
+Submission details - All categories
+-----------------------------------
+Authors are strongly encouraged to use LATEX2e and the Springer llncs
+class files. The primary means of submission is electronic. More
+submission details can be found at the IJCAR 2001 web site.
+
+Best Student Paper Award
+------------------------
+A prize of 500 Euros will be given to the best paper, as judged by the
+program committee, written solely by one or more students. A
+submission is eligible if all authors are full-time students at the
+time of submission. This should be indicated in the submission
+letter. The program committee may decline to make the award or may
+split it among several papers.
+
+Organization
+------------
+Conference Chair:
+
+    Fabio Massacci
+    University of Siena
+    Dipartimento di Ingegneria dell'Informazione
+    via Roma 56
+    53100 Siena, Italy
+
+    Phone: +39 0577 234607
+    FAX: +39 0577 233602
+    Email: ijcar-cch@dii.unisi.it
+
+Workshop Chair:
+
+    D. Hutter (Saarbr"ucken)
+    ijcar-workshop@dii.unisi.it
+
+    Tutorial Chair:
+    T. Walsh (York)
+    ijcar-tutorial@dii.unisi.it
+
+Program Co-Chairs:
+
+    Rajeev Gor'e (ARP-ANU, Australia)
+    Alexander Leitsch (TU-Wien, Austria)
+    Tobias Nipkow (TU-M"unchen, Germany)                 
+                                                                 
+    collective Email address: ijcar-pch@dii.unisi.it
+
+Publicity Chair:
+    P. Baumgartner (Koblenz)
+
+Treasurer: 
+    E. Giunchiglia (Genova)
+
+Invited speakers                      
+----------------
+    N. Jones (DIKU, DK)                 
+    L. Paulson (Cambridge, UK)              
+    H. Schwichtenberg (M"unchen, D)         
+    A. Voronkov (Manchester, UK)            
+    D. Zeilberger (Temple Univ., USA)       
+
+Program committee
+-----------------
+    R. Alur (Philadelphia)
+    F. Baader (Aachen)
+    M. Baaz (Wien)
+    B. Beckert (Karlsruhe)
+    R. Caferra (Grenoble)
+    R. Dyckhoff (St. Andrews)
+    U. Furbach (Koblenz)
+    D. Galmiche (Nancy)
+    H. Ganzinger (MPI Saarbr"ucken)
+    J. Goubault-Larrecq (INRIA Rocq.)
+    R. H"ahnle (Chalmers)
+    J. Harrison (Intel, Hillsboro)
+    D. Kapur (New Mexico)
+    H. Kautz (ATT, Florham Park)
+    M. Kohlhase (Saarbr"ucken)
+    Z. Manna (Stanford)
+    P. Patel-Schneider (Bell Labs)
+    F. Pfenning (Pittsburgh)
+    A. Podelski (MPI Saarbr"ucken)
+    W. Reif (Augsburg)
+    G. Salzer (Wien)
+    M. Vardi (Houston)
+
+Important dates
+---------------
+(all dates in 2001)
+
+January 14   Submission deadline - 
+             Research papers and system descriptions
+  March 19   Notification of acceptance - 
+             Research papers and system descriptions
+  April  2   Submission deadline - 
+             Short papers
+  April 12   Camera-ready copy due - 
+             Research papers and system descriptions
+  April 30   Notification of acceptance - 
+             Short papers 
+    May 14   Camera-ready copy due - Short papers
+
+   June 18 -
+   June 23   IJCAR 2001
+
+
+CALL FOR TUTORIALS
+==================
+
+Scope
+-----
+It is planned to hold a number of tutorials within the technical
+programme of the confer ence. We invite proposals for these tutorials
+(as well as suggestions for topics that might be covered). The topics
+of the tutorials can cover any area related to automated reasoning and
+any related cross-disciplinary areas that might be of interest
+(constraints, formal methods, ...). At present, the tutorials are
+scheduled to take place on Monday 18th and Tuesday 19th June.
+
+How to Propose a Tutorial 
+-------------------------
+Proposals should be in English and between one and two pages in
+length. They should contain:
+
+       * The title of the tutorial.                           
+       * The names, and affiliations of the person or persons who will
+         present the tutorial.
+       * A brief technical description of the topics covered by the tutorial.
+       * Contact details (email, web page, phone, fax, etc).
+       * A list of tutorials previously given in this or related areas.
+
+Proposals should be submitted electronically (in ASCII, Ghostscript
+compatible Postscript or LaTeX) at the follwing address:
+
+     Toby Walsh, IJCAR Tutorial Chair
+     Artificial Intelligence Group
+     Department of Computer Science
+     University of York
+     York YO10 5DD, U.K. 
+
+     Email: ijcar-tutorial@dii.unisi.it
+       Tel: +44 1904 432745
+       Fax: +44 1904 432767
+
+Important dates
+---------------
+Tutorial proposal deadline: January 15, 2001 
+Notification of acceptance: January 29, 2001 
+                 Tutorials: June 18+19, 2001 
+
+
+CALL FOR WORKSHOPS
+==================
+
+Scope
+-----
+Researchers and practitioners are invited to submit proposals for
+workshops on IJCAR related topics as mentioned in the "Call for
+Papers". Proposals that promise to bring new topics into IJCAR, of
+either practical or theoretical importance, or provide a forum for
+more detailed discussion on central topics of continuing importance
+are also welcomed. Workshops that close the gap between automated
+reasoning and related areas, like for instance formal methods or
+software engineering, are especially encouraged.
+
+Recent workshops of participating conferences have included, for
+instance, automated model building, automation of proofs by induction,
+empirical studies in logic algorithms, mechanization of partial
+functions, proof search in type-theoretic languages, strategies in
+automated deduction, automated theorem proving in software engineering
+and in mathematics, and integration of symbolic computation and
+deduction.
+
+Submission Details
+------------------
+Anyone wishing to organize a workshop in conjunction with IJCAR should
+send in postscript format (e-mail preferred) a proposal no longer than
+two pages to the workshop chair (ijcar-workshop@dii.unisi.it) by
+January 1, 2001.
+
+Proposals should consist of two parts. First, a short scientific
+justification of the proposed topic, its significance and the
+particular benefits of the workshop. A second part should include the
+proposed format and agenda, the procedures for selecting papers and
+participants, and contact information for the organizers. In
+particular it should also include estimated dates for paper
+submissions, acceptance of notification (before May 1, 2001) and
+camera ready copy.
+
+Proposals will be evaluated, and decisions will be communicated by
+January 15, 2001. Further information about the arrangements for
+workshops can be obtained from the IJCAR 2001 Web site.
+
+Important dates
+---------------
+Workshop proposal deadline: January 1, 2001
+Notification of acceptance: January 15, 2001
+                 Workshops: June 18+19, 2001
+
+Workshop chair
+--------------
+   Dieter Hutter (Saarbr"ucken, D)
+   ijcar-workshop@dii.unisi.it
+
+Sponsors
+--------
+   Università degli Studi di Siena, the University of Siena
+   AI*IA, l'Associazione Italiana per l'Intelligenza Artificiale 
+   CADE Inc., The Conference on Automated Deduction. 
+   EATCS, The European Association for Theoretical Computer Sciences. 
+   ECCAI, The European Coordinating Committee on Artificial Intelligence. 
+   ERCIM, The European Research Consortium for Informatics and Mathematics. 
+   IJCAI Inc., The International Joint Conferences on Artificial Intelligence.
+   MPS, Monte dei Paschi di Siena 
+
+-- 
+Peter Baumgartner                         
+phone: +49 261  287 2777    mail: peter@uni-koblenz.de
+fax:   +49 261  287 2731    WWW:  http://www.uni-koblenz.de/~peter/
+
+
+
+
+From rrosebru@mta.ca Mon Aug 28 17:11:17 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id RAA20318
+	for categories-list; Mon, 28 Aug 2000 17:04:30 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 28 Aug 2000 08:03:05 -0400 (EDT)
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Message-Id: <200008281203.e7SC35I09427@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: Ronnie Letter
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 20
+
+               Copyright 2000 Newspaper Publishing PLC
+                       The Independent (London)
+                                   
+                       August 27, 2000, Sunday
+                                   
+SECTION: SPORT; Pg. 27
+LENGTH: 145 words
+HEADLINE: LETTER: THE JOY OF MATHS
+BYLINE: R. Brown
+BODY:
+
+IT IS UNTRUE to say, as Geoff Poole does (Letters, 13 August), that
+university maths courses have not changed in 30 years. It depends
+where you go. Prospective students should look for courses in which a
+project is a requirement for the final assessment; where the project
+does allow for a "maths in context" flavour when desired; and in which
+the evaluation of mathematical method is seen as a part of the whole
+course. Such considerations are also essential for prospective
+teachers.
+
+Those of us who are working on raising public awareness of mathematics
+believe it is essential to popularise it. It is an essential component
+of high-technology because it allows for precision and hence deduction
+and calculation. This kind of rigour may not be easy, but it makes
+those who can do it very employable.
+
+R BROWN
+University of Wales
+Bangor, Gwynedd
+
+
+From rrosebru@mta.ca Tue Aug 29 15:26:25 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA10332
+	for categories-list; Tue, 29 Aug 2000 15:24:38 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <39ABCF40.D21F21A7@bangor.ac.uk>
+Date: Tue, 29 Aug 2000 15:57:04 +0100
+From: Ronnie Brown <r.brown@bangor.ac.uk>
+X-Mailer: Mozilla 4.72 [en] (Win98; I)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: preprints: Homotopies and automorphisms...; Local subgroupoids II
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 21
+
+The following preprints are available on http://arXiv.org
+
+http://arXiv.org/math.CT/0008117
+R. Brown, I. Icen
+Homotopies and automorphisms of crossed modules of groupoids
+ABSTRACT: We give a detailed description of the structure of the actor
+2-crossed module related to the automorphisms of a crossed module of
+groupoids. This generalises work of Brown and Gilbert for the case of
+crossed modules of groups, and part of this is needed for work on
+2-dimensional holonomy to be developed elsewhere.
+19pp
+
+http://arXiv.org/math.DG/0008165
+R. Brown, I. Icen, O.Mucuk
+Local subgroupoids II: Examples and properties
+ABSTRACT: The notion of local subgroupoid as a generalisation of a local
+equivalence relation was defined in a previous paper by the first two
+authors. Here we use the notion of star path connectivity for a Lie
+groupoid to give an important new class of examples, generalising the local
+equivalence relation of a foliation, and develop in this new context basic
+properties of coherence, due earlier to Rosenthal in the special case.
+These results are required for further applications to holonomy and
+monodromy.
+18pp
+[The first paper is on
+http://www.bangor.ac.uk/ma/research/preprints/00/algtop00.html
+preprint 00.03, and on math.DG/9808112, and is to appear in Topology and
+Appl.]
+--
+Prof R. Brown,
+School of Informatics, Mathematics Division,
+University of Wales, Bangor
+Dean St., Bangor,
+Gwynedd LL57 1UT, United Kingdom
+Tel. direct:+44 1248 382474|office:     382475
+fax: +44 1248 361429
+World Wide Web:
+home page: http://www.bangor.ac.uk/~mas010/
+(Links to survey articles:
+Higher dimensional group theory
+Groupoids and crossed objects in algebraic topology)
+
+Symbolic Sculpture and Mathematics:
+http://www.bangor.ac.uk/SculMath/
+Centre for the Popularisation of Mathematics
+http://www.bangor.ac.uk/cpm/
+
+
+
+
+From rrosebru@mta.ca Wed Aug 30 09:20:51 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id JAA16629
+	for categories-list; Wed, 30 Aug 2000 09:18:29 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+To: categories@mta.ca
+Subject: categories: Basic Concepts ...
+Mime-Version: 1.0 (generated by tm-edit 7.108)
+Content-Type: text/plain; charset=US-ASCII
+Date: Tue, 08 Aug 2000 15:44:22 +0200
+From: N Ghani <ng13@mcs.le.ac.uk>
+Message-Id: <E13MAcB-0003HV-00@pc36.mcs.le.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 22
+
+[Note from moderator: apologies to the poster for the lengthy delay in
+posting this]
+
+Is there some way in which CUP could be convinced to reprint some
+copies of Kelly's book "Basic Concepts of Enriched Category
+Theory"? I'm sure there would be a huge demand for it.
+
+Neil
+
+
+From rrosebru@mta.ca Wed Aug 30 16:39:38 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA25851
+	for categories-list; Wed, 30 Aug 2000 16:38:05 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Originating-IP: [198.168.181.50]
+From: "Marta Bunge" <martabunge@hotmail.com>
+To: categories@mta.ca
+Subject: categories: preprint: Relative Stone Locales
+Date: Wed, 30 Aug 2000 09:54:35 EDT
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+Message-ID: <LAW2-F251rwPBhfgM4f000026fb@hotmail.com>
+X-OriginalArrivalTime: 30 Aug 2000 13:54:35.0703 (UTC) FILETIME=[D4D6A470:01C01289]
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 23
+
+
+This is to announce the availability of a paper by Marta Bunge, Jonathon 
+Funk, Mamuka Jibladze and Thomas Streicher, "Relative Stone Locales", in the 
+following addresses:
+
+http://www.math.mcgill.ca/~bunge/current-papers.html
+
+http://www.math.mcgill.ca/~bunge/rsl.pdf(.ps,.dvi)
+
+Thanks very much.
+Regards,
+Marta
+
+
+_________________________________________________________________________
+Get Your Private, Free E-mail from MSN Hotmail at http://www.hotmail.com.
+
+Share information about yourself, create your own public profile at 
+http://profiles.msn.com.
+
+
+
+From rrosebru@mta.ca Wed Aug 30 16:41:07 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA27308
+	for categories-list; Wed, 30 Aug 2000 16:40:58 -0300 (ADT)
+X-Authentication-Warning: triples.math.mcgill.ca: rags owned process doing -bs
+Date: Wed, 30 Aug 2000 09:17:21 -0400 (EDT)
+From: "Robert A.G. Seely" <rags@math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: Re: Basic Concepts ...
+In-Reply-To: <E13MAcB-0003HV-00@pc36.mcs.le.ac.uk>
+Message-ID: <Pine.LNX.4.10.10008300914140.27531-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 24
+
+Max might want to look into the possiblity of taking back the
+copyright if CUP no longer is interested - I know that Jim Lambek and
+Mike Barr both had their books published by other publishers when
+original ones no longer wanted to keep them in print.  (Jim used
+Chelsea, which is no longer an option, but Mike used the CRM at U
+Montreal, which certainly is - and there are no doubt other
+possibilities, including some closer to (Max's) home.)  Of course, we
+could just scan it and put it on the web, but that'd be illegal :-)
+
+-= rags =-
+
+On Tue, 8 Aug 2000, N Ghani wrote:
+
+> [Note from moderator: apologies to the poster for the lengthy delay in
+> posting this]
+> 
+> Is there some way in which CUP could be convinced to reprint some
+> copies of Kelly's book "Basic Concepts of Enriched Category
+> Theory"? I'm sure there would be a huge demand for it.
+> 
+> Neil
+> 
+
+==================
+R.A.G. Seely
+<rags@math.mcgill.ca>
+<http://www.math.mcgill.ca/rags>
+
+
+
+From rrosebru@mta.ca Wed Aug 30 16:42:21 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA21838
+	for categories-list; Wed, 30 Aug 2000 16:42:18 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b00b5d2e68aa346@[130.251.167.61]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 30 Aug 2000 18:15:45 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: preprint: Exactness and stability in homotopical algebra
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+X-Keywords:
+X-UID: 25
+
+The following preprint is available:
+
+M. Grandis, Exactness and stability in homotopical algebra,
+Dip. Mat. Univ. Genova, Preprint 419 (2000)
+
+
+Abstract. Exact sequences are a well known notion in homological algebra.
+We investigate here the more vague properties of 'homotopical exactness',
+appearing for instance in the fibre or cofibre sequence of a map.
+   Such notions of exactness can be given for very general 'categories with
+homotopies' having homotopy kernels and cokernels, but become more
+interesting under suitable 'stability' hypotheses, satisfied - in
+particular - by chain complexes. It is then possible to measure the default
+of homotopical exactness of a sequence by the homotopy type of a certain
+object, a sort of 'homotopical homology'.
+
+Available as ps-file at:
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/Exa.Aug00.ps    (255 K)
+
+or via home page:
+http://www.dima.unige.it/STAFF/GRANDIS/
+
+With best regards,
+
+Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+
+e-mail: grandis@dima.unige.it
+tel: +39.010.353 6805   fax: +39.010.353 6752
+
+
+
+
+From rrosebru@mta.ca Fri Sep  1 16:02:15 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA11015
+	for categories-list; Fri, 1 Sep 2000 16:02:07 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <3.0.6.16.20000831202755.2127134c@pop.cwru.edu>
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.6 (16)
+Date: Thu, 31 Aug 2000 20:27:55
+To: categories@mta.ca
+From: Colin McLarty <cxm7@po.cwru.edu>
+Subject: categories: Mac Lane and Abelian Categories
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 26
+
+	This is to correct some remarks I made at the History of Categories
+meeting in Montreal in August, and to substantiate what I have written in
+the on-line Encyclopedia Britannica entry on Saunders Mac Lane. Mac Lane
+deserves credit for both the name "Abelian category" and the concept, in
+his paper "Duality for groups" (BAMS 1950, 485-516). 
+
+	Mac Lane 1950 defines "Abelian categories" in section III. He says an
+"Abelian category" is a category with a generator and a cogenerator and
+with zero object and biproducts (which he calls "free-and-direct products).
+ He proves that in such a category, the arrows from any object A to another
+B form an additive commutative monoid (he actually says "semigroup",
+p.511); and that any such category is isomorphic to a category of
+commutative monoids (p.512).
+
+	Of course this is far from our current definition of Abelian categories.
+But Mac Lane comes very close to the current definition with his "Abelian
+bicategories" on p.513 (using terms from 503). The definition makes heavy
+use of "submaps" and "supermaps". 
+
+	First, let me simplify by taking "submaps" to be monics, and "supermaps"
+to be epics. In these simplified terms Mac Lane's axioms for an "Abelian
+bicategory" say it is an "Abelian category" such that every arrow has an
+epic-monic factorization and:
+
+LC-1 the subobjects of any object A form a complete lattice.
+
+LC-2 sups of subobjects are preserved by direct images.
+
+and furthermore:
+
+ABC-1 The arrows from any A to another B form a commutative group.
+
+ABC-3 every subobject is a kernel and dually.
+
+
+These imply that every arrow has a kernel (sup of all subobjects killed by
+the arrow) and dually.
+
+Mac Lane's other axioms ABC-2 and ABC-4 and 5, are redundant in this
+simplified case.
+
+	So in this simplified form an "Abelian bicategory" for Mac Lane in
+1950 is what we would call an Abelian category with generator and
+cogenerator and with sups of subobjects (preserved by direct image). Mac
+Lane talks about pre-images of sups also, in terms not exactly ours today,
+and I have not worked out the connection.
+
+
+	Now, to stop simplifying, Mac Lane's "submaps" and "supermaps" are not
+defined but axiomatized. A category with submaps is a category with a
+distinguished class of monics satisfying certain axioms (which imply that
+every split monic is in the class, p.499). "Supermaps" are axiomatized
+dually. And the axioms imply that every arrow has a "supermap-submap"
+factorization.
+
+	Actually the axioms begin with a much narrower class of selected monics
+called "injections", and corresponding epics called "projections", such
+that every arrow factors uniquely as a projection followed by an
+isomorphism followed by an injection. The axioms pose further conditions,
+apparently all based on the idea that injections should correspond to
+certain set theoretic inclusions. I have not examined them closely.
+
+	A submap is defined to be any isomorphism followed by an injection, and
+dually for supermaps and projections.
+
+	Clearly the motivation for using "submaps" rather than monics was
+that Mac Lane hoped to extend this approach to include the category of all
+groups, with normal monics as the "submaps". See the footnote on p.513
+saying "proofs of the first and second isomorphism theorems for all groups
+can be based on 'categorical' axioms".
+
+	I think it fair to count this business of submaps and supermaps as an
+inessential complication.
+
+	Grothendieck radically simplified the axioms, extended them, and
+found far more penetrating applications than Mac Lane had in mind in 1950.
+I am sure Grothendieck did not know of Mac Lane's paper directly, and I
+suspect that once he heard something like this was possible he worked it
+out for himself. One key to Grothendieck's improvements is that
+Grothendieck proceeds in more purely categorical terms. But the name and
+the concept are from Mac Lane
+
+
+
+
+From rrosebru@mta.ca Fri Sep  1 16:02:43 2000 -0300
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id PAA10817
+	for categories-list; Fri, 1 Sep 2000 15:46:50 -0300 (ADT)
+X-Authentication-Warning: triples.math.mcgill.ca: barr owned process doing -bs
+Date: Thu, 31 Aug 2000 08:49:33 -0400 (EDT)
+From: Michael Barr <barr@barrs.org>
+X-Sender: barr@triples.math.mcgill.ca
+To: Categories list <categories@mta.ca>
+Subject: categories: Right exact functors
+Message-ID: <Pine.LNX.4.10.10008310842110.29315-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+X-Keywords:
+X-UID: 27
+
+I thought this would be a simple application of the snake lemma, but I
+cannot do it all.  Does anyone know if it is true and, if not, why it is
+true for tensor product?  Suppose X is an abelian category and T:X --> Ab
+is a right exact functor.  Say an object E is T-effaceable if for every
+exact sequence 0 --> A --> B --> E --> 0, the induced TA --> TB is
+injective.  Now suppose that 0 --> E' --> E --> E'' --> 0 is an exact
+sequence in which E and E'' are T-effaceable.  Does it follow that E' is?
+Does it help if you suppose that every object has an effaceable cover (and
+therefore an effaceable resolution)?  Then you could define homology, but
+you want it independent of the resolution and that is where this question
+actually comes from, trying to prove independence of resolution.
+
+Michael
+
+
+

@@ -1,0 +1,126 @@
+Date: Sat, 6 Dec 1997 16:13:55 -0400 (AST)
+Subject: Free-Forgetful Adjunction for Vect 
+
+Date: Sun, 7 Dec 1997 03:54:53 +1100 (AEDT)
+From: Jonathan Burns <burns@latcs1.cs.latrobe.edu.au>
+
+I've done my best on this, for two weeks. There comes a point at which
+one calls for help, because one isn't seeing it.
+
+A full-rank set of vectors in a vector space defines a basis, obviously.
+And given an n-dimensional  Euclidean manifold, with specified origin,
+an arbitrary set of n points, "in general position" (i.e. not contained
+in any proper subspace), defines a basis for it.
+
+In other words, a choice of simplex defines a choice of frame.
+
+Now, MacLane sets this up as an example of the "free-forgetful" adjoint
+relationship. Postulate functors V, U between the two categories:
+
+
+                V ->
+        Set(s)          Vect(or Spaces)
+                <- U
+
+and domains I in Set, and V in Vect.
+
+The adjunction is:
+
+        V I   ->  P             U P  <-  I
+
+        UV I  ->  U P           VU P <-  VI
+        |      /                |      /
+        ^     /                 v     /
+        |u   /                  |n   /
+        |   /                   |   /
+          I                       P
+
+The interpretation is:
+
+        V : Set -> Vect
+
+takes a set I to V I, the span of I over some field. (Set-to-set arrows
+go to linear maps.)
+
+        U : Vect -> Set
+
+is the forgetful functor, taking each vector space to "its underlying set";
+which as far as one can tell, is the vector space considered as the total
+set of linear combinations of the basis elements, with all arrows mapped
+to nowhere-land.
+
+The adjoint isomorphism is:
+
+        [ V I  -> P ]   ~~   [ I -> U P ]
+           frame                simplex
+
+That makes sense, as far as it goes. Now consider the unit and counit.
+
+        u: id(Sets)  ->  U V
+
+        => u(I): I ->  UV(I)
+
+        is the natural transformation from any set I to the elements
+        of its span; which set is isomorphic to R^|I|, and can be read
+        as the flat space in which I resides. That makes sense if I is
+        a set of points, but is meaningless if I is, say, the set {1,2,3}.
+
+        n : V U -> id(Vect)
+
+        =>  n(P) : VU(P) -> P
+
+        is the natural transformation from the span of the set of elements
+        of a vector space, to the space itself. But the set of elements
+        is infinite. VU(P) would have to be a vector space with an infinite
+        basis.
+
+My perplexities:
+
+(1) As above, the unit and counit do meaningless things.
+
+(2) The vector spaces defined by V are free on I. It's meaningless to
+ask whether the elements of I are in general position; they are assumed
+to be. But in a geometric interpretation, one wants to introduce the
+arrows to the Boolean domain:
+
+        C2 : P x P -> B : condition for two points to coincide
+
+        C3: P x P x P -> B: " " 3 points to be collinear
+
+        C4: PxPxPxP -> B:   " " 4 points to be coplanar
+
+        .... and so on up to |I|.
+
+There has to be a sensible place to plug these into Vect, and I expected
+the adjoint construction to be it.
+
+(3) Otherwise, what is the damn thing good for? By comparison, the
+Diagonal-Product and Product-Exponential units and counits are the
+most useful things about those constructions; and the Free-Forgetful
+adjunction for monoids gives us the Kleene closure. But the Free-
+Forgetful adjunction for Vect almost seems vacuous.
+
+
+An alternative way to see the problem is, to say that Set is not the
+right category to be looking for adjoints in. Geometrically, we want
+Vect to be related not to spaces, but to "linear structures" on spaces,
+in the sense that a manifold atlas genuinely describes a differentiable
+structure. Maybe we want something like:
+
+               V ->
+        Flat            Vect
+               <- U
+
+where Flat (= linear structure) is equipped with the incidence arrows
+C2, C3,.., C|I|, and admits only  m : Flat -> Flat which are U-images
+of the exterior products in Vect, and preserve the C's.
+
+This is related to the question: is the exterior product (i.e. determinant)
+the unit of some adjunction?
+
+Any help really appreciated.
+
+
+
+Jonathan Burns
+

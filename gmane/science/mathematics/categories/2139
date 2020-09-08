@@ -1,0 +1,159 @@
+Path: news.gmane.org!not-for-mail
+From: Alex Simpson <als@inf.ed.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Cauchy completeness of Cauchy reals
+Date: Wed, 29 Jan 2003 08:35:34 +0000 (GMT)
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <1043829334.3e37925619e77@mail.inf.ed.ac.uk>
+References: <3E36ED4F.4070807@kestrel>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+X-Trace: ger.gmane.org 1241018437 2672 80.91.229.2 (29 Apr 2009 15:20:37 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:20:37 +0000 (UTC)
+To: CATEGORIES mailing list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Wed Jan 29 11:40:48 2003 -0400
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Wed, 29 Jan 2003 11:40:48 -0400
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+	id 18duJ2-0005C2-00
+	for categories-list@mta.ca; Wed, 29 Jan 2003 11:39:16 -0400
+In-Reply-To: <3E36ED4F.4070807@kestrel>
+User-Agent: IMP/PHP IMAP webmail program 2.2.8
+X-Originating-IP: 130.54.16.90
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 64
+Status: O
+Content-Length: 4327
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:2139
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2139>
+
+
+
+Dear Dusko,
+
+> is there still an error? please ignore the trivial ones this time, and
+> i'll try to learn from errors.
+
+Yes, I think there's an error.
+
+> here is a slight modification of sequences from my previous post. let
+> Q be the set of rationals between 0 and 1, D <= Q dyadic rationals and
+> N natural numbers. a cauchy real A is now a subobject of Q^N such that
+>
+> [... construction omitted ...]
+>
+> the proofs proceed like for the corresponding sequences in my previous
+> post. in particular, for every x,y : A holds
+>
+>      |cb(x)i - cb(y)i| <= [... calculation omitted ...]
+>                        <=   1/2^i
+>
+> means that cb(x)i and cb(y)i have the first i digits equal. hence
+> dcb(x)i =dcb(y)i. since this holds for all i, dcb(x) = dcb(y).
+
+I don't see that cb(x)i and cb(y)i have the first i digits equal.
+It seems possible to have e.g. cb(x)i = .0111 and cb(y)i = .1000.
+Indeed, .0111, although it is sufficiently close to b(x)i to
+be the value of cb(x)i, may nonetheless be too far from b(y)i
+to qualify as a "simpler" candidate for cb(y)i than .1000.
+
+This problem is not easily repaired. In fact, there is a
+fundamental obstacle to this approach. Your argument attempts
+to construct a function f: Q^N --> Q^N (in your proof given
+by f=dcb) satisfying:
+
+  1. f maps any Cauchy sequence to a Cauchy sequence representing
+    the same real number.
+
+  2. All sequences that represent the same real number get mapped to
+    a single unique Cauchy sequence representative.
+
+Such an f is tantamount to giving a splitting to the epi
+
+  r: {x: Q^N | x a Cauchy sequence} --> I_C
+
+where I_C is the Cauchy interval. There are many toposes
+in which Q^N is basically Baire space and I_C is basically
+the closed unit interval in Euclidean space
+(e.g. Johnstone's "topological topos", many "Gros toposes").
+In such toposes, a splitting of r would
+correspond to a non-constant continuous function from the
+Euclidean interval to Baire space. This is clearly impossible,
+as Baire space is totally disconnected. Furthermore,
+in many such toposes (e.g. Johnstone's), countable
+choice and Markov's principle both hold.
+
+In conclusion, it is impossible to prove the existence of
+an f satisfying 1 and 2 above using intuitionistic logic,
+even if one further assumes countable choice and Markov's
+principle.
+
+
+Regarding Markov's principle:
+
+> now, as everyone has been pointing out, the dyadic representation
+> depends on markov's principle.
+
+This is *not* what has been pointed out (whatever you mean
+by dyadic representation).
+
+It is well-known that, in general, very many different
+versions of Cauchy sequence coincide, including: Cauchy
+sequences of rationals, indeed many variants depending on
+properties of the modulus; ditto for sequences of dyadic
+rationals; nested sequences of closeed proper intervals;
+"signed" binary representation, etc, etc.
+
+What I previously pointed out was that the existence of
+ordinary binary representations may fail even in the presence
+of Markov's principle.
+
+> in order to prove that the map c is
+> total, we need the fact that for every e>0 in Q there is some k such
+> that 1/2 + 1/4 +...+ 1/2^k > 1-e. in other words, that there is k
+> s.t. 1/2^k < e. this is *equivalent* to markov's principle.
+
+The property quoted is in fact a trivial consequence of intuitionistic
+arithmetic alone. It has nothing to do with Markov's principle.
+Indeed your function c is total in any elementary topos.
+
+> how bad is markov's principle? well, i think that markov proposed it
+> as a valid *intuitionistic* principle:
+>
+> ** given an algorithm, if i can prove that it terminates, then i
+> ** should be able to construct its output.
+
+This is a curious paraphrasing. It should rather be:
+
+  "if the algorithm cannot fail to terminate then ..."
+
+> it would be nice to know that this is all we need in order to have
+> cauchy complete cauchy reals.
+
+It would be nice and may be true. At present we don't have a
+single example topos in which the Cauchy reals are not complete
+(w.r.t. sequences).
+
+However, there is, as yet, no convincing reason to link Markov's
+principle to this question.
+
+Best wishes,
+
+Alex
+
+Alex Simpson, LFCS, Division of Informatics, Univ. of Edinburgh
+Email: Alex.Simpson@ed.ac.uk           Tel: +44 (0)131 650 5113
+Web: http://www.dcs.ed.ac.uk/home/als  Fax: +44 (0)131 667 7209
+
+
+
+
+

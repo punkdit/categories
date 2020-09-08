@@ -1,0 +1,279 @@
+Date: Thu, 28 Jan 1999 18:40:37 +1100 (EST)
+Subject: categories: two questions about universal quantification 
+From: Barry Jay <cbj@socs.uts.edu.au>
+
+
+Can anyone help with the following two questions? 
+Barry Jay
+
+
+
+Question 1 
+~~~~~~~~~~
+
+Has the following lemma been seen before? 
+
+Lemma: If D is a cartesian closed category having all finite limits
+then so is its arrow category.
+
+Proof
+
+Finite limits in the arrow category are constructed pointwise. 
+Arrows from a: A -> I to b: B-> J In the arrow category are given by
+commuting squares (all vertical lines are arrows pointing down)
+
+      f
+  A -----> B
+  |        |
+ a|        |b
+  |        |
+  I -----> J
+      u
+
+The object of such appropriate pairs (f,u) is given by the pullback
+
+  E -----> A->B
+  |         |
+  |         | A->b
+  |         |
+ I->J ---> A->J
+     a->J
+
+The universal property follows directly. QED
+
+The proof uses a form of universal quantification over A.
+Similar constructions arise with the use of ends and dinatural
+transformations. I also used them aggresively in my paper on data
+categories (http://linus/~cbj/Publications/data_categories.ps.gz) to
+quantify over all paths through a tree. The lemma generalises to other
+functor categories over D provided there are sufficient limits in D to
+express all of the constraints.
+
+
+Question 2 
+~~~~~~~~~~
+
+The proof above shows how pullbacks and cartesian closure interact to
+provide a form of universal quantification.  Call this new
+construction quantification by exponentiation. What is its expressive
+power?
+
+Discussion
+~~~~~~~~~~
+
+Universal quantification wrt an arrow f : X -> Y is usually given as a
+right adjoint to the functor D/Y --> D/X which pulls back along f.
+Call this quantification by adjunction. When it is specialised to a
+projection XxY ---> X then it can be thought of as quantification over
+the object Y. Quantification by exponentiation can be seen as
+supplying some of the ingredients necessary for this special case. For
+example, consider the equaliser E of two functions into an
+exponential:
+
+  f,g : X --> (A->B)
+
+If the quantifier by adjunction exists for the projection XxA ---> X
+then E is given by applying it to the equaliser of the uncurried forms
+of f and g from XxA to B. 
+  
+Motivation
+~~~~~~~~~~
+
+One the one hand, this structure is weaker than that normally assumed,
+which may sometimes be a good thing. On the other hand, the power
+resulting from this combination of features may still be more than
+desired.
+
+Many models of computation assume both cartesian closure and and all
+finite limits but this is already more than we need to model the types
+of most languages, i.e. a type corresponding to one of the objects
+produced by quantification by exponentiation would have undecidable
+membership, so that values would need to come equipped with a proof of
+their membership. So (assuming that cartesian closure is a given) the
+question becomes whether there is a smaller class of limits which are
+good enough to model programming languages. 
+
+One candidate is to work in an extensive category, in which only
+pullbacks along coproduct inclusions are presumed. A short argument
+shows that if Z has decidable equality then any cospan over it has a
+pullback. Actually, there is a rich, but under-explored class of
+pullbacks implied by this innocuous assumption. For example, the list
+functor preserves such pullbacks (this is not quite trivial). There
+may well be other, better candidates. I would be glad to hear of them.
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,	  http://www-staff.socs.uts.edu.au/~cbj	|
+| Australia.			        FISh homepage ... ~cbj/FISh     |
+*************************************************************************
+
+
+Subject: categories: Re: two questions about universal quantification
+Date: Thu, 28 Jan 1999 09:45:31 +0000 (GMT)
+From: "Dr. P.T. Johnstone" <P.T.Johnstone@dpmms.cam.ac.uk>
+
+Barry Jay asked
+
+> Has the following lemma been seen before?
+>
+> Lemma: If D is a cartesian closed category having all finite limits
+> then so is its arrow category.
+
+This is a special case of the cartesian closedness of a category 
+obtained by Artin glueing, which was covered in the Carboni--Johnstone
+paper (Math. Struct. Comp. Sci. 5 (1995), 441--459). (However, we don't
+claim any originality for it; it is implicit in Gavin Wraith's 1974
+paper on Artin glueing.) Of course, the "glueing functor" in Barry's case
+is the identity on D.
+
+Peter Johnstone
+
+
+Date: Thu, 28 Jan 1999 09:36:34 +0000 (GMT)
+From: "Roy L. Crole" <R.Crole@mcs.le.ac.uk>
+Subject: categories: Re: two questions about universal quantification
+
+
+>Question 1 
+>~~~~~~~~~~
+
+>Has the following lemma been seen before? 
+
+>Lemma: If D is a cartesian closed category having all finite limits
+>then so is its arrow category.
+
+If I've not misunderstood Barry's question 1, this is surely just the 
+gluing or sconing lemma for the particular functor id_D : D -> D, 
+where
+
+     Glue(id_D) = arrow(D)
+
+Gluing along the identity gives a pleasant form for exponentials; the
+glued exponentials in Glue(G) for some G : C -> D collapse to the diagram
+in Barry's note.
+
+
+Date: Fri, 29 Jan 1999 08:08:26 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+Subject: categories: Barry Jay's question
+
+Unless I am missing something, it seems to me that for any CCC C with
+finite limits and any finite category I, the functor category C^I is a
+CCC.  You can also replace finite by any cardinal if you do it in both
+places.  The argument is roughly this.  Let |I| denote the discrete
+category with the objects of I.  The inclusion |I| --> I induces U: C^I
+--> C^{|I|} and the limits imply the existence of a right adjoint R of U.
+Since U also preserves limits, the cotriple (UR,e,d) preserves finite
+limits.  It is easy to see that U is cotripleable and that C^{|I|} is a
+CCC and, hence, so is C^I.  For define A -o RC = R(UA -o C).  For a
+general object B, the line B --> URB ==> URURB is an equalizer and you can
+define A -o B as the equalizer of A -o URB ==> A -o URURB.  
+
+Michael
+
+
+-------------------------------------------------------------------
+History shows that the human mind, fed by constant accessions of
+knowledge, periodically grows too large for its theoretical coverings, and
+bursts them asunder to appear in new habiliments, as the feeding and
+growing grub, at intervals, casts its too narrow skin and assumes
+another... Truly the imago state of Man seems to be terribly distant, but
+every moult is a step gained. 
+
+- Charles Darwin, from "The Origin of Species"
+
+
+Date: Mon, 1 Feb 1999 17:55:01 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Subject: categories: Artin glueing et cetera; comments of Barr, Jay, Crole, and Johnstone
+
+
+Barry Jay recently sought comments on A^2 is cartesian closed when A is so,
+where 2 is the arrow-category. Roy Crole and Peter Johnstone both pointed
+out that this was a special case of Artin glueing.
+
+Is there not a more general fact? The forgetful 2-functor from cartesian-
+closed categories to categories is fairly easily seen to be monadic - the
+monadicity is well-known for categories with finite products or finite
+limits, and adding the right adjoint to (- x A) is purely equational. But
+for any 2-monad T on K, T-Alg has all lax and pseudo limits - indeed all
+flexible limits - formed as in K; see [Blackwell, Kelly, and Power, Two-
+-dimensional monad theory, J. Pure Appl. Algebra 50 (1989), 1-41]. Artin
+glueing is the case of the lax limit of a map, if I remember correctly its
+meaning. But (-)^X for any category X is also a flexible limit, so that
+Jay's observation is included directly without recourse to Artin glueing.
+
+Then, again, Michael Barr on 30 Jan asserts that A^X is cartesian closed if
+A is so when X is finite and A has finite limits. Surely such conditions are
+not needed - A^X is cartesian closed when A is so.
+
+Am I missing something?
+
+Max Kelly
+
+
+Date: Tue, 2 Feb 1999 00:25:26 +1100 (EST)
+From: maxk@maths.usyd.edu.au (Max Kelly)
+Subject: categories: my earlier comments on certain limits in algebras for a 2-category.
+
+After returning home and checking my references, I see that in [Blackwell,
+Kelly, Power] we show that, for a 2-monad T on a complete 2-category K, the
+category T-Alg, whose morphisms are the non-strict ones (the "to within a
+coherent isomorphism" ones), admits products, inserters, and equifiers,
+formed as in K, and hence such limits as follow from these, including the
+cotensor product (-)^X for an X in K. What I said today about admitting all
+FLEXIBLE limits is false; I had misremembered, and there is a counter-
+-example in Example 6.2 of [Bird, Kelly, Power, Street, Flexible limits for
+2-categories, JPAA 61 (1989), 1 - 27]. The flexibles would follow from those
+above if idempotents were to split - but they don't in general.
+
+I am strongly convinced that the above is true. The mere CATEGORY Ccc of
+cartesian closed categories was shown to be monadic over the mere category
+Cato of categories by Burroni, and this was checked and restated by Dubuc
+and Kelly in [J. Algebra 81 (1983), 420 - 433]. Blackwell, Kelly, and Power
+claimed on p.39 of [B,K,P] that Ccc, as a 2-category with only invertible
+2-cells, is monadic (2-monadic, if you want the repeated emphasis) over the
+complete 2-category Catg which is obtained from the 2-category Cat by
+discarding all the non-invertible 2-cells. It is most unlikely that Ccc is
+2-monadic over the usual 2-category Cat; for already symmetric monoidal
+closed categories is known not to be so; see p.34 of [B,K,P].
+
+I had strongly believed that Ccc was indeed 2-monadic over Catg; but we never
+checked every detail of this particular example. Today my belief has been
+shaken by two letters (one from Barry Jay) claiming that the monadicity of 
+Ccc is false, unless the cartesian closed categories are supposed to admit
+pullbacks. I shall try to check this out in the coming days - we were quite
+sure that the structure is equational even without pullbacks, but perhaps we
+were wrong. Certainly Burroni (see [Dubuc-Kelly for the reference) supposed
+pullbacks present, because he was headed for toposes.
+
+I must say that the letters I received today were imprecise about which
+base 2-category was involved; to be fair, they were not really about 
+monadicity but about the existence of A^2. However I formed theimpression
+that the 2-categorical investigations in the references above have not (yet?)
+become part of the common language of our colleagues. Note that the T-Alg
+where these limits are to exist does NOT have the strict maps; so that it is
+certainly not monadic in any classical sense. Clearly one cannot begin even
+to pose such questions precisely without using 2-categorical notions. Let me
+finish by saying that the universal property of A^2 is 2-categorical by its
+very nature (if we are speaking of A^2 in T-alg, not just in Cat).
+
+Oh, that's it! I have just seen what the point is. [B,K,P] is quite right in
+asserting that Ccc has the limit A^2 formed as in Catg; but the limit A^2 in
+Catg is not at all that in Cat; it is the category such that to give
+B --> A^2 is to give two maps B --> A and a 2-cell between them; but the
+2-cells in Catg are just the INVERTIBLE natural transformations, so that
+A^2 in Catg is A^I in Cat, where I is the free isomorphism, not the free a
+arrow 2.
+
+So, all right, I give in. The [B,K,P] results don't give a cartesian closed
+structure on the USUAL A^2 in Cat. Anyway, I've learned (or relearned)
+something from thinking this through, and hope some others may benefit from
+seeing these notions brought up.
+
+And so to bed. Max Kelly.
+

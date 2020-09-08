@@ -1,0 +1,1860 @@
+Date: Thu, 1 Oct 92 14:34:19 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Is there a standard name for those categories, A, such that 
+the slice category  A/X  is a topos for each object  X  in  A
+(e.g. the category whose objects are topological spaces and whose
+maps are local homeomorphisms)?  Are there any theorems?
+
+==============================================================================
+Subj:	From triposes to assemblies (correction)
+Date: 1 Oct 92   13:44:43 EST
+From: <cxm7@pop.cwru.edu>
+
+-------------
+
+	Thomas Streicher pointed out a problem in my definition
+of the "canonically separated" objects for triposes based
+on PCAs (and recall this does not simply mean the tripos
+given by a PCA in the most direct way).  The correct 
+definition is:
+
+
+	The tripos construction of a topos takes as objects all 
+pairs (X,=) where "=" is a partial equivalence relation in 
+the sense of the tripos on the set X.
+
+	To get a category of assemblies instead, take only 	those 
+pairs (X,=) where = is contained (in the tripos sense) in
+
+	          (Exist)(delta_X)(true)
+
+In other words, those = contained in the "direct image" 
+along the diagonal function for the set X of the maximal 
+predicate (in the tripos sense) on X.  Call these the
+"canonically separated" objects.  In the case of the
+effective topos this agrees with Hyland's usage.
+
+
+	The rest works as in the original post.  These objects
+can be represented by assemblies and the arrows between them
+as ordinary set theoretic functions with moduli.  That gives
+a regular category whose effective reflection is the topos
+given by the tripos.  The assemblies are (up to iso) precisely
+the separated objects of the topos.
+
+Colin McLarty 
+
+
+
+==============================================================================
+Subj:	diagram macros
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Thu, 1 Oct 1992 19:09:30 +0100
+
+One person has ticked me off for having a shouting match with Mike Barr.
+I apologise.  Several others have expressed sympathy, solidarity, etc.
+
+I don't think the categories list is an appropriate place for a discussion
+of LaTeX, so I don't want to go into any details. I just want to make an
+observation to settle the minds of those who are already using various
+packages or who are considering which one to use.
+
+Existing methods of drawing commutative diagrams may be divided, broadly
+speaking, into three classes:
+(1) use some general purpose graphics package, either within TeX (eg eepic,
+    pictex) or by importing PostScript (eg MacDraw, CorelDraw).
+(2) matrix-based specialist commutative diagrams packages such as those of
+        Francis Borceux; ftp sol.cs.ruu.nl /pub/TEX/DIAGRAM/diagram*
+        Kris Rose (xypic); ftp ftp.diku.dk /pub/tex/misc/xypic.tar.Z
+        Steven Smith (arrow); ftp ftp.cs.umb.edu /pub/tex/eplain/arrow.tex
+        Mike Spivak (lamstex); june.cs.washington.edu /tex/LAMS-TeX.tar.Z
+        me; ftp theory.doc.ic.ac.uk /tex/contrib/Taylor/tex/diagrams-V4*
+    maybe others; please tell me if these are not the authoritative archives
+(3) Mike Barr's macros.
+
+If you think Mike Barr's design philosophy is the right one then (God help you)
+you should send your suggestions to him.
+
+If you like mice then I hope you'll be happy together.
+
+The main point is this:*******************************************************
+* If you use any of the five packages I've mentioned in (2)                  *
+*       AND STICK TO THEIR CORE FEATURES, AVOIDING HACKS & GIMMICKS          *
+* then you have a pretty good chance of getting continued support should the *
+* one you use cease to be maintained, because since their conceptual basis   *
+* is common it will be possible to emulate or translate them.                *
+******************************************************************************
+
+For example, /tex/contrib/Taylor/tex/Borceux-to-Taylor-prototype.tex
+is a first attempt to emulate Francis' macros using mine. Try it out if
+you like but don't complain if it doesn't work correctly because I know that.
+It's a bug-ridden prototype to demonstrate the principle.
+Several low-level modifications have been made to my package (or are on the
+agenda) to deal with the minor conceptual differences and thereby facilitate
+emulation.
+
+Existing users of matrix-based packages (especially those who have used more
+than one of them) are welcome to send me their comments on the treatment of
+the core features. I will collect comments and forward them to whatever
+committee emerges to formulate proposals for LaTeX 3.
+
+Suggestions such as
+	Might I also mention strings, links, and Penrose tensor notation.
+will only cause annoyance. How many such diagrams do you envisage ever being
+drawn?  The original question was about syntax, and you have contributed
+nothing to that, even if anyone were willing to implement these features.
+I have my own research/career to get on with, and maintain TeX primarily for
+that. I'm certain Francis would say the same, as probably would others.
+If you want special features, DIY or *pay* somebody like Spivak to do it.
+An experience with a certain professor (and his publisher, OUP) who got me
+to spend several days rewriting my macros for use in some paper about a cube,
+and didn't even so much as take me out for a drink afterwards,
+has made me dis-inclined to go very far out of my way. I'm sorry.
+
+Paul
+==============================================================================
+Subj:	Re:  Freyd's question
+Date: Thu, 1 Oct 1992 21:59:00 +0100
+From: Thomas Streicher <streiche@informatik.uni-muenchen.de>
+
+Categories with finite limits where each slice is a topos and  
+reindexing is the inverse image part of a geometric morphism
+have been called "partial topos"  by  J. Benabou .
+
+It are lccc-s where each slice category is a topos.
+
+He gives as example any groupoid.
+
+T. Streicher
+++++++++++++++++++++++++++++++++++
+Date: Fri, 2 Oct 92 12:41:15 +1000
+From: street@macadam.mpce.mq.edu.au
+
+Perhaps a bicategory B which is "locally a topos" (i.e. whose
+hom-categories B(u,v) are topoi and for which B(f,g) is a geom morphism for
+all arrows f, g) might be called a *biallegory*. These provide a setting
+for "stacks".
+
+Of course, Peter's categories A are then those with SpanA a biallegory.
+
+Ross
+
+++++++++++++++++++++++++++++++++++
+Date: Fri, 02 Oct 92 09:46:08 +0100
+From: Andrew Pitts <Andrew.Pitts@cl.cam.ac.uk>
+
+>Is there a standard name for those categories, A, such that 
+>the slice category  A/X  is a topos for each object  X  in  A
+>(e.g. the category whose objects are topological spaces and whose
+>maps are local homeomorphisms)?  Are there any theorems?
+
+You should try asking Jean Benabou about this (not, I guess, by email). I seem
+to remember he worked on this kind of thing a few years ago (but I can't seem to
+remember what the results were).
+
+Andy Pitts
+==============================================================================
+Subj:	apologies
+Date: Fri, 2 Oct 92 11:22:59 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+When Paul Taylor writes:
+
+  "One person has ticked me off for having a shouting match with Mike Barr,"
+
+what does he mean?  Is this a Taylorism or a Londonism?  
+In the American Heritage Electronic Dictionary Copyright 1991 it says:
+
+  [tick off].
+  (Slang).
+    To make angry or annoyed: ``got really ticked off at her refusal.''
+
+So is Paul saying that someone made him angry for his having a shouting match?
+
+Come to think of it, it wouldn't be all that surprising.
+
+Best thoughts and always
+  remember to be nice to mice,
+      peter
+
++++++++++++++++++++++++++++++++++++
+Date: Fri, 2 Oct 92 12:19:20 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Leaving the linguistic question aside, I would like to point out that I
+have never engaged in any shouting match with Paul Taylor and I don't
+intend to start now.  Moreover, I have kept my private opinion of his
+posts strictly private and intend to continue that practice as well.
+
+Coming back to the linguistic question, I don't know for sure, but that
+is the sort of expression that can wind up with quite different usages on
+the two sides of the puddle, so I assume that is the case here.
+
+Michael
++++++++++++++++++++++++++++++++++++
+Date: Fri, 2 Oct 92 15:02:04 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+One of my colleagues claims that ``tick off'' is British schoolboy
+slang for scold.  
+
+Michael
+==============================================================================
+Subj:	Octoberfest
+Date: Fri, 2 Oct 92 15:21:04 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+As it stands now, we have nine people who have asked to talk.  I am 
+happy with that number, but we could also accomodate 2 or 3 more.
+
+Here is a list of talks and, insofar as I have been provided them, with
+titles and abstracts.
+
+Michael 
+
+Robin Cockett: TBA
+
+James R. Otto: Complexity classes from categories
+
+Richard Wood: A somewhat circular characterization of the
+               category of sets
+Years ago in a paper on total categories (those locally small
+B for which Y=yoneda:B--->PB has a left adjoint) I observed that
+for B=set_ there is U-|V-|W-|X-|Y and conjectured that this 
+characterizes set_. Bob Rosebrugh and I have returned to this 
+recently and hope to formally announce the result very soon. It
+builds on our work on completely distributive lattices. It
+probably makes good sense to say that a category B is "totally
+distributive" if it admits W-|X-|Y so the result can be seen as
+setting bounds on how "exact" a category can be.
+
+David B. Benson: Paths in Higher-Dimensional Graphs
+Paths in higher-dimensional graphs have arrows between arrows.
+These paths abstract many aspects of programming languages and
+related semantical matters.  Higher-dimensional graphs, a concept
+closely akin to computad, generate free n-categories -- and hence
+the free cellular omega-categories.  The arrows of such categories
+are represented by paths as the equivalence classes of paths modulo
+interchange.  Normal forms for the presentations of paths provide
+fast equality tests between the represented arrows, important for
+the goal of programming these ideas.  Two normal forms are considered.
+Natural normal form arises directly from the definitions.  Irreducible
+normal form is more efficient in the use of computer storage and
+appears to be related to Street's exponential wedge of r-equivalences.
+
+Thomas F. Fox: TBA
+
+Charles F. Wells:
+
+Mike Wendt: On Measurably Indexed Families of Hilbert Spaces.
+
+Robert Gordon: Tricategories
+
+Michel Hebert: A syntactic characterization of locally 
+               polypresentable categories
+
+
+==============================================================================
+Subj:	Re: diagram macros
+Date: Fri, 2 Oct 92 11:44:36 +1000
+From: street@macadam.mpce.mq.edu.au
+
+In response to Paul Taylor's letter expressing a certain amount of
+annoyance, it is clearly time for a (perhaps also annoying?) parable told
+me by a philosophical hero of mine, Steve Schanuel.
+
+It is well known that John Isbell has an incredible ability to create
+counterexamples when they exist. A great load was lifted from his mind when
+he realized one day that he was not obliged to provide a counterexample for
+everyone in category theory who could not prove their conjecture!
+--------
+
+But, Paul, I WILL buy a beer (maybe even a bottle of good Australian red)
+for anyone who does design string-drawing software I can use. In the
+meantime, don't worry. I'm happy with MacDraw.
+
+Best regards,
+         _________________________________________________________
+        /                     Ross STREET                         \
+       / School of Mathematics, Physics, Computing and Electronics \
+      /     Macquarie University, New South Wales 2109, AUSTRALIA   \
+     /       Telephone: 61-2-805-8946   Facsimile: 61-2-805-8241     \ 
+    /-----------------------------------------------------------------\
+                "Never cut what you can untie" Joseph Joubert
+
+++++++++++++++++++++++++++++++++++++
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Fri, 2 Oct 92 11:18:59 CDT
+
+I have no desire to become involved in a row over design philosophy or
+the virtues of existing packages (I personally, despite not particularly
+liking mice, use xfig to draw my diagrams and export LaTeX picture code), but
+Paul Taylor's  comment (reproduced below) on Ross Street's suggestion is 
+ill conceived:
+ 
+> Suggestions such as
+> 	Might I also mention strings, links, and Penrose tensor notation.
+> will only cause annoyance. How many such diagrams do you envisage ever being
+> drawn?  
+
+	My most recent manusript contained fourteen figures, each with
+between 2 and 9 Penrose tensor diagrams. Joyal/Street's "Geometry of Tensor
+Calculus I" contains numerous such diagrams as do *many* recent papers
+on the categories of representations of quantum groups (by such
+people as Reshetikhin, Turaev, and Lyubasheko). A good syntax for diagrams
+in Penrose tensor notation, would naturally include a good syntax for
+drawing knot diagrams (of use to low-dimensional topologist generally) and
+Feynman diagrams (of use to physicists), besides being invaluable to those
+of us who work on applications of monoidal category theory in those areas.
+
+Obviously, LaTeX is used by many people besides categorists, and if we're 
+going to update it to accomodate our need for algebra freed from the 
+constraints living in linear strings of symbols, we might as well get it 
+right for all people who need such algebra.  
+
+--David Yetter
+==============================================================================
+Subj:	Regular categories
+From:	Richard Wood <rjwood@cs.dal.ca>
+Date:	Fri, 2 Oct 1992 16:34:43 -0300
+
+I was writing a very belated contribution to the earlier discussion about
+regular categories when I saw Peter Freyd's question about categories
+all of whose slices are topoi. Since the former bears on the latter here
+it is without further ado.
+ 
+The definition of Carboni and Street given in "Order ideals" is 
+particularly nice because "E is regular" in their sense is exactly
+what one needs to define Rel(E) with no circumlocution. Recall that
+they require pullbacks, define strong epis in terms of (jointly)
+monic spans and require that every span factor, pullback stably,
+as a strong epi followed by a monic span. Then E is Barr regular
+iff E is C&S regular and has a terminal object.
+ 
+In joint (as yet unpublished) work with Carboni and Kelly we
+observed that the entire C&S definition can be encoded in a 
+single adjunction. Let S be the category x<---r--->a, the
+"free-living" span. Let {S,E} denote the functor category,
+best thought of here as a power (=cotensor), and let (S,E)
+denote the full subcategory of it determined by the monic
+spans. Regard both categories and the inclusion, 
+in:(S,E)--->{S,E} as data over ExE via the codomain(s)
+functors, c. Then E is a regular category iff "in" has a left
+adjoint "im" in the 2-category of fibrations over ExE.
+The point is that c:{S,E}--->ExE is a fibration iff E has
+pullbacks, whence c:(S,E)--->ExE is also a fibration; existence
+of im , merely as a functor over ExE, provides factorizations;
+and im being an arrow of fibrations is equivalent to stability
+under pullback.
+ 
+It is then fairly clear that one can define regular objects, E,
+in suitable 2-categories other than CAT, provided that one has
+also an interpretation for (S,E). This is not necessarily an
+idle generalization because such an approach dictates the
+reasonable definitions for both arrows and proarrows in the
+2-categories of regular objects that result when regularity
+is studied in the presence of further properties or structure.
+(For a similar sort of situation consider studying (co)complete
+objects in the 2-category of finitely complete ordered sets
+where the result is locales, or the deeper idea of Kelly and
+Lawvere of studying finitely complete objects in the 2-category
+of Skolem categories.)
+  
+But returning to regular categories, consider now Rel(E)(x,a)
+(where x and a are objects of E). It is reasonable to ask for
+representability in a , by an object P_a (but better S_a for
+see below). This was proposed by Street in the 1972 "Christmas
+card". C&S regular categories with this property, let us call
+one such an "opos" are rather good. In fact, E is a topos iff
+E is an opos and has a terminal object. (I believe that such
+categories have been considered by Benabou in work on trees
+and by Taylor in connection with laminations.) Every slice
+of an opos is a topos and if E is an opos then all Spn(E)(x,a) 
+are again oposes. The present definition indicates that in addition
+to topoi, groupoids (and hence sets) are oposes. Another interesting
+example suggested by Pare is the category whose objects are
+topological spaces and whose arrows are local homeomorphisms.
+Still another is the category whose objects are sets and whose
+arrows are functions with finite fibres.
+  
+The last example indicates that Cantor's theorem can fail in a 
+non-degenerate opos, for there P_a is the set of finite subsets
+of a. It is probably better to write S_a for P_a and think along
+the lines of Joyal and Moerdijk as in their "Cumulative hierarchy
+of sets" paper. Although the diagonal argument has many forms, as
+Lawvere showed, one sees here that it is in a certain sense 
+inevitable.
+  
+On the geometric side one gains intuition about oposes by observing
+that a disjoint union of oposes is again an opos. The geometric
+intuition is further sharpened by recalling that functors between
+topoi that have pullback preserving left adjoints can be thought of
+as both partially defined geometric morphisms and families of
+geometric morphisms. These have been studied by Kennison, Pare,
+Thiebaud, Rosebrugh and the writer.
+ 
+The chief virtue of oposes seems to be that 2-categories of such 
+are easier to work in than TOP, the 2-category of topoi and geometric 
+morphisms.The 2-categories of oposes that I refer to are oposes 
+together with fuctors that have pullback and monic span preserving 
+left adjoints and natural transformations; oposes together with 
+pullback and monic span preserving functors and natural transformations
+in the opposite direction. (The reason for dualizing at the level of 
+2-cells is so that the inclusion of the former in the latter is proarrow 
+equipment as discussed in various papers by Rosebrugh and the writer. 
+It enables a direct analogy with the pardigm CAT--->PRO, where the 
+1-arrows of PRO are profunctors.) It appears that various inverse 
+limit constructions in TOP and related 2-categories have their 
+complications concentrated in the passage from oposes to topoi but I
+have not yet thought this through. By the way, part of the reason that
+the "pro" version of a 2-category of oposes is so simple just resides in 
+the trivial observation that naming an object, i, of an opos E by the 
+functor i:1--->E is pullback preserving.
+  
+While I am not entirely happy with the name "opos" and do not wish to 
+tamper with the definition of topos there are several other indications
+that the role of the terminal object needs to be carefully understood.
+One concerns the real closed unit interval [0,1] regarded as a CCD lattice.
+The defining left adjoint to the supremum function for down-closed subsets 
+preserves binary infima but not the top element. This suggests that 
+[0,1), equivalently the non-negative reals, be studied in the spirit of
+the CCD programme but with arbitrary suprema replaced by suprema of bounded 
+(down-closed) subsets. Another concerns the fact that the functor 
+U:set--->CAT(set^op,set) is pullback preserving, where U-|V-|W-|X-|Yoneda . 
+Rosebrugh and I have recently shown that if a locally small category B has 
+such an adjoint string as above then B is equivalent to the category of sets.
+  
+Regards, R.J. Wood
+
+==============================================================================
+Subj:	Re:  apologies
+Date: Sat, 3 Oct 92 12:15:40 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+The OED records only the American use of "ticked off" and dates it to
+1959.  But good old Eric Partridge says that by 1916 it meant (in the
+British military): "to reproach, upbraid, blame; esp. to reprimand."
+(A Dictionary of Slang and Unconventional English, 8th Edition, 1984.)
+==============================================================================
+Subj:	Re: Regular categories
+From: koslowj@math.ksu.edu (Juergen Koslowski)
+Date: Sat, 3 Oct 92 11:07:38 CDT
+
+This concerns Richard Wood's remarks on regular categories:
+
+Maybe this is a superficial observation, but the terminal object in a topos and
+the 1 in a ccd lattice are the unit elements with respect to cartesian product
+x and binary meet, respectively. I seem to remember that such unit objects are
+responsible for difficulties when proving nice coherence theorems (maybe 
+Richard Blute could comment on that). Also, from computer scientists I got the
+impression that a unit object with respect to pairing causes complications
+in the lambda calculus. In particular the isomorphism A \cong [I,A] causes lots
+of trouble with the "continuation passing style transformation" some computer
+scientists like to use. I wonder whether it is this aspect of the terminal 
+objects that is responsible for the complications Richard Wood describes.
+
+-- J"urgen
+-- 
+J"urgen Koslowski         | If I don't see you no more in this world
+Department of Mathematics | I meet you in the next world
+Kansas State University   | and don't be late!
+koslowj@math.ksu.edu      |                         Jimi Hendrix (Voodoo Chile)
+==============================================================================
+Subj:	Note from moderator
+Date:    Sat, 3 Oct 1992 17:22:24 -0300 (ADT)
+From: Bob Rosebrugh
+
+Based on the the desire to allow discussion to flow freely, I have recently
+posted several messages which do not obviously qualify as discussion of
+category theory. Without criticizing either the posters or myself (for letting
+these posts go out), I will query (but not censor) future posts which are not
+clearly related to category theory. It should be noted that general discussion
+of aspects of (La)TeX or other programs which are widely useful in the
+community are clearly related to category theory. 
+
+Regards to all,
+Bob Rosebrugh
+==============================================================================
+Subj:	Re: apologies
+Date: Mon, 05 Oct 92 10:19:45
+From: sjv@doc.ic.ac.uk (Steve Vickers)
+
+[Sorry to prolong a non-categorical thread - I hope I'm not saying anything 
+contentious enough to warrant a reply.]
+
+I can state without recourse to dictionaries that in living English English, 
+to tick off is to reprimand, e.g. "Teacher gave me a real ticking off." 
+Paul's usage ("One person has ticked me off for ...") was completely 
+idiomatic.
+
+I only found out this year that American English is different - the phrase 
+is used in the "annoy" sense on "Dinosaurs".
+
+Steve Vickers
+==============================================================================
+Subj:	categories whose slices are toposes
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Mon, 5 Oct 1992 12:46:29 +0100
+
+Peter Freyd asks
+> Is there a standard name for those categories, A, such that the slice
+> category  A/X  is a topos for each object  X  in  A?
+
+> Are there any theorems?
+
+I don't know about the first question: not too sure whether I like "partial"
+topos - I thought of "local topos" or "polytopos".
+
+To the second, presumably Peter had some conjectures or generalisations in mind.
+I wonder what they were.
+
+Obviously a great many things generalise directly. For example, since
+experience shows that categorical logic is "local" in character - ie depending
+on an context (in the proof- or type-theoretic sense) - arguably the terminal
+("global") object should be dropped altogether. (On the other hand, earlier
+discussion of generalised definitions of "regular epi" showed that others
+did not find my methods of translating global to "poly" definitions via slices
+quite as obvious as I thought they were.)
+
+Strictly with the status of an "idle musing", one application of this that
+occurred to me was to model theories which are globally inconsistent but
+locally consistent. Dov Gabbay, who is good at inventing such examples, had
+a nice story of a professor who sought early retirement by telling the
+vice-chancellor he had a weak heart but his wife that he was healthy - only
+when the professor's and vice-chancellor's wives met was there a contradiction.
+
+On a more serious note, I have a comment in a different direction from the
+discussion by Richard Wood and others on (internal) logic.
+
+The (2-)category of polytoposes, stable (wide pullback preserving) functors
+(and cartesian transformations) is cartesian closed, indeed it has a symmetric
+monoidal closed structure and a comonad inducing the CCC a la Girard. If we
+make the categories have and the morphisms preserve filtered colimits, and
+impose the additional condition that any colimit diagram in the categories
+which has a cocone has a colimit (equivalently that they have binary products)
+then we may obtain models of (stronger) forms of polymorphism, including a
+type of types.
+
+Reference? Sorry, not for the general case, but in the case where the slices
+are presheaves on groupoids, see my paper "Quantitative Domains, Groupoids and
+Linear Logic" in CTCS 3 (Manchester, 1989), Springer LNCS 389. Also available
+from theory.doc.ic.ac.uk as /theory/papers/Taylor/Quantitative.dvi but beware
+that the font llwith10 is needed for the par. (The irony of this is that the
+alleged par is not a functor.) More sketchy results to back up my claims
+above in the other stable domain theory papers in that directory.
+
+========
+
+
+I see "tick off", like "mad", has different meanings on the two sides of
+The Pond. I understand it as "criticise (lightly)". (As regards "good old Eric
+Partridge", I think his dictionary is (a) useless, being largely confined to the
+peculiar usage of individual regiments & English Public Schools, and
+(b) offensive - see the entry under "gay".) Finally, let me assure you that
+there is no slanging match between me & Make Barr (whom I should have added
+to the list of those with higher priorities than TeX), but it is in the nature
+of software that differences arise which no amount of diplomacy can (or should)
+resolve.
+
+Paul
+
+==============================================================================
+Subj:	diagrams yet again
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Mon, 5 Oct 1992 16:08:17 +0100
+
+Having criticised (ticked off) certain senior categorists for giving terse and
+uninformative answers to naive category theory questions, perhaps I ought to
+give more helpful responses to TeX questions.
+
+LaTeX 3 is a general and extensive re-write of LaTeX. I don't fully understand
+the terms of reference, though they started as making amstex work with LaTeX.
+Some very amateurish CDs were in amstex, so we may take it that the present
+objectives are to do (ie make compatible and recommend a package to do)
+that much, but more professionally. There were CDs in amstex because
+(presumably) whoever at AMS specified it considered that they were already
+an important mode of expression IN MATHEMATICS AS A WHOLE.
+
+Rectangular diagrams without 2-cells are very commonly found. We all know
+exactly what the idiomatic usage of such diagrams is and that we would be lost
+without them. Moreover the fact that Mike Spivak, Steven Smith, Kris Rose and I
+have put a lot of time into developing the matrix notation of TeXercise 18.46,
+that Francis Borceux came up with the same idiom without reading the TeXbook,
+and that large numbers of users have found these five packages convenient
+are evidence that this is the most appropriate way of rendering such
+diagrams in machine- (and, of course, user-) readable form.
+
+The strings, braids, etc., are a completely different matter. It is not
+belittling the work done on these topics, in Australia in particular, to say
+that they are of minority interest, compared to the use of the simpler forms
+of diagrams. Nor would I be accusing Ross of riding a bandwagon if I suggest
+that in five years' time he'll probably be interested in something else and
+drawing a completely different kind of diagram. Meanwhile others on the
+fringe of the expanding categorical cosmos will only just be learning to use
+commutative \square's.
+
+With such a major piece of programming as CD drawing, "what you see" (type)
+and "what you get" (see on paper) are completely different things and are to
+be thought of (designed) separately.  For example, the diagrams in my thesis
+(as submitted to Cambridge in 1986) look pretty horrible, but substituting
+a recent version of my diagrams package (and, I confess, a little bit of
+global editting) yields an aesthetically far superior result for (almost)
+the same input. Later (say post Sept 1989) sources are adapted more easily.
+I have continued to support the same input language whilst developing the
+output. With the exception of a few details, the original language design
+decisions turned out to be good ones.
+
+Those who have asked me in person "how do you do this in TeX" will have found
+that I have tricks up my sleeve which I use in my own papers but am reluctant
+to explain.  Other things have had loud "PROTOTYPE" warning messages in them.
+This is because any piece of code I give out I have a duty to maintain (in the
+sense I've mentioned, of continuing to parse the input and producing similar or
+better output), so until I'm sure that I'm happy with the input language
+I won't release things. Consequently I sometimes get overtaken.
+
+So the short answer to Ross's comment (at the risk of compromising my own
+typographical principles and contradicting Mike Barr's recent [private] comment
+to me, "Hell, at least we agree on TeX!" :-) ), is, you're right in sticking
+to MacDraw for what are for the time being ad hoc diagrams. You can use
+epsf.sty to import them into LaTeX documents.  That is after all the modern
+equivalent of getting the engraver to do it.  When the idiom has become clear,
+and you've got me sufficiently interested in the subject to want to draw the
+diagrams myself, then I'll write your macros.
+
+Paul
+==============================================================================
+Subj:	Ross' request
+Date: Mon, 5 Oct 92 16:53:14 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I consider Ross' request perfectly reasonable.  I actually have done 
+some of these for Marta.  More to the point, I don't think that anyone
+ought, in principle, decide that any particular notation is not important
+enough to do, just because some especial package doesn't do it.  I don't
+even exclude the upside-down ampersand, although I don't care for it 
+at all.  As I just got finished saying on another forum, we ought to
+be trying to include people, not exclude them.
+
+By the way, I considered the pitiful attempt to do commutative diagrams
+in AMS-TeX as AMS' expression of their contempt for category theory,
+rather than as any genunine attempt to accommodate us.  
+
+Michael
+==============================================================================
+Subj:	Re: diagrams yet again
+Date: 05 Oct 92 20:07:34 PDT (Mon)
+From: pratt@cs.stanford.edu
+
+
+	From: Paul Taylor <pt@doc.ic.ac.uk>
+	Date: Mon, 5 Oct 1992 16:08:17 +0100
+
+	The strings, braids, etc., are a completely different matter.
+	It is not belittling the work done on these topics, in
+	Australia in particular, to say that they are of minority
+	interest, compared to the use of the simpler forms of
+	diagrams.
+
+Paul's representation of strings and braids as a flash in the category
+theory pan is not borne out by the literature.  Strings have been an
+integral part of the arrow business for a long time, witness Psalms
+21:12, "Therefore shalt thou make them turn their back, when thou shalt
+make ready thine arrows upon thy strings against the face of them."
+
+Besides their supporting role with arrows, strings are also known to
+every linguist and computer scientist to be an integral part of
+language, as Mark 7:35 attests: "And straightway his ears were opened,
+and the string of his tongue was loosed, and he spake plain."
+
+
+Commutative algebra has been synonymous with mainstream algebra for a
+long time.  But noncommutative algebra has been more than just a
+cottage industry for many years, and moreover has found a warmer
+welcome in linguistics and CS than the commutative variety, providing
+us with an algebraic basis for Turing machine computations and formal
+grammar derivations, both of which can be conveniently laid out in the
+(oriented) plane, where they lend themselves to a 2-categorical
+formulation.
+
+But as Zadeh reminds us, we live in a fuzzy world, neither clearly
+commutative nor clearly orientedly planar, but somewhere in between.
+The laws of this in-between world are braidal, with planarity
+corresponding to the initial or discrete braids and commutativity to
+the final braids, which can pass through themselves without losing
+their identity altogether (commutativity without idempotence).  Under
+these circumstances we can only keep our 2-categorical cool with
+braids, suggesting the following slogan:
+
+    Braids are the rule, of which commutativity and noncommutativity
+    are its two extremes.
+
+This appears to be a natural idea in both senses of "natural."  It is a
+natural mathematical idea to suggest and pursue; and it appears to be
+one that can be found in nature, witness the Yang-Baxter equations
+arising early on in physics, whose braidal character is now clear and
+about which several mathematical physicists have started writing, e.g.
+John Baez's recent MIT lecture notes on "Braids and Quantization."
+
+	Nor would I be accusing Ross of riding a bandwagon if I suggest
+	that in five years' time he'll probably be interested in
+	something else and drawing a completely different kind of
+	diagram.
+
+Nor would I be calling Paul shortsighted if I suggest that in five
+years time many of us in both mathematics and physics, and conceivably
+even philosophy, will be drawing braids.  (This is not to suggest that
+Jon Barwise's reaction to my explanation of linear logic last February
+would have been any different had I omitted the section on braids,
+which included five braid diagrams I had to do in ASCII that I am
+looking forward to being able to render in Taylorese.)
+
+As for Ross, I rather expect that in five years time he will be drawing
+whatever it is that those of us in the trenches will be drawing in ten
+years time, and one might hope that these too would appear in some
+diagram package, preferably in 1997 rather than 2002.
+
+	Meanwhile others on the fringe of the expanding categorical
+	cosmos will only just be learning to use commutative
+	\square's.
+
+This brings me back to my first theme.  Categories have been a pons
+asinorum for "the rest of us" for a very long time, ever since the exam
+in category theory given to the young lad who appeared briefly in the
+story of David and Jonathan [I Samuel 20:21-22]:
+
+    And, behold, I will send a lad, saying, "Go, find out the arrows."
+    If I expressly say unto the lad, "Behold, the arrows are on this
+    side of thee, take them;" then come thou: for there is peace to
+    thee, and no hurt; as the Lord liveth.  But if I say thus unto the
+    young man, "Behold, the arrows are beyond thee;" go thy way: for
+    the LORD hath sent thee away.
+
+As it turned out the arrows were indeed beyond the lad, who "knew not
+anything, only David and Jonathan knew the matter," and the lad was
+sent off to the city [20:37-40], a drop-out who for all we know may
+have later become the Bill Gates of his day.
+
+Another biblical character who struggled mightily with the subject was
+Job.  "For the arrows of the Almighty are within me, the poison whereof
+drinketh up my spirit: the terrors of God do set themselves in array
+against me." [Job 6:4]  One imagines him tackling either metacategories
+or coherence on that occasion.
+
+Job was thus afflicted for a long time, during which he complained
+bitterly of his plight to his three friends and the Lord in three major
+jam-sessions.  In the last of these, the Lord showed up in a Whirlwind
+evidently hoping to be able undo Satan's mischief and set things
+straight at last.  After spending the better part of three chapters
+extolling the virtues of His nobler creatures and getting Job into the
+proper frame of mind, the Lord came to the whale, of which He said "The
+arrow cannot make him flee." [Job 41:28]  That apparently did the
+trick:  Job immediately apologized for his ignorance of the subject: "I
+have heard of thee by the hearing of the ear, but now mine eye seeth
+thee.  Wherefore I abhor myself, and repent in dust and ashes." [Job
+42:5-6].
+
+The Lord then in unexpectedly firm tones told Job's friends that Job
+now understood the subject better even than they did and to treat him
+properly henceforth.  And He gave Job twice what he had before.  This
+came to 14,000 sheep, 6,000 camels, 1,000 oxen, 1,000 she-asses, 7
+sons, and 3 daughters, so you can figure out what he had before, at
+least for the livestock.  If Job's arrow anxiety lasted 25-35 years,
+that's around 2-3% p.a., probably a good rate for those days.
+
+But I digress.  Anyway you can read it for yourself, you'll see it's
+exactly as I said.
+
+Coming from the electrical engineering side of the business myself, the
+advice to "Cast forth lightning, and scatter them: shoot out thine
+arrows, and destroy them." [Psalms 144:6] speaks more directly to me.
+
+	Vaughan Pratt
+==============================================================================
+Subj:	Ross' request
+Date: Tue, 6 Oct 92 08:09:18 GMT-0400
+From: jds@rademacher.math.upenn.edu
+
+Begin forwarded message:
+
+Date: Mon, 5 Oct 92 16:53:14 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I
+By the way, I considered the pitiful attempt to do commutative diagrams
+in AMS-TeX as AMS' expression of their contempt for category theory,
+rather than as any genunine attempt to accommodate us.  
+
+
+Michael
+
+End forwarded msg:
+
+I don't want to tick anyone off nor for them to be ticked off,
+but that is a rather parochial comment.  There are (a few!) other users of
+commutative diagrams!
+
+jim stasheff
+==============================================================================
+Subj:	Re: diagrams yet again
+Date: Tue, 6 Oct 1992 19:59:40 +0100
+
+Thanks to Vaughan for putting a literary slant on this which I can't match.
+
+Please excuse me if *I* adopt a conservative policy and only provide macros
+which I believe I can support, with orthogonal design, in the long term.
+
+If Mike Barr or Kris Rose or anyone else wants to fill the niche markets with
+their non-orthogonal methods, that's fine by me.
+
+Just remember the "general advice" I gave earlier.
+
+Paul
+==============================================================================
+Subj:	Re: diagrams yet again
+Date: 6 Oct 92   11:51:07 EDT
+From: Charles Wells <cfw2@po.cwru.edu>
+
+> Besides their supporting role with arrows, strings are also known to
+> every linguist and computer scientist to be an integral part of
+> language, as Mark 7:35 attests: "And straightway his ears were opened,
+> and the string of his tongue was loosed, and he spake plain."
+
+(Apparently Vaughn just acquired the King James Version on CD
+ROM.)
+
+The Hebrews and Greeks wrote in strings, as we do, but the
+Egyptians and Chinese wrote in pictures.  Freyd has worked out
+the beginnings of a diagram-based language, although his
+statements still appear as strings of diagrams.  (Egyptian
+cartouches, I would argue, are truly not strings.)  
+
+Atish Bagchi and I will show how logic can be based directly on
+graphs and diagrams (not strings of them) in our forthcoming
+paper, "Graph- based logic and sketches."  In this case,
+"forthcoming" probably means in a few months.  I will talk about
+it in Montreal this weekend.  (This is a commercial.)
+
+Several times lately Vaughn has posted interesting messages on
+one forum or another and I have answered by criticizing
+minuscule parts of what he says.  Illegitimi non carborundum,
+Vaughn.  One theme in his messages (as I perceive it) is that
+category theory appears unnecessarily arcane to the rest of the
+technical world.  Let us take heed.
+
+--
+Charles Wells
+Department of Mathematics, Case Western Reserve University
+University Circle, Cleveland, OH 44106-7058, USA
+216 368 2893
+
+==============================================================================
+Subj:	VAUGHAN Pratt
+Date: 7 Oct 92   14:28:18 EDT
+From: Charles Wells <cfw2@po.cwru.edu>
+
+I repeatedly misspelled his name in my last message.  Sorry.
+
+--
+Charles Wells
+Department of Mathematics, Case Western Reserve University
+University Circle, Cleveland, OH 44106-7058, USA
+216 368 2893
+
+==============================================================================
+Subj:	update to speaker's list
+Date: Wed, 7 Oct 92 18:44:21 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+              Titles and some abstracts
+ 
+ 
+- Michael Barr: Cohomology of algebras
+Consider an adjunction F -| U, U: *A* --> *B* and F: *B* --> *A*.
+Suppose that *A* is a regular category and U a regular functor.  Let
+T and G be the resultant triple and cotriple.  Assume that B
+projective in *B* implies that TB is projective.  Suppose the
+inclusion Ab(*A*) --> *A* has a left adjoint Diff.  Suppose there is
+a chain complex functor C.: *A* --> ChComp(Ab(*A*)) that produces,
+for each A of *A*, for which UA is projective, a projective
+resolution of Diff(A).  Suppose also that for each n >= 0, there is
+a ~C_n: *B* --> Ab(*A*) such that ~C_n o U = C_n (= here means
+natural equivalence).  Then for any A of *A* such that UA is
+projective and any M of Ab(*A*), we have H^._G(A,M)=Ext^.(Diff(A),M).
+Applications include the well-known equivalence of the Hochschild
+cohomology of associative algebras with the cotriple cohomology for
+algebras that are projective over the ground ring, as well as that
+of the Eilenberg-Mac Lane cohomology of groups with the cotriple
+cohomology, but also gives the analogous result for Lie algebras,
+which has not, to my knowledge, been previously published.
+ 
+- David B. Benson: Paths in Higher-Dimensional Graphs
+Paths in higher-dimensional graphs have arrows between arrows.
+These paths abstract many aspects of programming languages and
+related semantical matters.  Higher-dimensional graphs, a concept
+closely akin to computad, generate free n-categories -- and hence
+the free cellular omega-categories.  The arrows of such categories
+are represented by paths as the equivalence classes of paths modulo
+interchange.  Normal forms for the presentations of paths provide
+fast equality tests between the represented arrows, important for
+the goal of programming these ideas.  Two normal forms are considered.
+Natural normal form arises directly from the definitions.  Irreducible
+normal form is more efficient in the use of computer storage and
+appears to be related to Street's exponential wedge of r-equivalences.
+ 
+- Richard Blute: Proof Nets and Monoidal Categories
+ 
+- William Boshuck: Strong completeness of predicate modal logic
+              or A duality theorem for predicate modal logic
+ 
+- Robin Cockett: TBA
+ 
+- Peter J. Freyd: Path Integrals
+ 
+- Robert Gordon: Tricategories
+ 
+- Michael Hebert: Syntactic characterizations of closure under pullbacks
+                and of locally polypresentable categories
+Locally (finitely) polypresentable, resp. multipresentable, resp.
+presentable categories (LFPP, LFMP, LFP) are (finitely) accessible
+categories with wide pullbacks, resp. connected limits, resp. all
+(small) limits.  LFPP are also fin. acc. cat. having all its slices LFP
+(Example:  the algebraically closed fields).  LFMP have been
+syntactically described by Johnstone in 1979, LFP by Coste in 1976.  My
+first result is a syntactic description of LFPP in this spirit.  If we
+now start with a given (finitary) language and want to stay
+ within, and require the limits to be the "usual" ones, they correspond to
+elementary categories of models closed respectively under pullbacks (LFPP),
+equalizers and pullbacks (LFMP) and finite limits (LFP). Syntactic
+characterizations become somewhat more complicated; LFP case was solved by
+H.Volger in 1979 and LFMP case by myself in 1991. I will present the solution
+for the pullback case. Those two results solve problems respectively presented
+by F. Lamarche (in the context of Domain Theory) and  by H.Volger (in the
+context of classical Model Theory, with motivations also from Database Theory).
+ 
+- Hongde Hu: A duality theorem on accessible exact categories
+ 
+- James R. Otto: Complexity classes from categories
+
+- Richard Squire: TBA
+
+- Walter Tholen: Factorization Systems as Eilenberg-Moore Algebras
+ 
+- Charles F. Wells: Graph Based Logic and Sketches
+ 
+- Mike Wendt: On Measurably Indexed Families of Hilbert Spaces.
+ 
+- Richard Wood: A somewhat circular characterization of the category of sets
+Years ago in a paper on total categories (those locally small
+B for which Y=yoneda:B--->PB has a left adjoint) I observed that
+for B=set_ there is U-|V-|W-|X-|Y and conjectured that this
+characterizes set_. Bob Rosebrugh and I have returned to this
+recently and hope to formally announce the result very soon. It
+builds on our work on completely distributive lattices. It
+probably makes good sense to say that a category B is "totally
+distributive" if it admits W-|X-|Y so the result can be seen as
+setting bounds on how "exact" a category can be.
+ 
+- Marek Zawadowski: Lax Descent Theorems for Left Exact Categories
+==============================================================================
+Date: Thu, 8 Oct 92 11:55:59 +1000
+From: domv@macadam.mpce.mq.edu.au
+
+
+.
+.
+.
+
+
+        Secondly to announce that yesterday (Wednesday the 8th October)
+Mike and Fiona Johnson took delivery of a brand new baby boy. Mother and
+child are both doing very well. 
+
+        I suppose I should leave it up to Mike to supply any further
+information, but I would like to extend my warmest congratulations to all
+three of them.
+
+
+Dominic Verity,
+Macquarie University,
+NSW, Australia
+
+==============================================================================
+Subj:	Re: diagrams yet again
+Date: Thu, 8 Oct 1992 12:06:37 +0000
+From: jrk@information-systems.east-anglia.ac.uk (Richard Kennaway)
+
+This message has nothing to do with categories, but that's the point.
+
+Paul Taylor writes:
+>LaTeX 3 is a general and extensive re-write of LaTeX. I don't fully understand
+>the terms of reference, though they started as making amstex work with LaTeX.
+>Some very amateurish CDs were in amstex, so we may take it that the present
+>objectives are to do (ie make compatible and recommend a package to do)
+>that much, but more professionally. There were CDs in amstex because
+>(presumably) whoever at AMS specified it considered that they were already
+>an important mode of expression IN MATHEMATICS AS A WHOLE.
+
+Why the emphasis on category diagrams?  Obviously, we want to be able to do
+them easily in LaTeX, because it's a topic we're interested in, but I would
+rather that LaTeX was extended with an entire language for drawing pictures,
+instead of just a few special cases like category diagrams, braids, inverted
+ampersands, and so on.  (I don't consider embedded postscript to be practical
+for this purpose.)  Has anything like this been considered by whoever is
+designing LaTeX 3, or by anyone else?
+
+--
+Richard Kennaway     SYS, University of East Anglia, Norwich NR4 7TJ, U.K.
+Internet:  jrk@sys.uea.ac.uk               uucp:  ...mcsun!ukc!uea-sys!jrk
+
+==============================================================================
+Subj:	Graph Based Logic and Sketches
+Date: Fri, 9 Oct 92 12:04:58 -0400
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+
+
+
+             Graph-based Logic and Sketches
+             Atish Bagchi and Charles Wells
+
+                      October 9, 1992
+
+Extended Abstract
+
+Traditional treatments of formal logic provide:
+
+1. A syntax for formulas. The formulas are typically defined recursively
+   by a production system (grammar).
+
+
+2. An inference relation between sets of formulas. This may be given by
+   structural induction on the syntax for the formulas.
+
+
+3. A rule for assigning meaning to formulas (semantics) that is sound
+   with respect to the inference relation. The semantics may also be
+   given by structural induction on the syntax of the formulas.
+
+    First order logic, the logic and semantics of programming
+languages, and the languages that have been formulated for
+various kinds of categories are all commonly described in this
+way. The formulas in those logics are strings of symbols that
+are ultimately modeled on the sentences mathematicians speak and
+write when proving theorems.
+
+    Mathematicians with a categorial orientation frequently
+state and prove theorems using graphs and diagrams (which may
+be described as graphs labeled coherently by data from some
+category). The graph, diagrams, cones and other data of a sketch
+are formal objects that correspond to the graphs and diagrams
+used by such mathematicians in much the same way as the formulas
+of traditional logic correspond to the sentences mathematicians
+use in proofs. The functorial semantics of sketches is sound in
+the informal sense that it preserves (usually by definition!)
+the structures given in the sketch. The analogy to traditional
+model theory is close enough that sketches and their models fit
+the definition of "institution" (Goguen and Burstall [2]), which
+is an abstraction of model theory.
+
+    The content of this paper is to exhibit the structure in
+sketch theory that corresponds to items 1 and 2 in the
+description of logic (the deductive structure) and to provide a
+detailed translation of a particular logic between the
+string-based version and the sketch-based version.
+
+    This work is parametrized by the type of categorial theory
+being considered. We assume given a finite-limit (projective)
+sketch E of a particular type of category as in [5] or [7]. E
+presents the type of category as essentially algebraic over the
+theory of categories. E -categories are then the models of E in
+Set. The kinds of categories that can be described in this way
+include categories with finite products, categories with limits
+or colimits over any particular set of diagrams, cartesian
+closed categories, regular categories, toposes, and many
+others.
+
+    A formula in this setting is a potential factorization (PF)
+through a subobject of the codomain: formally, a pair consisting
+of an arrow of E and a subobject of the codomain of the arrow.
+We will refer to the codomain of the arrow as the codomain of
+the PF, and the subobject as the "claim" of the PF. Roughly, the
+PF is "true" if its arrow factors through its claim.  Sentences
+are PF's whose arrows have domain 1. We provide a general
+recursive construction of the objects and arrows of E (hence of
+the PF's in particular) which is derived from the similar
+recursive construction for initial algebras of FLS sketches
+given by Barr and the second author in [8].  Our thesis is that
+this recursive definition constitutes the rules of inference
+corresponding to item 2 above.
+
+    An E-sketch is a sketch that allows the specification of any
+kind of construction that can be made in an E-category. This
+greatly enhances the expressive power of sketches when compared
+to Ehresmann's original definition. An E-sketch is a global
+element adjoined freely to E ([5] and [7]). The codomain of this
+adjoined arrow may be perceived as a description of the graph,
+diagrams and other constructions of the sketch.  Adjoining such
+an arrow constitutes the axioms of a theory, and the
+factorization of arrows through subobjects in the polynomial
+category E[s] obtained by adjoining such an arrow constitute the
+formulas and sentences that can be inferred from the sketch. The
+resulting system of inference is sound with respect to models.
+This type of logic fits some of the abstractions of logic that
+have been given, such as that of Meseguer in [4] and the
+formulation in terms of closures given by Tarski [6].
+
+    As a kind of worked example, the paper will also contain a
+detailed description of the relationship between finite-product
+sketches and multisorted equational logic as given by Goguen and
+Meseguer [3]. It is intended that this translation be
+sufficiently algorithmic as to be implementable, for example in
+Mathematica. The equations of equational logic will be seen
+to correspond to a specific subset of the set of PF's; indeed,
+in the classifying topos of E, there is a specific object and
+subobject that is the common codomain and claim of the all the
+PF's. We will give explicit proofs of the correctness of the
+rules of inference given by Goguen and Meseguer in terms of the
+deductive system described above (the recursive construction of
+E).
+
+References
+[1]M. Barr and C. Wells, Category theory for computing science.
+   Prentice-Hall International (1990).
+[2]J. A. Goguen and R. M. Burstall, A study in the foundations of
+   programming methodology: specifications, institutions, charters and
+   parchments. In D. Pitt et al., eds., Category Theory and
+   Computer Programming. Lecture Notes in Computer Science 240,
+   Springer-Verlag (1986), 313-333.
+[3]J. A. Goguen and J. Meseguer, Completeness of many-sorted
+   equational logic. Technical Report CSL-135, SRI International
+   Computer Science Laboratory, 333 Ravenswood Ave., Menlo Park,
+   CA 94025, USA (1982).
+[4]J. Meseguer, General Logics. Report SRI-CSL-89-5, SRI
+   International, Computer Science Laboratory, 333 Ravenswood Ave.,
+   Menlo Park, CA 94025, USA (1989).
+[5]A. J. Power and C. Wells, A formalism for the specification of
+   essentially-algebraic structures in 2-categories. Mathematical
+   Structures in Computer Science 2 (1992), 1-28.
+[6]A. Tarski, On some fundamental concepts of metamathematics. In
+   Logic, Semantics, Metamathematics, Oxford University Press,
+   1956.
+[7]C. Wells, A generalization of the concept of sketch. Theoretical
+   Computer Science 70 (1990), 159-178.
+[8]C. Wells and Michael Barr, The formal description of data types
+   using sketches. In M. Main, A. MElton, M. Mislove and D. Schmidt,
+   editors, Mathematical Foundations of Programming Language
+   Semantics, Springer Lecture Notes in Computer Science 298.
+   Springer-Verlag, 1988.
+
+Atish Bagchi
+Department of Mathematics
+Case Western Reserve University
+University Circle
+Cleveland, OH 44106-7058, USA
+axb35@po.cwru.edu
+
+Charles Wells
+Department of Mathematics
+Case Western Reserve University
+University Circle
+Cleveland, OH 44106-7058, USA
+cfw2@po.cwru.edu
+
+==============================================================================
+Subj:	Re: diagrams yet again
+Date: 08 Oct 92 18:32:41 PDT (Thu)
+From: pratt@cs.stanford.edu
+
+
+	One theme in his messages (as I perceive it) is that
+	category theory appears unnecessarily arcane to the rest of the
+	technical world.  Let us take heed.
+
+I understand that in response to public pressure Mattel will be
+changing Barbie's complaint to "Category theory is tough," with the
+expectation that any remaining protests will be unintelligible to the
+media.
+
+-Vaughan
+==============================================================================
+Subj:	Complete Distributivity paper - abstract/ftp
+Date: October 13, 1992
+From: rrosebrugh@mta.ca (Bob Rosebrugh)
+
+
+The preprint whose abstract follows is available by anonymous ftp from the
+machine
+
+sun1.mta.ca
+
+in the directory
+
+pub/papers/rosebrugh
+
+as ccd4.{tex,dvi}. The source file is LaTeX and also requires the files
+catmac.sty (for diagram macros) and cat.bib which are found in the same
+directory. Paper copies are available from Rosebrugh - be sure to include
+a postal address if requesting one.
+        
+
+Constructive complete distributivity IV
+Robert Rosebrugh and R. J. Wood
+
+
+Abstract
+
+A complete lattice L is  constructively completely distributive, ccd, when  the
+sup arrow from down-closed subobjects  of L to L has a left adjoint. The
+Karoubian  envelope of the (bi-)category of relations is equivalent to  the
+(bi-)category of ccd  lattices and sup-preserving arrows. The equivalence
+restricts to  an equivalence between ideals and ``totally algebraic'' lattices. 
+Both equivalences have  left exact versions. As applications we characterize
+projective sup lattices  and recover a known characterization of projective
+frames. Also, the  known characterization of nuclear sup lattices in set as 
+completely distributive lattices is extended to  an equivalence with ccd
+lattices in a topos.
+
+==============================================================================
+Subj:	weak toposes
+Date: 13 Oct 92   12:54:00 EST
+From: <cxm7@pop.cwru.edu>
+
+-------------
+
+	Does anyone have any advice about this following proposed
+terminology?
+
+	I think I want to use the term "weak topos" to mean a 
+cartesian closed category with all finite limits and colimits,
+stable surjections, and a weak power object.  By a "weak power
+object" I mean an object W with a monic M>--->W such that every 
+monic in the category is a pullback of M in at least one way.
+
+	The reasons for this are that categories of assemblies 
+(including assemblies for extensional or modified realizability)
+have these properties and:
+
+1) Except for the part about colimits this is just what you need to
+show the effective reflection is a topos.
+
+2) Using the presence of coequalizers this gives a usable 
+generalization of geometric morphisms.  If a functor between weak
+toposes in this sense has a left exact left adjoint then that
+adjoint is regular (pres. finite limits and surjections) and the
+adjunction lifts to a geometric morphism between the toposes.
+And in fact these arise among categories of assemblies (as is
+in effect remarked by Pitts and more recently Oosten).
+
+Thanks,
+
+Colin
+
+==============================================================================
+Subj:	Re: weak toposes
+Date: Wed, 14 Oct 92 09:19:06 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+In the early 60's Eilenberg, Mac Lane and I had lunch in a Denver
+cafeteria to see if we could agree on various items of terminology.
+There was one thing we all agreed on: the prefex "weak-" was an
+operator on definitions that removed uniqueness conditions.  Colin's
+candidate for "weak topos" is only missing one of the uniqueness 
+conditions, so I would hesitate to use the term.  How about "near topos"?
+
+Best thoughts,
+  peter
+==============================================================================
+Subj:	Re: weak toposes
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Wed, 14 Oct 1992 18:17:57 +0100
+
+Peter Freyd says,
+> Colin's candidate for "weak topos" is only missing one of the uniqueness
+> conditions, so I would hesitate to use the term.  How about "near topos"?
+
+Two counterarguments to this (without intending to express a definitive view):
+
+(1) There's always a danger of proliferating prefixes for "inferior" forms of
+    things - pseudo, quasi, pre, weak, near, etc.
+    Are you, Peter, willing to propose a definitive meaning for "near"
+    analogous to your (& Sammy & Sauders') meaning for "weak"? Do you think
+    we should use up one of these words for this purpose?
+
+(2) You say that a weak topos should be something satisfying the definition of
+    a topos with uniqueness deleted *everywhere*. The first clause of this
+    definition is that it's a category; do you intend it to be a weak category?
+    What is that? Something (like homotopies, perhaps) which has non-unique
+    composition? I suspect this leads us to a structure bearing little
+    relationship to simple type theory or higher order predicate calculus.
+
+    We often think of categorical definitions such as toposes in a hierarchical
+    way, eg
+      "A TOPOS is a cartesian category in which each object has a powerobject"
+    (Categories, Allegories, 1.9). Here "cartesian category" is a background
+    definition (genus in philosphical jargon) and "... powerobject" is the
+    distinguishing property we have in mind (species) (cf bounded comprehension)
+
+    So, if we want to weaken the definition, we do so by weakening the
+    distinguishing property.
+
+    n'est ce pas?
+
+Maybe this is a question that should be answered by examining what interesting
+phenomena arise in the literature. Raymond Hoofman's thesis ("Non-stable
+Models of Linear Logic", R.U. Utrecht, 1992) might be a good place to start.
+He considers weak cartesian closed categories - useful for modelling beta
+without eta in the lambda calculus.
+
+Exactly what to weaken is not, a priori, a clear cut issue.
+
+Paul
+==============================================================================
+Subj:	Re: weak toposes
+From: piggy@hilbert.maths.utas.edu.au (La Monte Yarroll)
+Date: Thu, 15 Oct 92 12:55:33 EST
+
+> 
+> Paul Taylor <pt@doc.ic.ac.uk> writes,
+>
+> Peter Freyd says,
+> > Colin's candidate for "weak topos" is only missing one of the uniqueness
+> > conditions, so I would hesitate to use the term.  How about "near topos"?
+...
+>     Are you, Peter, willing to propose a definitive meaning for "near"
+>     analogous to your (& Sammy & Sauders') meaning for "weak"?
+...
+> Exactly what to weaken is not, a priori, a clear cut issue.
+
+The prefix word "weak" is defined to mean "missing uniqueness", so it
+seems appropriate for Colin's work (or am I mistaken here?).
+
+The problem seems to be that there are degrees of "weak" imaginable.
+
+Why not provide an outside tag to identify the terminology?  Colin
+should use "weak topos" throughout his own work; works by third
+persons should refer to "weak topos (as per McLarty)".
+==============================================================================
+Subj:	Re: weak toposes
+Date: Thu, 15 Oct 92 19:43:10 EDT
+From: pjf@saul.cis.upenn.edu (Peter Freyd)
+
+Paul Taylor has given good evidence on why one should avoid using the
+prefix "weak" when it leads to ambiguities.  He says:
+
+      "A TOPOS is a cartesian category in which each object has a powerobject"
+    (Categories, Allegories, 1.9). Here "cartesian category" is a background
+    definition (genus in philosphical jargon) and "... powerobject" is the
+    distinguishing property we have in mind (species) (cf bounded comprehension)
+
+    So, if we want to weaken the definition, we do so by weakening the
+    distinguishing property.
+
+This gives a different notion of weak topos than McLarty's.  In 
+particular, it would have only weak exponentials whereas McLarty's
+has plain exponentials and a weak subobject-classifier (hence weak
+powerobjects).  
+
+La Monte Yarroll says:
+
+  Why not provide an outside tag to identify the terminology?  Colin
+  should use "weak topos" throughout his own work; works by third
+  persons should refer to "weak topos (as per McLarty)".
+
+The trouble is, of course, the last phrase will inevitably be changed to
+"McLarty-weak topos".
+==============================================================================
+Subj:	position announcement
+Date: Thu, 15 Oct 92 12:30:53 -0700
+From: dbenson@yoda.eecs.wsu.edu (David B. Benson)
+
+Dear Colleague,
+
+These positions do not appear to be well-publicized and I solicit
+your cooperation in making these positions more widely known. 
+Please feel free to distribute this position announcment to
+all who might be interested or might be willing to cooperate
+in further redistributing this announcement.  I believe we have
+4 to 6 vacancies we can fill if a good match can be made.  We are
+very interested in making some appointments at the the rank of
+associate professor and professor.
+
+Thank you for your kind assistance,
+David B. Benson
+
+P.S. The chair of the search committee this year is Prof. Raghu
+Raghavendra, raghu@eecs.wsu.edu
+
+-----------------------------------------------------------------
+
+Computer Science Faculty Positions
+School of Electrical Engineering and Computer Science
+Washington State University
+
+The School of Electrical Engineering and Computer Science solicits
+applications for one or more permanent computer science faculty
+positions.  Responsibilities include initiation and supervision of
+research programs and instruction at undergraduate and graduate
+levels.  Applicants for assistant professorships should demonstrate
+the potential for excellence in research.  Applicants for associate
+and full professorships should have proven records of accomplishment
+in their fields as evidenced by sponsored research programs and
+publications.  We seek outstanding candidates from all areas of
+computer science.  Areas of particular interest include software
+engineering,  artificial intelligence, parallel and distributed
+computing, database theory, and theoretical computer science.
+Screening of applications will begin immediately and continue until
+the positions are filled.  Positions start on January 15 and August
+15, 1993.
+
+Washington State University has offered the Ph.D. in computer science
+since 1970, and also offers B.S. and M.S. degrees.  The School of EECS
+has over forty faculty (approximately fifteen with primary interests in
+computer science and engineering), sixty computer science graduate
+students, and active research groups devoted to parallel and distributed
+processing, imaging (computer graphics, visualization, image processing,
+and vision), neural networks, and other areas. Computing facilities in the
+School of EECS include PCs, graphics workstations, and servers, all with
+Internet access.
+
+WSU has about 16,000 students and is located in Pullman, a quiet
+university town in the southeast corner of the state (approximately 90
+miles south of Spokane).  Nearby are some of the nation's most pristine
+and uncrowded places for outdoor recreation.  The Pullman school system is
+widely acknowledged to be one of the very finest in the Pacific Northwest.
+
+Applicants should send a cover letter, a curriculum vita, and the names and
+addresses of three references qualified to comment on their research and
+teaching qualifications to
+
+Chair, Computer Science Search Committee
+School of Electrical Engineering and Computer Science
+Washington State University
+Pullman, WA 99164-2752
+
+WSU is an EO/AA educator and employer.  Protected group members are
+encouraged to apply.
+
+
+==============================================================================
+Subj:	The theorem I didn't talk about at the Octoberfest
+Date: Tue, 20 Oct 92 11:12:19 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+Consider the following situation.  An adjoint pair U --| F, U:*A* -->
+*X*.  I assume that *A* is a regular category and U a regular functor.
+This means roughly that regular epis are pullback stable.  It is also
+supposed that some or all finite limits exist, depending on who you
+read.  Suppose all, for simplicity.  Also U preserves regular epis.  Let
+\G denote the resultant cotriple on *A*.
+ 
+Now Beck showed that in all situations that the idea of A-module (A
+being an object of *A*) had been defined, it had a uniform description
+as an abelian group object in the slice *A*/A.  So we set Mod(A) =
+Ab(*A*/A).  What this does is to identify an A-module with the split
+extension over A with the module as kernel.  If you do that, then for B
+--> A, the homset in *A*/A of B to M is simply Der(B,M).  It therefore
+makes sense to call an adjoint (if it exists) to the inclusion Mod(A)
+--> *A*/A the modules of differentials Diff^A(B).  I will assume it does
+exist for each object A. Corresponding to B --> A, there is a functor
+f_!:*A*/B --> *A*/A and it has a right adjoint f^* = A x_B -. This
+induces a functor, also called f^*:Mod(A) --> Mod(B) and, under mild
+conditions, that has a left adjoint f_#.  That is usually tensoring with
+an enveloping object.
+ 
+Next assume given a chain complex functor C_*^A:*A*/A --> Mod(A) for
+each object A. Suppose that f_# takes C_*^B(C) to C_*^A(C) for an arrow
+C --> B. (Actually need that assumption only for C = B, but the more
+general case is what actually happens.)
+ 
+That is all background.  Now come the three hypotheses that matter:
+ 
+1. Assume that C_*(A) is a projective resolution of Diff^A(A).  (This is
+the assumption that fails in the category of commutative algebras.)
+ 
+2. Assume that UG^nA is projective in *X* for all n >= 0.
+ 
+3. Assume that for each n >= 0, the functor C_n^A factors through U.
+More precisely, suppose that there is a functor ~C_n^A:*X*/UA --> Mod(A)
+such that C_n^A is naturally equivalent to the composite
+             U/A              ~C_n^A
+     *A*/A --------> *X*/UA ---------> Mod(A)
+ 
+The conclusion is that the complexes C_*^A(A) is chain homotopic to the
+cotriple complex that has in degree n the module Diff^A(G^{n+1}A) with
+boundary induced in the usual way by the simplicial face operators.
+ 
+It is a formidable set of conditions, but of course, they are all
+readily satisfied in the cohomology theories in Cartan-Eilenberg.  1.
+essentially defines the C-E theory, 2. is obvious for group and
+associative algebra cohomology of an algebra projective over its
+ground ring, and is true (although non-trivially so) for a lie algebra
+that is projective over its ground ring.  3. has often been remarked and
+the fact that it plays a role was understood already in the original
+Barr-Beck paper.  It says essentially that the algebra structure is not
+used in defining the C_n, only in defining the boundary operator.
+ 
+Michael
+==============================================================================
+Subj:	Atish Bagchi's address
+Date: 21 Oct 92   11:02:02 EDT
+From: Charles Wells <cfw2@po.cwru.edu>
+
+The recent abstract of joint work by Atish Bagchi and me
+contained an erroneous email address for Atish:  It should be
+axb32@po.cwru.edu.
+
+However, Atish will not be getting his email for a couple of
+weeks since he is out of the country.  We hope he will return by
+early November.
+
+
+--
+Charles Wells
+Department of Mathematics, Case Western Reserve University
+University Circle, Cleveland, OH 44106-7058, USA
+216 368 2893
+
+==============================================================================
+Subj:	tanglerads
+Date: Fri, 23 Oct 92 07:10:12 GMT-0400
+From: jds@rademacher.math.upenn.edu
+
+Operads are a useful way of encoding compositions of maps from
+n variables to 1, modelled on grafting of trees - root to branchtip
+and as such appear e.g. in ``classical'' closed string field theory
+
+Qunatum corrections require a generalization for which the model
+should be the category of tangles or some such
+
+Any work been done on such a generalization?
+jim stasheff
+
+==============================================================================
+Subj:	Re: tanglerads
+Date: Sun, 25 Oct 92 10:36:37 +0100
+From: Dip. Mat. - visitatore <visit2@imiucca.csi.unimi.it>
+
+Jim Stasheff and a few others have a copy of old 1972 notes of mine on operads,
+essentially studying, besides the obvious convolution tensor product on the
+functor category [P,V], another derived one, the monads for which generalize
+Peter May's operads. Here P is the category of natural numbers and permutations
+while V is any symmetric monoidal closed category (complete and cocomplete).
+The case V = Set is familiar from Joyal's species. Suppose we replace P here by
+the braid category B; everything still seems to work, at a first brief glance;
+so we have a notion of B-operad. Is this what Jim is asking for?
+
+                                                   Max Kelly.
+==============================================================================
+Subj:	a question on categories of contexts (CS)
+From: koslowj@math.ksu.edu (Juergen Koslowski)
+Date: Mon, 26 Oct 92 14:00:34 CST
+
+This question concerns Bart Jacobs' paper "Simply typed and untyped Lambda
+Calculus revisited", in "Applications of Categories in Computer Science",
+Durham Proceedings, London Mathematical Society Lecture Note Series No. 177
+
+In Example 3.2, Bart Jacobs constructs a term model for a certain kind of
+fibration (or indexed category). The base category has contexts as objects,
+i.e., finite tuples of type declarations, while morphisms are finite tuples of
+(beta-eta-equivalence classes of) terms. I have some trouble seeing that this
+category has finite products, given by concatenation of contexts, as claimed.
+Unless each variable can only be used once, isn't it possible to overwrite
+a declaration x:tau by x:sigma in a different context? This seems to make
+concatenation nonsymmetric (and one loses the projections as well). Computer
+Scientists here tell me that the ability to overwrite type declarations is
+essential for their work.
+
+I don't know whether Bart Jacobs has access to the net; maybe someone can
+forward this question to him? Thank you.
+
+regards,	J"urgen
+
+-- 
+J"urgen Koslowski         | If I don't see you no more in this world
+Department of Mathematics | I meet you in the next world
+Kansas State University   | and don't be late!
+koslowj@math.ksu.edu      |                         Jimi Hendrix (Voodoo Chile)
+==============================================================================
+Subj:	Re: a question on categories of contexts (CS)
+From: alti@dcs.ed.ac.uk
+Date: Tue, 27 Oct 92 10:26:06 GMT
+
+   Unless each variable can only be used once, isn't it possible to overwrite
+   a declaration x:tau by x:sigma in a different context? This seems to make
+   concatenation nonsymmetric (and one loses the projections as well). Computer
+   Scientists here tell me that the ability to overwrite type declarations is
+   essential for their work.
+
+I haven't read the paper in question but I can comment on this. In
+most presentations of typed \lambda calculi (e.g. Barendregt's PTS)
+this case (repeated use of the same variable) is excluded. Indeed it
+does not matter for the expressibility of the system because we can
+always consistently rename variables (\alpha conversion).
+
+Actually I prefer to use deBruijn indizes anyway. The translation of
+named variables into those indizes is certainly a matter for people
+writing compilers (i.e. handling a symbol table) but it should not be
+confused with the \lambda calculus. This two issues can and should be
+treated completeley seperately.
+
+DeBruijn indizes precisely correspond to projections and the usual
+operations of substitution and weakening have nice categorical
+explanations. Named variables are a complete redherring.
+
+ Thorsten Altenkirch         	And there's a hand, my trusty fiere,
+ Laboratory for Foundations  	   And gie's a hand o' thine,
+ of Computer Science 	      	And we'll tak a right guid-willie waught
+ University of Edinburgh     	   For auld lang syne!
+==============================================================================
+Subj:	categories of contexts
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Wed, 28 Oct 1992 12:12:05 +0000
+
+Thorsten Altenkirch says
+>  Named variables are a complete redherring.
+
+Named variables are the way that human mathematicians have been notating their
+work for centuries, and human programmers prefer them too.  Even categorists
+give up \pi_1 and \pi_2 shortly after introducing the universal property of
+products!
+
+Thorsten also mentioned alpha conversion.
+
+There's an important distinction to be made with alpha conversion which
+corresponds to that between free (open) and bound (closed) variables.
+The closed term $\lambda x.x$ is to all intents and purposes the same as
+$\lambda y.y$ (and with de Bruijn indices *is* the same) but the open terms
+are quite different.
+
+My personal way of formulating this construction is as follows:
+ * the objects are (finite) sets of distinct variable names together with
+   their types, ie contexts;
+	[x1:x1,x2:X2,...,xn:Xn]
+   changing the names gives a different object
+ * the morphisms are substitutions:
+				[y1:=u1,y2:=u2,...,ym:=um]
+	[x1:X1,x2:X2,...xn:Xn] ---------------------------> [y1:Y1,...,ym:Ym]
+   where there's one "assignment" for each variable in the target context
+   and the terms have their variables amongst those in the source.
+ * composition is given right to left by the notationally simple rule
+	[z:=v(y)] o [y:=u(x)] = [z:=v[y:=u]]
+I missed something out in the definition of morphism: I define *two* categories,
+one ("raw terms") consisting of closed-alpha equivalence classes, the other
+("terms") being its quotient by beta/eta/etc equivalence.
+
+Similar constructions may be done for languages other than the simply typed
+lambda calculus. In fact lambda abstraction is not relevant to the issue.
+
+Now we may ask some elementary categorical questions:
+
+What are the isomorphisms in the category of *raw* terms? They are exactly the
+open alpha equivalences. In particular a context with two variables of the
+same type has a non-trivial automorphism.
+
+What do we get from concatenating two contexts which share no variable name?
+Assuming that the language admits individual variables as terms, allowing
+omission (weakening) and repetition (contraction), we obtain a product diagram.
+
+How can we form the product of contexts which do share variables, in particular
+the square of a context? We replace one or both by isomorphic copies (along
+open-alpha equivalences, ie renaming variables) and take the product of those.
+
+It seems to me that for any purpose other than the machine implementation of
+a compiler it is notationally better *not* to adopt a convention for
+consistently renaming variables in order to provide a canonical product in
+all cases. The product always *exists*, as I have shown (so long as we have
+an inexhaustible supply of new variable names), and there is a canonical
+choice of it, albeit involving an exception.  If you're worried about the
+constructivity of the exception, remember that the variable names must have
+been chosen from amongst a decidable population, because I began by saying
+that they were distinct in each context (object).
+
+Paul Taylor
+==============================================================================
+Subj:	Re: a question on categories of contexts (CS)
+Date: Wed, 28 Oct 92 11:11:39 +0100
+From: bjacobs@math.ruu.nl (Bart Jacobs)
+
+Reply to a question by J"urgen Koslowski (from 26 Oct 92).
+
+   In logic and type theory, variables are there for human convenience.
+They are just pointers, which are given names. Such names are often
+used `locally' (i.e. in a specific term or formula) with an implicit
+convention that there are no `global' name clashes.
+   Category theory provides a variable-free formalism for logics and
+type theories. One uses projections instead of variables. Things become
+more precise, but less readable.
+   In constructing categories from syntax (as I did in Example 3.2 of
+my Durham 1991 paper in LMS 177, to which J"urgen refers), one can either
+use a very precise syntax (e.g. with de Bruijn indices) or be very sloppy
+and hope the reader is willing to understand things in the appropriate
+way. Clearly I have chosen the latter approach.
+
+   Below is a syntax for variables and contexts in simply typed lambda
+calculus, which solves the problems mentioned by J"urgen. It is not the
+syntax which is used in practice, but it is still readable. I'll use
+semi-LaTeX and write the letters `s' and `t' for types \sigma and \tau
+and `G' and `D' for contexts \Gamma and \Delta.
+   Fix an infinite set Var = {v_1, v_2, v_3,...} of variables. A context
+is defined to be a finite sequence of types written as
+   G = v_1:s_1, ..., v_n:s_n
+where by convention one counts the variables starting from 1. Assume
+another context
+   D = v_1:t_1, ..., v_m:t_m
+then the concatenation G,D is defined to be
+   G,D = v_1:s_1, ..., v_n:s_n, v_n+1:t_1, ..., v_n+m:t_m
+In this way no variable clashes occur (and hence no overwriting).
+The projections are the (equivalence classes of the) sequences
+   (v_1,...,v_n)      : G,D --> G
+   (v_n+1,...,v_n+m)  : G,D --> D
+This makes G,D the cartesian product of contexts G and D in the base
+category of contexts in Example 3.2 in loc. cit.
+
+   I assume J"urgen now wants to know the rules for handling such
+`canonical contexts'. Here they are.
+PROJECTION
+	     ----------------
+	      v_1:s |- v_1:s
+WEAKENING
+		 G |- M:t
+	     ----------------
+	      G,v_n:s |- M:t
+(where G is supposed to be of length n-1)
+CONTRACTION
+	       G,v_n:s,v_n+1:s |- M:t
+	     ---------------------------
+	      G,v_n:s |- M[v_n/v_n+1]:t
+EXCHANGE
+		       G,v_i:s_i,v_i+1:s_i+1,D |- M:t
+	     -----------------------------------------------------
+	      G,v_i:s_i+1,v_i+1:s_i,D |- M[v_i/v_i+1,v_i+1/v_i]:t
+
+Using such a precise syntax the problem raised by J"urgen can
+be solved. I did not put it in the paper because I thought it would
+distract too much.
+
+Bart Jacobs.
+Address since Aug.1, 1992:
+Mathematical Institute, RUU
+P.O.Box 80.010
+3508 TA Utrecht
+The Netherlands
+Email: bjacobs@math.ruu.nl
+==============================================================================
+Subj:	Re: categories of contexts
+Date: Thu, 29 Oct 1992 09:59:30 +0100
+From: F.J.de.Vries@cwi.nl
+
+Dear Thorsten,
+
+:-)When proving properties about systems with bound variables it
+:-)simplifies notation and understandibility quite a lot when we use
+:-)de Bruijn's notation. Otherwise we end up mumbling the words "up to
+:-)alpha equivalence" like a mantra.
+
+Completely right, but you run the risk that for the outsider your
+remark that actually you use de Bruijn's notation may be
+interpreted as a mantra as well.
+
+:-)Recently I did a machine checked and complete formalisation of the
+:-)strong normalisation proof for System F using de Bruijn indices (LFCS
+:-)report 92-230). I find it very hard to imagine doing the same thing
+:-)with named variables.
+
+Indeed!
+I am intersted in receiving a copy of your report. What were the
+difficulties you encountered in making this machine checked proof?
+Did it take you a long time?
+
+many thanks in advance! (uuencoded dvi-version is also welcome...)
+
+
+Fer-Jan de Vries,
+Department of Software technology
+CWI
+Kruislaan 413
+1098 SJ Amsterdam
+
+ferjan@cwi.nl
+
+==============================================================================
+Subj:	position announcement
+Date: Thu, 29 Oct 1992 14:41:11 +0100
+From: David Murphy <david@gmdzi.gmd.de>
+
+
+The following position has become available as a result of
+the award of an SERC fellowship for two years. Applicants
+with research interests in concurrency theory or categorical
+semantics are particularly welcomed.
+
+Further details are available from me or from the head of school:
+                 Professor Aaron Sloman
+                 School of Computer Science
+                 The University of Birmingham
+                 Edgbaston  
+                 Birmingham B15 2TT  England
+
+                 Email: A.Sloman@bham.ac.uk
+                 Phone: +44 (0)21 414 3711
+                 Fax: +44 (0)21 414 4281
+
+Thank you for your attention.
+
+David Murphy
+
+
+
+
+TEMPORARY LECTURESHIP IN COMPUTER SCIENCE 
+
+The University of Birmingham
+
+-----------------------------------------
+
+
+Post Reference:  S1788/92A
+Starting Salary: On the scale pounds 13,400 - 18,576 a year
+                 (Plus superannuation.)
+Starting date:   From April 1993
+Closing date for receipt of applications:
+                 19 November 1992 (It may be possible to consider 
+                 applications received after the closing date if the 
+                 selection process has not gone too far.)
+Application forms available from:
+                 The Director of Staffing Services
+                 The University of Birmingham
+                 Edgbaston
+                 Birmingham B15 2TT
+                 England
+                 Fax: +44 (0)21-414-4802
+                 Telephone: +44 (0)21-414-6486
+
+
+Further information 
+-------------------
+
+Applicants for the temporary lectureship should, ideally, have a PhD, or
+expect to have passed the examination by April 1993. In exceptional
+circumstances it may be decided to appoint someone without a PhD. 
+
+Applicants for the temporary lectureship in Computer Science should have
+qualifications and a research record in some area of Computer Science or
+Software Engineering. It is expected that the lecturer will contribute 
+to research, and research achievements and potential will play a strong 
+role in the selection process.
+
+The initial need is for someone who can help with a course on data
+structures (and some teaching in C++), as well as project supervision 
+for undergraduates and MSc students. It may be possible to rearrange 
+teaching to suit the qualifications of the successful candidate.
+
+All applications should, if possible, include the applicant's home and
+office phone numbers, electronic mail address, names of referees, full
+information about the applicant's research interests and future research
+plans, areas of teaching expertise, and details of any relevant
+experience.
+
+It is helpful if phone numbers and electronic mail addresses of referees
+can be provided in case we need to make contact with them quickly.
+

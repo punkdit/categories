@@ -1,0 +1,188 @@
+Path: news.gmane.org!not-for-mail
+From: =?iso-8859-1?Q?Joyal=2C_Andr=E9?= <joyal.andre@uqam.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Four problems corrected
+Date: Sun, 2 May 2010 09:58:18 -0400
+Lines: 152
+Approved: news@gmane.org
+Message-ID: <E1O8tvP-0000gG-4b@mailserv.mta.ca>
+References: <E1O761X-0006lG-Lm@mailserv.mta.ca> <20100430211359.nbm6pfhjk0wgkgwc@mail.math.yorku.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F57B0@CAHIER.gst.uqam.ca> <B3C24EA955FF0C4EA14658997CD3E25E370F57B1@CAHIER.gst.uqam.ca>
+Reply-To: =?iso-8859-1?Q?Joyal=2C_Andr=E9?= <joyal.andre@uqam.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1272888682 28068 80.91.229.12 (3 May 2010 12:11:22 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 3 May 2010 12:11:22 +0000 (UTC)
+To: <tholen@mathstat.yorku.ca>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Mon May 03 14:11:19 2010
+connect(): No such file or directory
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <categories@mta.ca>)
+	id 1O8uUV-0000eH-D2
+	for gsmc-categories@m.gmane.org; Mon, 03 May 2010 14:11:15 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1O8tvP-0000gG-4b
+	for categories-list@mta.ca; Mon, 03 May 2010 08:34:59 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5729
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5729>
+
+Dear All,=20
+
+there was a few typographic errors my last message.=20
+I am sending you the correction.
+
+Best,=20
+Andr=E9
+
+
+-----------------------------------------------------
+=20
+Dear Walter,
+
+Let me sketch a possible solution to problem 4=20
+(along the lines you have suggested).
+
+> If  P: C --> S  is a functor, I denote by V(P)  the subcategory of C=20
+>which has the same objects and as maps the vertical maps i.e. the f's =
+such
+>that P(f) is an identity. Let V  be a subcategory of a (small) category =
+C.
+> What conditions >must  the pair (C,V)  satisfy in order that
+> there exists a fibration  P with domain  C  such that  V =3D V(P)?
+
+I first make a few observations on the properties
+of a Grothendieck fibration P:C--->B.
+
+1) If V is the subcategory of vertical maps in C,
+then a morphism in C is cartesian with respect
+to the functor P iff it is right orthogonal=20
+(=3D it has the unique right lifting property)
+to every map in V. =20
+
+2) if R(V) is the class of maps in C which are right orthogonal
+to every map in V, then every map f in C admits
+a factorisation f=3Dcv with v in V and c in R(V).
+
+3) the base change of a map in V along a map in
+R(V) exists and can be taken in V (up to an isomorphism).=20
+
+4) A Grothendieck fibration P:C--->B is *connected* if its fibers=20
+are connected categories. It is easy to see that every Grothendieck=20
+fibration  P:C--->B admits a factorisation P=3DSQ:C-->E-->B with Q:C-->E =
+
+a connected Grothendieck fibration and  S:E-->B a discrete fibration=20
+(the fibers of S are the connected components of the fibers of P).
+The vertical maps of P coincide with
+the vertical maps of Q. This shows that if the problem
+has a solution, then there is one in which
+the fibration P:C-->B is connected, in which case there is a=20
+natural bijection between the objects of the=20
+base category B and the set  connected components
+of the sub-category of vertical maps.
+
+
+We shall suppose the the conditions 2-3 above are satisfied
+but we will we will need an extra condition later.=20
+
+The idea then is to declare that the objects of B
+*are* the connected components of the subcategory V.
+
+If C_0 and C_1 are two connected components of V,
+consider the distributor D:C_0-->C_1
+obtained by putting D(a,b)=3DC(a,b) for every object
+a of C_0 and every object b of C_1.=20
+The idea is to put
+
+B(C_0,C_1)=3D colimit D
+
+and to use the composition of arrows in C for
+defining the composition of morphisms in B.
+But we have to make sure that the composition
+so defined is unambigous. And this is where
+the extra condition 4 is popping out.=20
+
+First, the distributor D:C_0-->C_1 is locally=20
+corepresentable by a family. More precisely,
+for any object b of C_1 the presheaf=20
+
+D(-,b):C_0-->Set
+
+is a coproduct of representable presheaves.
+This follows directly from condition 2
+(the representing objects are morphisms f:a-->b in R(V)).
+Let us put=20
+
+T(b)=3D\pi_0D(-,b)=3Dcolimit D(-,b) =20
+
+This defines a functor T:C_1--->Set (which depends
+on C_0). It follows from condition 3 that
+the functor T inverts every morphism of C_1.
+This shows that the distribuor D:C_0-->C_1
+is of a very special type. The category
+of elements of the functor T is a *covering* el(T)-->C_1
+(a covering is a discrete fibration which
+is also an opfibration). It follows
+that the distributor D:C_0-->C_1 can be represented as a span
+
+C_0<---el(T)--->C_1
+
+in which the second leg is a covering.
+Assuming that the conditions 2 and 3 are=20
+satisfied, the problem of Benabou will have a solution=20
+iff this covering is trivial (ie it is a product)
+for any pair of connected components C_0
+and C_1 of V. This is true for example
+when the connected components of V are=20
+simply connected.
+
+
+Best,
+Andr=E9
+
+
+-------- Message d'origine--------
+De: tholen@mathstat.yorku.ca [mailto:tholen@mathstat.yorku.ca]
+Date: ven. 30/04/2010 21:13
+=C0: Joyal, Andr=E9
+Cc: categories@mta.ca; tholen@mathstat.yorku.ca
+Objet : Re: categories: Four problems
+=20
+In the article
+
+J. Rosicky, W. Tholen, "Factorization, fibration and torsion", J.=20
+Homotopy Theory and Related Structures (electronic) 2 (2007) 295-314
+
+we prove a result closely related to Problems 3 and 4 below (variations=20
+of which may well have appeared earlier?), as follows:
+
+In a finitely complete category C,  (E,M) is a simple reflective=20
+factorization system of C (in the sense of Cassidy, Hebert, Kelly, J.=20
+Austr. Math. Soc 38, (1985)) if, and only if, there exists a=20
+prefibration P: C ---> B preserving the terminal object of C with E =3D=20
+P^{-1}(Iso B) and M =3D {P-cartesian morphisms}.
+
+Here "prefibration" means that for all objects c in C, the functors C/c=20
+---> B/Pc induced by P have right adjoints, such that the induced=20
+monads are idempotent. (For a fibration one asks the counits to be=20
+identity morphisms.) Of course, Jean's question wants P^(-1)(Iso) to be=20
+replaced by the non-iso-closed class P^(-1)(Identities), which prevents=20
+the class from being part of an ordinary factorization system. But=20
+(without having looked into this at all) I would suspect that there is=20
+probably a (more cumbersome) reformulation of the theorem above which=20
+would address that concern.
+
+Regards,
+Walter.
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

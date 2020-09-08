@@ -1,0 +1,383 @@
+Date: Tue, 30 Apr 1996 15:44:37 -0300 (ADT)
+Subject: question
+
+Date: Tue, 30 Apr 1996 19:07:19 +0000
+From: Luis Soares Barbosa <lsb@di.uminho.pt>
+
+This is probably a trivial question, but I would appreciate
+any pointer to a solution:
+
+Let A be a denumerable set and A* be the set of finite sequences of A.
+It is easy to show (by defining two injections) that the set (A* x A*) is
+isomorphic (as a set) to (A x 2)* -- where 2 is a two element set and x
+the Cartesian product.  The question is how to exhibit the isomorphism
+(actually the 2 obvious injections are not mutually inverse).
+
+Thanks.
+L. S. Barbosa
+
+
+Date: Tue, 30 Apr 1996 22:42:15 -0300 (ADT)
+Subject: Re: question
+
+Date: 30-APR-1996 17:47:06.88
+From: Fred E.J. Linton <FLINTON@EAGLE.WESLEYAN.EDU>
+
+The usual proof of the Cantor/Schroeder/Bernstein Theorem (cf., e.g., Halmos'
+{Naive Set Theory}) gives quite an explicit construction of a bijection given
+two injections of each set in the other.  Of course there is considerable
+leeway -- reversing the roles of the two injections usually results in quite
+a different bijection from that found originally.
+
+Perhaps the point to emphasize is that, once there are any bijections at all,
+there are probably embarrassingly many, and the article "the" (in the phrase
+"the bijection") is surely a red herring.
+
+-- Fred [E.J. Linton]
+
+
+Date: Tue, 30 Apr 1996 22:41:25 -0300 (ADT)
+Subject: Re: question
+
+Date: Tue, 30 Apr 1996 23:25:52 +0200 (MET DST)
+From: koslowj@iti.cs.tu-bs.de
+
+Concerning Luis Soares Barbosa's question about the isomorphism in set
+of A^* x A^* and (A x 2)^* for countable A:
+
+Just because two sets are countable doesn't mean there has to exist
+a *canonical* isomorphism.  The only canonical function in this setting
+is induced by the monoid structure:  A x 2 in set is (canonically!)
+isomorphic to A + A (where + means coproduct, i.e., disjoint union in
+set).  The free monoid functor (-)^* is left adjoint and hence
+preserves coproducts, i.e., (A + A)^* =~ A^* + A^* in mon, the category
+of monoids (where the coproduct is *not* given by disjoint union).
+Now the two projections from A^* x A^* to A^* in mon have left inverses
+(pairing with the empty sequence), hence the universal property of the
+coproduct induces a canonical monoid-homomorphism from A^* + A^* to
+A^* x A^*.  Incidentally, the two "injections" from A^* to A^* + A^*
+both have right inverses in mon, hence the universal property of the
+product induces a canonical monoid-homomorphism from A^* + A^* to
+A^* x A^*, which coincides with the first one!  Although defined by
+"general abstract nonsense", this homomorphism is easily understood:
+it decomposes sequences of red and blue elements of A into the red and
+the blue subsequence.  Clearly, this is not injective.  We might say
+that "morally", A^* + A^* is larger than A^* x A^*.  That for countable
+A the underlying sets have the same size is just an accident.
+
+Best regards,
+
+-- J"urgen
+
+--
+J\"urgen Koslowski      %
+ITI                     %     This space intentionally left blank.
+TU Braunschweig         %
+koslowj@iti.cs.tu-bs.de %
+
+
+Date: Wed, 1 May 1996 09:30:41 -0300 (ADT)
+Subject: (A x 2)* = A* x A*
+
+Date: Wed, 1 May 1996 07:49:59 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+There's a good category question here. View  (A x 2)*  and  A* x A*
+as functors on the category of non-empty sets and Show that they are
+naturally equivalent.  It's not hard if you switch to the category
+of pointed sets (whereon each is naturally equivalent to  A*).
+
+
+Date: Wed, 1 May 1996 09:28:28 -0300 (ADT)
+Subject: Re: question
+
+Date: Wed, 1 May 96 10:13 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+Fred Linton's comment re Cantor--Bernstein is of course correct,
+provided you assume classical logic. However, Barbosa's question
+makes sense in any topos with a natural number object, and it's
+well known that Cantor--Bernstein can fail in non-Boolean toposes.
+Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+I suspect the answer is yes, but it may take some ingenuity to
+construct it.
+
+Peter Johnstone
+
+
+Date: Wed, 1 May 1996 09:29:44 -0300 (ADT)
+Subject: Re: question
+
+Date: Wed, 1 May 1996 12:24:09 +0100
+From: Tim Heap <timh@dcs.ed.ac.uk>
+
+categories  writes:
+
+Luis> Date: Tue, 30 Apr 1996 19:07:19 +0000 From: Luis Soares Barbosa
+Luis> <lsb@di.uminho.pt>
+
+Luis> This is probably a trivial question, but I would appreciate any
+Luis> pointer to a solution:
+
+Luis> Let A be a denumerable set and A* be the set of finite sequences
+Luis> of A.  It is easy to show (by defining two injections) that the
+Luis> set (A* x A*) is isomorphic (as a set) to (A x 2)* -- where 2 is
+Luis> a two element set and x the Cartesian product.  The question is
+Luis> how to exhibit the isomorphism (actually the 2 obvious
+Luis> injections are not mutually inverse).
+
+There's almost certainly a constructive proof of the
+Cantor-Schroeder-Bernstein theorem in the circumstances that you
+describe, which would necessarily contain a construction of a
+bijection given two appropriate injections --- it wouldn't be hard to
+makes this as explicit as you like.
+If you really want to exhibit this isomorphism explicitly, this
+suggests to me that your looking for something like an algorithm: If
+this is not the case, then even a non-constructive proof would do if
+you're prepared to a allow primitive corresponding to the law of the
+excluded middle in the recipe for your isomorphism --- it's just not
+always obvious how to interpret this in any computational sense.
+
+Alternatively, you could simply introduce some mutant
+lexicographic-type ordering on each of the two sets (using the
+ubiquitous `diagonal' trick (that's not diagonalisation) if necessary,
+i.e. if A is infinite).
+
+Neither of these suggestions is perceptibly natural or canonical i'm
+afraid, but i rather suspect that there is no particularly
+distinguished candidate with respect to the level of structure that
+you describe.
+
+                t!m
+
+
+Date: Wed, 1 May 1996 14:01:08 -0300 (ADT)
+Subject: Re: question
+
+Date: Wed, 1 May 1996 09:07:43 -0400 (EDT)
+From: Andre Joyal <joyal.andre@uqam.ca>
+
+
+On Tue, 30 Apr 1996
+Luis Soares Barbosa wrote
+
+> Let A be a denumerable set and A* be the set of finite sequences of A.
+> It is easy to show (by defining two injections) that the set (A* x A*) is
+> isomorphic (as a set) to (A x 2)* -- where 2 is a two element set and x
+> the Cartesian product.  The question is how to exhibit the isomorphism
+> (actually the 2 obvious injections are not mutually inverse).
+
+If we put F(A)=(A* x A*) and G(A)= (A x 2)* for any set A
+we obtain two functors F,G:Sets -->Sets.
+Are they naturally isomorphic?
+This is not the original question but a related one.
+Observe that both functors are analytic, which means that they have
+a power series expansion:
+
+ F(A)= sum_n n A^n  and   G(A)= sum_n 2^n A^n
+
+The two power series are different and it follows
+that F is not isomorphic to G.
+
+
+Andre Joyal
+
+PS: For the theory of analytic functors one can read my paper
+
+'' Foncteurs Analytiques et Especes de Structures''
+Combinatoire Enumerative Springer Lecture Notes 1234 (1985).
+
+
+Date: Wed, 1 May 1996 19:51:36 -0300 (ADT)
+Subject: Re: (A x 2)* = A* x A*
+
+Date: Wed, 1 May 1996 16:03:35 -0400
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+
+Andre's analytic functors do it all. As he points out, they answer,
+negatively, the question I put (answering it, note, before he could
+have read my question). And they provide a much nicer proof than the
+one I had in mind for the category of strict maps between pointed
+sets. Well, yeah, I didn't notice that my "not hard" proof was only
+good for what the CS people call "strict maps." What it comes to is
+that if you first apply the functor  \A. 1+A  and then Andre's
+functors  F , G  you get isomorphic functors:
+
+   ((1+A) x 2)*    =     (1+A)* x (1+A)*
+
+because in each case you get
+
+    sum_n  Nx(A^n).
+
+
+Date: Thu, 2 May 1996 23:33:10 -0300 (ADT)
+Subject: Barbosa's question
+
+Date: Thu, 2 May 96 10:42 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+Andre Joyal's neat argument not only shoots down Peter Freyd's conjectured
+extension of Barbosa's question, it also shoots down mine (i.e. does the
+isomorphism (A* x A*) =~ (A x 2)* hold for A an object of a non-Boolean
+topos with NNO?) Take E to be the object classifier (i.e. the functor
+category [Set_f,Set]) and A to be the generic object of this topos (i.e.
+the inclusion functor Set_f --> Set). Then (A* x A*) and (A x 2)* are
+simply the restrictions to Set_f of Andre's functors F and G, and these
+are already non-isomorphic (since both functors are finitary).
+
+Peter Johnstone
+
+
+Date: Thu, 2 May 1996 23:35:47 -0300 (ADT)
+Subject: Re: question
+
+Date: Thu, 2 May 1996 11:30:14 +0100
+From: Ralph Loader <loader@oban.ox.ac.uk>
+
+cat-dist@mta.ca writes:
+>Date: Wed, 1 May 96 10:13 BST
+>From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+>
+>Fred Linton's comment re Cantor--Bernstein is of course correct,
+>provided you assume classical logic. However, Barbosa's question
+>makes sense in any topos with a natural number object, and it's
+>well known that Cantor--Bernstein can fail in non-Boolean toposes.
+>Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+
+If we have a 1-1 correspondance between A and the set N of natural numbers,
+then this reduces to N* x N* =~ (N x 2)*, and constructive proofs of N* =~
+N and N x N =~ N are easy, so presumably this will work in any topos with a
+NNO.
+
+On the other hand, A* x A* =~ (A x 2)* for all A implies excluded middle.
+An informal argument follows:
+
+Suppose A* x A* =~ (A x 2)* for all A.  Let phi be a proposition.  We show
+phi or not phi.  Take a and b such that a=b iff phi; it suffices to show
+a=b or not a=b.  Let A be the set {a,b}.
+
+Let f : (A x 2)* --> A* x A* and g : (A* x A*) --> (A x 2)* be inverse.
+
+We take 2 = {0,1} for convenience.
+First look at f applied to x in S = {<(x,0),(y,0),(z,0)> | x,y,z in A}
+
+The images of each of these is in the form (<c_1,...,c_m>,<d_1,...,d_n>).
+
+If either m or n depends on x in S, then f is non-constant, S is not a
+singleton, and so not a=b.
+
+Alternatively m, n don't depend on x in S (we're using excluded middle for
+equality on natural numbers).  Let T = {(<x_1,...,x_m>,<y_1,...,y_n>) | x,y
+in A}.  Consider the g(w) for w in T.  If these are not all in the form
+(x,0),(y,0),(z,0), then we have two distinct members of T, so not a=b.
+Otherwise, g and f restrict to a bijection between S and T.  If not m+n =
+3, then we have A^i =~ A^j with not i=j and it follows that a=b.
+
+Otherwise, we are left with m+n=3.
+
+We now repeat with this with S = {<(x,i),(y,j),(z,k)>|x,y,z in A}, for each
+of the other seven possibilities of i,j,k in {0,1}.  There are two
+possibilities: either eventually we obtain (a=b or not a=b), or we find for
+all 8 triples (i,j,k), some m and n such that m+n=3.  But the latter case
+is impossible: as f and g are bijections, different triples (i,j,k) must
+give different pairs (m,n), a contradiction as there are eight triples, but
+only four pairs.
+
+[We've implicitly used the following fact: If n is a natural number, and
+psi(x) is decideable for all x in A^n, then psi(x) for all x in A^n, is
+also decidable]
+
+Ralph.
+
+P.S. The headers on this message probably won't survive the list
+distribution.  My email address is loader@maths.ox.ac.uk, not
+loader@oban.ox.ac.uk.
+
+
+Date: Thu, 2 May 1996 23:38:26 -0300 (ADT)
+Subject: Re: (A x 2)* = A* x A*
+
+Date: Thu, 2 May 1996 10:59:58 -0400 (EDT)
+From: Andre Joyal <joyal.andre@uqam.ca>
+
+I would like to correct an error in my power series expansion of
+A* x A*. You might have already noticed it.
+The correct expansion is
+
+   A* x A* = sum_n (n+1) x A^n
+
+Of course, the error does not affect the proof
+that A* x A* is not isomorphic to (2 x A)*
+as a functor from Sets to Sets.
+
+Peter is right about the isomorphism between the functors
+F(X+1) and G(X+1) where F(A)=A* x A* and G(A)=(2 x A)*.
+
+It might be worth to notice that
+if we substitute the category Sets, of sets and all maps,
+by the category Bi of sets and bijections then
+F and G become isomorphic as functors Bi -->Sets.
+In this case Cantor's argument applies since the
+category of functors Bi-->Sets is a Boolean topos
+(and since there are natural injections F>-->G
+and G>-->F in this category).
+
+However, if we substitute the category Sets by
+the category In of sets and injections then it can be shown
+F and G are not isomorphic as functors In -->Sets.
+
+Andre J.
+
+
+Date: Thu, 2 May 1996 23:40:34 -0300 (ADT)
+Subject: re: question
+
+Date: Thu, 2 May 1996 18:33:58 -0400
+From: Todd Wilson <twilson@CS.Cornell.EDU>
+
+----------------------------------------------------------------
+> > Let A be a denumerable set and A* be the set of finite sequences of A.
+> > It is easy to show (by defining two injections) that the set (A* x A*) is
+> > isomorphic (as a set) to (A x 2)* -- where 2 is a two element set and x
+> > the Cartesian product.  The question is how to exhibit the isomorphism
+> > (actually the 2 obvious injections are not mutually inverse).
+> >
+> > Thanks.
+> > L. S. Barbosa
+>
+> Fred Linton's comment re Cantor--Bernstein is of course correct,
+> provided you assume classical logic. However, Barbosa's question
+> makes sense in any topos with a natural number object, and it's
+> well known that Cantor--Bernstein can fail in non-Boolean toposes.
+> Is there always an isomorphism A* x A* =~ (A x 2)* in such a topos?
+> I suspect the answer is yes, but it may take some ingenuity to
+> construct it.
+>
+> Peter Johnstone
+
+Given total enumerations of A and B (in other words bijections N -> A
+and N -> B), there are standard ("canonical") constructions that
+produce total enumerations of A*, A x 2, A x B, and so on, using
+primitive recursive functions, which are thus available in any topos
+with natural numbers object.  For example, the Cantor Pairing Function
+
+    <x,y> = ((x+y)^2 + 3x + y)/2
+
+is a bijection N x N -> N.  (In fact, by the Fueter-Polya theorem, it
+is the unique such bijection up to swapping x and y that is given by a
+quadratic polynomial with real coefficients.)  Similarly, the function
+mapping N* to N given by the dyadic coding
+
+    <a0,...,an> |-> 2^a0 + 2^{a0+a1+1} + ... + 2^{a0+...+an + n}
+
+(the empty sequence is coded by 0) is a "primitive recursive"
+bijection in the extended sense where lists are a recursive data
+type.
+
+By appropriately composing these enumerations and their inverses, one
+gets canonical bijections between any two sets built from totally
+enumerated sets using x, *, and so on, by going from one of the sets
+back to N and then from N to the other set.
+
+--Todd Wilson
+

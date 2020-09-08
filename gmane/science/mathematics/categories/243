@@ -1,0 +1,124 @@
+Path: news.gmane.org!not-for-mail
+From: Thorsten Altenkirch <txa@Cs.Nott.AC.UK>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Where does the term monad come from?
+Date: Sat, 11 Apr 2009 16:43:13 +0100
+Lines: 91
+Approved: news@gmane.org
+Message-ID: <B5F4EBD3-18FC-4B38-9FED-3AB212DF369B@Cs.Nott.AC.UK>
+Reply-To: Thorsten Altenkirch <txa@Cs.Nott.AC.UK>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v930.3)
+Content-Type: text/plain; charset=US-ASCII; format=flowed; delsp=yes
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1239546222 27980 80.91.229.12 (12 Apr 2009 14:23:42 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Sun, 12 Apr 2009 14:23:42 +0000 (UTC)
+To: Steve Lack <s.lack@uws.edu.au>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Sun Apr 12 16:25:01 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Lt0c9-00033F-U1
+	for gsmc-categories@m.gmane.org; Sun, 12 Apr 2009 16:24:54 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1LsznH-0005aD-JW
+	for categories-list@mta.ca; Sun, 12 Apr 2009 10:32:19 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:243
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/243>
+
+Hi Steve,
+
+thank you for addressing the other part of my question.
+
+> There was also a second part to the question:
+>
+>>
+>> Btw, I frequently encounter monads in a categories of functors which
+>> are not endofunctors. An example are finite dimensional vectorspaces
+>> which can be constructed via a monoid in the category of functors
+>> FinSet -> Set, here I is the embedding and (x) can be constructed
+>> from
+>> the left kan extension and composition.
+>> The unit is given by the Kronecker delta and join can be constructed
+>> from Matrix multiplication. Should one call these beasts monads as
+>> well? Is there a good reference for this type of construction?
+>
+> The category of functors from FinSet to Set is equivalent to the
+> category
+> of endofunctors of Set which preserve filtered colimits: such
+> endofunctors
+> are usually called finitary. Thus a monoid in [FinSet,Set] with
+> respect to
+> this tensor product is the same thing as a monad on Set whose
+> endofunctor
+> part is finitary: this is called a finitary monad.
+>
+> These finitary monads on Set are equivalent to Lawvere theories and
+> so in
+> turn to (finitary, single-sorted) varieties.
+>
+> Finitary monads can also be considered on other base categories than
+> Set,
+> especially on locally finitely presentable ones.
+>
+> It is true that vector spaces are the algebras for a finitary monad
+> on Set.
+> There is no need to restrict to finite-dimensional vector spaces; in
+> fact it
+> is not true that there is a monad on Set whose algebras are the
+> finite-dimensional vector spaces.
+
+I am not sure I completely understand your comments. I guess it may be
+helpful to be more precise:
+
+F : FinSet -> Set
+F A = Real -> A
+
+together with:
+
+>
+
+eta_A : A -> F A
+eta a = \ b . if a=b then 1 else 0
+
+(>>=) : F A -> (A -> F B) -> F B
+v >>= f = \ b. \Sigma a:A.(v a)*(f a b)
+
+My notation is inspired by functional programming and naturally as a
+Computer Scientist I am interested in the constructive content of
+theorems. This construction only works if the input is decidable
+(needed for eta) and if we can define Sigma (this certainly works if A
+is finite).
+
+I can see how to lift F to a functor on Sets by using a Kan extension
+(left ?). In my terminology it may be something like
+
+F' : Set -> Set
+F' X = Sigma A:FinSet. A -> X x F A
+
+I suspect my eta and >>= give then rise to a monad on Set? However, I
+don't see how to do this if the vector spaces are not finite.
+
+Btw, I only used this as an example. My question was rather wether
+people have studied monoids in categories of functors which are not
+endofunctors. I believe this notion is useful in functional
+programming and Type Theory as a natural generalisation of the notion
+of a monad.
+
+Cheers,
+Thorsten
+
+
+This message has been checked for viruses but the contents of an attachment
+may still contain software viruses, which could damage your computer system:
+you are advised to perform your own checks. Email communications with the
+University of Nottingham may be monitored as permitted by UK legislation.
+
+
+
+

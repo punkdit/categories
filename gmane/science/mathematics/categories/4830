@@ -1,0 +1,130 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Axioms of elementary probability
+Date: Tue, 12 May 2009 16:34:07 +0100
+Lines: 95
+Approved: news@gmane.org
+Message-ID: <E1M4Di4-0002f5-Bm@mailserv.mta.ca>
+References: <E1M2mgx-00042j-9H@mailserv.mta.ca>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1242220999 5522 80.91.229.12 (13 May 2009 13:23:19 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 13 May 2009 13:23:19 +0000 (UTC)
+To: David Espinosa <david@davidespinosa.net>, <categories@mta.ca>
+Original-X-From: categories@mta.ca Wed May 13 15:23:09 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1M4EQO-0007aW-Fu
+	for gsmc-categories@m.gmane.org; Wed, 13 May 2009 15:23:08 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1M4Di4-0002f5-Bm
+	for categories-list@mta.ca; Wed, 13 May 2009 09:37:20 -0300
+In-Reply-To: <E1M2mgx-00042j-9H@mailserv.mta.ca>
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:4830
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4830>
+
+Dear David,
+
+On structure: Domain L (say) just needs to be distributive lattice - not
+Boolean algebra.
+
+The axiom P(top) = 1 looks an obvious dual to P(bottom) = 0, but there's
+a lot to be gained from considering P with codomain [0,infinity] and
+forgetting P(top) = 1.
+
+Maps P: L -> [0,infinity] satisfying P(0) = 0 and the third (modular)
+law are called valuations - I believe this dates back to Birkhoff's book
+on lattice theory. In the case where L is a frame (complete lattice,
+with binary meet distributing over all joins) and P is Scott continuous,
+P is called a continuous valuation. These have been studied in domain
+theory (Jones, Plotkin: probabilistic power domain) and general locales
+(including by Heckmann, by Coquand and Spitters and by myself).
+
+More generally, the domain of P can fruitfully be any commutative monoid
+M. There is a universal valuation L -> M(L) in this generalized sense,
+with M(L) got by adjoining finite monoid structure to L and forcing the
+two laws.
+
+Coquand and Spitter cite an interesting construction of M(L) by Horn and
+Tarski. Let L* be the set of finite lists over L, and define a preorder
+on L* by
+
+  [x_i]_{1 in I} <= [y_j]_{j in J}
+
+if for every natural number k,
+
+  \/{x_K | K subseteq I, |K| = k} <= \/{y_K' | K' subseteq J, |K'| = k}
+
+where x_K = /\{x_i | i in K} etc.
+
+Then M(L) is isomorphic to L*/(equ reln corresponding to <=).
+
+The relations holding in M(L) are what can be proved from the theory.
+You give a ternary inclusion-and-exclusion for P(A u B u C). If you
+bring all the negative terms from right to left, it will still hold in
+M(L), and can be generalized from ternary to n-ary. I think you will get
+the dual (for P(A n B n C)) by considering L^op.
+
+Another interesting relation, which can be used in proving the
+Horn-Tarski result, is this:
+
+   Sigma_{i = 0}^{n-1} x_i
+      = Sigma_{k = 1}^{m} \/{x_I | I subseteq {0, ..., n-1}, |I| = k}
+
+Regards,
+
+Steve Vickers.
+
+References:
+
+Jones & Plotkin: "A probabilistic powerdomain of evaluations", LICS'89.
+Horn & Tarski: "Measures in Boolean algebras", Trans. Amer. Math. Soc.
+64 (1948)
+Heckmann: "Probabilistic powerdomain, information systems and locales",
+MFPS VIII, Springer LNCS 802 (1994)
+Vickers: "A localic theory of lower and upper integrals", Math. Logic
+Quarterly 54 (2008)
+Coquand & Spitters: "Integrals and valuations", Journal of Logic and
+Analysis 1:3 (2009
+
+David Espinosa wrote:
+>
+> Here's a question about elementary (naive, finitist) probability.
+> The proper, self-dual axioms for elementary probability are presumably
+>
+>  P(0) = 0
+>  P(X) = 1
+>  P(A u B) + P(A n B) = P(A) + P(B)
+>
+> P's domain is a boolean algebra.  P's codomain is [0,1].
+> What kind of algebraic structure is [0,1] in this case?
+>
+> What can we prove from this theory?  The best I can think of is inclusion /
+> exclusion:
+>
+>  P(A u B u C) = P(A) + P(B) + P(C) - P(A n B) - P(A n C) - P(B n C) + P(A n
+> B n C)
+>  P(A n B n C) = P(A) + P(B) + P(C) - P(A u B) - P(A u C) - P(B u C) + P(A u
+> B u C)
+>
+> Thanks,
+>
+> David
+>
+>
+>
+>
+
+
+
+

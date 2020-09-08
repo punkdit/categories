@@ -1,0 +1,242 @@
+Date: Tue, 19 Mar 1996 20:59:52 -0400 (AST)
+Subject: Category theoretic reflection principles? 
+
+Date: Tue, 19 Mar 1996 12:42:22 GMT
+From: Ralph Loader <loader@maths.ox.ac.uk>
+
+Are there any categorical analogues of the reflection principles of set
+theory?  I couldn't find any in the texts I have, or in the MathSci index.
+
+These can be used to axiomatise ZF, and it should be possible to translate
+them into category theory in a reasonably nice way, so as to give a
+category theoretic account of ZF that is independent of such things as
+elements.
+
+Below is an account of how I think this could be done; my knowledge of the
+category theory required is sadly lacking in places, suggestions and
+criticism are very welcome.
+
+(1) What are the reflection principles of set-theory.
+
+Formal statement: let phi(x) be a first-order formula of set theory.  Then
+the following is a theorem of ZF:
+
+for all x, there exists an ordinal alpha such that (a) x in V_alpha and (b)
+for all y in V_alpha, phi(y) iff 'phi(y) holds in V_alpha'.
+
+'phi(y) holds in V_alpha' means the formula obtained by restricting all
+quantifiers in phi to the set V_alpha (the V_alpha present the universe of
+ZF as a union of an increasing sequence of sets). [By coding trickery, it
+doesn't make any difference if we allow several formula with several free
+variables to be reflected in the same V_alpha.  For our purposes, it's
+useful to take alpha to be a limit ordinal, so that V_alpha gives a topos.]
+
+In other words, the universe of ZF has lots of sub-universes that "look
+just like" the original universe, where "looks just like" can be measured
+by any particular formula phi.  [A more "dynamic" intuitive way of looking
+at this is having constructed a universe V of set theory, we can take V to
+be a set, and build a new universe V' containing it; in this new universe
+V', the V_alpha required is the original V.]
+
+(2) How do we translate these into category theory?
+
+More specifically, take our universe to be a topos E.  How can we state a
+reflection principle in E without reference to such things as the "V_alpha"
+that seem fairly hideous monsters to a category theorist (even better would
+be to get rid of first order formulae, also).
+
+Presumably, we want to replace the V_alpha with an internal category C of
+some sort, and then replace "x in V_alpha" with "x is an object of the
+externalisation of C".  The statement "for all y, phi(y) iff 'phi(y) holds
+in V_alpha'" can be replaced by that the externalisation of C is a
+subcategory of E, and that the embedding preserves various things,
+including the formula phi.  [My scant knowledge of such thing as
+externalisations comes from Phoa's notes on fibrations, topos theory, the
+effective topos and modest sets.  Apologies if I use terminology specific
+to those notes.]
+
+The V_alpha give subcategories of the universe of ZF in a fairly strong
+sense, but I think it's enough to have C an internal category, such that
+the externalisation of C is a full subcategory of E, in an appropriate
+fibrational sense.  [This is probably far more than is needed].  The tricky
+bit appears to be to get the notion of the inclusion preserving phi(x)
+right.  I think that just taking phi(x) to be an arbitrary formulae of the
+first order language of categories should be sufficient.  There are very
+likely problems with differences between satisfaction in C and satisfaction
+in its externalisation, but I'm ignoring this (fingers crossed).  Perhaps
+the formulae phi could be replaced by finite sketches in an appropriate
+manner (cf. Barr & Well's book), so as to get rid of logic, as well as set
+theory.
+
+I think we end up with something like the following definition:
+
+A topos E "has reflection" if: for all finite sets {phi_i(x,y,z,...)} of
+formula of the first order language of category theory, and objects/arrows
+(as appropriate) a,b,c,... of E there are:
+
+(a) an internal category C in E.
+
+(b) a functor F embedding the externalisation of C (a fibration over E)
+into the usual fibration of E^{arrow} over E.  This functor should be at
+least full and faithful [maybe F needs to be defined in some natural way].
+
+such that the following hold:
+
+(c) a,b,c,... are in the image of F.
+
+(d) For any I, and x,y,z,... in the fibre of the externalisation of C over
+I, a formula phi_i(x,y,z,...) [from our finite set] should hold if and only
+if phi_i(Fx,Fy,Fz,...) holds in the fibre of E^{arrow} over I.
+
+Whew!  Does this make any sense at all?  I hope so, but I wouldn't be
+surprised if it didn't.
+
+(3) Let's do a sanity check to see if our definition looks anything like
+the reflection principle of ZF.
+
+V_alpha certainly generates a subfibration of the fibration of V over
+itself.  There's a slight problem with the fibres over I where I is not in
+V_alpha, in that the morphisms of that fibration won't generally be in
+V_alpha.  However, I don't think that's a problem: since Set is well
+pointed, hopefully we can restrict to the fibre over a singleton (?), and
+which reduces us to the situation of V_alpha being a subcategory of V.
+That the inclusion of V_alpha in V is full is essentially just the fact
+that V_alpha is closed under cartesian products (for alpha a limit) and
+subsets, so if A,B are in V_alpha, then the functions from A to B are also
+in V_alpha.
+
+The statement that phi holds in V_alpha if and only if it holds in V seems
+to be the same, at least after translating a formula of category theory
+into a formula of set-theory (morphisms are sets of ordered pairs etc.)  So
+things don't look too bad.
+
+That the language of set-theory has much more than category theory (under
+this translation) tempts us to make C an internal topos, but this isn't
+needed:
+
+Lemma (I hope).  Let E be a topos with reflection.  Then E has an internal
+topos.
+
+Proof.  The statement that something is an elementary topos is well,
+elementary, and finitely axiomatised (terminal object, pull-backs, cartesian
+closed, subobject-classifier).  Apply reflection to the appropriate
+sentences of first order logic axiomatising toposes.  Since they are true
+in E, they are also true in the appropriate C, and thus we get an internal
+topos.  Oh, better make this non-trivial (assuming that E is non-trivial),
+"there is an arrow which isn't an iso".
+
+Lemma.  This internal topos can be taken to be a full sub-topos of E in
+some appropriate sense.
+
+Proof.  As above, but also reflect the formulae "(f',g') is the pull-back of
+f and g", "x is a terminal object", "tau: x --> omega is a sub-object
+classifier" etc.
+
+O.k., how about this:
+
+Lemma (fingers crossed).  Let E be a non-trivial topos with reflection.
+Then E has a natural numbers object.
+
+Proof (very sketchy).
+
+Let C be a non-trivial internal topos, as above.  We know that a (internal)
+topos has coproducts.  Therefore we can generate a minimal subobject (in E)
+N of C that (i) contains the initial object of C, (ii) is closed under x
+|--> x+1 (the coproduct with the terminal object, in C).  Hopefully it's
+not too hard to show that x|-->x+1 and 0 give N isomorphic to N+1 (in E),
+which along with minimality gives us a natural numbers object.  [I've
+entirely glossed over the non-uniqueness of co-products etc., I think this
+can be made good by a quotient.]
+
+(4)  Why should anyone be bothered with all this stuff?
+
+(i) Hopefully it should give a nice topos-theoretic account of ZF,
+independent of anything about elements etc.
+
+(ii) The main application of reflection principles that I know of, outside
+of set-theory, is category theory.  This makes (i) a little more important.
+The reason is that reflection principles give us a nice, and very general,
+way of working around small/large issues, which are normally glossed over
+in category theory texts.  [This is not a criticism---category theory is
+about category theory, not "limitation of size".  But it would be nice to
+put it on a sound category theoretic basis.]
+
+An example.  In Mac Lane and Moerdijk, page 12, it is stated that
+
+  "In general we shall not be very explicit about set-theoretic
+  foundations, and we shall tacitly assume that we are working in
+  some fixed universe U of sets.  Members of U are called small sets,
+  whereas a collection of members of U which does not itself belong
+  to U will sometimes be referred to as a large set."
+
+For concreteness, I'll assume that U is the universe of
+ZF; although the following remarks seem in principle to be independent of
+this.
+
+On M&M, page 182, we have
+
+  Corollary 4.  All toposes E have finite colimits.
+
+So, having verified that the category Set^C of presheaves over some C^{op}
+is a topos, we are justified in deducing that Set^C is also has finite
+colimits?  Not quite.  The problem is that the proof M&M give of corollary
+4 really only applies to small toposes; looking at the proof given, it uses
+too much in the way of large functors etc. to apply directly to large
+toposes.
+
+Now, we could work around this directly; by replacing the argument for
+corol. 4 given with an elementary one using diagram chasing.  This in
+principle possible, at least for this result; both M&M and Johnstone give
+examples (initial object and coequalisers) that should suffice to convince
+all but the most strong-hearted that in general this would not be
+desirable.  It also not "modular"---in the sense that a mathematician from
+another field wishes to do this, (s)he has to learn enough about monads
+etc. to actually carry this out.
+
+Another possibility, is to use the completeness theorem from logic---since
+the result is elementary, and has a proof for small toposes, it has an
+elementary proof, and thus can be carried out in a large topos.  This is
+unsatisfactory for several reasons (a) it only works for theorems; if
+corol. 4 was merely a conjecture, or the hypothesis of an argument, then
+the technique doesn't work [this is a slight over-simplification]. (b) it
+depends on the logic of the universe U being classical, or at least being
+formalised in such a way that a completeness result holds.  (c) it is not a
+formalisable method; if you have a recursively axiomatised logic, including
+arithmetic, in which this method can be formalised, then using Godel's
+incompleteness theorem, it is possible to show that the logic is
+inconsistent.
+
+O.k., so a quick proof of
+
+Corollary 5.  Let E be a large topos.  E has finite colimits.
+
+Proof.  Let d be a finite diagram in E.  Apply the reflection principle
+simultaneously to the formulae
+
+"E is a topos"
+
+and
+
+"The finite diagram x has a colimit".
+
+We now get a small sub-universe V (containing d) internal to which "E is a
+topos" holds.  It is trivial (bounded formulae) to verify that the two
+formulae above are absolute, in the sense that they are independent of the
+universe they are interpreted in.  Thus "The diagram d has a colimit in E"
+holds internally to the universe V, using corollary 4, and thus d has a
+colimit in E.
+
+(5) The other direction?  Construct a model of ZF from a topos E with
+    reflection.
+
+Should be possible.  The main things would be to construct, using
+reflection, the cumulative hierarchy indexed by an arbitrary well-founded
+relation in E.  Taking an appropriate "directed limit" (this would need to
+be done outside of E, as if E had the colimit, presumably one could recover
+the Burali-Forti paradox.) should give us the required universe.
+
+Anyway, this is far too long.  Once again, comments welcome, even if it's
+to tell me where I'm talking nonsense.
+
+Ralph Loader.
+

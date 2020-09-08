@@ -1,0 +1,182 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Shulman <mshulman@ucsd.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Fibrations in a 2-Category
+Date: Sun, 23 Jan 2011 12:17:45 -0800
+Lines: 143
+Approved: news@gmane.org
+Message-ID: <E1PhMuL-00010t-O8@mlist.mta.ca>
+References: <43697659-DDA8-44AC-AD7B-077BE1EC3665@wanadoo.fr>
+Reply-To: Michael Shulman <mshulman@ucsd.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1295877438 3723 80.91.229.12 (24 Jan 2011 13:57:18 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Mon, 24 Jan 2011 13:57:18 +0000 (UTC)
+Cc: Categories <categories@mta.ca>
+To: JeanBenabou <jean.benabou@wanadoo.fr>
+Original-X-From: majordomo@mlist.mta.ca Mon Jan 24 14:57:05 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.114])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PhMug-000575-2P
+	for gsmc-categories@m.gmane.org; Mon, 24 Jan 2011 14:56:58 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:33257)
+	by smtpx.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PhMuY-0003j0-6t; Mon, 24 Jan 2011 09:56:50 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1PhMuL-00010t-O8
+	for categories-list@mlist.mta.ca; Mon, 24 Jan 2011 09:56:38 -0400
+In-Reply-To: <43697659-DDA8-44AC-AD7B-077BE1EC3665@wanadoo.fr>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6491
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6491>
+
+Dear Jean,
+
+As you surmise, anafunctors are more or less the same as representable
+distributors.  I apologize for not pointing that out to begin with,
+and I'm glad you brought it up.  Specifically, the bicategory Cat_ana
+is equivalent to the bicategory Rep of categories and representable
+distributors, in the way that you sketched.  So if by
+
+> 3) Work with distributors.
+
+you mean to (among other things) regard Rep as a replacement for Cat,
+then I don't really view that approach as very different from my (1).
+In particular, it still resolves the issues you raised about internal
+fibrations: ordinary fibrations should equally well give rise to
+internal (Street) fibrations, in the representable sense, in Rep.
+
+I have no objection to using the language of representable
+distributors instead of anafunctors.  And as you point out,
+distributors have many other uses -- you don't need to convince me
+that distributors are useful and important!  (I feel obliged to point
+out that anafunctors can be enriched just as well as distributors can,
+but distributors can certainly be used for many things that
+anafunctors cannot.)  My experience in mathematics (which is
+admittedly much shorter than yours) is that usually, when a given
+concept has two equivalent representations, it is useful to know about
+both of them and how to go back and forth between them, since each
+will have its own advantages and be preferred by different people.
+
+Thus, my answer to your questions "which do you prefer?" is that I
+would prefer to have both at my disposal and be able to use either
+one.  Without prejudicing anafunctors over representable distributors,
+I could rephrase the point I intended to make in my previous email as:
+by replacing Cat with a bicategory whose morphisms are "functors
+defined up to isomorphism," we can recover many facts about category
+theory which classically require AC.  Whether that bicategory is
+Cat_ana or Rep is immaterial to the question of "how to do category
+theory without AC."
+
+
+Having said that, I suppose I should nevertheless also say a little
+bit about why I like to have anafunctors at my disposal *in addition
+to* distributors.  One reason is that sometimes it requires a little
+contortion to put something in the form of a representable
+distributor.  For instance, if a category A has binary products, then
+there is obviously a product-assigning representable distributor P: A
+x A -/-> A, defined by
+
+P(a,(a_1,a_2)) = Hom_A(a,a_1) x Hom_A(a,a_2)
+
+But if A has binary coproducts, then in order to define a
+coproduct-assigning representable distributor C: A x A -/-> A, then
+(as far as I know) one needs to say something like
+
+C(a,(a_1,a_2)) = the set of triples (a_3,p_1,p_2,f) where p_i: a_i -->
+a_3 are the injections into a coproduct and f: a --> a_3, modulo an
+equivalence relation (a_3,p_1,p_2,f) ~ (a_3',p_1',p_2',f') if there
+exists a (necessarily unique iso)morphism g: a_3 --> a_3' commuting
+with all the structure maps.
+
+Of course, C is more easily defined as a corepresentable distributor.
+But if you want to define a functor that involves both limits and
+colimits, like (a,b,c) |--> a x (b + c), then it is not "naturally"
+represented as either a representable or a corepresentable one --
+although it always *can* be so represented, essentially by passing
+across the equivalence Cat_ana = Rep that you sketched.
+
+By contrast, with anafunctors, all of these functors can be
+represented "naturally" in analogous ways.  In the first case, we
+consider the span AxA <-- P --> A, where P is the category of binary
+product diagrams in A.  In the second case, we consider the span AxA
+<-- C --> A, where C is the category of binary coproduct diagrams.
+And in the third case, we consider the span AxAxA <-- D --> A, where D
+is the category of binary coproduct diagrams together with a product
+diagram one of whose factors is the vertex of the coproduct diagram.
+Note that in each case, the middle category is the category of models
+of a "sketch" in A.
+
+Personally, I find the anafunctor way of representing such "functors"
+a bit cleaner, and sometimes easier to work with.  Roughly speaking, I
+would say that anafunctors are formulated exactly in order to describe
+"functors defined up to isomorphism."  Representable distributors, by
+contrast, can be described as "functors valued in representable
+presheaves."  "Objects defined up to isomorphism" and "representable
+presheaves" are *formally* equivalent (without invoking AC), but not
+every "naturally occurring" object-defined-up-to-isomorphism is "given
+in nature" by the presheaf it represents.  Some are given by the
+copresheaf they corepresent; others aren't given directly in either of
+those ways.  (But you can guess from the fact that there are lots of
+quotation marks in this paragraph, none of this is particularly
+formal.  In particular, I don't present it as an argument intended to
+convince you to prefer anafunctors over representable distributors,
+but rather as a reason why I or someone else might like to think about
+anafunctors *in addition to* representable distributors.  If you like,
+you can think of an anafunctor as a particularly convenient
+"presentation" of a representable distributor.)
+
+
+I also find it illuminating that amongst all the "classical" facts
+about category theory that naively become false without AC, if you
+take the single statement "a fully faithful and essentially surjective
+functor is an equivalence" and "force" it to be true in a universal
+way, then you end up with a world in which all (or at least most) of
+the *other* "classical" facts *also* become true again.  As far as I
+know, that fact is easiest to express using anafunctors and calculus
+of fractions -- although I would be very interested to see a direct
+proof that Rep is the result of formally inverting the weak
+equivalences in Cat (i.e. a proof that doesn't essentially go by
+proving that Rep is equivalent to Cat_ana).
+
+
+In regards to your other questions:
+
+> Ordinary categories of fractions are
+> very complicated, unless you have a calculus of right (or left) fractions.
+> Is there, precisely defined, and without neglecting the coherence of
+> canonical isomorphisms, such a "calculus" defined. Does it apply to the
+> "simple thing" of anafunctors.
+
+I wouldn't use the phrase "category of fractions" unless there is a
+calculus of fractions; otherwise I would probably say "homotopy
+category" or "localization".  Calculi of fractions for bicategories,
+and the construction of anafunctors thereby, can be found in:
+
+Pronk, D.  "Etendues and stacks as bicategories of fractions",
+Compositio Math. 1996
+
+Roberts, D.  "Internal categories, anafunctors and localisations",
+arXiv:1101.2363
+
+> what is the category of anafunctors with domain the terminal category 1 and codomain a category C?
+
+It's sometimes called the category of "ana-objects" or "cliques" in C.
+  Its objects are diagrams in C whose domain is a contractible
+category.  In the setting of internal categories in a topos, it is a
+stackification of C.  (Does that count as a precise mathematical
+application?)
+
+Best,
+Mike
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

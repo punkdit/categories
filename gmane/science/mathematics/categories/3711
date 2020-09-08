@@ -1,0 +1,68 @@
+Path: news.gmane.org!not-for-mail
+From: Vaughan Pratt <pratt@cs.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: functions not polynomials
+Date: Wed, 28 Mar 2007 20:47:27 -0700
+Lines: 34
+Approved: news@gmane.org
+Message-ID: <E1HX6he-0003cv-6X@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019476 9918 80.91.229.2 (29 Apr 2009 15:37:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:37:56 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Thu Mar 29 23:28:10 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 29 Mar 2007 23:28:10 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1HX6he-0003cv-6X
+	for categories-list@mta.ca; Thu, 29 Mar 2007 23:18:58 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 65
+Status: O
+Content-Length: 1782
+Original-Lines: 33
+Xref: news.gmane.org gmane.science.mathematics.categories:3711
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3711>
+
+Paul Taylor's example of an f(x,y) that is polynomial separately in x
+and y but not jointly was sum_n (x,n)(y,n) (where (x,n) denotes the
+binomial coefficient x!/(n!(x-n)!)).  After mulling over that example
+some more it occurred to me that it can be analyzed via the observation
+that W^{-1} maps the polynomial P_n(x) = (x(x-1)(x-2)...(x-(n-1)))^2 to
+the polynomial xy(x-1)(y-1)(x-2)(y-2)...(x-(n-1))(y-(n-1)).  This
+contradicts my earlier claim that the only polynomials in x that W^{-1}
+maps to polynomials in x and y are the linear combinations of 1 and x^2.
+  These two are easily seen to be the only *monomials* so mapped, but
+(the linearity of W^{-1} notwithstanding) it does not follow that the
+only *polynomials* so mapped are the linear combinations of these two
+monomials.
+
+W^{-1} maps sum_n P_n(x)/(n!)^2 to Paul's example.  The coefficient
+1/(n!)^2 of P_n(x) seems to play no role here, and any coefficients
+should do as long as infinitely many are nonzero (to make f(x,y) not a
+polynomial).  To extend the example (as a function on N^2) directly (via
+the constituent polynomials) to a function on the positive reals
+however, the coefficients would need to grow somewhat slower than 4^n,
+|P_n(x)| being bounded above by at best about 1/4^n for 0 < x < n (the
+half-integer points for x in that range give a good approximation of the
+bound).  1/(n!)^2 is more than slow enough for this purpose.
+
+A simpler example is g(x) = (2x,x) (again the binomial coefficient),
+which W^{-1} maps to f(x,y) = (x+y,x), polynomial separately in x and y
+but not jointly.  That is, Pascal's triangle is a sufficient
+counterexample for Paul's purposes.  Moreover the Gamma function gives a
+nicer (log-convex in fact) extension of f(x,y) to the upper right
+quadrant of R^2.
+
+Vaughan Pratt
+
+
+

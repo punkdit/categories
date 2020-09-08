@@ -1,0 +1,1565 @@
+Subject: Re: 2-category algebras?
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Tue, 1 Jun 93 9:12:21 CDT
+
+On John Baez's question:
+
+	I don't know of any linearization of 2-categories, but the "category
+algebra" construction gives examples of what Barry Mitchell (old work! --
+dare one say classical category theory?) called "algebroids". I don't know
+the reference, but someone else can certainly recall it.
+
+--David Yetter
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: RE: 2-category algebras?
+Date: 31 May 1993 15:31:27 -0400 (EDT)
+From: MTHFWL@ubvms.cc.buffalo.edu
+Subject: The group ring of a small category
+
+Dear John Baez, see my abstract in the American Math Society Notices for
+1963 Meeting Number 601, paper number 37, page 280. /A longer exposition
+including applications to network design, cohomology etc. was written then
+and I can make you a copy if you are interested. Even in 30 years not all
+the conclusions have been drawn. My colleague S.D. Schack also independently
+discovered the construction and has used it extensively in deformation
+theory. An important variant which applies to free categories and others
+was discovered by Pierre Leroux and used to construct the Moebius function
+of a category.   Greetings, F.W. Lawvere
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: RE: 2-category algebras?
+Date: Wed, 2 Jun 1993 10:39:14 +0000
+From: sjv@doc.ic.ac.uk (Steven Vickers)
+
+> ... what Barry Mitchell (old work! --
+>dare one say classical category theory?) called "algebroids". I don't know
+>the reference ...
+
+?? "Rings with several objects", Advances in Mathematics 8 (72) 1-161
+
+Steve Vickers.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: RE: 2-category algebras
+Date: Thu, 3 Jun 93 9:07 GMT
+From: MAS010@BANGOR.AC.UK
+
+2-category algebras:
+
+A student at Bangor, Ghaffar Mosa, did a thesis in:
+Higher dimensional algebroids and crossed complexes (1987).
+
+The aim was to define \omega-algebroids (following Brown-Higgins 
+definition of \omega-groupoids) and to prove these equivalent to 
+crossed complexes (in the context of algebroids), analogously to the 
+Brown-Higgins equivalence between \omega-groupoids and crossed 
+complexes of groupoids. (The former are essentially cubical.)
+A lot of information was found, some of which was a basis for the 
+thesis of Al-Agl (Aspects of multiple categories, 1989), which has 
+been subsumed in the paper of Al-Agl and 
+Steiner in the Proc LMS.  In effect, the equivalence is known up to 
+dimension 3, for the case originally mooted, although there is 
+presumably a version in the context of the Al-Agl/Steiner paper. 
+An equivalence between crossed complexes of algebroids and globular 
+infinity categories has been proved by Andy Tonks at Bangor. 
+
+The point of the relation with crossed complexes is that these are 
+part of the tradition in homological algebra from Rinehart, Frohlich, 
+Lue, in which the notion of "chains of syzygies" starts with a 
+resolution of an algebra in a general sense ("varieties of algebras"), 
+leading initially to a crossed module in the appropriate context, 
+rather than a module.  In order to carry out the analogous work to 
+that done for crossed complexes of 
+groupoids work, it is also desirable to have a tensor product of such 
+crossed complexes of algebras, as for the groupoid case. This was part 
+of the aim of obtaining an equivalence between crossed complexes of 
+algebroids and \omega-algebroids. However, even this equivalence would 
+leave many questions open, since, as said above, crossed complexes are 
+defined for "varieties of algebras", so one really wants a tensor 
+product in this setting. 
+
+Ronnie Brown
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: paper available
+From: raymond@fwi.uva.nl (Raymond Hoofman )
+Date: Mon, 7 Jun 1993 11:09:02 +0200 (MET DST)
+
+The following paper is available by anonymous ftp:
+
+                Information Systems as Coalgebras
+                           R. Hoofman
+
+Abstract: "In this paper we show that the category CINF of continuous
+information systems introduced in [1] can be constructed from the category
+REL of sets and relations in a systematic way: we prove that CINF is the
+category of coalgebras of the lower powerdomain comonad on the Karoubi
+envelope of REL. Informally, this means that the category of continuous
+dcpo's is in proportion to the Karoubi envelope of REL, like the category
+of sets and functions is in proportion to REL."
+
+([1] Vickers, S., Information Systems for Continuous Posets, Theoretical
+Computer Science, to appear.)
+
+FTP instructions:
+
+> ftp vera.fwi.uva.nl
+> Name: anonymous
+> Password: [your email address]
+> cd pub/illc/raymond
+> binary
+> get coalg.dvi.Z                               (dvi-format)
+> get coalg.ps.Z                                (ps-format)
+> quit
+> uncompress coalg.ps
+> uncompress coalg.dvi
+
+
+With kind regards,
+Raymond Hoofman.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: commutative diagrams
+Date: Fri, 4 Jun 93 13:50:33 EDT
+From: barr@triples.Math.McGill.CA (Michael Barr)
+
+I am on a committee to consider what the *syntax* for commutative
+diagrams ought to be in the next implementation of latex.  Thinking
+about I realized that this cannot and should not be based on just
+what I need, but should be based broadly on the needs of the whole
+community, meaning the whole categorical community, since we are
+clearly the heaviest consumers of this technology.  Now I am going
+to make a preliminary proposal.  I emphasize that this is purely
+mine, has not been approved of, or even seen by the committee and I
+want your reactions.  I am interested either in a reaction like,
+``Here is my counter-proposal'' or ``This aspect could be improved
+in this way''.  ``I think it stinks'' is not helpful (even if
+true).  I should say that this is not a complete proposal, just a
+fragment and would need lots of filling out to become a complete
+proposal.
+
+Consider the following diagram, which is a correction of something
+from TTT.
+
+%          TT-------------\>T
+%          |\                \
+%          | \                \
+%          |  \                \
+%          |   \                \
+%          |    \                \
+%          |     \                \
+%          |      \                \
+%          |       \        1       \
+%          |  TT\eta'\          T\eta'\
+%          |         \                \
+%          |          \                \
+%          |           \                \
+%          |            \                \
+%          |            \lr    \mu%T'    \lr
+%          |             TTT'===========\>TT'
+%    T\eta'T|      2      |    T\sigma    | \
+%          |              |               |  \
+%          |              |               |   \
+%          |              |               |    \
+%          |      T\eta'TT'|     3 T\eta'T'| 6  \\$id$\l
+% (6)      |              |               |      \
+%          |              |               |       \
+%         \v  TT'T\eta'  \v   TT'\sigma  \v  T\mu' \lr\l
+%         TT'T---------\>TT'TT'-------\>TT'T'----\>TT'
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%     \sigma%T|  4 \sigma%TT'|   5  \sigma%T'| 7    |\sigma\l
+%          |              |               |         |
+%          |              |               |         |
+%         \v             \v              \v        \v
+%          T'T---------\>T'TT'---------\>T'T'-----\>T'
+%              T'T\eta'      T'\sigma         \mu'
+% \efig
+
+What I am thinking of would have the following syntax:
+
+\diagram(4,4) % make a diagram on a 4 x 4 grid
+\object(1,1){TT} % object at pos (1,1) on the grid is TT
+\object(2,1)T % object at pos (2,1) is T
+\object(2,2){TTT'} % and so on
+.....
+\arrow(1,1)(2,2)_{TT\eta'} % draw an arrow with a subscript TT\eta
+% from position (1,1) to (2,2).  Subscript means that it would be a
+% subscript if it were rotated to pointing along the x axis.
+\arrow(1,1)(2,1)_\mu % Similarly
+\twoarrow(2,2)(3,2)_{T\sigma}^{\mu T} % draw a double arrow, with a
+% subscript T\sigma on the bottom one and a superscript \mu T on top.
+... % continue in this way to build a diagram, piece by piece
+\enddiagram
+
+Without the comments, this looks like:
+
+\diagram(4,4)
+\object(1,1){TT}
+\object(2,1)T
+\object(2,2){TTT'}
+.....
+\arrow(1,1)(2,2)_{TT\eta'}
+\arrow(1,1)(2,1)_\mu
+\twoarrow(2,2)(3,2)_{T\sigma}^{\mu T}
+...
+\enddiagram
+
+all in all, 12 objects and 15 arrows.  Of course, abbreviations \ob
+and \ar can obviously be used.
+
+Would you prefer to be able to say, e.g.
+\object11{TT}
+Or even
+\object11 TT
+(I don't know if it is possible to use line ends as an argument
+delimiter, but if it is then that could be done.)
+
+More is needed.  For example, sometimes you want a triangle to be
+isoceles and there should be a way of specifying that.  The basic
+idea of this syntax is that TeX should work out the arrangements and
+place the labels (centred on the arrows, needless to say) and grow
+the arrows to encompass the labels and so on.  In addition I think
+there should be more shapes.  For example the names \ptriangle,
+\Vtriangle,... that I used in my package.  I think those names are
+one of the best things about my package.  I never have trouble
+recalling which is which.
+
+There is also the question of those numbers that are placed in the
+diagrams.  I really don't know how to handle them, but they are quite
+unusual.
+
+Here is one kind of problem diagram I can forsee.  If there is an shape
+\Vtriangle it will, of course, be isoceles.  But consider a diagram of
+the shape
+
+                .  -----------> .
+                |               |
+                |               |
+                |               |
+                |               |
+                |               |
+                |               |
+                v               v
+                . ------------> .
+                 \             /
+                  \           /
+                   \         /
+                    \       /
+                     \     /
+                      \   /
+                       v v
+                        .
+I want to be able to say
+\subdiagram(1,1)(3,2){\square...}
+\subdiagram(1,2)(3,3){\Vtriangle...}
+whose semantics is, I hope, evident.
+
+Many other things come to mind.  Of course, sometimes there are three
+arrows, sometimes they go in different directions, sometimes they should
+be dashed and so on.
+
+Could this be implemented?  Of course it can; TeX is Turing
+complete.  The real question is, is it feasible?  I don't know and
+it is not really my job to find out.  Well, it is in a sense, since
+an unfeasible syntax will just not be implemented.  One possibility
+is that someone will write an extension to TeX (analogous to Michael
+Ferguson's multi-lingual tex that allows accented words to be
+hyphenated) that are non-standard, but are an initialization option
+at least in some versions and that do it quickly, while high level
+code is written that takes a long time to function.
+
+I await your responses, if not with bated breath, then perhaps with
+my arms covering my face.
+
+Michael
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: commutative diagrams yet again
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Mon, 7 Jun 93 13:27:39 BST
+
+You started this, Mike, not me. ``Here is my counter-proposal''
+
+12.35 started typing:
+\begin{diagram}
+  TT & \rTo & T \\
+  & \rdTo _{TT\eta'} & 1 & \rdTo\\
+ \dTo<{T\eta'T} & 2 & TTT' & \pile{\rTo^{\mu T'}\\\rTo_{T\sigma}} & TT'\\
+ && \dTo<{T\eta'TT'} & 3 & \dTo<{T\eta'T'} & \rdTo_6^{id} \\
+ TT'T & \rTo^{TT'T\eta'} & TT'TT' & \rTo^{TT'\sigma} & TT'T' &
+   \rTo^{T\mu'} & TT' \\
+ \dTo<{\sigma T} & 4 & \dTo<{\sigma TT'} & 5 & \dTo<{\sigma T'} & 7 &
+    \dTo>{\sigma} \\
+ T'T & \rTo_{TT'\eta'} & T'TT' & \rTo_{T'\sigma} & T'T' & \rTo_{\mu'} & T'
+\end{diagram}
+12:37 finished typing the original
+      tried LaTeX
+        well I made rather a lot of typing mistakes
+        because I don't think very well under "race" conditions
+          I had "TT && \rTo && T" in the first row (thinking of the cube!).
+          I had an extra & at the beginning of the third row (dunno why).
+          I missed an & before the last T'.
+          A closing } was missing from \pile.
+          I typed || instead of \\ on one row.
+12.49 I got it right.
+
+Now you can't test Mike's proposal because he hasn't implemented it,
+but you could try typing in his test diagram (timing yourself) and
+then check it using a "dry run". Maybe you could do the same with catmac
+or any of the other competitors.
+
+Test the other way round: without running LaTeX, read the source of the
+diagram and draw it on paper. Do the same with Mike's proposed syntax.
+Can you make sense of the same example as it appears in the catmac manual?
+
+(I know that there are plenty of my users out there who will back me up
+on this in private, but I'd quite appreciate it if they did so publicly.)
+
+I'm afraid I didn't understand all of the notation in Mike's example,
+so what I have above may not be quite what he intended.
+Here is the ASCII version of his example for reference.
+%          TT-------------\>T
+%          |\                \
+%          | \                \
+%          |  \                \
+%          |   \                \
+%          |    \                \
+%          |     \                \
+%          |      \                \
+%          |       \        1       \
+%          |  TT\eta'\          T\eta'\
+%          |         \                \
+%          |          \                \
+%          |           \                \
+%          |            \                \
+%          |            \lr    \mu%T'    \lr
+%          |             TTT'===========\>TT'
+%    T\eta'T|      2      |    T\sigma    | \
+%          |              |               |  \
+%          |              |               |   \
+%          |              |               |    \
+%          |      T\eta'TT'|     3 T\eta'T'| 6  \\$id$\l
+% (6)      |              |               |      \
+%          |              |               |       \
+%         \v  TT'T\eta'  \v   TT'\sigma  \v  T\mu' \lr\l
+%         TT'T---------\>TT'TT'-------\>TT'T'----\>TT'
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%          |              |               |         |
+%     \sigma%T|  4 \sigma%TT'|   5  \sigma%T'| 7    |\sigma\l
+%          |              |               |         |
+%          |              |               |         |
+%         \v             \v              \v        \v
+%          T'T---------\>T'TT'---------\>T'T'-----\>T'
+%              T'T\eta'      T'\sigma         \mu'
+
+Getting back to the LaTeX 3 project, which gave rise to this, I have proposed
+that instead of trying to build in applications like commutative diagrams as
+part of a monolithic program, there should be an interface standard for
+autonomous programs to co-operate with LaTeX if it is present. In fact this
+is already my and Kris Rose's policy: unlike most of the competitors, our
+code is written to be compatible with LaTeX, plain TeX, AMS-TeX, etc, rather
+than to rely on one of them.
+
+Kris Rose has recently made a proposal for a graphics language. (It is the
+core of xypic, but differs conceptually quite a lot from the original manual;
+in particular it is no longer based on the matrix structure, and I am not
+quite sure how he re-implements matrices on top of the new language.)
+The "core" proposal is in
+        diku/users/kris/xycore27beta.psZ        at      ftp.diku.dk
+for those who are interested.
+
+I don't believe there is such a thing as a definitive graphics package, or
+even a definitive package for all category theory applications, and so I think
+it would be better for LaTeX 3 to give access (in a structured way) to many
+different applications packages.
+
+As far as plain old fashioned commutative diagrams are concerned, I claim
+that my matrix syntax (with the "chess" rule for spanning cells between
+objects) is the easiest to use, though improvement is always possible.
+
+Paul
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: commutative diagrams
+From: Nico Verwer <nico@cs.ruu.nl>
+Date: Mon, 7 Jun 1993 14:47:28 +0100 (METDST)
+
+Here is what I think of Michael's proposal.
+
+I use XY-pic myself, and I am very satisfied by it. Therefore I am heavily
+biased in favour of XY-pic.
+
+| %          TT-------------\>T
+| %          |\                \
+| %          | \                \
+| %          |  \                \
+| %          |   \                \
+| %          |    \                \
+| %          |     \                \
+| %          |      \                \
+| %          |       \        1       \
+| %          |  TT\eta'\          T\eta'\
+| %          |         \                \
+| %          |          \                \
+| %          |           \                \
+| %          |            \                \
+| %          |            \lr    \mu%T'    \lr
+| %          |             TTT'===========\>TT'
+| %    T\eta'T|      2      |    T\sigma    | \
+| %          |              |               |  \
+| %          |              |               |   \
+| %          |              |               |    \
+| %          |      T\eta'TT'|     3 T\eta'T'| 6  \\$id$\l
+| % (6)      |              |               |      \
+| %          |              |               |       \
+| %         \v  TT'T\eta'  \v   TT'\sigma  \v  T\mu' \lr\l
+| %         TT'T---------\>TT'TT'-------\>TT'T'----\>TT'
+| %          |              |               |         |
+| %          |              |               |         |
+| %          |              |               |         |
+| %          |              |               |         |
+| %     \sigma%T|  4 \sigma%TT'|   5  \sigma%T'| 7    |\sigma\l
+| %          |              |               |         |
+| %          |              |               |         |
+| %         \v             \v              \v        \v
+| %          T'T---------\>T'TT'---------\>T'T'-----\>T'
+| %              T'T\eta'      T'\sigma         \mu'
+| % \efig
+|
+| What I am thinking of would have the following syntax:
+|
+| \diagram(4,4) % make a diagram on a 4 x 4 grid
+
+Why should I specify the size of the grid? The macros shoul do that for
+me. (Yes, XY-pic does that).
+
+| \object(1,1){TT} % object at pos (1,1) on the grid is TT
+
+I don't like to say \object every time. This can be inferred by the
+macros themselves, by letting everything be an object, except when it
+is a sub/superscript of an arrow.
+
+Also, I like the TeX alignment style of diagram specification, with &
+as a column separator, and \\ as a row separator better. This makes the
+code more position-independent, and less wysiwyg,ab-like.
+
+| \arrow(1,1)(2,2)_{TT\eta'} % draw an arrow with a subscript TT\eta
+
+The same goes for arrows. I like to specify a relative direction,
+instead of giving the exact co-ordinates.
+Co-ordinates are like goto's in programming languages: they make
+writing unreadable code very easy.
+The XY-pic syntax defines some standard arrows like \uto (up arrow),
+\drdashed (down-right dashed) or \drrto (one cell down, two to the
+right arrow). All these arrows can be made from more primitive commands,
+which specify relative, or absolute co-ordinates. This is extremely
+flexible, and allows the user to define her own arrows withoout much
+effort.
+
+| \enddiagram
+
+Yeah, I really like this. :-)
+
+| For example, sometimes you want a triangle to be
+| isoceles and there should be a way of specifying that.  The basic
+
+Special things like triangles etc. and even whole diagrams can be made
+into macros in XY-pic. The relative addressing means that this is
+completely position-independent (the origin of the diagram is local).
+
+| there should be more shapes.  For example the names \ptriangle,
+| \Vtriangle,... that I used in my package.  I think those names are
+
+It can be done easily in XY-pic. What is even better is that the arrows
+and the grid will be modified according to the object/arrow labels if
+you pass them as parameters.
+
+| Could this be implemented?
+
+It has been implemented. One of the BIG advantages of XY-pic is that it
+is not just a package for drawing category theoretical diagrams. In the
+new version (of which I am a beta-tester), diagrams are an option,
+which you can put on top of the XY core language. This is really a
+complete graphics drawing language, programmed in TeX. It is incredibly
+clever, and still small, and fast. There are other options for drawing
+flow charts, general graphs, etcetera.
+
+| One possibility
+| is that someone will write an extension to TeX (analogous to Michael
+| Ferguson's multi-lingual tex
+
+XY-pic is completely programmed in TeX, and compatible with LaTeX, AMS
+(La)TeX, (e)plain TeX. One of the big pro's is that it does not depend
+on any non-TeX features. All you need apart from TeX is MetaFont (for
+the beautiful arrowtips and circle-pieces), and even that is not needed
+if you have a standard 300dpi laser printer.
+At home, I use it on a slow Atari 1040ST with a Canon BJ10 inkjet
+printer, and it works perfectly well.
+
+In summary, I am strongly in favour of XY-pic. If you want to try it
+out for yourself, you can ftp it from ftp.diku.dk, or mail to the
+writer of this incredibly versatile, and free (!), package, Kristoffer
+Rose (kris@diku.dk).
+--
+Nico Verwer                                       | nico@cs.ruu.nl
+Dept. of Computer Science, University of Utrecht  | phone: +31 30 533921
+p.o. box 80.089, 3508 TB Utrecht, The Netherlands | fax:   +31 30 513791
+
+Date:    Mon, 7 Jun 1993 19:45:09 -0300 (ADT)
+From:    CATEGORIES@mta.ca
+Message-Id: <930607194509.20800540@mta.ca>
+Subject: Re: commutative diagrams
+To:      rrosebrugh@macc2.mta.ca
+X-Vmsmail-To: MX%"rrosebrugh@macc2.mta.ca"
+
+Date: Mon, 7 Jun 1993 14:22:27 +0000
+From: sjv@doc.ic.ac.uk (Steven Vickers)
+
+>From: barr@triples.Math.McGill.CA (Michael Barr)
+>
+>I am on a committee to consider what the *syntax* for commutative
+>diagrams ought to be in the next implementation of latex. ...
+
+Here is a proposal to replace diagrams by text in linear form. On the other
+hand, Jon Barwise (visiting Imperial) has just given a lecture on the
+formal use of diagrams instead of linear text.
+
+On the face of it, you might think it natural to combine these ideas and
+use a diagramatic syntax, not a textual one, for expressing diagrams -
+based on something like MacDraw, perhaps.
+
+But I'm not familiar with the Latex packages, so perhaps I'm thinking about
+the problem the wrong way.
+
+Steve Vickers.
+
+p.s. - No point in asking me about Barwise's lecture; I had to miss it.
+
+
+Date:    Mon, 7 Jun 1993 19:38:03 -0300 (ADT)
+From:    CATEGORIES@mta.ca
+Message-Id: <930607193803.2080053a@mta.ca>
+Subject: Re: commutative diagrams yet again
+To:      rrosebrugh@macc2.mta.ca
+X-Vmsmail-To: MX%"rrosebrugh@macc2.mta.ca"
+
+Date: Mon, 7 Jun 93 15:20:31 BST
+From: Thorsten Altenkirch <alti@dcs.ed.ac.uk>
+
+   (I know that there are plenty of my users out there who will back me up
+   on this in private, but I'd quite appreciate it if they did so publicly.)
+
+I do not use diagrams intensively, and for occasional use I found Paul's
+macros very useful and easy to remember. They also serve well to draw
+non-categorical diagrams (like Church-Rosser diagrams, Barendregt's
+cube , etc).
+
+I have to admit that I am a bit surprised that Michael Barr proposes
+something like:
+
+\diagram(4,4)
+\object(1,1){TT}
+\object(2,1)T
+\object(2,2){TTT'}
+.....
+\arrow(1,1)(2,2)_{TT\eta'}
+\arrow(1,1)(2,1)_\mu
+\twoarrow(2,2)(3,2)_{T\sigma}^{\mu T}
+...
+\enddiagram
+
+First of all I don't want to calculate positions and I don't want (and
+can) remember the names of lots of different objects (like
+'Vtriangle').
+
+Actually I haven't used Barr's package and it may well be that these
+macros are better suited for a very intensive user of categorical
+diagrams. However, I would rather appreciate it if there is a standard
+for diagrams acceptable for a wider class of users.
+
+ Thorsten Altenkirch            Kennst du das Land, wo die Zitronen blu"hn,
+ Laboratory for Foundations     Im dunkeln Laub die Gold-Orangen glu"hn,
+ of Computer Science            Ein sanfter Wind vom blauen Himmel weht,
+                                Die Myrte still und hoch der Lorbeer steht,
+ University of Edinburgh        Kennst du es wohl?      Dahin! Dahin
+                                Mo"cht ich mit dir, o mein Geliebter, ziehn.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: diagrams
+Date: Tue, 8 Jun 93 11:33:20 EST
+From: cbj@socs.uts.EDU.AU
+
+Two comments:
+
+1) Nico Verwer suggests using a general drawing package XY-pic.
+Drawings and diagrams differ fundamentally on the issue of who decides
+the position of picture elements. In a drawing package the user
+decides, in a diagram the program decides.
+
+Obviously there are many situations where control is shared in a
+limited way, but I believe that this difference is sufficiently
+fundamental to warrant separate packages and syntax for each purpose.
+In particular the syntax for a diagram can be much terser, since less
+information is required for processing. Of course, one would want to
+be able to incorporate a picture in a diagram, or a diagram in a
+picture, but their natures really are different.
+
+Paul Taylor proposes allowing a good interface to any package. Perhaps
+by separating these issues, the need for many packages can be reduced.
+
+2) The value of having both Tex and Latex is universally acknowledged.
+The former is a fundamental package, giving full power to the user,
+while the latter is convenient for the average user.
+Presumably our diagram tools should be designed in the same way. We
+need a diagram language based on general principles, and a convenience
+package built on top for the average user.
+
+To illustrate, Tex passed the music test: by adding a few macros,
+musical scores could be typeset in Tex without any fundamental
+problems, even though it was not designed for that purpose.
+
+Since musical scores are diagrams, perhaps the music test should apply
+to any diagram package.
+
+
+Barry Jay
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: commutative diagrams yet again
+Date: Tue, 8 Jun 1993 10:31:19 +0200
+From: David Murphy <david@gmdzi.gmd.de>
+
+For me, there are two separate issues in the debate over commuting
+diagrams packages; what's best for drawing simple square diagrams
+quickly, and what is best for achieving complex effects (non-square
+symmetries, lots of 2-cells, for instance).
+
+I don't like Paul's syntax for either. My objection on the first
+count, and the reason I like Mike's proposal, is just taste; in
+honesty, I think either Paul's or Mike's syntax would be reasonable
+for producing quick-and-easy square diagrams, even if some of us
+execrate the syntax.
+
+The second point is more serious; just how much of a graphics package
+do we want a commutative diagrams package to be? Should I be able
+(albeit with lots of effort) to draw pentagonal diagrams or complex
+interactions between 2-cells (such as in, for instance, Mike Johnson's
+thesis) ? Having tried to use it, I don't think Paul's package will
+extend cleanly in this direction. Mike's syntax might leave one with
+having to draw a complex diagram on graph paper first, but that is
+better than not being able to draw it at all, and is something that
+frankly ought to be done unless one is very sure of the way the results
+will look on the page.
+
+In summary, then, I don't believe a package that calculates its own
+positions for things (rather than leaving that up to the user) can
+achieve the highest standards for a wide class of diagrams. We must
+define the problem--what is the class of things we want to draw ?
+If it includes pentagons, heptagons,... then we may end up forcing
+people to do trigonometry.
+
+David Murphy
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: commutative diagrams (several posts)
+Date: Tue, 8 Jun 93 13:20:11 +0200
+From: rosolini@athena.dima.unige.it (Pino Rosolini)
+
+It seems that diagram drawing has been well implemented in TeX, so we
+should think of what is still unsatisfactory. For instance, there is
+little choice of appropriate arrow tips and tails. Probably good ones
+could be added in the LaTeX fonts.
+
+Pino Rosolini
+
+PS I am one of the "satisfied users" of Paul Taylor's macros. The
+syntax they use is very simple and direct (I'd say, in the true
+spirit of TeX).
+
++++++++++++++++++++++++++++++++++++++++++++
+Date: Tue, 8 Jun 93 14:52:11 +0200
+From: dybkjaer@euler.ruc.dk (Hans Dybkjaer)
+
+
+A number of comments:
+
+Barry Jay writes:
+
+> 1) Nico Verwer suggests using a general drawing package XY-pic.
+> Drawings and diagrams differ fundamentally on the issue of who decides
+> the position of picture elements. In a drawing package the user
+> decides, in a diagram the program decides.
+> ...
+> Presumably our diagram tools should be designed in the same way. We
+> need a diagram language based on general principles, and a convenience
+> package built on top for the average user.
+
+XY-pic (which I have used, and I agree much with Nico Verwer's praise) consists
+of core which is a general-purpose "drawing" package (entirely within TeX) in
+which almost everything within TeX's limited graphical capabilities may be
+done, and a diagram package (built on that) which makes possible specifying
+diagrams using the matrix analogy allowing for easy use.
+
+> To illustrate, Tex passed the music test: by adding a few macros,
+
+Music has a well-established, linear and compositional notation. Diagrams may
+have a harder time.
+
+> Paul Taylor proposes allowing a good interface to any package. Perhaps
+> by separating these issues, the need for many packages can be reduced.
+This is very true. The number of core macros and necessary font families should
+be low.
+
+David Murphy writes:
+
+> I don't like Paul's syntax for either. My objection on the first
+> count, and the reason I like Mike's proposal, is just taste; ...
+> ...
+> just how much of a graphics package
+> do we want a commutative diagrams package to be?
+
+This may be important. I don't know whether Michael Barr's initiation of the
+discussion was aimed at a general diagram drawing package, or just at
+"categorical" diagrams (then other kinds of digrams like syntax diagrams, flow
+charts, etc. being defined by other communities).
+        Anyway, it is impossible to find a single (linear) notations suited for
+all diagram purposes, and meeting everybodys taste.
+
+        I almost completely agree with Paul Taylors thoughts (though I have no
+strong meaning on his syntax compared to XY-pic).
+
+I would recommend:
+        1) The implementation of a general purpose core package based on pure
+TeX and compatible with Plain TeX, LaTeX and AmsTeX (at least). All packages
+have widespread use among mathematicians. The designers here should take a
+strong look at XY-pic with its possibilities of absolute, symbolic and relative
+adressings, uniform specifications of objects, arrows and arrow labels, easy
+definition of subdiagrams, and much more.
+
+        2) The addition of packages building on the core. These should at least
+include commutative diagrams (up to what is seen in basic category books like
+that of Barr and Wells, and perhaps some 2-cells and cubic drawings. I like
+best the notation philosophy of Paul Taylor and Kristoffer Rose, but one might
+include a number of common, special purpose macros a la Michael Barr). Other
+possibilities are syntax diagrams, flow charts, trees, and geometric drawings
+(note that at least here the paper-and-pencil approach is probably preferable).
+
+        3) For the core, and for each package, interfacing to the Plain, LaTeX
+and AmsTeX packages (possibly only a difference in the environment establishing
+macros; the problem is biggest for LaTeX who has tampered most with the basic
+TeX syntax).
+
+        4) One set of font families.
+
+
+        Hans Dybkj{\ae}r
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Date: Tue, 8 Jun 1993 10:48 AST
+From: RDAWSON@HUSKY1.STMARYS.CA
+
+        What would be really useful for quick work, etc, would be a sort
+of 'CAD' in which the 'D' stands for diagram. This would permit such
+things as:
+        -constructing cones and prisms over arbitrary parts of a diagram;
+        -adjusting highly nonplanar diagrams to avoid accidental co-
+        lineations;
+        -handling such things as curved arrows, etc, which could be very
+        difficult to specify using coordinates.
+
+What has this got to do with LaTeX?  Ideally, such a program would put
+out, not a bitmap, but a LaTeX or similar file that can be included in
+a paper. [In a perfect world, the diagram editor should pop up during the
+TeX editing session as required. Most nonDos OS's permit this, and even the
+DOS world is beginning to be able to do such wild & crazy things].
+        Now, a graphic interface may make various symbols (such as curved
+arrows) practical that are not easy to use by drawing a sketch on paper and
+typing in eyeballed coordinates. Perhaps any such diagram element that would
+be nice to use, even if not practical for 'hand entry', shpuld be considered
+for inclusion.
+        A similar situation occurs in some ray-tracing programs, which have
+some primitive shapes (spheres, ellipsoids, cones...) intended for hand entry,
+and some (Bezier patches, Phong triangles) with many parameters that are in-
+tended to be entered via software tools.
+        -Robert Dawson
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Date: Tue, 8 Jun 93 14:59:03 BST
+From: jrk@information-systems.east-anglia.ac.uk (Richard Kennaway)
+
+Barry Jay writes:
+>Drawings and diagrams differ fundamentally on the issue of who decides
+>the position of picture elements. In a drawing package the user
+>decides, in a diagram the program decides.
+>
+>Obviously there are many situations where control is shared in a
+>limited way, but I believe that this difference is sufficiently
+>fundamental to warrant separate packages and syntax for each purpose.
+
+A sufficiently expressive drawing package would allow a diagram package to
+be implemented on top of it, rather than implementing both independently in
+TeX.  (Cf. the implementation of LaTeX on top of TeX.)
+
+Personally, while I use category-diagram-like pictures, I also use pictures
+that are beyond the capabilities of any TeX package I know of.  What I want
+(if I'm going to use TeX at all, but that's a separate theological issue)
+is a TeX-compatible drawing package that can do, say, at least everything
+that a program like MacDraw can do.  For category diagrams, I find Paul
+Taylor's package sufficient.  It's the only one I've used, so that isn't a
+comment on the relative merits of the others.
+
+--                                  ____
+Richard Kennaway                  __\_ /    School of Information Systems
+Internet:  jrk@sys.uea.ac.uk      \  X/     University of East Anglia
+uucp:  ...mcsun!ukc!uea-sys!jrk    \/       Norwich NR4 7TJ, U.K.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: commutative diagrams yet again
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Tue, 8 Jun 93 14:19:03 CDT
+
+Since the debate has begun anew, I again want to appeal to the designers
+of LaTeX 3's diagram package to be mindful of the needs of *ALL* likely
+users who need diagrammatic algebra.
+
+One should certainly be able to handle 2-categorical diagrams as in
+Karponov and Voevodsky's recent work, as well as Joyal/Street "string
+diagrams" (and with them at no extra cost, except allowing the user to
+specify straight, dotted, double, or wavy lines with or without arrows,
+Feynman diagrams, knot and braid diagrams, the "Chinese character"
+diagrams arising in the theory of Vassiliev invariants, and linear
+logic proof nets).
+
+Algebra loosed from the constraints of living in strings of symbols was
+once the exclusive province of categorists, but no more, we are now
+joined by low-dimensional topologists, theoretical physicists, and a
+host of others. Let's not build a tool for the needs of the early 1980's
+when by 2010 half of mathematics will need what some in this debate had
+derided as extravigances.
+
+--David Yetter
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: XYpic examples
+Date: Wed, 9 Jun 93 20:28:06 +1000
+From: ross@macadam.mpce.mq.edu.au (Ross Moore)
+
+With all this discussion on commutative diagrams, I think it is about time some of you saw
+what XY-pic can do.
+
+Take a look at some of the files on:  ftp.mpce.mq.edu.au
+in the directory: /pub/maths/Quantum
+
+-rw-rw-r--  1 ross     ftpmaths    87743 Jun  4 17:43 Section12.ps.Z
+-rw-rw-r--  1 ross     ftpmaths    66125 Jun  4 17:43 Section12.psfonts.Z
+-rw-rw-r--  1 ross     ftpmaths    35953 Jun  9 19:42 examples.ps.Z
+
+(Actually the June 4 has now been updated to June 9)
+
+These are PostScript files, created using  dvips
+If you want a .dvi file instead, then I will put it there upon request.
+
+The file  Section12.psfonts.Z  requires your printer to have access to PostScript versions
+of the TeX CM fonts, and AMS fonts.
+(This may also be the case with  examples.ps.Z  so if anyone has trouble printing this,
+just let me know and I'll provide an easier version.)
+
+Enjoy,
+        Ross Moore.
+
+PS: these files require XY-pic 2.7, not yet released. This gives a taste of what is to come,
+real soon now!! :-)
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Diagrams-briefly
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Wed, 9 Jun 1993 15:51:55 +0100
+
+As "task coordinator" for commutative diagrams in the LaTeX 3 project,
+I would be grateful if you would turn your  minds to the question of the
+idiom in which you think it is best to express the majority of diagrams
+in the main stream of category theory and other parts of algebra.
+
+The extremes are not a good test of this:
+(1) for diagrams which are just a square or just a triangle, it makes no
+    difference what package you use, because you can always add \square
+    and \triangle macros on top of it. Mike did that for LaTeX pictures,
+    and anyone moderately competent in writing TeX macros could do it for
+    any of the graphics packages. I don't think there's any utility in
+    it but others may do.
+(2) if you are writing about the foundations of the theory of braids,
+    by definition you are doing something which is novel, peculiar and
+    not main-stream, and necessarily this will involve ad hoc methods of
+    creating your graphics. The low-level ad-hoc-ery needed for this is
+    a BURDEN to the use and development of tools for idiomatic uses.
+
+The matrix syntax has been used by several macro designers, including
+Kris Rose (who, as he acknowledges, took it from me) for XY-PIC, Francis
+Borceux, Mike Spivak (lamstex) and me.  In one form or another I think
+this has proved to be very useful. Mike Barr refuses to say anything that
+might be interpreted as approval for my package, but everyone else who
+has actually used TeX for commutative diagrams seems to agree.
+
+In my report to the LaTeX 3 project may I say that that is the consensus
+of the category theory community?
+
+Paul
+
+PS The current version of my package emulates AMSTEX (not lamstex).
+That is, you can take your existing amstex document, add
+	\input diagrams
+	\diagramstyle[amstex]
+and it will replace the amateurish mess by some pretty diagrams.
+anonymous FTP theory.doc.ic.ac.uk /tex/contrib/Taylor/tex/diagram*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Braids and categories
+Date: Sat, 12 Jun 93 15:36:19 PDT
+From: baez@ucrmath.ucr.edu (john baez)
+
+Paul Taylor writes:
+
+(2) if you are writing about the foundations of the theory of braids,
+    by definition you are doing something which is novel, peculiar and
+    not main-stream, 
+
+I take exception to this - one has only to look at (e.g.) New
+Developments in the Theory of Knots, a 900-page reprint volume, to
+see that while this work may be novel (it took off in '85) and may
+be peculiar (that's a matter of taste), it is very much mainstream.  
+One might argue that this is not category theory, but in fact the
+most significant recent applications of category theory to mathematical
+physics (my field) are connected with braids and the like.  
+
+Whether LaTeX 3 should attempt to take this fact into account is of
+course another question; I would *hope* it would, but it might be
+too much of a bother.
+
+John Baez
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: XYpic examples
+From: ross@mpce.mq.edu.au
+Date: Fri, 11 Jun 93 16:21:40 -0500
+
+In my earlier posting, I gave an incorrect directory path to the
+XY-pic examples.
+
+At the ftp site:   ftp.mpce.mq.edu.au
+the directory
+
+	pub/maths/Quantum
+
+should have been
+
+	pub/maths/TeX/Quantum
+
+This has been fixed so that BOTH paths now work.
+Sorry to anyone who may have been inconvenienced by my Oops :-)
+
+
+Ross Moore
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: Diagrams-briefly
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Mon, 14 Jun 93 9:55:16 CDT
+
+Paul Taylor has consistantly refused to reply to my comments regarding
+the design of a diagrams package for LaTeX 3. I can only suspect that
+this is because to acknowledge the use of diagrammatic algebra in
+such roles as Feynman diagrams, proof-nets, knot and braid theory,
+the representation theory of quantum groups, etc. would completely
+undermine his position, which seems limited to those sorts of diagrams
+used by categorists interested in *logical* applications of 1-category
+theory only.
+
+	I take strong exception to his remark
+
+
+> (2) if you are writing about the foundations of the theory of braids,
+>     by definition you are doing something which is novel, peculiar and
+>     not main-stream, and necessarily this will involve ad hoc methods of
+>     creating your graphics. The low-level ad-hoc-ery needed for this is
+>     a BURDEN to the use and development of tools for idiomatic uses.
+> 
+ 
+which shows a peculiar notion of the main-stream. The portion of category
+theory which has had the most fruitful interactions with the main-stream of
+mathematics *as a whole* has of late been the part which uses braid diagrams.
+In answer to Paul's question:
+
+> In my report to the LaTeX 3 project may I say that that is the consensus
+> of the category theory community?
+
+*NO* not if you ask me.
+
+	Not to be wholely negative, I want to point out that the suggestion
+of a syntax allowing one to specify a size of matrix, locations of 
+text at matrix nodes (usually objects), starting and endings of arrows (and
+labelling text), and (for 2-categorists)
+labels (including short arrows and text) for regions, would in fact permit
+one to specify knot diagrams, Feynman diagrams, proof-nets, etc. if one
+had the options of
+
+	a. specifying (in place of text) various sorts of nodes (trivalent
+vertex, overcrossing, undercrossing, box with text, empty circle, etc.)
+
+	b. specifying various types of connections (arrow, line, wavy line,
+semicircular arc on either side of the line, etc.)
+
+
+	Similarly such syntax would be perfectly adequate for pentagonal,
+hexagonal, etc. diagrams unless one demands regular polygons.  Personally,
+I a quite happy with hexagons with two right angle and four of 3\pi/4.
+
+--David Yetter
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: commutative diagrams (several posts)
+
+Note from moderator:
+
+Several posts on the topic of the moment follow. I regret that Charles Wells'
+was delayed until today. I would like to thank Michelle Boers for helping with
+sending out posts during my absence from telnet facilities. The posts which
+follow have been slightly edited for heat. If anyone wishes the changes
+restored, let me know.
+
+Bob Rosebrugh
+
+++++++++++++++++++++++++++++++++
+Date: Wed, 9 Jun 93 11:49:35 -0400
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+Subject: Syntax for Diagrams
+
+
+Comments concerning diagram drawing packages for TeX:
+
+1.  As some have already said, TeX needs a general drawing
+module in the spirit of commercial drawing programs.  A package
+for implementing diagrams as used by categorists could be added
+on top of that.  Mathematicians communicate with structured
+drawings of all sorts, not just category diagrams.  
+
+***************************************************************
+* A system for producing printed mathematical texts that does *
+* not provide for sophisticated drawing as well as            *
+* sophisticated setting of text is _only_half_a_system_       *
+* because mathematics is the marriage of geometry and logic.  *
+*************************************************************** 
+
+Such a drawing module, of course, is not really part of the
+LaTeX-s project.
+
+2. xypic and Paul Taylor's package use a grid metaphor with
+syntax based on TeX's array notation.  Mike Barr has suggested
+another grid based notation in which you refer to the grid
+points by coordinates.  I have not used either system but Mike's
+looked easier to use.  I am a mathematician.  I THINK the
+respondents who liked the array notation systems were computer
+scientists.  I suspect there may be a connection.  Most
+mathematicians are in math departments and have to teach
+calculus regularly, so are used to locating points by
+coordinates.  Perhaps computer scientists are less used to such
+things and more used to learning new syntax.
+
+What is amenable syntax is a very personal thing.  I think I
+could learn to use xypic's & notation easily; I KNOW I could use
+the name-the-coordinates system because it is just like what I
+do when I teach calculus. 
+
+Mike Barr's original syntax is still good for common simple
+squares and triangles, and his underlying \putmorphism macro
+works pretty well for very complicated diagrams that are not
+obviously grid-based. It has two flaws: you have to put in
+\phantoms on overlapping nodes, which is a royal pain, and you
+are restricted as to the angles you can draw arrows.  Both flaws
+are the result of flaws in the underlying system.  I repeat:  We
+need a full-fledged drawing module.
+
+I would expect a grid-based system to work better than Mike's
+for complicated diagrams in which imposing a grid structure does
+not do too much violence to the original diagram, since Mike's
+shapes are a pain to paste together.  I've become rather
+proficient at using Mike's system, but it's like programming in
+assembly language whereas the grid based systems look like
+programming in a higher level language.
+
+Charles Wells
+Department of Mathematics
+Case Western Reserve University
+10900 Euclid Avenue
+Cleveland, OH 44106-7058
+216-368-2893
+cfw2@po.cwru.edu
+
++++++++++++++++++++++++++++++++++++++
+Date: Mon, 14 Jun 1993 12:48:32 +0200
+From: David Murphy <david@gmdzi.gmd.de>
+Subject: Re:  Diagrams-briefly
+
+Paul writes:
+
+>  Mike Barr refuses to say anything that
+>  might be interpreted as approval for my package, but everyone else who
+>  has actually used TeX for commutative diagrams seems to agree.
+
+...about Paul's package... I have used it. I don't find his syntax helpful,
+intuitive, or sufficiently extensible. I do not feel that  the best interest
+of the community would be served by Paul's syntax becoming the standard, and
+will communicate this (as a minority view) to the LaTeX 3 project.
+
+David.
+
+++++++++++++++++++++++++++++++++++++
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Mon, 14 Jun 1993 21:20:18 +0100
+Subject: Re: Braids and categories
+
+John Baez takes exception to my excluding braids from asking about
+commutative diagrams syntax.
+
+Why?
+
+Would you take exception if I put out a general enquiry about topology
+and said I was specifically interested in applications to computer
+science rather than analysis?  You know perfectly well what kind of
+diagrams we are talking about, and I am asking you (those of you who
+draw such diagrams, which, I guess, is more or less everyone on this
+list) how to express them in ascii.
+
+Moreover I defend my use of the words "novel" and "peculiar".
+I have seen thousands of "commutative" diagrams and know what the
+idiom is, and have developed a TeX macro package which has an input
+and output graphical language matching this idiom. I know conceptually
+what braids are, but I have not seen enough diagrams of them to know
+what the idiom is.  Previously when we got on to this topic and
+I had no response besides counterexamples I made a public invitation
+to propose an ascii idiom but had no useful response.
+
+I have no wish to denigrate knot theory, but I would like members of
+the community to apply their minds to the question which has been
+asked ...
+
+Paul
+
+++++++++++++++++++++++++++++++++++++++
+Date:	Tue, 15 Jun 1993 02:17:28 -0400
+From:	Jon Berrick <MATBERIC@NUSVM>
+Subject:      Re: Diagrams-briefly
+
+  A small side-issue relating to commutative squares concerns introduction
+of a standard notation for pull-backs and push-outs.  In my Pitman book
+(Research Notes #56) I introduced the following symbols in the middle of
+the square.  For a pull-back, use a small square with upper and left-hand
+edge removed but top left vertex intact.  "Dually" for push-out.  TEXperts
+will know how to encode this.  These symbols have found some following
+among topologists (perhaps by default).  No doubt your more ardent
+correspondents will wish to comment.
+  Jon Berrick.
+
+++++++++++++++++++++++++++++++++++++
+Date: Tue, 15 Jun 93 10:16:19 -0400
+From: jds@math.upenn.edu
+Subject: Re: commutative diagrams
+
+being minimally competent, I will opt for
+for using more keystrokes but keeping things as readable
+as possible  i.e. (12,3) for a position is fine
+standard use of _{   } for subscripting arrows
+names for special configs being as mnemonic as possible
+
+get the wrinkles out of 2-D diagrams before worrying about 3-D
+
+don't forget the need for curved arrows
+
+more later
+thanks
+jim
+
++++++++++++++++++++++++++++++++++++
+From: Paul Taylor <pt@doc.ic.ac.uk>
+Date: Tue, 15 Jun 1993 15:16:22 +0100
+Subject: Re: Diagrams-briefly
+
+To reply to David Yetter's "not being entirely negative", I myself
+suspected that the matrix notation with special nodes for over/undercrossings
+(such as \HonV and \VonH) would extend to braids and the like.
+
+Maybe those who consider them to be so important conceptually
+would spend a few minutes thinking out how to express braids in
+a matrix notation ... 
+
+BTW I can't readily quote you or edit my own text, because I'm working
+on a dumb terminal 500km from home. The over and undercrossings of
+horizontal and vertical lines have been in my package for ages.
+There's also some kind of "break" feature in xypic.
+
+If you care to look in the international TeX archive, you will find
+macro packages intended for drawing Feynmann diagrams and trees.
+There are also prototypes of mine for proof trees and natural deduction 
+proof boxes, and many other things. No one package is ever going to
+do all of the jobs, and nor should it: if you want wysiwyg, use
+a pen an paper.
+
+Paul
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: contribution to the drawing diagrams debate
+Date: Wed, 16 Jun 1993 17:20:07 +0200
+From: F.J.de.Vries@cwi.nl
+_____________
+
+The discussion on a drawing module for LaTeX at present is only
+about the syntax in which one has to "program" one drawings. Of
+course that involves quite a lot of personal taste and routine.
+
+But shouldn't we first somehow decide how we want to make our
+drawings?
+ 
+As I see it there are two sort of drawings I make. Routine ones of a
+type that I make often and new ones. 
+
+Simple commutative diagrams e.g. belong to the first class, and I am
+a happy user of Paul Taylor's package to express them quick and
+concisely in LaTeX.
+
+Drawings of the second type I typically make with pencil and
+paper. If I decide to include such a drawing in  my LaTeX text, I
+have a problem. How to to represent this drawing in LaTeX? I don't want
+to experiment with many different packages to discover that they can
+or cannot represent my drawing in LaTeX.
+
+So I remember my old MacIntosh and its MacDraw program. Yes, I can
+make the drawing, but for the problem (1)
+that I cannot use LaTeX for the various bits of text which are 
+included in my drawing.
+Anyway suppose I overcome this somehow, then I have a second problem
+(2) to include such a drawing in LaTeX. Yes, I can make a postscript
+version and include it, but this process is slow and clumsy
+especially if I want to edit the drawing at some stage. Suppose I
+just want to rename some labels, I am forced to go through the
+whole procedure...
+
+What I would like is the following: the drawing in my document is
+made by a special editor, part of the tex system. If I want to make
+a picture, I would like to be able to open a window, as on the Mac,
+and make the picture in this window, being able to use LaTeX text
+fragments (which depending whether I click on it with the mouse is
+either in editable LaTeX form or in "print" form). And have all the
+wysiwyg drawing freedom that such MacDraw package provides me 
+(moving around bits and pieces, turning them, drawing lines, 
+arrows with definable heads and tails  etc): including fancy stuff
+as stretching and bending lines, hiding objects behind others,
+shading them etc etc.
+I don't think I want to see the "TeX" code of the picture, This bit
+of code should automatically be part of my document (say as an
+appendix produced by the TeX system), so that I can send it to other
+people as one file.
+When I LateX the document, the picture should appear in the text, at
+the specified place.
+
+It this a feasible dream? Would it be useful?
+Does it exist already? Isn't this easier then decide upon some 
+abstract syntax?
+Is such a dream heresy from the TeX point of view?
+
+Fer-Jan de Vries, 
+CWI, Amsterdam.
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: diagrams of all sorts
+From: dyetter@math.ksu.edu (David Yetter)
+Date: Thu, 17 Jun 93 9:43:06 CDT
+
+	I would favor a grid-based syntax something like that illustrated in 
+the examples below
+
+A simple commutative square might be denoted
+
+\begin{diagram}{2,2}
+	\atnodes{A, B, C, D}  %list entries at nodes in row-dominant order
+				%would be useful in diagrams with text or
+				%special symbols at all or most nodes
+	\arrow [f]{1,1}{1,2}  %arrow-head at second coordinate
+					%argument
+	\arrow [\phi ]{1,1}{2,1}
+	\arrow [\psi ]{1,2}{2,2}
+	\arrow [g]{2,1}{2,2}
+\end{diagram}
+
+A square with a 2-cell might be denoted
+
+\begin{diagram}{2,2}
+	\atnodes{A, B, C, D}  
+	\arrow [f]{1,1}{1,2} 				
+	\arrow [\phi ]{1,1}{2,1}
+	\arrow [\psi ]{1,2}{2,2}
+	\arrow [g]{2,1}{2,2}
+	\among{\Swarrow x}{1,1}{1,2}{2,2}{2,1} %variable number of vertices
+						%to define region, coordinate
+						%arguments are placed last to
+						%make synatax uniform, an allow
+						%the variable number here
+\end{diagram}
+
+A pushout square might be denoted
+
+\begin{diagram}{2,2}
+	\atnodes{A, B, C, D}  
+	\arrow [f]{1,1}{1,2} 				
+	\arrow [\phi ]{1,1}{2,1}
+	\arrow [\psi ]{1,2}{2,2}
+	\arrow [g]{2,1}{2,2}
+	\among{\rangle }{1,1}{1,2}{2,2}{2,1} %\rangle places the right-angle
+				%symbol as a region filler near the first
+				%listed vertex, thus a pushout would have the
+				%same form, except {2,2} would be the first of
+				%the coordiante arguments
+\end{diagram}
+
+A knot diagram for the trefoil knot as a closed braid might be
+denoted
+
+\begin{diagram}{4,4}
+	\line {1,1}{1,4} %draws a line between the nodes (if node is empty
+				%line goes to node location, if node has
+				%symbol, line stops a small distance away)
+	\line {4,1}{4,4}
+	\arcplus {1,1}{1,2} %draws a semicircular arc above (or right of) line
+				%joining nodes
+	\arcplus {1,3}{1,4}
+	\arcminus {4,1}{4,2} %similarly below (or left of)
+	\arcminus {4,3}{4,4}
+	\among{\overcrossing }{1,2}{1,3}{2,3}{2,2}
+	\among{\overcrossing }{2,2}{2,3}{3,3}{3,2}
+	\among{\overcrossing }{3,2}{3,3}{4,3}{4,2} %it is more convenient to
+				%put crossings inside regions than at nodes
+				%for certain special fillers such as 
+				%crossings, the \among command should require
+				%a fixed number of coordinate arguments
+\end{diagram}
+
+	One might want a command of the form \smoothing which would
+smooth connections at between arcs at incoming vertices. One could indicate
+orientation on the knot by using \arrow in place of \line.
+
+A Feynman diagram for the annihilation of an electron-positron pair might
+be denoted
+
+\begin{diagram}{3,3}
+	\arrow[e^-]{1,1}{2,2}
+	\arrow[e^+]{3,1}{2,2}
+	\wavyarrow[\gamma ]{2,2}{2,3}
+\end{diagram}
+
+One would also like commands of the forms
+
+	\atnode{ <text or special symbols> }{n,m}
+
+for use when most nodes do not require text or special symbols,
+while the syntax of  \atnodes should allow a pair of commas with
+a space between to indicate an empty node,
+
+	\arrowarcplus...
+	\arrowarcminus...
+
+useful for oriented knot diagrams or bigonal parts of 2-categorical diagrams,
+
+	\wavyline
+
+for vitural photons (and other things)
+
+and, of course, more symbols like \Swarrow for a double lined south-west
+pointing arrow, etc.
+
+	Other symbols for use at node or in \among statements might include
+standard circuit design and logical gate symbols.
+
+	Three cheers for a grid based syntax, so long as it has enough
+special symbols and the capacity to put things in regions as well
+as at nodes and between nodes. 
+
+--David Yetter
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Re: diagrams
+From: Nico Verwer <nico@cs.ruu.nl>
+Date: Thu, 17 Jun 1993 11:20:20 +0100 (METDST)
+
+I would like to contribute to the diagram discussion again, addressing
+some points that were brought up by others.
+
+One of the things that I think we should keep in mind, is that a
+drawing package must be more general than just a category theoretical
+diagram drawing package. Preferably, it would provide a well-chosen set
+of drawing primitives, on top of which a specific `front-end' can be
+built. Thus one could have the category theoretical diagram front-end,
+the electronic circuit front-end, the Feynman diagram front-end, the
+tree drawing front-end, etcetera...
+
+A highly specialized set of macros, like Michael Barr's, is not
+interesting for 99% of the LaTeX users. Of course his package could be
+a front-end on top of the drawing-kernel. Paul Taylor could make his
+macros into a front-end as well, and they would both be happy.
+I prefer the XY-pic syntax for diagrams, so I am already happy. :-)
+
+The rest of this posting seems to be a plug for XY-pic, but this is only
+because it solves many of the problems that people have brought up.
+
+From: cbj@socs.uts.EDU.AU (Barry Jay)
+| 1) Nico Verwer suggests using a general drawing package XY-pic.
+| Drawings and diagrams differ fundamentally on the issue of who decides
+| the position of picture elements. In a drawing package the user
+| decides, in a diagram the program decides.
+
+In the core of XY-pic, the user decides the position of the picture
+elements. The diagram-drawing option is a `user' from the XY-core point
+of view, and it translates the alignment-like grid into co-ordinates.
+The syntax of the diagram option differs radically from that of the
+core, so you can have it both ways.
+
+| Presumably our diagram tools should be designed in the same way. We
+| need a diagram language based on general principles, and a convenience
+| package built on top for the average user.
+
+This is exactly what XY-pic provides.
+
+
+From: dyetter@math.ksu.edu (David Yetter)
+| 	a. specifying (in place of text) various sorts of nodes (trivalent
+| vertex, overcrossing, undercrossing, box with text, empty circle, etc.)
+| 	b. specifying various types of connections (arrow, line, wavy line,
+| semicircular arc on either side of the line, etc.)
+| 	Similarly such syntax would be perfectly adequate for pentagonal,
+| hexagonal, etc. diagrams unless one demands regular polygons.
+
+It is all present in XY-pic.
+
+
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+| 2. xypic and Paul Taylor's package use a grid metaphor with
+| syntax based on TeX's array notation.
+
+From XY-pic 2.7 onwards this is definitely _not_ the case. The grid is
+added on top of the XY-core.
+In fact, this has alwasy been the case, but the lower levels were not
+really accessible to the user. That has now changed, and Kris has
+already written some excellent documentation on this.
+
+| I have not used either system but Mike's
+| looked easier to use.  I am a mathematician.  I THINK the
+| respondents who liked the array notation systems were computer
+| scientists.  I suspect there may be a connection.
+
+I am a computer scientist, and for me specifying absolute co-ordinates
+is like the GOTO statement in programming languages, which has been
+obsolete since the late sixties. A grid notation is easier to design
+(for simple diagrams I don't even make a sketch on paper first, I just
+type them in), easier to read (sometimes other people have to read and
+work with my LaTeX source), and easier to modify (you can easily change
+layout, add rows or columns, etc.).
+Running the risk of being a cs-chauvinist, I suspect that computer
+scientists are the people who make mathematics usable for the rest of
+the world, that is, _users_.
+LaTeX is used by all kinds of people, not just mathematicians.
+
+| What is amenable syntax is a very personal thing.  I think I
+| could learn to use xypic's & notation easily; I KNOW I could use
+| the name-the-coordinates system because it is just like what I
+| do when I teach calculus. 
+
+I think that once you learn to use the & and // notation, you will
+never want to use co-ordinates again.
+
+XY-pic can draw diagrams that are not grid-based easily, and has lines
+in many (that is, very many) directions. It automatically removes
+overlap with nodes at the end of lines.
+
+From: David Murphy <david@gmdzi.gmd.de>
+| ...about Paul's package... I have used it. I don't find his syntax helpful,
+| intuitive, or sufficiently extensible. I do not feel that  the best interest
+| of the community would be served by Paul's syntax becoming the standard, and
+| will communicate this (as a minority view) to the LaTeX 3 project.
+
+Is this whole discussion communicated to the LaTeX-3 project. Are we
+going to take a vote? Is there a place to send suggestions for LaTeX-3
+to? How will the LaTeX-3 group decide on a drawing module?
+
+
+From: jds@math.upenn.edu
+| don't forget the need for curved arrows
+
+Once again: they exist in XY-pic already.
+
+
+From: F.J.de.Vries@cwi.nl
+| What I would like is the following: the drawing in my document is
+| made by a special editor, part of the tex system. If I want to make
+| a picture, I would like to be able to open a window, as on the Mac,
+| and make the picture in this window, being able to use LaTeX text
+| fragments
+
+There are several such systems, like TeXCAD (PC) and TeXdraw (Atari ST).
+TeXdraw can generate MetaFont output, epic, or a LaTeX picture
+environment. It would be feasible to make a drawing program generating
+XY-pic core commands. This would meet all the demands that you put
+upon it.
+
+-- 
+Nico Verwer                                       | nico@cs.ruu.nl
+Dept. of Computer Science, University of Utrecht  | phone: +31 30 533921
+p.o. box 80.089, 3508 TB Utrecht, The Netherlands | fax:   +31 30 513791
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Introductory paper on geometric logic
+Date: Thu, 24 Jun 1993 12:57:10 +0000
+From: sjv@doc.ic.ac.uk (Steven Vickers)
+
+My short paper "Geometric Logic in Computer Science" is available by
+anonymous ftp from Imperial College.
+
+I present an introduction to geometric logic and the mathematical structures
+associated with it, such as categorical logic and toposes. I also describe
+some of its applications in computer science including its potential as a logic
+for specification languages. (The connectives of geometric logic are finitary
+conjunction, arbitrary disjunction, equality and existential quantification.)
+
+(18 pages, due to appear in - G.L. Burn, S.J. Gay and M.D. Ryan (eds) "Theory
+and Formal Methods 1993", Proceedings of the first Imperial College Department
+of Computing workshop on Theory and Formal Methods, Springer Workshops in
+Computer Science, 1993.)
+
+Steve Vickers
+
+Brief instructions
+------------------
+
+ftp host:    theory.doc.ic.ac.uk
+login name:  anonymous
+password:             (type in your email address at this point)
+directory:   papers/Vickers
+file:        GLiCS.dvi
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Subject: Questions about the meeting at MSRI
+Date: Tue, 29 Jun 93 11:28:43 -0400
+From: cfw2@po.CWRU.Edu (Charles F. Wells)
+
+
+I have chased down the answers to several questions that I have
+been asked about the Workshop on Universal Algebra and Category
+Theory at the Mathematical Sciences Research Institute in
+Berkeley, July 12 - 23, 1993.
+
+1. You will be able to lecture using a blackboard or using
+transparencies.
+
+2. There will be talks on Saturday morning, 17 July.
+
+3. There will be a windup discussion session at 4 PM Friday, 23
+July.
+
+4. The invited speakers should expect to speak for 50 minutes.
+
+If you have questions, you can email them at uact@msri.org.
+
+
+
+--
+
+Charles Wells
+Department of Mathematics
+Case Western Reserve University

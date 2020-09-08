@@ -1,0 +1,168 @@
+Path: news.gmane.org!not-for-mail
+From: "Yemon Choi" <y.choi.97@cantab.net>
+Newsgroups: gmane.science.mathematics.categories
+Subject: categorical literature on Arens products?
+Date: Mon, 16 Jul 2007 19:30:53 -0500
+Lines: 132
+Approved: news@gmane.org
+Message-ID: <E1IAb2b-0000s4-Eh@mailserv.mta.ca>
+Reply-To: y.choi.97@cantab.net
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019545 10458 80.91.229.2 (29 Apr 2009 15:39:05 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:39:05 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Mon Jul 16 21:42:59 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 16 Jul 2007 21:42:59 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1IAb2b-0000s4-Eh
+	for categories-list@mta.ca; Mon, 16 Jul 2007 21:35:49 -0300
+Content-Disposition: inline
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 18
+Status: O
+Content-Length: 4430
+Original-Lines: 131
+Xref: news.gmane.org gmane.science.mathematics.categories:3824
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3824>
+
+Dear categorists (and anyone else reading),
+
+I have a question that's been bugging me for some time (in genesis,
+all the way back to 2002 I think). It concerns a certain construction
+of interest in the world of (Banach) algebras: given an algebra over a
+field one can equip its double dual with two natural algebra
+structures, in general distinct, which extend the original algebra
+structure. More generally any bilinear map from a pair of vector
+spaces to a third vector space admits two natural extensions to a
+bilinear map on the bidual spaces.
+
+Functional analysts know this through work of Arens, but reading
+through his original paper (Monatsh Math 1955) it becomes clear that
+most of the calculations
+work in any symmetric closed monoidal category and so I wondered if
+this kind of construction has been well-studied or is
+well-known/well-understood in the categorical community.
+(Arens comes close to this level of abstraction but requires his
+objects to be sets with structure.)
+
+Here are the details (parphrased by me into the SCMC setting), with
+apologies for the dodgy attempts at notation.
+
+We work in a fixed symmetric closed monoidal category V. Fix a
+distinguished object C in V (we are thinking of V as complex Banach
+spaces and C as the ground field). Denote the `tensor' in V by @, and
+isomorphism in V by ~ .
+
+For A in ob(V) define A' using the Hom-tensor adjunction in V, i.e.
+
+ Hom_V ( __ @ A, C) ~ Hom_V( __, A').
+
+As usual we have a natural transformation with components A --> A'',
+call this K.
+
+
+Given objects R, S, T in V let's write r(R,S,T) for the isomorphism
+
+R @ S @ T ~> S @ T @ R
+
+
+Now: given an arrow m: E@F --> G  in V, we compose with the natural
+map K_G to get E@ F --> G'', then use the Hom-tensor adjunction to get
+an arrow E@F@G' --> C. Composing with the isomorphism r(G',E,F) gives
+us an arrow
+
+G' @ E @ F --> C
+
+and using Hom-tensor adjunction again gives us, finally, an arrow
+
+L(m) : G' @ E --> F'
+
+
+Note that in the case V=vector spaces, E an algebra, and F=G a left
+E-module with m the module action, L(m) is just the adjoint (right)
+action of E on the dual of F.
+
+Iterating this construction we get L^2(m): F'' @ G' --> E'  and
+
+L^3(m): E'' @ F'' --> G''
+
+which we might call the left Arens extension, or left Arens bidual, of m.
+
+The right Arens extension is constructed similarly: as before we
+produce from the original arrow m: E @ F --> G an arrow E @ F @ G' -->
+C. This time we compose with the isomorphism r(E,F,G')^{-1} to get an
+arrow
+
+F@ G' @ E --> C
+
+and apply Hom-tensor adjunction to get
+
+R(m): F @ G' --> E'
+
+Iterating this construction gives R^2(m): G' @ E'' --> F' and
+
+R^3(m): E'' @ F'' --> G''
+
+which we call the right Arens extension, or right Arens bidual, of m.
+
+Then left and right Arens extensions have been studied by functional
+analysts, mainly in the particular case where E=F=G is a Banach
+algebra and m is the multiplication map; in this case both L^3(m) and
+R^3(m) define associative multiplication maps on the double dual A'',
+but in general these multiplication maps are not the same. (They
+coincide if A is a C^*-algebra, and it would be interesting if there
+was a categorical interpretation of the proof.)
+
+Two noticeable features of the work functional analysts have done on
+this area (in the case where V=Ban is Banach spaces and continuous
+linear maps) is that
+
+1) the notation used to prove things is horrible, and usually looks a
+little like a proof by commutative diagrams would if it were written
+out as a line-by-line equational argument;
+
+2) a lot of the proofs use analytic tools (Hahn-Banach theorem, weak
+compactness of various mappings) but look as if they should have
+`purely algebraic proofs', i.e. the desired equations can often be
+derived purely from the closed structure on Ban.
+
+So if anyone can point me to any existing categorical/logical
+literature in this vein I'd be very grateful! In particular I would
+like to know why there are two equally `canonical' extensions, and
+whether there are universal properties underlying them. Also: in view
+of point 1) above, is there a better kind of graphical calculus for
+doing calculations?
+
+Best wishes
+Yemon
+
+--
+Dr. Y. Choi
+519 Machray Hall
+Department of Mathematics
+University of Manitoba
+Winnipeg. Manitoba
+Canada R3T 2N2
+Tel: (204)-474-8734
+
+
+-- 
+Dr. Y. Choi
+519 Machray Hall
+Department of Mathematics
+University of Manitoba
+Winnipeg. Manitoba
+Canada R3T 2N2
+Tel: (204)-474-8734
+
+
+

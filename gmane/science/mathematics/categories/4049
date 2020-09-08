@@ -1,0 +1,232 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt07@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: DVI, PDF and TAC
+Date: Thu, 1 Nov 2007 12:57:51 +0000
+Lines: 197
+Approved: news@gmane.org
+Message-ID: <E1InaIg-0003ES-Kd@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0 (Apple Message framework v624)
+Content-Type: text/plain; charset=MACINTOSH; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1241019688 11482 80.91.229.2 (29 Apr 2009 15:41:28 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:41:28 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Thu Nov  1 10:42:16 2007 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Thu, 01 Nov 2007 10:42:16 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1InaIg-0003ES-Kd
+	for categories-list@mta.ca; Thu, 01 Nov 2007 10:41:34 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 1
+Status: RO
+X-Status: A
+Content-Length: 8518
+Original-Lines: 196
+Xref: news.gmane.org gmane.science.mathematics.categories:4049
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4049>
+
+Mike Barr reported
+	that Adobe Acrobat 8 tacitly suppresses all ligature glyphs of =
+the
+	fi, fl, ff, ffi, and ffl sort and displays blanks in their place
+and then that
+	I have to admit that I never tested it, just copied the =
+complaint
+	from texhax
+but nevertheless this presumably gives us some idea why,
+	at TAC, we still consider the dvi to be the official format.
+
+However, as I shall demonstrate, the rest of the world nowadays regards
+PDF as the standard format in which to publish technical documents.
+
+DVI (the normal output from LaTeX) was based on the 1950s Monotype
+typesetting system, and puts characters from various fonts at given
+positions on the page, but cannot rotate them, and has no graphics
+capability.  The fonts also have to be supplied separately.   On the
+other hand, it has the virtues of being a compact and simple format
+that future digital archeologists would have no difficulty in
+deciphering.
+
+Adobe's PDF and PostScript have general graphics capability.
+
+By insisting on DVI, "Theory and Applications of Categories" severely
+limits the ways in which authors can express their mathematical ideas.
+But its restrictions go further than this:  the use of ANY macro package
+other than those by Mike Barr and Kris Rose is forbidden!
+
+
+
+Does anyone know of another journal that publishes primarily in DVI?
+
+One candidate might be the journal of the TeX Users' Group,
+	tug.org/TUGboat
+but even that uses PDF.   When I enquired about this, Karl Berry (who
+also wrote the Web2C Unix implementation of TeX) replied that
+	DVI files are not self-contained, so they simply don't work
+	for online archives.
+
+Turning to other respositories, arXiv.org generates papers in various
+formats on-the-fly.  On its page for each paper, eg
+	arxiv.org/abs/math/0512110
+it offers PostScript and PDF, with other options (including DVI) only
+being available via another link.
+
+On my own web site,
+	www.PaulTaylor.EU
+I also offer my papers in various formats, albeit statically, with DVI
+listed first.  However, the downloads in September and October were
+	DVI: 210     PDF: 1704     PS.GZ: 75     BKLT.GZ: 52
+This includes 504 PDF and 69 other downloads of "Proofs and Types", but
+excludes the lecture slides and scanned manuscripts that I only offer
+in PDF.  So, 85% of my readers choose PDF,  even though I also offer=20
+DVI.
+
+Looking at my colleagues' web pages, my impression is that most of them
+ONLY offer their papers in PDF nowadays.   I can't give authoritative
+figures for this, as Hypatia has been dead for seven years.  Papers that
+people send me as attachments to read or referee generally come in PDF=20=
+
+too.
+
+Even TAC has published a number of papers that it only offers in PS or
+PDF. Maybe Bob Rosebrugh could tell us how many downloads there have
+been in the various formats from the main TAC web site at MTA.
+
+
+
+Turning to software, although PDF legally belongs to Adobe, I really
+don't care about bugs in their programs, as I never use them.   For me
+and anyone else who writes in LaTeX,  PDF is de facto the language that
+is output by pdflatex and input by xpdf and ghostview (gv).   It is a
+well documented open format, as Peter Selinger and Andrej Bauer have
+pointed out, citing
+	www.adobe.com/devnet/pdf/pdf_reference.html
+and	en.wikipedia.org/wiki/Portable_Document_Format
+See	www.PaulTaylor.EU/technote.html
+for brief explanations and links to further information.
+
+When using my Mac OSX laptop, I use the program (Preview) that came with
+it to read PDF files.   This also understands several other file=20
+formats,
+but not DVI.
+
+When I run "latex" in the current tetex distribution of the TeX system,
+it actually invokes pdftex (the version of TeX that was modified by
+Jir=F5 Zlatuska to generate PDF instead of DVI) with \pdfoutput=3D0.
+
+Google indexes various other formats of web pages besides HTML,
+	www.google.com/help/faq_filetypes.html
+including PDF and several versions of MicroS**t W*rd, but not DVI.
+
+
+
+Returning to TAC,  I quote from its  "Author Information" at
+	tac.mta.ca/tac/authinfo.html
+
+	An article must be submitted as a single source file.
+	All macros must be included at the beginning of the file.
+	Any macro that is not actually used should be deleted from
+	the source file.
+
+	The only exception is diagram macro packages. The currently
+	acceptable diagram macro packages are those authored by Barr
+	and Rose and Moore(Xy-pic). Recall however that authors are
+	expected to provide source code which produces usable .dvi
+	from these packages (see Note 4 above). Do not rely on .ps
+	options. The author is responsible to ensure that the current
+	version of a macro package has been used.
+
+Leaving the DVI/PS/PDF issue aside, why is it necessary for articles
+to be submitted as single source files?   According to Mike Barr, in
+an email to me dated 10 July 2002,
+	our rule is, no inclusions, with the following exceptions:
+	diagram packages, including yours, and packages that are part of
+	standard distributions.  This is so that we can store each paper
+	in a single file, without a growing (and essentially =
+unidentifiable)
+	directory of inclusions.
+
+Now it has been customary for as long as I have had anything to do with
+computers that software (by which I mean both programs and papers in=20
+this
+context) is developed in modular parts, divided into several files but
+collected in a directory or folder.  In particular,  programming with
+macros should be separate from writing text about mathematics.  Indeed,
+the design of LaTeX2e presupposes this in its facility for passing
+options to macro packages via
+	\usepackage[options]{package}
+Has Mike Barr not heard of sub-directories, or of tar-archives?
+Why does he create so much inconvenience for TAC authors for such
+a trivial benefit to himself?
+
+Notice, in particular, that my diagrams package was approved for use
+in TAC in 2002, but is now forbidden.   Is this perhaps because Mike
+disgrees with me over DVI?
+
+The design decision to use PostScript inclusions to rotate diagonal
+arrows in my package was made in 1992,  in consultation with users.
+Neither Mike nor Bob nor anyone else at the time argued against that
+decision, whilst several people said it was a good idea.  The package
+web page,
+	www.PaulTaylor.EU/diagrams
+explains the background to this decision,  and also how to make half-
+decent diagrams using the UglyObsolete pre-1992 code if you REALLY
+need to use pure DVI.    I would strongly request that anyone who uses
+my package, or  who wishes to reply to my comments here, should READ
+this web page first.=09
+
+TAC began two or three years AFTER this decision was made,  but Mike
+and Bob did not discuss their pure DVI policy with me.   If they had
+done so, we might have been able to lobby the maintainers of DVI
+programs (such as Paul Vojta of XDVI) to add support for rotation,
+or they might have persuaded me to improve the old DVI code in my
+package.  The time for doing either of these things has now long past.
+
+In his email of 23 January 1990 to me and 24 other people that resulted
+in the establishment of the "categories" forum and subsequently the TAC
+journal,  Bob Rosebrugh said
+	it seems clear (maybe only to me) that a TeX-based journal is
+	a starting point.  My guess is that LaTeX together with some
+	version of Mike's macros should be the starting standard.
+It would appear that they are still trying to impose this standard.
+
+There are plenty of people who regard MY package as the standard.  For
+example, I recently heard from a blind mathematician who "draws"=20
+diagrams
+by dictating the input language of my package to his wife,
+	lalitalarking.blogspot.com/2007/09/great-dictator.html
+
+
+In conclusion,  I call upon Mike, Bob and the Editorial and Advisory
+Committees of TAC to come out of the 1980s, and support the production=20=
+
+of
+papers using the modern typographical software that other journals use.
+
+Paul Taylor
+
+
+PS.  Whichever /"Mr" Paul taylor/ it was who wrote a joint paper with
+Phil Scott on locally cartesian closed categories is no doubt greatly
+honored to find that "Monsieur" Jean benabou regards him as a special
+case.
+
+However, M. Benabou will perhaps be disappointed that he is neither the
+author of nor cited "alongside [the] lot of complete nonsense" to which
+I alluded.  This may be found at
+	computing.unn.ac.uk/staff/cgnr1/liege_quantum03.pdf
+it cites Baez, Barr, Bell, Birkhoff, Bishop, Bridges, Dirac, Dummett,
+Ehresmann, Einstein, Freyd, Heyting, Hilbert, Johnstone, Leibniz,
+Mac Lane, Peirce, Scedrov, Troelstra, Turing, Wells and me.
+
+
+
+

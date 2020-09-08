@@ -1,0 +1,162 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Point-free affine real line?
+Date: Fri, 01 Jun 2018 11:11:56 +0100
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <E1fPUFT-0003Ma-LX@mlist.mta.ca>
+References: <E1fOXVB-0006KP-5I@mlist.mta.ca> <alpine.LRH.2.21.1806011107450.24384@cyprus.labomath.univ-lille1.fr>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+X-Trace: blaine.gmane.org 1528037028 31230 195.159.176.226 (3 Jun 2018 14:43:48 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Sun, 3 Jun 2018 14:43:48 +0000 (UTC)
+Cc: Categories <categories@mta.ca>
+To: Johannes.Huebschmann@math.univ-lille1.fr
+Original-X-From: majordomo@mlist.mta.ca Sun Jun 03 16:43:44 2018
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.40])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUEO-0007xY-Ou
+	for gsmc-categories@m.gmane.org; Sun, 03 Jun 2018 16:43:41 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52837)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUG3-0007b0-F0; Sun, 03 Jun 2018 11:45:23 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1fPUFT-0003Ma-LX
+	for categories-list@mlist.mta.ca; Sun, 03 Jun 2018 11:44:47 -0300
+In-Reply-To: <alpine.LRH.2.21.1806011107450.24384@cyprus.labomath.univ-lille1.fr>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9641
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9641>
+
+Dear Johannes,
+
+"Point-free" is as opposed to "point-set" - there is no assumption that
+the real numbers form a set. Instead, they are taken to be the models of
+a (geometric) theory of Dedekind sections of the rationals (which do
+form a set). More generally, a point-free space is one where the points
+are defined as models of a propositional geometric theory. The topology
+is then defined intrinsically, opens being the geometric propositions.
+
+My motivation for this comes from topos theory. In any elementary topos,
+each point-free space does in fact have a set (object) of points.
+Topologically, it amounts to approximating bundles by local
+homeomorphisms. However, that construction is not geometric - preserved
+by inverse image functors, and by pullback of bundles -, so the
+point-set version is not robust under change of base. There are
+advantages to staying within the geometric fragment of elementary topos
+logic, and I am exploring how far that can be taken. I also now have
+other semantics using arithmetic universes, where the point-set versions
+simply don't exist.
+
+If it helps, the point-free real line in an elementary topos E is the
+localic geometric morphism p: F -> E got from F as topos of sheaves of
+the internal locale of formal reals in E. If E is an S-topos, then you
+can do this generically over S to get R as the S-classifier for Dedekind
+sections, and then p is just the bipullback E x_S R. A point-set R would
+be some local homeomorphism over E (then equipped separately with a
+topology), but in general it is not got as a bipullback of a local
+homeomorphism over S.
+
+The question about the affine real line represents a challenge to this
+geometric approach, and I'd like to form a better idea of whether it is
+simply a difficult problem, or a fundamental limitation to my approach.
+To put it another way, am I following in Grothendieck's footsteps in the
+way I think of toposes, or am I mishandling his ideas in ways that have
+no bearing on what he was trying to do?
+
+All the best,
+
+Steve.
+
+On 01/06/2018 10:22, huebschm@math.univ-lille1.fr wrote:
+> Dear Steve
+>
+> I am not sure whether I understand.
+> What precisely do you mean by "point-free"?
+>
+>
+>
+> On Thu, 31 May 2018, Steve Vickers wrote:
+>
+>> Algebraic geometry defines the affine line over a field k as an
+>> affine scheme,
+> the spectrum of k[X]. It includes a copy of k, each element a being
+> present as the irreducible polynomial X-a,
+> with local ring the ring of fractions got by inverting polynomials
+> f(X) such that f(a) is non-zero.
+>>
+>> You can carry this out for the real line R, but it is very much R as
+>> a set, and the copy of R in the underlying space of the spectrum has
+>> the discrete topology.
+>
+>
+>
+>
+> The standard approach leads to the Zariski topology.
+>
+>
+>
+>> Does algebraic geometry provide an analogous construction that could
+>> lead to  the point-free R? Can the locally ringed space be
+>> topologized (point-free) so that the copy of R has its usual topology?
+>>
+>> I've run into various problems.
+>>
+>> 1. It is not obvious to me that R[X] exists point-free. By that I
+>> mean that,  without presupposing a set R[X], or using non-geometric
+>> constructions, I can't see how to define a geometric theory whose
+>> models are the polynomials. The problem comes with trying to pin down
+>> the requirement that all but finitely many of the coefficients of a
+>> polynomial must be zero. You cannot continuously define the degree of
+>> a polynomial, because the function R -> N, a |-> degree(aX + 1), is
+>> not continuous.
+>>
+>> That suggests the construction as Spec(R[X]) might have to be
+>> adjusted. Is there still some locally ringed space that does the trick?
+>>
+>> 2. The "structure sheaf" cannot be a sheaf. We hope its fibres are
+>> point-free local rings, but, whatever they are, they must be
+>> R-algebras and so cannot  have the discrete topology. The space is
+>> locally ringed by some bundle other than a sheaf (local homeomorphism).
+>>
+>> 3. The usual local rings, got as rings of fractions as described
+>> above, may be problematic point-free in the same way as R[X] is.
+>> I don't know what would  do instead. The power series ring R[[X]]?
+>
+>
+>
+> The power series ring recovers a single point ("formal geometry" in
+> the sense of Grothendieck, Gelfand-Kazhdan, Kontsevich, etc.).
+>
+>
+> Best Johannes
+>
+>
+>
+>
+>> (At least as fibre over 0.)
+>> It does have the property of inverting those polynomials f for which
+>> f(0)
+> is non-zero. And it can be defined point-free, as R^N. (However, the
+> finitely presented approximations R[X|X^n = 0] happily exist point-free.)
+>>
+>> Thanks for any references you can provide,
+>>
+>> Steve.
+>>
+>>
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

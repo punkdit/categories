@@ -1,0 +1,203 @@
+Date: Tue, 23 May 1995 00:47:14 -0300 (ADT)
+Subject: question about bounded toposes
+
+---------- Forwarded message ----------
+Date: Mon, 22 May 95 19:09:45 +0300
+Subject: question about bounded toposes
+
+Topos theoretic concepts are implicitly in the focus of semantic modeling --
+an active subarea of the DataBase research. The corresponding theory
+developed in the DB community is a diverse collection of awkward
+pseudo-formal constructs, semi-formal correct specifications (whose precise
+counterparts are however known in Category Theory long ago), and also deep
+insights elaboration of which seems can contribute to CT itself.
+
+In particular, the following categorial construct which I'd call a
+{\em bounded power-object}
+is extremely useful in DB theory and my question is whether it was
+explored by anybody before.
+
+DEFINITION 1.  A category ${\cal C}$ is said to have {\em bounded power-objects}
+if any jointly monic pair (relation), f:R-->a, g:R-->B, can be extended to the 
+following commutative diagram (PDiag):
+
+            B===B     where the square (r,s,n,f) is pull-back
+            ^   ^     and (s,e) is jointly monic.
+           e|   |
+          s |   |
+       P<---E   |g
+       ^    ^   |
+      r|    |n  |
+       |    |   |
+       A<---R===R
+          f
+
+In addition, this augmentation enjoys the following universal property:
+for any other similar augmentation of (f,g): (PDiag') with P',E',r' etc
+instead of P,E,r etc. there are uniquely determined arrows u1:P-->P' and
+u2:E-->E' commuting the entire diagram (PDiag)+(PDiag').
+It is easy to prove that bounded power-objects are unique up to isomorphism.
+
+So, given an object B, there is no the universal power-object of the object
+B, ${\bf P}B $, but for any relation R=(f,g) with B a domain there is the
+R-specific power-object ${\bf P}_{R}B $. Thus, B has many power-objects
+indexed by relations to B.
+Of course, if ${\cal C}$ is cocomplete they can be joined into the
+universal power-object of B but unbounded cocompleteness is just the property
+we wish to avoid.
+
+DEFINITION 2. {\em A bounded topos} is a category with finite limits and
+finite colimits which has bounded power-objects for all jointly monic pairs
+of arrows.
+REMARK 1. I do not familiar with Mikkelsen's proof that finite limits and
+power-objects imply finite colimits so I do not know  to what extent the
+finite colimits condition can be relaxed.
+REMARK 2. The concept of bounded topos constitutes a natural universe for
+computationally feasible set theory. Indeed, bounded power-sets are tractable
+(ie, within the polynomial time computability) in contrast to intractability
+of finitary yet unbounded powersets.
+
+QUESTION:  What is known about bounded toposes? What is known about
+complexity evaluations of topos-theoretic operations?
+
+CONCLUDING REMARK. The interplay between computational and descriptional 
+complexities is one of the most nice and exciting hot topics of the modern 
+model theory. It seems that exploring the interplay between two hierarchies 
+when the descriptional one is specified in the language of graph-based 
+topos-theoretic operations will be of equal beaty but simultaneously of a much
+more immediate practical impact.
+
+Grateful for any comments and remarks,
+Zinovy Diskin
+
+
+Date: Tue, 23 May 1995 09:41:59 -0300 (ADT)
+Subject: Diskin's question
+
+Date: Tue, 23 May 95 10:01 BST
+From: Dr. P.T. Johnstone <P.T.Johnstone@pmms.cam.ac.uk>
+
+
+I don't have a direct answer to Diskin's question, but here are a few
+immediate comments about it.
+
+1.  I'm not happy with the terms `bounded power-objects' and `bounded
+topos', because `bounded' has another meaning in topos theory (bounded
+geometric morphisms) and I sense that this could lead to confusion. It
+seems to me that something like `local power-objects' would be a better
+name for the concept Diskin describes ... but of course `local' is also
+a word which is already heavily used by topos-theorists.
+
+2.  I presume that the universal property of the bounded/local
+power-object, as described by Diskin, is the wrong way round: that is,
+one wants (P,E) to be terminal rather than initial in the category of
+diagrams of the form (PDiag). (If you ask for an initial object, then
+the problem always has a trivial solution: take P = A and E = R.)
+
+3.  Assuming I'm right about (2), then the condition that an object B
+has bounded power-objects is equivalent to saying that the functor
+Rel(-,B) is multi-representable in the sense of Diers (rather than
+representable, as it would be in a topos). There is a considerable
+literature (much of it written by Diers, but some by other people
+including myself) about multi-representability, multi-limits and the
+like; but I don't think any of it addresses the multi-representability
+of this particular functor.
+
+4.  I'd find it a lot easier to think about the problem if I had a
+simple example of a category (other than a topos) with this property,
+on which to test my ideas. Does Diskin (or anyone else) have such an
+example?
+
+Peter Johnstone
+
+
+Date: Wed, 24 May 1995 17:52:49 -0300 (ADT)
+Subject: Re: question about bounded toposes
+
+Date: Wed, 24 May 95 18:41:47 +0300
+From: Zinovy Diskin <diskin@frame.riga.lv>
+
+Dear All,
+
+I must  apologize:   the universal property of (PDiag) described
+in my previous  definition  of bounded power-object is evidently
+not suitable (thanks  to  Peter  Johnstone)  and  terminality of
+(P,E) is also not suitable: take for P' a  superobject of  A and
+for E'   a  relation  from A' to  B which  is  a  "conservative"
+expansion of R -- then there are no canonical arrows from  P' to
+P (and from P to P' too).
+
+So, actually the question is open which  universal  property  of
+(PDiag) provides  intended semantics of the construction.
+
+Zinovy Diskin
+
+
+Date: Sun, 11 Jun 1995 11:24:32 -0300 (ADT)
+Subject: Re: Diskin's question (fwd)
+
+
+Date: Fri, 09 Jun 95
+From: Mamuka Jibladze <jib@imath.kheta.ge>
+
+Despite some confusion around the question of Diskin I think there is an
+exemplary situation where one may test ideas; hence a partial answer to
+
+> 4.  I'd find it a lot easier to think about the problem if I had a
+> simple example of a category (other than a topos) with this property,
+> on which to test my ideas. Does Diskin (or anyone else) have such an
+> example?
+>
+> Peter Johnstone
+>
+
+. Choose some notion of `small' good enough, in particular inherited by
+quotients (plus further strong requirements; e.g. I believe `K-finite'
+satisfies them all). Take a topos where the subobject classifier is not small.
+Consider the subcategory of small objects. Then the IMAGES of classifying maps
+of relations may serve for the purpose Diskin is talking about.
+
+One simple example: the category of finite-sets-with-an-endomap.
+
+Mamuka Jibladze
+
+
+Date: Thu, 29 Jun 1995 16:21:08 -0300 (ADT)
+Subject: answer to Diskin's question
+
+Date: Thu, 29 Jun 1995 19:05:29 MESZ
+From: Thomas Streicher <streicher@mathematik.th-darmstadt.de>
+
+I think I have an answer now to Z. Diskin's question on what he called
+originally bounded toposes.
+His setting is a category C with pullbacks and binary products.
+Assume that there is given a family of B-indexed subobjects of A represented bya mono R >-> BxA. How can formulate by a universal property the collection of
+all subobjects of A showing up in the enumeration
+
+   " { {a:A|R(b,a)} | b:B} "
+
+Consider the presheaf  H_R : C^op -> Set defined as
+
+  H_R(I) = { (fxA)*R | f : I -> B }
+
+  H_R(f)(S) = (fxA)*S
+
+We say that that the "power object of A bounded by R" exists if the presheaf
+H_R is representable, i.e. there exists an object P_R(A) together with a
+subobject  E(A,R) >-> P_R(A)xA such that for any f : I -> B the subobject
+(fxA)*R can be obtained as (chi x A)*E(A,R) for a unique  chi : I -> P_R(A).
+
+If "bounded" is understood in the liberalized sense that one means by P_R(A)
+the collection of subsets of A contained in a {a:A|R(b,a)} for some b : B then
+one simply has to redefine the presheaf  H_R as follows
+
+  H_R(I) = { S >-> IxA |  S  contained in  (fxA)*R for some  f : I -> B} .
+
+Under this interpretation of "bounded" a category C with finite limits is a
+topos iff for any A the bounded Power Object P_R exists for the relation
+<!_A,id_A> : A -> 1xA.
+
+Thomas Streicher
+
+
+

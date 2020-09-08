@@ -1,0 +1,91 @@
+Path: news.gmane.org!not-for-mail
+From: Colin McLarty <colin.mclarty@case.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Proving enough injectives for modules over a Grothendieck topos
+Date: Sun, 10 Oct 2010 11:58:29 -0400
+Lines: 55
+Approved: news@gmane.org
+Message-ID: <E1P53Yf-0004VD-Ng@mlist.mta.ca>
+Reply-To: Colin McLarty <colin.mclarty@case.edu>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1286746622 25412 80.91.229.12 (10 Oct 2010 21:37:02 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Sun, 10 Oct 2010 21:37:02 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: majordomo@mlist.mta.ca Sun Oct 10 23:37:01 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P53Zl-0001hx-9G
+	for gsmc-categories@m.gmane.org; Sun, 10 Oct 2010 23:37:01 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:36984)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P53Yi-0006GY-Jv; Sun, 10 Oct 2010 18:35:56 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1P53Yf-0004VD-Ng
+	for categories-list@mlist.mta.ca; Sun, 10 Oct 2010 18:35:53 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6311
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6311>
+
+It seems to me there is a nearly elementary proof that the category of
+sheaves of modules over any sheaf of rings in a Grothendieck topos has
+enough injectives.  I want to check it here because I do not see it
+published anywhere.  People normally cite Grothendieck's Tohoku to
+prove the result.
+
+To give the outline:  Johnstone TOPOS THEORY (p. 261) proves the
+category of Abelian groups in any Grothendieck topos has enough
+injectives.  Eisenbud COMMUTATIVE ALGEBRA (p. 621) uses adjunctions
+between module categories (over sets) to turn injectives in Abelian
+groups into enough injectives in any module category (over sets).
+These adjunctions lift to the categories of Modules in ringed toposes
+(E,R) over a fixed base topos E -- and so the category of R-Modules in
+E has enough injectives.
+
+In more detail, Eisenbud does not put it in terms of adjunctions.  But
+in effect he shows the underlying group functor R-Mod-->AbGrp from
+R-modules to Abelian groups (over Set) has a right adjoint taking each
+Abelian group A to the R-module of additive functions from R to A
+(i.e. the R-module of Abelian group morphisms from the underlying
+group of R to A).
+
+Of course the underlying group functor is also left exact (indeed has
+a left adjoint, change of base from the integers Z to R).  And a right
+adjoint to any exact functor preserves injectives.  So take any
+R-module M, embed it additively into an injective Abelian group M>-->Q
+and map this back to R-modules by the right adjoint.  It is easy to
+see that M has a monic to the domain of the morphism and so embeds in
+an injective R-module.
+
+Grothendieck in SGA 4 casts this in terms of ringed toposes.  So far
+as I can see he does not talk about the right adjoint to the
+underlying group functor, and does not connect this to injectives, but
+it lifts routinely unless I am missing something.
+
+Every ring R in a topos E is also an additive Abelian group in E.  On
+the other hand, for any Abelian group A in E we can form the group
+HOM(R,A) where I write HOM to indicate this is an E object and not the
+set of arrows.    But HOM(R,A) is also an R-module by the action of R
+on arguments: any r \in R times a function f \in HOM(R,A) is the
+function that multiplies by r first and then applies f.
+
+So HOM(R,_) is a functor from Abelian groups in E to R-modules in E,
+and the same straightforward calculation as we use  in Set shows it is
+right adjoint to the underlying group functor.  So it preserves
+injectives, and the same step as in Eisenbud shows we can use it to
+embed every R-module into an injective R-module.
+
+Is that reasonably clear?  Is it right?
+
+best, Colin
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

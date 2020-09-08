@@ -1,0 +1,79 @@
+Path: news.gmane.org!.POSTED.blaine.gmane.org!not-for-mail
+From: <rjwood@mathstat.dal.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: large integrals via manageable ends?
+Date: Sat, 23 Feb 2019 15:54:21 -0400
+Approved: news@gmane.org
+Message-ID: <E1gxe2g-0002Tf-4J@mlist.mta.ca>
+Reply-To: <rjwood@mathstat.dal.ca>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: 8bit
+Injection-Info: blaine.gmane.org; posting-host="blaine.gmane.org:195.159.176.226";
+	logging-data="56543"; mail-complaints-to="usenet@blaine.gmane.org"
+To: <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Feb 23 21:38:43 2019
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp2.mta.ca ([198.164.44.55])
+	by blaine.gmane.org with esmtps (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+	(Exim 4.89)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gxe4I-000EYv-LP
+	for gsmc-categories@m.gmane.org; Sat, 23 Feb 2019 21:38:42 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45804)
+	by smtp2.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gxe40-0005xl-J0; Sat, 23 Feb 2019 16:38:24 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1gxe2g-0002Tf-4J
+	for categories-list@mlist.mta.ca; Sat, 23 Feb 2019 16:37:02 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:9841
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/9841>
+
+With reference to the following diagram in \CAT, where \set is the category
+of small sets:
+
+        F
+  \A------->\B
+   |
+  P|
+   |
+   v
+\set
+
+it is classical that if \A is small and \B is locally small then the
+left Kan extension of P along F exists, call it L, and for B in \B
+LB=\int^A \B(FA,B) x PA. Clearly, local smallness of B can be weakened
+to the requirement that all \B(FA,B) are small, a condition called
+`admissibility' of F, by Street and Walters in their `Yoneda structures'
+paper. The point is that a small integral of small sets is small.
+
+However, I claim that smallness of \A can be `weakened' to local smallness
+of \set^{\A\op}. If we include \set in a category \SET of sets large
+enough to contain all the LB as above, via I:\set----->\SET then the
+description
+of L also gives a left Kan extension of IP along F. Now write p(LB) for
+the power set of LB and consider the following calculation:
+
+p(LB)=\SET(\int^A \B(FA,B) x PA, 2)=\int_A\SET(\B(FA,B), 2^{PA})
+      =\int_A\set(\B(FA,B), 2^{PA})
+      =\set^{\A\op}(\B(F-,B),\set(P-,2))
+
+It shows that local smallness of \set^{\A\op} implies p(LB) is small and
+hence that LB is small. Thus for \set^{\A\op} locally small and F
+admissible, the left Kan extension of any P:\A--->\set along F exists and
+is given by the usual formula.
+
+This calculation was prompted by questions similar to an open problem
+in the paper by Freyd and Street `On the size of categories' in TAC V1.
+Can anybody provide pointers to similar calculations where a big integral
+is tamed by a manageable end?
+Thanks, RJ Wood
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,69 @@
+Date: Fri, 27 Aug 1999 16:01:06 -0400
+From: Gaunce Lewis <lglewis@syr.edu>
+Subject: categories: looking for references
+
+A colleague in geometric topology has encountered a categorical 
+construction for which he would like some literature references.  He has 
+asked me to pass this request on to this mailing list.  Roughly speaking, 
+the construction takes a category carrying an action by a monoid and forms 
+an associated "orbit" category.  However, rather than identifying objects 
+in the same orbit, it inserts a canonical isomorphism between them.
+
+Here are the details:
+
+Let M be a monoid which is also a poset.  Assume that the multiplication on 
+M preserves the order and that the unit u for the multiplication on M is an 
+initial element for the poset.  Think of M as a category with morphisms 
+derived from the poset structure.  Let C be any category and let F : M x C 
+-> C be a functor which gives an action of M on C.  For each m in M and 
+each c in C, there is a map t(m,c) from c to F(m,c) obtained by applying F 
+to the poset relation u \leq m and the identity map on c.  Form the 
+category of fractions of C in which all the maps t(m,c) have been 
+inverted.  Note that it looks somewhat like the orbit category C/M, but 
+with the objects in the same orbit linked by canonical isomorphisms 
+(derived from the t(m,c)) rather than identified.
+
+Has anyone seen this construction before?  Is there literature on it?
+
+Thanks for any help on this,
+Gaunce Lewis
+
+
+Date: Sat, 28 Aug 1999 13:34:35 +1000
+From: Ross Street <street@ics.mq.edu.au>
+Subject: categories: Pseudo orbits
+
+Dear Gaunce Lewis, GT-colleague and all,
+
+When we regard a monoid  M  as a one-object category, an M-set is a functor
+X : M --> Set  and the colimit of the functor  X  is the set of orbits of
+the M-set.
+
+What GT-colleague has is an ordered monoid which can be regarded as a
+one-object 2-category  M,  and the action  F  of  M  on the category  C
+amounts to a 2-functor X : M --> Cat.  I suspect that the construction
+required is the pseudocolimit of  X.  This kind of colimit for 2-functors
+was considered in the book of John Gray
+
+J.W. Gray, Formal Category Theory: Adjointness for 2-Categories,  Lecture
+Notes in Math. 391 (Springer, 1974)
+
+and in my paper
+
+Limits indexed by category-valued 2-functors, J. Pure Appl. Algebra 8
+(1976) 149-181
+
+where I show that pseudo(co)limits and lax (co)limits are ordinary weighted
+(= indexed) (co)limits in the sense of enriched category theory (for the
+base monoidal category  Cat).
+
+I suspect the condition that the identity element is initial is a red
+herring even though this makes it look as though canonical maps are being
+inverted rather than isomorphisms being introduced.
+
+Regards,
+Ross
+
+
+
+

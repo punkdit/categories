@@ -1,0 +1,3528 @@
+From cat-dist Mon Nov  2 14:45:49 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA01190
+	for categories-list; Mon, 2 Nov 1998 12:57:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 2 Nov 1998 16:46:48 +1100 (EST)
+Message-Id: <199811020546.QAA25507@algae.socs.uts.EDU.AU>
+To: categories@mta.ca
+Subject: categories: Re: FISh performance 
+From: Barry Jay <cbj@socs.uts.edu.au>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+
+Dear Ralph,
+
+thank you for taking an interest in the FISh performance results for
+quicksort. You raise two basic questions. Is the FISh program faster?
+If so, why?
+
+
+Is quicksort in FISh faster than qsort (on arrays of doubles)? 
+==============================================================
+
+
+> (1) Your C code compares using two floating point operations 
+>(subtraction, compare), while the fish program uses just one (no 
+>subtraction).
+
+
+This makes a small difference to the overall performance of the
+algorithm.  I re-ran the test for qsort with the following comparison
+function
+
+int comp(const void *i, const void *j) {
+return (*(double*)i > *(double*)j ) ;
+}
+
+that has only one operation. The C results are better by about 10% but
+FISh is still twice as fast.
+
+	C benchmark1 	C benchmark2 	FISh benchmark
+
+	3.59		3.35		1.65
+
+>(3) The C library qsort takes a three-valued comparison function, 
+>while your fish code uses a two-valued comparison.
+
+I'm not sure what point you're making. The designers of qsort had a
+free choice. I suspect that the three-valued comparison is used to
+exploit equality of values, to obtain greater efficiency. In any
+event, it is unlikely to make much difference in the light of (1)
+above. 
+
+Conclusion: The FISh program *is* faster. 
+
+
+Why is quicksort in FISh faster?
+=================================
+
+>(4) As you note, your fish code gets optimised by specialising to the
+>datatype and comparison function used.  
+
+
+Yes. This is a given. The question is to pinpoint the source of the
+speedup.
+
+
+> ... This is the main 
+>performance issue, and has nothing to do with boxing/unboxing issues.
+
+
+Point taken. The data supplied to quicksort is not boxed, but this is
+because (the length of the array and) the size of the array entries
+are given as explicit parameters. In this sense qsort is *not*
+polymorphic in its choice of data type. If it were not provided by
+the C programmer then boxing would add another layer of indirection to
+the program. Such information about the size of entries etc. is
+inferred by the FISh compiler.
+
+>... Whether [FISh is faster] will depend on 
+>things like instruction scheduling in the compiler & CPU, & register 
+>allocation in the caller & in any case the difference will be tiny.
+
+
+Your conclusion does not match the performance figures above.
+
+The FISh program avoids making a function call at all.  That is,
+instead of passing the addresses to a function, a primitive comparison
+is made. The key point is that this can only be done because
+information like the length of the array and the size of the entries
+(in bytes) can be inferred by the FISh compiler, instead of being
+supplied by the user.
+
+
+Yours,
+Barry Jay
+
+
+*************************************************************************
+| Associate Professor C.Barry Jay, 					|
+| Reader in Computing Sciences		Phone: (61 2) 9514 1814		|
+| Head, Algorithms and Languages Group,	Fax:   (61 2) 9514 1807		|
+| University of Technology, Sydney,	e-mail: cbj@socs.uts.edu.au	|
+| P.O. Box 123 Broadway, 2007,	  http://www-staff.socs.uts.edu.au/~cbj	|
+| Australia.			        FISh homepage ... ~cbj/FISh     |
+*************************************************************************
+
+
+
+From cat-dist Mon Nov  2 17:54:05 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id QAA12026
+	for categories-list; Mon, 2 Nov 1998 16:58:42 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: CT for CS?
+From: rjwood@mscs.dal.ca
+To: categories@mta.ca
+Date: 	Mon, 2 Nov 1998 16:55:10 -0400 (AST)
+X-Mailer: ELM [version 2.4 PL24alpha3]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <19981102205515Z23968-361+3@mscs.dal.ca>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The new Faculty of Computer Science at Dalhousie is asking Mathematics 
+for new classes and the chairman of Mathematics is willing to suggest a 
+Category Theory class. Is there now a `standard CT for CS class' in the 
+same way that there is a `standard first class in measure theory' and so on?
+
+If so, can you advise on
+1) text(s), including material to be explicitly covered in a 39 hour class;
+2) background required, both for a CS major and a Mathematics major;
+3) universities which actually do this --- particularly those with 
+   pretensions and realities similar to Dalhousie's?
+
+Please send responses directly to me rather than the categories list. I
+will summarize them for the list.
+
+Thanks
+RJ
+
+
+From cat-dist Tue Nov  3 21:18:47 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA18254
+	for categories-list; Tue, 3 Nov 1998 20:18:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <363F38EF.3EFC@dcs.ed.ac.uk>
+Date: Tue, 03 Nov 1998 17:10:07 +0000
+From: Samson Abramsky <samson@dcs.ed.ac.uk>
+Organization: Dept. of Computer Science, University of Edinburgh
+X-Mailer: Mozilla 3.04 (X11; U; SunOS 5.6 sun4m)
+MIME-Version: 1.0
+To: categories <categories@mta.ca>
+Subject: categories: Post-doctoral fellowship
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Dear Colleagues,
+
+A 1-year postdoctoral fellowship is available on the UK EPSRC-funded
+grant ``Foundational Structures in Computer Science'', to work on topics
+related to game semantics. Further details of this position can be found
+at 
+ www.personnel.ed.ac.uk/vacs/external 
+(Click vac3ext.htm, and then ``8 Postdoctoral Research fellowships''.
+The relevant posts are the first two of these.).
+
+I would be very grateful if you could bring this position to the
+attention of anyone in your group who might be interested.
+
+Anyone wishing to discuss the project informally is welcome to contact
+me by email.
+
+Best wishes,
+
+Samson Abramsky
+
+
+From cat-dist Tue Nov  3 21:22:34 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA17314
+	for categories-list; Tue, 3 Nov 1998 20:16:58 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199811031118.HAA12375@mailserv.mta.ca>
+From: boerger <Reinhard.Boerger@fernuni-hagen.de>
+Organization: FernUniversitaet - Gesamthochschule
+To: categories@mta.ca
+Date: Tue, 3 Nov 1998 12:19:11 +0100
+MIME-Version: 1.0
+Content-type: text/plain; charset=US-ASCII
+Content-transfer-encoding: 7BIT
+Subject: Re: categories: Reference?
+In-reply-to: <Pine.LNX.3.95.981029135657.24182G-100000@triples.math.mcgill.ca>
+X-mailer: Pegasus Mail for Win32 (v2.54DE)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The result that finite products coincide with finite coproducts in 
+categories enriched commutative monoids can be found in Herrlich`s 
+and Strecker`s book under 40.8 (p.308 in the 2nd edition). The 
+converse is given there under 4.12 (p.310). They use the term 
+"semi-additive category", which I am also used to. Though I agree 
+with Bill Lawvere that prefixes like "semi" should be omitted if 
+possible, I am not convinced by his suggestion "linear categeory" 
+because for me subtraction seems essential fo linear algebra. Maybe 
+somebody invents a better term.
+
+                                       Greetings
+                                       Reinhard 
+
+
+From cat-dist Tue Nov  3 21:25:17 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA18050
+	for categories-list; Tue, 3 Nov 1998 20:17:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <363E8966.F3F23F3D@maths.usyd.edu.au>
+Date: Tue, 03 Nov 1998 15:41:11 +1100
+From: Robbie Gates <robbie@maths.usyd.edu.au>
+X-Mailer: Mozilla 4.05 [en] (X11; I; OSF1 V4.0 alpha)
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: FISh performance
+References: <199811020546.QAA25507@algae.socs.uts.EDU.AU>
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Warning: there's no category theory in this letter - it's purely a
+reponse to the discussion of execution speed of FISh quicksort.
+
+Barry Jay wrote:
+> Why is quicksort in FISh faster?
+> =================================
+
+I would like to propose another reason the FISh quicksort appears to be
+faster than the library qsort - they aren't the same algorithm.  In
+particular, the standard library qsort and the FISh sort are using
+different methods to pick the pivot.
+
+Choice of pivot in quicksort is important to ensure the worst case
+doesn't degenerate to O(n^2).  The choice of pivot in the FISh code
+is always the first element, which does give very poor performance
+in the case the array is already sorted.  I'm not sure what the qsort
+in the libc i have here does.  However, typical tricks include selecting
+the median of three elements at the bottom, middle and top of the array,
+choosing a random element, choosing the median of three random elements,
+and so on.  Importantly, each of these choices requires some work,
+and thus negatively impacts on the average speed of the sort in order to
+alleviate the worst case speed.
+
+Caveat: I'm not a professional benchmarker/tester, and the tests below
+are probably very flawed.  I have tried to give details on everything
+that seems relevant, but your mileage may vary.  This data is more given
+to suggest an alternative, plausible explanation for the observed speed
+difference in the FISh and C benchmarks, than to claim i have identified
+all the issues in the timing results found for FISh and C quicksort.
+
+To test this hypothesis, i coded up quicksort in C++ using the same
+pivot picking strategy as the FISh code.  I then modified my C++ code,
+and the C benchmark code and C translated FISh code (CTFC) from the
+FISh website (by CTFC i mean the contents of test01.c), by altering
+the random number generator to allow specification of two command line
+arguments giving the multiplier and step for the seeding algorithm.
+i.e rather than
+seed = seed * 25173 + 17431
+i used
+seed = seed * mult + 17431
+for varying mult.
+
+This allowed me to test the extent to which the algorithm was sensitive
+to the data being sorted.  What follows are timing values on a DGUX
+AlphaStation 255 (233 MHz) with mult = 1,2,3, ... ,10 (on an array of
+10000 values).  For each program, i give the total (user + system)
+time reported by the builtin time function of bash version
+2.02.0(1)-release (alpha-dec-osf4.0) (averaged over 10 trials in
+each case). The time columns are libqsort (= the standard library
+qsort), cppqsort (= my C++ qsort), fishqsort (= CTFC). They were
+compiled with gcc, g++, gcc in each case, and -O optimization.
+
+NOTE: With these mult values, the data supplied to the qsort is
+deliberately nonrandom to try and detect the effect proposed in
+the second paragraph.
+
+mult         libqsort        cppqsort     fishqsort
+1              .0350          3.462          3.410
+2              .0348          4.039          4.039
+3              .1003          .0334          .0391
+4              .0350          4.085          4.052
+5              .1130          .0332          .0393
+6              .0356          4.042          4.039
+7              .1025          .0341          .0382
+8              .0357          4.061          4.054
+9              .1088          .0336          .0382
+10             .0355          4.053          4.041
+
+Observe that the libqsort has much better average performance (and
+that its profile is different to the other two - one could
+probably determine something about the choice of pivots with enough
+tests ;-).  Also, the CTFC at best beats the library by
+a factor a bit under 3, whereas the library beats the CTFC
+by a factor of over 110.
+
+More importantly, the C++ and fish code run in very similar time,
+neither consistently beating the other.  Also, their profiles are
+almost identical.
+
+I also ran one bigger test - in the case of a 90000 element array
+consisting of 1 to 90,000 in order, the library took around .3
+seconds, whereas the CTFC overflowed the stack and crashed
+just under 200 seconds into the test (the C++ code took
+315 seconds to overflow the stack and crash - i'm not sure what's
+causing the difference here, but i suspect it has to do with
+the fact my C++ code used paramaters rather than a static struct).
+
+Based on this, I'm proposing that the standard library quicksort is
+trading off speed for the average cases to bring the worst cases down
+to something acceptable. This is presumably a serious issue for a
+library quicksort - its better to run on average somewhat slower in
+order to get consistency, as this makes applications easier to test
+for market acceptance of speed, rather than the application apparently
+hanging when the user manages to sort the worst case database with about
+1 million entries in it (when your testers happily sorted their million
+entry db's with no trouble).
+
+one other point - the compile time polymorphism is not specific
+to FISh (as Ralph Loader mentioned). You write:
+> The FISh program avoids making a function call at all.  That is,
+> instead of passing the addresses to a function, a primitive comparison
+> is made. The key point is that this can only be done because
+> information like the length of the array and the size of the entries
+> (in bytes) can be inferred by the FISh compiler, instead of being
+> supplied by the user.
+
+C++ templates also give the ability to supply a compile time comparision
+function to sort routines, the code will likewise be specialised on
+the given comparison and on the size of the entries.  One could write
+sort templates that take the length as well, however since the size
+of stuff to be sorted typically varies depending on the current
+application state (i.e. in a manner unknown at compile time) this tends
+not to be enough of a win to be worth doing.
+
+ - robbie
+-- 
+*--------------------------------> + <---------------------------------*
+|_|          robbie gates          |         pgp key available       |_|
+V          category theorist       V  //cat.maths.usyd.edu.au/~robbie  V
+*--------------------------------> + <---------------------------------*
+
+
+From cat-dist Fri Nov  6 19:18:24 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id SAA29437
+	for categories-list; Fri, 6 Nov 1998 18:04:12 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 6 Nov 1998 14:28:03 -0500 (EST)
+From: Andre Scedrov <scedrov@saul.cis.upenn.edu>
+Message-Id: <199811061928.OAA02735@saul.cis.upenn.edu>
+To: categories@mta.ca
+Subject: categories: MFPS deadline extension 
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+Dear Colleagues,
+  We have had a number of requests to extend the MFPS deadline 
+for submissions for next spring's meeting. The deadline was 
+November 3, but because of these requests, we have decided to 
+extend the deadline until next Tuesday, November 10. Detailed 
+information about submissions is available on the MFPS 15
+home page, http://www.math.tulane.edu/mfps15.html. 
+  Best regards,
+  The Organizers and Program Committee Chairmen
+
+
+From cat-dist Mon Nov  9 16:31:20 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA00232
+	for categories-list; Mon, 9 Nov 1998 15:09:35 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 9 Nov 1998 11:06:13 +0100 (MET)
+From: Philippe Gaucher <gaucher@irma.u-strasbg.fr>
+Message-Id: <199811091006.LAA04175@irma.u-strasbg.fr>
+To: categories@mta.ca
+Subject: categories: computation in CPS
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-MD5: QqGGoKoDrptNPwmdXmVFYw==
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id GAA18911
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Bonjour, 
+
+Here is a question about composable pasting schemes (CPS).
+
+In the omega-category In generated by the n-cube, is it possible to
+find a kind of "general" formula for the (n-1)-source (target) of 
+the n-morphism corresponding to the interior of In ? I can do 
+mechanical computation in low dimension but I am not able for the
+moment to imagine a formula for any dimension. In high dimension ,
+computations become very long.
+
+For example, using notations of Crans/Johnson/Street etc..., in I2, we
+have (R(x) means the CPS generated by x, sometimes also denoted by (x)) : 
+
+s_1(00)=R(-0,0+) (almost the definition in a CPS)
+and t_0(-0)=s_0(0+)=-+ => s_1(00)=R(-0) o_0 R(0+) (1) because the
+union is the composition in the framework of CPS. And 
+t_1(00)=R(+0,0-)=R(0-) o_o R(+0) (2). Obvious with a picture.
+
+In I3, we have : 
+
+s_2(000)=R(-00,0+0,00-)=R(-00,0++,-0-,0+0,00-,++0)
+t_0(-00)=s_0(0++) => R(-00,0++) = R(-00) o_0 R(0++)
+t_0(-0-)=s_0(0+0) => R(-0-,0+0) = R(-0-) o_0 R(0+0)
+t_0(00-)=s_0(++0) => R(00-,++0) = R(00-) o_0 R(++0)
+
+and 
+
+t_1(R(-00) o_0 R(0++)) = t_1(-00) o_0 R(0++) (axiom of omegaCat)
+                       = (-0-) o_0 (-+0) o_0 (0++) with (2)
+                       
+s_1(R(-0-) o_0 R(0+0)) = R(-0-) o_0 s_1(0+0) (axiom of omegaCat)
+                       = (-0-) o_0 (-+0) o_0 (0++) with (1)
+                       
+=> R(-00,0++,-0-,0+0) = R(-00,0++) o_1 R(-0-,0+0)
+
+and in the same way, we preove that 
+t_1(R(-0-,0+0))=s_1(R(00-,++0))  
+
+=> s_2(000) =((-00) o_0 (0++)) o_1 ((-0-) o_0 (0+0)) o_1 ((00-) o_0 (++0))
+
+For t_2(000), read the above formula from the right to the left and 
+replace - by +. Almost obvious with a picture.
+
+For I4 now : 
+
+I have found a formula for s_3(0000)... A little bit long and not
+interesting. 
+
+For I5 : Too long. 
+
+
+More generally, the question is : for a CPS, is there a way to compute 
+the source and target of a R({x}) using only compositions of elements 
+like R({y}) ?
+
+
+Thanks in advance for your help.
+
+pg.
+
+
+
+
+
+
+
+
+
+
+
+            
+
+
+
+From cat-dist Mon Nov  9 16:32:31 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA32643
+	for categories-list; Mon, 9 Nov 1998 15:15:18 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <36472B4E.7E74@dcs.ed.ac.uk>
+Date: Mon, 09 Nov 1998 17:50:06 +0000
+From: Samson Abramsky <samson@dcs.ed.ac.uk>
+Organization: Dept. of Computer Science, University of Edinburgh
+X-Mailer: Mozilla 3.04 (X11; U; SunOS 5.6 sun4m)
+MIME-Version: 1.0
+To: categories <categories@mta.ca>
+Subject: categories: Post-doctoral fellowship
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+I recently posted a message about the availability of some post-doc
+positions on this list. I gave a reference to the University personnel
+department web pages for further details. Unfortunately, as soon as I
+had done so the personnel department expunged this information. I
+therefore repeat the posting, including some further details of the
+positions.
+
+Best wishes,
+
+Samson Abramsky
+
+----------------
+
+Two 2-year postdoctoral fellowships are available on the UK EPSRC-funded
+grant ``Foundational Structures in Computer Science'', to work on topics
+related to game semantics. 
+
+I would be very grateful if you could bring these positions to the
+attention of anyone in your group who might be interested.
+
+Anyone wishing to discuss the project informally is welcome to contact
+me by email.
+
+Further details of the positions:
+  
+
+1. To investigate the applications of game semantics to
+programming languages and the computational interpretation of Classical
+Logic. The applicant should have a strong background in logic and
+semantics, and preferably some familiarity with recent developments in
+Game Semantics. Duration: 12 months. Ref: 896767
+
+2. To investigate applications of game semantics to concurrent
+systems. The applicant should have a good background in concurrency
+and semantics. Both these posts are associated with the project
+``Foundational Structures in Computer Science''. The Principal
+Investigator is Professor Samson Abramsky. Duration: 12 months. Ref:
+896768
+
+Salary for these positions will be in the range 15735 to 20107 (UK
+pounds).
+
+Further particulars including details of the application procedure
+should be obtained from:
+
+The Personnel Office, The University of Edinburgh. 1 Roxburgh Street,
+Edinburgh EH8 9TB
+
+Tel: 0131-650-2511 (24 hour answering service)
+quoting the appropriate reference number
+
+closing date: 5 November 1998
+
+Late applications will b considered.
+
+
+From cat-dist Tue Nov 10 11:02:58 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id IAA11876
+	for categories-list; Tue, 10 Nov 1998 08:55:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 9 Nov 1998 16:31:58 -0500 (EST)
+From: Sjoerd CRANS <crans@math.mcgill.ca>
+Message-Id: <199811092131.QAA18657@scylla.math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: Re: computation in CPS
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Philippe Gaucher <gaucher@irma.u-strasbg.fr> asked:
+
+> for a CPS, is there a way to compute 
+> the source and target of a R({x}) using only compositions of elements 
+> like R({y}) ?
+
+Yes and no.
+
+Yes in the sense that because the source and the target are pasting
+schemes themselves, Johnson's pasting theorem gives that 1. they
+are compositions of R({y})'s and 2. *any* way you do this gives the
+same result.
+No in two senses: although Johnson's proof actually gives an algorithm,
+I don't think this algorithm has ever been implemented (in AXIOM for
+example); and secondly, there is (as far as I know) no *general*
+expression which works for cubes of all dimensions.
+
+Sjoerd Crans
+
+
+From cat-dist Tue Nov 10 21:49:50 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA11252
+	for categories-list; Tue, 10 Nov 1998 20:36:24 -0400 (AST)
+Message-Id: <199811110036.UAA11252@mailserv.mta.ca>
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 10 Nov 1998 18:53:15 +0100 (MET)
+From: Perez Garcia Lucia <Lucia.Perez@uv.es>
+Subject: categories: Gödel and category theory
+To: categories@mta.ca
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+I am interested in the foundations of mathematics -more concretely,
+in the claim that category theory can serve as a superior substitute
+for set theory in the foundational landscape. In this context, I would
+like to point out a footnote which appears in 'What is Cantor's
+Continuum Problem?', written by Kurt G?del in 1947, revised and expanded
+in 1964, and finally published in Benacerraf P. and Putnam H. (eds.) 1983:
+Philosophy of Mathematics. Selected Readings, Cambridge University Press,
+pp. 470-485. It reads as follows:
+
+   It must be admitted that the spirit of the modern abstract disciplines
+   of mathematics, in particular of the theory of categories, transcends
+   this concept of set*, as becomes apparent, e.g., by the self-applicability
+   of categories (see MacLane, 1961**). It does not seem however, that
+   anything is lost from the mathematical content of the theory if categories
+   of different levels are distinguished. If there exist mathematically
+   interesting proofs that would not go through under this interpretation,
+   then the paradoxes of set theory would become a serious problem for
+   mathematics. 
+                *(the concept of set G?del was referring to is the iterative
+                  one).
+               **(MacLane, S. 1961. "Locally Small Categories and the
+                  Foundations of Set Theory". In Infinitistic Methods,
+                  Proceedings of the Symposium on Foundations of Mathematics
+                  (Warsaw, 1959). London and N.Y., Pergamon Press).
+
+I need some help to grasp the following questions:
+
+- In what sense the self-applicability of categories transcends the concept
+  of set?. (It is obvious that categories transcend the concept of well-
+  founded set but, what's the matter with non-well-founded sets?.
+
+- In what sense do you think G?del proposed distinguishing different levels
+  of categories?. Would it be possible that G?del was thinking of something
+  like type theory?.
+
+- Do you agree with G?del's intuition that nothing would be lost with such
+  a distinction?.
+
+- Finally, in the last lines of the note G?del seems to suggest a research
+  programme for category theory as an alternative foundation of mathematics.
+  To what extent has it been carried out?.
+
+
+  Thanks for your help.
+
+  Regards,
+  
+  Luc?a P?rez
+  Dpt.L?gica y Filosof?a de la Ciencia
+  University of Valencia -Spain-               
+                       
+--
+***********************************************
+lperez 
+***********************************************
+
+
+
+From cat-dist Tue Nov 10 21:56:08 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA10911
+	for categories-list; Tue, 10 Nov 1998 20:40:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <36479E64.97C61D0C@iswest.com>
+Date: Mon, 09 Nov 1998 21:01:09 -0500
+From: Zhaohua Luo <zack@iswest.com>
+X-Mailer: Mozilla 4.5 [en] (Win98; U)
+X-Accept-Language: en
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Axioms of Algebraic Geometry
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+                     Axioms of Algebraic Geometry I
+
+                              Zhaohua Luo
+
+                               (11/7/98)
+
+                                (a draft)
+
+The axioms of algebraic geometry given below consist of three (well
+known) algebraic axioms (A1) - (A3) and three geometric axioms (G1) -
+(G3), based on Diers's axioms of Zariski categories. The complete html
+version of this note (with links) is available at
+http://www.azd.com/axioms.html. Comments and suggestions are welcome.
+
+Consider a functor U: A --> Set from a category A to the category Set of
+sets.
+
+Algebraic Axioms:
+(Axiom A1) U has a left adjoint.
+(Axiom A2) Any bijective morphism in A is an isomorphism.
+(Axiom A3) Any pair of parallel morphisms in A has a surjective
+coequalizer.
+
+Recall that a functor satisfying the axioms (A1) - (A3) is an algebraic
+functor, and the pair (A, U) is an algebraic category (or algebraic
+construct, or quasivariety). An algebraic functor U is finitary if it
+preserves direct colimits. Any algebraic functor is faithful. In the
+following we shall regard A as a concrete category over Set via an
+algebraic functor U, and identify an object X with its underlying set
+U(X).
+
+A difference of an object is an ordered pair (a, b) of elements of A,
+denoted formally by a - b.
+(a) A difference a - b is a zero if a = b.
+(b) A difference a - b is a unit if for any morphism f: A --> B, f(a) =
+f(b) implies that B is terminal.
+(c) A difference a - b is nilpotent if for any morphism f: A --> B, f(a)
+- f(b) is a unit implies that B is terminal.
+(d) An object is reduced if it has no non-zero nilpotent difference; (A,
+U) is reduced if any object is reduced.
+(e) A morphism f: A --> B is flat if the pushout functor C/A --> C/B
+along it preserves monomorphisms.
+(f) A difference a - b is invertible (or disjunctable) if there is a
+flat epimorphism  i: A --> A(a, b) such that i(a) - i(b) is a unit, and
+any morphism j: A --> B factors through i if j(a) - j(b) is a unit.
+
+Suppose U x V is the product of two objects U and V with the projections
+u: U x V --> U and v: U x V --> V. The product U x V is co-universal if
+for any morphism f: U x V --> Z, let Z --> ZU and Z --> ZV  be the
+pushouts of u and v along f, then the induced morphism Z --> ZU  x ZV
+is an isomorphism.
+
+Geometric Axioms:
+(Axiom G1) Any object has a unit difference.
+(Axiom G2) The product of any two objects isco-universal.
+(Axiom G3) Any difference of an object is invertible.
+
+We call any functor U: A --> Set satisfying the above six axioms an
+algebraic-geometric functor. An algebraic-geometric category is a pair
+(A, U) consisting of a category A and an algebraic-geometric functor U
+on A.
+
+Remark. (cf. [Luo, Categorical Geometry]) (a) An algebraic-geometric
+category is the opposite of an analytic geometry.
+(b) A finitary algebraic-geometric category is the opposite of a
+coherent analytic geometry.
+(c) Any finitary algebraic-geometric category satisfies the first five
+of the six axioms of Zariski categories defined in Diers's book
+Categories of Commutative Algebras, Oxford University Press, 1992. The
+sixth axiom simply means that the category is strict, i.e. the
+Grothendieck topology defined by open subsets is subcanonical.
+
+Example. The following categories are algebraic-geometric categories:
+(a) The category of frames (non-finitary, reduced, non-strict).
+(b) The category of distributive lattices (finitary, reduced,
+non-strict).
+(c) The category of Boolean algebras (finitary, reduced, strict).
+(d) The category of commutative rings with identity (finitary,
+non-reduced, strict).
+(e) The category of reduced commutative rings (finitary, reduced,
+strict).
+(f) The category of commutative regular rings (finitary, reduced,
+strict).
+
+
+
+From cat-dist Wed Nov 11 13:14:14 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA04069
+	for categories-list; Wed, 11 Nov 1998 11:15:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 11 Nov 1998 10:03:10 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+To: Perez Garcia Lucia <Lucia.Perez@uv.es>
+cc: categories@mta.ca
+Subject: categories: Re: Gödel and category theory
+In-Reply-To: <199811110036.UAA11252@mailserv.mta.ca>
+Message-ID: <Pine.LNX.3.95.981111094953.7106A-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+I should really let people with more interest in foundations field this
+question, but fools rush in ...
+
+On Tue, 10 Nov 1998, Perez Garcia Lucia wrote:
+
+> 
+> I am interested in the foundations of mathematics -more concretely,
+> in the claim that category theory can serve as a superior substitute
+> for set theory in the foundational landscape. In this context, I would
+> like to point out a footnote which appears in 'What is Cantor's
+> Continuum Problem?', written by Kurt G?del in 1947, revised and expanded
+> in 1964, and finally published in Benacerraf P. and Putnam H. (eds.) 1983:
+> Philosophy of Mathematics. Selected Readings, Cambridge University Press,
+> pp. 470-485. It reads as follows:
+> 
+>    It must be admitted that the spirit of the modern abstract disciplines
+>    of mathematics, in particular of the theory of categories, transcends
+>    this concept of set*, as becomes apparent, e.g., by the self-applicability
+>    of categories (see MacLane, 1961**). It does not seem however, that
+>    anything is lost from the mathematical content of the theory if categories
+>    of different levels are distinguished. If there exist mathematically
+>    interesting proofs that would not go through under this interpretation,
+>    then the paradoxes of set theory would become a serious problem for
+>    mathematics. 
+>                 *(the concept of set G?del was referring to is the iterative
+>                   one).
+>                **(MacLane, S. 1961. "Locally Small Categories and the
+>                   Foundations of Set Theory". In Infinitistic Methods,
+>                   Proceedings of the Symposium on Foundations of Mathematics
+>                   (Warsaw, 1959). London and N.Y., Pergamon Press).
+> 
+> I need some help to grasp the following questions:
+> 
+> - In what sense the self-applicability of categories transcends the concept
+>   of set?. (It is obvious that categories transcend the concept of well-
+>   founded set but, what's the matter with non-well-founded sets?.
+> 
+
+I will pass on this one.  As far as I know, using category theory as
+foundations gives an equally powerful, but not more powerful, foundation.
+But I would say the same about non-well-founded set theory.  Basically, it
+is a matter of convenience and, perhaps, coherence.
+
+> - In what sense do you think G?del proposed distinguishing different levels
+>   of categories?. Would it be possible that G?del was thinking of something
+>   like type theory?.
+> 
+
+I would assume that is what he meant.
+
+> - Do you agree with G?del's intuition that nothing would be lost with such
+>   a distinction?.
+> 
+
+In a word: no.
+
+> - Finally, in the last lines of the note G?del seems to suggest a research
+>   programme for category theory as an alternative foundation of mathematics.
+>   To what extent has it been carried out?.
+> 
+
+Quite a bit; it is called elementary topos theory.  I want to add
+something here.  I have taught a course in set theory (twice, actually). 
+I didn't much enjoy it, so perhaps I am prejudiced.  But I have a specific
+complaint.  In all the fields of mathematics that I have worked with (all
+the axiomatic fields, I should say), structures are defined and then
+functions that preserve those structures.  The structure of a set is that
+of an epsilon tree, but this structure is ignored when it comes to
+defining functions.  A good thing too, since the only functions that
+preserve that structure are inclusions of subsets.  And the only
+endomorphism of a set is the identity.  Believing that theory should
+follow practice, I am unhappy with the standard foundations that build
+this elaborate structure only to ignore it.  When categories are used as
+foundations, then the undefined terms are object, arrow, domain, codomain,
+identity, and the relation (partial function) of composition.  They are
+all used regularly in category theory; they are not just there to give a
+formal foundation.  And functors are exactly what preserve these things.
+
+> 
+>   Thanks for your help.
+> 
+>   Regards,
+>   
+>   Luc?a P?rez
+>   Dpt.L?gica y Filosof?a de la Ciencia
+>   University of Valencia -Spain-               
+>                        
+> --
+> ***********************************************
+> lperez 
+> ***********************************************
+> 
+> 
+
+
+
+From cat-dist Wed Nov 11 15:29:11 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA32079
+	for categories-list; Wed, 11 Nov 1998 14:08:27 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: ct99@mat.uc.pt
+Message-Id: <3.0.5.32.19981111170241.007a6340@mat.uc.pt>
+X-Sender: ct99@mat.uc.pt
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.5 (32)
+Date: Wed, 11 Nov 1998 17:02:41 +0000
+To: categories@mta.ca
+Subject: categories: CT99 - first announcement
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+Please circulate to all interested colleagues.
+
+
+===================================================================
+                         FIRST ANNOUNCEMENT
+===================================================================
+
+
+
+                                CT99
+                International Category Theory Meeting
+
+                      Department of Mathematics
+                        University of Coimbra
+                          Coimbra,  Portugal
+                           July 19-24, 1999
+
+
+
+The Department of Mathematics of the University of Coimbra is organizing an
+International Meeting on Category Theory to be held at the University of
+Coimbra, from 19th to 24th of July, 1999.
+
+The program will consist of 50mn plenary lectures delivered by invited
+speakers 
+and 25mn contributed talks. 
+
+Scientific Committee:
+--------------------
+
+Jiri Adamek (Technische Universitat Braunschweig, Germany)
+Bernhard Banaschewski (McMaster University, Canada)
+Peter T. Johnstone (University of Cambridge, UK)
+Andre Joyal (Universite du Quebec a Montreal, Canada)
+F. William Lawvere (SUNY at Buffalo, USA)
+Dana Scott (Carnegie Mellon University, USA)
+Ross Street (Macquarie University, Australia)
+Walter Tholen (York University, Canada)
+
+
+Organizing Committee:
+--------------------
+
+Manuela Sobral (Universidade de Coimbra)
+Maria Manuel Clementino (Universidade de Coimbra)
+Jorge Picado (Universidade de Coimbra)
+Lurdes Sousa (Instituto Superior Politecnico de Viseu)
+Goncalo Gutierres (Universidade de Coimbra)
+
+
+Additional Information:
+----------------------
+
+Important information, as well as the registration form, will be sent
+to you on January 1999.
+Updated information can be found at the conference home page:
+http://www.mat.uc.pt/~ct99/
+
+
+Pre-Registration:
+----------------
+
+If you plan to attend the conference please pre-register at the web page,
+or fill the pre-registration form below and send it by email
+(mailto:ct99@mat.uc.pt),  by fax (+351-39-832568) or by mail 
+(to CT99, Departamento de Matematica, Universidade de Coimbra,
+Apartado 3008, 3000 Coimbra, Portugal).
+
+
+-------------------------------------------------------------------
+
+
+                    CATEGORY THEORY 99
+
+           Coimbra, Portugal, July 19-24, 1999
+
+            
+              PRELIMINARY REGISTRATION FORM
+                      
+          (Please send until 31 December, 1998)
+
+
+I plan to attend CT99.
+
+I plan to give a talk:  YES ___  NO ___
+
+Family name (please print): ..................................
+
+First name: ..................................................
+
+Affiliation: .................................................
+..............................................................
+..............................................................
+
+Mailing address (if different): ..............................
+..............................................................
+..............................................................
+
+Email: ....................... Fax: ..........................
+
+
+
+
+
+
+From cat-dist Wed Nov 11 15:47:03 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA30265
+	for categories-list; Wed, 11 Nov 1998 14:22:28 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Wed, 11 Nov 1998 17:16:37 GMT
+Message-Id: <199811111716.RAA26437@merlin.mat.uc.pt>
+X-Sender: mmc@mat.uc.pt
+X-Mailer: Windows Eudora Light Version 1.5.2
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: categories@mta.ca
+From: "M. M. Clementino" <mmc@mat.uc.pt>
+Subject: categories: SCTA - first announcement
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+===================================================================
+                         FIRST ANNOUNCEMENT
+===================================================================
+
+                                
+
+             School on Category Theory and Applications
+                      Department of Mathematics
+                        University of Coimbra
+                          Coimbra,  Portugal
+                           July 13-17, 1999
+
+
+The Department of Mathematics of the University of Coimbra is also
+organizing a School on Category Theory and Applications from 13th to 17th of
+July, 1999.
+This school will consist of the following 7 hours intensive courses, at a
+postgraduate level:
+
+n-Categories
+  by John Baez (University of California, USA)
+
+Algebraic Theories
+  by M. Cristina Pedicchio (University of Trieste, Italy)
+
+Chu Spaces: duality as a common foundation for computation and mathematics
+  by Vaughan Pratt (Stanford University, USA).
+
+
+The second announcement will appear on January 1999.
+Updated information can be found at the school home page
+http://www.mat.uc.pt/~scta/
+
+
+Pre-registration:
+----------------
+
+If you plan to attend the conference please register at the web page,
+or fill the pre-registration form below and send it by email
+(to scta@mat.uc.pt), by fax (+351-39-832568) or by mail (to SCTA,
+Departamento de Matematica, Universidade de Coimbra, Apartado 3008,
+3000 Coimbra, Portugal).
+
+
+----------------------------------------------------------------------------
+
+
+        SCHOOL ON CATEGORY THEORY AND APPLICATIONS
+
+           Coimbra, Portugal, July 13-17, 1999
+
+            
+              PRELIMINARY REGISTRATION FORM
+                      
+          (Please send until 31 December, 1998)
+
+
+I plan to attend SCTA.
+
+
+Family name (please print): ..................................
+
+First name: ..................................................
+
+Affiliation: .................................................
+..............................................................
+..............................................................
+
+Mailing address (if different): ..............................
+..............................................................
+..............................................................
+
+Email: ....................... Fax: ..........................
+
+
+
+From cat-dist Wed Nov 11 16:07:34 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA02911
+	for categories-list; Wed, 11 Nov 1998 14:32:48 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: Koslowski <koslowj@iti.cs.tu-bs.de>
+Message-Id: <199811111549.QAA03784@lisa.iti.cs.tu-bs.de>
+Subject: categories: Norddeutsches Kategorienseminar
+To: categories@mta.ca (categories list)
+Date: Wed, 11 Nov 1998 16:49:22 +0100 (MET)
+X-Mailer: ELM [version 2.4ME+ PL28 (25)]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Dear Colleagues,
+
+The following announcement is directed primarily, but not exclusively,
+at German readers of this list.  We simply don't know how many 
+categorically interested people are hiding in (northern) Germany :-)
+(An English version comes after the German version.)
+
+Thank you for your attention.
+
+-- J"urgen Koslowski
+
+
+===================================================================
+
+
+NORDDEUTSCHES KATEGORIENSEMINAR (NDKS)
+
+        am 20./21.\ Februar 1999 in Braunschweig
+
+
+Vor der Jahrtausendwende und in Anlehnung an das wohlbekannte
+"Nordwestdeutsche Kategorienseminar" der 70'er Jahre m\"ochten wir an
+Kategorien interessierten Mathematikern und Informatikern im
+norddeutschen Raum (und dar"uber hinaus) ein Forum bieten, ihre
+Ergebnisse zu pr\"asentieren und sich mit anderen auszutauschen.
+
+Insbesondere soll dem kategoriellen Nachwuchs die M\"oglichkeit
+geboten werden, im informellen Rahmen Gleichgesinnte kennenzulernen
+und evtl.\ erste Tagungserfahrungen zu sammeln.  Insofern wird die
+Tagungssprache \"uberwiegend Deutsch sein.  Aber nat\"urlich sind auch
+ausl\"andische KollegInnen herzlich eingeladen, falls sie sich gerade
+im norddeutschen Raum aufhalten.
+
+Wir verstehen diese Veranstaltung nicht als Konkurrenz zur
+erfolgreichen europ"aischen PSSL-Reihe, sondern eher als regionale
+Vorbereitung.  
+
+Beim Zeitplan wollen wir uns an das bew\"ahrte Schema halten mit
+Vortr\"agen am Samstag und am Sonntag Vormittag, sowie An- und Abreise
+am Freitag bzw.\ Sonntag.  Sie k\"onnen nat\"urlich auch l\"anger
+bleiben!  Um die Unterbringung der Teilnehmer in Braunschweig k"ummern
+wir uns.
+
+Bitte bringen Sie diese Ank\"undigung auch eventuell interessierten
+KollegInnen zur Kenntnis.  Wir freuen uns schon auf Ihren Besuch in
+Braunschweig!
+
+Jiri Adamek
+J"urgen Koslowski
+
+------------------------------------------------------------------------------
+NORDDEUTSCHES KATEGORIENSEMINAR (NDKS)
+
+        February 20/21, 1999, in Braunschweig
+
+
+Before the third millennium and in the tradition of the well-known
+"Nordwestdeutsches Kategorienseminar" of the 1970's we would like
+invite categorically interested mathematicians and computer scientists
+from Northern Germany (and beyond) to present their results and to
+exchange ideas.
+
+In particular, we hope that students interested in category theory
+will have a chance to meet like-minded people in an informal
+atmosphere and gain experience at meetings.  Hence we expect most
+talks to be in German.  But, of course, foreign colleagues who happen
+to be in the area are cordially invited to attend as well.
+
+This meeting is not intended as competition for the highly successful
+European PSSL series.  We would like it to serve as regional
+preparation instead.
+
+We want to keep the familiar timetable of talks on Saturday and Sunday
+morning, which leaves Friday and Saturday for arrival and departure,
+respectively.  Of course, you can stay longer, if you wish!  We will
+try to find accommodations for the participants.
+
+Please notify your colleagues who might be interested.  We are looking
+forward to your visit in Braunschweig!
+
+Jiri Adamek
+J"urgen Koslowski
+
+-------------------------------------------------------------------------------
+
+Bitte an J"urgen Koslowski <koslowj@iti.cs.tu-bs.de> schicken, m\"oglichst
+bis zum 10. Januar:
+
+Please return to J"urgen Koslowski <koslowj@iti.cs.tu-bs.de>, preferably
+before January 10:
+
+Postanschrift / postal address:
+Institut f"ur Theoretische Informatik
+TU Braunschweig
+Postfach 3329
+D-38023 Braunschweig
+Germany
+
+
+Ich m\"ochte am NDKS am 20./21.\ Februar 1999 in Braunschweig teilnehmen / 
+I intend to come to the NDKS on February 20/21, 1999, in Braunschweig:
+
+* Ich m\"ochte vortragen zum Thema / I intend to give a talk entitled
+
+  ...................................................................
+
+* ( ) 25 Minuten/minutes                       ( ) 40 Minuten/minutes
+
+* Bitte reservieren Sie ein Zimmer f\"ur / Please reserve accommodation for
+
+  Donnerstag/Freitag/Samstag/Sonntag  /  Thursday/Friday/Saturday/Sunday
+
+* ( ) Einzelzimmer / single room               ( ) Doppelzimmer / double room
+
+* ( ) Ich bin VegetarierIn / I am a vegetarian
+
+
+Name / name      :
+
+Adresse / address:
+
+Email            :
+
+Telefon / phone  :
+
+
+
+
+
+ 
+-- 
+J"urgen Koslowski       % If I don't see you no more in this world
+ITI                     % I meet you in the next world
+TU Braunschweig         % and don't be late!
+koslowj@iti.cs.tu-bs.de %              Jimi Hendrix (Voodoo Child)
+
+
+From cat-dist Wed Nov 11 20:16:47 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA08282
+	for categories-list; Wed, 11 Nov 1998 19:08:00 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199811112120.IAA12919@macadam.mpce.mq.edu.au>
+X-Sender: street@macadam.mpce.mq.edu.au
+Mime-Version: 1.0
+Content-Type: text/plain; charset="iso-8859-1"
+Date: Thu, 12 Nov 1998 08:21:09 +1000
+To: categories@mta.ca
+From: street@mpce.mq.edu.au (Ross Street)
+Subject: categories: Re: computation in CPS
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id RAA29277
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Dear Categories:
+
+I sent this yesterday but I notice I had mixed up the address. I'll try again.
+
+--Ross
+
+>In the omega-category In generated by the n-cube, is it possible to
+>find a kind of "general" formula for the (n-1)-source (target) of
+>the n-morphism corresponding to the interior of In ? I can do
+>mechanical computation in low dimension but I am not able for the
+>moment to imagine a formula for any dimension. In high dimension ,
+>computations become very long.
+
+There are two algorithms: my excision of extremals and the Aitchison-Pascal
+triangle.  The former starts with the top dimension cell and works down
+while the former builds up the cocycle identities recursively from
+dimension 0.
+
+Excision of extremals was done for simplexes on page 325 of [1] resulting
+in the formulas on page 330 and 331. The cubes case was done around the
+same time but not published. At the end of the 1980s, Ross Moore
+implemented this algorithm on a Mac; but things do get big quickly after
+the cases given in [1]. For general parity complexes, see page 330 of [2]
+where, even after [3], two expository mistakes remain: in the first line of
+the Algorithm, "largest" should be "smallest"; on the fourth line the plus
+signs should be unions; and on the fifth line the element  w  should be
+chosen to be not in  "mu"(u)_(n+1).
+
+Aitchison presented his algorithm for simplexes and cubes at the 1987
+category conference in Louvain-la-Neuve, Belgium.  I explain it somewhat on
+page 68 of [5]; also see page 559 of [4].  The simplex case can be obtained
+from the cube case which has more symmetry.
+
+1. The algebra of oriented simplexes, J. Pure Appl. Algebra 49 (1987) 283-335
+
+2. Parity complexes, Cahiers topologie et géométrie différentielle
+catégoriques 32 (1991) 315-343
+
+3. Parity complexes: corrigenda, Cahiers topologie et géométrie
+différentielle catégoriques  35 (1994) 359-361
+
+4. Categorical structures, Handbook of Algebra, Volume 1  (editor M.
+Hazewinkel; Elsevier Science, Amsterdam 1996; ISBN 0-444-82212-7) 529-577
+
+5. Higher categories, strings, cubes and  simplex equations, Applied
+Categorical Structures  3 (1995) 29-77 & 303
+
+Don't be surprised that the formula was hard to imagine. John Roberts said
+that no amount of staring revealed the pattern. Yet, the Aitchison-Pascal
+triangle is the solution! I seem to remember Iain Aitchison got it first
+for the cubes and then, by geometry, transferred to simplexes (which is
+where Roberts was looking).
+
+<== Ross
+
+
+
+
+
+
+
+From cat-dist Wed Nov 11 20:28:32 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA06714
+	for categories-list; Wed, 11 Nov 1998 19:08:47 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199811112141.QAA06255@po.cwru.edu>
+Date: Wed, 11 Nov 1998 16:41:48 -0500 (EST)
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: Windows Eudora Version 1.4.4
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+To: categories@mta.ca
+From: cxm7@po.cwru.edu (Colin McLarty)
+Subject: categories: Re: Gödel and category theory
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Perez Garcia Lucia <Lucia.Perez@uv.es> wrote, among other things:
+
+>- In what sense the self-applicability of categories transcends the concept
+>  of set?. (It is obvious that categories transcend the concept of well-
+>  founded set but, what's the matter with non-well-founded sets?.
+
+        Well-founding is an irrelevant detail. Take any non-wellfounded set
+theory which includes the axiom of choice, such as Aczel's AFA. Then every
+set is isomorphic to an ordinal, that is to a well-founded set. Since
+categorical methods are all isomorphism invariant, any categorical structure
+available in this set theory is also available in well-founded sets. I have
+discussed this in an article "Anti-foundation and self-reference" Journal of
+Philosophical Logic 22 (1993) 19-28. There is no real chance that abandoning
+the axiom of choice will help either--say by adopting AFA without Axiom of
+Choice. 
+
+        Rather, the apparent issue is existence of a universal set--a set of
+all sets, so that you make a category of all categories. If you want to use
+membership based set theory this will require non-wellfounding, but again
+the details of membership and wellfounding are irrelevant. 
+
+        Anyway, the problem here is that functions are hard to work with in
+set theory with a universal set. I have shown that in any such set theory
+meeting a few weak conditions there is a category of all categories, and it
+is not cartesian closed. The result is clear from the more particular case
+"Failure of cartesian closedness in NF" Journal of Symbolic Logic57 (1992)
+555-56. Working with such a poor 'category of all categories' is much more
+difficult than just doing without. 
+
+        I think a more promising approach is to use Benabou's theory of
+fibrations and definability as in Benabou J. (1985). "Fibered categories and
+the foundations of naive category theory". Journal of Symbolic Logic 50,
+10-37. I have discussed this briefly in "Category theory: Applications to
+the foundations of mathematics" Routledge Encyclopedia of Philosophy (1998);
+and in "Axiomatizing a category of categories" Journal of Symbolic Logic56
+(1991) 1243-60. 
+
+        I see no good arguments that there SHOULD be a genuine "category of
+all categories" in any strong sense. But it seems an interesting question.
+
+>- In what sense do you think G?del proposed distinguishing different levels
+>  of categories?. Would it be possible that G?del was thinking of something
+>  like type theory?.
+
+        More likely he was thinking of Eilenberg and Mac Lane's use of
+Goedel-Bernay's set theory as a foundation in "The general theory of natural
+equivalences", so there are set categories and class categories.
+
+        To study Goedel's claim here, you should look at any of Mac Lane's
+papers on foundations that Goedel might have seen by this time. Maybe the
+foundational parts of "The general theory of natural equivalences" are all
+he could have seen, I don't know. Then it would be good to know what people
+around Princeton were saying about category theory at this time--and that
+might be very hard to find out.
+
+Colin
+
+
+
+
+From cat-dist Thu Nov 12 11:00:59 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id IAA27774
+	for categories-list; Thu, 12 Nov 1998 08:42:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <3.0.3.32.19981112003347.006956a0@imiucca.csi.unimi.it>
+X-Sender: acarboni@imiucca.csi.unimi.it
+X-Mailer: QUALCOMM Windows Eudora Light Version 3.0.3 (32)
+Date: Thu, 12 Nov 1998 00:33:47 +0100
+To: categories@mta.ca
+From: aurelio carboni <acarboni@imiucca.csi.unimi.it>
+Subject: categories: Godel
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+AS for the Perez calling for references, I found quite surprising
+that nobody quoted Lawvere's work on the subject. Carboni.
+
+
+
+From cat-dist Thu Nov 12 12:56:04 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA09704
+	for categories-list; Thu, 12 Nov 1998 11:10:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b00b27092eb69cb@[130.251.60.168]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Thu, 12 Nov 1998 15:26:28 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Preprint available
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+The following preprint:
+
+M. Grandis,
+"An intrinsic homotopy theory for simplicial complexes
+with applications to image processing"
+
+is available at:
+
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+as:   Lnk.Nov98.ps
+
+***
+
+Abstract. A simplicial complex is a set equipped with a down-closed family
+of distinguished finite subsets; this structure is mostly viewed as
+codifying a triangulated space. Here, this structure is used directly to
+describe "spaces" of interest in various applications, where the associated
+triangulated space would be misleading. An intrinsic homotopy theory, not
+based on topological realisation, is introduced.
+        The applications considered here are aimed at metric spaces and
+digital topology; concretely, at image processing and computer graphics. A
+metric space  X  has a structure  t_e(X)  of simplicial complex at each
+"resolution"  e > 0;  the resulting n-homotopy group  \pi_n(t_e(X))  detects
+those singularities which can be captured by an n-dimensional grid, with
+edges bound by  e;  this works equally well for continuous or discrete
+regions of euclidean spaces.
+
+***
+
+Comments would be appreciated.
+
+In particular, I am uneasy about a question of terminology.
+
+In my opinion, the term "simplicial complex", quite appropriate when the
+structure is viewed as codifying a triangulated space, is unfit when such
+objects are treated as "spaces" in themselves (somewhat close to
+bornological spaces, which have similar axioms on objects and maps).
+
+In other words, "simplicial complex" should not refer to the category
+itself, say  C,  but to its usual embedding in  Top,  the simplicial
+realisation. The two aspects may clash, e.g. with respect to initial or
+final structures: the coarse C-object on three points (final structure, all
+parts are distinguished) is realised as a euclidean triangle; a C-subobject
+is sufficient to produce a topological subspace (a regular subobject in
+Top), but a C-subspace (a regular subobject in  C)  is a stronger notion.
+Moreover, from a more concrete point of view, the simplicial realisation is
+quite inappropriate in most of the applications considered in this work.
+
+The opposition  "C-object / simplicial complex" is in part similar to
+"sequence / series": the second term refers to a more specific view & use
+of the same data; the clashing of the opposition is particularly evident in
+the notions of convergence, for a sequence or a series.
+
+That's why I am calling a C-object a "combinatorial space". (The term
+"combinatorial complex" has also been used for simplicial complex; and I
+wanted a term of the form "attribute + space", to use freely of topological
+terms like discrete, coarse, subspace...)
+But of course it is embarassing to propose a new term for a classical notion.
+
+Marco Grandis
+
+
+
+
+From cat-dist Thu Nov 12 13:31:50 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA21977
+	for categories-list; Thu, 12 Nov 1998 11:56:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <364AAD06.739C69F4@server.ru>
+Date: Thu, 12 Nov 1998 12:40:22 +0300
+From: Danilov Nikita <god@server.ru>
+Organization: Server Ltd.
+X-Mailer: Mozilla 4.06 [en] (WinNT; I)
+MIME-Version: 1.0
+To: Categories Mailing List <categories@mta.ca>
+Subject: categories: Yoneda lemma
+Content-Type: text/plain; charset=koi8-r
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Hello all,
+
+I got a proof that if Hom-functor h of category C factors through
+complete category M up to natural isomorphism (that is $h \cong RP : C*
+\times C --> Set$, where P is faithful forgetful functor P : M --> Set
+and R : C* \times C --> M) and P preserves limits, then
+1. for every category C' Hom-functor Nat of Funct(C',C) factors through
+M up to isomorphism: Nat = Nat' P, and
+2. if Hom-functor of M itself factors through M and is right adjointed
+to multiplication functor (i.e., M is cartesian closed), P preserves
+exponential adjoints and for every object x in C there is 
+e_x : 1 --> R(x,x), such that e_xP selects 1_x in Hom(x,x), then for
+every functor F : C --> M, compatible with R in obvious sense, these
+exists natural (on x) isomorphism Nat'(R^x,F) \cong xF as objects in M,
+that is Yoneda lemma holds.
+
+Is this known/trivial/known-to-be-false?
+
+Nikita.
+
+
+From cat-dist Mon Nov 16 18:04:23 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id QAA22989
+	for categories-list; Mon, 16 Nov 1998 16:23:30 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from callisto.acsu.buffalo.edu (qmailr@callisto.acsu.buffalo.edu [128.205.7.122])
+	by mailserv.mta.ca (8.8.8/8.8.8) with SMTP id QAA19707
+	for <rrosebru@mta.ca>; Mon, 16 Nov 1998 16:08:23 -0400 (AST)
+X-Received: (qmail 7653 invoked by uid 39883); 16 Nov 1998 20:07:52 -0000
+Date: Mon, 16 Nov 1998 15:07:52 -0500 (EST)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+To: categories <categories@mta.ca>
+Reply-To: wlawvere@ACSU.Buffalo.EDU
+Subject: categories: re: Sets
+Message-ID: <Pine.GSO.3.96.981116144910.554B-100000@callisto.acsu.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+ Conceptualizing and axiomatizing
+     Mike Barr's experience with teaching membership-based set theory is
+shared by many mathematicians, and quite a few share his conclusions.  One
+conclusion is that clarification is needed on even more basic questions
+than just the large/small issue (which concerned Goedel, Mac Lane, and
+Perez), in order to arrive at conceptions and axiomatizations compatible
+with the practice of mathematics.  For example, I was aiming at such a
+clarification in pp. 118-128 of my 1976 paper in honor of Professor
+Eilenberg's 60th birthday, where I advocated some rational connection
+between conceptualizing and axiomatizing.
+	The complete lack of such a connection in a recent article in the
+journal "Mathematical Structures in Computer Science" could have been
+avoided by the editors, if not by the authors.  In a section labeled 
+"Basic Set Theory" (p.510) they quote from my above paper a description of
+the notion of abstract set:
+	1. ...each element of X has no structure whatsoever.
+	2.  X itself has no internal structure except for equality
+	    and inequality of pairs of elements....
+immediately followed by their absurd conclusion:
+"axiomatically this corresponds to taking the membership relation epsilon
+as the only primitive notion of set theory and to postulating  .." some
+axioms typical to Zermelo-style membership-based theory!  
+	Of course those axioms are NOT compatible with the conception
+quoted:  they violate (1) because according to the Zermelo primitives and
+axioms, an element usually has elements, which would be structure;  and
+they violate (2) since according to those primitives and axioms, a pair of
+elements of X may stand itself in the membership relation, which would be
+an internal structure other than equality.  The authors neglected to quote
+the third clause which (as in the example that Mike mentions) their axioms
+also violate.
+	The notion of abstract set (Kardinalen in Cantor's sense) is basic
+among the many other notions of cohesive and/or variable sets (Mengen) to
+the extent that we can model the Mengen via diagrams of maps between
+abstract sets.  Abstract sets may be "abstracted from" less abstract sets,
+as Cantor did, or used, as most modern mathematics in practice does, as
+all-purpose memory cells or parameterizers or nodes in such diagrams.  In
+addition to the papers by Colin McLarty mentioned in his message of
+November 11, 1998, the following papers should help to clarify this notion
+and its role in mathematics.  
+	
+J. Isbell	Adequate sub-categories
+		Illinois J. Math. vol. 4, pp 541-552, 1960
+
+F. W. Lawvere	An elementary theory of the category of sets
+		Proc. Nat. Acad. Sc. USA, vol. 52,  1964, 
+		pp 1506-1511
+
+F. W. Lawvere 	Variable quantities and variable structures in
+		topoi, (see especially pp 118-128)
+		in Algebra, Topology, and Category Theory,	
+		ed. Heller & Tierney, Academic Press, 1976
+			
+F. W. Lawvere	Cohesive toposes and Cantor's lauter Einsen
+		(concerning Cantor's neglected Kardinalen)
+		Philosophia Matematica, vol. 2, 1994, pp 5 - 15
+
+W. Mitchell	Boolean topoi and the theory of sets
+		(the membership-free content of Goedels
+		constructible sets still needs to be clarified
+		further)
+		Journal of Pure and Applied Algebra, 
+		vol. 2, 1972, pp 261-274
+
+
+
+
+********************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+*********************************************************************
+                       
+
+
+
+
+
+From cat-dist Mon Nov 16 20:43:05 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id TAA18523
+	for categories-list; Mon, 16 Nov 1998 19:45:46 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 16 Nov 1998 17:08:09 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+To: categories@mta.ca
+Subject: categories: query
+Message-ID: <Pine.SOL.3.96.981116170544.3385D-100000@noether.math.unc.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The language of higher category theory in more than analogous
+to homotopy theory, especially in the cellular version.  What
+is the appropriate reference for a non-categorical reader?
+Have the A_\infty categories of Smirnov or Fukaya been treated
+in the categorical literature??
+thanks
+
+.oooO   Jim Stasheff		jds@math.unc.edu
+(UNC)   Math-UNC		(919)-962-9607
+ \ (    Chapel Hill NC		FAX:(919)-962-2568
+  \*)   27599-3250
+
+        http://www.math.unc.edu/Faculty/jds
+
+
+
+From cat-dist Tue Nov 17 11:44:55 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id JAA30432
+	for categories-list; Tue, 17 Nov 1998 09:40:08 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b03b276e1237f20@[130.251.60.168]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Tue, 17 Nov 1998 09:26:51 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Re: preprint available (on simplicial complexes)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Reply to James Stasheff <jds@math.unc.edu>
+
+> is it also available on your web page without ftp?
+
+No, from my home page:
+
+http://pitagora.dima.unige.it/webdima/STAFF/GRANDIS/
+
+you would just have access to all papers available by ftp, at the
+address I gave:
+
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+***
+
+> will you be posting it to the math archive at lanl?
+
+yes, in a while and possibly after revision.
+
+***
+
+With best wishes
+
+Marco Grandis
+
+
+
+
+From cat-dist Wed Nov 18 12:51:08 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA23834
+	for categories-list; Wed, 18 Nov 1998 10:53:47 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199811180412.UAA15669@charity.ucr.edu>
+Subject: categories: Re: query
+To: categories@mta.ca
+Date: Tue, 17 Nov 1998 20:12:45 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Jim Stasheff writes:
+
+> The language of higher category theory in more than analogous
+> to homotopy theory, especially in the cellular version.  What
+> is the appropriate reference for a non-categorical reader?
+> Have the A_\infty categories of Smirnov or Fukaya been treated
+> in the categorical literature??
+
+Unfortunately the truly appropriate reference has not yet been
+written, because the equivalence between weak infinity-groupoids
+and homotopy types has not yet worked out in full detail, at least
+not in the cellular version.   The *dream* of translating all of 
+homotopy theory into higher category theory is outlined in:
+
+John Baez and James Dolan, Categorification, to appear in Proceedings
+Workshop on Higher Category Theory and Mathematical Physics at 
+Northwestern University, Evanston, Illinois, March 1997, eds. Ezra
+Getzler and Mikhail Kapranov, preprint available as math.QA/9802029.
+
+This also has lots of references to different places where various
+bits of the dream have been realized.  
+
+Basically the dream consists of working out the following correspondence:
+
+HIGHER CATEGORY THEORY             HOMOTOPY THEORY
+
+omega-groupoids                    homotopy types
+n-groupoids                        homotopy n-types
+k-tuply groupal omega-groupoids    homotopy types of k-fold loop spaces
+k-tuply groupal n-groupoids        homotopy n-types of k-fold loop spaces
+k-tuply monoidal omega-groupoids   homotopy types of E_k spaces
+k-tuply monoidal n-groupoids       homotopy n-types of E_k spaces
+stable omega-groupoids             homotopy types of infinite loop spaces
+stable n-groupoids                 homotopy n-types of infinite loop spaces
+Z-groupoids                        homotopy types of spectra
+ 
+How do A_infinity categories fit in?  As far as I can tell they should
+correspond to omega-categories where all j-morphisms are invertible for
+j > 1.  
+
+
+
+
+From cat-dist Wed Nov 18 12:58:44 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA22834
+	for categories-list; Wed, 18 Nov 1998 11:01:58 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from uts.univ.trieste.it (pedicchi@uts.univ.trieste.it [140.105.48.16])
+	by mailserv.mta.ca (8.8.8/8.8.8) with ESMTP id GAA00219
+	for <rrosebru@mta.ca>; Wed, 18 Nov 1998 06:00:49 -0400 (AST)
+X-Received: from localhost (pedicchi@localhost)
+	by uts.univ.trieste.it (8.8.8/8.8.8) with SMTP id LAA10270
+	for <rrosebru@mta.ca>; Wed, 18 Nov 1998 11:00:37 +0100 (MET)
+Date: Wed, 18 Nov 1998 11:00:36 +0100 (MET)
+To: categories <categories@mta.ca>
+From: "Pedicchio M. Cristina" <pedicchi@uts.univ.trieste.it>
+Subject: categories: PSSL in Trieste
+In-Reply-To: <Pine.OSF.3.96.981111153949.32593D-100000@mailserv.mta.ca>
+Message-ID: <Pine.OSF.4.00.9811181056270.12266-100000@uts.univ.trieste.it>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+
+PSSL  TRIESTE 28-29 November 1998
+
+
+
+Saturday:
+
+9.30 - 10.10  F.W. Lawvere: TBA
+10.15 -  10.45  A. Kock: Strength of Amazing Right Adjoints (with G.
+Reyes)
+10.50- 11.20  G. Janelidze: Homological Algebra in additive categories via
+Descent Theory
+break
+11.50 - 12.20  M. Grandis: An intrinsic homotopy theory for simplicial
+complexes
+12.25 - 12.55  E. Vitale: Factorization systems for symmetric cat-groups
+
+lunch
+
+15.00 - 15.30  J. Adamek: M-completeness is seldom monadic over graphs
+(joint with G.M. Kelly)
+15.35 -16.05 J. Rosicky:  Generalized varieties
+16.10 - 16.40 I. Le Cruerer: Descent of internal structures 
+break
+17.10 - 17.40 D. Bourn: Normal monomorphisms and Mal'cev objects in
+protomodular categories
+17.45 - 18.15 M. Gran: Internal groupoids in Maltsev categories
+18.20 - 18.50 H. Kleisli: A model of linear logic revisited.
+
+
+Sunday:
+
+9.00 - 9.30  J. Goguen: Sheaf Theory and cocurrency in Computer Science
+9.35  - 10.05  R.F.C. Walters: On the algebra of feedback and systems with
+boundary (joint work with P Katis and N Sabadini)
+10.10 -10.40  J. Koslowski: *-Linear Bicategories  (joint with Robert
+Seely  and Robin Cockett.)
+break
+11.10 - 11.40 F. Linton: Banach Spaces *are* monadic - just not quite over
+Sets
+11.45  - 12.15 W. Tholen: Total cocompleteness of the formal product
+completion (joint with J.Adamek and L.Sousa)
+12.20 - 12.50 M. Clementino: A categorical setting for local compactness. 
+
+
+ 
+
+M.Cristina Pedicchio - Dept.Mathematics - Univ.Trieste 34100 Trieste -
+Italy
+39 40 6763256/3727  - fax 39 40 6763256 - pedicchi@univ.trieste.it
+
+
+
+
+
+
+
+
+
+
+From cat-dist Wed Nov 18 13:03:19 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA23129
+	for categories-list; Wed, 18 Nov 1998 11:23:13 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <l03130300b27863d2ed99@[130.225.21.96]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Wed, 18 Nov 1998 13:27:09 +0100
+To: categories@mta.ca
+From: kock <kock@imf.au.dk>
+Subject: categories: preprint available (Kock and Reyes)
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+The following preprint
+
+A. Kock and G.E. Reyes: Fractional Exponent Functors and Categories of
+Differential Equations
+
+is available via the Home Page
+
+http://www.mi.aau.dk/~kock/
+
+or directly by ftp (200 KB)
+
+ftp://ftp.imf.au.dk/pub/kock/ODE5.ps
+
+(also available in .dvi format, 100 KB).
+
+Abstract: This paper grew out of a question/suggestion of Lawvere: to use
+the "amazing right adjoints" (= fractional exponents) of Synthetic
+Differential Geometry, to get information on the category of second order
+differential equations. As a byproduct of our investigations, we derive
+some information about the strength (enrichment) of fractional exponent
+functors in general.
+
+
+
+
+From cat-dist Wed Nov 18 15:36:38 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id OAA20916
+	for categories-list; Wed, 18 Nov 1998 14:07:57 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Date: Wed, 18 Nov 1998 16:09:09 +0000 (GMT)
+To: categories@mta.ca
+Subject: categories: preprint available
+X-Mailer: VM 6.43 under 20.4 "Emerald" XEmacs  Lucid
+Message-ID: <13906.60796.497804.182184@mhuilinn.dcs.ed.ac.uk>
+From: "Martin Escardo" <mhe@dcs.ed.ac.uk>
+Content-Transfer-Encoding: 8bit
+X-MIME-Autoconverted: from quoted-printable to 8bit by mailserv.mta.ca id MAA30554
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The following preprint is available at
+
+    http://www.dcs.ed.ac.uk/home/mhe/pub/papers/patch-CSLC.ps.gz
+&   http://www.dcs.ed.ac.uk/home/mhe/papers.html
+&   ftp://ftp.dcs.ed.ac.uk/pub/mhe/patch-CSLC.ps.gz
+
+             On the compact-regular coreflection 
+         of a compact stably locally compact locale.
+
+ABSTRACT: The Scott continuous nuclei form a subframe of the frame of
+all nuclei. We refer to this subframe as the patch frame. We show that
+the patch construction exhibits (i) the category of Stone locales and
+continuous maps as a coreflective subcategory of the category of
+coherent locales and coherent maps, (ii) the category of compact
+regular locales and continuous maps as a coreflective subcategory of
+the category of compact stably locally compact locales and perfect
+maps, and (iii) the category of regular locally compact locales and
+continuous maps as a coreflective subcategory of the category of
+stably locally compact locales. We relate our patch construction to
+Banaschewski and Brümmer's construction of the dual equivalence of the
+category of compact stably locally compact locales and perfect maps
+with the category of compact regular biframes and biframe
+homomorphisms.
+
+Comments are welcome.
+-----------------------------------------------------------------
+Martin H. Escardo, LFCS, Computer Science, Edinburgh University
+King's Buildings, Mayfield Road, Edinburgh EH9 3JZ, Scotland
+office:	2606 (JMCB) fax: +44 131 667 7209 phone: +44 131 650 5135
+mailto:mhe@dcs.ed.ac.uk          http://www.dcs.ed.ac.uk/home/mhe
+-----------------------------------------------------------------
+
+
+From cat-dist Wed Nov 18 22:23:15 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id VAA27550
+	for categories-list; Wed, 18 Nov 1998 21:28:48 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <199811190014.LAA28074@macadam.mpce.mq.edu.au>
+X-Sender: street@macadam.mpce.mq.edu.au
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Thu, 19 Nov 1998 11:15:46 +1000
+To: categories@mta.ca
+From: street@mpce.mq.edu.au (Ross Street)
+Subject: categories: Re: query
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+>The language of higher category theory in more than analogous
+>to homotopy theory, especially in the cellular version.  What
+>is the appropriate reference for a non-categorical reader?
+>Have the A_\infty categories of Smirnov or Fukaya been treated
+>in the categorical literature??
+
+Fortunately, since the A_\infty categories (described sketchily in the
+preprint I have of Fukaya) use chain complexes rather than topological
+spaces (so that I believe a 1-object A_\infty category is an algebra for
+the A_\infty non-permutative operad on chain complexes - an A_\infty
+DG-algebra), we do not need to realise the whole homotopy types dream (as
+described by John Baez) to give a categorical description of A_\infty
+categories. Several years ago I remember discussing this by email with Jim
+Stasheff.  Dominic Verity was here at the time.  I cannot remember all the
+details but the two basic ingredients were some free strict n-categories
+made from the set (whose elements are to be the objects of the A_\infty
+category) in much the way the orientals are constructed, and the
+construction (below) mentioned in my Oberwolfach Descent Theory notes of
+September 1995.
+
+        There is a connection between the Gray tensor product and ordinary
+chain complexes.  Each chain complex R gives rise to a (strict)
+omega-category J(R) whose 0-cells are 0-cycles  a  in  R, whose 1-cells  b
+: a --> a'  are elements  b  in  R_1  with  d(b) = a'- a,  whose 2-cells  c
+: b --> b'  are elements  c  in  R_2  with  d(c) = b'- b,  and so on.  All
+compositions are addition.  This gives a functor  J :  DG --> omega-Cat
+from the category  DG  of chain complexes and chain maps.  In fact,  J :
+DG --> omega-Cat  is a monoidal functor where  DG  has the usual tensor
+product of chain complexes and  omega-Cat  has the Gray tensor product.  By
+applying  J  on homs, we obtain a (2-) functor  J_* :  DG-Cat --> V_2-Cat,
+where  V_2  is  omega-Cat  with the Gray-like tensor product (extending the
+natural tensor product of oriented cubes as described in Sjoerd Crans
+thesis).  In particular, since  DG  is closed, it is a DG-category and we
+can apply  J_*  to it.  The V_2-category  J*(DG)  has chain complexes as
+0-cells and chain maps as 1-cells; the 2-cells are chain homotopies and the
+higher cells are higher analogues of chain homotopies.
+
+Best regards,
+Ross
+
+
+
+
+From cat-dist Thu Nov 19 13:59:01 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA15732
+	for categories-list; Thu, 19 Nov 1998 12:23:05 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: sjv@pop.doc.ic.ac.uk
+Message-Id: <v01510105b2789678a21c@[146.169.29.106]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Thu, 19 Nov 1998 11:53:12 +0000
+To: categories@mta.ca
+From: s.vickers@doc.ic.ac.uk (Steven Vickers)
+Subject: categories: Has this topos ever been found useful?
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+After seeing Eric Goubault's work on directed homotopy, where he defines a
+notion of "locally partially ordered space", I found myself considering the
+following topos. Does anyone know if it has been used, for instance in
+algebraic geometry or algebraic topology?
+
+What I am trying to capture by the definition is the process of taking the
+lower semicontinuous reals in [0,1] (classically, [0,1] with its Scott
+topology, so that the numerical order becomes the specification order) and
+identifying 0 and 1. Then the specialization from 0 to 1 becomes a
+non-trivial endomorphism e of 0, so we are forced to consider the modified
+space as a topos, not a locale. In addition, an extra point will spring
+into existence, namely the (filtered) colimit of
+
+  0 --> 0 --> 0 --> ...
+     e     e     e
+
+The topos is given by a site as follows. Let Q+ be the additive monoid of
+non-negative rationals and Q/Z the rationals modulo the integers. Q+ acts
+on Q/Z by addition. Let C be the corresponding category of elements (object
+= element [q] of Q/Z, morphisms ([q],f): [q] -> [q+f] for f in Q+) and
+generate a Grothendieck topology on C^op by letting any object [q] of C be
+cocovered by all the morphisms ([q],f) for f > 0.
+
+Let E be the topos corresponding to this site on C^op. Its points are flat
+presheaves F on C with the condition that if x is in F([q]) then x =
+([q],f)y for some f > 0, y in [q+f]. The points arising from the
+wrapped-round [0,1] are like half-infinite helices (F([q]) = N for all q),
+and the new point is like an infinite helix (F([q]) = Z for all q).
+
+Steve Vickers.
+
+
+
+
+From cat-dist Thu Nov 19 14:05:04 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA15445
+	for categories-list; Thu, 19 Nov 1998 12:22:16 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-Id: <v02140b00b27984d0b72b@[130.251.60.171]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Thu, 19 Nov 1998 10:31:09 +0100
+To: categories@mta.ca
+From: grandis@dima.unige.it (Marco Grandis)
+Subject: categories: Re: query
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+I have not seen Fukaya's paper.
+
+If the problem is to formalise higher homotopies for, say, topological
+spaces or chain complexes,  together with their operations, there is a
+simple solution based on the path endofunctor (or, dually, the cylinder
+endofunctor; or their adjunction) and its powers.
+
+The path endofunctor  P  is constructed so that a homotopy  a: f -> g: X ->
+Y  amounts to a map  a: X -> PY;  the maps  f, g  are recovered by means of
+the two faces  d-, d+: PY -> Y.
+(For  Top,  PY  is obviously the space  Y^[0, 1]  of paths in  Y,  with the
+compact-open topology; for chain complexes  (PY)_n  =  Y_n + Y_(n+1) + Y_n,
+with suitable differential.)
+
+P  comes equipped with various natural transformations (faces, degeneracy,
+connections, symmetries, concatenation...), satisfying "algebraic"
+coherence axioms (a sort of "cubical comonad" with additional structure).
+These transformations represent the basic structure of lower order
+homotopies.
+
+But now you have, practically for free:
+
+- n-tuple homotopies, represented by the power endofunctor  P^n,
+- n-homotopies, represented by a subfunctor  P_n  of  P^n,
+- their operations, via the usual algebra of natural transformations,
+- the deduced coherence relations of the latter.
+
+Eg, a double homotopy, represented by a map  X -> P^2(Y),  has four faces
+given by the four natural transformations  d-P, d+P, Pd-, Pd+: P^2 -> P;
+if  k  is the concatenation of homotopies,  kP  and  Pk  are the vertical
+and horizontal concatenation of double homotopies, and so on; if  k  is
+associative, as is the case for chain complexes but not for spaces, so are
+all higher concatenations. A double homotopy is said to be a 2-homotopy
+when its "vertical" faces (say) are trivial, i.e. factor through the
+degeneracy  1 -> P.
+(For  Top,  P^2(Y)  is the space of maps from the standard square  [0, 1]^2
+to Y;  P_2(Y)  is the subspace of those maps which are constant on the
+vertical faces of the square.)
+
+This way of deducing higher homotopies and their operations from the lower
+ones can be found in:
+
+M. Grandis, Categorically algebraic foundations for homotopical algebra,
+Appl. Categ. Structures 5 (1997), 363-413.
+
+M. Grandis, On the homotopy structure of strongly homotopy associative
+algebras, J. Pure Appl. Algebra, 134 / 1 (1999 ?), 15-81.
+
+Regards,   Marco Grandis
+
+Dipartimento di Matematica
+Universita' di Genova
+via Dodecaneso 35
+16146 GENOVA, Italy
+e-mail: grandis@dima.unige.it
+
+http://pitagora.dima.unige.it/webdima/STAFF/GRANDIS/
+ftp://pitagora.dima.unige.it/WWW/FTP/GRANDIS/
+
+
+
+
+From cat-dist Thu Nov 19 14:09:44 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA11116
+	for categories-list; Thu, 19 Nov 1998 12:21:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from zeus.mpce.mq.edu.au (zeus.mpce.mq.edu.au [137.111.219.12])
+	by mailserv.mta.ca (8.8.8/8.8.8) with ESMTP id GAA09013
+	for <cat-dist@mta.ca>; Thu, 19 Nov 1998 06:34:47 -0400 (AST)
+X-Received: (from joyal@localhost) by zeus.mpce.mq.edu.au (8.9.1/8.9.1) id VAA05255; Thu, 19 Nov 1998 21:34:42 +1100
+From: Andre Joyal <joyal@zeus.mpce.mq.edu.au>
+Message-Id: <199811191034.VAA05255@zeus.mpce.mq.edu.au>
+Subject: categories: category-homotopy
+To: categories@mta.ca
+Date: Thu, 19 Nov 1998 21:34:42 +1100 (EST)
+X-Mailer: ELM [version 2.4 PL23]
+Content-Type: text
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+This is in reply to a message of James Stasheff
+and of other participants.
+
+I agree that the language of category is more than analogous to
+homotopy theory, and think that the connection is deep.
+The work on A-infinity spaces is a striking early illustration of the 
+connection between homotopy coherence and categorical coherence.
+Homotopy theory is the main guideline for the emergence 
+of higher category theory.
+For example, the first correct concept of 3-category was discovered
+as a direct outcome of modelling homotopy 3-types with Gray groupoids.
+Before this example, all existing 3-categories were equivalent to strict ones.
+
+In my opinion, after a first stage of developpement, higher category theory
+should induce new progress in homotopy theory. This is the real test.  
+In particular, the new theory should help understanding
+homotopy groups of spheres.
+
+I am including an abstract of my talk on a related subject.
+Regards, Andre Joyal
+ 
+> University of Sydney Algebra Seminar
+> Friday 20th November, 12-1pm, Carslaw 273
+>
+> Title:   The homology of symmetric and braided monoidal categories
+> Abstract:
+>     We wish to comment on some aspects of the connection between
+>     category theory, topology and homological algebra.  The
+>     connection is at the root of higher K-theory and it is guiding
+>     much of the actual research on higher dimensional categories.
+>     We shall concentrate on the relation between monoidal categories
+>     and iterated loop spaces.  To each category C we can associate a
+>     space BC called the (Milgram)  classfying space of C.  The
+>     homology of C is defined to be the homology of BC.  The space BC
+>     is a monoid when C has a tensor product, and it has the
+>     structure of an E-infinity space (resp. of an E-2 space) if the
+>     tensor product is symmetric (resp. braided).  We shall briefly
+>     discuss  the work of P. May and F. Cohen on the homology of E-n
+>     spaces. It shows that the homology of a symmetric (resp. of a
+>     braided) monoidal category is a graded-commutative algebra
+>     admitting Dyer-Lashof operations (resp. is a poisson algebra).
+>     These structures play a crucial role in determining the homology
+>     of the symmetric groups and of the braid groups.  The poisson
+>     algebra structure also appears in the recent work of Lehrer and
+>     Segal on the rational homology of classical regular semisimple
+>     varieties.
+> 
+>                   ------------------------------
+> 
+> Best wishes,
+>      Andrew Mathas
+> 
+
+
+
+
+From cat-dist Thu Nov 19 15:41:26 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA20135
+	for categories-list; Thu, 19 Nov 1998 12:55:27 -0400 (AST)
+X-Received: from triples.math.mcgill.ca (rags@Triples.Math.McGill.CA [132.206.150.30])
+	by mailserv.mta.ca (8.8.8/8.8.8) with ESMTP id LAA02732
+	for <rrosebrugh@mta.ca>; Thu, 19 Nov 1998 11:06:24 -0400 (AST)
+X-Received: from localhost (rags@localhost) by triples.math.mcgill.ca (8.8.5/8.6.10) with SMTP id KAA25936 for <rrosebrugh@mta.ca>; Thu, 19 Nov 1998 10:08:32 -0500
+X-Authentication-Warning: triples.math.mcgill.ca: rags owned process doing -bs
+Date: Thu, 19 Nov 1998 10:08:32 -0500 (EST)
+From: "R.A.G. Seely" <rags@math.mcgill.ca>
+To: categories@mta.ca
+Subject: categories: Michael Barr named Peter Redpath Professor (fwd)
+Message-ID: <Pine.LNX.3.95.981119100455.25679A-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+=================================
+
+It gives me great pleasure to announce to the department that
+Professor Michael Barr has now been appointed as the Peter Redpath
+Professor of Mathematics.  I am sure that you will join me in
+congratulating him on this richly deserved honour.
+
+This chair was previously held by Professor Edward Rosenthall,
+Professor Jim Lambek (who still holds the title of Peter Redpath
+Emeritus Professor) and by Professor Carl Herz.
+
+Georg Schmidt, Chair
+Department of Mathematics and Statistics
+McGill University
+
+=================================
+
+<rags@math.mcgill.ca>
+<http://www.math.mcgill.ca/~rags>
+
+
+
+
+From cat-dist Fri Nov 20 13:23:36 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA00792
+	for categories-list; Fri, 20 Nov 1998 11:19:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3655805B.38C188D2@bangor.ac.uk>
+Date: Fri, 20 Nov 1998 14:44:43 +0000
+From: "T.Porter" <t.porter@bangor.ac.uk>
+X-Mailer: Mozilla 4.06 [en] (Win95; I)
+MIME-Version: 1.0
+To: "categories@mta.ca" <categories@mta.ca>
+Subject: categories: Jim's query
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+This is not really an adequate reply to Jim's query. The reason is that as
+I understand it, he is asking for a source that will explore the homotopy
+theory of the `globular' models of weak infty categories. My approach to
+the area is in some sense the dual. Starting with the various models for
+homotopy types or bits of them, try to see what is mirrored in the weak
+infty category theory by the homotopy structure.  This is in some sense the
+converse to his query but may none-the-less be relevant.
+
+My intuition was, and still is, that the Kan condition on simplicial sets
+gives a composition/pasting up to coherent homotopy. Moreover the `filler'
+gives the justification for the composite. (Compare the filler structure of
+the nerve of a category with that in an arbitrary Kan complex.) Accepting
+that as a starting point, and the idea that the `category' of weak infinity
+categories should be a weak infinity category, Jean-Marc Cordier and I
+looked at `locally Kan' simplicially enriched categories (e.g. Trans AMS
+349(1997)1-54). With that viewpoint, it becomes clear that the structure of
+an A_\infty category is needed to make things really `coherent', but that
+many of the constructions of `ordinary' category theory have A_\infty or
+homotopy coherent analogues in this setting, which thus serves as a
+test-bed' for the development of the more general theory.  In part this
+relates to Michael Batanin's paper in the Cahiers where explicit
+consideration of A_\infty structure is given.
+
+That theory looks at the `global' structure to some extent, but
+simplicially enriched groupoids model all homotopy types, so a corollary of
+the simplicial to globular type of transition should be that one should be
+able to construct weak \infty categroies DIRECTLY from the algebra of a
+simplicially enriched groupoid.  The obvious place to look for this is in
+the Moore complex which carries a hypercrossed complex structure in the
+sense of Pilar Carrasco and Antonio Cegarra.  (This is related to the
+n-hypergroupoid structures of Jack Duskin.) Exploring the \infty category
+structure, potentially in their definition, is the  aim of another line of
+research and in low dimensions, this has been attacked by Ali Mutlu and
+myself,  (see very recent articles in TAC or Bangor's preprint list on the
+web). 
+
+Getting nearer to Jim's query, any bridge between homotopy theory and
+higher dimensional category theory should I feel aim to be approachable by
+algebraic topologists and therefore should start with a recognisable model
+for homotopy types.
+
+Another approach that must be mentioned is that of Tamsamani and Simpson
+using multisimplicial objects. Presumably this also links in with the
+cat^n-groupoid approach pioneered some 14 years ago by Loday.  This only
+handles n-types but can be extended to a model that has higher information
+but in those dimensions above n, the Whitehead products are trivial. (Has
+anyone looked at the Whitehead and Samelson products from a globular or
+weak \infty category viewpoint?)
+
+The question of simplicial rather than cubical theory is a difficult one.
+Marco Grandis made a good case for the cubical formulation the other day,
+and the use of Kan filler conditions in a cubical setting has been for a
+long time a speciality of Heiner Kamps (see the recent book by him and
+me!). That theory does not directly address the question of A_\infty
+category structures, but it does raise a question that deserves some
+attention. Suppose you want an analogue of a given theorem from homotopy
+theory but in another non-topological context and you can get a weak
+composition structure in your setting (typically given by fillers for boxes
+in a cubical `enrichment'). What fillers/composites do you need for your
+particular theorem (e.g.Dold's theorem on homotopy equivalence between
+cofibrations, or long Dold-Puppe type sequences)?  
+
+This last question also raises that of the motivation for the
+generalisations.  I am convinced these are useful, even important, but
+perhaps some debate on directions to explore and goals to seek out might
+help in providing a fuller answer to Jim's question.
+
+
+Tim.
+
+ ************************************************************
+Timothy Porter                   |tel direct:        +44 1248 382492
+School of Mathematics            |mathematics office:         382475   
+University of Wales, Bangor      | fax:                       383663
+Dean St.                         |World Wide Web
+Bangor                           |homepage
+http://www.bangor.ac.uk/~mas013/	  
+Gwynedd LL57 1UT                 |Mathematics and Knots : exhibition
+United Kingdom                   |http://www.bangor.ac.uk/ma/CPM/
+
+
+From cat-dist Fri Nov 20 13:24:51 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA13273
+	for categories-list; Fri, 20 Nov 1998 11:21:34 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Received: from callisto.acsu.buffalo.edu (qmailr@callisto.acsu.buffalo.edu [128.205.7.122])
+	by mailserv.mta.ca (8.8.8/8.8.8) with SMTP id XAA05617
+	for <rrosebru@mta.ca>; Thu, 19 Nov 1998 23:49:19 -0400 (AST)
+X-Received: (qmail 8435 invoked by uid 39883); 20 Nov 1998 03:49:16 -0000
+Date: Thu, 19 Nov 1998 22:49:16 -0500 (EST)
+From: F W Lawvere <wlawvere@ACSU.Buffalo.EDU>
+To: categories <categories@mta.ca>
+Reply-To: wlawvere@ACSU.Buffalo.EDU
+Subject: categories: announcement of pre-prints
+Message-ID: <Pine.GSO.3.96.981119221617.1673B-100000@callisto.acsu.buffalo.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+     
+     There are two items now available for downloading (PDF) from
+my homepage
+
+		http://www.acsu.buffalo.edu/~wlawvere/
+They are:
+
+     Volterra's functionals and the covariant cohesion of space
+
+Abstract:
+	Volterra's principle of passage from finiteness to infinity is far
+less limited than a linearized construal of it might suggest;  I outline
+in Section III a nonlinear version of the principle with the help of
+category theory.  As necessary background I review in Section II some of
+the mathematical developments of the period 1887-1913 in order to clarify
+some more recent advances and controversies which I discuss in Section I.
+Some relevant historical and current literature is discussed in relation
+to the categorical analysis:  Volterra and Hadamard on the notion of
+element, Fichera's critique of the relation between functional analysis
+and continuum physics, and the recent Michor & Kriegl book published by
+the AMS.
+
+
+
+	Outline of Synthetic Differential Geometry
+
+Abstract:
+These rough notes were distributed to the geometry seminar at Buffalo
+in February 1998, sketching the background of categorical dynamics in
+anticipation of the April 1999 AMS Meeting in which there will be a
+special session on related matters.  In particular, some of the results
+stated in my September 1997 AMS talk in Montreal "Toposes of laws of
+motion" are outlined, especially the relation of second order differential
+equations to a.t.o.m's (amazingly tiny object models).  An additional
+appendix has been added (November 1998) to these rough notes concerning
+recent advances on these questions by Kock and Reyes.
+
+	Toposes of laws of motion
+will be added to the web page as soon as the transcript of the original
+video is completed.
+
+**********************************************************************
+F. William Lawvere			Mathematics Dept. SUNY 
+wlawvere@acsu.buffalo.edu               106 Diefendorf Hall
+716-829-2144  ext. 117		        Buffalo, N.Y. 14214, USA
+
+**********************************************************************
+                       
+
+
+
+
+
+From cat-dist Fri Nov 20 13:36:28 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA13498
+	for categories-list; Fri, 20 Nov 1998 11:15:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Thu, 19 Nov 1998 19:06:47 +0000 (GMT)
+From: Ronnie Brown <r.brown@bangor.ac.uk>
+X-Sender: mas010@publix
+To: categories@mta.ca
+Subject: categories: higher order category theory and homotopy theory
+Message-ID: <Pine.SOL.3.90.981119182006.12128E-100000@publix>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+There is a more down to earth and historically rooted approach. 
+
+A concern of the early topologists (Dehn, Hopf, Alexandroff,...) 
+was to find a higher dimensional version of the fundamental group, since 
+the were irritated by the facts that 
+(i) \pi_1 gave good geometric information (e.g. for complex variable 
+theory) which often involved the non commutativity, 
+(ii) H_1 was \pi_1 made abelian, for connected spaces, 
+(iii) H_n existed for all n \ge 0 (and was abelian). 
+
+There was also the intuition of big things made out of composing little 
+bits (simplices in the Poincare formulation). The `solution' was to use 
+formal sums (homology), and this gave abelian results. 
+
+Cech's 1932 submission on Higher homotopy groups to the Zurich ICM 
+was withdrawn at the request of Alexandroff and Hopf once they had proved 
+these groups abelian for n \ge 2. 
+
+The whole aim was to get immediate geometric results and computations. 
+
+My suggestion in 1967 was to use `higher homotopy groupoids' since these 
+did not have to be abelian. It was only in 1974 that Philip Higgins and I 
+found a definition of a homotopy double groupoid of a pair; 
+ with this and the work with Chris Spencer we could prove a 2-D Van 
+Kampen theorem. This is still giving actual computations of homotopy 
+2-types and invariants not previously known. For an exposition see my 
+notes
+Groupoids and crossed objects in algebraic topology
+from the 1997 School in Algebraic Topology at Grenoble 
+http://www.bangor.ac.uk/~mas010/brownpr.html
+which also go on briefly to the higher dimensional case (for strict higher 
+groupoids) parts of which were announced in 1977 (with Philip Higgins, 
+Compte 
+Rendue Acad. Sci. Paris S\'er. A. 285 (1977) 997-999, 286 (1978) 91-93. 
+
+Also, with the use of n-fold groupoids one can recover all n-types 
+(Loday) a result Grothendieck described to me in 1986 (in Montpellier) as  
+`absolutely 
+beautiful'. Again, the intricate structure of these can give new 
+computations of homotopy invariants and homotopy types, while studying 
+pushouts of these (strict again!) one can find new algebraic 
+constructions, such as a non abelian tensor product of groups (which act 
+on each other).  
+
+We have to develop new methods to compute even with 
+these strict objects, so there is still a lot to be done in getting 
+explicit information on specific examples using the non strict ones. 
+
+One overall setting is to have functors
+
+                             \Pi
+                          ---------->
+       (topological data) <--------- (Algebraic data)
+                              IB
+               |                       |
+             U |                       | B 
+               |                       |
+               V                       V
+               ======== (spaces)======                            
+
+where IB (\mathhbb{B}) and B are classifying data or space functors, U  
+is forget, and \Pi is a functor which should satisfy Van Kampen Theorem 
+(preserve certain colimits), and also \Pi  IB is equivalent to 1. 
+
+At the level of 3-types we have such a set up with topological data = 
+squares of (pointed) spaces, algebraic data = crossed squares (a kind of 
+triple groupoid). We do not (so far) have such a setup when (algebraic 
+data) is say the candidate proposed by Andre (which are equivalent to 
+2-crossed modules). Graham Ellis has shown how to compute 3-types and 
+homotopy classes of maps using the above set up (Math. Z., 461 (1993) 
+93-110. ). The existence of the functor \Pi (satisfying VKT, so one 
+can apply free algebraic objects) helps a lot. 
+
+So I find it interesting that even strict 3-fold groupoids have an 
+intricate structure (they model 3-types!). The relations and uses of all 
+these models needs lots of work. 
+
+The tensor product of crossed complexes (corresponding to a Gray tensor 
+product of strict \infinity groupoids) yields interesting models for 
+loop spaces, by considering monoids for this tensor:
+(see for example Baues and Tonks
+On the twisted cobar construction. Mathematical Proceedings of the 
+Cambridge Philosophical Society 121 (1997) pp.229-245 ). 
+
+But the nice thing about crossed complexes is one can write down explicitly 
+the Eilenberg-Zilber theorem (Tonks' thesis), which I have not seen for 
+infinity groupoids! 
+
+Ronnie Brown
+
+
+
+From cat-dist Sun Nov 22 01:01:47 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id AAA15425
+	for categories-list; Sun, 22 Nov 1998 00:02:59 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 20 Nov 1998 17:40:38 -0500 (EST)
+From: James Stasheff <jds@math.unc.edu>
+To: "categories@mta.ca" <categories@mta.ca>
+Subject: categories: Re: Jim's query
+In-Reply-To: <3655805B.38C188D2@bangor.ac.uk>
+Message-ID: <Pine.SOL.3.96.981120173926.14806C-100000@noether.math.unc.edu>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Amazing what deep interpretations have been given to my shallow question
+though i appreciate the answers.  Al I was after was
+some place for a novice reader to see how category theory
+and homtopy theory interacted in the concept of A_\infty-category
+cf. Smirnov or Fukaya
+
+.oooO   Jim Stasheff		jds@math.unc.edu
+(UNC)   Math-UNC		(919)-962-9607
+ \ (    Chapel Hill NC		FAX:(919)-962-2568
+  \*)   27599-3250
+
+        http://www.math.unc.edu/Faculty/jds
+
+
+
+From cat-dist Sun Nov 22 01:01:57 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id AAA19995
+	for categories-list; Sun, 22 Nov 1998 00:01:52 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 20 Nov 1998 15:53:55 -0500 (EST)
+From: Michael Barr <barr@triples.math.mcgill.ca>
+To: Categories list <categories@mta.ca>
+Subject: categories: staragain.dvi
+Message-ID: <Pine.LNX.3.95.981120154815.10302A-100000@triples.math.mcgill.ca>
+MIME-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+A paper titled 
+*-Autonomous categories: once more around the track has just been posted:
+ftp.math.mcgill.ca/pub/barr/staragain.dvi
+Basically, it redoes nearly all of the original Lecture Notes volume in
+about one fifth the space, using the Chu construction and proving a very
+general theorem.  The only example from the original monograph that is not
+convered by this theorem is the category of Banach balls, the subject of a
+recent paper by Kleisli and me.  That is also thee under the name
+balls.dvi (if I have remembered it correctly).
+
+This paper is to be submitted to tac for the Lambekfestschrift.
+
+
+
+From cat-dist Sun Nov 22 01:04:05 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id XAA16062
+	for categories-list; Sat, 21 Nov 1998 23:58:38 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 20 Nov 1998 18:58:35 GMT
+Message-Id: <v01540b01009fa0796890@[193.51.133.140]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Mailer: Eudora F1.5.4
+To: categories@mta.ca
+From: carlos@picard.ups-tlse.fr (Carlos Simpson)
+Subject: categories: Joyal's message + query
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+A. Joyal writes:
+
+>In particular, the new theory should help understanding
+>homotopy groups of spheres.
+
+I think it is safe to say that the ``n-category crowd'' (myself included)
+would love to make some progress on this.
+The main thing I am wondering about is: what exactly does one want to know
+about the homotopy groups of spheres? for example, is there a concrete
+question
+which needs answering?
+
+Up until not too long ago, I was under the impression that the question was
+how to calculate them; but it turns out that E. Brown in 1956 gave a
+perfectly good algorithm for calculating homotopy groups;
+another was subsequently given by Kan and refined by Curtis: one just has
+to calculate the ``nonabelian  homology groups'' of a simplicial complex of
+free groups, and by Curtis one can divide out by a higher commutator
+subgroup so this actually only concerns a simplicial complex of  nilpotent
+groups.
+
+
+(I give another algorithm in q-alg/9710011 using n-categorical type ideas,
+but this doesn't necessarily seem particularly useful and in any case I
+have more recently learned that it is basically the same thing as the
+``Milgram model'' see the Handbook, see also an article by Baues for the
+double loop space etc.etc....)
+
+One might complain that these are ``algorithms'' rather than ``formulae''
+but I have never quite understood the distinction. One generally needs a
+computer algorithm to evaluate one of Zagier's formulas! Maybe there is a
+subtle type of distinction about the type of machine the algorithm is
+supposed to run on?
+Or a quantitative question about the asymptotics of the computing time?
+
+
+Another possible version of the question (related to the computing time
+question in the previous sentence) might be: does one know how to bound the
+size of the $\pi _i (S^k)$? I can imagine applying n-categorical ideas to
+give a bound here, but it seems to be that there must be known bounds using
+spectral sequences or other. If there are known bounds, does someone know
+what the best one is?
+
+Other than that, does Prof. Joyal or anyone else have an idea of the type
+of question about the $\pi _i(S^k)$ which could/should be attacked by
+n-categories?
+
+--------------------
+
+On an introduction to $n$-categories: it would be great if J. Baez could
+bundle together his ``This week's finds in math. phys.'' which concern
+$n$-categories. This would make a really nice introduction specially for
+friends and family.
+
+For the more mathematically minded, a recommended ``bapteme de feu'' would
+be Grothendieck's ``Pursuing stacks''.
+
+Another good place to look is Benabou's LNM 47.
+
+----
+
+On A_{\infty}-categories and \infty-categories: the response of R. Street
+looks quite adequate to the question (and in fact is a nice illustration of
+what the ``Gray tensor product'' really  means, a point I  had never
+clearly understood up to now...). Here are a few more remarks, specially
+related to J. Baez's comment.
+
+The notion of Segal category
+(which, again I recently found out, first appeared in the paper of
+Dwyer-Kan-Smith...) corresponds to the notion (that J. Baez mentionned) of
+\infty-category in which the $i$-morphisms are invertible for $i>1$ (I call
+this condition ``$1$-groupic'').
+
+A first remark is that Segal categories are equivalent to strict
+simplicially enriched categories, as was already shown by Dwyer-Kan-Smith.
+(in particular, you can read ``simplicially enriched category'' wherever I
+write ``1-groupic $\infty$-category'' below...). This suggests that
+A_{\infty}-categories are also probably equivalent to strict i.e. DG
+categories, but it isn't a proof (see below for why not) and it would be
+interesting to know if someone has an answer to that question.
+
+Segal categories or $1$-groupic $\infty$-categories, are not actually
+totally equivalent to A_{\infty} categories, because they don't encode the
+``spectrum'' structure on Hom sets. In fact the notion of
+$A_{\infty}$-category in the DG
+world probably has a topological analogue where the Hom's are indeed spectra
+(cf Vogt et al on E_{\infty} ring spaces and the like???).
+
+Here is a proposition for an $\infty$-categorical notion which should
+correspond to this placing of a spectra structure on the Hom spaces.
+Suppose $C$ is a 1-groupic $\infty$-category.  We say that $C$ is {\em
+spectric}
+if it satisfies the following conditions:
+---C has an initial and final  object and these coincide (call them *);
+---if $X\in C$ then the fiber product $\Omega X := * \times _{X} *$
+exists (as a homotopy-limit) in $C$; (also that $\Omega$ becomes a functor...?)
+---the functor  $\Omega$ is an equivalence of categories.
+
+These conditions are inspired by M. Hovey's definition of ``stable model
+category''
+in ``Model categories''. (In particular, if M is a stable model category then
+the simplicial category, Dwyer-Kan localization of M inverting wk equivs
+L(M), will be a spectric $\infty$-category.)
+
+It follows from this definition that the $Hom$ spaces in C (i.e. the
+$\infty$-groupoids which are the Hom's of the $\infty$-category C) have
+structures of spectra:
+Hom(x,y)=\Omega Hom(x, \Omega ^{-1}y) = \Omega Hom(\Omega x, y) etc.
+Thus, C will correspond to the version of A_{\infty} category mentionned
+above where the Homs are spectra.
+
+On the other hand, given an A_{\infty}-category B, formally adjoin the
+shifts of objects, by setting for example Hom(X, Y[n]):= \Omega^nHom(X,Y)
+(for integers n) etc. It looks likely that this will give a spectric
+$\infty$-category C, and that these two constructions will be (as much as
+possible) a correspondence between A_{\infty}-categories and spectric
+$\infty$-categories.
+
+....
+
+Sorry to clog up the e-waves so...
+Carlos Simpson
+
+
+
+
+From cat-dist Sun Nov 22 01:05:22 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id AAA13274
+	for categories-list; Sun, 22 Nov 1998 00:04:40 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Message-ID: <3655F5F5.4C15@mpce.mq.edu.au>
+Date: Sat, 21 Nov 1998 10:06:29 +1100
+From: Michael Batanin <mbatanin@mpce.mq.edu.au>
+Organization: Maquarie University, Sydney
+X-Mailer: Mozilla 3.01Gold (Win95; I)
+MIME-Version: 1.0
+To: categories@mta.ca
+Subject: categories: Re: query
+References: <199811190226.NAA02248@macadam.mpce.mq.edu.au>
+Content-Type: text/plain; charset=koi8-r
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+This is a summary of my correspondence with J.Stasheff.
+
+
+James Stasheff wrote:
+
+> As monoids can be described as categories with one object,
+> one can consider \Aoo structures on categories with a notion of
+> homotopy, e.g. topological categories or differential graded categories.
+> To be more precise, the set of objects and the set of morphisms
+> carry a notion of homotopy. As usual, one deals with composable
+> morphisms and then weakens the axiom of associativity up to homotopy
+> in the strong sense in order to
+> define \Aoo - categories.  This was first done by Smirnov by 1987
+> \cite{smirnov:baku} to handle functorial homology operations and
+> their dependence on choices (cf. indeterminacy). More recently, Fukaya
+> \cite{fukaya:1} reinvented \Aoo -categories with remarkable applications to
+> Morse theory and Floer homology.
+> Inspired by this work, Nest and Tsygan have proposed an \Aoo -category
+> with automorphisms of an associative algebra as objects and for
+> the space of morphisms, a twisted version of the Hochschild complex
+> of the corresponding endomorphism algebras.
+
+Michael Batanin:
+
+One can generalize "ordinary" category theory in the different ways. One
+can consider internal category theory, enriched category theory. We can
+also consider a category as a special sort of simplicial set. All this 
+points of view have their own A_{\infty}-analogues.
+
+I realize, that the approach of Smirnov, Fukaya and others is a
+generalization of "internal" category theory. In my paper "Monoidal
+globular categories as a natural environment ..."(Adv.Math. 136, 39-103
+(1998)) I also consider a Cat-internal version of
+A_{\infty}-\omega-category (so it involves a weak form of interchange
+law)that I call monoidal globular category. A surprising coherence
+theorem sais that a general monoidal globular category is equivalent to
+a strict one (the internal category structure on objects aloows to
+strictify interchange low). 
+
+In another my paper "Homotopy coherent category theory and
+A_{\infty}-structures in monoidal categories" (JPAA 123(1998),67-103) I
+defined an enriched version of A_{\infty}-category. So 
+we have a honnest set of objects but morphisms are objects of a monoidal
+simplicial categories with a Quillen model structure. I also can define
+what A_{\infty} functor is and prove an appropriate coherence and
+homotopy invariance theorems. 
+Another nice theorem sais that A_{\infty}-categories and their
+A_{-infty}-functors form an A_{infty}-category in a natural way. 
+  
+The simpliocial point of view on A_{\infty}-categories goes back to 
+Boardman and Vogt book. The corresponding notion is a simplicial set
+satisfying some weak Kan conditions. This approach was extensively used
+by T.Porter and J.-M.Cordier (see T.Porter's answer on Jim's query). 
+ 
+
+
+James Stasheff:
+> Since in a category we are concerned with $n$-tuples of morphisms
+> only when they are composable, it is appropriate to similarly relax
+> the composition operations for in defining an operad.  the result is
+> known as a partial operad and appears in two different contexts:
+> in the mathematical physics of vertex operator algebras (VOAs)
+> \cite{yizhi} and
+
+Mivhael Batanin:
+ In my work "Globular monoidal
+categories ..." I introduced the n-dimensional operads over trees. A
+1-dimensional operad in this sense is not exatly the same as usual
+non-symmetric operad as every operation may have source and target and
+we can multiply just composable chains of operations. A one object
+version of this may be identify with a usual nonsymmetric operad. (In my
+paper I use \omega-operads). I wonder if a partial operad is the same as
+my 1-operad?  
+
+Michael.
+
+
+From cat-dist Mon Nov 23 13:31:06 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA13734
+	for categories-list; Mon, 23 Nov 1998 11:13:20 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 20 Nov 1998 21:07:05 +0100
+From: magne@ii.uib.no (Magne Haveraaen local)
+Message-Id: <199811202007.VAA09953@hemlock.uib.no>
+To: categories@mta.ca
+Subject: categories: Professorship in Programming Theory, University of Bergen
+X-Sun-Charset: US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+Department of Informatics, University of Bergen announces a position
+
+	 Professorship in Computer Science
+	    (Programming Theory)
+
+The successful applicant will be expected to join the research group in
+Foundations and Theory of Programming, whose current interests focus on:
+
+	1. formal design and development of software systems
+	2. basic theory of software systems, in particular,
+	   the algebraic and logical foundations
+        3. theory, design and implementation of
+	   specification and programming languages and tools.
+
+If no applicants are found qualified for a full professorship, the
+applications will be evaluated for a position of associate professor.  An
+additional associate professorship is expected to be announced early
+1999.
+
+Currently, the members of the group are:
+	Magne Haveraaen - magne@ii.uib.no - http://www.ii.uib.no/~magne
+	Khalid Mughal - khalid@ii.uib.no - http://www.ii.uib.no/~khalid
+	Michal Walicki - michal@ii.uib.no - http://www.ii.uib.no/~michal
+	Valentinas Kriauciukas - valis@ii.uib.no - http://www.ii.uib.no/~valis
+
+Any one of them may be contacted for more information concerning the
+research activity and the position. Details concerning the application
+procedure can be found at:
+	http://www.ii.uib.no/gen/profpututl.html
+
+General information about the group, the department, the university and
+Bergen may be found at
+	http://www.ii.uib.no/pt
+	http://www.ii.uib.no/
+	http://www.uib.no/
+	http://www.uib.no/guide
+
+Notice that the deadline is unreasonably tight - 15.december 1998.
+We hope to extend this somewhat, but we are not sure this is possible.
+
+
+
+From cat-dist Mon Nov 23 13:42:35 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id LAA16527
+	for categories-list; Mon, 23 Nov 1998 11:13:45 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Fri, 20 Nov 1998 21:06:59 +0100 (MET)
+Message-Id: <199811202006.VAA27751@brics.dk>
+From: Uffe Henrik Engberg <engberg@brics.dk>
+To: categories@mta.ca
+Subject: categories: BRICS Int. PhD School: Call for Admission and Grant Applications
+Mime-Version: 1.0 (generated by tm-edit 7.106)
+Content-Type: text/plain; charset=US-ASCII
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+X-Status: 
+
+[Please accept our apologies if you receive this more than once]
+
+                                                   B R I C S
+                                                   International PhD School
+                                                   in Computer Science
+                                                   University of Aarhus
+                                                   Denmark
+Call for Admission and Grant Applications
+
+This is a call for admission and  grant applications from students to BRICS
+International PhD   School in Computer  Science   at University  of Aarhus,
+Denmark.  The  call  is  aimed   at students  starting  August  1999,  with
+application deadline January 15th, 1999.
+
+BRICS  International PhD School is an  integrated part  of the BRICS (Basic
+Research in Computer Science) Research  Centre, and both  are funded by the
+Danish National Research  Foundation. The   school admits 10-15    students
+(Danish and   foreign) annually, and  it provides   a substantial number of
+student grants.
+
+The core areas of  the PhD School  are: Semantics of Computation; Logic  in
+Computer   Science;  Computational   Complexity;  Design  and  Analysis  of
+Algorithms; Programming Languages; Distributed Computing; Verification; and
+Data Security and Cryptology.
+
+The PhD school will  provide its students with  a  solid background in  the
+theoretical  foundation  of  computer science,  and  centred  around  BRICS
+activities. From  this foundation, the  students may either continue in one
+of  the core areas or venture into  areas of a more applied or experimental
+nature as possible areas of thesis specialisation.
+
+The PhD School wishes to recruit PhD students  of the highest international
+standards.  It provides an   excellent research environment  and scientific
+training facilities, and aims at making its  PhD graduates attractive for a
+wide spectrum of employers - in private and public research and development
+institutions, both in Denmark and abroad.
+
+So, if you are a student with at least four years of full-time study by the
+summer of 1999,   highly motivated and well   prepared for a   PhD study in
+computer  science within a  truly international environment, please send us
+an application  following the instructions below.  For more details, please
+visit
+                           http://www.brics.dk,
+
+or contact us by e-mail at phdschool@brics.dk.
+
+Also,  we would appreciate your  passing on this  information to interested
+students and colleagues at your university or research institute.
+
+
+BRICS
+
+The Research Centre BRICS (Basic  Research In Computer Science) was founded
+in 1994  by the Danish National Research  Foundation at the Universities of
+Aarhus and Aalborg.  BRICS is a centre of  basic research  in Algorithmics,
+Logic and Semantics, and has a  scientific staff of  30 (permanent and long
+term visitors), and around 100 short term visitors annually.
+
+
+Admission Prerequisites and Study Structure
+
+Admission is based  on knowledge corresponding  to four years of  full-time
+studies, including basic courses in  programming and programming languages,
+computer   systems, algorithms    and data  structures,  computability  and
+mathematics (this list will be interpreted in a flexible way).
+
+The time allocated for the  PhD studies is a  further four years, where the
+first  two  years  include some   mandatory course  work   and introductory
+research, concluded by a qualifying examination, whereas the last two years
+are dedicated to  the writing of the  thesis, finishing with a defence. All
+students admitted to the  school will enter  this study structure. We  may,
+however, take into account merits from previous study.
+
+Students  are  normally  admitted   for the  semester  start September 1st.
+--- but admission may  take place throughout  the year.
+
+
+PhD Student Grants
+
+The school offers student grants of different types:
+
+1. tuition waiver and full studentship
+2. tuition waiver and partial studentship
+3. tuition waiver
+
+Only a limited amount of type 1. grants are available.
+
+
+How to apply
+
+1. Fill in the application form on
+
+     http://www.brics.dk/PhDSchool/Application.html
+
+   Alternatively, send an e-mail to phdschool@brics.dk with subject
+   "PhD Application" including:
+
+   - your full name, personal address and phone number, college /
+     university, URL of home page (if applicable), and e-mail address,
+
+   - in case you apply for grants from the PhD School, the type of your
+     application (see above - for details see http://www.brics.dk).
+
+2. Send by ordinary mail to the address below
+
+   - a covering letter, including the information from your application
+     form/e-mail,
+   - a short curriculum vitae,
+   - complete official transcripts from colleges or universities,
+     documenting minimally four years of full time study,
+   - names of three people whom we may ask for letters of recommendation,
+   - an indication of your motivation for a PhD study, and particular
+     research area of initial interest (max two pages).
+
+Applications  for admission August  1st, 1999   should be sent  as soon  as
+possible and  before January  15th, 1999.  Decisions will  be announced  in
+March, 1999.
+
+
+Postal Address
+
+   BRICS International PhD School
+   Department of Computer Science
+   University of Aarhus
+   Ny Munkegade, Bldg. 540
+   DK-8000 Aarhus C
+   Denmark
+  
+   Phone: +45 8942 3264
+   Fax:   +45 8942 3255
+
+
+From cat-dist Mon Nov 23 14:19:22 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id MAA17932
+	for categories-list; Mon, 23 Nov 1998 12:01:44 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Mon, 23 Nov 1998 16:45:58 +0100
+From: Philippe Gaucher <gaucher@irmast1.u-strasbg.fr>
+Message-Id: <199811231545.AA14182@irmast1.u-strasbg.fr>
+To: categories@mta.ca
+Subject: categories: about dimension of morphisms
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+Content-Md5: Ew+TX2rFg2ed4CvwDWs2Ig==
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Bonjour, 
+
+I think that I have found a small pathological behaviour with 
+dimension of morphisms in omega-categories. This is the following
+one.
+
+Let us first  recall that 
+       min{m/s_m(x)=x} = min{n/t_n(x)=x} =: dim(x). 
+Because x = s_m(x) = t_m s_m(x) (because m=<m) = t_m(x).
+
+Lemma 1 : Let u and v be two composable morphisms of dimension
+1 (i.e. t_0(u)=s_0(v)). Suppose that t_0(v)<>s_0(u) (<> means
+different). Then u o_0 v is of dimension 1.
+
+Proof : Suppose that u o_0 v of dimension 0. Then 
+s_0(u) = s_0(u o_0 v) = u o_0 v and
+t_0(v) = t_0(u o_0 v) = u o_0 v
+So s_0(u) = t_0(v) : false.
+
+Here is now the pathological behaviour : 
+
+If s_0(u) = t_0(v), here is an example of category with u and
+v of dimension 1 and u o_0 v of dimension 0 : 
+
+We take A={alpha,beta,u,v} (four elements)
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------
+s_0	alpha	beta	alpha	beta
+-------------------------------------
+t_0	alpha	beta	beta	alpha
+-------------------------------------
+
+and for o_0 : 
+
+-------------------------------------
+	alpha	beta	u	v
+-------------------------------------	
+alpha	alpha	xxxx	u	xxxx
+-------------------------------------
+beta	xxxx	beta	xxxx	v
+-------------------------------------
+u	xxxx	u	xxxx	alpha
+-------------------------------------
+v	v	xxxx	beta	xxxx
+-------------------------------------
+
+(at the intersection of row x and column y, read x o_0 y)
+
+All axioms of categories seem to be verified (?). The only composition
+is a "word" of finite length "... u (beta) v (alpha) u (beta) v..."
+
+In (A,s_0,t_0,o_0), u and v are of dimension 1 and u o_0 v
+of dimension 0 because u o_0 v = alpha. 
+
+Where am I wrong ? (observe that this behaviour cannot appear with 
+for example a category coming from a composable pasting scheme).
+
+
+pg.
+
+
+
+
+
+From cat-dist Tue Nov 24 12:12:36 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA21250
+	for categories-list; Tue, 24 Nov 1998 10:13:17 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199811240408.UAA19352@charity.ucr.edu>
+Subject: categories: HDA4: 2-Tangles
+To: categories@mta.ca (categories)
+Date: Mon, 23 Nov 1998 20:08:31 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+The following preprint is now available at the places listed below.
+Comments and corrections are welcome!
+
+--------------------------------------------------------------------
+
+Higher-Dimensional Algebra IV: 2-Tangles
+John C. Baez, Laurel Langford
+
+Just as knots and links can be algebraically described as certain
+morphisms in the category of tangles in 3 dimensions, compact surfaces
+smoothly embedded in R^4 can be described as certain 2-morphisms in
+the 2-category of `2-tangles in 4 dimensions'.   Using the work of
+Carter, Rieger and Saito, we prove that this 2-category is the `free
+semistrict braided monoidal 2-category with duals on one unframed
+self-dual object'.  By this universal property, any unframed self-dual
+object in a braided monoidal 2-category with duals determines an
+invariant of 2-tangles in 4 dimensions.
+
+---------------------------------------------------------------------
+
+This paper is math.QA/981139 on the mathematics preprint server,
+so you can get it at:
+
+http://xxx.lanl.gov/abs/math.QA/9811139
+
+It's also available as a Postscript file at my website:
+
+http://math.ucr.edu/home/baez/hda4.ps
+
+If you have any trouble, let me know and I can send you a copy. 
+
+
+
+From cat-dist Tue Nov 24 12:20:15 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id KAA19160
+	for categories-list; Tue, 24 Nov 1998 10:15:08 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Date: Tue, 24 Nov 1998 14:35:47 +0100
+From: Matthieu Amiguet <matthieu.amiguet@info.unine.ch>
+Subject: categories: Continuity
+To: categories@mta.ca
+Message-id: <365AB632.F03C741@info.unine.ch>
+MIME-version: 1.0
+X-Mailer: Mozilla 4.07 (Macintosh; I; 68K)
+Content-type: text/plain; x-mac-creator=4D4F5353; x-mac-type=54455854;
+ charset=iso-8859-1
+Content-transfer-encoding: 8BIT
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+Dear categoricians,
+
+I'm wondering about the possibility of speaking of trajectories in a
+category. That is, given a category C, in what sense - if any - can we
+consider a continuous function R->C (where R are the real numbers).
+What extra structure is needed on C to consider it as a topological
+space? what relation with the category structure?
+I guess there's a link with topos theory, but I can't make it really
+clear...
+Subsidiary question: in what case is there a notion of differentiability
+for the function f?
+Thank you for direct answers or pointers to (quite easyly
+understandable) literature.
+Regards,
+----------------------------------
+Matthieu Amiguet, doctorant
+Institut d'Informatique et d'Intelligence Artificielle
+Université de Neuchatel
+rue Emile Argand 11
+CH - 2000 Neuchatel
+tel: +41 32 718 27 36
+matthieu.amiguet@info.unine.ch
+----------------------------------
+
+
+
+From cat-dist Tue Nov 24 16:55:12 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id PAA02592
+	for categories-list; Tue, 24 Nov 1998 15:03:02 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: sjv@pop.doc.ic.ac.uk
+Message-Id: <v0151010bb2809f006107@[146.169.29.106]>
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Date: Tue, 24 Nov 1998 17:42:53 +0000
+To: categories@mta.ca
+From: s.vickers@doc.ic.ac.uk (Steven Vickers)
+Subject: categories: Re: Continuity
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+>Dear categoricians,
+>
+>I'm wondering about the possibility of speaking of trajectories in a
+>category. That is, given a category C, in what sense - if any - can we
+>consider a continuous function R->C (where R are the real numbers).
+>What extra structure is needed on C to consider it as a topological
+>space? what relation with the category structure?
+>I guess there's a link with topos theory, but I can't make it really
+>clear...
+>Subsidiary question: in what case is there a notion of differentiability
+>for the function f?
+>Thank you for direct answers or pointers to (quite easyly
+>understandable) literature.
+>Regards,
+>----------------------------------
+>Matthieu Amiguet, doctorant
+
+The key is indeed via toposes, specifically Grothendieck toposes. As has
+always been recognized, these are generalized topological spaces and the
+geometric morphisms are generalized continuous maps.
+
+Instead of a category C whose objects are XXX's, you replace it by a topos
+whose points are XXX's (i.e. the classifying topos for the theory of
+XXX's). For instance, the category of set would be replaced by the
+classifying topos for the theory of sets (i.e. what's described in
+Johnstone's book and elsewhere as the "object classifier"). I'll write
+S[set] for this classifying topos.
+
+This works provided the objects and morphisms of C are the models and
+homomorphisms of a geometric theory.
+
+Turning to topological spaces X, if X is sober then its points are also the
+models of a geometric theory (to do proper justice to this you need to take
+the localic approach to topology) and so there is a corresponding
+classifying topos SX which is actually the category of sheaves over X.
+
+The "continuous maps" between toposes are just the geometric morphisms.
+They transform points of the source topos to points of the target.
+
+Specific examples:
+
+1. For two toposes SX and SY obtained from topological spaces, the
+geometric morphisms from SX to SY really do correspond to the continuous
+maps from X to Y.
+
+2. Geometric morphisms from SX to S[set] are the sheaves on X, and these
+can indeed be thought of as continuous maps from X to the category of sets
+(each sheaf maps points of X to their stalks).
+
+By no means can every category C be considered the category of models of a
+geometric theory. One necessary condition (not sufficient) is for C to have
+all filtered colimits. For a small category C, one can make a corresponding
+topos S^C (the functor category from C to sets) that is an analogue of the
+ind completion (which freely adjoins filtered colimits). Its points are the
+flat presheaves over C and include (by the Yoneda embedding) a full and
+faithful image of C.
+
+A particular link with category structure lies in specialization. Any sober
+topological space has the specialization order on its points, and a topos
+has analogous specialization morphisms between points - they are just
+homomorphisms between models of the geometric theory. For a topos SX
+obtained from a space, this "specialization category" structure on the
+points is a poset, the original specialization order. Any geometric
+morphism is, when considered as a points transformer, functorial with
+respect to the specialization morphisms - this generalizes the topological
+fact that a continuous map is monotone with respect to the specialization
+order.
+
+Though the "generalized space" ideas are not at all new, they are often
+hidden expositionally by the idea of topos as generalized universe of sets.
+If you look at my paper "Topical Categories of Domains" (to appear in Maths
+Structures in Computer Science but at present available through my Web home
+page) you will find a careful attempt to discuss toposes directly as
+generalized spaces.
+
+The home page is
+
+   http://theory.doc.ic.ac.uk:80/people/Vickers/
+
+There is also a short paper "Strongly Algebraic = SFP (Topically)" that
+includes a summary in these purely spatial terms of established results
+about points of presheaf toposes.
+
+Regarding differentiability, I too would be interested to hear of answers
+or pointers. I guess it would most conveniently be discussed using
+Caratheodory's approach. If X is a topological ring, or a ring object in
+the category of toposes, then f: X -> X is C^1 iff there is some continuous
+phi: XxX -> X such that
+
+   for all x, y. f(y) - f(x) = (y-x).phi(x,y)
+
+(The use of quantified "elements" of X can easily be translated into the
+equality of two geometric morphisms from XxX to X.)
+
+The derivative of f is f'(x) = phi(x,x).
+
+Steve Vickers.
+
+
+
+
+From cat-dist Tue Nov 24 21:33:11 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA15638
+	for categories-list; Tue, 24 Nov 1998 20:24:50 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+From: john baez <baez@math.ucr.edu>
+Message-Id: <199811242328.PAA02098@charity.ucr.edu>
+Subject: categories: n-categorical miscellany
+To: categories@mta.ca (categories)
+Date: Tue, 24 Nov 1998 15:28:09 -0800 (PST)
+X-Mailer: ELM [version 2.4 PL24 PGP3 *ALPHA*]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+1) Carlos Simpson writes:
+
+>A. Joyal writes:
+
+>>In particular, the new theory should help understanding
+>>homotopy groups of spheres.
+
+>I think it is safe to say that the ``n-category crowd'' (myself included)
+>would love to make some progress on this.  The main thing I am wondering 
+>about is: what exactly does one want to know about the homotopy groups of 
+>spheres? for example, is there a concrete question which needs answering?
+
+There are a lot of complicated and interesting patterns in the stable 
+homotopy groups of spheres.   A lot of these patterns are currently 
+studied using a generalized cohomology theory called complex cobordism 
+theory, together with an intricate mess of spectral sequences:
+
+Complex cobordism and stable homotopy groups of spheres / Douglas C.
+Ravenel.  Orlando: Academic Press, 1986.
+
+Nilpotence and periodicity in stable homotopy theory / by Douglas C.
+Ravenel.  Princeton, N.J. : Princeton University Press, 1992.
+
+It's all far too technical for me to understand, so I don't have much
+hope of suddenly answering some question that homotopy theorists are 
+stuck on!  However, I think that the n-category crowd can give more
+conceptual explanations of some facts that appear as miracles in the 
+current approach.  For example, there's an important relation between 
+complex cobordism theory and formal group laws: the complex cobordism 
+of a point is "the universal formal group law".  There should be an 
+elegant conceptual proof of this, but as far as I know, there are just 
+elegant *heuristics* for why it should be true, followed by a grungy 
+computation.  
+
+2) Carlos Simpson writes:
+
+>On an introduction to n-categories: it would be great if J. Baez could
+>bundle together his ``This week's finds in math. phys.'' which concern
+>n-categories. This would make a really nice introduction specially for
+>friends and family.
+
+Especially during the holiday season!  I should try to bundle them together
+more nicely at some point, but right now you can start at:
+
+http://math.ucr.edu/home/baez/week73.html ,
+
+skip the bit about left-right asymmetry in amino acids, read the stuff
+on n-categories, and then keep clicking on the thing that says:
+
+"To continue reading the `Tale of n-Categories', click here."
+
+It fizzles out around week100, though I plan to resume it with an
+issue discussing Carlos Simpson's paper on the stabilization hypothesis 
+and Mark Hovey's book on model categories.   
+
+3) Some people have noted that
+
+http://xxx.lanl.gov/abs/math.QA/9811139
+
+doesn't give them the paper "HDA4 - 2-Tangles".  Sorry! - the delay before 
+the preprint server makes papers publicly available is longer than it
+used to be.  It should be working by tomorrow.   If you still have trouble 
+after that (it's a big file and may bust your printer), feel free to 
+email me and ask me to send you a copy.
+
+
+
+From cat-dist Thu Nov 26 17:34:43 1998
+Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id QAA07473
+	for categories-list; Thu, 26 Nov 1998 16:14:21 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Subject: categories: commutative monoids
+To: categories@mta.ca
+Date: Thu, 26 Nov 1998 19:56:18 +0000 (GMT)
+X-Mailer: ELM [version 2.4 PL25]
+MIME-Version: 1.0
+Content-Type: text/plain; charset=US-ASCII
+Content-Transfer-Encoding: 7bit
+Message-Id: <E0zj7WU-0006oS-00@carp.dpmms.cam.ac.uk>
+From: Tom Leinster <T.Leinster@dpmms.cam.ac.uk>
+Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+X-Status: 
+
+
+A commutative monoid is a strict monoidal category with one object, so in
+this sense one can talk about a category enriched in a commutative
+monoid. Has anyone looked very hard at such things?
+
+Thanks,
+Tom
+
+
+

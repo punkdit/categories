@@ -1,0 +1,160 @@
+Date: Wed, 29 Jan 1997 16:05:46 -0400 (AST)
+Subject: Lax Indexed Functors?
+
+Date: Wed, 29 Jan 1997 18:58:44 +0100 (MET)
+From: Alfio Martini <alfio@cs.tu-berlin.de>
+
+
+At the moment we are investigating logical systems and their relations based
+on the formal concepts of institution (Goguen/Burstall) and entailment
+system/logic (Meseguer). For our analysis we found  appropriate to use
+concepts like "lax indexed functors" thereby having in mind the
+corresponding definitions for ordered categories in
+"Extending properties to categories of partial maps" from
+Barry Jay [Jay90] (TR ECS-LFCS-90-107).
+
+
+To give  an impression about what we are doing,
+I will give the definition
+that turns out to be the adequate one for our purposes:
+
+A lax indexed functor F from an indexed category C:IND->CAT to an indexed
+category D:IND->CAT is given by  functors F(i):C(i)->D(i) for each i in
+|IND| and by natural transformations  F(g):C(g);F(j)=>F(i);D(g):C(i)->D(j)
+for each morphism g:i->j in IND such that the following compositionality
+condition is satisfied for any g:i->j and h:j->k in IND:
+
+   F(g;h) = (C(g);F(h))*(F(g);D(h)).
+
+(We also need the other version where F(g) goes from F(i);D(g) to C(g);F(j).)
+
+
+To get the right feeling and insight we have developed all necessary results
+by ourselves. Especially we were interested in the generalization of the
+Grothendieck construction to "lax indexed functors".
+
+Now, before fixing these things in a technical report, were are looking for
+corresponding references of work already done in this direction. Especially we
+don't want to introduce new names for already known concepts. We need
+some advice here...
+
+Our observation is that we have essentially used for many concepts and
+results the 2-categorical structure of CAT. Thus we strongly believe that
+somebody has already defined and investigated "lax functors" and "lax
+natural transformations" for 2-categories.
+
+
+Thanks for any help.
+
+With all best wishes,
+
+Alfio Martini.
+
+
+Date: Fri, 31 Jan 1997 14:15:17 -0400 (AST)
+Subject: Re: Lax Indexed Functors?
+
+Date: Fri, 31 Jan 1997 14:48:30 GMT
+From: Sandro Fusco <sfusco@mathstat.yorku.ca>
+
+On Jan 29,  4:05pm, categories wrote:
+> Subject: Lax Indexed Functors?
+> Date: Wed, 29 Jan 1997 18:58:44 +0100 (MET)
+> From: Alfio Martini <alfio@cs.tu-berlin.de>
+>
+> To give  an impression about what we are doing,
+> I will give the definition that turns out to be the
+> adequate one for our purposes:
+>
+> A lax indexed functor F from an indexed category C:IND->CAT  to an
+> indexed category D:IND->CAT is given by  functors F(i):C(i)->D(i) for
+> each i in |IND| and by natural transformations  F(g):C(g);F(j)=>F(i);D(g)
+> for each morphism g:i->j in IND such that the following compositionality
+> condition is satisfied for any g:i->j and h:j->k in IND:
+>
+>    F(g;h) = (C(g);F(h))*(F(g);D(h)).            --------(1)
+>
+>
+> To get the right feeling and insight we have developed all necessary
+> results by ourselves. Especially we were interested in the generalization
+> of the Grothendieck construction to "lax indexed functors".
+>
+> Thanks for any help.
+>
+> With all best wishes,
+>
+> Alfio Martini.
+>
+>
+>-- End of excerpt from categories
+
+
+
+Greetings!
+
+Concerning Alfio Martini's message, I would like to point out that I have
+been using a similar notion of what I also called "lax indexed functors".
+
+The only difference is that instead of condition (1) I have the following:
+
+ (\Phi_g,h ; F(k)) * F(g;h) = (C(g);F(h)) * (F(g);D(h)) * (F(i) ; \Phi'_g,h)
+
+where \Phi_g,h:C(g);C(h)->C(g;h) is the natural isomorphism associated
+with the indexed category C and \Phi'_g,h is the natural isomorphism
+associated with D (the reason being that my indexed categories
+C, D: IND->CAT are basically pseudofunctors).
+
+As shown in my thesis abstract below, a generalized Grothendieck
+construction is established.
+
+I expect to have copies of my thesis available by the end of April 1997.
+
+
+Yours truly,
+
+Sandro Fusco
+
+
+-------------
+
+Doctoral Thesis
+
+Title:
+Stable Functors and the Grothendieck Construction.
+
+Abstract:
+In classical domain theory, Scott-continuous functions of partially ordered
+sets (posets) are used to model approximation processes. When replacing
+posets by (the more general) categories, the so called "stable functors" take
+on the role of Scott-continuous functions. Different notions of stable functors
+were studied intensively by various researchers during the past ten years
+(notably by Paul Taylor of Imperial College, London, and Walter Tholen of
+York University, Toronto). These notions are closely related to generalizations
+of two fundamental notions of category theory, adjoint functors, and
+fibrations, with no apparent link between the two approaches.
+In this thesis, we
+1. introduce and investigate a satisfactory notion and theory of stable
+ functors based on "factorizations relative to a functor" (as given by
+ both, generalized adjoints and fibrations);
+2. establish the Grothendieck construction as a 2-functor \Gamma whose
+ domain is the 2-category of \{cal X}-indexed categories and whose target
+ is the suitably defined 2-category of stable functors with codomain \{cal X},
+ in such a way that \Gamma is part of a higher-dimensional adjunction.
+This latter part can be exploited at various levels of generality, yielding in
+particular the well-known equivalence between \{cal X}-indexed categories and
+cloven fibrations.
+
+
+
+--
+
+Sandro Fusco  <sfusco@mathstat.yorku.ca>
+Dept. of Mathematics and Statistics
+York University
+North York, Ontario
+Canada  M3J 1P3
+
+Tel:  (416) 736-2100  Ext. 40617
+Fax: (416) 736-5757
+
+

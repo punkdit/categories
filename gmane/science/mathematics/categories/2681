@@ -1,0 +1,206 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt@cs.man.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Arithmetic Universes and Abstract Stone Duality
+Date: Mon, 3 May 2004 23:11:21 +0100
+Lines: 176
+Approved: news@gmane.org
+Message-ID: <200405032211.i43MBLn14037@primrose.cs.man.ac.uk>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241018826 5306 80.91.229.2 (29 Apr 2009 15:27:06 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:27:06 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Tue May  4 08:19:25 2004 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Tue, 04 May 2004 08:19:25 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.10)
+    id 1BKxlK-000306-00
+    for categories-list@mta.ca; Tue, 04 May 2004 08:06:58 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 2
+Status: O
+Content-Length: 8387
+Original-Lines: 175
+Xref: news.gmane.org gmane.science.mathematics.categories:2681
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/2681>
+
+Arithmetic Universes and Abstract Stone Duality  --  Paul Taylor
+            www.cs.man.ac.uk/~pt/ASD
+
+(a) Inside every model of Abstract Stone Duality lies an Arithmetic Universe
+(b) Every Arithmetic Universe is embedded in a model of Abstract Stone Duality.
+
+The first is the title of a new draft paper, available from the web
+page above, on which your comments are invited.  I haven't written up
+the second, but the essence of the argument follows below.
+
+The "embedding" in question is (up to equivalence) as exactly the
+full subcategory of overt discrete objects.
+
+ABSTRACT of (a):
+    The first paper published on Abstract Stone Duality showed that
+    the overt discrete objects (those admitting  exists  and  equality
+    internally) form a pretopos, ie admit finite limits, stable disjoint
+    coproducts and stable effective quotients of equivalence relations.
+
+    Using an N-indexed least fixed point axiom, here we show that this
+    full subcategory is an arithmetic universe, having a free semilattice
+    (KX, "collection of Kuratowski-finite subsets") and a free monoid
+    (List X, "collection of lists") on any overt discrete object.
+
+    Each finite subset is represented by its pair ([], <>) of modal
+    operators (although a tight correspondence with these depends
+    on a stronger Scott-continuity axiom).  Topologically, such subsets
+    are both compact and open and also involve proper open maps.
+    In applications of ASD this can eliminate lists in favour of
+    a continuation-passing interpretation.
+
+The three aspects of the paper to which I would like to draw your
+attention are:
+
+    The use of modal operators is related to the three powerdomains
+    (in particular to the Plotkin or convex one) in domain theory.
+    The construction itself is a domain-theoretic one, as the object KX
+    is constructed by means of an idempotent that is the solution of
+    a fixed point equation.  A novel induction principle is needed
+    to prove the modal laws from the fixed point equation.
+
+    The final section shows how KX is a "finite powerset" in that it
+    classifies Kuratowski-finite subsets or compact open subspaces of X.
+    More generally, maps Gamma->KX correspond to open relations
+    U subset Gamma x X for which U->Gamma is proper.
+
+    As this paper is the first serious use of internal induction and
+    recursion in ASD, it forced me to reconsider the definition of the
+    natural numbers object in this category without arbitrary equalisers
+    (cf my message to "categories" on 4 November).  Proof-theoretically,
+    this means that the judgements in the ASD lambda-calculus must allow
+    equations as well as assignments of types to variables as
+    hypotheses.  Topologically, this may provide a way of extending ASD
+    from locally compact locales to all locales (but as several previous
+    attempts to do this have failed, I'm making no promises here).
+
+THE CONVERSE (b) - embedding a given AU in a model of ASD.
+
+There are numerous constructions and characterisations of categories of
+domains using "bases", "information systems", "approximable relations"
+etc., most notably that in Dana Scott's 1982 "Domains for Denotational
+Semantics" that defined what have since become known as Scott domains.
+
+In these, each domain is encoded as a set of tokens, possibly with
+other structure such as a closure condition, and each continuous
+function is encoded as a relation between tokens.
+
+Although these constructions were almost invariably presented in very
+concrete language with "set" meaning "set", the categorically astute
+observer will notice that they need far less than full set theory in
+the metalanguage. In fact they require
+ - cartesian products (products)
+ - sets of solutions of equations (equalisers)
+ - disjoint unions (extensivity - stable disjoint coproducts)
+ - relations considered as a notion of function
+     (regularity - stable image factorisation)
+ - relations considered as a notion of equality
+     (exactness - stable effective quotients of equivalence relations)
+ - definition by description and
+ - recursion over lists (free monoids),
+where the formal categorical names are given in brackets for the various
+notions that are to be found in a first year "Discrete Math" course.
+
+All but the last define a PRETOPOS, and including the last we have
+an ARITHMETIC UNIVERSE (AU).
+
+One way to construct a model of ASD around an AU would be as the
+category of "abstract bases" and "abstract matrices" defined in my
+paper "Computably based locally compact spaces".  (My abstract bases
+are similar to the "strong proximity lattices" used by Achim Jung
+and others to characterise stably locally compact spaces.)
+
+However, such a construction would be rather difficult - and
+unnecessarily so, as "Subspaces in ASD" already provides a general way
+of adding the monadic property to a given category that has powers of
+an object Sigma.
+
+All we need, therefore, is a category in which the given AU embeds
+as a full subcategory, in which there are powers of an object Sigma.
+
+In classical terms, a suitable such category would be that of disjoint
+unions of algebraic lattices, with Scott-continuous maps.  For
+convenience, we call such a disjoint union a "predomain".
+
+An "information system" construction would encode a predomain as a
+family of sets of tokens, each set being equipped with a finitary
+closure relation.  The members of the family correspond to the
+components of the disjoint union. A "family of sets" can be encoded in
+an AU as a single morphism, and a relation as a subobject.  The
+morphisms are "approximable relations", which are also encoded as
+subobjects.
+
+This category has finite products and stable disjoint coproducts, and
+the given AU is embedded as a full subcategory: an object N of the AU
+becomes the predomain encoded as the N-indexed family of empty sets
+(the morphism 0->N).  Sigma is encoded as the family consisting of a
+single singleton (the morphism 1->1). The exponential Sigma^X exists
+for any predomain X, encoded as the family whose one member is the set
+of finite sets of tokens of X - this is where the free semilattice
+comes in.
+
+One striking but actually very simple property of this category
+of predomains is that Sigma classifies subobjects in the AU:
+
+    U ----> 1
+    v  |    |
+    |---    | top
+    |   |
+    v   v
+    N ----> Sigma
+
+That is, Sigma has exactly the defining property of a subobject
+classifier (Omega), as if the AU were an elementary topos - except
+that the object Sigma belongs to the larger category of predomains,
+not to the given AU.  This property is achieved by the same sleight of
+hand that often makes category theory so powerful - we may encode
+objects and morphisms of a category as we please, in this case as
+subobjects (it would be better to say monomorphisms) of a given category.
+
+Besides having powers of Sigma and embedding the AU exactly as its
+full subcategory of overt discrete objects, the category of predomains
+obeys the Phoa principle, its morphisms are all Scott continuous and
+its objects are Sigma-split subspaces of Sigma^N.  Its "monadic
+completion" (using "Subspaces in ASD") is therefore exactly the
+kind of category that is discussed in "Computably based locally
+compact spaces".
+
+In particular, no new overt discrete objects are added by these
+constructions: the given AU is embedded (up to equivalence) as
+exactly the full subcategory of overt discrete objects.
+
+
+It seems to me that the "equivalence" between AUs and ASD that is
+established by these two results should be very significant.  Andre'
+Joyal originally introduced AUs because they are the minimal natural
+categorical structure in which one can form the free internal thing of
+the same kind.  Since any AU can be embedded in a model of ASD, we can
+use domain theoretic methods (of which my new paper is a clumsy simple
+example) to construct free internal algebras (including free
+categories) and cofree internal coalgebras.  The semantics of WHILE
+programs given in "first order" terms using coequalisers in Section
+6.4 of "Practical Foundations" is really the same thing as the better
+known "higher order" domain-theoretic fixed point semantics. On the
+other hand, we may construct the free internal AU as a subcategory of
+the free internal model of ASD.
+
+Paul Taylor
+www.cs.man.ac.uk/~pt
+pt@cs.man.ac.uk
+University of Manchester ("East London Campus")
+
+
+
+
+
+

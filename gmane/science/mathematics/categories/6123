@@ -1,0 +1,145 @@
+Path: news.gmane.org!not-for-mail
+From: Greg Meredith <lgreg.meredith@biosimilarity.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Makkai's suggestion
+Date: Mon, 6 Sep 2010 10:08:27 -0700
+Lines: 106
+Approved: news@gmane.org
+Message-ID: <E1OsxLm-0008WR-EB@mlist.mta.ca>
+References: <AANLkTikK_KK3qHEJOewHY+c7u5=PYBs3JBjFrXX0ag_J@mail.gmail.com>
+Reply-To: Greg Meredith <lgreg.meredith@biosimilarity.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: dough.gmane.org 1283862845 617 80.91.229.12 (7 Sep 2010 12:34:05 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 7 Sep 2010 12:34:05 +0000 (UTC)
+Cc: categories <categories@mta.ca>
+To: David Leduc <david.leduc6@googlemail.com>
+Original-X-From: majordomo@mlist.mta.ca Tue Sep 07 14:34:04 2010
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.139])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsxN9-0006CL-O0
+	for gsmc-categories@m.gmane.org; Tue, 07 Sep 2010 14:34:00 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:53526)
+	by smtpy.mta.ca with esmtp (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsxLx-0006MN-B8; Tue, 07 Sep 2010 09:32:45 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1OsxLm-0008WR-EB
+	for categories-list@mlist.mta.ca; Tue, 07 Sep 2010 09:32:35 -0300
+In-Reply-To: <AANLkTinMcT+eTMb03vo2a7f4ud-xtv-E8_gvXy=VPhXF@mail.gmail.com>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6123
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6123>
+
+Dear David,
+
+[This reply never made it to the list and i got a note from Bob
+Rosebrugh about text-only messages and no attachments. i've a feeling
+that the gmail client did something strange with my reply -- since i
+thought everything i typed was predominantly ASCII. The following
+version of the original reply should be just plain ASCII.]
+
+>> the fact that it is exceptionally hard to
+>> get categorical composition to line up with parallel composition (in the
+>> sense of concurrent computation) in a manner that respects Curry-Howard,
+>
+>I am not aware of this fact. What do you mean? Please explain or give
+>references.
+
+Arguably, the two best approaches are Interaction Categories
+(Abramsky, et al) and Bi-graphs (Milner, et al). The crucial concern
+is to align categorical composition with parallel composition in a
+manner that respects Curry-Howard. Thus, processes must be interpreted
+as morphisms. The central complication is how to do this in a setting
+supporting a natural interpretation of mobility, i.e. the dynamic
+reconfiguration of communication topology. As an example, consider the
+pi-calculus process,
+
+*(u?(v).(new w)v!(w)) | (new x)u!(x).x?(y).P
+
+Find below one of it's reductions. The process represents a simplified
+model of a little mini-protocol we use on the internet every day: on
+some well known URL (the channel u above) ask for a unique (and
+potentially private) URL (the channel w above) on which to do further
+communication.
+
+A categorical interpretation (meeting the desiderata above) needs to
+interpret -- for example --
+
+1) *(u?(v).(new w)v!(w)) as a morphism, say [| *(u?(v).(new w)v!(w)) |]
+
+2) (new x)u!(x).x?(y).P as a morphism, say [| (new x)u!(x).x?(y).P |] and
+
+3) *(u?(v).(new w)v!(w)) | (new x)u!(x).x?(y).P as a morphism, say [|
+*(u?(v).(new w)v!(w)) | (new x)u!(x).x?(y).P |]
+
+such that
+
+[| *(u?(v).(new w)v!(w)) | (new x)u!(x).x?(y).P |]
+=
+[| *(u?(v).(new w)v!(w)) |] o [| (new x)u!(x).x?(y).P |]
+
+Sangiorgi, Fiore and others have given fully abstract interpretations
+meeting these criteria, by the letter of the law, so to speak. Imho,
+one would never use any of these semantic accounts to do calculations
+of properties of even these simple protocols. That's the sense in
+which i mean that parallel composition does not line up well with
+categorical composition. The "semantic" categorical account doesn't
+help clarify things. It doesn't aid practical calculation. For
+concurrent computation the process calculi still have greater utility
+for both practical calculations theoretical framework supplying a
+robust notion of equivalence and substitutability (i.e.,
+bisimulation).
+
+One reduction of the example process.
+
+*(u?(v).(new w)v!(w)) | (new x)u!(x).x?(y).P
+->
+*(u?(v).(new w)v!(w)) | u?(v).(new w)v!(w) | (new x)u!(x).x?(y).P
+=
+*(u?(v).(new w)v!(w)) | (new x)(u?(v).(new w)v!(w) | u!(x).x?(y).P)
+->
+*(u?(v).(new w)v!(w)) | (new x)((new w)x!(w) | x?(y).P)
+=
+*(u?(v).(new w)v!(w)) | (new x)((new w)(x!(w) | x?(y).P))
+->
+*(u?(v).(new w)v!(w)) | (new x)((new w)(P{w/y}))
+
+
+
+Best wishes,
+
+--greg
+
+On Sat, Sep 4, 2010 at 3:10 AM, David Leduc <david.leduc6@googlemail.com> wrote:
+>
+> On 9/1/10, Greg Meredith <lgreg.meredith@biosimilarity.com> wrote:
+>> the fact that it is exceptionally hard to
+>> get categorical composition to line up with parallel composition (in the
+>> sense of concurrent computation) in a manner that respects Curry-Howard,
+>
+> I am not aware of this fact. What do you mean? Please explain or give
+> references.
+
+
+
+--
+L.G. Meredith
+Managing Partner
+Biosimilarity LLC
+1219 NW 83rd St
+Seattle, WA 98117
+
++1 206.650.3740
+
+http://biosimilarity.blogspot.com
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

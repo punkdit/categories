@@ -1,0 +1,153 @@
+Path: news.gmane.org!not-for-mail
+From: Robbie Gates <robbie@maths.usyd.edu.au>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: FISh performance
+Date: Tue, 03 Nov 1998 15:41:11 +1100
+Lines: 122
+Approved: news@gmane.org
+Message-ID: <363E8966.F3F23F3D@maths.usyd.edu.au>
+References: <199811020546.QAA25507@algae.socs.uts.EDU.AU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241017325 28278 80.91.229.2 (29 Apr 2009 15:02:05 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:02:05 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Tue Nov  3 21:25:17 1998
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.8.8/8.8.8) id UAA18050
+	for categories-list; Tue, 3 Nov 1998 20:17:49 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: Mozilla 4.05 [en] (X11; I; OSF1 V4.0 alpha)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 6138
+Original-Lines: 121
+Xref: news.gmane.org gmane.science.mathematics.categories:913
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/913>
+
+Warning: there's no category theory in this letter - it's purely a
+reponse to the discussion of execution speed of FISh quicksort.
+
+Barry Jay wrote:
+> Why is quicksort in FISh faster?
+> =================================
+
+I would like to propose another reason the FISh quicksort appears to be
+faster than the library qsort - they aren't the same algorithm.  In
+particular, the standard library qsort and the FISh sort are using
+different methods to pick the pivot.
+
+Choice of pivot in quicksort is important to ensure the worst case
+doesn't degenerate to O(n^2).  The choice of pivot in the FISh code
+is always the first element, which does give very poor performance
+in the case the array is already sorted.  I'm not sure what the qsort
+in the libc i have here does.  However, typical tricks include selecting
+the median of three elements at the bottom, middle and top of the array,
+choosing a random element, choosing the median of three random elements,
+and so on.  Importantly, each of these choices requires some work,
+and thus negatively impacts on the average speed of the sort in order to
+alleviate the worst case speed.
+
+Caveat: I'm not a professional benchmarker/tester, and the tests below
+are probably very flawed.  I have tried to give details on everything
+that seems relevant, but your mileage may vary.  This data is more given
+to suggest an alternative, plausible explanation for the observed speed
+difference in the FISh and C benchmarks, than to claim i have identified
+all the issues in the timing results found for FISh and C quicksort.
+
+To test this hypothesis, i coded up quicksort in C++ using the same
+pivot picking strategy as the FISh code.  I then modified my C++ code,
+and the C benchmark code and C translated FISh code (CTFC) from the
+FISh website (by CTFC i mean the contents of test01.c), by altering
+the random number generator to allow specification of two command line
+arguments giving the multiplier and step for the seeding algorithm.
+i.e rather than
+seed = seed * 25173 + 17431
+i used
+seed = seed * mult + 17431
+for varying mult.
+
+This allowed me to test the extent to which the algorithm was sensitive
+to the data being sorted.  What follows are timing values on a DGUX
+AlphaStation 255 (233 MHz) with mult = 1,2,3, ... ,10 (on an array of
+10000 values).  For each program, i give the total (user + system)
+time reported by the builtin time function of bash version
+2.02.0(1)-release (alpha-dec-osf4.0) (averaged over 10 trials in
+each case). The time columns are libqsort (= the standard library
+qsort), cppqsort (= my C++ qsort), fishqsort (= CTFC). They were
+compiled with gcc, g++, gcc in each case, and -O optimization.
+
+NOTE: With these mult values, the data supplied to the qsort is
+deliberately nonrandom to try and detect the effect proposed in
+the second paragraph.
+
+mult         libqsort        cppqsort     fishqsort
+1              .0350          3.462          3.410
+2              .0348          4.039          4.039
+3              .1003          .0334          .0391
+4              .0350          4.085          4.052
+5              .1130          .0332          .0393
+6              .0356          4.042          4.039
+7              .1025          .0341          .0382
+8              .0357          4.061          4.054
+9              .1088          .0336          .0382
+10             .0355          4.053          4.041
+
+Observe that the libqsort has much better average performance (and
+that its profile is different to the other two - one could
+probably determine something about the choice of pivots with enough
+tests ;-).  Also, the CTFC at best beats the library by
+a factor a bit under 3, whereas the library beats the CTFC
+by a factor of over 110.
+
+More importantly, the C++ and fish code run in very similar time,
+neither consistently beating the other.  Also, their profiles are
+almost identical.
+
+I also ran one bigger test - in the case of a 90000 element array
+consisting of 1 to 90,000 in order, the library took around .3
+seconds, whereas the CTFC overflowed the stack and crashed
+just under 200 seconds into the test (the C++ code took
+315 seconds to overflow the stack and crash - i'm not sure what's
+causing the difference here, but i suspect it has to do with
+the fact my C++ code used paramaters rather than a static struct).
+
+Based on this, I'm proposing that the standard library quicksort is
+trading off speed for the average cases to bring the worst cases down
+to something acceptable. This is presumably a serious issue for a
+library quicksort - its better to run on average somewhat slower in
+order to get consistency, as this makes applications easier to test
+for market acceptance of speed, rather than the application apparently
+hanging when the user manages to sort the worst case database with about
+1 million entries in it (when your testers happily sorted their million
+entry db's with no trouble).
+
+one other point - the compile time polymorphism is not specific
+to FISh (as Ralph Loader mentioned). You write:
+> The FISh program avoids making a function call at all.  That is,
+> instead of passing the addresses to a function, a primitive comparison
+> is made. The key point is that this can only be done because
+> information like the length of the array and the size of the entries
+> (in bytes) can be inferred by the FISh compiler, instead of being
+> supplied by the user.
+
+C++ templates also give the ability to supply a compile time comparision
+function to sort routines, the code will likewise be specialised on
+the given comparison and on the size of the entries.  One could write
+sort templates that take the length as well, however since the size
+of stuff to be sorted typically varies depending on the current
+application state (i.e. in a manner unknown at compile time) this tends
+not to be enough of a win to be worth doing.
+
+ - robbie
+-- 
+*--------------------------------> + <---------------------------------*
+|_|          robbie gates          |         pgp key available       |_|
+V          category theorist       V  //cat.maths.usyd.edu.au/~robbie  V
+*--------------------------------> + <---------------------------------*
+
+

@@ -1,0 +1,70 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: ticked arrowheads in xy-pic and diagxy
+Date: Wed, 25 Feb 2009 20:08:48 -0500 (EST)
+Lines: 38
+Approved: news@gmane.org
+Message-ID: <E1Lca2p-0003G3-DV@mailserv.mta.ca>
+Reply-To: Michael Barr <barr@math.mcgill.ca>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII; format=flowed
+X-Trace: ger.gmane.org 1235633516 18758 80.91.229.12 (26 Feb 2009 07:31:56 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Thu, 26 Feb 2009 07:31:56 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: categories@mta.ca Thu Feb 26 08:33:12 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1Lcak0-0007ff-5O
+	for gsmc-categories@m.gmane.org; Thu, 26 Feb 2009 08:33:08 +0100
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1Lca2p-0003G3-DV
+	for categories-list@mta.ca; Thu, 26 Feb 2009 02:48:31 -0400
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:112
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/112>
+
+A month or two ago, Micah McCurdy wrote to ask me if it was possible to
+make an arrow with a tick in the middle (that is ----+---->) and I said I
+didn't know how to do that and suggested he ask Ross Moore.  Ross told him
+that xy-pic didn't have that capacity.  Well, Micah discovered that it
+did.  Here are some samples, using diagxy, but that is just a front end to
+xy-pic.
+
+  $$\bfig
+\node a(0,0)[A]
+\node b(300,400)[B]
+\arrow/@{>}|-*@{>}/[a`b;f]
+  \efig$$
+
+
+  $$\bfig
+  \ptriangle/>`>`@{>}|-@{|}/[A`B`C;f`g`h]
+  \efig$$
+
+
+
+  $$\bfig
+  \morphism/@{>}|-@{+}/<700,0>[ABCDE`F;h]
+  \efig$$
+
+
+  $$\bfig
+  \morphism/@{>}|-*@{|}/<700,0>[ABCDE`F;h]
+  \efig$$
+
+As far as I can tell, the * between the - and the @ has no effect.  The
+one limitation is that what goes inside the -@{ } must be a \dir.  This is
+a limitation for me, since I cannot figure out the syntax of \newdir.  For
+this to work, it clearly has to be something that tex can rotate.
+
+Michael
+
+
+

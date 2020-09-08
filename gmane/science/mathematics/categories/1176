@@ -1,0 +1,78 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Levy <pbl@dcs.qmw.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: co-exponential question
+Date: Tue, 20 Jul 1999 18:41:59 +0100 (BST)
+Lines: 48
+Approved: news@gmane.org
+Message-ID: <199907201741.SAA29163@gentzen.dcs.qmw.ac.uk>
+References: <3794E2AC.425B@latrobe.edu.au>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017617 29822 80.91.229.2 (29 Apr 2009 15:06:57 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:57 +0000 (UTC)
+Cc: w.james@latrobe.edu.au, categories@mta.ca
+To: bhalchin@hotmail.com
+Original-X-From: cat-dist Thu Jul 22 12:10:40 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id KAA06696
+	for categories-list; Thu, 22 Jul 1999 10:37:39 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-reply-to: <3794E2AC.425B@latrobe.edu.au> (message from William James on
+	Tue, 20 Jul 1999 13:57:18 -0700)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 1912
+Original-Lines: 47
+Xref: news.gmane.org gmane.science.mathematics.categories:1176
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1176>
+
+I don't know if this is relevant to your question, but there is an example in
+programming semantics where the dual of a cartesian closed
+category has independent significance, due to Lafont, Streicher, Reus
+and Hofmann.  (Some further work was done by Selinger.)  It is found in the following paper:
+		  
+@Article{StreicherReus:continuations,
+  title =        "Classical logic, continutation semantics and abstract
+                 machines",
+  author =       "Th. Streicher and B. Reus",
+  pages =        "543--572",
+  journal =      "Journal of Functional Programming",
+  month =        nov,
+  year =         "1998",
+  volume =       "8",
+  number =       "6",
+}
+
+The construction is as follows.
+
+Let C be a distributive
+category, and let Ans (the "answer type") be an object in C, such that the exponential X -> Ans exists for
+each object X.  Define two categories K and
+N as follows. Both have the same objects as C.  In K, a morphism from
+X to Y is a C-morphism from X x (Y -> Ans) to Ans.  In N, a morphism
+from X to Y is a C-morphism from (X -> Ans) x Y to Ans. 
+
+ Clearly these two
+categories are dual.  Streicher and Reus' paper makes it clear that just as K can be
+used to interpret a typed call-by-value language with control effects (which
+was well-known), N can be used to interpret a typed call-by-name language
+with control effects.  Like any call-by-name model, N is cartesian closed:
+
+the product of X and Y in N is given by X+Y
+
+the exponential from X to Y in N is given by (X -> Ans) x Y
+
+K is certainly an important category, but I wouldn't say that the fact
+that it has coexponentials is significant.  
+
+Paul
+
+===========================================================================
+Paul Blain Levy, Department of Computer Science,
+Queen Mary and Westfield College, LONDON E1 4NS
+http://www.dcs.qmw.ac.uk/~pbl/
+===========================================================================
+
+

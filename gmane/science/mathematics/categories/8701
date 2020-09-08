@@ -1,0 +1,109 @@
+Path: news.gmane.org!not-for-mail
+From: "Noson S. Yanofsky" <noson@sci.brooklyn.cuny.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: RE: Computability and Complexity of Categorical Structures
+Date: Mon, 21 Sep 2015 09:42:04 -0400
+Lines: 68
+Approved: news@gmane.org
+Message-ID: <E1ZePoo-00032N-7c@mlist.mta.ca>
+References: <E1ZdoIW-0000us-9f@mlist.mta.ca> <EEC7F07F-5544-4945-A9CB-AEABEEF26B9E@cs.bham.ac.uk>
+Reply-To: "Noson S. Yanofsky" <noson@sci.brooklyn.cuny.edu>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain;	charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+X-Trace: ger.gmane.org 1442937012 12956 80.91.229.3 (22 Sep 2015 15:50:12 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Tue, 22 Sep 2015 15:50:12 +0000 (UTC)
+Cc: <categories@mta.ca>
+To: "'Steve Vickers'" <s.j.vickers@cs.bham.ac.uk>
+Original-X-From: majordomo@mlist.mta.ca Tue Sep 22 17:50:01 2015
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.22])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePpJ-0003uL-4J
+	for gsmc-categories@m.gmane.org; Tue, 22 Sep 2015 17:49:53 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:51362)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePon-0004F5-HN; Tue, 22 Sep 2015 12:49:21 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1ZePoo-00032N-7c
+	for categories-list@mlist.mta.ca; Tue, 22 Sep 2015 12:49:22 -0300
+In-Reply-To: <EEC7F07F-5544-4945-A9CB-AEABEEF26B9E@cs.bham.ac.uk>
+Content-Language: en-us
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8701
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8701>
+
+Dear Steve,
+
+Thanks for taking the interest in the paper.=20
+
+Whether or not the colimit exists depends on which category you are in. =
+In my paper the colimit is taken in the category of small categories =
+where it does exist. Like you point out, (and David Roberts pointed out =
+in a previous post) you might want to do some of this stuff in other =
+categories such as the effective topos etc where this colimit would not =
+exist. I do not know if the category of small categories is "omniscient" =
+or not, and if that is a good thing or a bad thing, but the result =
+stands.
+
+(It is not a typo. Since 2 is indiscreet 0-->1 once the output goes to 1 =
+it must stay in 1. This is exactly what Halt(x,y,t) does. Once it halts =
+it stays halted. But all the outputs can remain 0.)=20
+
+All the best,
+Noson
+
+-----Original Message-----
+From: Steve Vickers [mailto:s.j.vickers@cs.bham.ac.uk]=20
+Sent: Monday, September 21, 2015 6:10 AM
+To: Noson S. Yanofsky
+Cc: categories@mta.ca
+Subject: Re: categories: Computability and Complexity of Categorical =
+Structures
+
+Dear Noson,
+
+It seems to me it's an oversimplification to say that categories can =
+solve the Halting Problem. There's a logical principle involved.
+
+In your proof on p.23, the central step is that if H: =CF=89 -> 2 is a =
+functor (where =CF=89 and 2 are the posets of natural numbers and =
+{0,1}), then it has a colimit H': 1 -> 2. H(t) describes whether the =
+computation has halted by step t. (By the way, you use =CF=89_i, the =
+indiscreet natural numbers, for the type of t. That's a typo, isn't it? =
+Since 2 is antisymmetric, that would imply H is constant.)
+
+Does the colimit exist? That's not a fact of pure category theory, but a =
+logical principle of "omniscience". If you go beyond classical logic =
+(and category theory facilitates this) then the colimit might not exist.
+
+For example, it will not work in a topos. To find the colimit you will =
+need to embed 2 in =CE=A9, the poset on the subobject classifier. There =
+you still have the classical objects 0 and 1 (false and true), but also =
+intermediate objects corresponding to truth values of other propositions =
+such as "this computation halts". This switch from 2 to =CE=A9 =
+corresponds to relaxing decidability to semidecidability - and =
+semidecidability of the halting problem is trivial.
+
+If my calculations are correct, you can see this in the topos of sheaves =
+over the 1-point compactification of =CF=89. This is the classifying =
+topos for functors H, and the generic H has no colimit.
+
+An alternative way to understand this is what you see in denotational =
+semantics. Here, when a map to 2 takes the value 0 ("bottom"), that is =
+interpreted as meaning that the assignment of result to argument gets =
+ensnared in a divergence.
+
+Regards,
+
+Steve.
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

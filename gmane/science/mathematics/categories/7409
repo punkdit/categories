@@ -1,0 +1,69 @@
+Path: news.gmane.org!not-for-mail
+From: Tom Leinster <Tom.Leinster@glasgow.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Yoneda Lemma when there is a monad
+Date: Tue, 21 Aug 2012 19:08:54 +0100
+Lines: 31
+Approved: news@gmane.org
+Message-ID: <E1T4C2e-0007Zz-62@mlist.mta.ca>
+References: <E1T3nON-0002W0-9T@mlist.mta.ca>
+Reply-To: Tom Leinster <Tom.Leinster@glasgow.ac.uk>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed; charset="US-ASCII"
+X-Trace: ger.gmane.org 1345646228 10106 80.91.229.3 (22 Aug 2012 14:37:08 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 22 Aug 2012 14:37:08 +0000 (UTC)
+Cc: "categories@mta.ca" <categories@mta.ca>, Tom Leinster	<Tom.Leinster@glasgow.ac.uk>
+To: "info@christophertownsend.org" <info@christophertownsend.org>
+Original-X-From: majordomo@mlist.mta.ca Wed Aug 22 16:37:05 2012
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpy.mta.ca ([138.73.1.128])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1T4C3M-0002Uw-4k
+	for gsmc-categories@m.gmane.org; Wed, 22 Aug 2012 16:37:04 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52369)
+	by smtpy.mta.ca with esmtp (Exim 4.77)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1T4C2b-0006kH-7s; Wed, 22 Aug 2012 11:36:17 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1T4C2e-0007Zz-62
+	for categories-list@mlist.mta.ca; Wed, 22 Aug 2012 11:36:20 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7409
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7409>
+
+
+Dear Chris,
+
+> C^T embeds in [(C_T)^op,Set]; i.e. any category of algebras embeds in
+> the presheaf category of the Kleisli category.
+
+This part is morally clear, I think, via the notion of density.
+
+A functor F: A --> B is called dense if the induced functor
+
+     Hom(F, -): B --> [A^op, Set]
+
+is full and faithful.  An equivalent condition (stated loosely) is that
+every object of B is a colimit of objects of the form F(a) (with a in A)
+in a canonical way.  (See e.g. Categories for the Working Mathematician.)
+
+Now take a monad T on a category C.  Every T-algebra is canonically a
+coequalizer of free T-algebras.  So every object of C^T is canonically a
+colimit of objects of the subcategory C_T.
+
+As long as "canonically" means what I assume it does (and I haven't
+checked the details), this tells us that the inclusion C_T --> C^T is
+dense.  Hence the induced functor C^T ---> [(C_T)^op, Set] is full and
+faithful - which I guess is what you mean by an embedding.
+
+All the best,
+Tom
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

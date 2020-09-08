@@ -1,0 +1,171 @@
+Path: news.gmane.org!not-for-mail
+From: Andrius Kulikauskas <ms@ms.lt>
+Newsgroups: gmane.science.mathematics.categories
+Subject: An abstracted matrix approach to category theory?
+Date: Thu, 09 Jul 2009 17:33:29 +0300
+Lines: 138
+Approved: news@gmane.org
+Message-ID: <E1MPGjl-0005Pi-VZ@mailserv.mta.ca>
+Reply-To: Andrius Kulikauskas <ms@ms.lt>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1247237708 23946 80.91.229.12 (10 Jul 2009 14:55:08 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Fri, 10 Jul 2009 14:55:08 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: categories@mta.ca Fri Jul 10 16:55:01 2009
+Return-path: <categories@mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from mailserv.mta.ca ([138.73.1.1])
+	by lo.gmane.org with esmtp (Exim 4.50)
+	id 1MPHV6-0008W5-KG
+	for gsmc-categories@m.gmane.org; Fri, 10 Jul 2009 16:55:00 +0200
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <categories@mta.ca>)
+	id 1MPGjl-0005Pi-VZ
+	for categories-list@mta.ca; Fri, 10 Jul 2009 11:06:06 -0300
+Original-Sender: categories@mta.ca
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:5047
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/5047>
+
+I'm studying the basics of Category Theory.  I appreciate help with my
+questions!
+
+My main interest is to "know everything and apply that knowledge
+usefully".  I have a set of notes that reflect more than 25 years of
+work on this:
+http://www.worknets.org/wiki.cgi?LivingByTruth/Summary
+
+Category theory may be relevant in describing an "algebra of views" and
+the composition of views.  Consider a lost child who goes to where she
+thinks her mother will look for her.  Such a child is taking up her view
+of her mother's view of her view of her mother's view of her view.  In
+this way, it is possible for two people to have a "good understanding"
+even if they presently have no channel of communication.
+http://www.worknets.org/wiki.cgi?LivingByTruth/LostChild
+
+Has anybody ever studied an algebra of views or perspectives?
+
+I'm studying from "Basic Category Theory for Computer Scientists" by
+Benjamin C. Pierce.
+
+I'm interested to apply the mathematics from my Ph.D. thesis "Symmetric
+Functions of the Eigenvalues of a Matrix" (UCSD, 1993).
+http://www.worknets.org/upload/AndriusKulikauskas/AndriusKulikauskasThesis.pdf
+I am wondering if it is possible to consider a category as an
+"abstracted matrix" and take its trace or determinant, etc.
+
+Symmetric functions are those functions such as X1 + X2 + X3 or X1*X2*X3
+which stay the same even if you permute the variables.  They are
+ubiquitous in algebraic combinatorics because objects are generally
+built up with labels (which may at some point taken off) where the order
+of the labels themselves generally shouldn't matter.  I studied
+algebraic combinatorics as the "basement" of mathematics where objects
+are constructed, and thus in some sense, foundational.  I was also
+interested that the vector space of symmetric functions had several
+"natural" bases, namely the power, elementary, homogeneous, monomial,
+forgotten, Schur which I thought might reflect how humans look at things.
+http://mathworld.wolfram.com/SymmetricFunction.html
+
+For my thesis, I noted that the trace and determinant of a matrix are
+symmetric functions of its eigenvalues, namely the sum E1 + E2 + E3
++...  and the product E1*E2*E3...   We can calculate these and all
+symmetric functions of eigenvalues straightforwardly in terms of the
+edges of a matrix, which is interesting, because in general, we can't
+calculate the eigenvalues themselves.  I gave combinatorial
+interpretations of these functions in terms of walks, cycles, Lyndon
+words, rimhook tableux, etc on a generic matrix A.  What's very
+interesting is that if you set that generic matrix A to be a diagonal
+matrix X (whose eigenvalues are necessarily the diagonal elements), then
+the results collapse to yield the usual symmetric functions.  The matrix
+A can be specialized in other ways as well.  Also, the symmetric
+functions of the eigenvalues capture the combinatorics of all of the
+theorems that I could find about generic matrices.
+
+I am drawn to think of a category as a "generic matrix" from the
+combinatorial point of view, if possible.  In such a view:
+* the objects would be the dimensions of a square matrix A (and I allow
+that the objects are unordered and perhaps uncountable, so that I speak
+of an "abstracted matrix").
+* each arrow F:X->Y would be a term in an (unordered, commutative) sum
+that corresponds to Axy
+* composition and associativity imply that each term in such a sum can
+be written (perhaps in more than one way) as a path (composed of arrows)
+starting at X and passing through perhaps several other nodes and
+arriving at Y.
+* an identity 1:X->X can be thought of as a term 1 in the series for the
+diagonal cell Axx  (I suppose that the identity need not be unique? or
+must it?)
+* if there are no arrows from X to Y, then we write a 0 in the cell Axy
+
+What I would then want to say is that the series Axy consists of terms
+such that:
+* some are distinct atoms F:X->Y
+* the rest are generated by composition   F:X-> ... ... ... ->Y
+* there is an equivalence relationship by which certain compositions are
+equal, perhaps imagined to collapse
+
+I suppose that this is alway possible in that, given X, Y, we can simply
+take as our "atoms" the entire collection of arrows from X to Y.  Then
+all compositions must collapse back into our atoms.  Indeed, there is a
+partial order (by inclusion) of the sets of arrows that may be
+understood as "the atoms".  In this partial order we may ask if there is
+any set of arrows that is "natural", for example, depending on the
+equivalence relationship, there may or not be a smallest set of atoms.
+Perhaps this search for atoms might be analogous to what "representation
+theory" does for groups.
+
+This is a very "concrete" approach and when I wrote to Joseph Goguen
+(who sadly passed away) about it, he didn't think that was a good way to
+think about categories.  But I have in my thesis a powerful perspective
+for dealing with a generic matrix.  And I think that an "abstracted
+matrix" is metaphysically, conceptually about the most basic object that
+math offers.
+
+I suppose that my question is, Assuming a labeling for objects, What can
+we say about the systems for labeling arrows (the ones that drop
+parentheses, thanks to associativity)?
+
+Once we have a system for labeling the arrows, then my thesis work
+observes that various constructions accord with symmetric functions of
+"eigenvalues" of the related matrix.  For example, the trace generates
+the closed walks (from any X back to itself) that you can take within
+the category.
+
+The determinant of a category is the product of signed cycles.  The sign
+is straightforward if there is an implicit order in the objects, and if
+one does not exist for some of the objects, then we can simply leave
+that unresolved.  Where the sign exists, then there can be some
+collapsing.  Are there theorems in category theory where products of
+signed cycles are generated?
+
+Note that we may have two categories with the same objects (or we may
+always extend the sets of objects and embed the categories).  Then
+multiplication of matrices gives a composition of the categories.  We
+can multiply (and compose) a matrix with itself.  (Indeed, a category
+may be thought of as the matrix generated from its atoms Q by series
+expansion matrix multiplication 1/(1-Q) ).  And the matrix/category A
+may be thought as the paths accepted by an automata and Q as the basic
+rules.
+
+Has this "abstracted matrix" approach been taken?  I appreciate
+suggestions on what to read and what to explore.
+
+Thank you,
+
+Andrius Kulikauskas
+Minciu Sodas
+http://www.ms.lt
+ms@ms.lt
++370 699 30003
+Dukiskiu km
+Butrimoniu sen
+Alytaus raj
+Lithuania
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

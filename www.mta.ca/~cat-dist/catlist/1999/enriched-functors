@@ -1,0 +1,96 @@
+Date: Sat, 31 Dec 1994 11:06:47 -0400 (AST)
+Subject: composition of enriched functors
+
+Date: Wed, 14 Dec 94 13:08:12 CST
+From: David Yetter <dyetter@math.ksu.edu>
+
+
+        It sticks in my mind that somewhere (probably Kelly's book
+on enriched category theory) I have seen the composition of
+enriched functors expressed in terms of coends.
+
+        Our library's copy of Kelly is out, so I was hoping someone
+could help me recover the result and all necessary hypotheses.
+
+        More precisely, I recall that it ran like this (and have
+proved this for ordinary categories):
+
+        Associate to an enriched functor F:A \rightarrow B
+the functor Hom(F(-),-):A^{op} \times B \rightarrow V
+
+        The composition of F and G is then given by
+
+        \integral^c Hom(F(-),c) \otimes Hom(G(c),-) \cong Hom(G(F(-)),-).
+
+        I am particularly interested in an analogous result for
+C-linear categories, and categories enriched in the category of
+C-linear categories, as this could have applications to topological
+and conformal field theories.
+
+Best Thoughts to all,
+David Yetter
+
+Date: Tue, 3 Jan 1995 15:08:25 -0400 (AST)
+Subject: Re: composition of enriched functors
+
+Date: Mon, 2 Jan 95 09:34:16 +1100
+Subject: Re: composition of enriched functors
+
+David Yetter, in his query, seems to be making heavy weather of the compositionof enriched functors. The composite of F:A --> B and G:B --> C is given on
+objects by GFa, while its "effect on maps" is the composite of the effects of Fand of G as in  A(a,a') ------> B(Fa,Fa') -----> C(GFa,GFa'). That is all.
+
+ There is further a composition of profunctors (also called bimodules, or just
+modules), given by an evident co-end formula. Now every functor F determines a
+profunctor F*, where F*(a,b) is B(Fa,b); and the calculation David refers to
+(which is a simple application of the Yoneda isomorphism) is just the verification
+that (GF)* is canonically isomorphic to (G*)(F*). Of course this holds, in
+particular, for C-linear categories.
+
+ New-Year greetings to all - Max Kelly.
+
+Date: Tue, 3 Jan 1995 15:11:26 -0400 (AST)
+Subject: David Yetter's question
+
+Date: Tue, 3 Jan 1995 14:43:10 +1100
+From: Ross Street <street@macadam.mpce.mq.edu.au>
+
+>The composition of F and G is then given by
+>
+>        \integral^c Hom(F(-),c) \otimes Hom(G(c),-) \cong Hom(G(F(-)),-).
+
+This follows from the enriched Yoneda Lemma. The setting is as follows.
+It is tensor product of (bi)modules which is given by the coend formula.
+Modules (= profunctors = distributors) between V-categories are the arrows
+for a bicategory Mod(V) with this tensor product as composition. Each
+V-functor  F  becomes a module in two ways: F_* and F^*. The latter
+involves the Hom(F(a),c) as required by David. Each process gives a
+locally fully faithful embedding of V-Cat in V-Mod (Yoneda's Lemma)
+with appropriate variances. Moreover,  F^*  is right adjoint to F_* in
+the bicategory Mod(V).
+
+A good reference is Lawvere's paper "Metric spaces, generalised logic,
+and closed categories" Rend. Sem. Mat. Fis. Milano 43 (1974) 135-166.
+
+Best wishes for the New Year,
+Ross
+
+
+Date: Mon, 9 Jan 1995 08:22:03 -0400 (AST)
+Subject: Re: composition of enriched functors
+
+Date: Mon, 9 Jan 1995 09:02:15 +0100
+From: Axel Poigne <poigne@gmd.de>
+
+Referring to recent contibutions by Yetter and Kelly.
+
+As remarked by Kelly, the construction is straightforward. A paper
+strongly recommended to be read in this context is Lawvere's 'Generalized
+Metric Spaces ...". The material about composition of profunctors +
+construction of "free algebras" are to be found in my contribution "Basic
+category theory", chpt. 6, in the Handbook of Logic in Computer Science
+(Abramsky, Gabbay, Maibaum, eds.).
+
+
+Axel Poigne
+
+

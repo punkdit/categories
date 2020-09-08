@@ -1,0 +1,349 @@
+Path: news.gmane.org!not-for-mail
+From: Paul Taylor <pt08@PaulTaylor.EU>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Dedekind cuts
+Date: Mon, 7 Apr 2008 17:10:39 +0100
+Lines: 316
+Approved: news@gmane.org
+Message-ID: <E1JiwpG-0006sM-Dx@mailserv.mta.ca>
+NNTP-Posting-Host: main.gmane.org
+Content-Type: text/plain; charset=US-ASCII; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019894 12909 80.91.229.2 (29 Apr 2009 15:44:54 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:44:54 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: rrosebru@mta.ca Mon Apr  7 16:22:10 2008 -0300
+Return-path: <cat-dist@mta.ca>
+Envelope-to: categories-list@mta.ca
+Delivery-date: Mon, 07 Apr 2008 16:22:10 -0300
+Original-Received: from Majordom by mailserv.mta.ca with local (Exim 4.61)
+	(envelope-from <cat-dist@mta.ca>)
+	id 1JiwpG-0006sM-Dx
+	for categories-list@mta.ca; Mon, 07 Apr 2008 16:16:18 -0300
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 10
+Status: O
+Content-Length: 13169
+Original-Lines: 315
+Xref: news.gmane.org gmane.science.mathematics.categories:4361
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/4361>
+
+Many of the accounts of Dedekind cuts that I have seen, including the
+original one, wave their hands in the most blatant way, especially
+with regard to multiplication. Nevertheless, several deep and powerful
+ideas have been incorporated into this theory in the course of 150
+years. This posting is a summary of them, and was written in the hope
+that somebody might tell me who first discovered each of
+them. However, whilst I am always glad to receive mathematical,
+historical and philosophical comments from my colleagues, I would
+respectfully ask, on this occasion in particular, that they first
+check them against the actual papers that they cite, and against the
+bibliography of my paper with Andrej Bauer:
+
+        The Dedekind Reals in Abstract Stone Duality
+        www.PaulTaylor.EU/ASD/dedras
+
+This paper originally appeared in the proceedings of Computability and
+Complexity in Analysis, held in Kyoto in August 2005. It has now been
+accepted for a journal, and we intend to finalise it very soon.
+
+Abstract Stone Duality is a new axiomatisation of recursive general
+topology without set theory. In it, the Dedekind reals satisfy the
+Heine--Borel property ("finite open subcover" compactness of [0,1]),
+whereas this fails in traditional recursive analysis based on set
+theory. How ASD achieves this is, of course, explained in the paper,
+but I also gave a summary in my posting to the categories mailing list
+on 18 August 2007.
+
+However, this posting is about different issues, and will be expressed
+in traditional (set-theoretic) language. Where I have "d in D" here,
+in ASD it is written "delta d".
+
+Please see  www.PaulTaylor.EU/ASD/dedras/classical.html  for a version
+of this posting that includes links and mathematical symbols.  It
+was sent to sci.math.research several weeks ago, generating some
+discussion of the definition of reciprocals of intervals, but not of
+most of the main points of history about which I wanted to ask.
+
+It did, however, lead me to the original papers about the Archimedean
+principle and the classical result that this follows from Dedekind
+completeness.  I can send references to anyone who is interested in
+this point, or you can search for the names Stolz, Veronese, Killing,
+Bettazzi, Vivanti and Holder.   The historical expert on this is
+Philip Ehrlich at the University of Ohio.
+
+
+DEFINITION OF A DEDEKIND CUT
+
+Dedekind originally defined a cut (D,U) as a partition of the
+rationals. This means that there are two representations of each
+rational number q as a cut, namely ({d | d <= q}, {u | u > q}) and
+({d | d < q}, {u | u >= q}). This is messy, even in the classical
+situation, so our definition omits q in this case. Who first did this?
+
+The letters D and U stand for "down" and "up", for which they are
+conveniently positioned in the alphabet. For the moment, all lower
+case variables range over the rationals.
+
+We want to say, in a mathematically sensitive way, that D and U have
+no endpoints:
+        d in D   <=>   Some e. (d < e)  &  e in D
+and    u in U   <=>   Some t. (t < u)  &  t in U.
+
+This property is called roundedness, and I learned it in the context
+of continuous lattices. Where did it come from originally?
+
+D and U also need to be bounded and disjoint:
+        Some d. d in D,        Some u. u in U
+and    d in D  &  u in U  =>  d < u,
+although there are other ways of expressing disjointness.
+
+The final condition is the most interesting one. We want to say that D
+and U account for the whole line, apart from at most one point, or
+"almost touch". There is an order-theoretic way to say this,
+        d < u    =>   d in D  or  u in U,
+and an arithmetical one,
+        eps > 0  =>   Some d u. d in D  &  u in U  &  u-d < eps.
+These properties are called locatedness. Who formulated them,
+particularly the first one? Was is Brouwer, perhaps?
+
+I shall return to the difference between these two notions of
+locatedness, but first examine some useful subsystems.
+
+
+
+
+ONE-SIDED REALS
+
+Although Andrej and I only set out to construct the real line itself,
+we found that both the construction and the applications forced us to
+consider other structures first.
+
+Consider D on its own, satisfying just the roundedness condition.
+Classically, D = {d | d < a} where a = sup D  in  R + {-oo, +oo}.
+he collection of all such D or a forms a continuous lattice,
+which naturally carries the Scott topology.
+
+As the set D grows, so does the extended real number a. Customarily,
+we use a temporal metaphor for the reals, and a vertical one for
+lattices, so I call D an ascending real, although it is called
+(I think) lower elsewhere. Similarly, U is a descending or upper real.
+
+There is a bijection between rounded lower subsets D of the rationals
+and of the reals, and this respects the other properties, so I shall
+switch between the two without comment. This bijection is essentially
+the idempotence of the cut construction in Dedekind's paper.
+
+An (extended) real-valued function f is called lower semicontinuous if
+f^-1 (a,+oo] is open for all a. I have checked the handedness of this
+definition with two textbooks and two websites, but who first used it?
+
+A function is lower semicontinuous iff it is continuous in the generic
+sense as a function to the ascending reals with the Scott topology.
+
+
+
+CONSTRUCTIVE LEAST UPPER BOUND
+
+Constructively and computationally, it is not always possible to form
+sup D.
+
+The supremum, if it is a real number a, is represented by a Dedekind
+cut ({d | d < a}, {u | u > a}). But the lower half of this must be the
+original D.   So, I'm saying that an ascending real D need not have a
+descending partner U for which (D,U) is a cut.
+
+If, as is essentially the case in ASD, D and U are recursively
+enumerable
+sets of rationals, an RE set D need not have an RE complement U.
+
+Let S be any set of real numbers, and suppose that a = sup S exists as
+a real number. Then, as R is totally ordered, for any x < y, either x<a
+or a<y, and in the latter case, s<y for all s in S.
+
+So, if sup S exists then, for any x<y, either x<s for some s in S
+or s<y for all s in S.  This is known as the constructive least upper
+bound principle.
+
+Douglas Bridges told me that Errett Bishop knew it, and Bas Spitters
+says that similar ideas occur in Brouwer's work, but cannot pinpoint
+the statement. Did Brouwer formulate it? If not, who did?
+
+A subset S of a metric space X is called located if the distance
+d(x,S) = inf {d(x,y) | y in S} exists, for all points x in X. Who
+formulated this idea? Classically, using infima of distances like this
+goes back to Hausdorff.
+
+Is ASD, using the same logical principle, we find that the supremum of
+any compact subspace of ? exists, but it is a descending real
+number. Similarly, the supremum of an overt subspace is an ascending
+real number. If the subspace is compact, overt and nonempty, it has a
+maximum.
+
+
+
+INTERVALS
+
+If D and U are rounded and disjoint, R\D\U is classically a closed
+interval, [d,u], where d = supD and u = infU; these are +/- oo
+unless D and U are bounded. The systematic study of intervals and
+their arithmetic was begun by Ramon Moore.
+
+I claim that intervals should be represented by the sets D and U, and
+not by the numbers d and u or the closed subset [d,u].
+
+At any stage in the computation of a real number, we have so far
+demonstrated that some numbers are lower bounds, and some are upper
+ones. These (and their lower and upper closures) form sets D and U.
+
+For example, Archimedes measured the area of a circle by inscribing
+and circumscribing polygons, and Riemann integration is defined in the
+same way for general continuous functions.
+
+When dealing with sets of lower and upper bounds like this, it is
+usually automatic that D and U be rounded and disjoint. Sometimes
+boundedness may be in doubt, but usually the most difficult part is to
+demonstrate locatedness. Intervals (possibly infinite ones) separate
+the easy parts of a proof or computation from the difficult ones.
+
+In the case of Riemann integration of a continuous function on a
+closed interval, locatedness follows from uniform continuity. It is
+then much easier to demostrate the linearity properties of the
+integral using Dedekind cuts that with limits of Cauchy sequences.
+
+Similarly, it is possible to define the derivative of any continuous
+function, as an interval. This is bounded iff the function is
+Lipschitz and located iff it is differentiable in the standard sense.
+
+
+
+
+INTERVAL ARITHMETIC
+
+Ramon Moore defined the arithmetic operations on intervals as follows:
+
+         [d,u] + [e,t]  =  [d+e, u+t]
+               - [d,u]  =  [-u,   -d]
+         [d,u] x [e,t]  =  [min (d e,d t,u e,u t), max (d e,d t,u e,u t)]
+              [d,u]^-1  =  [u^-1, d^-1]   if 0 notin [d,u]
+                                            ie  0 in D  or  0 in U
+                        =  [-oo, +oo]     if 0 in [d,u]
+
+The formula for multiplication is complicated by the need to consider
+all possible combinations of signs.
+
+However, we have just said that supD and infU need not exist as real
+numbers, so we have more work to do to define the arithmetic
+operations for them.
+
+This extension can be defined, using methods from continuous lattices,
+so long as each operation * is rounded in the sense that
+
+         [d,u] * [e,t] << [a,z]   =>   Some d' u' e' t'.
+         [d,u]<<[d',u'] & [e,t]<<[e',t'] & [d',u']*[e',t']<<[a',z']
+
+where [d,u] << [d',u'] means d'<d & u<u'. This is easy to prove for
+addition, but rather messy for multiplication. It's neither difficult
+nor deep, but the property is important, so is it stated anywhere?
+
+
+
+COMPLETENESS OF INTERVAL COMPUTATION
+
+Standard interval analysis evaluates a function with an interval as
+its argument by replacing the usual arithmetic operations with Moore's
+generalisation to intervals. This overestimates the range of a
+function, often by a long way.
+
+However, we may compute the set-theoretic image of an interval [d,u]
+to within any  eps>0  by sub-dividing [d,u] into sufficiently but
+finitely many parts, applying the function Moore-wise to each part,
+and forming the union. Where is this theorem (first) proved in the
+interval literature? This result is the basis of the construction of R
+and the proof that [d,u] is compact in ASD.
+
+
+
+BACK-TO-FRONT INTERVALS
+
+Bizarrely, it is also possible to UNDERestimate the image by considering
+back-to-front intervals. This was first done by E.W. Kaucher, but can
+anyone give me his paper or tell me his first name? It is also used to
+construct the existential quantifier in our paper.
+
+It does not make sense to represent Kaucher intervals as closed
+subspaces: we should use D and U instead, although they now overlap.
+
+
+
+DEDEKIND COMPLETENESS AND THE ARCHIMEDEAN AXIOM
+
+A total order X is Dedekind complete if every pair of subsets D, U of X
+that satisfies the axioms for a cut is of the form
+         D = {d | d < a}     and     U = {u | u > a}
+for some unique a in X.
+
+Dedekind cuts of the rationals form a Dedekind complete field, ie a
+cut composed of real numbers defines another real number. In other
+words, Dedekind's construction is idempotent.
+
+Q and R are Archimedean:
+         eps>0   =>   Some n:N.  (n-1) eps < x < (n+1) eps.
+
+Classically, R is the only Dedekind complete ordered field, because
+Dedekind completeness implies the Archimedean principle.
+
+Proof: the sets
+         D = {d | Some n:N. d < n}     and     U = {u | All n:N. u > n}
+are rounded, disjoint and order-located. They are bounded (and so form
+a cut) iff U is nonempty. By Dedekind completeness, the cut (D,U)
+corresponds to an element  omega  of the field. This should be the only
+element that lies between D and U, but  omega-1 does so too.
+Hence U must be empty.
+
+Assuming the Archimedean principle, the two definitions of locatedness
+are equivalent. Who first proved these results?
+
+John Conway's system of surreal numbers tries to extend the idea of
+Dedekind completeness to infinities and infinitessimals. The whole
+system is a proper class, as is U in this proof, and so (D,U) is not a
+legitimate cut: Conway calls it a gap.
+
+I conjecture (and John Conway considered this plausible when I put it
+to him) that there is a version of his number system in which sets are
+replaced by RE sets, and every RE Dedekind cut represents a number,
+but there are also infinities and infinitessimals.
+
+Andrej and I certainly don't construct such a thing in our
+paper. However, we have isolated the use of the Archimedean principle,
+in the hope that someone in future might eliminate it.
+
+
+
+LOCATEDNESS OF THE ARITHMETIC OPERATIONS
+
+The most difficult thing to prove is always locatedness.
+
+In computational terms, when we are asked to compute the result of an
+operation to a certain precision, we have to ask for its arguments to
+the appropriate precision. For example, if we need x+y within eps,
+it is enough to know x and y within eps/2.
+
+However, for multiplication things are more complicated: we need to
+know x to within  eps/|y|. This is also formulated and proved
+constructively in our paper.
+
+Finally, we also have a way of defining inverse functions
+(reciprocals, roots, powers and logarithms) that the referee
+considered "rather elegant".
+
+
+Paul Taylor
+pt08@PaulTaylor.EU
+
+
+
+

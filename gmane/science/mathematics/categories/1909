@@ -1,0 +1,84 @@
+Path: news.gmane.org!not-for-mail
+From: david carlton <carlton@math.stanford.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: strict n-categories, equivalences
+Date: Thu, 5 Apr 2001 13:33:48 -0700 (PDT)
+Lines: 51
+Approved: news@gmane.org
+Message-ID: <15052.54956.183609.916620@jackfruit.Stanford.EDU>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241018198 1138 80.91.229.2 (29 Apr 2009 15:16:38 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:16:38 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Fri Apr  6 12:53:49 2001 -0300
+Return-Path: <cat-dist@mta.ca>
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.11.1/8.11.1) id f36F48S00218
+	for categories-list; Fri, 6 Apr 2001 12:04:08 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Mailer: VM 6.72 under 21.1 "20 Minutes to Nikko" XEmacs Lucid (patch 2)
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+X-Keywords: 
+X-UID: 7
+Status: O
+Content-Length: 2160
+Original-Lines: 50
+Xref: news.gmane.org gmane.science.mathematics.categories:1909
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1909>
+
+I'm trying to figure out the relation between the following notions of 
+"equivalence":
+
+We define a strict n-category to be a category enriched in strict
+(n-1)-categories.  Then we can make a recursive definition of
+"equivalence" as follows: we say that an arrow f: x -> y is an
+equivalence if there exists an arrow g: y -> x such that there exist
+arrows alpha: fg -> 1_x and beta: gf -> 1_y that are also
+equivalences.
+
+Also, we might want to say that a (strict) functor F: C -> D of strict
+n-categories is an "equivalence" if:
+
+1) For all objects d in D, there exists an object c of C and an
+   equivalence F(c) -> d;
+2) For all objects c, c' in C, the map Hom_C(c,c') -> Hom_D(F(c),F(c'))
+   (which is a functor of (n-1)-categories) is an equivalence.
+
+(To complete these definitions, I should also say that an arrow in a
+1-category is an equivalence iff it's an isomorphism and that a
+functor of 0-categories is an equivalence iff it's a bijection.)
+
+Then, my main question is:
+
+Q: Is it the case that an arrow f: x -> y is an equivalence if and only
+   if, for all z, the Yoneda functor Hom(z,x) -> Hom(z,y) induced by f
+   is an equivalence?
+
+I think and hope that the answer is true, but I'm certainly not 100%
+confident; it seems to me that its proof would involve a sufficiently
+messy (and picky) simultaneous induction that I'd be quite happy if
+somebody else had already worked this out.  If it's not true, are
+there any other theorems along this line with improved definitions of
+"equivalence" (either on the arrow side or the functor side)?
+
+One warning: my terminology might be badly chosen, especially for
+functors, because I don't think that it's the case that, if one
+constructs the strict (n+1)-category of all n-categories, that the
+functors that I'm calling equivalences are all equivilances as arrows
+in that category.
+
+In general, are there any good references for strict n-categories?
+(E.g. one giving the details of the construction of nCat.)  I'm not as
+conversant with the literature of category theory as I should be, and
+I'd like to avoid reinventing the wheel more than necessary.
+
+thanks,
+david carlton
+carlton@math.stanford.edu
+
+

@@ -1,0 +1,129 @@
+Path: news.gmane.org!not-for-mail
+From: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Empty algebras
+Date: Mon, 24 Oct 2011 14:57:39 +0100
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1RIgcZ-0000YV-SW@mlist.mta.ca>
+References: <E1RGvAd-0006iU-00@mlist.mta.ca> <4EA1807A.1060802@cs.bham.ac.uk> <E1RHaSQ-0001Zf-6g@mlist.mta.ca> <E1RHwoL-0003lH-Ba@mlist.mta.ca> <CE271049-EF59-4E64-AAEA-C1A673FEA224@kestrel.edu> <5E279F28-70B7-4393-A564-B95E3768C561@cs.bham.ac.uk> <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu>
+Reply-To: Steve Vickers <s.j.vickers@cs.bham.ac.uk>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753.1)
+Content-Type: text/plain; charset=US-ASCII; delsp=yes; format=flowed
+Content-Transfer-Encoding: 7bit
+X-Trace: dough.gmane.org 1319547758 17702 80.91.229.12 (25 Oct 2011 13:02:38 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 25 Oct 2011 13:02:38 +0000 (UTC)
+Cc: Categories list <categories@mta.ca>
+To: Dusko Pavlovic <dusko@kestrel.edu>
+Original-X-From: majordomo@mlist.mta.ca Tue Oct 25 15:02:33 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgeG-0003pB-A2
+	for gsmc-categories@m.gmane.org; Tue, 25 Oct 2011 15:02:32 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:45856)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgcb-0000kp-Ut; Tue, 25 Oct 2011 10:00:49 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RIgcZ-0000YV-SW
+	for categories-list@mlist.mta.ca; Tue, 25 Oct 2011 10:00:47 -0300
+In-Reply-To: <36141083-FB05-4179-8C98-81D5D6EBB6B1@kestrel.edu>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:6993
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/6993>
+
+Dear Dusko,
+
+First of all, what your "tautology" says is semantically incorrect in
+the case where A is empty: for then the meet of P is true and the
+join is false, so we don't have that the meet is lower than the join.
+Constructively, the product is an empty product and hence 1, while
+the coproduct is 0 and there is no morphism from the product to the
+coproduct. The composite morphism
+
+     (all) x.P(x) --> P(a) --> (exists) x.P(x)
+
+exists only when we have a in A.
+
+Second, in your proof with contexts, you use "the equivalence
+ 	true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <->
+(((all) a. P(a) --> (exists) x. P(x)))"
+
+You didn't give a proof of this equivalence, but anyway we have a
+counterexample. When A is empty, (all) a. P(a) and (exists) x. P(x)
+are true and false respectively, so (all) a. P(a) --> (exists) x. P
+(x) is false. But
+
+     (all) b. ((all) a. P(a) --> (exists) x. P(x))
+
+is true, so the biequivalence is false.
+
+Regards,
+
+Steve.
+
+On 24 Oct 2011, at 13:35, Dusko Pavlovic wrote:
+
+> hi steve,
+>
+> i am afraid that the "falsehood"
+>
+> (all) x.P(x) => (exists) x.P(x)
+>
+> is a *tautology* of predicate logic, in any topos, for any
+> predicate P:A-->Prop, with or without the free variables hanging
+> around. if it helps, think of P:A-->Prop as an A-indexed set of
+> elements of the lattice Prop. then
+>
+>  	(all) x.P(x) is the meet of P, whereas
+> 	(exists) x.P(x) is the join of P,
+>
+> and the tautology says the meet is lower than the join. or
+> constructively,
+>
+> 	(all) x.P(x) is the product of the A-indexed family P(x)
+> 	(exists)x.P(x) is the coproduct
+>
+> so that
+>
+> 	(all) x.P(x) -->P(a) is a projection, and
+> 	P(a) --> (exists) x.P(x) is an injection.
+>
+>> with a sequent calculus that keeps track of the possible free
+>> variables - see e.g. part C of the Elephant. With this notation
+>> you distinguish between, on the one hand,
+>>
+>>  true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+>> or
+>>  (all) a. P(a) |-(b) (exists) x. P(x)
+>>
+>> (both valid) and, on the other,
+>>
+>>  true |-() ((all) a. P(a) --> (exists) x. P(x))
+>> or
+>>  (all) a. P(a) |-() (exists) x. P(x)
+>>
+>> (both not valid).
+>
+> to prove these last two formulas, observe that
+> from
+> 	true |-(b) ((all) a. P(a) --> (exists) x. P(x))
+> we can derive
+> 	true |-() (all) b. ((all) a. P(a) --> (exists) x. P(x))
+> now use the equivalence
+> 	true |-() ((all) b. ((all) a. P(a) --> (exists) x. P(x))) <->
+> (((all) a. P(a) --> (exists) x. P(x)))
+> to conclude that the RHS is true.
+>
+> -- dusko
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

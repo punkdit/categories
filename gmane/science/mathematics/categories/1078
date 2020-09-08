@@ -1,0 +1,112 @@
+Path: news.gmane.org!not-for-mail
+From: Michael Barr <barr@triples.math.mcgill.ca>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Monoidal structure, take II
+Date: Thu, 18 Mar 1999 12:46:52 -0500 (EST)
+Lines: 82
+Approved: news@gmane.org
+Message-ID: <Pine.LNX.4.04.9903181245550.13498-100000@triples.math.mcgill.ca>
+References: <36F0E6ED.7EF7BB45@loria.fr>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: TEXT/PLAIN; charset=US-ASCII
+X-Trace: ger.gmane.org 1241017552 29412 80.91.229.2 (29 Apr 2009 15:05:52 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:05:52 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Thu Mar 18 16:36:24 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id OAA26035
+	for categories-list; Thu, 18 Mar 1999 14:07:46 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+In-Reply-To: <36F0E6ED.7EF7BB45@loria.fr>
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3840
+Original-Lines: 81
+Xref: news.gmane.org gmane.science.mathematics.categories:1078
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1078>
+
+I did not quite understand Francois' construction.  However, my first
+reaction to a question like that is that it ought to be a homotopy.  So
+I will say what a homotopy reduces to in this case and leave it to
+Francois to decide if this is what he has.
+
+I suspect that rather few people know what a simplicial homotopy is and,
+of those, rather few have ever actually verified one.  I am in that
+minority^2, so perhaps I tend to see them where they are not the most
+natural, but I think it quite remarkable that they can arise where no
+real topology (but some combinatorics) is present.
+
+I have to begin by saying how a graph becomes a simplicial set.
+Actually, that is a lie, since unless you are dealing with reflexive
+graphs--that are equipped with a selected loop at each vertex--you will
+only get a face complex.  But homotopies are still definable.  A
+category is a simplicial set by taking for n-simplexes composable
+n-tuples of arrows.  This doesn't work for graphs, since the "interior
+faces" (all except the lowest and highest numbered) all depend on
+composition.  But there is a face complex in which an n-simplex is
+simply an n-simplex in the graph.  So a 2-simplex is a
+triangle--obviously non-commutative and a 3-simplex is a tetrahedron and
+so on.  You can describe a composable n-tuple in a category as
+commutative n-simplex, so this isn't so different.  Now given this, if
+f,g:  X --> Y are graph morphisms, what is a homotopy?  Well, write X as
+d^0,d^1:  X_1 --> X_0 and similarly for Y. Then f consists of f_0:  X_0
+--> Y_0 and f_1:  X_1 --> Y_1 giving a serially commutative square.
+Just a homomtopy between functors turns out to be simply a natural
+transformation, a homotopy in this case turns out to consist of a
+function p_0:  X_0 --> Y_1 and a function p_1:  X_1 --> Y_1 such that
+there
+is a diagram (not, of course commutative; what a diagram does is specify
+source and target) as follows.  In this diagram I assume x:  x^0 --> x^1
+in X, and f(x):  y^0 --> y^1 and g(x):  z^0 --> z^1 in Y.
+                            f(x)
+                    y^0 -----------> y^1
+                     | \              |
+                     |  \             |
+                     |   \            |
+                     |    \           |
+                     |     \          |
+                     |      \         |
+                     |       \        |
+             p_0(x^0)|  p_1(x)\       |p_0(x^1)
+                     |         \      |
+                     |          \     |
+                     |           \    |
+                     |            \   |
+                     |             \  |
+                     |              \ |
+                     v      g(x)     vv
+                    z^0 -----------> z^1
+
+So if this is what Francois was saying, then the answer is it a homotopy
+of face complexes.  Of course, if you replaced X_1 by X_1 + X_0, you
+would have a reflexive graph and I assume (I have not checked this) you
+would then get a simplicial homotopy.
+
+BTW, homotopies do not generally compose--and the ones described here do
+not appear to either.  Categories are special because of their internal
+composition.  It makes me wonder if the well-known failure of dinats to
+compose could be related to this in some way.
+
+Having seen Francois' clarification, I think this is exactly what he
+had.
+
+Michael
+
+
+
+-------------------------------------------------------------------
+History shows that the human mind, fed by constant accessions of
+knowledge, periodically grows too large for its theoretical coverings, and
+bursts them asunder to appear in new habiliments, as the feeding and
+growing grub, at intervals, casts its too narrow skin and assumes
+another... Truly the imago state of Man seems to be terribly distant, but
+every moult is a step gained. 
+
+- Charles Darwin, from "The Origin of Species"
+
+
+
+

@@ -1,0 +1,111 @@
+Path: news.gmane.org!not-for-mail
+From: Venkata Rayudu Posina <posinavrayudu@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Subobject classifier algorithm
+Date: Sun, 20 Oct 2013 13:55:34 +0530
+Lines: 75
+Approved: news@gmane.org
+Message-ID: <E1VYLRl-0002Zb-21@mlist.mta.ca>
+Reply-To: Venkata Rayudu Posina <posinavrayudu@gmail.com>
+NNTP-Posting-Host: plane.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+X-Trace: ger.gmane.org 1382384971 7712 80.91.229.3 (21 Oct 2013 19:49:31 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Mon, 21 Oct 2013 19:49:31 +0000 (UTC)
+To: categories <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Mon Oct 21 21:49:36 2013
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.1.186])
+	by plane.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYLTs-0007ev-1j
+	for gsmc-categories@m.gmane.org; Mon, 21 Oct 2013 21:49:36 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:52695)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYLRl-0006dx-LK; Mon, 21 Oct 2013 16:47:25 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1VYLRl-0002Zb-21
+	for categories-list@mlist.mta.ca; Mon, 21 Oct 2013 16:47:25 -0300
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7896
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7896>
+
+Dear All,
+
+In continuation of the discussion we had sometime ago regarding
+algorithms for finding truth value objects, I am wondering if the
+following constitutes an algorithm for calculating subobject
+classifiers.
+
+The basic idea is to use the correspondence between parts of an object
+and maps to truth value object from the object to find the truth value
+object.
+
+In general we start with an object (of "simplest" shape such as
+initial and gradually going to less simple ones), enumerate its parts,
+and then look for objects to which the number of maps from the object
+is equal to the number of parts of the object.
+
+In the case of the category of sets, we start with the initial object,
+which has one part.  Since there is exactly one function from empty
+set to every set, this doesn't help in identifying the truth value
+set.  So we move to [the next] sigleton set, which has two parts.  The
+set to which there are exactly two maps from the singleton set is a
+two-element set, which we take as [candidate] truth value set.
+Finally we verify that the two-element set is indeed the truth value
+set by way of checking
+
+parts of an object = maps to truth value object from the object
+
+in the case of [the set after sigleton set] two-element set. (For now
+I'm ignoring the question of how many more objects do we have to
+check.)
+
+The above method does give the correct truth value object in the
+categories of maps, graphs, and dynamical systems in addition to the
+aforementioned case of the category of sets.
+
+In the category of [set] maps, we only have to look at two objects
+before we get to the terminal object, which lets us identify the truth
+value object
+
+w: D --> C
+
+where D = {false, u, true} and C = {false, true}
+with w(false) = false, w(u) = true, w(true) = true (see Sets for
+Mathematics, pp. 114 - 9).
+
+To give one more illustration, in the case of graphs, we have to go
+little beyond terminal object to the generic arrow, whose five parts
+correspond to the five graph maps from the generic arrow to the truth
+value object of graphs (please see bottom-left corner of the cover of
+Conceptual Mathematics).
+
+In all these case we begin with [the simplest] initial object and go
+to next [less simple] object, and at each stage we use
+
+number of parts of an object = number of maps to truth value object
+from the object
+
+to identify (and then verify) the truth value object.  All the more
+important is that we have to examine the above correspondence at a few
+simple shapes only (beginning with the initial object) to find the
+truth value object.
+
+Would you be kind enough to let me know if there's something wrong in
+using the above method to find the truth value object (when there's
+one) of a category in general.
+
+Thanking you,
+Yours sincerely,
+posina
+
+http://conceptualmathematics.wordpress.com/
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

@@ -1,0 +1,115 @@
+Path: news.gmane.org!not-for-mail
+From: Peter Freyd <pjf@saul.cis.upenn.edu>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Functorial injective hulls
+Date: Wed, 22 Mar 2000 15:17:14 -0500 (EST)
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <200003222017.PAA15701@saul.cis.upenn.edu>
+NNTP-Posting-Host: main.gmane.org
+X-Trace: ger.gmane.org 1241017843 31330 80.91.229.2 (29 Apr 2009 15:10:43 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:10:43 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Wed Mar 22 17:03:12 2000 -0400
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id QAA21675
+	for categories-list; Wed, 22 Mar 2000 16:24:37 -0400 (AST)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: RO
+Content-Length: 3883
+Original-Lines: 88
+Xref: news.gmane.org gmane.science.mathematics.categories:1455
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1455>
+
+     Some comments on:
+
+>TITLE: Injective Hulls are not Natural
+>AUTHORS: J. Adamek, H. Herrlich, J. Rosicky and W. Tholen
+>ABSTRACT: In a category with injective hulls and a cogenerator, the 
+>embeddings into injective hulls can never form a natural transformation, 
+>unless all objects are injective. In particular, assigning to a field
+>its algebraic closure, to a poset or boolean algebra its MacNeille
+>completion, and to an R-module its injective envelope is not functorial, 
+>if one wants the respective embeddings to form a natural transformation.
+
+
+What is meant by saying that an object is "injective" varies a bit 
+from place to place. If it means that the object represents a 
+contravariant functor that carries monics into epics and if one defines
+an "injective hull" of an object  A  to mean
+
+   a monic  A --> E  where  E  is injective and such that
+   A --> E --> X  monic implies  E --> X is monic 
+
+then there are non-trivial examples of functorial injective hulls: take
+any poset with a top element and view it as a category; the only
+injective object is the top and the unique map from any object to the
+top is easily verified to be an injective hull.
+
+Apparently, therefore, the meaning of injective is a mutation obtained
+by changing the word "monic" in the above description to something
+stronger, such as "extremal monic" or "regular monic". (In Cats and
+Alligators the notions of projective and injective are not dual: a
+co-projective would be the mutation of injective obtained by using
+extremal monics.)
+
+If the strengthening of monic is such that it becomes an iso whenever
+epic (as is the case with extremal and regular), then there's an easy
+proof of the impossibility of functoriality, with or without a
+cogenerator.
+
+In the days when all categories were abelian (that is, in the days
+when people actually talked about injective hulls) it was also the 
+case that all monic-epics were isos, and this easy proof was a pretty
+standard exercise. It goes as follows. Suppose that  E  is a functor,
+u  a natural transformation from the identity functor to  E  such that
+u:A --> E(A)  is an injective hull for all  A. We wish to show that  u
+is epic.
+
+If  B  is injective then there must be  E(B) --> B  such that 
+B --> E(B) --> B  is the identity map. The definition of injective 
+hull forces  E(B) --> B  to be monic which, in turn, forces  u_B  to
+be an iso. We may replace  E  with a naturally equivalent functor with
+the property that  u_B  is the identity map whenever  B  is injective.
+
+For an arbitrary  A  consider
+
+                               u
+                           A ---> E(A)
+                      
+                        u  |       |  E(u)
+                               1
+                         E(A) --> E(A)
+                      
+                      E(u) |       |  E(u)
+                               1
+                         E(A) --> E(A)
+
+
+and conclude that  E(u)  is an idempotent. Using again (and for the 
+last time) the definition of injective hull we have that  E(u)  is
+monic. The only monic idempotent is the identity map.
+
+                 u        x           u        y
+Suppose that  A --> E(A) --> C  =  A --> E(A) --> C. Consider
+
+              u                              u
+          A ---> E(A)                    A ---> E(A)
+                                    
+       u  |       |  1                u  |       |  1
+              1                              1
+        E(A) --> E(A)                  E(A) --> E(A)
+                                    
+       x  |       |  E(x)             y  |       |  E(y)
+              u                              u
+          C ---> E(C)                    C ---> E(C)
+
+
+If one considers just the outer rectangles one sees that the left hand
+verticals are the same, hence so must be the right hand verticals.
+But  u  is monic, thus  E(x) = E(y)  implies   x = y.
+
+

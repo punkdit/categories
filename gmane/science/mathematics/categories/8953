@@ -1,0 +1,127 @@
+Path: news.gmane.org!.POSTED!not-for-mail
+From: Mamuka Jibladze <jib@rmi.ge>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Re: Examples of certain monotone operators
+Date: Thu, 25 Aug 2016 19:33:36 +0400
+Lines: 88
+Approved: news@gmane.org
+Message-ID: <E1bdQeA-0000mJ-EA@mlist.mta.ca>
+References: <alpine.LRH.2.03.1608242155420.23083@mta.ca>
+Reply-To: Mamuka Jibladze <jib@rmi.ge>
+NNTP-Posting-Host: blaine.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+X-Trace: blaine.gmane.org 1472254563 8017 195.159.176.226 (26 Aug 2016 23:36:03 GMT)
+X-Complaints-To: usenet@blaine.gmane.org
+NNTP-Posting-Date: Fri, 26 Aug 2016 23:36:03 +0000 (UTC)
+To: categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Sat Aug 27 01:35:59 2016
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtp3.mta.ca ([138.73.7.28])
+	by blaine.gmane.org with esmtp (Exim 4.84_2)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bdQfE-0001Nt-Ua
+	for gsmc-categories@m.gmane.org; Sat, 27 Aug 2016 01:35:57 +0200
+Original-Received: from mlist.mta.ca ([138.73.1.63]:47223)
+	by smtp3.mta.ca with esmtp (Exim 4.80)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bdQeM-0007uO-0O; Fri, 26 Aug 2016 20:35:02 -0300
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1bdQeA-0000mJ-EA
+	for categories-list@mlist.mta.ca; Fri, 26 Aug 2016 20:34:50 -0300
+In-Reply-To: <alpine.LRH.2.03.1608242155420.23083@mta.ca>
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:8953
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/8953>
+
+> Date: Mon, 15 Aug 2016 17:05:50 -0300
+> From: Andrej Bauer <andrej.bauer@andrej.com>
+> To: categories list <categories@mta.ca>
+> Subject: categories: Examples of certain monotone operators
+
+Here is (I hope) a proof that such map is a (sub-open) nucleus.
+
+(1) q -> fp = f(q -> p) ; in particular, f is inflationary.
+This has been pointed out by Ingo Blechschmidt
+
+(2) (fp -> p) -> p = fp:
+reasoning "inside Omega" this is almost trivial -
+if  fp -> p is p, then f(fp -> p) is fp
+
+(3) (fp -> p) -> fp = (fp -> p) -> p:
+(fp -> p) -> fp =
+[(fp -> p) -> fp] & [(fp -> p) -> (fp -> p)] =
+(fp -> p) -> [fp & (fp -> p)] =
+(fp -> p) -> [fp & p] =
+(fp -> p) -> p
+(this only required inflationarity of f, at the last step)
+
+(4) (fp -> p) -> fp = f((fp -> p) -> p):
+this is a particular case of (1) (with fp -> p in place of q)
+
+(5) (fp -> p) -> p = f((fp -> p) -> p):
+this follows from (3) and (4)
+
+(6) fp = ffp:
+this follows from (2) and (5)
+
+(7) q -> fp = q -> f(q & p):
+by (1) both are equal to f(q -> p) = f(q -> (q & p))
+
+(8) fq & fp -> f(q & p):
+in (7), take fq & fp in place of q,
+then the lhs of (7) becomes true
+
+(9) f(q & p) -> fq & fp:
+monotonicity
+
+So f is inflationary, idempotent (6) and multiplicative (8-9).
+
+Note that (9) is the only place where monotonicity is used.
+I wonder whether it could be actually deduced from the rest.
+I think I have seen in a paper by Anders Kock that any
+idempotent prenucleus on Omega is a nucleus; and it follows
+easily (without monotonicity) that q & fp = fq & fp -
+just apply q & _ to both sides of (7).
+
+Glad I'm back,
+Mamuka
+
+>
+> Dear all,
+>
+> I have come accross a certain kind of operators, and I wonder if they
+> have a name or have been encountered before.
+>
+> We work internally in a topos with a subobject classifier ??. For the
+> purposes of this discussion, call a monotone map  f : ?? ??? ?? *good* if
+>
+> (*)       ??? p : ??, f (f p ??? p)
+>
+> is valid in the topos.
+>
+> Some examples of good maps are:
+>
+> 1. The identity map.
+> 2. The double negation map.
+> 3. For any q ??? ??, the j-operator p ??? (q ??? p).
+>
+> Is the condition (*) known? Can you think of other examples of good
+> maps (perhaps in specific toposes)?
+>
+> I have so far just one connection: in provability logic condition (*)
+> appears (without the universal quantifier) as the antecedent of L??b's
+> theorem, which sttates that ??? (??? p ??? p) ??? ??? p.
+>
+> With kind regards,
+>
+> Andrej
+
+
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+

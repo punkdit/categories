@@ -1,0 +1,105 @@
+Path: news.gmane.org!not-for-mail
+From: Eduardo Dubuc <edubuc@dm.uba.ar>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Construction of a real closure
+Date: Fri, 5 May 2006 23:24:38 -0300 (ART)
+Lines: 80
+Approved: news@gmane.org
+Message-ID: <37131.9321253852$1241019219@news.gmane.org>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+X-Trace: ger.gmane.org 1241019218 8173 80.91.229.2 (29 Apr 2009 15:33:38 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:33:38 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: rrosebru@mta.ca Sat May  6 11:46:52 2006 -0300
+X-Keywords: 
+X-UID: 226
+Status: O
+Content-Length: 2528
+Original-Lines: 79
+Xref: news.gmane.org gmane.science.mathematics.categories:3306
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/3306>
+
+Hi!
+
+In 1978  Joyal gave a lecture in Montreal where he described  a
+constructive construction  of the pithagorean closure (every a > 0 has a
+square root > 0).
+
+This he does with a beautifully  simple idea.
+
+Assume K is ordered decidable (in particular   "=" is decidable)
+
+Using M. Barr wording:
+
+" Let me give an example of the flavor.  Suppose you want to have a square
+root of a > 0.  It is decidable (by hypothesis) if a > 0; what may not be
+decidable is whether a has a square root."
+
+Joyal simply construct the ring A = K[x]/(x^2  - a) = K[s] with s^2 = a.
+He then considers an equivalence relation  in A:
+
+Consider
+
+J = {x + ys | x = 0, y = 0  or  not(y = 0), -x/y > 0, (-x/y)^2 = a}
+
+the relation  "\in  J" is decidable,  then if J is an ideal, the quotient
+by J will also have "=" decidable.
+
+J = {0} precisely if a does not have an square root in K,
+
+but it can be shown that J is an ideal without having to decide if a has
+or not a square root !!
+
+Furthermore, it can be shown (with some but not too much work) that the
+quotient  K[s]/J  is a order decidable field.
+
+This field is the solution to the universal problem of adding to K an
+square root of a, and it is obtained  without the use of Gauss theorem  !!
+
+(Notice that for non-ordered fields, the universal solution of adding a
+square root of a when a already has a square root DOES NOT EXIST (it is
+not given by K itself), while for ordered fields the solution of adding a
+positive square root does exist, and it is K itself)
+
+Algorithms for K[s]/J are easily obtained from the algorhitms for K !!
+
+We can iterate this, and then construct the filtered colimit.  This
+filtered colimit is the pithagorean closure, and by construction of
+filtered colimits  a rather simple description of its elements  is there.
+Also algorithms for this colimit are rather easily obtained.
+
+All this is considerably simpler than other methods quoted in this
+thread, and certainly  not " *unbelievably* painful".  Actually, I believe
+it could be possible to write with reaonable trouble an actual  computer
+program to calculate in the pithagorean closure of the rationals.
+
+I have an article written with an student for a journal on math teaching
+("revista de educacion matematica" of the UMA, Union Matematica Argentina)
+with details of all this. The text is in spanish, in a .pdf file, and
+I will be happy to send it on request
+
+I do not know if Joyal had also a continuation of this story, meaning how
+to keep adding more roots  without Gauss's theorem.
+
+e.d.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

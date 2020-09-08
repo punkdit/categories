@@ -1,0 +1,139 @@
+Path: news.gmane.org!not-for-mail
+From: cxm7@po.cwru.edu (Colin McLarty)
+Newsgroups: gmane.science.mathematics.categories
+Subject: "Universes" within ZFC
+Date: Sat, 12 Jun 1999 13:42:13 -0400 (EDT)
+Lines: 109
+Approved: news@gmane.org
+Message-ID: <199906121742.NAA05420@celeste.INS.CWRU.Edu>
+NNTP-Posting-Host: main.gmane.org
+Mime-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+X-Trace: ger.gmane.org 1241017592 29671 80.91.229.2 (29 Apr 2009 15:06:32 GMT)
+X-Complaints-To: usenet@ger.gmane.org
+NNTP-Posting-Date: Wed, 29 Apr 2009 15:06:32 +0000 (UTC)
+To: categories@mta.ca
+Original-X-From: cat-dist Sat Jun 12 20:09:45 1999
+Original-Received: (from Majordom@localhost)
+	by mailserv.mta.ca (8.9.3/8.9.3) id TAA08498
+	for categories-list; Sat, 12 Jun 1999 19:05:37 -0300 (ADT)
+X-Authentication-Warning: mailserv.mta.ca: Majordom set sender to cat-dist@mta.ca using -f
+X-Sender: cxm7@pop.cwru.edu
+X-Mailer: Windows Eudora Version 1.4.4
+Original-Sender: cat-dist@mta.ca
+Precedence: bulk
+Status: O
+Content-Length: 6331
+Original-Lines: 108
+Xref: news.gmane.org gmane.science.mathematics.categories:1138
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/1138>
+
+        The following improves on remarks I made to some people at the
+recent Buffalo meeting, and on the FOM e-mail list.
+
+   	This is a step towards showing Grothendieck's method of universes for
+algebraic geometry can be formalized nearly unchanged in ZFC, without the
+further axiom asserting existence of Grothendieck universes. To any set of
+sites (or ringed sites) we associate a "generating cardinal" k and consider
+as universes the sets V(i) where i is a limit ordinal larger than k and k
+not cofinal in i. ZFC proves every set is a member of such a "universe".
+These universes are at least models of Zermelo set theory plus countable
+replacement. So, for example, for any set S and finitary operation on S in
+the universe, the closure of S under that operation is also in the universe.
+This obviously suffices for most of Grothendieck's theorems in TOHOKU and
+SGA. The only theorem that stands out as needing more is existence of
+injectives in AB5 categories with generators. I will show these universes
+suffice for that theorem, for the AB5 categories associated to those
+(ringed) sites. The problem is simply to find bounds on the transfinite
+inductions we use. But these are not as simple as I had thought.    
+
+        For any site C we can construct a generator U for the category of
+Abelian sheaves on C, which works no matter which universe of sets we use to
+define the topos on C (assuming, of course, that C is in the universe). Any
+of the standard constructions have this property. And U has a fixed poset of
+subsheaves (up to equivalence as monics to U) also independent of the
+universe of sets. The "generating cardinal" for C is the first infinite
+cardinal greater than the number of subobjects of U. Actually we can make it
+smaller by a slightly more complicated definition: We can take the first
+infinite cardinal greater than the length of  any chain of subobjects of U
+well ordered by inclusion.
+
+        If we use a ringed site and modules over that  ring, then U depends
+on both the site and the sheaf of rings, but it still does not depend on the
+universe of sets.
+
+	The generating cardinal for a set of (ringed) sites is the supremum of the
+generating cardinals for each one.
+
+        Suppose we have a set of sites, and it has generating cardinal k.
+Let i be any limit ordinal larger than k and k not cofinal in i. We will use
+"small" to mean "a member of V(i)." So "small" here does not mean "of small
+enough cardinality". It means "of low enough rank". A small set can be
+isomorphic to a non-small one.
+
+	The key fact is that the axiom of replacement holds within V(i) for any
+countable family of sets and for any family of sets indexed by k. That is,
+any set of small sets which is the range of a function defined on k is
+itself a small set. The reason is this: Consider any function f:k-->S where
+S is a subset of V(i) but we do not assume f is small. Compose f with the
+rank function from S to the ordinals, taking each element of S to its rank.
+This composite cannot be unbounded in V(i), by assumption, so its image has
+a supremum m inside of V(i), and so f is a subset of V(m) and so is small. 
+
+        We use locally small categories in V(i): any subset of V(i) may be
+objects, but for any objects A and B there is a small set of morphisms
+hom(A,B) from A to B. An AB5 category is an Abelian category with all small
+colimits, such that suprema of small filtered sets of subobjects (of a given
+object B) are preserved by intersection (with any subobject of B). It
+follows that every small filtered set of subobjects is a stably effective
+epimorphic family over its supremum.
+
+	When we speak of a well-powered category we assume each object A has a
+selected small set Sub(A) of one representative of each equivalence class of
+monics to A. By a "subobject" of A we mean one of these selected
+representatives.
+
+The following lemmas and theorems hold for any well-powered AB5 category
+with generator U.
+
+Lemma 1: Given any objects C and D, there is a small set isomorphic to the
+set of all partial morphisms from C to D, that is all morphisms f:V-->D from
+subobjects V>->C.
+PROOF: There is a small set of subobjects Sub(C+D). A subset of C+D whose
+projection onto C is monic, is the graph of a partial morphism, and vice versa. 
+
+LEMMA 2: An object M is injective iff it looks injective to U. That is, iff
+every morphism h:V-->M from a subobject V>->U extends to some g:U-->M.
+PROOF: Given any subobject B>->A and morphism f:B-->M consider the obvious
+partially ordered set E of pairs <B',f'> where B' is a subobject of A
+containing B, and f' extends f. By Lemma 1 this is isomorphic to a small
+poset, and so every linearly ordered subset of it is small. So AB5 and
+Zorn's lemma show it has maximal elements.  The assumption on M implies that
+any maximal element of E must have B'=A.
+
+LEMMA 3: Each object A has a monic A>->M1 such that every morphism f:V-->A
+from a subobject V>->U extends to a morphism from U to M1. 
+PROOF: Consider the set I of all morphisms f:V-->A from any subobject V of
+U, to A. For each such f:V-->A we will paste a copy of U onto A by
+identifying V with its image under f. The result of all that pasting is M1.
+It is the cokernel of the natural morphism from (the coproduct of all
+domains of morphisms in I) to  A+(the I-fold copower of U). By Lemma 1, the
+set I is isomorphic to a small set so that the coproducts do exist. 
+
+THEOREM: Every object a has a monic A>->M where M is injective. 
+PROOF: We iterate the construction from Lemma 2 transfinitely, for each Mj
+give a monic Mi>- >M(j+1), continuing to the first cardinal larger than
+Sub(U). Let the colimit be M. By AB5, each Mj has a monic Mj>->M. Now take
+any subobject V>->U and any f:V-->M. If we knew that f factored as V-->Mj
+for some ordinal j we would be done, since by construction f would extend to
+a morphism U-->M(j+1). So consider the subobjects Vj>->V gotten by pulling
+back Mj>->M along f. This is an increasing chain of subjects,  and Sub(U)
+cannot be cofinal in this chain, so the chain is eventually constant. Say it
+is constant from Vs onwards. By AB5 the supremum of this chain is V, and so
+V=Vs and f factors through Ms. That proves the theorem. Notice we could have
+just iterated the construction to the first cardinal larger than any chain
+of subobjects of U well ordered by inclusion.
+
+
+
+

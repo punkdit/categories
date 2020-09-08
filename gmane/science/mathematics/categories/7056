@@ -1,0 +1,126 @@
+Path: news.gmane.org!not-for-mail
+From: =?UTF-8?Q?Jonathan_CHICHE_=E9=BD=8A=E6=AD=A3=E8=88=AA?= <chichejonathan@gmail.com>
+Newsgroups: gmane.science.mathematics.categories
+Subject: Strictification of lax 2-functors and Gray tensor product
+Date: Mon, 14 Nov 2011 21:57:17 +0100
+Lines: 89
+Approved: news@gmane.org
+Message-ID: <E1RQIBm-0005Os-2O@mlist.mta.ca>
+Reply-To: =?UTF-8?Q?Jonathan_CHICHE_=E9=BD=8A=E6=AD=A3=E8=88=AA?= <chichejonathan@gmail.com>
+NNTP-Posting-Host: lo.gmane.org
+Mime-Version: 1.0 (Apple Message framework v753.1)
+Content-Type: text/plain; charset=ISO-8859-1; delsp=yes; format=flowed
+Content-Transfer-Encoding: quoted-printable
+X-Trace: dough.gmane.org 1321360428 24184 80.91.229.12 (15 Nov 2011 12:33:48 GMT)
+X-Complaints-To: usenet@dough.gmane.org
+NNTP-Posting-Date: Tue, 15 Nov 2011 12:33:48 +0000 (UTC)
+To: Categories list <categories@mta.ca>
+Original-X-From: majordomo@mlist.mta.ca Tue Nov 15 13:33:41 2011
+Return-path: <majordomo@mlist.mta.ca>
+Envelope-to: gsmc-categories@m.gmane.org
+Original-Received: from smtpx.mta.ca ([138.73.1.4])
+	by lo.gmane.org with esmtp (Exim 4.69)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RQICq-0001Ze-H5
+	for gsmc-categories@m.gmane.org; Tue, 15 Nov 2011 13:33:40 +0100
+Original-Received: from mlist.mta.ca ([138.73.1.63]:33744)
+	by smtpx.mta.ca with esmtp (Exim 4.76)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RQIBn-0001lH-HC; Tue, 15 Nov 2011 08:32:35 -0400
+Original-Received: from majordomo by mlist.mta.ca with local (Exim 4.71)
+	(envelope-from <majordomo@mlist.mta.ca>)
+	id 1RQIBm-0005Os-2O
+	for categories-list@mlist.mta.ca; Tue, 15 Nov 2011 08:32:34 -0400
+Precedence: bulk
+Xref: news.gmane.org gmane.science.mathematics.categories:7056
+Archived-At: <http://permalink.gmane.org/gmane.science.mathematics.categories/7056>
+
+Dear all,
+
+In "Formal Category Theory: Adjointness for 2-Categories", Gray =20
+introduces what is now known as the Gray tensor product. The =20
+following two questions concern the part I,4.23, Appendix A, p.92-95, =20=
+
+where Gray relates the aforesaid product to a universal construction =20
+due to B=E9nabou. (I shall send a PDF version of what follows for those =20=
+
+averse to e-mails swarming with dollar symbols.) In the following, =20
+all the 2-categories are strict.
+
+1. Given a 2-category $A$, Gray, refering to B=E9nabou unpublished =20
+notes, gives a description of a couple $(\widetilde{A}, P)$ where $=20
+\widetilde{A}$ is a 2-category and $P : A \to \widetilde{A}$ a lax =20
+functor (oplax in Gray's text, but I take the liberty to take the lax =20=
+
+viewpoint and translate everything accordingly) which has the =20
+following universal property: for any 2-category $B$ and any lax 2-=20
+functor $F : A \to B$, there is a unique strict 2-functor $\widetilde=20
+{F} : \widetilde{A} \to B$ such that $\widetilde{F}P=3DF$. I have =20
+trouble in understanding the description with which Gray goes on, but =20=
+
+I believe it is equivalent to the following one, which I have learnt =20
+from Matias del Hoyo:
+
+The objects of $\widetilde{A}$ are those of $A$;
+
+If $a$ and $a'$ are two objects of $\widetilde{A}$, then the 1-cells =20
+from $a$ to $a'$ in $\widetilde{A}$ are the couples $([m], (x) : [m] =20
+\to A)$, where $m$ is a nonnegative integer, $[m]$ denotes the =20
+category associated to the ordinal $m$, and $(x) : [m] \to A$ is a 2-=20
+functor such that $(x)(0)=3Da$ and $(x)(1)=3Da'$, in other words $(x)$ =20=
+
+can be viewed as a chain linking $a$ to $a'$ of 1-cells of $A$ (we do =20=
+
+not require the chain to be nondegenerate, so identities are allowed =20
+in it);
+
+If $a$ and $a'$ are two objects of $\widetilde{A}$ and $([m], (x) : =20
+[m] \to A)$ and $([n], (y) : [n] \to A)$ are two 1-cells from $a$ to =20
+$a'$ in $\widetilde{A}$, then the 2-cells from $([m], (x))$ to $([n], =20=
+
+(y))$ in $\widetilde{A}$ are the n+1-uples $(\varphi, \alpha_{1}, =20
+ldots, \alpha_{n})$, where $\varphi : [n] \to [m]$ is a morphism =20
+between partially ordered sets (we do not require it to be injective) =20=
+
+such that, for every $i$ in $[n]$, we have $x_{\varphi(i)} =3D y_{i}$, =20=
+
+and where $\alpha_{i}$ is a 2-cell of $A$ from $x_{\varphi(i), \varphi=20=
+
+(i)-1} \circ \ldots \circ x_{\varphi(i-1)+1, \varphi(i-1)}$ to $y_{i, =20=
+
+i-1}$ for $i \in \{1, \ldots, n\}$. ($x_{i+1,i}$ stands for the image =20=
+
+of the arrow $i \to i+1$ by $(x)$.)
+
+The first question I have is: does this explicit description appear =20
+in the literature somewhere else than Gray's book? Is there a =20
+detailed proof of the universal property written down to which I =20
+could refer? I confess having too much difficulties in understanding =20
+Gray's book not to hope that someone will point out a more concrete =20
+and modern treatment in the literature. (In fact, I even have trouble =20=
+
+in convicing myself that the description just given is equivalent to =20
+that given by Gray, one of the reason being the terminological =20
+discrepancy between Gray's words and current usage.)
+
+2. Gray goes on by relating the Gray tensor product to this universal =20=
+
+construction. Given two 2-categories $A$ and $B$, I would like to =20
+understand the relationship between the 2-category $\widetilde{A =20
+\times B}$ ("tilde construction" of the cartesian product of $A$ and =20
+$B$) and the Gray tensor product $A \otimes B$ of $A$ and $B$. I =20
+suspect there is some kind of "localization" 2-functor relating these =20=
+
+two 2-categories. What is the more concrete description of this =20
+canonical 2-functor? Once again, pointers to the literature are =20
+welcome. I would like to stress that I am not at all interested in =20
+restricting the description to the pseudo case of the Gray tensor =20
+product, I really want to deal with the general lax case.
+
+Thanks in advance!
+
+Jonathan=
+
+
+[For admin and other information see: http://www.mta.ca/~cat-dist/ ]
+
